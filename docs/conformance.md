@@ -149,6 +149,7 @@ This repository currently provides:
 - `NF-MANIFEST` draft documentation
 - `NF-SCHEMA` draft schemas
 - reference examples
+- validation guidance
 
 It does not currently provide:
 

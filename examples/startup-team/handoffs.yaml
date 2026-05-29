@@ -1,0 +1,36 @@
+specVersion: "0.1"
+kind: HandoffSet
+metadata:
+  project: startup-team
+handoffs:
+  - id: product-to-design-and-build
+    from:
+      - product-owner
+    to:
+      - design-agent
+      - fullstack-agent
+    reason: Product scope is ready for design review and implementation planning.
+    status: pending
+    artifacts:
+      - scope_note
+    notes:
+      - Keep implementation limited to accepted scope.
+    blockingIssues: []
+    acceptanceCriteria:
+      - Design and implementation actors accept the scope.
+    nextAction: Review design context and prepare build plan.
+  - id: build-to-release
+    from:
+      - fullstack-agent
+    to:
+      - release-reviewer
+    reason: Product slice is ready for release review.
+    status: pending
+    artifacts:
+      - product_branch
+      - design_review
+    notes: []
+    blockingIssues: []
+    acceptanceCriteria:
+      - Release reviewer has implementation and risk context.
+    nextAction: Complete release readiness check.

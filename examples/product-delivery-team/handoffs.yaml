@@ -1,0 +1,53 @@
+specVersion: "0.1"
+kind: HandoffSet
+metadata:
+  project: product-delivery-team
+handoffs:
+  - id: discovery-to-design-build
+    from:
+      - product-manager
+    to:
+      - ux-agent
+      - implementation-agent
+    reason: Delivery goal is accepted and ready for UX and implementation planning.
+    status: pending
+    artifacts:
+      - delivery_goal
+    notes:
+      - Non-goals should remain out of scope.
+    blockingIssues: []
+    acceptanceCriteria:
+      - UX and implementation actors accept the goal.
+    nextAction: Prepare UX criteria and implementation plan.
+  - id: build-to-quality
+    from:
+      - implementation-agent
+    to:
+      - qa-agent
+    reason: Delivery branch is ready for validation.
+    status: pending
+    artifacts:
+      - delivery_branch
+      - ux_criteria
+    notes: []
+    blockingIssues: []
+    acceptanceCriteria:
+      - QA has branch and criteria.
+    nextAction: Validate delivery.
+  - id: quality-to-launch
+    from:
+      - qa-agent
+    to:
+      - launch-coordinator
+      - product-manager
+    reason: Quality evidence is ready for launch planning.
+    status: pending
+    artifacts:
+      - quality_report
+      - delivery_branch
+    notes:
+      - Launch decision remains human-owned.
+    blockingIssues: []
+    acceptanceCriteria:
+      - Launch coordinator has quality evidence and product context.
+    nextAction: Prepare launch plan.

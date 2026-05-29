@@ -1,0 +1,61 @@
+specVersion: "0.1"
+kind: EventSet
+metadata:
+  project: enterprise-team
+events:
+  - type: workflow.started
+    description: Enterprise workflow starts.
+    retention: Enterprise audit policy.
+    auditRequired: true
+    payload:
+      required:
+        - workflowId
+        - actor
+  - type: task.blocked
+    description: Task is blocked.
+    retention: Enterprise audit policy.
+    auditRequired: true
+    payload:
+      required:
+        - taskId
+        - reason
+  - type: task.completed
+    description: Task is completed.
+    retention: Enterprise audit policy.
+    auditRequired: true
+    payload:
+      required:
+        - taskId
+        - artifacts
+  - type: handoff.created
+    description: Responsibility is transferred.
+    retention: Enterprise audit policy.
+    auditRequired: true
+    payload:
+      required:
+        - from
+        - to
+  - type: review.requested
+    description: Review is requested.
+    retention: Enterprise audit policy.
+    auditRequired: true
+    payload:
+      required:
+        - reviewer
+        - approvalGate
+  - type: review.completed
+    description: Review is completed.
+    retention: Enterprise audit policy.
+    auditRequired: true
+    payload:
+      required:
+        - result
+        - approvalGate
+  - type: workflow.completed
+    description: Enterprise workflow completes.
+    retention: Enterprise audit policy.
+    auditRequired: true
+    payload:
+      required:
+        - workflowId
+        - outcome

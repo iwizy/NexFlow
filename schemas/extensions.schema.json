@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nexflow.dev/schemas/extensions.schema.json",
+  "title": "NexFlow Extensions Manifest",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["specVersion", "kind", "metadata", "extensions"],
+  "properties": {
+    "specVersion": {
+      "$ref": "common.schema.json#/$defs/specVersion"
+    },
+    "kind": {
+      "const": "ExtensionSet"
+    },
+    "metadata": {
+      "$ref": "common.schema.json#/$defs/metadata"
+    },
+    "extensions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": ["id", "namespace", "displayName", "lifecycle"],
+        "properties": {
+          "id": {
+            "$ref": "common.schema.json#/$defs/id"
+          },
+          "namespace": {
+            "type": "string",
+            "minLength": 1
+          },
+          "displayName": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "lifecycle": {
+            "type": "string",
+            "enum": ["experimental", "stable", "deprecated", "removed"]
+          },
+          "appliesTo": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "project",
+                "agents",
+                "workflow",
+                "tasks",
+                "handoffs",
+                "permissions",
+                "capabilities",
+                "context",
+                "memory",
+                "providers",
+                "events",
+                "extensions"
+              ]
+            },
+            "uniqueItems": true
+          },
+          "requiredCapabilities": {
+            "$ref": "common.schema.json#/$defs/idList"
+          },
+          "documentation": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

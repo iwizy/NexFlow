@@ -1,0 +1,75 @@
+specVersion: "0.1"
+kind: Workflow
+metadata:
+  project: enterprise-team
+workflow:
+  id: enterprise-change-control
+  displayName: Enterprise Change Control
+  description: Governed flow for sensitive enterprise changes.
+  triggers:
+    - task.created
+  stages:
+    - id: assessment
+      displayName: Assessment
+      steps:
+        - id: step-architecture-assessment
+          task: architecture-assessment
+          dependsOn: []
+          approvalGates:
+            - architecture_review
+          emits:
+            - review.completed
+    - id: implementation
+      displayName: Implementation
+      steps:
+        - id: step-implement-enterprise-change
+          task: implement-enterprise-change
+          dependsOn:
+            - step-architecture-assessment
+          approvalGates:
+            - architecture_review
+          emits:
+            - task.completed
+    - id: assurance
+      displayName: Assurance
+      steps:
+        - id: step-security-review
+          task: security-review
+          dependsOn:
+            - step-implement-enterprise-change
+          approvalGates:
+            - security_review
+          emits:
+            - review.completed
+        - id: step-compliance-signoff
+          task: compliance-signoff
+          dependsOn:
+            - step-security-review
+          approvalGates:
+            - security_review
+          emits:
+            - review.completed
+    - id: release
+      displayName: Release
+      steps:
+        - id: step-release-approval
+          task: release-approval
+          dependsOn:
+            - step-compliance-signoff
+          approvalGates:
+            - release_approval
+          emits:
+            - workflow.completed
+  dependencies:
+    - from: step-architecture-assessment
+      to: step-implement-enterprise-change
+      type: blocks
+    - from: step-implement-enterprise-change
+      to: step-security-review
+      type: blocks
+    - from: step-security-review
+      to: step-compliance-signoff
+      type: blocks
+    - from: step-compliance-signoff
+      to: step-release-approval
+      type: blocks

@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nexflow.dev/schemas/project.schema.json",
+  "title": "NexFlow Project Manifest",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["specVersion", "kind", "metadata", "project", "manifests"],
+  "properties": {
+    "specVersion": {
+      "$ref": "common.schema.json#/$defs/specVersion"
+    },
+    "kind": {
+      "const": "Project"
+    },
+    "metadata": {
+      "$ref": "common.schema.json#/$defs/metadata"
+    },
+    "project": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["id", "displayName", "description"],
+      "properties": {
+        "id": {
+          "$ref": "common.schema.json#/$defs/id"
+        },
+        "displayName": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "license": {
+          "type": "string"
+        },
+        "maintainers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "required": ["id", "name"],
+            "properties": {
+              "id": {
+                "$ref": "common.schema.json#/$defs/id"
+              },
+              "name": {
+                "type": "string"
+              },
+              "role": {
+                "type": "string"
+              },
+              "contact": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "defaultAutonomy": {
+          "$ref": "common.schema.json#/$defs/autonomyLevel"
+        },
+        "policies": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "requireReview": {
+              "type": "boolean"
+            },
+            "secretHandling": {
+              "type": "string"
+            },
+            "networkAccess": {
+              "type": "string"
+            },
+            "destructiveActions": {
+              "type": "string"
+            },
+            "productionActions": {
+              "type": "string"
+            }
+          }
+        },
+        "approvalGates": {
+          "type": "array",
+          "items": {
+            "$ref": "common.schema.json#/$defs/approvalGate"
+          }
+        }
+      }
+    },
+    "manifests": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "required": [
+        "agents",
+        "workflow",
+        "tasks",
+        "handoffs",
+        "permissions",
+        "capabilities",
+        "context",
+        "memory",
+        "providers",
+        "events",
+        "extensions"
+      ]
+    }
+  }
+}

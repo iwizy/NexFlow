@@ -1,0 +1,52 @@
+specVersion: "0.1"
+kind: HandoffSet
+metadata:
+  project: enterprise-team
+handoffs:
+  - id: architecture-to-implementation
+    from:
+      - enterprise-architect
+    to:
+      - implementation-agent
+    reason: Architecture assessment is approved for implementation.
+    status: pending
+    artifacts:
+      - architecture_note
+    notes:
+      - Implementation must stay within approved boundaries.
+    blockingIssues: []
+    acceptanceCriteria:
+      - Implementation agent confirms scope and constraints.
+    nextAction: Draft implementation branch.
+  - id: implementation-to-assurance
+    from:
+      - implementation-agent
+    to:
+      - security-reviewer
+      - compliance-reviewer
+    reason: Implementation is ready for security and compliance review.
+    status: pending
+    artifacts:
+      - enterprise_branch
+    notes:
+      - Include command log and test evidence.
+    blockingIssues: []
+    acceptanceCriteria:
+      - Reviewers have implementation, evidence, and architecture note.
+    nextAction: Complete security review and compliance signoff.
+  - id: assurance-to-release
+    from:
+      - security-reviewer
+      - compliance-reviewer
+    to:
+      - release-manager
+    reason: Assurance gates are complete.
+    status: pending
+    artifacts:
+      - security_report
+      - compliance_note
+    notes: []
+    blockingIssues: []
+    acceptanceCriteria:
+      - Release manager can verify completed approvals.
+    nextAction: Perform release approval.

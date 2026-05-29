@@ -1,0 +1,80 @@
+specVersion: "0.1"
+kind: TaskSet
+metadata:
+  project: software-team
+tasks:
+  - id: implement-feature
+    title: Implement scoped feature
+    status: ready
+    owner: implementation-agent
+    participants:
+      - reviewer
+    dependsOn: []
+    artifacts:
+      - id: feature_branch
+        type: branch
+        description: Branch containing implementation changes.
+        producedBy: implementation-agent
+    capabilitiesRequired:
+      - read_repository
+      - write_repository
+      - create_branch
+    approvalGates:
+      - code_review
+    acceptanceCriteria:
+      - Feature matches task scope.
+      - No undeclared capability is used.
+  - id: test-feature
+    title: Test scoped feature
+    status: proposed
+    owner: qa-agent
+    participants:
+      - implementation-agent
+      - reviewer
+    dependsOn:
+      - implement-feature
+    artifacts:
+      - id: test_report
+        type: report
+        description: Test results and quality notes.
+        producedBy: qa-agent
+    capabilitiesRequired:
+      - execute_command
+    approvalGates:
+      - code_review
+    acceptanceCriteria:
+      - Tests and risks are summarized.
+  - id: review-change
+    title: Review change
+    status: proposed
+    owner: reviewer
+    dependsOn:
+      - test-feature
+    artifacts:
+      - id: pull_request
+        type: pull_request
+        description: Pull request for maintainer review.
+        producedBy: reviewer
+    capabilitiesRequired:
+      - create_pull_request
+      - approve_changes
+    approvalGates: []
+    acceptanceCriteria:
+      - Reviewer approves or requests changes.
+  - id: update-docs
+    title: Update documentation
+    status: proposed
+    owner: docs-agent
+    dependsOn:
+      - review-change
+    artifacts:
+      - id: docs_update
+        type: patch
+        description: Documentation update.
+        producedBy: docs-agent
+    capabilitiesRequired:
+      - modify_documentation
+    approvalGates:
+      - code_review
+    acceptanceCriteria:
+      - User-facing behavior is documented.

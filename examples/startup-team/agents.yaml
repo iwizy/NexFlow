@@ -1,0 +1,119 @@
+specVersion: "0.1"
+kind: AgentSet
+metadata:
+  project: startup-team
+agents:
+  - id: product-owner
+    displayName: Product Owner
+    role: product_owner
+    description: Human owner for product direction and release scope.
+    responsibilities:
+      - Define acceptance criteria.
+      - Approve launch scope.
+    skills:
+      - product_strategy
+    permissions:
+      - product_decision_authority
+    capabilities:
+      - read_context
+      - manage_tasks
+      - approve_changes
+    contextAccess:
+      - product_backlog
+      - customer_research
+      - design_files
+    memoryAccess:
+      - ephemeral
+      - task
+      - project
+    autonomyLevel: manual_only
+    providerPreferences: []
+    extensions: []
+  - id: design-agent
+    displayName: Design Agent
+    role: product_designer
+    description: Produces design notes and interface review artifacts.
+    responsibilities:
+      - Review design context.
+      - Prepare UX acceptance notes.
+    skills:
+      - ux_review
+      - design_systems
+    permissions:
+      - design_context_access
+    capabilities:
+      - access_figma
+      - read_context
+      - read_documentation
+    contextAccess:
+      - design_files
+      - customer_research
+    memoryAccess:
+      - ephemeral
+      - task
+    autonomyLevel: autonomous_safe
+    providerPreferences:
+      - provider: general_reasoning
+        priority: preferred
+    extensions:
+      - namespace: io.nexflow.figma
+  - id: fullstack-agent
+    displayName: Fullstack Agent
+    role: implementation_engineer
+    description: Drafts implementation changes for a startup product surface.
+    responsibilities:
+      - Implement approved product tasks.
+      - Keep changes small and reviewable.
+    skills:
+      - frontend_development
+      - backend_development
+      - testing
+    permissions:
+      - startup_implementation_work
+    capabilities:
+      - read_repository
+      - write_repository
+      - create_branch
+      - execute_command
+      - read_context
+    contextAccess:
+      - repository
+      - product_backlog
+      - design_files
+      - docs
+    memoryAccess:
+      - ephemeral
+      - task
+    autonomyLevel: ask_before_changes
+    providerPreferences:
+      - provider: coding_reasoning
+        priority: preferred
+    extensions:
+      - namespace: io.nexflow.github
+  - id: release-reviewer
+    displayName: Release Reviewer
+    role: release_manager
+    description: Human release approval authority.
+    responsibilities:
+      - Approve release readiness.
+      - Confirm production safety.
+    skills:
+      - release_review
+      - risk_management
+    permissions:
+      - release_decision_authority
+    capabilities:
+      - create_pull_request
+      - approve_changes
+      - deploy_application
+    contextAccess:
+      - repository
+      - product_backlog
+      - docs
+    memoryAccess:
+      - ephemeral
+      - task
+      - project
+    autonomyLevel: manual_only
+    providerPreferences: []
+    extensions: []

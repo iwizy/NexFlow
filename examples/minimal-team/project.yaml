@@ -1,0 +1,38 @@
+specVersion: "0.1"
+kind: Project
+metadata:
+  project: minimal-team
+  name: Minimal Team
+project:
+  id: minimal-team
+  displayName: Minimal Team
+  description: Smallest useful NexFlow configuration.
+  license: MIT
+  maintainers:
+    - id: human-maintainer
+      name: Human Maintainer
+      role: maintainer
+  defaultAutonomy: ask_before_changes
+  policies:
+    requireReview: true
+    secretHandling: Raw secrets are never stored in manifests.
+    networkAccess: Disabled unless a task explicitly requests approval.
+    destructiveActions: Human approval required.
+    productionActions: Not applicable.
+  approvalGates:
+    - id: human_review
+      description: A maintainer must review before changes are accepted.
+      requiredApprovers:
+        - human-maintainer
+manifests:
+  agents: agents.yaml
+  workflow: workflow.yaml
+  tasks: tasks.yaml
+  handoffs: handoffs.yaml
+  permissions: permissions.yaml
+  capabilities: capabilities.yaml
+  context: context.yaml
+  memory: memory.yaml
+  providers: providers.yaml
+  events: events.yaml
+  extensions: extensions.yaml

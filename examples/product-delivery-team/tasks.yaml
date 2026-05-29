@@ -1,0 +1,109 @@
+specVersion: "0.1"
+kind: TaskSet
+metadata:
+  project: product-delivery-team
+tasks:
+  - id: define-delivery-goal
+    title: Define delivery goal
+    status: ready
+    owner: product-manager
+    participants:
+      - ux-agent
+      - implementation-agent
+    dependsOn: []
+    artifacts:
+      - id: delivery_goal
+        type: document
+        description: Product goal and acceptance criteria.
+        producedBy: product-manager
+    capabilitiesRequired:
+      - manage_tasks
+      - read_context
+    approvalGates:
+      - product_acceptance
+    acceptanceCriteria:
+      - Goal and non-goals are explicit.
+      - Acceptance criteria are testable.
+  - id: prepare-ux-criteria
+    title: Prepare UX criteria
+    status: proposed
+    owner: ux-agent
+    participants:
+      - product-manager
+      - implementation-agent
+    dependsOn:
+      - define-delivery-goal
+    artifacts:
+      - id: ux_criteria
+        type: document
+        description: UX criteria and design references.
+        producedBy: ux-agent
+    capabilitiesRequired:
+      - access_figma
+      - read_context
+    approvalGates: []
+    acceptanceCriteria:
+      - UX criteria are linked to design context.
+  - id: implement-delivery-slice
+    title: Implement delivery slice
+    status: proposed
+    owner: implementation-agent
+    participants:
+      - product-manager
+      - qa-agent
+    dependsOn:
+      - prepare-ux-criteria
+    artifacts:
+      - id: delivery_branch
+        type: branch
+        description: Delivery implementation branch.
+        producedBy: implementation-agent
+    capabilitiesRequired:
+      - read_repository
+      - write_repository
+      - create_branch
+      - execute_command
+    approvalGates:
+      - product_acceptance
+    acceptanceCriteria:
+      - Implementation satisfies product and UX criteria.
+  - id: validate-delivery
+    title: Validate delivery
+    status: proposed
+    owner: qa-agent
+    participants:
+      - implementation-agent
+      - launch-coordinator
+    dependsOn:
+      - implement-delivery-slice
+    artifacts:
+      - id: quality_report
+        type: report
+        description: QA evidence and known risks.
+        producedBy: qa-agent
+    capabilitiesRequired:
+      - execute_command
+      - approve_changes
+    approvalGates:
+      - quality_gate
+    acceptanceCriteria:
+      - Quality evidence is sufficient for launch planning.
+  - id: prepare-launch
+    title: Prepare launch
+    status: proposed
+    owner: launch-coordinator
+    dependsOn:
+      - validate-delivery
+    artifacts:
+      - id: launch_plan
+        type: document
+        description: Launch plan and release notes.
+        producedBy: launch-coordinator
+    capabilitiesRequired:
+      - create_pull_request
+      - modify_documentation
+      - deploy_application
+    approvalGates:
+      - launch_gate
+    acceptanceCriteria:
+      - Launch plan references quality report and product acceptance.

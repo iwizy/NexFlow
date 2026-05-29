@@ -1,0 +1,17 @@
+specVersion: "0.1"
+kind: ProviderSet
+metadata:
+  project: enterprise-team
+providers:
+  - id: enterprise_reasoning
+    type: abstract
+    description: Provider-neutral enterprise-approved reasoning class.
+    capabilities:
+      - text_generation
+      - code_reasoning
+      - policy_reasoning
+    constraints:
+      allowTrainingUse: false
+      dataResidency: organization_policy
+    selection:
+      strategy: governed_provider_policy

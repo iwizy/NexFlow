@@ -1,0 +1,27 @@
+specVersion: "0.1"
+kind: ContextSet
+metadata:
+  project: minimal-team
+contextSources:
+  - id: repository
+    type: local_files
+    description: Local project repository.
+    uri: .
+    access:
+      default: read
+      allowedActors:
+        - human-maintainer
+        - docs-agent
+    classification: internal
+    refreshPolicy: on_request
+  - id: docs
+    type: docs
+    description: Project documentation directory.
+    uri: docs/
+    access:
+      default: read
+      allowedActors:
+        - human-maintainer
+        - docs-agent
+    classification: public
+    refreshPolicy: on_request

@@ -1,0 +1,63 @@
+specVersion: "0.1"
+kind: ContextSet
+metadata:
+  project: enterprise-team
+contextSources:
+  - id: repository
+    type: github
+    description: Enterprise source repository.
+    uri: https://github.com/example/enterprise-system
+    access:
+      default: read
+      allowedActors:
+        - enterprise-architect
+        - implementation-agent
+        - security-reviewer
+        - release-manager
+    classification: confidential
+    refreshPolicy: on_request
+  - id: issue_tracker
+    type: jira
+    description: Enterprise issue tracker.
+    access:
+      default: query
+      allowedActors:
+        - enterprise-architect
+        - implementation-agent
+        - compliance-reviewer
+        - release-manager
+    classification: confidential
+    refreshPolicy: on_workflow_start
+  - id: architecture_docs
+    type: confluence
+    description: Architecture decision records and standards.
+    access:
+      default: read
+      allowedActors:
+        - enterprise-architect
+        - implementation-agent
+        - security-reviewer
+        - compliance-reviewer
+        - release-manager
+    classification: confidential
+    refreshPolicy: on_request
+  - id: security_knowledge
+    type: knowledge_base
+    description: Security standards and sanitized threat models.
+    access:
+      default: read
+      allowedActors:
+        - security-reviewer
+        - compliance-reviewer
+        - enterprise-architect
+    classification: restricted
+    refreshPolicy: manual
+  - id: mcp_tools
+    type: mcp
+    description: Approved enterprise development MCP server.
+    access:
+      default: query
+      allowedActors:
+        - implementation-agent
+    classification: confidential
+    refreshPolicy: manual

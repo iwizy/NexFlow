@@ -1,0 +1,32 @@
+specVersion: "0.1"
+kind: MemorySet
+metadata:
+  project: minimal-team
+memoryScopes:
+  - scope: ephemeral
+    retention: Session only.
+    ownership: Runtime or current actor.
+    visibility: Current actor.
+    updateRules: May be updated automatically during active work.
+    sensitivity: internal
+    allowedConsumers:
+      - docs-agent
+      - human-maintainer
+  - scope: task
+    retention: Until task completion.
+    ownership: Project.
+    visibility: Task participants.
+    updateRules: Updates must relate to the active task.
+    sensitivity: internal
+    allowedConsumers:
+      - docs-agent
+      - human-maintainer
+  - scope: project
+    retention: Project policy.
+    ownership: Maintainers.
+    visibility: Maintainers and approved agents.
+    updateRules: Human review required.
+    sensitivity: internal
+    allowedConsumers:
+      - human-maintainer
+    approvalGate: human_review

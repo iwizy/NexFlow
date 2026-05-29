@@ -1,0 +1,35 @@
+specVersion: "0.1"
+kind: ExtensionSet
+metadata:
+  project: product-delivery-team
+extensions:
+  - id: github_basic
+    namespace: io.nexflow.github
+    displayName: GitHub Basic
+    lifecycle: experimental
+    appliesTo:
+      - context
+      - workflow
+      - events
+    requiredCapabilities:
+      - read_repository
+      - create_branch
+      - create_pull_request
+  - id: jira_basic
+    namespace: io.nexflow.jira
+    displayName: Jira Basic
+    lifecycle: experimental
+    appliesTo:
+      - context
+      - tasks
+    requiredCapabilities:
+      - access_jira
+      - manage_tasks
+  - id: figma_readonly
+    namespace: io.nexflow.figma
+    displayName: Figma Read Only
+    lifecycle: experimental
+    appliesTo:
+      - context
+    requiredCapabilities:
+      - access_figma

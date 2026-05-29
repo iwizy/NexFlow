@@ -1,0 +1,47 @@
+specVersion: "0.1"
+kind: PermissionSet
+metadata:
+  project: software-team
+permissions:
+  - id: implementation_branch_work
+    description: Implementation agent may work in an approved branch and task scope.
+    subjects:
+      - implementation-agent
+    capabilities:
+      - read_repository
+      - write_repository
+      - create_branch
+      - read_context
+    effect: approval_required
+    approvalGate: code_review
+    conditions:
+      - No dependency installation without dependency_approval.
+  - id: qa_test_execution
+    description: QA agent may read code and run approved tests.
+    subjects:
+      - qa-agent
+    capabilities:
+      - read_repository
+      - execute_command
+      - read_context
+    effect: approval_required
+    approvalGate: code_review
+  - id: reviewer_approval
+    description: Reviewer may approve changes and create pull requests.
+    subjects:
+      - reviewer
+    capabilities:
+      - read_repository
+      - create_pull_request
+      - approve_changes
+    effect: allow
+  - id: docs_write_after_review
+    description: Docs agent may update docs once implementation is reviewed.
+    subjects:
+      - docs-agent
+    capabilities:
+      - read_repository
+      - modify_documentation
+      - read_context
+    effect: approval_required
+    approvalGate: code_review

@@ -1,0 +1,77 @@
+specVersion: "0.1"
+kind: CapabilitySet
+metadata:
+  project: startup-team
+capabilities:
+  - id: read_repository
+    description: Read source code and repository metadata.
+    risk: low
+    category: repository
+    requiresApprovalByDefault: false
+    auditRecommended: false
+  - id: write_repository
+    description: Write source files in an approved branch.
+    risk: high
+    category: repository
+    requiresApprovalByDefault: true
+    auditRecommended: true
+  - id: create_branch
+    description: Create a branch for scoped work.
+    risk: medium
+    category: repository
+    requiresApprovalByDefault: false
+    auditRecommended: true
+  - id: create_pull_request
+    description: Open a pull request.
+    risk: medium
+    category: repository
+    requiresApprovalByDefault: true
+    auditRecommended: true
+  - id: execute_command
+    description: Run approved local development commands.
+    risk: high
+    category: runtime
+    requiresApprovalByDefault: true
+    auditRecommended: true
+  - id: read_context
+    description: Read declared product, design, or repository context.
+    risk: low
+    category: context
+    requiresApprovalByDefault: false
+    auditRecommended: true
+  - id: read_documentation
+    description: Read documentation sources.
+    risk: low
+    category: documentation
+    requiresApprovalByDefault: false
+    auditRecommended: false
+  - id: access_linear
+    description: Read or update declared Linear tasks according to permission.
+    risk: medium
+    category: integration
+    requiresApprovalByDefault: true
+    auditRecommended: true
+  - id: access_figma
+    description: Read declared Figma design files.
+    risk: medium
+    category: integration
+    requiresApprovalByDefault: false
+    auditRecommended: true
+  - id: manage_tasks
+    description: Update task status and product scope records.
+    risk: medium
+    category: workflow
+    requiresApprovalByDefault: true
+    auditRecommended: true
+  - id: approve_changes
+    description: Approve gated changes or release scope.
+    risk: high
+    category: governance
+    requiresApprovalByDefault: false
+    auditRecommended: true
+  - id: deploy_application
+    description: Initiate deployment through an approved release system.
+    risk: critical
+    category: deployment
+    requiresApprovalByDefault: true
+    auditRecommended: true

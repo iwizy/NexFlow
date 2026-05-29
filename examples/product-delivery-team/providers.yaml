@@ -1,0 +1,26 @@
+specVersion: "0.1"
+kind: ProviderSet
+metadata:
+  project: product-delivery-team
+providers:
+  - id: product_reasoning
+    type: abstract
+    description: Provider-neutral product and UX reasoning class.
+    capabilities:
+      - text_generation
+      - visual_reasoning
+    constraints:
+      allowTrainingUse: false
+    selection:
+      strategy: project_policy
+  - id: coding_reasoning
+    type: abstract
+    description: Provider-neutral coding and testing reasoning class.
+    capabilities:
+      - text_generation
+      - code_reasoning
+      - tool_reasoning
+    constraints:
+      allowTrainingUse: false
+    selection:
+      strategy: project_policy

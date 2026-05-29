@@ -1,0 +1,71 @@
+specVersion: "0.1"
+kind: CapabilitySet
+metadata:
+  project: enterprise-team
+capabilities:
+  - id: read_repository
+    description: Read repository files and metadata.
+    risk: low
+    category: repository
+    requiresApprovalByDefault: false
+    auditRecommended: true
+  - id: write_repository
+    description: Write files in an approved change scope.
+    risk: high
+    category: repository
+    requiresApprovalByDefault: true
+    auditRecommended: true
+  - id: create_branch
+    description: Create an isolated branch for approved work.
+    risk: medium
+    category: repository
+    requiresApprovalByDefault: true
+    auditRecommended: true
+  - id: create_pull_request
+    description: Open a pull request against the enterprise repository.
+    risk: medium
+    category: repository
+    requiresApprovalByDefault: true
+    auditRecommended: true
+  - id: execute_command
+    description: Run approved local commands.
+    risk: high
+    category: runtime
+    requiresApprovalByDefault: true
+    auditRecommended: true
+  - id: read_documentation
+    description: Read approved documentation sources.
+    risk: low
+    category: documentation
+    requiresApprovalByDefault: false
+    auditRecommended: true
+  - id: read_context
+    description: Read declared enterprise context sources.
+    risk: medium
+    category: context
+    requiresApprovalByDefault: false
+    auditRecommended: true
+  - id: access_jira
+    description: Query or update declared Jira issues according to permission.
+    risk: medium
+    category: integration
+    requiresApprovalByDefault: true
+    auditRecommended: true
+  - id: access_mcp
+    description: Use declared MCP tool or context servers.
+    risk: high
+    category: integration
+    requiresApprovalByDefault: true
+    auditRecommended: true
+  - id: approve_changes
+    description: Approve gated changes.
+    risk: high
+    category: governance
+    requiresApprovalByDefault: false
+    auditRecommended: true
+  - id: deploy_application
+    description: Trigger approved deployment.
+    risk: critical
+    category: deployment
+    requiresApprovalByDefault: true
+    auditRecommended: true

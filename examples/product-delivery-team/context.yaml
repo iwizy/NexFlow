@@ -1,0 +1,62 @@
+specVersion: "0.1"
+kind: ContextSet
+metadata:
+  project: product-delivery-team
+contextSources:
+  - id: repository
+    type: github
+    description: Product repository.
+    uri: https://github.com/example/product
+    access:
+      default: read
+      allowedActors:
+        - implementation-agent
+        - qa-agent
+        - launch-coordinator
+    classification: internal
+    refreshPolicy: on_request
+  - id: backlog
+    type: jira
+    description: Product delivery backlog.
+    access:
+      default: query
+      allowedActors:
+        - product-manager
+        - implementation-agent
+        - qa-agent
+        - launch-coordinator
+    classification: internal
+    refreshPolicy: on_workflow_start
+  - id: design_files
+    type: figma
+    description: UX and visual design files.
+    access:
+      default: read
+      allowedActors:
+        - product-manager
+        - ux-agent
+        - implementation-agent
+    classification: confidential
+    refreshPolicy: on_request
+  - id: customer_docs
+    type: docs
+    description: Sanitized customer-facing requirements and support notes.
+    access:
+      default: read
+      allowedActors:
+        - product-manager
+        - ux-agent
+    classification: internal
+    refreshPolicy: manual
+  - id: docs
+    type: docs
+    description: Technical documentation and launch notes.
+    uri: docs/
+    access:
+      default: read
+      allowedActors:
+        - implementation-agent
+        - qa-agent
+        - launch-coordinator
+    classification: public
+    refreshPolicy: on_request

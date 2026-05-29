@@ -1,0 +1,25 @@
+specVersion: "0.1"
+kind: PermissionSet
+metadata:
+  project: minimal-team
+permissions:
+  - id: maintainer_full_review
+    description: Maintainer may read the repository and approve changes.
+    subjects:
+      - human-maintainer
+    capabilities:
+      - read_repository
+      - approve_changes
+    effect: allow
+  - id: docs_write_with_review
+    description: Docs agent may draft documentation changes after review.
+    subjects:
+      - docs-agent
+    capabilities:
+      - read_repository
+      - read_context
+      - modify_documentation
+    effect: approval_required
+    approvalGate: human_review
+    conditions:
+      - Documentation changes only.

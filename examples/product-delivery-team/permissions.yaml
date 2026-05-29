@@ -1,0 +1,57 @@
+specVersion: "0.1"
+kind: PermissionSet
+metadata:
+  project: product-delivery-team
+permissions:
+  - id: product_acceptance_authority
+    description: Product manager can approve scope and acceptance.
+    subjects:
+      - product-manager
+    capabilities:
+      - manage_tasks
+      - read_context
+      - approve_changes
+    effect: allow
+  - id: ux_context_access
+    description: UX agent can inspect design and customer documentation.
+    subjects:
+      - ux-agent
+    capabilities:
+      - access_figma
+      - read_context
+      - read_documentation
+    effect: allow
+  - id: delivery_implementation_work
+    description: Implementation agent can draft delivery changes after product acceptance.
+    subjects:
+      - implementation-agent
+    capabilities:
+      - read_repository
+      - write_repository
+      - create_branch
+      - execute_command
+      - read_context
+    effect: approval_required
+    approvalGate: product_acceptance
+  - id: qa_quality_gate
+    description: QA agent can run approved checks and approve quality evidence.
+    subjects:
+      - qa-agent
+    capabilities:
+      - read_repository
+      - execute_command
+      - read_context
+      - approve_changes
+    effect: approval_required
+    approvalGate: quality_gate
+  - id: launch_authority
+    description: Launch coordinator can approve release actions and documentation.
+    subjects:
+      - launch-coordinator
+    capabilities:
+      - create_pull_request
+      - modify_documentation
+      - deploy_application
+      - approve_changes
+    effect: approval_required
+    approvalGate: launch_gate

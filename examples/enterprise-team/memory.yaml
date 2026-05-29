@@ -1,0 +1,51 @@
+specVersion: "0.1"
+kind: MemorySet
+metadata:
+  project: enterprise-team
+memoryScopes:
+  - scope: ephemeral
+    retention: Session only.
+    ownership: Runtime or current actor.
+    visibility: Current actor.
+    updateRules: Automatic during active work.
+    sensitivity: confidential
+    allowedConsumers:
+      - enterprise-architect
+      - implementation-agent
+      - security-reviewer
+      - compliance-reviewer
+      - release-manager
+  - scope: task
+    retention: Until task closure plus audit retention policy.
+    ownership: Enterprise project.
+    visibility: Task participants and required reviewers.
+    updateRules: Updates must cite task, artifact, or approval.
+    sensitivity: confidential
+    allowedConsumers:
+      - enterprise-architect
+      - implementation-agent
+      - security-reviewer
+      - compliance-reviewer
+      - release-manager
+  - scope: project
+    retention: Enterprise retention policy.
+    ownership: Project maintainers.
+    visibility: Maintainers and approved reviewers.
+    updateRules: Review required for durable updates.
+    sensitivity: confidential
+    allowedConsumers:
+      - enterprise-architect
+      - security-reviewer
+      - release-manager
+    approvalGate: architecture_review
+  - scope: organization
+    retention: Organization retention policy.
+    ownership: Organization.
+    visibility: Authorized human reviewers only.
+    updateRules: Compliance approval required.
+    sensitivity: restricted
+    allowedConsumers:
+      - enterprise-architect
+      - security-reviewer
+      - compliance-reviewer
+    approvalGate: security_review

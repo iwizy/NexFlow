@@ -1,0 +1,15 @@
+specVersion: "0.1"
+kind: ProviderSet
+metadata:
+  project: minimal-team
+providers:
+  - id: general_reasoning
+    type: abstract
+    description: Provider-neutral reasoning capability.
+    capabilities:
+      - text_generation
+      - tool_reasoning
+    constraints:
+      allowTrainingUse: false
+    selection:
+      strategy: project_policy

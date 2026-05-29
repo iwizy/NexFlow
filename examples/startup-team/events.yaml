@@ -1,0 +1,49 @@
+specVersion: "0.1"
+kind: EventSet
+metadata:
+  project: startup-team
+events:
+  - type: task.created
+    description: A product task is created.
+    retention: Project policy.
+    auditRequired: true
+    payload:
+      required:
+        - taskId
+  - type: task.completed
+    description: A task is completed.
+    retention: Project policy.
+    auditRequired: true
+    payload:
+      required:
+        - taskId
+        - artifacts
+  - type: handoff.created
+    description: Responsibility is handed to another actor.
+    retention: Project policy.
+    auditRequired: true
+    payload:
+      required:
+        - from
+        - to
+  - type: review.requested
+    description: Review is requested.
+    retention: Project policy.
+    auditRequired: true
+    payload:
+      required:
+        - reviewer
+  - type: review.completed
+    description: Review is completed.
+    retention: Project policy.
+    auditRequired: true
+    payload:
+      required:
+        - result
+  - type: workflow.completed
+    description: Startup delivery flow completes.
+    retention: Project policy.
+    auditRequired: true
+    payload:
+      required:
+        - outcome

@@ -1,0 +1,45 @@
+specVersion: "0.1"
+kind: PermissionSet
+metadata:
+  project: startup-team
+permissions:
+  - id: product_decision_authority
+    description: Product owner can manage scope and approve product decisions.
+    subjects:
+      - product-owner
+    capabilities:
+      - read_context
+      - manage_tasks
+      - approve_changes
+    effect: allow
+  - id: design_context_access
+    description: Design agent can inspect design and customer context.
+    subjects:
+      - design-agent
+    capabilities:
+      - access_figma
+      - read_context
+      - read_documentation
+    effect: allow
+  - id: startup_implementation_work
+    description: Fullstack agent can draft changes in approved scope.
+    subjects:
+      - fullstack-agent
+    capabilities:
+      - read_repository
+      - write_repository
+      - create_branch
+      - execute_command
+      - read_context
+    effect: approval_required
+    approvalGate: product_review
+  - id: release_decision_authority
+    description: Release reviewer can create PRs, approve changes, and approve deployments.
+    subjects:
+      - release-reviewer
+    capabilities:
+      - create_pull_request
+      - approve_changes
+      - deploy_application
+    effect: approval_required
+    approvalGate: release_review

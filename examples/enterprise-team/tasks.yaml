@@ -1,0 +1,108 @@
+specVersion: "0.1"
+kind: TaskSet
+metadata:
+  project: enterprise-team
+tasks:
+  - id: architecture-assessment
+    title: Architecture assessment
+    status: ready
+    owner: enterprise-architect
+    participants:
+      - implementation-agent
+      - security-reviewer
+    dependsOn: []
+    artifacts:
+      - id: architecture_note
+        type: document
+        description: Approved architecture direction.
+        producedBy: enterprise-architect
+    capabilitiesRequired:
+      - read_documentation
+      - read_context
+      - approve_changes
+    approvalGates:
+      - architecture_review
+    acceptanceCriteria:
+      - Scope and boundaries are explicit.
+      - Security-sensitive areas are identified.
+  - id: implement-enterprise-change
+    title: Implement enterprise change
+    status: proposed
+    owner: implementation-agent
+    participants:
+      - enterprise-architect
+    dependsOn:
+      - architecture-assessment
+    artifacts:
+      - id: enterprise_branch
+        type: branch
+        description: Implementation branch.
+        producedBy: implementation-agent
+    capabilitiesRequired:
+      - read_repository
+      - write_repository
+      - create_branch
+      - execute_command
+    approvalGates:
+      - architecture_review
+    acceptanceCriteria:
+      - Change stays within approved architecture.
+      - Commands are approved and logged.
+  - id: security-review
+    title: Security review
+    status: proposed
+    owner: security-reviewer
+    participants:
+      - implementation-agent
+      - compliance-reviewer
+    dependsOn:
+      - implement-enterprise-change
+    artifacts:
+      - id: security_report
+        type: report
+        description: Security review findings.
+        producedBy: security-reviewer
+    capabilitiesRequired:
+      - read_repository
+      - read_context
+      - approve_changes
+    approvalGates:
+      - security_review
+    acceptanceCriteria:
+      - Sensitive risks are accepted or remediated.
+  - id: compliance-signoff
+    title: Compliance signoff
+    status: proposed
+    owner: compliance-reviewer
+    dependsOn:
+      - security-review
+    artifacts:
+      - id: compliance_note
+        type: document
+        description: Compliance evidence summary.
+        producedBy: compliance-reviewer
+    capabilitiesRequired:
+      - read_documentation
+      - approve_changes
+    approvalGates:
+      - security_review
+    acceptanceCriteria:
+      - Evidence requirements are satisfied.
+  - id: release-approval
+    title: Release approval
+    status: proposed
+    owner: release-manager
+    dependsOn:
+      - compliance-signoff
+    artifacts:
+      - id: enterprise_pr
+        type: pull_request
+        description: Pull request ready for release approval.
+        producedBy: release-manager
+    capabilitiesRequired:
+      - create_pull_request
+      - deploy_application
+    approvalGates:
+      - release_approval
+    acceptanceCriteria:
+      - Architecture, security, and compliance reviews are complete.

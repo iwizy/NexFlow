@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nexflow.dev/schemas/handoffs.schema.json",
+  "title": "NexFlow Handoffs Manifest",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["specVersion", "kind", "metadata", "handoffs"],
+  "properties": {
+    "specVersion": {
+      "$ref": "common.schema.json#/$defs/specVersion"
+    },
+    "kind": {
+      "const": "HandoffSet"
+    },
+    "metadata": {
+      "$ref": "common.schema.json#/$defs/metadata"
+    },
+    "handoffs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": ["id", "from", "to", "reason", "status", "nextAction"],
+        "properties": {
+          "id": {
+            "$ref": "common.schema.json#/$defs/id"
+          },
+          "from": {
+            "$ref": "common.schema.json#/$defs/idList"
+          },
+          "to": {
+            "$ref": "common.schema.json#/$defs/idList"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "status": {
+            "$ref": "common.schema.json#/$defs/handoffStatus"
+          },
+          "artifacts": {
+            "$ref": "common.schema.json#/$defs/idList"
+          },
+          "notes": {
+            "$ref": "common.schema.json#/$defs/stringList"
+          },
+          "blockingIssues": {
+            "$ref": "common.schema.json#/$defs/stringList"
+          },
+          "acceptanceCriteria": {
+            "$ref": "common.schema.json#/$defs/stringList"
+          },
+          "nextAction": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

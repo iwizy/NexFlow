@@ -1,0 +1,15 @@
+specVersion: "0.1"
+kind: ExtensionSet
+metadata:
+  project: minimal-team
+extensions:
+  - id: local_repository
+    namespace: io.nexflow.local_repository
+    displayName: Local Repository
+    description: Declares local files as a context source.
+    lifecycle: experimental
+    appliesTo:
+      - context
+    requiredCapabilities:
+      - read_repository
+    documentation: docs/context-model.md

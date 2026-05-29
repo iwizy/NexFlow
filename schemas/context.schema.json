@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nexflow.dev/schemas/context.schema.json",
+  "title": "NexFlow Context Manifest",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["specVersion", "kind", "metadata", "contextSources"],
+  "properties": {
+    "specVersion": {
+      "$ref": "common.schema.json#/$defs/specVersion"
+    },
+    "kind": {
+      "const": "ContextSet"
+    },
+    "metadata": {
+      "$ref": "common.schema.json#/$defs/metadata"
+    },
+    "contextSources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": ["id", "type", "description", "access", "classification"],
+        "properties": {
+          "id": {
+            "$ref": "common.schema.json#/$defs/id"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "github",
+              "gitlab",
+              "docs",
+              "notes",
+              "confluence",
+              "local_files",
+              "knowledge_base",
+              "linear",
+              "jira",
+              "figma",
+              "mcp",
+              "web",
+              "custom"
+            ]
+          },
+          "description": {
+            "type": "string"
+          },
+          "uri": {
+            "type": "string"
+          },
+          "access": {
+            "type": "object",
+            "additionalProperties": true,
+            "required": ["default"],
+            "properties": {
+              "default": {
+                "$ref": "common.schema.json#/$defs/accessMode"
+              },
+              "allowedActors": {
+                "$ref": "common.schema.json#/$defs/idList"
+              },
+              "deniedActors": {
+                "$ref": "common.schema.json#/$defs/idList"
+              }
+            }
+          },
+          "classification": {
+            "$ref": "common.schema.json#/$defs/classification"
+          },
+          "refreshPolicy": {
+            "type": "string",
+            "enum": ["manual", "on_request", "on_workflow_start", "scheduled", "custom"]
+          },
+          "allowedDomains": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}

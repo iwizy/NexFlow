@@ -1,0 +1,35 @@
+specVersion: "0.1"
+kind: HandoffSet
+metadata:
+  project: software-team
+handoffs:
+  - id: implementation-to-qa
+    from:
+      - implementation-agent
+    to:
+      - qa-agent
+    reason: Feature branch is ready for validation.
+    status: pending
+    artifacts:
+      - feature_branch
+    notes:
+      - Tests should use approved commands only.
+    blockingIssues: []
+    acceptanceCriteria:
+      - QA can reproduce the change locally.
+    nextAction: Run approved validation checks.
+  - id: qa-to-reviewer
+    from:
+      - qa-agent
+    to:
+      - reviewer
+    reason: Test report is ready for human review.
+    status: pending
+    artifacts:
+      - test_report
+      - feature_branch
+    notes: []
+    blockingIssues: []
+    acceptanceCriteria:
+      - Reviewer receives implementation and test evidence.
+    nextAction: Review the change and request docs update if accepted.

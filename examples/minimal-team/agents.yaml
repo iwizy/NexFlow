@@ -1,0 +1,56 @@
+specVersion: "0.1"
+kind: AgentSet
+metadata:
+  project: minimal-team
+agents:
+  - id: human-maintainer
+    displayName: Human Maintainer
+    role: maintainer
+    description: Final authority for project changes.
+    responsibilities:
+      - Approve changes.
+      - Resolve ambiguity.
+    skills:
+      - project_review
+    permissions:
+      - maintainer_full_review
+    capabilities:
+      - read_repository
+      - approve_changes
+    contextAccess:
+      - repository
+      - docs
+    memoryAccess:
+      - ephemeral
+      - task
+      - project
+    autonomyLevel: manual_only
+    providerPreferences: []
+    extensions: []
+  - id: docs-agent
+    displayName: Docs Agent
+    role: technical_writer
+    description: Drafts documentation updates for maintainer review.
+    responsibilities:
+      - Keep docs aligned with examples.
+      - Flag underspecified behavior.
+    skills:
+      - specification_writing
+      - schema_review
+    permissions:
+      - docs_write_with_review
+    capabilities:
+      - read_repository
+      - modify_documentation
+      - read_context
+    contextAccess:
+      - repository
+      - docs
+    memoryAccess:
+      - ephemeral
+      - task
+    autonomyLevel: ask_before_changes
+    providerPreferences:
+      - provider: general_reasoning
+        priority: preferred
+    extensions: []

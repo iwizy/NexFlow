@@ -1,0 +1,49 @@
+specVersion: "0.1"
+kind: Project
+metadata:
+  project: product-delivery-team
+  name: Product Delivery Team
+project:
+  id: product-delivery-team
+  displayName: Product Delivery Team
+  description: Cross-functional product delivery configuration.
+  license: MIT
+  maintainers:
+    - id: product-manager
+      name: Product Manager
+      role: product
+    - id: launch-coordinator
+      name: Launch Coordinator
+      role: release
+  defaultAutonomy: autonomous_safe
+  policies:
+    requireReview: true
+    secretHandling: Secrets are not part of product delivery manifests.
+    networkAccess: Allowed only for declared context sources.
+    destructiveActions: Human approval required.
+    productionActions: Launch coordinator approval required.
+  approvalGates:
+    - id: product_acceptance
+      description: Product manager approval required for scope and acceptance.
+      requiredApprovers:
+        - product-manager
+    - id: quality_gate
+      description: QA approval required before launch planning.
+      requiredApprovers:
+        - qa-agent
+    - id: launch_gate
+      description: Launch coordinator approval required for release actions.
+      requiredApprovers:
+        - launch-coordinator
+manifests:
+  agents: agents.yaml
+  workflow: workflow.yaml
+  tasks: tasks.yaml
+  handoffs: handoffs.yaml
+  permissions: permissions.yaml
+  capabilities: capabilities.yaml
+  context: context.yaml
+  memory: memory.yaml
+  providers: providers.yaml
+  events: events.yaml
+  extensions: extensions.yaml

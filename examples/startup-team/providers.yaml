@@ -1,0 +1,26 @@
+specVersion: "0.1"
+kind: ProviderSet
+metadata:
+  project: startup-team
+providers:
+  - id: coding_reasoning
+    type: abstract
+    description: Provider-neutral coding model class.
+    capabilities:
+      - code_reasoning
+      - text_generation
+      - tool_reasoning
+    constraints:
+      allowTrainingUse: false
+    selection:
+      strategy: project_policy
+  - id: general_reasoning
+    type: abstract
+    description: Provider-neutral product and design reasoning class.
+    capabilities:
+      - text_generation
+      - visual_reasoning
+    constraints:
+      allowTrainingUse: false
+    selection:
+      strategy: project_policy

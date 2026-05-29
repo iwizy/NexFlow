@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nexflow.dev/schemas/capabilities.schema.json",
+  "title": "NexFlow Capabilities Manifest",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["specVersion", "kind", "metadata", "capabilities"],
+  "properties": {
+    "specVersion": {
+      "$ref": "common.schema.json#/$defs/specVersion"
+    },
+    "kind": {
+      "const": "CapabilitySet"
+    },
+    "metadata": {
+      "$ref": "common.schema.json#/$defs/metadata"
+    },
+    "capabilities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": ["id", "description", "risk"],
+        "properties": {
+          "id": {
+            "$ref": "common.schema.json#/$defs/id"
+          },
+          "description": {
+            "type": "string"
+          },
+          "risk": {
+            "$ref": "common.schema.json#/$defs/riskLevel"
+          },
+          "category": {
+            "type": "string"
+          },
+          "requiresApprovalByDefault": {
+            "type": "boolean"
+          },
+          "auditRecommended": {
+            "type": "boolean"
+          }
+        }
+      }
+    }
+  }
+}

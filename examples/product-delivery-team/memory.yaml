@@ -1,0 +1,39 @@
+specVersion: "0.1"
+kind: MemorySet
+metadata:
+  project: product-delivery-team
+memoryScopes:
+  - scope: ephemeral
+    retention: Session only.
+    ownership: Runtime or current actor.
+    visibility: Current actor.
+    updateRules: Automatic during active work.
+    sensitivity: internal
+    allowedConsumers:
+      - product-manager
+      - ux-agent
+      - implementation-agent
+      - qa-agent
+      - launch-coordinator
+  - scope: task
+    retention: Until delivery task is closed.
+    ownership: Project.
+    visibility: Task participants.
+    updateRules: Updates must link to task or artifact.
+    sensitivity: internal
+    allowedConsumers:
+      - product-manager
+      - ux-agent
+      - implementation-agent
+      - qa-agent
+      - launch-coordinator
+  - scope: project
+    retention: Product policy.
+    ownership: Product manager.
+    visibility: Product and launch authorities.
+    updateRules: Durable updates require product acceptance.
+    sensitivity: confidential
+    allowedConsumers:
+      - product-manager
+      - launch-coordinator
+    approvalGate: product_acceptance

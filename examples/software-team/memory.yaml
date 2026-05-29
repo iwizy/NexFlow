@@ -1,0 +1,36 @@
+specVersion: "0.1"
+kind: MemorySet
+metadata:
+  project: software-team
+memoryScopes:
+  - scope: ephemeral
+    retention: Session only.
+    ownership: Runtime or current actor.
+    visibility: Current actor.
+    updateRules: Automatic during active work.
+    sensitivity: internal
+    allowedConsumers:
+      - implementation-agent
+      - qa-agent
+      - docs-agent
+      - reviewer
+  - scope: task
+    retention: Until task is closed.
+    ownership: Project.
+    visibility: Task participants and reviewer.
+    updateRules: Updates must cite task or artifact.
+    sensitivity: internal
+    allowedConsumers:
+      - implementation-agent
+      - qa-agent
+      - docs-agent
+      - reviewer
+  - scope: project
+    retention: Maintainer policy.
+    ownership: Maintainers.
+    visibility: Maintainers and approved agents.
+    updateRules: Review required for durable updates.
+    sensitivity: internal
+    allowedConsumers:
+      - reviewer
+    approvalGate: code_review

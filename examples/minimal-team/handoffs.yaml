@@ -1,0 +1,20 @@
+specVersion: "0.1"
+kind: HandoffSet
+metadata:
+  project: minimal-team
+handoffs:
+  - id: docs-to-maintainer
+    from:
+      - docs-agent
+    to:
+      - human-maintainer
+    reason: Documentation patch is ready for review.
+    status: pending
+    artifacts:
+      - docs_patch
+    notes:
+      - Runtime behavior remains explicitly planned, not implemented.
+    blockingIssues: []
+    acceptanceCriteria:
+      - Maintainer confirms the text matches the specification.
+    nextAction: Review the documentation patch.

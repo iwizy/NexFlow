@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nexflow.dev/schemas/events.schema.json",
+  "title": "NexFlow Events Manifest",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["specVersion", "kind", "metadata", "events"],
+  "properties": {
+    "specVersion": {
+      "$ref": "common.schema.json#/$defs/specVersion"
+    },
+    "kind": {
+      "const": "EventSet"
+    },
+    "metadata": {
+      "$ref": "common.schema.json#/$defs/metadata"
+    },
+    "events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": ["type", "description", "payload"],
+        "properties": {
+          "type": {
+            "type": "string",
+            "pattern": "^[a-z]+(\\.[a-z]+)+$"
+          },
+          "description": {
+            "type": "string"
+          },
+          "retention": {
+            "type": "string"
+          },
+          "auditRequired": {
+            "type": "boolean"
+          },
+          "payload": {
+            "type": "object",
+            "additionalProperties": true
+          }
+        }
+      }
+    }
+  }
+}

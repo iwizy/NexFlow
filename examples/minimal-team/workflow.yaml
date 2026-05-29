@@ -1,0 +1,36 @@
+specVersion: "0.1"
+kind: Workflow
+metadata:
+  project: minimal-team
+workflow:
+  id: docs-review-flow
+  displayName: Documentation Review Flow
+  description: Draft documentation changes and hand them to a maintainer.
+  triggers:
+    - manual
+  stages:
+    - id: draft
+      displayName: Draft
+      steps:
+        - id: step-draft-doc-update
+          task: draft-doc-update
+          dependsOn: []
+          approvalGates:
+            - human_review
+          emits:
+            - task.completed
+            - review.requested
+    - id: review
+      displayName: Review
+      steps:
+        - id: step-review-doc-update
+          task: review-doc-update
+          dependsOn:
+            - step-draft-doc-update
+          approvalGates: []
+          emits:
+            - review.completed
+  dependencies:
+    - from: step-draft-doc-update
+      to: step-review-doc-update
+      type: blocks

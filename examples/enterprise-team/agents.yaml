@@ -1,0 +1,151 @@
+specVersion: "0.1"
+kind: AgentSet
+metadata:
+  project: enterprise-team
+agents:
+  - id: enterprise-architect
+    displayName: Enterprise Architect
+    role: architect
+    description: Human owner for architecture and system boundaries.
+    responsibilities:
+      - Approve architectural direction.
+      - Resolve cross-system dependencies.
+    skills:
+      - architecture_review
+      - dependency_analysis
+    permissions:
+      - architecture_decision_authority
+    capabilities:
+      - read_repository
+      - read_documentation
+      - read_context
+      - approve_changes
+    contextAccess:
+      - repository
+      - architecture_docs
+      - issue_tracker
+      - knowledge_base
+    memoryAccess:
+      - ephemeral
+      - task
+      - project
+      - organization
+    autonomyLevel: manual_only
+    providerPreferences: []
+    extensions: []
+  - id: implementation-agent
+    displayName: Implementation Agent
+    role: implementation_engineer
+    description: Drafts enterprise code changes after approval.
+    responsibilities:
+      - Implement approved tasks.
+      - Preserve auditability.
+    skills:
+      - code_editing
+      - test_driven_development
+    permissions:
+      - restricted_implementation_work
+    capabilities:
+      - read_repository
+      - write_repository
+      - create_branch
+      - execute_command
+      - read_context
+      - access_mcp
+    contextAccess:
+      - repository
+      - issue_tracker
+      - architecture_docs
+      - mcp_tools
+    memoryAccess:
+      - ephemeral
+      - task
+    autonomyLevel: ask_before_changes
+    providerPreferences:
+      - provider: enterprise_reasoning
+        priority: preferred
+    extensions:
+      - namespace: io.nexflow.github
+      - namespace: io.nexflow.mcp
+  - id: security-reviewer
+    displayName: Security Reviewer
+    role: security_reviewer
+    description: Human security approval authority.
+    responsibilities:
+      - Review sensitive changes.
+      - Approve security gates.
+    skills:
+      - threat_modeling
+      - secure_code_review
+    permissions:
+      - security_decision_authority
+    capabilities:
+      - read_repository
+      - read_context
+      - approve_changes
+    contextAccess:
+      - repository
+      - security_knowledge
+      - architecture_docs
+    memoryAccess:
+      - ephemeral
+      - task
+      - project
+      - organization
+    autonomyLevel: manual_only
+    providerPreferences: []
+    extensions: []
+  - id: compliance-reviewer
+    displayName: Compliance Reviewer
+    role: compliance_reviewer
+    description: Reviews policy and evidence requirements.
+    responsibilities:
+      - Check compliance evidence.
+      - Record approval notes.
+    skills:
+      - compliance_review
+      - audit_evidence
+    permissions:
+      - compliance_review_access
+    capabilities:
+      - read_documentation
+      - read_context
+      - approve_changes
+    contextAccess:
+      - architecture_docs
+      - security_knowledge
+      - issue_tracker
+    memoryAccess:
+      - ephemeral
+      - task
+      - organization
+    autonomyLevel: manual_only
+    providerPreferences: []
+    extensions: []
+  - id: release-manager
+    displayName: Release Manager
+    role: release_manager
+    description: Human owner for release and deployment gates.
+    responsibilities:
+      - Approve deployment.
+      - Confirm required reviews are complete.
+    skills:
+      - release_management
+      - incident_risk_review
+    permissions:
+      - enterprise_release_authority
+    capabilities:
+      - create_pull_request
+      - approve_changes
+      - deploy_application
+    contextAccess:
+      - repository
+      - issue_tracker
+      - architecture_docs
+    memoryAccess:
+      - ephemeral
+      - task
+      - project
+    autonomyLevel: manual_only
+    providerPreferences: []
+    extensions: []

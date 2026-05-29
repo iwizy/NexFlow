@@ -1,0 +1,58 @@
+specVersion: "0.1"
+kind: EventSet
+metadata:
+  project: software-team
+events:
+  - type: workflow.started
+    description: Delivery workflow starts.
+    retention: Project policy.
+    auditRequired: true
+    payload:
+      required:
+        - workflowId
+  - type: task.completed
+    description: A task is completed.
+    retention: Project policy.
+    auditRequired: true
+    payload:
+      required:
+        - taskId
+        - artifacts
+  - type: task.blocked
+    description: A task cannot proceed.
+    retention: Project policy.
+    auditRequired: true
+    payload:
+      required:
+        - taskId
+        - reason
+  - type: review.requested
+    description: A review is requested.
+    retention: Project policy.
+    auditRequired: true
+    payload:
+      required:
+        - reviewer
+  - type: review.completed
+    description: A review is completed.
+    retention: Project policy.
+    auditRequired: true
+    payload:
+      required:
+        - result
+  - type: handoff.created
+    description: Responsibility moves to another actor.
+    retention: Project policy.
+    auditRequired: true
+    payload:
+      required:
+        - from
+        - to
+  - type: workflow.completed
+    description: Delivery workflow completes.
+    retention: Project policy.
+    auditRequired: true
+    payload:
+      required:
+        - workflowId
+        - outcome

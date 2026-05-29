@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nexflow.dev/schemas/permissions.schema.json",
+  "title": "NexFlow Permissions Manifest",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["specVersion", "kind", "metadata", "permissions"],
+  "properties": {
+    "specVersion": {
+      "$ref": "common.schema.json#/$defs/specVersion"
+    },
+    "kind": {
+      "const": "PermissionSet"
+    },
+    "metadata": {
+      "$ref": "common.schema.json#/$defs/metadata"
+    },
+    "permissions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": ["id", "description", "subjects", "capabilities", "effect"],
+        "properties": {
+          "id": {
+            "$ref": "common.schema.json#/$defs/id"
+          },
+          "description": {
+            "type": "string"
+          },
+          "subjects": {
+            "$ref": "common.schema.json#/$defs/idList"
+          },
+          "capabilities": {
+            "$ref": "common.schema.json#/$defs/idList"
+          },
+          "effect": {
+            "$ref": "common.schema.json#/$defs/permissionEffect"
+          },
+          "approvalGate": {
+            "$ref": "common.schema.json#/$defs/id"
+          },
+          "conditions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "scope": {
+            "type": "object",
+            "additionalProperties": true
+          }
+        }
+      }
+    }
+  }
+}

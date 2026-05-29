@@ -1,0 +1,60 @@
+specVersion: "0.1"
+kind: PermissionSet
+metadata:
+  project: enterprise-team
+permissions:
+  - id: architecture_decision_authority
+    description: Architect may approve architecture and context decisions.
+    subjects:
+      - enterprise-architect
+    capabilities:
+      - read_repository
+      - read_documentation
+      - read_context
+      - approve_changes
+    effect: allow
+  - id: restricted_implementation_work
+    description: Implementation agent may draft changes only after architecture review.
+    subjects:
+      - implementation-agent
+    capabilities:
+      - read_repository
+      - write_repository
+      - create_branch
+      - execute_command
+      - read_context
+      - access_mcp
+    effect: approval_required
+    approvalGate: architecture_review
+    conditions:
+      - No production action.
+      - No secret access.
+  - id: security_decision_authority
+    description: Security reviewer may approve sensitive changes.
+    subjects:
+      - security-reviewer
+    capabilities:
+      - read_repository
+      - read_context
+      - approve_changes
+    effect: approval_required
+    approvalGate: security_review
+  - id: compliance_review_access
+    description: Compliance reviewer may inspect evidence and approve compliance notes.
+    subjects:
+      - compliance-reviewer
+    capabilities:
+      - read_documentation
+      - read_context
+      - approve_changes
+    effect: allow
+  - id: enterprise_release_authority
+    description: Release manager may open PRs and approve deployment after reviews.
+    subjects:
+      - release-manager
+    capabilities:
+      - create_pull_request
+      - approve_changes
+      - deploy_application
+    effect: approval_required
+    approvalGate: release_approval

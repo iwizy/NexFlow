@@ -1,0 +1,77 @@
+specVersion: "0.1"
+kind: Workflow
+metadata:
+  project: product-delivery-team
+workflow:
+  id: product-delivery
+  displayName: Product Delivery
+  description: Cross-functional flow from goal definition to launch planning.
+  triggers:
+    - task.created
+  stages:
+    - id: discovery
+      displayName: Discovery
+      steps:
+        - id: step-define-delivery-goal
+          task: define-delivery-goal
+          dependsOn: []
+          approvalGates:
+            - product_acceptance
+          emits:
+            - task.completed
+    - id: design
+      displayName: Design
+      steps:
+        - id: step-prepare-ux-criteria
+          task: prepare-ux-criteria
+          dependsOn:
+            - step-define-delivery-goal
+          approvalGates: []
+          emits:
+            - handoff.created
+    - id: build
+      displayName: Build
+      steps:
+        - id: step-implement-delivery-slice
+          task: implement-delivery-slice
+          dependsOn:
+            - step-prepare-ux-criteria
+          approvalGates:
+            - product_acceptance
+          emits:
+            - task.completed
+    - id: validation
+      displayName: Validation
+      steps:
+        - id: step-validate-delivery
+          task: validate-delivery
+          dependsOn:
+            - step-implement-delivery-slice
+          approvalGates:
+            - quality_gate
+          emits:
+            - review.completed
+    - id: launch
+      displayName: Launch
+      steps:
+        - id: step-prepare-launch
+          task: prepare-launch
+          dependsOn:
+            - step-validate-delivery
+          approvalGates:
+            - launch_gate
+          emits:
+            - workflow.completed
+  dependencies:
+    - from: step-define-delivery-goal
+      to: step-prepare-ux-criteria
+      type: blocks
+    - from: step-prepare-ux-criteria
+      to: step-implement-delivery-slice
+      type: blocks
+    - from: step-implement-delivery-slice
+      to: step-validate-delivery
+      type: blocks
+    - from: step-validate-delivery
+      to: step-prepare-launch
+      type: blocks

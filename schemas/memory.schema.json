@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nexflow.dev/schemas/memory.schema.json",
+  "title": "NexFlow Memory Manifest",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["specVersion", "kind", "metadata", "memoryScopes"],
+  "properties": {
+    "specVersion": {
+      "$ref": "common.schema.json#/$defs/specVersion"
+    },
+    "kind": {
+      "const": "MemorySet"
+    },
+    "metadata": {
+      "$ref": "common.schema.json#/$defs/metadata"
+    },
+    "memoryScopes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": [
+          "scope",
+          "retention",
+          "ownership",
+          "visibility",
+          "updateRules",
+          "sensitivity",
+          "allowedConsumers"
+        ],
+        "properties": {
+          "scope": {
+            "$ref": "common.schema.json#/$defs/memoryScope"
+          },
+          "retention": {
+            "type": "string"
+          },
+          "ownership": {
+            "type": "string"
+          },
+          "visibility": {
+            "type": "string"
+          },
+          "updateRules": {
+            "type": "string"
+          },
+          "sensitivity": {
+            "$ref": "common.schema.json#/$defs/classification"
+          },
+          "allowedConsumers": {
+            "$ref": "common.schema.json#/$defs/idList"
+          },
+          "approvalGate": {
+            "$ref": "common.schema.json#/$defs/id"
+          }
+        }
+      }
+    }
+  }
+}

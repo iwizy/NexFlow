@@ -1,0 +1,85 @@
+specVersion: "0.1"
+kind: TaskSet
+metadata:
+  project: startup-team
+tasks:
+  - id: shape-scope
+    title: Shape product scope
+    status: ready
+    owner: product-owner
+    participants:
+      - design-agent
+      - fullstack-agent
+    dependsOn: []
+    artifacts:
+      - id: scope_note
+        type: document
+        description: Product scope and acceptance criteria.
+        producedBy: product-owner
+    capabilitiesRequired:
+      - manage_tasks
+      - read_context
+    approvalGates:
+      - product_review
+    acceptanceCriteria:
+      - Scope is small enough for one delivery cycle.
+  - id: review-design
+    title: Review design context
+    status: proposed
+    owner: design-agent
+    participants:
+      - product-owner
+    dependsOn:
+      - shape-scope
+    artifacts:
+      - id: design_review
+        type: document
+        description: UX notes and open questions.
+        producedBy: design-agent
+    capabilitiesRequired:
+      - access_figma
+      - read_context
+    approvalGates: []
+    acceptanceCriteria:
+      - UX risks are visible before implementation.
+  - id: build-slice
+    title: Build product slice
+    status: proposed
+    owner: fullstack-agent
+    participants:
+      - release-reviewer
+    dependsOn:
+      - review-design
+    artifacts:
+      - id: product_branch
+        type: branch
+        description: Implementation branch.
+        producedBy: fullstack-agent
+    capabilitiesRequired:
+      - read_repository
+      - write_repository
+      - create_branch
+      - execute_command
+    approvalGates:
+      - product_review
+    acceptanceCriteria:
+      - Slice meets approved acceptance criteria.
+  - id: release-check
+    title: Release readiness check
+    status: proposed
+    owner: release-reviewer
+    dependsOn:
+      - build-slice
+    artifacts:
+      - id: release_note
+        type: document
+        description: Release readiness and risk summary.
+        producedBy: release-reviewer
+    capabilitiesRequired:
+      - create_pull_request
+      - approve_changes
+      - deploy_application
+    approvalGates:
+      - release_review
+    acceptanceCriteria:
+      - Release reviewer approves or blocks launch.

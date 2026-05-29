@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nexflow.dev/schemas/agents.schema.json",
+  "title": "NexFlow Agents Manifest",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["specVersion", "kind", "metadata", "agents"],
+  "properties": {
+    "specVersion": {
+      "$ref": "common.schema.json#/$defs/specVersion"
+    },
+    "kind": {
+      "const": "AgentSet"
+    },
+    "metadata": {
+      "$ref": "common.schema.json#/$defs/metadata"
+    },
+    "agents": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": [
+          "id",
+          "displayName",
+          "role",
+          "description",
+          "responsibilities",
+          "skills",
+          "permissions",
+          "capabilities",
+          "contextAccess",
+          "memoryAccess",
+          "autonomyLevel"
+        ],
+        "properties": {
+          "id": {
+            "$ref": "common.schema.json#/$defs/id"
+          },
+          "displayName": {
+            "type": "string"
+          },
+          "role": {
+            "$ref": "common.schema.json#/$defs/id"
+          },
+          "description": {
+            "type": "string"
+          },
+          "responsibilities": {
+            "$ref": "common.schema.json#/$defs/stringList"
+          },
+          "skills": {
+            "$ref": "common.schema.json#/$defs/idList"
+          },
+          "permissions": {
+            "$ref": "common.schema.json#/$defs/idList"
+          },
+          "capabilities": {
+            "$ref": "common.schema.json#/$defs/idList"
+          },
+          "contextAccess": {
+            "$ref": "common.schema.json#/$defs/idList"
+          },
+          "memoryAccess": {
+            "type": "array",
+            "items": {
+              "$ref": "common.schema.json#/$defs/memoryScope"
+            },
+            "uniqueItems": true
+          },
+          "autonomyLevel": {
+            "$ref": "common.schema.json#/$defs/autonomyLevel"
+          },
+          "providerPreferences": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true,
+              "required": ["provider", "priority"],
+              "properties": {
+                "provider": {
+                  "$ref": "common.schema.json#/$defs/id"
+                },
+                "priority": {
+                  "type": "string",
+                  "enum": ["required", "preferred", "allowed", "avoid"]
+                },
+                "reason": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "extensions": {
+            "type": "array",
+            "items": {
+              "$ref": "common.schema.json#/$defs/extensionAttachment"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+specVersion: "0.1"
+kind: ContextSet
+metadata:
+  project: software-team
+contextSources:
+  - id: repository
+    type: github
+    description: Source repository and pull request metadata.
+    uri: https://github.com/example/software-team
+    access:
+      default: read
+      allowedActors:
+        - implementation-agent
+        - qa-agent
+        - reviewer
+        - docs-agent
+    classification: internal
+    refreshPolicy: on_request
+  - id: issue_tracker
+    type: linear
+    description: Product and engineering tasks.
+    access:
+      default: query
+      allowedActors:
+        - implementation-agent
+        - qa-agent
+        - reviewer
+    classification: internal
+    refreshPolicy: on_workflow_start
+  - id: docs
+    type: docs
+    description: Project documentation.
+    uri: docs/
+    access:
+      default: read
+      allowedActors:
+        - reviewer
+        - docs-agent
+        - implementation-agent
+    classification: public
+    refreshPolicy: on_request
+  - id: mcp_tools
+    type: mcp
+    description: Approved local development tool server.
+    access:
+      default: query
+      allowedActors:
+        - implementation-agent
+        - qa-agent
+    classification: internal
+    refreshPolicy: manual

@@ -1,0 +1,83 @@
+specVersion: "0.1"
+kind: CapabilitySet
+metadata:
+  project: product-delivery-team
+capabilities:
+  - id: read_repository
+    description: Read repository files and metadata.
+    risk: low
+    category: repository
+    requiresApprovalByDefault: false
+    auditRecommended: false
+  - id: write_repository
+    description: Write source files in approved scope.
+    risk: high
+    category: repository
+    requiresApprovalByDefault: true
+    auditRecommended: true
+  - id: create_branch
+    description: Create a delivery branch.
+    risk: medium
+    category: repository
+    requiresApprovalByDefault: false
+    auditRecommended: true
+  - id: create_pull_request
+    description: Open a delivery pull request.
+    risk: medium
+    category: repository
+    requiresApprovalByDefault: true
+    auditRecommended: true
+  - id: execute_command
+    description: Run approved build, test, or lint commands.
+    risk: high
+    category: runtime
+    requiresApprovalByDefault: true
+    auditRecommended: true
+  - id: read_documentation
+    description: Read product and technical documentation.
+    risk: low
+    category: documentation
+    requiresApprovalByDefault: false
+    auditRecommended: false
+  - id: modify_documentation
+    description: Modify launch notes or project documentation.
+    risk: medium
+    category: documentation
+    requiresApprovalByDefault: true
+    auditRecommended: true
+  - id: read_context
+    description: Read declared delivery context.
+    risk: low
+    category: context
+    requiresApprovalByDefault: false
+    auditRecommended: true
+  - id: access_jira
+    description: Read or update declared Jira delivery items.
+    risk: medium
+    category: integration
+    requiresApprovalByDefault: true
+    auditRecommended: true
+  - id: access_figma
+    description: Read declared Figma designs.
+    risk: medium
+    category: integration
+    requiresApprovalByDefault: false
+    auditRecommended: true
+  - id: manage_tasks
+    description: Manage declared delivery tasks.
+    risk: medium
+    category: workflow
+    requiresApprovalByDefault: true
+    auditRecommended: true
+  - id: approve_changes
+    description: Approve gated work.
+    risk: high
+    category: governance
+    requiresApprovalByDefault: false
+    auditRecommended: true
+  - id: deploy_application
+    description: Trigger release through approved deployment process.
+    risk: critical
+    category: deployment
+    requiresApprovalByDefault: true
+    auditRecommended: true

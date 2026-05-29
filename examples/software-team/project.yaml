@@ -1,0 +1,42 @@
+specVersion: "0.1"
+kind: Project
+metadata:
+  project: software-team
+  name: Software Team
+project:
+  id: software-team
+  displayName: Software Team
+  description: Reference configuration for a small software delivery team.
+  license: MIT
+  maintainers:
+    - id: reviewer
+      name: Code Reviewer
+      role: maintainer
+  defaultAutonomy: ask_before_changes
+  policies:
+    requireReview: true
+    secretHandling: Use secret references only.
+    networkAccess: Allowed only through declared integrations.
+    destructiveActions: Human approval required.
+    productionActions: Human approval required.
+  approvalGates:
+    - id: code_review
+      description: Reviewer approval required before merge.
+      requiredApprovers:
+        - reviewer
+    - id: dependency_approval
+      description: Maintainer approval required before installing dependencies.
+      requiredApprovers:
+        - reviewer
+manifests:
+  agents: agents.yaml
+  workflow: workflow.yaml
+  tasks: tasks.yaml
+  handoffs: handoffs.yaml
+  permissions: permissions.yaml
+  capabilities: capabilities.yaml
+  context: context.yaml
+  memory: memory.yaml
+  providers: providers.yaml
+  events: events.yaml
+  extensions: extensions.yaml

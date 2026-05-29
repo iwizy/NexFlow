@@ -1,0 +1,45 @@
+specVersion: "0.1"
+kind: Project
+metadata:
+  project: startup-team
+  name: Startup Team
+project:
+  id: startup-team
+  displayName: Startup Team
+  description: Lean team configuration for early product delivery.
+  license: MIT
+  maintainers:
+    - id: product-owner
+      name: Product Owner
+      role: owner
+    - id: release-reviewer
+      name: Release Reviewer
+      role: maintainer
+  defaultAutonomy: autonomous_safe
+  policies:
+    requireReview: true
+    secretHandling: Secrets are referenced through approved deployment systems only.
+    networkAccess: Web access allowed only for declared research tasks.
+    destructiveActions: Human approval required.
+    productionActions: Release reviewer approval required.
+  approvalGates:
+    - id: product_review
+      description: Product owner approval required for scope and launch changes.
+      requiredApprovers:
+        - product-owner
+    - id: release_review
+      description: Release reviewer approval required before production action.
+      requiredApprovers:
+        - release-reviewer
+manifests:
+  agents: agents.yaml
+  workflow: workflow.yaml
+  tasks: tasks.yaml
+  handoffs: handoffs.yaml
+  permissions: permissions.yaml
+  capabilities: capabilities.yaml
+  context: context.yaml
+  memory: memory.yaml
+  providers: providers.yaml
+  events: events.yaml
+  extensions: extensions.yaml

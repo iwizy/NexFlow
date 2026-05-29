@@ -1,0 +1,28 @@
+specVersion: "0.1"
+kind: ExtensionSet
+metadata:
+  project: software-team
+extensions:
+  - id: github_basic
+    namespace: io.nexflow.github
+    displayName: GitHub Basic
+    description: Source control and pull request integration.
+    lifecycle: experimental
+    appliesTo:
+      - context
+      - workflow
+      - events
+    requiredCapabilities:
+      - read_repository
+      - create_branch
+      - create_pull_request
+  - id: linear_basic
+    namespace: io.nexflow.linear
+    displayName: Linear Basic
+    description: Task context integration.
+    lifecycle: experimental
+    appliesTo:
+      - context
+      - tasks
+    requiredCapabilities:
+      - manage_tasks

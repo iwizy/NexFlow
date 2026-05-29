@@ -1,0 +1,35 @@
+specVersion: "0.1"
+kind: ExtensionSet
+metadata:
+  project: enterprise-team
+extensions:
+  - id: github_enterprise
+    namespace: io.nexflow.github
+    displayName: GitHub Enterprise
+    lifecycle: experimental
+    appliesTo:
+      - context
+      - workflow
+      - events
+    requiredCapabilities:
+      - read_repository
+      - create_branch
+      - create_pull_request
+  - id: jira_basic
+    namespace: io.nexflow.jira
+    displayName: Jira Basic
+    lifecycle: experimental
+    appliesTo:
+      - context
+      - tasks
+    requiredCapabilities:
+      - access_jira
+  - id: mcp_enterprise
+    namespace: io.nexflow.mcp
+    displayName: MCP Enterprise
+    lifecycle: experimental
+    appliesTo:
+      - context
+      - workflow
+    requiredCapabilities:
+      - access_mcp

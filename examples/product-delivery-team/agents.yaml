@@ -1,0 +1,150 @@
+specVersion: "0.1"
+kind: AgentSet
+metadata:
+  project: product-delivery-team
+agents:
+  - id: product-manager
+    displayName: Product Manager
+    role: product_manager
+    description: Human owner for product outcome and acceptance.
+    responsibilities:
+      - Define delivery goals.
+      - Approve product acceptance.
+    skills:
+      - product_planning
+      - stakeholder_alignment
+    permissions:
+      - product_acceptance_authority
+    capabilities:
+      - manage_tasks
+      - read_context
+      - approve_changes
+    contextAccess:
+      - backlog
+      - customer_docs
+      - design_files
+    memoryAccess:
+      - ephemeral
+      - task
+      - project
+    autonomyLevel: manual_only
+    providerPreferences: []
+    extensions: []
+  - id: ux-agent
+    displayName: UX Agent
+    role: ux_designer
+    description: Reviews design context and creates UX delivery notes.
+    responsibilities:
+      - Translate goals into UX criteria.
+      - Identify design gaps.
+    skills:
+      - ux_analysis
+      - design_review
+    permissions:
+      - ux_context_access
+    capabilities:
+      - access_figma
+      - read_context
+      - read_documentation
+    contextAccess:
+      - design_files
+      - customer_docs
+    memoryAccess:
+      - ephemeral
+      - task
+    autonomyLevel: autonomous_safe
+    providerPreferences:
+      - provider: product_reasoning
+        priority: preferred
+    extensions:
+      - namespace: io.nexflow.figma
+  - id: implementation-agent
+    displayName: Implementation Agent
+    role: implementation_engineer
+    description: Implements accepted product delivery tasks.
+    responsibilities:
+      - Draft implementation changes.
+      - Produce implementation notes.
+    skills:
+      - frontend_development
+      - backend_development
+      - integration_testing
+    permissions:
+      - delivery_implementation_work
+    capabilities:
+      - read_repository
+      - write_repository
+      - create_branch
+      - execute_command
+      - read_context
+    contextAccess:
+      - repository
+      - backlog
+      - design_files
+      - docs
+    memoryAccess:
+      - ephemeral
+      - task
+    autonomyLevel: ask_before_changes
+    providerPreferences:
+      - provider: coding_reasoning
+        priority: preferred
+    extensions:
+      - namespace: io.nexflow.github
+  - id: qa-agent
+    displayName: QA Agent
+    role: quality_engineer
+    description: Validates delivery quality and records risk.
+    responsibilities:
+      - Run approved validation checks.
+      - Own quality gate evidence.
+    skills:
+      - quality_review
+      - test_planning
+    permissions:
+      - qa_quality_gate
+    capabilities:
+      - read_repository
+      - execute_command
+      - read_context
+      - approve_changes
+    contextAccess:
+      - repository
+      - backlog
+      - docs
+    memoryAccess:
+      - ephemeral
+      - task
+    autonomyLevel: ask_before_changes
+    providerPreferences:
+      - provider: coding_reasoning
+        priority: preferred
+    extensions: []
+  - id: launch-coordinator
+    displayName: Launch Coordinator
+    role: release_manager
+    description: Coordinates launch readiness and release communication.
+    responsibilities:
+      - Confirm launch readiness.
+      - Coordinate release notes and deployment approval.
+    skills:
+      - release_coordination
+      - communication_planning
+    permissions:
+      - launch_authority
+    capabilities:
+      - create_pull_request
+      - modify_documentation
+      - deploy_application
+      - approve_changes
+    contextAccess:
+      - repository
+      - backlog
+      - docs
+    memoryAccess:
+      - ephemeral
+      - task
+      - project
+    autonomyLevel: manual_only
+    providerPreferences: []
+    extensions: []

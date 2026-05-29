@@ -1,0 +1,37 @@
+specVersion: "0.1"
+kind: MemorySet
+metadata:
+  project: startup-team
+memoryScopes:
+  - scope: ephemeral
+    retention: Session only.
+    ownership: Runtime or current actor.
+    visibility: Current actor.
+    updateRules: Automatic during active work.
+    sensitivity: internal
+    allowedConsumers:
+      - product-owner
+      - design-agent
+      - fullstack-agent
+      - release-reviewer
+  - scope: task
+    retention: Until task acceptance.
+    ownership: Project.
+    visibility: Task participants.
+    updateRules: Product owner may correct scope notes.
+    sensitivity: internal
+    allowedConsumers:
+      - product-owner
+      - design-agent
+      - fullstack-agent
+      - release-reviewer
+  - scope: project
+    retention: Until project policy removes it.
+    ownership: Product owner.
+    visibility: Product owner and release reviewer.
+    updateRules: Human approval required for durable product memory.
+    sensitivity: confidential
+    allowedConsumers:
+      - product-owner
+      - release-reviewer
+    approvalGate: product_review

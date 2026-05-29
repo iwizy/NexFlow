@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nexflow.dev/schemas/providers.schema.json",
+  "title": "NexFlow Providers Manifest",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["specVersion", "kind", "metadata", "providers"],
+  "properties": {
+    "specVersion": {
+      "$ref": "common.schema.json#/$defs/specVersion"
+    },
+    "kind": {
+      "const": "ProviderSet"
+    },
+    "metadata": {
+      "$ref": "common.schema.json#/$defs/metadata"
+    },
+    "providers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": ["id", "type", "description"],
+        "properties": {
+          "id": {
+            "$ref": "common.schema.json#/$defs/id"
+          },
+          "type": {
+            "type": "string",
+            "enum": ["abstract", "openai", "anthropic", "google", "openrouter", "ollama", "custom"]
+          },
+          "description": {
+            "type": "string"
+          },
+          "capabilities": {
+            "$ref": "common.schema.json#/$defs/idList"
+          },
+          "constraints": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "selection": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "strategy": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,152 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nexflow.dev/schemas/common.schema.json",
+  "title": "NexFlow Common Definitions",
+  "type": "object",
+  "$defs": {
+    "specVersion": {
+      "type": "string",
+      "enum": ["0.1"]
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_-]*$"
+    },
+    "nonEmptyString": {
+      "type": "string",
+      "minLength": 1
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "project": {
+          "$ref": "#/$defs/id"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "labels": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "stringList": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "idList": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/id"
+      },
+      "uniqueItems": true
+    },
+    "autonomyLevel": {
+      "type": "string",
+      "enum": [
+        "manual_only",
+        "suggest_only",
+        "ask_before_changes",
+        "autonomous_safe",
+        "autonomous_extended"
+      ]
+    },
+    "riskLevel": {
+      "type": "string",
+      "enum": ["low", "medium", "high", "critical"]
+    },
+    "permissionEffect": {
+      "type": "string",
+      "enum": ["allow", "deny", "approval_required"]
+    },
+    "taskStatus": {
+      "type": "string",
+      "enum": ["proposed", "ready", "in_progress", "blocked", "completed", "cancelled"]
+    },
+    "handoffStatus": {
+      "type": "string",
+      "enum": ["pending", "accepted", "rejected", "blocked", "cancelled", "completed"]
+    },
+    "accessMode": {
+      "type": "string",
+      "enum": ["none", "read", "write", "query", "admin"]
+    },
+    "classification": {
+      "type": "string",
+      "enum": ["public", "internal", "confidential", "restricted"]
+    },
+    "memoryScope": {
+      "type": "string",
+      "enum": ["ephemeral", "task", "project", "team", "user", "organization"]
+    },
+    "artifact": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["id", "type"],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "type": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "uri": {
+          "type": "string"
+        },
+        "producedBy": {
+          "$ref": "#/$defs/id"
+        }
+      }
+    },
+    "approvalGate": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["id", "description"],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "description": {
+          "type": "string"
+        },
+        "requiredApprovers": {
+          "$ref": "#/$defs/idList"
+        },
+        "appliesTo": {
+          "$ref": "#/$defs/idList"
+        },
+        "events": {
+          "$ref": "#/$defs/idList"
+        }
+      }
+    },
+    "extensionAttachment": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["namespace"],
+      "properties": {
+        "namespace": {
+          "type": "string",
+          "minLength": 1
+        },
+        "config": {
+          "type": "object",
+          "additionalProperties": true
+        }
+      }
+    }
+  }
+}

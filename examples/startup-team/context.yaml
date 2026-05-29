@@ -1,0 +1,71 @@
+specVersion: "0.1"
+kind: ContextSet
+metadata:
+  project: startup-team
+contextSources:
+  - id: repository
+    type: github
+    description: Product code repository.
+    uri: https://github.com/example/startup-app
+    access:
+      default: read
+      allowedActors:
+        - fullstack-agent
+        - release-reviewer
+    classification: internal
+    refreshPolicy: on_request
+  - id: product_backlog
+    type: linear
+    description: Startup product backlog.
+    access:
+      default: query
+      allowedActors:
+        - product-owner
+        - fullstack-agent
+        - release-reviewer
+    classification: internal
+    refreshPolicy: on_workflow_start
+  - id: design_files
+    type: figma
+    description: Product design files and prototypes.
+    access:
+      default: read
+      allowedActors:
+        - product-owner
+        - design-agent
+        - fullstack-agent
+    classification: confidential
+    refreshPolicy: on_request
+  - id: customer_research
+    type: knowledge_base
+    description: Sanitized customer research notes.
+    access:
+      default: read
+      allowedActors:
+        - product-owner
+        - design-agent
+    classification: confidential
+    refreshPolicy: manual
+  - id: docs
+    type: docs
+    description: Product documentation.
+    uri: docs/
+    access:
+      default: read
+      allowedActors:
+        - fullstack-agent
+        - release-reviewer
+    classification: public
+    refreshPolicy: on_request
+  - id: web_research
+    type: web
+    description: Market and standards research for approved tasks.
+    access:
+      default: query
+      allowedActors:
+        - product-owner
+        - design-agent
+    classification: public
+    refreshPolicy: manual
+    allowedDomains:
+      - example.com

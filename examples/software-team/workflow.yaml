@@ -1,0 +1,60 @@
+specVersion: "0.1"
+kind: Workflow
+metadata:
+  project: software-team
+workflow:
+  id: feature-delivery
+  displayName: Feature Delivery
+  description: Implement, test, review, and document a scoped feature.
+  triggers:
+    - task.created
+  stages:
+    - id: implementation
+      displayName: Implementation
+      steps:
+        - id: step-implement-feature
+          task: implement-feature
+          dependsOn: []
+          approvalGates:
+            - code_review
+          emits:
+            - task.completed
+    - id: validation
+      displayName: Validation
+      steps:
+        - id: step-test-feature
+          task: test-feature
+          dependsOn:
+            - step-implement-feature
+          approvalGates:
+            - code_review
+          emits:
+            - task.completed
+    - id: review
+      displayName: Review
+      steps:
+        - id: step-review-change
+          task: review-change
+          dependsOn:
+            - step-test-feature
+          approvalGates: []
+          emits:
+            - review.completed
+        - id: step-update-docs
+          task: update-docs
+          dependsOn:
+            - step-review-change
+          approvalGates:
+            - code_review
+          emits:
+            - workflow.completed
+  dependencies:
+    - from: step-implement-feature
+      to: step-test-feature
+      type: blocks
+    - from: step-test-feature
+      to: step-review-change
+      type: blocks
+    - from: step-review-change
+      to: step-update-docs
+      type: blocks

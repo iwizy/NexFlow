@@ -1,0 +1,63 @@
+specVersion: "0.1"
+kind: Workflow
+metadata:
+  project: startup-team
+workflow:
+  id: startup-delivery
+  displayName: Startup Delivery
+  description: Product scope, design review, build, and release check.
+  triggers:
+    - task.created
+  stages:
+    - id: discovery
+      displayName: Discovery
+      steps:
+        - id: step-shape-scope
+          task: shape-scope
+          dependsOn: []
+          approvalGates:
+            - product_review
+          emits:
+            - task.completed
+    - id: design
+      displayName: Design
+      steps:
+        - id: step-review-design
+          task: review-design
+          dependsOn:
+            - step-shape-scope
+          approvalGates: []
+          emits:
+            - task.completed
+    - id: build
+      displayName: Build
+      steps:
+        - id: step-build-slice
+          task: build-slice
+          dependsOn:
+            - step-review-design
+          approvalGates:
+            - product_review
+          emits:
+            - review.requested
+    - id: release
+      displayName: Release
+      steps:
+        - id: step-release-check
+          task: release-check
+          dependsOn:
+            - step-build-slice
+          approvalGates:
+            - release_review
+          emits:
+            - workflow.completed
+  dependencies:
+    - from: step-shape-scope
+      to: step-review-design
+      type: blocks
+    - from: step-review-design
+      to: step-build-slice
+      type: blocks
+    - from: step-build-slice
+      to: step-release-check
+      type: blocks

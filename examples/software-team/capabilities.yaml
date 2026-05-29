@@ -1,0 +1,59 @@
+specVersion: "0.1"
+kind: CapabilitySet
+metadata:
+  project: software-team
+capabilities:
+  - id: read_repository
+    description: Read repository files and metadata.
+    risk: low
+    category: repository
+    requiresApprovalByDefault: false
+    auditRecommended: false
+  - id: write_repository
+    description: Write project files in an approved work scope.
+    risk: high
+    category: repository
+    requiresApprovalByDefault: true
+    auditRecommended: true
+  - id: create_branch
+    description: Create a source control branch.
+    risk: medium
+    category: repository
+    requiresApprovalByDefault: false
+    auditRecommended: true
+  - id: create_pull_request
+    description: Open a pull request for review.
+    risk: medium
+    category: repository
+    requiresApprovalByDefault: true
+    auditRecommended: true
+  - id: execute_command
+    description: Run local commands such as tests or linters.
+    risk: high
+    category: runtime
+    requiresApprovalByDefault: true
+    auditRecommended: true
+  - id: read_context
+    description: Read declared context sources.
+    risk: low
+    category: context
+    requiresApprovalByDefault: false
+    auditRecommended: true
+  - id: modify_documentation
+    description: Modify documentation files.
+    risk: medium
+    category: repository
+    requiresApprovalByDefault: true
+    auditRecommended: true
+  - id: manage_tasks
+    description: Update task metadata in a declared tracker.
+    risk: medium
+    category: workflow
+    requiresApprovalByDefault: true
+    auditRecommended: true
+  - id: approve_changes
+    description: Approve gated changes.
+    risk: high
+    category: governance
+    requiresApprovalByDefault: false
+    auditRecommended: true

@@ -1,0 +1,52 @@
+specVersion: "0.1"
+kind: Project
+metadata:
+  project: enterprise-team
+  name: Enterprise Team
+project:
+  id: enterprise-team
+  displayName: Enterprise Team
+  description: Conservative enterprise delivery configuration.
+  license: MIT
+  maintainers:
+    - id: enterprise-architect
+      name: Enterprise Architect
+      role: architect
+    - id: security-reviewer
+      name: Security Reviewer
+      role: security
+    - id: release-manager
+      name: Release Manager
+      role: release
+  defaultAutonomy: ask_before_changes
+  policies:
+    requireReview: true
+    secretHandling: Secrets must remain in approved secret managers.
+    networkAccess: Denied unless listed in context policy.
+    destructiveActions: Human approval and audit event required.
+    productionActions: Release and security approval required.
+  approvalGates:
+    - id: architecture_review
+      description: Enterprise architect approval required for design direction.
+      requiredApprovers:
+        - enterprise-architect
+    - id: security_review
+      description: Security reviewer approval required for sensitive changes.
+      requiredApprovers:
+        - security-reviewer
+    - id: release_approval
+      description: Release manager approval required for deployment.
+      requiredApprovers:
+        - release-manager
+manifests:
+  agents: agents.yaml
+  workflow: workflow.yaml
+  tasks: tasks.yaml
+  handoffs: handoffs.yaml
+  permissions: permissions.yaml
+  capabilities: capabilities.yaml
+  context: context.yaml
+  memory: memory.yaml
+  providers: providers.yaml
+  events: events.yaml
+  extensions: extensions.yaml

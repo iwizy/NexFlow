@@ -1,0 +1,29 @@
+specVersion: "0.1"
+kind: CapabilitySet
+metadata:
+  project: minimal-team
+capabilities:
+  - id: read_repository
+    description: Read repository files and metadata.
+    risk: low
+    category: repository
+    requiresApprovalByDefault: false
+    auditRecommended: false
+  - id: modify_documentation
+    description: Modify documentation files.
+    risk: medium
+    category: repository
+    requiresApprovalByDefault: true
+    auditRecommended: true
+  - id: read_context
+    description: Read declared context sources.
+    risk: low
+    category: context
+    requiresApprovalByDefault: false
+    auditRecommended: true
+  - id: approve_changes
+    description: Approve gated changes.
+    risk: high
+    category: governance
+    requiresApprovalByDefault: false
+    auditRecommended: true

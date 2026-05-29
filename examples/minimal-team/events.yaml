@@ -1,0 +1,44 @@
+specVersion: "0.1"
+kind: EventSet
+metadata:
+  project: minimal-team
+events:
+  - type: task.created
+    description: A task is created.
+    retention: Project policy.
+    auditRequired: true
+    payload:
+      required:
+        - taskId
+        - actor
+  - type: task.completed
+    description: A task is completed.
+    retention: Project policy.
+    auditRequired: true
+    payload:
+      required:
+        - taskId
+        - artifacts
+  - type: review.requested
+    description: A review is requested.
+    retention: Project policy.
+    auditRequired: true
+    payload:
+      required:
+        - reviewer
+        - artifacts
+  - type: review.completed
+    description: A review is completed.
+    retention: Project policy.
+    auditRequired: true
+    payload:
+      required:
+        - result
+  - type: handoff.created
+    description: Responsibility is transferred for review.
+    retention: Project policy.
+    auditRequired: true
+    payload:
+      required:
+        - from
+        - to

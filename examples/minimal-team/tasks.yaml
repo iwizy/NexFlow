@@ -1,0 +1,38 @@
+specVersion: "0.1"
+kind: TaskSet
+metadata:
+  project: minimal-team
+tasks:
+  - id: draft-doc-update
+    title: Draft documentation update
+    description: Update docs to reflect a small spec clarification.
+    status: ready
+    owner: docs-agent
+    participants:
+      - human-maintainer
+    dependsOn: []
+    artifacts:
+      - id: docs_patch
+        type: patch
+        description: Documentation patch for review.
+        producedBy: docs-agent
+    capabilitiesRequired:
+      - read_repository
+      - modify_documentation
+    approvalGates:
+      - human_review
+    acceptanceCriteria:
+      - Documentation states what is specified and what is planned.
+      - No runtime behavior is implied.
+  - id: review-doc-update
+    title: Review documentation update
+    status: proposed
+    owner: human-maintainer
+    dependsOn:
+      - draft-doc-update
+    artifacts: []
+    capabilitiesRequired:
+      - approve_changes
+    approvalGates: []
+    acceptanceCriteria:
+      - Maintainer approves or requests changes.

@@ -10,6 +10,7 @@ This project follows a specification-first process. Breaking changes must includ
 
 - Initial specification-first repository structure.
 - Core documentation set under `docs/`.
+- Draft conformance vocabulary for manifests, validators, CLIs, runtimes, and extensions.
 - Draft JSON Schemas for core manifests.
 - Reference examples for minimal, software, startup, enterprise, and product delivery teams.
 - Governance and RFC process.

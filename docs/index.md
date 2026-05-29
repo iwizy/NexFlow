@@ -27,6 +27,7 @@ The documentation is the canonical source for the specification. Schemas and exa
 
 - [Governance](governance.md)
 - [Versioning](versioning.md)
+- [Conformance](conformance.md)
 - [Compatibility](compatibility.md)
 - [Runtime Options](runtime-options.md)
 - [Integrations](integrations.md)

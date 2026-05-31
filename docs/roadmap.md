@@ -21,8 +21,10 @@ Status: in progress.
 ## Milestone 3: Schema Hardening
 
 - Improve cross-manifest consistency.
+- Document validation workflow and current validation limits.
 - Add schema examples and negative cases.
 - Define conformance expectations for validators.
+- Refine draft conformance levels for manifests, validators, CLIs, runtimes, and extensions.
 
 ## Milestone 4: Runtime Architecture Decision
 

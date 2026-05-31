@@ -132,8 +132,11 @@ NexFlow is intentionally split into layers:
 
 - [docs/](docs/index.md): specification documentation
 - [schemas/](schemas/): draft JSON Schemas for core manifests
+- [Schema Guide](schemas/README.md): schema scope, update rules, and validation boundaries
 - [examples/](examples/): complete reference team configurations
+- [Examples Guide](examples/README.md): overview of reference teams and manifest file sets
 - [rfcs/](rfcs/README.md): governance and design proposal process
+- [Conformance](docs/conformance.md): draft support levels for manifests, validators, CLIs, runtimes, and extensions
 - [AGENTS.md](AGENTS.md): instructions for humans and AI contributors
 - [CONTRIBUTING.md](CONTRIBUTING.md): contribution workflow
 - [SECURITY.md](SECURITY.md): vulnerability and safety reporting policy

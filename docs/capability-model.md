@@ -4,6 +4,17 @@ Capabilities describe what an actor or integration can technically do. Permissio
 
 Capabilities are intentionally separate from roles, skills, and permissions.
 
+## Why Capabilities and Permissions Are Separate
+
+NexFlow separates "can do" from "may do".
+
+- A **skill** says an actor is suited for work.
+- A **capability** says an actor or integration has a technical action available.
+- A **permission** says whether using that capability is allowed, denied, or requires approval.
+- An **approval gate** says who or what must approve a gated action before it proceeds.
+
+This separation keeps manifests auditable. A reviewer can see that an agent may be technically connected to a repository, issue tracker, MCP server, or deployment system without assuming the agent is authorized to use every action exposed by that system.
+
 ## Rules
 
 - A capability does not grant access by itself.
@@ -11,6 +22,8 @@ Capabilities are intentionally separate from roles, skills, and permissions.
 - Risky capabilities should have approval gates.
 - Integrations should declare which capabilities they expose.
 - Future runtimes should audit high-risk capability use.
+- When permission rules conflict, explicit deny rules should be treated as stronger than allow rules.
+- Approval-required rules should be treated as pending authorization, not as successful authorization.
 
 ## Standard Draft Capabilities
 
@@ -56,6 +69,94 @@ Capabilities are intentionally separate from roles, skills, and permissions.
   effect: approval_required
   approvalGate: code_review
 ```
+
+## Permission Effects
+
+NexFlow defines three draft permission effects:
+
+| Effect | Meaning | Example Use |
+| --- | --- | --- |
+| `allow` | The subject may use the listed capabilities within the declared scope. | A maintainer may read repository files and approve changes. |
+| `deny` | The subject may not use the listed capabilities, even if another broader rule might allow them. | A docs agent may not deploy an application. |
+| `approval_required` | The subject may use the listed capabilities only after the referenced approval gate is satisfied. | An implementation agent may write repository files after review. |
+
+## Practical Scenarios
+
+### Capability Exists, Permission Missing
+
+An integration may expose `execute_command`, but an agent that has no permission referencing `execute_command` should not be allowed to run commands.
+
+```yaml
+capabilities:
+  - execute_command
+permissions: []
+```
+
+The capability is visible. It is not authorized.
+
+### Capability Allowed
+
+Low-risk read access may be allowed directly.
+
+```yaml
+- id: repository_read
+  subjects:
+    - docs-agent
+  capabilities:
+    - read_repository
+  effect: allow
+```
+
+### Capability Denied
+
+High-risk actions can be denied explicitly for a subject.
+
+```yaml
+- id: docs_agent_no_deploy
+  subjects:
+    - docs-agent
+  capabilities:
+    - deploy_application
+  effect: deny
+```
+
+### Capability Requires Approval
+
+Writable or externally visible actions should usually be gated.
+
+```yaml
+- id: implementation_write_with_review
+  subjects:
+    - implementation-agent
+  capabilities:
+    - write_repository
+    - create_pull_request
+  effect: approval_required
+  approvalGate: code_review
+```
+
+### Integration Capability Is Not Actor Permission
+
+An extension or integration may declare that it can create pull requests:
+
+```yaml
+requiredCapabilities:
+  - create_pull_request
+```
+
+That declaration means the integration needs the capability to operate. It does not mean every agent using that integration can create pull requests.
+
+## Review Checklist
+
+When reviewing capabilities and permissions, check:
+
+- every risky capability has an explicit permission rule
+- high-risk capabilities are denied or approval-gated by default
+- no extension grants access by presence alone
+- permissions reference existing capabilities
+- agents do not list capabilities that their permissions never allow or gate
+- deployment and destructive capabilities require human approval
+- audit-recommended capabilities are represented in event expectations
 
 ## Future Work
 

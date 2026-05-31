@@ -36,6 +36,8 @@ Probably, but only after the manifest model stabilizes. The first CLI should val
 
 A capability says an actor or integration can technically do something. A permission says whether it is allowed, denied, or approval-gated.
 
+For example, an integration may expose `create_pull_request`, but an agent still needs a permission rule that allows or gates `create_pull_request` before a runtime should let it open a pull request.
+
 ## What is the most important model?
 
 Context and memory are especially important because they define what agents can know, retain, and reuse.

@@ -13,6 +13,7 @@ This project follows a specification-first process. Breaking changes must includ
 - Draft conformance vocabulary for manifests, validators, CLIs, runtimes, and extensions.
 - Validation workflow guidance for schema and future semantic checks.
 - Schema guide for schema scope, update rules, and validation boundaries.
+- Examples guide for reference team selection and manifest file sets.
 - Draft JSON Schemas for core manifests.
 - Reference examples for minimal, software, startup, enterprise, and product delivery teams.
 - Governance and RFC process.

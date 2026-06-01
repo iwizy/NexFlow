@@ -82,6 +82,19 @@ Declares known capabilities, descriptions, risk levels, and expected approval be
 
 Declares context sources and access policies.
 
+Context sources define:
+
+- `id`, `type`, and `description`
+- optional `uri` and `contentTypes`
+- `access.default`, `allowedActors`, and `deniedActors`
+- `classification`
+- optional `refreshPolicy` and `freshness`
+- optional web boundaries such as `allowedDomains` and `disallowedDomains`
+- optional `mcp` metadata for MCP servers that expose context, tools, or both
+- optional `approvalGates` for sensitive source use
+
+See [Context Model](context-model.md) for source taxonomy, freshness guidance, web context, and MCP behavior.
+
 ### `memory.yaml`
 
 Declares memory scopes, retention, ownership, visibility, update rules, sensitivity, and allowed consumers.

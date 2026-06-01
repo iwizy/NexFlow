@@ -7,6 +7,9 @@ contextSources:
     type: github
     description: Product code repository.
     uri: https://github.com/example/startup-app
+    contentTypes:
+      - source_code
+      - pull_requests
     access:
       default: read
       allowedActors:
@@ -28,6 +31,9 @@ contextSources:
   - id: design_files
     type: figma
     description: Product design files and prototypes.
+    contentTypes:
+      - designs
+      - metadata
     access:
       default: read
       allowedActors:
@@ -39,6 +45,8 @@ contextSources:
   - id: customer_research
     type: knowledge_base
     description: Sanitized customer research notes.
+    contentTypes:
+      - knowledge_articles
     access:
       default: read
       allowedActors:
@@ -46,10 +54,16 @@ contextSources:
         - design-agent
     classification: confidential
     refreshPolicy: manual
+    freshness:
+      maxAge: 30d
+      staleAllowed: true
+      requiresCitation: false
   - id: docs
     type: docs
     description: Product documentation.
     uri: docs/
+    contentTypes:
+      - documentation
     access:
       default: read
       allowedActors:
@@ -60,12 +74,18 @@ contextSources:
   - id: web_research
     type: web
     description: Market and standards research for approved tasks.
+    contentTypes:
+      - web_pages
     access:
       default: query
       allowedActors:
         - product-owner
         - design-agent
     classification: public
-    refreshPolicy: manual
+    refreshPolicy: on_request
+    freshness:
+      maxAge: 14d
+      staleAllowed: false
+      requiresCitation: true
     allowedDomains:
       - example.com

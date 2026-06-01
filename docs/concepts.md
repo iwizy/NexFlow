@@ -62,6 +62,8 @@ A policy decision that allows, denies, or gates a capability for a specific acto
 
 A declared source of information such as a repository, docs site, issue tracker, design file, MCP server, web source, or custom knowledge base.
 
+Context sources describe information boundaries, freshness expectations, access modes, and sensitivity classification. They do not grant permission to modify systems or retain memory.
+
 ## Memory Scope
 
 A boundary for retaining and reusing information. NexFlow defines `ephemeral`, `task`, `project`, `team`, `user`, and `organization` scopes.

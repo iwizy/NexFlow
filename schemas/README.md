@@ -17,7 +17,7 @@ The schemas currently target `specVersion: "0.1"` and use JSON Schema draft 2020
 | `handoffs.schema.json` | `HandoffSet` | Responsibility transfers between actors. |
 | `permissions.schema.json` | `PermissionSet` | Allow, deny, and approval-required rules for capabilities. |
 | `capabilities.schema.json` | `CapabilitySet` | Capability vocabulary, categories, risk levels, and audit guidance. |
-| `context.schema.json` | `ContextSet` | Context sources, access modes, classifications, and refresh policy. |
+| `context.schema.json` | `ContextSet` | Context sources, access modes, classifications, freshness, web boundaries, and MCP metadata. |
 | `memory.schema.json` | `MemorySet` | Memory scopes, retention, ownership, visibility, sensitivity, and allowed consumers. |
 | `providers.schema.json` | `ProviderSet` | Provider abstractions and selection constraints. |
 | `events.schema.json` | `EventSet` | Event names, payload expectations, retention, and audit requirements. |

@@ -40,6 +40,10 @@ Destructive operations require human approval and audit events.
 
 Network access should be declared and scoped by policy, source, or domain where possible.
 
+### Context Boundaries
+
+Context sources should be classified conservatively and should not be expanded through provider defaults, extensions, cached data, or MCP tools. Web context should define freshness and domain boundaries where possible.
+
 ### Human Override
 
 Humans must be able to stop or override future runtime activity.

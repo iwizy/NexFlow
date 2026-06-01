@@ -1,5 +1,11 @@
 # NexFlow
 
+![Spec Version](https://img.shields.io/badge/spec-0.1--draft-orange)
+![Status](https://img.shields.io/badge/status-specification--first-blue)
+![Runtime](https://img.shields.io/badge/runtime-not%20implemented-lightgrey)
+![Provider Neutral](https://img.shields.io/badge/provider-neutral-brightgreen)
+![License](https://img.shields.io/badge/license-MIT-blue)
+
 **Open specification and orchestration framework for AI developer teams.**
 
 NexFlow is a specification-first project for describing how humans, AI agents, automation systems, tools, context sources, approvals, and workflows cooperate on software projects.

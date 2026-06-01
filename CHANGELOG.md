@@ -15,6 +15,7 @@ This project follows a specification-first process. Breaking changes must includ
 - Schema guide for schema scope, update rules, and validation boundaries.
 - Examples guide for reference team selection and manifest file sets.
 - Clarified capability and permission separation with allow, deny, and approval-required examples.
+- Approval gate semantics for approvers, decisions, evidence, scope, expiry, revocation, and runtime expectations.
 - Draft JSON Schemas for core manifests.
 - Reference examples for minimal, software, startup, enterprise, and product delivery teams.
 - Governance and RFC process.

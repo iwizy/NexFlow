@@ -17,6 +17,7 @@ Status: in progress.
 - Collect feedback from agent tool builders, open-source maintainers, startups, enterprises, and researchers.
 - Refine terminology.
 - Identify missing safety and compatibility rules.
+- Review approval gate semantics with maintainers and runtime implementers.
 
 ## Milestone 3: Schema Hardening
 

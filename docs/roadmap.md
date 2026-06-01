@@ -18,6 +18,7 @@ Status: in progress.
 - Refine terminology.
 - Identify missing safety and compatibility rules.
 - Review approval gate semantics with maintainers and runtime implementers.
+- Review context source taxonomy, freshness rules, web boundaries, and MCP context/tool separation.
 
 ## Milestone 3: Schema Hardening
 

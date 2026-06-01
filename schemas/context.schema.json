@@ -49,6 +49,26 @@
           "uri": {
             "type": "string"
           },
+          "contentTypes": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "source_code",
+                "documentation",
+                "issues",
+                "pull_requests",
+                "tickets",
+                "designs",
+                "knowledge_articles",
+                "web_pages",
+                "tool_results",
+                "metadata",
+                "custom"
+              ]
+            },
+            "uniqueItems": true
+          },
           "access": {
             "type": "object",
             "additionalProperties": true,
@@ -72,10 +92,69 @@
             "type": "string",
             "enum": ["manual", "on_request", "on_workflow_start", "scheduled", "custom"]
           },
+          "freshness": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "maxAge": {
+                "type": "string"
+              },
+              "staleAllowed": {
+                "type": "boolean"
+              },
+              "requiresCitation": {
+                "type": "boolean"
+              },
+              "lastReviewed": {
+                "type": "string",
+                "format": "date"
+              }
+            }
+          },
           "allowedDomains": {
             "type": "array",
             "items": {
               "type": "string"
+            },
+            "uniqueItems": true
+          },
+          "disallowedDomains": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true
+          },
+          "mcp": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "serverId": {
+                "$ref": "common.schema.json#/$defs/id"
+              },
+              "exposes": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": ["context", "tools", "prompts", "resources", "actions"]
+                },
+                "uniqueItems": true
+              },
+              "allowedTools": {
+                "$ref": "common.schema.json#/$defs/stringList"
+              },
+              "requiresApprovalForTools": {
+                "type": "boolean"
+              }
+            }
+          },
+          "approvalGates": {
+            "$ref": "common.schema.json#/$defs/idList"
+          },
+          "extensions": {
+            "type": "array",
+            "items": {
+              "$ref": "common.schema.json#/$defs/extensionAttachment"
             }
           }
         }

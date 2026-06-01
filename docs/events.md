@@ -97,3 +97,5 @@ payload:
 ## Audit Requirements
 
 Events related to approvals, destructive actions, production actions, credential access, and memory updates SHOULD be retained according to project policy.
+
+See [Approval Gates](approval-gates.md) for how approval decisions relate to review events and future approval-specific events.

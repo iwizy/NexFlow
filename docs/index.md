@@ -18,6 +18,7 @@ The documentation is the canonical source for the specification. Schemas and exa
 - [Memory Model](memory-model.md)
 - [Autonomy Model](autonomy-model.md)
 - [Capability Model](capability-model.md)
+- [Approval Gates](approval-gates.md)
 - [Handoff Protocol](handoff-protocol.md)
 - [Event Model](events.md)
 - [Extension Model](extensions.md)

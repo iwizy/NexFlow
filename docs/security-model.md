@@ -18,6 +18,8 @@ Future runtimes should evaluate permission rules before using any capability. A 
 
 Sensitive actions should require explicit approval.
 
+Approval gates are described in [Approval Gates](approval-gates.md). They should be scoped, auditable, and human-owned for high-risk actions.
+
 ### Auditability
 
 Important state changes should emit events and preserve enough context for later review.

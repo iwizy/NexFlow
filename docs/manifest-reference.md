@@ -123,3 +123,5 @@ extensions:
 ## Validation
 
 Schemas live in `schemas/`. They are intentionally practical rather than exhaustive. Semantic validation, such as checking cross-file references, is future runtime or validation CLI work.
+
+See [Approval Gates](approval-gates.md) for approval gate semantics beyond the compact schema shape.

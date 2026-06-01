@@ -39,6 +39,8 @@ Projects SHOULD define approval requirements for:
 - credential access
 - memory writes beyond task scope
 
+See [Approval Gates](approval-gates.md) for the draft semantics of approval actors, decisions, evidence, scope, expiry, and revocation.
+
 ## Default Approval Matrix
 
 | Action | Recommended Gate |

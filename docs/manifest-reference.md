@@ -99,6 +99,19 @@ See [Context Model](context-model.md) for source taxonomy, freshness guidance, w
 
 Declares memory scopes, retention, ownership, visibility, update rules, sensitivity, and allowed consumers.
 
+Memory scopes define:
+
+- `scope`, `retention`, `ownership`, `visibility`, `updateRules`, and `sensitivity`
+- `allowedConsumers` for memory reads and reuse
+- optional `updateMode` for automatic, requested, reviewed, approval-gated, or prohibited writes
+- optional `allowedWriters`
+- optional `allowedSourceScopes` for explicit memory promotion paths
+- optional `prohibitedContent`
+- optional `auditEvents`
+- optional `approvalGate` for durable or sensitive writes
+
+See [Memory Model](memory-model.md) for sensitivity rules, ownership guidance, and cross-scope leakage prevention.
+
 ### `providers.yaml`
 
 Declares provider abstractions and preferences without binding the spec to a vendor.

@@ -68,6 +68,8 @@ Context sources describe information boundaries, freshness expectations, access 
 
 A boundary for retaining and reusing information. NexFlow defines `ephemeral`, `task`, `project`, `team`, `user`, and `organization` scopes.
 
+Memory scopes describe retention, ownership, visibility, update rules, sensitivity, allowed consumers, and cross-scope reuse boundaries. Memory access is declared separately from context access.
+
 ## Provider
 
 A model or service provider abstraction. Providers can describe capabilities and preferences without becoming part of the core specification.

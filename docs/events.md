@@ -21,6 +21,10 @@ Event names use dotted lowercase names:
 - `agent.failed`
 - `workflow.started`
 - `workflow.completed`
+- `memory.written`
+- `memory.corrected`
+- `memory.deleted`
+- `memory.promoted`
 
 ## Common Payload Fields
 
@@ -92,6 +96,17 @@ payload:
   result: changes_requested
   findings:
     - Missing approval gate for deployment.
+```
+
+### `memory.promoted`
+
+```yaml
+type: memory.promoted
+payload:
+  fromScope: task
+  toScope: project
+  approvalGate: code_review
+  retainedBecause: Reusable implementation decision accepted by reviewer.
 ```
 
 ## Audit Requirements

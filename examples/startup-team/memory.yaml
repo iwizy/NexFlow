@@ -14,6 +14,15 @@ memoryScopes:
       - design-agent
       - fullstack-agent
       - release-reviewer
+    updateMode: automatic
+    allowedWriters:
+      - product-owner
+      - design-agent
+      - fullstack-agent
+      - release-reviewer
+    prohibitedContent:
+      - raw_secrets
+      - credential_values
   - scope: task
     retention: Until task acceptance.
     ownership: Project.
@@ -25,6 +34,20 @@ memoryScopes:
       - design-agent
       - fullstack-agent
       - release-reviewer
+    updateMode: actor_requested
+    allowedWriters:
+      - product-owner
+      - design-agent
+      - fullstack-agent
+      - release-reviewer
+    allowedSourceScopes:
+      - ephemeral
+    prohibitedContent:
+      - raw_secrets
+      - credential_values
+      - customer_identifiers
+    auditEvents:
+      - task.completed
   - scope: project
     retention: Until project policy removes it.
     ownership: Product owner.
@@ -34,4 +57,16 @@ memoryScopes:
     allowedConsumers:
       - product-owner
       - release-reviewer
+    updateMode: approval_required
+    allowedWriters:
+      - product-owner
+    allowedSourceScopes:
+      - task
+    prohibitedContent:
+      - raw_secrets
+      - credential_values
+      - customer_identifiers
+      - unreviewed_external_claims
+    auditEvents:
+      - review.completed
     approvalGate: product_review

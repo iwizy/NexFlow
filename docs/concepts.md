@@ -2,6 +2,8 @@
 
 This page defines the core NexFlow domain model.
 
+For a quick terminology reference, see [Glossary](glossary.md).
+
 ## Project
 
 A repository, product, service, or workstream governed by NexFlow manifests.

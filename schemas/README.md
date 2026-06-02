@@ -18,7 +18,7 @@ The schemas currently target `specVersion: "0.1"` and use JSON Schema draft 2020
 | `permissions.schema.json` | `PermissionSet` | Allow, deny, and approval-required rules for capabilities. |
 | `capabilities.schema.json` | `CapabilitySet` | Capability vocabulary, categories, risk levels, and audit guidance. |
 | `context.schema.json` | `ContextSet` | Context sources, access modes, classifications, freshness, web boundaries, and MCP metadata. |
-| `memory.schema.json` | `MemorySet` | Memory scopes, retention, ownership, visibility, sensitivity, and allowed consumers. |
+| `memory.schema.json` | `MemorySet` | Memory scopes, retention, ownership, visibility, sensitivity, consumers, writers, update modes, audit events, and promotion boundaries. |
 | `providers.schema.json` | `ProviderSet` | Provider abstractions and selection constraints. |
 | `events.schema.json` | `EventSet` | Event names, payload expectations, retention, and audit requirements. |
 | `extensions.schema.json` | `ExtensionSet` | Extension namespaces, lifecycle state, and required capabilities. |
@@ -101,6 +101,7 @@ Examples of future semantic checks:
 - approval gates cover high-risk capabilities
 - handoff artifacts are produced by previous tasks
 - memory access is consistent with project policy
+- memory writers, prohibited content, and promotion paths are consistent with sensitivity
 - extension requirements are satisfied
 
 See [Validation](../docs/validation.md) for the current validation model.

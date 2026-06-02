@@ -17,6 +17,7 @@ This project follows a specification-first process. Breaking changes must includ
 - Clarified capability and permission separation with allow, deny, and approval-required examples.
 - Approval gate semantics for approvers, decisions, evidence, scope, expiry, revocation, and runtime expectations.
 - Expanded context source taxonomy with source fields, freshness guidance, web boundaries, MCP metadata, and classification rules.
+- Expanded memory sensitivity rules with ownership, allowed writers, update modes, prohibited content, audit events, and cross-scope leakage guidance.
 - Draft JSON Schemas for core manifests.
 - Reference examples for minimal, software, startup, enterprise, and product delivery teams.
 - Governance and RFC process.

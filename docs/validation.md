@@ -89,6 +89,8 @@ JSON Schema does not fully check:
 - whether handoff artifacts were produced by earlier tasks
 - whether event names referenced by workflows are declared
 - whether memory scope access is consistent with project policy
+- whether memory promotion paths preserve sensitivity boundaries
+- whether memory audit events and approval gates are declared
 - whether agent context source references exist
 - whether web sources have domain and freshness policies
 - whether MCP sources distinguish context from tools
@@ -110,6 +112,7 @@ Future semantic validators should check:
 - approval gate coverage
 - context and memory access boundaries
 - context freshness, source classification, and MCP boundary consistency
+- memory ownership, allowed writers, prohibited content, and cross-scope promotion consistency
 - extension namespace and capability requirements
 
 Semantic validation should report warnings separately from hard errors when the spec allows judgment.

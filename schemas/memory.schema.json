@@ -51,6 +51,32 @@
           "allowedConsumers": {
             "$ref": "common.schema.json#/$defs/idList"
           },
+          "updateMode": {
+            "type": "string",
+            "enum": [
+              "automatic",
+              "actor_requested",
+              "review_required",
+              "approval_required",
+              "prohibited"
+            ]
+          },
+          "allowedWriters": {
+            "$ref": "common.schema.json#/$defs/idList"
+          },
+          "allowedSourceScopes": {
+            "type": "array",
+            "items": {
+              "$ref": "common.schema.json#/$defs/memoryScope"
+            },
+            "uniqueItems": true
+          },
+          "prohibitedContent": {
+            "$ref": "common.schema.json#/$defs/stringList"
+          },
+          "auditEvents": {
+            "$ref": "common.schema.json#/$defs/stringList"
+          },
           "approvalGate": {
             "$ref": "common.schema.json#/$defs/id"
           }

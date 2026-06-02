@@ -44,6 +44,10 @@ Network access should be declared and scoped by policy, source, or domain where 
 
 Context sources should be classified conservatively and should not be expanded through provider defaults, extensions, cached data, or MCP tools. Web context should define freshness and domain boundaries where possible.
 
+### Memory Boundaries
+
+Memory writes are higher risk than context reads because they can persist and reuse information after the task ends. Durable or sensitive memory should declare ownership, visibility, allowed consumers, allowed writers, prohibited content, promotion paths, audit events, and approval gates where needed.
+
 ### Human Override
 
 Humans must be able to stop or override future runtime activity.
@@ -56,6 +60,8 @@ Humans must be able to stop or override future runtime activity.
 - implicit access through integrations or extensions
 - provider access to all context
 - unbounded memory writes
+- automatic cross-scope memory promotion
+- retaining secrets or credential values in memory
 - silent network access
 - automatic deployment
 - destructive actions without approval

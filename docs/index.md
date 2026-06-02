@@ -8,6 +8,7 @@ The documentation is the canonical source for the specification. Schemas and exa
 
 - [Vision](vision.md)
 - [Concepts](concepts.md)
+- [Glossary](glossary.md)
 - [Architecture](architecture.md)
 - [Manifest Reference](manifest-reference.md)
 - [Security Model](security-model.md)

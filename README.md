@@ -68,7 +68,7 @@ The goal is to make AI-assisted software delivery inspectable before anything ru
 - **Event**: an auditable state transition such as `task.completed` or `review.requested`.
 - **Extension**: a namespaced integration surface for tools such as GitHub, Linear, Figma, Slack, MCP, or custom systems.
 
-See [Concepts](docs/concepts.md) for the full domain model.
+See [Concepts](docs/concepts.md) for the full domain model and [Glossary](docs/glossary.md) for quick terminology reference.
 
 ## Manifest Example
 

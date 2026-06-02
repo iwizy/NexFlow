@@ -2,6 +2,8 @@
 
 This page defines the core NexFlow domain model.
 
+For a quick terminology reference, see [Glossary](glossary.md).
+
 ## Project
 
 A repository, product, service, or workstream governed by NexFlow manifests.
@@ -62,9 +64,13 @@ A policy decision that allows, denies, or gates a capability for a specific acto
 
 A declared source of information such as a repository, docs site, issue tracker, design file, MCP server, web source, or custom knowledge base.
 
+Context sources describe information boundaries, freshness expectations, access modes, and sensitivity classification. They do not grant permission to modify systems or retain memory.
+
 ## Memory Scope
 
 A boundary for retaining and reusing information. NexFlow defines `ephemeral`, `task`, `project`, `team`, `user`, and `organization` scopes.
+
+Memory scopes describe retention, ownership, visibility, update rules, sensitivity, allowed consumers, and cross-scope reuse boundaries. Memory access is declared separately from context access.
 
 ## Provider
 

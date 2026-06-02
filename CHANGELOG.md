@@ -10,6 +10,15 @@ This project follows a specification-first process. Breaking changes must includ
 
 - Initial specification-first repository structure.
 - Core documentation set under `docs/`.
+- Draft conformance vocabulary for manifests, validators, CLIs, runtimes, and extensions.
+- Validation workflow guidance for schema and future semantic checks.
+- Schema guide for schema scope, update rules, and validation boundaries.
+- Examples guide for reference team selection and manifest file sets.
+- Clarified capability and permission separation with allow, deny, and approval-required examples.
+- Approval gate semantics for approvers, decisions, evidence, scope, expiry, revocation, and runtime expectations.
+- Expanded context source taxonomy with source fields, freshness guidance, web boundaries, MCP metadata, and classification rules.
+- Expanded memory sensitivity rules with ownership, allowed writers, update modes, prohibited content, audit events, and cross-scope leakage guidance.
+- Glossary for stable specification vocabulary.
 - Draft JSON Schemas for core manifests.
 - Reference examples for minimal, software, startup, enterprise, and product delivery teams.
 - Governance and RFC process.

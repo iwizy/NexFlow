@@ -82,9 +82,35 @@ Declares known capabilities, descriptions, risk levels, and expected approval be
 
 Declares context sources and access policies.
 
+Context sources define:
+
+- `id`, `type`, and `description`
+- optional `uri` and `contentTypes`
+- `access.default`, `allowedActors`, and `deniedActors`
+- `classification`
+- optional `refreshPolicy` and `freshness`
+- optional web boundaries such as `allowedDomains` and `disallowedDomains`
+- optional `mcp` metadata for MCP servers that expose context, tools, or both
+- optional `approvalGates` for sensitive source use
+
+See [Context Model](context-model.md) for source taxonomy, freshness guidance, web context, and MCP behavior.
+
 ### `memory.yaml`
 
 Declares memory scopes, retention, ownership, visibility, update rules, sensitivity, and allowed consumers.
+
+Memory scopes define:
+
+- `scope`, `retention`, `ownership`, `visibility`, `updateRules`, and `sensitivity`
+- `allowedConsumers` for memory reads and reuse
+- optional `updateMode` for automatic, requested, reviewed, approval-gated, or prohibited writes
+- optional `allowedWriters`
+- optional `allowedSourceScopes` for explicit memory promotion paths
+- optional `prohibitedContent`
+- optional `auditEvents`
+- optional `approvalGate` for durable or sensitive writes
+
+See [Memory Model](memory-model.md) for sensitivity rules, ownership guidance, and cross-scope leakage prevention.
 
 ### `providers.yaml`
 
@@ -123,3 +149,5 @@ extensions:
 ## Validation
 
 Schemas live in `schemas/`. They are intentionally practical rather than exhaustive. Semantic validation, such as checking cross-file references, is future runtime or validation CLI work.
+
+See [Approval Gates](approval-gates.md) for approval gate semantics beyond the compact schema shape.

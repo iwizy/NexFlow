@@ -45,6 +45,8 @@ Future runtimes should publish:
 - validation behavior
 - enforcement limitations
 
+See [Conformance](conformance.md) for draft vocabulary that tools can use when describing support levels.
+
 ## Compatibility Promise
 
 Until `1.0`, NexFlow prioritizes learning and correctness over strict stability. Breaking changes are allowed with documentation and migration guidance.

@@ -1,5 +1,11 @@
 # NexFlow
 
+![Spec Version](https://img.shields.io/badge/spec-0.1--draft-orange)
+![Status](https://img.shields.io/badge/status-specification--first-blue)
+![Runtime](https://img.shields.io/badge/runtime-not%20implemented-lightgrey)
+![Provider Neutral](https://img.shields.io/badge/provider-neutral-brightgreen)
+![License](https://img.shields.io/badge/license-MIT-blue)
+
 **Open specification and orchestration framework for AI developer teams.**
 
 NexFlow is a specification-first project for describing how humans, AI agents, automation systems, tools, context sources, approvals, and workflows cooperate on software projects.
@@ -62,7 +68,7 @@ The goal is to make AI-assisted software delivery inspectable before anything ru
 - **Event**: an auditable state transition such as `task.completed` or `review.requested`.
 - **Extension**: a namespaced integration surface for tools such as GitHub, Linear, Figma, Slack, MCP, or custom systems.
 
-See [Concepts](docs/concepts.md) for the full domain model.
+See [Concepts](docs/concepts.md) for the full domain model and [Glossary](docs/glossary.md) for quick terminology reference.
 
 ## Manifest Example
 
@@ -132,8 +138,11 @@ NexFlow is intentionally split into layers:
 
 - [docs/](docs/index.md): specification documentation
 - [schemas/](schemas/): draft JSON Schemas for core manifests
+- [Schema Guide](schemas/README.md): schema scope, update rules, and validation boundaries
 - [examples/](examples/): complete reference team configurations
+- [Examples Guide](examples/README.md): overview of reference teams and manifest file sets
 - [rfcs/](rfcs/README.md): governance and design proposal process
+- [Conformance](docs/conformance.md): draft support levels for manifests, validators, CLIs, runtimes, and extensions
 - [AGENTS.md](AGENTS.md): instructions for humans and AI contributors
 - [CONTRIBUTING.md](CONTRIBUTING.md): contribution workflow
 - [SECURITY.md](SECURITY.md): vulnerability and safety reporting policy

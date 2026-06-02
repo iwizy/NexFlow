@@ -8,6 +8,7 @@ The documentation is the canonical source for the specification. Schemas and exa
 
 - [Vision](vision.md)
 - [Concepts](concepts.md)
+- [Glossary](glossary.md)
 - [Architecture](architecture.md)
 - [Manifest Reference](manifest-reference.md)
 - [Security Model](security-model.md)
@@ -18,6 +19,7 @@ The documentation is the canonical source for the specification. Schemas and exa
 - [Memory Model](memory-model.md)
 - [Autonomy Model](autonomy-model.md)
 - [Capability Model](capability-model.md)
+- [Approval Gates](approval-gates.md)
 - [Handoff Protocol](handoff-protocol.md)
 - [Event Model](events.md)
 - [Extension Model](extensions.md)
@@ -27,6 +29,8 @@ The documentation is the canonical source for the specification. Schemas and exa
 
 - [Governance](governance.md)
 - [Versioning](versioning.md)
+- [Conformance](conformance.md)
+- [Validation](validation.md)
 - [Compatibility](compatibility.md)
 - [Runtime Options](runtime-options.md)
 - [Integrations](integrations.md)

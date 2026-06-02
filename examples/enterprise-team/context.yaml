@@ -7,6 +7,9 @@ contextSources:
     type: github
     description: Enterprise source repository.
     uri: https://github.com/example/enterprise-system
+    contentTypes:
+      - source_code
+      - pull_requests
     access:
       default: read
       allowedActors:
@@ -19,6 +22,9 @@ contextSources:
   - id: issue_tracker
     type: jira
     description: Enterprise issue tracker.
+    contentTypes:
+      - tickets
+      - metadata
     access:
       default: query
       allowedActors:
@@ -31,6 +37,9 @@ contextSources:
   - id: architecture_docs
     type: confluence
     description: Architecture decision records and standards.
+    contentTypes:
+      - documentation
+      - knowledge_articles
     access:
       default: read
       allowedActors:
@@ -44,6 +53,9 @@ contextSources:
   - id: security_knowledge
     type: knowledge_base
     description: Security standards and sanitized threat models.
+    contentTypes:
+      - knowledge_articles
+      - metadata
     access:
       default: read
       allowedActors:
@@ -52,12 +64,32 @@ contextSources:
         - enterprise-architect
     classification: restricted
     refreshPolicy: manual
+    freshness:
+      maxAge: 30d
+      staleAllowed: false
+      requiresCitation: true
+    approvalGates:
+      - security_review
   - id: mcp_tools
     type: mcp
     description: Approved enterprise development MCP server.
+    contentTypes:
+      - tool_results
+      - metadata
     access:
       default: query
       allowedActors:
         - implementation-agent
     classification: confidential
     refreshPolicy: manual
+    mcp:
+      serverId: enterprise_development_tools
+      exposes:
+        - context
+        - tools
+      allowedTools:
+        - build-log-reader
+        - dependency-inventory-reader
+      requiresApprovalForTools: true
+    approvalGates:
+      - security_review

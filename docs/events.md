@@ -21,6 +21,10 @@ Event names use dotted lowercase names:
 - `agent.failed`
 - `workflow.started`
 - `workflow.completed`
+- `memory.written`
+- `memory.corrected`
+- `memory.deleted`
+- `memory.promoted`
 
 ## Common Payload Fields
 
@@ -94,6 +98,19 @@ payload:
     - Missing approval gate for deployment.
 ```
 
+### `memory.promoted`
+
+```yaml
+type: memory.promoted
+payload:
+  fromScope: task
+  toScope: project
+  approvalGate: code_review
+  retainedBecause: Reusable implementation decision accepted by reviewer.
+```
+
 ## Audit Requirements
 
 Events related to approvals, destructive actions, production actions, credential access, and memory updates SHOULD be retained according to project policy.
+
+See [Approval Gates](approval-gates.md) for how approval decisions relate to review events and future approval-specific events.

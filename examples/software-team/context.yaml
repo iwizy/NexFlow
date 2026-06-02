@@ -7,6 +7,9 @@ contextSources:
     type: github
     description: Source repository and pull request metadata.
     uri: https://github.com/example/software-team
+    contentTypes:
+      - source_code
+      - pull_requests
     access:
       default: read
       allowedActors:
@@ -19,6 +22,9 @@ contextSources:
   - id: issue_tracker
     type: linear
     description: Product and engineering tasks.
+    contentTypes:
+      - tickets
+      - metadata
     access:
       default: query
       allowedActors:
@@ -31,6 +37,8 @@ contextSources:
     type: docs
     description: Project documentation.
     uri: docs/
+    contentTypes:
+      - documentation
     access:
       default: read
       allowedActors:
@@ -42,6 +50,9 @@ contextSources:
   - id: mcp_tools
     type: mcp
     description: Approved local development tool server.
+    contentTypes:
+      - tool_results
+      - metadata
     access:
       default: query
       allowedActors:
@@ -49,3 +60,14 @@ contextSources:
         - qa-agent
     classification: internal
     refreshPolicy: manual
+    mcp:
+      serverId: local_development_tools
+      exposes:
+        - context
+        - tools
+      allowedTools:
+        - test-log-reader
+        - dependency-graph-reader
+      requiresApprovalForTools: true
+    approvalGates:
+      - dependency_approval

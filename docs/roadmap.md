@@ -17,12 +17,17 @@ Status: in progress.
 - Collect feedback from agent tool builders, open-source maintainers, startups, enterprises, and researchers.
 - Refine terminology.
 - Identify missing safety and compatibility rules.
+- Review approval gate semantics with maintainers and runtime implementers.
+- Review context source taxonomy, freshness rules, web boundaries, and MCP context/tool separation.
+- Review memory sensitivity, ownership, allowed consumers, and cross-scope promotion rules.
 
 ## Milestone 3: Schema Hardening
 
 - Improve cross-manifest consistency.
+- Document validation workflow and current validation limits.
 - Add schema examples and negative cases.
 - Define conformance expectations for validators.
+- Refine draft conformance levels for manifests, validators, CLIs, runtimes, and extensions.
 
 ## Milestone 4: Runtime Architecture Decision
 

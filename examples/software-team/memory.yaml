@@ -14,6 +14,15 @@ memoryScopes:
       - qa-agent
       - docs-agent
       - reviewer
+    updateMode: automatic
+    allowedWriters:
+      - implementation-agent
+      - qa-agent
+      - docs-agent
+      - reviewer
+    prohibitedContent:
+      - raw_secrets
+      - credential_values
   - scope: task
     retention: Until task is closed.
     ownership: Project.
@@ -25,6 +34,20 @@ memoryScopes:
       - qa-agent
       - docs-agent
       - reviewer
+    updateMode: actor_requested
+    allowedWriters:
+      - implementation-agent
+      - qa-agent
+      - docs-agent
+      - reviewer
+    allowedSourceScopes:
+      - ephemeral
+    prohibitedContent:
+      - raw_secrets
+      - credential_values
+    auditEvents:
+      - task.completed
+      - task.blocked
   - scope: project
     retention: Maintainer policy.
     ownership: Maintainers.
@@ -33,4 +56,15 @@ memoryScopes:
     sensitivity: internal
     allowedConsumers:
       - reviewer
+    updateMode: approval_required
+    allowedWriters:
+      - reviewer
+    allowedSourceScopes:
+      - task
+    prohibitedContent:
+      - raw_secrets
+      - credential_values
+      - unreviewed_external_claims
+    auditEvents:
+      - review.completed
     approvalGate: code_review

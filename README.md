@@ -147,6 +147,19 @@ NexFlow is intentionally split into layers:
 - [CONTRIBUTING.md](CONTRIBUTING.md): contribution workflow
 - [SECURITY.md](SECURITY.md): vulnerability and safety reporting policy
 
+## Specification Guide
+
+| Need | Start Here |
+| --- | --- |
+| Understand the vocabulary | [Concepts](docs/concepts.md), [Glossary](docs/glossary.md) |
+| See every manifest shape | [Manifest Reference](docs/manifest-reference.md) |
+| Understand safety boundaries | [Security Model](docs/security-model.md), [Approval Gates](docs/approval-gates.md) |
+| Model what agents can and may do | [Capability Model](docs/capability-model.md), [Autonomy Model](docs/autonomy-model.md) |
+| Model what agents may know or retain | [Context Model](docs/context-model.md), [Memory Model](docs/memory-model.md) |
+| Validate manifests | [Validation](docs/validation.md), [Schema Guide](schemas/README.md), [Conformance](docs/conformance.md) |
+| Extend or integrate NexFlow | [Extension Model](docs/extensions.md), [Integrations](docs/integrations.md), [Provider Abstraction](docs/provider-abstraction.md) |
+| Review future implementation choices | [Runtime Options](docs/runtime-options.md), [Roadmap](docs/roadmap.md) |
+
 ## Roadmap
 
 1. Stabilize the draft `0.1` manifest vocabulary.

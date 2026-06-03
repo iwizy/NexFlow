@@ -19,6 +19,7 @@ This project follows a specification-first process. Breaking changes must includ
 - Expanded context source taxonomy with source fields, freshness guidance, web boundaries, MCP metadata, and classification rules.
 - Expanded memory sensitivity rules with ownership, allowed writers, update modes, prohibited content, audit events, and cross-scope leakage guidance.
 - Glossary for stable specification vocabulary.
+- Cross-linked README, docs index, roadmap, and manifest reference across core models, validation, conformance, schemas, examples, and runtime planning docs.
 - Draft JSON Schemas for core manifests.
 - Reference examples for minimal, software, startup, enterprise, and product delivery teams.
 - Governance and RFC process.

@@ -13,29 +13,44 @@ The documentation is the canonical source for the specification. Schemas and exa
 - [Manifest Reference](manifest-reference.md)
 - [Security Model](security-model.md)
 
+## Reading Paths
+
+| Reader | Recommended Path |
+| --- | --- |
+| New project visitor | [Vision](vision.md) -> [Concepts](concepts.md) -> [Glossary](glossary.md) -> [Manifest Reference](manifest-reference.md) |
+| Manifest author | [Manifest Reference](manifest-reference.md) -> [Context Model](context-model.md) -> [Memory Model](memory-model.md) -> [Examples Guide](../examples/README.md) |
+| Safety reviewer | [Security Model](security-model.md) -> [Approval Gates](approval-gates.md) -> [Capability Model](capability-model.md) -> [Autonomy Model](autonomy-model.md) |
+| Validator author | [Validation](validation.md) -> [Schema Guide](../schemas/README.md) -> [Conformance](conformance.md) -> [Compatibility](compatibility.md) |
+| Runtime implementer | [Architecture](architecture.md) -> [Runtime Options](runtime-options.md) -> [Provider Abstraction](provider-abstraction.md) -> [Roadmap](roadmap.md) |
+| Extension author | [Extension Model](extensions.md) -> [Integrations](integrations.md) -> [Provider Abstraction](provider-abstraction.md) -> [Conformance](conformance.md) |
+
 ## Core Models
 
-- [Context Model](context-model.md)
-- [Memory Model](memory-model.md)
-- [Autonomy Model](autonomy-model.md)
-- [Capability Model](capability-model.md)
-- [Approval Gates](approval-gates.md)
-- [Handoff Protocol](handoff-protocol.md)
-- [Event Model](events.md)
-- [Extension Model](extensions.md)
-- [Provider Abstraction](provider-abstraction.md)
+| Model | Purpose |
+| --- | --- |
+| [Capability Model](capability-model.md) | Defines technical actions separately from authorization. |
+| [Autonomy Model](autonomy-model.md) | Defines how independently actors may act. |
+| [Approval Gates](approval-gates.md) | Defines human or policy approvals before sensitive actions. |
+| [Context Model](context-model.md) | Defines declared information sources, freshness, classification, and access boundaries. |
+| [Memory Model](memory-model.md) | Defines retention, ownership, sensitivity, and cross-scope reuse boundaries. |
+| [Handoff Protocol](handoff-protocol.md) | Defines structured responsibility transfer between actors. |
+| [Event Model](events.md) | Defines auditable state transitions and payload expectations. |
+| [Extension Model](extensions.md) | Defines namespaced extension lifecycle and integration surface. |
+| [Provider Abstraction](provider-abstraction.md) | Defines provider-neutral preferences and constraints. |
 
 ## Project Process
 
-- [Governance](governance.md)
-- [Versioning](versioning.md)
-- [Conformance](conformance.md)
-- [Validation](validation.md)
-- [Compatibility](compatibility.md)
-- [Runtime Options](runtime-options.md)
-- [Integrations](integrations.md)
-- [Roadmap](roadmap.md)
-- [FAQ](faq.md)
+| Process Area | Purpose |
+| --- | --- |
+| [Governance](governance.md) | Contribution, review, and decision rules. |
+| [Versioning](versioning.md) | Spec versioning and migration policy. |
+| [Conformance](conformance.md) | Draft support levels for manifests, validators, CLIs, runtimes, and extensions. |
+| [Validation](validation.md) | Structural validation workflow and semantic validation boundary. |
+| [Compatibility](compatibility.md) | Compatibility expectations and breaking change guidance. |
+| [Runtime Options](runtime-options.md) | Runtime language evaluation criteria without choosing an implementation. |
+| [Integrations](integrations.md) | Integration modeling rules and safety expectations. |
+| [Roadmap](roadmap.md) | Specification, review, schema, CLI, runtime, and ecosystem milestones. |
+| [FAQ](faq.md) | Short answers to common project questions. |
 
 ## Specification Layers
 

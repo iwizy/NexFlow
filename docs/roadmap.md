@@ -12,6 +12,8 @@ NexFlow is specification-first. Runtime work starts only after the core model is
 
 Status: in progress.
 
+Relevant docs: [Concepts](concepts.md), [Glossary](glossary.md), [Manifest Reference](manifest-reference.md), [Context Model](context-model.md), [Memory Model](memory-model.md), [Approval Gates](approval-gates.md).
+
 ## Milestone 2: Community Review
 
 - Collect feedback from agent tool builders, open-source maintainers, startups, enterprises, and researchers.
@@ -21,6 +23,8 @@ Status: in progress.
 - Review context source taxonomy, freshness rules, web boundaries, and MCP context/tool separation.
 - Review memory sensitivity, ownership, allowed consumers, and cross-scope promotion rules.
 
+Relevant docs: [Security Model](security-model.md), [Capability Model](capability-model.md), [Autonomy Model](autonomy-model.md), [Provider Abstraction](provider-abstraction.md), [Extension Model](extensions.md).
+
 ## Milestone 3: Schema Hardening
 
 - Improve cross-manifest consistency.
@@ -28,6 +32,8 @@ Status: in progress.
 - Add schema examples and negative cases.
 - Define conformance expectations for validators.
 - Refine draft conformance levels for manifests, validators, CLIs, runtimes, and extensions.
+
+Relevant docs: [Validation](validation.md), [Conformance](conformance.md), [Compatibility](compatibility.md), [Schema Guide](../schemas/README.md), [Examples Guide](../examples/README.md).
 
 ## Milestone 4: Runtime Architecture Decision
 
@@ -37,6 +43,8 @@ Status: in progress.
 - Decide packaging and conformance test strategy.
 
 This milestone must happen before runtime implementation begins.
+
+Relevant docs: [Architecture](architecture.md), [Runtime Options](runtime-options.md), [Provider Abstraction](provider-abstraction.md), [Security Model](security-model.md).
 
 ## Milestone 5: Reference CLI
 
@@ -49,6 +57,8 @@ Possible commands:
 
 The CLI should validate and inspect manifests only. It should not orchestrate real work.
 
+Relevant docs: [Validation](validation.md), [Conformance](conformance.md), [Compatibility](compatibility.md).
+
 ## Milestone 6: Runtime Prototype
 
 - Interpret workflows.
@@ -56,6 +66,8 @@ The CLI should validate and inspect manifests only. It should not orchestrate re
 - Emit audit events.
 - Integrate with provider abstractions.
 - Keep provider-specific logic isolated.
+
+Relevant docs: [Architecture](architecture.md), [Autonomy Model](autonomy-model.md), [Approval Gates](approval-gates.md), [Event Model](events.md), [Integrations](integrations.md).
 
 ## Milestone 7: Ecosystem Split
 

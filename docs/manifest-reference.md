@@ -38,6 +38,8 @@ Key fields:
 - `project.policies`
 - `manifests`
 
+Related docs: [Project Policy](concepts.md#project-policy), [Autonomy Model](autonomy-model.md), [Approval Gates](approval-gates.md), [Versioning](versioning.md).
+
 ### `agents.yaml`
 
 Declares agents and their roles.
@@ -58,25 +60,37 @@ Agent fields:
 - `providerPreferences`
 - `extensions`
 
+Related docs: [Concepts](concepts.md), [Glossary](glossary.md), [Capability Model](capability-model.md), [Context Model](context-model.md), [Memory Model](memory-model.md), [Autonomy Model](autonomy-model.md), [Provider Abstraction](provider-abstraction.md), [Extension Model](extensions.md).
+
 ### `workflow.yaml`
 
 Declares workflow stages, steps, dependencies, and approval gates.
+
+Related docs: [Handoff Protocol](handoff-protocol.md), [Approval Gates](approval-gates.md), [Event Model](events.md), [Validation](validation.md).
 
 ### `tasks.yaml`
 
 Declares units of work, owners, dependencies, artifacts, status, and acceptance criteria.
 
+Related docs: [Capability Model](capability-model.md), [Approval Gates](approval-gates.md), [Handoff Protocol](handoff-protocol.md), [Event Model](events.md).
+
 ### `handoffs.yaml`
 
 Declares transfers of responsibility between actors.
+
+Related docs: [Handoff Protocol](handoff-protocol.md), [Event Model](events.md), [Workflow](concepts.md#workflow).
 
 ### `permissions.yaml`
 
 Declares allow, deny, and approval-gated rules for capabilities.
 
+Related docs: [Capability Model](capability-model.md), [Security Model](security-model.md), [Approval Gates](approval-gates.md), [Autonomy Model](autonomy-model.md).
+
 ### `capabilities.yaml`
 
 Declares known capabilities, descriptions, risk levels, and expected approval behavior.
+
+Related docs: [Capability Model](capability-model.md), [Permissions](concepts.md#permission), [Security Model](security-model.md).
 
 ### `context.yaml`
 
@@ -116,13 +130,19 @@ See [Memory Model](memory-model.md) for sensitivity rules, ownership guidance, a
 
 Declares provider abstractions and preferences without binding the spec to a vendor.
 
+Related docs: [Provider Abstraction](provider-abstraction.md), [Runtime Options](runtime-options.md), [Security Model](security-model.md).
+
 ### `events.yaml`
 
 Declares event types, payload expectations, retention, and audit requirements.
 
+Related docs: [Event Model](events.md), [Approval Gates](approval-gates.md), [Memory Model](memory-model.md), [Conformance](conformance.md).
+
 ### `extensions.yaml`
 
 Declares integration namespaces and extension lifecycle state.
+
+Related docs: [Extension Model](extensions.md), [Integrations](integrations.md), [Provider Abstraction](provider-abstraction.md), [Security Model](security-model.md), [Conformance](conformance.md).
 
 ## Identifier Rules
 
@@ -150,4 +170,4 @@ extensions:
 
 Schemas live in `schemas/`. They are intentionally practical rather than exhaustive. Semantic validation, such as checking cross-file references, is future runtime or validation CLI work.
 
-See [Approval Gates](approval-gates.md) for approval gate semantics beyond the compact schema shape.
+See [Validation](validation.md), [Conformance](conformance.md), and [Schema Guide](../schemas/README.md) for validation boundaries. See [Approval Gates](approval-gates.md) for approval gate semantics beyond the compact schema shape.

@@ -4,6 +4,8 @@ Conformance describes what it means for a manifest set, validator, CLI, runtime,
 
 This draft is intentionally lightweight. It gives implementers a shared vocabulary without pretending that a production runtime exists today.
 
+Related RFC: [RFC-0003: Conformance Levels](../rfcs/RFC-0003-conformance-levels.md).
+
 ## Goals
 
 - Make compatibility claims precise.
@@ -125,10 +127,13 @@ Spec versions: 0.1
 Runtime or CLI documentation SHOULD also list:
 
 - supported manifest kinds
+- supported `specVersion` values
 - unsupported fields
 - supported extension namespaces
 - validation limitations
 - enforcement limitations
+
+Conformance claims are compatibility claims. A change can affect one conformance level without affecting another. For example, an optional schema field may preserve `NF-SCHEMA`, while a change to approval gate meaning may affect `NF-RUNTIME`.
 
 ## Non-Conforming Behavior
 

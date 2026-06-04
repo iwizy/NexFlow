@@ -47,6 +47,20 @@ Future runtimes should publish:
 
 See [Conformance](conformance.md) for draft vocabulary that tools can use when describing support levels.
 
+## Conformance Impact
+
+Compatibility notes should identify which conformance levels are affected when possible.
+
+Examples:
+
+| Change | Likely Impact |
+| --- | --- |
+| Add optional schema field | May preserve `NF-SCHEMA`; may require docs and examples updates. |
+| Rename required manifest field | Breaks `NF-MANIFEST` and `NF-SCHEMA`. |
+| Change approval gate meaning | May break `NF-RUNTIME` safety expectations. |
+| Add semantic cross-reference rule | May affect `NF-SEMANTIC` validators. |
+| Change extension namespace lifecycle | May affect `NF-EXTENSION` compatibility. |
+
 ## Compatibility Promise
 
 Until `1.0`, NexFlow prioritizes learning and correctness over strict stability. Breaking changes are allowed with documentation and migration guidance.

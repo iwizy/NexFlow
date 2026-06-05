@@ -22,6 +22,14 @@ All manifests in one project SHOULD use the same `specVersion`.
 
 A future runtime MAY support mixed versions during migration, but it MUST make compatibility behavior explicit.
 
+## Agent Definition Versioning
+
+Manifest `specVersion` describes the shape of a NexFlow manifest. It does not fully describe the behavioral version of an individual agent.
+
+[RFC-0004](../rfcs/RFC-0004-agent-definition-versioning.md) proposes a draft model for versioned agent definitions that reference model profiles, prompt sets, retrieval profiles, permission sets, memory policies, autonomy levels, and extensions.
+
+Until that RFC is accepted, agent definition versioning is specified as draft vocabulary only. Projects should avoid treating proposed agent definition fields as stable schema requirements.
+
 ## Migration Policy
 
 Breaking changes require:

@@ -181,3 +181,39 @@ Before merging a change, reviewers should ask:
 - Does the change preserve provider and runtime neutrality?
 - Are breaking changes documented?
 - Does the README still describe reality?
+
+## Master Vault Inbox Handoff Rules
+
+This repository participates in the shared Obsidian master vault memory workflow.
+
+Future agents in fresh chats will not remember prior chat context, so every meaningful task must leave a durable handoff in the master vault Inbox.
+
+Master vault Inbox path:
+
+`/Users/iwizard/Library/Mobile Documents/iCloud~md~obsidian/Documents/Inbox`
+
+After each user-requested task, or before ending a substantial work chunk, create or update a task folder under Inbox using this pattern:
+
+`YYYY-MM-DD__<repo-name>__<short-task-slug>/`
+
+Do not write into `Inbox/Done`.
+
+Minimum handoff files:
+
+- `00-index.md` — short task title, repo, branch, date, agent/chat identity if known, and status.
+- `01-work-summary.md` — what changed, why, and user-visible behavior.
+- `02-decisions.md` — decisions made, tradeoffs, assumptions, rejected options.
+- `03-changed-files.md` — changed files and purpose of each change.
+- `04-checks.md` — tests/checks run and results; if not run, explain why.
+- `05-risks-open-questions.md` — risks, open questions, follow-ups.
+
+Rules:
+
+- Be factual and source-grounded.
+- Do not invent project state, decisions, test results, or user intent.
+- Include exact repo path, current branch, commit hash after commit, and whether push succeeded.
+- Record cross-repo impacts, API/contract changes, schema changes, migrations, release/deploy notes, and documentation gaps when relevant.
+- Do not store secrets, tokens, passwords, private keys, raw personal data, or sensitive medical/financial/legal details.
+- Do not process, reorganize, or summarize other Inbox folders unless the user explicitly asks.
+- Do not modify master-vault documents outside Inbox from this repo unless the user explicitly asks.
+- Before the final response, ensure the Inbox handoff reflects the final state of the task.

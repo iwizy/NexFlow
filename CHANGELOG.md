@@ -21,6 +21,7 @@ This project follows a specification-first process. Breaking changes must includ
 - Glossary for stable specification vocabulary.
 - Cross-linked README, docs index, roadmap, and manifest reference across core models, validation, conformance, schemas, examples, and runtime planning docs.
 - Draft RFC-0003 for conformance levels and compatibility impact vocabulary.
+- Draft RFC-0004 for agent definition versioning across models, prompts, retrieval profiles, permissions, memory, autonomy, and extensions.
 - Draft JSON Schemas for core manifests.
 - Reference examples for minimal, software, startup, enterprise, and product delivery teams.
 - Governance and RFC process.

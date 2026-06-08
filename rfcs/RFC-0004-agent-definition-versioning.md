@@ -109,6 +109,8 @@ These references do not grant access by themselves. Permissions and approval gat
 
 A model profile should be provider-neutral and should avoid making provider-specific behavior part of core NexFlow semantics.
 
+NF-007 adds draft [Model Profiles](../docs/model-profiles.md) guidance and a practical `ModelProfileSet` schema for this vocabulary.
+
 A future model profile may describe:
 
 - intended model class

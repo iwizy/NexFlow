@@ -76,6 +76,12 @@ Memory scopes describe retention, ownership, visibility, update rules, sensitivi
 
 A model or service provider abstraction. Providers can describe capabilities and preferences without becoming part of the core specification.
 
+## Model Profile
+
+A provider-neutral declaration of model selection expectations, constraints, fallback behavior, and audit requirements for a behaviorally meaningful use of a model.
+
+Model profiles may describe pinned model references, floating aliases, or policy-based selection. They do not select providers by themselves and do not grant permissions, context access, tool access, or autonomy.
+
 ## Runtime
 
 A future implementation that validates, interprets, or executes NexFlow manifests.

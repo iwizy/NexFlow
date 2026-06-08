@@ -20,6 +20,7 @@ The schemas currently target `specVersion: "0.1"` and use JSON Schema draft 2020
 | `context.schema.json` | `ContextSet` | Context sources, access modes, classifications, freshness, web boundaries, and MCP metadata. |
 | `memory.schema.json` | `MemorySet` | Memory scopes, retention, ownership, visibility, sensitivity, consumers, writers, update modes, audit events, and promotion boundaries. |
 | `providers.schema.json` | `ProviderSet` | Provider abstractions and selection constraints. |
+| `model-profiles.schema.json` | `ModelProfileSet` | Provider-neutral model profiles, selection modes, constraints, fallback rules, review triggers, and audit expectations. |
 | `events.schema.json` | `EventSet` | Event names, payload expectations, retention, and audit requirements. |
 | `extensions.schema.json` | `ExtensionSet` | Extension namespaces, lifecycle state, and required capabilities. |
 | `common.schema.json` | Shared definitions | IDs, metadata, autonomy levels, risk levels, artifacts, approval gates, and common enums. |
@@ -102,6 +103,8 @@ Examples of future semantic checks:
 - handoff artifacts are produced by previous tasks
 - memory access is consistent with project policy
 - memory writers, prohibited content, and promotion paths are consistent with sensitivity
+- referenced provider IDs in model profiles exist
+- model profile references in future agent definitions exist
 - extension requirements are satisfied
 
 See [Validation](../docs/validation.md) for the current validation model.

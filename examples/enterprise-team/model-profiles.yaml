@@ -1,0 +1,56 @@
+specVersion: "0.1"
+kind: ModelProfileSet
+metadata:
+  project: enterprise-team
+modelProfiles:
+  - id: enterprise_review_profile
+    description: Strict reviewed profile for architecture, security, compliance, and release review.
+    modelClass: review
+    selection:
+      mode: pinned
+      providerRefs:
+        - enterprise_reasoning
+      pinnedModel:
+        providerRef: enterprise_reasoning
+        modelId: approved-enterprise-review-model
+        revision: "2026-06"
+    constraints:
+      trainingUse: prohibited
+      dataResidency: required_region
+      toolUse: declared_tools_only
+      maxCostTier: high
+      maxLatencyClass: batch
+      sensitivity: restricted
+    fallback:
+      allowed: false
+      strategy: no_unapproved_fallback
+      requiresApproval: true
+      requiresAuditEvent: true
+    audit:
+      recordModelProfileRef: true
+      recordResolvedProvider: true
+      recordResolvedModel: true
+      recordModelRevision: true
+      recordSelectionReason: true
+      recordFallbackUsed: true
+      events:
+        - agent.started
+        - review.requested
+        - review.completed
+    review:
+      required: true
+      approvers:
+        - enterprise-architect
+        - security-reviewer
+        - compliance-reviewer
+      reviewTriggers:
+        - pinned_model_change
+        - broader_provider_eligibility
+        - broader_training_use
+        - fallback_policy_change
+        - sensitivity_change
+    recommendedFor:
+      - enterprise-architect
+      - security-reviewer
+      - compliance-reviewer
+      - release-manager

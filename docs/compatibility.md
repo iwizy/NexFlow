@@ -27,6 +27,9 @@ NexFlow compatibility is about preserving the meaning of manifests across tools 
 - changing default approval behavior
 - changing memory visibility semantics
 - changing capability meaning
+- changing a pinned model reference
+- changing a floating model alias policy
+- broadening provider eligibility, training use, or tool use in a model profile
 - removing fields
 - changing required fields
 - changing event payload structure
@@ -60,6 +63,7 @@ Examples:
 | Change approval gate meaning | May break `NF-RUNTIME` safety expectations. |
 | Add semantic cross-reference rule | May affect `NF-SEMANTIC` validators. |
 | Change extension namespace lifecycle | May affect `NF-EXTENSION` compatibility. |
+| Change model profile selection or constraints | May affect `NF-SEMANTIC`, `NF-RUNTIME`, and audit compatibility. |
 
 ## Compatibility Promise
 

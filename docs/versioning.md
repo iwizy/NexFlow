@@ -30,6 +30,22 @@ Manifest `specVersion` describes the shape of a NexFlow manifest. It does not fu
 
 Until that RFC is accepted, agent definition versioning is specified as draft vocabulary only. Projects should avoid treating proposed agent definition fields as stable schema requirements.
 
+## Model Profile Versioning
+
+Model profiles describe provider-neutral model selection expectations. A model profile can be behavior-changing even when the agent identity and manifest `specVersion` stay the same.
+
+[Model Profiles](model-profiles.md) define draft vocabulary for:
+
+- pinned model references
+- floating aliases
+- policy-based selection
+- fallback behavior
+- model constraints
+- audit expectations
+- review triggers
+
+Changing a pinned model reference, changing a floating alias policy, broadening provider eligibility, allowing training use, or broadening tool use SHOULD be treated as behavior-significant and may require review.
+
 ## Migration Policy
 
 Breaking changes require:

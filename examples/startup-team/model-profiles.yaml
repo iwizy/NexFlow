@@ -1,0 +1,46 @@
+specVersion: "0.1"
+kind: ModelProfileSet
+metadata:
+  project: startup-team
+modelProfiles:
+  - id: product_iteration_profile
+    description: Policy-based profile for product, design, and implementation iteration.
+    modelClass: reasoning
+    selection:
+      mode: policy
+      providerRefs:
+        - general_reasoning
+        - coding_reasoning
+      floatingAlias: approved-startup-iteration-model
+      resolutionPolicy: Prefer low-latency reviewed models for product and implementation work.
+    constraints:
+      trainingUse: prohibited
+      dataResidency: project_policy
+      toolUse: declared_tools_only
+      maxCostTier: medium
+      maxLatencyClass: interactive
+      sensitivity: internal
+    fallback:
+      allowed: true
+      strategy: same_class_low_latency
+      requiresApproval: false
+      requiresAuditEvent: true
+    audit:
+      recordModelProfileRef: true
+      recordResolvedProvider: true
+      recordResolvedModel: true
+      recordModelRevision: true
+      recordSelectionReason: true
+      recordFallbackUsed: true
+    review:
+      required: true
+      approvers:
+        - product-owner
+      reviewTriggers:
+        - floating_alias_policy_change
+        - broader_training_use
+        - sensitivity_change
+    recommendedFor:
+      - product-owner
+      - design-agent
+      - fullstack-agent

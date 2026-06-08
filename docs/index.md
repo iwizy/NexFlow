@@ -33,6 +33,7 @@ The documentation is the canonical source for the specification. Schemas and exa
 | [Approval Gates](approval-gates.md) | Defines human or policy approvals before sensitive actions. |
 | [Context Model](context-model.md) | Defines declared information sources, freshness, classification, and access boundaries. |
 | [Memory Model](memory-model.md) | Defines retention, ownership, sensitivity, and cross-scope reuse boundaries. |
+| [Model Profiles](model-profiles.md) | Defines provider-neutral model selection, pinned and floating references, constraints, and audit expectations. |
 | [Handoff Protocol](handoff-protocol.md) | Defines structured responsibility transfer between actors. |
 | [Event Model](events.md) | Defines auditable state transitions and payload expectations. |
 | [Extension Model](extensions.md) | Defines namespaced extension lifecycle and integration surface. |

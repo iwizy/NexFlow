@@ -22,8 +22,9 @@ Relevant docs: [Concepts](concepts.md), [Glossary](glossary.md), [Manifest Refer
 - Review approval gate semantics with maintainers and runtime implementers.
 - Review context source taxonomy, freshness rules, web boundaries, and MCP context/tool separation.
 - Review memory sensitivity, ownership, allowed consumers, and cross-scope promotion rules.
+- Review model profile selection modes, pinned and floating references, constraints, fallback, and audit expectations.
 
-Relevant docs: [Security Model](security-model.md), [Capability Model](capability-model.md), [Autonomy Model](autonomy-model.md), [Provider Abstraction](provider-abstraction.md), [Extension Model](extensions.md).
+Relevant docs: [Security Model](security-model.md), [Capability Model](capability-model.md), [Autonomy Model](autonomy-model.md), [Provider Abstraction](provider-abstraction.md), [Model Profiles](model-profiles.md), [Extension Model](extensions.md).
 
 ## Milestone 3: Schema Hardening
 

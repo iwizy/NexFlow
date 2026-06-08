@@ -1,0 +1,48 @@
+specVersion: "0.1"
+kind: ModelProfileSet
+metadata:
+  project: software-team
+modelProfiles:
+  - id: implementation_agent_coding
+    description: Pinned coding-oriented profile for implementation planning and patch drafting.
+    modelClass: coding
+    selection:
+      mode: pinned
+      providerRefs:
+        - coding_reasoning
+      pinnedModel:
+        providerRef: coding_reasoning
+        modelId: approved-coding-model
+        revision: "2026-06"
+    constraints:
+      trainingUse: prohibited
+      dataResidency: project_policy
+      toolUse: declared_tools_only
+      maxCostTier: medium
+      maxLatencyClass: interactive
+      sensitivity: confidential
+    fallback:
+      allowed: true
+      strategy: reviewed_coding_equivalent
+      requiresApproval: true
+      requiresAuditEvent: true
+      candidateProviderRefs:
+        - general_reasoning
+    audit:
+      recordModelProfileRef: true
+      recordResolvedProvider: true
+      recordResolvedModel: true
+      recordModelRevision: true
+      recordSelectionReason: true
+      recordFallbackUsed: true
+    review:
+      required: true
+      approvers:
+        - reviewer
+      reviewTriggers:
+        - pinned_model_change
+        - fallback_policy_change
+        - broader_tool_use
+    recommendedFor:
+      - implementation-agent
+      - reviewer

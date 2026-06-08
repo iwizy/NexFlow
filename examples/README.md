@@ -2,7 +2,7 @@
 
 This directory contains complete reference manifest sets for different team shapes.
 
-The examples are not runtime fixtures. They are readable specification examples that show how agents, permissions, capabilities, context, memory, tasks, workflows, handoffs, events, providers, and extensions fit together.
+The examples are not runtime fixtures. They are readable specification examples that show how agents, permissions, capabilities, context, memory, tasks, workflows, handoffs, events, providers, model profiles, and extensions fit together.
 
 ## Example Matrix
 
@@ -30,6 +30,7 @@ Each example contains the same core manifest files:
 | `context.yaml` | Context sources, source types, access modes, classifications, and refresh policies. |
 | `memory.yaml` | Memory scopes, retention, ownership, visibility, update rules, sensitivity, and allowed consumers. |
 | `providers.yaml` | Provider-neutral model classes and selection constraints. |
+| `model-profiles.yaml` | Provider-neutral model selection profiles, pinned or floating references, constraints, fallback, review triggers, and audit expectations. |
 | `events.yaml` | Event names, payload expectations, retention, and audit requirements. |
 | `extensions.yaml` | Integration namespaces, lifecycle state, applicable manifests, and required capabilities. |
 
@@ -45,6 +46,8 @@ After that, follow the work:
 4. `events.yaml` shows the audit trail expected from meaningful state changes.
 
 Finally, check `context.yaml` and `memory.yaml` to understand what actors may know, read, retain, or reuse.
+
+Read `providers.yaml` and `model-profiles.yaml` together: providers describe available provider abstractions, while model profiles describe how model selection should be reviewed, constrained, and audited.
 
 ## Choosing an Example
 
@@ -66,6 +69,7 @@ All examples follow the same safety pattern:
 - risky capabilities are approval-gated
 - context access is explicit
 - memory access is scoped
+- model profile selection is explicit and provider-neutral
 - handoffs include artifacts and next actions
 - event declarations make audit expectations visible
 - provider declarations remain abstract

@@ -45,5 +45,6 @@ manifests:
   context: context.yaml
   memory: memory.yaml
   providers: providers.yaml
+  modelProfiles: model-profiles.yaml
   events: events.yaml
   extensions: extensions.yaml

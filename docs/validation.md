@@ -73,6 +73,7 @@ Example mapping:
 | `context.yaml` | `ContextSet` | `schemas/context.schema.json` |
 | `memory.yaml` | `MemorySet` | `schemas/memory.schema.json` |
 | `providers.yaml` | `ProviderSet` | `schemas/providers.schema.json` |
+| `model-profiles.yaml` | `ModelProfileSet` | `schemas/model-profiles.schema.json` |
 | `events.yaml` | `EventSet` | `schemas/events.schema.json` |
 | `extensions.yaml` | `ExtensionSet` | `schemas/extensions.schema.json` |
 
@@ -91,6 +92,8 @@ JSON Schema does not fully check:
 - whether memory scope access is consistent with project policy
 - whether memory promotion paths preserve sensitivity boundaries
 - whether memory audit events and approval gates are declared
+- whether model profile provider references exist
+- whether model profile fallback rules are compatible with project policy
 - whether agent context source references exist
 - whether web sources have domain and freshness policies
 - whether MCP sources distinguish context from tools
@@ -113,6 +116,7 @@ Future semantic validators should check:
 - context and memory access boundaries
 - context freshness, source classification, and MCP boundary consistency
 - memory ownership, allowed writers, prohibited content, and cross-scope promotion consistency
+- model profile provider references, fallback policies, and audit expectations
 - extension namespace and capability requirements
 
 Semantic validation should report warnings separately from hard errors when the spec allows judgment.

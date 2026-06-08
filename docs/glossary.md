@@ -150,6 +150,12 @@ A declared boundary for retention and reuse. NexFlow defines `ephemeral`, `task`
 
 Memory scopes describe retention, ownership, visibility, update rules, sensitivity, allowed consumers, and cross-scope reuse boundaries.
 
+### Model Profile
+
+A provider-neutral declaration of model selection expectations for a behaviorally meaningful use of a model.
+
+Model profiles can describe pinned model references, floating aliases, policy-based selection, fallback behavior, constraints, and audit expectations. They do not call providers or grant access.
+
 ## P
 
 ### Permission

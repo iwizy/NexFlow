@@ -1,0 +1,43 @@
+specVersion: "0.1"
+kind: ModelProfileSet
+metadata:
+  project: minimal-team
+modelProfiles:
+  - id: docs_agent_balanced
+    description: Provider-neutral model profile for documentation drafting and specification review.
+    modelClass: reasoning
+    selection:
+      mode: policy
+      providerRefs:
+        - general_reasoning
+      floatingAlias: approved-general-reasoning
+      resolutionPolicy: Project policy chooses an approved general reasoning model.
+    constraints:
+      trainingUse: prohibited
+      dataResidency: unspecified
+      toolUse: declared_tools_only
+      maxCostTier: low
+      maxLatencyClass: interactive
+      sensitivity: internal
+    fallback:
+      allowed: true
+      strategy: same_provider_class
+      requiresApproval: false
+      requiresAuditEvent: true
+    audit:
+      recordModelProfileRef: true
+      recordResolvedProvider: true
+      recordResolvedModel: true
+      recordModelRevision: true
+      recordSelectionReason: true
+      recordFallbackUsed: true
+    review:
+      required: true
+      approvers:
+        - human-maintainer
+      reviewTriggers:
+        - floating_alias_policy_change
+        - broader_training_use
+        - broader_tool_use
+    recommendedFor:
+      - docs-agent

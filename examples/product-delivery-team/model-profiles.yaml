@@ -1,0 +1,52 @@
+specVersion: "0.1"
+kind: ModelProfileSet
+metadata:
+  project: product-delivery-team
+modelProfiles:
+  - id: product_delivery_profile
+    description: Provider-neutral profile for product delivery planning, implementation, QA, and launch coordination.
+    modelClass: reasoning
+    selection:
+      mode: policy
+      providerRefs:
+        - product_reasoning
+        - coding_reasoning
+      floatingAlias: approved-product-delivery-model
+      resolutionPolicy: Select an approved model that matches the active workflow stage and sensitivity.
+    constraints:
+      trainingUse: prohibited
+      dataResidency: project_policy
+      toolUse: declared_tools_only
+      maxCostTier: medium
+      maxLatencyClass: interactive
+      sensitivity: confidential
+    fallback:
+      allowed: true
+      strategy: stage_appropriate_reviewed_model
+      requiresApproval: true
+      requiresAuditEvent: true
+      candidateProviderRefs:
+        - product_reasoning
+    audit:
+      recordModelProfileRef: true
+      recordResolvedProvider: true
+      recordResolvedModel: true
+      recordModelRevision: true
+      recordSelectionReason: true
+      recordFallbackUsed: true
+    review:
+      required: true
+      approvers:
+        - product-manager
+        - launch-coordinator
+      reviewTriggers:
+        - floating_alias_policy_change
+        - broader_training_use
+        - broader_tool_use
+        - fallback_policy_change
+    recommendedFor:
+      - product-manager
+      - ux-agent
+      - implementation-agent
+      - qa-agent
+      - launch-coordinator

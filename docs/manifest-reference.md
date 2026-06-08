@@ -38,7 +38,9 @@ Key fields:
 - `project.policies`
 - `manifests`
 
-Related docs: [Project Policy](concepts.md#project-policy), [Autonomy Model](autonomy-model.md), [Approval Gates](approval-gates.md), [Versioning](versioning.md).
+The `manifests` map may include draft versioning manifests such as `modelProfiles: model-profiles.yaml`.
+
+Related docs: [Project Policy](concepts.md#project-policy), [Autonomy Model](autonomy-model.md), [Approval Gates](approval-gates.md), [Versioning](versioning.md), [Model Profiles](model-profiles.md).
 
 ### `agents.yaml`
 
@@ -131,6 +133,24 @@ See [Memory Model](memory-model.md) for sensitivity rules, ownership guidance, a
 Declares provider abstractions and preferences without binding the spec to a vendor.
 
 Related docs: [Provider Abstraction](provider-abstraction.md), [Runtime Options](runtime-options.md), [Security Model](security-model.md).
+
+### `model-profiles.yaml`
+
+Declares provider-neutral model selection profiles for future agent definitions, workflows, or runtime events.
+
+Model profiles define:
+
+- `id`, `description`, and `modelClass`
+- `selection.mode` as `pinned`, `floating`, or `policy`
+- optional `providerRefs`, `pinnedModel`, `floatingAlias`, and `resolutionPolicy`
+- optional constraints for training use, data residency, tool use, cost, latency, and sensitivity
+- optional fallback behavior
+- audit expectations for recording resolved providers, models, revisions, selection reasons, and fallback use
+- review requirements and review triggers for behavior-changing model updates
+
+Model profiles do not select a provider by themselves and do not grant permissions, context access, tool access, or runtime autonomy.
+
+Related docs: [Model Profiles](model-profiles.md), [Provider Abstraction](provider-abstraction.md), [Versioning](versioning.md), [Event Model](events.md), [Security Model](security-model.md).
 
 ### `events.yaml`
 

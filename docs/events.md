@@ -58,6 +58,11 @@ Future runtimes SHOULD also record:
 
 - manifest version
 - runtime version
+- agent definition reference
+- model profile reference
+- resolved provider and model, when safe and available
+- model selection reason
+- whether model fallback was used
 - approval references
 - context sources used
 - memory scopes read or written
@@ -108,6 +113,26 @@ payload:
   approvalGate: code_review
   retainedBecause: Reusable implementation decision accepted by reviewer.
 ```
+
+### Model profile audit fields
+
+Future events that involve model-backed agent behavior may include model profile metadata:
+
+```yaml
+type: agent.started
+payload:
+  agent:
+    id: docs-agent
+    definitionRef: docs-agent-2026-06
+  model:
+    profileRef: docs-agent-balanced
+    selectionMode: policy
+    providerRef: general_reasoning
+    resolvedModel: approved-general-reasoning
+    fallbackUsed: false
+```
+
+Resolved provider and model details should be recorded only when safe and available. Provider-specific fields should remain extension-scoped or runtime-scoped.
 
 ## Audit Requirements
 

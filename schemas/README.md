@@ -21,6 +21,7 @@ The schemas currently target `specVersion: "0.1"` and use JSON Schema draft 2020
 | `memory.schema.json` | `MemorySet` | Memory scopes, retention, ownership, visibility, sensitivity, consumers, writers, update modes, audit events, and promotion boundaries. |
 | `providers.schema.json` | `ProviderSet` | Provider abstractions and selection constraints. |
 | `model-profiles.schema.json` | `ModelProfileSet` | Provider-neutral model profiles, selection modes, constraints, fallback rules, review triggers, and audit expectations. |
+| `prompt-sets.schema.json` | `PromptSet` | Versioned prompt material, prompt revisions, source references, safety review status, compatibility impact, and audit expectations. |
 | `events.schema.json` | `EventSet` | Event names, payload expectations, retention, and audit requirements. |
 | `extensions.schema.json` | `ExtensionSet` | Extension namespaces, lifecycle state, and required capabilities. |
 | `common.schema.json` | Shared definitions | IDs, metadata, autonomy levels, risk levels, artifacts, approval gates, and common enums. |
@@ -105,6 +106,10 @@ Examples of future semantic checks:
 - memory writers, prohibited content, and promotion paths are consistent with sensitivity
 - referenced provider IDs in model profiles exist
 - model profile references in future agent definitions exist
+- prompt source references exist
+- prompt set owners and approvers exist
+- prompt content digests match referenced prompt material
+- prompt set references in future agent definitions exist
 - extension requirements are satisfied
 
 See [Validation](../docs/validation.md) for the current validation model.

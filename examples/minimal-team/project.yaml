@@ -35,5 +35,6 @@ manifests:
   memory: memory.yaml
   providers: providers.yaml
   modelProfiles: model-profiles.yaml
+  promptSets: prompt-sets.yaml
   events: events.yaml
   extensions: extensions.yaml

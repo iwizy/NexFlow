@@ -1,0 +1,66 @@
+specVersion: "0.1"
+kind: PromptSet
+metadata:
+  project: startup-team
+promptSets:
+  - id: product_iteration_prompts
+    description: Prompt material for product iteration, design review, implementation planning, and launch readiness.
+    version: "2026.06.0"
+    status: draft
+    owner: product-owner
+    prompts:
+      - id: product_owner_task
+        kind: task
+        revision: "1"
+        sourceRef: prompts/product-owner/task.md
+        contentDigest: sha256:example-product-owner-task
+        variables:
+          - product_goal
+          - customer_research_summary
+        classification: internal
+        notes: Frames product acceptance and scope decisions.
+      - id: design_agent_role
+        kind: role
+        revision: "1"
+        sourceRef: prompts/design-agent/role.md
+        contentDigest: sha256:example-design-agent-role
+        variables:
+          - design_context
+          - acceptance_criteria
+        classification: internal
+        notes: Guides design critique and UX acceptance notes.
+      - id: fullstack_agent_system
+        kind: system
+        revision: "2"
+        sourceRef: prompts/fullstack-agent/system.md
+        contentDigest: sha256:example-fullstack-agent-system
+        variables:
+          - task_context
+          - design_constraints
+          - release_gate_refs
+        classification: confidential
+        notes: Keeps implementation work aligned to approved product scope.
+    review:
+      required: true
+      approvers:
+        - product-owner
+        - release-reviewer
+      safetyReviewStatus: pending
+    compatibility:
+      impact: behavior_changing
+      notes: Prompt changes may alter product prioritization, design interpretation, or launch readiness criteria.
+      affectedAgents:
+        - product-owner
+        - design-agent
+        - fullstack-agent
+        - release-reviewer
+    audit:
+      recordPromptSetRef: true
+      recordPromptRevisions: true
+      recordContentDigest: true
+      recordReviewStatus: true
+    recommendedFor:
+      - product-owner
+      - design-agent
+      - fullstack-agent
+      - release-reviewer

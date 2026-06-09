@@ -1,0 +1,48 @@
+specVersion: "0.1"
+kind: PromptSet
+metadata:
+  project: minimal-team
+promptSets:
+  - id: docs_agent_prompts
+    description: Prompt material for documentation drafting and specification consistency review.
+    version: "2026.06.0"
+    status: draft
+    owner: human-maintainer
+    prompts:
+      - id: docs_agent_system
+        kind: system
+        revision: "1"
+        sourceRef: prompts/docs-agent/system.md
+        contentDigest: sha256:example-docs-agent-system
+        variables:
+          - project_summary
+          - task_context
+        classification: internal
+        notes: Defines documentation boundaries and specification-first behavior.
+      - id: docs_agent_review
+        kind: review
+        revision: "1"
+        sourceRef: prompts/docs-agent/review.md
+        contentDigest: sha256:example-docs-agent-review
+        variables:
+          - changed_files
+          - approval_gate_refs
+        classification: internal
+        notes: Checks that docs, schemas, examples, and changelog remain aligned.
+    review:
+      required: true
+      approvers:
+        - human-maintainer
+      safetyReviewStatus: pending
+    compatibility:
+      impact: behavior_changing
+      notes: Prompt changes may alter documentation tone, strictness, and safety escalation behavior.
+      affectedAgents:
+        - docs-agent
+    audit:
+      recordPromptSetRef: true
+      recordPromptRevisions: true
+      recordContentDigest: true
+      recordReviewStatus: true
+    recommendedFor:
+      - docs-agent

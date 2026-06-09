@@ -60,6 +60,8 @@ Future runtimes SHOULD also record:
 - runtime version
 - agent definition reference
 - model profile reference
+- prompt set reference
+- prompt revisions or content digests, when safe and available
 - resolved provider and model, when safe and available
 - model selection reason
 - whether model fallback was used
@@ -133,6 +135,28 @@ payload:
 ```
 
 Resolved provider and model details should be recorded only when safe and available. Provider-specific fields should remain extension-scoped or runtime-scoped.
+
+### Prompt set audit fields
+
+Future events that involve model-backed agent behavior may include prompt set metadata:
+
+```yaml
+type: agent.started
+payload:
+  agent:
+    id: docs-agent
+    definitionRef: docs-agent-2026-06
+  promptSet:
+    ref: docs_agent_prompts
+    version: "2026.06.0"
+    promptRevisions:
+      docs_agent_system: "1"
+      docs_agent_review: "1"
+    safetyReviewStatus: approved
+    contentDigestsRecorded: true
+```
+
+Events should prefer prompt set references, revisions, and digests over raw prompt content. Prompt content should be recorded only when project policy allows it.
 
 ## Audit Requirements
 

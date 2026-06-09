@@ -2,7 +2,7 @@
 
 This directory contains complete reference manifest sets for different team shapes.
 
-The examples are not runtime fixtures. They are readable specification examples that show how agents, permissions, capabilities, context, memory, tasks, workflows, handoffs, events, providers, model profiles, and extensions fit together.
+The examples are not runtime fixtures. They are readable specification examples that show how agents, permissions, capabilities, context, memory, tasks, workflows, handoffs, events, providers, model profiles, prompt sets, and extensions fit together.
 
 ## Example Matrix
 
@@ -31,6 +31,7 @@ Each example contains the same core manifest files:
 | `memory.yaml` | Memory scopes, retention, ownership, visibility, update rules, sensitivity, and allowed consumers. |
 | `providers.yaml` | Provider-neutral model classes and selection constraints. |
 | `model-profiles.yaml` | Provider-neutral model selection profiles, pinned or floating references, constraints, fallback, review triggers, and audit expectations. |
+| `prompt-sets.yaml` | Versioned prompt material, prompt revisions, source references, safety review status, compatibility impact, and audit expectations. |
 | `events.yaml` | Event names, payload expectations, retention, and audit requirements. |
 | `extensions.yaml` | Integration namespaces, lifecycle state, applicable manifests, and required capabilities. |
 
@@ -47,7 +48,7 @@ After that, follow the work:
 
 Finally, check `context.yaml` and `memory.yaml` to understand what actors may know, read, retain, or reuse.
 
-Read `providers.yaml` and `model-profiles.yaml` together: providers describe available provider abstractions, while model profiles describe how model selection should be reviewed, constrained, and audited.
+Read `providers.yaml`, `model-profiles.yaml`, and `prompt-sets.yaml` together: providers describe available provider abstractions, model profiles describe how model selection should be reviewed, constrained, and audited, and prompt sets describe versioned prompt material without requiring raw prompt text in public manifests.
 
 ## Choosing an Example
 
@@ -70,6 +71,7 @@ All examples follow the same safety pattern:
 - context access is explicit
 - memory access is scoped
 - model profile selection is explicit and provider-neutral
+- prompt sets are versioned and reviewable
 - handoffs include artifacts and next actions
 - event declarations make audit expectations visible
 - provider declarations remain abstract

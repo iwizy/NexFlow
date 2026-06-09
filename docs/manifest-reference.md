@@ -38,9 +38,9 @@ Key fields:
 - `project.policies`
 - `manifests`
 
-The `manifests` map may include draft versioning manifests such as `modelProfiles: model-profiles.yaml`.
+The `manifests` map may include draft versioning manifests such as `modelProfiles: model-profiles.yaml` and `promptSets: prompt-sets.yaml`.
 
-Related docs: [Project Policy](concepts.md#project-policy), [Autonomy Model](autonomy-model.md), [Approval Gates](approval-gates.md), [Versioning](versioning.md), [Model Profiles](model-profiles.md).
+Related docs: [Project Policy](concepts.md#project-policy), [Autonomy Model](autonomy-model.md), [Approval Gates](approval-gates.md), [Versioning](versioning.md), [Model Profiles](model-profiles.md), [Prompt Sets](prompt-sets.md).
 
 ### `agents.yaml`
 
@@ -151,6 +151,23 @@ Model profiles define:
 Model profiles do not select a provider by themselves and do not grant permissions, context access, tool access, or runtime autonomy.
 
 Related docs: [Model Profiles](model-profiles.md), [Provider Abstraction](provider-abstraction.md), [Versioning](versioning.md), [Event Model](events.md), [Security Model](security-model.md).
+
+### `prompt-sets.yaml`
+
+Declares versioned prompt material for future agent definitions, workflows, tasks, reviews, and safety checks.
+
+Prompt sets define:
+
+- `id`, `description`, `version`, `status`, and `owner`
+- prompt entries with `id`, `kind`, `revision`, optional `sourceRef`, optional `contentDigest`, optional `variables`, and optional `classification`
+- review requirements and safety review status
+- compatibility impact and affected agents or workflows
+- audit expectations for recording prompt set references, revisions, content digests, and review state
+- intended agents or agent definitions through `recommendedFor`
+
+Prompt sets do not execute prompts, load prompt files, call providers, grant permissions, or replace approval gates.
+
+Related docs: [Prompt Sets](prompt-sets.md), [Versioning](versioning.md), [Event Model](events.md), [Security Model](security-model.md), [Validation](validation.md).
 
 ### `events.yaml`
 

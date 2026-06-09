@@ -48,6 +48,12 @@ Context sources should be classified conservatively and should not be expanded t
 
 Memory writes are higher risk than context reads because they can persist and reuse information after the task ends. Durable or sensitive memory should declare ownership, visibility, allowed consumers, allowed writers, prohibited content, promotion paths, audit events, and approval gates where needed.
 
+### Prompt Boundaries
+
+Prompt sets can contain sensitive operational guidance even when they do not contain credentials. Public manifests should prefer prompt source references, revisions, digests, ownership, and review metadata over raw prompt text when disclosure would expose internal controls, private workflows, or sensitive escalation rules.
+
+Raw prompt text must not contain secrets, tokens, passwords, private keys, raw personal data, or sensitive regulated details.
+
 ### Human Override
 
 Humans must be able to stop or override future runtime activity.
@@ -62,6 +68,7 @@ Humans must be able to stop or override future runtime activity.
 - unbounded memory writes
 - automatic cross-scope memory promotion
 - retaining secrets or credential values in memory
+- storing sensitive raw prompt text in public manifests
 - silent network access
 - automatic deployment
 - destructive actions without approval

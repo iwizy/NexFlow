@@ -1,0 +1,78 @@
+specVersion: "0.1"
+kind: PromptSet
+metadata:
+  project: product-delivery-team
+promptSets:
+  - id: product_delivery_prompts
+    description: Prompt material for product delivery planning, UX criteria, implementation notes, QA evidence, and launch handoff.
+    version: "2026.06.0"
+    status: draft
+    owner: product-manager
+    prompts:
+      - id: product_manager_workflow
+        kind: workflow
+        revision: "1"
+        sourceRef: prompts/product-manager/workflow.md
+        contentDigest: sha256:example-product-manager-workflow
+        variables:
+          - delivery_goal
+          - stakeholder_constraints
+        classification: internal
+        notes: Guides product acceptance and delivery scope.
+      - id: ux_agent_role
+        kind: role
+        revision: "1"
+        sourceRef: prompts/ux-agent/role.md
+        contentDigest: sha256:example-ux-agent-role
+        variables:
+          - design_context
+          - customer_docs_summary
+        classification: internal
+        notes: Guides UX criteria and design-gap analysis.
+      - id: qa_agent_review
+        kind: review
+        revision: "1"
+        sourceRef: prompts/qa-agent/review.md
+        contentDigest: sha256:example-product-delivery-qa-review
+        variables:
+          - test_results
+          - risk_summary
+        classification: confidential
+        notes: Structures quality gate evidence for launch decisions.
+      - id: launch_handoff
+        kind: handoff
+        revision: "1"
+        sourceRef: prompts/launch-coordinator/handoff.md
+        contentDigest: sha256:example-launch-handoff
+        variables:
+          - launch_gate_refs
+          - artifacts
+          - open_risks
+        classification: confidential
+        notes: Prepares launch readiness handoffs without approving deployment.
+    review:
+      required: true
+      approvers:
+        - product-manager
+        - launch-coordinator
+      safetyReviewStatus: pending
+    compatibility:
+      impact: behavior_changing
+      notes: Prompt changes may alter acceptance criteria, QA evidence, launch handoff, or release communication.
+      affectedAgents:
+        - product-manager
+        - ux-agent
+        - implementation-agent
+        - qa-agent
+        - launch-coordinator
+    audit:
+      recordPromptSetRef: true
+      recordPromptRevisions: true
+      recordContentDigest: true
+      recordReviewStatus: true
+    recommendedFor:
+      - product-manager
+      - ux-agent
+      - implementation-agent
+      - qa-agent
+      - launch-coordinator

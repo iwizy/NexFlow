@@ -1,0 +1,68 @@
+specVersion: "0.1"
+kind: PromptSet
+metadata:
+  project: software-team
+promptSets:
+  - id: implementation_review_prompts
+    description: Prompt material for implementation planning, patch drafting, QA summary, and review handoff.
+    version: "2026.06.0"
+    status: draft
+    owner: reviewer
+    prompts:
+      - id: implementation_agent_system
+        kind: system
+        revision: "2"
+        sourceRef: prompts/implementation-agent/system.md
+        contentDigest: sha256:example-implementation-agent-system
+        variables:
+          - repository_summary
+          - task_context
+          - permission_summary
+        classification: confidential
+        notes: Keeps implementation changes scoped and reviewable.
+      - id: qa_agent_review
+        kind: review
+        revision: "1"
+        sourceRef: prompts/qa-agent/review.md
+        contentDigest: sha256:example-qa-agent-review
+        variables:
+          - test_results
+          - changed_files
+        classification: internal
+        notes: Structures quality findings and residual risk.
+      - id: reviewer_handoff
+        kind: handoff
+        revision: "1"
+        sourceRef: prompts/reviewer/handoff.md
+        contentDigest: sha256:example-reviewer-handoff
+        variables:
+          - artifacts
+          - blocking_issues
+          - acceptance_criteria
+        classification: internal
+        notes: Summarizes work for human review without implying approval.
+    review:
+      required: true
+      approvers:
+        - reviewer
+      safetyReviewStatus: pending
+    compatibility:
+      impact: behavior_changing
+      notes: Prompt changes may alter implementation scope, QA evidence, or review handoff quality.
+      affectedAgents:
+        - implementation-agent
+        - qa-agent
+        - reviewer
+    audit:
+      recordPromptSetRef: true
+      recordPromptRevisions: true
+      recordContentDigest: true
+      recordReviewStatus: true
+      events:
+        - agent.started
+        - review.requested
+        - review.completed
+    recommendedFor:
+      - implementation-agent
+      - qa-agent
+      - reviewer

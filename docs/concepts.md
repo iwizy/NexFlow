@@ -82,6 +82,12 @@ A provider-neutral declaration of model selection expectations, constraints, fal
 
 Model profiles may describe pinned model references, floating aliases, or policy-based selection. They do not select providers by themselves and do not grant permissions, context access, tool access, or autonomy.
 
+## Prompt Set
+
+A provider-neutral declaration of versioned prompt material, prompt revisions, source references, ownership, safety review status, compatibility impact, and audit expectations.
+
+Prompt sets may describe system, role, workflow, task, review, safety, tool, handoff, memory, or custom prompt material. They do not execute prompts and do not grant permissions, context access, tool access, memory access, or autonomy.
+
 ## Runtime
 
 A future implementation that validates, interprets, or executes NexFlow manifests.

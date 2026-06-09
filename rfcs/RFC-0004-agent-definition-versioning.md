@@ -134,6 +134,8 @@ Floating selection is useful, but it can be behavior-changing. A change in the r
 
 A prompt set should describe versioned prompt material without requiring every repository to publish raw prompt text.
 
+NF-008 adds draft [Prompt Sets](../docs/prompt-sets.md) guidance and a practical `PromptSet` schema for this vocabulary.
+
 A future prompt set may include:
 
 - prompt identifiers

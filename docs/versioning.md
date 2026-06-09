@@ -46,6 +46,25 @@ Model profiles describe provider-neutral model selection expectations. A model p
 
 Changing a pinned model reference, changing a floating alias policy, broadening provider eligibility, allowing training use, or broadening tool use SHOULD be treated as behavior-significant and may require review.
 
+## Prompt Set Versioning
+
+Prompt sets describe versioned prompt material. A prompt set can be behavior-changing even when the agent identity and manifest `specVersion` stay the same.
+
+[Prompt Sets](prompt-sets.md) define draft vocabulary for:
+
+- prompt set identifiers
+- prompt revisions
+- prompt source references
+- optional content digests
+- prompt ownership
+- safety review status
+- compatibility impact
+- audit expectations
+
+Changing prompt revisions used by an active agent definition, changing safety prompts, changing required variables, broadening tool-use guidance, or disclosing sensitive prompt text SHOULD be treated as behavior-significant and may require review.
+
+Prompt set versions should be recorded separately from `specVersion`. `specVersion` describes the manifest shape; prompt set `version` describes a behavioral release of prompt material.
+
 ## Migration Policy
 
 Breaking changes require:

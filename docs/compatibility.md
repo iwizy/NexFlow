@@ -30,6 +30,11 @@ NexFlow compatibility is about preserving the meaning of manifests across tools 
 - changing a pinned model reference
 - changing a floating model alias policy
 - broadening provider eligibility, training use, or tool use in a model profile
+- changing a prompt revision used by an active agent definition
+- changing safety prompt material
+- changing required prompt variables used by runtime assembly
+- lowering prompt classification incorrectly
+- disclosing sensitive prompt text in public manifests
 - removing fields
 - changing required fields
 - changing event payload structure
@@ -64,6 +69,7 @@ Examples:
 | Add semantic cross-reference rule | May affect `NF-SEMANTIC` validators. |
 | Change extension namespace lifecycle | May affect `NF-EXTENSION` compatibility. |
 | Change model profile selection or constraints | May affect `NF-SEMANTIC`, `NF-RUNTIME`, and audit compatibility. |
+| Change prompt set revisions or safety review status | May affect `NF-SEMANTIC`, `NF-RUNTIME`, safety, and audit compatibility. |
 
 ## Compatibility Promise
 

@@ -172,6 +172,12 @@ A repository, product, service, workstream, or software effort governed by NexFl
 
 Rules that apply across a project, such as default autonomy, required reviews, secret handling, network access, destructive actions, and production boundaries.
 
+### Prompt Set
+
+A provider-neutral declaration of versioned prompt material and prompt revisions for agents, agent definitions, workflows, tasks, reviews, safety checks, handoffs, tools, or memory behavior.
+
+Prompt sets can describe prompt source references, content digests, ownership, safety review status, compatibility impact, and audit expectations. They do not execute prompts or grant access.
+
 ### Provider
 
 A model or service provider abstraction. Providers can describe preferences and constraints without becoming part of the core specification.

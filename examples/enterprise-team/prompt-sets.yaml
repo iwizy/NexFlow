@@ -1,0 +1,72 @@
+specVersion: "0.1"
+kind: PromptSet
+metadata:
+  project: enterprise-team
+promptSets:
+  - id: enterprise_review_prompts
+    description: Reviewed prompt material for architecture, implementation, security, compliance, and release evidence.
+    version: "2026.06.0"
+    status: draft
+    owner: enterprise-architect
+    prompts:
+      - id: enterprise_architecture_review
+        kind: review
+        revision: "2"
+        sourceRef: prompts/enterprise-architect/review.md
+        contentDigest: sha256:example-enterprise-architecture-review
+        variables:
+          - architecture_context
+          - dependency_summary
+        classification: restricted
+        notes: Defines architecture evidence and cross-system dependency checks.
+      - id: enterprise_security_safety
+        kind: safety
+        revision: "2"
+        sourceRef: prompts/security-reviewer/safety.md
+        contentDigest: sha256:example-enterprise-security-safety
+        variables:
+          - sensitive_context_summary
+          - approval_gate_refs
+        classification: restricted
+        notes: Requires escalation for sensitive, credential, production, and destructive operations.
+      - id: enterprise_compliance_evidence
+        kind: workflow
+        revision: "1"
+        sourceRef: prompts/compliance-reviewer/evidence.md
+        contentDigest: sha256:example-enterprise-compliance-evidence
+        variables:
+          - compliance_requirements
+          - audit_event_refs
+        classification: restricted
+        notes: Structures compliance evidence without storing raw regulated data.
+    review:
+      required: true
+      approvers:
+        - enterprise-architect
+        - security-reviewer
+        - compliance-reviewer
+      safetyReviewStatus: pending
+    compatibility:
+      impact: safety_significant
+      notes: Prompt changes may affect evidence requirements, security escalation, compliance posture, and release approval.
+      affectedAgents:
+        - enterprise-architect
+        - implementation-agent
+        - security-reviewer
+        - compliance-reviewer
+        - release-manager
+    audit:
+      recordPromptSetRef: true
+      recordPromptRevisions: true
+      recordContentDigest: true
+      recordReviewStatus: true
+      events:
+        - agent.started
+        - review.requested
+        - review.completed
+    recommendedFor:
+      - enterprise-architect
+      - implementation-agent
+      - security-reviewer
+      - compliance-reviewer
+      - release-manager

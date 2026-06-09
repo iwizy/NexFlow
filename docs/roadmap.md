@@ -12,7 +12,7 @@ NexFlow is specification-first. Runtime work starts only after the core model is
 
 Status: in progress.
 
-Relevant docs: [Concepts](concepts.md), [Glossary](glossary.md), [Manifest Reference](manifest-reference.md), [Context Model](context-model.md), [Memory Model](memory-model.md), [Approval Gates](approval-gates.md).
+Relevant docs: [Concepts](concepts.md), [Glossary](glossary.md), [Manifest Reference](manifest-reference.md), [Context Model](context-model.md), [Memory Model](memory-model.md), [Approval Gates](approval-gates.md), [Prompt Sets](prompt-sets.md).
 
 ## Milestone 2: Community Review
 
@@ -23,8 +23,9 @@ Relevant docs: [Concepts](concepts.md), [Glossary](glossary.md), [Manifest Refer
 - Review context source taxonomy, freshness rules, web boundaries, and MCP context/tool separation.
 - Review memory sensitivity, ownership, allowed consumers, and cross-scope promotion rules.
 - Review model profile selection modes, pinned and floating references, constraints, fallback, and audit expectations.
+- Review prompt set identifiers, revisions, source references, safety review status, and compatibility impact.
 
-Relevant docs: [Security Model](security-model.md), [Capability Model](capability-model.md), [Autonomy Model](autonomy-model.md), [Provider Abstraction](provider-abstraction.md), [Model Profiles](model-profiles.md), [Extension Model](extensions.md).
+Relevant docs: [Security Model](security-model.md), [Capability Model](capability-model.md), [Autonomy Model](autonomy-model.md), [Provider Abstraction](provider-abstraction.md), [Model Profiles](model-profiles.md), [Prompt Sets](prompt-sets.md), [Extension Model](extensions.md).
 
 ## Milestone 3: Schema Hardening
 

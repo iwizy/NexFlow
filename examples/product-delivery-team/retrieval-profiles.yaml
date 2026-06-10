@@ -1,0 +1,99 @@
+specVersion: "0.1"
+kind: RetrievalProfileSet
+metadata:
+  project: product-delivery-team
+retrievalProfiles:
+  - id: product_delivery_retrieval
+    description: Retrieval expectations for product delivery planning, UX criteria, implementation, QA, and launch readiness.
+    version: "2026.06.0"
+    status: draft
+    owner: product-manager
+    sources:
+      - contextSourceRef: backlog
+        purpose: Delivery goals, dependencies, and acceptance criteria.
+        accessMode: query
+        required: true
+        maxClassification: internal
+      - contextSourceRef: design_files
+        purpose: UX and visual design context.
+        accessMode: read
+        required: false
+        maxClassification: confidential
+      - contextSourceRef: customer_docs
+        purpose: Sanitized customer-facing requirements and support notes.
+        accessMode: read
+        required: false
+        maxClassification: internal
+      - contextSourceRef: repository
+        purpose: Product implementation and test context.
+        accessMode: read
+        required: false
+        maxClassification: internal
+      - contextSourceRef: docs
+        purpose: Technical documentation and launch notes.
+        accessMode: read
+        required: false
+        maxClassification: public
+    index:
+      corpusRef: product-delivery-corpus
+      version: "2026-06-10"
+      updatePolicy: on_workflow_start
+    chunking:
+      strategy: semantic
+      maxChunkTokens: 1000
+      overlapTokens: 100
+      preserveBoundaries:
+        - ticket
+        - design_section
+        - test_case
+        - launch_note
+    retriever:
+      strategy: hybrid
+      topK: 12
+      scoreThreshold: 0.25
+      queryRewrite: static_policy
+    freshness:
+      maxAge: 7d
+      staleAllowed: false
+      requiresRefreshBeforeUse: true
+    citations:
+      required: true
+      style: source_path
+      includeLineRefs: true
+      includeRetrievedAt: true
+    sensitivity:
+      maxClassification: confidential
+      allowCrossScopeReuse: false
+      redactionPolicy: redact_customer_identifiers_and_secrets
+    review:
+      required: true
+      approvers:
+        - product-manager
+        - launch-coordinator
+      reviewTriggers:
+        - source_added
+        - design_context_broadened
+        - stale_allowed
+        - citations_disabled
+    compatibility:
+      impact: behavior_changing
+      notes: Retrieval changes may alter delivery scope, QA evidence, launch handoff, or product acceptance.
+      affectedAgents:
+        - product-manager
+        - ux-agent
+        - implementation-agent
+        - qa-agent
+        - launch-coordinator
+    audit:
+      recordRetrievalProfileRef: true
+      recordContextSources: true
+      recordIndexVersion: true
+      recordFreshness: true
+      recordCitations: true
+      recordRetrieverConfig: true
+    recommendedFor:
+      - product-manager
+      - ux-agent
+      - implementation-agent
+      - qa-agent
+      - launch-coordinator

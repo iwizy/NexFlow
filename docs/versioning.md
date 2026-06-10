@@ -65,6 +65,27 @@ Changing prompt revisions used by an active agent definition, changing safety pr
 
 Prompt set versions should be recorded separately from `specVersion`. `specVersion` describes the manifest shape; prompt set `version` describes a behavioral release of prompt material.
 
+## Retrieval Profile Versioning
+
+Retrieval profiles describe how declared context should be selected, indexed, assembled, cited, and audited. A retrieval profile can be behavior-changing even when the agent identity and manifest `specVersion` stay the same.
+
+[Retrieval Profiles](retrieval-profiles.md) define draft vocabulary for:
+
+- context source references
+- included and excluded sources
+- index or corpus versions
+- chunking policy
+- retriever strategy
+- freshness expectations
+- citation requirements
+- sensitivity and redaction expectations
+- audit expectations
+- review triggers
+
+Changing source sets, index versions, chunking policy, retriever strategy, freshness rules, citation requirements, or maximum classification SHOULD be treated as behavior-significant and may require review.
+
+Retrieval profile versions should be recorded separately from `specVersion`. `specVersion` describes the manifest shape; retrieval profile `version` describes a behavioral release of retrieval expectations.
+
 ## Migration Policy
 
 Breaking changes require:

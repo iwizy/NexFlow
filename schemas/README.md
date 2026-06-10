@@ -22,6 +22,7 @@ The schemas currently target `specVersion: "0.1"` and use JSON Schema draft 2020
 | `providers.schema.json` | `ProviderSet` | Provider abstractions and selection constraints. |
 | `model-profiles.schema.json` | `ModelProfileSet` | Provider-neutral model profiles, selection modes, constraints, fallback rules, review triggers, and audit expectations. |
 | `prompt-sets.schema.json` | `PromptSet` | Versioned prompt material, prompt revisions, source references, safety review status, compatibility impact, and audit expectations. |
+| `retrieval-profiles.schema.json` | `RetrievalProfileSet` | Retrieval profiles for context source selection, index versions, chunking, freshness, citations, sensitivity, review triggers, and audit expectations. |
 | `events.schema.json` | `EventSet` | Event names, payload expectations, retention, and audit requirements. |
 | `extensions.schema.json` | `ExtensionSet` | Extension namespaces, lifecycle state, and required capabilities. |
 | `common.schema.json` | Shared definitions | IDs, metadata, autonomy levels, risk levels, artifacts, approval gates, and common enums. |
@@ -110,6 +111,10 @@ Examples of future semantic checks:
 - prompt set owners and approvers exist
 - prompt content digests match referenced prompt material
 - prompt set references in future agent definitions exist
+- retrieval profile context source references exist
+- retrieval profile index versions and source digests match referenced corpora
+- retrieval profile freshness, citation, and sensitivity rules satisfy project policy
+- retrieval profile references in future agent definitions exist
 - extension requirements are satisfied
 
 See [Validation](../docs/validation.md) for the current validation model.

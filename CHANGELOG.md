@@ -24,6 +24,7 @@ This project follows a specification-first process. Breaking changes must includ
 - Draft RFC-0004 for agent definition versioning across models, prompts, retrieval profiles, permissions, memory, autonomy, and extensions.
 - Draft model profile vocabulary for provider-neutral model selection, pinned and floating references, constraints, fallback, review triggers, and audit expectations.
 - Draft prompt set vocabulary for prompt identifiers, revisions, source references, ownership, safety review, compatibility impact, and audit expectations.
+- Draft retrieval profile vocabulary for context source references, index versions, chunking, freshness, citations, sensitivity, review triggers, and audit expectations.
 - Draft JSON Schemas for core manifests.
 - Reference examples for minimal, software, startup, enterprise, and product delivery teams.
 - Governance and RFC process.

@@ -1,0 +1,94 @@
+specVersion: "0.1"
+kind: RetrievalProfileSet
+metadata:
+  project: software-team
+retrievalProfiles:
+  - id: implementation_review_retrieval
+    description: Retrieval expectations for implementation planning, QA evidence, and code review.
+    version: "2026.06.0"
+    status: draft
+    owner: reviewer
+    sources:
+      - contextSourceRef: repository
+        purpose: Source code, pull request metadata, and changed files.
+        accessMode: read
+        required: true
+        maxClassification: internal
+      - contextSourceRef: issue_tracker
+        purpose: Task requirements, acceptance criteria, and implementation context.
+        accessMode: query
+        required: true
+        maxClassification: internal
+      - contextSourceRef: docs
+        purpose: User-facing documentation and project conventions.
+        accessMode: read
+        required: false
+        maxClassification: public
+      - contextSourceRef: mcp_tools
+        purpose: Approved tool result context such as dependency graphs and test logs.
+        accessMode: query
+        required: false
+        maxClassification: internal
+    index:
+      corpusRef: software-team-review-corpus
+      version: "2026-06-10"
+      updatePolicy: on_workflow_start
+      rerankerRef: approved-code-review-reranker
+    chunking:
+      strategy: structure_aware
+      maxChunkTokens: 1200
+      overlapTokens: 120
+      preserveBoundaries:
+        - function
+        - class
+        - markdown_section
+        - issue_comment
+    retriever:
+      strategy: hybrid
+      topK: 12
+      scoreThreshold: 0.25
+      queryRewrite: static_policy
+    freshness:
+      maxAge: 3d
+      staleAllowed: false
+      requiresRefreshBeforeUse: true
+    citations:
+      required: true
+      style: source_path
+      includeLineRefs: true
+      includeRetrievedAt: true
+    sensitivity:
+      maxClassification: internal
+      allowCrossScopeReuse: false
+      redactionPolicy: redact_secrets_and_credentials
+    review:
+      required: true
+      approvers:
+        - reviewer
+      reviewTriggers:
+        - source_added
+        - mcp_source_enabled
+        - index_version_change
+        - stale_allowed
+    compatibility:
+      impact: behavior_changing
+      notes: Retrieval changes may alter implementation scope, QA evidence, and review conclusions.
+      affectedAgents:
+        - implementation-agent
+        - qa-agent
+        - reviewer
+    audit:
+      recordRetrievalProfileRef: true
+      recordContextSources: true
+      recordIndexVersion: true
+      recordFreshness: true
+      recordCitations: true
+      recordRetrieverConfig: true
+      events:
+        - agent.started
+        - review.requested
+        - review.completed
+    recommendedFor:
+      - implementation-agent
+      - qa-agent
+      - reviewer

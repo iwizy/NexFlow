@@ -1,0 +1,72 @@
+specVersion: "0.1"
+kind: RetrievalProfileSet
+metadata:
+  project: minimal-team
+retrievalProfiles:
+  - id: docs_agent_retrieval
+    description: Retrieval expectations for documentation drafting and specification consistency checks.
+    version: "2026.06.0"
+    status: draft
+    owner: human-maintainer
+    sources:
+      - contextSourceRef: repository
+        purpose: Inspect repository files and manifest examples.
+        accessMode: read
+        required: true
+        maxClassification: internal
+      - contextSourceRef: docs
+        purpose: Read existing documentation before proposing changes.
+        accessMode: read
+        required: true
+        maxClassification: public
+    index:
+      corpusRef: minimal-docs-corpus
+      version: "2026-06-10"
+      updatePolicy: on_request
+    chunking:
+      strategy: structure_aware
+      maxChunkTokens: 1000
+      overlapTokens: 80
+      preserveBoundaries:
+        - markdown_section
+        - yaml_document
+    retriever:
+      strategy: hybrid
+      topK: 8
+      scoreThreshold: 0.2
+      queryRewrite: none
+    freshness:
+      maxAge: 7d
+      staleAllowed: false
+      requiresRefreshBeforeUse: true
+    citations:
+      required: true
+      style: source_path
+      includeLineRefs: true
+      includeRetrievedAt: true
+    sensitivity:
+      maxClassification: internal
+      allowCrossScopeReuse: false
+      redactionPolicy: redact_secrets
+    review:
+      required: true
+      approvers:
+        - human-maintainer
+      reviewTriggers:
+        - source_added
+        - index_version_change
+        - citations_disabled
+    compatibility:
+      impact: behavior_changing
+      notes: Retrieval changes may alter which docs and manifests are used as evidence.
+      affectedAgents:
+        - docs-agent
+    audit:
+      recordRetrievalProfileRef: true
+      recordContextSources: true
+      recordIndexVersion: true
+      recordFreshness: true
+      recordCitations: true
+      recordRetrieverConfig: true
+    recommendedFor:
+      - docs-agent

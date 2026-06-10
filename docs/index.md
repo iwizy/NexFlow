@@ -35,6 +35,7 @@ The documentation is the canonical source for the specification. Schemas and exa
 | [Memory Model](memory-model.md) | Defines retention, ownership, sensitivity, and cross-scope reuse boundaries. |
 | [Model Profiles](model-profiles.md) | Defines provider-neutral model selection, pinned and floating references, constraints, and audit expectations. |
 | [Prompt Sets](prompt-sets.md) | Defines versioned prompt material, prompt revisions, ownership, safety review, and compatibility impact. |
+| [Retrieval Profiles](retrieval-profiles.md) | Defines context source selection, index versions, chunking, freshness, citations, sensitivity, and audit expectations. |
 | [Handoff Protocol](handoff-protocol.md) | Defines structured responsibility transfer between actors. |
 | [Event Model](events.md) | Defines auditable state transitions and payload expectations. |
 | [Extension Model](extensions.md) | Defines namespaced extension lifecycle and integration surface. |

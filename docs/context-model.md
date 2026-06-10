@@ -215,6 +215,14 @@ contextAccess:
 
 An agent with `contextAccess` can only use a source if the source access policy, permissions, and project policy also allow it. Future semantic validators should check that referenced context source IDs exist.
 
+## Relationship To Retrieval Profiles
+
+Context sources declare what information exists and who may access it.
+
+[Retrieval Profiles](retrieval-profiles.md) declare how selected context sources should be assembled for a behaviorally meaningful purpose, including source selection, index or corpus version, chunking, retriever strategy, freshness, citations, sensitivity, and audit metadata.
+
+A retrieval profile does not grant access to a context source. Future runtimes and validators should still check agent context access, source allow/deny lists, capabilities, permissions, autonomy level, approval gates, and project policy.
+
 ## Runtime Expectations
 
 Future runtimes should:

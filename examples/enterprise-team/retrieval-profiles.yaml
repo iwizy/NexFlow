@@ -1,0 +1,107 @@
+specVersion: "0.1"
+kind: RetrievalProfileSet
+metadata:
+  project: enterprise-team
+retrievalProfiles:
+  - id: enterprise_governed_retrieval
+    description: Strict retrieval expectations for architecture, security, compliance, implementation, and release evidence.
+    version: "2026.06.0"
+    status: draft
+    owner: enterprise-architect
+    sources:
+      - contextSourceRef: repository
+        purpose: Confidential source code, pull request metadata, and changed files.
+        accessMode: read
+        required: true
+        maxClassification: confidential
+      - contextSourceRef: issue_tracker
+        purpose: Enterprise requirements and approval context.
+        accessMode: query
+        required: true
+        maxClassification: confidential
+      - contextSourceRef: architecture_docs
+        purpose: Architecture standards, ADRs, and dependency constraints.
+        accessMode: read
+        required: true
+        maxClassification: confidential
+      - contextSourceRef: security_knowledge
+        purpose: Security standards and sanitized threat model evidence.
+        accessMode: read
+        required: false
+        maxClassification: restricted
+      - contextSourceRef: mcp_tools
+        purpose: Approved build log and dependency inventory context.
+        accessMode: query
+        required: false
+        maxClassification: confidential
+    index:
+      corpusRef: enterprise-governed-review-corpus
+      version: "2026-06-10"
+      updatePolicy: manual
+      rerankerRef: approved-enterprise-evidence-reranker
+    chunking:
+      strategy: structure_aware
+      maxChunkTokens: 1000
+      overlapTokens: 100
+      preserveBoundaries:
+        - policy_section
+        - architecture_decision
+        - code_symbol
+        - audit_record
+    retriever:
+      strategy: hybrid
+      topK: 15
+      scoreThreshold: 0.35
+      queryRewrite: none
+    freshness:
+      maxAge: 24h
+      staleAllowed: false
+      requiresRefreshBeforeUse: true
+    citations:
+      required: true
+      style: artifact_id
+      includeLineRefs: true
+      includeRetrievedAt: true
+    sensitivity:
+      maxClassification: restricted
+      allowCrossScopeReuse: false
+      redactionPolicy: redact_secrets_personal_data_and_regulated_data
+    review:
+      required: true
+      approvers:
+        - enterprise-architect
+        - security-reviewer
+        - compliance-reviewer
+      reviewTriggers:
+        - source_added
+        - restricted_source_enabled
+        - index_version_change
+        - stale_allowed
+        - citations_disabled
+        - cross_scope_reuse_allowed
+    compatibility:
+      impact: safety_significant
+      notes: Retrieval changes may affect security evidence, compliance posture, audit reproducibility, and release approval.
+      affectedAgents:
+        - enterprise-architect
+        - implementation-agent
+        - security-reviewer
+        - compliance-reviewer
+        - release-manager
+    audit:
+      recordRetrievalProfileRef: true
+      recordContextSources: true
+      recordIndexVersion: true
+      recordFreshness: true
+      recordCitations: true
+      recordRetrieverConfig: true
+      events:
+        - agent.started
+        - review.requested
+        - review.completed
+    recommendedFor:
+      - enterprise-architect
+      - implementation-agent
+      - security-reviewer
+      - compliance-reviewer
+      - release-manager

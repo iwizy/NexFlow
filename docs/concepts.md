@@ -88,6 +88,12 @@ A provider-neutral declaration of versioned prompt material, prompt revisions, s
 
 Prompt sets may describe system, role, workflow, task, review, safety, tool, handoff, memory, or custom prompt material. They do not execute prompts and do not grant permissions, context access, tool access, memory access, or autonomy.
 
+## Retrieval Profile
+
+A provider-neutral declaration of retrieval expectations for selecting, indexing, assembling, citing, and auditing context from declared context sources.
+
+Retrieval profiles may describe context source references, index or corpus versions, chunking policy, retriever strategy, freshness, citations, sensitivity, and review triggers. They do not retrieve data and do not grant permissions, context access, tool access, memory access, or autonomy.
+
 ## Runtime
 
 A future implementation that validates, interprets, or executes NexFlow manifests.

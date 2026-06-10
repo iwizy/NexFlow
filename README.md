@@ -22,6 +22,7 @@ It is **not** an AI coding agent, an LLM API wrapper, a chat application, or a p
 | Examples | Implemented as reference examples |
 | Model profiles | Specified as draft provider-neutral vocabulary |
 | Prompt sets | Specified as draft prompt versioning vocabulary |
+| Retrieval profiles | Specified as draft context retrieval vocabulary |
 | Governance and RFC process | Implemented in documentation |
 | Runtime engine | Planned, not implemented |
 | Provider integrations | Planned, not implemented |
@@ -54,6 +55,7 @@ NexFlow defines a common declarative layer for AI developer teams:
 - **Memory as Code** for retention, ownership, visibility, and allowed consumers
 - **Model Profile as Code** for provider-neutral model selection, constraints, fallback, and audit expectations
 - **Prompt Set as Code** for prompt revisions, source references, ownership, safety review, and compatibility impact
+- **Retrieval Profile as Code** for context sources, index versions, chunking, freshness, citations, and audit expectations
 - **Integration as Code** for provider-neutral extensions
 
 The goal is to make AI-assisted software delivery inspectable before anything runs.
@@ -69,6 +71,7 @@ The goal is to make AI-assisted software delivery inspectable before anything ru
 - **Memory Scope**: a declared retention and visibility boundary for remembered information.
 - **Model Profile**: a provider-neutral model selection profile with pinned, floating, or policy-based selection and audit expectations.
 - **Prompt Set**: versioned prompt material with source references, revisions, safety review, compatibility impact, and audit expectations.
+- **Retrieval Profile**: versioned retrieval expectations for context sources, indexes, chunking, freshness, citations, sensitivity, and audit.
 - **Workflow**: an ordered or event-driven set of tasks, dependencies, gates, and handoffs.
 - **Handoff**: a structured transfer of responsibility between actors.
 - **Event**: an auditable state transition such as `task.completed` or `review.requested`.
@@ -164,6 +167,7 @@ NexFlow is intentionally split into layers:
 | Model what agents may know or retain | [Context Model](docs/context-model.md), [Memory Model](docs/memory-model.md) |
 | Model provider-neutral model selection | [Model Profiles](docs/model-profiles.md), [Provider Abstraction](docs/provider-abstraction.md), [Versioning](docs/versioning.md) |
 | Model prompt revisions and safety review | [Prompt Sets](docs/prompt-sets.md), [Versioning](docs/versioning.md), [Event Model](docs/events.md) |
+| Model retrieval, freshness, and citations | [Retrieval Profiles](docs/retrieval-profiles.md), [Context Model](docs/context-model.md), [Event Model](docs/events.md) |
 | Validate manifests | [Validation](docs/validation.md), [Schema Guide](schemas/README.md), [Conformance](docs/conformance.md) |
 | Extend or integrate NexFlow | [Extension Model](docs/extensions.md), [Integrations](docs/integrations.md), [Provider Abstraction](docs/provider-abstraction.md) |
 | Review future implementation choices | [Runtime Options](docs/runtime-options.md), [Roadmap](docs/roadmap.md) |

@@ -35,6 +35,12 @@ NexFlow compatibility is about preserving the meaning of manifests across tools 
 - changing required prompt variables used by runtime assembly
 - lowering prompt classification incorrectly
 - disclosing sensitive prompt text in public manifests
+- changing retrieval source sets used by an active agent definition
+- changing retrieval index or corpus versions
+- changing chunking or retriever strategy
+- disabling required citations
+- allowing stale context where it was previously prohibited
+- broadening retrieval classification or cross-scope reuse
 - removing fields
 - changing required fields
 - changing event payload structure
@@ -70,6 +76,7 @@ Examples:
 | Change extension namespace lifecycle | May affect `NF-EXTENSION` compatibility. |
 | Change model profile selection or constraints | May affect `NF-SEMANTIC`, `NF-RUNTIME`, and audit compatibility. |
 | Change prompt set revisions or safety review status | May affect `NF-SEMANTIC`, `NF-RUNTIME`, safety, and audit compatibility. |
+| Change retrieval sources, index versions, freshness, or citation rules | May affect `NF-SEMANTIC`, `NF-RUNTIME`, context safety, and audit compatibility. |
 
 ## Compatibility Promise
 

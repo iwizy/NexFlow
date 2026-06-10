@@ -38,9 +38,9 @@ Key fields:
 - `project.policies`
 - `manifests`
 
-The `manifests` map may include draft versioning manifests such as `modelProfiles: model-profiles.yaml` and `promptSets: prompt-sets.yaml`.
+The `manifests` map may include draft versioning manifests such as `modelProfiles: model-profiles.yaml`, `promptSets: prompt-sets.yaml`, and `retrievalProfiles: retrieval-profiles.yaml`.
 
-Related docs: [Project Policy](concepts.md#project-policy), [Autonomy Model](autonomy-model.md), [Approval Gates](approval-gates.md), [Versioning](versioning.md), [Model Profiles](model-profiles.md), [Prompt Sets](prompt-sets.md).
+Related docs: [Project Policy](concepts.md#project-policy), [Autonomy Model](autonomy-model.md), [Approval Gates](approval-gates.md), [Versioning](versioning.md), [Model Profiles](model-profiles.md), [Prompt Sets](prompt-sets.md), [Retrieval Profiles](retrieval-profiles.md).
 
 ### `agents.yaml`
 
@@ -168,6 +168,28 @@ Prompt sets define:
 Prompt sets do not execute prompts, load prompt files, call providers, grant permissions, or replace approval gates.
 
 Related docs: [Prompt Sets](prompt-sets.md), [Versioning](versioning.md), [Event Model](events.md), [Security Model](security-model.md), [Validation](validation.md).
+
+### `retrieval-profiles.yaml`
+
+Declares retrieval expectations for selecting, indexing, assembling, citing, and auditing context from declared context sources.
+
+Retrieval profiles define:
+
+- `id`, `description`, `version`, `status`, and `owner`
+- context source references, purpose, expected access mode, and maximum classification
+- optional excluded sources
+- optional index or corpus metadata, including version and update policy
+- optional chunking policy
+- optional retriever strategy, `topK`, score threshold, filters, and query rewrite expectations
+- freshness and citation requirements
+- sensitivity and redaction expectations
+- review triggers for retrieval changes
+- compatibility impact and affected agents or workflows
+- audit expectations for recording retrieval profile references, context sources, index versions, freshness, citations, and retriever configuration
+
+Retrieval profiles do not retrieve data, build indexes, call embedding providers, grant context access, grant tool access, or replace approval gates.
+
+Related docs: [Retrieval Profiles](retrieval-profiles.md), [Context Model](context-model.md), [Versioning](versioning.md), [Event Model](events.md), [Security Model](security-model.md), [Validation](validation.md).
 
 ### `events.yaml`
 

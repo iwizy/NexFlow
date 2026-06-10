@@ -1,0 +1,102 @@
+specVersion: "0.1"
+kind: RetrievalProfileSet
+metadata:
+  project: startup-team
+retrievalProfiles:
+  - id: product_iteration_retrieval
+    description: Retrieval expectations for product, design, implementation, and launch readiness work.
+    version: "2026.06.0"
+    status: draft
+    owner: product-owner
+    sources:
+      - contextSourceRef: product_backlog
+        purpose: Product goals, tickets, and acceptance criteria.
+        accessMode: query
+        required: true
+        maxClassification: internal
+      - contextSourceRef: design_files
+        purpose: Design files, prototypes, and UX constraints.
+        accessMode: read
+        required: false
+        maxClassification: confidential
+      - contextSourceRef: customer_research
+        purpose: Sanitized customer research and product evidence.
+        accessMode: read
+        required: false
+        maxClassification: confidential
+      - contextSourceRef: repository
+        purpose: Product implementation context.
+        accessMode: read
+        required: false
+        maxClassification: internal
+      - contextSourceRef: docs
+        purpose: Product documentation and release notes.
+        accessMode: read
+        required: false
+        maxClassification: public
+      - contextSourceRef: web_research
+        purpose: Approved market or standards research with citations.
+        accessMode: query
+        required: false
+        maxClassification: public
+    index:
+      corpusRef: startup-product-iteration-corpus
+      version: "2026-06-10"
+      updatePolicy: on_workflow_start
+    chunking:
+      strategy: semantic
+      maxChunkTokens: 900
+      overlapTokens: 90
+      preserveBoundaries:
+        - ticket
+        - design_section
+        - research_note
+    retriever:
+      strategy: hybrid
+      topK: 10
+      scoreThreshold: 0.2
+      queryRewrite: static_policy
+    freshness:
+      maxAge: 14d
+      staleAllowed: true
+      requiresRefreshBeforeUse: false
+      citationRequiredForStale: true
+    citations:
+      required: true
+      style: url
+      includeLineRefs: false
+      includeRetrievedAt: true
+    sensitivity:
+      maxClassification: confidential
+      allowCrossScopeReuse: false
+      redactionPolicy: redact_customer_identifiers
+    review:
+      required: true
+      approvers:
+        - product-owner
+        - release-reviewer
+      reviewTriggers:
+        - source_added
+        - web_source_added
+        - broader_classification
+        - citations_disabled
+    compatibility:
+      impact: behavior_changing
+      notes: Retrieval changes may alter product evidence, design interpretation, and release readiness.
+      affectedAgents:
+        - product-owner
+        - design-agent
+        - fullstack-agent
+        - release-reviewer
+    audit:
+      recordRetrievalProfileRef: true
+      recordContextSources: true
+      recordIndexVersion: true
+      recordFreshness: true
+      recordCitations: true
+      recordRetrieverConfig: true
+    recommendedFor:
+      - product-owner
+      - design-agent
+      - fullstack-agent
+      - release-reviewer

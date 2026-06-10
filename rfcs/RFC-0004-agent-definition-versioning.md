@@ -155,6 +155,8 @@ Prompt changes can be behavior-breaking even when schemas do not change.
 
 A retrieval profile should describe how external or project context is selected and assembled.
 
+NF-009 adds draft [Retrieval Profiles](../docs/retrieval-profiles.md) guidance and a practical `RetrievalProfileSet` schema for this vocabulary.
+
 A future retrieval profile may include:
 
 - context source references
@@ -166,6 +168,7 @@ A future retrieval profile may include:
 - citation policy
 - excluded sources
 - sensitivity classification
+- audit expectations
 
 Retrieval profile changes can affect correctness, privacy, and reproducibility. A task event should be able to identify which retrieval profile was active when context was used.
 

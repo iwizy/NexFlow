@@ -75,6 +75,7 @@ Example mapping:
 | `providers.yaml` | `ProviderSet` | `schemas/providers.schema.json` |
 | `model-profiles.yaml` | `ModelProfileSet` | `schemas/model-profiles.schema.json` |
 | `prompt-sets.yaml` | `PromptSet` | `schemas/prompt-sets.schema.json` |
+| `retrieval-profiles.yaml` | `RetrievalProfileSet` | `schemas/retrieval-profiles.schema.json` |
 | `events.yaml` | `EventSet` | `schemas/events.schema.json` |
 | `extensions.yaml` | `ExtensionSet` | `schemas/extensions.schema.json` |
 
@@ -100,6 +101,11 @@ JSON Schema does not fully check:
 - whether prompt set recommended agents exist
 - whether prompt content digests match external prompt material
 - whether prompt classification is appropriate for the referenced content
+- whether retrieval profile context source references exist
+- whether retrieval profile owners and approvers exist
+- whether retrieval profile index versions or source digests match external corpora
+- whether retrieval profile freshness and citation rules satisfy project policy
+- whether retrieval sensitivity is compatible with referenced context sources and memory scopes
 - whether agent context source references exist
 - whether web sources have domain and freshness policies
 - whether MCP sources distinguish context from tools
@@ -124,6 +130,7 @@ Future semantic validators should check:
 - memory ownership, allowed writers, prohibited content, and cross-scope promotion consistency
 - model profile provider references, fallback policies, and audit expectations
 - prompt set references, source references, safety review status, content digest expectations, and compatibility impact
+- retrieval profile references, source coverage, index versions, freshness, citations, sensitivity, and compatibility impact
 - extension namespace and capability requirements
 
 Semantic validation should report warnings separately from hard errors when the spec allows judgment.

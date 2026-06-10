@@ -2,7 +2,7 @@
 
 This directory contains complete reference manifest sets for different team shapes.
 
-The examples are not runtime fixtures. They are readable specification examples that show how agents, permissions, capabilities, context, memory, tasks, workflows, handoffs, events, providers, model profiles, prompt sets, and extensions fit together.
+The examples are not runtime fixtures. They are readable specification examples that show how agents, permissions, capabilities, context, memory, tasks, workflows, handoffs, events, providers, model profiles, prompt sets, retrieval profiles, and extensions fit together.
 
 ## Example Matrix
 
@@ -32,6 +32,7 @@ Each example contains the same core manifest files:
 | `providers.yaml` | Provider-neutral model classes and selection constraints. |
 | `model-profiles.yaml` | Provider-neutral model selection profiles, pinned or floating references, constraints, fallback, review triggers, and audit expectations. |
 | `prompt-sets.yaml` | Versioned prompt material, prompt revisions, source references, safety review status, compatibility impact, and audit expectations. |
+| `retrieval-profiles.yaml` | Retrieval expectations for context sources, index versions, chunking, freshness, citations, sensitivity, and audit metadata. |
 | `events.yaml` | Event names, payload expectations, retention, and audit requirements. |
 | `extensions.yaml` | Integration namespaces, lifecycle state, applicable manifests, and required capabilities. |
 
@@ -46,9 +47,9 @@ After that, follow the work:
 3. `handoffs.yaml` shows how responsibility moves between actors.
 4. `events.yaml` shows the audit trail expected from meaningful state changes.
 
-Finally, check `context.yaml` and `memory.yaml` to understand what actors may know, read, retain, or reuse.
+Finally, check `context.yaml`, `retrieval-profiles.yaml`, and `memory.yaml` to understand what actors may know, retrieve, cite, retain, or reuse.
 
-Read `providers.yaml`, `model-profiles.yaml`, and `prompt-sets.yaml` together: providers describe available provider abstractions, model profiles describe how model selection should be reviewed, constrained, and audited, and prompt sets describe versioned prompt material without requiring raw prompt text in public manifests.
+Read `providers.yaml`, `model-profiles.yaml`, `prompt-sets.yaml`, and `retrieval-profiles.yaml` together: providers describe available provider abstractions, model profiles describe how model selection should be reviewed, constrained, and audited, prompt sets describe versioned prompt material without requiring raw prompt text in public manifests, and retrieval profiles describe how declared context should be selected, assembled, refreshed, cited, and audited.
 
 ## Choosing an Example
 
@@ -72,6 +73,7 @@ All examples follow the same safety pattern:
 - memory access is scoped
 - model profile selection is explicit and provider-neutral
 - prompt sets are versioned and reviewable
+- retrieval profiles cite declared context sources and preserve context boundaries
 - handoffs include artifacts and next actions
 - event declarations make audit expectations visible
 - provider declarations remain abstract

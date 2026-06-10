@@ -186,6 +186,12 @@ NexFlow is provider neutral.
 
 ## R
 
+### Retrieval Profile
+
+A provider-neutral declaration of retrieval expectations for a behaviorally meaningful use of context.
+
+Retrieval profiles can describe context source references, index or corpus versions, chunking policy, retriever strategy, freshness, citations, sensitivity, review triggers, compatibility impact, and audit expectations. They do not retrieve data or grant access.
+
 ### Role
 
 A named function within a team, such as `maintainer`, `reviewer`, `implementation_agent`, `security_reviewer`, or `documentation_architect`.

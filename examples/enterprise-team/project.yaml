@@ -50,5 +50,6 @@ manifests:
   providers: providers.yaml
   modelProfiles: model-profiles.yaml
   promptSets: prompt-sets.yaml
+  retrievalProfiles: retrieval-profiles.yaml
   events: events.yaml
   extensions: extensions.yaml

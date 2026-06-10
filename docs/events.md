@@ -62,6 +62,8 @@ Future runtimes SHOULD also record:
 - model profile reference
 - prompt set reference
 - prompt revisions or content digests, when safe and available
+- retrieval profile reference
+- retrieval source IDs, index versions, freshness decisions, and citation metadata when safe and available
 - resolved provider and model, when safe and available
 - model selection reason
 - whether model fallback was used
@@ -157,6 +159,31 @@ payload:
 ```
 
 Events should prefer prompt set references, revisions, and digests over raw prompt content. Prompt content should be recorded only when project policy allows it.
+
+### Retrieval profile audit fields
+
+Future events that involve context retrieval may include retrieval profile metadata:
+
+```yaml
+type: agent.started
+payload:
+  agent:
+    id: implementation-agent
+    definitionRef: implementation-agent-2026-06
+  retrieval:
+    profileRef: implementation_review_retrieval
+    version: "2026.06.0"
+    contextSources:
+      - repository
+      - issue_tracker
+      - docs
+    corpusRef: software-team-review-corpus
+    corpusVersion: "2026-06-10"
+    staleAllowed: false
+    citationsRequired: true
+```
+
+Events should prefer retrieval profile references, context source IDs, corpus versions, freshness decisions, and citation metadata over raw retrieved content.
 
 ## Audit Requirements
 

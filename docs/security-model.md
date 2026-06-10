@@ -54,6 +54,12 @@ Prompt sets can contain sensitive operational guidance even when they do not con
 
 Raw prompt text must not contain secrets, tokens, passwords, private keys, raw personal data, or sensitive regulated details.
 
+### Retrieval Boundaries
+
+Retrieval profiles can combine context from multiple sources. Future runtimes should treat assembled context as at least the strictest classification among retrieved sources unless project policy explicitly defines a stricter rule.
+
+Retrieval profiles should not broaden context access. They should reference declared context sources, respect freshness and citation requirements, avoid silent cross-scope reuse, and preserve approval gates for restricted or tool-backed sources.
+
 ### Human Override
 
 Humans must be able to stop or override future runtime activity.
@@ -69,6 +75,8 @@ Humans must be able to stop or override future runtime activity.
 - automatic cross-scope memory promotion
 - retaining secrets or credential values in memory
 - storing sensitive raw prompt text in public manifests
+- retrieving undeclared sources or silently broadening retrieval scope
+- using stale context without citation or warning when freshness matters
 - silent network access
 - automatic deployment
 - destructive actions without approval

@@ -1,0 +1,64 @@
+specVersion: "0.1"
+kind: AgentDefinitionSet
+metadata:
+  project: enterprise-team
+agentDefinitions:
+  - id: implementation_agent_2026_06
+    agentRef: implementation-agent
+    definitionVersion: "2026.06.0"
+    status: draft
+    owner: enterprise-architect
+    description: Enterprise implementation agent release for approved, auditable, security-reviewed change work.
+    components:
+      modelProfileRef: enterprise_review_profile
+      promptSetRef: enterprise_review_prompts
+      retrievalProfileRef: enterprise_governed_retrieval
+      permissionRefs:
+        - restricted_implementation_work
+      capabilityRefs:
+        - read_repository
+        - write_repository
+        - create_branch
+        - execute_command
+        - read_context
+        - access_mcp
+      contextSourceRefs:
+        - repository
+        - issue_tracker
+        - architecture_docs
+        - mcp_tools
+      memoryScopes:
+        - ephemeral
+        - task
+      extensionRefs:
+        - github_enterprise
+        - jira_basic
+        - mcp_enterprise
+    autonomyLevel: ask_before_changes
+    changeSummary: Establishes governed implementation behavior with restricted retrieval, explicit MCP boundaries, and security review requirements.
+    review:
+      required: true
+      approvers:
+        - enterprise-architect
+        - security-reviewer
+      approvalGate: security_review
+      activationCriteria:
+        - Restricted sources remain approval-gated.
+        - MCP tool use remains approval-gated.
+        - Repository writes stay scoped to approved tasks.
+        - Compliance evidence is preserved through events.
+    compatibility:
+      impact: safety_significant
+      notes: Changes may alter enterprise implementation scope, security evidence, MCP exposure, or audit reproducibility.
+      affectedAgents:
+        - implementation-agent
+    audit:
+      recordAgentDefinitionRef: true
+      recordDefinitionVersion: true
+      recordComponentRefs: true
+      recordReviewState: true
+      recordChangeSummary: true
+      events:
+        - agent.started
+        - review.requested
+        - review.completed

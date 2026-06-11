@@ -18,6 +18,12 @@ An AI participant with a declared identity, role, responsibilities, skills, cont
 
 Agents are not assumed to be powered by any specific provider or runtime.
 
+## Agent Definition
+
+A versioned behavioral release of an agent assembled from model profile, prompt set, retrieval profile, permission, capability, context source, memory scope, autonomy, and extension references.
+
+Agent definitions describe behaviorally meaningful releases. They do not run agents and do not grant access by themselves.
+
 ## Role
 
 A named function within a team, such as `maintainer`, `reviewer`, `implementation_agent`, `security_reviewer`, or `documentation_architect`.

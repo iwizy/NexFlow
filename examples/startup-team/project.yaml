@@ -33,6 +33,7 @@ project:
         - release-reviewer
 manifests:
   agents: agents.yaml
+  agentDefinitions: agent-definitions.yaml
   workflow: workflow.yaml
   tasks: tasks.yaml
   handoffs: handoffs.yaml

@@ -60,6 +60,12 @@ Retrieval profiles can combine context from multiple sources. Future runtimes sh
 
 Retrieval profiles should not broaden context access. They should reference declared context sources, respect freshness and citation requirements, avoid silent cross-scope reuse, and preserve approval gates for restricted or tool-backed sources.
 
+### Agent Definition Boundaries
+
+Agent definitions assemble model, prompt, retrieval, permission, capability, context, memory, autonomy, and extension references. A future runtime must not treat an agent definition reference as granting access by itself.
+
+Safety-significant definition changes, such as broader context access, broader memory scopes, higher autonomy, new high-risk capabilities, or less restrictive approval gates, should require review before activation.
+
 ### Human Override
 
 Humans must be able to stop or override future runtime activity.
@@ -77,6 +83,7 @@ Humans must be able to stop or override future runtime activity.
 - storing sensitive raw prompt text in public manifests
 - retrieving undeclared sources or silently broadening retrieval scope
 - using stale context without citation or warning when freshness matters
+- activating broader agent definitions without review
 - silent network access
 - automatic deployment
 - destructive actions without approval

@@ -38,9 +38,9 @@ Key fields:
 - `project.policies`
 - `manifests`
 
-The `manifests` map may include draft versioning manifests such as `modelProfiles: model-profiles.yaml`, `promptSets: prompt-sets.yaml`, and `retrievalProfiles: retrieval-profiles.yaml`.
+The `manifests` map may include draft versioning manifests such as `agentDefinitions: agent-definitions.yaml`, `modelProfiles: model-profiles.yaml`, `promptSets: prompt-sets.yaml`, and `retrievalProfiles: retrieval-profiles.yaml`.
 
-Related docs: [Project Policy](concepts.md#project-policy), [Autonomy Model](autonomy-model.md), [Approval Gates](approval-gates.md), [Versioning](versioning.md), [Model Profiles](model-profiles.md), [Prompt Sets](prompt-sets.md), [Retrieval Profiles](retrieval-profiles.md).
+Related docs: [Project Policy](concepts.md#project-policy), [Autonomy Model](autonomy-model.md), [Approval Gates](approval-gates.md), [Versioning](versioning.md), [Agent Definitions](agent-definitions.md), [Model Profiles](model-profiles.md), [Prompt Sets](prompt-sets.md), [Retrieval Profiles](retrieval-profiles.md).
 
 ### `agents.yaml`
 
@@ -63,6 +63,25 @@ Agent fields:
 - `extensions`
 
 Related docs: [Concepts](concepts.md), [Glossary](glossary.md), [Capability Model](capability-model.md), [Context Model](context-model.md), [Memory Model](memory-model.md), [Autonomy Model](autonomy-model.md), [Provider Abstraction](provider-abstraction.md), [Extension Model](extensions.md).
+
+### `agent-definitions.yaml`
+
+Declares versioned behavioral releases for agents.
+
+Agent definitions define:
+
+- `id`, `agentRef`, `definitionVersion`, `status`, `owner`, and `description`
+- component references such as `modelProfileRef`, `promptSetRef`, and `retrievalProfileRef`
+- permission, capability, context source, memory scope, and extension references
+- autonomy level for the definition
+- change summary and optional replacement metadata
+- review requirements and activation criteria
+- compatibility impact
+- audit expectations for recording agent definition references, versions, components, review state, and change summaries
+
+Agent definitions do not run agents, call providers, load prompts, retrieve context, grant permissions, or replace approval gates.
+
+Related docs: [Agent Definitions](agent-definitions.md), [Versioning](versioning.md), [Model Profiles](model-profiles.md), [Prompt Sets](prompt-sets.md), [Retrieval Profiles](retrieval-profiles.md), [Autonomy Model](autonomy-model.md), [Event Model](events.md), [Security Model](security-model.md), [Validation](validation.md).
 
 ### `workflow.yaml`
 

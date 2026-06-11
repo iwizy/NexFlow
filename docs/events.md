@@ -59,6 +59,7 @@ Future runtimes SHOULD also record:
 - manifest version
 - runtime version
 - agent definition reference
+- agent definition version
 - model profile reference
 - prompt set reference
 - prompt revisions or content digests, when safe and available
@@ -137,6 +138,24 @@ payload:
 ```
 
 Resolved provider and model details should be recorded only when safe and available. Provider-specific fields should remain extension-scoped or runtime-scoped.
+
+### Agent definition audit fields
+
+Future events that involve an agent may include agent definition metadata:
+
+```yaml
+type: agent.started
+payload:
+  agent:
+    id: implementation-agent
+    definitionRef: implementation_agent_2026_06
+    definitionVersion: "2026.06.0"
+    modelProfileRef: implementation_agent_coding
+    promptSetRef: implementation_review_prompts
+    retrievalProfileRef: implementation_review_retrieval
+```
+
+Events should prefer definition references, versions, component references, review state, and change summaries over embedding full component content.
 
 ### Prompt set audit fields
 

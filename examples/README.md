@@ -2,7 +2,7 @@
 
 This directory contains complete reference manifest sets for different team shapes.
 
-The examples are not runtime fixtures. They are readable specification examples that show how agents, permissions, capabilities, context, memory, tasks, workflows, handoffs, events, providers, model profiles, prompt sets, retrieval profiles, and extensions fit together.
+The examples are not runtime fixtures. They are readable specification examples that show how agents, agent definitions, permissions, capabilities, context, memory, tasks, workflows, handoffs, events, providers, model profiles, prompt sets, retrieval profiles, and extensions fit together.
 
 ## Example Matrix
 
@@ -22,6 +22,7 @@ Each example contains the same core manifest files:
 | --- | --- |
 | `project.yaml` | Project identity, maintainers, policies, approval gates, and manifest locations. |
 | `agents.yaml` | Agents, human actors, roles, responsibilities, skills, capabilities, permissions, context access, memory access, autonomy, providers, and extensions. |
+| `agent-definitions.yaml` | Versioned behavioral releases that assemble model, prompt, retrieval, permission, context, memory, autonomy, and extension references. |
 | `workflow.yaml` | Workflow stages, steps, dependencies, approval gates, and emitted events. |
 | `tasks.yaml` | Tasks, owners, participants, dependencies, artifacts, required capabilities, approval gates, and acceptance criteria. |
 | `handoffs.yaml` | Transfers of responsibility between actors, including artifacts and next actions. |
@@ -38,7 +39,7 @@ Each example contains the same core manifest files:
 
 ## How to Read an Example
 
-Start with `project.yaml` to understand the project policy and approval gates. Then read `agents.yaml` and `capabilities.yaml` together: capabilities describe what actors can technically do, while permissions decide what is allowed or approval-gated.
+Start with `project.yaml` to understand the project policy and approval gates. Then read `agents.yaml`, `agent-definitions.yaml`, and `capabilities.yaml` together: agents describe identity, agent definitions describe behavioral releases, capabilities describe what actors can technically do, and permissions decide what is allowed or approval-gated.
 
 After that, follow the work:
 
@@ -68,6 +69,7 @@ Use `product-delivery-team` when the workflow spans product, UX, engineering, QA
 All examples follow the same safety pattern:
 
 - capabilities are declared separately from permissions
+- agent definitions assemble reviewed component references without granting access
 - risky capabilities are approval-gated
 - context access is explicit
 - memory access is scoped

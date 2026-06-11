@@ -1,0 +1,154 @@
+specVersion: "0.1"
+kind: AgentDefinitionSet
+metadata:
+  project: software-team
+agentDefinitions:
+  - id: implementation_agent_2026_06
+    agentRef: implementation-agent
+    definitionVersion: "2026.06.0"
+    status: draft
+    owner: reviewer
+    description: Implementation agent release for scoped branch work and reviewable patch drafting.
+    components:
+      modelProfileRef: implementation_agent_coding
+      promptSetRef: implementation_review_prompts
+      retrievalProfileRef: implementation_review_retrieval
+      permissionRefs:
+        - implementation_branch_work
+      capabilityRefs:
+        - read_repository
+        - write_repository
+        - create_branch
+        - execute_command
+        - read_context
+      contextSourceRefs:
+        - repository
+        - issue_tracker
+        - docs
+      memoryScopes:
+        - ephemeral
+        - task
+      extensionRefs:
+        - github_basic
+        - linear_basic
+    autonomyLevel: ask_before_changes
+    changeSummary: Assembles reviewed model, prompt, and retrieval profiles for implementation work while keeping writes approval-gated.
+    review:
+      required: true
+      approvers:
+        - reviewer
+      approvalGate: code_review
+      activationCriteria:
+        - Repository writes remain approval-gated.
+        - Dependency installation still requires separate approval.
+        - Retrieval sources match declared context access.
+    compatibility:
+      impact: behavior_changing
+      notes: Changes may alter implementation scope, patch behavior, or review evidence.
+      affectedAgents:
+        - implementation-agent
+    audit:
+      recordAgentDefinitionRef: true
+      recordDefinitionVersion: true
+      recordComponentRefs: true
+      recordReviewState: true
+      recordChangeSummary: true
+      events:
+        - agent.started
+        - task.completed
+        - review.requested
+  - id: qa_agent_2026_06
+    agentRef: qa-agent
+    definitionVersion: "2026.06.0"
+    status: draft
+    owner: reviewer
+    description: QA agent release for approved test execution and quality risk summaries.
+    components:
+      modelProfileRef: implementation_agent_coding
+      promptSetRef: implementation_review_prompts
+      retrievalProfileRef: implementation_review_retrieval
+      permissionRefs:
+        - qa_test_execution
+      capabilityRefs:
+        - read_repository
+        - execute_command
+        - read_context
+      contextSourceRefs:
+        - repository
+        - issue_tracker
+      memoryScopes:
+        - ephemeral
+        - task
+      extensionRefs: []
+    autonomyLevel: ask_before_changes
+    changeSummary: Establishes QA behavior around approved test commands, retrieval-backed risk summaries, and review handoff evidence.
+    review:
+      required: true
+      approvers:
+        - reviewer
+      approvalGate: code_review
+      activationCriteria:
+        - Test command execution remains approval-gated.
+        - QA summaries cite retrieved evidence.
+    compatibility:
+      impact: behavior_changing
+      notes: Changes may alter test evidence, risk summaries, or review handoffs.
+      affectedAgents:
+        - qa-agent
+    audit:
+      recordAgentDefinitionRef: true
+      recordDefinitionVersion: true
+      recordComponentRefs: true
+      recordReviewState: true
+      recordChangeSummary: true
+      events:
+        - agent.started
+        - task.completed
+        - review.requested
+  - id: docs_agent_2026_06
+    agentRef: docs-agent
+    definitionVersion: "2026.06.0"
+    status: draft
+    owner: reviewer
+    description: Documentation agent release for post-review docs and changelog updates.
+    components:
+      modelProfileRef: implementation_agent_coding
+      promptSetRef: implementation_review_prompts
+      retrievalProfileRef: implementation_review_retrieval
+      permissionRefs:
+        - docs_write_after_review
+      capabilityRefs:
+        - read_repository
+        - modify_documentation
+        - read_context
+      contextSourceRefs:
+        - repository
+        - docs
+      memoryScopes:
+        - ephemeral
+        - task
+      extensionRefs: []
+    autonomyLevel: ask_before_changes
+    changeSummary: Defines docs update behavior after implementation review without broadening repository write permissions.
+    review:
+      required: true
+      approvers:
+        - reviewer
+      approvalGate: code_review
+      activationCriteria:
+        - Documentation writes remain review-gated.
+        - Changelog notes cite accepted artifacts.
+    compatibility:
+      impact: behavior_changing
+      notes: Changes may alter documentation update behavior and release note summaries.
+      affectedAgents:
+        - docs-agent
+    audit:
+      recordAgentDefinitionRef: true
+      recordDefinitionVersion: true
+      recordComponentRefs: true
+      recordReviewState: true
+      recordChangeSummary: true
+      events:
+        - agent.started
+        - task.completed

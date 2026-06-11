@@ -204,6 +204,12 @@ Model profiles describe how a project expects a model to be selected for a behav
 
 Provider declarations and model profiles do not grant access. Capabilities, permissions, context access, memory access, autonomy, and approval gates remain separate and authoritative.
 
+## Relationship To Agent Definitions
+
+Agent definitions may reference model profiles through `modelProfileRef`.
+
+`agent-definitions.yaml` is draft vocabulary. Until that vocabulary is accepted, `model-profiles.yaml` still provides independently reviewable model selection metadata for examples, RFCs, and future semantic validation.
+
 ## Current Status
 
 Model profiles are draft specification vocabulary in `0.1`.

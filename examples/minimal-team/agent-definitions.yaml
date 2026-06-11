@@ -1,0 +1,54 @@
+specVersion: "0.1"
+kind: AgentDefinitionSet
+metadata:
+  project: minimal-team
+agentDefinitions:
+  - id: docs_agent_2026_06
+    agentRef: docs-agent
+    definitionVersion: "2026.06.0"
+    status: draft
+    owner: human-maintainer
+    description: Docs agent behavioral release for documentation drafting and specification consistency checks.
+    components:
+      modelProfileRef: docs_agent_balanced
+      promptSetRef: docs_agent_prompts
+      retrievalProfileRef: docs_agent_retrieval
+      permissionRefs:
+        - docs_write_with_review
+      capabilityRefs:
+        - read_repository
+        - modify_documentation
+        - read_context
+      contextSourceRefs:
+        - repository
+        - docs
+      memoryScopes:
+        - ephemeral
+        - task
+      extensionRefs:
+        - local_repository
+    autonomyLevel: ask_before_changes
+    changeSummary: Establishes the first reviewable docs agent definition from model, prompt, retrieval, permission, context, and memory references.
+    review:
+      required: true
+      approvers:
+        - human-maintainer
+      approvalGate: human_review
+      activationCriteria:
+        - Documentation changes remain review-gated.
+        - Context references match declared sources.
+        - Durable project memory remains human-reviewed.
+    compatibility:
+      impact: behavior_changing
+      notes: Future changes may alter documentation evidence, writing behavior, or review strictness.
+      affectedAgents:
+        - docs-agent
+    audit:
+      recordAgentDefinitionRef: true
+      recordDefinitionVersion: true
+      recordComponentRefs: true
+      recordReviewState: true
+      recordChangeSummary: true
+      events:
+        - agent.started
+        - review.requested

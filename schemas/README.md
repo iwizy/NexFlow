@@ -12,6 +12,7 @@ The schemas currently target `specVersion: "0.1"` and use JSON Schema draft 2020
 | --- | --- | --- |
 | `project.schema.json` | `Project` | Project identity, policies, maintainers, approval gates, and manifest locations. |
 | `agents.schema.json` | `AgentSet` | Agent identities, roles, skills, capabilities, permissions, context, memory, and autonomy. |
+| `agent-definitions.schema.json` | `AgentDefinitionSet` | Versioned agent behavioral releases assembled from model, prompt, retrieval, permission, context, memory, autonomy, and extension references. |
 | `workflow.schema.json` | `Workflow` | Workflow stages, steps, dependencies, gates, and emitted events. |
 | `tasks.schema.json` | `TaskSet` | Tasks, owners, dependencies, artifacts, required capabilities, and acceptance criteria. |
 | `handoffs.schema.json` | `HandoffSet` | Responsibility transfers between actors. |
@@ -97,6 +98,8 @@ JSON Schema does not fully validate project meaning.
 Examples of future semantic checks:
 
 - referenced agent IDs exist
+- agent definitions reference existing agents and component manifests
+- agent definition autonomy, permissions, memory, context, and review gates are compatible
 - referenced permission IDs exist
 - referenced capability IDs exist
 - workflow dependencies form a coherent graph
@@ -106,15 +109,15 @@ Examples of future semantic checks:
 - memory access is consistent with project policy
 - memory writers, prohibited content, and promotion paths are consistent with sensitivity
 - referenced provider IDs in model profiles exist
-- model profile references in future agent definitions exist
+- model profile references in agent definitions exist
 - prompt source references exist
 - prompt set owners and approvers exist
 - prompt content digests match referenced prompt material
-- prompt set references in future agent definitions exist
+- prompt set references in agent definitions exist
 - retrieval profile context source references exist
 - retrieval profile index versions and source digests match referenced corpora
 - retrieval profile freshness, citation, and sensitivity rules satisfy project policy
-- retrieval profile references in future agent definitions exist
+- retrieval profile references in agent definitions exist
 - extension requirements are satisfied
 
 See [Validation](../docs/validation.md) for the current validation model.

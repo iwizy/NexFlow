@@ -61,7 +61,9 @@ These values may still change, but they are not enough to describe the effective
 
 An agent definition describes a versioned behavioral release of an agent.
 
-Future manifests may represent this as a dedicated manifest such as `agent-definitions.yaml`, or as a named section in an existing agent manifest. This RFC does not require a final manifest shape.
+This draft currently represents agent definitions as a dedicated `agent-definitions.yaml` manifest. This RFC does not require that draft shape to become final without review.
+
+NF-010 adds draft [Agent Definitions](../docs/agent-definitions.md) guidance and a practical `AgentDefinitionSet` schema using a dedicated `agent-definitions.yaml` manifest.
 
 A draft agent definition should include:
 
@@ -240,7 +242,9 @@ Deprecating or retiring an agent definition should identify the replacement when
 
 This RFC does not change current manifest schemas.
 
-If accepted, later work may add new manifests or fields for agent definitions and versioned references.
+NF-010 adds draft schema and examples for `agent-definitions.yaml`, but this RFC remains draft until accepted through the governance process.
+
+If accepted, later work may refine manifests or fields for agent definitions and versioned references.
 
 Compatibility guidance:
 
@@ -293,7 +297,7 @@ This would violate provider neutrality and make the core specification depend on
 
 ## Open Questions
 
-- Should agent definitions live in a dedicated `agent-definitions.yaml` manifest?
+- Should the dedicated `agent-definitions.yaml` manifest remain the final shape or be revised before acceptance?
 - Should tasks and workflows reference agent identity, agent definition, or both?
 - Should NexFlow define lockfiles for resolved model, prompt, retrieval, and extension versions?
 - Which digest formats should be recommended for prompt and retrieval artifacts?

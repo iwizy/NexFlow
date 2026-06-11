@@ -1,0 +1,182 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nexflow.dev/schemas/agent-definitions.schema.json",
+  "title": "NexFlow Agent Definitions Manifest",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["specVersion", "kind", "metadata", "agentDefinitions"],
+  "properties": {
+    "specVersion": {
+      "$ref": "common.schema.json#/$defs/specVersion"
+    },
+    "kind": {
+      "const": "AgentDefinitionSet"
+    },
+    "metadata": {
+      "$ref": "common.schema.json#/$defs/metadata"
+    },
+    "agentDefinitions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": [
+          "id",
+          "agentRef",
+          "definitionVersion",
+          "status",
+          "owner",
+          "description",
+          "components",
+          "autonomyLevel",
+          "review",
+          "audit"
+        ],
+        "properties": {
+          "id": {
+            "$ref": "common.schema.json#/$defs/id"
+          },
+          "agentRef": {
+            "$ref": "common.schema.json#/$defs/id"
+          },
+          "definitionVersion": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "type": "string",
+            "enum": ["draft", "active", "deprecated", "retired"]
+          },
+          "owner": {
+            "$ref": "common.schema.json#/$defs/id"
+          },
+          "description": {
+            "type": "string"
+          },
+          "components": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "modelProfileRef": {
+                "$ref": "common.schema.json#/$defs/id"
+              },
+              "promptSetRef": {
+                "$ref": "common.schema.json#/$defs/id"
+              },
+              "retrievalProfileRef": {
+                "$ref": "common.schema.json#/$defs/id"
+              },
+              "permissionRefs": {
+                "$ref": "common.schema.json#/$defs/idList"
+              },
+              "capabilityRefs": {
+                "$ref": "common.schema.json#/$defs/idList"
+              },
+              "contextSourceRefs": {
+                "$ref": "common.schema.json#/$defs/idList"
+              },
+              "memoryScopes": {
+                "type": "array",
+                "items": {
+                  "$ref": "common.schema.json#/$defs/memoryScope"
+                },
+                "uniqueItems": true
+              },
+              "memoryPolicyRef": {
+                "$ref": "common.schema.json#/$defs/id"
+              },
+              "extensionRefs": {
+                "$ref": "common.schema.json#/$defs/idList"
+              }
+            }
+          },
+          "autonomyLevel": {
+            "$ref": "common.schema.json#/$defs/autonomyLevel"
+          },
+          "changeSummary": {
+            "type": "string"
+          },
+          "replaces": {
+            "$ref": "common.schema.json#/$defs/id"
+          },
+          "review": {
+            "type": "object",
+            "additionalProperties": true,
+            "required": ["required"],
+            "properties": {
+              "required": {
+                "type": "boolean"
+              },
+              "approvers": {
+                "$ref": "common.schema.json#/$defs/idList"
+              },
+              "approvalGate": {
+                "$ref": "common.schema.json#/$defs/id"
+              },
+              "reviewedAt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "activationCriteria": {
+                "$ref": "common.schema.json#/$defs/stringList"
+              },
+              "evidenceRefs": {
+                "$ref": "common.schema.json#/$defs/stringList"
+              }
+            }
+          },
+          "compatibility": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "impact": {
+                "type": "string",
+                "enum": [
+                  "compatible",
+                  "behavior_changing",
+                  "safety_significant",
+                  "breaking",
+                  "unknown"
+                ]
+              },
+              "notes": {
+                "type": "string"
+              },
+              "affectedAgents": {
+                "$ref": "common.schema.json#/$defs/idList"
+              },
+              "affectedWorkflows": {
+                "$ref": "common.schema.json#/$defs/idList"
+              }
+            }
+          },
+          "audit": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "recordAgentDefinitionRef": {
+                "type": "boolean"
+              },
+              "recordDefinitionVersion": {
+                "type": "boolean"
+              },
+              "recordComponentRefs": {
+                "type": "boolean"
+              },
+              "recordReviewState": {
+                "type": "boolean"
+              },
+              "recordChangeSummary": {
+                "type": "boolean"
+              },
+              "events": {
+                "$ref": "common.schema.json#/$defs/stringList"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

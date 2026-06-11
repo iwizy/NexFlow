@@ -65,6 +65,7 @@ Example mapping:
 | --- | --- | --- |
 | `project.yaml` | `Project` | `schemas/project.schema.json` |
 | `agents.yaml` | `AgentSet` | `schemas/agents.schema.json` |
+| `agent-definitions.yaml` | `AgentDefinitionSet` | `schemas/agent-definitions.schema.json` |
 | `workflow.yaml` | `Workflow` | `schemas/workflow.schema.json` |
 | `tasks.yaml` | `TaskSet` | `schemas/tasks.schema.json` |
 | `handoffs.yaml` | `HandoffSet` | `schemas/handoffs.schema.json` |
@@ -86,6 +87,10 @@ JSON Schema can check structure, required fields, enums, and simple patterns.
 JSON Schema does not fully check:
 
 - whether agent IDs referenced by tasks exist
+- whether agent definitions reference existing agents
+- whether agent definitions reference existing model profiles, prompt sets, retrieval profiles, permissions, capabilities, context sources, memory scopes, and extensions
+- whether agent definition autonomy is compatible with project policy
+- whether agent definition review gates cover safety-significant changes
 - whether permission IDs referenced by agents exist
 - whether capability IDs referenced by permissions exist
 - whether workflow step dependencies form a valid graph
@@ -120,6 +125,7 @@ Semantic validation should evaluate cross-manifest meaning.
 Future semantic validators should check:
 
 - cross-file references
+- agent definition component references and lifecycle consistency
 - duplicate IDs within a manifest
 - capability and permission consistency
 - task ownership and dependency consistency

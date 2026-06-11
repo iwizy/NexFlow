@@ -192,9 +192,9 @@ Prompt content should be recorded in events only when project policy allows it. 
 
 ## Relationship To Agent Definitions
 
-Agent definitions may later reference prompt sets through `promptSetRef`.
+Agent definitions may reference prompt sets through `promptSetRef`.
 
-This repository does not yet define final `agent-definitions.yaml` schema. Until that vocabulary is accepted, `prompt-sets.yaml` can still provide reviewable prompt set metadata for examples, RFCs, and future semantic validation.
+`agent-definitions.yaml` is draft vocabulary. Until that vocabulary is accepted, `prompt-sets.yaml` still provides independently reviewable prompt set metadata for examples, RFCs, and future semantic validation.
 
 Prompt set references do not grant access. Capabilities, permissions, context access, memory access, autonomy, approval gates, and extension policies remain separate and authoritative.
 

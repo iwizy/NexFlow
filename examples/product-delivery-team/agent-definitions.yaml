@@ -1,0 +1,164 @@
+specVersion: "0.1"
+kind: AgentDefinitionSet
+metadata:
+  project: product-delivery-team
+agentDefinitions:
+  - id: ux_agent_2026_06
+    agentRef: ux-agent
+    definitionVersion: "2026.06.0"
+    status: draft
+    owner: product-manager
+    description: UX agent release for design review, customer-doc synthesis, and UX delivery criteria.
+    components:
+      modelProfileRef: product_delivery_profile
+      promptSetRef: product_delivery_prompts
+      retrievalProfileRef: product_delivery_retrieval
+      permissionRefs:
+        - ux_context_access
+      capabilityRefs:
+        - access_figma
+        - read_context
+        - read_documentation
+      contextSourceRefs:
+        - design_files
+        - customer_docs
+      memoryScopes:
+        - ephemeral
+        - task
+      extensionRefs:
+        - figma_readonly
+    autonomyLevel: autonomous_safe
+    changeSummary: Defines UX support behavior while keeping product acceptance and launch authority human-owned.
+    review:
+      required: true
+      approvers:
+        - product-manager
+      approvalGate: product_acceptance
+      activationCriteria:
+        - Design file access remains read-only.
+        - Customer docs remain sanitized.
+        - Product acceptance stays with the product manager.
+    compatibility:
+      impact: behavior_changing
+      notes: Changes may alter UX criteria, design interpretation, or customer-doc synthesis.
+      affectedAgents:
+        - ux-agent
+    audit:
+      recordAgentDefinitionRef: true
+      recordDefinitionVersion: true
+      recordComponentRefs: true
+      recordReviewState: true
+      recordChangeSummary: true
+      events:
+        - agent.started
+        - review.requested
+  - id: implementation_agent_2026_06
+    agentRef: implementation-agent
+    definitionVersion: "2026.06.0"
+    status: draft
+    owner: product-manager
+    description: Implementation agent release for accepted product delivery tasks and implementation notes.
+    components:
+      modelProfileRef: product_delivery_profile
+      promptSetRef: product_delivery_prompts
+      retrievalProfileRef: product_delivery_retrieval
+      permissionRefs:
+        - delivery_implementation_work
+      capabilityRefs:
+        - read_repository
+        - write_repository
+        - create_branch
+        - execute_command
+        - read_context
+      contextSourceRefs:
+        - repository
+        - backlog
+        - design_files
+        - docs
+      memoryScopes:
+        - ephemeral
+        - task
+      extensionRefs:
+        - github_basic
+        - jira_basic
+        - figma_readonly
+    autonomyLevel: ask_before_changes
+    changeSummary: Assembles delivery implementation behavior with product scope, design context, and review-gated writes.
+    review:
+      required: true
+      approvers:
+        - product-manager
+        - launch-coordinator
+      approvalGate: product_acceptance
+      activationCriteria:
+        - Product acceptance is recorded before implementation.
+        - Repository writes remain reviewable.
+        - Launch actions remain launch-gated.
+    compatibility:
+      impact: behavior_changing
+      notes: Changes may alter implementation scope, retrieval evidence, or delivery handoff quality.
+      affectedAgents:
+        - implementation-agent
+    audit:
+      recordAgentDefinitionRef: true
+      recordDefinitionVersion: true
+      recordComponentRefs: true
+      recordReviewState: true
+      recordChangeSummary: true
+      events:
+        - agent.started
+        - task.completed
+        - review.requested
+  - id: qa_agent_2026_06
+    agentRef: qa-agent
+    definitionVersion: "2026.06.0"
+    status: draft
+    owner: launch-coordinator
+    description: QA agent release for validation evidence, quality gate notes, and launch risk summaries.
+    components:
+      modelProfileRef: product_delivery_profile
+      promptSetRef: product_delivery_prompts
+      retrievalProfileRef: product_delivery_retrieval
+      permissionRefs:
+        - qa_quality_gate
+      capabilityRefs:
+        - read_repository
+        - execute_command
+        - read_context
+        - approve_changes
+      contextSourceRefs:
+        - repository
+        - backlog
+        - docs
+      memoryScopes:
+        - ephemeral
+        - task
+      extensionRefs:
+        - github_basic
+        - jira_basic
+    autonomyLevel: ask_before_changes
+    changeSummary: Defines QA validation behavior around quality gate evidence and launch risk reporting.
+    review:
+      required: true
+      approvers:
+        - launch-coordinator
+      approvalGate: quality_gate
+      activationCriteria:
+        - Test execution remains approval-gated.
+        - Quality findings cite retrieved evidence.
+        - Launch readiness remains human-reviewed.
+    compatibility:
+      impact: behavior_changing
+      notes: Changes may alter quality evidence, risk summaries, or launch readiness recommendations.
+      affectedAgents:
+        - qa-agent
+    audit:
+      recordAgentDefinitionRef: true
+      recordDefinitionVersion: true
+      recordComponentRefs: true
+      recordReviewState: true
+      recordChangeSummary: true
+      events:
+        - agent.started
+        - review.requested
+        - review.completed

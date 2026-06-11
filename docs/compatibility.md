@@ -27,6 +27,9 @@ NexFlow compatibility is about preserving the meaning of manifests across tools 
 - changing default approval behavior
 - changing memory visibility semantics
 - changing capability meaning
+- changing an active agent definition component reference
+- increasing agent definition autonomy
+- broadening agent definition context, memory, permission, capability, or extension references
 - changing a pinned model reference
 - changing a floating model alias policy
 - broadening provider eligibility, training use, or tool use in a model profile
@@ -74,6 +77,7 @@ Examples:
 | Change approval gate meaning | May break `NF-RUNTIME` safety expectations. |
 | Add semantic cross-reference rule | May affect `NF-SEMANTIC` validators. |
 | Change extension namespace lifecycle | May affect `NF-EXTENSION` compatibility. |
+| Change active agent definition components or autonomy | May affect `NF-SEMANTIC`, `NF-RUNTIME`, safety, and audit compatibility. |
 | Change model profile selection or constraints | May affect `NF-SEMANTIC`, `NF-RUNTIME`, and audit compatibility. |
 | Change prompt set revisions or safety review status | May affect `NF-SEMANTIC`, `NF-RUNTIME`, safety, and audit compatibility. |
 | Change retrieval sources, index versions, freshness, or citation rules | May affect `NF-SEMANTIC`, `NF-RUNTIME`, context safety, and audit compatibility. |

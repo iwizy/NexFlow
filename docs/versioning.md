@@ -28,7 +28,25 @@ Manifest `specVersion` describes the shape of a NexFlow manifest. It does not fu
 
 [RFC-0004](../rfcs/RFC-0004-agent-definition-versioning.md) proposes a draft model for versioned agent definitions that reference model profiles, prompt sets, retrieval profiles, permission sets, memory policies, autonomy levels, and extensions.
 
-Until that RFC is accepted, agent definition versioning is specified as draft vocabulary only. Projects should avoid treating proposed agent definition fields as stable schema requirements.
+[Agent Definitions](agent-definitions.md) define draft `agent-definitions.yaml` vocabulary for practical examples and schema validation.
+
+Agent definitions can include:
+
+- agent identity references
+- definition versions
+- lifecycle status
+- model profile references
+- prompt set references
+- retrieval profile references
+- permission and capability references
+- context source references
+- memory scopes
+- autonomy level
+- extension references
+- review and activation criteria
+- audit expectations
+
+Until the RFC is accepted, agent definition versioning remains draft vocabulary. Projects should avoid treating draft agent definition fields as stable runtime requirements.
 
 ## Model Profile Versioning
 

@@ -31,6 +31,7 @@ The documentation is the canonical source for the specification. Schemas and exa
 | [Capability Model](capability-model.md) | Defines technical actions separately from authorization. |
 | [Autonomy Model](autonomy-model.md) | Defines how independently actors may act. |
 | [Approval Gates](approval-gates.md) | Defines human or policy approvals before sensitive actions. |
+| [Agent Definitions](agent-definitions.md) | Defines versioned behavioral releases assembled from model, prompt, retrieval, permission, context, memory, autonomy, and extension references. |
 | [Context Model](context-model.md) | Defines declared information sources, freshness, classification, and access boundaries. |
 | [Memory Model](memory-model.md) | Defines retention, ownership, sensitivity, and cross-scope reuse boundaries. |
 | [Model Profiles](model-profiles.md) | Defines provider-neutral model selection, pinned and floating references, constraints, and audit expectations. |

@@ -295,6 +295,12 @@ Retrieval profiles describe how declared context should be selected, assembled, 
 
 Retrieval profile references do not grant access. Capabilities, permissions, context access, memory access, autonomy, approval gates, and extension policies remain separate and authoritative.
 
+## Relationship To Agent Definitions
+
+Agent definitions may reference retrieval profiles through `retrievalProfileRef`.
+
+`agent-definitions.yaml` is draft vocabulary. Until that vocabulary is accepted, `retrieval-profiles.yaml` still provides independently reviewable retrieval metadata for examples, RFCs, and future semantic validation.
+
 ## Current Status
 
 Retrieval profiles are draft specification vocabulary in `0.1`.

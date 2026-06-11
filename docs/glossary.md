@@ -30,6 +30,12 @@ An AI participant with a declared identity, role, responsibilities, skills, cont
 
 An agent is not assumed to be powered by any specific model provider or runtime.
 
+### Agent Definition
+
+A versioned behavioral release of an agent assembled from model profile, prompt set, retrieval profile, permission, capability, context source, memory scope, autonomy, and extension references.
+
+Agent definitions make behavioral changes auditable. They do not execute agents or grant access.
+
 ### Approval Gate
 
 A declared condition that must be satisfied before a gated action, task transition, workflow step, memory write, or sensitive operation may proceed.

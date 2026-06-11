@@ -1,0 +1,111 @@
+specVersion: "0.1"
+kind: AgentDefinitionSet
+metadata:
+  project: startup-team
+agentDefinitions:
+  - id: design_agent_2026_06
+    agentRef: design-agent
+    definitionVersion: "2026.06.0"
+    status: draft
+    owner: product-owner
+    description: Design agent release for UX review, design context analysis, and acceptance notes.
+    components:
+      modelProfileRef: product_iteration_profile
+      promptSetRef: product_iteration_prompts
+      retrievalProfileRef: product_iteration_retrieval
+      permissionRefs:
+        - design_context_access
+      capabilityRefs:
+        - access_figma
+        - read_context
+        - read_documentation
+      contextSourceRefs:
+        - design_files
+        - customer_research
+      memoryScopes:
+        - ephemeral
+        - task
+      extensionRefs:
+        - figma_readonly
+    autonomyLevel: autonomous_safe
+    changeSummary: Captures reviewed design behavior for safe UX analysis without production or repository write access.
+    review:
+      required: true
+      approvers:
+        - product-owner
+      approvalGate: product_review
+      activationCriteria:
+        - Design access remains read-only.
+        - Customer research remains sanitized.
+        - Launch decisions remain human-owned.
+    compatibility:
+      impact: behavior_changing
+      notes: Changes may alter UX criteria, design interpretation, or product acceptance notes.
+      affectedAgents:
+        - design-agent
+    audit:
+      recordAgentDefinitionRef: true
+      recordDefinitionVersion: true
+      recordComponentRefs: true
+      recordReviewState: true
+      recordChangeSummary: true
+      events:
+        - agent.started
+        - review.requested
+  - id: fullstack_agent_2026_06
+    agentRef: fullstack-agent
+    definitionVersion: "2026.06.0"
+    status: draft
+    owner: product-owner
+    description: Fullstack agent release for approved product slices and implementation notes.
+    components:
+      modelProfileRef: product_iteration_profile
+      promptSetRef: product_iteration_prompts
+      retrievalProfileRef: product_iteration_retrieval
+      permissionRefs:
+        - startup_implementation_work
+      capabilityRefs:
+        - read_repository
+        - write_repository
+        - create_branch
+        - execute_command
+        - read_context
+      contextSourceRefs:
+        - repository
+        - product_backlog
+        - design_files
+        - docs
+      memoryScopes:
+        - ephemeral
+        - task
+      extensionRefs:
+        - github_basic
+        - linear_basic
+        - figma_readonly
+    autonomyLevel: ask_before_changes
+    changeSummary: Assembles product iteration behavior while keeping implementation work scoped and reviewable.
+    review:
+      required: true
+      approvers:
+        - product-owner
+        - release-reviewer
+      approvalGate: product_review
+      activationCriteria:
+        - Product scope is approved before implementation.
+        - Production actions remain release-gated.
+        - Web research remains cited through retrieval policy.
+    compatibility:
+      impact: behavior_changing
+      notes: Changes may alter product slice implementation, design interpretation, or launch readiness evidence.
+      affectedAgents:
+        - fullstack-agent
+    audit:
+      recordAgentDefinitionRef: true
+      recordDefinitionVersion: true
+      recordComponentRefs: true
+      recordReviewState: true
+      recordChangeSummary: true
+      events:
+        - agent.started
+        - task.completed
+        - review.requested

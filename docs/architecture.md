@@ -9,8 +9,10 @@ flowchart TD
   D["Documentation"] --> S["Specification Model"]
   S --> M["YAML Manifests"]
   S --> J["JSON Schemas"]
+  M --> A["Agent Assembly"]
   M --> V["Validation Tools"]
   J --> V
+  A --> V
   V --> R["Future Runtime"]
   R --> I["Integrations"]
   R --> P["Providers"]
@@ -23,6 +25,20 @@ flowchart TD
 - `schemas/` provides practical validation.
 - `examples/` demonstrates coherent configurations.
 - `rfcs/` records design proposals and accepted decisions.
+
+## Agent Assembly Layer
+
+Agent assembly connects agent identity with versioned behavioral components:
+
+- agent definitions
+- model profiles
+- prompt sets
+- retrieval profiles
+- permissions and capabilities
+- context sources and memory scopes
+- autonomy levels and extensions
+
+This layer is intentionally declarative. It gives humans, validators, and future runtimes a reviewable view of behavior-changing agent updates without requiring NexFlow to execute those agents.
 
 ## Runtime Boundary
 

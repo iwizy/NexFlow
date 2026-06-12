@@ -48,6 +48,29 @@ Agent definitions can include:
 
 Until the RFC is accepted, agent definition versioning remains draft vocabulary. Projects should avoid treating draft agent definition fields as stable runtime requirements.
 
+## Agent Assembly Checkpoints
+
+[Agent Assembly](agent-assembly.md) describes how agent definitions, model profiles, prompt sets, retrieval profiles, permissions, context, memory, autonomy, and extensions fit together as a reviewable behavioral release.
+
+Agent assembly checkpoints may be useful for project planning, releases, changelog entries, and review summaries, but they do not automatically require a manifest `specVersion` bump.
+
+Keep `specVersion` unchanged when a change:
+
+- clarifies draft documentation
+- adds examples that remain compatible with the current schema
+- adds new draft vocabulary without changing existing manifest meaning
+- improves cross-links, review checklists, or audit guidance
+
+Re-evaluate `specVersion` when a change:
+
+- changes required fields
+- removes or renames fields
+- changes schema compatibility
+- changes normative semantics for permissions, approval gates, memory, context, provider selection, or runtime behavior
+- introduces accepted breaking changes through the RFC process
+
+For the current draft, agent assembly remains part of `specVersion: "0.1"` and is not a separate stable runtime contract.
+
 ## Model Profile Versioning
 
 Model profiles describe provider-neutral model selection expectations. A model profile can be behavior-changing even when the agent identity and manifest `specVersion` stay the same.

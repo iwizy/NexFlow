@@ -14,6 +14,8 @@ Status: in progress.
 
 Relevant docs: [Concepts](concepts.md), [Glossary](glossary.md), [Manifest Reference](manifest-reference.md), [Agent Definitions](agent-definitions.md), [Context Model](context-model.md), [Memory Model](memory-model.md), [Approval Gates](approval-gates.md), [Prompt Sets](prompt-sets.md), [Retrieval Profiles](retrieval-profiles.md).
 
+Agent assembly draft checkpoint: complete for initial review. The current draft links agent definitions, model profiles, prompt sets, retrieval profiles, permissions, context, memory, autonomy, extensions, compatibility, and audit expectations.
+
 ## Milestone 2: Community Review
 
 - Collect feedback from agent tool builders, open-source maintainers, startups, enterprises, and researchers.
@@ -27,7 +29,7 @@ Relevant docs: [Concepts](concepts.md), [Glossary](glossary.md), [Manifest Refer
 - Review retrieval source references, index versions, chunking, freshness, citations, sensitivity, and audit expectations.
 - Review agent definition component references, lifecycle status, activation criteria, autonomy, and audit expectations.
 
-Relevant docs: [Security Model](security-model.md), [Capability Model](capability-model.md), [Autonomy Model](autonomy-model.md), [Provider Abstraction](provider-abstraction.md), [Agent Definitions](agent-definitions.md), [Model Profiles](model-profiles.md), [Prompt Sets](prompt-sets.md), [Retrieval Profiles](retrieval-profiles.md), [Extension Model](extensions.md).
+Relevant docs: [Security Model](security-model.md), [Capability Model](capability-model.md), [Autonomy Model](autonomy-model.md), [Provider Abstraction](provider-abstraction.md), [Agent Assembly](agent-assembly.md), [Agent Definitions](agent-definitions.md), [Model Profiles](model-profiles.md), [Prompt Sets](prompt-sets.md), [Retrieval Profiles](retrieval-profiles.md), [Extension Model](extensions.md).
 
 ## Milestone 3: Schema Hardening
 

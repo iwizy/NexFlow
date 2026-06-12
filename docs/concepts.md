@@ -18,6 +18,12 @@ An AI participant with a declared identity, role, responsibilities, skills, cont
 
 Agents are not assumed to be powered by any specific provider or runtime.
 
+## Agent Assembly
+
+A reviewable behavioral release of an agent that links an agent identity to an agent definition, model profile, prompt set, retrieval profile, permission, capability, context source, memory scope, autonomy, and extension references.
+
+Agent assembly is declarative specification metadata. It does not run agents and does not grant access by itself.
+
 ## Agent Definition
 
 A versioned behavioral release of an agent assembled from model profile, prompt set, retrieval profile, permission, capability, context source, memory scope, autonomy, and extension references.

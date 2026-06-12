@@ -20,7 +20,8 @@ It is **not** an AI coding agent, an LLM API wrapper, a chat application, or a p
 | YAML manifests | Specified in draft form |
 | JSON Schemas | Implemented as practical draft schemas |
 | Examples | Implemented as reference examples |
-| Agent definitions | Specified as draft agent assembly vocabulary |
+| Agent assembly | Specified as draft behavior versioning vocabulary |
+| Agent definitions | Specified as draft agent assembly components |
 | Model profiles | Specified as draft provider-neutral vocabulary |
 | Prompt sets | Specified as draft prompt versioning vocabulary |
 | Retrieval profiles | Specified as draft context retrieval vocabulary |
@@ -67,6 +68,7 @@ The goal is to make AI-assisted software delivery inspectable before anything ru
 - **Project**: the repository, product, or workstream governed by NexFlow manifests.
 - **Team**: humans, agents, automation systems, and review authorities.
 - **Agent**: a declared AI participant with role, responsibilities, skills, access, and autonomy.
+- **Agent Assembly**: a reviewable behavioral release that links an agent identity to versioned model, prompt, retrieval, permission, context, memory, autonomy, and extension references.
 - **Agent Definition**: a versioned behavioral release of an agent assembled from model, prompt, retrieval, permission, context, memory, autonomy, and extension references.
 - **Capability**: something an actor can technically do, such as `read_repository` or `create_pull_request`.
 - **Permission**: a policy decision allowing, denying, or gating a capability.
@@ -166,7 +168,7 @@ NexFlow is intentionally split into layers:
 | Understand the vocabulary | [Concepts](docs/concepts.md), [Glossary](docs/glossary.md) |
 | See every manifest shape | [Manifest Reference](docs/manifest-reference.md) |
 | Understand safety boundaries | [Security Model](docs/security-model.md), [Approval Gates](docs/approval-gates.md) |
-| Version agent behavior | [Agent Definitions](docs/agent-definitions.md), [Versioning](docs/versioning.md), [Event Model](docs/events.md) |
+| Version agent behavior | [Agent Assembly](docs/agent-assembly.md), [Agent Definitions](docs/agent-definitions.md), [Versioning](docs/versioning.md), [Event Model](docs/events.md) |
 | Model what agents can and may do | [Capability Model](docs/capability-model.md), [Autonomy Model](docs/autonomy-model.md) |
 | Model what agents may know or retain | [Context Model](docs/context-model.md), [Memory Model](docs/memory-model.md) |
 | Model provider-neutral model selection | [Model Profiles](docs/model-profiles.md), [Provider Abstraction](docs/provider-abstraction.md), [Versioning](docs/versioning.md) |

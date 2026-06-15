@@ -122,6 +122,8 @@ Examples of future semantic checks:
 
 See [Validation](../docs/validation.md) for the current validation model.
 
+See [RFC-0005](../rfcs/RFC-0005-validation-strategy.md) for the draft validation strategy covering syntax checks, schema validation, manifest inventory, semantic validation, diagnostics, and safety boundaries.
+
 ## Local Smoke Checks
 
 Check schema JSON syntax:

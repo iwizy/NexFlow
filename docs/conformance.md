@@ -4,7 +4,10 @@ Conformance describes what it means for a manifest set, validator, CLI, runtime,
 
 This draft is intentionally lightweight. It gives implementers a shared vocabulary without pretending that a production runtime exists today.
 
-Related RFC: [RFC-0003: Conformance Levels](../rfcs/RFC-0003-conformance-levels.md).
+Related RFCs:
+
+- [RFC-0003: Conformance Levels](../rfcs/RFC-0003-conformance-levels.md)
+- [RFC-0005: Validation Strategy](../rfcs/RFC-0005-validation-strategy.md)
 
 ## Goals
 

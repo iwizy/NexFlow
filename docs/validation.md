@@ -4,6 +4,8 @@ Validation is the process of checking NexFlow manifests before any tool or runti
 
 NexFlow currently provides draft JSON Schemas and examples. It does not yet provide an official validation CLI or semantic validator.
 
+Related RFC: [RFC-0005: Validation Strategy](../rfcs/RFC-0005-validation-strategy.md).
+
 ## Validation Goals
 
 - Catch structural manifest errors early.
@@ -121,6 +123,8 @@ Those checks belong to future semantic validation.
 ## Semantic Validation
 
 Semantic validation should evaluate cross-manifest meaning.
+
+[RFC-0005](../rfcs/RFC-0005-validation-strategy.md) proposes a layered validation strategy that separates syntax checks, JSON Schema validation, manifest set inventory, semantic validation, and future runtime preflight checks.
 
 Future semantic validators should check:
 

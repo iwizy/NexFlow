@@ -28,8 +28,9 @@ Agent assembly draft checkpoint: complete for initial review. The current draft 
 - Review prompt set identifiers, revisions, source references, safety review status, and compatibility impact.
 - Review retrieval source references, index versions, chunking, freshness, citations, sensitivity, and audit expectations.
 - Review agent definition component references, lifecycle status, activation criteria, autonomy, and audit expectations.
+- Review extension namespace ownership, lifecycle transitions, registry expectations, and unsupported-extension behavior.
 
-Relevant docs: [Security Model](security-model.md), [Capability Model](capability-model.md), [Autonomy Model](autonomy-model.md), [Provider Abstraction](provider-abstraction.md), [Agent Assembly](agent-assembly.md), [Agent Definitions](agent-definitions.md), [Model Profiles](model-profiles.md), [Prompt Sets](prompt-sets.md), [Retrieval Profiles](retrieval-profiles.md), [Extension Model](extensions.md).
+Relevant docs: [Security Model](security-model.md), [Capability Model](capability-model.md), [Autonomy Model](autonomy-model.md), [Provider Abstraction](provider-abstraction.md), [Agent Assembly](agent-assembly.md), [Agent Definitions](agent-definitions.md), [Model Profiles](model-profiles.md), [Prompt Sets](prompt-sets.md), [Retrieval Profiles](retrieval-profiles.md), [Extension Model](extensions.md), [Integrations](integrations.md).
 
 ## Milestone 3: Schema Hardening
 

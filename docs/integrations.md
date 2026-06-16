@@ -2,6 +2,8 @@
 
 Integrations connect NexFlow projects to external systems. They are declared, not assumed.
 
+Integrations that need non-core metadata should use extension namespaces. See [Extension Model](extensions.md) and [RFC-0006: Extension Namespaces](../rfcs/RFC-0006-extension-namespaces.md).
+
 ## Integration Examples
 
 - GitHub

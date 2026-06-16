@@ -52,6 +52,8 @@ NexFlow compatibility is about preserving the meaning of manifests across tools 
 
 Extensions MUST declare a namespace and lifecycle state. A runtime that does not understand an extension SHOULD preserve it when possible and MUST NOT treat it as granting additional permission.
 
+[RFC-0006](../rfcs/RFC-0006-extension-namespaces.md) proposes namespace ownership, lifecycle transition, registry, and compatibility expectations for extensions.
+
 ## Runtime Compatibility
 
 Future runtimes should publish:

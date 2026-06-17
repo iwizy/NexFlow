@@ -12,6 +12,7 @@ RFCs are design proposals for meaningful changes to NexFlow.
 | [RFC-0004](RFC-0004-agent-definition-versioning.md) | Agent Definition Versioning | Draft |
 | [RFC-0005](RFC-0005-validation-strategy.md) | Validation Strategy | Draft |
 | [RFC-0006](RFC-0006-extension-namespaces.md) | Extension Namespaces | Draft |
+| [RFC-0007](RFC-0007-approval-gates.md) | Approval Gates | Draft |
 
 ## When to Write an RFC
 

@@ -4,6 +4,8 @@ Approval gates define when human or policy approval is required before an actor 
 
 An approval gate is not a runtime by itself. It is a declarative policy object that future validators and runtimes can inspect and enforce.
 
+Related RFC: [RFC-0007: Approval Gates](../rfcs/RFC-0007-approval-gates.md).
+
 ## Goals
 
 - Keep human authority explicit.

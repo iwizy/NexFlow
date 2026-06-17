@@ -9,6 +9,7 @@ Related RFCs:
 - [RFC-0003: Conformance Levels](../rfcs/RFC-0003-conformance-levels.md)
 - [RFC-0005: Validation Strategy](../rfcs/RFC-0005-validation-strategy.md)
 - [RFC-0006: Extension Namespaces](../rfcs/RFC-0006-extension-namespaces.md)
+- [RFC-0007: Approval Gates](../rfcs/RFC-0007-approval-gates.md)
 
 ## Goals
 

@@ -22,6 +22,7 @@ Agent assembly draft checkpoint: complete for initial review. The current draft 
 - Refine terminology.
 - Identify missing safety and compatibility rules.
 - Review approval gate semantics with maintainers and runtime implementers.
+- Review RFC-0007 approval request, decision, evidence, scope, expiry, revocation, and enforcement boundary semantics.
 - Review context source taxonomy, freshness rules, web boundaries, and MCP context/tool separation.
 - Review memory sensitivity, ownership, allowed consumers, and cross-scope promotion rules.
 - Review model profile selection modes, pinned and floating references, constraints, fallback, and audit expectations.

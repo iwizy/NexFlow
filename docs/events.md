@@ -209,3 +209,5 @@ Events should prefer retrieval profile references, context source IDs, corpus ve
 Events related to approvals, destructive actions, production actions, credential access, and memory updates SHOULD be retained according to project policy.
 
 See [Approval Gates](approval-gates.md) for how approval decisions relate to review events and future approval-specific events.
+
+See [RFC-0007](../rfcs/RFC-0007-approval-gates.md) for the draft approval gate event and audit model.

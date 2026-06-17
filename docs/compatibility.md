@@ -66,6 +66,8 @@ Future runtimes should publish:
 
 See [Conformance](conformance.md) for draft vocabulary that tools can use when describing support levels.
 
+[RFC-0007](../rfcs/RFC-0007-approval-gates.md) proposes approval semantics that may affect `NF-SEMANTIC`, `NF-RUNTIME`, safety, and audit compatibility when approval meaning changes.
+
 ## Conformance Impact
 
 Compatibility notes should identify which conformance levels are affected when possible.

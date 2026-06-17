@@ -20,6 +20,8 @@ Sensitive actions should require explicit approval.
 
 Approval gates are described in [Approval Gates](approval-gates.md). They should be scoped, auditable, and human-owned for high-risk actions.
 
+[RFC-0007](../rfcs/RFC-0007-approval-gates.md) proposes draft approval semantics for declarations, requests, decisions, evidence, scope, expiry, revocation, and future runtime enforcement boundaries.
+
 ### Auditability
 
 Important state changes should emit events and preserve enough context for later review.

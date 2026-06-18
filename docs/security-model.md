@@ -50,6 +50,8 @@ Context sources should be classified conservatively and should not be expanded t
 
 Memory writes are higher risk than context reads because they can persist and reuse information after the task ends. Durable or sensitive memory should declare ownership, visibility, allowed consumers, allowed writers, prohibited content, promotion paths, audit events, and approval gates where needed.
 
+[RFC-0008](../rfcs/RFC-0008-memory-retention.md) proposes draft memory retention semantics for scopes, ownership, visibility, consumers, writers, sensitivity, promotion, correction, deletion, expiry, audit, and future runtime boundaries.
+
 ### Prompt Boundaries
 
 Prompt sets can contain sensitive operational guidance even when they do not contain credentials. Public manifests should prefer prompt source references, revisions, digests, ownership, and review metadata over raw prompt text when disclosure would expose internal controls, private workflows, or sensitive escalation rules.

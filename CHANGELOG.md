@@ -25,6 +25,7 @@ This project follows a specification-first process. Breaking changes must includ
 - Draft RFC-0005 for validation strategy across syntax checks, JSON Schema validation, manifest inventory, semantic validation, diagnostics, and safety boundaries.
 - Draft RFC-0006 for extension namespace ownership, lifecycle transitions, registry expectations, compatibility, and safety boundaries.
 - Draft RFC-0007 for approval gate declarations, requests, decisions, evidence, scope, expiry, revocation, evaluation order, and future enforcement boundaries.
+- Draft RFC-0008 for memory retention, ownership, visibility, consumers, writers, sensitivity, promotion, correction, deletion, expiry, audit, and future runtime boundaries.
 - Draft agent definition vocabulary for versioned behavioral releases assembled from model, prompt, retrieval, permission, capability, context, memory, autonomy, and extension references.
 - Draft model profile vocabulary for provider-neutral model selection, pinned and floating references, constraints, fallback, review triggers, and audit expectations.
 - Draft prompt set vocabulary for prompt identifiers, revisions, source references, ownership, safety review, compatibility impact, and audit expectations.

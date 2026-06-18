@@ -124,6 +124,8 @@ See [Validation](../docs/validation.md) for the current validation model.
 
 See [RFC-0005](../rfcs/RFC-0005-validation-strategy.md) for the draft validation strategy covering syntax checks, schema validation, manifest inventory, semantic validation, diagnostics, and safety boundaries.
 
+See [RFC-0008](../rfcs/RFC-0008-memory-retention.md) for draft memory retention semantics beyond schema shape.
+
 ## Local Smoke Checks
 
 Check schema JSON syntax:

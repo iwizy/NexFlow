@@ -119,6 +119,8 @@ payload:
   retainedBecause: Reusable implementation decision accepted by reviewer.
 ```
 
+See [RFC-0008](../rfcs/RFC-0008-memory-retention.md) for memory write, correction, deletion, promotion, retention, and audit expectations.
+
 ### Model profile audit fields
 
 Future events that involve model-backed agent behavior may include model profile metadata:

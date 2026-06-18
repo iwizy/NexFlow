@@ -44,6 +44,7 @@ NexFlow compatibility is about preserving the meaning of manifests across tools 
 - disabling required citations
 - allowing stale context where it was previously prohibited
 - broadening retrieval classification or cross-scope reuse
+- changing memory retention, visibility, sensitivity, allowed consumers, allowed writers, or promotion paths
 - removing fields
 - changing required fields
 - changing event payload structure
@@ -68,6 +69,8 @@ See [Conformance](conformance.md) for draft vocabulary that tools can use when d
 
 [RFC-0007](../rfcs/RFC-0007-approval-gates.md) proposes approval semantics that may affect `NF-SEMANTIC`, `NF-RUNTIME`, safety, and audit compatibility when approval meaning changes.
 
+[RFC-0008](../rfcs/RFC-0008-memory-retention.md) proposes memory retention semantics that may affect `NF-SEMANTIC`, `NF-RUNTIME`, privacy, audit, and safety compatibility.
+
 ## Conformance Impact
 
 Compatibility notes should identify which conformance levels are affected when possible.
@@ -79,6 +82,7 @@ Examples:
 | Add optional schema field | May preserve `NF-SCHEMA`; may require docs and examples updates. |
 | Rename required manifest field | Breaks `NF-MANIFEST` and `NF-SCHEMA`. |
 | Change approval gate meaning | May break `NF-RUNTIME` safety expectations. |
+| Change memory retention, visibility, sensitivity, consumers, writers, or promotion paths | May affect `NF-SEMANTIC`, `NF-RUNTIME`, privacy, audit, and safety compatibility. |
 | Add semantic cross-reference rule | May affect `NF-SEMANTIC` validators. |
 | Change extension namespace lifecycle | May affect `NF-EXTENSION` compatibility. |
 | Change active agent definition components or autonomy | May affect `NF-SEMANTIC`, `NF-RUNTIME`, safety, and audit compatibility. |

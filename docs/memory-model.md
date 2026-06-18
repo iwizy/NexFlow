@@ -7,6 +7,8 @@ Memory describes retained information and reuse boundaries. It answers a differe
 
 Memory is therefore higher risk than ordinary context access. A runtime that can remember can accidentally preserve sensitive facts, reuse stale assumptions, or move information into a broader audience than originally intended.
 
+Related RFC: [RFC-0008: Memory Retention](../rfcs/RFC-0008-memory-retention.md).
+
 ## Goals
 
 - Make retention and reuse explicit.

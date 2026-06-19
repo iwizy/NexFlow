@@ -15,6 +15,33 @@
     "metadata": {
       "$ref": "common.schema.json#/$defs/metadata"
     },
+    "envelope": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "required": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "optional": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "auditRecommended": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "redactionPolicy": {
+          "type": "string"
+        }
+      }
+    },
     "events": {
       "type": "array",
       "items": {

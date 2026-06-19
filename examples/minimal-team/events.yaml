@@ -2,6 +2,22 @@ specVersion: "0.1"
 kind: EventSet
 metadata:
   project: minimal-team
+envelope:
+  required:
+    - specVersion
+    - eventId
+    - type
+    - occurredAt
+    - actor
+    - subject
+    - correlationId
+    - payload
+  auditRecommended:
+    - recordedAt
+    - source
+    - causationId
+    - audit
+  redactionPolicy: Follow project security policy; prefer references over raw sensitive content.
 events:
   - type: task.created
     description: A task is created.

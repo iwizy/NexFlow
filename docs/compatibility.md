@@ -45,6 +45,7 @@ NexFlow compatibility is about preserving the meaning of manifests across tools 
 - allowing stale context where it was previously prohibited
 - broadening retrieval classification or cross-scope reuse
 - changing memory retention, visibility, sensitivity, allowed consumers, allowed writers, or promotion paths
+- changing event envelope identity, actor, subject, correlation, causation, payload, audit, or redaction semantics
 - removing fields
 - changing required fields
 - changing event payload structure
@@ -71,6 +72,8 @@ See [Conformance](conformance.md) for draft vocabulary that tools can use when d
 
 [RFC-0008](../rfcs/RFC-0008-memory-retention.md) proposes memory retention semantics that may affect `NF-SEMANTIC`, `NF-RUNTIME`, privacy, audit, and safety compatibility.
 
+[RFC-0009](../rfcs/RFC-0009-event-envelope.md) proposes event envelope semantics that may affect `NF-SEMANTIC`, `NF-RUNTIME`, audit, traceability, privacy, and safety compatibility.
+
 ## Conformance Impact
 
 Compatibility notes should identify which conformance levels are affected when possible.
@@ -83,6 +86,7 @@ Examples:
 | Rename required manifest field | Breaks `NF-MANIFEST` and `NF-SCHEMA`. |
 | Change approval gate meaning | May break `NF-RUNTIME` safety expectations. |
 | Change memory retention, visibility, sensitivity, consumers, writers, or promotion paths | May affect `NF-SEMANTIC`, `NF-RUNTIME`, privacy, audit, and safety compatibility. |
+| Change event envelope identity, actor, subject, correlation, causation, payload, audit, or redaction semantics | May affect `NF-SEMANTIC`, `NF-RUNTIME`, audit, traceability, privacy, and safety compatibility. |
 | Add semantic cross-reference rule | May affect `NF-SEMANTIC` validators. |
 | Change extension namespace lifecycle | May affect `NF-EXTENSION` compatibility. |
 | Change active agent definition components or autonomy | May affect `NF-SEMANTIC`, `NF-RUNTIME`, safety, and audit compatibility. |

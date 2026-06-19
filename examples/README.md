@@ -34,7 +34,7 @@ Each example contains the same core manifest files:
 | `model-profiles.yaml` | Provider-neutral model selection profiles, pinned or floating references, constraints, fallback, review triggers, and audit expectations. |
 | `prompt-sets.yaml` | Versioned prompt material, prompt revisions, source references, safety review status, compatibility impact, and audit expectations. |
 | `retrieval-profiles.yaml` | Retrieval expectations for context sources, index versions, chunking, freshness, citations, sensitivity, and audit metadata. |
-| `events.yaml` | Event names, payload expectations, retention, and audit requirements. |
+| `events.yaml` | Event names, optional envelope expectations, payload expectations, retention, and audit requirements. |
 | `extensions.yaml` | Integration namespaces, lifecycle state, applicable manifests, and required capabilities. |
 
 ## How to Read an Example
@@ -46,7 +46,7 @@ After that, follow the work:
 1. `tasks.yaml` shows units of work and required capabilities.
 2. `workflow.yaml` shows ordering and dependency structure.
 3. `handoffs.yaml` shows how responsibility moves between actors.
-4. `events.yaml` shows the audit trail expected from meaningful state changes.
+4. `events.yaml` shows the event types and event envelope expectations for audit trails from meaningful state changes.
 
 Finally, check `context.yaml`, `retrieval-profiles.yaml`, and `memory.yaml` to understand what actors may know, retrieve, cite, retain, or reuse.
 
@@ -77,7 +77,7 @@ All examples follow the same safety pattern:
 - prompt sets are versioned and reviewable
 - retrieval profiles cite declared context sources and preserve context boundaries
 - handoffs include artifacts and next actions
-- event declarations make audit expectations visible
+- event declarations make audit and envelope expectations visible
 - provider declarations remain abstract
 
 ## Validation

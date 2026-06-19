@@ -24,7 +24,7 @@ The schemas currently target `specVersion: "0.1"` and use JSON Schema draft 2020
 | `model-profiles.schema.json` | `ModelProfileSet` | Provider-neutral model profiles, selection modes, constraints, fallback rules, review triggers, and audit expectations. |
 | `prompt-sets.schema.json` | `PromptSet` | Versioned prompt material, prompt revisions, source references, safety review status, compatibility impact, and audit expectations. |
 | `retrieval-profiles.schema.json` | `RetrievalProfileSet` | Retrieval profiles for context source selection, index versions, chunking, freshness, citations, sensitivity, review triggers, and audit expectations. |
-| `events.schema.json` | `EventSet` | Event names, payload expectations, retention, and audit requirements. |
+| `events.schema.json` | `EventSet` | Event names, optional envelope expectations, payload expectations, retention, and audit requirements. |
 | `extensions.schema.json` | `ExtensionSet` | Extension namespaces, lifecycle state, and required capabilities. |
 | `common.schema.json` | Shared definitions | IDs, metadata, autonomy levels, risk levels, artifacts, approval gates, and common enums. |
 
@@ -125,6 +125,8 @@ See [Validation](../docs/validation.md) for the current validation model.
 See [RFC-0005](../rfcs/RFC-0005-validation-strategy.md) for the draft validation strategy covering syntax checks, schema validation, manifest inventory, semantic validation, diagnostics, and safety boundaries.
 
 See [RFC-0008](../rfcs/RFC-0008-memory-retention.md) for draft memory retention semantics beyond schema shape.
+
+See [RFC-0009](../rfcs/RFC-0009-event-envelope.md) for draft event envelope semantics beyond schema shape.
 
 ## Local Smoke Checks
 

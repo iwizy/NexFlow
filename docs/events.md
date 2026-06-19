@@ -2,6 +2,10 @@
 
 Events describe auditable state transitions.
 
+Related RFC: [RFC-0009: Event Envelope](../rfcs/RFC-0009-event-envelope.md).
+
+`events.yaml` declares event types, payload expectations, retention, and audit requirements. It is not an event log. Future runtimes may emit event instances that follow the common envelope model.
+
 ## Event Naming
 
 Event names use dotted lowercase names:
@@ -26,12 +30,15 @@ Event names use dotted lowercase names:
 - `memory.deleted`
 - `memory.promoted`
 
-## Common Payload Fields
+## Common Event Envelope
 
 ```yaml
 event:
+  specVersion: "0.1"
+  eventId: evt_task_completed_001
   type: task.completed
   occurredAt: "2026-05-29T10:00:00Z"
+  recordedAt: "2026-05-29T10:00:02Z"
   actor: docs-architect
   subject:
     kind: task
@@ -47,6 +54,8 @@ event:
 
 Events SHOULD include:
 
+- `specVersion`
+- `eventId`
 - `type`
 - `occurredAt`
 - `actor`
@@ -56,6 +65,11 @@ Events SHOULD include:
 
 Future runtimes SHOULD also record:
 
+- `recordedAt`
+- source runtime, CLI, integration, or validator
+- causation ID when known
+- sequence when useful
+- severity or outcome when useful
 - manifest version
 - runtime version
 - agent definition reference
@@ -71,6 +85,9 @@ Future runtimes SHOULD also record:
 - approval references
 - context sources used
 - memory scopes read or written
+- redaction status and retention policy for audit-sensitive events
+
+See [RFC-0009](../rfcs/RFC-0009-event-envelope.md) for event identity, correlation, causation, payload, audit, redaction, ordering, and extension guidance.
 
 ## Event Payload Examples
 

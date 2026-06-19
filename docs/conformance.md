@@ -11,6 +11,7 @@ Related RFCs:
 - [RFC-0006: Extension Namespaces](../rfcs/RFC-0006-extension-namespaces.md)
 - [RFC-0007: Approval Gates](../rfcs/RFC-0007-approval-gates.md)
 - [RFC-0008: Memory Retention](../rfcs/RFC-0008-memory-retention.md)
+- [RFC-0009: Event Envelope](../rfcs/RFC-0009-event-envelope.md)
 
 ## Goals
 
@@ -150,6 +151,7 @@ The following behavior is non-conforming:
 - ignoring approval gates for high-risk actions
 - using undeclared context sources
 - writing memory outside declared scopes
+- emitting audit events that omit required envelope metadata while claiming complete runtime audit conformance
 - executing workflows while claiming validation-only behavior
 - silently accepting unsupported spec versions
 

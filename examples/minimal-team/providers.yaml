@@ -13,3 +13,6 @@ providers:
       allowTrainingUse: false
     selection:
       strategy: project_policy
+      explainability:
+        recordSelectionReason: true
+        recordConstraintsApplied: true

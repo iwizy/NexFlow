@@ -151,7 +151,7 @@ See [Memory Model](memory-model.md) for sensitivity rules, ownership guidance, a
 
 Declares provider abstractions and preferences without binding the spec to a vendor.
 
-Related docs: [Provider Abstraction](provider-abstraction.md), [Runtime Options](runtime-options.md), [Security Model](security-model.md).
+Related docs: [Provider Abstraction](provider-abstraction.md), [Runtime Options](runtime-options.md), [Security Model](security-model.md), [RFC-0010](../rfcs/RFC-0010-provider-selection.md).
 
 ### `model-profiles.yaml`
 
@@ -165,11 +165,12 @@ Model profiles define:
 - optional constraints for training use, data residency, tool use, cost, latency, and sensitivity
 - optional fallback behavior
 - audit expectations for recording resolved providers, models, revisions, selection reasons, and fallback use
+- optional audit expectations for recording constraints applied and policy decisions
 - review requirements and review triggers for behavior-changing model updates
 
 Model profiles do not select a provider by themselves and do not grant permissions, context access, tool access, or runtime autonomy.
 
-Related docs: [Model Profiles](model-profiles.md), [Provider Abstraction](provider-abstraction.md), [Versioning](versioning.md), [Event Model](events.md), [Security Model](security-model.md).
+Related docs: [Model Profiles](model-profiles.md), [Provider Abstraction](provider-abstraction.md), [Versioning](versioning.md), [Event Model](events.md), [Security Model](security-model.md), [RFC-0010](../rfcs/RFC-0010-provider-selection.md).
 
 ### `prompt-sets.yaml`
 

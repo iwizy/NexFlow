@@ -32,6 +32,7 @@ NexFlow compatibility is about preserving the meaning of manifests across tools 
 - broadening agent definition context, memory, permission, capability, or extension references
 - changing a pinned model reference
 - changing a floating model alias policy
+- changing provider preference precedence, provider selection constraints, fallback eligibility, or provider selection explainability expectations
 - broadening provider eligibility, training use, or tool use in a model profile
 - changing a prompt revision used by an active agent definition
 - changing safety prompt material
@@ -74,6 +75,8 @@ See [Conformance](conformance.md) for draft vocabulary that tools can use when d
 
 [RFC-0009](../rfcs/RFC-0009-event-envelope.md) proposes event envelope semantics that may affect `NF-SEMANTIC`, `NF-RUNTIME`, audit, traceability, privacy, and safety compatibility.
 
+[RFC-0010](../rfcs/RFC-0010-provider-selection.md) proposes provider selection semantics that may affect `NF-SEMANTIC`, `NF-RUNTIME`, audit, privacy, cost, safety, and compatibility.
+
 ## Conformance Impact
 
 Compatibility notes should identify which conformance levels are affected when possible.
@@ -87,6 +90,7 @@ Examples:
 | Change approval gate meaning | May break `NF-RUNTIME` safety expectations. |
 | Change memory retention, visibility, sensitivity, consumers, writers, or promotion paths | May affect `NF-SEMANTIC`, `NF-RUNTIME`, privacy, audit, and safety compatibility. |
 | Change event envelope identity, actor, subject, correlation, causation, payload, audit, or redaction semantics | May affect `NF-SEMANTIC`, `NF-RUNTIME`, audit, traceability, privacy, and safety compatibility. |
+| Change provider selection precedence, constraints, fallback, or explainability expectations | May affect `NF-SEMANTIC`, `NF-RUNTIME`, audit, privacy, cost, safety, and compatibility. |
 | Add semantic cross-reference rule | May affect `NF-SEMANTIC` validators. |
 | Change extension namespace lifecycle | May affect `NF-EXTENSION` compatibility. |
 | Change active agent definition components or autonomy | May affect `NF-SEMANTIC`, `NF-RUNTIME`, safety, and audit compatibility. |

@@ -30,6 +30,8 @@ modelProfiles:
       recordResolvedModel: true
       recordModelRevision: true
       recordSelectionReason: true
+      recordConstraintsApplied: true
+      recordPolicyDecision: true
       recordFallbackUsed: true
     review:
       required: true

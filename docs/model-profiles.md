@@ -21,6 +21,8 @@ It can describe:
 
 Model profiles are part of the agent assembly versioning vocabulary proposed in [RFC-0004](../rfcs/RFC-0004-agent-definition-versioning.md).
 
+Provider selection semantics are proposed in [RFC-0010](../rfcs/RFC-0010-provider-selection.md).
+
 ## Manifest
 
 Model profiles may be declared in `model-profiles.yaml`.
@@ -58,6 +60,8 @@ modelProfiles:
       recordResolvedModel: true
       recordModelRevision: true
       recordSelectionReason: true
+      recordConstraintsApplied: true
+      recordPolicyDecision: true
       recordFallbackUsed: true
     review:
       required: true
@@ -156,10 +160,16 @@ model:
   providerRef: coding_reasoning
   resolvedModel: approved-coding-review-model
   resolvedRevision: "2026-06"
+  constraintsApplied:
+    trainingUse: prohibited
+    toolUse: declared_tools_only
+  policyDecisionRef: project-policy-model-selection
   fallbackUsed: false
 ```
 
 Provider-specific runtime details should remain extension-scoped or runtime-scoped when they do not belong in the core model.
+
+Selection explanations should record why a provider and model were selected, which constraints were applied, whether fallback was used, and whether approval was required.
 
 ## Review Triggers
 

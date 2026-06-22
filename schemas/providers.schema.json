@@ -45,6 +45,21 @@
             "properties": {
               "strategy": {
                 "type": "string"
+              },
+              "explainability": {
+                "type": "object",
+                "additionalProperties": true,
+                "properties": {
+                  "recordSelectionReason": {
+                    "type": "boolean"
+                  },
+                  "recordConstraintsApplied": {
+                    "type": "boolean"
+                  },
+                  "recordFallbackReason": {
+                    "type": "boolean"
+                  }
+                }
               }
             }
           }

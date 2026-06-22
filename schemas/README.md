@@ -20,7 +20,7 @@ The schemas currently target `specVersion: "0.1"` and use JSON Schema draft 2020
 | `capabilities.schema.json` | `CapabilitySet` | Capability vocabulary, categories, risk levels, and audit guidance. |
 | `context.schema.json` | `ContextSet` | Context sources, access modes, classifications, freshness, web boundaries, and MCP metadata. |
 | `memory.schema.json` | `MemorySet` | Memory scopes, retention, ownership, visibility, sensitivity, consumers, writers, update modes, audit events, and promotion boundaries. |
-| `providers.schema.json` | `ProviderSet` | Provider abstractions and selection constraints. |
+| `providers.schema.json` | `ProviderSet` | Provider abstractions, selection constraints, and optional explainability hints. |
 | `model-profiles.schema.json` | `ModelProfileSet` | Provider-neutral model profiles, selection modes, constraints, fallback rules, review triggers, and audit expectations. |
 | `prompt-sets.schema.json` | `PromptSet` | Versioned prompt material, prompt revisions, source references, safety review status, compatibility impact, and audit expectations. |
 | `retrieval-profiles.schema.json` | `RetrievalProfileSet` | Retrieval profiles for context source selection, index versions, chunking, freshness, citations, sensitivity, review triggers, and audit expectations. |
@@ -127,6 +127,8 @@ See [RFC-0005](../rfcs/RFC-0005-validation-strategy.md) for the draft validation
 See [RFC-0008](../rfcs/RFC-0008-memory-retention.md) for draft memory retention semantics beyond schema shape.
 
 See [RFC-0009](../rfcs/RFC-0009-event-envelope.md) for draft event envelope semantics beyond schema shape.
+
+See [RFC-0010](../rfcs/RFC-0010-provider-selection.md) for draft provider selection semantics beyond schema shape.
 
 ## Local Smoke Checks
 

@@ -12,6 +12,7 @@ Related RFCs:
 - [RFC-0007: Approval Gates](../rfcs/RFC-0007-approval-gates.md)
 - [RFC-0008: Memory Retention](../rfcs/RFC-0008-memory-retention.md)
 - [RFC-0009: Event Envelope](../rfcs/RFC-0009-event-envelope.md)
+- [RFC-0010: Provider Selection](../rfcs/RFC-0010-provider-selection.md)
 
 ## Goals
 
@@ -151,6 +152,7 @@ The following behavior is non-conforming:
 - ignoring approval gates for high-risk actions
 - using undeclared context sources
 - writing memory outside declared scopes
+- treating provider preferences or provider availability as permission to call a provider
 - emitting audit events that omit required envelope metadata while claiming complete runtime audit conformance
 - executing workflows while claiming validation-only behavior
 - silently accepting unsupported spec versions

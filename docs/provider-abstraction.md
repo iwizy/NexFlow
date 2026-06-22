@@ -2,6 +2,8 @@
 
 NexFlow is provider neutral.
 
+Related RFC: [RFC-0010: Provider Selection](../rfcs/RFC-0010-provider-selection.md).
+
 Providers may include:
 
 - OpenAI
@@ -28,6 +30,9 @@ capabilities:
   - tool_reasoning
 selection:
   strategy: project_policy
+  explainability:
+    recordSelectionReason: true
+    recordConstraintsApplied: true
 ```
 
 ## Provider Preferences
@@ -42,6 +47,8 @@ providerPreferences:
 ```
 
 Preferences are not hard requirements unless project policy says so.
+
+Provider preferences must not override model profile constraints, permissions, approval gates, context boundaries, memory boundaries, or project policy.
 
 ## Model Profiles
 
@@ -78,3 +85,5 @@ A future runtime should make provider selection explainable:
 - policy constraints applied
 - context shared
 - memory scopes used
+
+See [RFC-0010](../rfcs/RFC-0010-provider-selection.md) for the draft provider selection decision path, fallback expectations, and audit guidance.

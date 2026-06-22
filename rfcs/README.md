@@ -15,6 +15,7 @@ RFCs are design proposals for meaningful changes to NexFlow.
 | [RFC-0007](RFC-0007-approval-gates.md) | Approval Gates | Draft |
 | [RFC-0008](RFC-0008-memory-retention.md) | Memory Retention | Draft |
 | [RFC-0009](RFC-0009-event-envelope.md) | Event Envelope | Draft |
+| [RFC-0010](RFC-0010-provider-selection.md) | Provider Selection | Draft |
 
 ## When to Write an RFC
 

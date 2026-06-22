@@ -28,6 +28,7 @@ Agent assembly draft checkpoint: complete for initial review. The current draft 
 - Review RFC-0008 memory retention, ownership, visibility, allowed consumers, allowed writers, correction, deletion, expiry, and audit expectations.
 - Review RFC-0009 event envelope identity, actor, subject, correlation, causation, payload, audit, redaction, ordering, and extension expectations.
 - Review model profile selection modes, pinned and floating references, constraints, fallback, and audit expectations.
+- Review RFC-0010 provider preference, constraint, fallback, explainability, and runtime audit semantics.
 - Review prompt set identifiers, revisions, source references, safety review status, and compatibility impact.
 - Review retrieval source references, index versions, chunking, freshness, citations, sensitivity, and audit expectations.
 - Review agent definition component references, lifecycle status, activation criteria, autonomy, and audit expectations.

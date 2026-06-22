@@ -81,6 +81,8 @@ Future runtimes SHOULD also record:
 - retrieval source IDs, index versions, freshness decisions, and citation metadata when safe and available
 - resolved provider and model, when safe and available
 - model selection reason
+- provider selection constraints applied
+- provider policy decision reference, when safe and available
 - whether model fallback was used
 - approval references
 - context sources used

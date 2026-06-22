@@ -151,6 +151,12 @@
               "recordSelectionReason": {
                 "type": "boolean"
               },
+              "recordConstraintsApplied": {
+                "type": "boolean"
+              },
+              "recordPolicyDecision": {
+                "type": "boolean"
+              },
               "recordFallbackUsed": {
                 "type": "boolean"
               },

@@ -44,6 +44,12 @@ Destructive operations require human approval and audit events.
 
 Network access should be declared and scoped by policy, source, or domain where possible.
 
+### Provider Selection
+
+Provider preferences and provider declarations do not grant access. Future runtimes should apply project policy, permissions, approval gates, context boundaries, memory boundaries, model profile constraints, and fallback rules before calling a provider.
+
+[RFC-0010](../rfcs/RFC-0010-provider-selection.md) proposes draft provider selection semantics for preferences, constraints, fallback, explainability, audit, and future runtime boundaries.
+
 ### Context Boundaries
 
 Context sources should be classified conservatively and should not be expanded through provider defaults, extensions, cached data, or MCP tools. Web context should define freshness and domain boundaries where possible.

@@ -32,6 +32,14 @@ It is **not** an AI coding agent, an LLM API wrapper, a chat application, or a p
 
 Current spec version: **0.1 draft**
 
+## Repository History Note
+
+This repository was recreated on June 23, 2026 after personal files were accidentally committed during early bootstrapping.
+
+The repository history was sanitized and republished with original commit author dates preserved where possible. Old pull request links from the previous repository instance should be considered obsolete.
+
+No project specification content was intentionally removed as part of this cleanup.
+
 ## Problem
 
 Software teams increasingly include humans, AI agents, CI systems, external tools, and automation services. Today, every tool describes agents, prompts, skills, memory, permissions, context, tasks, and workflow state differently.

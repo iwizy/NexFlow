@@ -6,7 +6,7 @@ Related RFC: [RFC-0006: Extension Namespaces](../rfcs/RFC-0006-extension-namespa
 
 ## Goals
 
-- support integrations such as GitHub, GitLab, Jira, Linear, Figma, Slack, Discord, Telegram, notes, MCP, and custom systems
+- support integrations such as GitHub, GitLab, Jira, Linear, Figma, Slack, Discord, Telegram, MCP, notes, and custom systems
 - preserve core portability
 - make non-core behavior visible
 - avoid hidden permission expansion

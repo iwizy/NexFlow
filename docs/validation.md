@@ -4,7 +4,10 @@ Validation is the process of checking NexFlow manifests before any tool or runti
 
 NexFlow currently provides draft JSON Schemas and examples. It does not yet provide an official validation CLI or semantic validator.
 
-Related RFC: [RFC-0005: Validation Strategy](../rfcs/RFC-0005-validation-strategy.md).
+Related RFCs:
+
+- [RFC-0005: Validation Strategy](../rfcs/RFC-0005-validation-strategy.md)
+- [RFC-0011: Reference CLI Scope](../rfcs/RFC-0011-reference-cli-scope.md)
 
 ## Validation Goals
 
@@ -190,3 +193,5 @@ examples/software-team/tasks.yaml
 Validation supports the `NF-SCHEMA` and future `NF-SEMANTIC` conformance levels described in [Conformance](conformance.md).
 
 Current repository checks are draft validation aids. A future `nexflow validate` command should make these checks easier to run consistently.
+
+See [RFC-0011](../rfcs/RFC-0011-reference-cli-scope.md) for the draft scope of `nexflow validate`, `nexflow inspect`, `nexflow graph`, and `nexflow init`.

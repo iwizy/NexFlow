@@ -21,7 +21,7 @@ NexFlow defines the following draft source types.
 | `github` | Repositories, issues, pull requests, discussions, actions metadata. | `read`, `query`, gated `write`. | Repository write actions require separate capabilities and permissions. |
 | `gitlab` | Repositories, merge requests, issues, pipelines. | `read`, `query`, gated `write`. | Similar to GitHub, but provider-specific fields should remain extension-scoped. |
 | `docs` | Project docs, API docs, runbooks, decision records. | `read`, sometimes gated `write`. | Public docs may still contain project-sensitive intent. |
-| `notes` | Local or synced notes, personal knowledge bases. | `read`, `query`. | Usually has stronger ownership and privacy expectations. |
+| `notes` | Local or synced notes and project knowledge bases. | `read`, `query`. | Usually has stronger ownership and privacy expectations. |
 | `confluence` | Enterprise documentation, standards, runbooks. | `read`, `query`. | Often `internal` or `confidential`. |
 | `local_files` | Repository files, local worktree folders, generated artifacts. | `read`, gated `write`. | File writes are separate sensitive actions. |
 | `knowledge_base` | Curated project, product, support, or research knowledge. | `read`, `query`. | Should document curation and sensitivity assumptions. |

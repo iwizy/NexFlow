@@ -4,6 +4,8 @@ NexFlow does not choose a runtime language yet.
 
 A runtime architecture decision must happen before implementation begins.
 
+Reference CLI scope is a separate planning step. See [RFC-0011](../rfcs/RFC-0011-reference-cli-scope.md) for the draft validation-only CLI boundary.
+
 ## Evaluation Criteria
 
 Candidate runtimes should be evaluated on:

@@ -13,6 +13,7 @@ Related RFCs:
 - [RFC-0008: Memory Retention](../rfcs/RFC-0008-memory-retention.md)
 - [RFC-0009: Event Envelope](../rfcs/RFC-0009-event-envelope.md)
 - [RFC-0010: Provider Selection](../rfcs/RFC-0010-provider-selection.md)
+- [RFC-0011: Reference CLI Scope](../rfcs/RFC-0011-reference-cli-scope.md)
 
 ## Goals
 
@@ -79,6 +80,8 @@ A future reference CLI may support commands such as:
 - `nexflow graph`
 
 An initial conforming CLI SHOULD focus on validation and inspection. It MUST NOT imply orchestration behavior unless that behavior is specified.
+
+[RFC-0011](../rfcs/RFC-0011-reference-cli-scope.md) proposes the initial validation-only reference CLI scope for `validate`, `inspect`, `graph`, and `init`.
 
 ### Runtime
 
@@ -155,6 +158,7 @@ The following behavior is non-conforming:
 - treating provider preferences or provider availability as permission to call a provider
 - emitting audit events that omit required envelope metadata while claiming complete runtime audit conformance
 - executing workflows while claiming validation-only behavior
+- a reference CLI calling providers, executing commands, writing memory, or mutating remote systems while claiming validation-only `NF-CLI` behavior
 - silently accepting unsupported spec versions
 
 ## Current Repository Status

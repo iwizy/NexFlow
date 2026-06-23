@@ -47,6 +47,7 @@ NexFlow compatibility is about preserving the meaning of manifests across tools 
 - broadening retrieval classification or cross-scope reuse
 - changing memory retention, visibility, sensitivity, allowed consumers, allowed writers, or promotion paths
 - changing event envelope identity, actor, subject, correlation, causation, payload, audit, or redaction semantics
+- changing reference CLI command names, exit code meanings, diagnostic code meanings, or machine-readable output formats
 - removing fields
 - changing required fields
 - changing event payload structure
@@ -77,6 +78,8 @@ See [Conformance](conformance.md) for draft vocabulary that tools can use when d
 
 [RFC-0010](../rfcs/RFC-0010-provider-selection.md) proposes provider selection semantics that may affect `NF-SEMANTIC`, `NF-RUNTIME`, audit, privacy, cost, safety, and compatibility.
 
+[RFC-0011](../rfcs/RFC-0011-reference-cli-scope.md) proposes validation-only reference CLI scope that may affect `NF-CLI`, `NF-SCHEMA`, `NF-SEMANTIC`, diagnostics, and developer workflow compatibility.
+
 ## Conformance Impact
 
 Compatibility notes should identify which conformance levels are affected when possible.
@@ -91,6 +94,7 @@ Examples:
 | Change memory retention, visibility, sensitivity, consumers, writers, or promotion paths | May affect `NF-SEMANTIC`, `NF-RUNTIME`, privacy, audit, and safety compatibility. |
 | Change event envelope identity, actor, subject, correlation, causation, payload, audit, or redaction semantics | May affect `NF-SEMANTIC`, `NF-RUNTIME`, audit, traceability, privacy, and safety compatibility. |
 | Change provider selection precedence, constraints, fallback, or explainability expectations | May affect `NF-SEMANTIC`, `NF-RUNTIME`, audit, privacy, cost, safety, and compatibility. |
+| Change reference CLI command names, exit codes, diagnostic codes, or output formats | May affect `NF-CLI`, CI workflows, editor integrations, and developer tooling compatibility. |
 | Add semantic cross-reference rule | May affect `NF-SEMANTIC` validators. |
 | Change extension namespace lifecycle | May affect `NF-EXTENSION` compatibility. |
 | Change active agent definition components or autonomy | May affect `NF-SEMANTIC`, `NF-RUNTIME`, safety, and audit compatibility. |

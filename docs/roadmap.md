@@ -51,6 +51,7 @@ Relevant docs: [Validation](validation.md), [Conformance](conformance.md), [Comp
 
 - Compare implementation languages.
 - Define reference CLI scope.
+- Review RFC-0011 validation-only reference CLI command boundaries.
 - Define security and extension loading boundaries.
 - Decide packaging and conformance test strategy.
 

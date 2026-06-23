@@ -136,7 +136,7 @@ The principle that humans remain the final authority for risky, destructive, pro
 
 ### Integration
 
-A connection to an external system such as GitHub, GitLab, Jira, Linear, Figma, Slack, Discord, Telegram, notes, MCP, or a custom service.
+A connection to an external system such as GitHub, GitLab, Jira, Linear, Figma, Slack, Discord, Telegram, MCP, notes, or a custom service.
 
 An integration can expose capabilities or context, but it should not authorize actors by presence alone.
 

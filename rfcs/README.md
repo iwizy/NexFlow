@@ -16,6 +16,7 @@ RFCs are design proposals for meaningful changes to NexFlow.
 | [RFC-0008](RFC-0008-memory-retention.md) | Memory Retention | Draft |
 | [RFC-0009](RFC-0009-event-envelope.md) | Event Envelope | Draft |
 | [RFC-0010](RFC-0010-provider-selection.md) | Provider Selection | Draft |
+| [RFC-0011](RFC-0011-reference-cli-scope.md) | Reference CLI Scope | Draft |
 
 ## When to Write an RFC
 

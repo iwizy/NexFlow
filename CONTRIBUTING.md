@@ -18,7 +18,6 @@ Thank you for helping shape NexFlow. This project is specification-first, so doc
 Read:
 
 - [README.md](README.md)
-- [contributor guidance](contributor guidance)
 - [docs/index.md](docs/index.md)
 - [rfcs/README.md](rfcs/README.md)
 

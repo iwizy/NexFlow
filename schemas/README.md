@@ -130,6 +130,8 @@ See [RFC-0009](../rfcs/RFC-0009-event-envelope.md) for draft event envelope sema
 
 See [RFC-0010](../rfcs/RFC-0010-provider-selection.md) for draft provider selection semantics beyond schema shape.
 
+See [RFC-0011](../rfcs/RFC-0011-reference-cli-scope.md) for draft reference CLI scope for schema validation, inspection, graph output, and initialization without orchestration.
+
 ## Local Smoke Checks
 
 Check schema JSON syntax:

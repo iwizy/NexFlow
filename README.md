@@ -157,7 +157,6 @@ NexFlow is intentionally split into layers:
 - [Examples Guide](examples/README.md): overview of reference teams and manifest file sets
 - [rfcs/](rfcs/README.md): governance and design proposal process
 - [Conformance](docs/conformance.md): draft support levels for manifests, validators, CLIs, runtimes, and extensions
-- [contributor guidance](contributor guidance): instructions for humans and AI contributors
 - [CONTRIBUTING.md](CONTRIBUTING.md): contribution workflow
 - [SECURITY.md](SECURITY.md): vulnerability and safety reporting policy
 
@@ -223,7 +222,7 @@ MIT. The goal is broad adoption across hobby, commercial, research, and enterpri
 
 ## Contributing
 
-Start with [CONTRIBUTING.md](CONTRIBUTING.md), then read [contributor guidance](contributor guidance). Changes that alter the model, manifests, schemas, or compatibility expectations should go through the RFC process.
+Start with [CONTRIBUTING.md](CONTRIBUTING.md). Changes that alter the model, manifests, schemas, or compatibility expectations should go through the RFC process.
 
 ## License
 

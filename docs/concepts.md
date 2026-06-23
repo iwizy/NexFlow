@@ -128,4 +128,4 @@ A namespaced addition to the specification for integrations, custom fields, or i
 
 ## Integration
 
-A connection to an external system such as GitHub, GitLab, Jira, Linear, Figma, Slack, Discord, Telegram, notes, MCP, or a custom service.
+A connection to an external system such as GitHub, GitLab, Jira, Linear, Figma, Slack, Discord, Telegram, MCP, notes, or a custom service.

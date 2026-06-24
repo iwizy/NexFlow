@@ -56,6 +56,6 @@ Separate manifests were chosen because they make review, ownership, and future v
 
 ## Open Questions
 
-- Should future versions allow manifest bundling?
+- Should future versions allow manifest bundling? See [RFC-0012](RFC-0012-manifest-bundling.md) for the current draft proposal.
 - How should cross-file references be validated?
 - Which capabilities should be standardized first?

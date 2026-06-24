@@ -230,7 +230,7 @@ Future discovery may support:
 - current directory
 - a `project.yaml` path
 - a directory containing manifests
-- a manifest bundle if a future RFC accepts bundling
+- a manifest bundle if a future RFC accepts bundling; [RFC-0012](RFC-0012-manifest-bundling.md) is the current draft proposal
 
 Discovery should be deterministic and visible.
 

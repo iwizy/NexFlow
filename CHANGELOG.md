@@ -14,6 +14,7 @@ This project follows a specification-first process. Breaking changes must includ
 - Validation workflow guidance for schema and future semantic checks.
 - Schema guide for schema scope, update rules, and validation boundaries.
 - Examples guide for reference team selection and manifest file sets.
+- Example consistency checklist for IDs, references, capabilities, permissions, context, memory, events, safety, and local checks.
 - Clarified capability and permission separation with allow, deny, and approval-required examples.
 - Approval gate semantics for approvers, decisions, evidence, scope, expiry, revocation, and runtime expectations.
 - Expanded context source taxonomy with source fields, freshness guidance, web boundaries, MCP metadata, and classification rules.

@@ -39,7 +39,7 @@ Use an RFC for:
 
 - Docs are updated.
 - Schemas are updated if manifest fields changed.
-- Examples are updated if behavior changed.
+- Examples are updated if behavior changed, and example changes follow [examples/CHECKLIST.md](examples/CHECKLIST.md).
 - Changelog is updated for user-visible changes.
 - Security and autonomy impact is considered.
 - Provider and runtime neutrality are preserved.

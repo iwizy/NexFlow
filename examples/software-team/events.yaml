@@ -3,6 +3,22 @@ kind: EventSet
 metadata:
   project: software-team
 events:
+  - type: task.created
+    description: A delivery task is created or selected for the workflow.
+    retention: Project policy.
+    auditRequired: true
+    payload:
+      required:
+        - taskId
+        - owner
+  - type: task.updated
+    description: A task changes status, scope, owner, or acceptance evidence.
+    retention: Project policy.
+    auditRequired: true
+    payload:
+      required:
+        - taskId
+        - status
   - type: workflow.started
     description: Delivery workflow starts.
     retention: Project policy.
@@ -48,6 +64,15 @@ events:
       required:
         - from
         - to
+        - artifacts
+  - type: handoff.accepted
+    description: The receiving actor accepts responsibility for the next step.
+    retention: Project policy.
+    auditRequired: true
+    payload:
+      required:
+        - handoffId
+        - acceptedBy
   - type: workflow.completed
     description: Delivery workflow completes.
     retention: Project policy.

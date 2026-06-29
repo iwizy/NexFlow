@@ -19,6 +19,7 @@ workflow:
             - code_review
           emits:
             - task.completed
+            - handoff.created
     - id: validation
       displayName: Validation
       steps:
@@ -30,6 +31,8 @@ workflow:
             - code_review
           emits:
             - task.completed
+            - handoff.created
+            - review.requested
     - id: review
       displayName: Review
       steps:
@@ -37,9 +40,12 @@ workflow:
           task: review-change
           dependsOn:
             - step-test-feature
-          approvalGates: []
+          approvalGates:
+            - code_review
           emits:
+            - task.completed
             - review.completed
+            - handoff.created
         - id: step-update-docs
           task: update-docs
           dependsOn:
@@ -47,6 +53,7 @@ workflow:
           approvalGates:
             - code_review
           emits:
+            - task.completed
             - workflow.completed
   dependencies:
     - from: step-implement-feature

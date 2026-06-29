@@ -12,11 +12,15 @@ handoffs:
     status: pending
     artifacts:
       - feature_branch
+      - implementation_summary
     notes:
       - Tests should use approved commands only.
+      - QA should record skipped checks instead of treating them as pass results.
     blockingIssues: []
     acceptanceCriteria:
       - QA can reproduce the change locally.
+      - QA understands the intended feature scope and changed files.
+      - Any missing test setup is recorded as a blocker.
     nextAction: Run approved validation checks.
   - id: qa-to-reviewer
     from:
@@ -27,9 +31,31 @@ handoffs:
     status: pending
     artifacts:
       - test_report
+      - qa_risk_summary
       - feature_branch
-    notes: []
+    notes:
+      - Reviewer should inspect failed, skipped, and not-run checks before approval.
     blockingIssues: []
     acceptanceCriteria:
       - Reviewer receives implementation and test evidence.
+      - QA identifies open risks, coverage gaps, and any blocked checks.
+      - Pull request review can proceed without hidden validation assumptions.
     nextAction: Review the change and request docs update if accepted.
+  - id: reviewer-to-docs
+    from:
+      - reviewer
+    to:
+      - docs-agent
+    reason: Pull request review identified user-facing documentation work.
+    status: pending
+    artifacts:
+      - pull_request
+      - review_decision
+      - test_report
+    notes:
+      - Docs update should describe reviewed behavior, not unaccepted implementation details.
+    blockingIssues: []
+    acceptanceCriteria:
+      - Docs agent receives the accepted behavior, review decision, and QA evidence.
+      - Documentation scope is clear enough to update user-facing docs and changelog notes.
+    nextAction: Draft documentation update for reviewed behavior.

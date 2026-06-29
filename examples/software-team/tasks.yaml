@@ -5,15 +5,21 @@ metadata:
 tasks:
   - id: implement-feature
     title: Implement scoped feature
+    description: Draft code changes on a feature branch within the approved task scope.
     status: ready
     owner: implementation-agent
     participants:
       - reviewer
+      - qa-agent
     dependsOn: []
     artifacts:
       - id: feature_branch
         type: branch
         description: Branch containing implementation changes.
+        producedBy: implementation-agent
+      - id: implementation_summary
+        type: summary
+        description: Summary of changed files, assumptions, risks, and validation needs.
         producedBy: implementation-agent
     capabilitiesRequired:
       - read_repository
@@ -23,9 +29,13 @@ tasks:
       - code_review
     acceptanceCriteria:
       - Feature matches task scope.
+      - Branch isolates the scoped change from unrelated work.
+      - Implementation summary names changed areas, assumptions, and known risks.
       - No undeclared capability is used.
+      - No dependency installation occurs without dependency_approval.
   - id: test-feature
     title: Test scoped feature
+    description: Run approved validation checks and summarize quality risks before review.
     status: proposed
     owner: qa-agent
     participants:
@@ -38,16 +48,28 @@ tasks:
         type: report
         description: Test results and quality notes.
         producedBy: qa-agent
+      - id: qa_risk_summary
+        type: summary
+        description: QA summary of remaining risks, skipped checks, and reviewer attention points.
+        producedBy: qa-agent
     capabilitiesRequired:
       - execute_command
     approvalGates:
       - code_review
     acceptanceCriteria:
-      - Tests and risks are summarized.
+      - Approved checks are listed with pass, fail, skipped, or not-run status.
+      - Failures and skipped checks include reasons and suggested next action.
+      - QA risk summary identifies regressions, coverage gaps, and review blockers.
+      - Test evidence is ready for reviewer handoff.
   - id: review-change
-    title: Review change
+    title: Open and review pull request
+    description: Create a pull request from the feature branch and record the review decision.
     status: proposed
     owner: reviewer
+    participants:
+      - implementation-agent
+      - qa-agent
+      - docs-agent
     dependsOn:
       - test-feature
     artifacts:
@@ -55,16 +77,27 @@ tasks:
         type: pull_request
         description: Pull request for maintainer review.
         producedBy: reviewer
+      - id: review_decision
+        type: decision
+        description: Review result, required follow-ups, and accepted residual risks.
+        producedBy: reviewer
     capabilitiesRequired:
       - create_pull_request
       - approve_changes
-    approvalGates: []
+    approvalGates:
+      - code_review
     acceptanceCriteria:
-      - Reviewer approves or requests changes.
+      - Pull request links the feature branch, implementation summary, test report, and QA risk summary.
+      - Reviewer approves, requests changes, or blocks with explicit reasons.
+      - Residual QA risks are accepted, rejected, or assigned follow-up.
+      - Documentation update scope is identified before handoff to docs.
   - id: update-docs
     title: Update documentation
+    description: Update user-facing documentation and changelog notes after review.
     status: proposed
     owner: docs-agent
+    participants:
+      - reviewer
     dependsOn:
       - review-change
     artifacts:
@@ -78,3 +111,6 @@ tasks:
       - code_review
     acceptanceCriteria:
       - User-facing behavior is documented.
+      - Changelog notes mention behavior changes, compatibility impact, or no-op documentation status.
+      - Documentation references the reviewed pull request or review decision.
+      - No runtime capability is implied beyond the specification.

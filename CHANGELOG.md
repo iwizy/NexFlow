@@ -37,6 +37,7 @@ This project follows a specification-first process. Breaking changes must includ
 - Draft retrieval profile vocabulary for context source references, index versions, chunking, freshness, citations, sensitivity, review triggers, and audit expectations.
 - Agent assembly checkpoint documentation tying agent definitions, model profiles, prompt sets, retrieval profiles, permissions, context, memory, autonomy, extensions, versioning, review, compatibility, and future audit expectations together.
 - Expanded minimal team example notes with learning goals, reading path, reference chain, safety notes, and local checks.
+- Strengthened software team example lifecycle, pull request review evidence, QA handoffs, and documentation handoff notes.
 - Draft JSON Schemas for core manifests.
 - Reference examples for minimal, software, startup, enterprise, and product delivery teams.
 - Governance and RFC process.

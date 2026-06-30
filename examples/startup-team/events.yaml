@@ -18,6 +18,14 @@ events:
       required:
         - taskId
         - artifacts
+  - type: task.blocked
+    description: A task is blocked by missing product, research, validation, or release evidence.
+    retention: Project policy.
+    auditRequired: true
+    payload:
+      required:
+        - taskId
+        - reason
   - type: handoff.created
     description: Responsibility is handed to another actor.
     retention: Project policy.
@@ -26,6 +34,15 @@ events:
       required:
         - from
         - to
+        - artifacts
+  - type: handoff.accepted
+    description: Receiving actors accept responsibility for the next startup delivery step.
+    retention: Project policy.
+    auditRequired: true
+    payload:
+      required:
+        - handoffId
+        - acceptedBy
   - type: review.requested
     description: Review is requested.
     retention: Project policy.
@@ -40,6 +57,7 @@ events:
     payload:
       required:
         - result
+        - approvalGate
   - type: workflow.completed
     description: Startup delivery flow completes.
     retention: Project policy.

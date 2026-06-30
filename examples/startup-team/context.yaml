@@ -44,20 +44,27 @@ contextSources:
     refreshPolicy: on_request
   - id: customer_research
     type: knowledge_base
-    description: Sanitized customer research notes.
+    description: Sanitized customer research notes used for product decisions.
     contentTypes:
       - knowledge_articles
+      - interview_summaries
+      - product_feedback
     access:
       default: read
       allowedActors:
         - product-owner
         - design-agent
+        - release-reviewer
     classification: confidential
     refreshPolicy: manual
     freshness:
       maxAge: 30d
       staleAllowed: true
-      requiresCitation: false
+      requiresCitation: true
+    privacy:
+      rawCustomerIdentifiers: prohibited
+      aggregateFindingsPreferred: true
+      approvalGate: product_review
   - id: docs
     type: docs
     description: Product documentation.
@@ -89,3 +96,6 @@ contextSources:
       requiresCitation: true
     allowedDomains:
       - example.com
+      - standards.example.org
+    approvalGates:
+      - product_review

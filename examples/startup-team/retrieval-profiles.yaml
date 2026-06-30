@@ -20,7 +20,7 @@ retrievalProfiles:
         required: false
         maxClassification: confidential
       - contextSourceRef: customer_research
-        purpose: Sanitized customer research and product evidence.
+        purpose: Sanitized customer research and product evidence for scope, design, and launch readiness.
         accessMode: read
         required: false
         maxClassification: confidential
@@ -35,7 +35,7 @@ retrievalProfiles:
         required: false
         maxClassification: public
       - contextSourceRef: web_research
-        purpose: Approved market or standards research with citations.
+        purpose: Approved market or standards research with citations and freshness checks.
         accessMode: query
         required: false
         maxClassification: public
@@ -70,6 +70,7 @@ retrievalProfiles:
       maxClassification: confidential
       allowCrossScopeReuse: false
       redactionPolicy: redact_customer_identifiers
+      prohibitRawCustomerIdentifiers: true
     review:
       required: true
       approvers:

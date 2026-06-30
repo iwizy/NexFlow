@@ -24,13 +24,19 @@ project:
     productionActions: Release reviewer approval required.
   approvalGates:
     - id: product_review
-      description: Product owner approval required for scope and launch changes.
+      description: Product owner approval required for scope, research interpretation, product acceptance, and launch scope changes.
       requiredApprovers:
         - product-owner
+      appliesTo:
+        - shape-scope
+        - review-design
+        - build-slice
     - id: release_review
-      description: Release reviewer approval required before production action.
+      description: Release reviewer approval required before pull request acceptance, deployment, or production-facing launch action.
       requiredApprovers:
         - release-reviewer
+      appliesTo:
+        - release-check
 manifests:
   agents: agents.yaml
   agentDefinitions: agent-definitions.yaml

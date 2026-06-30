@@ -13,24 +13,52 @@ handoffs:
     status: pending
     artifacts:
       - scope_note
+      - product_decision
     notes:
       - Keep implementation limited to accepted scope.
+      - Research interpretation must use sanitized notes and citation-ready evidence.
     blockingIssues: []
     acceptanceCriteria:
       - Design and implementation actors accept the scope.
+      - Product owner has approved target user, problem, non-goals, and launch threshold.
     nextAction: Review design context and prepare build plan.
+  - id: design-to-build
+    from:
+      - design-agent
+    to:
+      - fullstack-agent
+      - product-owner
+    reason: Design review and research brief are ready for implementation planning.
+    status: pending
+    artifacts:
+      - design_review
+      - research_brief
+      - scope_note
+    notes:
+      - Stale or uncited research should remain an assumption, not accepted fact.
+    blockingIssues: []
+    acceptanceCriteria:
+      - Fullstack agent receives UX risks, design constraints, and accepted research assumptions.
+      - Product owner accepts the research interpretation before build work proceeds.
+    nextAction: Build the approved product slice and record validation evidence.
   - id: build-to-release
     from:
       - fullstack-agent
     to:
       - release-reviewer
+      - product-owner
     reason: Product slice is ready for release review.
     status: pending
     artifacts:
       - product_branch
+      - build_summary
+      - product_decision
       - design_review
+      - research_brief
     notes: []
     blockingIssues: []
     acceptanceCriteria:
       - Release reviewer has implementation and risk context.
+      - Product owner can confirm launch scope before production-facing approval.
+      - Release reviewer can trace validation evidence to scope, design, and research assumptions.
     nextAction: Complete release readiness check.

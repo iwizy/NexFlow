@@ -19,6 +19,7 @@ workflow:
             - product_review
           emits:
             - task.completed
+            - handoff.created
     - id: design
       displayName: Design
       steps:
@@ -26,9 +27,12 @@ workflow:
           task: review-design
           dependsOn:
             - step-shape-scope
-          approvalGates: []
+          approvalGates:
+            - product_review
           emits:
             - task.completed
+            - review.requested
+            - handoff.created
     - id: build
       displayName: Build
       steps:
@@ -39,7 +43,9 @@ workflow:
           approvalGates:
             - product_review
           emits:
+            - task.completed
             - review.requested
+            - handoff.created
     - id: release
       displayName: Release
       steps:
@@ -48,8 +54,10 @@ workflow:
           dependsOn:
             - step-build-slice
           approvalGates:
+            - product_review
             - release_review
           emits:
+            - review.completed
             - workflow.completed
   dependencies:
     - from: step-shape-scope

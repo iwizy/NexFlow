@@ -5,16 +5,22 @@ metadata:
 tasks:
   - id: shape-scope
     title: Shape product scope
+    description: Define a narrow product slice using backlog items, sanitized customer research, and launch constraints.
     status: ready
     owner: product-owner
     participants:
       - design-agent
       - fullstack-agent
+      - release-reviewer
     dependsOn: []
     artifacts:
       - id: scope_note
         type: document
         description: Product scope and acceptance criteria.
+        producedBy: product-owner
+      - id: product_decision
+        type: decision
+        description: Product owner decision on target user, problem, non-goals, and launch threshold.
         producedBy: product-owner
     capabilitiesRequired:
       - manage_tasks
@@ -23,12 +29,17 @@ tasks:
       - product_review
     acceptanceCriteria:
       - Scope is small enough for one delivery cycle.
+      - Scope note cites backlog, research, or product rationale.
+      - Non-goals and launch threshold are explicit.
+      - Release reviewer can identify production-facing risk early.
   - id: review-design
     title: Review design context
+    description: Review design files and research evidence before implementation begins.
     status: proposed
     owner: design-agent
     participants:
       - product-owner
+      - fullstack-agent
     dependsOn:
       - shape-scope
     artifacts:
@@ -36,17 +47,27 @@ tasks:
         type: document
         description: UX notes and open questions.
         producedBy: design-agent
+      - id: research_brief
+        type: document
+        description: Sanitized research and market evidence with citations and open assumptions.
+        producedBy: design-agent
     capabilitiesRequired:
       - access_figma
       - read_context
-    approvalGates: []
+    approvalGates:
+      - product_review
     acceptanceCriteria:
       - UX risks are visible before implementation.
+      - Research brief avoids raw customer identifiers.
+      - Stale or uncited research is marked as an assumption.
+      - Product owner accepts or revises design assumptions before build.
   - id: build-slice
     title: Build product slice
+    description: Implement the approved slice and prepare build evidence for launch review.
     status: proposed
     owner: fullstack-agent
     participants:
+      - product-owner
       - release-reviewer
     dependsOn:
       - review-design
@@ -54,6 +75,10 @@ tasks:
       - id: product_branch
         type: branch
         description: Implementation branch.
+        producedBy: fullstack-agent
+      - id: build_summary
+        type: summary
+        description: Changed areas, validation commands, known risks, and product acceptance notes.
         producedBy: fullstack-agent
     capabilitiesRequired:
       - read_repository
@@ -64,10 +89,17 @@ tasks:
       - product_review
     acceptanceCriteria:
       - Slice meets approved acceptance criteria.
+      - Build summary links scope, design review, and research assumptions.
+      - Validation commands and skipped checks are recorded.
+      - No production action is performed before release_review.
   - id: release-check
     title: Release readiness check
+    description: Decide whether the product slice is ready for pull request acceptance and production-facing launch.
     status: proposed
     owner: release-reviewer
+    participants:
+      - product-owner
+      - fullstack-agent
     dependsOn:
       - build-slice
     artifacts:
@@ -75,11 +107,23 @@ tasks:
         type: document
         description: Release readiness and risk summary.
         producedBy: release-reviewer
+      - id: release_readiness_report
+        type: report
+        description: Launch checklist, validation evidence, product approval status, and rollback notes.
+        producedBy: release-reviewer
+      - id: launch_decision
+        type: decision
+        description: Release reviewer decision to approve, block, or defer launch.
+        producedBy: release-reviewer
     capabilitiesRequired:
       - create_pull_request
       - approve_changes
       - deploy_application
     approvalGates:
+      - product_review
       - release_review
     acceptanceCriteria:
       - Release reviewer approves or blocks launch.
+      - Product owner confirms launch scope and user-facing behavior.
+      - Release readiness report includes validation evidence, known risks, and rollback notes.
+      - Production action remains blocked unless release_review is approved.

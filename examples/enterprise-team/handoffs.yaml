@@ -12,11 +12,15 @@ handoffs:
     status: pending
     artifacts:
       - architecture_note
+      - system_boundary_map
+      - dependency_inventory
     notes:
       - Implementation must stay within approved boundaries.
+      - Sensitive context and dependency boundaries must be visible before work begins.
     blockingIssues: []
     acceptanceCriteria:
       - Implementation agent confirms scope and constraints.
+      - Implementation agent can identify required approvals before writing files or running commands.
     nextAction: Draft implementation branch.
   - id: implementation-to-assurance
     from:
@@ -28,11 +32,16 @@ handoffs:
     status: pending
     artifacts:
       - enterprise_branch
+      - command_log
+      - implementation_evidence
+      - architecture_note
     notes:
       - Include command log and test evidence.
+      - Include changed areas, validation gaps, and any deviations from the approved architecture.
     blockingIssues: []
     acceptanceCriteria:
       - Reviewers have implementation, evidence, and architecture note.
+      - Reviewers can trace implementation evidence to the approved scope.
     nextAction: Complete security review and compliance signoff.
   - id: assurance-to-release
     from:
@@ -44,9 +53,13 @@ handoffs:
     status: pending
     artifacts:
       - security_report
+      - risk_acceptance_record
       - compliance_note
+      - compliance_evidence_packet
+      - audit_trail_summary
     notes: []
     blockingIssues: []
     acceptanceCriteria:
       - Release manager can verify completed approvals.
+      - Release manager has residual risk, evidence, audit, and compliance constraints.
     nextAction: Perform release approval.

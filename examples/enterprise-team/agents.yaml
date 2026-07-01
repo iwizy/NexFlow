@@ -24,11 +24,12 @@ agents:
       - repository
       - architecture_docs
       - issue_tracker
-      - knowledge_base
+      - security_knowledge
     memoryAccess:
       - ephemeral
       - task
       - project
+      - team
       - organization
     autonomyLevel: manual_only
     providerPreferences: []
@@ -40,6 +41,7 @@ agents:
     responsibilities:
       - Implement approved tasks.
       - Preserve auditability.
+      - Produce command and validation evidence for reviewers.
     skills:
       - code_editing
       - test_driven_development
@@ -74,6 +76,7 @@ agents:
     responsibilities:
       - Review sensitive changes.
       - Approve security gates.
+      - Record residual risk decisions.
     skills:
       - threat_modeling
       - secure_code_review
@@ -91,6 +94,7 @@ agents:
       - ephemeral
       - task
       - project
+      - team
       - organization
     autonomyLevel: manual_only
     providerPreferences: []
@@ -102,6 +106,7 @@ agents:
     responsibilities:
       - Check compliance evidence.
       - Record approval notes.
+      - Confirm audit trail completeness.
     skills:
       - compliance_review
       - audit_evidence
@@ -114,10 +119,13 @@ agents:
     contextAccess:
       - architecture_docs
       - security_knowledge
+      - compliance_evidence
+      - audit_register
       - issue_tracker
     memoryAccess:
       - ephemeral
       - task
+      - team
       - organization
     autonomyLevel: manual_only
     providerPreferences: []
@@ -129,12 +137,14 @@ agents:
     responsibilities:
       - Approve deployment.
       - Confirm required reviews are complete.
+      - Confirm rollback and release evidence are available.
     skills:
       - release_management
       - incident_risk_review
     permissions:
       - enterprise_release_authority
     capabilities:
+      - read_context
       - create_pull_request
       - approve_changes
       - deploy_application
@@ -142,10 +152,12 @@ agents:
       - repository
       - issue_tracker
       - architecture_docs
+      - audit_register
     memoryAccess:
       - ephemeral
       - task
       - project
+      - team
     autonomyLevel: manual_only
     providerPreferences: []
     extensions: []

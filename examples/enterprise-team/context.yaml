@@ -70,6 +70,47 @@ contextSources:
       requiresCitation: true
     approvalGates:
       - security_review
+  - id: compliance_evidence
+    type: custom
+    description: Approved compliance control mappings and evidence references.
+    contentTypes:
+      - documentation
+      - metadata
+    access:
+      default: query
+      allowedActors:
+        - compliance-reviewer
+        - security-reviewer
+        - release-manager
+    classification: restricted
+    refreshPolicy: manual
+    freshness:
+      maxAge: 30d
+      staleAllowed: false
+      requiresCitation: true
+    approvalGates:
+      - compliance_review
+  - id: audit_register
+    type: custom
+    description: Audit event register and approval decision references.
+    contentTypes:
+      - metadata
+      - tool_results
+    access:
+      default: query
+      allowedActors:
+        - compliance-reviewer
+        - release-manager
+        - enterprise-architect
+        - security-reviewer
+    classification: restricted
+    refreshPolicy: manual
+    freshness:
+      maxAge: 7d
+      staleAllowed: false
+      requiresCitation: true
+    approvalGates:
+      - compliance_review
   - id: mcp_tools
     type: mcp
     description: Approved enterprise development MCP server.

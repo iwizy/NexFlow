@@ -5,16 +5,26 @@ metadata:
 tasks:
   - id: architecture-assessment
     title: Architecture assessment
+    description: Establish approved scope, boundaries, dependencies, sensitive areas, and evidence requirements before implementation begins.
     status: ready
     owner: enterprise-architect
     participants:
       - implementation-agent
       - security-reviewer
+      - compliance-reviewer
     dependsOn: []
     artifacts:
       - id: architecture_note
         type: document
         description: Approved architecture direction.
+        producedBy: enterprise-architect
+      - id: system_boundary_map
+        type: diagram
+        description: System boundaries, integration points, and sensitive data paths.
+        producedBy: enterprise-architect
+      - id: dependency_inventory
+        type: report
+        description: Declared dependency and integration inventory for the change.
         producedBy: enterprise-architect
     capabilitiesRequired:
       - read_documentation
@@ -25,8 +35,11 @@ tasks:
     acceptanceCriteria:
       - Scope and boundaries are explicit.
       - Security-sensitive areas are identified.
+      - Dependencies and integration points are listed.
+      - Compliance evidence needs are known before implementation.
   - id: implement-enterprise-change
     title: Implement enterprise change
+    description: Draft the approved change and preserve implementation evidence for assurance review.
     status: proposed
     owner: implementation-agent
     participants:
@@ -38,6 +51,14 @@ tasks:
         type: branch
         description: Implementation branch.
         producedBy: implementation-agent
+      - id: command_log
+        type: log
+        description: Approved commands, checks, and results used during implementation.
+        producedBy: implementation-agent
+      - id: implementation_evidence
+        type: report
+        description: Changed areas, validation notes, assumptions, and known implementation risks.
+        producedBy: implementation-agent
     capabilitiesRequired:
       - read_repository
       - write_repository
@@ -48,8 +69,11 @@ tasks:
     acceptanceCriteria:
       - Change stays within approved architecture.
       - Commands are approved and logged.
+      - Implementation evidence names changed areas, assumptions, and validation gaps.
+      - No production action or secret access is performed by the implementation agent.
   - id: security-review
     title: Security review
+    description: Review the implementation, restricted context use, MCP/tool exposure, and residual security risk.
     status: proposed
     owner: security-reviewer
     participants:
@@ -62,6 +86,10 @@ tasks:
         type: report
         description: Security review findings.
         producedBy: security-reviewer
+      - id: risk_acceptance_record
+        type: document
+        description: Accepted, rejected, or deferred residual risks with reviewer decision.
+        producedBy: security-reviewer
     capabilitiesRequired:
       - read_repository
       - read_context
@@ -70,8 +98,12 @@ tasks:
       - security_review
     acceptanceCriteria:
       - Sensitive risks are accepted or remediated.
+      - MCP/tool use and network boundaries are reviewed.
+      - Credential, secret, and restricted data handling are checked.
+      - Residual risk decisions are captured for compliance and release.
   - id: compliance-signoff
     title: Compliance signoff
+    description: Confirm required evidence, audit trail completeness, and restricted memory handling before release approval.
     status: proposed
     owner: compliance-reviewer
     dependsOn:
@@ -81,15 +113,28 @@ tasks:
         type: document
         description: Compliance evidence summary.
         producedBy: compliance-reviewer
+      - id: compliance_evidence_packet
+        type: report
+        description: Evidence references, review outcomes, and control mapping for the approved change.
+        producedBy: compliance-reviewer
+      - id: audit_trail_summary
+        type: report
+        description: Required task, handoff, review, memory, and release events for audit review.
+        producedBy: compliance-reviewer
     capabilitiesRequired:
       - read_documentation
+      - read_context
       - approve_changes
     approvalGates:
-      - security_review
+      - compliance_review
     acceptanceCriteria:
       - Evidence requirements are satisfied.
+      - Audit trail summary references required events and artifacts.
+      - Restricted memory promotion is approved or explicitly not used.
+      - Compliance reviewer records any release constraints.
   - id: release-approval
     title: Release approval
+    description: Confirm completed assurance evidence, open pull request readiness, rollback planning, and production-facing constraints.
     status: proposed
     owner: release-manager
     dependsOn:
@@ -99,10 +144,23 @@ tasks:
         type: pull_request
         description: Pull request ready for release approval.
         producedBy: release-manager
+      - id: release_approval_record
+        type: document
+        description: Release decision, required approvals, release constraints, and residual risk status.
+        producedBy: release-manager
+      - id: rollback_plan
+        type: document
+        description: Rollback or mitigation plan for production-facing release.
+        producedBy: release-manager
     capabilitiesRequired:
+      - read_context
       - create_pull_request
+      - approve_changes
       - deploy_application
     approvalGates:
       - release_approval
     acceptanceCriteria:
       - Architecture, security, and compliance reviews are complete.
+      - Release approval record links required evidence artifacts.
+      - Rollback or mitigation plan is present.
+      - Production action remains blocked until release approval is explicit.

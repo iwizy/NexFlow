@@ -5,7 +5,7 @@ metadata:
 workflow:
   id: enterprise-change-control
   displayName: Enterprise Change Control
-  description: Governed flow for sensitive enterprise changes.
+  description: Governed flow for sensitive enterprise changes with evidence, audit, and release controls.
   triggers:
     - task.created
   stages:
@@ -18,6 +18,8 @@ workflow:
           approvalGates:
             - architecture_review
           emits:
+            - task.completed
+            - handoff.created
             - review.completed
     - id: implementation
       displayName: Implementation
@@ -30,6 +32,7 @@ workflow:
             - architecture_review
           emits:
             - task.completed
+            - handoff.created
     - id: assurance
       displayName: Assurance
       steps:
@@ -40,15 +43,18 @@ workflow:
           approvalGates:
             - security_review
           emits:
+            - task.completed
             - review.completed
         - id: step-compliance-signoff
           task: compliance-signoff
           dependsOn:
             - step-security-review
           approvalGates:
-            - security_review
+            - compliance_review
           emits:
+            - task.completed
             - review.completed
+            - handoff.created
     - id: release
       displayName: Release
       steps:
@@ -59,6 +65,7 @@ workflow:
           approvalGates:
             - release_approval
           emits:
+            - review.completed
             - workflow.completed
   dependencies:
     - from: step-architecture-assessment
@@ -73,3 +80,18 @@ workflow:
     - from: step-compliance-signoff
       to: step-release-approval
       type: blocks
+  auditTrail:
+    requiredArtifacts:
+      - architecture_note
+      - command_log
+      - security_report
+      - compliance_evidence_packet
+      - audit_trail_summary
+      - release_approval_record
+    requiredEvents:
+      - workflow.started
+      - task.completed
+      - handoff.created
+      - review.requested
+      - review.completed
+      - workflow.completed

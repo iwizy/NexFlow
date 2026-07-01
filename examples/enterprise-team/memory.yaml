@@ -79,6 +79,35 @@ memoryScopes:
       - review.requested
       - review.completed
     approvalGate: architecture_review
+  - scope: team
+    retention: Enterprise delivery team retention policy.
+    ownership: Enterprise delivery team.
+    visibility: Approved human reviewers and release authority.
+    updateRules: Approval required for durable team memory or cross-project reuse.
+    sensitivity: restricted
+    allowedConsumers:
+      - enterprise-architect
+      - security-reviewer
+      - compliance-reviewer
+      - release-manager
+    updateMode: approval_required
+    allowedWriters:
+      - enterprise-architect
+      - security-reviewer
+      - compliance-reviewer
+    allowedSourceScopes:
+      - project
+    prohibitedContent:
+      - raw_secrets
+      - credential_values
+      - customer_identifiers
+      - production_incident_details
+      - security_exploit_details
+      - provider_private_outputs
+    auditEvents:
+      - review.requested
+      - review.completed
+    approvalGate: compliance_review
   - scope: organization
     retention: Organization retention policy.
     ownership: Organization.
@@ -94,7 +123,7 @@ memoryScopes:
       - security-reviewer
       - compliance-reviewer
     allowedSourceScopes:
-      - project
+      - team
     prohibitedContent:
       - raw_secrets
       - credential_values
@@ -102,4 +131,4 @@ memoryScopes:
     auditEvents:
       - review.requested
       - review.completed
-    approvalGate: security_review
+    approvalGate: compliance_review

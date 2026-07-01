@@ -3,6 +3,23 @@ kind: EventSet
 metadata:
   project: enterprise-team
 events:
+  - type: task.created
+    description: Enterprise task is created or selected for change control.
+    retention: Enterprise audit policy.
+    auditRequired: true
+    payload:
+      required:
+        - taskId
+        - owner
+        - approvalGates
+  - type: task.updated
+    description: Enterprise task status, scope, evidence, or owner changes.
+    retention: Enterprise audit policy.
+    auditRequired: true
+    payload:
+      required:
+        - taskId
+        - changes
   - type: workflow.started
     description: Enterprise workflow starts.
     retention: Enterprise audit policy.
@@ -33,8 +50,19 @@ events:
     auditRequired: true
     payload:
       required:
+        - handoffId
         - from
         - to
+        - artifacts
+  - type: handoff.accepted
+    description: Receiving actor accepts responsibility and required evidence for the next enterprise stage.
+    retention: Enterprise audit policy.
+    auditRequired: true
+    payload:
+      required:
+        - handoffId
+        - acceptedBy
+        - acceptedArtifacts
   - type: review.requested
     description: Review is requested.
     retention: Enterprise audit policy.
@@ -51,6 +79,16 @@ events:
       required:
         - result
         - approvalGate
+        - evidence
+  - type: agent.started
+    description: Agent or human-assisted agent session starts with a declared agent definition or profile.
+    retention: Enterprise audit policy.
+    auditRequired: true
+    payload:
+      required:
+        - agentId
+        - agentDefinitionRef
+        - modelProfileRef
   - type: workflow.completed
     description: Enterprise workflow completes.
     retention: Enterprise audit policy.

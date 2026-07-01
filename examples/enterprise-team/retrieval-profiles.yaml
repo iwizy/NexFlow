@@ -29,6 +29,16 @@ retrievalProfiles:
         accessMode: read
         required: false
         maxClassification: restricted
+      - contextSourceRef: compliance_evidence
+        purpose: Compliance control mappings and approved evidence references.
+        accessMode: query
+        required: true
+        maxClassification: restricted
+      - contextSourceRef: audit_register
+        purpose: Audit event and approval decision references for release readiness.
+        accessMode: query
+        required: true
+        maxClassification: restricted
       - contextSourceRef: mcp_tools
         purpose: Approved build log and dependency inventory context.
         accessMode: query
@@ -48,6 +58,8 @@ retrievalProfiles:
         - architecture_decision
         - code_symbol
         - audit_record
+        - compliance_control
+        - approval_record
     retriever:
       strategy: hybrid
       topK: 15
@@ -66,6 +78,7 @@ retrievalProfiles:
       maxClassification: restricted
       allowCrossScopeReuse: false
       redactionPolicy: redact_secrets_personal_data_and_regulated_data
+      evidencePolicy: cite_artifacts_without_embedding_restricted_raw_data
     review:
       required: true
       approvers:
@@ -81,7 +94,7 @@ retrievalProfiles:
         - cross_scope_reuse_allowed
     compatibility:
       impact: safety_significant
-      notes: Retrieval changes may affect security evidence, compliance posture, audit reproducibility, and release approval.
+      notes: Retrieval changes may affect security evidence, compliance posture, audit reproducibility, memory boundaries, and release approval.
       affectedAgents:
         - enterprise-architect
         - implementation-agent

@@ -27,8 +27,17 @@ permissions:
     effect: approval_required
     approvalGate: architecture_review
     conditions:
+      - Work must match the approved architecture assessment.
       - No production action.
       - No secret access.
+      - Command execution must be recorded in command_log.
+    scope:
+      tasks:
+        - implement-enterprise-change
+      excludedActions:
+        - deployment
+        - destructive_operation
+        - credential_access
   - id: security_decision_authority
     description: Security reviewer may approve sensitive changes.
     subjects:
@@ -39,6 +48,8 @@ permissions:
       - approve_changes
     effect: approval_required
     approvalGate: security_review
+    conditions:
+      - Security review must record findings and residual risk.
   - id: compliance_review_access
     description: Compliance reviewer may inspect evidence and approve compliance notes.
     subjects:
@@ -47,14 +58,23 @@ permissions:
       - read_documentation
       - read_context
       - approve_changes
-    effect: allow
+    effect: approval_required
+    approvalGate: compliance_review
+    conditions:
+      - Compliance evidence must reference artifacts or approved systems.
+      - Restricted raw data must not be copied into durable memory.
   - id: enterprise_release_authority
     description: Release manager may open PRs and approve deployment after reviews.
     subjects:
       - release-manager
     capabilities:
+      - read_context
       - create_pull_request
       - approve_changes
       - deploy_application
     effect: approval_required
     approvalGate: release_approval
+    conditions:
+      - Architecture, security, and compliance gates are complete.
+      - Release approval record and rollback plan are present.
+      - Production action remains blocked until release approval is explicit.

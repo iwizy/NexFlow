@@ -47,9 +47,14 @@ agentDefinitions:
         - MCP tool use remains approval-gated.
         - Repository writes stay scoped to approved tasks.
         - Compliance evidence is preserved through events.
+        - Implementation evidence includes command logs and validation gaps.
+      evidenceRefs:
+        - architecture_note
+        - command_log
+        - implementation_evidence
     compatibility:
       impact: safety_significant
-      notes: Changes may alter enterprise implementation scope, security evidence, MCP exposure, or audit reproducibility.
+      notes: Changes may alter enterprise implementation scope, security evidence, restricted retrieval, MCP exposure, memory boundaries, or audit reproducibility.
       affectedAgents:
         - implementation-agent
     audit:

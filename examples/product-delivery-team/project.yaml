@@ -6,7 +6,7 @@ metadata:
 project:
   id: product-delivery-team
   displayName: Product Delivery Team
-  description: Cross-functional product delivery configuration.
+  description: Cross-functional product delivery configuration with explicit acceptance, quality evidence, and launch readiness controls.
   license: MIT
   maintainers:
     - id: product-manager
@@ -22,19 +22,31 @@ project:
     networkAccess: Allowed only for declared context sources.
     destructiveActions: Human approval required.
     productionActions: Launch coordinator approval required.
+    productAcceptance: Product acceptance is distinct from QA approval and launch approval.
+    qualityEvidence: Validation evidence, skipped checks, and launch risks must be visible before launch planning.
+    launchReadiness: Launch planning must reference accepted scope, quality evidence, release notes, and rollback notes.
   approvalGates:
     - id: product_acceptance
       description: Product manager approval required for scope and acceptance.
       requiredApprovers:
         - product-manager
+      appliesTo:
+        - define-delivery-goal
+        - prepare-ux-criteria
+        - implement-delivery-slice
+        - accept-delivery
     - id: quality_gate
       description: QA approval required before launch planning.
       requiredApprovers:
         - qa-agent
+      appliesTo:
+        - validate-delivery
     - id: launch_gate
       description: Launch coordinator approval required for release actions.
       requiredApprovers:
         - launch-coordinator
+      appliesTo:
+        - prepare-launch
 manifests:
   agents: agents.yaml
   agentDefinitions: agent-definitions.yaml

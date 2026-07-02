@@ -9,45 +9,102 @@ handoffs:
     to:
       - ux-agent
       - implementation-agent
+      - qa-agent
+      - launch-coordinator
     reason: Delivery goal is accepted and ready for UX and implementation planning.
     status: pending
     artifacts:
       - delivery_goal
+      - acceptance_matrix
+      - stakeholder_constraints
     notes:
       - Non-goals should remain out of scope.
+      - QA and launch coordinator should identify validation and launch implications early.
     blockingIssues: []
     acceptanceCriteria:
-      - UX and implementation actors accept the goal.
+      - UX, implementation, QA, and launch actors accept the goal and constraints.
     nextAction: Prepare UX criteria and implementation plan.
-  - id: build-to-quality
+  - id: design-to-build-validation
+    from:
+      - ux-agent
+      - product-manager
+    to:
+      - implementation-agent
+      - qa-agent
+    reason: UX criteria and product decisions are ready for build and validation planning.
+    status: pending
+    artifacts:
+      - ux_criteria
+      - design_gap_log
+      - product_ux_decisions
+      - acceptance_matrix
+    notes:
+      - Design gaps should be treated as implementation or validation risks until resolved.
+    blockingIssues: []
+    acceptanceCriteria:
+      - Implementation and QA can trace UX criteria to accepted product scope.
+      - Open design gaps are assigned, accepted, or marked as blockers.
+    nextAction: Implement the delivery slice and prepare validation coverage.
+  - id: build-to-quality-product
     from:
       - implementation-agent
     to:
       - qa-agent
+      - product-manager
+      - launch-coordinator
     reason: Delivery branch is ready for validation.
     status: pending
     artifacts:
       - delivery_branch
       - ux_criteria
+      - implementation_notes
+      - change_summary
     notes: []
     blockingIssues: []
     acceptanceCriteria:
-      - QA has branch and criteria.
+      - QA has branch, criteria, implementation notes, and changed areas.
+      - Product and launch actors can inspect behavior changes before acceptance and launch planning.
     nextAction: Validate delivery.
-  - id: quality-to-launch
+  - id: quality-to-product-launch
     from:
       - qa-agent
     to:
-      - launch-coordinator
       - product-manager
+      - launch-coordinator
+      - implementation-agent
     reason: Quality evidence is ready for launch planning.
     status: pending
     artifacts:
       - quality_report
+      - validation_matrix
+      - launch_risk_summary
       - delivery_branch
     notes:
       - Launch decision remains human-owned.
+      - QA evidence is not product acceptance by itself.
     blockingIssues: []
     acceptanceCriteria:
       - Launch coordinator has quality evidence and product context.
+      - Product manager can accept, reject, or defer the delivery.
     nextAction: Prepare launch plan.
+  - id: product-to-launch
+    from:
+      - product-manager
+      - qa-agent
+    to:
+      - launch-coordinator
+    reason: Product acceptance and quality evidence are ready for launch coordination.
+    status: pending
+    artifacts:
+      - product_acceptance_record
+      - accepted_delivery_scope
+      - quality_report
+      - validation_matrix
+      - launch_risk_summary
+    notes:
+      - Launch coordinator still owns the launch decision and release communication.
+    blockingIssues: []
+    acceptanceCriteria:
+      - Launch coordinator has accepted scope, quality evidence, and launch risks.
+      - Release notes and rollback notes can be prepared from accepted evidence.
+    nextAction: Prepare launch plan, release notes, launch decision, and rollback notes.

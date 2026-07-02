@@ -34,6 +34,16 @@ retrievalProfiles:
         accessMode: read
         required: false
         maxClassification: public
+      - contextSourceRef: release_calendar
+        purpose: Launch windows, freeze periods, stakeholder milestones, and release dependencies.
+        accessMode: query
+        required: true
+        maxClassification: internal
+      - contextSourceRef: support_readiness
+        purpose: Support, documentation, and communication readiness notes.
+        accessMode: read
+        required: false
+        maxClassification: internal
     index:
       corpusRef: product-delivery-corpus
       version: "2026-06-10"
@@ -44,9 +54,12 @@ retrievalProfiles:
       overlapTokens: 100
       preserveBoundaries:
         - ticket
+        - acceptance_criterion
         - design_section
         - test_case
+        - quality_evidence
         - launch_note
+        - launch_checklist
     retriever:
       strategy: hybrid
       topK: 12
@@ -77,7 +90,7 @@ retrievalProfiles:
         - citations_disabled
     compatibility:
       impact: behavior_changing
-      notes: Retrieval changes may alter delivery scope, QA evidence, launch handoff, or product acceptance.
+      notes: Retrieval changes may alter delivery scope, UX interpretation, QA evidence, launch handoff, product acceptance, or launch readiness.
       affectedAgents:
         - product-manager
         - ux-agent
@@ -91,6 +104,10 @@ retrievalProfiles:
       recordFreshness: true
       recordCitations: true
       recordRetrieverConfig: true
+      events:
+        - agent.started
+        - review.requested
+        - review.completed
     recommendedFor:
       - product-manager
       - ux-agent

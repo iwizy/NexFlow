@@ -36,6 +36,7 @@ contextSources:
         - product-manager
         - ux-agent
         - implementation-agent
+        - qa-agent
     classification: confidential
     refreshPolicy: on_request
   - id: customer_docs
@@ -46,8 +47,13 @@ contextSources:
       allowedActors:
         - product-manager
         - ux-agent
+        - launch-coordinator
     classification: internal
     refreshPolicy: manual
+    freshness:
+      maxAge: 30d
+      staleAllowed: false
+      requiresCitation: true
   - id: docs
     type: docs
     description: Technical documentation and launch notes.
@@ -60,3 +66,32 @@ contextSources:
         - launch-coordinator
     classification: public
     refreshPolicy: on_request
+  - id: release_calendar
+    type: custom
+    description: Planned launch windows, freeze periods, stakeholder milestones, and release dependencies.
+    access:
+      default: query
+      allowedActors:
+        - product-manager
+        - launch-coordinator
+    classification: internal
+    refreshPolicy: on_request
+    freshness:
+      maxAge: 14d
+      staleAllowed: false
+      requiresCitation: true
+  - id: support_readiness
+    type: docs
+    description: Support, documentation, and communication readiness notes for launch planning.
+    access:
+      default: read
+      allowedActors:
+        - product-manager
+        - qa-agent
+        - launch-coordinator
+    classification: internal
+    refreshPolicy: manual
+    freshness:
+      maxAge: 14d
+      staleAllowed: false
+      requiresCitation: true

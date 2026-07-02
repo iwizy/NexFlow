@@ -5,7 +5,7 @@ metadata:
 workflow:
   id: product-delivery
   displayName: Product Delivery
-  description: Cross-functional flow from goal definition to launch planning.
+  description: Cross-functional flow from goal definition through product acceptance and launch planning.
   triggers:
     - task.created
   stages:
@@ -19,6 +19,7 @@ workflow:
             - product_acceptance
           emits:
             - task.completed
+            - handoff.created
     - id: design
       displayName: Design
       steps:
@@ -26,8 +27,10 @@ workflow:
           task: prepare-ux-criteria
           dependsOn:
             - step-define-delivery-goal
-          approvalGates: []
+          approvalGates:
+            - product_acceptance
           emits:
+            - task.completed
             - handoff.created
     - id: build
       displayName: Build
@@ -40,6 +43,7 @@ workflow:
             - product_acceptance
           emits:
             - task.completed
+            - handoff.created
     - id: validation
       displayName: Validation
       steps:
@@ -50,6 +54,21 @@ workflow:
           approvalGates:
             - quality_gate
           emits:
+            - task.completed
+            - handoff.created
+            - review.completed
+    - id: acceptance
+      displayName: Acceptance
+      steps:
+        - id: step-accept-delivery
+          task: accept-delivery
+          dependsOn:
+            - step-validate-delivery
+          approvalGates:
+            - product_acceptance
+          emits:
+            - task.completed
+            - handoff.created
             - review.completed
     - id: launch
       displayName: Launch
@@ -57,10 +76,13 @@ workflow:
         - id: step-prepare-launch
           task: prepare-launch
           dependsOn:
-            - step-validate-delivery
+            - step-accept-delivery
           approvalGates:
+            - product_acceptance
+            - quality_gate
             - launch_gate
           emits:
+            - review.completed
             - workflow.completed
   dependencies:
     - from: step-define-delivery-goal
@@ -73,5 +95,24 @@ workflow:
       to: step-validate-delivery
       type: blocks
     - from: step-validate-delivery
+      to: step-accept-delivery
+      type: blocks
+    - from: step-accept-delivery
       to: step-prepare-launch
       type: blocks
+  evidenceFlow:
+    requiredArtifacts:
+      - delivery_goal
+      - acceptance_matrix
+      - ux_criteria
+      - delivery_branch
+      - implementation_notes
+      - quality_report
+      - validation_matrix
+      - product_acceptance_record
+      - launch_plan
+      - launch_decision
+    requiredGates:
+      - product_acceptance
+      - quality_gate
+      - launch_gate

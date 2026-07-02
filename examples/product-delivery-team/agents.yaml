@@ -10,6 +10,7 @@ agents:
     responsibilities:
       - Define delivery goals.
       - Approve product acceptance.
+      - Maintain acceptance matrix and accepted scope.
     skills:
       - product_planning
       - stakeholder_alignment
@@ -23,6 +24,8 @@ agents:
       - backlog
       - customer_docs
       - design_files
+      - release_calendar
+      - support_readiness
     memoryAccess:
       - ephemeral
       - task
@@ -37,6 +40,7 @@ agents:
     responsibilities:
       - Translate goals into UX criteria.
       - Identify design gaps.
+      - Record design decisions for build and validation.
     skills:
       - ux_analysis
       - design_review
@@ -65,6 +69,7 @@ agents:
     responsibilities:
       - Draft implementation changes.
       - Produce implementation notes.
+      - Summarize launch-relevant behavior changes.
     skills:
       - frontend_development
       - backend_development
@@ -98,6 +103,7 @@ agents:
     responsibilities:
       - Run approved validation checks.
       - Own quality gate evidence.
+      - Produce launch risk summaries.
     skills:
       - quality_review
       - test_planning
@@ -112,6 +118,8 @@ agents:
       - repository
       - backlog
       - docs
+      - design_files
+      - support_readiness
     memoryAccess:
       - ephemeral
       - task
@@ -127,12 +135,14 @@ agents:
     responsibilities:
       - Confirm launch readiness.
       - Coordinate release notes and deployment approval.
+      - Prepare launch decision and rollback notes.
     skills:
       - release_coordination
       - communication_planning
     permissions:
       - launch_authority
     capabilities:
+      - read_context
       - create_pull_request
       - modify_documentation
       - deploy_application
@@ -141,6 +151,8 @@ agents:
       - repository
       - backlog
       - docs
+      - release_calendar
+      - support_readiness
     memoryAccess:
       - ephemeral
       - task

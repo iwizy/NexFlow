@@ -16,6 +16,7 @@ promptSets:
         contentDigest: sha256:example-product-manager-workflow
         variables:
           - delivery_goal
+          - acceptance_matrix
           - stakeholder_constraints
         classification: internal
         notes: Guides product acceptance and delivery scope.
@@ -27,6 +28,7 @@ promptSets:
         variables:
           - design_context
           - customer_docs_summary
+          - design_gap_log
         classification: internal
         notes: Guides UX criteria and design-gap analysis.
       - id: qa_agent_review
@@ -36,7 +38,9 @@ promptSets:
         contentDigest: sha256:example-product-delivery-qa-review
         variables:
           - test_results
+          - validation_matrix
           - risk_summary
+          - launch_risk_summary
         classification: confidential
         notes: Structures quality gate evidence for launch decisions.
       - id: launch_handoff
@@ -46,8 +50,10 @@ promptSets:
         contentDigest: sha256:example-launch-handoff
         variables:
           - launch_gate_refs
+          - product_acceptance_record
           - artifacts
           - open_risks
+          - rollback_notes
         classification: confidential
         notes: Prepares launch readiness handoffs without approving deployment.
     review:
@@ -58,7 +64,7 @@ promptSets:
       safetyReviewStatus: pending
     compatibility:
       impact: behavior_changing
-      notes: Prompt changes may alter acceptance criteria, QA evidence, launch handoff, or release communication.
+      notes: Prompt changes may alter acceptance criteria, UX handoff, QA evidence, launch handoff, product acceptance, or release communication.
       affectedAgents:
         - product-manager
         - ux-agent
@@ -70,6 +76,10 @@ promptSets:
       recordPromptRevisions: true
       recordContentDigest: true
       recordReviewStatus: true
+      events:
+        - agent.started
+        - review.requested
+        - review.completed
     recommendedFor:
       - product-manager
       - ux-agent

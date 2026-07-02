@@ -40,6 +40,7 @@ This project follows a specification-first process. Breaking changes must includ
 - Strengthened software team example lifecycle, pull request review evidence, QA handoffs, and documentation handoff notes.
 - Refined startup team example product approval gates, research context, handoffs, and release readiness evidence.
 - Expanded enterprise team example with audit-ready evidence, compliance signoff, restricted context, restricted memory, and release controls.
+- Expanded product delivery team example with many-to-many handoffs, explicit product acceptance, quality evidence, and launch readiness details.
 - Draft JSON Schemas for core manifests.
 - Reference examples for minimal, software, startup, enterprise, and product delivery teams.
 - Governance and RFC process.

@@ -15,6 +15,17 @@ memoryScopes:
       - implementation-agent
       - qa-agent
       - launch-coordinator
+    updateMode: automatic
+    allowedWriters:
+      - product-manager
+      - ux-agent
+      - implementation-agent
+      - qa-agent
+      - launch-coordinator
+    prohibitedContent:
+      - raw_secrets
+      - credential_values
+      - customer_identifiers
   - scope: task
     retention: Until delivery task is closed.
     ownership: Project.
@@ -27,6 +38,23 @@ memoryScopes:
       - implementation-agent
       - qa-agent
       - launch-coordinator
+    updateMode: review_required
+    allowedWriters:
+      - product-manager
+      - ux-agent
+      - implementation-agent
+      - qa-agent
+      - launch-coordinator
+    allowedSourceScopes:
+      - ephemeral
+    prohibitedContent:
+      - raw_secrets
+      - credential_values
+      - customer_identifiers
+      - unreviewed_launch_claims
+    auditEvents:
+      - task.completed
+      - handoff.created
   - scope: project
     retention: Product policy.
     ownership: Product manager.
@@ -36,4 +64,19 @@ memoryScopes:
     allowedConsumers:
       - product-manager
       - launch-coordinator
+    updateMode: approval_required
+    allowedWriters:
+      - product-manager
+      - launch-coordinator
+    allowedSourceScopes:
+      - task
+    prohibitedContent:
+      - raw_secrets
+      - credential_values
+      - customer_identifiers
+      - unreviewed_launch_claims
+      - unresolved_quality_blockers
+    auditEvents:
+      - review.completed
+      - workflow.completed
     approvalGate: product_acceptance

@@ -38,9 +38,13 @@ agentDefinitions:
         - Design file access remains read-only.
         - Customer docs remain sanitized.
         - Product acceptance stays with the product manager.
+      evidenceRefs:
+        - ux_criteria
+        - design_gap_log
+        - product_ux_decisions
     compatibility:
       impact: behavior_changing
-      notes: Changes may alter UX criteria, design interpretation, or customer-doc synthesis.
+      notes: Changes may alter UX criteria, design interpretation, customer-doc synthesis, or build validation handoffs.
       affectedAgents:
         - ux-agent
     audit:
@@ -94,6 +98,13 @@ agentDefinitions:
         - Product acceptance is recorded before implementation.
         - Repository writes remain reviewable.
         - Launch actions remain launch-gated.
+        - Implementation notes and change summaries are produced for QA, product, and launch review.
+      evidenceRefs:
+        - delivery_goal
+        - acceptance_matrix
+        - ux_criteria
+        - implementation_notes
+        - change_summary
     compatibility:
       impact: behavior_changing
       notes: Changes may alter implementation scope, retrieval evidence, or delivery handoff quality.
@@ -130,6 +141,8 @@ agentDefinitions:
         - repository
         - backlog
         - docs
+        - design_files
+        - support_readiness
       memoryScopes:
         - ephemeral
         - task
@@ -147,6 +160,11 @@ agentDefinitions:
         - Test execution remains approval-gated.
         - Quality findings cite retrieved evidence.
         - Launch readiness remains human-reviewed.
+        - Validation matrix and launch risk summary are available before product acceptance.
+      evidenceRefs:
+        - quality_report
+        - validation_matrix
+        - launch_risk_summary
     compatibility:
       impact: behavior_changing
       notes: Changes may alter quality evidence, risk summaries, or launch readiness recommendations.

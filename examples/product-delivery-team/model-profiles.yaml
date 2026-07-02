@@ -34,6 +34,10 @@ modelProfiles:
       recordModelRevision: true
       recordSelectionReason: true
       recordFallbackUsed: true
+      events:
+        - agent.started
+        - review.requested
+        - review.completed
     review:
       required: true
       approvers:

@@ -3,6 +3,15 @@ kind: EventSet
 metadata:
   project: product-delivery-team
 events:
+  - type: task.created
+    description: Product delivery task is created or selected for delivery planning.
+    retention: Project policy.
+    auditRequired: true
+    payload:
+      required:
+        - taskId
+        - owner
+        - approvalGates
   - type: workflow.started
     description: Product delivery workflow starts.
     retention: Project policy.
@@ -32,8 +41,19 @@ events:
     auditRequired: true
     payload:
       required:
+        - handoffId
         - from
         - to
+        - artifacts
+  - type: handoff.accepted
+    description: Receiving actors accept responsibility and evidence for the next product delivery step.
+    retention: Project policy.
+    auditRequired: true
+    payload:
+      required:
+        - handoffId
+        - acceptedBy
+        - acceptedArtifacts
   - type: review.requested
     description: Review is requested.
     retention: Project policy.
@@ -48,6 +68,17 @@ events:
     payload:
       required:
         - result
+        - approvalGate
+        - evidence
+  - type: agent.started
+    description: Agent session starts with declared definition, model profile, and retrieval profile.
+    retention: Project policy.
+    auditRequired: true
+    payload:
+      required:
+        - agentId
+        - agentDefinitionRef
+        - modelProfileRef
   - type: workflow.completed
     description: Product delivery workflow completes.
     retention: Project policy.

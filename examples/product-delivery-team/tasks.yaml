@@ -5,16 +5,27 @@ metadata:
 tasks:
   - id: define-delivery-goal
     title: Define delivery goal
+    description: Define accepted product outcome, non-goals, stakeholders, and testable acceptance criteria.
     status: ready
     owner: product-manager
     participants:
       - ux-agent
       - implementation-agent
+      - qa-agent
+      - launch-coordinator
     dependsOn: []
     artifacts:
       - id: delivery_goal
         type: document
         description: Product goal and acceptance criteria.
+        producedBy: product-manager
+      - id: acceptance_matrix
+        type: document
+        description: Product acceptance criteria mapped to UX, implementation, validation, and launch concerns.
+        producedBy: product-manager
+      - id: stakeholder_constraints
+        type: document
+        description: Stakeholder constraints, launch constraints, dependencies, and explicit non-goals.
         producedBy: product-manager
     capabilitiesRequired:
       - manage_tasks
@@ -24,13 +35,17 @@ tasks:
     acceptanceCriteria:
       - Goal and non-goals are explicit.
       - Acceptance criteria are testable.
+      - Stakeholder constraints and launch constraints are captured.
+      - UX, implementation, QA, and launch actors can identify their responsibilities.
   - id: prepare-ux-criteria
     title: Prepare UX criteria
+    description: Translate accepted product scope into UX criteria, design decisions, and open design gaps.
     status: proposed
     owner: ux-agent
     participants:
       - product-manager
       - implementation-agent
+      - qa-agent
     dependsOn:
       - define-delivery-goal
     artifacts:
@@ -38,25 +53,47 @@ tasks:
         type: document
         description: UX criteria and design references.
         producedBy: ux-agent
+      - id: design_gap_log
+        type: report
+        description: Open design gaps, assumptions, and decisions needed before implementation or validation.
+        producedBy: ux-agent
+      - id: product_ux_decisions
+        type: document
+        description: Product manager decisions on UX tradeoffs and accepted design constraints.
+        producedBy: product-manager
     capabilitiesRequired:
       - access_figma
       - read_context
-    approvalGates: []
+    approvalGates:
+      - product_acceptance
     acceptanceCriteria:
       - UX criteria are linked to design context.
+      - Design gaps and assumptions are visible to implementation and QA.
+      - Product manager accepts UX tradeoffs that affect scope or launch readiness.
   - id: implement-delivery-slice
     title: Implement delivery slice
+    description: Implement the accepted slice and produce reviewable evidence for QA, product, and launch planning.
     status: proposed
     owner: implementation-agent
     participants:
       - product-manager
+      - ux-agent
       - qa-agent
+      - launch-coordinator
     dependsOn:
       - prepare-ux-criteria
     artifacts:
       - id: delivery_branch
         type: branch
         description: Delivery implementation branch.
+        producedBy: implementation-agent
+      - id: implementation_notes
+        type: report
+        description: Changed areas, assumptions, commands, validation gaps, and product/UX traceability.
+        producedBy: implementation-agent
+      - id: change_summary
+        type: document
+        description: User-facing behavior changes, documentation impacts, and launch communication notes.
         producedBy: implementation-agent
     capabilitiesRequired:
       - read_repository
@@ -67,12 +104,17 @@ tasks:
       - product_acceptance
     acceptanceCriteria:
       - Implementation satisfies product and UX criteria.
+      - Implementation notes trace work to acceptance matrix and UX criteria.
+      - Known validation gaps are handed to QA.
+      - Launch-relevant behavior changes are summarized.
   - id: validate-delivery
     title: Validate delivery
+    description: Validate implementation against product and UX criteria, record quality evidence, and identify launch risks.
     status: proposed
     owner: qa-agent
     participants:
       - implementation-agent
+      - product-manager
       - launch-coordinator
     dependsOn:
       - implement-delivery-slice
@@ -81,29 +123,97 @@ tasks:
         type: report
         description: QA evidence and known risks.
         producedBy: qa-agent
+      - id: validation_matrix
+        type: report
+        description: Passed, failed, skipped, and not-run checks mapped to acceptance criteria.
+        producedBy: qa-agent
+      - id: launch_risk_summary
+        type: report
+        description: Risks, blockers, mitigations, and reviewer attention points for launch planning.
+        producedBy: qa-agent
     capabilitiesRequired:
+      - read_repository
       - execute_command
+      - read_context
       - approve_changes
     approvalGates:
       - quality_gate
     acceptanceCriteria:
       - Quality evidence is sufficient for launch planning.
-  - id: prepare-launch
-    title: Prepare launch
+      - Validation matrix names passed, failed, skipped, and not-run checks.
+      - Launch risks are accepted, mitigated, or marked as blockers.
+      - Product manager can use QA evidence for acceptance review.
+  - id: accept-delivery
+    title: Accept delivery
+    description: Confirm delivered behavior against product acceptance criteria before launch planning proceeds.
     status: proposed
-    owner: launch-coordinator
+    owner: product-manager
+    participants:
+      - qa-agent
+      - implementation-agent
+      - launch-coordinator
     dependsOn:
       - validate-delivery
+    artifacts:
+      - id: product_acceptance_record
+        type: document
+        description: Product acceptance decision, accepted risks, rejected scope, and required follow-ups.
+        producedBy: product-manager
+      - id: accepted_delivery_scope
+        type: document
+        description: Accepted user-facing behavior, non-goals, launch constraints, and follow-up items.
+        producedBy: product-manager
+    capabilitiesRequired:
+      - manage_tasks
+      - read_context
+      - approve_changes
+    approvalGates:
+      - product_acceptance
+    acceptanceCriteria:
+      - Product acceptance record references quality report and validation matrix.
+      - Accepted scope and non-goals are explicit.
+      - Follow-up work is recorded or launch is blocked.
+      - Launch coordinator can distinguish accepted behavior from unresolved risk.
+  - id: prepare-launch
+    title: Prepare launch
+    description: Prepare launch plan, release notes, rollout decision, and rollback notes using accepted product and quality evidence.
+    status: proposed
+    owner: launch-coordinator
+    participants:
+      - product-manager
+      - qa-agent
+      - implementation-agent
+    dependsOn:
+      - accept-delivery
     artifacts:
       - id: launch_plan
         type: document
         description: Launch plan and release notes.
         producedBy: launch-coordinator
+      - id: release_notes
+        type: document
+        description: User-facing release notes and communication points tied to accepted scope.
+        producedBy: launch-coordinator
+      - id: launch_decision
+        type: document
+        description: Launch approval, deferral, or block decision with required evidence references.
+        producedBy: launch-coordinator
+      - id: rollback_notes
+        type: document
+        description: Rollback or mitigation notes for production-facing release.
+        producedBy: launch-coordinator
     capabilitiesRequired:
+      - read_context
       - create_pull_request
       - modify_documentation
+      - approve_changes
       - deploy_application
     approvalGates:
+      - product_acceptance
+      - quality_gate
       - launch_gate
     acceptanceCriteria:
       - Launch plan references quality report and product acceptance.
+      - Release notes match accepted delivery scope.
+      - Rollback or mitigation notes are present.
+      - Deployment remains blocked until launch decision is explicit.

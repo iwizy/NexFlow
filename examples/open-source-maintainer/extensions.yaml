@@ -1,0 +1,29 @@
+specVersion: "0.1"
+kind: ExtensionSet
+metadata:
+  project: open-source-maintainer
+extensions:
+  - id: github_public
+    namespace: io.nexflow.github
+    displayName: GitHub Public Repository
+    lifecycle: experimental
+    appliesTo:
+      - context
+      - tasks
+      - workflow
+      - events
+    requiredCapabilities:
+      - read_repository
+      - access_github
+      - label_issue
+      - review_pull_request
+  - id: docs_public
+    namespace: io.nexflow.docs
+    displayName: Public Documentation
+    lifecycle: experimental
+    appliesTo:
+      - context
+      - tasks
+    requiredCapabilities:
+      - read_documentation
+      - modify_documentation

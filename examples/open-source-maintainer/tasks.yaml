@@ -1,0 +1,160 @@
+specVersion: "0.1"
+kind: TaskSet
+metadata:
+  project: open-source-maintainer
+tasks:
+  - id: triage-issue
+    title: Triage issue
+    description: Summarize the public issue, suggest labels, identify reproduction status, and list missing maintainer decisions.
+    status: ready
+    owner: issue-triage-agent
+    participants:
+      - maintainer
+    dependsOn: []
+    artifacts:
+      - id: issue_triage_report
+        type: report
+        description: Issue summary, observed facts, missing information, reproduction status, and recommended next step.
+        producedBy: issue-triage-agent
+      - id: suggested_labels
+        type: metadata
+        description: Suggested labels and rationale for maintainer review.
+        producedBy: issue-triage-agent
+      - id: reproduction_notes
+        type: report
+        description: Reproduction evidence, not-reproduced notes, or explicit reproduction gaps.
+        producedBy: issue-triage-agent
+    capabilitiesRequired:
+      - read_context
+      - access_github
+      - manage_tasks
+      - label_issue
+    approvalGates:
+      - maintainer_triage
+    acceptanceCriteria:
+      - Triage report separates facts, assumptions, and questions.
+      - Suggested labels include rationale.
+      - Missing reproduction information is visible.
+  - id: accept-maintainer-scope
+    title: Accept maintainer scope
+    description: Decide whether the issue is accepted, rejected, deferred, or needs more information.
+    status: proposed
+    owner: maintainer
+    participants:
+      - issue-triage-agent
+      - docs-agent
+    dependsOn:
+      - triage-issue
+    artifacts:
+      - id: maintainer_decision
+        type: document
+        description: Maintainer decision, accepted scope, rejected scope, and required follow-ups.
+        producedBy: maintainer
+      - id: accepted_scope
+        type: document
+        description: Public scope statement for docs, review, or release-note work.
+        producedBy: maintainer
+    capabilitiesRequired:
+      - read_context
+      - manage_tasks
+      - label_issue
+      - approve_changes
+    approvalGates:
+      - maintainer_triage
+    acceptanceCriteria:
+      - Maintainer decision references triage evidence.
+      - Accepted and rejected scope are explicit.
+      - Follow-ups are documented or the issue remains blocked.
+  - id: update-docs
+    title: Update documentation
+    description: Draft documentation updates for accepted issue scope.
+    status: proposed
+    owner: docs-agent
+    participants:
+      - maintainer
+      - pr-review-agent
+    dependsOn:
+      - accept-maintainer-scope
+    artifacts:
+      - id: docs_branch
+        type: branch
+        description: Documentation update branch.
+        producedBy: docs-agent
+      - id: docs_change_summary
+        type: document
+        description: Changed docs, user-visible impact, assumptions, and review notes.
+        producedBy: docs-agent
+    capabilitiesRequired:
+      - read_repository
+      - write_repository
+      - create_branch
+      - read_documentation
+      - modify_documentation
+      - read_context
+    approvalGates:
+      - docs_review
+    acceptanceCriteria:
+      - Documentation changes trace to accepted scope.
+      - Public claims are cited or framed as maintainer decisions.
+      - Review notes identify any behavior or compatibility implications.
+  - id: review-pull-request
+    title: Review pull request
+    description: Prepare pull request review evidence for maintainer approval.
+    status: proposed
+    owner: pr-review-agent
+    participants:
+      - maintainer
+      - docs-agent
+      - release-notes-agent
+    dependsOn:
+      - update-docs
+    artifacts:
+      - id: review_report
+        type: report
+        description: Review findings, changed files, checks, risks, and follow-ups.
+        producedBy: pr-review-agent
+      - id: review_risk_summary
+        type: report
+        description: Blocking issues, suggestions, accepted risks, and release-note implications.
+        producedBy: pr-review-agent
+    capabilitiesRequired:
+      - read_repository
+      - read_context
+      - review_pull_request
+    approvalGates:
+      - pr_review
+    acceptanceCriteria:
+      - Review report distinguishes blockers from suggestions.
+      - Maintainer can decide whether the PR is ready.
+      - Release-note implications are visible.
+  - id: prepare-release-notes
+    title: Prepare release notes
+    description: Draft release notes from accepted issue scope, docs changes, and PR review evidence.
+    status: proposed
+    owner: release-notes-agent
+    participants:
+      - maintainer
+      - pr-review-agent
+    dependsOn:
+      - review-pull-request
+    artifacts:
+      - id: release_notes_draft
+        type: document
+        description: Draft release note entry with issue, PR, docs, and maintainer decision references.
+        producedBy: release-notes-agent
+      - id: release_summary
+        type: document
+        description: Public-facing summary, migration notes if any, and excluded private details.
+        producedBy: release-notes-agent
+    capabilitiesRequired:
+      - read_repository
+      - read_documentation
+      - read_context
+      - modify_documentation
+      - publish_release_notes
+    approvalGates:
+      - release_note_approval
+    acceptanceCriteria:
+      - Release notes cite accepted issue and PR evidence.
+      - Public summary avoids private maintainer notes and sensitive details.
+      - Publication remains blocked until maintainer approval.

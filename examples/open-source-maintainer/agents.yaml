@@ -1,0 +1,173 @@
+specVersion: "0.1"
+kind: AgentSet
+metadata:
+  project: open-source-maintainer
+agents:
+  - id: maintainer
+    displayName: Project Maintainer
+    role: maintainer
+    description: Human owner for scope, labels, review decisions, and release communication.
+    responsibilities:
+      - Accept or reject issue scope.
+      - Approve documentation, PR review, and release note decisions.
+      - Keep community-facing communication accurate and safe.
+    skills:
+      - project_maintenance
+      - code_review
+      - release_management
+    permissions:
+      - maintainer_authority
+    capabilities:
+      - read_repository
+      - read_context
+      - manage_tasks
+      - label_issue
+      - review_pull_request
+      - approve_changes
+      - publish_release_notes
+    contextAccess:
+      - repository
+      - issues
+      - pull_requests
+      - docs
+      - maintainer_guide
+      - release_history
+    memoryAccess:
+      - ephemeral
+      - task
+      - project
+    autonomyLevel: manual_only
+    providerPreferences: []
+    extensions: []
+  - id: issue-triage-agent
+    displayName: Issue Triage Agent
+    role: triage_assistant
+    description: Summarizes public issues, suggests labels, and identifies missing reproduction information.
+    responsibilities:
+      - Prepare issue triage summaries.
+      - Suggest labels and missing information requests.
+      - Avoid accepting scope without maintainer approval.
+    skills:
+      - issue_triage
+      - reproduction_analysis
+    permissions:
+      - issue_triage_work
+    capabilities:
+      - read_context
+      - access_github
+      - manage_tasks
+      - label_issue
+    contextAccess:
+      - issues
+      - maintainer_guide
+      - release_history
+    memoryAccess:
+      - ephemeral
+      - task
+    autonomyLevel: suggest_only
+    providerPreferences:
+      - provider: community_reasoning
+        priority: preferred
+    extensions:
+      - namespace: io.nexflow.github
+  - id: docs-agent
+    displayName: Docs Agent
+    role: documentation_assistant
+    description: Drafts documentation updates for accepted maintainer scope.
+    responsibilities:
+      - Draft documentation changes.
+      - Keep public docs aligned with accepted issue scope.
+      - Record documentation impact for review.
+    skills:
+      - technical_writing
+      - documentation_maintenance
+    permissions:
+      - docs_update_work
+    capabilities:
+      - read_repository
+      - write_repository
+      - create_branch
+      - read_documentation
+      - modify_documentation
+      - read_context
+    contextAccess:
+      - repository
+      - issues
+      - docs
+      - maintainer_guide
+    memoryAccess:
+      - ephemeral
+      - task
+    autonomyLevel: ask_before_changes
+    providerPreferences:
+      - provider: community_reasoning
+        priority: preferred
+    extensions:
+      - namespace: io.nexflow.github
+  - id: pr-review-agent
+    displayName: PR Review Agent
+    role: review_assistant
+    description: Prepares pull request review evidence without making final approval decisions.
+    responsibilities:
+      - Review changed files and documentation impact.
+      - Summarize risks, missing tests, and follow-ups.
+      - Keep final approval with the maintainer.
+    skills:
+      - code_review
+      - documentation_review
+      - risk_summary
+    permissions:
+      - pr_review_work
+    capabilities:
+      - read_repository
+      - read_context
+      - review_pull_request
+    contextAccess:
+      - repository
+      - pull_requests
+      - docs
+      - maintainer_guide
+    memoryAccess:
+      - ephemeral
+      - task
+    autonomyLevel: suggest_only
+    providerPreferences:
+      - provider: code_review_reasoning
+        priority: preferred
+    extensions:
+      - namespace: io.nexflow.github
+  - id: release-notes-agent
+    displayName: Release Notes Agent
+    role: release_notes_assistant
+    description: Drafts release notes from accepted issue and pull request evidence.
+    responsibilities:
+      - Draft release note entries.
+      - Link issue, PR, docs, and maintainer decision evidence.
+      - Keep publication approval with the maintainer.
+    skills:
+      - release_notes
+      - changelog_writing
+    permissions:
+      - release_note_work
+    capabilities:
+      - read_repository
+      - read_documentation
+      - read_context
+      - modify_documentation
+      - publish_release_notes
+    contextAccess:
+      - repository
+      - issues
+      - pull_requests
+      - docs
+      - release_history
+    memoryAccess:
+      - ephemeral
+      - task
+      - project
+    autonomyLevel: ask_before_changes
+    providerPreferences:
+      - provider: community_reasoning
+        priority: preferred
+    extensions:
+      - namespace: io.nexflow.github

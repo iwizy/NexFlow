@@ -1,0 +1,107 @@
+specVersion: "0.1"
+kind: ContextSet
+metadata:
+  project: open-source-maintainer
+contextSources:
+  - id: repository
+    type: github
+    description: Public source repository.
+    uri: https://github.com/example/open-source-project
+    contentTypes:
+      - source_code
+      - pull_requests
+    access:
+      default: read
+      allowedActors:
+        - maintainer
+        - docs-agent
+        - pr-review-agent
+        - release-notes-agent
+    classification: public
+    refreshPolicy: on_request
+  - id: issues
+    type: github
+    description: Public issue tracker and discussion attached to issues.
+    contentTypes:
+      - issues
+      - metadata
+    access:
+      default: query
+      allowedActors:
+        - maintainer
+        - issue-triage-agent
+        - docs-agent
+        - release-notes-agent
+    classification: public
+    refreshPolicy: on_workflow_start
+    freshness:
+      maxAge: 24h
+      staleAllowed: false
+      requiresCitation: true
+  - id: pull_requests
+    type: github
+    description: Pull request metadata, changed files, review comments, and linked issues.
+    contentTypes:
+      - pull_requests
+      - metadata
+    access:
+      default: query
+      allowedActors:
+        - maintainer
+        - pr-review-agent
+        - release-notes-agent
+    classification: public
+    refreshPolicy: on_request
+    freshness:
+      maxAge: 24h
+      staleAllowed: false
+      requiresCitation: true
+  - id: docs
+    type: docs
+    description: Public documentation, README, changelog, and contribution guide.
+    uri: docs/
+    contentTypes:
+      - documentation
+      - metadata
+    access:
+      default: read
+      allowedActors:
+        - maintainer
+        - docs-agent
+        - pr-review-agent
+        - release-notes-agent
+    classification: public
+    refreshPolicy: on_request
+  - id: maintainer_guide
+    type: docs
+    description: Public maintainer policy, issue labels, review expectations, and release note style.
+    contentTypes:
+      - documentation
+      - metadata
+    access:
+      default: read
+      allowedActors:
+        - maintainer
+        - issue-triage-agent
+        - docs-agent
+        - pr-review-agent
+    classification: public
+    refreshPolicy: manual
+    freshness:
+      maxAge: 30d
+      staleAllowed: false
+      requiresCitation: true
+  - id: release_history
+    type: docs
+    description: Public changelog, release notes, and milestone history.
+    contentTypes:
+      - documentation
+      - metadata
+    access:
+      default: read
+      allowedActors:
+        - maintainer
+        - issue-triage-agent
+        - release-notes-agent
+    classification: public
+    refreshPolicy: on_request

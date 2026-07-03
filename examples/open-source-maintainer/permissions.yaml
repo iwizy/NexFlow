@@ -1,0 +1,78 @@
+specVersion: "0.1"
+kind: PermissionSet
+metadata:
+  project: open-source-maintainer
+permissions:
+  - id: maintainer_authority
+    description: Maintainer can approve scope, labels, PR review decisions, and release notes.
+    subjects:
+      - maintainer
+    capabilities:
+      - read_repository
+      - read_context
+      - manage_tasks
+      - label_issue
+      - review_pull_request
+      - approve_changes
+      - publish_release_notes
+    effect: allow
+    conditions:
+      - Public decisions should cite issue, PR, documentation, or release artifacts.
+  - id: issue_triage_work
+    description: Triage agent may suggest labels and issue summaries after maintainer triage approval.
+    subjects:
+      - issue-triage-agent
+    capabilities:
+      - read_context
+      - access_github
+      - manage_tasks
+      - label_issue
+    effect: approval_required
+    approvalGate: maintainer_triage
+    conditions:
+      - Suggested labels remain recommendations until maintainer approval.
+      - Missing information requests must stay factual and respectful.
+  - id: docs_update_work
+    description: Docs agent may draft documentation changes for accepted scope.
+    subjects:
+      - docs-agent
+    capabilities:
+      - read_repository
+      - write_repository
+      - create_branch
+      - read_documentation
+      - modify_documentation
+      - read_context
+    effect: approval_required
+    approvalGate: docs_review
+    conditions:
+      - Documentation changes must trace to accepted scope.
+      - Repository writes must remain on a reviewable branch.
+  - id: pr_review_work
+    description: PR review agent may prepare review evidence without final approval authority.
+    subjects:
+      - pr-review-agent
+    capabilities:
+      - read_repository
+      - read_context
+      - review_pull_request
+    effect: approval_required
+    approvalGate: pr_review
+    conditions:
+      - Review findings must distinguish blocking issues from suggestions.
+      - The agent may not approve or merge its own output.
+  - id: release_note_work
+    description: Release notes agent may draft release notes for maintainer approval.
+    subjects:
+      - release-notes-agent
+    capabilities:
+      - read_repository
+      - read_documentation
+      - read_context
+      - modify_documentation
+      - publish_release_notes
+    effect: approval_required
+    approvalGate: release_note_approval
+    conditions:
+      - Release notes must cite accepted issue and PR evidence.
+      - Publication remains blocked until maintainer approval.

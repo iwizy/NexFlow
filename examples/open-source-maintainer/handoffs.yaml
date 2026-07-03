@@ -1,0 +1,75 @@
+specVersion: "0.1"
+kind: HandoffSet
+metadata:
+  project: open-source-maintainer
+handoffs:
+  - id: triage-to-maintainer
+    from:
+      - issue-triage-agent
+    to:
+      - maintainer
+    reason: Issue triage evidence is ready for maintainer scope decision.
+    status: pending
+    artifacts:
+      - issue_triage_report
+      - suggested_labels
+      - reproduction_notes
+    notes:
+      - Suggested labels and scope are recommendations until maintainer approval.
+    blockingIssues: []
+    acceptanceCriteria:
+      - Maintainer has facts, assumptions, and missing information clearly separated.
+    nextAction: Accept, reject, defer, or request more information.
+  - id: maintainer-to-docs
+    from:
+      - maintainer
+    to:
+      - docs-agent
+      - pr-review-agent
+    reason: Maintainer accepted scope and documentation impact is ready for drafting.
+    status: pending
+    artifacts:
+      - maintainer_decision
+      - accepted_scope
+    notes:
+      - Documentation updates must stay inside accepted scope.
+    blockingIssues: []
+    acceptanceCriteria:
+      - Docs and review actors can trace work to maintainer decision.
+    nextAction: Draft documentation update.
+  - id: docs-to-pr-review
+    from:
+      - docs-agent
+    to:
+      - pr-review-agent
+      - maintainer
+    reason: Documentation branch is ready for pull request review preparation.
+    status: pending
+    artifacts:
+      - docs_branch
+      - docs_change_summary
+      - accepted_scope
+    notes: []
+    blockingIssues: []
+    acceptanceCriteria:
+      - Reviewer can inspect changed docs, accepted scope, and public claims.
+    nextAction: Prepare PR review evidence.
+  - id: review-to-release-notes
+    from:
+      - pr-review-agent
+      - maintainer
+    to:
+      - release-notes-agent
+    reason: Review evidence is ready for release note drafting.
+    status: pending
+    artifacts:
+      - review_report
+      - review_risk_summary
+      - maintainer_decision
+      - docs_change_summary
+    notes:
+      - Release notes stay draft until maintainer approval.
+    blockingIssues: []
+    acceptanceCriteria:
+      - Release notes agent has accepted scope, review findings, and documentation impact.
+    nextAction: Draft release notes for maintainer approval.

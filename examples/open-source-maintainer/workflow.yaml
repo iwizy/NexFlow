@@ -1,0 +1,97 @@
+specVersion: "0.1"
+kind: Workflow
+metadata:
+  project: open-source-maintainer
+workflow:
+  id: open-source-maintenance
+  displayName: Open Source Maintenance
+  description: Maintainer-led workflow for issue triage, documentation updates, PR review, and release notes.
+  triggers:
+    - task.created
+  stages:
+    - id: triage
+      displayName: Triage
+      steps:
+        - id: step-triage-issue
+          task: triage-issue
+          dependsOn: []
+          approvalGates:
+            - maintainer_triage
+          emits:
+            - task.completed
+            - handoff.created
+    - id: scope
+      displayName: Scope
+      steps:
+        - id: step-accept-maintainer-scope
+          task: accept-maintainer-scope
+          dependsOn:
+            - step-triage-issue
+          approvalGates:
+            - maintainer_triage
+          emits:
+            - task.completed
+            - review.completed
+            - handoff.created
+    - id: documentation
+      displayName: Documentation
+      steps:
+        - id: step-update-docs
+          task: update-docs
+          dependsOn:
+            - step-accept-maintainer-scope
+          approvalGates:
+            - docs_review
+          emits:
+            - task.completed
+            - handoff.created
+    - id: review
+      displayName: Pull Request Review
+      steps:
+        - id: step-review-pull-request
+          task: review-pull-request
+          dependsOn:
+            - step-update-docs
+          approvalGates:
+            - pr_review
+          emits:
+            - task.completed
+            - review.completed
+            - handoff.created
+    - id: release-notes
+      displayName: Release Notes
+      steps:
+        - id: step-prepare-release-notes
+          task: prepare-release-notes
+          dependsOn:
+            - step-review-pull-request
+          approvalGates:
+            - release_note_approval
+          emits:
+            - review.completed
+            - workflow.completed
+  dependencies:
+    - from: step-triage-issue
+      to: step-accept-maintainer-scope
+      type: blocks
+    - from: step-accept-maintainer-scope
+      to: step-update-docs
+      type: blocks
+    - from: step-update-docs
+      to: step-review-pull-request
+      type: blocks
+    - from: step-review-pull-request
+      to: step-prepare-release-notes
+      type: blocks
+  evidenceFlow:
+    requiredArtifacts:
+      - issue_triage_report
+      - maintainer_decision
+      - docs_change_summary
+      - review_report
+      - release_notes_draft
+    requiredGates:
+      - maintainer_triage
+      - docs_review
+      - pr_review
+      - release_note_approval

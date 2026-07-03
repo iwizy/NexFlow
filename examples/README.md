@@ -15,6 +15,7 @@ Use the [Example Consistency Checklist](CHECKLIST.md) before adding or changing 
 | [Startup Team](startup-team/) | Fast product iteration | Product, design, fullstack, release | Safe autonomy with human launch control | GitHub, Linear, Figma, research, docs | Product and release review |
 | [Enterprise Team](enterprise-team/) | Governed sensitive change control | Architecture, implementation, security, compliance, release | Strict and audit-heavy | GitHub, Jira, Confluence, knowledge base, MCP | Architecture, security, compliance, and release gates |
 | [Product Delivery Team](product-delivery-team/) | Cross-functional delivery | Product, UX, implementation, QA, launch | Safe autonomy with staged gates | GitHub, Jira, Figma, customer docs | Product acceptance, quality gate, launch gate |
+| [Open Source Maintainer](open-source-maintainer/) | Public repository maintenance | Maintainer, triage, docs, PR review, release notes | Maintainer-owned approvals | GitHub issues, PRs, docs, release history | Maintainer triage, docs review, PR review, release notes approval |
 
 ## Common File Set
 
@@ -65,6 +66,8 @@ Use `startup-team` when product scope, design context, and release readiness mat
 Use `enterprise-team` when least privilege, restricted memory, compliance evidence, and explicit release control are central.
 
 Use `product-delivery-team` when the workflow spans product, UX, engineering, QA, and launch coordination.
+
+Use `open-source-maintainer` when public issue triage, maintainer decisions, documentation updates, pull request review, and release notes need explicit handoffs.
 
 ## Safety Pattern
 

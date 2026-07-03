@@ -1,0 +1,65 @@
+specVersion: "0.1"
+kind: Project
+metadata:
+  project: open-source-maintainer
+  name: Open Source Maintainer
+project:
+  id: open-source-maintainer
+  displayName: Open Source Maintainer
+  description: Public repository maintenance workflow with issue triage, documentation updates, PR review, and release notes.
+  license: MIT
+  maintainers:
+    - id: maintainer
+      name: Project Maintainer
+      role: maintainer
+  defaultAutonomy: ask_before_changes
+  policies:
+    requireReview: true
+    secretHandling: Public manifests must use secret references only.
+    networkAccess: Allowed only through declared public repository and documentation sources.
+    destructiveActions: Human maintainer approval required.
+    productionActions: Release note publication and release tagging require maintainer approval.
+    publicEvidence: Public claims should cite issue, pull request, documentation, or release artifacts.
+    communitySafety: Agents must not publish private maintainer notes, raw personal data, credentials, or security-sensitive exploit details.
+  approvalGates:
+    - id: maintainer_triage
+      description: Maintainer approval required for issue scope, labels, and accepted work.
+      requiredApprovers:
+        - maintainer
+      appliesTo:
+        - triage-issue
+        - accept-maintainer-scope
+    - id: docs_review
+      description: Maintainer approval required before documentation changes are proposed.
+      requiredApprovers:
+        - maintainer
+      appliesTo:
+        - update-docs
+    - id: pr_review
+      description: Maintainer approval required before review findings become an approval decision.
+      requiredApprovers:
+        - maintainer
+      appliesTo:
+        - review-pull-request
+    - id: release_note_approval
+      description: Maintainer approval required before release notes are published or attached to a release.
+      requiredApprovers:
+        - maintainer
+      appliesTo:
+        - prepare-release-notes
+manifests:
+  agents: agents.yaml
+  agentDefinitions: agent-definitions.yaml
+  workflow: workflow.yaml
+  tasks: tasks.yaml
+  handoffs: handoffs.yaml
+  permissions: permissions.yaml
+  capabilities: capabilities.yaml
+  context: context.yaml
+  memory: memory.yaml
+  providers: providers.yaml
+  modelProfiles: model-profiles.yaml
+  promptSets: prompt-sets.yaml
+  retrievalProfiles: retrieval-profiles.yaml
+  events: events.yaml
+  extensions: extensions.yaml

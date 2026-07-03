@@ -1,0 +1,106 @@
+specVersion: "0.1"
+kind: RetrievalProfileSet
+metadata:
+  project: open-source-maintainer
+retrievalProfiles:
+  - id: maintainer_support_retrieval
+    description: Retrieval expectations for public issue triage, docs updates, PR review preparation, and release-note drafting.
+    version: "2026.06.0"
+    status: draft
+    owner: maintainer
+    sources:
+      - contextSourceRef: issues
+        purpose: Public issue facts, labels, reproduction notes, and maintainer questions.
+        accessMode: query
+        required: true
+        maxClassification: public
+      - contextSourceRef: pull_requests
+        purpose: Public PR metadata, changed files, review comments, and linked issues.
+        accessMode: query
+        required: false
+        maxClassification: public
+      - contextSourceRef: repository
+        purpose: Public source files and documentation changes.
+        accessMode: read
+        required: false
+        maxClassification: public
+      - contextSourceRef: docs
+        purpose: Public documentation, README, changelog, and contribution guide.
+        accessMode: read
+        required: false
+        maxClassification: public
+      - contextSourceRef: maintainer_guide
+        purpose: Public label policy, review expectations, and release note style.
+        accessMode: read
+        required: true
+        maxClassification: public
+      - contextSourceRef: release_history
+        purpose: Public changelog, release notes, and milestone history.
+        accessMode: read
+        required: false
+        maxClassification: public
+    index:
+      corpusRef: open-source-maintainer-corpus
+      version: "2026-06-10"
+      updatePolicy: on_workflow_start
+    chunking:
+      strategy: structure_aware
+      maxChunkTokens: 1000
+      overlapTokens: 100
+      preserveBoundaries:
+        - issue_comment
+        - pull_request_file
+        - review_comment
+        - docs_section
+        - changelog_entry
+    retriever:
+      strategy: hybrid
+      topK: 12
+      scoreThreshold: 0.25
+      queryRewrite: static_policy
+    freshness:
+      maxAge: 24h
+      staleAllowed: false
+      requiresRefreshBeforeUse: true
+    citations:
+      required: true
+      style: source_path
+      includeLineRefs: true
+      includeRetrievedAt: true
+    sensitivity:
+      maxClassification: internal
+      allowCrossScopeReuse: false
+      redactionPolicy: redact_secrets_personal_data_and_unpublished_security_details
+    review:
+      required: true
+      approvers:
+        - maintainer
+      reviewTriggers:
+        - source_added
+        - private_source_enabled
+        - stale_allowed
+        - citations_disabled
+    compatibility:
+      impact: behavior_changing
+      notes: Retrieval changes may alter issue triage, maintainer decisions, docs scope, PR review evidence, or release notes.
+      affectedAgents:
+        - issue-triage-agent
+        - docs-agent
+        - pr-review-agent
+        - release-notes-agent
+    audit:
+      recordRetrievalProfileRef: true
+      recordContextSources: true
+      recordIndexVersion: true
+      recordFreshness: true
+      recordCitations: true
+      recordRetrieverConfig: true
+      events:
+        - agent.started
+        - review.requested
+        - review.completed
+    recommendedFor:
+      - issue-triage-agent
+      - docs-agent
+      - pr-review-agent
+      - release-notes-agent

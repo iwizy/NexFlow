@@ -1,0 +1,235 @@
+specVersion: "0.1"
+kind: AgentDefinitionSet
+metadata:
+  project: open-source-maintainer
+agentDefinitions:
+  - id: issue_triage_agent_2026_06
+    agentRef: issue-triage-agent
+    definitionVersion: "2026.06.0"
+    status: draft
+    owner: maintainer
+    description: Issue triage agent release for public issue summaries, suggested labels, and reproduction gaps.
+    components:
+      modelProfileRef: maintainer_support_profile
+      promptSetRef: maintainer_support_prompts
+      retrievalProfileRef: maintainer_support_retrieval
+      permissionRefs:
+        - issue_triage_work
+      capabilityRefs:
+        - read_context
+        - access_github
+        - manage_tasks
+        - label_issue
+      contextSourceRefs:
+        - issues
+        - maintainer_guide
+        - release_history
+      memoryScopes:
+        - ephemeral
+        - task
+      extensionRefs:
+        - github_public
+    autonomyLevel: suggest_only
+    changeSummary: Defines safe issue triage support without maintainer scope authority.
+    review:
+      required: true
+      approvers:
+        - maintainer
+      approvalGate: maintainer_triage
+      activationCriteria:
+        - Suggested labels remain recommendations.
+        - Issue scope remains maintainer-owned.
+        - Missing information requests remain factual and respectful.
+      evidenceRefs:
+        - issue_triage_report
+        - suggested_labels
+        - reproduction_notes
+    compatibility:
+      impact: behavior_changing
+      notes: Changes may alter issue triage behavior, label suggestions, or community-facing tone.
+      affectedAgents:
+        - issue-triage-agent
+    audit:
+      recordAgentDefinitionRef: true
+      recordDefinitionVersion: true
+      recordComponentRefs: true
+      recordReviewState: true
+      recordChangeSummary: true
+      events:
+        - agent.started
+        - review.requested
+  - id: docs_agent_2026_06
+    agentRef: docs-agent
+    definitionVersion: "2026.06.0"
+    status: draft
+    owner: maintainer
+    description: Docs agent release for accepted issue scope and public documentation updates.
+    components:
+      modelProfileRef: maintainer_support_profile
+      promptSetRef: maintainer_support_prompts
+      retrievalProfileRef: maintainer_support_retrieval
+      permissionRefs:
+        - docs_update_work
+      capabilityRefs:
+        - read_repository
+        - write_repository
+        - create_branch
+        - read_documentation
+        - modify_documentation
+        - read_context
+      contextSourceRefs:
+        - repository
+        - issues
+        - docs
+        - maintainer_guide
+      memoryScopes:
+        - ephemeral
+        - task
+      extensionRefs:
+        - github_public
+        - docs_public
+    autonomyLevel: ask_before_changes
+    changeSummary: Defines documentation update behavior with maintainer-reviewed scope and branch-based changes.
+    review:
+      required: true
+      approvers:
+        - maintainer
+      approvalGate: docs_review
+      activationCriteria:
+        - Docs changes trace to accepted scope.
+        - Repository writes remain on reviewable branches.
+        - Public claims cite accepted evidence.
+      evidenceRefs:
+        - accepted_scope
+        - docs_branch
+        - docs_change_summary
+    compatibility:
+      impact: behavior_changing
+      notes: Changes may alter documentation scope, writing behavior, or PR review handoff quality.
+      affectedAgents:
+        - docs-agent
+    audit:
+      recordAgentDefinitionRef: true
+      recordDefinitionVersion: true
+      recordComponentRefs: true
+      recordReviewState: true
+      recordChangeSummary: true
+      events:
+        - agent.started
+        - task.completed
+        - review.requested
+  - id: pr_review_agent_2026_06
+    agentRef: pr-review-agent
+    definitionVersion: "2026.06.0"
+    status: draft
+    owner: maintainer
+    description: PR review agent release for review evidence, risk summaries, and maintainer decision support.
+    components:
+      modelProfileRef: maintainer_support_profile
+      promptSetRef: maintainer_support_prompts
+      retrievalProfileRef: maintainer_support_retrieval
+      permissionRefs:
+        - pr_review_work
+      capabilityRefs:
+        - read_repository
+        - read_context
+        - review_pull_request
+      contextSourceRefs:
+        - repository
+        - pull_requests
+        - docs
+        - maintainer_guide
+      memoryScopes:
+        - ephemeral
+        - task
+      extensionRefs:
+        - github_public
+    autonomyLevel: suggest_only
+    changeSummary: Defines PR review support without final approval or merge authority.
+    review:
+      required: true
+      approvers:
+        - maintainer
+      approvalGate: pr_review
+      activationCriteria:
+        - Review output separates blockers, suggestions, and risks.
+        - Maintainer remains final approval authority.
+        - Release-note implications are visible.
+      evidenceRefs:
+        - review_report
+        - review_risk_summary
+    compatibility:
+      impact: behavior_changing
+      notes: Changes may alter review framing, risk summaries, or release-note handoff evidence.
+      affectedAgents:
+        - pr-review-agent
+    audit:
+      recordAgentDefinitionRef: true
+      recordDefinitionVersion: true
+      recordComponentRefs: true
+      recordReviewState: true
+      recordChangeSummary: true
+      events:
+        - agent.started
+        - review.requested
+        - review.completed
+  - id: release_notes_agent_2026_06
+    agentRef: release-notes-agent
+    definitionVersion: "2026.06.0"
+    status: draft
+    owner: maintainer
+    description: Release notes agent release for draft release communication based on accepted public evidence.
+    components:
+      modelProfileRef: maintainer_support_profile
+      promptSetRef: maintainer_support_prompts
+      retrievalProfileRef: maintainer_support_retrieval
+      permissionRefs:
+        - release_note_work
+      capabilityRefs:
+        - read_repository
+        - read_documentation
+        - read_context
+        - modify_documentation
+        - publish_release_notes
+      contextSourceRefs:
+        - repository
+        - issues
+        - pull_requests
+        - docs
+        - release_history
+      memoryScopes:
+        - ephemeral
+        - task
+        - project
+      extensionRefs:
+        - github_public
+        - docs_public
+    autonomyLevel: ask_before_changes
+    changeSummary: Defines release note drafting without publication authority.
+    review:
+      required: true
+      approvers:
+        - maintainer
+      approvalGate: release_note_approval
+      activationCriteria:
+        - Release notes cite issue, PR, docs, and maintainer decision evidence.
+        - Private maintainer notes are excluded.
+        - Publication remains blocked until maintainer approval.
+      evidenceRefs:
+        - release_notes_draft
+        - release_summary
+    compatibility:
+      impact: behavior_changing
+      notes: Changes may alter release-note wording, public claims, or publication readiness.
+      affectedAgents:
+        - release-notes-agent
+    audit:
+      recordAgentDefinitionRef: true
+      recordDefinitionVersion: true
+      recordComponentRefs: true
+      recordReviewState: true
+      recordChangeSummary: true
+      events:
+        - agent.started
+        - review.requested
+        - review.completed

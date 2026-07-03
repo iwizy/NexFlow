@@ -1,0 +1,26 @@
+specVersion: "0.1"
+kind: ProviderSet
+metadata:
+  project: open-source-maintainer
+providers:
+  - id: community_reasoning
+    type: abstract
+    description: Provider-neutral reasoning class for public issue triage, documentation, and release notes.
+    capabilities:
+      - text_generation
+      - policy_reasoning
+    constraints:
+      allowTrainingUse: false
+    selection:
+      strategy: project_policy
+  - id: code_review_reasoning
+    type: abstract
+    description: Provider-neutral reasoning class for repository and pull request review evidence.
+    capabilities:
+      - text_generation
+      - code_reasoning
+      - policy_reasoning
+    constraints:
+      allowTrainingUse: false
+    selection:
+      strategy: project_policy

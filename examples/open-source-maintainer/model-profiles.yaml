@@ -1,0 +1,54 @@
+specVersion: "0.1"
+kind: ModelProfileSet
+metadata:
+  project: open-source-maintainer
+modelProfiles:
+  - id: maintainer_support_profile
+    description: Provider-neutral profile for public maintainer support, issue triage, docs drafting, PR review preparation, and release notes.
+    modelClass: reasoning
+    selection:
+      mode: policy
+      providerRefs:
+        - community_reasoning
+        - code_review_reasoning
+      floatingAlias: approved-maintainer-support-model
+      resolutionPolicy: Select an approved model appropriate for public repository context and review sensitivity.
+    constraints:
+      trainingUse: prohibited
+      dataResidency: project_policy
+      toolUse: declared_tools_only
+      maxCostTier: medium
+      maxLatencyClass: interactive
+      sensitivity: internal
+    fallback:
+      allowed: true
+      strategy: community_safe_reviewed_model
+      requiresApproval: true
+      requiresAuditEvent: true
+      candidateProviderRefs:
+        - community_reasoning
+    audit:
+      recordModelProfileRef: true
+      recordResolvedProvider: true
+      recordResolvedModel: true
+      recordModelRevision: true
+      recordSelectionReason: true
+      recordFallbackUsed: true
+      events:
+        - agent.started
+        - review.requested
+        - review.completed
+    review:
+      required: true
+      approvers:
+        - maintainer
+      reviewTriggers:
+        - floating_alias_policy_change
+        - broader_training_use
+        - broader_tool_use
+        - fallback_policy_change
+    recommendedFor:
+      - issue-triage-agent
+      - docs-agent
+      - pr-review-agent
+      - release-notes-agent

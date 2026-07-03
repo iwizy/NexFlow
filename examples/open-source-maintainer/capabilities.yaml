@@ -1,0 +1,83 @@
+specVersion: "0.1"
+kind: CapabilitySet
+metadata:
+  project: open-source-maintainer
+capabilities:
+  - id: read_repository
+    description: Read public repository files and metadata.
+    risk: low
+    category: repository
+    requiresApprovalByDefault: false
+    auditRecommended: false
+  - id: write_repository
+    description: Write repository files in an approved branch.
+    risk: high
+    category: repository
+    requiresApprovalByDefault: true
+    auditRecommended: true
+  - id: create_branch
+    description: Create a branch for approved documentation or maintenance work.
+    risk: medium
+    category: repository
+    requiresApprovalByDefault: true
+    auditRecommended: true
+  - id: create_pull_request
+    description: Open a pull request for approved maintenance work.
+    risk: medium
+    category: repository
+    requiresApprovalByDefault: true
+    auditRecommended: true
+  - id: read_documentation
+    description: Read public documentation and maintainer guidance.
+    risk: low
+    category: documentation
+    requiresApprovalByDefault: false
+    auditRecommended: false
+  - id: modify_documentation
+    description: Modify documentation or release-note drafts.
+    risk: medium
+    category: documentation
+    requiresApprovalByDefault: true
+    auditRecommended: true
+  - id: read_context
+    description: Read declared open-source context sources.
+    risk: low
+    category: context
+    requiresApprovalByDefault: false
+    auditRecommended: true
+  - id: access_github
+    description: Read or prepare updates for declared GitHub issues and pull requests.
+    risk: medium
+    category: integration
+    requiresApprovalByDefault: true
+    auditRecommended: true
+  - id: manage_tasks
+    description: Manage declared issue triage and maintenance tasks.
+    risk: medium
+    category: workflow
+    requiresApprovalByDefault: true
+    auditRecommended: true
+  - id: label_issue
+    description: Suggest or apply public issue labels under maintainer policy.
+    risk: medium
+    category: issue_tracking
+    requiresApprovalByDefault: true
+    auditRecommended: true
+  - id: review_pull_request
+    description: Prepare or record pull request review findings.
+    risk: high
+    category: governance
+    requiresApprovalByDefault: true
+    auditRecommended: true
+  - id: approve_changes
+    description: Approve gated repository, issue, review, or release-note changes.
+    risk: high
+    category: governance
+    requiresApprovalByDefault: false
+    auditRecommended: true
+  - id: publish_release_notes
+    description: Publish release notes or attach them to a release.
+    risk: high
+    category: release
+    requiresApprovalByDefault: true
+    auditRecommended: true

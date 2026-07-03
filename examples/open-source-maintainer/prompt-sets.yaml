@@ -1,0 +1,82 @@
+specVersion: "0.1"
+kind: PromptSet
+metadata:
+  project: open-source-maintainer
+promptSets:
+  - id: maintainer_support_prompts
+    description: Prompt material for public issue triage, docs drafting, PR review preparation, and release notes.
+    version: "2026.06.0"
+    status: draft
+    owner: maintainer
+    prompts:
+      - id: issue_triage_prompt
+        kind: workflow
+        revision: "1"
+        sourceRef: prompts/issue-triage/triage.md
+        contentDigest: sha256:example-issue-triage
+        variables:
+          - issue_body
+          - maintainer_guide
+          - reproduction_notes
+        classification: public
+        notes: Structures public issue facts, assumptions, labels, and missing information.
+      - id: docs_update_prompt
+        kind: workflow
+        revision: "1"
+        sourceRef: prompts/docs/update.md
+        contentDigest: sha256:example-docs-update
+        variables:
+          - accepted_scope
+          - docs_context
+          - docs_change_summary
+        classification: public
+        notes: Keeps documentation changes tied to accepted maintainer scope.
+      - id: pr_review_prompt
+        kind: review
+        revision: "1"
+        sourceRef: prompts/pr-review/review.md
+        contentDigest: sha256:example-pr-review
+        variables:
+          - pull_request_context
+          - changed_files
+          - review_risk_summary
+        classification: public
+        notes: Separates blockers, suggestions, risks, and maintainer-only decisions.
+      - id: release_notes_prompt
+        kind: handoff
+        revision: "1"
+        sourceRef: prompts/release-notes/draft.md
+        contentDigest: sha256:example-release-notes
+        variables:
+          - maintainer_decision
+          - review_report
+          - release_history
+        classification: public
+        notes: Drafts release notes without publishing or inventing release claims.
+    review:
+      required: true
+      approvers:
+        - maintainer
+      safetyReviewStatus: pending
+    compatibility:
+      impact: behavior_changing
+      notes: Prompt changes may alter issue triage tone, documentation scope, review framing, or release note communication.
+      affectedAgents:
+        - issue-triage-agent
+        - docs-agent
+        - pr-review-agent
+        - release-notes-agent
+    audit:
+      recordPromptSetRef: true
+      recordPromptRevisions: true
+      recordContentDigest: true
+      recordReviewStatus: true
+      events:
+        - agent.started
+        - review.requested
+        - review.completed
+    recommendedFor:
+      - issue-triage-agent
+      - docs-agent
+      - pr-review-agent
+      - release-notes-agent

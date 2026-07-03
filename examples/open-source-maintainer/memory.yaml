@@ -1,0 +1,83 @@
+specVersion: "0.1"
+kind: MemorySet
+metadata:
+  project: open-source-maintainer
+memoryScopes:
+  - scope: ephemeral
+    retention: Session only.
+    ownership: Runtime or current actor.
+    visibility: Current actor.
+    updateRules: Automatic during active work.
+    sensitivity: public
+    allowedConsumers:
+      - maintainer
+      - issue-triage-agent
+      - docs-agent
+      - pr-review-agent
+      - release-notes-agent
+    updateMode: automatic
+    allowedWriters:
+      - maintainer
+      - issue-triage-agent
+      - docs-agent
+      - pr-review-agent
+      - release-notes-agent
+    prohibitedContent:
+      - raw_secrets
+      - credential_values
+      - raw_personal_data
+  - scope: task
+    retention: Until issue, pull request, or release-note task is closed.
+    ownership: Project maintainers.
+    visibility: Task participants and maintainers.
+    updateRules: Updates must cite public issue, PR, documentation, or release artifacts.
+    sensitivity: public
+    allowedConsumers:
+      - maintainer
+      - issue-triage-agent
+      - docs-agent
+      - pr-review-agent
+      - release-notes-agent
+    updateMode: review_required
+    allowedWriters:
+      - maintainer
+      - issue-triage-agent
+      - docs-agent
+      - pr-review-agent
+      - release-notes-agent
+    allowedSourceScopes:
+      - ephemeral
+    prohibitedContent:
+      - raw_secrets
+      - credential_values
+      - raw_personal_data
+      - private_maintainer_notes
+      - security_exploit_details
+    auditEvents:
+      - task.completed
+      - handoff.created
+  - scope: project
+    retention: Maintainer policy.
+    ownership: Project maintainers.
+    visibility: Maintainers and approved release-note helpers.
+    updateRules: Durable updates require maintainer approval and public evidence.
+    sensitivity: internal
+    allowedConsumers:
+      - maintainer
+      - release-notes-agent
+    updateMode: approval_required
+    allowedWriters:
+      - maintainer
+    allowedSourceScopes:
+      - task
+    prohibitedContent:
+      - raw_secrets
+      - credential_values
+      - raw_personal_data
+      - private_maintainer_notes
+      - security_exploit_details
+      - unpublished_security_advisory_details
+    auditEvents:
+      - review.completed
+      - workflow.completed
+    approvalGate: maintainer_triage

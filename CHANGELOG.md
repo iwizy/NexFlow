@@ -41,8 +41,9 @@ This project follows a specification-first process. Breaking changes must includ
 - Refined startup team example product approval gates, research context, handoffs, and release readiness evidence.
 - Expanded enterprise team example with audit-ready evidence, compliance signoff, restricted context, restricted memory, and release controls.
 - Expanded product delivery team example with many-to-many handoffs, explicit product acceptance, quality evidence, and launch readiness details.
+- Added open-source maintainer example for issue triage, maintainer scope decisions, documentation updates, PR review, and release notes.
 - Draft JSON Schemas for core manifests.
-- Reference examples for minimal, software, startup, enterprise, and product delivery teams.
+- Reference examples for minimal, software, startup, enterprise, product delivery, and open-source maintainer teams.
 - Governance and RFC process.
 - MIT License.
 - Contributor, security, and agent guidance.

@@ -1,0 +1,88 @@
+specVersion: "0.1"
+kind: EventSet
+metadata:
+  project: open-source-maintainer
+events:
+  - type: task.created
+    description: Maintenance task is created or selected for workflow.
+    retention: Project policy.
+    auditRequired: true
+    payload:
+      required:
+        - taskId
+        - owner
+  - type: workflow.started
+    description: Open-source maintenance workflow starts.
+    retention: Project policy.
+    auditRequired: true
+    payload:
+      required:
+        - workflowId
+  - type: task.updated
+    description: Maintenance task status, scope, evidence, or owner changes.
+    retention: Project policy.
+    auditRequired: true
+    payload:
+      required:
+        - taskId
+        - changes
+  - type: task.completed
+    description: Maintenance task completes with evidence artifacts.
+    retention: Project policy.
+    auditRequired: true
+    payload:
+      required:
+        - taskId
+        - artifacts
+  - type: handoff.created
+    description: Responsibility transfers between maintainer workflow actors.
+    retention: Project policy.
+    auditRequired: true
+    payload:
+      required:
+        - handoffId
+        - from
+        - to
+        - artifacts
+  - type: handoff.accepted
+    description: Receiving actor accepts handoff evidence for the next workflow step.
+    retention: Project policy.
+    auditRequired: true
+    payload:
+      required:
+        - handoffId
+        - acceptedBy
+  - type: review.requested
+    description: Maintainer review is requested for a gate.
+    retention: Project policy.
+    auditRequired: true
+    payload:
+      required:
+        - reviewer
+        - approvalGate
+  - type: review.completed
+    description: Maintainer review or approval decision is completed.
+    retention: Project policy.
+    auditRequired: true
+    payload:
+      required:
+        - result
+        - approvalGate
+        - evidence
+  - type: agent.started
+    description: Agent session starts with a declared definition and profile.
+    retention: Project policy.
+    auditRequired: true
+    payload:
+      required:
+        - agentId
+        - agentDefinitionRef
+        - modelProfileRef
+  - type: workflow.completed
+    description: Open-source maintenance workflow completes.
+    retention: Project policy.
+    auditRequired: true
+    payload:
+      required:
+        - workflowId
+        - outcome

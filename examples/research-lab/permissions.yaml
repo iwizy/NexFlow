@@ -1,0 +1,80 @@
+specVersion: "0.1"
+kind: PermissionSet
+metadata:
+  project: research-lab
+permissions:
+  - id: research_lead_authority
+    description: Principal investigator can approve scope, experiments, and publication claims.
+    subjects:
+      - principal-investigator
+    capabilities:
+      - read_documentation
+      - read_context
+      - manage_experiments
+      - approve_changes
+      - prepare_publication
+    effect: allow
+    conditions:
+      - Publication claims must cite literature, experiment, or reproducibility evidence.
+      - Sensitive data and private review notes remain outside public summaries.
+  - id: literature_review_work
+    description: Literature agent may prepare cited summaries and open questions for scope review.
+    subjects:
+      - literature-agent
+    capabilities:
+      - read_documentation
+      - read_context
+      - search_papers
+      - manage_citations
+    effect: approval_required
+    approvalGate: research_scope_review
+    conditions:
+      - Literature summaries must distinguish source claims from project claims.
+      - Citation gaps must remain visible.
+  - id: experiment_execution_work
+    description: Experiment agent may run approved experiments and record evidence.
+    subjects:
+      - experiment-agent
+    capabilities:
+      - read_repository
+      - write_repository
+      - execute_command
+      - read_context
+      - manage_experiments
+      - record_results
+    effect: approval_required
+    approvalGate: experiment_approval
+    conditions:
+      - Experiment plan and dataset manifest must be approved before execution.
+      - Commands, metrics, artifacts, and anomalies must be recorded.
+      - Result reports must not assert publication claims.
+  - id: reproducibility_authority
+    description: Reproducibility reviewer may review artifacts, provenance, and limitations.
+    subjects:
+      - reproducibility-reviewer
+    capabilities:
+      - read_repository
+      - read_documentation
+      - read_context
+      - review_results
+      - approve_changes
+    effect: approval_required
+    approvalGate: reproducibility_review
+    conditions:
+      - Reproducibility findings must identify missing artifacts and limits.
+      - Limitations must be available before publication claims are drafted.
+  - id: research_summary_work
+    description: Research writer may draft summaries from reviewed evidence.
+    subjects:
+      - research-writer
+    capabilities:
+      - read_documentation
+      - read_context
+      - manage_citations
+      - prepare_publication
+    effect: approval_required
+    approvalGate: publication_review
+    conditions:
+      - Research summaries must cite literature and experiment evidence.
+      - Unsupported claims must be deferred or rejected.
+      - Publication remains blocked until principal investigator approval.

@@ -1,0 +1,89 @@
+specVersion: "0.1"
+kind: EventSet
+metadata:
+  project: research-lab
+events:
+  - type: task.created
+    description: Research task is created or selected for workflow.
+    retention: Research project policy.
+    auditRequired: true
+    payload:
+      required:
+        - taskId
+        - owner
+  - type: workflow.started
+    description: Research workflow starts.
+    retention: Research project policy.
+    auditRequired: true
+    payload:
+      required:
+        - workflowId
+  - type: task.updated
+    description: Research task status, scope, evidence, or owner changes.
+    retention: Research project policy.
+    auditRequired: true
+    payload:
+      required:
+        - taskId
+        - changes
+  - type: task.completed
+    description: Research task completes with evidence artifacts.
+    retention: Research project policy.
+    auditRequired: true
+    payload:
+      required:
+        - taskId
+        - artifacts
+  - type: handoff.created
+    description: Evidence and responsibility transfer between research actors.
+    retention: Research project policy.
+    auditRequired: true
+    payload:
+      required:
+        - handoffId
+        - from
+        - to
+        - artifacts
+  - type: handoff.accepted
+    description: Receiving actor accepts evidence for the next research stage.
+    retention: Research project policy.
+    auditRequired: true
+    payload:
+      required:
+        - handoffId
+        - acceptedBy
+        - acceptedArtifacts
+  - type: review.requested
+    description: Review is requested for a research gate.
+    retention: Research project policy.
+    auditRequired: true
+    payload:
+      required:
+        - reviewer
+        - approvalGate
+  - type: review.completed
+    description: Research review decision is completed.
+    retention: Research project policy.
+    auditRequired: true
+    payload:
+      required:
+        - result
+        - approvalGate
+        - evidence
+  - type: agent.started
+    description: Agent session starts with declared definition and model profile.
+    retention: Research project policy.
+    auditRequired: true
+    payload:
+      required:
+        - agentId
+        - agentDefinitionRef
+        - modelProfileRef
+  - type: workflow.completed
+    description: Research workflow completes.
+    retention: Research project policy.
+    auditRequired: true
+    payload:
+      required:
+        - workflowId
+        - outcome

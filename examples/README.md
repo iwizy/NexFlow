@@ -16,6 +16,7 @@ Use the [Example Consistency Checklist](CHECKLIST.md) before adding or changing 
 | [Enterprise Team](enterprise-team/) | Governed sensitive change control | Architecture, implementation, security, compliance, release | Strict and audit-heavy | GitHub, Jira, Confluence, knowledge base, MCP | Architecture, security, compliance, and release gates |
 | [Product Delivery Team](product-delivery-team/) | Cross-functional delivery | Product, UX, implementation, QA, launch | Safe autonomy with staged gates | GitHub, Jira, Figma, customer docs | Product acceptance, quality gate, launch gate |
 | [Open Source Maintainer](open-source-maintainer/) | Public repository maintenance | Maintainer, triage, docs, PR review, release notes | Maintainer-owned approvals | GitHub issues, PRs, docs, release history | Maintainer triage, docs review, PR review, release notes approval |
+| [Research Lab](research-lab/) | Research workflows | Principal investigator, literature, experiments, reproducibility, writing | Review-gated and evidence-heavy | Papers, citations, datasets, lab notes, experiment artifacts | Scope, experiment, reproducibility, and publication review |
 
 ## Common File Set
 
@@ -68,6 +69,8 @@ Use `enterprise-team` when least privilege, restricted memory, compliance eviden
 Use `product-delivery-team` when the workflow spans product, UX, engineering, QA, and launch coordination.
 
 Use `open-source-maintainer` when public issue triage, maintainer decisions, documentation updates, pull request review, and release notes need explicit handoffs.
+
+Use `research-lab` when papers, experiments, reproducibility artifacts, citations, and research memory limits are central.
 
 ## Safety Pattern
 

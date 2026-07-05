@@ -1,0 +1,47 @@
+specVersion: "0.1"
+kind: ExtensionSet
+metadata:
+  project: research-lab
+extensions:
+  - id: web_research_public
+    namespace: io.nexflow.web
+    displayName: Public Web Research
+    lifecycle: experimental
+    appliesTo:
+      - context
+      - retrieval
+    requiredCapabilities:
+      - search_papers
+      - read_context
+  - id: github_experiment_repo
+    namespace: io.nexflow.github
+    displayName: Experiment Repository
+    lifecycle: experimental
+    appliesTo:
+      - context
+      - workflow
+      - events
+    requiredCapabilities:
+      - read_repository
+      - write_repository
+      - execute_command
+  - id: local_experiment_files
+    namespace: io.nexflow.local-files
+    displayName: Local Experiment Files
+    lifecycle: experimental
+    appliesTo:
+      - context
+      - memory
+    requiredCapabilities:
+      - read_context
+      - record_results
+  - id: docs_publication
+    namespace: io.nexflow.docs
+    displayName: Research Documentation
+    lifecycle: experimental
+    appliesTo:
+      - context
+      - tasks
+    requiredCapabilities:
+      - read_documentation
+      - prepare_publication

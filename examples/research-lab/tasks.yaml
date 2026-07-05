@@ -1,0 +1,175 @@
+specVersion: "0.1"
+kind: TaskSet
+metadata:
+  project: research-lab
+tasks:
+  - id: review-literature
+    title: Review literature
+    description: Review relevant literature, map citations, and identify open questions before experiment design.
+    status: ready
+    owner: literature-agent
+    participants:
+      - principal-investigator
+    dependsOn: []
+    artifacts:
+      - id: literature_review
+        type: report
+        description: Literature summary with source claims, project relevance, and unresolved questions.
+        producedBy: literature-agent
+      - id: citation_map
+        type: metadata
+        description: Claim-to-source map for literature-derived statements.
+        producedBy: literature-agent
+      - id: open_questions
+        type: document
+        description: Research gaps, uncertain assumptions, and questions for experiment design.
+        producedBy: literature-agent
+    capabilitiesRequired:
+      - read_documentation
+      - read_context
+      - search_papers
+      - manage_citations
+    approvalGates:
+      - research_scope_review
+    acceptanceCriteria:
+      - Literature summary distinguishes source claims from project claims.
+      - Citation map links important claims to sources.
+      - Open questions and citation gaps are visible.
+  - id: design-experiment
+    title: Design experiment
+    description: Define hypothesis, dataset boundaries, metrics, commands, and expected reproducibility evidence.
+    status: proposed
+    owner: principal-investigator
+    participants:
+      - literature-agent
+      - experiment-agent
+      - reproducibility-reviewer
+    dependsOn:
+      - review-literature
+    artifacts:
+      - id: experiment_plan
+        type: document
+        description: Hypothesis, protocol, planned commands, evaluation metrics, and stopping criteria.
+        producedBy: principal-investigator
+      - id: dataset_manifest
+        type: metadata
+        description: Dataset references, licenses, access limits, preprocessing notes, and sensitivity classification.
+        producedBy: principal-investigator
+      - id: evaluation_protocol
+        type: document
+        description: Metrics, baselines, comparison method, and reproducibility expectations.
+        producedBy: principal-investigator
+    capabilitiesRequired:
+      - read_documentation
+      - read_context
+      - manage_experiments
+      - approve_changes
+    approvalGates:
+      - experiment_approval
+    acceptanceCriteria:
+      - Hypothesis and non-goals are explicit.
+      - Dataset boundaries and sensitivity are declared.
+      - Evaluation protocol is reviewable before execution.
+  - id: run-experiment
+    title: Run experiment
+    description: Execute approved experiment work and record logs, artifacts, metrics, and anomalies.
+    status: proposed
+    owner: experiment-agent
+    participants:
+      - principal-investigator
+      - reproducibility-reviewer
+    dependsOn:
+      - design-experiment
+    artifacts:
+      - id: experiment_log
+        type: log
+        description: Approved commands, runtime notes, environment assumptions, and execution results.
+        producedBy: experiment-agent
+      - id: results_report
+        type: report
+        description: Observed metrics, outputs, anomalies, failed runs, and interpretation limits.
+        producedBy: experiment-agent
+      - id: artifact_manifest
+        type: metadata
+        description: Produced artifacts, hashes or identifiers, provenance notes, and retention expectations.
+        producedBy: experiment-agent
+    capabilitiesRequired:
+      - read_repository
+      - write_repository
+      - execute_command
+      - read_context
+      - manage_experiments
+      - record_results
+    approvalGates:
+      - experiment_approval
+    acceptanceCriteria:
+      - Execution follows the approved experiment plan.
+      - Logs and artifacts are sufficient for review.
+      - Results report avoids unsupported publication claims.
+  - id: review-reproducibility
+    title: Review reproducibility
+    description: Review whether artifacts, logs, metrics, and limitations support reproducibility and claim drafting.
+    status: proposed
+    owner: reproducibility-reviewer
+    participants:
+      - principal-investigator
+      - experiment-agent
+      - research-writer
+    dependsOn:
+      - run-experiment
+    artifacts:
+      - id: reproducibility_report
+        type: report
+        description: Reproducibility findings, missing evidence, rerun notes, and artifact review.
+        producedBy: reproducibility-reviewer
+      - id: limitations_note
+        type: document
+        description: Limitations, unresolved anomalies, rejected claims, and required follow-ups.
+        producedBy: reproducibility-reviewer
+    capabilitiesRequired:
+      - read_repository
+      - read_documentation
+      - read_context
+      - review_results
+      - approve_changes
+    approvalGates:
+      - reproducibility_review
+    acceptanceCriteria:
+      - Reproducibility report identifies missing artifacts or confirms evidence.
+      - Limitations are explicit and usable for publication review.
+      - Unsupported claims are marked as rejected or deferred.
+  - id: prepare-research-summary
+    title: Prepare research summary
+    description: Draft citation-backed research summary and publication claim packet from reviewed evidence.
+    status: proposed
+    owner: research-writer
+    participants:
+      - principal-investigator
+      - reproducibility-reviewer
+      - literature-agent
+    dependsOn:
+      - review-reproducibility
+    artifacts:
+      - id: research_summary
+        type: document
+        description: Draft research summary with methods, results, limitations, and citations.
+        producedBy: research-writer
+      - id: citation_packet
+        type: metadata
+        description: Sources and experiment artifacts referenced by the summary.
+        producedBy: research-writer
+      - id: publication_claims
+        type: document
+        description: Proposed claims marked as approved, limited, deferred, or rejected.
+        producedBy: research-writer
+    capabilitiesRequired:
+      - read_documentation
+      - read_context
+      - manage_citations
+      - prepare_publication
+    approvalGates:
+      - publication_review
+    acceptanceCriteria:
+      - Summary cites literature, experiment, and reproducibility evidence.
+      - Claims are bounded by limitations and approved evidence.
+      - Publication remains blocked until principal investigator review.

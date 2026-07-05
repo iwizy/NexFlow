@@ -1,0 +1,111 @@
+specVersion: "0.1"
+kind: MemorySet
+metadata:
+  project: research-lab
+memoryScopes:
+  - scope: ephemeral
+    retention: Session only.
+    ownership: Runtime or current actor.
+    visibility: Current actor.
+    updateRules: Automatic during active work.
+    sensitivity: internal
+    allowedConsumers:
+      - principal-investigator
+      - literature-agent
+      - experiment-agent
+      - reproducibility-reviewer
+      - research-writer
+    updateMode: automatic
+    allowedWriters:
+      - principal-investigator
+      - literature-agent
+      - experiment-agent
+      - reproducibility-reviewer
+      - research-writer
+    prohibitedContent:
+      - raw_secrets
+      - credential_values
+      - raw_participant_data
+  - scope: task
+    retention: Until research task closure plus project review window.
+    ownership: Research project.
+    visibility: Task participants and required reviewers.
+    updateRules: Updates must cite papers, datasets, experiment artifacts, or review decisions.
+    sensitivity: confidential
+    allowedConsumers:
+      - principal-investigator
+      - literature-agent
+      - experiment-agent
+      - reproducibility-reviewer
+      - research-writer
+    updateMode: review_required
+    allowedWriters:
+      - principal-investigator
+      - literature-agent
+      - experiment-agent
+      - reproducibility-reviewer
+      - research-writer
+    allowedSourceScopes:
+      - ephemeral
+    prohibitedContent:
+      - raw_secrets
+      - credential_values
+      - raw_participant_data
+      - private_reviewer_notes
+      - unsupported_publication_claims
+    auditEvents:
+      - task.completed
+      - handoff.created
+  - scope: project
+    retention: Principal investigator policy.
+    ownership: Research project lead.
+    visibility: Principal investigator, reproducibility reviewer, and approved writer.
+    updateRules: Durable updates require principal investigator approval and citation-backed evidence.
+    sensitivity: confidential
+    allowedConsumers:
+      - principal-investigator
+      - reproducibility-reviewer
+      - research-writer
+    updateMode: approval_required
+    allowedWriters:
+      - principal-investigator
+      - reproducibility-reviewer
+    allowedSourceScopes:
+      - task
+    prohibitedContent:
+      - raw_secrets
+      - credential_values
+      - raw_participant_data
+      - private_reviewer_notes
+      - sensitive_experimental_data
+      - unsupported_publication_claims
+    auditEvents:
+      - review.completed
+      - workflow.completed
+    approvalGate: publication_review
+  - scope: team
+    retention: Research team retention policy.
+    ownership: Research team.
+    visibility: Approved research team members.
+    updateRules: Team memory requires reproducibility review and publication claim boundaries.
+    sensitivity: confidential
+    allowedConsumers:
+      - principal-investigator
+      - reproducibility-reviewer
+    updateMode: approval_required
+    allowedWriters:
+      - principal-investigator
+    allowedSourceScopes:
+      - project
+    prohibitedContent:
+      - raw_secrets
+      - credential_values
+      - raw_participant_data
+      - private_reviewer_notes
+      - sensitive_experimental_data
+      - unsupported_publication_claims
+      - unpublished_security_advisory_details
+    auditEvents:
+      - review.completed
+      - workflow.completed
+    approvalGate: reproducibility_review

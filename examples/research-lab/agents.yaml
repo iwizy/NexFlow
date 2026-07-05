@@ -1,0 +1,172 @@
+specVersion: "0.1"
+kind: AgentSet
+metadata:
+  project: research-lab
+agents:
+  - id: principal-investigator
+    displayName: Principal Investigator
+    role: research_lead
+    description: Human authority for research scope, experiment approval, and publication claims.
+    responsibilities:
+      - Approve research scope and experiment design.
+      - Decide which claims are supported, limited, deferred, or rejected.
+      - Protect sensitive data and private review notes.
+    skills:
+      - research_design
+      - claim_review
+      - publication_review
+    permissions:
+      - research_lead_authority
+    capabilities:
+      - read_documentation
+      - read_context
+      - manage_experiments
+      - approve_changes
+      - prepare_publication
+    contextAccess:
+      - paper_corpus
+      - citation_index
+      - experiment_repository
+      - datasets
+      - lab_notebook
+      - experiment_artifacts
+    memoryAccess:
+      - ephemeral
+      - task
+      - project
+      - team
+    autonomyLevel: manual_only
+    providerPreferences: []
+    extensions: []
+  - id: literature-agent
+    displayName: Literature Agent
+    role: literature_reviewer
+    description: Reviews papers, creates citation maps, and identifies open questions.
+    responsibilities:
+      - Summarize relevant literature with citations.
+      - Identify unresolved questions and methodological gaps.
+      - Avoid turning literature summaries into validated project claims.
+    skills:
+      - literature_review
+      - citation_mapping
+    permissions:
+      - literature_review_work
+    capabilities:
+      - read_documentation
+      - read_context
+      - search_papers
+      - manage_citations
+    contextAccess:
+      - paper_corpus
+      - citation_index
+      - web_research
+    memoryAccess:
+      - ephemeral
+      - task
+    autonomyLevel: suggest_only
+    providerPreferences:
+      - provider: research_reasoning
+        priority: preferred
+    extensions:
+      - namespace: io.nexflow.web
+  - id: experiment-agent
+    displayName: Experiment Agent
+    role: experiment_assistant
+    description: Runs approved experiments and records results without claiming conclusions.
+    responsibilities:
+      - Execute approved experiment commands.
+      - Record logs, artifacts, metrics, and anomalies.
+      - Preserve provenance for reproducibility review.
+    skills:
+      - experiment_execution
+      - result_recording
+    permissions:
+      - experiment_execution_work
+    capabilities:
+      - read_repository
+      - write_repository
+      - execute_command
+      - read_context
+      - manage_experiments
+      - record_results
+    contextAccess:
+      - experiment_repository
+      - datasets
+      - lab_notebook
+      - experiment_artifacts
+    memoryAccess:
+      - ephemeral
+      - task
+    autonomyLevel: ask_before_changes
+    providerPreferences:
+      - provider: experiment_reasoning
+        priority: preferred
+    extensions:
+      - namespace: io.nexflow.github
+      - namespace: io.nexflow.local-files
+  - id: reproducibility-reviewer
+    displayName: Reproducibility Reviewer
+    role: reproducibility_reviewer
+    description: Human or review authority for reproducibility evidence and limitations.
+    responsibilities:
+      - Review experiment artifacts and result provenance.
+      - Identify missing reproducibility evidence.
+      - Approve limitations before claims are drafted.
+    skills:
+      - reproducibility_review
+      - evidence_review
+    permissions:
+      - reproducibility_authority
+    capabilities:
+      - read_repository
+      - read_documentation
+      - read_context
+      - review_results
+      - approve_changes
+    contextAccess:
+      - experiment_repository
+      - datasets
+      - lab_notebook
+      - experiment_artifacts
+      - citation_index
+    memoryAccess:
+      - ephemeral
+      - task
+      - project
+      - team
+    autonomyLevel: manual_only
+    providerPreferences: []
+    extensions: []
+  - id: research-writer
+    displayName: Research Writer
+    role: research_writer
+    description: Drafts research summaries from reviewed evidence and approved claim boundaries.
+    responsibilities:
+      - Draft research summaries with citations and limitations.
+      - Keep unsupported claims out of publication drafts.
+      - Preserve distinction between results, interpretation, and claims.
+    skills:
+      - scientific_writing
+      - citation_review
+    permissions:
+      - research_summary_work
+    capabilities:
+      - read_documentation
+      - read_context
+      - manage_citations
+      - prepare_publication
+    contextAccess:
+      - paper_corpus
+      - citation_index
+      - lab_notebook
+      - experiment_artifacts
+    memoryAccess:
+      - ephemeral
+      - task
+      - project
+    autonomyLevel: ask_before_changes
+    providerPreferences:
+      - provider: research_reasoning
+        priority: preferred
+    extensions:
+      - namespace: io.nexflow.docs

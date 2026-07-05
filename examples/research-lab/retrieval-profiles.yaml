@@ -1,0 +1,115 @@
+specVersion: "0.1"
+kind: RetrievalProfileSet
+metadata:
+  project: research-lab
+retrievalProfiles:
+  - id: research_lab_retrieval
+    description: Retrieval expectations for literature, citations, experiment artifacts, reproducibility evidence, and research summaries.
+    version: "2026.06.0"
+    status: draft
+    owner: principal-investigator
+    sources:
+      - contextSourceRef: paper_corpus
+        purpose: Approved papers, abstracts, and bibliography records.
+        accessMode: read
+        required: true
+        maxClassification: public
+      - contextSourceRef: citation_index
+        purpose: Claim-to-source citation map and source metadata.
+        accessMode: read
+        required: true
+        maxClassification: internal
+      - contextSourceRef: experiment_repository
+        purpose: Experiment scripts, analysis code, reports, and artifact manifests.
+        accessMode: read
+        required: false
+        maxClassification: internal
+      - contextSourceRef: datasets
+        purpose: Dataset manifests, licenses, access notes, and approved derived summaries.
+        accessMode: read
+        required: false
+        maxClassification: confidential
+      - contextSourceRef: lab_notebook
+        purpose: Approved lab notes, protocol notes, and experiment decisions.
+        accessMode: read
+        required: false
+        maxClassification: confidential
+      - contextSourceRef: experiment_artifacts
+        purpose: Experiment logs, result summaries, model cards, plots, and artifact manifests.
+        accessMode: read
+        required: false
+        maxClassification: confidential
+      - contextSourceRef: web_research
+        purpose: Approved public paper metadata, documentation, and standards references.
+        accessMode: query
+        required: false
+        maxClassification: public
+    index:
+      corpusRef: research-lab-evidence-corpus
+      version: "2026-06-10"
+      updatePolicy: manual
+    chunking:
+      strategy: structure_aware
+      maxChunkTokens: 1000
+      overlapTokens: 100
+      preserveBoundaries:
+        - abstract
+        - method_section
+        - citation_entry
+        - experiment_step
+        - result_table
+        - limitation
+    retriever:
+      strategy: hybrid
+      topK: 15
+      scoreThreshold: 0.3
+      queryRewrite: none
+    freshness:
+      maxAge: 7d
+      staleAllowed: false
+      requiresRefreshBeforeUse: true
+    citations:
+      required: true
+      style: artifact_id
+      includeLineRefs: true
+      includeRetrievedAt: true
+    sensitivity:
+      maxClassification: confidential
+      allowCrossScopeReuse: false
+      redactionPolicy: redact_secrets_raw_participant_data_private_review_notes_and_sensitive_experiment_details
+    review:
+      required: true
+      approvers:
+        - principal-investigator
+        - reproducibility-reviewer
+      reviewTriggers:
+        - source_added
+        - dataset_source_added
+        - experiment_artifact_source_added
+        - stale_allowed
+        - citations_disabled
+        - cross_scope_reuse_allowed
+    compatibility:
+      impact: safety_significant
+      notes: Retrieval changes may alter citation evidence, experiment interpretation, reproducibility review, memory boundaries, or publication claims.
+      affectedAgents:
+        - literature-agent
+        - experiment-agent
+        - reproducibility-reviewer
+        - research-writer
+    audit:
+      recordRetrievalProfileRef: true
+      recordContextSources: true
+      recordIndexVersion: true
+      recordFreshness: true
+      recordCitations: true
+      recordRetrieverConfig: true
+      events:
+        - agent.started
+        - review.requested
+        - review.completed
+    recommendedFor:
+      - literature-agent
+      - experiment-agent
+      - reproducibility-reviewer
+      - research-writer

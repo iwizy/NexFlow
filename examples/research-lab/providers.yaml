@@ -1,0 +1,26 @@
+specVersion: "0.1"
+kind: ProviderSet
+metadata:
+  project: research-lab
+providers:
+  - id: research_reasoning
+    type: abstract
+    description: Provider-neutral reasoning class for literature review, citations, and research writing.
+    capabilities:
+      - text_generation
+      - policy_reasoning
+    constraints:
+      allowTrainingUse: false
+    selection:
+      strategy: project_policy
+  - id: experiment_reasoning
+    type: abstract
+    description: Provider-neutral reasoning class for experiment planning, result recording, and reproducibility support.
+    capabilities:
+      - text_generation
+      - code_reasoning
+      - tool_reasoning
+    constraints:
+      allowTrainingUse: false
+    selection:
+      strategy: project_policy

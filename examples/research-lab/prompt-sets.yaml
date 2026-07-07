@@ -1,0 +1,84 @@
+specVersion: "0.1"
+kind: PromptSet
+metadata:
+  project: research-lab
+promptSets:
+  - id: research_lab_prompts
+    description: Prompt material for literature review, experiment execution notes, reproducibility review, and research summary drafting.
+    version: "2026.06.0"
+    status: draft
+    owner: principal-investigator
+    prompts:
+      - id: literature_review_prompt
+        kind: workflow
+        revision: "1"
+        sourceRef: prompts/literature/review.md
+        contentDigest: sha256:example-research-literature-review
+        variables:
+          - paper_context
+          - citation_map
+          - open_questions
+        classification: public
+        notes: Structures literature summaries without converting source claims into project claims.
+      - id: experiment_evidence_prompt
+        kind: workflow
+        revision: "1"
+        sourceRef: prompts/experiment/evidence.md
+        contentDigest: sha256:example-research-experiment-evidence
+        variables:
+          - experiment_plan
+          - dataset_manifest
+          - experiment_log
+          - results_report
+        classification: confidential
+        notes: Records experiment evidence and anomalies without asserting conclusions.
+      - id: reproducibility_review_prompt
+        kind: review
+        revision: "1"
+        sourceRef: prompts/reproducibility/review.md
+        contentDigest: sha256:example-reproducibility-review
+        variables:
+          - artifact_manifest
+          - results_report
+          - limitations_note
+        classification: confidential
+        notes: Separates reproducibility status, missing artifacts, limitations, and rejected claims.
+      - id: research_summary_prompt
+        kind: handoff
+        revision: "1"
+        sourceRef: prompts/research-writer/summary.md
+        contentDigest: sha256:example-research-summary
+        variables:
+          - reproducibility_report
+          - citation_packet
+          - publication_claims
+        classification: confidential
+        notes: Drafts citation-backed summaries while keeping publication review human-owned.
+    review:
+      required: true
+      approvers:
+        - principal-investigator
+        - reproducibility-reviewer
+      safetyReviewStatus: pending
+    compatibility:
+      impact: safety_significant
+      notes: Prompt changes may alter literature interpretation, experiment evidence, reproducibility review, or publication claim boundaries.
+      affectedAgents:
+        - literature-agent
+        - experiment-agent
+        - reproducibility-reviewer
+        - research-writer
+    audit:
+      recordPromptSetRef: true
+      recordPromptRevisions: true
+      recordContentDigest: true
+      recordReviewStatus: true
+      events:
+        - agent.started
+        - review.requested
+        - review.completed
+    recommendedFor:
+      - literature-agent
+      - experiment-agent
+      - reproducibility-reviewer
+      - research-writer

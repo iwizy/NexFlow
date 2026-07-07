@@ -14,6 +14,7 @@ This project follows a specification-first process. Breaking changes must includ
 - Validation workflow guidance for schema and future semantic checks.
 - Schema guide for schema scope, update rules, and validation boundaries.
 - Examples guide for reference team selection and manifest file sets.
+- Detailed example matrix for comparing complexity, context sources, autonomy posture, approval gates, integrations, validation focus, and learning path.
 - Example consistency checklist for IDs, references, capabilities, permissions, context, memory, events, safety, and local checks.
 - Clarified capability and permission separation with allow, deny, and approval-required examples.
 - Approval gate semantics for approvers, decisions, evidence, scope, expiry, revocation, and runtime expectations.
@@ -42,8 +43,9 @@ This project follows a specification-first process. Breaking changes must includ
 - Expanded enterprise team example with audit-ready evidence, compliance signoff, restricted context, restricted memory, and release controls.
 - Expanded product delivery team example with many-to-many handoffs, explicit product acceptance, quality evidence, and launch readiness details.
 - Added open-source maintainer example for issue triage, maintainer scope decisions, documentation updates, PR review, and release notes.
+- Added research lab example for literature review, experiment planning, reproducibility artifacts, citations, publication claims, and research memory limits.
 - Draft JSON Schemas for core manifests.
-- Reference examples for minimal, software, startup, enterprise, product delivery, and open-source maintainer teams.
+- Reference examples for minimal, software, startup, enterprise, product delivery, open-source maintainer, and research lab teams.
 - Governance and RFC process.
 - MIT License.
 - Contributor, security, and agent guidance.

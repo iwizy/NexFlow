@@ -1,0 +1,140 @@
+specVersion: "0.1"
+kind: ContextSet
+metadata:
+  project: research-lab
+contextSources:
+  - id: paper_corpus
+    type: docs
+    description: Approved paper set, abstracts, notes, and bibliography records.
+    contentTypes:
+      - documentation
+      - metadata
+    access:
+      default: read
+      allowedActors:
+        - principal-investigator
+        - literature-agent
+        - research-writer
+    classification: public
+    refreshPolicy: manual
+    freshness:
+      maxAge: 90d
+      staleAllowed: false
+      requiresCitation: true
+  - id: citation_index
+    type: knowledge_base
+    description: Claim-to-source citation map and source metadata.
+    contentTypes:
+      - knowledge_articles
+      - metadata
+    access:
+      default: read
+      allowedActors:
+        - principal-investigator
+        - literature-agent
+        - reproducibility-reviewer
+        - research-writer
+    classification: internal
+    refreshPolicy: on_request
+    freshness:
+      maxAge: 30d
+      staleAllowed: false
+      requiresCitation: true
+  - id: experiment_repository
+    type: github
+    description: Experiment scripts, analysis code, reports, and artifact manifests.
+    uri: https://github.com/example/research-lab
+    contentTypes:
+      - source_code
+      - documentation
+      - metadata
+    access:
+      default: read
+      allowedActors:
+        - principal-investigator
+        - experiment-agent
+        - reproducibility-reviewer
+    classification: internal
+    refreshPolicy: on_request
+  - id: datasets
+    type: custom
+    description: Dataset manifests, licenses, access notes, and approved derived summaries.
+    contentTypes:
+      - metadata
+      - custom
+    access:
+      default: read
+      allowedActors:
+        - principal-investigator
+        - experiment-agent
+        - reproducibility-reviewer
+    classification: confidential
+    refreshPolicy: manual
+    freshness:
+      maxAge: 30d
+      staleAllowed: false
+      requiresCitation: true
+    approvalGates:
+      - experiment_approval
+  - id: lab_notebook
+    type: docs
+    description: Approved lab notes, protocol notes, and experiment decisions.
+    contentTypes:
+      - documentation
+      - metadata
+    access:
+      default: read
+      allowedActors:
+        - principal-investigator
+        - experiment-agent
+        - reproducibility-reviewer
+        - research-writer
+    classification: confidential
+    refreshPolicy: manual
+    freshness:
+      maxAge: 7d
+      staleAllowed: false
+      requiresCitation: true
+  - id: experiment_artifacts
+    type: local_files
+    description: Declared experiment logs, result summaries, model cards, plots, and artifact manifests.
+    contentTypes:
+      - documentation
+      - metadata
+      - custom
+    access:
+      default: read
+      allowedActors:
+        - principal-investigator
+        - experiment-agent
+        - reproducibility-reviewer
+        - research-writer
+    classification: confidential
+    refreshPolicy: on_request
+    freshness:
+      maxAge: 7d
+      staleAllowed: false
+      requiresCitation: true
+    approvalGates:
+      - reproducibility_review
+  - id: web_research
+    type: web
+    description: Approved public web sources for paper metadata, documentation, and standards references.
+    contentTypes:
+      - web_pages
+      - metadata
+    access:
+      default: query
+      allowedActors:
+        - literature-agent
+    classification: public
+    refreshPolicy: on_request
+    freshness:
+      maxAge: 30d
+      staleAllowed: false
+      requiresCitation: true
+    allowedDomains:
+      - arxiv.org
+      - doi.org
+      - openreview.net
+      - paperswithcode.com

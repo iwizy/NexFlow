@@ -1,0 +1,82 @@
+specVersion: "0.1"
+kind: HandoffSet
+metadata:
+  project: research-lab
+handoffs:
+  - id: literature-to-design
+    from:
+      - literature-agent
+    to:
+      - principal-investigator
+      - experiment-agent
+    reason: Literature evidence and open questions are ready for experiment design.
+    status: pending
+    artifacts:
+      - literature_review
+      - citation_map
+      - open_questions
+    notes:
+      - Source claims are not project findings until reviewed.
+    blockingIssues: []
+    acceptanceCriteria:
+      - Principal investigator can identify research gaps and citation limits.
+      - Experiment agent can see relevant assumptions before planning execution.
+    nextAction: Approve experiment design or request more literature review.
+  - id: design-to-experiment
+    from:
+      - principal-investigator
+    to:
+      - experiment-agent
+      - reproducibility-reviewer
+    reason: Experiment design is approved for execution and reproducibility planning.
+    status: pending
+    artifacts:
+      - experiment_plan
+      - dataset_manifest
+      - evaluation_protocol
+    notes:
+      - Experiment execution must stay within approved dataset and metric boundaries.
+    blockingIssues: []
+    acceptanceCriteria:
+      - Experiment agent can identify approved commands, metrics, and data limits.
+      - Reproducibility reviewer can identify expected artifacts.
+    nextAction: Run the approved experiment and record evidence.
+  - id: experiment-to-reproducibility
+    from:
+      - experiment-agent
+    to:
+      - reproducibility-reviewer
+      - principal-investigator
+    reason: Experiment logs and result artifacts are ready for reproducibility review.
+    status: pending
+    artifacts:
+      - experiment_log
+      - results_report
+      - artifact_manifest
+      - experiment_plan
+    notes:
+      - Result reports are evidence, not publication claims.
+    blockingIssues: []
+    acceptanceCriteria:
+      - Reviewer has logs, artifacts, metrics, and known anomalies.
+      - Missing artifacts are called out before summary drafting.
+    nextAction: Review reproducibility and limitations.
+  - id: reproducibility-to-writing
+    from:
+      - reproducibility-reviewer
+      - principal-investigator
+    to:
+      - research-writer
+    reason: Reviewed results and limitations are ready for research summary drafting.
+    status: pending
+    artifacts:
+      - reproducibility_report
+      - limitations_note
+      - citation_map
+      - results_report
+    notes:
+      - Summary must cite limitations and avoid deferred or rejected claims.
+    blockingIssues: []
+    acceptanceCriteria:
+      - Research writer has reproducibility status, limitations, citations, and claim boundaries.
+    nextAction: Draft research summary and publication claims for review.

@@ -4,9 +4,11 @@ This directory contains complete reference manifest sets for different team shap
 
 The examples are not runtime fixtures. They are readable specification examples that show how agents, agent definitions, permissions, capabilities, context, memory, tasks, workflows, handoffs, events, providers, model profiles, prompt sets, retrieval profiles, and extensions fit together.
 
+Use the [Example Matrix](MATRIX.md) to compare examples by complexity, context, autonomy, approval gates, integrations, and learning path.
+
 Use the [Example Consistency Checklist](CHECKLIST.md) before adding or changing an example.
 
-## Example Matrix
+## Quick Matrix
 
 | Example | Best For | Team Shape | Autonomy Posture | Main Context Sources | Approval Emphasis |
 | --- | --- | --- | --- | --- | --- |
@@ -16,6 +18,7 @@ Use the [Example Consistency Checklist](CHECKLIST.md) before adding or changing 
 | [Enterprise Team](enterprise-team/) | Governed sensitive change control | Architecture, implementation, security, compliance, release | Strict and audit-heavy | GitHub, Jira, Confluence, knowledge base, MCP | Architecture, security, compliance, and release gates |
 | [Product Delivery Team](product-delivery-team/) | Cross-functional delivery | Product, UX, implementation, QA, launch | Safe autonomy with staged gates | GitHub, Jira, Figma, customer docs | Product acceptance, quality gate, launch gate |
 | [Open Source Maintainer](open-source-maintainer/) | Public repository maintenance | Maintainer, triage, docs, PR review, release notes | Maintainer-owned approvals | GitHub issues, PRs, docs, release history | Maintainer triage, docs review, PR review, release notes approval |
+| [Research Lab](research-lab/) | Research workflows | Principal investigator, literature, experiments, reproducibility, writing | Review-gated and evidence-heavy | Papers, citations, datasets, lab notes, experiment artifacts | Scope, experiment, reproducibility, and publication review |
 
 ## Common File Set
 
@@ -68,6 +71,8 @@ Use `enterprise-team` when least privilege, restricted memory, compliance eviden
 Use `product-delivery-team` when the workflow spans product, UX, engineering, QA, and launch coordination.
 
 Use `open-source-maintainer` when public issue triage, maintainer decisions, documentation updates, pull request review, and release notes need explicit handoffs.
+
+Use `research-lab` when papers, experiments, reproducibility artifacts, citations, and research memory limits are central.
 
 ## Safety Pattern
 

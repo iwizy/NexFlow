@@ -1,0 +1,77 @@
+specVersion: "0.1"
+kind: CapabilitySet
+metadata:
+  project: research-lab
+capabilities:
+  - id: read_repository
+    description: Read experiment repository files, scripts, and metadata.
+    risk: low
+    category: repository
+    requiresApprovalByDefault: false
+    auditRecommended: true
+  - id: write_repository
+    description: Write approved experiment logs, reports, or artifact manifests.
+    risk: high
+    category: repository
+    requiresApprovalByDefault: true
+    auditRecommended: true
+  - id: execute_command
+    description: Run approved experiment, analysis, or validation commands.
+    risk: high
+    category: runtime
+    requiresApprovalByDefault: true
+    auditRecommended: true
+  - id: read_documentation
+    description: Read papers, protocols, lab notes, and documentation.
+    risk: low
+    category: documentation
+    requiresApprovalByDefault: false
+    auditRecommended: true
+  - id: read_context
+    description: Read declared research context sources.
+    risk: medium
+    category: context
+    requiresApprovalByDefault: false
+    auditRecommended: true
+  - id: search_papers
+    description: Search or query declared paper and citation sources.
+    risk: medium
+    category: research
+    requiresApprovalByDefault: true
+    auditRecommended: true
+  - id: manage_citations
+    description: Create citation maps and claim-to-source references.
+    risk: medium
+    category: research
+    requiresApprovalByDefault: true
+    auditRecommended: true
+  - id: manage_experiments
+    description: Plan, organize, or update declared experiment tasks and protocols.
+    risk: high
+    category: experiment
+    requiresApprovalByDefault: true
+    auditRecommended: true
+  - id: record_results
+    description: Record experiment logs, metrics, artifacts, anomalies, and result reports.
+    risk: high
+    category: experiment
+    requiresApprovalByDefault: true
+    auditRecommended: true
+  - id: review_results
+    description: Review result provenance, reproducibility evidence, and limitations.
+    risk: high
+    category: governance
+    requiresApprovalByDefault: true
+    auditRecommended: true
+  - id: approve_changes
+    description: Approve gated research, experiment, reproducibility, or publication decisions.
+    risk: high
+    category: governance
+    requiresApprovalByDefault: false
+    auditRecommended: true
+  - id: prepare_publication
+    description: Draft or approve research summaries, claim packets, or publication notes.
+    risk: high
+    category: publication
+    requiresApprovalByDefault: true
+    auditRecommended: true

@@ -1,0 +1,243 @@
+specVersion: "0.1"
+kind: AgentDefinitionSet
+metadata:
+  project: research-lab
+agentDefinitions:
+  - id: literature_agent_2026_06
+    agentRef: literature-agent
+    definitionVersion: "2026.06.0"
+    status: draft
+    owner: principal-investigator
+    description: Literature agent release for citation-backed review and open question discovery.
+    components:
+      modelProfileRef: research_lab_profile
+      promptSetRef: research_lab_prompts
+      retrievalProfileRef: research_lab_retrieval
+      permissionRefs:
+        - literature_review_work
+      capabilityRefs:
+        - read_documentation
+        - read_context
+        - search_papers
+        - manage_citations
+      contextSourceRefs:
+        - paper_corpus
+        - citation_index
+        - web_research
+      memoryScopes:
+        - ephemeral
+        - task
+      extensionRefs:
+        - web_research_public
+    autonomyLevel: suggest_only
+    changeSummary: Defines citation-backed literature support without publication claim authority.
+    review:
+      required: true
+      approvers:
+        - principal-investigator
+      approvalGate: research_scope_review
+      activationCriteria:
+        - Literature summaries distinguish source claims from project claims.
+        - Citation gaps remain visible.
+        - Scope decisions remain principal-investigator-owned.
+      evidenceRefs:
+        - literature_review
+        - citation_map
+        - open_questions
+    compatibility:
+      impact: behavior_changing
+      notes: Changes may alter literature interpretation, citation mapping, or experiment design handoff.
+      affectedAgents:
+        - literature-agent
+    audit:
+      recordAgentDefinitionRef: true
+      recordDefinitionVersion: true
+      recordComponentRefs: true
+      recordReviewState: true
+      recordChangeSummary: true
+      events:
+        - agent.started
+        - review.requested
+  - id: experiment_agent_2026_06
+    agentRef: experiment-agent
+    definitionVersion: "2026.06.0"
+    status: draft
+    owner: principal-investigator
+    description: Experiment agent release for approved experiment execution and result evidence recording.
+    components:
+      modelProfileRef: research_lab_profile
+      promptSetRef: research_lab_prompts
+      retrievalProfileRef: research_lab_retrieval
+      permissionRefs:
+        - experiment_execution_work
+      capabilityRefs:
+        - read_repository
+        - write_repository
+        - execute_command
+        - read_context
+        - manage_experiments
+        - record_results
+      contextSourceRefs:
+        - experiment_repository
+        - datasets
+        - lab_notebook
+        - experiment_artifacts
+      memoryScopes:
+        - ephemeral
+        - task
+      extensionRefs:
+        - github_experiment_repo
+        - local_experiment_files
+    autonomyLevel: ask_before_changes
+    changeSummary: Defines experiment execution behavior with approved commands, logs, artifacts, and result boundaries.
+    review:
+      required: true
+      approvers:
+        - principal-investigator
+        - reproducibility-reviewer
+      approvalGate: experiment_approval
+      activationCriteria:
+        - Experiment plan is approved before execution.
+        - Dataset manifest and sensitivity are declared.
+        - Results reports do not assert publication claims.
+      evidenceRefs:
+        - experiment_plan
+        - dataset_manifest
+        - experiment_log
+        - results_report
+        - artifact_manifest
+    compatibility:
+      impact: safety_significant
+      notes: Changes may alter experiment execution, artifact recording, sensitive data handling, or reproducibility evidence.
+      affectedAgents:
+        - experiment-agent
+    audit:
+      recordAgentDefinitionRef: true
+      recordDefinitionVersion: true
+      recordComponentRefs: true
+      recordReviewState: true
+      recordChangeSummary: true
+      events:
+        - agent.started
+        - task.completed
+        - review.requested
+  - id: reproducibility_reviewer_2026_06
+    agentRef: reproducibility-reviewer
+    definitionVersion: "2026.06.0"
+    status: draft
+    owner: principal-investigator
+    description: Reproducibility reviewer release for evidence review, artifact inspection, and limitations.
+    components:
+      modelProfileRef: research_lab_profile
+      promptSetRef: research_lab_prompts
+      retrievalProfileRef: research_lab_retrieval
+      permissionRefs:
+        - reproducibility_authority
+      capabilityRefs:
+        - read_repository
+        - read_documentation
+        - read_context
+        - review_results
+        - approve_changes
+      contextSourceRefs:
+        - experiment_repository
+        - datasets
+        - lab_notebook
+        - experiment_artifacts
+        - citation_index
+      memoryScopes:
+        - ephemeral
+        - task
+        - project
+        - team
+      extensionRefs:
+        - github_experiment_repo
+        - local_experiment_files
+    autonomyLevel: manual_only
+    changeSummary: Defines reproducibility review behavior and evidence boundaries.
+    review:
+      required: true
+      approvers:
+        - principal-investigator
+      approvalGate: reproducibility_review
+      activationCriteria:
+        - Missing artifacts and limitations are recorded.
+        - Unsupported claims are rejected or deferred.
+        - Durable memory promotion remains gated.
+      evidenceRefs:
+        - reproducibility_report
+        - limitations_note
+    compatibility:
+      impact: safety_significant
+      notes: Changes may alter reproducibility review, limitation handling, memory boundaries, or publication evidence.
+      affectedAgents:
+        - reproducibility-reviewer
+    audit:
+      recordAgentDefinitionRef: true
+      recordDefinitionVersion: true
+      recordComponentRefs: true
+      recordReviewState: true
+      recordChangeSummary: true
+      events:
+        - agent.started
+        - review.requested
+        - review.completed
+  - id: research_writer_2026_06
+    agentRef: research-writer
+    definitionVersion: "2026.06.0"
+    status: draft
+    owner: principal-investigator
+    description: Research writer release for citation-backed summaries and claim packets.
+    components:
+      modelProfileRef: research_lab_profile
+      promptSetRef: research_lab_prompts
+      retrievalProfileRef: research_lab_retrieval
+      permissionRefs:
+        - research_summary_work
+      capabilityRefs:
+        - read_documentation
+        - read_context
+        - manage_citations
+        - prepare_publication
+      contextSourceRefs:
+        - paper_corpus
+        - citation_index
+        - lab_notebook
+        - experiment_artifacts
+      memoryScopes:
+        - ephemeral
+        - task
+        - project
+      extensionRefs:
+        - docs_publication
+    autonomyLevel: ask_before_changes
+    changeSummary: Defines research summary drafting with citation packets, limitations, and publication review.
+    review:
+      required: true
+      approvers:
+        - principal-investigator
+        - reproducibility-reviewer
+      approvalGate: publication_review
+      activationCriteria:
+        - Summaries cite literature and experiment evidence.
+        - Publication claims are bounded by reviewed limitations.
+        - Publication remains blocked until approval.
+      evidenceRefs:
+        - research_summary
+        - citation_packet
+        - publication_claims
+    compatibility:
+      impact: safety_significant
+      notes: Changes may alter research summary wording, citation behavior, limitation framing, or publication readiness.
+      affectedAgents:
+        - research-writer
+    audit:
+      recordAgentDefinitionRef: true
+      recordDefinitionVersion: true
+      recordComponentRefs: true
+      recordReviewState: true
+      recordChangeSummary: true
+      events:
+        - agent.started
+        - review.requested
+        - review.completed

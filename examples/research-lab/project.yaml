@@ -1,0 +1,68 @@
+specVersion: "0.1"
+kind: Project
+metadata:
+  project: research-lab
+  name: Research Lab
+project:
+  id: research-lab
+  displayName: Research Lab
+  description: Research workflow for literature review, experiment planning, reproducibility review, and research summaries.
+  license: MIT
+  maintainers:
+    - id: principal-investigator
+      name: Principal Investigator
+      role: research_lead
+    - id: reproducibility-reviewer
+      name: Reproducibility Reviewer
+      role: reviewer
+  defaultAutonomy: ask_before_changes
+  policies:
+    requireReview: true
+    secretHandling: Credentials and private dataset access must remain outside manifests.
+    networkAccess: Allowed only through declared paper, dataset, and documentation sources.
+    destructiveActions: Human approval required before deleting data, artifacts, or experiment outputs.
+    productionActions: Publication or release of research claims requires publication review.
+    citationDiscipline: Research claims must cite source or experiment artifacts.
+    memoryLimits: Durable memory must not retain raw sensitive data, private reviewer notes, or unsupported claims.
+  approvalGates:
+    - id: research_scope_review
+      description: Principal investigator approval required for research scope and literature interpretation.
+      requiredApprovers:
+        - principal-investigator
+      appliesTo:
+        - review-literature
+    - id: experiment_approval
+      description: Principal investigator approval required before experiment execution or result recording.
+      requiredApprovers:
+        - principal-investigator
+      appliesTo:
+        - design-experiment
+        - run-experiment
+    - id: reproducibility_review
+      description: Reproducibility reviewer approval required before findings are used in summaries.
+      requiredApprovers:
+        - reproducibility-reviewer
+      appliesTo:
+        - review-reproducibility
+    - id: publication_review
+      description: Principal investigator approval required before publication claims or summaries are accepted.
+      requiredApprovers:
+        - principal-investigator
+      appliesTo:
+        - prepare-research-summary
+manifests:
+  agents: agents.yaml
+  agentDefinitions: agent-definitions.yaml
+  workflow: workflow.yaml
+  tasks: tasks.yaml
+  handoffs: handoffs.yaml
+  permissions: permissions.yaml
+  capabilities: capabilities.yaml
+  context: context.yaml
+  memory: memory.yaml
+  providers: providers.yaml
+  modelProfiles: model-profiles.yaml
+  promptSets: prompt-sets.yaml
+  retrievalProfiles: retrieval-profiles.yaml
+  events: events.yaml
+  extensions: extensions.yaml

@@ -1,0 +1,102 @@
+specVersion: "0.1"
+kind: Workflow
+metadata:
+  project: research-lab
+workflow:
+  id: research-lab-workflow
+  displayName: Research Lab Workflow
+  description: Workflow for literature review, experiment design, execution, reproducibility review, and research summary preparation.
+  triggers:
+    - task.created
+  stages:
+    - id: literature
+      displayName: Literature
+      steps:
+        - id: step-review-literature
+          task: review-literature
+          dependsOn: []
+          approvalGates:
+            - research_scope_review
+          emits:
+            - task.completed
+            - handoff.created
+    - id: experiment-design
+      displayName: Experiment Design
+      steps:
+        - id: step-design-experiment
+          task: design-experiment
+          dependsOn:
+            - step-review-literature
+          approvalGates:
+            - experiment_approval
+          emits:
+            - task.completed
+            - review.completed
+            - handoff.created
+    - id: experiment-run
+      displayName: Experiment Run
+      steps:
+        - id: step-run-experiment
+          task: run-experiment
+          dependsOn:
+            - step-design-experiment
+          approvalGates:
+            - experiment_approval
+          emits:
+            - task.completed
+            - handoff.created
+    - id: reproducibility
+      displayName: Reproducibility
+      steps:
+        - id: step-review-reproducibility
+          task: review-reproducibility
+          dependsOn:
+            - step-run-experiment
+          approvalGates:
+            - reproducibility_review
+          emits:
+            - task.completed
+            - review.completed
+            - handoff.created
+    - id: summary
+      displayName: Research Summary
+      steps:
+        - id: step-prepare-research-summary
+          task: prepare-research-summary
+          dependsOn:
+            - step-review-reproducibility
+          approvalGates:
+            - publication_review
+          emits:
+            - review.completed
+            - workflow.completed
+  dependencies:
+    - from: step-review-literature
+      to: step-design-experiment
+      type: blocks
+    - from: step-design-experiment
+      to: step-run-experiment
+      type: blocks
+    - from: step-run-experiment
+      to: step-review-reproducibility
+      type: blocks
+    - from: step-review-reproducibility
+      to: step-prepare-research-summary
+      type: blocks
+  evidenceFlow:
+    requiredArtifacts:
+      - literature_review
+      - citation_map
+      - experiment_plan
+      - dataset_manifest
+      - experiment_log
+      - results_report
+      - reproducibility_report
+      - limitations_note
+      - research_summary
+      - publication_claims
+    requiredGates:
+      - research_scope_review
+      - experiment_approval
+      - reproducibility_review
+      - publication_review

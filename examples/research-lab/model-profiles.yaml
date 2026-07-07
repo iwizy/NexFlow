@@ -1,0 +1,56 @@
+specVersion: "0.1"
+kind: ModelProfileSet
+metadata:
+  project: research-lab
+modelProfiles:
+  - id: research_lab_profile
+    description: Provider-neutral profile for literature review, experiment evidence, reproducibility review, and research writing.
+    modelClass: reasoning
+    selection:
+      mode: policy
+      providerRefs:
+        - research_reasoning
+        - experiment_reasoning
+      floatingAlias: approved-research-lab-model
+      resolutionPolicy: Select an approved model appropriate for citation sensitivity and experiment context.
+    constraints:
+      trainingUse: prohibited
+      dataResidency: project_policy
+      toolUse: declared_tools_only
+      maxCostTier: high
+      maxLatencyClass: batch
+      sensitivity: confidential
+    fallback:
+      allowed: true
+      strategy: research_safe_reviewed_model
+      requiresApproval: true
+      requiresAuditEvent: true
+      candidateProviderRefs:
+        - research_reasoning
+    audit:
+      recordModelProfileRef: true
+      recordResolvedProvider: true
+      recordResolvedModel: true
+      recordModelRevision: true
+      recordSelectionReason: true
+      recordFallbackUsed: true
+      events:
+        - agent.started
+        - review.requested
+        - review.completed
+    review:
+      required: true
+      approvers:
+        - principal-investigator
+        - reproducibility-reviewer
+      reviewTriggers:
+        - floating_alias_policy_change
+        - broader_training_use
+        - broader_tool_use
+        - fallback_policy_change
+        - sensitivity_change
+    recommendedFor:
+      - literature-agent
+      - experiment-agent
+      - reproducibility-reviewer
+      - research-writer

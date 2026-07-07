@@ -4,9 +4,11 @@ This directory contains complete reference manifest sets for different team shap
 
 The examples are not runtime fixtures. They are readable specification examples that show how agents, agent definitions, permissions, capabilities, context, memory, tasks, workflows, handoffs, events, providers, model profiles, prompt sets, retrieval profiles, and extensions fit together.
 
+Use the [Example Matrix](MATRIX.md) to compare examples by complexity, context, autonomy, approval gates, integrations, and learning path.
+
 Use the [Example Consistency Checklist](CHECKLIST.md) before adding or changing an example.
 
-## Example Matrix
+## Quick Matrix
 
 | Example | Best For | Team Shape | Autonomy Posture | Main Context Sources | Approval Emphasis |
 | --- | --- | --- | --- | --- | --- |

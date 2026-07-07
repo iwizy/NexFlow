@@ -124,6 +124,7 @@ Examples are part of the specification surface. They should remain small enough 
 ## Documentation And Change Control
 
 - [ ] `examples/README.md` is updated if the example set changes.
+- [ ] `examples/MATRIX.md` is updated if complexity, context, autonomy, gates, integrations, or learning order changes.
 - [ ] `CHANGELOG.md` is updated for user-visible example changes.
 - [ ] Relevant docs are updated if the example demonstrates new semantics.
 - [ ] Relevant schemas are updated if manifest shape changes.

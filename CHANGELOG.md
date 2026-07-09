@@ -13,6 +13,7 @@ This project follows a specification-first process. Breaking changes must includ
 - Draft conformance vocabulary for manifests, validators, CLIs, runtimes, and extensions.
 - Validation workflow guidance for schema and future semantic checks.
 - Schema guide for schema scope, update rules, and validation boundaries.
+- Schema design notes explaining schemas as practical validation aids rather than complete formal semantics or runtime enforcement.
 - Examples guide for reference team selection and manifest file sets.
 - Detailed example matrix for comparing complexity, context sources, autonomy posture, approval gates, integrations, validation focus, and learning path.
 - Example consistency checklist for IDs, references, capabilities, permissions, context, memory, events, safety, and local checks.

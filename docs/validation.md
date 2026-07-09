@@ -9,6 +9,10 @@ Related RFCs:
 - [RFC-0005: Validation Strategy](../rfcs/RFC-0005-validation-strategy.md)
 - [RFC-0011: Reference CLI Scope](../rfcs/RFC-0011-reference-cli-scope.md)
 
+Related design notes:
+
+- [Schema Design Notes](schema-design-notes.md)
+
 ## Validation Goals
 
 - Catch structural manifest errors early.
@@ -88,6 +92,8 @@ Example mapping:
 ## Schema Validation Limits
 
 JSON Schema can check structure, required fields, enums, and simple patterns.
+
+See [Schema Design Notes](schema-design-notes.md) for the design rationale behind this boundary.
 
 JSON Schema does not fully check:
 

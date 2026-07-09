@@ -4,6 +4,8 @@ This directory contains draft JSON Schemas for NexFlow manifests.
 
 The schemas are practical validation aids. They are not a complete formal semantics for NexFlow.
 
+See [Schema Design Notes](../docs/schema-design-notes.md) for the design rationale, strictness boundaries, extension flexibility, and non-goals behind these schemas.
+
 ## Current Scope
 
 The schemas currently target `specVersion: "0.1"` and use JSON Schema draft 2020-12.

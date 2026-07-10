@@ -6,6 +6,10 @@ This project follows a specification-first process. Breaking changes must includ
 
 ## [0.1.0-draft] - 2026-05-29
 
+### Changed
+
+- Tightened common ID syntax, documented exact reference resolution, and separated dotted event types from entity IDs across schemas and examples guidance.
+
 ### Added
 
 - Initial specification-first repository structure.

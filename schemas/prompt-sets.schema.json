@@ -165,7 +165,7 @@
                 "type": "boolean"
               },
               "events": {
-                "$ref": "common.schema.json#/$defs/idList"
+                "$ref": "common.schema.json#/$defs/eventTypeList"
               }
             }
           },

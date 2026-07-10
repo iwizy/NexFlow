@@ -59,6 +59,7 @@ Schemas should be strict where the specification has stable structure:
 - stable enum values
 - common object shapes
 - required IDs for declared entities
+- lexical form for IDs and event types
 - common approval gate, artifact, memory, and extension attachment shapes
 
 Strictness is useful when it prevents obvious mistakes without blocking legitimate extension or draft use.
@@ -70,6 +71,9 @@ Schemas should not try to fully validate meaning across files.
 These checks belong to future semantic validation:
 
 - referenced agent IDs exist
+- declared IDs are unique in their owning collections
+- identifier references resolve exactly, without case or separator normalization
+- multi-kind references do not resolve ambiguously
 - permission IDs referenced by agents exist
 - capability IDs referenced by permissions exist
 - workflow steps reference existing tasks
@@ -85,6 +89,8 @@ These checks belong to future semantic validation:
 - extension namespaces and required capabilities are compatible
 
 Some of these checks are possible with advanced JSON Schema patterns, but encoding them there would make the schemas harder to read and harder to evolve.
+
+`common.schema.json` defines the lexical boundary for IDs and dotted event types. The same ID pattern applies to declarations and references, while the containing field determines which resource kind a reference targets. Schemas do not infer aliases or prove that a referenced declaration exists.
 
 ## Extension Flexibility
 

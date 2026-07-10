@@ -9,8 +9,19 @@
       "enum": ["0.1"]
     },
     "id": {
+      "title": "Identifier",
+      "description": "Stable, case-sensitive identifier. It starts with a lowercase letter and uses lowercase letters, digits, and non-empty segments separated by hyphens or underscores.",
       "type": "string",
-      "pattern": "^[a-z][a-z0-9_-]*$"
+      "maxLength": 128,
+      "pattern": "^[a-z][a-z0-9]*(?:[-_][a-z0-9]+)*$",
+      "examples": ["docs-agent", "read_repository"]
+    },
+    "eventType": {
+      "title": "Event Type",
+      "description": "Dotted lowercase event type. Event types are a separate namespace from entity identifiers.",
+      "type": "string",
+      "pattern": "^[a-z]+(?:\\.[a-z]+)+$",
+      "examples": ["task.completed", "review.requested"]
     },
     "nonEmptyString": {
       "type": "string",
@@ -45,9 +56,20 @@
       }
     },
     "idList": {
+      "title": "Identifier List",
+      "description": "Unique identifiers or identifier references. The containing field determines the target namespace for references.",
       "type": "array",
       "items": {
         "$ref": "#/$defs/id"
+      },
+      "uniqueItems": true
+    },
+    "eventTypeList": {
+      "title": "Event Type List",
+      "description": "Unique references to declared event types.",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/eventType"
       },
       "uniqueItems": true
     },
@@ -129,7 +151,7 @@
           "$ref": "#/$defs/idList"
         },
         "events": {
-          "$ref": "#/$defs/idList"
+          "$ref": "#/$defs/eventTypeList"
         }
       }
     },

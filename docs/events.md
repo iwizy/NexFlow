@@ -30,6 +30,8 @@ Event names use dotted lowercase names:
 - `memory.deleted`
 - `memory.promoted`
 
+Event types are not entity IDs. They use their own dotted namespace and MUST be referenced exactly from fields such as `emits`, `auditEvents`, audit `events` lists, and event-driven `triggers`. A non-event trigger such as `manual` is not an event type.
+
 ## Common Event Envelope
 
 ```yaml

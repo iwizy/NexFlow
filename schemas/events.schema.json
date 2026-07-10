@@ -50,8 +50,7 @@
         "required": ["type", "description", "payload"],
         "properties": {
           "type": {
-            "type": "string",
-            "pattern": "^[a-z]+(\\.[a-z]+)+$"
+            "$ref": "common.schema.json#/$defs/eventType"
           },
           "description": {
             "type": "string"

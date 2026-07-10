@@ -22,9 +22,13 @@ Examples are part of the specification surface. They should remain small enough 
 
 ## IDs And References
 
+- [ ] Every ID matches the common lowercase segmented format and is at most 128 characters.
+- [ ] IDs do not use leading, trailing, repeated, or mixed adjacent separators.
+- [ ] Each ID uses one separator style even when different resource categories use different styles.
 - [ ] Agent IDs are stable and unique within `agents.yaml`.
 - [ ] Human actor IDs and agent IDs are not confused.
 - [ ] Task IDs are unique within `tasks.yaml`.
+- [ ] Task artifact IDs are unique across `tasks.yaml` while handoffs use unqualified artifact references.
 - [ ] Workflow stage IDs and step IDs are unique within `workflow.yaml`.
 - [ ] Handoff IDs are unique within `handoffs.yaml`.
 - [ ] Capability IDs are defined in `capabilities.yaml` before use.
@@ -37,6 +41,7 @@ Examples are part of the specification surface. They should remain small enough 
 - [ ] Retrieval profile IDs are defined in `retrieval-profiles.yaml` before use.
 - [ ] Extension IDs or namespaces are declared in `extensions.yaml` before use.
 - [ ] References use the same spelling, case, and separator style everywhere.
+- [ ] Event references use dotted lowercase event types rather than entity ID syntax.
 
 ## Agents And Agent Definitions
 

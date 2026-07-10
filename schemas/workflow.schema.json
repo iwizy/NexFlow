@@ -30,11 +30,7 @@
           "type": "string"
         },
         "triggers": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "uniqueItems": true
+          "$ref": "common.schema.json#/$defs/stringList"
         },
         "stages": {
           "type": "array",
@@ -70,11 +66,7 @@
                       "$ref": "common.schema.json#/$defs/idList"
                     },
                     "emits": {
-                      "type": "array",
-                      "items": {
-                        "type": "string"
-                      },
-                      "uniqueItems": true
+                      "$ref": "common.schema.json#/$defs/eventTypeList"
                     }
                   }
                 }

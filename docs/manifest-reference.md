@@ -227,12 +227,55 @@ Related docs: [Extension Model](extensions.md), [Integrations](integrations.md),
 
 ## Identifier Rules
 
-IDs should:
+An ID is a stable machine-readable name for a declared resource. It is not a display name, file path, URI, event type, or version string.
 
-- use lowercase letters, numbers, hyphens, and underscores
-- be stable across commits
-- avoid provider names unless the resource is provider-specific
-- be unique within the manifest
+Every ID MUST:
+
+- contain between 1 and 128 characters
+- start with a lowercase ASCII letter
+- contain only lowercase ASCII letters, digits, hyphens, and underscores
+- use separators only between non-empty segments, so leading, trailing, or repeated separators are invalid
+- remain stable while the declared resource keeps the same identity
+
+Valid examples include `docs-agent`, `review-change`, `read_repository`, and `implementation_agent_2026_06`. Invalid examples include `DocsAgent`, `1-reviewer`, `docs--agent`, `docs_agent_`, and `task.completed`.
+
+Naming guidance:
+
+- Prefer kebab-case for project, actor, task, workflow, stage, step, and handoff identities.
+- Prefer snake_case for capability, permission, approval gate, artifact, profile, and other policy vocabulary.
+- Use one separator style within an ID. Different resource categories MAY use different styles.
+- Avoid provider names unless the resource is intentionally provider-specific.
+- Avoid mutable model names, dates, or versions in stable identities. An immutable, explicitly versioned resource MAY include a revision suffix.
+
+IDs MUST be unique within the namespace from which references resolve:
+
+- Top-level resource IDs MUST be unique within their declaring manifest collection.
+- Workflow stage IDs MUST be unique within the workflow, and workflow step IDs MUST be unique across all stages because dependencies may cross stage boundaries.
+- Task artifact IDs MUST be unique across the `TaskSet` while handoffs use unqualified artifact references.
+- Other nested IDs MUST be unique within their immediate owning collection unless another field references them from a broader scope.
+
+The same string MAY appear in distinct resource namespaces only when the reference field identifies exactly one target kind. Multi-kind reference fields, including the draft `approvalGate.appliesTo` field, MUST NOT resolve to more than one declared resource. Authors SHOULD avoid collisions across possible target kinds, and future semantic validators MUST reject ambiguous matches.
+
+## Identifier References
+
+An identifier reference is the exact ID string of a declared resource. References use plain scalar values or lists:
+
+```yaml
+agentRef: docs-agent
+capabilityRefs:
+  - read_repository
+  - modify_documentation
+```
+
+References are case-sensitive and MUST preserve the declaration's spelling and separator style. Authors and tools MUST NOT silently lowercase, trim, rewrite separators, or infer aliases. Qualified forms such as `agent:docs-agent` and path-like forms such as `agents/docs-agent` are not part of the core `0.1` reference syntax.
+
+The containing field identifies the target namespace. For example, `agentRef` targets an agent ID, `modelProfileRef` targets a model profile ID, and `approvalGates` contains approval gate IDs. JSON Schema checks lexical form; future semantic validation must check uniqueness, existence, target kind, ambiguity, and graph consistency.
+
+Event types are not IDs. They use a separate dotted lowercase form such as `task.completed` and are referenced from event-related fields such as `emits`, `auditEvents`, audit `events`, and event-driven `triggers`. A non-event trigger such as `manual` is not an event type.
+
+An identifier reference never grants access or authority by itself. Capabilities, permissions, context policy, memory policy, autonomy, and approval gates remain authoritative.
+
+Migration from earlier `0.1` drafts: replace IDs with leading, trailing, or repeated separators and update every reference to the exact replacement. Current repository examples require no migration.
 
 ## Extension Fields
 

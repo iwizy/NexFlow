@@ -67,6 +67,7 @@ Breaking schema changes require migration guidance and should be routed through 
 Use `common.schema.json` for shared concepts:
 
 - IDs
+- dotted event types
 - metadata
 - autonomy levels
 - permission effects
@@ -80,6 +81,8 @@ Use `common.schema.json` for shared concepts:
 - extension attachments
 
 Prefer adding shared definitions once rather than duplicating shapes across schemas.
+
+Common IDs are case-sensitive, limited to 128 characters, and use lowercase alphanumeric segments separated by single hyphens or underscores. Dotted event types such as `task.completed` use a separate shared definition. A schema can validate these lexical forms, but uniqueness and cross-manifest reference resolution remain semantic checks.
 
 ## What JSON Schema Can Check
 

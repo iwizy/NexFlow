@@ -75,7 +75,7 @@
             "$ref": "common.schema.json#/$defs/stringList"
           },
           "auditEvents": {
-            "$ref": "common.schema.json#/$defs/stringList"
+            "$ref": "common.schema.json#/$defs/eventTypeList"
           },
           "approvalGate": {
             "$ref": "common.schema.json#/$defs/id"

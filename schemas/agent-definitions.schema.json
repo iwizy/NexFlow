@@ -171,7 +171,7 @@
                 "type": "boolean"
               },
               "events": {
-                "$ref": "common.schema.json#/$defs/stringList"
+                "$ref": "common.schema.json#/$defs/eventTypeList"
               }
             }
           }

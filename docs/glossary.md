@@ -134,6 +134,18 @@ The principle that humans remain the final authority for risky, destructive, pro
 
 ## I
 
+### Identifier
+
+A stable, case-sensitive machine-readable name for a declared NexFlow resource. IDs use lowercase letters and digits with non-empty hyphen- or underscore-separated segments.
+
+An ID is not a display name, URI, file path, event type, or version string.
+
+### Identifier Reference
+
+An exact ID value used to point from one manifest field to a declared resource. The containing field determines the target resource kind.
+
+Identifier references do not grant capabilities, permissions, context access, memory access, autonomy, or approval.
+
 ### Integration
 
 A connection to an external system such as GitHub, GitLab, Jira, Linear, Figma, Slack, Discord, Telegram, MCP, notes, or a custom service.

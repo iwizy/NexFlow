@@ -84,7 +84,7 @@ A prompt set identity should be stable and meaningful within a project.
 
 Prompt set IDs SHOULD:
 
-- use lowercase letters, numbers, hyphens, and underscores
+- follow the common [identifier rules](manifest-reference.md#identifier-rules)
 - describe the behavioral purpose, not the provider
 - remain stable across prompt revisions
 - avoid embedding secrets, account names, private URLs, or raw credentials

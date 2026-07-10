@@ -115,7 +115,7 @@ A retrieval profile identity should be stable and meaningful within a project.
 
 Retrieval profile IDs SHOULD:
 
-- use lowercase letters, numbers, hyphens, and underscores
+- follow the common [identifier rules](manifest-reference.md#identifier-rules)
 - describe the retrieval purpose, not the provider or runtime
 - remain stable across index or corpus versions
 - avoid embedding credentials, private URLs, account names, or raw query secrets

@@ -82,7 +82,9 @@ approvalGates:
 
 Schemas validate only practical structure. More complex rules, such as whether an actor exists or a domain belongs to a source, are future semantic validation work.
 
-The current schema recognizes these draft `contentTypes`: `source_code`, `documentation`, `issues`, `pull_requests`, `tickets`, `designs`, `knowledge_articles`, `web_pages`, `tool_results`, `metadata`, and `custom`.
+The current schema recognizes these draft `contentTypes`: `source_code`, `documentation`, `issues`, `pull_requests`, `tickets`, `designs`, `knowledge_articles`, `interview_summaries`, `product_feedback`, `web_pages`, `tool_results`, `metadata`, and `custom`.
+
+`interview_summaries` and `product_feedback` describe sanitized research outputs, not raw customer records. Their use does not weaken the source classification, privacy constraints, or approval gates declared for the context source.
 
 ## Access Modes
 

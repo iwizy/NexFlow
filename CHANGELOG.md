@@ -9,6 +9,7 @@ This project follows a specification-first process. Breaking changes must includ
 ### Changed
 
 - Tightened common ID syntax, documented exact reference resolution, and separated dotted event types from entity IDs across schemas and examples guidance.
+- Aligned extension and context schema vocabularies with retrieval profiles and sanitized product research content used by the reference examples.
 
 ### Added
 

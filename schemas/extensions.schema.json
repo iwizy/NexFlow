@@ -52,6 +52,7 @@
                 "permissions",
                 "capabilities",
                 "context",
+                "retrieval",
                 "memory",
                 "providers",
                 "events",

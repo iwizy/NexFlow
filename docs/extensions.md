@@ -60,6 +60,12 @@ Extensions MUST NOT:
 - bypass approval gates
 - redefine core event names incompatibly
 
+## Attachment Areas
+
+The current schema recognizes these draft `appliesTo` values: `project`, `agents`, `workflow`, `tasks`, `handoffs`, `permissions`, `capabilities`, `context`, `retrieval`, `memory`, `providers`, `events`, and `extensions`.
+
+`retrieval` covers retrieval profile declarations and related retrieval configuration. It does not grant access to context sources or permit retrieval by itself. Context access, capabilities, permissions, autonomy, and approval gates remain separate controls.
+
 ## Custom Extensions
 
 Private organizations may use reverse-DNS namespaces:

@@ -58,6 +58,15 @@ events:
       required:
         - result
         - approvalGate
+  - type: agent.started
+    description: An agent session starts with a declared definition and model profile.
+    retention: Project policy.
+    auditRequired: true
+    payload:
+      required:
+        - agentId
+        - agentDefinitionRef
+        - modelProfileRef
   - type: workflow.completed
     description: Startup delivery flow completes.
     retention: Project policy.

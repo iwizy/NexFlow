@@ -32,6 +32,8 @@ Event names use dotted lowercase names:
 
 Event types are not entity IDs. They use their own dotted namespace and MUST be referenced exactly from fields such as `emits`, `auditEvents`, audit `events` lists, and event-driven `triggers`. A non-event trigger such as `manual` is not an event type.
 
+Within a project manifest set, every event type reference MUST resolve to exactly one `events[].type` declaration in that project's `events.yaml`. Event declarations MAY remain unused when they describe supported transitions that the current workflow does not emit. Duplicate declarations and references to undeclared event types are semantic validation errors.
+
 ## Common Event Envelope
 
 ```yaml

@@ -57,13 +57,15 @@ Avoid implying that planned runtime behavior already exists.
 
 ## Local Validation
 
-This repository currently provides JSON Schemas but no official validation CLI. Contributors may validate manifests with any JSON Schema tooling that can parse YAML to JSON first.
-
-At minimum, ensure schema files are valid JSON:
+This repository currently provides JSON Schemas but no official validation CLI. Run the repository smoke checks before opening a pull request:
 
 ```sh
-python3 -m json.tool schemas/project.schema.json >/dev/null
+./scripts/schema-smoke
 ```
+
+The script checks schema JSON syntax, example YAML syntax, and whether every discovered example manifest kind has a matching schema. It also checks that each schema-backed manifest kind appears in the examples.
+
+The smoke script does not validate manifest contents against JSON Schema and does not perform semantic validation. Contributors may run additional JSON Schema tooling that parses YAML to JSON first.
 
 ## License
 

@@ -1,0 +1,85 @@
+#!/usr/bin/env ruby
+
+require "date"
+require "json"
+require "pathname"
+require "yaml"
+
+ROOT = Pathname.new(__dir__).parent.expand_path
+SCHEMA_GLOB = ROOT.join("schemas", "*.schema.json").to_s
+MANIFEST_GLOB = ROOT.join("examples", "**", "*.{yaml,yml}").to_s
+
+def relative(path)
+  Pathname.new(path).relative_path_from(ROOT).to_s
+end
+
+errors = []
+schema_files = Dir[SCHEMA_GLOB].sort
+manifest_files = Dir[MANIFEST_GLOB].sort
+schemas_by_kind = {}
+
+errors << "no schema files found under schemas/" if schema_files.empty?
+errors << "no example manifests found under examples/" if manifest_files.empty?
+
+schema_files.each do |path|
+  begin
+    schema = JSON.parse(File.read(path, encoding: "UTF-8"))
+  rescue JSON::ParserError => error
+    errors << "#{relative(path)}: invalid JSON: #{error.message}"
+    next
+  end
+
+  kind = schema.dig("properties", "kind", "const")
+  next unless kind
+
+  if schemas_by_kind.key?(kind)
+    errors << "#{relative(path)}: duplicate schema for manifest kind #{kind.inspect}"
+  else
+    schemas_by_kind[kind] = path
+  end
+end
+
+manifest_kind_counts = Hash.new(0)
+
+manifest_files.each do |path|
+  begin
+    manifest = YAML.safe_load(
+      File.read(path, encoding: "UTF-8"),
+      permitted_classes: [Date],
+      aliases: false
+    )
+  rescue Psych::Exception => error
+    errors << "#{relative(path)}: invalid YAML: #{error.message.lines.first.strip}"
+    next
+  end
+
+  unless manifest.is_a?(Hash)
+    errors << "#{relative(path)}: manifest root must be a mapping"
+    next
+  end
+
+  kind = manifest["kind"]
+  unless kind.is_a?(String) && !kind.empty?
+    errors << "#{relative(path)}: missing non-empty string kind"
+    next
+  end
+
+  manifest_kind_counts[kind] += 1
+  errors << "#{relative(path)}: no schema declares manifest kind #{kind.inspect}" unless schemas_by_kind.key?(kind)
+end
+
+(schemas_by_kind.keys - manifest_kind_counts.keys).sort.each do |kind|
+  errors << "#{relative(schemas_by_kind.fetch(kind))}: no example manifest uses kind #{kind.inspect}"
+end
+
+unless errors.empty?
+  warn "NexFlow schema smoke checks failed:"
+  errors.each { |error| warn "  - #{error}" }
+  exit 1
+end
+
+puts "Schema JSON syntax: #{schema_files.length} files"
+puts "Example YAML syntax: #{manifest_files.length} files"
+puts "Manifest discovery: #{manifest_kind_counts.length} kinds matched to schemas"
+puts "Smoke checks passed."
+puts "Note: schema conformance and semantic validation are not performed."

@@ -139,25 +139,13 @@ See [RFC-0011](../rfcs/RFC-0011-reference-cli-scope.md) for draft reference CLI 
 
 ## Local Smoke Checks
 
-Check schema JSON syntax:
+Run the repository smoke checks from the repository root:
 
 ```sh
-python3 - <<'PY'
-import json
-from pathlib import Path
-
-for path in sorted(Path("schemas").glob("*.schema.json")):
-    with path.open(encoding="utf-8") as handle:
-        json.load(handle)
-    print(f"ok {path}")
-PY
+./scripts/schema-smoke
 ```
 
-Check example YAML syntax:
-
-```sh
-ruby -ryaml -e 'Dir["examples/**/*.yaml"].sort.each { |p| YAML.load_file(p); puts "ok #{p}" }'
-```
+The script checks schema JSON syntax, example YAML syntax, and manifest kind discovery. It intentionally does not validate manifests against these schemas or perform semantic validation; see [Validation](../docs/validation.md) for those boundaries.
 
 ## Extension Policy
 

@@ -13,6 +13,7 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Added
 
+- Repository smoke script for schema JSON syntax, example YAML syntax, and manifest kind discovery checks.
 - Initial specification-first repository structure.
 - Core documentation set under `docs/`.
 - Draft conformance vocabulary for manifests, validators, CLIs, runtimes, and extensions.

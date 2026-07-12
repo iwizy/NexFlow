@@ -25,8 +25,10 @@ Related design notes:
 
 The repository supports basic validation through:
 
+- A local repository smoke script.
 - JSON syntax checks for schema files.
 - YAML parsing checks for example manifests.
+- Example manifest kind discovery against available schemas.
 - Draft JSON Schemas in `schemas/`.
 - Documentation describing semantic expectations.
 
@@ -34,27 +36,23 @@ This is enough to catch many authoring mistakes, but not enough to prove that a 
 
 ## Recommended Local Checks
 
-Check that all schema files are valid JSON:
+Run the repository smoke checks from the repository root:
 
 ```sh
-python3 - <<'PY'
-import json
-from pathlib import Path
-
-for path in sorted(Path("schemas").glob("*.schema.json")):
-    with path.open(encoding="utf-8") as handle:
-        json.load(handle)
-    print(f"ok {path}")
-PY
+./scripts/schema-smoke
 ```
 
-Check that all example manifests parse as YAML:
+The script checks:
 
-```sh
-ruby -ryaml -e 'Dir["examples/**/*.yaml"].sort.each { |p| YAML.load_file(p); puts "ok #{p}" }'
-```
+- every `schemas/*.schema.json` file parses as JSON
+- every example YAML manifest parses safely
+- every example manifest declares a non-empty `kind`
+- every discovered manifest kind has a matching schema
+- every schema-backed manifest kind appears in at least one example
 
-These checks do not validate examples against JSON Schemas. They only confirm that files are syntactically readable.
+The script uses Ruby and standard-library JSON and YAML support as repository maintenance tooling. This does not select or constrain a future NexFlow runtime language.
+
+These checks do not validate example contents against JSON Schemas and do not perform semantic validation. They confirm that files are syntactically readable and that the discovered manifest kinds have schema coverage.
 
 ## YAML to JSON Schema Validation
 

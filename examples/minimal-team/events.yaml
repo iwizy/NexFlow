@@ -58,3 +58,12 @@ events:
       required:
         - from
         - to
+  - type: agent.started
+    description: An agent session starts with a declared definition and model profile.
+    retention: Project policy.
+    auditRequired: true
+    payload:
+      required:
+        - agentId
+        - agentDefinitionRef
+        - modelProfileRef

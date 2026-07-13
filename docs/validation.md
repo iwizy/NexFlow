@@ -29,6 +29,7 @@ The repository supports basic validation through:
 - JSON syntax checks for schema files.
 - YAML parsing checks for example manifests.
 - Example manifest kind discovery against available schemas.
+- A reproducible command that validates every example manifest against its JSON Schema.
 - Draft JSON Schemas in `schemas/`.
 - Documentation describing semantic expectations.
 
@@ -53,6 +54,17 @@ The script checks:
 The script uses Ruby and standard-library JSON and YAML support as repository maintenance tooling. This does not select or constrain a future NexFlow runtime language.
 
 These checks do not validate example contents against JSON Schemas and do not perform semantic validation. They confirm that files are syntactically readable and that the discovered manifest kinds have schema coverage.
+
+Install the pinned validation dependencies and run full schema validation:
+
+```sh
+npm ci
+npm run validate
+```
+
+The command requires Node.js 20 or newer. It safely parses each YAML file under `examples/`, selects a schema from the manifest `kind`, compiles the draft 2020-12 schemas, and reports syntax or schema diagnostics with file and instance paths. `package-lock.json` pins AJV, YAML parsing, and format validation dependencies.
+
+This Node.js command is repository maintenance tooling, not a reference CLI or runtime implementation. It does not choose a future NexFlow runtime language and does not perform semantic validation.
 
 ## YAML to JSON Schema Validation
 

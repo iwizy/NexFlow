@@ -1,0 +1,17 @@
+{
+  "name": "nexflow-spec-tooling",
+  "private": true,
+  "description": "Pinned repository validation tooling for the NexFlow specification; not a runtime package.",
+  "type": "module",
+  "scripts": {
+    "validate": "node scripts/validate-schemas.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "ajv": "8.20.0",
+    "ajv-formats": "3.0.1",
+    "yaml": "2.9.0"
+  }
+}

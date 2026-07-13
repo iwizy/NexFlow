@@ -147,6 +147,15 @@ Run the repository smoke checks from the repository root:
 
 The script checks schema JSON syntax, example YAML syntax, and manifest kind discovery. It intentionally does not validate manifests against these schemas or perform semantic validation; see [Validation](../docs/validation.md) for those boundaries.
 
+For complete validation of every reference manifest against the schema selected by its `kind`, install the pinned repository dependencies and run:
+
+```sh
+npm ci
+npm run validate
+```
+
+The Node.js dependency is limited to repository maintenance tooling and does not select the language of a future NexFlow runtime.
+
 ## Extension Policy
 
 Core schemas allow some `additionalProperties` intentionally. This lets projects attach future or private metadata without immediately breaking validation.

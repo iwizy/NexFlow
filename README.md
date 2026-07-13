@@ -19,6 +19,7 @@ It is **not** an AI coding agent, an LLM API wrapper, a chat application, or a p
 | Core concepts | Specified in draft form |
 | YAML manifests | Specified in draft form |
 | JSON Schemas | Implemented as practical draft schemas |
+| Repository schema validation | Implemented for all reference manifests |
 | Examples | Implemented as reference examples |
 | Agent assembly | Specified as draft behavior versioning vocabulary |
 | Agent definitions | Specified as draft agent assembly components |
@@ -208,7 +209,7 @@ See [Governance](docs/governance.md) and [RFCs](rfcs/README.md).
 - The current schemas are practical drafts, not complete formal semantics.
 - No runtime engine exists yet.
 - Provider and integration support is described, not implemented.
-- Manifest validation currently depends on external JSON Schema tooling.
+- Repository schema validation is implemented for reference manifests; cross-manifest semantic validation is not yet implemented.
 - Security behavior is normative for future runtimes, but not enforced by this repository alone.
 
 ## FAQ

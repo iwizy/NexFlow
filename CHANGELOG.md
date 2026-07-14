@@ -14,6 +14,7 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Added
 
+- Public release plan describing readiness criteria from `0.1` draft through `1.0` without publishing date commitments.
 - Reproducible, lockfile-pinned validation command for checking every reference manifest against its draft JSON Schema.
 - Repository smoke script for schema JSON syntax, example YAML syntax, and manifest kind discovery checks.
 - Initial specification-first repository structure.

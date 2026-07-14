@@ -53,6 +53,7 @@ The documentation is the canonical source for the specification. Schemas and exa
 | [Validation](validation.md) | Structural validation workflow and semantic validation boundary. |
 | [Schema Design Notes](schema-design-notes.md) | Explains schema goals, non-goals, strictness boundaries, extension flexibility, and semantic validation limits. |
 | [Compatibility](compatibility.md) | Compatibility expectations and breaking change guidance. |
+| [Release Plan](release-plan.md) | Public readiness criteria from `0.1` draft through `1.0`. |
 | [Runtime Options](runtime-options.md) | Runtime language evaluation criteria without choosing an implementation. |
 | [Integrations](integrations.md) | Integration modeling rules and safety expectations. |
 | [Roadmap](roadmap.md) | Specification, review, schema, CLI, runtime, and ecosystem milestones. |

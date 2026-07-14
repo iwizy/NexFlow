@@ -166,6 +166,7 @@ NexFlow is intentionally split into layers:
 - [Examples Guide](examples/README.md): overview of reference teams and manifest file sets
 - [rfcs/](rfcs/README.md): governance and design proposal process
 - [Conformance](docs/conformance.md): draft support levels for manifests, validators, CLIs, runtimes, and extensions
+- [Release Plan](docs/release-plan.md): public readiness criteria from `0.1` draft through `1.0`
 - [CONTRIBUTING.md](CONTRIBUTING.md): contribution workflow
 - [SECURITY.md](SECURITY.md): vulnerability and safety reporting policy
 
@@ -184,7 +185,7 @@ NexFlow is intentionally split into layers:
 | Model retrieval, freshness, and citations | [Retrieval Profiles](docs/retrieval-profiles.md), [Context Model](docs/context-model.md), [Event Model](docs/events.md) |
 | Validate manifests | [Validation](docs/validation.md), [Schema Guide](schemas/README.md), [Conformance](docs/conformance.md) |
 | Extend or integrate NexFlow | [Extension Model](docs/extensions.md), [Integrations](docs/integrations.md), [Provider Abstraction](docs/provider-abstraction.md) |
-| Review future implementation choices | [Runtime Options](docs/runtime-options.md), [Roadmap](docs/roadmap.md) |
+| Review future implementation choices | [Runtime Options](docs/runtime-options.md), [Roadmap](docs/roadmap.md), [Release Plan](docs/release-plan.md) |
 
 ## Roadmap
 
@@ -196,7 +197,7 @@ NexFlow is intentionally split into layers:
 6. Build a reference validation CLI.
 7. Explore runtime prototypes without locking the specification to one language.
 
-See [Roadmap](docs/roadmap.md).
+See [Roadmap](docs/roadmap.md) and [Release Plan](docs/release-plan.md).
 
 ## Governance Summary
 

@@ -26,6 +26,7 @@ Related design notes:
 The repository supports basic validation through:
 
 - A local repository smoke script.
+- A GitHub Actions validation workflow for pull requests and pushes to `main` or `develop`.
 - JSON syntax checks for schema files.
 - YAML parsing checks for example manifests.
 - Example manifest kind discovery against available schemas.
@@ -65,6 +66,8 @@ npm run validate
 The command requires Node.js 20 or newer. It safely parses each YAML file under `examples/`, selects a schema from the manifest `kind`, compiles the draft 2020-12 schemas, and reports syntax or schema diagnostics with file and instance paths. `package-lock.json` pins AJV, YAML parsing, and format validation dependencies.
 
 This Node.js command is repository maintenance tooling, not a reference CLI or runtime implementation. It does not choose a future NexFlow runtime language and does not perform semantic validation.
+
+The GitHub Actions workflow runs the same smoke script and schema validation command so pull requests exercise schema JSON parsing, example YAML parsing, manifest kind discovery, schema compilation, and example manifest validation.
 
 ## YAML to JSON Schema Validation
 

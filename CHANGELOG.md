@@ -8,6 +8,7 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Changed
 
+- Upgraded the schema validation workflow to run repository smoke checks and full example manifest schema validation.
 - Tightened common ID syntax, documented exact reference resolution, and separated dotted event types from entity IDs across schemas and examples guidance.
 - Aligned extension and context schema vocabularies with retrieval profiles and sanitized product research content used by the reference examples.
 - Declared referenced `agent.started` audit events across the minimal, software, and startup examples and clarified project-level event reference resolution.

@@ -1,4 +1,4 @@
-name: Schema Smoke Test
+name: Schema Validation
 
 on:
   pull_request:
@@ -8,21 +8,21 @@ on:
       - develop
 
 jobs:
-  schema-json:
+  schema-validation:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.x"
-      - name: Check schema JSON syntax
-        run: |
-          python - <<'PY'
-          import json
-          from pathlib import Path
 
-          for path in sorted(Path("schemas").glob("*.schema.json")):
-              with path.open("r", encoding="utf-8") as handle:
-                  json.load(handle)
-              print(f"ok {path}")
-          PY
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: Install validation tooling
+        run: npm ci --ignore-scripts
+
+      - name: Run repository smoke checks
+        run: ./scripts/schema-smoke
+
+      - name: Validate example manifests against schemas
+        run: npm run validate

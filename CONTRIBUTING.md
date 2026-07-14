@@ -76,6 +76,8 @@ The command requires Node.js 20 or newer. `package-lock.json` pins the validatio
 
 Schema validation does not perform cross-manifest or policy checks. See [Validation](docs/validation.md) for the boundary between schema, semantic, and runtime validation.
 
+The repository GitHub Actions workflow runs the same smoke script and schema validation command on pull requests and pushes to `main` or `develop`.
+
 ## License
 
 By contributing, you agree that your contribution is provided under the MIT License.

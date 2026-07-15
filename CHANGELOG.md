@@ -15,6 +15,7 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Added
 
+- `0.1` readiness checklist covering docs, schemas, examples, validation, RFCs, compatibility, safety, limitations, blockers, and release evidence.
 - Semantic reference smoke command for checking core cross-manifest references in examples without claiming full semantic validation.
 - Public release plan describing readiness criteria from `0.1` draft through `1.0` without publishing date commitments.
 - Reproducible, lockfile-pinned validation command for checking every reference manifest against its draft JSON Schema.

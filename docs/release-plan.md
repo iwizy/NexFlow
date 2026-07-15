@@ -34,6 +34,8 @@ NexFlow uses `0.x` releases while the specification is still stabilizing. The `1
 
 The `0.1` line establishes the shape of the project.
 
+Use the [0.1 Readiness Checklist](readiness-checklist.md) when reviewing whether the draft is ready for a candidate tag.
+
 Release readiness:
 
 - core domain vocabulary is documented
@@ -199,6 +201,8 @@ Before tagging a release, maintainers should verify:
 - migration notes exist for breaking or behavior-significant changes
 - runtime and provider claims match implemented reality
 - release notes clearly separate implemented behavior, specified behavior, and planned behavior
+
+For the `0.1` line, use the more detailed [0.1 Readiness Checklist](readiness-checklist.md).
 
 ## Relationship to Project Planning
 

@@ -4,6 +4,8 @@ NexFlow is specification-first. Runtime work starts only after the core model is
 
 For version-by-version readiness criteria from `0.1` draft through `1.0`, see the [Release Plan](release-plan.md).
 
+For the first candidate review, see the [0.1 Readiness Checklist](readiness-checklist.md).
+
 ## Milestone 1: Draft Specification
 
 - Define core concepts.

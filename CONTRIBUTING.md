@@ -70,13 +70,14 @@ Install the pinned repository tooling and validate every example manifest agains
 ```sh
 npm ci
 npm run validate
+npm run semantic-smoke
 ```
 
 The command requires Node.js 20 or newer. `package-lock.json` pins the validation dependencies for reproducible contributor and CI use. Node.js is used only for repository maintenance tooling; this does not select or constrain a future NexFlow runtime language.
 
-Schema validation does not perform cross-manifest or policy checks. See [Validation](docs/validation.md) for the boundary between schema, semantic, and runtime validation.
+Schema validation does not perform cross-manifest or policy checks. The semantic smoke command checks selected references in examples, but it is not full semantic validation. See [Validation](docs/validation.md) for the boundary between schema, semantic, and runtime validation.
 
-The repository GitHub Actions workflow runs the same smoke script and schema validation command on pull requests and pushes to `main` or `develop`.
+The repository GitHub Actions workflow runs the same smoke script, schema validation command, and semantic reference smoke command on pull requests and pushes to `main` or `develop`.
 
 ## License
 

@@ -31,6 +31,7 @@ The repository supports basic validation through:
 - YAML parsing checks for example manifests.
 - Example manifest kind discovery against available schemas.
 - A reproducible command that validates every example manifest against its JSON Schema.
+- A semantic reference smoke command for core cross-manifest references in examples.
 - Draft JSON Schemas in `schemas/`.
 - Documentation describing semantic expectations.
 
@@ -68,6 +69,16 @@ The command requires Node.js 20 or newer. It safely parses each YAML file under 
 This Node.js command is repository maintenance tooling, not a reference CLI or runtime implementation. It does not choose a future NexFlow runtime language and does not perform semantic validation.
 
 The GitHub Actions workflow runs the same smoke script and schema validation command so pull requests exercise schema JSON parsing, example YAML parsing, manifest kind discovery, schema compilation, and example manifest validation.
+
+Run semantic reference smoke checks:
+
+```sh
+npm run semantic-smoke
+```
+
+This command checks core example references across actors, tasks, workflow steps, artifacts, permissions, capabilities, context sources, memory scopes, providers, model profiles, prompt sets, retrieval profiles, agent definitions, approval gates, events, and extensions. It reports `NF-SEMANTIC` diagnostics for missing references or duplicate IDs.
+
+The command is intentionally a smoke check. It does not prove workflow graph correctness, policy safety, approval sufficiency, runtime enforceability, provider compatibility, or full semantic conformance.
 
 ## YAML to JSON Schema Validation
 
@@ -151,6 +162,7 @@ Semantic validation should evaluate cross-manifest meaning.
 Future semantic validators should check:
 
 - cross-file references
+- duplicate IDs within a manifest or project namespace
 - agent definition component references and lifecycle consistency
 - duplicate IDs within a manifest
 - capability and permission consistency

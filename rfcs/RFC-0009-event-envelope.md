@@ -196,6 +196,8 @@ When `occurredAt` and `recordedAt` differ significantly, audit tooling should pr
 
 `actor` identifies who or what initiated the state transition.
 
+[RFC-0013](RFC-0013-actor-model.md) proposes canonical human, agent, automation, service, and authority actor kinds. If accepted, this envelope should align with that model; the `runtime` and `integration` examples below remain provisional hosting and connection identities rather than accepted additional actor kinds.
+
 Actor examples:
 
 ```yaml

@@ -18,6 +18,7 @@ RFCs are design proposals for meaningful changes to NexFlow.
 | [RFC-0010](RFC-0010-provider-selection.md) | Provider Selection | Draft |
 | [RFC-0011](RFC-0011-reference-cli-scope.md) | Reference CLI Scope | Draft |
 | [RFC-0012](RFC-0012-manifest-bundling.md) | Manifest Bundling | Draft |
+| [RFC-0013](RFC-0013-actor-model.md) | Actor Model | Draft |
 
 ## When to Write an RFC
 

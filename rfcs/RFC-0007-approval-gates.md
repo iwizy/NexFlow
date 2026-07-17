@@ -24,7 +24,7 @@ The goal is to keep human authority explicit while preserving a clear boundary b
 
 ## Motivation
 
-NexFlow separates capabilities from permissions. A capability says an actor or integration can technically perform an action. A permission says whether the action is allowed, denied, or approval-gated.
+NexFlow separates capabilities from permissions. A capability says an actor or integration can technically perform an action. A permission rule applies an `allow`, `deny`, or `approval_required` effect to that capability.
 
 Approval gates are the mechanism that makes sensitive actions reviewable before they happen.
 

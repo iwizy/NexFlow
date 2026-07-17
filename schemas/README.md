@@ -13,7 +13,7 @@ The schemas currently target `specVersion: "0.1"` and use JSON Schema draft 2020
 | Schema | Manifest `kind` | Purpose |
 | --- | --- | --- |
 | `project.schema.json` | `Project` | Project identity, policies, maintainers, approval gates, and manifest locations. |
-| `agents.schema.json` | `AgentSet` | Agent identities, roles, skills, capabilities, permissions, context, memory, and autonomy. |
+| `agents.schema.json` | `AgentSet` | Current draft participant identities, including AI agents and legacy human entries, with roles, skills, policy references, context, memory, and autonomy. |
 | `agent-definitions.schema.json` | `AgentDefinitionSet` | Versioned agent behavioral releases assembled from model, prompt, retrieval, permission, context, memory, autonomy, and extension references. |
 | `workflow.schema.json` | `Workflow` | Workflow stages, steps, dependencies, gates, and emitted events. |
 | `tasks.schema.json` | `TaskSet` | Tasks, owners, dependencies, artifacts, required capabilities, and acceptance criteria. |
@@ -26,7 +26,7 @@ The schemas currently target `specVersion: "0.1"` and use JSON Schema draft 2020
 | `model-profiles.schema.json` | `ModelProfileSet` | Provider-neutral model profiles, selection modes, constraints, fallback rules, review triggers, and audit expectations. |
 | `prompt-sets.schema.json` | `PromptSet` | Versioned prompt material, prompt revisions, source references, safety review status, compatibility impact, and audit expectations. |
 | `retrieval-profiles.schema.json` | `RetrievalProfileSet` | Retrieval profiles for context source selection, index versions, chunking, freshness, citations, sensitivity, review triggers, and audit expectations. |
-| `events.schema.json` | `EventSet` | Event names, optional envelope expectations, payload expectations, retention, and audit requirements. |
+| `events.schema.json` | `EventSet` | Event types, optional envelope expectations, payload expectations, retention, and audit requirements. |
 | `extensions.schema.json` | `ExtensionSet` | Extension namespaces, lifecycle state, and required capabilities. |
 | `common.schema.json` | Shared definitions | IDs, metadata, autonomy levels, risk levels, artifacts, approval gates, and common enums. |
 

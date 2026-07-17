@@ -405,7 +405,7 @@ payload:
   approvalRequired: false
 ```
 
-This RFC does not require `provider.selected` to become a core event name in `0.1`. It defines the information future events should preserve.
+This RFC does not require `provider.selected` to become a core event type in `0.1`. It defines the information future events should preserve.
 
 ## Audit Expectations
 
@@ -650,7 +650,7 @@ This is premature and would likely become provider-specific. The current draft s
 
 ## Open Questions
 
-- Should `provider.selected` become a core event name in `0.1`?
+- Should `provider.selected` become a core event type in `0.1`?
 - Should provider selection decisions have first-class IDs?
 - Should model profile constraints use stricter enums for cost, latency, and residency?
 - Should provider catalogs be standardized as a future manifest kind or extension?

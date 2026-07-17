@@ -21,8 +21,8 @@ It is **not** an AI coding agent, an LLM API wrapper, a chat application, or a p
 | JSON Schemas | Implemented as practical draft schemas |
 | Repository schema validation | Implemented for all reference manifests |
 | Examples | Implemented as reference examples |
-| Agent assembly | Specified as draft behavior versioning vocabulary |
-| Agent definitions | Specified as draft agent assembly components |
+| Agent assembly | Specified as a draft cross-manifest review model |
+| Agent definitions | Specified as draft versioned behavioral releases |
 | Model profiles | Specified as draft provider-neutral vocabulary |
 | Prompt sets | Specified as draft prompt versioning vocabulary |
 | Retrieval profiles | Specified as draft context retrieval vocabulary |
@@ -59,7 +59,7 @@ That fragmentation makes it difficult to:
 
 NexFlow defines a common declarative layer for AI developer teams:
 
-- **Team Structure as Code** for agents, roles, responsibilities, and skills
+- **Team Structure as Code** for human participants, AI agents, automation systems, roles, responsibilities, and skills
 - **Agent Definition as Code** for versioned behavioral releases assembled from models, prompts, retrieval, permissions, memory, autonomy, and extensions
 - **Workflow as Code** for tasks, dependencies, handoffs, and approvals
 - **Context as Code** for repositories, docs, issue trackers, design systems, and knowledge bases
@@ -76,11 +76,12 @@ The goal is to make AI-assisted software delivery inspectable before anything ru
 
 - **Project**: the repository, product, or workstream governed by NexFlow manifests.
 - **Team**: humans, agents, automation systems, and review authorities.
+- **Actor**: any human, agent, automation system, runtime, integration, or policy authority participating in project work.
 - **Agent**: a declared AI participant with role, responsibilities, skills, access, and autonomy.
-- **Agent Assembly**: a reviewable behavioral release that links an agent identity to versioned model, prompt, retrieval, permission, context, memory, autonomy, and extension references.
+- **Agent Assembly**: the cross-manifest relationship and review checkpoint connecting an agent identity, an agent definition, and its referenced behavioral components.
 - **Agent Definition**: a versioned behavioral release of an agent assembled from model, prompt, retrieval, permission, context, memory, autonomy, and extension references.
 - **Capability**: something an actor can technically do, such as `read_repository` or `create_pull_request`.
-- **Permission**: a policy decision allowing, denying, or gating a capability.
+- **Permission**: a policy rule with an `allow`, `deny`, or `approval_required` effect for capabilities.
 - **Context Source**: a repository, docs system, issue tracker, design file, web source, MCP server, or custom data source.
 - **Memory Scope**: a declared retention and visibility boundary for remembered information.
 - **Model Profile**: a provider-neutral model selection profile with pinned, floating, or policy-based selection and audit expectations.

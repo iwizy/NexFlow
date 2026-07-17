@@ -12,17 +12,25 @@ A repository, product, service, or workstream governed by NexFlow manifests.
 
 A collection of humans, agents, and automation systems that collaborate on a project.
 
+## Actor
+
+A general participant identity for a human, agent, automation system, runtime, integration, or policy authority involved in project work.
+
+Use `Agent` only for AI participants. Actor identity does not grant capabilities, permissions, context access, memory access, autonomy, or approval authority.
+
 ## Agent
 
 An AI participant with a declared identity, role, responsibilities, skills, context access, memory access, capabilities, permissions, autonomy level, provider preferences, and extensions.
 
 Agents are not assumed to be powered by any specific provider or runtime.
 
+The current `0.1` draft `AgentSet` also carries legacy human participant entries. This is a transitional manifest shape, not a redefinition of humans as agents. See [RFC-0013](../rfcs/RFC-0013-actor-model.md) for the proposed actor model and migration.
+
 ## Agent Assembly
 
-A reviewable behavioral release of an agent that links an agent identity to an agent definition, model profile, prompt set, retrieval profile, permission, capability, context source, memory scope, autonomy, and extension references.
+A cross-manifest relationship and review checkpoint that links an agent identity to an agent definition and its model profile, prompt set, retrieval profile, permission, capability, context source, memory scope, autonomy, and extension references.
 
-Agent assembly is declarative specification metadata. It does not run agents and does not grant access by itself.
+Agent assembly is not a separate manifest kind or another behavioral version. It is declarative specification metadata, does not run agents, and does not grant access by itself.
 
 ## Agent Definition
 
@@ -70,7 +78,7 @@ Capabilities do not authorize action by themselves.
 
 ## Permission
 
-A policy decision that allows, denies, or gates a capability for a specific actor, role, team, workflow, or context.
+A policy rule with an `allow`, `deny`, or `approval_required` effect for capabilities in a specific actor, role, team, workflow, or context.
 
 ## Context Source
 

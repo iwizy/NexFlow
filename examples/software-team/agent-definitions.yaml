@@ -136,7 +136,7 @@ agentDefinitions:
         - reviewer
       approvalGate: code_review
       activationCriteria:
-        - Documentation writes remain review-gated.
+        - Documentation writes remain approval-gated.
         - Changelog notes cite accepted artifacts.
     compatibility:
       impact: behavior_changing

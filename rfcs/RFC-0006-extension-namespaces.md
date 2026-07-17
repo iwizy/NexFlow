@@ -108,7 +108,7 @@ The owner of a namespace is responsible for documenting:
 - required capabilities
 - permission implications
 - context sources exposed
-- event names emitted
+- event types emitted
 - credential and network behavior
 - compatibility promises
 - security contact or reporting path when appropriate
@@ -138,7 +138,7 @@ An extension SHOULD NOT become `stable` until it documents:
 - required capabilities
 - permission implications
 - context and memory implications
-- event names or event payload additions
+- event type or event payload additions
 - credential and network behavior
 - compatibility policy
 - security and safety considerations
@@ -182,7 +182,7 @@ A future public registry entry may include:
 - required capabilities
 - permission implications
 - context sources exposed
-- event names emitted
+- event types emitted
 - credential requirements
 - security contact
 - compatibility notes
@@ -225,7 +225,7 @@ An extension MUST NOT:
 - call providers implicitly
 - access undeclared context sources
 - write memory outside declared scopes
-- redefine core event names incompatibly
+- redefine core event types incompatibly
 - weaken core classification, autonomy, permission, or approval semantics
 
 An extension SHOULD:
@@ -343,7 +343,7 @@ This would violate provider neutrality and would not cover task systems, design 
 - Should NexFlow define a stricter namespace grammar before `1.0`?
 - Should public namespace ownership require verification?
 - Should extension manifests include optional `owner`, `version`, `securityContact`, or `registry` fields in `0.1`?
-- Should extension-specific event names use a namespace prefix?
+- Should extension-specific event types use a namespace prefix?
 - Should a future registry support signed extension metadata?
 - Should `local.*` namespaces be valid in shared examples, or only in private projects?
 - How should runtimes report unsupported but preserved extension metadata?

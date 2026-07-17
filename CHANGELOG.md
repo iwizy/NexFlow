@@ -8,6 +8,7 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Changed
 
+- Normalized actor and agent vocabulary, agent identity/definition/assembly distinctions, permission effect language, event type terminology, schema enum descriptions, example wording, and draft RFC references.
 - Upgraded the schema validation workflow to run repository smoke checks and full example manifest schema validation.
 - Tightened common ID syntax, documented exact reference resolution, and separated dotted event types from entity IDs across schemas and examples guidance.
 - Aligned extension and context schema vocabularies with retrieval profiles and sanitized product research content used by the reference examples.

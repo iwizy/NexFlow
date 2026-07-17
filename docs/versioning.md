@@ -52,7 +52,7 @@ Until the RFC is accepted, agent definition versioning remains draft vocabulary.
 
 ## Agent Assembly Checkpoints
 
-[Agent Assembly](agent-assembly.md) describes how agent definitions, model profiles, prompt sets, retrieval profiles, permissions, context, memory, autonomy, and extensions fit together as a reviewable behavioral release.
+[Agent Assembly](agent-assembly.md) describes the cross-manifest relationship and review checkpoint connecting an agent identity, an agent definition, model profiles, prompt sets, retrieval profiles, permissions, context, memory, autonomy, and extensions.
 
 Agent assembly checkpoints may be useful for project planning, releases, changelog entries, and review summaries, but they do not automatically require a manifest `specVersion` bump.
 

@@ -6,7 +6,7 @@ They are specification metadata. They do not run agents, call providers, load pr
 
 ## Purpose
 
-An agent identity explains who an agent is in a team. An agent definition explains which reviewed behavioral assembly is active for that agent.
+An agent identity explains who an agent is in a team. An agent definition describes a versioned behavioral release. Agent assembly is the wider relationship and review checkpoint connecting that identity and definition to referenced components.
 
 An agent definition can describe:
 
@@ -27,7 +27,7 @@ An agent definition can describe:
 - compatibility impact
 - audit metadata expected from a future runtime
 
-Agent definitions are the assembly layer proposed in [RFC-0004](../rfcs/RFC-0004-agent-definition-versioning.md).
+Agent definitions are the versioned behavioral release resources used by agent assembly and proposed in [RFC-0004](../rfcs/RFC-0004-agent-definition-versioning.md).
 
 ## Manifest
 
@@ -117,7 +117,7 @@ Common component references include:
 | `modelProfileRef` | Provider-neutral model selection, constraints, fallback, review triggers, and audit expectations. |
 | `promptSetRef` | Versioned prompt material, prompt revisions, ownership, safety review, and compatibility impact. |
 | `retrievalProfileRef` | Context source selection, index versions, chunking, freshness, citations, sensitivity, and audit expectations. |
-| `permissionRefs` | Permissions that allow, deny, or approval-gate capabilities for the agent. |
+| `permissionRefs` | Permission rules with `allow`, `deny`, or `approval_required` effects for the agent. |
 | `capabilityRefs` | Technical actions the agent definition expects to use. |
 | `contextSourceRefs` | Declared context sources expected by the definition. |
 | `memoryScopes` | Memory scopes expected by the definition. |
@@ -180,7 +180,7 @@ Examples:
 | Change `promptSetRef` | Behavior-breaking. |
 | Change `retrievalProfileRef` | Behavior-breaking. |
 | Add a high-risk capability | Runtime safety breaking. |
-| Remove an approval-gated permission | Runtime compatibility breaking. |
+| Change `approval_required` to `allow` | Runtime compatibility breaking. |
 | Increase autonomy level | Safety-significant and may be breaking. |
 | Broaden memory scopes | Privacy and safety breaking. |
 | Broaden context source references | Privacy and correctness breaking. |
@@ -214,7 +214,7 @@ Agent definitions assemble existing manifest concepts. They do not replace them.
 - `model-profiles.yaml` declares model selection expectations.
 - `prompt-sets.yaml` declares prompt material and revisions.
 - `retrieval-profiles.yaml` declares context retrieval expectations.
-- `permissions.yaml` declares allow, deny, or approval-gated policy.
+- `permissions.yaml` declares permission rules with `allow`, `deny`, or `approval_required` effects.
 - `capabilities.yaml` declares technical actions.
 - `context.yaml` declares information sources and access boundaries.
 - `memory.yaml` declares retention and reuse boundaries.

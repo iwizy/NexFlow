@@ -130,7 +130,7 @@ JSON Schema does not fully check:
 - whether capability IDs referenced by permissions exist
 - whether workflow step dependencies form a valid graph
 - whether handoff artifacts were produced by earlier tasks
-- whether event names referenced by workflows are declared
+- whether event types referenced by workflows are declared
 - whether memory scope access is consistent with project policy
 - whether memory promotion paths preserve sensitivity boundaries
 - whether memory audit events and approval gates are declared

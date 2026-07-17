@@ -1,6 +1,6 @@
 # Capability Model
 
-Capabilities describe what an actor or integration can technically do. Permissions decide whether that capability is allowed, denied, or approval-gated.
+Capabilities describe what an actor or integration can technically do. Permission rules apply an `allow`, `deny`, or `approval_required` effect to capabilities.
 
 Capabilities are intentionally separate from roles, skills, and permissions.
 

@@ -11,6 +11,12 @@ For fuller domain explanations, see [Concepts](concepts.md).
 - Distinguish specified, implemented, and planned behavior.
 - Treat capabilities, permissions, context, memory, autonomy, and approval gates as separate concepts.
 - Prefer explicit source, owner, scope, and authority language over vague agent behavior.
+- Use **actor** for any participant and **agent** only for an AI participant.
+- Use **agent identity** for the stable participant, **agent definition** for a versioned behavioral release, and **agent assembly** for the cross-manifest relationship and review checkpoint that connects identity, definition, and referenced components.
+- Use **spec version** in prose and `specVersion` only for the manifest field.
+- Use exact manifest kind names such as `AgentSet` and exact field names such as `agentRef` in code-formatted text.
+- Use **event type** for a declared dotted value such as `task.completed` and **event instance** for an occurrence of that type.
+- Use **approval-required permission** for a permission with `effect: approval_required` and **approval-gated action** for an action controlled by an approval gate.
 
 ## A
 
@@ -30,11 +36,13 @@ An AI participant with a declared identity, role, responsibilities, skills, cont
 
 An agent is not assumed to be powered by any specific model provider or runtime.
 
+The current `0.1` draft `AgentSet` still contains legacy human participant entries. Those entries do not make humans AI agents. [RFC-0013](../rfcs/RFC-0013-actor-model.md) proposes a first-class actor model and staged migration for this mixed draft shape.
+
 ### Agent Assembly
 
-A reviewable behavioral release of an agent that links an agent identity to agent definition, model profile, prompt set, retrieval profile, permission, capability, context source, memory scope, autonomy, and extension references.
+A cross-manifest relationship and review checkpoint that links an agent identity to an agent definition and its model profile, prompt set, retrieval profile, permission, capability, context source, memory scope, autonomy, and extension references.
 
-Agent assembly is declarative metadata. It does not run agents or grant access.
+Agent assembly is not a separate manifest kind or another behavioral version. It is declarative metadata and does not run agents or grant access.
 
 ### Agent Definition
 
@@ -184,7 +192,7 @@ Model profiles can describe pinned model references, floating aliases, policy-ba
 
 ### Permission
 
-A policy decision that allows, denies, or gates a capability for an actor, role, team, workflow, project, context, or other scope.
+A policy rule with an `allow`, `deny`, or `approval_required` effect for capabilities in an actor, role, team, workflow, project, context, or other scope.
 
 Permission means "may do."
 
@@ -254,7 +262,7 @@ NexFlow currently provides docs, schemas, examples, and RFC process. Runtime beh
 
 ### Spec Version
 
-The version of the NexFlow specification used by a manifest. Current examples use `specVersion: "0.1"`.
+The version of the NexFlow specification used by a manifest. `specVersion` is the exact manifest field name. Current examples use `specVersion: "0.1"`.
 
 ## T
 

@@ -58,7 +58,7 @@ Extensions MUST NOT:
 - grant permissions by presence alone
 - read secrets implicitly
 - bypass approval gates
-- redefine core event names incompatibly
+- redefine core event types incompatibly
 
 ## Attachment Areas
 

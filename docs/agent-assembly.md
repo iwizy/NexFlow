@@ -1,10 +1,10 @@
 # Agent Assembly
 
-Agent assembly is the draft NexFlow vocabulary for describing a reviewable behavioral release of an AI developer agent.
+Agent assembly is the draft NexFlow vocabulary for the cross-manifest relationship and review checkpoint around an AI developer agent's behavioral configuration.
 
-It links an agent identity to the model, prompt, retrieval, permission, context, memory, autonomy, and extension references that shape how that agent is expected to behave.
+It links an agent identity to an agent definition and the model, prompt, retrieval, permission, context, memory, autonomy, and extension references that shape how that agent is expected to behave.
 
-Agent assembly is specification metadata. It does not run agents, call providers, render prompts, retrieve context, write memory, enforce permissions, or execute workflows.
+Agent assembly is not a separate manifest kind or another behavioral version. It is specification metadata and does not run agents, call providers, render prompts, retrieve context, write memory, enforce permissions, or execute workflows.
 
 ## Purpose
 
@@ -54,7 +54,7 @@ flowchart TD
 | Prompt set | Which prompt revisions, source references, and safety review state apply? |
 | Retrieval profile | Which context sources, index versions, freshness rules, citations, and sensitivity boundaries apply? |
 | Capabilities | What technical actions might this release need? |
-| Permissions | Which capabilities are allowed, denied, or approval-gated? |
+| Permissions | Which rules have `allow`, `deny`, or `approval_required` effects? |
 | Context sources | What declared information sources are in scope? |
 | Memory scopes | What retention, ownership, visibility, and reuse boundaries apply? |
 | Autonomy level | How independently may the agent act? |
@@ -88,6 +88,8 @@ Agent assembly uses multiple version layers:
 | Prompt set `version` and prompt `revision` | Prompt material and safety review state. |
 | Retrieval profile `version` | Context retrieval, freshness, citation, and sensitivity expectations. |
 | Extension version metadata | Integration surface compatibility when an extension defines its own lifecycle. |
+
+Agent assembly has no separate version field. It is a review checkpoint over the identity, agent definition, component versions, and policy references listed above.
 
 Changing an agent assembly component can be behavior-changing even when the manifest `specVersion` stays the same.
 

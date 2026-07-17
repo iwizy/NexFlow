@@ -245,6 +245,8 @@ Policy selection must not become a hidden provider default.
 
 A future runtime should use a conservative decision path.
 
+[RFC-0014](RFC-0014-effective-agent-configuration.md) proposes the wider effective configuration process that selects the agent definition and constrains permissions, context, memory, autonomy, tasks, workflows, and runtime support before provider resolution completes.
+
 Recommended order:
 
 1. Identify the active actor and agent definition.

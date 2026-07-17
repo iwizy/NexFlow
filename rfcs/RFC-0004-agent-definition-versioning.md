@@ -61,6 +61,8 @@ These values may still change, but they are not enough to describe the effective
 
 An agent definition describes a versioned behavioral release of an agent.
 
+[RFC-0014](RFC-0014-effective-agent-configuration.md) proposes how a future tool selects one definition and resolves it with identity, policy, components, task scope, workflow scope, and runtime support into an effective configuration.
+
 This draft currently represents agent definitions as a dedicated `agent-definitions.yaml` manifest. The repository includes [Agent Definitions](../docs/agent-definitions.md) guidance and a practical `AgentDefinitionSet` schema, but this RFC does not require that draft shape to become final without review.
 
 A draft agent definition should include:

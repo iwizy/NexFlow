@@ -192,7 +192,7 @@ An agent actor:
 - must remain traceable to the effective agent definition used for an action
 
 The exact source-of-truth and precedence rules for effective agent configuration
-belong in a follow-up RFC.
+are proposed in [RFC-0014](RFC-0014-effective-agent-configuration.md).
 
 ### Automation
 
@@ -464,7 +464,8 @@ This RFC proposes `agentRef` as a candidate bridge, but does not decide:
 - which source wins when bindings appear in more than one manifest
 - how task-level or workflow-level overrides compose
 
-Those questions require a separate effective agent configuration RFC.
+Those questions are addressed by the draft effective configuration model in
+[RFC-0014](RFC-0014-effective-agent-configuration.md).
 
 ## Relationship To Runtime And Integration Identities
 

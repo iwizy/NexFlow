@@ -6,6 +6,8 @@ It links an agent identity to an agent definition and the model, prompt, retriev
 
 Agent assembly is not a separate manifest kind or another behavioral version. It is specification metadata and does not run agents, call providers, render prompts, retrieve context, write memory, enforce permissions, or execute workflows.
 
+Related RFCs: [RFC-0004: Agent Definition Versioning](../rfcs/RFC-0004-agent-definition-versioning.md) and [RFC-0014: Effective Agent Configuration](../rfcs/RFC-0014-effective-agent-configuration.md).
+
 ## Purpose
 
 NexFlow separates a stable agent identity from the components that may change over time.

@@ -59,7 +59,7 @@ approvalGate: code_review
 | `allowedWriters` | No | Actor IDs allowed to write or update this memory scope. |
 | `allowedSourceScopes` | No | Source memory scopes from which this scope may be derived or promoted. |
 | `prohibitedContent` | No | Categories that must not be stored in this scope. |
-| `auditEvents` | No | Event names that should be emitted or retained for meaningful writes. |
+| `auditEvents` | No | Event type references that should be emitted or retained for meaningful writes. |
 | `approvalGate` | No | Approval gate required for sensitive or durable memory writes. |
 
 Schemas validate only practical structure. Cross-file checks, such as whether `allowedConsumers` exist or an approval gate is declared in `project.yaml`, are future semantic validation work.

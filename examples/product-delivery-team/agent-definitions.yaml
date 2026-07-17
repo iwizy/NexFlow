@@ -87,7 +87,7 @@ agentDefinitions:
         - jira_basic
         - figma_readonly
     autonomyLevel: ask_before_changes
-    changeSummary: Assembles delivery implementation behavior with product scope, design context, and review-gated writes.
+    changeSummary: Assembles delivery implementation behavior with product scope, design context, and approval-gated writes.
     review:
       required: true
       approvers:

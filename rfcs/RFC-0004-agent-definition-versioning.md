@@ -61,33 +61,47 @@ These values may still change, but they are not enough to describe the effective
 
 An agent definition describes a versioned behavioral release of an agent.
 
-This draft currently represents agent definitions as a dedicated `agent-definitions.yaml` manifest. This RFC does not require that draft shape to become final without review.
-
-NF-010 adds draft [Agent Definitions](../docs/agent-definitions.md) guidance and a practical `AgentDefinitionSet` schema using a dedicated `agent-definitions.yaml` manifest.
+This draft currently represents agent definitions as a dedicated `agent-definitions.yaml` manifest. The repository includes [Agent Definitions](../docs/agent-definitions.md) guidance and a practical `AgentDefinitionSet` schema, but this RFC does not require that draft shape to become final without review.
 
 A draft agent definition should include:
 
 ```yaml
-id: backend-reviewer-2026-06
+id: backend_reviewer_2026_06
 agentRef: backend-reviewer
 definitionVersion: "2026.06.0"
 status: draft
+owner: human-tech-lead
 description: Backend reviewer profile for API, migration, and pull request review work.
-modelProfileRef: model-profile.backend-reviewer.v1
-promptSetRef: prompt-set.backend-reviewer.v3
-retrievalProfileRef: retrieval-profile.backend-reviewer.v2
-permissionSetRef: permission-set.backend-reviewer.v1
-memoryPolicyRef: memory-policy.project-reviewer.v1
+components:
+  modelProfileRef: backend_reviewer_model
+  promptSetRef: backend_reviewer_prompts
+  retrievalProfileRef: backend_reviewer_retrieval
+  permissionRefs:
+    - backend_review_permissions
+  capabilityRefs:
+    - read_repository
+    - read_context
+    - approve_changes
+  contextSourceRefs:
+    - repository
+    - docs
+  memoryScopes:
+    - ephemeral
+    - task
+  extensionRefs:
+    - github_basic
 autonomyLevel: ask_before_changes
-extensionRefs:
-  - github.review.v1
-  - mcp.repository-context.v1
 changeSummary: Adds migration review prompts and narrows production deployment permissions.
-replaces: backend-reviewer-2026-05
+replaces: backend_reviewer_2026_05
 review:
   required: true
   approvers:
-    - human.tech-lead
+    - human-tech-lead
+  approvalGate: code_review
+audit:
+  recordAgentDefinitionRef: true
+  recordDefinitionVersion: true
+  recordComponentRefs: true
 ```
 
 ### Versioned References
@@ -101,8 +115,11 @@ Recommended references include:
 | `modelProfileRef` | Provider-neutral model selection, constraints, and audit expectations. |
 | `promptSetRef` | System, role, workflow, and task prompt revisions. |
 | `retrievalProfileRef` | Context source, index, chunking, freshness, and citation expectations. |
-| `permissionSetRef` | Permission grants, denies, and approval-required actions. |
-| `memoryPolicyRef` | Allowed memory scopes, retention, writers, readers, and sensitivity rules. |
+| `permissionRefs` | Permission rules with `allow`, `deny`, or `approval_required` effects. |
+| `capabilityRefs` | Technical actions expected by the behavioral release. |
+| `contextSourceRefs` | Declared context sources expected by the behavioral release. |
+| `memoryScopes` | Allowed memory scope references. |
+| `memoryPolicyRef` | Optional reference to a versioned memory policy when a project defines one. |
 | `extensionRefs` | Versioned extension configuration that may affect tools, context, or events. |
 
 These references do not grant access by themselves. Permissions and approval gates remain authoritative.
@@ -111,7 +128,7 @@ These references do not grant access by themselves. Permissions and approval gat
 
 A model profile should be provider-neutral and should avoid making provider-specific behavior part of core NexFlow semantics.
 
-NF-007 adds draft [Model Profiles](../docs/model-profiles.md) guidance and a practical `ModelProfileSet` schema for this vocabulary.
+The repository includes draft [Model Profiles](../docs/model-profiles.md) guidance and a practical `ModelProfileSet` schema for this vocabulary.
 
 A future model profile may describe:
 
@@ -136,7 +153,7 @@ Floating selection is useful, but it can be behavior-changing. A change in the r
 
 A prompt set should describe versioned prompt material without requiring every repository to publish raw prompt text.
 
-NF-008 adds draft [Prompt Sets](../docs/prompt-sets.md) guidance and a practical `PromptSet` schema for this vocabulary.
+The repository includes draft [Prompt Sets](../docs/prompt-sets.md) guidance and a practical `PromptSet` schema for this vocabulary.
 
 A future prompt set may include:
 
@@ -157,7 +174,7 @@ Prompt changes can be behavior-breaking even when schemas do not change.
 
 A retrieval profile should describe how external or project context is selected and assembled.
 
-NF-009 adds draft [Retrieval Profiles](../docs/retrieval-profiles.md) guidance and a practical `RetrievalProfileSet` schema for this vocabulary.
+The repository includes draft [Retrieval Profiles](../docs/retrieval-profiles.md) guidance and a practical `RetrievalProfileSet` schema for this vocabulary.
 
 A future retrieval profile may include:
 
@@ -174,9 +191,9 @@ A future retrieval profile may include:
 
 Retrieval profile changes can affect correctness, privacy, and reproducibility. A task event should be able to identify which retrieval profile was active when context was used.
 
-### Memory Policy Versioning
+### Memory Scope And Policy Versioning
 
-A memory policy should define which memory scopes an agent definition may read or write.
+The `memoryScopes` component should identify which declared scopes an agent definition expects to use. Projects may also use `memoryPolicyRef` when they define a separate versioned memory policy.
 
 Versioned memory policy references should preserve:
 
@@ -216,11 +233,11 @@ Event payloads may include:
 ```yaml
 agent:
   id: backend-reviewer
-  definitionRef: backend-reviewer-2026-06
+  definitionRef: backend_reviewer_2026_06
   definitionVersion: "2026.06.0"
-  modelProfileRef: model-profile.backend-reviewer.v1
-  promptSetRef: prompt-set.backend-reviewer.v3
-  retrievalProfileRef: retrieval-profile.backend-reviewer.v2
+  modelProfileRef: backend_reviewer_model
+  promptSetRef: backend_reviewer_prompts
+  retrievalProfileRef: backend_reviewer_retrieval
 ```
 
 A runtime may also record resolved provider details when available, but provider-specific fields should remain extension-scoped or runtime-scoped.
@@ -240,9 +257,7 @@ Deprecating or retiring an agent definition should identify the replacement when
 
 ## Compatibility Impact
 
-This RFC does not change current manifest schemas.
-
-NF-010 adds draft schema and examples for `agent-definitions.yaml`, but this RFC remains draft until accepted through the governance process.
+This RFC does not change current manifest schemas. The repository includes a draft schema and examples for `agent-definitions.yaml`, but this RFC remains draft until accepted through the governance process.
 
 If accepted, later work may refine manifests or fields for agent definitions and versioned references.
 

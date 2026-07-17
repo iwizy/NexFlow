@@ -13,12 +13,12 @@ Use the [Example Consistency Checklist](CHECKLIST.md) before adding or changing 
 | Example | Best For | Team Shape | Autonomy Posture | Main Context Sources | Approval Emphasis |
 | --- | --- | --- | --- | --- | --- |
 | [Minimal Team](minimal-team/) | Learning the smallest useful NexFlow setup | One human maintainer and one docs agent | Conservative | Local files and docs | Human review for documentation changes |
-| [Software Team](software-team/) | Conventional feature delivery | Implementation, QA, reviewer, docs | Review-gated | GitHub, Linear, docs, MCP | Code review and dependency approval |
+| [Software Team](software-team/) | Conventional feature delivery | Implementation, QA, reviewer, docs | Approval-gated | GitHub, Linear, docs, MCP | Code review and dependency approval |
 | [Startup Team](startup-team/) | Fast product iteration | Product, design, fullstack, release | Safe autonomy with human launch control | GitHub, Linear, Figma, research, docs | Product and release review |
 | [Enterprise Team](enterprise-team/) | Governed sensitive change control | Architecture, implementation, security, compliance, release | Strict and audit-heavy | GitHub, Jira, Confluence, knowledge base, MCP | Architecture, security, compliance, and release gates |
 | [Product Delivery Team](product-delivery-team/) | Cross-functional delivery | Product, UX, implementation, QA, launch | Safe autonomy with staged gates | GitHub, Jira, Figma, customer docs | Product acceptance, quality gate, launch gate |
 | [Open Source Maintainer](open-source-maintainer/) | Public repository maintenance | Maintainer, triage, docs, PR review, release notes | Maintainer-owned approvals | GitHub issues, PRs, docs, release history | Maintainer triage, docs review, PR review, release notes approval |
-| [Research Lab](research-lab/) | Research workflows | Principal investigator, literature, experiments, reproducibility, writing | Review-gated and evidence-heavy | Papers, citations, datasets, lab notes, experiment artifacts | Scope, experiment, reproducibility, and publication review |
+| [Research Lab](research-lab/) | Research workflows | Principal investigator, literature, experiments, reproducibility, writing | Approval-gated and evidence-heavy | Papers, citations, datasets, lab notes, experiment artifacts | Scope, experiment, reproducibility, and publication review |
 
 ## Common File Set
 
@@ -27,7 +27,7 @@ Each example contains the same core manifest files:
 | File | Purpose |
 | --- | --- |
 | `project.yaml` | Project identity, maintainers, policies, approval gates, and manifest locations. |
-| `agents.yaml` | Agents, human actors, roles, responsibilities, skills, capabilities, permissions, context access, memory access, autonomy, providers, and extensions. |
+| `agents.yaml` | Current draft participant identities, including human actors and AI agents, plus roles, responsibilities, skills, policy references, context, memory, autonomy, providers, and extensions. |
 | `agent-definitions.yaml` | Versioned behavioral releases that assemble model, prompt, retrieval, permission, context, memory, autonomy, and extension references. |
 | `workflow.yaml` | Workflow stages, steps, dependencies, approval gates, and emitted events. |
 | `tasks.yaml` | Tasks, owners, participants, dependencies, artifacts, required capabilities, approval gates, and acceptance criteria. |
@@ -40,7 +40,7 @@ Each example contains the same core manifest files:
 | `model-profiles.yaml` | Provider-neutral model selection profiles, pinned or floating references, constraints, fallback, review triggers, and audit expectations. |
 | `prompt-sets.yaml` | Versioned prompt material, prompt revisions, source references, safety review status, compatibility impact, and audit expectations. |
 | `retrieval-profiles.yaml` | Retrieval expectations for context sources, index versions, chunking, freshness, citations, sensitivity, and audit metadata. |
-| `events.yaml` | Event names, optional envelope expectations, payload expectations, retention, and audit requirements. |
+| `events.yaml` | Event types, optional envelope expectations, payload expectations, retention, and audit requirements. |
 | `extensions.yaml` | Integration namespaces, lifecycle state, applicable manifests, and required capabilities. |
 
 ## How to Read an Example

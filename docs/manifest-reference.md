@@ -44,7 +44,7 @@ Related docs: [Project Policy](concepts.md#project-policy), [Autonomy Model](aut
 
 ### `agents.yaml`
 
-Declares agents and their roles.
+Declares participant identities in the current draft `AgentSet` shape. Current examples include AI agents and legacy human participant entries; a human entry is not an AI agent. [RFC-0013](../rfcs/RFC-0013-actor-model.md) proposes a first-class actor model and staged migration from this mixed shape.
 
 Agent fields:
 
@@ -103,7 +103,7 @@ Related docs: [Handoff Protocol](handoff-protocol.md), [Event Model](events.md),
 
 ### `permissions.yaml`
 
-Declares allow, deny, and approval-gated rules for capabilities.
+Declares permission rules with `allow`, `deny`, and `approval_required` effects for capabilities.
 
 Related docs: [Capability Model](capability-model.md), [Security Model](security-model.md), [Approval Gates](approval-gates.md), [Autonomy Model](autonomy-model.md).
 
@@ -138,7 +138,7 @@ Memory scopes define:
 
 - `scope`, `retention`, `ownership`, `visibility`, `updateRules`, and `sensitivity`
 - `allowedConsumers` for memory reads and reuse
-- optional `updateMode` for automatic, requested, reviewed, approval-gated, or prohibited writes
+- optional `updateMode` using `automatic`, `actor_requested`, `review_required`, `approval_required`, or `prohibited`
 - optional `allowedWriters`
 - optional `allowedSourceScopes` for explicit memory promotion paths
 - optional `prohibitedContent`

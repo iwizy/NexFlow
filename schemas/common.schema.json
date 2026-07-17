@@ -5,6 +5,8 @@
   "type": "object",
   "$defs": {
     "specVersion": {
+      "title": "Spec Version",
+      "description": "NexFlow spec version used to interpret the manifest.",
       "type": "string",
       "enum": ["0.1"]
     },
@@ -74,6 +76,8 @@
       "uniqueItems": true
     },
     "autonomyLevel": {
+      "title": "Autonomy Level",
+      "description": "Declared level of agent or automation independence. Autonomy does not grant permission.",
       "type": "string",
       "enum": [
         "manual_only",
@@ -84,30 +88,44 @@
       ]
     },
     "riskLevel": {
+      "title": "Risk Level",
+      "description": "Declared risk classification for a capability or operation.",
       "type": "string",
       "enum": ["low", "medium", "high", "critical"]
     },
     "permissionEffect": {
+      "title": "Permission Effect",
+      "description": "Policy effect that allows, denies, or requires approval before capability use.",
       "type": "string",
       "enum": ["allow", "deny", "approval_required"]
     },
     "taskStatus": {
+      "title": "Task Status",
+      "description": "Lifecycle state of a declared task.",
       "type": "string",
       "enum": ["proposed", "ready", "in_progress", "blocked", "completed", "cancelled"]
     },
     "handoffStatus": {
+      "title": "Handoff Status",
+      "description": "Lifecycle state of a declared handoff.",
       "type": "string",
       "enum": ["pending", "accepted", "rejected", "blocked", "cancelled", "completed"]
     },
     "accessMode": {
+      "title": "Access Mode",
+      "description": "Declared mode for using a context source. Access mode does not grant permission.",
       "type": "string",
       "enum": ["none", "read", "write", "query", "admin"]
     },
     "classification": {
+      "title": "Classification",
+      "description": "Sensitivity classification for context or memory.",
       "type": "string",
       "enum": ["public", "internal", "confidential", "restricted"]
     },
     "memoryScope": {
+      "title": "Memory Scope",
+      "description": "Boundary for retaining and reusing information.",
       "type": "string",
       "enum": ["ephemeral", "task", "project", "team", "user", "organization"]
     },

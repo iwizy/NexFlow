@@ -22,7 +22,7 @@ It can describe:
 - audit metadata expected from a future runtime
 - intended agent definitions or agents
 
-Prompt sets are part of the agent assembly versioning vocabulary proposed in [RFC-0004](../rfcs/RFC-0004-agent-definition-versioning.md).
+Prompt sets are versioned component vocabulary used by agent assembly and proposed in [RFC-0004](../rfcs/RFC-0004-agent-definition-versioning.md).
 
 ## Manifest
 
@@ -176,7 +176,7 @@ Example:
 ```yaml
 agent:
   id: backend-reviewer
-  definitionRef: backend-reviewer-2026-06
+  definitionRef: backend_reviewer_2026_06
   promptSetRef: backend_reviewer_prompts
 promptSet:
   ref: backend_reviewer_prompts

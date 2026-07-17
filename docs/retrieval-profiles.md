@@ -6,7 +6,7 @@ They are specification metadata. They do not retrieve data, build indexes, call 
 
 ## Purpose
 
-A retrieval profile makes RAG-style context behavior reviewable without requiring NexFlow to define a retrieval engine.
+A retrieval profile makes retrieval-augmented generation (RAG) context behavior reviewable without requiring NexFlow to define a retrieval engine.
 
 It can describe:
 
@@ -22,7 +22,7 @@ It can describe:
 - audit metadata expected from a future runtime
 - intended agent definitions or agents
 
-Retrieval profiles are part of the agent assembly versioning vocabulary proposed in [RFC-0004](../rfcs/RFC-0004-agent-definition-versioning.md).
+Retrieval profiles are versioned component vocabulary used by agent assembly and proposed in [RFC-0004](../rfcs/RFC-0004-agent-definition-versioning.md).
 
 ## Manifest
 
@@ -230,7 +230,7 @@ Example:
 ```yaml
 agent:
   id: backend-reviewer
-  definitionRef: backend-reviewer-2026-06
+  definitionRef: backend_reviewer_2026_06
   retrievalProfileRef: backend_reviewer_retrieval
 retrieval:
   profileRef: backend_reviewer_retrieval

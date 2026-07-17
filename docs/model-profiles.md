@@ -19,7 +19,7 @@ It can describe:
 - audit metadata expected from a future runtime
 - review triggers for behavior-changing model updates
 
-Model profiles are part of the agent assembly versioning vocabulary proposed in [RFC-0004](../rfcs/RFC-0004-agent-definition-versioning.md).
+Model profiles are versioned component vocabulary used by agent assembly and proposed in [RFC-0004](../rfcs/RFC-0004-agent-definition-versioning.md).
 
 Provider selection semantics are proposed in [RFC-0010](../rfcs/RFC-0010-provider-selection.md).
 
@@ -33,7 +33,7 @@ kind: ModelProfileSet
 metadata:
   project: example-project
 modelProfiles:
-  - id: backend-reviewer-model
+  - id: backend_reviewer_model
     description: Provider-neutral model expectations for backend code review.
     modelClass: coding
     selection:
@@ -152,10 +152,10 @@ Example:
 ```yaml
 agent:
   id: backend-reviewer
-  definitionRef: backend-reviewer-2026-06
-  modelProfileRef: backend-reviewer-model
+  definitionRef: backend_reviewer_2026_06
+  modelProfileRef: backend_reviewer_model
 model:
-  profileRef: backend-reviewer-model
+  profileRef: backend_reviewer_model
   selectionMode: pinned
   providerRef: coding_reasoning
   resolvedModel: approved-coding-review-model

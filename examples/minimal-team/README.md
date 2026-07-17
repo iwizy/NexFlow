@@ -11,7 +11,7 @@ Use this example to learn the core NexFlow pattern without enterprise policy, mu
 It demonstrates:
 
 - one human actor as the final authority
-- one AI agent with review-gated documentation responsibilities
+- one AI agent with approval-gated documentation responsibilities
 - separate capability and permission declarations
 - one approval gate reused across project policy, permissions, tasks, workflow, and agent definition review
 - explicit context sources for repository and documentation access
@@ -63,7 +63,7 @@ The workflow is intentionally conservative. The docs agent can draft documentati
 
 ## Safety Notes
 
-- `read_repository` is allowed for the maintainer and available to the docs agent through review-gated documentation work.
+- `read_repository` is allowed for the maintainer and available to the docs agent through approval-gated documentation work.
 - `modify_documentation` is approval-gated for the docs agent.
 - `approve_changes` belongs to the human maintainer.
 - Network access is disabled unless a task explicitly requests approval.

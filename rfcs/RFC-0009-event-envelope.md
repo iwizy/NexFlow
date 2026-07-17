@@ -68,12 +68,12 @@ NexFlow uses two related but different concepts.
 
 | Concept | Purpose | Example location |
 | --- | --- | --- |
-| Event type declaration | Describes an event name, expected payload shape, retention, and audit requirements. | `events.yaml` |
+| Event type declaration | Describes an event type, expected payload shape, retention, and audit requirements. | `events.yaml` |
 | Event instance | Records that a specific state transition happened at a specific time. | Future runtime audit log, event sink, exported trace, or test fixture |
 
 An `EventSet` manifest may declare:
 
-- known event names
+- known event types
 - payload expectations
 - retention expectations
 - whether audit is required
@@ -130,9 +130,9 @@ Future runtimes SHOULD include the following fields for every event instance:
 
 | Field | Purpose |
 | --- | --- |
-| `specVersion` | NexFlow specification version used to interpret the event. |
+| `specVersion` | NexFlow spec version used to interpret the event. |
 | `eventId` | Stable unique event identifier. |
-| `type` | Dotted lowercase event name. |
+| `type` | Dotted lowercase event type. |
 | `occurredAt` | Time the state transition occurred. |
 | `actor` | Human, agent, runtime, integration, or policy actor responsible for the transition. |
 | `subject` | Main resource affected by the event. |
@@ -438,7 +438,7 @@ Relevant event types may include:
 - `approval.expired`
 - `approval.revoked`
 
-This RFC does not require those event names to be accepted in `0.1`. It defines how future approval events should be wrapped if they are emitted.
+This RFC does not require those event types to be accepted in `0.1`. It defines how future approval events should be wrapped if they are emitted.
 
 See [RFC-0007](RFC-0007-approval-gates.md) for approval gate semantics.
 
@@ -573,7 +573,7 @@ JSON Schema can validate useful structure:
 
 - `events.yaml` has `specVersion`
 - `kind` is `EventSet`
-- event names follow dotted lowercase syntax
+- event types follow dotted lowercase syntax
 - payload declarations are objects
 - optional envelope declarations are structurally valid
 
@@ -673,7 +673,7 @@ This is premature. The current draft should define common envelope semantics and
 ## Open Questions
 
 - Should `eventId` have a recommended format such as ULID?
-- Should approval events become required core event names in `0.1`?
+- Should approval events become required core event types in `0.1`?
 - Should event severity use a fixed enum or remain project-defined?
 - Should event retention be inherited from `events.yaml`, project policy, or event sink policy when they differ?
 - Should future CLIs support validating exported event traces?

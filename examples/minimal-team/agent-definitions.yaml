@@ -35,7 +35,7 @@ agentDefinitions:
         - human-maintainer
       approvalGate: human_review
       activationCriteria:
-        - Documentation changes remain review-gated.
+        - Documentation changes remain approval-gated.
         - Context references match declared sources.
         - Durable project memory remains human-reviewed.
     compatibility:

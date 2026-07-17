@@ -8,7 +8,7 @@ Related RFC: [RFC-0009: Event Envelope](../rfcs/RFC-0009-event-envelope.md).
 
 ## Event Naming
 
-Event names use dotted lowercase names:
+Event types use dotted lowercase values:
 
 - `task.created`
 - `task.updated`

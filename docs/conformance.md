@@ -15,6 +15,8 @@ Related RFCs:
 - [RFC-0010: Provider Selection](../rfcs/RFC-0010-provider-selection.md)
 - [RFC-0011: Reference CLI Scope](../rfcs/RFC-0011-reference-cli-scope.md)
 
+See the [Compatibility Matrix](compatibility-matrix.md) for the repository's current evidence-backed support claims.
+
 ## Goals
 
 - Make compatibility claims precise.
@@ -68,7 +70,7 @@ Examples include:
 - handoffs reference existing actors and artifacts
 - events referenced by workflows are declared
 
-Semantic validation is planned future work.
+Complete semantic validation is planned future work. The repository includes limited semantic reference smoke checks for maintained examples, but they do not establish `NF-SEMANTIC` conformance.
 
 ### Reference CLI
 
@@ -168,6 +170,8 @@ This repository currently provides:
 - `NF-MANIFEST` draft documentation
 - `NF-SCHEMA` draft schemas
 - reference examples
+- full schema validation for maintained examples
+- limited semantic reference smoke checks that do not establish complete `NF-SEMANTIC` conformance
 - validation guidance
 
 It does not currently provide:

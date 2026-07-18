@@ -2,6 +2,8 @@
 
 NexFlow compatibility is about preserving the meaning of manifests across tools and time.
 
+For the current supported combinations and explicit implementation gaps, see the [Compatibility Matrix](compatibility-matrix.md).
+
 ## Compatibility Goals
 
 - A manifest should mean the same thing across runtimes.

@@ -100,6 +100,8 @@ ruby -ryaml -e 'Dir["examples/**/*.yaml"].sort.each { |p| YAML.load_file(p); put
 
 See [Validation](../docs/validation.md) for current validation guidance and known limits.
 
+See the [Compatibility Matrix](../docs/compatibility-matrix.md) for the exact status of example, schema, validator, CLI, runtime, and extension support.
+
 ## Extension Guidance
 
 Example extension declarations are illustrative and draft-level. They do not implement integrations and do not grant access by themselves.

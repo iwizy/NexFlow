@@ -18,6 +18,8 @@ Draft versions may use `0.x` until the specification stabilizes.
 
 For public release readiness criteria across `0.1` through `1.0`, see the [Release Plan](release-plan.md).
 
+For the currently tested pairing of spec version, schemas, examples, validators, CLI, runtime, and extensions, see the [Compatibility Matrix](compatibility-matrix.md).
+
 ## Manifest Versioning
 
 All manifests in one project SHOULD use the same `specVersion`.

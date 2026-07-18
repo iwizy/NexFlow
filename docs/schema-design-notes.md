@@ -92,6 +92,8 @@ Some of these checks are possible with advanced JSON Schema patterns, but encodi
 
 `common.schema.json` defines the lexical boundary for IDs and dotted event types. The same ID pattern applies to declarations and references, while the containing field determines which resource kind a reference targets. Schemas do not infer aliases or prove that a referenced declaration exists.
 
+[RFC-0015: Typed References](../rfcs/RFC-0015-typed-references.md) proposes future field contracts and a structured typed-reference shape for polymorphic or explicitly scoped references. Until that proposal is accepted and implemented, schemas must continue to validate the current unqualified `0.1` reference syntax.
+
 ## Extension Flexibility
 
 Core schemas may intentionally allow some additional properties.

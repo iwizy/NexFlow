@@ -20,6 +20,7 @@ RFCs are design proposals for meaningful changes to NexFlow.
 | [RFC-0012](RFC-0012-manifest-bundling.md) | Manifest Bundling | Draft |
 | [RFC-0013](RFC-0013-actor-model.md) | Actor Model | Draft |
 | [RFC-0014](RFC-0014-effective-agent-configuration.md) | Effective Agent Configuration | Draft |
+| [RFC-0015](RFC-0015-typed-references.md) | Typed References | Draft |
 
 ## When to Write an RFC
 

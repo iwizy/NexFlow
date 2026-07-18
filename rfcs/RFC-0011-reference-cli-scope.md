@@ -271,6 +271,8 @@ Example machine-readable diagnostic:
 
 Diagnostic codes should be stable once the CLI is public enough for CI usage.
 
+[RFC-0015](RFC-0015-typed-references.md) proposes the typed-reference resolution model and candidate stable `NF-REF-*` diagnostics that a future CLI should expose consistently.
+
 ## Output Modes
 
 The CLI should support human-readable output first.
@@ -458,7 +460,7 @@ This would introduce credentials, network side effects, provider assumptions, an
 
 - Should `nexflow validate` be the first implemented command?
 - Should `nexflow init` generate all core manifests or a smaller starter subset?
-- Should diagnostic code namespaces be standardized before implementation?
+- Which typed-reference diagnostic codes from [RFC-0015](RFC-0015-typed-references.md) must be stable before implementation?
 - Should JSON output be stable from the first release?
 - Should SARIF output be part of the first CLI milestone?
 - Should `nexflow graph` produce Mermaid, DOT, JSON, or all three initially?

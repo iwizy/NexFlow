@@ -374,8 +374,9 @@ Required behavior:
 - an agent definition must not copy and silently override referenced component
   contents
 
-Typed reference syntax and namespace rules belong in a separate RFC. This RFC
-defines the resolution outcome, not the final reference encoding.
+Typed reference syntax and namespace rules are proposed in
+[RFC-0015](RFC-0015-typed-references.md). This RFC defines the effective
+configuration outcome, not the final reference encoding.
 
 ## Capability Resolution
 

@@ -269,6 +269,8 @@ capabilityRefs:
 
 References are case-sensitive and MUST preserve the declaration's spelling and separator style. Authors and tools MUST NOT silently lowercase, trim, rewrite separators, or infer aliases. Qualified forms such as `agent:docs-agent` and path-like forms such as `agents/docs-agent` are not part of the core `0.1` reference syntax.
 
+[RFC-0015: Typed References](../rfcs/RFC-0015-typed-references.md) proposes a future structured `kind`, `id`, and optional `scope` model for fields that cannot resolve safely from an unqualified ID. It does not change the current `0.1` syntax unless accepted and implemented through synchronized schema, example, compatibility, and versioning updates.
+
 The containing field identifies the target namespace. For example, `agentRef` targets an agent ID, `modelProfileRef` targets a model profile ID, and `approvalGates` contains approval gate IDs. JSON Schema checks lexical form; future semantic validation must check uniqueness, existence, target kind, ambiguity, and graph consistency.
 
 Event types are not IDs. They use a separate dotted lowercase form such as `task.completed` and are referenced from event-related fields such as `emits`, `auditEvents`, audit `events`, and event-driven `triggers`. A non-event trigger such as `manual` is not an event type.

@@ -697,6 +697,8 @@ An accepted actor model would affect several conformance surfaces.
 Tools should not claim actor-model support merely because they can parse an
 `actors.yaml` file.
 
+[RFC-0015](RFC-0015-typed-references.md) proposes `actor` as a reserved target kind and defines how actor references would participate in deterministic kind, ID, and scope resolution if this actor model is accepted.
+
 ## Compatibility Impact
 
 This RFC is planning-oriented and does not change current manifests by itself.
@@ -859,8 +861,9 @@ who may represent that authority, or who actually approved an action.
   fields?
 - How should event envelopes represent actor, initiator, delegate, and authority
   without duplicating identity data?
-- How should actor references interact with future typed reference and namespace
-  rules?
+- Should actor reference fields require the typed object form immediately, or
+  retain unqualified IDs where the field contract permits only `actor`, as
+  proposed by [RFC-0015](RFC-0015-typed-references.md)?
 - Which compatibility stage should introduce a manifest `specVersion` change?
 - Should validators warn when actor kind and declared capability combinations are
   unusual but not structurally invalid?

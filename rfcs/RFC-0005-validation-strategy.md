@@ -165,6 +165,8 @@ Proposed families:
 
 This RFC does not require final numeric codes. A future RFC or CLI design may define exact codes.
 
+[RFC-0015](RFC-0015-typed-references.md) proposes exact `NF-REF-*` codes for malformed, unresolved, ambiguous, duplicate, wrong-kind, and invalid-scope resource references.
+
 ## Validator Output
 
 Validator output should be actionable for humans and stable enough for automation.

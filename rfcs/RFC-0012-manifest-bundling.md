@@ -100,6 +100,8 @@ Validation should conceptually work as:
 
 The bundle envelope should not change the meaning of the expanded manifests.
 
+[RFC-0015](RFC-0015-typed-references.md) proposes that reference namespaces and symbol tables are built from the expanded logical manifest assembly, so bundle paths and entry order cannot change reference meaning.
+
 ### Bundles Must Be Inspectable
 
 Humans and tools should be able to answer:

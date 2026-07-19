@@ -20,6 +20,7 @@ It is **not** an AI coding agent, an LLM API wrapper, a chat application, or a p
 | YAML manifests | Specified in draft form |
 | JSON Schemas | Implemented as practical draft schemas |
 | Repository schema validation | Implemented for all reference manifests |
+| Semantic reference checks | Implemented as limited repository smoke checks, not full `NF-SEMANTIC` validation |
 | Examples | Implemented as reference examples |
 | Agent assembly | Specified as a draft cross-manifest review model |
 | Agent definitions | Specified as draft versioned behavioral releases |
@@ -185,7 +186,7 @@ NexFlow is intentionally split into layers:
 | Model provider-neutral model selection | [Model Profiles](docs/model-profiles.md), [Provider Abstraction](docs/provider-abstraction.md), [Versioning](docs/versioning.md) |
 | Model prompt revisions and safety review | [Prompt Sets](docs/prompt-sets.md), [Versioning](docs/versioning.md), [Event Model](docs/events.md) |
 | Model retrieval, freshness, and citations | [Retrieval Profiles](docs/retrieval-profiles.md), [Context Model](docs/context-model.md), [Event Model](docs/events.md) |
-| Validate manifests | [Validation](docs/validation.md), [Schema Guide](schemas/README.md), [Conformance](docs/conformance.md) |
+| Validate manifests | [Validation](docs/validation.md), [Schema Guide](schemas/README.md), [Conformance](docs/conformance.md), [Compatibility Matrix](docs/compatibility-matrix.md) |
 | Extend or integrate NexFlow | [Extension Model](docs/extensions.md), [Integrations](docs/integrations.md), [Provider Abstraction](docs/provider-abstraction.md) |
 | Review future implementation choices | [Runtime Options](docs/runtime-options.md), [Roadmap](docs/roadmap.md), [Release Plan](docs/release-plan.md), [0.1 Readiness Checklist](docs/readiness-checklist.md) |
 

@@ -12,6 +12,7 @@ Related RFCs:
 Related design notes:
 
 - [Schema Design Notes](schema-design-notes.md)
+- [Compatibility Matrix](compatibility-matrix.md)
 
 ## Validation Goals
 

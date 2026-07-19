@@ -20,7 +20,7 @@ The documentation is the canonical source for the specification. Schemas and exa
 | New project visitor | [Vision](vision.md) -> [Concepts](concepts.md) -> [Glossary](glossary.md) -> [Manifest Reference](manifest-reference.md) |
 | Manifest author | [Manifest Reference](manifest-reference.md) -> [Context Model](context-model.md) -> [Memory Model](memory-model.md) -> [Examples Guide](../examples/README.md) |
 | Safety reviewer | [Security Model](security-model.md) -> [Approval Gates](approval-gates.md) -> [Capability Model](capability-model.md) -> [Autonomy Model](autonomy-model.md) |
-| Validator author | [Validation](validation.md) -> [Schema Design Notes](schema-design-notes.md) -> [Schema Guide](../schemas/README.md) -> [Conformance](conformance.md) -> [Compatibility](compatibility.md) |
+| Validator author | [Validation](validation.md) -> [Schema Design Notes](schema-design-notes.md) -> [Schema Guide](../schemas/README.md) -> [Conformance](conformance.md) -> [Compatibility Matrix](compatibility-matrix.md) |
 | Runtime implementer | [Architecture](architecture.md) -> [Runtime Options](runtime-options.md) -> [Provider Abstraction](provider-abstraction.md) -> [Roadmap](roadmap.md) |
 | Extension author | [Extension Model](extensions.md) -> [Integrations](integrations.md) -> [Provider Abstraction](provider-abstraction.md) -> [Conformance](conformance.md) |
 
@@ -53,6 +53,7 @@ The documentation is the canonical source for the specification. Schemas and exa
 | [Validation](validation.md) | Structural validation workflow and semantic validation boundary. |
 | [Schema Design Notes](schema-design-notes.md) | Explains schema goals, non-goals, strictness boundaries, extension flexibility, and semantic validation limits. |
 | [Compatibility](compatibility.md) | Compatibility expectations and breaking change guidance. |
+| [Compatibility Matrix](compatibility-matrix.md) | Current support across spec versions, schemas, examples, validators, CLI, runtime, and extensions. |
 | [Release Plan](release-plan.md) | Public readiness criteria from `0.1` draft through `1.0`. |
 | [0.1 Readiness Checklist](readiness-checklist.md) | Candidate review checklist for docs, schemas, examples, RFCs, compatibility, and limitations. |
 | [Runtime Options](runtime-options.md) | Runtime language evaluation criteria without choosing an implementation. |

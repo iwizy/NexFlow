@@ -48,6 +48,8 @@ A future version may define an optional `ManifestBundle` representation that pac
 
 A bundle should expand into the same logical manifest set that separate files would produce.
 
+[RFC-0016](RFC-0016-core-profile-and-discovery.md) proposes the core profile, optional module, multiple workflow, and logical assembly rules that bundle expansion should preserve.
+
 The bundle must not:
 
 - override manifest semantics

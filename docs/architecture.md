@@ -26,6 +26,12 @@ flowchart TD
 - `examples/` demonstrates coherent configurations.
 - `rfcs/` records design proposals and accepted decisions.
 
+## Logical Assembly
+
+Manifests should be interpreted as one logical project assembly after deterministic discovery. Declared `specVersion`, `kind`, project identity, resource IDs, and references determine meaning; conventional file names remain authoring aids rather than semantic identity.
+
+[RFC-0016](../rfcs/RFC-0016-core-profile-and-discovery.md) proposes a minimum core profile, optional modules, multiple workflows, and bounded discovery rules. These rules remain draft and do not change the current complete `0.1` examples or schemas yet.
+
 ## Agent Assembly View
 
 Agent assembly connects agent identity with versioned behavioral components:

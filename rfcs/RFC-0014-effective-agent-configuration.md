@@ -4,6 +4,13 @@
 
 Draft
 
+## Cross-RFC Review
+
+The [Foundational Model Cross-RFC Review](reviews/2026-07-foundational-model-review.md)
+accepts the precedence and fail-closed selection direction for implementation
+planning, starts with one unscoped active definition per agent, and records the
+remaining binding and migration blockers. This RFC remains Draft.
+
 ## Summary
 
 This RFC proposes how NexFlow derives an effective configuration for an AI

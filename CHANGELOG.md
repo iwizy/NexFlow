@@ -51,6 +51,7 @@ This project follows a specification-first process. Breaking changes must includ
 - Draft RFC-0014 for effective agent configuration source-of-truth, definition selection, domain-specific precedence, conservative policy composition, validation, audit, and migration boundaries.
 - Draft RFC-0015 for typed resource references, target-kind and scope namespaces, deterministic resolution, ambiguity diagnostics, and migration from unqualified IDs.
 - Draft RFC-0016 for a minimum core profile, optional modules, dependency-driven incremental adoption, multiple workflows, and logical manifest discovery independent of file layout.
+- Foundational cross-RFC review aligning the Actor Model, Effective Agent Configuration, Typed References, and Core Profile proposals with safety invariants, blockers, migration gates, and implementation order.
 - Draft agent definition vocabulary for versioned behavioral releases assembled from model, prompt, retrieval, permission, capability, context, memory, autonomy, and extension references.
 - Draft model profile vocabulary for provider-neutral model selection, pinned and floating references, constraints, fallback, review triggers, and audit expectations.
 - Draft prompt set vocabulary for prompt identifiers, revisions, source references, ownership, safety review, compatibility impact, and audit expectations.

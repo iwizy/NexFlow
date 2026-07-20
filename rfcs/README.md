@@ -23,6 +23,13 @@ RFCs are design proposals for meaningful changes to NexFlow.
 | [RFC-0015](RFC-0015-typed-references.md) | Typed References | Draft |
 | [RFC-0016](RFC-0016-core-profile-and-discovery.md) | Core Profile And Logical Discovery | Draft |
 
+## Cross-RFC Reviews
+
+- [Foundational Model Cross-RFC Review](reviews/2026-07-foundational-model-review.md)
+  records compatibility, safety, migration dependencies, blockers, and the
+  implementation order for RFC-0013 through RFC-0016. The reviewed RFCs remain
+  Draft.
+
 ## When to Write an RFC
 
 Write an RFC for:

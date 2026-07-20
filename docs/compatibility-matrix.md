@@ -52,6 +52,8 @@ The `0.1` row does not mean that every draft RFC is accepted or represented in
 schemas. RFC proposals remain proposals until their docs, schemas, examples,
 compatibility notes, and versioning impact are accepted and synchronized.
 
+[RFC-0016](../rfcs/RFC-0016-core-profile-and-discovery.md) proposes reduced core profiles, optional modules, and multiple workflow discovery. Those combinations are not part of the current supported matrix unless the proposal is accepted and implemented.
+
 ## Current Artifact Pairing
 
 The currently tested repository pairing is:

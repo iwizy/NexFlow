@@ -38,6 +38,8 @@ kind: ManifestKind
 
 Schemas should validate useful structure without attempting to encode every semantic rule.
 
+[RFC-0016](RFC-0016-core-profile-and-discovery.md) proposes a future distinction between this complete manifest vocabulary, a minimum core profile, optional modules, and logical discovery independent of file layout. It does not change this accepted initial model unless separately accepted and implemented.
+
 ## Compatibility Impact
 
 This creates the initial draft compatibility surface. Future breaking changes must update docs, schemas, examples, and changelog entries.

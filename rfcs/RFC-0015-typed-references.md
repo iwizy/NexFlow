@@ -163,6 +163,10 @@ A directory, expanded bundle, YAML multi-document stream, or another accepted
 transport may produce the same assembly. Transport does not change reference
 meaning.
 
+[RFC-0016](RFC-0016-core-profile-and-discovery.md) proposes how minimum profiles,
+optional modules, multiple workflows, and bounded discovery produce this logical
+assembly.
+
 ### Field Contract
 
 A field contract defines:

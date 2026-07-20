@@ -232,6 +232,8 @@ Future discovery may support:
 - a directory containing manifests
 - a manifest bundle if a future RFC accepts bundling; [RFC-0012](RFC-0012-manifest-bundling.md) is the current draft proposal
 
+[RFC-0016](RFC-0016-core-profile-and-discovery.md) proposes the logical assembly, minimum profile, multiple workflow, and bounded discovery rules that these input modes should share.
+
 Discovery should be deterministic and visible.
 
 The CLI should not scan unrelated parent directories indefinitely.

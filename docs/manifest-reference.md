@@ -23,6 +23,8 @@ metadata:
 
 ## Required Core Manifests
 
+The current `0.1` schema and maintained examples use a complete manifest set. [RFC-0016: Core Profile And Logical Discovery](../rfcs/RFC-0016-core-profile-and-discovery.md) proposes a future minimum profile, optional modules, multiple workflows, and reference-driven dependency closure. Reduced profiles are not supported by the current schemas unless that RFC is accepted and implemented.
+
 ### `project.yaml`
 
 Describes project identity, maintainers, policies, and manifest locations.

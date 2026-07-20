@@ -4,6 +4,13 @@
 
 Draft
 
+## Cross-RFC Review
+
+The [Foundational Model Cross-RFC Review](reviews/2026-07-foundational-model-review.md)
+accepts the identity direction for implementation planning, requires the common
+typed-reference primitive before the Actor schema migration, and records the
+remaining schema blockers. This RFC remains Draft.
+
 ## Summary
 
 This RFC proposes a first-class actor model for NexFlow.

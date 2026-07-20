@@ -4,6 +4,13 @@
 
 Draft
 
+## Cross-RFC Review
+
+The [Foundational Model Cross-RFC Review](reviews/2026-07-foundational-model-review.md)
+accepts the logical object form and deterministic field-contract direction for
+implementation planning and places the reusable reference primitive before the
+Actor schema migration. This RFC remains Draft.
+
 ## Summary
 
 This RFC proposes a typed reference model for NexFlow resources.

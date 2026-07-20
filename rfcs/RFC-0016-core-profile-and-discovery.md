@@ -4,6 +4,13 @@
 
 Draft
 
+## Cross-RFC Review
+
+The [Foundational Model Cross-RFC Review](reviews/2026-07-foundational-model-review.md)
+accepts the core-profile and logical-assembly direction for implementation
+planning and defers profile schema migration until participant identity and
+reference contracts are stable. This RFC remains Draft.
+
 ## Summary
 
 This RFC proposes a minimum useful NexFlow core profile, optional manifest

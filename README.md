@@ -14,25 +14,31 @@ It is **not** an AI coding agent, an LLM API wrapper, a chat application, or a p
 
 ## Status
 
-| Area | Status |
-| --- | --- |
-| Core concepts | Specified in draft form |
-| YAML manifests | Specified in draft form |
-| JSON Schemas | Implemented as practical draft schemas |
-| Repository schema validation | Implemented for all reference manifests |
-| Semantic reference checks | Implemented as limited repository smoke checks, not full `NF-SEMANTIC` validation |
-| Examples | Implemented as reference examples |
-| Agent assembly | Specified as a draft cross-manifest review model |
-| Agent definitions | Specified as draft versioned behavioral releases |
-| Model profiles | Specified as draft provider-neutral vocabulary |
-| Prompt sets | Specified as draft prompt versioning vocabulary |
-| Retrieval profiles | Specified as draft context retrieval vocabulary |
-| Governance and RFC process | Implemented in documentation |
-| Runtime engine | Planned, not implemented |
-| Provider integrations | Planned, not implemented |
-| Reference CLI | Planned, not implemented |
+Current release posture: **`0.1` draft, preparing for candidate review**. No
+`0.1` candidate tag has been published.
 
-Current spec version: **0.1 draft**
+| Surface | Current State | Evidence |
+| --- | --- | --- |
+| Specification | Specified in draft form | [Documentation](docs/index.md), [Manifest Reference](docs/manifest-reference.md) |
+| JSON Schemas | Implemented for 16 manifest kinds plus common definitions | [Schemas](schemas/), [Schema Guide](schemas/README.md) |
+| Reference examples | Implemented as 7 project sets containing 112 schema-backed manifests | [Examples](examples/), [Examples Guide](examples/README.md) |
+| Structural validation | Implemented for all maintained examples | `npm run validate` |
+| Semantic reference checks | Partial repository smoke coverage | `npm run semantic-smoke`, [Validation](docs/validation.md) |
+| Governance and RFC process | Implemented in documentation | [Governance](docs/governance.md), [RFCs](rfcs/README.md) |
+| Foundational model changes | Cross-reviewed proposals; RFCs remain Draft | [Foundational Model Review](rfcs/reviews/2026-07-foundational-model-review.md) |
+| Reference CLI | Planned, not implemented | [RFC-0011](rfcs/RFC-0011-reference-cli-scope.md) |
+| Runtime and provider execution | Planned, not implemented | [Architecture](docs/architecture.md), [Runtime Options](docs/runtime-options.md) |
+| Live integrations and extension loading | Not implemented | [Compatibility Matrix](docs/compatibility-matrix.md) |
+
+Today, NexFlow can be used to author and review declarative team manifests,
+validate the maintained examples structurally, and run limited cross-manifest
+reference checks. It cannot execute tasks, call model providers, enforce policy,
+load extensions, or orchestrate workflows.
+
+See the [Compatibility Matrix](docs/compatibility-matrix.md) for the exact tested
+artifact pairing and the [0.1 Readiness Checklist](docs/readiness-checklist.md)
+for candidate criteria. `Specified`, `Partial`, and `Implemented` are distinct
+support claims; documented future behavior is not an implementation claim.
 
 ## Repository History Note
 
@@ -161,13 +167,16 @@ NexFlow is intentionally split into layers:
 
 ## Repository Map
 
-- [docs/](docs/index.md): specification documentation
+- [Documentation Index](docs/index.md): specification documentation and reading paths
 - [schemas/](schemas/): draft JSON Schemas for core manifests
 - [Schema Guide](schemas/README.md): schema scope, update rules, and validation boundaries
 - [examples/](examples/): complete reference team configurations
 - [Examples Guide](examples/README.md): overview of reference teams and manifest file sets
 - [rfcs/](rfcs/README.md): governance and design proposal process
+- [Foundational Model Review](rfcs/reviews/2026-07-foundational-model-review.md): compatibility, safety, blockers, and implementation order for RFC-0013 through RFC-0016
 - [Conformance](docs/conformance.md): draft support levels for manifests, validators, CLIs, runtimes, and extensions
+- [Compatibility Matrix](docs/compatibility-matrix.md): current support and explicit implementation gaps
+- [Validation](docs/validation.md): repository checks and their boundaries
 - [Release Plan](docs/release-plan.md): public readiness criteria from `0.1` draft through `1.0`
 - [0.1 Readiness Checklist](docs/readiness-checklist.md): candidate review checklist for docs, schemas, examples, RFCs, compatibility, and limitations
 - [CONTRIBUTING.md](CONTRIBUTING.md): contribution workflow
@@ -192,15 +201,25 @@ NexFlow is intentionally split into layers:
 
 ## Roadmap
 
-1. Stabilize the draft `0.1` manifest vocabulary.
-2. Collect feedback through RFCs.
-3. Improve schemas and example coverage.
-4. Define conformance expectations.
-5. Complete the **Runtime Architecture Decision** milestone.
-6. Build a reference validation CLI.
-7. Explore runtime prototypes without locking the specification to one language.
+The current priorities are:
 
-See [Roadmap](docs/roadmap.md), [Release Plan](docs/release-plan.md), and [0.1 Readiness Checklist](docs/readiness-checklist.md).
+1. Complete the `0.1` candidate checkpoint with validation evidence, known
+   limitations, compatibility notes, and an explicit release decision.
+2. Resolve the foundational Actor, effective agent configuration, typed
+   reference, and core profile proposals in dependency order. Typed reference
+   contracts must precede the Actor schema migration.
+3. Harden validation and conformance with positive and negative fixtures,
+   deterministic diagnostics, and broader semantic checks.
+4. Complete the **Runtime Architecture Decision** before selecting an
+   implementation language or starting runtime work.
+5. Build a validation-focused reference CLI for `init`, `validate`, `inspect`,
+   and `graph`; it must not orchestrate work.
+6. Explore a runtime prototype only after its permission, approval, credential,
+   network, extension, and audit boundaries are specified.
+
+See [Roadmap](docs/roadmap.md), [Release Plan](docs/release-plan.md),
+[0.1 Readiness Checklist](docs/readiness-checklist.md), and the
+[Foundational Model Review](rfcs/reviews/2026-07-foundational-model-review.md).
 
 ## Governance Summary
 
@@ -210,11 +229,24 @@ See [Governance](docs/governance.md) and [RFCs](rfcs/README.md).
 
 ## Known Limitations
 
-- The current schemas are practical drafts, not complete formal semantics.
-- No runtime engine exists yet.
-- Provider and integration support is described, not implemented.
-- Repository schema validation is implemented for reference manifests; cross-manifest semantic validation is not yet implemented.
-- Security behavior is normative for future runtimes, but not enforced by this repository alone.
+- `specVersion: "0.1"` is pre-`1.0`; fields and semantics may change with
+  documented compatibility and migration guidance.
+- The current schemas validate useful structure, not complete cross-manifest
+  meaning, policy correctness, graph safety, or runtime enforceability.
+- Semantic reference checks cover selected repository invariants only and do not
+  establish full `NF-SEMANTIC` conformance.
+- Current maintained examples use complete 16-manifest project sets. Reduced
+  core profiles, optional modules, and multiple workflow discovery remain draft
+  proposals and are not supported by the current schemas.
+- Schemas are not yet distributed as an independently versioned package. Use a
+  repository release, tag, or commit to identify a reproducible schema snapshot.
+- Draft RFCs may describe behavior that has not yet been incorporated into the
+  manifest reference, schemas, examples, or compatibility contract.
+- No reference CLI, runtime engine, provider adapter, extension loader, live
+  integration, task execution, workflow orchestration, or deployment support
+  exists.
+- Security and approval requirements constrain future implementations, but this
+  repository does not enforce them at runtime.
 
 ## FAQ
 

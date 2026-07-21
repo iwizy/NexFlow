@@ -6,6 +6,49 @@ For version-by-version readiness criteria from `0.1` draft through `1.0`, see th
 
 For the first candidate review, see the [0.1 Readiness Checklist](readiness-checklist.md).
 
+## Current Checkpoint: `0.1` Candidate Preparation
+
+Status: preparation in progress. No `0.1` candidate tag has been published.
+
+The repository currently provides the following candidate evidence:
+
+- a documented draft specification and manifest reference
+- practical JSON Schemas for 16 manifest kinds plus common definitions
+- 7 maintained project examples containing 112 schema-backed manifests
+- reproducible schema syntax, structural validation, and semantic reference
+  smoke commands
+- explicit conformance vocabulary and a current compatibility matrix
+- a public readiness checklist, release plan, known limitations, and governance
+  process
+- a cross-RFC review for the Actor Model, Effective Agent Configuration, Typed
+  References, and Core Profile proposals
+
+Before publishing a candidate, maintainers still need to:
+
+1. Run the readiness checklist against one exact candidate commit.
+2. Record the candidate label, commit hash, validation results, compatibility
+   notes, known limitations, and unresolved RFCs or blockers.
+3. Classify the outcome as Ready, Ready with notes, or Blocked.
+4. Confirm that the README, changelog, schemas, examples, and support claims
+   describe the same repository state.
+5. Confirm that draft RFC proposals are either intentionally deferred or
+   represented by synchronized specification changes and migration guidance.
+
+The candidate boundary is deliberately narrow:
+
+- manifest `specVersion` remains `"0.1"` unless a separate version decision is
+  approved
+- a repository candidate tag identifies one tested artifact snapshot; it does
+  not create runtime conformance or an independent schema package version
+- no reference CLI, runtime, provider adapter, live integration, workflow
+  execution, policy enforcement, or deployment capability is implied
+- post-`0.1` validation and conformance hardening begins only after the candidate
+  decision is recorded
+
+Relevant evidence: [Compatibility Matrix](compatibility-matrix.md),
+[0.1 Readiness Checklist](readiness-checklist.md), [Release Plan](release-plan.md),
+and [Foundational Model Cross-RFC Review](../rfcs/reviews/2026-07-foundational-model-review.md).
+
 ## Milestone 1: Draft Specification
 
 - Define core concepts.
@@ -14,7 +57,7 @@ For the first candidate review, see the [0.1 Readiness Checklist](readiness-chec
 - Add examples.
 - Create governance and RFC process.
 
-Status: in progress.
+Status: candidate preparation; release decision pending.
 
 Relevant docs: [Concepts](concepts.md), [Glossary](glossary.md), [Manifest Reference](manifest-reference.md), [Agent Definitions](agent-definitions.md), [Context Model](context-model.md), [Memory Model](memory-model.md), [Approval Gates](approval-gates.md), [Prompt Sets](prompt-sets.md), [Retrieval Profiles](retrieval-profiles.md).
 

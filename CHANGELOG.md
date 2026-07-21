@@ -4,6 +4,33 @@ All notable changes to NexFlow will be documented in this file.
 
 This project follows a specification-first process. Breaking changes must include migration notes.
 
+## [Unreleased]
+
+This section records preparation for a possible `0.1` candidate. No candidate
+tag or release has been published, and manifest `specVersion` remains `"0.1"`.
+
+### Changed
+
+- Refreshed the README support snapshot, navigation, near-term priorities, and
+  known limitations using evidence from the compatibility matrix and repository
+  validation workflow.
+- Added a roadmap checkpoint separating candidate evidence, release decisions,
+  known draft boundaries, and post-`0.1` work.
+
+### Candidate Notes
+
+- The candidate, if approved, remains a draft specification release rather than
+  a runtime, CLI, provider integration, or orchestration release.
+- Current repository evidence covers 16 schema-backed manifest kinds, 7
+  maintained project examples, 112 structurally validated manifests, and
+  limited semantic reference smoke checks.
+- Draft RFCs remain proposals unless their decisions are accepted and reflected
+  consistently in documentation, schemas, examples, compatibility guidance,
+  migrations, and release notes.
+- A candidate tag requires a recorded readiness outcome, commit hash, validation
+  results, compatibility notes, known limitations, and unresolved RFCs or
+  blockers.
+
 ## [0.1.0-draft] - 2026-05-29
 
 ### Changed

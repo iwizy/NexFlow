@@ -77,9 +77,26 @@ Run semantic reference smoke checks:
 npm run semantic-smoke
 ```
 
-This command checks core example references across actors, tasks, workflow steps, artifacts, permissions, capabilities, structured network policies, context sources, memory scopes, providers, model profiles, prompt sets, retrieval profiles, agent definitions, approval gates, events, and extensions. It reports `NF-SEMANTIC` diagnostics for missing references or duplicate IDs.
+This command checks core example references across ActorSet identity and agent
+bridges, tasks, workflow steps, artifacts, permissions, capabilities,
+structured network policies, context sources, memory scopes, providers, model
+profiles, prompt sets, retrieval profiles, agent definitions, approval gates,
+events, and extensions. It reports `NF-SEMANTIC` diagnostics for missing
+references, duplicate IDs, duplicate agent bridges, and actor relationship
+cycles.
 
 The command is intentionally a smoke check. It does not prove workflow graph correctness, policy safety, approval sufficiency, runtime enforceability, provider compatibility, or full semantic conformance.
+
+Run focused ActorSet structural boundary checks:
+
+```sh
+npm run actor-schema-smoke
+```
+
+This command exercises accepted and rejected actor kinds, required
+kind-specific relationships, typed target kinds, assembly scope, and required
+identity fields. It complements maintained example validation; it is not a
+general conformance suite or semantic resolver.
 
 ## YAML to JSON Schema Validation
 
@@ -164,6 +181,7 @@ Future semantic validators should check:
 
 - cross-file references
 - duplicate IDs within a manifest or project namespace
+- ActorSet identity mode, explicit agent bridges, operators, representatives, integration references, and relationship cycles
 - agent definition component references and lifecycle consistency
 - duplicate IDs within a manifest
 - capability and permission consistency

@@ -14,7 +14,7 @@ The current schema design optimizes for:
 - predictable `specVersion` and `kind` routing
 - required top-level manifest structure
 - stable enum values where the draft specification defines them
-- shared definitions for common IDs, metadata, statuses, risk levels, classifications, autonomy levels, and approval gates
+- shared definitions for common IDs, metadata, statuses, risk levels, classifications, autonomy levels, approval gates, and typed references
 - enough structure for early validators to produce useful diagnostics
 - enough flexibility for extension metadata and draft iteration
 
@@ -43,7 +43,7 @@ NexFlow treats validation as a layered process.
 | Syntax | Supported through local checks | Confirm JSON schemas parse and YAML manifests are readable. |
 | Schema | Draft schemas exist | Check required fields, field types, enums, simple patterns, and manifest shape. |
 | Manifest inventory | Future validation work | Confirm all expected manifest files are present and routed by `kind`. |
-| Semantic validation | Future validation work | Check cross-manifest references, graph consistency, permission coverage, memory boundaries, and extension requirements. |
+| Semantic validation | Partial repository smoke coverage | Check selected cross-manifest references, ActorSet bridges, graph consistency, permission coverage, memory boundaries, and extension requirements. Full semantic conformance remains future work. |
 | Runtime preflight | Future runtime work | Check credentials, sandboxing, provider behavior, tool access, and execution safety before any runtime action. |
 
 Schema validation is one layer. It should not pretend to cover the responsibilities of later layers.
@@ -61,6 +61,7 @@ Schemas should be strict where the specification has stable structure:
 - required IDs for declared entities
 - lexical form for IDs and event types
 - common approval gate, artifact, memory, and extension attachment shapes
+- typed reference structure and kind-specific ActorSet relationship boundaries
 
 Strictness is useful when it prevents obvious mistakes without blocking legitimate extension or draft use.
 
@@ -71,6 +72,8 @@ Schemas should not try to fully validate meaning across files.
 These checks belong to future semantic validation:
 
 - referenced agent IDs exist
+- ActorSet identities are unique and agent actors bridge explicitly to AgentSet declarations
+- ActorSet operator and representative relationships resolve and remain acyclic
 - declared IDs are unique in their owning collections
 - identifier references resolve exactly, without case or separator normalization
 - multi-kind references do not resolve ambiguously
@@ -92,7 +95,7 @@ Some of these checks are possible with advanced JSON Schema patterns, but encodi
 
 `common.schema.json` defines the lexical boundary for IDs and dotted event types. The same ID pattern applies to declarations and references, while the containing field determines which resource kind a reference targets. Schemas do not infer aliases or prove that a referenced declaration exists.
 
-[RFC-0015: Typed References](../rfcs/RFC-0015-typed-references.md) proposes future field contracts and a structured typed-reference shape for polymorphic or explicitly scoped references. Until that proposal is accepted and implemented, schemas must continue to validate the current unqualified `0.1` reference syntax.
+[RFC-0015: Typed References](../rfcs/RFC-0015-typed-references.md) defines the broader proposed field-contract model. `common.schema.json` now implements the shared typed-reference primitive and scalar-compatible migration unions, while `ActorSet` uses strict typed references for `agentRef`, `operatedBy`, `representedBy`, and `integrationRef`. Existing manifest fields retain their unqualified `0.1` syntax until their own migration contracts are accepted and implemented.
 
 ## Extension Flexibility
 

@@ -1,0 +1,184 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nexflow.dev/schemas/actors.schema.json",
+  "title": "NexFlow Actors Manifest",
+  "description": "First-class project participant identities. Actor kind and references do not grant authority, access, autonomy, or credentials.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["specVersion", "kind", "metadata", "actors"],
+  "properties": {
+    "specVersion": {
+      "$ref": "common.schema.json#/$defs/specVersion"
+    },
+    "kind": {
+      "const": "ActorSet"
+    },
+    "metadata": {
+      "$ref": "common.schema.json#/$defs/metadata"
+    },
+    "actors": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/actor"
+      }
+    }
+  },
+  "$defs": {
+    "actor": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "id",
+        "kind",
+        "displayName",
+        "description",
+        "roles",
+        "responsibilities"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "common.schema.json#/$defs/id"
+        },
+        "kind": {
+          "type": "string",
+          "enum": ["human", "agent", "automation", "service", "authority"]
+        },
+        "displayName": {
+          "$ref": "common.schema.json#/$defs/nonEmptyString"
+        },
+        "description": {
+          "$ref": "common.schema.json#/$defs/nonEmptyString"
+        },
+        "roles": {
+          "allOf": [
+            {
+              "$ref": "common.schema.json#/$defs/idList"
+            }
+          ],
+          "minItems": 1
+        },
+        "responsibilities": {
+          "allOf": [
+            {
+              "$ref": "common.schema.json#/$defs/stringList"
+            }
+          ],
+          "minItems": 1
+        },
+        "skills": {
+          "allOf": [
+            {
+              "$ref": "common.schema.json#/$defs/idList"
+            }
+          ],
+          "minItems": 1
+        },
+        "agentRef": {
+          "$ref": "common.schema.json#/$defs/agentReference"
+        },
+        "operatedBy": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "common.schema.json#/$defs/actorReference"
+          }
+        },
+        "representedBy": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "common.schema.json#/$defs/actorReference"
+          }
+        },
+        "integrationRef": {
+          "$ref": "common.schema.json#/$defs/extensionReference"
+        },
+        "extensions": {
+          "type": "array",
+          "items": {
+            "$ref": "common.schema.json#/$defs/extensionAttachment"
+          }
+        }
+      },
+      "oneOf": [
+        {
+          "properties": {
+            "kind": {
+              "const": "human"
+            }
+          },
+          "not": {
+            "anyOf": [
+              { "required": ["agentRef"] },
+              { "required": ["operatedBy"] },
+              { "required": ["representedBy"] },
+              { "required": ["integrationRef"] }
+            ]
+          }
+        },
+        {
+          "required": ["agentRef"],
+          "properties": {
+            "kind": {
+              "const": "agent"
+            }
+          },
+          "not": {
+            "anyOf": [
+              { "required": ["operatedBy"] },
+              { "required": ["representedBy"] },
+              { "required": ["integrationRef"] }
+            ]
+          }
+        },
+        {
+          "required": ["operatedBy"],
+          "properties": {
+            "kind": {
+              "const": "automation"
+            }
+          },
+          "not": {
+            "anyOf": [
+              { "required": ["agentRef"] },
+              { "required": ["representedBy"] },
+              { "required": ["integrationRef"] }
+            ]
+          }
+        },
+        {
+          "required": ["operatedBy"],
+          "properties": {
+            "kind": {
+              "const": "service"
+            }
+          },
+          "not": {
+            "anyOf": [
+              { "required": ["agentRef"] },
+              { "required": ["representedBy"] }
+            ]
+          }
+        },
+        {
+          "required": ["representedBy"],
+          "properties": {
+            "kind": {
+              "const": "authority"
+            }
+          },
+          "not": {
+            "anyOf": [
+              { "required": ["agentRef"] },
+              { "required": ["operatedBy"] },
+              { "required": ["integrationRef"] }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

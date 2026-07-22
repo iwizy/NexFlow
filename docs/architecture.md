@@ -32,6 +32,18 @@ Manifests should be interpreted as one logical project assembly after determinis
 
 [RFC-0016](../rfcs/RFC-0016-core-profile-and-discovery.md) proposes a minimum core profile, optional modules, multiple workflows, and bounded discovery rules. These rules remain draft and do not change the current complete `0.1` examples or schemas yet.
 
+## Actor Identity View
+
+The optional `ActorSet` layer identifies human, agent, automation, service, and
+authority participants before policy or behavior is resolved. When present, it
+is the authoritative participant namespace for the assembly. An agent actor
+uses an explicit typed reference to stable AI identity in `AgentSet`; agent
+definitions and their components remain separate behavioral resources.
+
+Projects without `ActorSet` retain the documented legacy participant fallback
+during the `0.1` migration window. See [Actor Model](actor-model.md) and
+[Actor Model Migration](actor-model-migration.md).
+
 ## Agent Assembly View
 
 Agent assembly connects agent identity with versioned behavioral components:

@@ -9,6 +9,7 @@ The documentation is the canonical source for the specification. Schemas and exa
 - [Vision](vision.md)
 - [Concepts](concepts.md)
 - [Glossary](glossary.md)
+- [Actor Model](actor-model.md)
 - [Architecture](architecture.md)
 - [Manifest Reference](manifest-reference.md)
 - [Security Model](security-model.md)
@@ -18,7 +19,7 @@ The documentation is the canonical source for the specification. Schemas and exa
 | Reader | Recommended Path |
 | --- | --- |
 | New project visitor | [Vision](vision.md) -> [Concepts](concepts.md) -> [Glossary](glossary.md) -> [Manifest Reference](manifest-reference.md) |
-| Manifest author | [Manifest Reference](manifest-reference.md) -> [Context Model](context-model.md) -> [Memory Model](memory-model.md) -> [Examples Guide](../examples/README.md) |
+| Manifest author | [Manifest Reference](manifest-reference.md) -> [Actor Model](actor-model.md) -> [Context Model](context-model.md) -> [Memory Model](memory-model.md) -> [Examples Guide](../examples/README.md) |
 | Safety reviewer | [Security Model](security-model.md) -> [Network Access Policy](network-access-policy.md) -> [Approval Gates](approval-gates.md) -> [Capability Model](capability-model.md) -> [Autonomy Model](autonomy-model.md) |
 | Validator author | [Validation](validation.md) -> [Schema Design Notes](schema-design-notes.md) -> [Schema Guide](../schemas/README.md) -> [Conformance](conformance.md) -> [Compatibility Matrix](compatibility-matrix.md) |
 | Runtime implementer | [Architecture](architecture.md) -> [Runtime Options](runtime-options.md) -> [Provider Abstraction](provider-abstraction.md) -> [Roadmap](roadmap.md) |
@@ -28,6 +29,7 @@ The documentation is the canonical source for the specification. Schemas and exa
 
 | Model | Purpose |
 | --- | --- |
+| [Actor Model](actor-model.md) | Defines first-class human, agent, automation, service, and authority identity plus migration behavior. |
 | [Capability Model](capability-model.md) | Defines technical actions separately from authorization. |
 | [Autonomy Model](autonomy-model.md) | Defines how independently actors may act. |
 | [Approval Gates](approval-gates.md) | Defines human or policy approvals before sensitive actions. |
@@ -50,6 +52,7 @@ The documentation is the canonical source for the specification. Schemas and exa
 | --- | --- |
 | [Governance](governance.md) | Contribution, review, and decision rules. |
 | [Versioning](versioning.md) | Spec versioning and migration policy. |
+| [Actor Model Migration](actor-model-migration.md) | Defines the staged, identity-preserving transition from legacy participant resolution. |
 | [Conformance](conformance.md) | Draft support levels for manifests, validators, CLIs, runtimes, and extensions. |
 | [Validation](validation.md) | Structural validation workflow and semantic validation boundary. |
 | [Schema Design Notes](schema-design-notes.md) | Explains schema goals, non-goals, strictness boundaries, extension flexibility, and semantic validation limits. |

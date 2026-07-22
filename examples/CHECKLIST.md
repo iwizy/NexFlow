@@ -26,7 +26,11 @@ Examples are part of the specification surface. They should remain small enough 
 - [ ] IDs do not use leading, trailing, repeated, or mixed adjacent separators.
 - [ ] Each ID uses one separator style even when different resource categories use different styles.
 - [ ] Agent IDs are stable and unique within `agents.yaml`.
-- [ ] Human actor IDs and agent IDs are not confused.
+- [ ] Actor IDs are stable and unique within `actors.yaml` when `ActorSet` is present.
+- [ ] `ActorSet` is the authoritative participant identity inventory when present; legacy fallback is not mixed into it.
+- [ ] Every agent actor has one explicit typed `agentRef` to an existing `AgentSet` declaration.
+- [ ] Automation and service actors declare existing operators; authority actors declare existing representatives.
+- [ ] Actor operator and representative relationships do not form cycles.
 - [ ] Task IDs are unique within `tasks.yaml`.
 - [ ] Task artifact IDs are unique across `tasks.yaml` while handoffs use unqualified artifact references.
 - [ ] Workflow stage IDs and step IDs are unique within `workflow.yaml`.
@@ -43,8 +47,10 @@ Examples are part of the specification surface. They should remain small enough 
 - [ ] References use the same spelling, case, and separator style everywhere.
 - [ ] Event references use dotted lowercase event types rather than entity ID syntax.
 
-## Agents And Agent Definitions
+## Actors, Agents, And Agent Definitions
 
+- [ ] Each actor has a kind, role, description, and responsibilities.
+- [ ] Actor identity fields do not duplicate effective permissions, capabilities, context, memory, autonomy, or provider configuration.
 - [ ] Each agent has a role, description, responsibilities, and skills.
 - [ ] Each agent lists only capabilities it actually needs in the example.
 - [ ] Each agent references permissions that apply to that actor.
@@ -68,8 +74,8 @@ Examples are part of the specification surface. They should remain small enough 
 
 ## Tasks, Workflows, Handoffs, And Artifacts
 
-- [ ] Each task has an owner that exists in `agents.yaml`.
-- [ ] Task participants exist in `agents.yaml`.
+- [ ] Each task has an owner in the authoritative actor inventory (`actors.yaml` when present, otherwise the legacy participant inventory).
+- [ ] Task participants exist in the authoritative actor inventory.
 - [ ] Task dependencies reference existing tasks.
 - [ ] Task required capabilities exist in `capabilities.yaml`.
 - [ ] Task approval gates match the risk of required capabilities.

@@ -233,7 +233,11 @@ If a runtime cannot verify approval state for a gated action, it should fail clo
 
 Approvers should be declared human actors, roles, teams, or policy authorities.
 
-[RFC-0013](RFC-0013-actor-model.md) proposes a first-class actor model for humans, agents, automations, services, and authorities. If accepted, approval gates and decisions should use that model to distinguish the authority that owns a decision from the concrete actor that made it.
+The implemented first slice of [RFC-0013](RFC-0013-actor-model.md) provides an
+optional first-class actor inventory for humans, agents, automations, services,
+and authorities. Approval gates and decisions should use the selected project
+identity mode to distinguish the authority that owns a decision from the
+concrete actor that made it.
 
 Agents may:
 

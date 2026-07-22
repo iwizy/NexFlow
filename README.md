@@ -20,12 +20,12 @@ Current release posture: **`0.1` draft, preparing for candidate review**. No
 | Surface | Current State | Evidence |
 | --- | --- | --- |
 | Specification | Specified in draft form | [Documentation](docs/index.md), [Manifest Reference](docs/manifest-reference.md) |
-| JSON Schemas | Implemented for 16 manifest kinds plus common definitions | [Schemas](schemas/), [Schema Guide](schemas/README.md) |
-| Reference examples | Implemented as 7 project sets containing 112 schema-backed manifests | [Examples](examples/), [Examples Guide](examples/README.md) |
-| Structural validation | Implemented for all maintained examples | `npm run validate` |
+| JSON Schemas | Implemented for 17 manifest kinds plus common definitions | [Schemas](schemas/), [Schema Guide](schemas/README.md) |
+| Reference examples | Implemented as 7 project sets containing 113 schema-backed manifests | [Examples](examples/), [Examples Guide](examples/README.md) |
+| Structural validation | Implemented for all maintained examples plus ActorSet boundary cases | `npm run validate`, `npm run actor-schema-smoke` |
 | Semantic reference checks | Partial repository smoke coverage | `npm run semantic-smoke`, [Validation](docs/validation.md) |
 | Governance and RFC process | Implemented in documentation | [Governance](docs/governance.md), [RFCs](rfcs/README.md) |
-| Foundational model changes | Cross-reviewed proposals; RFCs remain Draft | [Foundational Model Review](rfcs/reviews/2026-07-foundational-model-review.md) |
+| Foundational model changes | First ActorSet migration slice implemented; RFCs remain Draft | [Actor Model](docs/actor-model.md), [Foundational Model Review](rfcs/reviews/2026-07-foundational-model-review.md) |
 | Reference CLI | Planned, not implemented | [RFC-0011](rfcs/RFC-0011-reference-cli-scope.md) |
 | Runtime and provider execution | Planned, not implemented | [Architecture](docs/architecture.md), [Runtime Options](docs/runtime-options.md) |
 | Live integrations and extension loading | Not implemented | [Compatibility Matrix](docs/compatibility-matrix.md) |
@@ -66,7 +66,7 @@ That fragmentation makes it difficult to:
 
 NexFlow defines a common declarative layer for AI developer teams:
 
-- **Team Structure as Code** for human participants, AI agents, automation systems, roles, responsibilities, and skills
+- **Team Structure as Code** for typed human, agent, automation, service, and authority identities, roles, responsibilities, and skills
 - **Agent Definition as Code** for versioned behavioral releases assembled from models, prompts, retrieval, permissions, memory, autonomy, and extensions
 - **Workflow as Code** for tasks, dependencies, handoffs, and approvals
 - **Context as Code** for repositories, docs, issue trackers, design systems, and knowledge bases
@@ -83,7 +83,7 @@ The goal is to make AI-assisted software delivery inspectable before anything ru
 
 - **Project**: the repository, product, or workstream governed by NexFlow manifests.
 - **Team**: humans, agents, automation systems, and review authorities.
-- **Actor**: any human, agent, automation system, runtime, integration, or policy authority participating in project work.
+- **Actor**: a first-class human, agent, automation, service, or authority identity participating in project work.
 - **Agent**: a declared AI participant with role, responsibilities, skills, access, and autonomy.
 - **Agent Assembly**: the cross-manifest relationship and review checkpoint connecting an agent identity, an agent definition, and its referenced behavioral components.
 - **Agent Definition**: a versioned behavioral release of an agent assembled from model, prompt, retrieval, permission, context, memory, autonomy, and extension references.
@@ -105,37 +105,33 @@ See [Concepts](docs/concepts.md) for the full domain model and [Glossary](docs/g
 
 ```yaml
 specVersion: "0.1"
-kind: AgentSet
+kind: ActorSet
 metadata:
   project: nexflow-example
-agents:
+actors:
+  - id: human-maintainer
+    kind: human
+    displayName: Human Maintainer
+    description: Final human authority for accepted project changes.
+    roles:
+      - maintainer
+    responsibilities:
+      - Review proposed changes.
   - id: docs-architect
+    kind: agent
     displayName: Documentation Architect
-    role: technical_writer
-    description: Maintains specification clarity and example consistency.
+    description: AI participant that maintains specification clarity.
+    roles:
+      - technical_writer
     responsibilities:
       - Keep docs, schemas, and examples aligned.
       - Flag behavior that is not represented in the specification.
     skills:
       - specification_writing
       - schema_review
-    capabilities:
-      - read_repository
-      - modify_documentation
-      - read_context
-    permissions:
-      - docs_write_with_review
-    contextAccess:
-      - repository
-      - docs
-    memoryAccess:
-      - ephemeral
-      - project
-    autonomyLevel: ask_before_changes
-    providerPreferences:
-      - provider: any
-        priority: preferred
-    extensions: []
+    agentRef:
+      kind: agent
+      id: docs-architect
 ```
 
 ## Architecture
@@ -177,6 +173,8 @@ NexFlow is intentionally split into layers:
 - [Conformance](docs/conformance.md): draft support levels for manifests, validators, CLIs, runtimes, and extensions
 - [Compatibility Matrix](docs/compatibility-matrix.md): current support and explicit implementation gaps
 - [Validation](docs/validation.md): repository checks and their boundaries
+- [Actor Model](docs/actor-model.md): first-class participant identity and kind-specific relationships
+- [Actor Model Migration](docs/actor-model-migration.md): staged transition from mixed AgentSet identity
 - [Network Access Policy](docs/network-access-policy.md): fail-closed outbound connection rules and migration from advisory strings
 - [Release Plan](docs/release-plan.md): public readiness criteria from `0.1` draft through `1.0`
 - [0.1 Readiness Checklist](docs/readiness-checklist.md): candidate review checklist for docs, schemas, examples, RFCs, compatibility, and limitations
@@ -188,6 +186,7 @@ NexFlow is intentionally split into layers:
 | Need | Start Here |
 | --- | --- |
 | Understand the vocabulary | [Concepts](docs/concepts.md), [Glossary](docs/glossary.md) |
+| Model participant identity | [Actor Model](docs/actor-model.md), [Actor Model Migration](docs/actor-model-migration.md) |
 | See every manifest shape | [Manifest Reference](docs/manifest-reference.md) |
 | Understand safety boundaries | [Security Model](docs/security-model.md), [Network Access Policy](docs/network-access-policy.md), [Approval Gates](docs/approval-gates.md) |
 | Version agent behavior | [Agent Assembly](docs/agent-assembly.md), [Agent Definitions](docs/agent-definitions.md), [Versioning](docs/versioning.md), [Event Model](docs/events.md) |
@@ -206,9 +205,8 @@ The current priorities are:
 
 1. Complete the `0.1` candidate checkpoint with validation evidence, known
    limitations, compatibility notes, and an explicit release decision.
-2. Resolve the foundational Actor, effective agent configuration, typed
-   reference, and core profile proposals in dependency order. Typed reference
-   contracts must precede the Actor schema migration.
+2. Review the first ActorSet migration slice, then simplify stable agent identity
+   and make agent definitions authoritative before broader example migration.
 3. Harden validation and conformance with positive and negative fixtures,
    deterministic diagnostics, and broader semantic checks.
 4. Complete the **Runtime Architecture Decision** before selecting an
@@ -236,9 +234,9 @@ See [Governance](docs/governance.md) and [RFCs](rfcs/README.md).
   meaning, policy correctness, graph safety, or runtime enforceability.
 - Semantic reference checks cover selected repository invariants only and do not
   establish full `NF-SEMANTIC` conformance.
-- Current maintained examples use complete 16-manifest project sets. Reduced
-  core profiles, optional modules, and multiple workflow discovery remain draft
-  proposals and are not supported by the current schemas.
+- Six maintained examples use the legacy 16-manifest participant inventory; the
+  Minimal Team adds `ActorSet` as a reviewed migration path. Reduced core
+  profiles, optional modules, and multiple workflow discovery remain draft.
 - Schemas are not yet distributed as an independently versioned package. Use a
   repository release, tag, or commit to identify a reproducible schema snapshot.
 - Draft RFCs may describe behavior that has not yet been incorporated into the

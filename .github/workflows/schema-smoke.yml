@@ -27,5 +27,8 @@ jobs:
       - name: Validate example manifests against schemas
         run: npm run validate
 
+      - name: Run ActorSet schema boundary checks
+        run: npm run actor-schema-smoke
+
       - name: Run semantic reference smoke checks
         run: npm run semantic-smoke

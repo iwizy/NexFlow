@@ -34,6 +34,7 @@ Do not tag a candidate if the repository implies runtime behavior, provider inte
 - [ ] README explains vision, problem, solution, status, roadmap, governance, limitations, license, and FAQ.
 - [ ] Documentation index links to all core models and project process docs.
 - [ ] Concepts and glossary define the core domain terms consistently.
+- [ ] Actor model and migration guidance distinguish participant identity from effective agent configuration.
 - [ ] Manifest reference describes every core manifest family.
 - [ ] Security model explains least privilege, explicit permissions, approval gates, credentials, network access, destructive operations, and human override.
 - [ ] Autonomy model and approval gates document human authority and sensitive action requirements.
@@ -47,7 +48,7 @@ Do not tag a candidate if the repository implies runtime behavior, provider inte
 
 - [ ] Every core manifest kind has a practical JSON Schema.
 - [ ] Schemas include `specVersion`, `kind`, and required top-level structure.
-- [ ] Common ID, event type, autonomy level, memory scope, risk, and status definitions are centralized where practical.
+- [ ] Common ID, event type, autonomy level, memory scope, risk, status, and typed-reference definitions are centralized where practical.
 - [ ] Schemas validate useful structure without pretending to encode full project semantics.
 - [ ] Schema guide explains scope, update rules, and validation boundaries.
 - [ ] Schema design notes explain why some rules belong to semantic validation instead of JSON Schema.
@@ -56,7 +57,7 @@ Do not tag a candidate if the repository implies runtime behavior, provider inte
 
 ## Examples Checklist
 
-- [ ] Minimal team example remains the easiest first reading path.
+- [ ] Minimal team example remains the easiest first reading path and demonstrates the staged ActorSet-to-AgentSet bridge.
 - [ ] Software team example demonstrates implementation, QA, review, docs, and handoffs.
 - [ ] Startup team example demonstrates product, design, implementation, and release review.
 - [ ] Enterprise team example demonstrates security, compliance, audit evidence, restricted context, and gated release controls.
@@ -72,10 +73,11 @@ Do not tag a candidate if the repository implies runtime behavior, provider inte
 - [ ] `npm ci --ignore-scripts` succeeds.
 - [ ] `./scripts/schema-smoke` succeeds.
 - [ ] `npm run validate` succeeds.
+- [ ] `npm run actor-schema-smoke` succeeds.
 - [ ] `npm run semantic-smoke` succeeds.
 - [ ] Markdown link checks succeed.
 - [ ] `git diff --check` succeeds.
-- [ ] CI runs schema smoke, schema validation, and semantic reference smoke checks on pull requests.
+- [ ] CI runs schema smoke, schema validation, ActorSet boundary checks, and semantic reference smoke checks on pull requests.
 - [ ] Validation docs explain the difference between syntax checks, schema validation, semantic smoke checks, future semantic validation, and runtime enforcement.
 - [ ] Validation output avoids claiming full semantic conformance.
 

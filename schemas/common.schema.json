@@ -66,6 +66,146 @@
       },
       "uniqueItems": true
     },
+    "referenceTargetKind": {
+      "title": "Reference Target Kind",
+      "description": "Closed target-kind vocabulary for typed resource references in the 0.1 draft.",
+      "type": "string",
+      "enum": [
+        "project",
+        "project-maintainer",
+        "actor",
+        "agent",
+        "agent-definition",
+        "capability",
+        "permission",
+        "approval-gate",
+        "context-source",
+        "memory-scope",
+        "provider",
+        "model-profile",
+        "prompt-set",
+        "prompt",
+        "retrieval-profile",
+        "task",
+        "workflow",
+        "workflow-stage",
+        "workflow-step",
+        "handoff",
+        "artifact",
+        "extension"
+      ]
+    },
+    "typedReferenceScope": {
+      "title": "Typed Reference Scope",
+      "description": "Explicit owner namespace for a scoped typed reference.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "id"],
+      "properties": {
+        "kind": {
+          "$ref": "#/$defs/referenceTargetKind"
+        },
+        "id": {
+          "$ref": "#/$defs/id"
+        }
+      }
+    },
+    "typedReference": {
+      "title": "Typed Reference",
+      "description": "Deterministic kind, ID, and optional scope tuple. Resolution never grants authority.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "id"],
+      "properties": {
+        "kind": {
+          "$ref": "#/$defs/referenceTargetKind"
+        },
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "scope": {
+          "$ref": "#/$defs/typedReferenceScope"
+        }
+      }
+    },
+    "resourceReference": {
+      "title": "Transitional Resource Reference",
+      "description": "Scalar ID or typed reference object for field contracts that explicitly permit both authored forms during migration.",
+      "oneOf": [
+        {
+          "$ref": "#/$defs/id"
+        },
+        {
+          "$ref": "#/$defs/typedReference"
+        }
+      ]
+    },
+    "resourceReferenceList": {
+      "title": "Transitional Resource Reference List",
+      "description": "Unique scalar or typed resource references where an owning field contract permits both forms.",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/resourceReference"
+      },
+      "uniqueItems": true
+    },
+    "actorReference": {
+      "title": "Actor Reference",
+      "description": "Assembly-scoped typed reference to an ActorSet declaration.",
+      "allOf": [
+        {
+          "$ref": "#/$defs/typedReference"
+        },
+        {
+          "properties": {
+            "kind": {
+              "const": "actor"
+            }
+          },
+          "not": {
+            "required": ["scope"]
+          }
+        }
+      ]
+    },
+    "agentReference": {
+      "title": "Agent Reference",
+      "description": "Assembly-scoped typed reference to an AgentSet declaration.",
+      "allOf": [
+        {
+          "$ref": "#/$defs/typedReference"
+        },
+        {
+          "properties": {
+            "kind": {
+              "const": "agent"
+            }
+          },
+          "not": {
+            "required": ["scope"]
+          }
+        }
+      ]
+    },
+    "extensionReference": {
+      "title": "Extension Reference",
+      "description": "Assembly-scoped typed reference to an ExtensionSet declaration.",
+      "allOf": [
+        {
+          "$ref": "#/$defs/typedReference"
+        },
+        {
+          "properties": {
+            "kind": {
+              "const": "extension"
+            }
+          },
+          "not": {
+            "required": ["scope"]
+          }
+        }
+      ]
+    },
     "eventTypeList": {
       "title": "Event Type List",
       "description": "Unique references to declared event types.",

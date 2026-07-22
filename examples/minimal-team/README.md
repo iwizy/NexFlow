@@ -12,6 +12,7 @@ It demonstrates:
 
 - one human actor as the final authority
 - one AI agent with approval-gated documentation responsibilities
+- an authoritative `ActorSet` with an explicit typed actor-to-agent bridge
 - separate capability and permission declarations
 - one approval gate reused across project policy, permissions, tasks, workflow, and agent definition review
 - explicit context sources for repository and documentation access
@@ -24,16 +25,17 @@ It demonstrates:
 Read the files in this order:
 
 1. `project.yaml` defines the project, maintainer, default autonomy, policies, approval gate, and manifest file map.
-2. `agents.yaml` introduces the human maintainer and the docs agent.
-3. `capabilities.yaml` defines what actors can technically do.
-4. `permissions.yaml` decides which capabilities are allowed or approval-gated.
-5. `agent-definitions.yaml` assembles the docs agent's model, prompt, retrieval, permission, context, memory, autonomy, and extension references into a reviewable behavioral release.
-6. `tasks.yaml` shows the work units and required capabilities.
-7. `workflow.yaml` orders the draft and review tasks.
-8. `handoffs.yaml` transfers responsibility from the docs agent to the maintainer.
-9. `events.yaml` declares the audit events expected around tasks, reviews, and handoffs.
-10. `context.yaml`, `retrieval-profiles.yaml`, and `memory.yaml` explain what the agent may read, cite, and retain.
-11. `providers.yaml`, `model-profiles.yaml`, `prompt-sets.yaml`, and `extensions.yaml` show provider-neutral configuration references without implementing provider calls or integrations.
+2. `actors.yaml` declares the human and agent participant identities.
+3. `agents.yaml` declares the stable AI identity linked by the agent actor.
+4. `capabilities.yaml` defines what actors can technically do.
+5. `permissions.yaml` decides which capabilities are allowed or approval-gated.
+6. `agent-definitions.yaml` assembles the docs agent's model, prompt, retrieval, permission, context, memory, autonomy, and extension references into a reviewable behavioral release.
+7. `tasks.yaml` shows the work units and required capabilities.
+8. `workflow.yaml` orders the draft and review tasks.
+9. `handoffs.yaml` transfers responsibility from the docs agent to the maintainer.
+10. `events.yaml` declares the audit events expected around tasks, reviews, and handoffs.
+11. `context.yaml`, `retrieval-profiles.yaml`, and `memory.yaml` explain what the agent may read, cite, and retain.
+12. `providers.yaml`, `model-profiles.yaml`, `prompt-sets.yaml`, and `extensions.yaml` show provider-neutral configuration references without implementing provider calls or integrations.
 
 ## Smallest Useful Flow
 
@@ -50,8 +52,8 @@ The workflow is intentionally conservative. The docs agent can draft documentati
 
 | Concept | Example ID | Where It Appears |
 | --- | --- | --- |
-| Human authority | `human-maintainer` | `project.yaml`, `agents.yaml`, `permissions.yaml`, `tasks.yaml`, `handoffs.yaml` |
-| AI participant | `docs-agent` | `agents.yaml`, `agent-definitions.yaml`, `tasks.yaml`, `handoffs.yaml` |
+| Human authority | `human-maintainer` | `actors.yaml`, `project.yaml`, `permissions.yaml`, `tasks.yaml`, `handoffs.yaml` |
+| AI participant | `docs-agent` | `actors.yaml`, `agents.yaml`, `agent-definitions.yaml`, `tasks.yaml`, `handoffs.yaml` |
 | Approval gate | `human_review` | `project.yaml`, `permissions.yaml`, `tasks.yaml`, `workflow.yaml`, `agent-definitions.yaml` |
 | Documentation task | `draft-doc-update` | `tasks.yaml`, `workflow.yaml` |
 | Review task | `review-doc-update` | `tasks.yaml`, `workflow.yaml` |

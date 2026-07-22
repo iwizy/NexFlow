@@ -11,6 +11,13 @@ tag or release has been published, and manifest `specVersion` remains `"0.1"`.
 
 ### Added
 
+- Added the optional `ActorSet` manifest, shared typed-reference primitives,
+  kind-specific actor relationships, and an identity-preserving Minimal Team
+  migration guide.
+- Extended semantic reference smoke checks with authoritative ActorSet
+  resolution, explicit agent bridge validation, relationship references, and
+  cycle detection.
+- Added focused ActorSet schema boundary checks to the repository CI workflow.
 - Added a structured, fail-closed outbound network access policy model with
   actor, purpose, destination, approval, transport, audit, and legacy migration
   semantics.
@@ -29,8 +36,8 @@ tag or release has been published, and manifest `specVersion` remains `"0.1"`.
 
 - The candidate, if approved, remains a draft specification release rather than
   a runtime, CLI, provider integration, or orchestration release.
-- Current repository evidence covers 16 schema-backed manifest kinds, 7
-  maintained project examples, 112 structurally validated manifests, and
+- Current repository evidence covers 17 schema-backed manifest kinds, 7
+  maintained project examples, 113 structurally validated manifests, and
   limited semantic reference smoke checks.
 - Draft RFCs remain proposals unless their decisions are accepted and reflected
   consistently in documentation, schemas, examples, compatibility guidance,

@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://nexflow.dev/schemas/agents.schema.json",
   "title": "NexFlow Agents Manifest",
-  "description": "Current draft participant declarations. Examples include AI agents and legacy human participant entries; kind-specific actor modeling is proposed separately.",
+  "description": "AI agent configuration declarations. Projects without ActorSet may retain legacy mixed participant entries during migration; when ActorSet is present, agent identity is linked explicitly through ActorSet agentRef fields.",
   "type": "object",
   "additionalProperties": true,
   "required": ["specVersion", "kind", "metadata", "agents"],

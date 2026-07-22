@@ -3,30 +3,6 @@ kind: AgentSet
 metadata:
   project: minimal-team
 agents:
-  - id: human-maintainer
-    displayName: Human Maintainer
-    role: maintainer
-    description: Final authority for project changes.
-    responsibilities:
-      - Approve changes.
-      - Resolve ambiguity.
-    skills:
-      - project_review
-    permissions:
-      - maintainer_full_review
-    capabilities:
-      - read_repository
-      - approve_changes
-    contextAccess:
-      - repository
-      - docs
-    memoryAccess:
-      - ephemeral
-      - task
-      - project
-    autonomyLevel: manual_only
-    providerPreferences: []
-    extensions: []
   - id: docs-agent
     displayName: Docs Agent
     role: technical_writer

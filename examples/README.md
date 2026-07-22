@@ -2,7 +2,7 @@
 
 This directory contains complete reference manifest sets for different team shapes.
 
-The examples are not runtime fixtures. They are readable specification examples that show how agents, agent definitions, permissions, capabilities, context, memory, tasks, workflows, handoffs, events, providers, model profiles, prompt sets, retrieval profiles, and extensions fit together.
+The examples are not runtime fixtures. They are readable specification examples that show how actors, agents, agent definitions, permissions, capabilities, context, memory, tasks, workflows, handoffs, events, providers, model profiles, prompt sets, retrieval profiles, and extensions fit together.
 
 Use the [Example Matrix](MATRIX.md) to compare examples by complexity, context, autonomy, approval gates, integrations, and learning path.
 
@@ -22,12 +22,14 @@ Use the [Example Consistency Checklist](CHECKLIST.md) before adding or changing 
 
 ## Common File Set
 
-Each example contains the same core manifest files:
+Six examples retain the complete legacy participant file set. `minimal-team`
+adds `actors.yaml` as the first maintained ActorSet migration path.
 
 | File | Purpose |
 | --- | --- |
 | `project.yaml` | Project identity, maintainers, policies including network access, approval gates, and manifest locations. |
-| `agents.yaml` | Current draft participant identities, including human actors and AI agents, plus roles, responsibilities, skills, policy references, context, memory, autonomy, providers, and extensions. |
+| `actors.yaml` | Optional first-class participant identity inventory; currently implemented by `minimal-team`. |
+| `agents.yaml` | Stable AI identity and current standing configuration, plus legacy mixed-participant compatibility where ActorSet is absent. |
 | `agent-definitions.yaml` | Versioned behavioral releases that assemble model, prompt, retrieval, permission, context, memory, autonomy, and extension references. |
 | `workflow.yaml` | Workflow stages, steps, dependencies, approval gates, and emitted events. |
 | `tasks.yaml` | Tasks, owners, participants, dependencies, artifacts, required capabilities, approval gates, and acceptance criteria. |
@@ -45,7 +47,12 @@ Each example contains the same core manifest files:
 
 ## How to Read an Example
 
-Start with `project.yaml` to understand the project policy and approval gates. Then read `agents.yaml`, `agent-definitions.yaml`, and `capabilities.yaml` together: agents describe identity, agent definitions describe behavioral releases, capabilities describe what actors can technically do, and permissions decide what is allowed or approval-gated.
+Start with `project.yaml` to understand the project policy and approval gates.
+When `actors.yaml` is present, read it next for participant identity and actor
+kind. Then read `agents.yaml`, `agent-definitions.yaml`, and
+`capabilities.yaml` together: agents describe stable AI identity, agent
+definitions describe behavioral releases, capabilities describe technical
+actions, and permissions decide what is allowed or approval-gated.
 
 After that, follow the work:
 

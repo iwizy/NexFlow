@@ -104,6 +104,11 @@ The schema is intentionally practical. It validates useful structure, but deeper
 
 `agent-definitions.yaml` declares a versioned behavioral release for an agent identity.
 
+In a project with `ActorSet`, the participating actor links explicitly to the
+stable `AgentSet` identity, and `AgentDefinitionSet.agentRef` continues to target
+that agent identity. Equal actor and agent IDs do not create either link
+implicitly.
+
 The two layers should stay aligned, but they are not the same. An agent can keep the same `agentRef` while a new definition changes the model profile, prompt set, retrieval profile, permissions, memory scopes, autonomy, or extension configuration.
 
 ## Component References

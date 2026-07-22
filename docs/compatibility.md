@@ -48,11 +48,27 @@ For the current supported combinations and explicit implementation gaps, see the
 - allowing stale context where it was previously prohibited
 - broadening retrieval classification or cross-scope reuse
 - changing memory retention, visibility, sensitivity, allowed consumers, allowed writers, or promotion paths
+- changing actor kind, identity resolution mode, agent bridge, operator, representative, or integration relationship
+- changing network defaults, rule effects, actor or purpose scope, destination selectors, transport constraints, approval requirements, or audit semantics
 - changing event envelope identity, actor, subject, correlation, causation, payload, audit, or redaction semantics
 - changing reference CLI command names, exit code meanings, diagnostic code meanings, or machine-readable output formats
 - removing fields
 - changing required fields
 - changing event payload structure
+
+## Actor Model Compatibility
+
+`ActorSet` is optional in the current `0.1` draft. Its presence explicitly
+selects ActorSet mode for that project assembly; its absence preserves legacy
+participant resolution through project maintainers and `AgentSet`.
+
+This additive compatibility window keeps existing projects valid while making
+the migrated mode fail closed. A participant omitted from an authored
+`ActorSet` cannot be recovered silently from a same-named legacy declaration.
+
+Requiring `ActorSet`, removing legacy fallback, changing actor kind, or requiring
+typed objects in existing participant fields would be breaking. See
+[Actor Model Migration](actor-model-migration.md).
 
 ## Extension Compatibility
 
@@ -94,6 +110,8 @@ Examples:
 | Rename required manifest field | Breaks `NF-MANIFEST` and `NF-SCHEMA`. |
 | Change approval gate meaning | May break `NF-RUNTIME` safety expectations. |
 | Change memory retention, visibility, sensitivity, consumers, writers, or promotion paths | May affect `NF-SEMANTIC`, `NF-RUNTIME`, privacy, audit, and safety compatibility. |
+| Change actor kind, identity mode, agent bridge, operator, representative, or integration relationship | May affect `NF-MANIFEST`, `NF-SCHEMA`, `NF-SEMANTIC`, `NF-RUNTIME`, authority, and audit compatibility. |
+| Change network defaults, destination scope, transport constraints, approvals, or audit semantics | May affect `NF-SEMANTIC`, `NF-RUNTIME`, integrations, privacy, audit, and safety compatibility. |
 | Change event envelope identity, actor, subject, correlation, causation, payload, audit, or redaction semantics | May affect `NF-SEMANTIC`, `NF-RUNTIME`, audit, traceability, privacy, and safety compatibility. |
 | Change provider selection precedence, constraints, fallback, or explainability expectations | May affect `NF-SEMANTIC`, `NF-RUNTIME`, audit, privacy, cost, safety, and compatibility. |
 | Change reference CLI command names, exit codes, diagnostic codes, or output formats | May affect `NF-CLI`, CI workflows, editor integrations, and developer tooling compatibility. |

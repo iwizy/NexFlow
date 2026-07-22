@@ -66,6 +66,146 @@
       },
       "uniqueItems": true
     },
+    "referenceTargetKind": {
+      "title": "Reference Target Kind",
+      "description": "Closed target-kind vocabulary for typed resource references in the 0.1 draft.",
+      "type": "string",
+      "enum": [
+        "project",
+        "project-maintainer",
+        "actor",
+        "agent",
+        "agent-definition",
+        "capability",
+        "permission",
+        "approval-gate",
+        "context-source",
+        "memory-scope",
+        "provider",
+        "model-profile",
+        "prompt-set",
+        "prompt",
+        "retrieval-profile",
+        "task",
+        "workflow",
+        "workflow-stage",
+        "workflow-step",
+        "handoff",
+        "artifact",
+        "extension"
+      ]
+    },
+    "typedReferenceScope": {
+      "title": "Typed Reference Scope",
+      "description": "Explicit owner namespace for a scoped typed reference.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "id"],
+      "properties": {
+        "kind": {
+          "$ref": "#/$defs/referenceTargetKind"
+        },
+        "id": {
+          "$ref": "#/$defs/id"
+        }
+      }
+    },
+    "typedReference": {
+      "title": "Typed Reference",
+      "description": "Deterministic kind, ID, and optional scope tuple. Resolution never grants authority.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "id"],
+      "properties": {
+        "kind": {
+          "$ref": "#/$defs/referenceTargetKind"
+        },
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "scope": {
+          "$ref": "#/$defs/typedReferenceScope"
+        }
+      }
+    },
+    "resourceReference": {
+      "title": "Transitional Resource Reference",
+      "description": "Scalar ID or typed reference object for field contracts that explicitly permit both authored forms during migration.",
+      "oneOf": [
+        {
+          "$ref": "#/$defs/id"
+        },
+        {
+          "$ref": "#/$defs/typedReference"
+        }
+      ]
+    },
+    "resourceReferenceList": {
+      "title": "Transitional Resource Reference List",
+      "description": "Unique scalar or typed resource references where an owning field contract permits both forms.",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/resourceReference"
+      },
+      "uniqueItems": true
+    },
+    "actorReference": {
+      "title": "Actor Reference",
+      "description": "Assembly-scoped typed reference to an ActorSet declaration.",
+      "allOf": [
+        {
+          "$ref": "#/$defs/typedReference"
+        },
+        {
+          "properties": {
+            "kind": {
+              "const": "actor"
+            }
+          },
+          "not": {
+            "required": ["scope"]
+          }
+        }
+      ]
+    },
+    "agentReference": {
+      "title": "Agent Reference",
+      "description": "Assembly-scoped typed reference to an AgentSet declaration.",
+      "allOf": [
+        {
+          "$ref": "#/$defs/typedReference"
+        },
+        {
+          "properties": {
+            "kind": {
+              "const": "agent"
+            }
+          },
+          "not": {
+            "required": ["scope"]
+          }
+        }
+      ]
+    },
+    "extensionReference": {
+      "title": "Extension Reference",
+      "description": "Assembly-scoped typed reference to an ExtensionSet declaration.",
+      "allOf": [
+        {
+          "$ref": "#/$defs/typedReference"
+        },
+        {
+          "properties": {
+            "kind": {
+              "const": "extension"
+            }
+          },
+          "not": {
+            "required": ["scope"]
+          }
+        }
+      ]
+    },
     "eventTypeList": {
       "title": "Event Type List",
       "description": "Unique references to declared event types.",
@@ -122,6 +262,231 @@
       "description": "Sensitivity classification for context or memory.",
       "type": "string",
       "enum": ["public", "internal", "confidential", "restricted"]
+    },
+    "networkAccessPolicy": {
+      "title": "Network Access Policy",
+      "description": "Fail-closed project policy for outbound network requests. This policy narrows connectivity and does not grant capabilities, permissions, credentials, context, provider access, or integration access.",
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["default", "rules", "transport", "audit"],
+      "properties": {
+        "default": {
+          "const": "deny",
+          "description": "Unmatched network requests are denied."
+        },
+        "rules": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "required": ["id", "description", "effect", "actors", "purposes", "destinations"],
+            "properties": {
+              "id": {
+                "$ref": "#/$defs/id"
+              },
+              "description": {
+                "$ref": "#/$defs/nonEmptyString"
+              },
+              "effect": {
+                "$ref": "#/$defs/permissionEffect"
+              },
+              "actors": {
+                "allOf": [
+                  {
+                    "$ref": "#/$defs/idList"
+                  }
+                ],
+                "minItems": 1
+              },
+              "capabilities": {
+                "allOf": [
+                  {
+                    "$ref": "#/$defs/idList"
+                  }
+                ],
+                "minItems": 1
+              },
+              "purposes": {
+                "type": "array",
+                "minItems": 1,
+                "uniqueItems": true,
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "context_read",
+                    "provider_request",
+                    "integration_read",
+                    "integration_write",
+                    "package_download",
+                    "artifact_transfer",
+                    "webhook_delivery",
+                    "custom"
+                  ]
+                }
+              },
+              "destinations": {
+                "type": "object",
+                "additionalProperties": true,
+                "properties": {
+                  "domains": {
+                    "type": "array",
+                    "minItems": 1,
+                    "uniqueItems": true,
+                    "items": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 253,
+                      "pattern": "^[a-z0-9](?:[a-z0-9.-]*[a-z0-9])?$"
+                    }
+                  },
+                  "contextSources": {
+                    "allOf": [
+                      {
+                        "$ref": "#/$defs/idList"
+                      }
+                    ],
+                    "minItems": 1
+                  },
+                  "providers": {
+                    "allOf": [
+                      {
+                        "$ref": "#/$defs/idList"
+                      }
+                    ],
+                    "minItems": 1
+                  },
+                  "extensions": {
+                    "allOf": [
+                      {
+                        "$ref": "#/$defs/idList"
+                      }
+                    ],
+                    "minItems": 1
+                  },
+                  "schemes": {
+                    "type": "array",
+                    "minItems": 1,
+                    "uniqueItems": true,
+                    "items": {
+                      "type": "string",
+                      "enum": ["https", "wss", "http"]
+                    }
+                  },
+                  "ports": {
+                    "type": "array",
+                    "minItems": 1,
+                    "uniqueItems": true,
+                    "items": {
+                      "type": "integer",
+                      "minimum": 1,
+                      "maximum": 65535
+                    }
+                  }
+                },
+                "anyOf": [
+                  {
+                    "required": ["domains"]
+                  },
+                  {
+                    "required": ["contextSources"]
+                  },
+                  {
+                    "required": ["providers"]
+                  },
+                  {
+                    "required": ["extensions"]
+                  }
+                ]
+              },
+              "maxDataClassification": {
+                "$ref": "#/$defs/classification"
+              },
+              "approvalGate": {
+                "$ref": "#/$defs/id"
+              }
+            },
+            "allOf": [
+              {
+                "if": {
+                  "required": ["effect"],
+                  "properties": {
+                    "effect": {
+                      "const": "approval_required"
+                    }
+                  }
+                },
+                "then": {
+                  "required": ["approvalGate"]
+                },
+                "else": {
+                  "not": {
+                    "required": ["approvalGate"]
+                  }
+                }
+              }
+            ]
+          }
+        },
+        "transport": {
+          "type": "object",
+          "additionalProperties": true,
+          "required": ["requireTls", "allowPrivateNetworks", "allowLoopback", "followRedirects", "maxRedirects"],
+          "properties": {
+            "requireTls": {
+              "type": "boolean",
+              "default": true
+            },
+            "allowPrivateNetworks": {
+              "type": "boolean",
+              "default": false
+            },
+            "allowLoopback": {
+              "type": "boolean",
+              "default": false
+            },
+            "followRedirects": {
+              "type": "boolean",
+              "default": false
+            },
+            "maxRedirects": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 10,
+              "default": 0
+            }
+          }
+        },
+        "audit": {
+          "type": "object",
+          "additionalProperties": true,
+          "required": ["events", "recordDecisions", "recordDestination", "recordPurpose", "redactQuery", "redactHeaders"],
+          "properties": {
+            "events": {
+              "allOf": [
+                {
+                  "$ref": "#/$defs/eventTypeList"
+                }
+              ],
+              "minItems": 1
+            },
+            "recordDecisions": {
+              "const": true
+            },
+            "recordDestination": {
+              "type": "boolean"
+            },
+            "recordPurpose": {
+              "type": "boolean"
+            },
+            "redactQuery": {
+              "const": true
+            },
+            "redactHeaders": {
+              "const": true
+            }
+          }
+        }
+      }
     },
     "memoryScope": {
       "title": "Memory Scope",

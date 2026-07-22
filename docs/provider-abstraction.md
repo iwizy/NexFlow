@@ -72,6 +72,12 @@ Provider configuration MUST NOT bypass permissions, autonomy levels, context bou
 
 Provider-specific extensions should be namespaced and optional.
 
+Declaring or selecting a provider does not authorize a connection to it. A
+provider request also requires the `access_network` capability, effective
+permission, a matching structured
+[Network Access Policy](network-access-policy.md) rule, and credentials supplied
+through an appropriate secret-management boundary.
+
 ## Future Runtime Expectations
 
 A future runtime should make provider selection explainable:

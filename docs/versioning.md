@@ -26,6 +26,22 @@ All manifests in one project SHOULD use the same `specVersion`.
 
 A future runtime MAY support mixed versions during migration, but it MUST make compatibility behavior explicit.
 
+## Actor Model Version Decision
+
+The first `ActorSet` schema and typed-reference primitives remain in
+`specVersion: "0.1"`. This is an additive draft change: existing manifests remain
+valid, and participant resolution changes only when a project explicitly
+declares an `ActorSet`.
+
+Projects with `ActorSet` use it as the authoritative participant namespace.
+Projects without it retain legacy maintainer and `AgentSet` participant
+resolution during the migration window.
+
+A later explicit version decision is required before making `ActorSet`
+mandatory, rejecting legacy human entries in `AgentSet`, removing fallback, or
+requiring typed objects in existing participant fields. See
+[Actor Model Migration](actor-model-migration.md).
+
 ## Agent Definition Versioning
 
 Manifest `specVersion` describes the shape of a NexFlow manifest. It does not fully describe the behavioral version of an individual agent.

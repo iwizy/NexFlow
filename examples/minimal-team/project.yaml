@@ -16,7 +16,23 @@ project:
   policies:
     requireReview: true
     secretHandling: Raw secrets are never stored in manifests.
-    networkAccess: Disabled unless a task explicitly requests approval.
+    networkAccess:
+      default: deny
+      rules: []
+      transport:
+        requireTls: true
+        allowPrivateNetworks: false
+        allowLoopback: false
+        followRedirects: false
+        maxRedirects: 0
+      audit:
+        events:
+          - network.decision
+        recordDecisions: true
+        recordDestination: true
+        recordPurpose: true
+        redactQuery: true
+        redactHeaders: true
     destructiveActions: Human approval required.
     productionActions: Not applicable.
   approvalGates:
@@ -25,6 +41,7 @@ project:
       requiredApprovers:
         - human-maintainer
 manifests:
+  actors: actors.yaml
   agents: agents.yaml
   agentDefinitions: agent-definitions.yaml
   workflow: workflow.yaml

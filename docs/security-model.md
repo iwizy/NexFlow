@@ -42,7 +42,16 @@ Destructive operations require human approval and audit events.
 
 ### Network Access
 
-Network access should be declared and scoped by policy, source, or domain where possible.
+Outbound network access must be fail-closed, declared, and scoped by actor,
+purpose, destination, transport, data classification, permission, and approval.
+
+The structured [Network Access Policy](network-access-policy.md) uses an explicit
+deny default and deterministic rules. Context sources, provider declarations,
+extensions, capabilities, permissions, and approvals remain independent policy
+layers; none grants connectivity by reference or presence alone.
+
+Legacy free-text `networkAccess` values remain advisory during the `0.1` draft
+migration. A future runtime must not parse them into allow rules.
 
 ### Provider Selection
 
@@ -97,6 +106,8 @@ Humans must be able to stop or override future runtime activity.
 - using stale context without citation or warning when freshness matters
 - activating broader agent definitions without review
 - silent network access
+- treating context, provider, extension, DNS, redirect, or proxy metadata as an implicit network grant
+- following redirects or resolved private addresses without re-evaluating policy
 - automatic deployment
 - destructive actions without approval
 
@@ -145,3 +156,6 @@ A conforming runtime should:
 - log sensitive events
 - reject unsupported manifest versions
 - clearly report unsupported extension behavior
+- deny outbound requests that lack a matching structured network policy rule
+- re-evaluate DNS results and redirects against private-network, loopback, scheme, port, and destination constraints
+- redact credentials, headers, query data, and payloads from network audit records

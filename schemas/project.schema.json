@@ -68,7 +68,16 @@
               "type": "string"
             },
             "networkAccess": {
-              "type": "string"
+              "description": "Structured outbound network policy or a legacy advisory string. Legacy strings do not grant machine-enforceable access.",
+              "oneOf": [
+                {
+                  "type": "string",
+                  "minLength": 1
+                },
+                {
+                  "$ref": "common.schema.json#/$defs/networkAccessPolicy"
+                }
+              ]
             },
             "destructiveActions": {
               "type": "string"

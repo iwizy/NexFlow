@@ -176,6 +176,12 @@ Projects should avoid broad unrestricted web access. If broad access is necessar
 
 Web context should not be used to bypass provider, network, credential, or license policy.
 
+`allowedDomains` and `disallowedDomains` narrow the content represented by a
+web-like context source; they do not grant network access. A future runtime must
+also find a matching structured [Network Access Policy](network-access-policy.md)
+rule and enforce the intersection of both declarations. If either boundary
+denies the destination, the request is denied.
+
 ## MCP Context
 
 MCP can expose context, tools, prompts, resources, or workflow actions. NexFlow models MCP explicitly because it can cross the boundary between reading data and performing actions.

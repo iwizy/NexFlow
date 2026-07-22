@@ -51,6 +51,12 @@ events:
 
 Integrations MUST NOT silently grant access. All meaningful actions should map to capabilities and permissions.
 
+An integration declaration, extension reference, context source, or credential
+MUST NOT be treated as an outbound connection grant. Network-dependent
+integration actions also require a matching structured
+[Network Access Policy](network-access-policy.md) rule. In the absence of such a
+rule, future runtimes must deny the connection.
+
 Integrations SHOULD declare:
 
 - supported capabilities
@@ -59,6 +65,11 @@ Integrations SHOULD declare:
 - approval surfaces
 - credential requirements
 - audit behavior
+
+Network policy should select the integration or extension destination, allowed
+purposes, actors, schemes, and ports as narrowly as practical. Credentials must
+remain outside public manifests and must not be inferred from destination
+selection.
 
 ## MCP
 

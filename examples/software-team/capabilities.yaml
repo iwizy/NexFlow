@@ -33,6 +33,12 @@ capabilities:
     category: runtime
     requiresApprovalByDefault: true
     auditRecommended: true
+  - id: access_network
+    description: Initiate an outbound connection allowed by project network policy.
+    risk: high
+    category: network
+    requiresApprovalByDefault: true
+    auditRecommended: true
   - id: read_context
     description: Read declared context sources.
     risk: low

@@ -29,6 +29,7 @@ Event types use dotted lowercase values:
 - `memory.corrected`
 - `memory.deleted`
 - `memory.promoted`
+- `network.decision`
 
 Event types are not entity IDs. They use their own dotted namespace and MUST be referenced exactly from fields such as `emits`, `auditEvents`, audit `events` lists, and event-driven `triggers`. A non-event trigger such as `manual` is not an event type.
 
@@ -143,6 +144,27 @@ payload:
 ```
 
 See [RFC-0008](../rfcs/RFC-0008-memory-retention.md) for memory write, correction, deletion, promotion, retention, and audit expectations.
+
+### `network.decision`
+
+```yaml
+type: network.decision
+payload:
+  actor: implementation-agent
+  purpose: context_read
+  decision: approval_required
+  ruleIds:
+    - approved_project_services
+  logicalDestination:
+    contextSource: repository
+  redactionApplied: true
+```
+
+Network decision events should identify the result and rules applied without
+storing authorization headers, cookies, tokens, secret query values, request
+bodies, or response bodies. Destination details remain subject to project audit
+and classification policy. See
+[Network Access Policy](network-access-policy.md).
 
 ### Model profile audit fields
 

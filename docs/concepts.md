@@ -14,9 +14,14 @@ A collection of humans, agents, and automation systems that collaborate on a pro
 
 ## Actor
 
-A general participant identity for a human, agent, automation system, runtime, integration, or policy authority involved in project work.
+A first-class participant identity with kind `human`, `agent`, `automation`,
+`service`, or `authority`.
 
 Use `Agent` only for AI participants. Actor identity does not grant capabilities, permissions, context access, memory access, autonomy, or approval authority.
+
+The optional `ActorSet` manifest implements the first migration slice in the
+`0.1` draft. See [Actor Model](actor-model.md) and
+[Actor Model Migration](actor-model-migration.md).
 
 ## Agent
 
@@ -24,7 +29,10 @@ An AI participant with a declared identity, role, responsibilities, skills, cont
 
 Agents are not assumed to be powered by any specific provider or runtime.
 
-The current `0.1` draft `AgentSet` also carries legacy human participant entries. This is a transitional manifest shape, not a redefinition of humans as agents. See [RFC-0013](../rfcs/RFC-0013-actor-model.md) for the proposed actor model and migration.
+Projects without `ActorSet` may still carry legacy human participant entries in
+`AgentSet`. This is a compatibility shape, not a redefinition of humans as
+agents. Migrated projects keep only AI identities in `AgentSet` and link them
+from agent actors explicitly.
 
 ## Agent Assembly
 
@@ -121,6 +129,10 @@ A future implementation that validates, interprets, or executes NexFlow manifest
 ## Project Policy
 
 Rules that apply across a project, such as default autonomy, required reviews, secret handling, and network access boundaries.
+
+The structured [Network Access Policy](network-access-policy.md) defines
+fail-closed outbound connection rules separately from capabilities,
+permissions, context access, provider selection, and credentials.
 
 ## Approval Gate
 

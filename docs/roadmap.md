@@ -13,8 +13,8 @@ Status: preparation in progress. No `0.1` candidate tag has been published.
 The repository currently provides the following candidate evidence:
 
 - a documented draft specification and manifest reference
-- practical JSON Schemas for 16 manifest kinds plus common definitions
-- 7 maintained project examples containing 112 schema-backed manifests
+- practical JSON Schemas for 17 manifest kinds plus common definitions
+- 7 maintained project examples containing 113 schema-backed manifests
 - reproducible schema syntax, structural validation, and semantic reference
   smoke commands
 - explicit conformance vocabulary and a current compatibility matrix
@@ -22,6 +22,8 @@ The repository currently provides the following candidate evidence:
   process
 - a cross-RFC review for the Actor Model, Effective Agent Configuration, Typed
   References, and Core Profile proposals
+- an initial ActorSet schema and Minimal Team migration using shared typed
+  reference contracts
 
 Before publishing a candidate, maintainers still need to:
 
@@ -59,7 +61,7 @@ and [Foundational Model Cross-RFC Review](../rfcs/reviews/2026-07-foundational-m
 
 Status: candidate preparation; release decision pending.
 
-Relevant docs: [Concepts](concepts.md), [Glossary](glossary.md), [Manifest Reference](manifest-reference.md), [Agent Definitions](agent-definitions.md), [Context Model](context-model.md), [Memory Model](memory-model.md), [Approval Gates](approval-gates.md), [Prompt Sets](prompt-sets.md), [Retrieval Profiles](retrieval-profiles.md).
+Relevant docs: [Concepts](concepts.md), [Glossary](glossary.md), [Manifest Reference](manifest-reference.md), [Actor Model](actor-model.md), [Actor Model Migration](actor-model-migration.md), [Agent Definitions](agent-definitions.md), [Context Model](context-model.md), [Memory Model](memory-model.md), [Approval Gates](approval-gates.md), [Prompt Sets](prompt-sets.md), [Retrieval Profiles](retrieval-profiles.md).
 
 Agent assembly draft checkpoint: complete for initial review. The current draft links agent definitions, model profiles, prompt sets, retrieval profiles, permissions, context, memory, autonomy, extensions, compatibility, and audit expectations.
 
@@ -89,6 +91,7 @@ Relevant docs: [Security Model](security-model.md), [Capability Model](capabilit
 - Document validation workflow and current validation limits.
 - Review RFC-0005 validation strategy for syntax, schema, semantic, diagnostic, and runtime preflight boundaries.
 - Add schema examples and negative cases.
+- Review the initial ActorSet boundary cases before migrating another example.
 - Define conformance expectations for validators.
 - Refine draft conformance levels for manifests, validators, CLIs, runtimes, and extensions.
 

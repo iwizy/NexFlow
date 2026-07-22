@@ -11,6 +11,11 @@ accepts the logical object form and deterministic field-contract direction for
 implementation planning and places the reusable reference primitive before the
 Actor schema migration. This RFC remains Draft.
 
+The first implemented slice adds the common kind, ID, and optional scope tuple
+plus closed assembly-scoped contracts for Actor relationships. Other current
+reference fields retain their existing authored forms until their contracts are
+reviewed and migrated deliberately.
+
 ## Summary
 
 This RFC proposes a typed reference model for NexFlow resources.

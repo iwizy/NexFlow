@@ -11,6 +11,12 @@ accepts the identity direction for implementation planning, requires the common
 typed-reference primitive before the Actor schema migration, and records the
 remaining schema blockers. This RFC remains Draft.
 
+The first implemented slice is documented in
+[Actor Model](../docs/actor-model.md) and
+[Actor Model Migration](../docs/actor-model-migration.md). It adds the shared
+reference primitive, an optional `ActorSet`, explicit agent bridges, and one
+maintained migration path without accepting the rest of this RFC automatically.
+
 ## Summary
 
 This RFC proposes a first-class actor model for NexFlow.

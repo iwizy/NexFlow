@@ -21,9 +21,11 @@ metadata:
   description: Optional description
 ```
 
-## Required Core Manifests
+## Core Manifests
 
-The current `0.1` schema and maintained examples use a complete manifest set. [RFC-0016: Core Profile And Logical Discovery](../rfcs/RFC-0016-core-profile-and-discovery.md) proposes a future minimum profile, optional modules, multiple workflows, and reference-driven dependency closure. Reduced profiles are not supported by the current schemas unless that RFC is accepted and implemented.
+The current `0.1` maintained examples use the existing complete manifest set.
+`ActorSet` is an additive migration manifest and is currently present only in
+the Minimal Team reference path. [RFC-0016: Core Profile And Logical Discovery](../rfcs/RFC-0016-core-profile-and-discovery.md) proposes a future minimum profile, optional modules, multiple workflows, and reference-driven dependency closure. Reduced profiles are not supported by the current schemas unless that RFC is accepted and implemented.
 
 ### `project.yaml`
 
@@ -40,13 +42,49 @@ Key fields:
 - `project.policies`
 - `manifests`
 
-The `manifests` map may include draft versioning manifests such as `agentDefinitions: agent-definitions.yaml`, `modelProfiles: model-profiles.yaml`, `promptSets: prompt-sets.yaml`, and `retrievalProfiles: retrieval-profiles.yaml`.
+`project.policies.networkAccess` accepts a structured, fail-closed outbound
+network policy. Its `default` is `deny`; rules identify actors, purposes,
+destinations, effects, transport constraints, audit expectations, and any
+required approval gate. Its audit event references resolve through
+`events.yaml`. Legacy free-text values remain schema-valid during the `0.1`
+draft but are advisory only and MUST NOT grant connectivity.
 
-Related docs: [Project Policy](concepts.md#project-policy), [Autonomy Model](autonomy-model.md), [Approval Gates](approval-gates.md), [Versioning](versioning.md), [Agent Definitions](agent-definitions.md), [Model Profiles](model-profiles.md), [Prompt Sets](prompt-sets.md), [Retrieval Profiles](retrieval-profiles.md).
+The `manifests` map may include `actors: actors.yaml` for a migrated participant
+inventory and draft versioning manifests such as
+`agentDefinitions: agent-definitions.yaml`, `modelProfiles: model-profiles.yaml`,
+`promptSets: prompt-sets.yaml`, and
+`retrievalProfiles: retrieval-profiles.yaml`.
+
+Related docs: [Project Policy](concepts.md#project-policy), [Network Access Policy](network-access-policy.md), [Autonomy Model](autonomy-model.md), [Approval Gates](approval-gates.md), [Versioning](versioning.md), [Agent Definitions](agent-definitions.md), [Model Profiles](model-profiles.md), [Prompt Sets](prompt-sets.md), [Retrieval Profiles](retrieval-profiles.md).
+
+### `actors.yaml`
+
+Declares first-class participant identity in the draft `ActorSet` shape.
+
+Actor fields:
+
+- `id`, `kind`, `displayName`, and `description`
+- `roles` and `responsibilities`
+- optional `skills` and namespaced `extensions`
+- required typed `agentRef` for an `agent`
+- required typed `operatedBy` references for an `automation` or `service`
+- required typed `representedBy` references for an `authority`
+- optional typed `integrationRef` for a `service`
+
+When `ActorSet` is present, it is the authoritative participant namespace for
+that manifest assembly. When absent, legacy `0.1` projects continue to resolve
+participants from project maintainers and `AgentSet` during the migration
+window.
+
+Related docs: [Actor Model](actor-model.md), [Actor Model Migration](actor-model-migration.md), [Concepts](concepts.md), [Compatibility](compatibility.md), [RFC-0013](../rfcs/RFC-0013-actor-model.md), [RFC-0015](../rfcs/RFC-0015-typed-references.md).
 
 ### `agents.yaml`
 
-Declares participant identities in the current draft `AgentSet` shape. Current examples include AI agents and legacy human participant entries; a human entry is not an AI agent. [RFC-0013](../rfcs/RFC-0013-actor-model.md) proposes a first-class actor model and staged migration from this mixed shape.
+Declares stable AI agent identity and current standing configuration fields.
+Legacy projects may still include human participant entries for compatibility; a
+human entry is not an AI agent. Projects using `ActorSet` keep non-agent
+participants out of `AgentSet` and connect each agent actor through explicit
+`agentRef`.
 
 Agent fields:
 
@@ -260,7 +298,8 @@ The same string MAY appear in distinct resource namespaces only when the referen
 
 ## Identifier References
 
-An identifier reference is the exact ID string of a declared resource. References use plain scalar values or lists:
+Resource references use the authored form permitted by their field contract.
+Existing deterministic fields continue to use exact scalar IDs:
 
 ```yaml
 agentRef: docs-agent
@@ -269,17 +308,41 @@ capabilityRefs:
   - modify_documentation
 ```
 
-References are case-sensitive and MUST preserve the declaration's spelling and separator style. Authors and tools MUST NOT silently lowercase, trim, rewrite separators, or infer aliases. Qualified forms such as `agent:docs-agent` and path-like forms such as `agents/docs-agent` are not part of the core `0.1` reference syntax.
+The first migrated Actor relationship fields require typed objects:
 
-[RFC-0015: Typed References](../rfcs/RFC-0015-typed-references.md) proposes a future structured `kind`, `id`, and optional `scope` model for fields that cannot resolve safely from an unqualified ID. It does not change the current `0.1` syntax unless accepted and implemented through synchronized schema, example, compatibility, and versioning updates.
+```yaml
+agentRef:
+  kind: agent
+  id: docs-agent
+```
 
-The containing field identifies the target namespace. For example, `agentRef` targets an agent ID, `modelProfileRef` targets a model profile ID, and `approvalGates` contains approval gate IDs. JSON Schema checks lexical form; future semantic validation must check uniqueness, existence, target kind, ambiguity, and graph consistency.
+The common typed reference contains `kind`, `id`, and optional `scope`. A field
+contract closes the allowed target kinds and determines whether scope or a
+legacy scalar form is accepted. Actor relationship fields are assembly-scoped
+and prohibit authored scope.
+
+References are case-sensitive and MUST preserve declaration spelling and
+separator style. Authors and tools MUST NOT silently lowercase, trim, rewrite
+separators, infer aliases, or search unrelated target kinds. Compact strings
+such as `agent:docs-agent` and path-like forms such as `agents/docs-agent` are
+not accepted typed reference syntax.
+
+For scalar references, the containing field identifies the target namespace.
+For typed references, the field contract also verifies that the authored kind is
+allowed. JSON Schema checks authored shape and closed kind constraints; semantic
+validation checks uniqueness, existence, scope, ambiguity, and graph
+consistency.
+
+[RFC-0015: Typed References](../rfcs/RFC-0015-typed-references.md) remains Draft.
+Only the common primitive and Actor relationship contracts documented in
+[Actor Model](actor-model.md) are implemented. Other fields retain their current
+forms until migrated deliberately.
 
 Event types are not IDs. They use a separate dotted lowercase form such as `task.completed` and are referenced from event-related fields such as `emits`, `auditEvents`, audit `events`, and event-driven `triggers`. A non-event trigger such as `manual` is not an event type.
 
 An identifier reference never grants access or authority by itself. Capabilities, permissions, context policy, memory policy, autonomy, and approval gates remain authoritative.
 
-Migration from earlier `0.1` drafts: replace IDs with leading, trailing, or repeated separators and update every reference to the exact replacement. Current repository examples require no migration.
+Migration from earlier `0.1` drafts: replace IDs with leading, trailing, or repeated separators and update every reference to the exact replacement. Projects adopting ActorSet should follow [Actor Model Migration](actor-model-migration.md).
 
 ## Extension Fields
 

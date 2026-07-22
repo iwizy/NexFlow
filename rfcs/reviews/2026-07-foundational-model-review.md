@@ -8,6 +8,18 @@ This document records decisions accepted for implementation planning. It does
 not accept any RFC in full and does not change current schemas, examples, or
 manifest validity.
 
+## Implementation Follow-Up
+
+As of 2026-07-22, the first Actor identity slice implements the dependency order
+recorded here: shared typed and scalar-compatible reference primitives, closed
+Actor relationship contracts, an `ActorSet` schema, explicit `agentRef`, one maintained example
+migration, compatibility guidance, and focused validation checks.
+
+This follow-up does not accept RFC-0013 or RFC-0015 in full. Typed references
+outside the Actor relationship fields, complete agent identity simplification,
+effective definition authority, core profile changes, and broader example
+migration remain open.
+
 ## Scope
 
 This review covers:
@@ -38,8 +50,8 @@ must precede the first Actor schema migration. Otherwise actor references would
 need an immediate second format migration.
 
 The package is therefore **compatible with conditions**. Its conceptual
-directions may guide implementation, but schema work remains gated by the
-blockers in this review.
+directions may guide implementation, but later schema work remains gated by the
+remaining blockers in this review.
 
 ## Dependency Order
 
@@ -169,6 +181,10 @@ This phase can be additive and should keep current manifests valid.
 - migrate one maintained example before migrating the complete example set
 - keep a documented compatibility path for legacy human entries in `AgentSet`
 
+Status: the initial additive slice is implemented for the Minimal Team reference
+path. Complete example migration remains deferred until the next identity and
+effective-configuration decisions are reviewed.
+
 ### Phase 3: Agent Configuration
 
 - reduce `AgentSet` to stable AI identity and accepted standing constraints
@@ -205,9 +221,9 @@ This phase can be additive and should keep current manifests valid.
 
 | Blocker | Blocks | Required resolution |
 | --- | --- | --- |
-| Common typed-reference primitive is not implemented | Actor schema migration and multi-kind participant references | Define reusable object and scalar-compatible forms plus field contracts first. |
-| Final common Actor fields are undecided | Normative `ActorSet` schema | Separate identity fields from kind-specific policy and configuration fields. |
-| Actor-to-agent bridge is not yet normative | Agent actor schema and resolution | Adopt explicit `agentRef`; never infer the bridge from equal IDs. |
+| Typed-reference contracts outside ActorSet relationships remain incomplete | Broader multi-kind and nested reference migration | Reuse the implemented common tuple and define each remaining field contract deliberately. |
+| Actor policy and configuration bindings beyond the initial identity slice remain undecided | Complete participant model | Keep ActorSet identity-only until policy ownership and effective configuration are accepted. |
+| Actor-to-agent activation and lifecycle binding remains incomplete | Effective agent configuration selection | Preserve the implemented explicit stable identity `agentRef`; define activation separately. |
 | Remaining `AgentSet` standing constraints are undecided | Complete identity/configuration split | Classify current fields as stable identity, standing ceiling, behavioral release, or deprecated compatibility data. |
 | Scoped active-definition binding has no accepted field | Multiple simultaneous active releases per agent | Use one unscoped active definition initially; specify scoped binding separately. |
 | Context and memory intent lacks read/write/promotion typing | Complete effective configuration semantics | Define intent without treating access references as grants. |
@@ -257,9 +273,9 @@ the draft is not acceptable.
 
 | RFC | Disposition | Conditions |
 | --- | --- | --- |
-| RFC-0013 | Direction accepted for planning; remains Draft | Typed-reference primitive first; finalize common fields and explicit `agentRef`. |
+| RFC-0013 | Initial Actor identity slice implemented; remains Draft | Review agent identity simplification and broader migration before claiming the full model. |
 | RFC-0014 | Precedence and fail-closed selection accepted for planning; remains Draft | Start with one unscoped active definition; classify remaining standing constraints. |
-| RFC-0015 | Logical object form and deterministic field contracts accepted for planning; remains Draft | Define authoritative contract storage and migrate fields deliberately. |
+| RFC-0015 | Common tuple and Actor relationship contracts implemented; remains Draft | Define authoritative contracts and migrate remaining fields deliberately. |
 | RFC-0016 | Core profile and logical assembly direction accepted for planning; remains Draft | Stabilize participant inventory and reference contracts before schema migration. |
 
 ## Exit Criteria For Schema Work

@@ -25,6 +25,7 @@ Approval gates can appear in several manifest areas:
 | `tasks[].approvalGates` | Gates task execution or completion. |
 | `workflow.stages[].steps[].approvalGates` | Gates workflow transitions or steps. |
 | `memoryScopes[].approvalGate` | Gates durable or sensitive memory writes. |
+| `project.policies.networkAccess.rules[].approvalGate` | Gates a matching outbound network purpose and destination. |
 
 The same gate ID may be referenced by multiple manifests when the approval policy is shared.
 
@@ -110,6 +111,7 @@ Good approval scopes:
 - one command
 - one deployment target
 - one memory write
+- one network purpose and destination set
 
 Broad approvals, such as unlimited repository write access, should be avoided.
 
@@ -166,6 +168,20 @@ Examples:
 - storing user preference memory
 
 Approval gates for memory should identify ownership, visibility, sensitivity, and allowed consumers.
+
+## Network Interaction
+
+A network rule with `effect: approval_required` must reference a declared
+project approval gate. The approval is valid only for the actors, purposes,
+destinations, schemes, ports, classification, and time scope represented by the
+request and decision.
+
+Approval does not create network authority by itself. The actor must still have
+the `access_network` capability, an effective permission, access to the selected
+context, provider, or extension, and any required credentials. A deny rule or
+transport restriction remains binding after approval.
+
+See [Network Access Policy](network-access-policy.md).
 
 ## Event Expectations
 

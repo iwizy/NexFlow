@@ -59,6 +59,67 @@ function requireRefs(file, refs, targets, label, targetLabel) {
   }
 }
 
+function typedReferenceIds(file, value, label, expectedKind) {
+  const references = Array.isArray(value) ? value : value === undefined ? [] : [value];
+  const ids = [];
+
+  for (const reference of references) {
+    if (typeof reference === "string") {
+      ids.push(reference);
+      continue;
+    }
+
+    if (reference === null || typeof reference !== "object" || Array.isArray(reference)) continue;
+
+    if (reference.kind !== expectedKind) {
+      report(file, `${label} requires reference kind ${JSON.stringify(expectedKind)}, found ${JSON.stringify(reference.kind)}`);
+      continue;
+    }
+
+    if (typeof reference.id === "string" && reference.id.length > 0) ids.push(reference.id);
+  }
+
+  return ids;
+}
+
+function requireTypedRefs(file, value, targets, label, targetLabel, expectedKind) {
+  const ids = typedReferenceIds(file, value, label, expectedKind);
+  requireRefs(file, ids, targets, label, targetLabel);
+  return ids;
+}
+
+function reportReferenceCycles(file, graph, label) {
+  const states = new Map();
+  const stack = [];
+  const reported = new Set();
+
+  function visit(id) {
+    const state = states.get(id);
+    if (state === "done") return;
+
+    if (state === "visiting") {
+      const start = stack.indexOf(id);
+      const cycle = [...stack.slice(start), id];
+      const signature = cycle.join(" -> ");
+      if (!reported.has(signature)) {
+        report(file, `${label} cycle ${cycle.map((item) => JSON.stringify(item)).join(" -> ")}`);
+        reported.add(signature);
+      }
+      return;
+    }
+
+    states.set(id, "visiting");
+    stack.push(id);
+    for (const target of graph.get(id) ?? []) {
+      if (graph.has(target)) visit(target);
+    }
+    stack.pop();
+    states.set(id, "done");
+  }
+
+  for (const id of graph.keys()) visit(id);
+}
+
 function providerRefsFromModelProfile(profile) {
   const refs = [];
   refs.push(...stringItems(profile.selection?.providerRefs));
@@ -94,6 +155,7 @@ function collectWorkflowSteps(workflow) {
 function validateProjectSet(directory, manifests) {
   const projectFile = manifests.get("Project")?.file ?? directory;
   const project = manifests.get("Project")?.data?.project ?? {};
+  const actorsFile = manifests.get("ActorSet")?.file ?? directory;
   const agentsFile = manifests.get("AgentSet")?.file ?? directory;
   const taskFile = manifests.get("TaskSet")?.file ?? directory;
   const workflowFile = manifests.get("Workflow")?.file ?? directory;
@@ -126,9 +188,14 @@ function validateProjectSet(directory, manifests) {
   const agentDefinitions = new Set();
   const eventTypes = new Set();
   const extensions = new Set();
+  const networkRules = new Set();
+  const hasActorSet = manifests.has("ActorSet");
+  const actorData = asArray(manifests.get("ActorSet")?.data?.actors);
 
-  for (const maintainer of asArray(project.maintainers)) {
-    addUnique(projectFile, actors, maintainer?.id, "actor");
+  if (!hasActorSet) {
+    for (const maintainer of asArray(project.maintainers)) {
+      addUnique(projectFile, actors, maintainer?.id, "actor");
+    }
   }
 
   for (const gate of asArray(project.approvalGates)) {
@@ -137,7 +204,13 @@ function validateProjectSet(directory, manifests) {
 
   for (const agent of asArray(manifests.get("AgentSet")?.data?.agents)) {
     addUnique(agentsFile, agents, agent?.id, "agent");
-    if (typeof agent?.id === "string") actors.add(agent.id);
+    if (!hasActorSet && typeof agent?.id === "string") actors.add(agent.id);
+  }
+
+  if (hasActorSet) {
+    for (const actor of actorData) {
+      addUnique(actorsFile, actors, actor?.id, "actor");
+    }
   }
 
   for (const task of asArray(manifests.get("TaskSet")?.data?.tasks)) {
@@ -193,9 +266,74 @@ function validateProjectSet(directory, manifests) {
     addUnique(extensionsFile, extensions, extension?.id, "extension");
   }
 
+  const configuredNetworkAccess = project.policies?.networkAccess;
+  const networkAccess = configuredNetworkAccess !== null
+    && typeof configuredNetworkAccess === "object"
+    && !Array.isArray(configuredNetworkAccess)
+    ? configuredNetworkAccess
+    : null;
+
+  for (const rule of asArray(networkAccess?.rules)) {
+    addUnique(projectFile, networkRules, rule?.id, "network access rule");
+  }
+
   for (const gate of asArray(project.approvalGates)) {
     requireRefs(projectFile, gate?.requiredApprovers, actors, `approval gate ${JSON.stringify(gate?.id)}`, "actor");
   }
+
+  if (hasActorSet) {
+    const linkedAgents = new Set();
+    const actorRelationships = new Map(actorData
+      .filter((actor) => typeof actor?.id === "string")
+      .map((actor) => [actor.id, []]));
+
+    for (const maintainer of asArray(project.maintainers)) {
+      requireRefs(projectFile, [maintainer?.id], actors, `project maintainer ${JSON.stringify(maintainer?.id)}`, "actor");
+    }
+
+    for (const actor of actorData) {
+      const label = `actor ${JSON.stringify(actor?.id)}`;
+
+      if (actor?.kind === "agent") {
+        const agentRefs = requireTypedRefs(actorsFile, actor?.agentRef, agents, label, "agent", "agent");
+        for (const agentRef of agentRefs) {
+          if (linkedAgents.has(agentRef)) {
+            report(actorsFile, `${label} duplicates agent bridge for ${JSON.stringify(agentRef)}`);
+          } else {
+            linkedAgents.add(agentRef);
+          }
+        }
+      }
+
+      const operators = requireTypedRefs(actorsFile, actor?.operatedBy, actors, label, "actor", "actor");
+      const representatives = requireTypedRefs(actorsFile, actor?.representedBy, actors, label, "actor", "actor");
+      requireTypedRefs(actorsFile, actor?.integrationRef, extensions, label, "extension", "extension");
+
+      if (typeof actor?.id === "string") {
+        actorRelationships.set(actor.id, [...operators, ...representatives]);
+      }
+    }
+
+    for (const agent of agents) {
+      if (!linkedAgents.has(agent)) {
+        report(actorsFile, `agent ${JSON.stringify(agent)} has no ActorSet bridge`);
+      }
+    }
+
+    reportReferenceCycles(actorsFile, actorRelationships, "actor relationship");
+  }
+
+  for (const rule of asArray(networkAccess?.rules)) {
+    const label = `network access rule ${JSON.stringify(rule?.id)}`;
+    requireRefs(projectFile, rule?.actors, actors, label, "actor");
+    requireRefs(projectFile, rule?.capabilities, capabilities, label, "capability");
+    requireRefs(projectFile, rule?.destinations?.contextSources, contextSources, label, "context source");
+    requireRefs(projectFile, rule?.destinations?.providers, providers, label, "provider");
+    requireRefs(projectFile, rule?.destinations?.extensions, extensions, label, "extension");
+    requireRefs(projectFile, [rule?.approvalGate], approvalGates, label, "approval gate");
+  }
+
+  requireRefs(projectFile, networkAccess?.audit?.events, eventTypes, "network access audit", "event type");
 
   for (const agent of asArray(manifests.get("AgentSet")?.data?.agents)) {
     requireRefs(agentsFile, agent?.permissions, permissions, `agent ${JSON.stringify(agent?.id)}`, "permission");
@@ -346,6 +484,6 @@ if (diagnostics.length > 0) {
   process.exitCode = 1;
 } else {
   console.log(`Semantic reference smoke checks passed for ${projects.size} example project(s).`);
-  console.log("Checked core actor, task, workflow, artifact, permission, context, profile, gate, event, and extension references.");
+  console.log("Checked core actor identity, agent bridges, task, workflow, artifact, permission, network policy, context, profile, gate, event, and extension references.");
   console.log("This is a repository smoke check, not full semantic validation.");
 }

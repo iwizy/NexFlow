@@ -1,0 +1,31 @@
+specVersion: "0.1"
+kind: ActorSet
+metadata:
+  project: minimal-team
+actors:
+  - id: human-maintainer
+    kind: human
+    displayName: Human Maintainer
+    description: Final human authority for accepted project changes.
+    roles:
+      - maintainer
+    responsibilities:
+      - Approve changes.
+      - Resolve ambiguity.
+    skills:
+      - project_review
+  - id: docs-agent
+    kind: agent
+    displayName: Docs Agent
+    description: AI participant that drafts documentation updates for maintainer review.
+    roles:
+      - technical_writer
+    responsibilities:
+      - Keep docs aligned with examples.
+      - Flag underspecified behavior.
+    skills:
+      - specification_writing
+      - schema_review
+    agentRef:
+      kind: agent
+      id: docs-agent

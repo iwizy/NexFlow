@@ -38,8 +38,9 @@ The central rule is:
 > references determine their meaning.
 
 This RFC does not change current schemas or examples by itself. The current
-`0.1` repository continues to validate complete 16-manifest example sets until
-an accepted migration is implemented.
+`0.1` repository continues to validate the complete 16-manifest base example
+sets; the Minimal Team additionally carries the optional ActorSet migration
+manifest. Reduced profiles remain unimplemented.
 
 ## Motivation
 
@@ -48,8 +49,8 @@ make review, ownership, and validation clearer. The repository has since grown
 from the original set to include agent definitions, model profiles, prompt sets,
 and retrieval profiles.
 
-Current reference examples contain all 16 schema-backed manifest kinds. The
-current `Project` schema also requires a `manifests` map with paths for agents,
+Current reference examples contain the 16-kind base set, and the Minimal Team
+also covers `ActorSet`. The current `Project` schema requires a `manifests` map with paths for agents,
 workflow, tasks, handoffs, permissions, capabilities, context, memory, providers,
 events, and extensions.
 
@@ -166,7 +167,8 @@ This has three effects:
 
 ### Current Examples
 
-Each maintained example currently includes all 16 schema-backed kinds.
+Each maintained example currently includes the 16-kind base set. The Minimal
+Team additionally includes `ActorSet` as the first staged migration path.
 
 They remain useful complete examples and should not be rewritten as reduced
 profiles merely to demonstrate this proposal.
@@ -975,12 +977,13 @@ If accepted, RFC-0002 should be updated to distinguish:
 ## Relationship To Actor Model
 
 RFC-0013 proposes replacing mixed participant declarations with first-class
-actors.
+actors. The repository implements the first additive `ActorSet` migration slice
+for the Minimal Team while the broader RFC remains Draft.
 
 This RFC defines a participant inventory slot rather than permanently declaring
 `AgentSet` to be the correct identity model. The slot is satisfied by the current
-`AgentSet` during migration and should move to `ActorSet` if the Actor Model is
-accepted.
+`AgentSet` for legacy examples and by `ActorSet` where the staged Actor Model
+migration has been applied.
 
 ## Relationship To Typed References
 

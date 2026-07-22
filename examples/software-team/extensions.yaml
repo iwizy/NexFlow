@@ -16,6 +16,7 @@ extensions:
       - read_repository
       - create_branch
       - create_pull_request
+      - access_network
   - id: linear_basic
     namespace: io.nexflow.linear
     displayName: Linear Basic
@@ -26,3 +27,4 @@ extensions:
       - tasks
     requiredCapabilities:
       - manage_tasks
+      - access_network

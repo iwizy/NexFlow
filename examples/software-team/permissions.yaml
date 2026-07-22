@@ -45,3 +45,15 @@ permissions:
       - read_context
     effect: approval_required
     approvalGate: code_review
+  - id: approved_network_access
+    description: Approved agents may initiate only connections matched by structured project network policy.
+    subjects:
+      - implementation-agent
+      - qa-agent
+      - docs-agent
+    capabilities:
+      - access_network
+    effect: approval_required
+    approvalGate: network_access_review
+    conditions:
+      - The request must match actor, purpose, destination, transport, and classification constraints.

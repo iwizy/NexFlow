@@ -67,3 +67,14 @@ events:
         - agentId
         - agentDefinitionRef
         - modelProfileRef
+  - type: network.decision
+    description: A structured network policy decision is recorded without request secrets or payloads.
+    retention: Project policy.
+    auditRequired: true
+    payload:
+      required:
+        - actor
+        - purpose
+        - decision
+        - ruleIds
+        - redactionApplied

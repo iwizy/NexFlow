@@ -180,6 +180,7 @@ It checks selected:
 - artifact references
 - capability and permission references
 - approval gate references
+- structured network policy rule and destination references
 - context and memory references
 - provider and agent component references
 - event references

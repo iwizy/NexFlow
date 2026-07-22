@@ -122,6 +122,10 @@ A future implementation that validates, interprets, or executes NexFlow manifest
 
 Rules that apply across a project, such as default autonomy, required reviews, secret handling, and network access boundaries.
 
+The structured [Network Access Policy](network-access-policy.md) defines
+fail-closed outbound connection rules separately from capabilities,
+permissions, context access, provider selection, and credentials.
+
 ## Approval Gate
 
 A condition requiring explicit authorization before an action can proceed.

@@ -126,6 +126,7 @@ function validateProjectSet(directory, manifests) {
   const agentDefinitions = new Set();
   const eventTypes = new Set();
   const extensions = new Set();
+  const networkRules = new Set();
 
   for (const maintainer of asArray(project.maintainers)) {
     addUnique(projectFile, actors, maintainer?.id, "actor");
@@ -193,9 +194,32 @@ function validateProjectSet(directory, manifests) {
     addUnique(extensionsFile, extensions, extension?.id, "extension");
   }
 
+  const configuredNetworkAccess = project.policies?.networkAccess;
+  const networkAccess = configuredNetworkAccess !== null
+    && typeof configuredNetworkAccess === "object"
+    && !Array.isArray(configuredNetworkAccess)
+    ? configuredNetworkAccess
+    : null;
+
+  for (const rule of asArray(networkAccess?.rules)) {
+    addUnique(projectFile, networkRules, rule?.id, "network access rule");
+  }
+
   for (const gate of asArray(project.approvalGates)) {
     requireRefs(projectFile, gate?.requiredApprovers, actors, `approval gate ${JSON.stringify(gate?.id)}`, "actor");
   }
+
+  for (const rule of asArray(networkAccess?.rules)) {
+    const label = `network access rule ${JSON.stringify(rule?.id)}`;
+    requireRefs(projectFile, rule?.actors, actors, label, "actor");
+    requireRefs(projectFile, rule?.capabilities, capabilities, label, "capability");
+    requireRefs(projectFile, rule?.destinations?.contextSources, contextSources, label, "context source");
+    requireRefs(projectFile, rule?.destinations?.providers, providers, label, "provider");
+    requireRefs(projectFile, rule?.destinations?.extensions, extensions, label, "extension");
+    requireRefs(projectFile, [rule?.approvalGate], approvalGates, label, "approval gate");
+  }
+
+  requireRefs(projectFile, networkAccess?.audit?.events, eventTypes, "network access audit", "event type");
 
   for (const agent of asArray(manifests.get("AgentSet")?.data?.agents)) {
     requireRefs(agentsFile, agent?.permissions, permissions, `agent ${JSON.stringify(agent?.id)}`, "permission");
@@ -346,6 +370,6 @@ if (diagnostics.length > 0) {
   process.exitCode = 1;
 } else {
   console.log(`Semantic reference smoke checks passed for ${projects.size} example project(s).`);
-  console.log("Checked core actor, task, workflow, artifact, permission, context, profile, gate, event, and extension references.");
+  console.log("Checked core actor, task, workflow, artifact, permission, network policy, context, profile, gate, event, and extension references.");
   console.log("This is a repository smoke check, not full semantic validation.");
 }

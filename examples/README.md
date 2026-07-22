@@ -26,7 +26,7 @@ Each example contains the same core manifest files:
 
 | File | Purpose |
 | --- | --- |
-| `project.yaml` | Project identity, maintainers, policies, approval gates, and manifest locations. |
+| `project.yaml` | Project identity, maintainers, policies including network access, approval gates, and manifest locations. |
 | `agents.yaml` | Current draft participant identities, including human actors and AI agents, plus roles, responsibilities, skills, policy references, context, memory, autonomy, providers, and extensions. |
 | `agent-definitions.yaml` | Versioned behavioral releases that assemble model, prompt, retrieval, permission, context, memory, autonomy, and extension references. |
 | `workflow.yaml` | Workflow stages, steps, dependencies, approval gates, and emitted events. |
@@ -81,6 +81,7 @@ All examples follow the same safety pattern:
 - capabilities are declared separately from permissions
 - agent definitions assemble reviewed component references without granting access
 - risky capabilities are approval-gated
+- outbound network access is fail-closed and selected independently from capability and permission grants
 - context access is explicit
 - memory access is scoped
 - model profile selection is explicit and provider-neutral

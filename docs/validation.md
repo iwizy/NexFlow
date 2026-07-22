@@ -77,7 +77,7 @@ Run semantic reference smoke checks:
 npm run semantic-smoke
 ```
 
-This command checks core example references across actors, tasks, workflow steps, artifacts, permissions, capabilities, context sources, memory scopes, providers, model profiles, prompt sets, retrieval profiles, agent definitions, approval gates, events, and extensions. It reports `NF-SEMANTIC` diagnostics for missing references or duplicate IDs.
+This command checks core example references across actors, tasks, workflow steps, artifacts, permissions, capabilities, structured network policies, context sources, memory scopes, providers, model profiles, prompt sets, retrieval profiles, agent definitions, approval gates, events, and extensions. It reports `NF-SEMANTIC` diagnostics for missing references or duplicate IDs.
 
 The command is intentionally a smoke check. It does not prove workflow graph correctness, policy safety, approval sufficiency, runtime enforceability, provider compatibility, or full semantic conformance.
 
@@ -170,6 +170,8 @@ Future semantic validators should check:
 - task ownership and dependency consistency
 - workflow graph validity
 - approval gate coverage
+- network rule identifiers and references to actors, capabilities, destinations, approval gates, and audit event types
+- network rule coherence with permissions, context boundaries, transport constraints, DNS resolution, redirects, and audit policy
 - context and memory access boundaries
 - context freshness, source classification, and MCP boundary consistency
 - memory ownership, allowed writers, prohibited content, and cross-scope promotion consistency

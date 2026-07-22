@@ -16,7 +16,52 @@ project:
   policies:
     requireReview: true
     secretHandling: Use secret references only.
-    networkAccess: Allowed only through declared integrations.
+    networkAccess:
+      default: deny
+      rules:
+        - id: approved_project_services
+          description: Approved agents may reach declared context, provider, and integration services.
+          effect: approval_required
+          actors:
+            - implementation-agent
+            - qa-agent
+            - docs-agent
+          capabilities:
+            - access_network
+          purposes:
+            - context_read
+            - provider_request
+            - integration_read
+          destinations:
+            contextSources:
+              - repository
+              - issue_tracker
+            providers:
+              - coding_reasoning
+              - general_reasoning
+            extensions:
+              - github_basic
+              - linear_basic
+            schemes:
+              - https
+            ports:
+              - 443
+          maxDataClassification: confidential
+          approvalGate: network_access_review
+      transport:
+        requireTls: true
+        allowPrivateNetworks: false
+        allowLoopback: false
+        followRedirects: false
+        maxRedirects: 0
+      audit:
+        events:
+          - network.decision
+        recordDecisions: true
+        recordDestination: true
+        recordPurpose: true
+        redactQuery: true
+        redactHeaders: true
     destructiveActions: Human approval required.
     productionActions: Human approval required.
   approvalGates:
@@ -26,6 +71,10 @@ project:
         - reviewer
     - id: dependency_approval
       description: Maintainer approval required before installing dependencies.
+      requiredApprovers:
+        - reviewer
+    - id: network_access_review
+      description: Reviewer approval required before an agent initiates an allowed outbound connection.
       requiredApprovers:
         - reviewer
 manifests:

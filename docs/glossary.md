@@ -188,6 +188,17 @@ A provider-neutral declaration of model selection expectations for a behaviorall
 
 Model profiles can describe pinned model references, floating aliases, policy-based selection, fallback behavior, constraints, and audit expectations. They do not call providers or grant access.
 
+## N
+
+### Network Access Policy
+
+A project-level, fail-closed declaration of which actors may initiate outbound
+connections for named purposes to selected destinations, under explicit
+transport, approval, and audit constraints.
+
+A network rule narrows authority. It does not grant a capability, permission,
+context source, provider, extension, integration, credential, or secret.
+
 ## P
 
 ### Permission

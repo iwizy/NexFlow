@@ -22,6 +22,8 @@ This separation keeps manifests auditable. A reviewer can see that an agent may 
 - Risky capabilities should have approval gates.
 - Integrations should declare which capabilities they expose.
 - Future runtimes should audit high-risk capability use.
+- Network-dependent actions should require both an effective `access_network`
+  permission and a matching structured project network rule.
 - When permission rules conflict, explicit deny rules should be treated as stronger than allow rules.
 - Approval-required rules should be treated as pending authorization, not as successful authorization.
 
@@ -34,6 +36,7 @@ This separation keeps manifests auditable. A reviewer can see that an agent may 
 | `create_branch` | Create a source control branch. | Medium |
 | `create_pull_request` | Open or update a pull request. | Medium |
 | `execute_command` | Run local, CI, or sandboxed commands. | High |
+| `access_network` | Initiate an outbound connection that also matches project network policy. | High |
 | `read_documentation` | Read declared documentation sources. | Low |
 | `modify_documentation` | Modify documentation, changelog, or specification files. | Medium |
 | `read_context` | Read declared context sources. | Low to medium |
@@ -146,6 +149,17 @@ requiredCapabilities:
 
 That declaration means the integration needs the capability to operate. It does not mean every agent using that integration can create pull requests.
 
+### Network Capability Is Not A Destination Grant
+
+An actor may declare `access_network`, and a permission may allow or gate that
+capability. The connection must still match the structured
+[Network Access Policy](network-access-policy.md).
+
+Likewise, a matching network rule does not grant the actor `read_context`,
+`manage_tasks`, provider access, integration access, or credentials. Future
+runtimes must evaluate the action capability, permissions, approval gates, and
+network policy together.
+
 ## Review Checklist
 
 When reviewing capabilities and permissions, check:
@@ -156,6 +170,7 @@ When reviewing capabilities and permissions, check:
 - permissions reference existing capabilities
 - agents do not list capabilities that their permissions never allow or gate
 - deployment and destructive capabilities require human approval
+- network capabilities have explicit permissions and matching destination rules
 - audit-recommended capabilities are represented in event expectations
 
 ## Future Work

@@ -9,6 +9,14 @@ This project follows a specification-first process. Breaking changes must includ
 This section records preparation for a possible `0.1` candidate. No candidate
 tag or release has been published, and manifest `specVersion` remains `"0.1"`.
 
+### Added
+
+- Added a structured, fail-closed outbound network access policy model with
+  actor, purpose, destination, approval, transport, audit, and legacy migration
+  semantics.
+- Added the standard `access_network` capability to the software team example
+  and semantic smoke checks for network policy references.
+
 ### Changed
 
 - Refreshed the README support snapshot, navigation, near-term priorities, and

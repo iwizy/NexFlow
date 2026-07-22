@@ -40,9 +40,16 @@ Key fields:
 - `project.policies`
 - `manifests`
 
+`project.policies.networkAccess` accepts a structured, fail-closed outbound
+network policy. Its `default` is `deny`; rules identify actors, purposes,
+destinations, effects, transport constraints, audit expectations, and any
+required approval gate. Its audit event references resolve through
+`events.yaml`. Legacy free-text values remain schema-valid during the `0.1`
+draft but are advisory only and MUST NOT grant connectivity.
+
 The `manifests` map may include draft versioning manifests such as `agentDefinitions: agent-definitions.yaml`, `modelProfiles: model-profiles.yaml`, `promptSets: prompt-sets.yaml`, and `retrievalProfiles: retrieval-profiles.yaml`.
 
-Related docs: [Project Policy](concepts.md#project-policy), [Autonomy Model](autonomy-model.md), [Approval Gates](approval-gates.md), [Versioning](versioning.md), [Agent Definitions](agent-definitions.md), [Model Profiles](model-profiles.md), [Prompt Sets](prompt-sets.md), [Retrieval Profiles](retrieval-profiles.md).
+Related docs: [Project Policy](concepts.md#project-policy), [Network Access Policy](network-access-policy.md), [Autonomy Model](autonomy-model.md), [Approval Gates](approval-gates.md), [Versioning](versioning.md), [Agent Definitions](agent-definitions.md), [Model Profiles](model-profiles.md), [Prompt Sets](prompt-sets.md), [Retrieval Profiles](retrieval-profiles.md).
 
 ### `agents.yaml`
 

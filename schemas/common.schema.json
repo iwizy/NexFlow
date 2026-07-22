@@ -123,6 +123,231 @@
       "type": "string",
       "enum": ["public", "internal", "confidential", "restricted"]
     },
+    "networkAccessPolicy": {
+      "title": "Network Access Policy",
+      "description": "Fail-closed project policy for outbound network requests. This policy narrows connectivity and does not grant capabilities, permissions, credentials, context, provider access, or integration access.",
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["default", "rules", "transport", "audit"],
+      "properties": {
+        "default": {
+          "const": "deny",
+          "description": "Unmatched network requests are denied."
+        },
+        "rules": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "required": ["id", "description", "effect", "actors", "purposes", "destinations"],
+            "properties": {
+              "id": {
+                "$ref": "#/$defs/id"
+              },
+              "description": {
+                "$ref": "#/$defs/nonEmptyString"
+              },
+              "effect": {
+                "$ref": "#/$defs/permissionEffect"
+              },
+              "actors": {
+                "allOf": [
+                  {
+                    "$ref": "#/$defs/idList"
+                  }
+                ],
+                "minItems": 1
+              },
+              "capabilities": {
+                "allOf": [
+                  {
+                    "$ref": "#/$defs/idList"
+                  }
+                ],
+                "minItems": 1
+              },
+              "purposes": {
+                "type": "array",
+                "minItems": 1,
+                "uniqueItems": true,
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "context_read",
+                    "provider_request",
+                    "integration_read",
+                    "integration_write",
+                    "package_download",
+                    "artifact_transfer",
+                    "webhook_delivery",
+                    "custom"
+                  ]
+                }
+              },
+              "destinations": {
+                "type": "object",
+                "additionalProperties": true,
+                "properties": {
+                  "domains": {
+                    "type": "array",
+                    "minItems": 1,
+                    "uniqueItems": true,
+                    "items": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 253,
+                      "pattern": "^[a-z0-9](?:[a-z0-9.-]*[a-z0-9])?$"
+                    }
+                  },
+                  "contextSources": {
+                    "allOf": [
+                      {
+                        "$ref": "#/$defs/idList"
+                      }
+                    ],
+                    "minItems": 1
+                  },
+                  "providers": {
+                    "allOf": [
+                      {
+                        "$ref": "#/$defs/idList"
+                      }
+                    ],
+                    "minItems": 1
+                  },
+                  "extensions": {
+                    "allOf": [
+                      {
+                        "$ref": "#/$defs/idList"
+                      }
+                    ],
+                    "minItems": 1
+                  },
+                  "schemes": {
+                    "type": "array",
+                    "minItems": 1,
+                    "uniqueItems": true,
+                    "items": {
+                      "type": "string",
+                      "enum": ["https", "wss", "http"]
+                    }
+                  },
+                  "ports": {
+                    "type": "array",
+                    "minItems": 1,
+                    "uniqueItems": true,
+                    "items": {
+                      "type": "integer",
+                      "minimum": 1,
+                      "maximum": 65535
+                    }
+                  }
+                },
+                "anyOf": [
+                  {
+                    "required": ["domains"]
+                  },
+                  {
+                    "required": ["contextSources"]
+                  },
+                  {
+                    "required": ["providers"]
+                  },
+                  {
+                    "required": ["extensions"]
+                  }
+                ]
+              },
+              "maxDataClassification": {
+                "$ref": "#/$defs/classification"
+              },
+              "approvalGate": {
+                "$ref": "#/$defs/id"
+              }
+            },
+            "allOf": [
+              {
+                "if": {
+                  "required": ["effect"],
+                  "properties": {
+                    "effect": {
+                      "const": "approval_required"
+                    }
+                  }
+                },
+                "then": {
+                  "required": ["approvalGate"]
+                },
+                "else": {
+                  "not": {
+                    "required": ["approvalGate"]
+                  }
+                }
+              }
+            ]
+          }
+        },
+        "transport": {
+          "type": "object",
+          "additionalProperties": true,
+          "required": ["requireTls", "allowPrivateNetworks", "allowLoopback", "followRedirects", "maxRedirects"],
+          "properties": {
+            "requireTls": {
+              "type": "boolean",
+              "default": true
+            },
+            "allowPrivateNetworks": {
+              "type": "boolean",
+              "default": false
+            },
+            "allowLoopback": {
+              "type": "boolean",
+              "default": false
+            },
+            "followRedirects": {
+              "type": "boolean",
+              "default": false
+            },
+            "maxRedirects": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 10,
+              "default": 0
+            }
+          }
+        },
+        "audit": {
+          "type": "object",
+          "additionalProperties": true,
+          "required": ["events", "recordDecisions", "recordDestination", "recordPurpose", "redactQuery", "redactHeaders"],
+          "properties": {
+            "events": {
+              "allOf": [
+                {
+                  "$ref": "#/$defs/eventTypeList"
+                }
+              ],
+              "minItems": 1
+            },
+            "recordDecisions": {
+              "const": true
+            },
+            "recordDestination": {
+              "type": "boolean"
+            },
+            "recordPurpose": {
+              "type": "boolean"
+            },
+            "redactQuery": {
+              "const": true
+            },
+            "redactHeaders": {
+              "const": true
+            }
+          }
+        }
+      }
+    },
     "memoryScope": {
       "title": "Memory Scope",
       "description": "Boundary for retaining and reusing information.",

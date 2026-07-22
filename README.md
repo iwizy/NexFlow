@@ -177,6 +177,7 @@ NexFlow is intentionally split into layers:
 - [Conformance](docs/conformance.md): draft support levels for manifests, validators, CLIs, runtimes, and extensions
 - [Compatibility Matrix](docs/compatibility-matrix.md): current support and explicit implementation gaps
 - [Validation](docs/validation.md): repository checks and their boundaries
+- [Network Access Policy](docs/network-access-policy.md): fail-closed outbound connection rules and migration from advisory strings
 - [Release Plan](docs/release-plan.md): public readiness criteria from `0.1` draft through `1.0`
 - [0.1 Readiness Checklist](docs/readiness-checklist.md): candidate review checklist for docs, schemas, examples, RFCs, compatibility, and limitations
 - [CONTRIBUTING.md](CONTRIBUTING.md): contribution workflow
@@ -188,7 +189,7 @@ NexFlow is intentionally split into layers:
 | --- | --- |
 | Understand the vocabulary | [Concepts](docs/concepts.md), [Glossary](docs/glossary.md) |
 | See every manifest shape | [Manifest Reference](docs/manifest-reference.md) |
-| Understand safety boundaries | [Security Model](docs/security-model.md), [Approval Gates](docs/approval-gates.md) |
+| Understand safety boundaries | [Security Model](docs/security-model.md), [Network Access Policy](docs/network-access-policy.md), [Approval Gates](docs/approval-gates.md) |
 | Version agent behavior | [Agent Assembly](docs/agent-assembly.md), [Agent Definitions](docs/agent-definitions.md), [Versioning](docs/versioning.md), [Event Model](docs/events.md) |
 | Model what agents can and may do | [Capability Model](docs/capability-model.md), [Autonomy Model](docs/autonomy-model.md) |
 | Model what agents may know or retain | [Context Model](docs/context-model.md), [Memory Model](docs/memory-model.md) |

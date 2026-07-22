@@ -12,7 +12,7 @@ The schemas currently target `specVersion: "0.1"` and use JSON Schema draft 2020
 
 | Schema | Manifest `kind` | Purpose |
 | --- | --- | --- |
-| `project.schema.json` | `Project` | Project identity, policies, maintainers, approval gates, and manifest locations. |
+| `project.schema.json` | `Project` | Project identity, policies including structured network access, maintainers, approval gates, and manifest locations. |
 | `agents.schema.json` | `AgentSet` | Current draft participant identities, including AI agents and legacy human entries, with roles, skills, policy references, context, memory, and autonomy. |
 | `agent-definitions.schema.json` | `AgentDefinitionSet` | Versioned agent behavioral releases assembled from model, prompt, retrieval, permission, context, memory, autonomy, and extension references. |
 | `workflow.schema.json` | `Workflow` | Workflow stages, steps, dependencies, gates, and emitted events. |
@@ -78,6 +78,7 @@ Use `common.schema.json` for shared concepts:
 - memory scopes
 - artifacts
 - approval gates
+- structured network access policies
 - extension attachments
 
 Prefer adding shared definitions once rather than duplicating shapes across schemas.
@@ -110,6 +111,9 @@ Examples of future semantic checks:
 - workflow dependencies form a coherent graph
 - task owners have required permissions
 - approval gates cover high-risk capabilities
+- network rules reference declared actors, capabilities, context sources, providers, extensions, and approval gates
+- network audit event references resolve to declared event types
+- network rules are coherent with effective permissions, context boundaries, transport constraints, and destination resolution
 - handoff artifacts are produced by previous tasks
 - memory access is consistent with project policy
 - memory writers, prohibited content, and promotion paths are consistent with sensitivity

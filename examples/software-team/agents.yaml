@@ -15,12 +15,14 @@ agents:
       - test_driven_development
     permissions:
       - implementation_branch_work
+      - approved_network_access
     capabilities:
       - read_repository
       - write_repository
       - create_branch
       - execute_command
       - read_context
+      - access_network
     contextAccess:
       - repository
       - issue_tracker
@@ -46,10 +48,12 @@ agents:
       - bug_reproduction
     permissions:
       - qa_test_execution
+      - approved_network_access
     capabilities:
       - read_repository
       - execute_command
       - read_context
+      - access_network
     contextAccess:
       - repository
       - issue_tracker
@@ -100,10 +104,12 @@ agents:
       - changelog_writing
     permissions:
       - docs_write_after_review
+      - approved_network_access
     capabilities:
       - read_repository
       - modify_documentation
       - read_context
+      - access_network
     contextAccess:
       - repository
       - docs

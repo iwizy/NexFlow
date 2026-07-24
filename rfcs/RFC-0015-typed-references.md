@@ -12,9 +12,10 @@ implementation planning and places the reusable reference primitive before the
 Actor schema migration. This RFC remains Draft.
 
 The first implemented slice adds the common kind, ID, and optional scope tuple
-plus closed assembly-scoped contracts for Actor relationships. Other current
-reference fields retain their existing authored forms until their contracts are
-reviewed and migrated deliberately.
+plus closed assembly-scoped contracts for Actor relationships. The structured
+human override policy reuses the closed actor-reference contract for its
+authorities. Other current reference fields retain their existing authored
+forms until their contracts are reviewed and migrated deliberately.
 
 ## Summary
 

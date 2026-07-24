@@ -116,7 +116,8 @@ Visibility should be narrower than or equal to the declared `allowedConsumers`. 
 
 `allowedWriters` optionally declares who may create or update memory in that scope.
 
-An actor with memory access in `agents.yaml` should still pass all of these checks:
+An actor using a memory scope requested by an agent definition should still
+pass all of these checks:
 
 - the target scope exists in `memory.yaml`
 - the actor is an allowed consumer for reads
@@ -204,7 +205,9 @@ Runtimes must not use provider defaults, hidden caches, or extension behavior to
 
 Future validators may check:
 
-- agent `memoryAccess` scopes exist in `memory.yaml`
+- agent definition `components.memoryScopes` values exist in `memory.yaml`
+- deprecated AgentSet `memoryAccess` values, when present for compatibility,
+  do not grant memory access
 - memory `allowedConsumers` and `allowedWriters` refer to declared actors
 - sensitive scopes define approval gates or narrow consumers
 - `organization` and `user` scopes are not writable without explicit policy

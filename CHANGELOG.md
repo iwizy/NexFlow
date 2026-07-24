@@ -23,6 +23,14 @@ tag or release has been published, and manifest `specVersion` remains `"0.1"`.
   semantics.
 - Added the standard `access_network` capability to the software team example
   and semantic smoke checks for network policy references.
+- Added a structured human override project policy with typed human-controlled
+  authorities, closed narrowing operations, fail-closed response,
+  approval-gated resume, required audit events, a Minimal Team example, and
+  focused boundary checks.
+- Added RFC-0017 for human override authority, response, resume, audit,
+  compatibility, and future runtime boundaries.
+- Added focused AgentSet identity boundary checks and an identity migration
+  guide.
 
 ### Changed
 
@@ -31,6 +39,11 @@ tag or release has been published, and manifest `specVersion` remains `"0.1"`.
   validation workflow.
 - Added a roadmap checkpoint separating candidate evidence, release decisions,
   known draft boundaries, and post-`0.1` work.
+- Simplified the required AgentSet shape to stable AI identity, role,
+  description, responsibilities, and skills while keeping duplicated behavior
+  and access fields schema-valid but deprecated for compatibility.
+- Migrated the Minimal Team AgentSet to compact identity and extended semantic
+  checks for human override authorities, resume gates, and audit events.
 
 ### Candidate Notes
 

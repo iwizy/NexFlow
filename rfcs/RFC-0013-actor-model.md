@@ -17,6 +17,11 @@ The first implemented slice is documented in
 reference primitive, an optional `ActorSet`, explicit agent bridges, and one
 maintained migration path without accepting the rest of this RFC automatically.
 
+The next implemented slice is documented in
+[Agent Identity Migration](../docs/agent-identity-migration.md). It reduces the
+required AgentSet shape to stable AI identity metadata and deprecates duplicated
+behavior fields while preserving legacy manifest validity.
+
 ## Summary
 
 This RFC proposes a first-class actor model for NexFlow.
@@ -328,17 +333,6 @@ actors:
       - Resolve project policy ambiguity.
     skills:
       - project_review
-    capabilities:
-      - read_repository
-      - approve_changes
-    permissions:
-      - maintainer_full_review
-    contextAccess:
-      - repository
-      - docs
-    memoryAccess:
-      - task
-      - project
 
   - id: docs-agent
     kind: agent
@@ -348,18 +342,9 @@ actors:
       - technical_writer
     responsibilities:
       - Keep documentation aligned with accepted specification behavior.
-    agentRef: docs-agent
-    capabilities:
-      - read_repository
-      - modify_documentation
-    permissions:
-      - docs_write_with_review
-    contextAccess:
-      - repository
-      - docs
-    memoryAccess:
-      - ephemeral
-      - task
+    agentRef:
+      kind: agent
+      id: docs-agent
 
   - id: schema-check
     kind: automation
@@ -367,13 +352,11 @@ actors:
     description: Runs deterministic manifest validation in CI.
     roles:
       - validator
+    responsibilities:
+      - Validate manifest structure in CI.
     operatedBy:
-      - human-maintainer
-    capabilities:
-      - read_repository
-      - execute_command
-    permissions:
-      - ci_validation
+      - kind: actor
+        id: human-maintainer
 
   - id: repository-service
     kind: service
@@ -381,13 +364,14 @@ actors:
     description: Represents repository API actions used by the project.
     roles:
       - repository_integration
-    integrationRef: github
+    responsibilities:
+      - Represent declared repository integration activity.
+    integrationRef:
+      kind: extension
+      id: github
     operatedBy:
-      - human-maintainer
-    capabilities:
-      - create_pull_request
-    permissions:
-      - repository_service_actions
+      - kind: actor
+        id: human-maintainer
 
   - id: project-change-authority
     kind: authority
@@ -395,8 +379,11 @@ actors:
     description: Owns final acceptance decisions for project changes.
     roles:
       - change_approver
+    responsibilities:
+      - Own final acceptance decisions.
     representedBy:
-      - human-maintainer
+      - kind: actor
+        id: human-maintainer
 ```
 
 The example uses the current draft `specVersion` only to illustrate the
@@ -416,10 +403,6 @@ Candidate common fields:
 | `roles` | Yes | Functional roles held by the actor. |
 | `responsibilities` | Yes | Expected work or accountability. |
 | `skills` | No | Declared areas of competence or suitability. |
-| `capabilities` | No | Technical actions available to the actor. |
-| `permissions` | No | Policy rules applying to the actor. |
-| `contextAccess` | No | Declared context source references. |
-| `memoryAccess` | No | Declared memory scope references. |
 | `operatedBy` | Conditional | Actors responsible for an automation or service. |
 | `representedBy` | Conditional | Actors allowed to represent an authority. |
 | `agentRef` | Conditional | Agent-specific configuration identity for an agent actor. |
@@ -429,6 +412,10 @@ Candidate common fields:
 The final schema should use conditional validation by actor kind. Fields that do
 not apply to an actor kind should be absent instead of filled with artificial
 values.
+
+Capabilities, permissions, context, memory, autonomy, provider, and behavioral
+components are intentionally outside the common actor record and remain
+authoritative in their owning manifests.
 
 ## Identity Rules
 

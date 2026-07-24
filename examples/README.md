@@ -27,9 +27,9 @@ adds `actors.yaml` as the first maintained ActorSet migration path.
 
 | File | Purpose |
 | --- | --- |
-| `project.yaml` | Project identity, maintainers, policies including network access, approval gates, and manifest locations. |
+| `project.yaml` | Project identity, maintainers, policies including network access and human override, approval gates, and manifest locations. |
 | `actors.yaml` | Optional first-class participant identity inventory; currently implemented by `minimal-team`. |
-| `agents.yaml` | Stable AI identity and current standing configuration, plus legacy mixed-participant compatibility where ActorSet is absent. |
+| `agents.yaml` | Stable AI identity, plus deprecated behavior-field and mixed-participant compatibility during migration. |
 | `agent-definitions.yaml` | Versioned behavioral releases that assemble model, prompt, retrieval, permission, context, memory, autonomy, and extension references. |
 | `workflow.yaml` | Workflow stages, steps, dependencies, approval gates, and emitted events. |
 | `tasks.yaml` | Tasks, owners, participants, dependencies, artifacts, required capabilities, approval gates, and acceptance criteria. |
@@ -89,6 +89,7 @@ All examples follow the same safety pattern:
 - agent definitions assemble reviewed component references without granting access
 - risky capabilities are approval-gated
 - outbound network access is fail-closed and selected independently from capability and permission grants
+- human override can only narrow activity, remains blocked on failure, and requires approval before resume
 - context access is explicit
 - memory access is scoped
 - model profile selection is explicit and provider-neutral

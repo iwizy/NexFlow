@@ -42,6 +42,31 @@ mandatory, rejecting legacy human entries in `AgentSet`, removing fallback, or
 requiring typed objects in existing participant fields. See
 [Actor Model Migration](actor-model-migration.md).
 
+## Agent Identity Version Decision
+
+The compact AgentSet migration remains in `specVersion: "0.1"`. The schema
+removes behavior-specific fields from the required set while continuing to
+validate those fields as deprecated compatibility data.
+
+This is a widening structural change: existing manifests remain valid, and
+migrated projects can remove duplicated behavior fields without changing
+stable agent IDs.
+
+A later version decision is required before removing deprecated fields,
+rejecting legacy mixed AgentSet entries, or adding new required standing
+constraints. See [Agent Identity Migration](agent-identity-migration.md).
+
+## Human Override Version Decision
+
+The optional structured human override policy remains in
+`specVersion: "0.1"`. It is an additive project policy and does not claim runtime
+enforcement.
+
+Making the policy mandatory, broadening eligible authority kinds, allowing
+automatic resume, weakening fail-closed response, or changing operation
+semantics requires an explicit version and migration decision. See
+[Human Override](human-override.md).
+
 ## Agent Definition Versioning
 
 Manifest `specVersion` describes the shape of a NexFlow manifest. It does not fully describe the behavioral version of an individual agent.

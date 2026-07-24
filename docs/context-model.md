@@ -211,17 +211,21 @@ If an MCP server only exposes resources, model it as context. If it performs act
 
 `access_mcp` does not imply `execute_command`, repository write access, credential access, or deployment permission.
 
-## Context Access in Agents
+## Context Requests In Agent Definitions
 
-Agents refer to context sources by ID.
+Agent definitions refer to context sources by ID.
 
 ```yaml
-contextAccess:
+components:
+  contextSourceRefs:
   - repository
   - docs
 ```
 
-An agent with `contextAccess` can only use a source if the source access policy, permissions, and project policy also allow it. Future semantic validators should check that referenced context source IDs exist.
+A requested source can only be used if ContextSet actor policy, permissions,
+project policy, classification, network policy, and runtime support also allow
+it. Legacy AgentSet `contextAccess` remains schema-valid but deprecated during
+migration.
 
 ## Relationship To Retrieval Profiles
 
@@ -229,7 +233,9 @@ Context sources declare what information exists and who may access it.
 
 [Retrieval Profiles](retrieval-profiles.md) declare how selected context sources should be assembled for a behaviorally meaningful purpose, including source selection, index or corpus version, chunking, retriever strategy, freshness, citations, sensitivity, and audit metadata.
 
-A retrieval profile does not grant access to a context source. Future runtimes and validators should still check agent context access, source allow/deny lists, capabilities, permissions, autonomy level, approval gates, and project policy.
+A retrieval profile does not grant access to a context source. Future runtimes
+and validators should still check definition requests, source allow/deny lists,
+capabilities, permissions, autonomy level, approval gates, and project policy.
 
 ## Runtime Expectations
 
@@ -249,7 +255,9 @@ Runtimes must not silently expand an actor's context through provider defaults, 
 
 Future validators may check:
 
-- agent `contextAccess` IDs exist in `context.yaml`
+- agent definition `components.contextSourceRefs` IDs exist in `context.yaml`
+- deprecated AgentSet `contextAccess` values, when present for compatibility,
+  do not grant context access
 - source `allowedActors` and `deniedActors` IDs exist
 - `web` sources define `allowedDomains` or an explicit project exception
 - `restricted` sources have approval gates or narrow actor lists

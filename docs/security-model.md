@@ -89,7 +89,17 @@ Safety-significant definition changes, such as broader context access, broader m
 
 ### Human Override
 
-Humans must be able to stop or override future runtime activity.
+Humans must be able to stop or override future runtime activity through an
+explicit, fail-closed policy.
+
+The structured [Human Override](human-override.md) model declares
+human-controlled authorities, supported pause, stop, cancel, block, and
+revocation operations, in-flight response, approval-gated resume, and audit
+events. Override can only narrow behavior. It cannot grant access, approve an
+action, erase a deny, or raise autonomy.
+
+[RFC-0017](../rfcs/RFC-0017-human-override.md) records the broader proposal and
+remaining runtime questions.
 
 ## Unsafe Defaults to Avoid
 
@@ -105,6 +115,8 @@ Humans must be able to stop or override future runtime activity.
 - retrieving undeclared sources or silently broadening retrieval scope
 - using stale context without citation or warning when freshness matters
 - activating broader agent definitions without review
+- automatic resume after a human override or failed interruption
+- allowing agents, automations, or services to act as human override authorities
 - silent network access
 - treating context, provider, extension, DNS, redirect, or proxy metadata as an implicit network grant
 - following redirects or resolved private addresses without re-evaluating policy
@@ -151,6 +163,7 @@ A conforming runtime should:
 
 - enforce capability and permission checks
 - enforce approval gates
+- honor declared human override blocking and fail-closed resume requirements
 - isolate credentials
 - log approval decisions
 - log sensitive events

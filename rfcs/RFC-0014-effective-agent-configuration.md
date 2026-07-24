@@ -11,6 +11,11 @@ accepts the precedence and fail-closed selection direction for implementation
 planning, starts with one unscoped active definition per agent, and records the
 remaining binding and migration blockers. This RFC remains Draft.
 
+The first AgentSet simplification slice keeps stable identity, role,
+description, responsibilities, and skills as required fields; marks duplicated
+behavior and access fields as deprecated compatibility data; and migrates the
+Minimal Team example. Definition authority and activation remain later work.
+
 ## Summary
 
 This RFC proposes how NexFlow derives an effective configuration for an AI
@@ -36,12 +41,13 @@ The central rule is:
 > constrain that behavior. No reference, default, task, extension, provider, or
 > runtime setting may silently broaden authority.
 
-This RFC does not add a runtime, change current schemas, activate current draft
-agent definitions, or define a generic deep-merge algorithm.
+This RFC does not add a runtime, activate current draft agent definitions, or
+define a generic deep-merge algorithm. The implemented identity simplification
+slice changes schema requiredness without accepting the full RFC.
 
 ## Motivation
 
-NexFlow currently distributes agent-related information across several
+The legacy `0.1` shape distributes agent-related information across several
 manifests:
 
 - `agents.yaml` contains identity, responsibilities, skills, permissions,
@@ -63,9 +69,12 @@ manifests:
   additional gates
 - provider and extension manifests describe available integration surfaces
 
-The current examples intentionally keep duplicated identity and definition
+Six current examples intentionally keep duplicated identity and definition
 references aligned. That demonstrates the component model, but it does not
 answer what happens when the values differ.
+
+The Minimal Team now demonstrates the compact identity shape without duplicated
+behavior fields.
 
 The current examples also mark agent definitions as `draft`. No specification
 rule says which definition becomes active, whether the identity record remains
@@ -189,8 +198,10 @@ choices.
 A standing constraint is a project or identity-level limit that a behavioral
 release must not silently exceed.
 
-The current `0.1` `AgentSet` fields may serve as transitional standing
-constraints while behavior-specific references move toward agent definitions.
+The implemented compact `AgentSet` shape does not define behavior-specific
+standing constraints. Legacy behavior and access fields remain deprecated
+compatibility data while projects migrate. Any future standing agent constraint
+must be introduced explicitly and must only narrow a selected definition.
 
 ### Requested Configuration
 
@@ -274,7 +285,7 @@ manifest.
 | Domain | Source of truth | Selection or constraint role |
 | --- | --- | --- |
 | Actor identity | Future accepted `ActorSet`, or transitional `AgentSet` | Identifies who acts; does not grant access. |
-| Agent identity | `AgentSet` during the current draft migration | Stable AI participant metadata and transitional standing constraints. |
+| Agent identity | `AgentSet` during the current draft migration | Stable AI participant metadata; deprecated compatibility fields are not grants. |
 | Behavioral release | Selected entry in `AgentDefinitionSet` | Selects versioned component references and requested behavior. |
 | Model selection policy | Selected `ModelProfileSet` entry | Defines acceptable model class, selection mode, constraints, fallback, and audit. |
 | Prompt material | Selected `PromptSet` entry and prompt revisions | Defines reviewed prompt material and metadata. |
@@ -987,6 +998,15 @@ Effective configuration identifies which gates apply. It does not satisfy them.
 A valid approval narrows a blocker for one scoped action. It does not rewrite the
 agent definition, permission manifest, autonomy level, or standing policy.
 
+## Relationship To Human Override
+
+RFC-0017 defines human-controlled pause, stop, cancellation, blocking,
+revocation, fail-closed response, and approval-gated resume.
+
+Human override is a narrowing constraint on effective configuration. It cannot
+grant a missing capability or permission, select a broader definition, erase a
+deny, or raise autonomy.
+
 ## Relationship To Memory Retention
 
 RFC-0008 defines memory ownership, retention, visibility, sensitivity, consumers,
@@ -1214,8 +1234,9 @@ resolution output, not replace authored policy manifests or grant authority.
   binding use one field shape?
 - Should more than one active definition per agent be allowed before scoped
   selectors are standardized?
-- Which current `AgentSet` fields remain as standing constraints after ActorSet
-  migration?
+- Should a future explicit standing-constraint object be added, given that the
+  initial compact AgentSet migration retains none of the duplicated behavior
+  fields as required identity data?
 - Should `project.defaultAutonomy` remain only a fallback, or should a separate
   project maximum autonomy field be added?
 - Should context and memory references distinguish read, write, and promotion

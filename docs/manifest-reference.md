@@ -49,13 +49,19 @@ required approval gate. Its audit event references resolve through
 `events.yaml`. Legacy free-text values remain schema-valid during the `0.1`
 draft but are advisory only and MUST NOT grant connectivity.
 
+`project.policies.humanOverride` declares typed human-controlled authorities, a
+closed operation set, new-action and in-flight response, fail-closed behavior,
+approval-gated resume, and required audit events. The policy requires
+`ActorSet`, can only narrow behavior, and does not implement runtime
+interruption.
+
 The `manifests` map may include `actors: actors.yaml` for a migrated participant
 inventory and draft versioning manifests such as
 `agentDefinitions: agent-definitions.yaml`, `modelProfiles: model-profiles.yaml`,
 `promptSets: prompt-sets.yaml`, and
 `retrievalProfiles: retrieval-profiles.yaml`.
 
-Related docs: [Project Policy](concepts.md#project-policy), [Network Access Policy](network-access-policy.md), [Autonomy Model](autonomy-model.md), [Approval Gates](approval-gates.md), [Versioning](versioning.md), [Agent Definitions](agent-definitions.md), [Model Profiles](model-profiles.md), [Prompt Sets](prompt-sets.md), [Retrieval Profiles](retrieval-profiles.md).
+Related docs: [Project Policy](concepts.md#project-policy), [Human Override](human-override.md), [Network Access Policy](network-access-policy.md), [Autonomy Model](autonomy-model.md), [Approval Gates](approval-gates.md), [Versioning](versioning.md), [Agent Definitions](agent-definitions.md), [Model Profiles](model-profiles.md), [Prompt Sets](prompt-sets.md), [Retrieval Profiles](retrieval-profiles.md).
 
 ### `actors.yaml`
 
@@ -80,13 +86,13 @@ Related docs: [Actor Model](actor-model.md), [Actor Model Migration](actor-model
 
 ### `agents.yaml`
 
-Declares stable AI agent identity and current standing configuration fields.
+Declares stable AI agent identity.
 Legacy projects may still include human participant entries for compatibility; a
 human entry is not an AI agent. Projects using `ActorSet` keep non-agent
 participants out of `AgentSet` and connect each agent actor through explicit
 `agentRef`.
 
-Agent fields:
+Required identity fields:
 
 - `id`
 - `displayName`
@@ -94,15 +100,13 @@ Agent fields:
 - `description`
 - `responsibilities`
 - `skills`
-- `permissions`
-- `capabilities`
-- `contextAccess`
-- `memoryAccess`
-- `autonomyLevel`
-- `providerPreferences`
-- `extensions`
 
-Related docs: [Concepts](concepts.md), [Glossary](glossary.md), [Capability Model](capability-model.md), [Context Model](context-model.md), [Memory Model](memory-model.md), [Autonomy Model](autonomy-model.md), [Provider Abstraction](provider-abstraction.md), [Extension Model](extensions.md).
+The legacy fields `permissions`, `capabilities`, `contextAccess`,
+`memoryAccess`, `autonomyLevel`, `providerPreferences`, and `extensions` remain
+schema-valid but deprecated for compatibility. New and migrated identities
+should omit them. They do not grant access or select behavior.
+
+Related docs: [Agent Identity Migration](agent-identity-migration.md), [Concepts](concepts.md), [Glossary](glossary.md), [Agent Definitions](agent-definitions.md), [Capability Model](capability-model.md), [Context Model](context-model.md), [Memory Model](memory-model.md), [Autonomy Model](autonomy-model.md), [Provider Abstraction](provider-abstraction.md), [Extension Model](extensions.md).
 
 ### `agent-definitions.yaml`
 
@@ -308,7 +312,8 @@ capabilityRefs:
   - modify_documentation
 ```
 
-The first migrated Actor relationship fields require typed objects:
+The first migrated Actor relationship fields and human override authorities
+require typed objects:
 
 ```yaml
 agentRef:
@@ -334,9 +339,10 @@ validation checks uniqueness, existence, scope, ambiguity, and graph
 consistency.
 
 [RFC-0015: Typed References](../rfcs/RFC-0015-typed-references.md) remains Draft.
-Only the common primitive and Actor relationship contracts documented in
-[Actor Model](actor-model.md) are implemented. Other fields retain their current
-forms until migrated deliberately.
+Only the common primitive, Actor relationship contracts documented in
+[Actor Model](actor-model.md), and the human override authority contract are
+implemented. Other fields retain their current forms until migrated
+deliberately.
 
 Event types are not IDs. They use a separate dotted lowercase form such as `task.completed` and are referenced from event-related fields such as `emits`, `auditEvents`, audit `events`, and event-driven `triggers`. A non-event trigger such as `manual` is not an event type.
 

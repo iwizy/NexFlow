@@ -132,8 +132,9 @@ identity in one manifest assembly.
 
 The actor identifies the participant. `AgentSet` retains the current stable AI
 identity declaration during migration, and `AgentDefinitionSet` describes
-versioned requested behavior. Future work may simplify the remaining
-`AgentSet` fields without changing the explicit bridge.
+versioned requested behavior. The compact AgentSet migration keeps identity,
+role, description, responsibilities, and skills while deprecating duplicated
+behavior fields without changing the explicit bridge.
 
 ### Automation
 
@@ -268,6 +269,8 @@ path.
 
 - [Concepts](concepts.md)
 - [Agent Definitions](agent-definitions.md)
+- [Agent Identity Migration](agent-identity-migration.md)
+- [Human Override](human-override.md)
 - [Manifest Reference](manifest-reference.md)
 - [Capability Model](capability-model.md)
 - [Approval Gates](approval-gates.md)

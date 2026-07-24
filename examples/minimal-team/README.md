@@ -13,6 +13,8 @@ It demonstrates:
 - one human actor as the final authority
 - one AI agent with approval-gated documentation responsibilities
 - an authoritative `ActorSet` with an explicit typed actor-to-agent bridge
+- a compact AgentSet that contains stable AI identity without duplicated behavior fields
+- fail-closed human override with approval-gated resume and audit events
 - separate capability and permission declarations
 - one approval gate reused across project policy, permissions, tasks, workflow, and agent definition review
 - explicit context sources for repository and documentation access
@@ -24,7 +26,7 @@ It demonstrates:
 
 Read the files in this order:
 
-1. `project.yaml` defines the project, maintainer, default autonomy, policies, approval gate, and manifest file map.
+1. `project.yaml` defines the project, maintainer, default autonomy, network and human override policies, approval gate, and manifest file map.
 2. `actors.yaml` declares the human and agent participant identities.
 3. `agents.yaml` declares the stable AI identity linked by the agent actor.
 4. `capabilities.yaml` defines what actors can technically do.
@@ -55,6 +57,7 @@ The workflow is intentionally conservative. The docs agent can draft documentati
 | Human authority | `human-maintainer` | `actors.yaml`, `project.yaml`, `permissions.yaml`, `tasks.yaml`, `handoffs.yaml` |
 | AI participant | `docs-agent` | `actors.yaml`, `agents.yaml`, `agent-definitions.yaml`, `tasks.yaml`, `handoffs.yaml` |
 | Approval gate | `human_review` | `project.yaml`, `permissions.yaml`, `tasks.yaml`, `workflow.yaml`, `agent-definitions.yaml` |
+| Human override | `humanOverride` | `project.yaml`, `events.yaml` |
 | Documentation task | `draft-doc-update` | `tasks.yaml`, `workflow.yaml` |
 | Review task | `review-doc-update` | `tasks.yaml`, `workflow.yaml` |
 | Handoff | `docs-to-maintainer` | `handoffs.yaml` |
@@ -69,6 +72,7 @@ The workflow is intentionally conservative. The docs agent can draft documentati
 - `modify_documentation` is approval-gated for the docs agent.
 - `approve_changes` belongs to the human maintainer.
 - Network access is disabled unless a task explicitly requests approval.
+- Human override blocks new target actions, requests a stop for in-flight work, remains blocked on failure, and requires `human_review` plus a reason before resume.
 - Destructive and production actions are not part of this example.
 - Raw secrets, credentials, and private prompt text are not stored in manifests.
 

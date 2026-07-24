@@ -488,6 +488,116 @@
         }
       }
     },
+    "humanOverrideOperation": {
+      "title": "Human Override Operation",
+      "description": "A human-control operation that can only narrow or stop effective behavior.",
+      "type": "string",
+      "enum": [
+        "pause_agent",
+        "stop_agent",
+        "pause_workflow",
+        "stop_workflow",
+        "cancel_task",
+        "block_action",
+        "revoke_approval",
+        "revoke_authorization"
+      ]
+    },
+    "humanOverridePolicy": {
+      "title": "Human Override Policy",
+      "description": "Fail-closed project policy for human-controlled pause, stop, cancellation, blocking, and revocation. Declaration does not implement runtime enforcement.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["authorities", "operations", "response", "resume", "audit"],
+      "properties": {
+        "authorities": {
+          "description": "Actors permitted to request human override. Each actor must resolve semantically to a human or fully human-represented authority.",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/actorReference"
+          },
+          "uniqueItems": true
+        },
+        "operations": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/humanOverrideOperation"
+          },
+          "uniqueItems": true
+        },
+        "response": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["blockNewActions", "inFlightActions", "onFailure"],
+          "properties": {
+            "blockNewActions": {
+              "description": "New target actions must remain blocked after an accepted override request.",
+              "const": true
+            },
+            "inFlightActions": {
+              "description": "Whether in-flight work receives a stop request or may reach a declared safe completion boundary.",
+              "type": "string",
+              "enum": ["request_stop", "allow_safe_completion"]
+            },
+            "onFailure": {
+              "description": "Required fail-closed state when an override cannot be confirmed or applied.",
+              "const": "remain_blocked"
+            }
+          }
+        },
+        "resume": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["mode", "approvalGate", "requireReason"],
+          "properties": {
+            "mode": {
+              "const": "approval_required"
+            },
+            "approvalGate": {
+              "$ref": "#/$defs/id"
+            },
+            "requireReason": {
+              "const": true
+            }
+          }
+        },
+        "audit": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "events",
+            "recordAuthority",
+            "recordReason",
+            "recordTarget",
+            "recordOutcome"
+          ],
+          "properties": {
+            "events": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "$ref": "#/$defs/eventType"
+              },
+              "uniqueItems": true
+            },
+            "recordAuthority": {
+              "const": true
+            },
+            "recordReason": {
+              "const": true
+            },
+            "recordTarget": {
+              "const": true
+            },
+            "recordOutcome": {
+              "const": true
+            }
+          }
+        }
+      }
+    },
     "memoryScope": {
       "title": "Memory Scope",
       "description": "Boundary for retaining and reusing information.",

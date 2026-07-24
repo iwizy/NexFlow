@@ -25,7 +25,8 @@ The optional `ActorSet` manifest implements the first migration slice in the
 
 ## Agent
 
-An AI participant with a declared identity, role, responsibilities, skills, context access, memory access, capabilities, permissions, autonomy level, provider preferences, and extensions.
+An AI participant with a stable identity, role, description, responsibilities,
+and skills in `AgentSet`.
 
 Agents are not assumed to be powered by any specific provider or runtime.
 
@@ -33,6 +34,12 @@ Projects without `ActorSet` may still carry legacy human participant entries in
 `AgentSet`. This is a compatibility shape, not a redefinition of humans as
 agents. Migrated projects keep only AI identities in `AgentSet` and link them
 from agent actors explicitly.
+
+Behavior-specific model, prompt, retrieval, permission, capability, context,
+memory, autonomy, provider, and extension requests belong to versioned agent
+definitions and their referenced resources. Legacy AgentSet fields for these
+domains remain schema-valid but deprecated during migration. See
+[Agent Identity Migration](agent-identity-migration.md).
 
 ## Agent Assembly
 
@@ -134,9 +141,19 @@ The structured [Network Access Policy](network-access-policy.md) defines
 fail-closed outbound connection rules separately from capabilities,
 permissions, context access, provider selection, and credentials.
 
+The structured [Human Override](human-override.md) policy defines
+human-controlled pause, stop, cancellation, blocking, revocation, fail-closed
+response, approval-gated resume, and audit requirements.
+
 ## Approval Gate
 
 A condition requiring explicit authorization before an action can proceed.
+
+## Human Override
+
+A fail-closed project policy that allows explicitly declared human-controlled
+actors to pause, stop, cancel, block, or revoke activity. Override can only
+narrow behavior. Resume requires a declared approval gate and reason.
 
 ## Event
 

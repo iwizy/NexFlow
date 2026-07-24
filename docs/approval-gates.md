@@ -183,6 +183,21 @@ transport restriction remains binding after approval.
 
 See [Network Access Policy](network-access-policy.md).
 
+## Human Override Interaction
+
+Human override may revoke an approval or block an action, but it cannot create
+an approval or turn `deny` into `allow`.
+
+After an override:
+
+- new target actions remain blocked
+- failed interruption remains blocked
+- resume requires the declared approval gate and reason
+- resume does not restore other expired or revoked approvals
+- the original action still requires its own permissions and gates
+
+See [Human Override](human-override.md).
+
 ## Event Expectations
 
 Approval-related activity should be auditable.
@@ -216,7 +231,8 @@ A future runtime should:
 - preserve approval evidence
 - reject approvals outside their declared scope
 - log high-risk approval decisions
-- allow human override or revocation
+- honor declared human override and revocation without treating resume approval
+  as a broader grant
 
 ## Non-Conforming Behavior
 

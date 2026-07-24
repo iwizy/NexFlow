@@ -34,7 +34,7 @@ Do not tag a candidate if the repository implies runtime behavior, provider inte
 - [ ] README explains vision, problem, solution, status, roadmap, governance, limitations, license, and FAQ.
 - [ ] Documentation index links to all core models and project process docs.
 - [ ] Concepts and glossary define the core domain terms consistently.
-- [ ] Actor model and migration guidance distinguish participant identity from effective agent configuration.
+- [ ] Actor and agent identity migration guidance distinguish participant identity from effective agent configuration.
 - [ ] Manifest reference describes every core manifest family.
 - [ ] Security model explains least privilege, explicit permissions, approval gates, credentials, network access, destructive operations, and human override.
 - [ ] Autonomy model and approval gates document human authority and sensitive action requirements.
@@ -57,7 +57,7 @@ Do not tag a candidate if the repository implies runtime behavior, provider inte
 
 ## Examples Checklist
 
-- [ ] Minimal team example remains the easiest first reading path and demonstrates the staged ActorSet-to-AgentSet bridge.
+- [ ] Minimal team example remains the easiest first reading path and demonstrates the staged ActorSet-to-AgentSet bridge, compact AgentSet, and fail-closed human override.
 - [ ] Software team example demonstrates implementation, QA, review, docs, and handoffs.
 - [ ] Startup team example demonstrates product, design, implementation, and release review.
 - [ ] Enterprise team example demonstrates security, compliance, audit evidence, restricted context, and gated release controls.
@@ -74,10 +74,12 @@ Do not tag a candidate if the repository implies runtime behavior, provider inte
 - [ ] `./scripts/schema-smoke` succeeds.
 - [ ] `npm run validate` succeeds.
 - [ ] `npm run actor-schema-smoke` succeeds.
+- [ ] `npm run agent-identity-schema-smoke` succeeds.
+- [ ] `npm run human-override-schema-smoke` succeeds.
 - [ ] `npm run semantic-smoke` succeeds.
 - [ ] Markdown link checks succeed.
 - [ ] `git diff --check` succeeds.
-- [ ] CI runs schema smoke, schema validation, ActorSet boundary checks, and semantic reference smoke checks on pull requests.
+- [ ] CI runs schema smoke, schema validation, ActorSet, agent identity, and human override boundary checks, and semantic reference smoke checks on pull requests.
 - [ ] Validation docs explain the difference between syntax checks, schema validation, semantic smoke checks, future semantic validation, and runtime enforcement.
 - [ ] Validation output avoids claiming full semantic conformance.
 
@@ -86,7 +88,7 @@ Do not tag a candidate if the repository implies runtime behavior, provider inte
 - [ ] RFC index explains proposal, review, acceptance, breaking change, and deprecation processes.
 - [ ] Project vision RFC records the purpose and non-goals.
 - [ ] Core manifest model RFC records the initial manifest vocabulary.
-- [ ] Conformance, agent definition versioning, validation, extension namespace, approval gate, memory retention, event envelope, provider selection, reference CLI, and manifest bundling RFCs are discoverable.
+- [ ] Conformance, agent definition versioning, validation, extension namespace, approval gate, memory retention, event envelope, provider selection, reference CLI, manifest bundling, actor, effective configuration, typed reference, discovery, and human override RFCs are discoverable.
 - [ ] Draft RFCs are marked as draft unless accepted.
 - [ ] Accepted or deferred decisions are reflected in docs, schemas, examples, and changelog.
 - [ ] Breaking or behavior-significant changes include compatibility notes.
@@ -109,7 +111,7 @@ Do not tag a candidate if the repository implies runtime behavior, provider inte
 - [ ] Dangerous actions require explicit permissions and approval gates in the specification.
 - [ ] Credential and secret guidance avoids storing secrets in manifests.
 - [ ] Network, deployment, production, and destructive action policies require explicit review.
-- [ ] Human override remains part of the safety model.
+- [ ] Human override remains explicit, human-controlled, fail-closed, approval-gated for resume, auditable, and clearly separated from runtime enforcement claims.
 
 ## Candidate Blockers
 

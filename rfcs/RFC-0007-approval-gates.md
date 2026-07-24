@@ -22,6 +22,10 @@ The proposal defines:
 
 The goal is to keep human authority explicit while preserving a clear boundary between specification metadata, validation, and future runtime enforcement.
 
+[RFC-0017: Human Override](RFC-0017-human-override.md) defines the separate
+pause, stop, cancellation, blocking, revocation, and approval-gated resume
+policy. Override may revoke an approval but cannot create one or bypass a deny.
+
 ## Motivation
 
 NexFlow separates capabilities from permissions. A capability says an actor or integration can technically perform an action. A permission rule applies an `allow`, `deny`, or `approval_required` effect to that capability.

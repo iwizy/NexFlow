@@ -28,6 +28,12 @@ Yes. The MIT License is intentionally permissive.
 
 Yes. Manifests can serve as reviewable project policy and coordination documents.
 
+## Does human override stop agents today?
+
+No. NexFlow now specifies and structurally validates a fail-closed human
+override policy, but no runtime exists to authenticate authorities, interrupt
+work, revoke live authorization, or enforce resume gates.
+
 ## Will there be a CLI?
 
 Probably, but only after the manifest model stabilizes. The first CLI should validate and inspect manifests, not orchestrate work.

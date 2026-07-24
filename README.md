@@ -22,10 +22,11 @@ Current release posture: **`0.1` draft, preparing for candidate review**. No
 | Specification | Specified in draft form | [Documentation](docs/index.md), [Manifest Reference](docs/manifest-reference.md) |
 | JSON Schemas | Implemented for 17 manifest kinds plus common definitions | [Schemas](schemas/), [Schema Guide](schemas/README.md) |
 | Reference examples | Implemented as 7 project sets containing 113 schema-backed manifests | [Examples](examples/), [Examples Guide](examples/README.md) |
-| Structural validation | Implemented for all maintained examples plus ActorSet boundary cases | `npm run validate`, `npm run actor-schema-smoke` |
+| Structural validation | Implemented for all maintained examples plus ActorSet, agent identity, and human override boundary cases | `npm run validate`, `npm run actor-schema-smoke`, `npm run agent-identity-schema-smoke`, `npm run human-override-schema-smoke` |
 | Semantic reference checks | Partial repository smoke coverage | `npm run semantic-smoke`, [Validation](docs/validation.md) |
 | Governance and RFC process | Implemented in documentation | [Governance](docs/governance.md), [RFCs](rfcs/README.md) |
-| Foundational model changes | First ActorSet migration slice implemented; RFCs remain Draft | [Actor Model](docs/actor-model.md), [Foundational Model Review](rfcs/reviews/2026-07-foundational-model-review.md) |
+| Foundational model changes | ActorSet and compact AgentSet migration slices implemented; RFCs remain Draft | [Actor Model](docs/actor-model.md), [Agent Identity Migration](docs/agent-identity-migration.md), [Foundational Model Review](rfcs/reviews/2026-07-foundational-model-review.md) |
+| Human override policy | Structured fail-closed manifest model implemented; runtime enforcement absent | [Human Override](docs/human-override.md), [RFC-0017](rfcs/RFC-0017-human-override.md) |
 | Reference CLI | Planned, not implemented | [RFC-0011](rfcs/RFC-0011-reference-cli-scope.md) |
 | Runtime and provider execution | Planned, not implemented | [Architecture](docs/architecture.md), [Runtime Options](docs/runtime-options.md) |
 | Live integrations and extension loading | Not implemented | [Compatibility Matrix](docs/compatibility-matrix.md) |
@@ -71,6 +72,7 @@ NexFlow defines a common declarative layer for AI developer teams:
 - **Workflow as Code** for tasks, dependencies, handoffs, and approvals
 - **Context as Code** for repositories, docs, issue trackers, design systems, and knowledge bases
 - **Permission as Code** for capabilities, access, and dangerous actions
+- **Human Control as Code** for fail-closed pause, stop, revocation, and approval-gated resume
 - **Memory as Code** for retention, ownership, visibility, and allowed consumers
 - **Model Profile as Code** for provider-neutral model selection, constraints, fallback, and audit expectations
 - **Prompt Set as Code** for prompt revisions, source references, ownership, safety review, and compatibility impact
@@ -84,11 +86,12 @@ The goal is to make AI-assisted software delivery inspectable before anything ru
 - **Project**: the repository, product, or workstream governed by NexFlow manifests.
 - **Team**: humans, agents, automation systems, and review authorities.
 - **Actor**: a first-class human, agent, automation, service, or authority identity participating in project work.
-- **Agent**: a declared AI participant with role, responsibilities, skills, access, and autonomy.
+- **Agent**: a stable AI identity with a role, responsibilities, and skills; versioned behavior belongs to agent definitions.
 - **Agent Assembly**: the cross-manifest relationship and review checkpoint connecting an agent identity, an agent definition, and its referenced behavioral components.
 - **Agent Definition**: a versioned behavioral release of an agent assembled from model, prompt, retrieval, permission, context, memory, autonomy, and extension references.
 - **Capability**: something an actor can technically do, such as `read_repository` or `create_pull_request`.
 - **Permission**: a policy rule with an `allow`, `deny`, or `approval_required` effect for capabilities.
+- **Human Override**: a fail-closed project policy for human-controlled pause, stop, cancellation, blocking, revocation, and approval-gated resume.
 - **Context Source**: a repository, docs system, issue tracker, design file, web source, MCP server, or custom data source.
 - **Memory Scope**: a declared retention and visibility boundary for remembered information.
 - **Model Profile**: a provider-neutral model selection profile with pinned, floating, or policy-based selection and audit expectations.
@@ -175,6 +178,8 @@ NexFlow is intentionally split into layers:
 - [Validation](docs/validation.md): repository checks and their boundaries
 - [Actor Model](docs/actor-model.md): first-class participant identity and kind-specific relationships
 - [Actor Model Migration](docs/actor-model-migration.md): staged transition from mixed AgentSet identity
+- [Agent Identity Migration](docs/agent-identity-migration.md): transition from duplicated AgentSet behavior fields to compact stable identity
+- [Human Override](docs/human-override.md): fail-closed human-control policy, resume gate, and audit contract
 - [Network Access Policy](docs/network-access-policy.md): fail-closed outbound connection rules and migration from advisory strings
 - [Release Plan](docs/release-plan.md): public readiness criteria from `0.1` draft through `1.0`
 - [0.1 Readiness Checklist](docs/readiness-checklist.md): candidate review checklist for docs, schemas, examples, RFCs, compatibility, and limitations
@@ -188,7 +193,7 @@ NexFlow is intentionally split into layers:
 | Understand the vocabulary | [Concepts](docs/concepts.md), [Glossary](docs/glossary.md) |
 | Model participant identity | [Actor Model](docs/actor-model.md), [Actor Model Migration](docs/actor-model-migration.md) |
 | See every manifest shape | [Manifest Reference](docs/manifest-reference.md) |
-| Understand safety boundaries | [Security Model](docs/security-model.md), [Network Access Policy](docs/network-access-policy.md), [Approval Gates](docs/approval-gates.md) |
+| Understand safety boundaries | [Security Model](docs/security-model.md), [Human Override](docs/human-override.md), [Network Access Policy](docs/network-access-policy.md), [Approval Gates](docs/approval-gates.md) |
 | Version agent behavior | [Agent Assembly](docs/agent-assembly.md), [Agent Definitions](docs/agent-definitions.md), [Versioning](docs/versioning.md), [Event Model](docs/events.md) |
 | Model what agents can and may do | [Capability Model](docs/capability-model.md), [Autonomy Model](docs/autonomy-model.md) |
 | Model what agents may know or retain | [Context Model](docs/context-model.md), [Memory Model](docs/memory-model.md) |
@@ -205,8 +210,8 @@ The current priorities are:
 
 1. Complete the `0.1` candidate checkpoint with validation evidence, known
    limitations, compatibility notes, and an explicit release decision.
-2. Review the first ActorSet migration slice, then simplify stable agent identity
-   and make agent definitions authoritative before broader example migration.
+2. Review the ActorSet, compact AgentSet, and human override migration slices,
+   then make agent definitions authoritative before broader example migration.
 3. Harden validation and conformance with positive and negative fixtures,
    deterministic diagnostics, and broader semantic checks.
 4. Complete the **Runtime Architecture Decision** before selecting an
@@ -246,6 +251,8 @@ See [Governance](docs/governance.md) and [RFCs](rfcs/README.md).
   exists.
 - Security and approval requirements constrain future implementations, but this
   repository does not enforce them at runtime.
+- Human override manifests describe required pause, stop, revocation, resume,
+  and audit behavior but do not interrupt processes or authenticate people.
 
 ## FAQ
 

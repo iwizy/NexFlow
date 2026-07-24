@@ -34,6 +34,9 @@ tag or release has been published, and manifest `specVersion` remains `"0.1"`.
 - Added authoritative unique-active agent definition selection semantics,
   selection audit events, an effective configuration guide, and focused
   structural and selection checks.
+- Added cataloged negative schema fixtures for required fields, enum values, ID
+  formats, and unknown manifest kinds, with a dedicated CI command that verifies
+  each expected rejection.
 
 ### Changed
 

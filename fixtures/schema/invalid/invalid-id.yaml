@@ -1,0 +1,13 @@
+specVersion: "0.1"
+kind: AgentSet
+metadata:
+  project: negative-id
+agents:
+  - id: Docs Agent
+    displayName: Docs Agent
+    role: technical_writer
+    description: Demonstrates an invalid stable agent identifier.
+    responsibilities:
+      - Maintain specification documentation.
+    skills:
+      - specification_writing

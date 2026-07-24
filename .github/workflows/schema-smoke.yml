@@ -27,6 +27,9 @@ jobs:
       - name: Validate example manifests against schemas
         run: npm run validate
 
+      - name: Verify negative schema fixtures
+        run: npm run negative-schema-fixtures
+
       - name: Run ActorSet schema boundary checks
         run: npm run actor-schema-smoke
 

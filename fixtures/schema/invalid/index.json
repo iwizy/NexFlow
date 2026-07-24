@@ -1,0 +1,48 @@
+{
+  "cases": [
+    {
+      "id": "missing-required-field",
+      "file": "missing-required-field.yaml",
+      "category": "required_field",
+      "expected": {
+        "code": "NF-SCHEMA",
+        "kind": "Project",
+        "keyword": "required",
+        "instancePath": "/project",
+        "missingProperty": "description"
+      }
+    },
+    {
+      "id": "invalid-enum",
+      "file": "invalid-enum.yaml",
+      "category": "enum_value",
+      "expected": {
+        "code": "NF-SCHEMA",
+        "kind": "PermissionSet",
+        "keyword": "enum",
+        "instancePath": "/permissions/0/effect"
+      }
+    },
+    {
+      "id": "invalid-id",
+      "file": "invalid-id.yaml",
+      "category": "id_format",
+      "expected": {
+        "code": "NF-SCHEMA",
+        "kind": "AgentSet",
+        "keyword": "pattern",
+        "instancePath": "/agents/0/id"
+      }
+    },
+    {
+      "id": "unknown-kind",
+      "file": "unknown-kind.yaml",
+      "category": "unknown_kind",
+      "expected": {
+        "code": "NF-SCHEMA",
+        "kind": "AgentTeam",
+        "reason": "unknown_kind"
+      }
+    }
+  ]
+}

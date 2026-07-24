@@ -42,6 +42,7 @@ NexFlow treats validation as a layered process.
 | --- | --- | --- |
 | Syntax | Supported through local checks | Confirm JSON schemas parse and YAML manifests are readable. |
 | Schema | Draft schemas exist | Check required fields, field types, enums, simple patterns, and manifest shape. |
+| Negative schema fixtures | Four rejection categories implemented | Confirm representative required-field, enum, ID-format, and unknown-kind failures remain rejected for the intended reason. |
 | Manifest inventory | Future validation work | Confirm all expected manifest files are present and routed by `kind`. |
 | Semantic validation | Partial repository smoke coverage | Check selected cross-manifest references, ActorSet bridges, active agent definition authority, human override authorities, graph consistency, permission coverage, memory boundaries, and extension requirements. Full semantic conformance remains future work. |
 | Runtime preflight | Future runtime work | Check credentials, sandboxing, provider behavior, tool access, and execution safety before any runtime action. |

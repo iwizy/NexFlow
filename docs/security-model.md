@@ -83,9 +83,16 @@ Retrieval profiles should not broaden context access. They should reference decl
 
 ### Agent Definition Boundaries
 
-Agent definitions assemble model, prompt, retrieval, permission, capability, context, memory, autonomy, and extension references. A future runtime must not treat an agent definition reference as granting access by itself.
+The unique unscoped active agent definition is authoritative for requested
+model, prompt, retrieval, permission, capability, context, memory, autonomy, and
+extension references. A future runtime must not treat those requests as grants.
+Permission, context, memory, provider, project, task, workflow, human-control,
+and runtime policy can only narrow the request.
 
-Safety-significant definition changes, such as broader context access, broader memory scopes, higher autonomy, new high-risk capabilities, or less restrictive approval gates, should require review before activation.
+Safety-significant definition changes, such as broader context access, broader
+memory scopes, higher autonomy, new high-risk capabilities, or less restrictive
+approval gates, require a complete approved active definition. Missing or
+ambiguous active selection must fail closed.
 
 ### Human Override
 

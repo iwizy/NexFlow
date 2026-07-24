@@ -4,7 +4,11 @@ Agent assembly is the draft NexFlow vocabulary for the cross-manifest relationsh
 
 It links an agent identity to an agent definition and the model, prompt, retrieval, permission, context, memory, autonomy, and extension references that shape how that agent is expected to behave.
 
-Agent assembly is not a separate manifest kind or another behavioral version. It is specification metadata and does not run agents, call providers, render prompts, retrieve context, write memory, enforce permissions, or execute workflows.
+Agent assembly is not a separate manifest kind, another behavioral version, or
+another source of authority. It is a derived review view over the selected
+definition and referenced policy domains. It does not run agents, call
+providers, render prompts, retrieve context, write memory, enforce permissions,
+or execute workflows.
 
 Related RFCs: [RFC-0004: Agent Definition Versioning](../rfcs/RFC-0004-agent-definition-versioning.md) and [RFC-0014: Effective Agent Configuration](../rfcs/RFC-0014-effective-agent-configuration.md).
 
@@ -21,7 +25,8 @@ An agent identity answers:
 
 An agent assembly answers:
 
-- which versioned behavioral definition is proposed or active
+- which unique active versioned behavioral definition is authoritative, or why
+  selection is blocked
 - which model profile should be used or resolved
 - which prompt set and prompt revisions shape behavior
 - which retrieval profile describes context selection and evidence expectations
@@ -68,6 +73,7 @@ Component references do not grant access by themselves.
 
 A future runtime or validator should treat an agent assembly as a set of claims to check against the rest of the project:
 
+- exactly one unscoped active definition is selected for normal use
 - referenced agents, profiles, permissions, capabilities, context sources, memory scopes, and extensions exist
 - model profile constraints are compatible with project policy
 - prompt set review state is compatible with the agent's autonomy and capabilities
@@ -78,6 +84,12 @@ A future runtime or validator should treat an agent assembly as a set of claims 
 - human override, project policy, and runtime constraints can only narrow the requested behavior
 
 These checks are semantic validation. JSON Schemas can validate shape, but they cannot prove that cross-manifest references, safety intent, or runtime policies are coherent.
+
+The selected definition owns requested behavior. The assembly view must not
+merge deprecated AgentSet behavior fields into that request or let any derived
+value replace the authority of `PermissionSet`, `CapabilitySet`, `ContextSet`,
+`MemorySet`, provider, project, task, workflow, human-control, or runtime
+policy. See [Effective Agent Configuration](effective-agent-configuration.md).
 
 ## Versioning
 
@@ -135,6 +147,7 @@ Agent assembly is draft specification vocabulary in NexFlow `0.1`.
 The current draft covers:
 
 - agent definition versioning
+- authoritative unique-active-definition selection
 - model profile versioning
 - prompt set versioning
 - retrieval profile versioning
@@ -142,4 +155,6 @@ The current draft covers:
 - audit expectations for future events
 - compatibility guidance for behavior-changing component updates
 
-Future work should focus on semantic validation strategy, conformance expectations, examples, and review feedback before any runtime implementation begins.
+Future work should focus on a deterministic derived inspection shape,
+provenance, broader semantic validation, conformance expectations, and review
+feedback before any runtime implementation begins.

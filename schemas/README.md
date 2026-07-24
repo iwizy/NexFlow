@@ -15,7 +15,7 @@ The schemas currently target `specVersion: "0.1"` and use JSON Schema draft 2020
 | `project.schema.json` | `Project` | Project identity, policies including structured network access and human override, maintainers, approval gates, and manifest locations. |
 | `actors.schema.json` | `ActorSet` | First-class human, agent, automation, service, and authority identity with kind-specific typed relationships. |
 | `agents.schema.json` | `AgentSet` | Stable AI identity, with deprecated behavior fields and legacy mixed-participant compatibility during migration. |
-| `agent-definitions.schema.json` | `AgentDefinitionSet` | Versioned agent behavioral releases assembled from model, prompt, retrieval, permission, context, memory, autonomy, and extension references. |
+| `agent-definitions.schema.json` | `AgentDefinitionSet` | Versioned agent behavioral releases with complete reviewed active-definition requirements and component references. |
 | `workflow.schema.json` | `Workflow` | Workflow stages, steps, dependencies, gates, and emitted events. |
 | `tasks.schema.json` | `TaskSet` | Tasks, owners, dependencies, artifacts, required capabilities, and acceptance criteria. |
 | `handoffs.schema.json` | `HandoffSet` | Responsibility transfers between actors. |
@@ -109,6 +109,7 @@ Examples of future semantic checks:
 - actor identity, agent bridge, operator, representative, integration, and cycle consistency
 - referenced agent IDs exist
 - agent definitions reference existing agents and component manifests
+- no more than one active definition exists for an agent
 - agent definition autonomy, permissions, memory, context, and review gates are compatible
 - referenced permission IDs exist
 - referenced capability IDs exist
@@ -166,6 +167,7 @@ npm ci
 npm run validate
 npm run actor-schema-smoke
 npm run agent-identity-schema-smoke
+npm run agent-definition-authority-smoke
 npm run human-override-schema-smoke
 npm run semantic-smoke
 ```

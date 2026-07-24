@@ -109,9 +109,11 @@ agentDefinitions:
     autonomyLevel: ask_before_changes
 ```
 
-This migration does not make a draft definition active. Definition selection,
-activation, effective configuration, and runtime enforcement remain separate
-work.
+This identity migration does not make a draft definition active. The
+implemented authority rule selects only the unique unscoped definition with
+`status: active`; draft definitions remain authoring and review data. Scoped
+bindings, a complete derived effective view, and runtime enforcement remain
+future work.
 
 ## Migration Procedure
 
@@ -128,6 +130,8 @@ work.
    and extension lifecycle in their owning manifests.
 7. Validate identity, component references, compatibility notes, and review
    requirements.
+8. When normal selection is intended, complete the active-definition
+   requirements and leave exactly one definition active for the agent.
 
 Do not infer an active definition from declaration order, file name, version
 string, modification time, or provider availability.
@@ -160,6 +164,7 @@ Run:
 
 ```sh
 npm run agent-identity-schema-smoke
+npm run agent-definition-authority-smoke
 npm run validate
 npm run semantic-smoke
 ```

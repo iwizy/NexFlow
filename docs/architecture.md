@@ -42,6 +42,12 @@ definitions and their components remain separate behavioral resources.
 Migrated AgentSet entries retain only stable identity metadata; deprecated
 behavior fields remain available for legacy compatibility.
 
+For each stable AI identity, the unique unscoped active `AgentDefinitionSet`
+entry is authoritative for requested behavior. Deprecated AgentSet behavior
+fields are compatibility data, not merge inputs or constraints. Policy
+manifests retain authority for permissions, capabilities, context, memory,
+provider use, approvals, and human control.
+
 Projects without `ActorSet` retain the documented legacy participant fallback
 during the `0.1` migration window. See [Actor Model](actor-model.md) and
 [Actor Model Migration](actor-model-migration.md).
@@ -62,7 +68,11 @@ Agent assembly connects agent identity with versioned behavioral components:
 - context sources and memory scopes
 - autonomy levels and extensions
 
-This view is intentionally declarative. It gives humans, validators, and future runtimes a reviewable checkpoint for behavior-changing agent updates without requiring NexFlow to execute those agents.
+This view is intentionally declarative and derived. It gives humans,
+validators, and future runtimes a reviewable checkpoint for behavior-changing
+agent updates without requiring NexFlow to execute those agents or creating a
+second source of authority. See
+[Effective Agent Configuration](effective-agent-configuration.md).
 
 ## Runtime Boundary
 

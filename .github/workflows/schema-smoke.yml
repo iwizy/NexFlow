@@ -33,6 +33,9 @@ jobs:
       - name: Run agent identity schema boundary checks
         run: npm run agent-identity-schema-smoke
 
+      - name: Run agent definition authority checks
+        run: npm run agent-definition-authority-smoke
+
       - name: Run human override schema boundary checks
         run: npm run human-override-schema-smoke
 

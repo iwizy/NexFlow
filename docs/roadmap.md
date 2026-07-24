@@ -66,7 +66,11 @@ Status: candidate preparation; release decision pending.
 
 Relevant docs: [Concepts](concepts.md), [Glossary](glossary.md), [Manifest Reference](manifest-reference.md), [Actor Model](actor-model.md), [Actor Model Migration](actor-model-migration.md), [Agent Identity Migration](agent-identity-migration.md), [Agent Definitions](agent-definitions.md), [Human Override](human-override.md), [Context Model](context-model.md), [Memory Model](memory-model.md), [Approval Gates](approval-gates.md), [Prompt Sets](prompt-sets.md), [Retrieval Profiles](retrieval-profiles.md).
 
-Agent assembly draft checkpoint: complete for initial review. The current draft links agent definitions, model profiles, prompt sets, retrieval profiles, permissions, context, memory, autonomy, extensions, compatibility, and audit expectations.
+Agent definition authority checkpoint: implemented for the Minimal Team
+reference path. The unique unscoped active definition owns requested behavior;
+schemas and repository checks enforce active completeness and ambiguity
+boundaries. A derived Agent Assembly inspection view remains the next
+foundational slice.
 
 ## Milestone 2: Community Review
 
@@ -97,6 +101,8 @@ Relevant docs: [Security Model](security-model.md), [Capability Model](capabilit
 - Add schema examples and negative cases.
 - Review the initial ActorSet boundary cases before migrating another example.
 - Review compact AgentSet and human override boundary cases before broader migration.
+- Review active agent definition authority and derived Agent Assembly inspection
+  evidence before broader migration.
 - Define conformance expectations for validators.
 - Refine draft conformance levels for manifests, validators, CLIs, runtimes, and extensions.
 

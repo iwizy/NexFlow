@@ -80,7 +80,11 @@ Release readiness:
 - memory retention and visibility semantics have testable expectations
 - event envelope requirements are aligned across docs, schemas, and examples
 - provider selection and fallback semantics are explainable without provider-specific assumptions
-- agent assembly relationships are clear across agent definitions, model profiles, prompt sets, retrieval profiles, permissions, context, memory, autonomy, and extensions
+- unique active agent definition selection and authority are deterministic and
+  testable
+- the derived agent assembly relationship is clear across agent definitions,
+  model profiles, prompt sets, retrieval profiles, permissions, context, memory,
+  autonomy, and extensions
 
 Non-goals:
 

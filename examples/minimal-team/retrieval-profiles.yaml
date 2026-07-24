@@ -6,7 +6,7 @@ retrievalProfiles:
   - id: docs_agent_retrieval
     description: Retrieval expectations for documentation drafting and specification consistency checks.
     version: "2026.06.0"
-    status: draft
+    status: active
     owner: human-maintainer
     sources:
       - contextSourceRef: repository

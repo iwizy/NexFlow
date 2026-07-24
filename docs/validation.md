@@ -32,7 +32,8 @@ The repository supports basic validation through:
 - YAML parsing checks for example manifests.
 - Example manifest kind discovery against available schemas.
 - A reproducible command that validates every example manifest against its JSON Schema.
-- Focused ActorSet, AgentSet identity, and human override boundary checks.
+- Focused ActorSet, AgentSet identity, agent definition authority, and human
+  override boundary checks.
 - A semantic reference smoke command for core cross-manifest references in examples.
 - Draft JSON Schemas in `schemas/`.
 - Documentation describing semantic expectations.
@@ -74,7 +75,8 @@ The GitHub Actions workflow runs the same smoke script, schema validation, and
 focused boundary commands so pull requests exercise schema JSON parsing,
 example YAML parsing, manifest kind discovery, schema compilation, example
 manifest validation, compact agent identity compatibility, and human override
-fail-closed shape.
+fail-closed shape. It also checks active agent definition completeness and
+unique unscoped selection cases.
 
 Run semantic reference smoke checks:
 
@@ -83,7 +85,8 @@ npm run semantic-smoke
 ```
 
 This command checks core example references across ActorSet identity and agent
-bridges, tasks, workflow steps, artifacts, permissions, capabilities,
+bridges, active agent definition authority, tasks, workflow steps, artifacts,
+permissions, capabilities,
 structured network policies, context sources, memory scopes, providers, model
 profiles, prompt sets, retrieval profiles, agent definitions, approval gates,
 human override authorities and audit references, events, and extensions. It
@@ -114,6 +117,17 @@ This command checks the compact required identity shape, non-empty
 responsibilities and skills, and continued structural validity of deprecated
 legacy behavior fields. It does not select an agent definition or compute
 effective configuration.
+
+Run focused agent definition authority checks:
+
+```sh
+npm run agent-definition-authority-smoke
+```
+
+This command checks complete active definitions, approved review and audit
+requirements, draft compatibility, unique active selection, missing active
+selection, and ambiguous active selection. It does not resolve full policy,
+authenticate reviewers, execute agents, or prove runtime enforcement.
 
 Run focused human override boundary checks:
 

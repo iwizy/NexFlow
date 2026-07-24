@@ -22,8 +22,10 @@ Use the [Example Consistency Checklist](CHECKLIST.md) before adding or changing 
 
 ## Common File Set
 
-Six examples retain the complete legacy participant file set. `minimal-team`
-adds `actors.yaml` as the first maintained ActorSet migration path.
+Six examples retain the complete legacy participant file set and draft agent
+definitions. `minimal-team` adds `actors.yaml` as the first maintained ActorSet
+migration path and contains the only active definition used to demonstrate
+authoritative unscoped selection.
 
 | File | Purpose |
 | --- | --- |
@@ -51,8 +53,9 @@ Start with `project.yaml` to understand the project policy and approval gates.
 When `actors.yaml` is present, read it next for participant identity and actor
 kind. Then read `agents.yaml`, `agent-definitions.yaml`, and
 `capabilities.yaml` together: agents describe stable AI identity, agent
-definitions describe behavioral releases, capabilities describe technical
-actions, and permissions decide what is allowed or approval-gated.
+definitions describe behavioral releases, the unique active definition owns
+requested behavior, capabilities describe technical actions, and permissions
+decide what is allowed or approval-gated.
 
 After that, follow the work:
 
@@ -86,7 +89,9 @@ Use `research-lab` when papers, experiments, reproducibility artifacts, citation
 All examples follow the same safety pattern:
 
 - capabilities are declared separately from permissions
-- agent definitions assemble reviewed component references without granting access
+- the unique active agent definition is authoritative for requested behavior
+  without granting access
+- draft definitions remain declaration and review data
 - risky capabilities are approval-gated
 - outbound network access is fail-closed and selected independently from capability and permission grants
 - human override can only narrow activity, remains blocked on failure, and requires approval before resume

@@ -211,9 +211,19 @@ function validateProjectSet(directory, manifests) {
   const networkRules = new Set();
   const hasActorSet = manifests.has("ActorSet");
   const actorData = asArray(manifests.get("ActorSet")?.data?.actors);
+  const agentDefinitionData = asArray(manifests.get("AgentDefinitionSet")?.data?.agentDefinitions);
+  const promptSetData = asArray(manifests.get("PromptSet")?.data?.promptSets);
+  const retrievalProfileData = asArray(manifests.get("RetrievalProfileSet")?.data?.retrievalProfiles);
   const actorById = new Map(actorData
     .filter((actor) => typeof actor?.id === "string")
     .map((actor) => [actor.id, actor]));
+  const promptSetById = new Map(promptSetData
+    .filter((promptSet) => typeof promptSet?.id === "string")
+    .map((promptSet) => [promptSet.id, promptSet]));
+  const retrievalProfileById = new Map(retrievalProfileData
+    .filter((profile) => typeof profile?.id === "string")
+    .map((profile) => [profile.id, profile]));
+  const activeDefinitionsByAgent = new Map();
 
   if (!hasActorSet) {
     for (const maintainer of asArray(project.maintainers)) {
@@ -269,16 +279,22 @@ function validateProjectSet(directory, manifests) {
     addUnique(modelProfilesFile, modelProfiles, profile?.id, "model profile");
   }
 
-  for (const promptSet of asArray(manifests.get("PromptSet")?.data?.promptSets)) {
+  for (const promptSet of promptSetData) {
     addUnique(promptSetsFile, promptSets, promptSet?.id, "prompt set");
   }
 
-  for (const profile of asArray(manifests.get("RetrievalProfileSet")?.data?.retrievalProfiles)) {
+  for (const profile of retrievalProfileData) {
     addUnique(retrievalProfilesFile, retrievalProfiles, profile?.id, "retrieval profile");
   }
 
-  for (const definition of asArray(manifests.get("AgentDefinitionSet")?.data?.agentDefinitions)) {
+  for (const definition of agentDefinitionData) {
     addUnique(agentDefinitionsFile, agentDefinitions, definition?.id, "agent definition");
+
+    if (definition?.status === "active" && typeof definition?.agentRef === "string") {
+      const activeDefinitions = activeDefinitionsByAgent.get(definition.agentRef) ?? [];
+      activeDefinitions.push(definition);
+      activeDefinitionsByAgent.set(definition.agentRef, activeDefinitions);
+    }
   }
 
   for (const event of asArray(manifests.get("EventSet")?.data?.events)) {
@@ -405,6 +421,17 @@ function validateProjectSet(directory, manifests) {
     );
   }
 
+  for (const [agentRef, activeDefinitions] of activeDefinitionsByAgent) {
+    if (activeDefinitions.length > 1) {
+      report(
+        agentDefinitionsFile,
+        `agent ${JSON.stringify(agentRef)} has multiple unscoped active definitions: ${activeDefinitions
+          .map((definition) => JSON.stringify(definition.id))
+          .join(", ")}`
+      );
+    }
+  }
+
   for (const agent of asArray(manifests.get("AgentSet")?.data?.agents)) {
     requireRefs(agentsFile, agent?.permissions, permissions, `agent ${JSON.stringify(agent?.id)}`, "permission");
     requireRefs(agentsFile, agent?.capabilities, capabilities, `agent ${JSON.stringify(agent?.id)}`, "capability");
@@ -472,7 +499,7 @@ function validateProjectSet(directory, manifests) {
     requireRefs(modelProfilesFile, profile?.recommendedFor, agents, label, "agent");
   }
 
-  for (const promptSet of asArray(manifests.get("PromptSet")?.data?.promptSets)) {
+  for (const promptSet of promptSetData) {
     const label = `prompt set ${JSON.stringify(promptSet?.id)}`;
     requireRefs(promptSetsFile, [promptSet?.owner], actors, label, "actor");
     requireRefs(promptSetsFile, promptSet?.review?.approvers, actors, label, "actor");
@@ -480,7 +507,7 @@ function validateProjectSet(directory, manifests) {
     requireRefs(promptSetsFile, promptSet?.recommendedFor, agents, label, "agent");
   }
 
-  for (const profile of asArray(manifests.get("RetrievalProfileSet")?.data?.retrievalProfiles)) {
+  for (const profile of retrievalProfileData) {
     const label = `retrieval profile ${JSON.stringify(profile?.id)}`;
     requireRefs(retrievalProfilesFile, [profile?.owner], actors, label, "actor");
     requireRefs(retrievalProfilesFile, profile?.sources?.map((source) => source?.contextSourceRef), contextSources, label, "context source");
@@ -489,7 +516,7 @@ function validateProjectSet(directory, manifests) {
     requireRefs(retrievalProfilesFile, profile?.recommendedFor, agents, label, "agent");
   }
 
-  for (const definition of asArray(manifests.get("AgentDefinitionSet")?.data?.agentDefinitions)) {
+  for (const definition of agentDefinitionData) {
     const label = `agent definition ${JSON.stringify(definition?.id)}`;
     requireRefs(agentDefinitionsFile, [definition?.agentRef], agents, label, "agent");
     requireRefs(agentDefinitionsFile, [definition?.owner], actors, label, "actor");
@@ -505,6 +532,35 @@ function validateProjectSet(directory, manifests) {
     requireRefs(agentDefinitionsFile, [definition?.review?.approvalGate], approvalGates, label, "approval gate");
     requireRefs(agentDefinitionsFile, definition?.compatibility?.affectedAgents, agents, label, "agent");
     requireRefs(agentDefinitionsFile, definition?.audit?.events, eventTypes, label, "event type");
+
+    if (definition?.status === "active") {
+      const promptSet = promptSetById.get(definition?.components?.promptSetRef);
+      const retrievalProfile = retrievalProfileById.get(definition?.components?.retrievalProfileRef);
+
+      if (promptSet && promptSet.status !== "active") {
+        report(
+          agentDefinitionsFile,
+          `${label} references prompt set ${JSON.stringify(promptSet.id)} with lifecycle status ${JSON.stringify(promptSet.status)}`
+        );
+      }
+
+      if (
+        promptSet?.review?.required === true
+        && promptSet?.review?.safetyReviewStatus !== "approved"
+      ) {
+        report(
+          agentDefinitionsFile,
+          `${label} references prompt set ${JSON.stringify(promptSet.id)} without approved safety review`
+        );
+      }
+
+      if (retrievalProfile && retrievalProfile.status !== "active") {
+        report(
+          agentDefinitionsFile,
+          `${label} references retrieval profile ${JSON.stringify(retrievalProfile.id)} with lifecycle status ${JSON.stringify(retrievalProfile.status)}`
+        );
+      }
+    }
   }
 
   for (const extension of asArray(manifests.get("ExtensionSet")?.data?.extensions)) {
@@ -554,6 +610,6 @@ if (diagnostics.length > 0) {
   process.exitCode = 1;
 } else {
   console.log(`Semantic reference smoke checks passed for ${projects.size} example project(s).`);
-  console.log("Checked core actor identity, agent bridges, task, workflow, artifact, permission, network policy, human override, context, profile, gate, event, and extension references.");
+  console.log("Checked core actor identity, agent bridges, active definition authority, task, workflow, artifact, permission, network policy, human override, context, profile, gate, event, and extension references.");
   console.log("This is a repository smoke check, not full semantic validation.");
 }

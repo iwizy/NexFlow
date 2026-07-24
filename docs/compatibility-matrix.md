@@ -37,8 +37,9 @@ enforced.
 | Repository schema validator | Current repository schema snapshot and reference examples | Implemented | `npm run validate` | Maintenance tooling, not a published `nexflow` CLI or general runtime preflight. |
 | Actor schema boundary smoke | 9 accepted and rejected structural cases | Implemented | `npm run actor-schema-smoke` | Focused ActorSet schema evidence, not full semantic or runtime conformance. |
 | Agent identity boundary smoke | 7 compact and legacy structural cases | Implemented | `npm run agent-identity-schema-smoke` | Checks identity migration compatibility, not definition selection or effective configuration. |
+| Agent definition authority smoke | 13 structural and selection cases | Implemented | `npm run agent-definition-authority-smoke` | Checks active completeness and unique unscoped selection, not full policy resolution or runtime execution. |
 | Human override boundary smoke | 11 accepted and rejected structural cases | Implemented | `npm run human-override-schema-smoke` | Checks policy shape, not authentication, interruption, revocation, or runtime enforcement. |
-| Semantic reference smoke | Selected cross-manifest reference and duplicate checks | Partial | `npm run semantic-smoke` | Does not establish full `NF-SEMANTIC` conformance, graph safety, or policy correctness. |
+| Semantic reference smoke | Selected cross-manifest reference, active definition authority, and duplicate checks | Partial | `npm run semantic-smoke` | Does not establish full `NF-SEMANTIC` conformance, graph safety, or policy correctness. |
 | Reference CLI | Validation-only scope proposed | Planned | RFC-0011 | No `nexflow` executable or `NF-CLI` implementation exists. |
 | Runtime | Provider-neutral requirements documented | Planned | Architecture, runtime options, roadmap | No orchestration, enforcement, provider calling, task execution, or `NF-RUNTIME` implementation exists. |
 | Extensions | Core declaration schema and draft namespace/lifecycle rules | Partial | `extensions.schema.json`, extension docs, examples | No registry, loader, live integration, plugin execution, or supported namespace catalog exists. |
@@ -68,6 +69,7 @@ examples: current repository snapshot
 schema validator: scripts/validate-schemas.mjs
 actor boundary smoke: scripts/actor-schema-smoke.mjs
 agent identity boundary smoke: scripts/agent-identity-schema-smoke.mjs
+agent definition authority smoke: scripts/agent-definition-authority-smoke.mjs
 human override boundary smoke: scripts/human-override-schema-smoke.mjs
 semantic smoke: scripts/semantic-reference-smoke.mjs
 reference CLI: absent

@@ -31,6 +31,9 @@ tag or release has been published, and manifest `specVersion` remains `"0.1"`.
   compatibility, and future runtime boundaries.
 - Added focused AgentSet identity boundary checks and an identity migration
   guide.
+- Added authoritative unique-active agent definition selection semantics,
+  selection audit events, an effective configuration guide, and focused
+  structural and selection checks.
 
 ### Changed
 
@@ -44,6 +47,12 @@ tag or release has been published, and manifest `specVersion` remains `"0.1"`.
   and access fields schema-valid but deprecated for compatibility.
 - Migrated the Minimal Team AgentSet to compact identity and extended semantic
   checks for human override authorities, resume gates, and audit events.
+- Tightened active agent definitions to require complete component, approved
+  review, compatibility, activation, and audit metadata while keeping draft
+  definitions authoring-compatible.
+- Activated the Minimal Team definition, prompt set, and retrieval profile as
+  the maintained authority example and extended semantic checks for active
+  lifecycle compatibility.
 
 ### Candidate Notes
 

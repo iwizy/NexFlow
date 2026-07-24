@@ -12,7 +12,10 @@ For fuller domain explanations, see [Concepts](concepts.md).
 - Treat capabilities, permissions, context, memory, autonomy, and approval gates as separate concepts.
 - Prefer explicit source, owner, scope, and authority language over vague agent behavior.
 - Use **actor** for any participant and **agent** only for an AI participant.
-- Use **agent identity** for stable AI identity metadata, **agent definition** for a versioned behavioral release, and **agent assembly** for the cross-manifest relationship and review checkpoint that connects identity, definition, and referenced components.
+- Use **agent identity** for stable AI identity metadata, **agent definition** for
+  a versioned behavioral release, and **agent assembly** for the derived
+  cross-manifest relationship and review view that connects identity,
+  definition, and referenced components.
 - Use **spec version** in prose and `specVersion` only for the manifest field.
 - Use exact manifest kind names such as `ActorSet` and `AgentSet`, and exact field names such as `agentRef`, in code-formatted text.
 - Use **event type** for a declared dotted value such as `task.completed` and **event instance** for an occurrence of that type.
@@ -53,13 +56,17 @@ fields.
 
 A cross-manifest relationship and review checkpoint that links an agent identity to an agent definition and its model profile, prompt set, retrieval profile, permission, capability, context source, memory scope, autonomy, and extension references.
 
-Agent assembly is not a separate manifest kind or another behavioral version. It is declarative metadata and does not run agents or grant access.
+Agent assembly is not a separate manifest kind, another behavioral version, or
+an authored source of authority. It is derived declarative metadata and does
+not run agents or grant access.
 
 ### Agent Definition
 
 A versioned behavioral release of an agent assembled from model profile, prompt set, retrieval profile, permission, capability, context source, memory scope, autonomy, and extension references.
 
-Agent definitions make behavioral changes auditable. They do not execute agents or grant access.
+The unique unscoped active definition for an agent is authoritative for
+requested behavior. Agent definitions make behavioral changes auditable. They
+do not execute agents or grant access.
 
 ### Approval Gate
 

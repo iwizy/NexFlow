@@ -14,6 +14,8 @@ It demonstrates:
 - one AI agent with approval-gated documentation responsibilities
 - an authoritative `ActorSet` with an explicit typed actor-to-agent bridge
 - a compact AgentSet that contains stable AI identity without duplicated behavior fields
+- one complete active agent definition that is authoritative for requested
+  behavior
 - fail-closed human override with approval-gated resume and audit events
 - separate capability and permission declarations
 - one approval gate reused across project policy, permissions, tasks, workflow, and agent definition review
@@ -31,7 +33,9 @@ Read the files in this order:
 3. `agents.yaml` declares the stable AI identity linked by the agent actor.
 4. `capabilities.yaml` defines what actors can technically do.
 5. `permissions.yaml` decides which capabilities are allowed or approval-gated.
-6. `agent-definitions.yaml` assembles the docs agent's model, prompt, retrieval, permission, context, memory, autonomy, and extension references into a reviewable behavioral release.
+6. `agent-definitions.yaml` selects the docs agent's unique active behavioral
+   release and requests model, prompt, retrieval, permission, context, memory,
+   autonomy, and extension components.
 7. `tasks.yaml` shows the work units and required capabilities.
 8. `workflow.yaml` orders the draft and review tasks.
 9. `handoffs.yaml` transfers responsibility from the docs agent to the maintainer.
@@ -71,10 +75,18 @@ The workflow is intentionally conservative. The docs agent can draft documentati
 - `read_repository` is allowed for the maintainer and available to the docs agent through approval-gated documentation work.
 - `modify_documentation` is approval-gated for the docs agent.
 - `approve_changes` belongs to the human maintainer.
+- The active definition is authoritative for requested behavior but does not
+  grant any capability, permission, context, memory, provider, or network
+  access.
+- The active prompt and retrieval profiles are reviewed lifecycle components;
+  their status still does not execute or authorize them.
 - Network access is disabled unless a task explicitly requests approval.
 - Human override blocks new target actions, requests a stop for in-flight work, remains blocked on failure, and requires `human_review` plus a reason before resume.
 - Destructive and production actions are not part of this example.
 - Raw secrets, credentials, and private prompt text are not stored in manifests.
+
+The active lifecycle demonstrates selection and validation semantics only. No
+agent, provider, workflow, or event is executed by this repository.
 
 ## What Is Intentionally Omitted
 

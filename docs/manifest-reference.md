@@ -123,9 +123,21 @@ Agent definitions define:
 - compatibility impact
 - audit expectations for recording agent definition references, versions, components, review state, and change summaries
 
-Agent definitions do not run agents, call providers, load prompts, retrieve context, grant permissions, or replace approval gates.
+The unique unscoped definition with `status: active` for an `agentRef` is
+authoritative for requested behavior. No active definition blocks normal
+selection; more than one active definition is an error. Selection does not use
+version or file order.
 
-Related docs: [Agent Definitions](agent-definitions.md), [Versioning](versioning.md), [Model Profiles](model-profiles.md), [Prompt Sets](prompt-sets.md), [Retrieval Profiles](retrieval-profiles.md), [Autonomy Model](autonomy-model.md), [Event Model](events.md), [Security Model](security-model.md), [Validation](validation.md).
+Active definitions require complete component lists, a change summary,
+compatibility notes, approved review with an approver and gate, activation
+criteria, enabled audit flags, and declared audit events. Draft definitions may
+remain incomplete for authoring and review.
+
+Agent definitions do not run agents, call providers, load prompts, retrieve
+context, grant permissions, or replace approval gates. Referenced policy
+manifests remain authoritative in their own domains.
+
+Related docs: [Agent Definitions](agent-definitions.md), [Effective Agent Configuration](effective-agent-configuration.md), [Versioning](versioning.md), [Model Profiles](model-profiles.md), [Prompt Sets](prompt-sets.md), [Retrieval Profiles](retrieval-profiles.md), [Autonomy Model](autonomy-model.md), [Event Model](events.md), [Security Model](security-model.md), [Validation](validation.md).
 
 ### `workflow.yaml`
 

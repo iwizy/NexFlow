@@ -57,7 +57,7 @@ Do not tag a candidate if the repository implies runtime behavior, provider inte
 
 ## Examples Checklist
 
-- [ ] Minimal team example remains the easiest first reading path and demonstrates the staged ActorSet-to-AgentSet bridge, compact AgentSet, and fail-closed human override.
+- [ ] Minimal team example remains the easiest first reading path and demonstrates the staged ActorSet-to-AgentSet bridge, compact AgentSet, authoritative active definition, and fail-closed human override.
 - [ ] Software team example demonstrates implementation, QA, review, docs, and handoffs.
 - [ ] Startup team example demonstrates product, design, implementation, and release review.
 - [ ] Enterprise team example demonstrates security, compliance, audit evidence, restricted context, and gated release controls.
@@ -75,11 +75,12 @@ Do not tag a candidate if the repository implies runtime behavior, provider inte
 - [ ] `npm run validate` succeeds.
 - [ ] `npm run actor-schema-smoke` succeeds.
 - [ ] `npm run agent-identity-schema-smoke` succeeds.
+- [ ] `npm run agent-definition-authority-smoke` succeeds.
 - [ ] `npm run human-override-schema-smoke` succeeds.
 - [ ] `npm run semantic-smoke` succeeds.
 - [ ] Markdown link checks succeed.
 - [ ] `git diff --check` succeeds.
-- [ ] CI runs schema smoke, schema validation, ActorSet, agent identity, and human override boundary checks, and semantic reference smoke checks on pull requests.
+- [ ] CI runs schema smoke, schema validation, ActorSet, agent identity, agent definition authority, and human override boundary checks, and semantic reference smoke checks on pull requests.
 - [ ] Validation docs explain the difference between syntax checks, schema validation, semantic smoke checks, future semantic validation, and runtime enforcement.
 - [ ] Validation output avoids claiming full semantic conformance.
 
@@ -97,6 +98,7 @@ Do not tag a candidate if the repository implies runtime behavior, provider inte
 
 - [ ] Compatibility doc distinguishes compatible changes, potentially breaking changes, and pre-`1.0` instability.
 - [ ] Versioning doc explains manifest `specVersion` and separate behavioral versions for agent definitions, prompt sets, model profiles, and retrieval profiles.
+- [ ] Compatibility and migration docs explain unique active-definition authority and the stricter active shape.
 - [ ] Conformance doc distinguishes manifest, schema, semantic, CLI, runtime, extension, and audit support surfaces.
 - [ ] Release notes separate implemented behavior, specified behavior, and planned behavior.
 - [ ] `specVersion: "0.1"` remains accurate for current manifests.

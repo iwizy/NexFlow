@@ -297,9 +297,12 @@ Retrieval profile references do not grant access. Capabilities, permissions, con
 
 ## Relationship To Agent Definitions
 
-Agent definitions may reference retrieval profiles through `retrievalProfileRef`.
+Agent definitions reference retrieval profiles through `retrievalProfileRef`.
+The unique active definition selects the requested profile, while
+`ContextSet`, provider policy, and future runtime support remain authoritative
+constraints.
 
-`agent-definitions.yaml` is draft vocabulary. Until that vocabulary is accepted, `retrieval-profiles.yaml` still provides independently reviewable retrieval metadata for examples, RFCs, and future semantic validation.
+Both manifests remain draft vocabulary. Selection does not retrieve data.
 
 ## Current Status
 

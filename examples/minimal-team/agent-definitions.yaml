@@ -6,7 +6,7 @@ agentDefinitions:
   - id: docs_agent_2026_06
     agentRef: docs-agent
     definitionVersion: "2026.06.0"
-    status: draft
+    status: active
     owner: human-maintainer
     description: Docs agent behavioral release for documentation drafting and specification consistency checks.
     components:
@@ -31,6 +31,7 @@ agentDefinitions:
     changeSummary: Establishes the first reviewable docs agent definition from model, prompt, retrieval, permission, context, and memory references.
     review:
       required: true
+      state: approved
       approvers:
         - human-maintainer
       approvalGate: human_review
@@ -51,4 +52,6 @@ agentDefinitions:
       recordChangeSummary: true
       events:
         - agent.started
+        - agent.definition.selected
+        - agent.definition.failed
         - review.requested

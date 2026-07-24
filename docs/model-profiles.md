@@ -216,9 +216,12 @@ Provider declarations and model profiles do not grant access. Capabilities, perm
 
 ## Relationship To Agent Definitions
 
-Agent definitions may reference model profiles through `modelProfileRef`.
+Agent definitions reference model profiles through `modelProfileRef`. The
+unique active definition selects the requested profile, while the profile,
+provider inventory, project policy, and future runtime support remain
+authoritative for model eligibility and resolution.
 
-`agent-definitions.yaml` is draft vocabulary. Until that vocabulary is accepted, `model-profiles.yaml` still provides independently reviewable model selection metadata for examples, RFCs, and future semantic validation.
+Both manifests remain draft vocabulary. Selection does not call a provider.
 
 ## Current Status
 

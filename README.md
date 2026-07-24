@@ -22,10 +22,10 @@ Current release posture: **`0.1` draft, preparing for candidate review**. No
 | Specification | Specified in draft form | [Documentation](docs/index.md), [Manifest Reference](docs/manifest-reference.md) |
 | JSON Schemas | Implemented for 17 manifest kinds plus common definitions | [Schemas](schemas/), [Schema Guide](schemas/README.md) |
 | Reference examples | Implemented as 7 project sets containing 113 schema-backed manifests | [Examples](examples/), [Examples Guide](examples/README.md) |
-| Structural validation | Implemented for all maintained examples plus ActorSet, agent identity, and human override boundary cases | `npm run validate`, `npm run actor-schema-smoke`, `npm run agent-identity-schema-smoke`, `npm run human-override-schema-smoke` |
+| Structural validation | Implemented for all maintained examples plus ActorSet, agent identity, active agent definition, and human override boundary cases | `npm run validate`, `npm run actor-schema-smoke`, `npm run agent-identity-schema-smoke`, `npm run agent-definition-authority-smoke`, `npm run human-override-schema-smoke` |
 | Semantic reference checks | Partial repository smoke coverage | `npm run semantic-smoke`, [Validation](docs/validation.md) |
 | Governance and RFC process | Implemented in documentation | [Governance](docs/governance.md), [RFCs](rfcs/README.md) |
-| Foundational model changes | ActorSet and compact AgentSet migration slices implemented; RFCs remain Draft | [Actor Model](docs/actor-model.md), [Agent Identity Migration](docs/agent-identity-migration.md), [Foundational Model Review](rfcs/reviews/2026-07-foundational-model-review.md) |
+| Foundational model changes | ActorSet, compact AgentSet, and authoritative unique-active-definition slices implemented; RFCs remain Draft | [Actor Model](docs/actor-model.md), [Effective Agent Configuration](docs/effective-agent-configuration.md), [Foundational Model Review](rfcs/reviews/2026-07-foundational-model-review.md) |
 | Human override policy | Structured fail-closed manifest model implemented; runtime enforcement absent | [Human Override](docs/human-override.md), [RFC-0017](rfcs/RFC-0017-human-override.md) |
 | Reference CLI | Planned, not implemented | [RFC-0011](rfcs/RFC-0011-reference-cli-scope.md) |
 | Runtime and provider execution | Planned, not implemented | [Architecture](docs/architecture.md), [Runtime Options](docs/runtime-options.md) |
@@ -68,7 +68,7 @@ That fragmentation makes it difficult to:
 NexFlow defines a common declarative layer for AI developer teams:
 
 - **Team Structure as Code** for typed human, agent, automation, service, and authority identities, roles, responsibilities, and skills
-- **Agent Definition as Code** for versioned behavioral releases assembled from models, prompts, retrieval, permissions, memory, autonomy, and extensions
+- **Agent Definition as Code** for authoritative versioned behavior requests assembled from models, prompts, retrieval, permissions, memory, autonomy, and extensions
 - **Workflow as Code** for tasks, dependencies, handoffs, and approvals
 - **Context as Code** for repositories, docs, issue trackers, design systems, and knowledge bases
 - **Permission as Code** for capabilities, access, and dangerous actions
@@ -87,8 +87,8 @@ The goal is to make AI-assisted software delivery inspectable before anything ru
 - **Team**: humans, agents, automation systems, and review authorities.
 - **Actor**: a first-class human, agent, automation, service, or authority identity participating in project work.
 - **Agent**: a stable AI identity with a role, responsibilities, and skills; versioned behavior belongs to agent definitions.
-- **Agent Assembly**: the cross-manifest relationship and review checkpoint connecting an agent identity, an agent definition, and its referenced behavioral components.
-- **Agent Definition**: a versioned behavioral release of an agent assembled from model, prompt, retrieval, permission, context, memory, autonomy, and extension references.
+- **Agent Assembly**: the derived cross-manifest relationship and review view connecting an agent identity, its selected definition, and referenced behavioral components.
+- **Agent Definition**: a versioned behavioral release; the unique unscoped active definition is authoritative for requested behavior but grants no access.
 - **Capability**: something an actor can technically do, such as `read_repository` or `create_pull_request`.
 - **Permission**: a policy rule with an `allow`, `deny`, or `approval_required` effect for capabilities.
 - **Human Override**: a fail-closed project policy for human-controlled pause, stop, cancellation, blocking, revocation, and approval-gated resume.
@@ -179,6 +179,7 @@ NexFlow is intentionally split into layers:
 - [Actor Model](docs/actor-model.md): first-class participant identity and kind-specific relationships
 - [Actor Model Migration](docs/actor-model-migration.md): staged transition from mixed AgentSet identity
 - [Agent Identity Migration](docs/agent-identity-migration.md): transition from duplicated AgentSet behavior fields to compact stable identity
+- [Effective Agent Configuration](docs/effective-agent-configuration.md): authoritative active-definition selection, policy boundaries, migration, and validation
 - [Human Override](docs/human-override.md): fail-closed human-control policy, resume gate, and audit contract
 - [Network Access Policy](docs/network-access-policy.md): fail-closed outbound connection rules and migration from advisory strings
 - [Release Plan](docs/release-plan.md): public readiness criteria from `0.1` draft through `1.0`
@@ -194,7 +195,7 @@ NexFlow is intentionally split into layers:
 | Model participant identity | [Actor Model](docs/actor-model.md), [Actor Model Migration](docs/actor-model-migration.md) |
 | See every manifest shape | [Manifest Reference](docs/manifest-reference.md) |
 | Understand safety boundaries | [Security Model](docs/security-model.md), [Human Override](docs/human-override.md), [Network Access Policy](docs/network-access-policy.md), [Approval Gates](docs/approval-gates.md) |
-| Version agent behavior | [Agent Assembly](docs/agent-assembly.md), [Agent Definitions](docs/agent-definitions.md), [Versioning](docs/versioning.md), [Event Model](docs/events.md) |
+| Version and select agent behavior | [Effective Agent Configuration](docs/effective-agent-configuration.md), [Agent Assembly](docs/agent-assembly.md), [Agent Definitions](docs/agent-definitions.md), [Versioning](docs/versioning.md), [Event Model](docs/events.md) |
 | Model what agents can and may do | [Capability Model](docs/capability-model.md), [Autonomy Model](docs/autonomy-model.md) |
 | Model what agents may know or retain | [Context Model](docs/context-model.md), [Memory Model](docs/memory-model.md) |
 | Model provider-neutral model selection | [Model Profiles](docs/model-profiles.md), [Provider Abstraction](docs/provider-abstraction.md), [Versioning](docs/versioning.md) |
@@ -210,8 +211,9 @@ The current priorities are:
 
 1. Complete the `0.1` candidate checkpoint with validation evidence, known
    limitations, compatibility notes, and an explicit release decision.
-2. Review the ActorSet, compact AgentSet, and human override migration slices,
-   then make agent definitions authoritative before broader example migration.
+2. Review the ActorSet, compact AgentSet, active-definition authority, and human
+   override slices, then define the derived Agent Assembly inspection view
+   before broader example migration.
 3. Harden validation and conformance with positive and negative fixtures,
    deterministic diagnostics, and broader semantic checks.
 4. Complete the **Runtime Architecture Decision** before selecting an
@@ -239,6 +241,9 @@ See [Governance](docs/governance.md) and [RFCs](rfcs/README.md).
   meaning, policy correctness, graph safety, or runtime enforceability.
 - Semantic reference checks cover selected repository invariants only and do not
   establish full `NF-SEMANTIC` conformance.
+- Minimal Team demonstrates authoritative active-definition selection; the
+  other six examples intentionally remain draft-only and cannot be selected for
+  normal effective configuration.
 - Six maintained examples use the legacy 16-manifest participant inventory; the
   Minimal Team adds `ActorSet` as a reviewed migration path. Reduced core
   profiles, optional modules, and multiple workflow discovery remain draft.

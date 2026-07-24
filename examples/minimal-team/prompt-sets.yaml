@@ -6,7 +6,7 @@ promptSets:
   - id: docs_agent_prompts
     description: Prompt material for documentation drafting and specification consistency review.
     version: "2026.06.0"
-    status: draft
+    status: active
     owner: human-maintainer
     prompts:
       - id: docs_agent_system
@@ -33,7 +33,7 @@ promptSets:
       required: true
       approvers:
         - human-maintainer
-      safetyReviewStatus: pending
+      safetyReviewStatus: approved
     compatibility:
       impact: behavior_changing
       notes: Prompt changes may alter documentation tone, strictness, and safety escalation behavior.

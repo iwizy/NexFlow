@@ -23,6 +23,8 @@ Event types use dotted lowercase values:
 - `agent.started`
 - `agent.stopped`
 - `agent.failed`
+- `agent.definition.selected`
+- `agent.definition.failed`
 - `workflow.started`
 - `workflow.completed`
 - `memory.written`
@@ -232,6 +234,31 @@ payload:
 ```
 
 Events should prefer definition references, versions, component references, review state, and change summaries over embedding full component content.
+
+### Agent definition selection
+
+```yaml
+type: agent.definition.selected
+payload:
+  agentId: docs-agent
+  agentDefinitionRef: docs_agent_2026_06
+  definitionVersion: "2026.06.0"
+  selectionReason: unique_active_definition
+```
+
+```yaml
+type: agent.definition.failed
+payload:
+  agentId: docs-agent
+  reason: multiple_active_definitions
+  candidateDefinitionRefs:
+    - docs_agent_2026_06
+    - docs_agent_2026_07
+```
+
+Selection events should identify references and reasons without embedding raw
+prompt material, context, memory, credentials, or approval evidence. Declaring
+these types does not mean this repository emits them.
 
 ### Prompt set audit fields
 

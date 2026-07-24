@@ -45,13 +45,18 @@ domains remain schema-valid but deprecated during migration. See
 
 A cross-manifest relationship and review checkpoint that links an agent identity to an agent definition and its model profile, prompt set, retrieval profile, permission, capability, context source, memory scope, autonomy, and extension references.
 
-Agent assembly is not a separate manifest kind or another behavioral version. It is declarative specification metadata, does not run agents, and does not grant access by itself.
+Agent assembly is not a separate manifest kind, another behavioral version, or
+an authored source of authority. It is a derived declarative review view, does
+not run agents, and does not grant access by itself.
 
 ## Agent Definition
 
 A versioned behavioral release of an agent assembled from model profile, prompt set, retrieval profile, permission, capability, context source, memory scope, autonomy, and extension references.
 
-Agent definitions describe behaviorally meaningful releases. They do not run agents and do not grant access by themselves.
+The unique unscoped active definition for an agent is authoritative for
+requested behavior. Agent definitions do not run agents and do not grant access
+by themselves; domain policy can only authorize or narrow their requests. See
+[Effective Agent Configuration](effective-agent-configuration.md).
 
 ## Role
 

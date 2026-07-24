@@ -67,6 +67,25 @@ events:
         - agentId
         - agentDefinitionRef
         - modelProfileRef
+  - type: agent.definition.selected
+    description: The unique active agent definition is selected for requested behavior.
+    retention: Project policy.
+    auditRequired: true
+    payload:
+      required:
+        - agentId
+        - agentDefinitionRef
+        - definitionVersion
+        - selectionReason
+  - type: agent.definition.failed
+    description: Agent definition selection is blocked because no unique eligible active definition exists.
+    retention: Project policy.
+    auditRequired: true
+    payload:
+      required:
+        - agentId
+        - reason
+        - candidateDefinitionRefs
   - type: network.decision
     description: A structured network policy decision is recorded without request secrets or payloads.
     retention: Project policy.

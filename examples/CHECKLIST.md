@@ -58,6 +58,12 @@ Examples are part of the specification surface. They should remain small enough 
 - [ ] Each agent definition requests only the capabilities, permissions, context, memory, autonomy, and extensions it needs.
 - [ ] Agent definition review requirements are present for behavior-changing definitions.
 - [ ] Compatibility notes explain behavior-significant changes.
+- [ ] Each agent has at most one active definition in the current unscoped model.
+- [ ] Every active definition has complete component lists, approved review,
+  activation criteria, compatibility notes, enabled audit flags, and declared
+  audit events.
+- [ ] Deprecated AgentSet behavior fields are not merged into active definition
+  requests.
 
 ## Capabilities, Permissions, And Approval Gates
 
@@ -118,6 +124,8 @@ Examples are part of the specification surface. They should remain small enough 
 ## Events And Audit
 
 - [ ] Events used by workflows, tasks, handoffs, memory, provider selection, or reviews are declared.
+- [ ] Active definition selection and failure events are declared when the
+  example expects selection audit.
 - [ ] Event payload expectations are specific enough to inspect.
 - [ ] Envelope requirements match the event model.
 - [ ] Audit and retention expectations are visible.

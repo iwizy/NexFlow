@@ -37,6 +37,7 @@ The documentation is the canonical source for the specification. Schemas and exa
 | [Human Override](human-override.md) | Defines human-controlled pause, stop, cancellation, revocation, fail-closed response, resume, and audit policy. |
 | [Agent Assembly](agent-assembly.md) | Defines the cross-manifest relationship and review checkpoint connecting agent identities, definitions, and referenced behavioral components. |
 | [Agent Definitions](agent-definitions.md) | Defines versioned behavioral releases assembled from model, prompt, retrieval, permission, context, memory, autonomy, and extension references. |
+| [Effective Agent Configuration](effective-agent-configuration.md) | Defines authoritative unique-active-definition selection and domain policy boundaries. |
 | [Context Model](context-model.md) | Defines declared information sources, freshness, classification, and access boundaries. |
 | [Network Access Policy](network-access-policy.md) | Defines fail-closed outbound connection rules, destinations, approvals, transport constraints, audit, and legacy migration. |
 | [Memory Model](memory-model.md) | Defines retention, ownership, sensitivity, and cross-scope reuse boundaries. |

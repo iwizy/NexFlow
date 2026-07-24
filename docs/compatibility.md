@@ -84,6 +84,24 @@ Removing those fields from the schema, rejecting legacy mixed AgentSet projects,
 or giving deprecated fields new grant semantics would be breaking. See
 [Agent Identity Migration](agent-identity-migration.md).
 
+## Agent Definition Authority Compatibility
+
+The current `0.1` draft selects the unique unscoped active definition for an
+agent as the authoritative source of requested behavior. Draft-only projects
+remain schema-valid and reviewable, but they do not produce a normal selected
+configuration.
+
+An active definition must contain complete component lists, change and
+compatibility metadata, approved review data, activation criteria, and enabled
+audit expectations. Earlier unreleased `0.1` snapshots with incomplete active
+definitions must complete those fields before validation.
+
+Changing active selection, activating a second definition for the same agent,
+inferring selection from version order, or treating deprecated AgentSet
+behavior fields as merge inputs would change `NF-SEMANTIC`, safety, audit, and
+future runtime compatibility. See
+[Effective Agent Configuration](effective-agent-configuration.md).
+
 ## Human Override Compatibility
 
 The structured human override policy is optional and additive in `0.1`.
@@ -136,6 +154,7 @@ Examples:
 | Change memory retention, visibility, sensitivity, consumers, writers, or promotion paths | May affect `NF-SEMANTIC`, `NF-RUNTIME`, privacy, audit, and safety compatibility. |
 | Change actor kind, identity mode, agent bridge, operator, representative, or integration relationship | May affect `NF-MANIFEST`, `NF-SCHEMA`, `NF-SEMANTIC`, `NF-RUNTIME`, authority, and audit compatibility. |
 | Remove deprecated AgentSet behavior fields or change stable identity meaning | May affect `NF-MANIFEST`, `NF-SCHEMA`, `NF-SEMANTIC`, migration, and future effective configuration. |
+| Change unique active-definition selection or active completeness requirements | May affect `NF-SCHEMA`, `NF-SEMANTIC`, safety, migration, audit, and future runtime compatibility. |
 | Change network defaults, destination scope, transport constraints, approvals, or audit semantics | May affect `NF-SEMANTIC`, `NF-RUNTIME`, integrations, privacy, audit, and safety compatibility. |
 | Change human override authority, response, resume, operation, or audit semantics | May affect `NF-SCHEMA`, `NF-SEMANTIC`, `NF-RUNTIME`, safety, authority, and audit compatibility. |
 | Change event envelope identity, actor, subject, correlation, causation, payload, audit, or redaction semantics | May affect `NF-SEMANTIC`, `NF-RUNTIME`, audit, traceability, privacy, and safety compatibility. |

@@ -56,6 +56,24 @@ A later version decision is required before removing deprecated fields,
 rejecting legacy mixed AgentSet entries, or adding new required standing
 constraints. See [Agent Identity Migration](agent-identity-migration.md).
 
+## Agent Definition Authority Version Decision
+
+The unique unscoped active-definition authority rule remains in
+`specVersion: "0.1"`. No `0.1` candidate tag has been published, so the current
+draft schema can tighten the active-definition contract before candidate review
+with synchronized migration guidance.
+
+Projects with only draft definitions remain valid. Earlier unreleased `0.1`
+snapshots with incomplete active definitions must add complete component lists,
+change and compatibility metadata, approved review data, activation criteria,
+and required audit settings. Normal selection requires exactly one active
+definition for the agent and never uses version or file order.
+
+A later explicit version decision is required before adding scoped binding,
+allowing multiple simultaneously active releases, removing deprecated AgentSet
+fields, or changing the authority boundary. See
+[Effective Agent Configuration](effective-agent-configuration.md).
+
 ## Human Override Version Decision
 
 The optional structured human override policy remains in
@@ -91,7 +109,9 @@ Agent definitions can include:
 - review and activation criteria
 - audit expectations
 
-Until the RFC is accepted, agent definition versioning remains draft vocabulary. Projects should avoid treating draft agent definition fields as stable runtime requirements.
+Agent definition versioning remains draft vocabulary. The unique-active
+authority slice is implemented for specification and validation, but it is not
+a stable runtime contract and does not execute agents.
 
 ## Agent Assembly Checkpoints
 

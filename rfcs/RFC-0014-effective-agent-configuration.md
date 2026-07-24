@@ -14,7 +14,13 @@ remaining binding and migration blockers. This RFC remains Draft.
 The first AgentSet simplification slice keeps stable identity, role,
 description, responsibilities, and skills as required fields; marks duplicated
 behavior and access fields as deprecated compatibility data; and migrates the
-Minimal Team example. Definition authority and activation remain later work.
+Minimal Team example.
+
+The next implemented slice makes the unique unscoped `active` agent definition
+authoritative for requested behavior, requires a complete reviewed active
+shape, and exercises the rule in the Minimal Team example. Scoped bindings,
+derived effective inspection, broader migration, and runtime enforcement remain
+later work.
 
 ## Summary
 
@@ -41,9 +47,10 @@ The central rule is:
 > constrain that behavior. No reference, default, task, extension, provider, or
 > runtime setting may silently broaden authority.
 
-This RFC does not add a runtime, activate current draft agent definitions, or
-define a generic deep-merge algorithm. The implemented identity simplification
-slice changes schema requiredness without accepting the full RFC.
+This RFC does not add a runtime or define a generic deep-merge algorithm. The
+implemented identity and authority slices activate one maintained definition
+for specification and validation evidence without accepting the full RFC or
+making that definition executable.
 
 ## Motivation
 
@@ -74,12 +81,9 @@ references aligned. That demonstrates the component model, but it does not
 answer what happens when the values differ.
 
 The Minimal Team now demonstrates the compact identity shape without duplicated
-behavior fields.
-
-The current examples also mark agent definitions as `draft`. No specification
-rule says which definition becomes active, whether the identity record remains
-authoritative, whether task configuration can override the definition, or how a
-future runtime should explain the resulting configuration.
+behavior fields and the unique active-definition authority rule. The other six
+maintained examples keep their definitions in `draft` for declaration and
+review coverage.
 
 Without shared resolution rules, tools could make incompatible and unsafe
 choices:
@@ -295,7 +299,7 @@ manifest.
 | Context policy | `ContextSet` | Defines sources, classification, actor access, freshness, and source boundaries. |
 | Memory policy | `MemorySet` | Defines scopes, retention, visibility, sensitivity, consumers, writers, update modes, and promotion. |
 | Autonomy request | Selected agent definition | Requests an autonomy level for the behavioral release. |
-| Autonomy ceiling | Identity standing constraint, project policy, task or workflow policy, and human control | Narrows the requested level. |
+| Autonomy ceiling | Project policy, task or workflow policy, human control, and runtime policy | Narrows the requested level. |
 | Provider inventory | `ProviderSet` | Defines available provider abstractions and provider-level constraints. |
 | Extension declarations | `ExtensionSet` | Defines namespace, lifecycle, compatibility, and declared requirements. |
 | Task scope | `TaskSet` | Selects work, participants, required capabilities, artifacts, and gates; does not grant access. |
@@ -332,20 +336,17 @@ The exact actor-to-agent reference shape remains subject to Actor Model review.
 
 Definition selection must be deterministic and explicit.
 
-Recommended order:
+The implemented unscoped rule is:
 
 1. Resolve the requested agent identity.
-2. Look for an explicit agent definition binding in the invocation, task,
-   workflow, or project activation scope if a future accepted schema defines one.
-3. If an explicit binding exists, verify that the definition's `agentRef` matches
-   the requested identity.
-4. Verify that the selected definition is eligible for the requested scope.
-5. In the absence of an explicit binding, select the only `active` definition
-   for the agent.
-6. If no active definition exists, stop unless a declared legacy identity-only
-   compatibility mode is supported.
-7. If more than one active definition exists and no accepted scope selector
-   disambiguates them, report an error.
+2. Find definitions whose `agentRef` matches that identity.
+3. Select the only definition with `status: active`.
+4. If no active definition exists, stop normal selection.
+5. If more than one active definition exists, report an ambiguity error.
+
+The current schema has no project, task, workflow, invocation, or environment
+binding field. Tools must not simulate scoped activation through extensions,
+naming conventions, or file layout.
 
 Selection must not infer recency from `definitionVersion`.
 
@@ -359,8 +360,8 @@ Lifecycle state affects selection:
 | Status | Selection behavior |
 | --- | --- |
 | `draft` | Must not be selected for normal execution by default. May be inspected or validated. |
-| `active` | Eligible for selection when identity and scope match. |
-| `deprecated` | May remain selectable only under explicit compatibility policy; warn and identify a replacement. |
+| `active` | Eligible for authoritative selection when it is the only active definition for the agent. |
+| `deprecated` | Preserved for migration and audit; not selected automatically. |
 | `retired` | Must not be selected for new work. Historical audit references remain valid. |
 
 A one-off evaluation of a draft definition, if allowed later, should require an
@@ -369,11 +370,13 @@ activation state.
 
 ### Current Example Status
 
-Current reference examples use draft agent definitions for specification review.
+The Minimal Team declares one complete active definition with approved review,
+active prompt and retrieval components, compatibility metadata, and selection
+audit events. It is the maintained authority and validation example.
 
-They do not declare an executable active configuration. A future runtime must not
-treat example declaration order or the existence of one draft definition as
-activation.
+The other six reference projects keep draft definitions for declaration and
+review coverage. Neither lifecycle state creates an executable configuration:
+this repository has no runtime.
 
 ## Component Resolution
 
@@ -403,20 +406,16 @@ Capabilities describe technical actions, not authorization.
 Effective capability availability should be based on:
 
 - capability IDs requested by the selected agent definition
-- transitional standing capability constraints on the agent identity
 - declarations in `capabilities.yaml`
 - runtime, sandbox, integration, and extension support
 - task-required capabilities
 - project and organization policy
 
-During migration, if both identity and definition capability lists exist:
+Deprecated identity capability lists are compatibility data. They are not
+merged, unioned, or treated as authority or a standing ceiling.
 
-- the definition list is the requested release surface
-- the identity list is a standing ceiling
-- a definition capability absent from the identity ceiling is a conflict, not an
-  implicit expansion
-- a capability missing from `CapabilitySet` is unresolved
-- a capability unavailable in the runtime is unavailable even if declared
+A capability missing from `CapabilitySet` is unresolved. A capability
+unavailable in the runtime is unavailable even if declared.
 
 Task `capabilitiesRequired` means the task cannot proceed without those
 capabilities. It does not grant them.
@@ -428,8 +427,9 @@ Permission evaluation happens after capability availability is known.
 `permissions.yaml` is authoritative for permission effects, subjects,
 capabilities, conditions, scope, and approval gates.
 
-Identity and definition permission references identify expected policy
-dependencies. They do not create permission effects.
+Definition permission references identify expected policy dependencies.
+Deprecated identity references are compatibility data. Neither creates
+permission effects.
 
 A future resolver should:
 
@@ -445,9 +445,8 @@ A future resolver should:
 
 Omitting a deny rule from an agent definition must not suppress that deny.
 
-During the current duplicated draft shape, mismatched identity and definition
-permission references should be reported. A resolver must not union allow rules
-to maximize access.
+A resolver must not union deprecated identity references with definition
+references to maximize access.
 
 ## Context Resolution
 
@@ -457,7 +456,6 @@ context source.
 Effective readable context should be the intersection of:
 
 - context sources requested by the selected definition
-- transitional identity `contextAccess` standing constraints
 - retrieval profile source references
 - `ContextSet` actor allowlists and denylists
 - source access mode
@@ -489,7 +487,6 @@ Memory access is distinct from context access.
 Effective memory use should consider:
 
 - memory scopes requested by the selected definition
-- transitional identity `memoryAccess` standing constraints
 - `MemorySet` scope declarations
 - allowed consumers and allowed writers
 - retention, visibility, sensitivity, update mode, and prohibited content
@@ -503,8 +500,6 @@ Rules:
 
 - a scope reference does not grant read or write access by itself
 - write access must not be inferred from read access
-- a broader definition scope must not exceed the identity standing ceiling during
-  migration
 - stricter sensitivity and retention constraints win
 - memory promotion must satisfy both source and destination rules
 - `approval_required` writes remain blocked until approval is valid
@@ -534,7 +529,6 @@ release.
 
 Applicable ceilings may come from:
 
-- the current identity `autonomyLevel`
 - explicit project or organization policy
 - task or workflow constraints
 - runtime sandbox policy
@@ -571,8 +565,10 @@ Resolution then follows RFC-0010:
 8. Check approval requirements.
 9. Record the resolved provider, model, revision, constraints, and fallback use.
 
-Agent `providerPreferences` may rank candidates that remain after filtering.
-They must not broaden the candidate set or override the model profile.
+Deprecated AgentSet `providerPreferences` are compatibility data and do not
+participate in authoritative resolution. A future explicit preference policy
+may rank candidates only after eligibility filtering and must not override the
+model profile.
 
 No model profile means no model-backed execution unless a declared legacy mode
 defines a safe and explainable fallback. Provider runtime defaults must not
@@ -734,10 +730,9 @@ A future resolver should use explicit phases.
 
 ### Phase 3: Select Definition
 
-- apply an explicit accepted binding when present
-- otherwise select the unique active definition
-- verify lifecycle and scope
-- reject ambiguous, draft, retired, or identity-mismatched selection
+- select the unique unscoped active definition
+- verify identity and lifecycle
+- reject missing, ambiguous, inactive, or identity-mismatched selection
 
 ### Phase 4: Resolve Components
 
@@ -747,9 +742,8 @@ A future resolver should use explicit phases.
 - resolve permission, capability, context, memory, and extension references
 - reject unresolved or wrong-kind references
 
-### Phase 5: Apply Standing Constraints
+### Phase 5: Apply Policy Constraints
 
-- compare the definition with transitional identity ceilings
 - apply project and organization policy
 - apply explicit deny rules
 - apply context and memory policy
@@ -853,12 +847,12 @@ Conflict handling should be deterministic.
 
 | Conflict | Required behavior |
 | --- | --- |
-| Multiple eligible active definitions | Error unless an accepted scope selector resolves exactly one. |
+| Multiple active definitions for one agent | Error in the current unscoped model. |
 | Selected definition belongs to another agent | Error. |
 | Draft or retired definition selected for normal work | Error. |
 | Required component reference is missing | Error. |
 | Reference resolves to the wrong resource kind | Error. |
-| Definition requests capability beyond identity ceiling during migration | Error or explicit migration diagnostic; never broaden silently. |
+| Deprecated AgentSet behavior differs from the selected definition | Ignore it as compatibility data; do not merge or grant from it. |
 | Permission rules disagree | Apply scope and conditions; explicit deny wins. |
 | Approval is missing or invalid | Block the gated action. |
 | Context source is requested but denied | Exclude and report; block if required. |
@@ -889,7 +883,6 @@ Semantic validation should check:
 - no more than one unscoped active definition exists per agent
 - draft and retired definitions are not treated as active
 - selected component references resolve to the expected kinds
-- identity and definition standing constraints are compatible during migration
 - definition permissions apply to the agent or relevant scope
 - definition capabilities exist
 - context source references exist and access rules are coherent
@@ -907,10 +900,10 @@ Candidate diagnostics:
 | Code | Meaning |
 | --- | --- |
 | `NF-EFFECTIVE-CONFIG-NO-ACTIVE-DEFINITION` | No eligible active definition can be selected. |
-| `NF-EFFECTIVE-CONFIG-AMBIGUOUS-DEFINITION` | More than one definition is eligible without an accepted selector. |
-| `NF-EFFECTIVE-CONFIG-INELIGIBLE-DEFINITION` | A draft, retired, wrong-agent, or out-of-scope definition was selected. |
+| `NF-EFFECTIVE-CONFIG-AMBIGUOUS-DEFINITION` | More than one active definition exists for the agent. |
+| `NF-EFFECTIVE-CONFIG-INELIGIBLE-DEFINITION` | A draft, deprecated, retired, or wrong-agent definition was selected. |
 | `NF-EFFECTIVE-CONFIG-UNRESOLVED-COMPONENT` | A required component reference does not resolve. |
-| `NF-EFFECTIVE-CONFIG-STANDING-CONFLICT` | A definition exceeds a transitional identity constraint. |
+| `NF-EFFECTIVE-CONFIG-INCOMPLETE-ACTIVE-DEFINITION` | An active definition lacks required component, review, compatibility, or audit data. |
 | `NF-EFFECTIVE-CONFIG-CONTEXT-DENIED` | Requested context is denied or outside policy. |
 | `NF-EFFECTIVE-CONFIG-MEMORY-DENIED` | Requested memory use is denied or outside policy. |
 | `NF-EFFECTIVE-CONFIG-APPROVAL-PENDING` | A required gate lacks a valid approval decision. |
@@ -1062,16 +1055,17 @@ support.
 
 ## Compatibility Impact
 
-This RFC is planning-oriented and does not change current manifest validity.
-
-If accepted, the semantics may expose incompatible assumptions in early tools.
+The implemented authority slice changes active-definition validity and
+selection meaning inside the unreleased `0.1` draft. Draft-only definitions
+remain valid. Earlier snapshots with incomplete active definitions require
+migration.
 
 Potentially breaking changes include:
 
 - changing which active definition is selected
 - rejecting multiple active definitions
 - refusing implicit latest-version selection
-- treating identity fields as ceilings instead of runtime defaults
+- treating deprecated identity behavior fields as authority or constraints
 - refusing union-based capability, context, or memory broadening
 - changing autonomy composition to the most restrictive applicable level
 - treating task-required capabilities as requirements rather than grants
@@ -1083,44 +1077,45 @@ Potentially breaking changes include:
 Changes to effective configuration semantics may affect `NF-SEMANTIC`,
 `NF-RUNTIME`, `NF-CLI`, security, privacy, cost, audit, and reproducibility.
 
-No manifest `specVersion` change is required merely to publish this draft RFC.
-Implementation may require a version change if accepted schema fields are added,
-removed, renamed, or given new normative meaning.
+The implemented authority slice remains in the unreleased `specVersion: "0.1"`
+draft with explicit migration guidance. A later version decision is required
+before scoped bindings, multiple simultaneous active releases, deprecated-field
+removal, or another authority-boundary change.
 
 ## Migration Strategy
 
 Migration should be staged.
 
-### Stage 1: Document And Diagnose
+### Stage 1: Establish Identity And Authority
 
-- accept source-of-truth vocabulary
-- document definition selection and lifecycle rules
-- compare duplicated identity and definition fields
-- warn about unresolved, conflicting, or ambiguous configuration
-- keep current examples valid as specification examples
+- keep stable AI identity in compact `AgentSet`
+- make the unique unscoped active definition authoritative for requested
+  behavior
+- require complete review, compatibility, and audit metadata for active
+  definitions
+- reject missing or ambiguous active selection
+- keep draft-only projects valid for authoring and review
 
-### Stage 2: Add Explicit Activation
+Status: implemented in the Minimal Team reference path.
 
-- define where project, task, workflow, or invocation definition bindings live
-- define any scope selector needed for multiple active definitions
-- add semantic checks for active, deprecated, and retired definitions
-- avoid implicit version ordering
-
-### Stage 3: Separate Identity From Behavior
-
-- coordinate with the Actor Model migration
-- keep stable identity and standing policy separate from versioned release
-  components
-- move behavior-specific model, prompt, retrieval, provider, and autonomy
-  selection into agent definitions
-- preserve IDs where possible
-
-### Stage 4: Expose Effective Inspection
+### Stage 2: Expose Effective Inspection
 
 - add deterministic preflight output
 - report source provenance for effective values
 - report pending approvals and unsupported runtime requirements
 - define machine-readable diagnostics
+
+### Stage 3: Define Scoped Activation
+
+- define where project, task, workflow, or invocation bindings live
+- define scope selectors for multiple simultaneous releases
+- preserve the unscoped fail-closed rule when no scoped contract applies
+
+### Stage 4: Broaden Migration
+
+- coordinate with the Actor Model migration
+- migrate additional examples deliberately
+- preserve stable IDs and lifecycle history where possible
 
 ### Stage 5: Enforce Runtime Claims
 
@@ -1130,8 +1125,8 @@ Migration should be staged.
 - emit effective configuration audit metadata
 - remove legacy identity-only behavior in a declared spec version
 
-Current examples mirror identity and definition policy references. Migration
-should preserve that consistency while making the source roles explicit.
+Legacy examples may mirror identity and definition behavior fields. Migration
+must remove those duplicates rather than treating them as a second source.
 
 ## Security And Safety Impact
 
@@ -1229,11 +1224,11 @@ resolution output, not replace authored policy manifests or grant authority.
 
 ## Open Questions
 
-- Where should an explicit active agent definition binding live?
+- Where should a future scoped active agent definition binding live?
 - Should project activation, task binding, workflow binding, and invocation
   binding use one field shape?
-- Should more than one active definition per agent be allowed before scoped
-  selectors are standardized?
+- Which scopes, if any, should permit more than one simultaneously active
+  definition after scoped selectors are standardized?
 - Should a future explicit standing-constraint object be added, given that the
   initial compact AgentSet migration retains none of the duplicated behavior
   fields as required identity data?

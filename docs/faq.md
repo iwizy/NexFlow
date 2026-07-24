@@ -34,6 +34,13 @@ No. NexFlow now specifies and structurally validates a fail-closed human
 override policy, but no runtime exists to authenticate authorities, interrupt
 work, revoke live authorization, or enforce resume gates.
 
+## Does an active agent definition run an agent?
+
+No. `active` makes the unique unscoped definition authoritative for requested
+behavior during specification inspection and validation. It does not call a
+provider, load prompts, retrieve context, grant access, emit events, or execute
+work.
+
 ## Will there be a CLI?
 
 Probably, but only after the manifest model stabilizes. The first CLI should validate and inspect manifests, not orchestrate work.

@@ -88,12 +88,11 @@ until participant identity and reference contracts are stable.
    interpreted as an implicit link.
 4. Human, automation, service, and authority participants migrate out of the
    current mixed `AgentSet`.
-5. `AgentSet` remains AI-agent-specific and retains stable identity metadata and
-   any accepted standing constraints. It does not become a second actor store or
-   the source of effective behavior.
+5. `AgentSet` remains AI-agent-specific and retains stable identity metadata. It
+   does not become a second actor store or the source of effective behavior.
 
-The exact final list of common actor fields and standing agent constraints is a
-schema blocker, not an identity-model blocker.
+The exact final list of common actor fields and any future explicit standing
+agent constraints is a schema blocker, not an identity-model blocker.
 
 ### Agent Configuration Authority
 
@@ -199,8 +198,9 @@ effective-configuration decisions are reviewed.
 - defer multi-scope activation until a binding field contract is accepted
 
 Status: compact AgentSet identity is implemented for the Minimal Team.
-Definition authority, active-definition selection, derived inspection, and
-broader migration remain open.
+Authoritative unique-active-definition selection is also implemented for that
+reference path. Derived inspection, scoped activation, and broader migration
+remain open.
 
 ### Phase 4: Reference Normalization
 
@@ -232,7 +232,7 @@ broader migration remain open.
 | --- | --- | --- |
 | Typed-reference contracts outside ActorSet relationships remain incomplete | Broader multi-kind and nested reference migration | Reuse the implemented common tuple and define each remaining field contract deliberately. |
 | Actor policy and configuration bindings beyond the initial identity slice remain undecided | Complete participant model | Keep ActorSet identity-only until policy ownership and effective configuration are accepted. |
-| Actor-to-agent activation and lifecycle binding remains incomplete | Effective agent configuration selection | Preserve the implemented explicit stable identity `agentRef`; define activation separately. |
+| Scoped actor-to-agent activation and lifecycle binding remains incomplete | Multiple scoped effective configurations | Preserve the implemented explicit stable identity `agentRef` and unique unscoped active selection; define scoped binding separately. |
 | Future explicit standing agent constraints are undecided | Complete identity/configuration split | The initial compact shape classifies duplicated behavior fields as deprecated compatibility data; introduce any future ceiling explicitly. |
 | Scoped active-definition binding has no accepted field | Multiple simultaneous active releases per agent | Use one unscoped active definition initially; specify scoped binding separately. |
 | Context and memory intent lacks read/write/promotion typing | Complete effective configuration semantics | Define intent without treating access references as grants. |
@@ -283,7 +283,7 @@ the draft is not acceptable.
 | RFC | Disposition | Conditions |
 | --- | --- | --- |
 | RFC-0013 | Initial Actor identity and compact AgentSet slices implemented; remains Draft | Review broader migration before claiming the full model. |
-| RFC-0014 | Compact identity boundary plus precedence and fail-closed selection accepted for planning; remains Draft | Make selected definitions authoritative and start with one unscoped active definition. |
+| RFC-0014 | Compact identity and authoritative unique-active selection slices implemented; remains Draft | Review derived inspection, scoped binding, and broader migration before claiming the full model. |
 | RFC-0015 | Common tuple and Actor relationship contracts implemented; remains Draft | Define authoritative contracts and migrate remaining fields deliberately. |
 | RFC-0016 | Core profile and logical assembly direction accepted for planning; remains Draft | Stabilize participant inventory and reference contracts before schema migration. |
 

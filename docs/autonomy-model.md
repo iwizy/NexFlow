@@ -41,6 +41,16 @@ Projects SHOULD define approval requirements for:
 
 See [Approval Gates](approval-gates.md) for the draft semantics of approval actors, decisions, evidence, scope, expiry, and revocation.
 
+## Agent Definition Request
+
+The unique unscoped active agent definition owns the requested autonomy level
+for that behavioral release. It does not authorize actions or define the final
+effective level.
+
+Project, task, workflow, permission, human override, and runtime policy may only
+narrow the request. Deprecated `AgentSet.autonomyLevel` values are compatibility
+data and do not participate in authoritative resolution.
+
 ## Default Approval Matrix
 
 | Action | Recommended Gate |

@@ -52,13 +52,10 @@ Examples are part of the specification surface. They should remain small enough 
 - [ ] Each actor has a kind, role, description, and responsibilities.
 - [ ] Actor identity fields do not duplicate effective permissions, capabilities, context, memory, autonomy, or provider configuration.
 - [ ] Each agent has a role, description, responsibilities, and skills.
-- [ ] Each agent lists only capabilities it actually needs in the example.
-- [ ] Each agent references permissions that apply to that actor.
-- [ ] Each agent's context access matches declared context sources.
-- [ ] Each agent's memory access matches declared memory scopes.
-- [ ] Each agent's autonomy level matches the example's safety posture.
+- [ ] New or migrated AgentSet entries omit deprecated behavior and access fields.
 - [ ] Each agent definition references an existing agent.
 - [ ] Agent definitions reference existing model profiles, prompt sets, retrieval profiles, permissions, capabilities, context sources, memory scopes, and extensions.
+- [ ] Each agent definition requests only the capabilities, permissions, context, memory, autonomy, and extensions it needs.
 - [ ] Agent definition review requirements are present for behavior-changing definitions.
 - [ ] Compatibility notes explain behavior-significant changes.
 
@@ -103,7 +100,8 @@ Examples are part of the specification surface. They should remain small enough 
 - [ ] Retention, ownership, visibility, sensitivity, writers, and allowed consumers are clear.
 - [ ] Cross-scope promotion is gated or prohibited where needed.
 - [ ] Sensitive memory does not leak into broader scopes.
-- [ ] Memory access in agents and agent definitions matches `memory.yaml`.
+- [ ] Agent definition memory scope requests match `memory.yaml`.
+- [ ] Deprecated AgentSet memory fields, when retained for compatibility, do not grant access.
 - [ ] Memory audit events are declared when the example expects memory updates.
 
 ## Providers, Models, Prompts, And Extensions

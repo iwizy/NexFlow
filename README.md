@@ -84,7 +84,7 @@ The goal is to make AI-assisted software delivery inspectable before anything ru
 - **Project**: the repository, product, or workstream governed by NexFlow manifests.
 - **Team**: humans, agents, automation systems, and review authorities.
 - **Actor**: a first-class human, agent, automation, service, or authority identity participating in project work.
-- **Agent**: a declared AI participant with role, responsibilities, skills, access, and autonomy.
+- **Agent**: a stable AI identity with a role, responsibilities, and skills; versioned behavior belongs to agent definitions.
 - **Agent Assembly**: the cross-manifest relationship and review checkpoint connecting an agent identity, an agent definition, and its referenced behavioral components.
 - **Agent Definition**: a versioned behavioral release of an agent assembled from model, prompt, retrieval, permission, context, memory, autonomy, and extension references.
 - **Capability**: something an actor can technically do, such as `read_repository` or `create_pull_request`.

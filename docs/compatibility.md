@@ -49,6 +49,8 @@ For the current supported combinations and explicit implementation gaps, see the
 - broadening retrieval classification or cross-scope reuse
 - changing memory retention, visibility, sensitivity, allowed consumers, allowed writers, or promotion paths
 - changing actor kind, identity resolution mode, agent bridge, operator, representative, or integration relationship
+- removing deprecated AgentSet behavior fields before the compatibility window ends
+- changing stable AgentSet identity fields or treating deprecated fields as grants
 - changing network defaults, rule effects, actor or purpose scope, destination selectors, transport constraints, approval requirements, or audit semantics
 - changing event envelope identity, actor, subject, correlation, causation, payload, audit, or redaction semantics
 - changing reference CLI command names, exit code meanings, diagnostic code meanings, or machine-readable output formats
@@ -111,6 +113,7 @@ Examples:
 | Change approval gate meaning | May break `NF-RUNTIME` safety expectations. |
 | Change memory retention, visibility, sensitivity, consumers, writers, or promotion paths | May affect `NF-SEMANTIC`, `NF-RUNTIME`, privacy, audit, and safety compatibility. |
 | Change actor kind, identity mode, agent bridge, operator, representative, or integration relationship | May affect `NF-MANIFEST`, `NF-SCHEMA`, `NF-SEMANTIC`, `NF-RUNTIME`, authority, and audit compatibility. |
+| Remove deprecated AgentSet behavior fields or change stable identity meaning | May affect `NF-MANIFEST`, `NF-SCHEMA`, `NF-SEMANTIC`, migration, and future effective configuration. |
 | Change network defaults, destination scope, transport constraints, approvals, or audit semantics | May affect `NF-SEMANTIC`, `NF-RUNTIME`, integrations, privacy, audit, and safety compatibility. |
 | Change event envelope identity, actor, subject, correlation, causation, payload, audit, or redaction semantics | May affect `NF-SEMANTIC`, `NF-RUNTIME`, audit, traceability, privacy, and safety compatibility. |
 | Change provider selection precedence, constraints, fallback, or explainability expectations | May affect `NF-SEMANTIC`, `NF-RUNTIME`, audit, privacy, cost, safety, and compatibility. |

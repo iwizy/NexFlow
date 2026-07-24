@@ -35,20 +35,16 @@ selection:
     recordConstraintsApplied: true
 ```
 
-## Provider Preferences
+## Provider Selection Requests
 
-Agents may express preferences:
+Migrated agent identities do not carry provider preferences. An agent definition
+references a model profile, and that profile declares provider-neutral
+selection modes, eligible provider references, constraints, and fallback.
 
-```yaml
-providerPreferences:
-  - provider: general-reasoning
-    priority: preferred
-    reason: Requires strong reasoning and code review capability.
-```
-
-Preferences are not hard requirements unless project policy says so.
-
-Provider preferences must not override model profile constraints, permissions, approval gates, context boundaries, memory boundaries, or project policy.
+Legacy AgentSet `providerPreferences` remain schema-valid but deprecated during
+the `0.1` migration window. They must not override model profile constraints,
+permissions, approval gates, context boundaries, memory boundaries, network
+policy, human override, or project policy.
 
 ## Model Profiles
 

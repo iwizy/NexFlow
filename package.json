@@ -4,6 +4,7 @@
   "description": "Pinned repository validation tooling for the NexFlow specification; not a runtime package.",
   "type": "module",
   "scripts": {
+    "agent-identity-schema-smoke": "node scripts/agent-identity-schema-smoke.mjs",
     "actor-schema-smoke": "node scripts/actor-schema-smoke.mjs",
     "semantic-smoke": "node scripts/semantic-reference-smoke.mjs",
     "validate": "node scripts/validate-schemas.mjs"

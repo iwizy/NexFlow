@@ -12,7 +12,7 @@ For fuller domain explanations, see [Concepts](concepts.md).
 - Treat capabilities, permissions, context, memory, autonomy, and approval gates as separate concepts.
 - Prefer explicit source, owner, scope, and authority language over vague agent behavior.
 - Use **actor** for any participant and **agent** only for an AI participant.
-- Use **agent identity** for the stable participant, **agent definition** for a versioned behavioral release, and **agent assembly** for the cross-manifest relationship and review checkpoint that connects identity, definition, and referenced components.
+- Use **agent identity** for stable AI identity metadata, **agent definition** for a versioned behavioral release, and **agent assembly** for the cross-manifest relationship and review checkpoint that connects identity, definition, and referenced components.
 - Use **spec version** in prose and `specVersion` only for the manifest field.
 - Use exact manifest kind names such as `ActorSet` and `AgentSet`, and exact field names such as `agentRef`, in code-formatted text.
 - Use **event type** for a declared dotted value such as `task.completed` and **event instance** for an occurrence of that type.
@@ -36,13 +36,18 @@ authority or access by itself. See [Actor Model](actor-model.md).
 
 ### Agent
 
-An AI participant with a declared identity, role, responsibilities, skills, context access, memory access, capabilities, permissions, autonomy level, provider preferences, and extensions.
+An AI participant with stable identity, role, description, responsibilities,
+and skills in `AgentSet`.
 
 An agent is not assumed to be powered by any specific model provider or runtime.
 
 Legacy projects without `ActorSet` may still contain human participant entries
 in `AgentSet`. Those entries do not make humans AI agents. Migrated projects use
 an explicit typed bridge from an agent actor to its `AgentSet` identity.
+
+Behavior-specific configuration belongs to agent definitions and the resources
+they reference. Legacy behavior fields in AgentSet are deprecated compatibility
+fields.
 
 ### Agent Assembly
 

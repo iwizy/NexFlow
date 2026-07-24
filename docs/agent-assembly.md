@@ -17,7 +17,7 @@ An agent identity answers:
 - who the agent is
 - what role it serves
 - what responsibilities it has
-- what skills, capabilities, permissions, context, memory, autonomy, and extensions are declared for it
+- what stable skills describe its suitability
 
 An agent assembly answers:
 

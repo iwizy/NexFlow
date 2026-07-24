@@ -39,6 +39,8 @@ authority participants before policy or behavior is resolved. When present, it
 is the authoritative participant namespace for the assembly. An agent actor
 uses an explicit typed reference to stable AI identity in `AgentSet`; agent
 definitions and their components remain separate behavioral resources.
+Migrated AgentSet entries retain only stable identity metadata; deprecated
+behavior fields remain available for legacy compatibility.
 
 Projects without `ActorSet` retain the documented legacy participant fallback
 during the `0.1` migration window. See [Actor Model](actor-model.md) and

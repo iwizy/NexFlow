@@ -28,11 +28,23 @@ kind: AgentSet
 agents:
   - id: human-maintainer
     displayName: Human Maintainer
+    role: maintainer
+    description: Legacy human participant awaiting ActorSet migration.
+    responsibilities:
+      - Review project changes.
+    skills:
+      - specification_review
     autonomyLevel: manual_only
     # Human identity is mixed with AI-specific fields.
 
   - id: docs-agent
     displayName: Docs Agent
+    role: technical_writer
+    description: AI participant that drafts documentation updates.
+    responsibilities:
+      - Keep documentation consistent.
+    skills:
+      - specification_writing
     autonomyLevel: ask_before_changes
 ```
 
@@ -74,7 +86,12 @@ kind: AgentSet
 agents:
   - id: docs-agent
     displayName: Docs Agent
-    # Existing agent fields remain until the agent identity migration lands.
+    role: technical_writer
+    description: AI participant that drafts documentation updates.
+    responsibilities:
+      - Keep documentation consistent.
+    skills:
+      - specification_writing
 ```
 
 ## Procedure

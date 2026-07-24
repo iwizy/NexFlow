@@ -63,7 +63,8 @@ A semantic validator checks relationships that JSON Schema cannot fully express.
 
 Examples include:
 
-- agent permissions reference existing permission IDs
+- agent definition permission references resolve to existing permission IDs
+- deprecated AgentSet behavior fields do not broaden effective configuration
 - permission capabilities reference existing capability IDs
 - tasks reference existing owners and dependencies
 - workflow steps reference existing tasks

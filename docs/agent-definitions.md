@@ -94,15 +94,16 @@ The schema is intentionally practical. It validates useful structure, but deeper
 - `id`
 - display name
 - role
+- description
 - responsibilities
 - skills
-- declared context and memory access
-- declared capabilities and permissions
-- autonomy level
-- provider preferences
-- extensions
 
 `agent-definitions.yaml` declares a versioned behavioral release for an agent identity.
+
+Legacy AgentSet fields for permissions, capabilities, context, memory, autonomy,
+provider preferences, and extensions remain schema-valid but deprecated. New
+and migrated identities should omit them. See
+[Agent Identity Migration](agent-identity-migration.md).
 
 In a project with `ActorSet`, the participating actor links explicitly to the
 stable `AgentSet` identity, and `AgentDefinitionSet.agentRef` continues to target

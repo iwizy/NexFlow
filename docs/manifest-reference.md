@@ -80,13 +80,13 @@ Related docs: [Actor Model](actor-model.md), [Actor Model Migration](actor-model
 
 ### `agents.yaml`
 
-Declares stable AI agent identity and current standing configuration fields.
+Declares stable AI agent identity.
 Legacy projects may still include human participant entries for compatibility; a
 human entry is not an AI agent. Projects using `ActorSet` keep non-agent
 participants out of `AgentSet` and connect each agent actor through explicit
 `agentRef`.
 
-Agent fields:
+Required identity fields:
 
 - `id`
 - `displayName`
@@ -94,15 +94,13 @@ Agent fields:
 - `description`
 - `responsibilities`
 - `skills`
-- `permissions`
-- `capabilities`
-- `contextAccess`
-- `memoryAccess`
-- `autonomyLevel`
-- `providerPreferences`
-- `extensions`
 
-Related docs: [Concepts](concepts.md), [Glossary](glossary.md), [Capability Model](capability-model.md), [Context Model](context-model.md), [Memory Model](memory-model.md), [Autonomy Model](autonomy-model.md), [Provider Abstraction](provider-abstraction.md), [Extension Model](extensions.md).
+The legacy fields `permissions`, `capabilities`, `contextAccess`,
+`memoryAccess`, `autonomyLevel`, `providerPreferences`, and `extensions` remain
+schema-valid but deprecated for compatibility. New and migrated identities
+should omit them. They do not grant access or select behavior.
+
+Related docs: [Agent Identity Migration](agent-identity-migration.md), [Concepts](concepts.md), [Glossary](glossary.md), [Agent Definitions](agent-definitions.md), [Capability Model](capability-model.md), [Context Model](context-model.md), [Memory Model](memory-model.md), [Autonomy Model](autonomy-model.md), [Provider Abstraction](provider-abstraction.md), [Extension Model](extensions.md).
 
 ### `agent-definitions.yaml`
 

@@ -115,6 +115,7 @@ Example mapping:
 | Manifest File | `kind` | Schema |
 | --- | --- | --- |
 | `project.yaml` | `Project` | `schemas/project.schema.json` |
+| `actors.yaml` | `ActorSet` | `schemas/actors.schema.json` |
 | `agents.yaml` | `AgentSet` | `schemas/agents.schema.json` |
 | `agent-definitions.yaml` | `AgentDefinitionSet` | `schemas/agent-definitions.schema.json` |
 | `workflow.yaml` | `Workflow` | `schemas/workflow.schema.json` |
@@ -230,7 +231,7 @@ Example:
 ```text
 examples/minimal-team/agents.yaml
   kind: AgentSet
-  error: agents[0].autonomyLevel must be one of manual_only, suggest_only, ask_before_changes, autonomous_safe, autonomous_extended
+  error: agents[0].skills must contain at least one stable skill identifier
 ```
 
 For semantic checks:

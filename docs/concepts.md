@@ -25,7 +25,8 @@ The optional `ActorSet` manifest implements the first migration slice in the
 
 ## Agent
 
-An AI participant with a declared identity, role, responsibilities, skills, context access, memory access, capabilities, permissions, autonomy level, provider preferences, and extensions.
+An AI participant with a stable identity, role, description, responsibilities,
+and skills in `AgentSet`.
 
 Agents are not assumed to be powered by any specific provider or runtime.
 
@@ -33,6 +34,12 @@ Projects without `ActorSet` may still carry legacy human participant entries in
 `AgentSet`. This is a compatibility shape, not a redefinition of humans as
 agents. Migrated projects keep only AI identities in `AgentSet` and link them
 from agent actors explicitly.
+
+Behavior-specific model, prompt, retrieval, permission, capability, context,
+memory, autonomy, provider, and extension requests belong to versioned agent
+definitions and their referenced resources. Legacy AgentSet fields for these
+domains remain schema-valid but deprecated during migration. See
+[Agent Identity Migration](agent-identity-migration.md).
 
 ## Agent Assembly
 

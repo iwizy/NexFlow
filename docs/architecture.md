@@ -46,6 +46,10 @@ Projects without `ActorSet` retain the documented legacy participant fallback
 during the `0.1` migration window. See [Actor Model](actor-model.md) and
 [Actor Model Migration](actor-model-migration.md).
 
+Human override is a project policy layer above requested behavior and autonomy.
+It may only narrow activity and does not become an execution or permission
+source. See [Human Override](human-override.md).
+
 ## Agent Assembly View
 
 Agent assembly connects agent identity with versioned behavioral components:

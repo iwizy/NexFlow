@@ -96,6 +96,7 @@ Runtime conformance is planned future work. A future conforming runtime MUST enf
 - declared capabilities
 - permissions
 - approval gates
+- human override blocking, revocation, failure, and resume requirements
 - autonomy levels
 - context access boundaries
 - memory scope boundaries
@@ -156,6 +157,7 @@ The following behavior is non-conforming:
 - treating capability declarations as permissions
 - granting access through an extension by presence alone
 - ignoring approval gates for high-risk actions
+- ignoring a valid human override or resuming automatically after one
 - using undeclared context sources
 - writing memory outside declared scopes
 - treating provider preferences or provider availability as permission to call a provider

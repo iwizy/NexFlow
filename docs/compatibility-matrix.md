@@ -36,6 +36,8 @@ enforced.
 | Reference examples | 7 project sets, 113 schema-backed manifests, all using `0.1` | Implemented | `examples/` | Authoring and validation fixtures, not executable teams or runtime demonstrations. |
 | Repository schema validator | Current repository schema snapshot and reference examples | Implemented | `npm run validate` | Maintenance tooling, not a published `nexflow` CLI or general runtime preflight. |
 | Actor schema boundary smoke | 9 accepted and rejected structural cases | Implemented | `npm run actor-schema-smoke` | Focused ActorSet schema evidence, not full semantic or runtime conformance. |
+| Agent identity boundary smoke | 7 compact and legacy structural cases | Implemented | `npm run agent-identity-schema-smoke` | Checks identity migration compatibility, not definition selection or effective configuration. |
+| Human override boundary smoke | 11 accepted and rejected structural cases | Implemented | `npm run human-override-schema-smoke` | Checks policy shape, not authentication, interruption, revocation, or runtime enforcement. |
 | Semantic reference smoke | Selected cross-manifest reference and duplicate checks | Partial | `npm run semantic-smoke` | Does not establish full `NF-SEMANTIC` conformance, graph safety, or policy correctness. |
 | Reference CLI | Validation-only scope proposed | Planned | RFC-0011 | No `nexflow` executable or `NF-CLI` implementation exists. |
 | Runtime | Provider-neutral requirements documented | Planned | Architecture, runtime options, roadmap | No orchestration, enforcement, provider calling, task execution, or `NF-RUNTIME` implementation exists. |
@@ -65,6 +67,8 @@ schemas: current repository snapshot
 examples: current repository snapshot
 schema validator: scripts/validate-schemas.mjs
 actor boundary smoke: scripts/actor-schema-smoke.mjs
+agent identity boundary smoke: scripts/agent-identity-schema-smoke.mjs
+human override boundary smoke: scripts/human-override-schema-smoke.mjs
 semantic smoke: scripts/semantic-reference-smoke.mjs
 reference CLI: absent
 runtime: absent
@@ -86,9 +90,9 @@ example and is validated in CI.
 
 | Manifest `kind` | Schema | Example coverage | `npm run validate` | `npm run semantic-smoke` |
 | --- | --- | --- | --- | --- |
-| `Project` | `project.schema.json` | All 7 project sets | Full structural check | Selected project, maintainer, and approval gate inventory checks |
+| `Project` | `project.schema.json` | All 7 project sets | Full structural check | Selected project, maintainer, approval gate, network policy, and human override checks |
 | `ActorSet` | `actors.schema.json` | Minimal Team migration path | Full structural check | Actor identity, agent bridge, operator, representative, integration, and relationship cycle checks |
-| `AgentSet` | `agents.schema.json` | All 7 project sets | Full structural check | Agent identity inventory plus selected capability, permission, context, memory, and provider references |
+| `AgentSet` | `agents.schema.json` | All 7 project sets | Full structural check | Agent identity inventory plus deprecated compatibility-field references where present |
 | `AgentDefinitionSet` | `agent-definitions.schema.json` | All 7 project sets | Full structural check | Selected agent and component references |
 | `CapabilitySet` | `capabilities.schema.json` | All 7 project sets | Full structural check | Capability inventory and selected references |
 | `PermissionSet` | `permissions.schema.json` | All 7 project sets | Full structural check | Permission, subject, capability, and approval gate references |
@@ -180,6 +184,37 @@ fields.
 It does not resolve external references, authenticate actors, evaluate
 delegation, or establish `NF-SEMANTIC` or `NF-RUNTIME` conformance.
 
+### Agent Identity Schema Boundary Smoke
+
+Command:
+
+```sh
+npm run agent-identity-schema-smoke
+```
+
+Compatible with the current AgentSet schema snapshot. It checks seven accepted
+and rejected cases covering compact required identity, non-empty identity
+metadata, and legacy behavior-field compatibility.
+
+It does not select an agent definition, resolve components, or establish
+effective behavior.
+
+### Human Override Schema Boundary Smoke
+
+Command:
+
+```sh
+npm run human-override-schema-smoke
+```
+
+Compatible with the current common and Project schema snapshot. It checks
+eleven accepted and rejected cases covering typed authorities, supported
+operations, new-action blocking, fail-closed response, approval-gated resume,
+required reason, audit fields, and event syntax.
+
+It does not authenticate authorities, interrupt work, revoke live credentials,
+or establish runtime conformance.
+
 ### Semantic Reference Smoke
 
 Command:
@@ -200,6 +235,7 @@ It checks selected:
 - capability and permission references
 - approval gate references
 - structured network policy rule and destination references
+- human override authority, resume gate, and audit event references
 - context and memory references
 - provider and agent component references
 - event references

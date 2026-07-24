@@ -8,7 +8,7 @@ Use it to choose an example to read, adapt, or validate. The examples are specif
 
 | Order | Example | Start Here When | Main Concepts To Learn |
 | --- | --- | --- | --- |
-| 1 | [Minimal Team](minimal-team/) | You want the smallest complete manifest set and the first ActorSet migration path. | Typed actor identity, an explicit agent bridge, project policy, capabilities, permissions, context, memory, and one simple workflow. |
+| 1 | [Minimal Team](minimal-team/) | You want the smallest complete manifest set and the first identity migration path. | Typed actor identity, compact AgentSet, explicit agent bridge, human override, project policy, and one simple workflow. |
 | 2 | [Software Team](software-team/) | You want a conventional repository workflow. | Implementation, review, QA, docs handoff, dependency approval, GitHub and task context. |
 | 3 | [Startup Team](startup-team/) | You want fast iteration with human launch control. | Product decisions, design review, release review, safe autonomy, product context. |
 | 4 | [Product Delivery Team](product-delivery-team/) | You want cross-functional delivery. | Product acceptance, UX handoff, QA evidence, launch readiness, many-to-many handoffs. |
@@ -20,7 +20,7 @@ Use it to choose an example to read, adapt, or validate. The examples are specif
 
 | Example | Complexity | Context Sources | Autonomy Posture | Approval Gates | Integration Footprint | Best Validation Focus |
 | --- | --- | --- | --- | --- | --- | --- |
-| [Minimal Team](minimal-team/) | 1 - Small | Local files, docs | `manual_only`, `ask_before_changes` | Human documentation review | Local repository extension | ActorSet identity, agent bridge, required fields, minimal references, basic workflow order |
+| [Minimal Team](minimal-team/) | 1 - Small | Local files, docs | `manual_only`, `ask_before_changes` | Human documentation review and override resume | Local repository extension | ActorSet identity, compact AgentSet, agent bridge, human override, minimal references |
 | [Software Team](software-team/) | 2 - Standard | GitHub, Linear, docs, MCP | Mostly `ask_before_changes`, human review | Code review, dependency approval, docs review | GitHub and Linear extensions | Task ownership, capability use, dependency and review gates |
 | [Startup Team](startup-team/) | 3 - Product-heavy | GitHub, Linear, Figma, research, docs | `autonomous_safe` for low-risk work, human release control | Product review, design review, release review | GitHub, Linear, Figma extensions | Product scope, launch gates, design and release handoffs |
 | [Product Delivery Team](product-delivery-team/) | 3 - Cross-functional | GitHub, Jira, Figma, customer docs | Safe autonomy with staged review | Product acceptance, quality gate, launch gate | GitHub, Jira, Figma extensions | Many-to-many handoffs, QA evidence, launch readiness |

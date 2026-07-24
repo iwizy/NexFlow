@@ -22,6 +22,7 @@ RFCs are design proposals for meaningful changes to NexFlow.
 | [RFC-0014](RFC-0014-effective-agent-configuration.md) | Effective Agent Configuration | Draft |
 | [RFC-0015](RFC-0015-typed-references.md) | Typed References | Draft |
 | [RFC-0016](RFC-0016-core-profile-and-discovery.md) | Core Profile And Logical Discovery | Draft |
+| [RFC-0017](RFC-0017-human-override.md) | Human Override | Draft |
 
 ## Cross-RFC Reviews
 

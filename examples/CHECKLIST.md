@@ -68,6 +68,8 @@ Examples are part of the specification surface. They should remain small enough 
 - [ ] Approval gate IDs are reused consistently across project policy, permissions, tasks, workflows, and agent definitions.
 - [ ] Dangerous actions do not rely on implied approval.
 - [ ] Provider, extension, network, command, deployment, and destructive actions remain explicit.
+- [ ] Human override authorities resolve to human-controlled ActorSet entries.
+- [ ] Human override blocks new actions, remains blocked on failure, requires approval and a reason to resume, and references declared audit events.
 
 ## Tasks, Workflows, Handoffs, And Artifacts
 

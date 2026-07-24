@@ -16,9 +16,14 @@ Actor relationship contracts, an `ActorSet` schema, explicit `agentRef`, one mai
 migration, compatibility guidance, and focused validation checks.
 
 This follow-up does not accept RFC-0013 or RFC-0015 in full. Typed references
-outside the Actor relationship fields, complete agent identity simplification,
-effective definition authority, core profile changes, and broader example
-migration remain open.
+outside the Actor relationship fields, effective definition authority, core
+profile changes, and broader example migration remain open.
+
+As of 2026-07-24, the first AgentSet simplification slice classifies the six
+stable identity fields, marks duplicated behavior and access fields deprecated,
+migrates the Minimal Team, and adds focused compatibility checks. A separate
+human override policy slice makes human control explicit without adding runtime
+enforcement.
 
 ## Scope
 

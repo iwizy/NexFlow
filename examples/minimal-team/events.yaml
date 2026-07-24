@@ -78,3 +78,43 @@ events:
         - decision
         - ruleIds
         - redactionApplied
+  - type: override.requested
+    description: An authorized human-controlled actor requests an override.
+    retention: Project policy.
+    auditRequired: true
+    payload:
+      required:
+        - authority
+        - operation
+        - target
+        - reason
+  - type: override.applied
+    description: A human override is applied and the target remains blocked.
+    retention: Project policy.
+    auditRequired: true
+    payload:
+      required:
+        - authority
+        - operation
+        - target
+        - outcome
+  - type: override.failed
+    description: A human override cannot be confirmed or applied and the target remains blocked.
+    retention: Project policy.
+    auditRequired: true
+    payload:
+      required:
+        - authority
+        - operation
+        - target
+        - failure
+  - type: override.resumed
+    description: Work resumes after the declared approval gate and reason requirements are satisfied.
+    retention: Project policy.
+    auditRequired: true
+    payload:
+      required:
+        - authority
+        - target
+        - approvalGate
+        - reason

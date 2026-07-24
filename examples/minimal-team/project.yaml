@@ -33,6 +33,37 @@ project:
         recordPurpose: true
         redactQuery: true
         redactHeaders: true
+    humanOverride:
+      authorities:
+        - kind: actor
+          id: human-maintainer
+      operations:
+        - pause_agent
+        - stop_agent
+        - pause_workflow
+        - stop_workflow
+        - cancel_task
+        - block_action
+        - revoke_approval
+        - revoke_authorization
+      response:
+        blockNewActions: true
+        inFlightActions: request_stop
+        onFailure: remain_blocked
+      resume:
+        mode: approval_required
+        approvalGate: human_review
+        requireReason: true
+      audit:
+        events:
+          - override.requested
+          - override.applied
+          - override.failed
+          - override.resumed
+        recordAuthority: true
+        recordReason: true
+        recordTarget: true
+        recordOutcome: true
     destructiveActions: Human approval required.
     productionActions: Not applicable.
   approvalGates:

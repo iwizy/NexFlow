@@ -10,6 +10,7 @@ The documentation is the canonical source for the specification. Schemas and exa
 - [Concepts](concepts.md)
 - [Glossary](glossary.md)
 - [Actor Model](actor-model.md)
+- [Human Override](human-override.md)
 - [Architecture](architecture.md)
 - [Manifest Reference](manifest-reference.md)
 - [Security Model](security-model.md)
@@ -20,7 +21,7 @@ The documentation is the canonical source for the specification. Schemas and exa
 | --- | --- |
 | New project visitor | [Vision](vision.md) -> [Concepts](concepts.md) -> [Glossary](glossary.md) -> [Manifest Reference](manifest-reference.md) |
 | Manifest author | [Manifest Reference](manifest-reference.md) -> [Actor Model](actor-model.md) -> [Context Model](context-model.md) -> [Memory Model](memory-model.md) -> [Examples Guide](../examples/README.md) |
-| Safety reviewer | [Security Model](security-model.md) -> [Network Access Policy](network-access-policy.md) -> [Approval Gates](approval-gates.md) -> [Capability Model](capability-model.md) -> [Autonomy Model](autonomy-model.md) |
+| Safety reviewer | [Security Model](security-model.md) -> [Human Override](human-override.md) -> [Network Access Policy](network-access-policy.md) -> [Approval Gates](approval-gates.md) -> [Capability Model](capability-model.md) -> [Autonomy Model](autonomy-model.md) |
 | Validator author | [Validation](validation.md) -> [Schema Design Notes](schema-design-notes.md) -> [Schema Guide](../schemas/README.md) -> [Conformance](conformance.md) -> [Compatibility Matrix](compatibility-matrix.md) |
 | Runtime implementer | [Architecture](architecture.md) -> [Runtime Options](runtime-options.md) -> [Provider Abstraction](provider-abstraction.md) -> [Roadmap](roadmap.md) |
 | Extension author | [Extension Model](extensions.md) -> [Integrations](integrations.md) -> [Provider Abstraction](provider-abstraction.md) -> [Conformance](conformance.md) |
@@ -33,6 +34,7 @@ The documentation is the canonical source for the specification. Schemas and exa
 | [Capability Model](capability-model.md) | Defines technical actions separately from authorization. |
 | [Autonomy Model](autonomy-model.md) | Defines how independently actors may act. |
 | [Approval Gates](approval-gates.md) | Defines human or policy approvals before sensitive actions. |
+| [Human Override](human-override.md) | Defines human-controlled pause, stop, cancellation, revocation, fail-closed response, resume, and audit policy. |
 | [Agent Assembly](agent-assembly.md) | Defines the cross-manifest relationship and review checkpoint connecting agent identities, definitions, and referenced behavioral components. |
 | [Agent Definitions](agent-definitions.md) | Defines versioned behavioral releases assembled from model, prompt, retrieval, permission, context, memory, autonomy, and extension references. |
 | [Context Model](context-model.md) | Defines declared information sources, freshness, classification, and access boundaries. |
@@ -53,6 +55,7 @@ The documentation is the canonical source for the specification. Schemas and exa
 | [Governance](governance.md) | Contribution, review, and decision rules. |
 | [Versioning](versioning.md) | Spec versioning and migration policy. |
 | [Actor Model Migration](actor-model-migration.md) | Defines the staged, identity-preserving transition from legacy participant resolution. |
+| [Agent Identity Migration](agent-identity-migration.md) | Defines the transition from duplicated AgentSet behavior fields to compact stable AI identity. |
 | [Conformance](conformance.md) | Draft support levels for manifests, validators, CLIs, runtimes, and extensions. |
 | [Validation](validation.md) | Structural validation workflow and semantic validation boundary. |
 | [Schema Design Notes](schema-design-notes.md) | Explains schema goals, non-goals, strictness boundaries, extension flexibility, and semantic validation limits. |

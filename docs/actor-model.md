@@ -269,6 +269,8 @@ path.
 
 - [Concepts](concepts.md)
 - [Agent Definitions](agent-definitions.md)
+- [Agent Identity Migration](agent-identity-migration.md)
+- [Human Override](human-override.md)
 - [Manifest Reference](manifest-reference.md)
 - [Capability Model](capability-model.md)
 - [Approval Gates](approval-gates.md)

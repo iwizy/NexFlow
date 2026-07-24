@@ -998,6 +998,15 @@ Effective configuration identifies which gates apply. It does not satisfy them.
 A valid approval narrows a blocker for one scoped action. It does not rewrite the
 agent definition, permission manifest, autonomy level, or standing policy.
 
+## Relationship To Human Override
+
+RFC-0017 defines human-controlled pause, stop, cancellation, blocking,
+revocation, fail-closed response, and approval-gated resume.
+
+Human override is a narrowing constraint on effective configuration. It cannot
+grant a missing capability or permission, select a broader definition, erase a
+deny, or raise autonomy.
+
 ## Relationship To Memory Retention
 
 RFC-0008 defines memory ownership, retention, visibility, sensitivity, consumers,

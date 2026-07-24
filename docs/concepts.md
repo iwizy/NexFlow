@@ -141,9 +141,19 @@ The structured [Network Access Policy](network-access-policy.md) defines
 fail-closed outbound connection rules separately from capabilities,
 permissions, context access, provider selection, and credentials.
 
+The structured [Human Override](human-override.md) policy defines
+human-controlled pause, stop, cancellation, blocking, revocation, fail-closed
+response, approval-gated resume, and audit requirements.
+
 ## Approval Gate
 
 A condition requiring explicit authorization before an action can proceed.
+
+## Human Override
+
+A fail-closed project policy that allows explicitly declared human-controlled
+actors to pause, stop, cancel, block, or revoke activity. Override can only
+narrow behavior. Resume requires a declared approval gate and reason.
 
 ## Event
 

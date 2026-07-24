@@ -24,6 +24,9 @@ The repository currently provides the following candidate evidence:
   References, and Core Profile proposals
 - an initial ActorSet schema and Minimal Team migration using shared typed
   reference contracts
+- a compact AgentSet migration with legacy compatibility checks
+- an explicit fail-closed human override policy, audit vocabulary, and focused
+  schema checks without runtime enforcement
 
 Before publishing a candidate, maintainers still need to:
 
@@ -61,7 +64,7 @@ and [Foundational Model Cross-RFC Review](../rfcs/reviews/2026-07-foundational-m
 
 Status: candidate preparation; release decision pending.
 
-Relevant docs: [Concepts](concepts.md), [Glossary](glossary.md), [Manifest Reference](manifest-reference.md), [Actor Model](actor-model.md), [Actor Model Migration](actor-model-migration.md), [Agent Definitions](agent-definitions.md), [Context Model](context-model.md), [Memory Model](memory-model.md), [Approval Gates](approval-gates.md), [Prompt Sets](prompt-sets.md), [Retrieval Profiles](retrieval-profiles.md).
+Relevant docs: [Concepts](concepts.md), [Glossary](glossary.md), [Manifest Reference](manifest-reference.md), [Actor Model](actor-model.md), [Actor Model Migration](actor-model-migration.md), [Agent Identity Migration](agent-identity-migration.md), [Agent Definitions](agent-definitions.md), [Human Override](human-override.md), [Context Model](context-model.md), [Memory Model](memory-model.md), [Approval Gates](approval-gates.md), [Prompt Sets](prompt-sets.md), [Retrieval Profiles](retrieval-profiles.md).
 
 Agent assembly draft checkpoint: complete for initial review. The current draft links agent definitions, model profiles, prompt sets, retrieval profiles, permissions, context, memory, autonomy, extensions, compatibility, and audit expectations.
 
@@ -81,6 +84,7 @@ Agent assembly draft checkpoint: complete for initial review. The current draft 
 - Review prompt set identifiers, revisions, source references, safety review status, and compatibility impact.
 - Review retrieval source references, index versions, chunking, freshness, citations, sensitivity, and audit expectations.
 - Review agent definition component references, lifecycle status, activation criteria, autonomy, and audit expectations.
+- Review human override authority, interruption boundaries, fail-closed behavior, resume gates, and audit expectations.
 - Review extension namespace ownership, lifecycle transitions, registry expectations, and unsupported-extension behavior.
 
 Relevant docs: [Security Model](security-model.md), [Capability Model](capability-model.md), [Autonomy Model](autonomy-model.md), [Provider Abstraction](provider-abstraction.md), [Agent Assembly](agent-assembly.md), [Agent Definitions](agent-definitions.md), [Model Profiles](model-profiles.md), [Prompt Sets](prompt-sets.md), [Retrieval Profiles](retrieval-profiles.md), [Extension Model](extensions.md), [Integrations](integrations.md).
@@ -92,6 +96,7 @@ Relevant docs: [Security Model](security-model.md), [Capability Model](capabilit
 - Review RFC-0005 validation strategy for syntax, schema, semantic, diagnostic, and runtime preflight boundaries.
 - Add schema examples and negative cases.
 - Review the initial ActorSet boundary cases before migrating another example.
+- Review compact AgentSet and human override boundary cases before broader migration.
 - Define conformance expectations for validators.
 - Refine draft conformance levels for manifests, validators, CLIs, runtimes, and extensions.
 

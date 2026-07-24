@@ -30,6 +30,10 @@ Event types use dotted lowercase values:
 - `memory.deleted`
 - `memory.promoted`
 - `network.decision`
+- `override.requested`
+- `override.applied`
+- `override.failed`
+- `override.resumed`
 
 Event types are not entity IDs. They use their own dotted namespace and MUST be referenced exactly from fields such as `emits`, `auditEvents`, audit `events` lists, and event-driven `triggers`. A non-event trigger such as `manual` is not an event type.
 
@@ -166,6 +170,31 @@ bodies, or response bodies. Destination details remain subject to project audit
 and classification policy. See
 [Network Access Policy](network-access-policy.md).
 
+### Human override events
+
+```yaml
+type: override.applied
+payload:
+  authority:
+    kind: actor
+    id: human-maintainer
+  operation: stop_agent
+  target:
+    kind: actor
+    id: docs-agent
+  outcome: blocked
+  reason: Human-reviewed safety intervention.
+```
+
+`override.requested`, `override.applied`, `override.failed`, and
+`override.resumed` should identify authority, operation, target, reason, and
+outcome as applicable. A failed override leaves the target blocked; it is not a
+continue decision.
+
+Record references and redacted summaries rather than credentials, tokens, raw
+prompts, raw context, raw memory, or sensitive incident details. See
+[Human Override](human-override.md).
+
 ### Model profile audit fields
 
 Future events that involve model-backed agent behavior may include model profile metadata:
@@ -253,7 +282,9 @@ Events should prefer retrieval profile references, context source IDs, corpus ve
 
 ## Audit Requirements
 
-Events related to approvals, destructive actions, production actions, credential access, and memory updates SHOULD be retained according to project policy.
+Events related to approvals, human override, destructive actions, production
+actions, credential access, and memory updates SHOULD be retained according to
+project policy.
 
 See [Approval Gates](approval-gates.md) for how approval decisions relate to review events and future approval-specific events.
 

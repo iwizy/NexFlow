@@ -75,6 +75,7 @@ A future runtime or validator should treat an agent assembly as a set of claims 
 - high-risk capabilities remain denied or approval-gated unless explicitly approved
 - autonomy level is compatible with permissions, approval gates, and project policy
 - audit settings can record the definition, component references, review state, and resolved runtime choices when available
+- human override, project policy, and runtime constraints can only narrow the requested behavior
 
 These checks are semantic validation. JSON Schemas can validate shape, but they cannot prove that cross-manifest references, safety intent, or runtime policies are coherent.
 

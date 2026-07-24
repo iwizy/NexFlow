@@ -30,5 +30,11 @@ jobs:
       - name: Run ActorSet schema boundary checks
         run: npm run actor-schema-smoke
 
+      - name: Run agent identity schema boundary checks
+        run: npm run agent-identity-schema-smoke
+
+      - name: Run human override schema boundary checks
+        run: npm run human-override-schema-smoke
+
       - name: Run semantic reference smoke checks
         run: npm run semantic-smoke

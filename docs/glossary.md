@@ -141,6 +141,12 @@ Extensions must not silently grant access or bypass permissions.
 
 ## H
 
+### Human Override
+
+A fail-closed project policy through which explicitly declared
+human-controlled actors may pause, stop, cancel, block, or revoke activity.
+Human override only narrows behavior; resume requires approval and a reason.
+
 ### Handoff
 
 A structured transfer of responsibility from one or more actors to one or more actors.

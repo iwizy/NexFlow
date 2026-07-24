@@ -79,6 +79,9 @@
                 }
               ]
             },
+            "humanOverride": {
+              "$ref": "common.schema.json#/$defs/humanOverridePolicy"
+            },
             "destructiveActions": {
               "type": "string"
             },

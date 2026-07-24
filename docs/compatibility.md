@@ -52,6 +52,7 @@ For the current supported combinations and explicit implementation gaps, see the
 - removing deprecated AgentSet behavior fields before the compatibility window ends
 - changing stable AgentSet identity fields or treating deprecated fields as grants
 - changing network defaults, rule effects, actor or purpose scope, destination selectors, transport constraints, approval requirements, or audit semantics
+- changing human override authority eligibility, operation meaning, fail-closed response, resume requirements, or audit semantics
 - changing event envelope identity, actor, subject, correlation, causation, payload, audit, or redaction semantics
 - changing reference CLI command names, exit code meanings, diagnostic code meanings, or machine-readable output formats
 - removing fields
@@ -71,6 +72,27 @@ the migrated mode fail closed. A participant omitted from an authored
 Requiring `ActorSet`, removing legacy fallback, changing actor kind, or requiring
 typed objects in existing participant fields would be breaking. See
 [Actor Model Migration](actor-model-migration.md).
+
+## Agent Identity Compatibility
+
+The compact AgentSet shape requires only stable AI identity metadata. Legacy
+behavior and access fields remain schema-valid but deprecated, so existing
+`0.1` projects continue to validate while the Minimal Team demonstrates the
+migrated form.
+
+Removing those fields from the schema, rejecting legacy mixed AgentSet projects,
+or giving deprecated fields new grant semantics would be breaking. See
+[Agent Identity Migration](agent-identity-migration.md).
+
+## Human Override Compatibility
+
+The structured human override policy is optional and additive in `0.1`.
+Declaring it requires ActorSet-based human authority resolution and enables no
+runtime behavior by itself.
+
+Making it required, allowing non-human-controlled authorities, enabling
+automatic resume, weakening `remain_blocked`, or changing operation meaning
+would be breaking. See [Human Override](human-override.md).
 
 ## Extension Compatibility
 
@@ -115,6 +137,7 @@ Examples:
 | Change actor kind, identity mode, agent bridge, operator, representative, or integration relationship | May affect `NF-MANIFEST`, `NF-SCHEMA`, `NF-SEMANTIC`, `NF-RUNTIME`, authority, and audit compatibility. |
 | Remove deprecated AgentSet behavior fields or change stable identity meaning | May affect `NF-MANIFEST`, `NF-SCHEMA`, `NF-SEMANTIC`, migration, and future effective configuration. |
 | Change network defaults, destination scope, transport constraints, approvals, or audit semantics | May affect `NF-SEMANTIC`, `NF-RUNTIME`, integrations, privacy, audit, and safety compatibility. |
+| Change human override authority, response, resume, operation, or audit semantics | May affect `NF-SCHEMA`, `NF-SEMANTIC`, `NF-RUNTIME`, safety, authority, and audit compatibility. |
 | Change event envelope identity, actor, subject, correlation, causation, payload, audit, or redaction semantics | May affect `NF-SEMANTIC`, `NF-RUNTIME`, audit, traceability, privacy, and safety compatibility. |
 | Change provider selection precedence, constraints, fallback, or explainability expectations | May affect `NF-SEMANTIC`, `NF-RUNTIME`, audit, privacy, cost, safety, and compatibility. |
 | Change reference CLI command names, exit codes, diagnostic codes, or output formats | May affect `NF-CLI`, CI workflows, editor integrations, and developer tooling compatibility. |

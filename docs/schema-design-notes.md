@@ -43,7 +43,7 @@ NexFlow treats validation as a layered process.
 | Syntax | Supported through local checks | Confirm JSON schemas parse and YAML manifests are readable. |
 | Schema | Draft schemas exist | Check required fields, field types, enums, simple patterns, and manifest shape. |
 | Manifest inventory | Future validation work | Confirm all expected manifest files are present and routed by `kind`. |
-| Semantic validation | Partial repository smoke coverage | Check selected cross-manifest references, ActorSet bridges, graph consistency, permission coverage, memory boundaries, and extension requirements. Full semantic conformance remains future work. |
+| Semantic validation | Partial repository smoke coverage | Check selected cross-manifest references, ActorSet bridges, human override authorities, graph consistency, permission coverage, memory boundaries, and extension requirements. Full semantic conformance remains future work. |
 | Runtime preflight | Future runtime work | Check credentials, sandboxing, provider behavior, tool access, and execution safety before any runtime action. |
 
 Schema validation is one layer. It should not pretend to cover the responsibilities of later layers.
@@ -62,6 +62,8 @@ Schemas should be strict where the specification has stable structure:
 - lexical form for IDs and event types
 - common approval gate, artifact, memory, and extension attachment shapes
 - typed reference structure and kind-specific ActorSet relationship boundaries
+- compact AgentSet identity requiredness and deprecated compatibility fields
+- fail-closed human override policy shape
 
 Strictness is useful when it prevents obvious mistakes without blocking legitimate extension or draft use.
 
@@ -74,6 +76,7 @@ These checks belong to future semantic validation:
 - referenced agent IDs exist
 - ActorSet identities are unique and agent actors bridge explicitly to AgentSet declarations
 - ActorSet operator and representative relationships resolve and remain acyclic
+- human override authorities are fully human-controlled and its gate and event references resolve
 - declared IDs are unique in their owning collections
 - identifier references resolve exactly, without case or separator normalization
 - multi-kind references do not resolve ambiguously

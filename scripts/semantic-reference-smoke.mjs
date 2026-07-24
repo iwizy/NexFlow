@@ -88,6 +88,26 @@ function requireTypedRefs(file, value, targets, label, targetLabel, expectedKind
   return ids;
 }
 
+function isHumanControlledActor(id, actorById, visiting = new Set()) {
+  if (visiting.has(id)) return false;
+
+  const actor = actorById.get(id);
+  if (!actor) return false;
+  if (actor.kind === "human") return true;
+  if (actor.kind !== "authority") return false;
+
+  const representatives = asArray(actor.representedBy)
+    .filter((reference) => reference?.kind === "actor" && typeof reference?.id === "string")
+    .map((reference) => reference.id);
+
+  if (representatives.length === 0) return false;
+
+  const nextVisiting = new Set(visiting);
+  nextVisiting.add(id);
+  return representatives.every((representative) =>
+    isHumanControlledActor(representative, actorById, nextVisiting));
+}
+
 function reportReferenceCycles(file, graph, label) {
   const states = new Map();
   const stack = [];
@@ -191,6 +211,9 @@ function validateProjectSet(directory, manifests) {
   const networkRules = new Set();
   const hasActorSet = manifests.has("ActorSet");
   const actorData = asArray(manifests.get("ActorSet")?.data?.actors);
+  const actorById = new Map(actorData
+    .filter((actor) => typeof actor?.id === "string")
+    .map((actor) => [actor.id, actor]));
 
   if (!hasActorSet) {
     for (const maintainer of asArray(project.maintainers)) {
@@ -272,6 +295,12 @@ function validateProjectSet(directory, manifests) {
     && !Array.isArray(configuredNetworkAccess)
     ? configuredNetworkAccess
     : null;
+  const configuredHumanOverride = project.policies?.humanOverride;
+  const humanOverride = configuredHumanOverride !== null
+    && typeof configuredHumanOverride === "object"
+    && !Array.isArray(configuredHumanOverride)
+    ? configuredHumanOverride
+    : null;
 
   for (const rule of asArray(networkAccess?.rules)) {
     addUnique(projectFile, networkRules, rule?.id, "network access rule");
@@ -334,6 +363,47 @@ function validateProjectSet(directory, manifests) {
   }
 
   requireRefs(projectFile, networkAccess?.audit?.events, eventTypes, "network access audit", "event type");
+
+  if (humanOverride) {
+    const label = "human override policy";
+
+    if (!hasActorSet) {
+      report(projectFile, `${label} requires ActorSet for typed human authority resolution`);
+    } else {
+      const authorityIds = requireTypedRefs(
+        projectFile,
+        humanOverride.authorities,
+        actors,
+        label,
+        "actor",
+        "actor"
+      );
+
+      for (const authorityId of authorityIds) {
+        if (!isHumanControlledActor(authorityId, actorById)) {
+          report(
+            projectFile,
+            `${label} authority ${JSON.stringify(authorityId)} is not a human or fully human-represented authority`
+          );
+        }
+      }
+    }
+
+    requireRefs(
+      projectFile,
+      [humanOverride.resume?.approvalGate],
+      approvalGates,
+      `${label} resume`,
+      "approval gate"
+    );
+    requireRefs(
+      projectFile,
+      humanOverride.audit?.events,
+      eventTypes,
+      `${label} audit`,
+      "event type"
+    );
+  }
 
   for (const agent of asArray(manifests.get("AgentSet")?.data?.agents)) {
     requireRefs(agentsFile, agent?.permissions, permissions, `agent ${JSON.stringify(agent?.id)}`, "permission");
@@ -484,6 +554,6 @@ if (diagnostics.length > 0) {
   process.exitCode = 1;
 } else {
   console.log(`Semantic reference smoke checks passed for ${projects.size} example project(s).`);
-  console.log("Checked core actor identity, agent bridges, task, workflow, artifact, permission, network policy, context, profile, gate, event, and extension references.");
+  console.log("Checked core actor identity, agent bridges, task, workflow, artifact, permission, network policy, human override, context, profile, gate, event, and extension references.");
   console.log("This is a repository smoke check, not full semantic validation.");
 }

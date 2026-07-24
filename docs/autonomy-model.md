@@ -58,7 +58,17 @@ See [Approval Gates](approval-gates.md) for the draft semantics of approval acto
 
 ## Human Override
 
-Humans must remain able to pause, revoke, or override agent activity in future runtimes.
+Human override is stricter than every requested autonomy level.
+
+An explicitly declared human-controlled authority may pause, stop, cancel,
+block, or revoke activity under the project
+[Human Override](human-override.md) policy. A conforming future runtime must
+prevent new target actions after accepting an override, follow the declared
+in-flight action policy, and remain blocked on failure.
+
+Resume requires the policy's approval gate and a recorded reason. It does not
+raise autonomy or restore an expired, revoked, denied, or otherwise unavailable
+authorization.
 
 ## Runtime Responsibility
 

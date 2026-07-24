@@ -110,7 +110,11 @@ stable `AgentSet` identity, and `AgentDefinitionSet.agentRef` continues to targe
 that agent identity. Equal actor and agent IDs do not create either link
 implicitly.
 
-The two layers should stay aligned, but they are not the same. An agent can keep the same `agentRef` while a new definition changes the model profile, prompt set, retrieval profile, permissions, memory scopes, autonomy, or extension configuration.
+The two layers should stay aligned, but they are not the same. An agent can keep
+the same `agentRef` while a new definition changes the model profile, prompt
+set, retrieval profile, permissions, memory scopes, autonomy, or extension
+configuration. Human override and other project controls may narrow that
+requested behavior but never broaden it.
 
 ## Component References
 

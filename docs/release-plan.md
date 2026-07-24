@@ -56,6 +56,7 @@ Release readiness:
 
 - validation commands are documented and reproducible
 - schema compilation and example validation run in CI
+- focused ActorSet, agent identity, and human override schema boundaries are covered
 - diagnostic categories are stable enough for early tooling
 - manifest inventory expectations are explicit
 - conformance levels are clear enough for validators and CLIs
@@ -75,6 +76,7 @@ Release readiness:
 
 - reference resolution rules are documented and covered by checks
 - approval gate semantics are detailed enough for preflight validation
+- human override authority, gate, event, and fail-closed relationships are testable
 - memory retention and visibility semantics have testable expectations
 - event envelope requirements are aligned across docs, schemas, and examples
 - provider selection and fallback semantics are explainable without provider-specific assumptions

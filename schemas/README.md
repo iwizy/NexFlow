@@ -12,9 +12,9 @@ The schemas currently target `specVersion: "0.1"` and use JSON Schema draft 2020
 
 | Schema | Manifest `kind` | Purpose |
 | --- | --- | --- |
-| `project.schema.json` | `Project` | Project identity, policies including structured network access, maintainers, approval gates, and manifest locations. |
+| `project.schema.json` | `Project` | Project identity, policies including structured network access and human override, maintainers, approval gates, and manifest locations. |
 | `actors.schema.json` | `ActorSet` | First-class human, agent, automation, service, and authority identity with kind-specific typed relationships. |
-| `agents.schema.json` | `AgentSet` | Stable AI identity and current standing configuration, with legacy mixed-participant compatibility for projects without ActorSet. |
+| `agents.schema.json` | `AgentSet` | Stable AI identity, with deprecated behavior fields and legacy mixed-participant compatibility during migration. |
 | `agent-definitions.schema.json` | `AgentDefinitionSet` | Versioned agent behavioral releases assembled from model, prompt, retrieval, permission, context, memory, autonomy, and extension references. |
 | `workflow.schema.json` | `Workflow` | Workflow stages, steps, dependencies, gates, and emitted events. |
 | `tasks.schema.json` | `TaskSet` | Tasks, owners, dependencies, artifacts, required capabilities, and acceptance criteria. |
@@ -29,7 +29,7 @@ The schemas currently target `specVersion: "0.1"` and use JSON Schema draft 2020
 | `retrieval-profiles.schema.json` | `RetrievalProfileSet` | Retrieval profiles for context source selection, index versions, chunking, freshness, citations, sensitivity, review triggers, and audit expectations. |
 | `events.schema.json` | `EventSet` | Event types, optional envelope expectations, payload expectations, retention, and audit requirements. |
 | `extensions.schema.json` | `ExtensionSet` | Extension namespaces, lifecycle state, and required capabilities. |
-| `common.schema.json` | Shared definitions | IDs, metadata, autonomy levels, risk levels, artifacts, approval gates, and common enums. |
+| `common.schema.json` | Shared definitions | IDs, metadata, typed references, autonomy levels, risk levels, artifacts, approval gates, network access, human override, and common enums. |
 
 ## Design Rules
 
@@ -81,6 +81,7 @@ Use `common.schema.json` for shared concepts:
 - artifacts
 - approval gates
 - structured network access policies
+- fail-closed human override policies
 - extension attachments
 
 Prefer adding shared definitions once rather than duplicating shapes across schemas.
@@ -117,6 +118,8 @@ Examples of future semantic checks:
 - network rules reference declared actors, capabilities, context sources, providers, extensions, and approval gates
 - network audit event references resolve to declared event types
 - network rules are coherent with effective permissions, context boundaries, transport constraints, and destination resolution
+- human override authorities resolve to human-controlled actors
+- human override resume gates and audit event references resolve
 - handoff artifacts are produced by previous tasks
 - memory access is consistent with project policy
 - memory writers, prohibited content, and promotion paths are consistent with sensitivity
@@ -161,6 +164,10 @@ For complete validation of every reference manifest against the schema selected 
 ```sh
 npm ci
 npm run validate
+npm run actor-schema-smoke
+npm run agent-identity-schema-smoke
+npm run human-override-schema-smoke
+npm run semantic-smoke
 ```
 
 The Node.js dependency is limited to repository maintenance tooling and does not select the language of a future NexFlow runtime.

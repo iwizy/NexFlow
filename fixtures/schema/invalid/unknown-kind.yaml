@@ -1,0 +1,5 @@
+specVersion: "0.1"
+kind: AgentTeam
+metadata:
+  project: negative-unknown-kind
+agents: []

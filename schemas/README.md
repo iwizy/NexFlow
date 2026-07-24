@@ -165,6 +165,7 @@ For complete validation of every reference manifest against the schema selected 
 ```sh
 npm ci
 npm run validate
+npm run negative-schema-fixtures
 npm run actor-schema-smoke
 npm run agent-identity-schema-smoke
 npm run agent-definition-authority-smoke
@@ -173,6 +174,12 @@ npm run semantic-smoke
 ```
 
 The Node.js dependency is limited to repository maintenance tooling and does not select the language of a future NexFlow runtime.
+
+The files under `fixtures/schema/invalid/` are intentionally invalid and are
+excluded from normal example validation. Their `index.json` catalog records the
+expected rejection category and path. `npm run negative-schema-fixtures`
+ensures each fixture remains invalid for the intended reason and that no YAML
+fixture is omitted from the catalog.
 
 ## Extension Policy
 

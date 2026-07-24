@@ -35,6 +35,7 @@ enforced.
 | JSON Schemas | `0.1` across 17 manifest kinds plus common definitions | Implemented | `schemas/*.schema.json` | Structural validation only; schemas do not prove cross-manifest meaning or safety. |
 | Reference examples | 7 project sets, 113 schema-backed manifests, all using `0.1` | Implemented | `examples/` | Authoring and validation fixtures, not executable teams or runtime demonstrations. |
 | Repository schema validator | Current repository schema snapshot and reference examples | Implemented | `npm run validate` | Maintenance tooling, not a published `nexflow` CLI or general runtime preflight. |
+| Negative schema fixtures | Required field, enum value, ID format, and unknown kind rejection | Implemented | `npm run negative-schema-fixtures`, `fixtures/schema/invalid/` | Four focused rejection categories, not a complete invalid-input or diagnostic conformance suite. |
 | Actor schema boundary smoke | 9 accepted and rejected structural cases | Implemented | `npm run actor-schema-smoke` | Focused ActorSet schema evidence, not full semantic or runtime conformance. |
 | Agent identity boundary smoke | 7 compact and legacy structural cases | Implemented | `npm run agent-identity-schema-smoke` | Checks identity migration compatibility, not definition selection or effective configuration. |
 | Agent definition authority smoke | 13 structural and selection cases | Implemented | `npm run agent-definition-authority-smoke` | Checks active completeness and unique unscoped selection, not full policy resolution or runtime execution. |
@@ -67,6 +68,7 @@ specVersion: 0.1
 schemas: current repository snapshot
 examples: current repository snapshot
 schema validator: scripts/validate-schemas.mjs
+negative schema fixtures: fixtures/schema/invalid/ via scripts/negative-schema-fixtures.mjs
 actor boundary smoke: scripts/actor-schema-smoke.mjs
 agent identity boundary smoke: scripts/agent-identity-schema-smoke.mjs
 agent definition authority smoke: scripts/agent-definition-authority-smoke.mjs

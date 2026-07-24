@@ -22,7 +22,7 @@ Current release posture: **`0.1` draft, preparing for candidate review**. No
 | Specification | Specified in draft form | [Documentation](docs/index.md), [Manifest Reference](docs/manifest-reference.md) |
 | JSON Schemas | Implemented for 17 manifest kinds plus common definitions | [Schemas](schemas/), [Schema Guide](schemas/README.md) |
 | Reference examples | Implemented as 7 project sets containing 113 schema-backed manifests | [Examples](examples/), [Examples Guide](examples/README.md) |
-| Structural validation | Implemented for all maintained examples plus ActorSet, agent identity, active agent definition, and human override boundary cases | `npm run validate`, `npm run actor-schema-smoke`, `npm run agent-identity-schema-smoke`, `npm run agent-definition-authority-smoke`, `npm run human-override-schema-smoke` |
+| Structural validation | Implemented for all maintained examples, four negative schema categories, and focused model boundaries | `npm run validate`, `npm run negative-schema-fixtures`, [Validation](docs/validation.md) |
 | Semantic reference checks | Partial repository smoke coverage | `npm run semantic-smoke`, [Validation](docs/validation.md) |
 | Governance and RFC process | Implemented in documentation | [Governance](docs/governance.md), [RFCs](rfcs/README.md) |
 | Foundational model changes | ActorSet, compact AgentSet, and authoritative unique-active-definition slices implemented; RFCs remain Draft | [Actor Model](docs/actor-model.md), [Effective Agent Configuration](docs/effective-agent-configuration.md), [Foundational Model Review](rfcs/reviews/2026-07-foundational-model-review.md) |
@@ -171,6 +171,8 @@ NexFlow is intentionally split into layers:
 - [Schema Guide](schemas/README.md): schema scope, update rules, and validation boundaries
 - [examples/](examples/): complete reference team configurations
 - [Examples Guide](examples/README.md): overview of reference teams and manifest file sets
+- [fixtures/schema/invalid/](fixtures/schema/invalid/): intentionally invalid
+  manifests for stable schema rejection checks
 - [rfcs/](rfcs/README.md): governance and design proposal process
 - [Foundational Model Review](rfcs/reviews/2026-07-foundational-model-review.md): compatibility, safety, blockers, and implementation order for RFC-0013 through RFC-0016
 - [Conformance](docs/conformance.md): draft support levels for manifests, validators, CLIs, runtimes, and extensions
@@ -214,8 +216,8 @@ The current priorities are:
 2. Review the ActorSet, compact AgentSet, active-definition authority, and human
    override slices, then define the derived Agent Assembly inspection view
    before broader example migration.
-3. Harden validation and conformance with positive and negative fixtures,
-   deterministic diagnostics, and broader semantic checks.
+3. Add positive fixtures, expand maintained negative fixtures, stabilize
+   diagnostics, and broaden semantic checks.
 4. Complete the **Runtime Architecture Decision** before selecting an
    implementation language or starting runtime work.
 5. Build a validation-focused reference CLI for `init`, `validate`, `inspect`,

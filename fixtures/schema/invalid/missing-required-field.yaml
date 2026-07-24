@@ -1,0 +1,19 @@
+specVersion: "0.1"
+kind: Project
+metadata:
+  project: negative-required-field
+project:
+  id: negative-required-field
+  displayName: Negative Required Field
+manifests:
+  agents: agents.yaml
+  workflow: workflow.yaml
+  tasks: tasks.yaml
+  handoffs: handoffs.yaml
+  permissions: permissions.yaml
+  capabilities: capabilities.yaml
+  context: context.yaml
+  memory: memory.yaml
+  providers: providers.yaml
+  events: events.yaml
+  extensions: extensions.yaml

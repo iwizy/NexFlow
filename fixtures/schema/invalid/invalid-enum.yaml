@@ -1,0 +1,12 @@
+specVersion: "0.1"
+kind: PermissionSet
+metadata:
+  project: negative-enum
+permissions:
+  - id: read-repository-policy
+    description: Demonstrates an unsupported permission effect.
+    subjects:
+      - docs-agent
+    capabilities:
+      - read_repository
+    effect: permitted

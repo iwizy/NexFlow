@@ -98,7 +98,7 @@ Relevant docs: [Security Model](security-model.md), [Capability Model](capabilit
 - Improve cross-manifest consistency.
 - Document validation workflow and current validation limits.
 - Review RFC-0005 validation strategy for syntax, schema, semantic, diagnostic, and runtime preflight boundaries.
-- Add schema examples and negative cases.
+- Maintain cataloged negative schema fixtures and add positive schema fixtures.
 - Review the initial ActorSet boundary cases before migrating another example.
 - Review compact AgentSet and human override boundary cases before broader migration.
 - Review active agent definition authority and derived Agent Assembly inspection

@@ -32,6 +32,8 @@ The repository supports basic validation through:
 - YAML parsing checks for example manifests.
 - Example manifest kind discovery against available schemas.
 - A reproducible command that validates every example manifest against its JSON Schema.
+- Four cataloged negative fixture categories for required fields, enum values,
+  ID formats, and unknown manifest kinds.
 - Focused ActorSet, AgentSet identity, agent definition authority, and human
   override boundary checks.
 - A semantic reference smoke command for core cross-manifest references in examples.
@@ -71,12 +73,26 @@ The command requires Node.js 20 or newer. It safely parses each YAML file under 
 
 This Node.js command is repository maintenance tooling, not a reference CLI or runtime implementation. It does not choose a future NexFlow runtime language and does not perform semantic validation.
 
+Verify the intentionally invalid schema fixtures:
+
+```sh
+npm run negative-schema-fixtures
+```
+
+This command loads `fixtures/schema/invalid/index.json`, confirms every
+cataloged YAML file is syntactically valid, and verifies that it is rejected
+for the expected schema category and field path. It also fails when a fixture
+is missing from the catalog or unexpectedly becomes valid.
+
+Negative fixtures are not reference examples. They do not test cross-manifest
+meaning, policy safety, diagnostic wording stability, or runtime enforcement.
+
 The GitHub Actions workflow runs the same smoke script, schema validation, and
 focused boundary commands so pull requests exercise schema JSON parsing,
 example YAML parsing, manifest kind discovery, schema compilation, example
 manifest validation, compact agent identity compatibility, and human override
 fail-closed shape. It also checks active agent definition completeness and
-unique unscoped selection cases.
+unique unscoped selection cases, plus the cataloged negative schema boundaries.
 
 Run semantic reference smoke checks:
 

@@ -8,7 +8,10 @@ They are specification metadata. They do not run agents, call providers, load pr
 
 ## Purpose
 
-An agent identity explains who an agent is in a team. An agent definition describes a versioned behavioral release. Agent assembly is the wider relationship and review checkpoint connecting that identity and definition to referenced components.
+An agent identity explains who an agent is in a team. An agent definition
+describes a versioned behavioral release. Agent Assembly projects the effective
+result after that definition and its referenced components are resolved against
+applicable policy.
 
 An agent definition can describe:
 
@@ -29,8 +32,8 @@ An agent definition can describe:
 - compatibility impact
 - audit metadata expected from a future runtime
 
-Agent definitions are the versioned behavioral release resources used by agent
-assembly and proposed in
+Agent definitions are the authoritative versioned behavioral release resources
+projected by Agent Assembly and proposed in
 [RFC-0004](../rfcs/RFC-0004-agent-definition-versioning.md). See
 [Effective Agent Configuration](effective-agent-configuration.md) for
 selection, authority, and policy composition.

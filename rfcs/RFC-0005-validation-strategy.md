@@ -104,7 +104,7 @@ Initial semantic validation should focus on:
 | References | Referenced agents, tasks, permissions, capabilities, context sources, memory scopes, providers, profiles, and extensions exist. |
 | Permissions | Permission rules reference declared capabilities and do not silently override deny rules. |
 | Approval gates | High-risk actions, broad autonomy, deployments, destructive operations, and credential access have gates where required by project policy. |
-| Agent assembly | Agent definitions reference existing model profiles, prompt sets, retrieval profiles, permissions, capabilities, context sources, memory scopes, and extensions. |
+| Effective agent configuration | Agent definitions reference existing model profiles, prompt sets, retrieval profiles, permissions, capabilities, context sources, memory scopes, and extensions; a future Agent Assembly view preserves provenance and blockers. |
 | Context | Context source classifications, freshness rules, web boundaries, and MCP context/tool separation are coherent. |
 | Memory | Scope access, ownership, allowed writers, allowed consumers, retention, and promotion rules preserve sensitivity boundaries. |
 | Workflows | Workflow steps, tasks, dependencies, handoffs, and emitted events form a coherent graph. |

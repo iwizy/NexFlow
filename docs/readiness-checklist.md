@@ -35,6 +35,7 @@ Do not tag a candidate if the repository implies runtime behavior, provider inte
 - [ ] Documentation index links to all core models and project process docs.
 - [ ] Concepts and glossary define the core domain terms consistently.
 - [ ] Actor and agent identity migration guidance distinguish participant identity from effective agent configuration.
+- [ ] Agent Assembly remains a derived inspection projection; no authored manifest, schema, example output, or grant semantics are introduced for it.
 - [ ] Manifest reference describes every core manifest family.
 - [ ] Security model explains least privilege, explicit permissions, approval gates, credentials, network access, destructive operations, and human override.
 - [ ] Autonomy model and approval gates document human authority and sensitive action requirements.

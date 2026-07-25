@@ -13,9 +13,8 @@ For fuller domain explanations, see [Concepts](concepts.md).
 - Prefer explicit source, owner, scope, and authority language over vague agent behavior.
 - Use **actor** for any participant and **agent** only for an AI participant.
 - Use **agent identity** for stable AI identity metadata, **agent definition** for
-  a versioned behavioral release, and **agent assembly** for the derived
-  cross-manifest relationship and review view that connects identity,
-  definition, and referenced components.
+  a versioned behavioral release, and **agent assembly** for the read-only
+  inspection projection of effective agent configuration.
 - Use **spec version** in prose and `specVersion` only for the manifest field.
 - Use exact manifest kind names such as `ActorSet` and `AgentSet`, and exact field names such as `agentRef`, in code-formatted text.
 - Use **event type** for a declared dotted value such as `task.completed` and **event instance** for an occurrence of that type.
@@ -54,11 +53,13 @@ fields.
 
 ### Agent Assembly
 
-A cross-manifest relationship and review checkpoint that links an agent identity to an agent definition and its model profile, prompt set, retrieval profile, permission, capability, context source, memory scope, autonomy, and extension references.
+A read-only inspection projection of an Effective Agent Configuration. It shows
+the selected identity and definition, requested components, applicable
+constraints, provenance, unresolved facts, and blockers.
 
 Agent assembly is not a separate manifest kind, another behavioral version, or
-an authored source of authority. It is derived declarative metadata and does
-not run agents or grant access.
+an authored source of authority. It cannot be re-ingested as a grant or
+override and does not run agents or grant access.
 
 ### Agent Definition
 

@@ -102,6 +102,17 @@ behavior fields as merge inputs would change `NF-SEMANTIC`, safety, audit, and
 future runtime compatibility. See
 [Effective Agent Configuration](effective-agent-configuration.md).
 
+## Agent Assembly View Compatibility
+
+Agent Assembly is currently a documentation-defined inspection projection of
+Effective Agent Configuration. It is not an authored manifest, has no JSON
+Schema, and is not emitted by repository tooling.
+
+A future standardized machine-readable view must preserve source authority,
+provenance, blockers, redaction, and deterministic ordering. Changes to its
+fields, state meanings, or diagnostic codes may affect `NF-CLI` and
+`NF-SEMANTIC`, but do not by themselves change manifest `specVersion`.
+
 ## Human Override Compatibility
 
 The structured human override policy is optional and additive in `0.1`.
@@ -155,6 +166,7 @@ Examples:
 | Change actor kind, identity mode, agent bridge, operator, representative, or integration relationship | May affect `NF-MANIFEST`, `NF-SCHEMA`, `NF-SEMANTIC`, `NF-RUNTIME`, authority, and audit compatibility. |
 | Remove deprecated AgentSet behavior fields or change stable identity meaning | May affect `NF-MANIFEST`, `NF-SCHEMA`, `NF-SEMANTIC`, migration, and future effective configuration. |
 | Change unique active-definition selection or active completeness requirements | May affect `NF-SCHEMA`, `NF-SEMANTIC`, safety, migration, audit, and future runtime compatibility. |
+| Change a standardized Agent Assembly field, state, ordering rule, or diagnostic code | May affect `NF-CLI`, `NF-SEMANTIC`, inspection consumers, and audit tooling without changing manifest shape. |
 | Change network defaults, destination scope, transport constraints, approvals, or audit semantics | May affect `NF-SEMANTIC`, `NF-RUNTIME`, integrations, privacy, audit, and safety compatibility. |
 | Change human override authority, response, resume, operation, or audit semantics | May affect `NF-SCHEMA`, `NF-SEMANTIC`, `NF-RUNTIME`, safety, authority, and audit compatibility. |
 | Change event envelope identity, actor, subject, correlation, causation, payload, audit, or redaction semantics | May affect `NF-SEMANTIC`, `NF-RUNTIME`, audit, traceability, privacy, and safety compatibility. |

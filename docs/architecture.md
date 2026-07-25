@@ -9,11 +9,13 @@ flowchart TD
   D["Documentation"] --> S["Specification Model"]
   S --> M["YAML Manifests"]
   S --> J["JSON Schemas"]
-  M --> AS["Agent Assembly"]
   M --> V["Validation Tools"]
   J --> V
-  AS --> V
-  V --> R["Future Runtime"]
+  M --> E["Future Effective Configuration Resolution"]
+  V --> E
+  E --> AS["Agent Assembly Inspection View"]
+  E --> R["Future Runtime"]
+  R --> RS["Resolved Execution Snapshot"]
   R --> I["Integrations"]
   R --> P["Providers"]
   R --> AE["Audit Events"]
@@ -58,7 +60,8 @@ source. See [Human Override](human-override.md).
 
 ## Agent Assembly View
 
-Agent assembly connects agent identity with versioned behavioral components:
+Agent Assembly is the derived inspection projection of an Effective Agent
+Configuration. It connects agent identity with versioned behavioral components:
 
 - agent definitions
 - model profiles
@@ -68,10 +71,11 @@ Agent assembly connects agent identity with versioned behavioral components:
 - context sources and memory scopes
 - autonomy levels and extensions
 
-This view is intentionally declarative and derived. It gives humans,
-validators, and future runtimes a reviewable checkpoint for behavior-changing
-agent updates without requiring NexFlow to execute those agents or creating a
-second source of authority. See
+It presents requested values, applicable constraints, provenance, unresolved
+runtime facts, and blockers. It is read-only evidence, not a manifest,
+behavioral declaration, grant, or runtime input. The current repository defines
+this relationship in documentation but does not implement the resolver or view
+serializer. See [Agent Assembly](agent-assembly.md) and
 [Effective Agent Configuration](effective-agent-configuration.md).
 
 ## Runtime Boundary

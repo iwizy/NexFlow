@@ -113,18 +113,21 @@ Agent definition versioning remains draft vocabulary. The unique-active
 authority slice is implemented for specification and validation, but it is not
 a stable runtime contract and does not execute agents.
 
-## Agent Assembly Checkpoints
+## Agent Assembly Views
 
-[Agent Assembly](agent-assembly.md) describes the cross-manifest relationship and review checkpoint connecting an agent identity, an agent definition, model profiles, prompt sets, retrieval profiles, permissions, context, memory, autonomy, and extensions.
+[Agent Assembly](agent-assembly.md) is the derived inspection projection of an
+Effective Agent Configuration. It has no independently authored version and is
+not a manifest.
 
-Agent assembly checkpoints may be useful for project planning, releases, changelog entries, and review summaries, but they do not automatically require a manifest `specVersion` bump.
+An illustrative view may report `sourceSpecVersion` to identify the manifest
+semantics used for derivation. Definition and component versions remain
+separate and should be preserved in the projection.
 
 Keep `specVersion` unchanged when a change:
 
 - clarifies draft documentation
-- adds examples that remain compatible with the current schema
-- adds new draft vocabulary without changing existing manifest meaning
-- improves cross-links, review checklists, or audit guidance
+- refines the non-normative illustrative view without changing manifest meaning
+- improves authority, provenance, blocker, redaction, or review guidance
 
 Re-evaluate `specVersion` when a change:
 
@@ -134,7 +137,13 @@ Re-evaluate `specVersion` when a change:
 - changes normative semantics for permissions, approval gates, memory, context, provider selection, or runtime behavior
 - introduces accepted breaking changes through the RFC process
 
-For the current draft, agent assembly remains part of `specVersion: "0.1"` and is not a separate stable runtime contract.
+A future standardized Agent Assembly serialization needs its own output
+compatibility decision. Changing its fields, state meanings, ordering, or
+diagnostic codes may affect `NF-CLI` and `NF-SEMANTIC` without changing authored
+manifest compatibility.
+
+For the current draft, Agent Assembly remains documentation for
+`specVersion: "0.1"` and is not a stable machine-readable or runtime contract.
 
 ## Model Profile Versioning
 

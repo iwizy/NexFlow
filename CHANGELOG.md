@@ -37,6 +37,10 @@ tag or release has been published, and manifest `specVersion` remains `"0.1"`.
 - Added cataloged negative schema fixtures for required fields, enum values, ID
   formats, and unknown manifest kinds, with a dedicated CI command that verifies
   each expected rejection.
+- Defined Agent Assembly as the read-only inspection projection of Effective
+  Agent Configuration, including deterministic derivation, authority,
+  provenance, blocker, serialization, security, compatibility, and conformance
+  boundaries.
 
 ### Changed
 
@@ -123,7 +127,7 @@ tag or release has been published, and manifest `specVersion` remains `"0.1"`.
 - Draft model profile vocabulary for provider-neutral model selection, pinned and floating references, constraints, fallback, review triggers, and audit expectations.
 - Draft prompt set vocabulary for prompt identifiers, revisions, source references, ownership, safety review, compatibility impact, and audit expectations.
 - Draft retrieval profile vocabulary for context source references, index versions, chunking, freshness, citations, sensitivity, review triggers, and audit expectations.
-- Agent assembly checkpoint documentation tying agent definitions, model profiles, prompt sets, retrieval profiles, permissions, context, memory, autonomy, extensions, versioning, review, compatibility, and future audit expectations together.
+- Initial Agent Assembly documentation connecting agent definitions, model profiles, prompt sets, retrieval profiles, permissions, context, memory, autonomy, extensions, versioning, review, compatibility, and future audit expectations.
 - Expanded minimal team example notes with learning goals, reading path, reference chain, safety notes, and local checks.
 - Strengthened software team example lifecycle, pull request review evidence, QA handoffs, and documentation handoff notes.
 - Refined startup team example product approval gates, research context, handoffs, and release readiness evidence.

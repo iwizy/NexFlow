@@ -2,6 +2,11 @@
 
 NexFlow manifests are YAML documents with a required `specVersion` field.
 
+Agent Assembly is not a manifest. It is a derived inspection projection of
+Effective Agent Configuration, so there is no `agent-assembly.yaml`,
+`AgentAssemblySet`, or project manifest entry. See
+[Agent Assembly](agent-assembly.md).
+
 The current draft version is:
 
 ```yaml

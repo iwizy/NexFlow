@@ -42,6 +42,11 @@ The repository supports basic validation through:
 
 This is enough to catch many authoring mistakes, but not enough to prove that a full project is semantically consistent.
 
+Agent Assembly is outside the current schema-validation surface because it is a
+derived inspection projection rather than an authored manifest. The repository
+does not validate an assembly document, and the semantic smoke command does not
+compute a complete Agent Assembly view.
+
 ## Recommended Local Checks
 
 Run the repository smoke checks from the repository root:

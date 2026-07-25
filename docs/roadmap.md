@@ -69,8 +69,13 @@ Relevant docs: [Concepts](concepts.md), [Glossary](glossary.md), [Manifest Refer
 Agent definition authority checkpoint: implemented for the Minimal Team
 reference path. The unique unscoped active definition owns requested behavior;
 schemas and repository checks enforce active completeness and ambiguity
-boundaries. A derived Agent Assembly inspection view remains the next
-foundational slice.
+boundaries.
+
+Agent Assembly checkpoint: its documentation now defines a derived inspection
+projection with authority, provenance, blocker, serialization, security, and
+conformance boundaries. A resolver and machine-readable output remain future
+tooling. Typed reference primitives and field normalization are the next
+foundational slices.
 
 ## Milestone 2: Community Review
 
@@ -101,8 +106,8 @@ Relevant docs: [Security Model](security-model.md), [Capability Model](capabilit
 - Maintain cataloged negative schema fixtures and add positive schema fixtures.
 - Review the initial ActorSet boundary cases before migrating another example.
 - Review compact AgentSet and human override boundary cases before broader migration.
-- Review active agent definition authority and derived Agent Assembly inspection
-  evidence before broader migration.
+- Review active agent definition authority and the documented Agent Assembly
+  projection before standardizing machine-readable inspection output.
 - Define conformance expectations for validators.
 - Refine draft conformance levels for manifests, validators, CLIs, runtimes, and extensions.
 

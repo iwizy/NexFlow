@@ -3,6 +3,11 @@
 Effective agent configuration is the deterministic, policy-bounded view of the
 behavior requested for one AI agent.
 
+The [Agent Assembly](agent-assembly.md) is the inspection projection of this
+semantic result. It presents selected values, constraints, provenance, and
+blockers without becoming another authored configuration or source of
+authority.
+
 The current `0.1` draft implements the first authoritative selection slice:
 
 - `AgentSet` owns stable AI identity.
@@ -236,3 +241,23 @@ Repository semantic checks cover:
 Validation does not load components, calculate full permission effects,
 authenticate reviewers, satisfy approval gates, resolve a provider, execute an
 agent, or prove runtime enforcement.
+
+## Agent Assembly Projection
+
+Effective Agent Configuration and Agent Assembly do not define competing
+models. Effective Agent Configuration is the semantic resolution result; Agent
+Assembly is a human-readable or machine-readable inspection projection of that
+result.
+
+The projection may report:
+
+- selected identity and active definition
+- requested component references and autonomy
+- applicable policy constraints and approval requirements
+- unresolved runtime choices
+- blockers and source provenance
+
+It is not an authored manifest, cannot be used as a grant or override, and is
+not currently produced by repository tooling. See
+[Agent Assembly](agent-assembly.md) for its derivation, serialization, security,
+and compatibility boundaries.

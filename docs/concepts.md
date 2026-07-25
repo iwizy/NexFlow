@@ -43,11 +43,13 @@ domains remain schema-valid but deprecated during migration. See
 
 ## Agent Assembly
 
-A cross-manifest relationship and review checkpoint that links an agent identity to an agent definition and its model profile, prompt set, retrieval profile, permission, capability, context source, memory scope, autonomy, and extension references.
+A read-only inspection projection of an Effective Agent Configuration. It shows
+the selected identity and definition, requested components, applicable
+constraints, provenance, unresolved facts, and blockers.
 
 Agent assembly is not a separate manifest kind, another behavioral version, or
-an authored source of authority. It is a derived declarative review view, does
-not run agents, and does not grant access by itself.
+an authored source of authority. It cannot be re-ingested as a grant or
+override, does not run agents, and does not grant access by itself.
 
 ## Agent Definition
 

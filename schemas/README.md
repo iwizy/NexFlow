@@ -4,6 +4,11 @@ This directory contains draft JSON Schemas for NexFlow manifests.
 
 The schemas are practical validation aids. They are not a complete formal semantics for NexFlow.
 
+Agent Assembly has no schema in this directory because it is a derived
+inspection projection, not an authored manifest. A future standardized
+machine-readable inspection format would require its own compatibility and
+conformance contract.
+
 See [Schema Design Notes](../docs/schema-design-notes.md) for the design rationale, strictness boundaries, extension flexibility, and non-goals behind these schemas.
 
 ## Current Scope

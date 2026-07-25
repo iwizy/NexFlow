@@ -19,7 +19,9 @@ It can describe:
 - audit metadata expected from a future runtime
 - review triggers for behavior-changing model updates
 
-Model profiles are versioned component vocabulary used by agent assembly and proposed in [RFC-0004](../rfcs/RFC-0004-agent-definition-versioning.md).
+Model profiles are versioned component vocabulary referenced by agent
+definitions and projected in Agent Assembly views. They are proposed in
+[RFC-0004](../rfcs/RFC-0004-agent-definition-versioning.md).
 
 Provider selection semantics are proposed in [RFC-0010](../rfcs/RFC-0010-provider-selection.md).
 

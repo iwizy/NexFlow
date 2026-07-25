@@ -73,6 +73,24 @@ Examples include:
 
 Complete semantic validation is planned future work. The repository includes limited semantic reference smoke checks for maintained examples, but they do not establish `NF-SEMANTIC` conformance.
 
+### Agent Assembly Inspection
+
+Agent Assembly is a derived projection of Effective Agent Configuration, not a
+manifest or independent conformance target in the current draft. No repository
+tool currently computes or serializes the complete view.
+
+A future tool claiming Agent Assembly inspection support MUST:
+
+- preserve the authority of authored manifests and domain policies
+- derive values deterministically without generic merging or file-order rules
+- expose provenance, unresolved facts, and blockers
+- fail closed on ambiguity and unsupported required semantics
+- redact sensitive content without hiding blocker existence
+- avoid treating exported output as a grant, override, or resolution input
+
+Such a claim would require appropriate `NF-SEMANTIC` behavior and, when exposed
+through a command, an `NF-CLI` output compatibility contract.
+
 ### Reference CLI
 
 A future reference CLI may support commands such as:

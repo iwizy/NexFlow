@@ -18,9 +18,10 @@ Minimal Team example.
 
 The next implemented slice makes the unique unscoped `active` agent definition
 authoritative for requested behavior, requires a complete reviewed active
-shape, and exercises the rule in the Minimal Team example. Scoped bindings,
-derived effective inspection, broader migration, and runtime enforcement remain
-later work.
+shape, and exercises the rule in the Minimal Team example. A later
+documentation slice defines Agent Assembly as the inspection projection of the
+effective result. Machine-readable inspection output, scoped bindings, broader
+migration, and runtime enforcement remain later work.
 
 ## Summary
 
@@ -782,60 +783,61 @@ A future resolver should use explicit phases.
 
 Each phase should produce diagnostics tied to source files and fields.
 
-## Candidate Effective Configuration View
+## Candidate Agent Assembly View
 
-A future `inspect` command or runtime preflight may expose a derived view such as
-the following, assuming the referenced definition is eligible and active:
+A future `inspect` command may expose an Agent Assembly projection such as the
+following, assuming manifest-level resolution succeeds:
 
 ```yaml
-effectiveAgentConfiguration:
-  agentRef: docs-agent
-  definitionRef: docs_agent_active_2026_07
-  definitionVersion: "2026.07.0"
-  resolutionMode: active_definition
-  components:
+agentAssembly:
+  sourceSpecVersion: "0.1"
+  status: resolved
+  identity:
+    agentRef: docs-agent
+  selectedDefinition:
+    ref: docs_agent_active_2026_07
+    version: "2026.07.0"
+    selectionMode: unique_unscoped_active
+  requested:
     modelProfileRef: docs_agent_balanced
     promptSetRef: docs_agent_prompts
     retrievalProfileRef: docs_agent_retrieval
-  capabilities:
-    requested:
+    capabilityRefs:
       - read_repository
       - modify_documentation
-    available:
-      - read_repository
-      - modify_documentation
-  permissions:
-    applicable:
+    permissionRefs:
       - docs_write_with_review
-    pendingApprovalGates:
-      - human_review
-  context:
-    readable:
+    contextSourceRefs:
       - repository
       - docs
-  memory:
-    readable:
+    memoryScopes:
       - ephemeral
       - task
-    writable:
-      - ephemeral
-  autonomyLevel: ask_before_changes
-  provider:
-    modelProfileRef: docs_agent_balanced
-    resolutionStatus: unresolved
+    autonomyLevel: ask_before_changes
+    extensionRefs: []
+  constraints:
+    permissions:
+      pendingApprovalGates:
+        - human_review
+  runtimeResolution:
+    status: not_attempted
   blockers: []
-  sources:
-    - agents.yaml
-    - agent-definitions.yaml
-    - model-profiles.yaml
-    - prompt-sets.yaml
-    - retrieval-profiles.yaml
-    - permissions.yaml
-    - context.yaml
-    - memory.yaml
+  provenance:
+    - domain: identity
+      manifestKind: AgentSet
+      resourceRef: docs-agent
+    - domain: requested_behavior
+      manifestKind: AgentDefinitionSet
+      resourceRef: docs_agent_active_2026_07
+    - domain: permissions
+      manifestKind: PermissionSet
+      resourceRef: docs_write_with_review
 ```
 
-This is illustrative output, not a proposed authored manifest.
+This is illustrative output, not a proposed authored manifest or implemented
+output contract. Agent Assembly is a projection of Effective Agent
+Configuration, not a competing declaration. There is no `AgentAssemblySet`, and
+the output must not be re-ingested as a grant or override.
 
 The view should explain why a value is effective and which source constrained it.
 It should avoid embedding raw prompts, retrieved content, memory contents,
@@ -1021,7 +1023,7 @@ content.
 
 RFC-0011 keeps the reference CLI validation-focused.
 
-A future `nexflow inspect` command may display an effective configuration view or
+A future `nexflow inspect` command may display an Agent Assembly view or
 preflight explanation without executing an agent.
 
 A future `nexflow graph` command may show identity, definition, component, policy,
@@ -1098,12 +1100,17 @@ Migration should be staged.
 
 Status: implemented in the Minimal Team reference path.
 
-### Stage 2: Expose Effective Inspection
+### Stage 2: Expose Agent Assembly Inspection
 
-- add deterministic preflight output
-- report source provenance for effective values
-- report pending approvals and unsupported runtime requirements
-- define machine-readable diagnostics
+- define Agent Assembly as the read-only inspection projection of Effective
+  Agent Configuration
+- define authority, provenance, blocker, serialization, security, and
+  compatibility boundaries
+- add deterministic preflight output in future tooling
+- standardize machine-readable diagnostics before interoperability claims
+
+Status: the documentation contract is implemented. A resolver, serializer,
+reference CLI output, and machine-readable conformance suite remain future work.
 
 ### Stage 3: Define Scoped Activation
 

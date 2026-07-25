@@ -87,7 +87,7 @@ The goal is to make AI-assisted software delivery inspectable before anything ru
 - **Team**: humans, agents, automation systems, and review authorities.
 - **Actor**: a first-class human, agent, automation, service, or authority identity participating in project work.
 - **Agent**: a stable AI identity with a role, responsibilities, and skills; versioned behavior belongs to agent definitions.
-- **Agent Assembly**: the derived cross-manifest relationship and review view connecting an agent identity, its selected definition, and referenced behavioral components.
+- **Agent Assembly**: the read-only inspection projection of an Effective Agent Configuration, including selected behavior, constraints, provenance, and blockers.
 - **Agent Definition**: a versioned behavioral release; the unique unscoped active definition is authoritative for requested behavior but grants no access.
 - **Capability**: something an actor can technically do, such as `read_repository` or `create_pull_request`.
 - **Permission**: a policy rule with an `allow`, `deny`, or `approval_required` effect for capabilities.
@@ -213,9 +213,9 @@ The current priorities are:
 
 1. Complete the `0.1` candidate checkpoint with validation evidence, known
    limitations, compatibility notes, and an explicit release decision.
-2. Review the ActorSet, compact AgentSet, active-definition authority, and human
-   override slices, then define the derived Agent Assembly inspection view
-   before broader example migration.
+2. Review the ActorSet, compact AgentSet, active-definition authority, human
+   override, and Agent Assembly inspection slices before broader example
+   migration.
 3. Add positive fixtures, expand maintained negative fixtures, stabilize
    diagnostics, and broaden semantic checks.
 4. Complete the **Runtime Architecture Decision** before selecting an

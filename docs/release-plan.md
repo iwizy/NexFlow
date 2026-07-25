@@ -85,9 +85,8 @@ Release readiness:
 - provider selection and fallback semantics are explainable without provider-specific assumptions
 - unique active agent definition selection and authority are deterministic and
   testable
-- the derived agent assembly relationship is clear across agent definitions,
-  model profiles, prompt sets, retrieval profiles, permissions, context, memory,
-  autonomy, and extensions
+- the derived Agent Assembly projection clearly separates requested behavior,
+  policy constraints, provenance, unresolved runtime facts, and blockers
 
 Non-goals:
 

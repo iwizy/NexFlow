@@ -22,7 +22,9 @@ It can describe:
 - audit metadata expected from a future runtime
 - intended agent definitions or agents
 
-Prompt sets are versioned component vocabulary used by agent assembly and proposed in [RFC-0004](../rfcs/RFC-0004-agent-definition-versioning.md).
+Prompt sets are versioned component vocabulary referenced by agent definitions
+and projected in Agent Assembly views. They are proposed in
+[RFC-0004](../rfcs/RFC-0004-agent-definition-versioning.md).
 
 ## Manifest
 

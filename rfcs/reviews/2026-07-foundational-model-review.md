@@ -110,8 +110,9 @@ agent constraints is a schema blocker, not an identity-model blocker.
    one eligible unscoped active definition. Tools must not infer the active
    definition from version order, file order, modification time, or provider
    availability.
-6. Agent Assembly is a derived inspection and review view. It is not another
-   authored source of authority.
+6. Agent Assembly is the read-only inspection projection of Effective Agent
+   Configuration. It is not another authored source of authority and cannot be
+   re-ingested as a grant or override.
 
 ### Typed References
 
@@ -194,12 +195,14 @@ effective-configuration decisions are reviewed.
 - reduce `AgentSet` to stable AI identity and accepted standing constraints
 - make selected agent definitions authoritative for requested behavior
 - enforce the one-active-definition rule for the initial unscoped model
-- expose Agent Assembly as derived inspection output with provenance
+- define Agent Assembly as a derived inspection projection with provenance and
+  blocker boundaries
 - defer multi-scope activation until a binding field contract is accepted
 
 Status: compact AgentSet identity is implemented for the Minimal Team.
 Authoritative unique-active-definition selection is also implemented for that
-reference path. Derived inspection, scoped activation, and broader migration
+reference path. The Agent Assembly documentation contract is implemented;
+machine-readable inspection output, scoped activation, and broader migration
 remain open.
 
 ### Phase 4: Reference Normalization
@@ -283,7 +286,7 @@ the draft is not acceptable.
 | RFC | Disposition | Conditions |
 | --- | --- | --- |
 | RFC-0013 | Initial Actor identity and compact AgentSet slices implemented; remains Draft | Review broader migration before claiming the full model. |
-| RFC-0014 | Compact identity and authoritative unique-active selection slices implemented; remains Draft | Review derived inspection, scoped binding, and broader migration before claiming the full model. |
+| RFC-0014 | Compact identity, authoritative unique-active selection, and Agent Assembly documentation slices implemented; remains Draft | Standardize machine-readable inspection, scoped binding, and broader migration before claiming the full model. |
 | RFC-0015 | Common tuple and Actor relationship contracts implemented; remains Draft | Define authoritative contracts and migrate remaining fields deliberately. |
 | RFC-0016 | Core profile and logical assembly direction accepted for planning; remains Draft | Stabilize participant inventory and reference contracts before schema migration. |
 

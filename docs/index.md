@@ -35,7 +35,7 @@ The documentation is the canonical source for the specification. Schemas and exa
 | [Autonomy Model](autonomy-model.md) | Defines how independently actors may act. |
 | [Approval Gates](approval-gates.md) | Defines human or policy approvals before sensitive actions. |
 | [Human Override](human-override.md) | Defines human-controlled pause, stop, cancellation, revocation, fail-closed response, resume, and audit policy. |
-| [Agent Assembly](agent-assembly.md) | Defines the cross-manifest relationship and review checkpoint connecting agent identities, definitions, and referenced behavioral components. |
+| [Agent Assembly](agent-assembly.md) | Defines the read-only inspection projection of effective agent configuration, including provenance and blockers. |
 | [Agent Definitions](agent-definitions.md) | Defines versioned behavioral releases assembled from model, prompt, retrieval, permission, context, memory, autonomy, and extension references. |
 | [Effective Agent Configuration](effective-agent-configuration.md) | Defines authoritative unique-active-definition selection and domain policy boundaries. |
 | [Context Model](context-model.md) | Defines declared information sources, freshness, classification, and access boundaries. |

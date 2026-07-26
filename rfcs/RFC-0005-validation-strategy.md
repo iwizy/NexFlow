@@ -113,6 +113,12 @@ Initial semantic validation should focus on:
 | Retrieval | Retrieval profile sources, excluded sources, index metadata, freshness, citations, sensitivity, and review triggers are compatible with context policy. |
 | Extensions | Extension namespaces, lifecycle state, required capabilities, and permission implications are declared. |
 
+The
+[Semantic Reference Inventory](../docs/semantic-reference-inventory.md)
+turns the first implementation slice into a field-level P0-P3 plan. It records
+target namespaces, current smoke coverage, known gaps, and identifier-shaped
+fields that must remain unsupported until their contracts are unambiguous.
+
 Semantic validation supports the future `NF-SEMANTIC` conformance level.
 
 ### 5. Runtime Preflight

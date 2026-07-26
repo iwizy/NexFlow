@@ -44,7 +44,7 @@ NexFlow treats validation as a layered process.
 | Schema | Draft schemas exist | Check required fields, field types, enums, simple patterns, and manifest shape. |
 | Negative schema fixtures | Four rejection categories implemented | Confirm representative required-field, enum, ID-format, and unknown-kind failures remain rejected for the intended reason. |
 | Manifest inventory | Future validation work | Confirm all expected manifest files are present and routed by `kind`. |
-| Semantic validation | Partial repository smoke coverage | Check selected cross-manifest references, ActorSet bridges, active agent definition authority, human override authorities, graph consistency, permission coverage, memory boundaries, and extension requirements. Full semantic conformance remains future work. |
+| Semantic validation | Partial repository smoke coverage plus a documented inventory | Check prioritized cross-manifest references, ActorSet bridges, active agent definition authority, human override authorities, graph consistency, permission coverage, memory boundaries, and extension requirements. Full semantic conformance remains future work. |
 | Runtime preflight | Future runtime work | Check credentials, sandboxing, provider behavior, tool access, and execution safety before any runtime action. |
 
 Schema validation is one layer. It should not pretend to cover the responsibilities of later layers.
@@ -100,6 +100,11 @@ These checks belong to future semantic validation:
 - extension namespaces and required capabilities are compatible
 
 Some of these checks are possible with advanced JSON Schema patterns, but encoding them there would make the schemas harder to read and harder to evolve.
+
+The [Semantic Reference Inventory](semantic-reference-inventory.md) assigns
+accepted reference fields to target namespaces, implementation priorities, and
+current coverage. It also identifies ambiguous fields that semantic validators
+must preserve without guessing.
 
 `common.schema.json` defines the lexical boundary for IDs and dotted event types. The same ID pattern applies to declarations and references, while the containing field determines which resource kind a reference targets. Schemas do not infer aliases or prove that a referenced declaration exists.
 

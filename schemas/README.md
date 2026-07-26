@@ -11,6 +11,10 @@ conformance contract.
 
 See [Schema Design Notes](../docs/schema-design-notes.md) for the design rationale, strictness boundaries, extension flexibility, and non-goals behind these schemas.
 
+See the [Semantic Reference Inventory](../docs/semantic-reference-inventory.md)
+for target namespaces, validator priorities, current smoke coverage, and
+reference fields that remain unsafe to resolve generically.
+
 ## Current Scope
 
 The schemas currently target `specVersion: "0.1"` and use JSON Schema draft 2020-12.
@@ -142,6 +146,11 @@ Examples of future semantic checks:
 - extension requirements are satisfied
 
 See [Validation](../docs/validation.md) for the current validation model.
+
+See the
+[Semantic Reference Inventory](../docs/semantic-reference-inventory.md) for the
+field-by-field boundary between current repository checks and future semantic
+validator work.
 
 See the [Compatibility Matrix](../docs/compatibility-matrix.md) for the supported spec, schema, example, validator, CLI, runtime, and extension combinations.
 

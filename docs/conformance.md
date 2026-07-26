@@ -73,6 +73,10 @@ Examples include:
 
 Complete semantic validation is planned future work. The repository includes limited semantic reference smoke checks for maintained examples, but they do not establish `NF-SEMANTIC` conformance.
 
+The [Semantic Reference Inventory](semantic-reference-inventory.md) defines the
+recommended P0-P3 implementation order, target namespaces, current coverage,
+known gaps, and fields that remain unsafe to resolve generically.
+
 ### Agent Assembly Inspection
 
 Agent Assembly is a derived projection of Effective Agent Configuration, not a

@@ -7,6 +7,10 @@ Effective Agent Configuration, so there is no `agent-assembly.yaml`,
 `AgentAssemblySet`, or project manifest entry. See
 [Agent Assembly](agent-assembly.md).
 
+Cross-manifest target namespaces and current semantic smoke coverage are
+documented in the
+[Semantic Reference Inventory](semantic-reference-inventory.md).
+
 The current draft version is:
 
 ```yaml

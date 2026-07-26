@@ -17,6 +17,8 @@ The repository currently provides the following candidate evidence:
 - 7 maintained project examples containing 113 schema-backed manifests
 - reproducible schema syntax, structural validation, and semantic reference
   smoke commands
+- a prioritized semantic reference inventory with explicit current coverage,
+  gaps, and deferred ambiguous fields
 - explicit conformance vocabulary and a current compatibility matrix
 - a public readiness checklist, release plan, known limitations, and governance
   process
@@ -108,6 +110,8 @@ Relevant docs: [Security Model](security-model.md), [Capability Model](capabilit
 - Review compact AgentSet and human override boundary cases before broader migration.
 - Review active agent definition authority and the documented Agent Assembly
   projection before standardizing machine-readable inspection output.
+- Maintain the P0-P3 semantic reference inventory as fields are normalized and
+  smoke coverage expands.
 - Define conformance expectations for validators.
 - Refine draft conformance levels for manifests, validators, CLIs, runtimes, and extensions.
 

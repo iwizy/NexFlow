@@ -113,6 +113,17 @@ provenance, blockers, redaction, and deterministic ordering. Changes to its
 fields, state meanings, or diagnostic codes may affect `NF-CLI` and
 `NF-SEMANTIC`, but do not by themselves change manifest `specVersion`.
 
+## Semantic Reference Compatibility
+
+The [Semantic Reference Inventory](semantic-reference-inventory.md) records
+accepted target namespaces, implementation priority, current smoke coverage,
+known gaps, and deferred ambiguous fields.
+
+Changing a reference target kind, scope, exact-match rule, ambiguity behavior,
+or grant boundary may break `NF-SEMANTIC` validators even when the source field
+remains schema-valid. A validator must not infer compatibility by searching
+every namespace for the same scalar ID.
+
 ## Human Override Compatibility
 
 The structured human override policy is optional and additive in `0.1`.

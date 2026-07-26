@@ -41,6 +41,9 @@ tag or release has been published, and manifest `specVersion` remains `"0.1"`.
   Agent Configuration, including deterministic derivation, authority,
   provenance, blocker, serialization, security, compatibility, and conformance
   boundaries.
+- Added a P0-P3 semantic reference inventory covering target namespaces,
+  deterministic resolution, current smoke coverage, known gaps, deferred
+  ambiguous fields, non-reference lookalikes, and maintenance rules.
 
 ### Changed
 

@@ -12,6 +12,7 @@ Related RFCs:
 Related design notes:
 
 - [Schema Design Notes](schema-design-notes.md)
+- [Semantic Reference Inventory](semantic-reference-inventory.md)
 - [Compatibility Matrix](compatibility-matrix.md)
 
 ## Validation Goals
@@ -36,7 +37,9 @@ The repository supports basic validation through:
   ID formats, and unknown manifest kinds.
 - Focused ActorSet, AgentSet identity, agent definition authority, and human
   override boundary checks.
-- A semantic reference smoke command for core cross-manifest references in examples.
+- A semantic reference smoke command for selected cross-manifest references in examples.
+- A prioritized semantic reference inventory that distinguishes checked,
+  partial, missing, and deferred field contracts.
 - Draft JSON Schemas in `schemas/`.
 - Documentation describing semantic expectations.
 
@@ -116,6 +119,10 @@ references, duplicate IDs, duplicate agent bridges, and actor relationship
 cycles.
 
 The command is intentionally a smoke check. It does not prove workflow graph correctness, policy safety, approval sufficiency, runtime enforceability, provider compatibility, or full semantic conformance.
+
+The [Semantic Reference Inventory](semantic-reference-inventory.md) records
+which reference fields the command checks today, known gaps, deferred ambiguous
+fields, and the P0-P3 order recommended for future validator work.
 
 Run focused ActorSet structural boundary checks:
 

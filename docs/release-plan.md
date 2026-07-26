@@ -78,6 +78,8 @@ The `0.3` line should make cross-manifest meaning easier to test.
 Release readiness:
 
 - reference resolution rules are documented and covered by checks
+- the semantic reference inventory identifies target namespaces, implementation
+  order, current coverage, gaps, and fields that validators must not guess
 - approval gate semantics are detailed enough for preflight validation
 - human override authority, gate, event, and fail-closed relationships are testable
 - memory retention and visibility semantics have testable expectations

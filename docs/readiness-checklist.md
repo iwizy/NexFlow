@@ -86,6 +86,8 @@ Do not tag a candidate if the repository implies runtime behavior, provider inte
   agent identity, agent definition authority, human override boundaries, and
   semantic reference smoke checks on pull requests.
 - [ ] Validation docs explain the difference between syntax checks, schema validation, semantic smoke checks, future semantic validation, and runtime enforcement.
+- [ ] Semantic reference inventory target namespaces and coverage labels match
+  the current schemas, examples, and semantic smoke implementation.
 - [ ] Validation output avoids claiming full semantic conformance.
 
 ## RFC Checklist

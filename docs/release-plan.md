@@ -56,8 +56,8 @@ Release readiness:
 
 - validation commands are documented and reproducible
 - schema compilation and example validation run in CI
-- focused ActorSet, agent identity, agent definition authority, and human
-  override schema boundaries are covered
+- focused typed-reference, ActorSet, agent identity, agent definition authority,
+  and human override schema boundaries are covered
 - required field, enum value, ID format, and unknown manifest kind rejection
   fixtures run in CI
 - diagnostic categories are stable enough for early tooling
@@ -78,6 +78,8 @@ The `0.3` line should make cross-manifest meaning easier to test.
 Release readiness:
 
 - reference resolution rules are documented and covered by checks
+- shared typed-reference primitives have focused structural evidence, and each
+  field migration defines target kinds, scope, and compatibility behavior
 - the semantic reference inventory identifies target namespaces, implementation
   order, current coverage, gaps, and fields that validators must not guess
 - approval gate semantics are detailed enough for preflight validation

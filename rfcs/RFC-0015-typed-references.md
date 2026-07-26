@@ -11,11 +11,12 @@ accepts the logical object form and deterministic field-contract direction for
 implementation planning and places the reusable reference primitive before the
 Actor schema migration. This RFC remains Draft.
 
-The first implemented slice adds the common kind, ID, and optional scope tuple
-plus closed assembly-scoped contracts for Actor relationships. The structured
-human override policy reuses the closed actor-reference contract for its
-authorities. Other current reference fields retain their existing authored
-forms until their contracts are reviewed and migrated deliberately.
+The implemented primitive slice adds the common kind, ID, and optional scope
+tuple, scalar-compatible migration definitions, lexical rules, schema examples,
+and focused structural checks. Closed assembly-scoped Actor relationships and
+the structured human override policy use strict kind-specific forms. Other
+current reference fields retain their existing authored forms until their
+contracts are reviewed and migrated deliberately.
 
 ## Summary
 
@@ -39,8 +40,8 @@ The central rule is:
 > deterministic scope. It does not infer aliases, search unrelated scopes, or
 > grant authority.
 
-This RFC is specification-first. It does not change current schemas, examples,
-or runtime behavior by itself.
+This RFC remains Draft. The implemented primitive slice does not migrate other
+fields, accept the full RFC, or add runtime behavior.
 
 ## Motivation
 
@@ -110,7 +111,8 @@ This RFC aims to:
 
 This RFC does not:
 
-- accept a new schema shape immediately
+- require every current scalar reference field to accept or require typed
+  objects
 - require current examples to migrate immediately
 - define remote or cross-project references
 - define a package registry or dependency manager
@@ -305,7 +307,7 @@ validation.
 
 ## Logical Typed Reference Model
 
-The candidate logical shape is:
+The shared logical shape is:
 
 ```yaml
 kind: agent
@@ -458,6 +460,7 @@ specification.
 | --- | --- | --- |
 | `project` | `Project.project` | Manifest assembly |
 | `project-maintainer` | `Project.project.maintainers[]` | Manifest assembly, owned by the project |
+| `actor` | `ActorSet.actors[]` | Manifest assembly when ActorSet mode is active |
 | `agent` | `AgentSet.agents[]` | Manifest assembly |
 | `agent-definition` | `AgentDefinitionSet.agentDefinitions[]` | Manifest assembly |
 | `capability` | `CapabilitySet.capabilities[]` | Manifest assembly |
@@ -487,14 +490,9 @@ The `prompt` kind is reserved for fields that semantically reference a declared
 prompt entry. Existing prompt `sourceRef` fields are source locators, not prompt
 resource references.
 
-### Reserved Draft Target Kinds
-
-| Target kind | Dependency | Status |
-| --- | --- | --- |
-| `actor` | RFC-0013 Actor Model | Reserved until the actor declaration model is accepted. |
-
-Reserved kinds must not be treated as implemented merely because a validator
-recognizes the token.
+Recognizing a target-kind token does not create a field contract. `actor` is
+active for the implemented ActorSet relationships; every other field still
+needs an explicit allowed-kind and scope contract.
 
 ### Vocabulary That Is Not Yet A Target Kind
 
@@ -916,15 +914,18 @@ Validators must not auto-fix ambiguous references.
 
 ### Structural Validation
 
-Future JSON Schemas may validate:
+The current shared JSON Schema definitions validate:
 
 - typed reference object shape
 - required `kind` and `id`
 - target-kind lexical form or enum
 - core ID lexical form
 - scope object shape
-- field-specific allowed kind enums
 - scalar-or-object migration unions
+- strict actor, agent, and extension target kinds
+
+Future field migrations may add field-specific allowed kind enums and scope
+constraints.
 
 JSON Schema alone generally cannot prove:
 
@@ -961,10 +962,14 @@ They must not claim complete typed-reference conformance unless they cover:
 - diagnostics required by this RFC
 - migration behavior for claimed spec versions
 
+The focused shared-definition command covers authored structure and lexical
+boundaries only. It does not resolve declarations or apply every field
+contract.
+
 ## Relationship To Actor Model
 
-RFC-0013 proposes first-class human, agent, automation, service, and authority
-actors.
+The first RFC-0013 implementation slice provides first-class human, agent,
+automation, service, and authority actors while that RFC remains Draft.
 
 Typed references should make `actor` the common target kind for participant
 identity after that model is accepted. This reduces polymorphic fields and keeps
@@ -1043,7 +1048,8 @@ Parsing a typed reference object is not enough to claim semantic support.
 
 ## Compatibility Impact
 
-This RFC is planning-oriented and does not change current manifests by itself.
+The implemented primitive slice is additive and does not change existing
+manifest fields by itself.
 
 Potentially compatible changes:
 
@@ -1079,6 +1085,10 @@ Migration should be staged and tool-assisted.
 - add duplicate and ambiguity fixtures
 - keep current schemas and examples valid
 
+Status: the initial semantic reference inventory and primitive guide implement
+the documentation portion. Complete duplicate and ambiguity fixture coverage
+remains future work.
+
 ### Stage 1: Normalize Internally
 
 - let validators normalize current single-kind string references to logical typed
@@ -1094,6 +1104,10 @@ Migration should be staged and tool-assisted.
 - require typed objects for new examples in genuinely multi-kind fields
 - retain exact legacy behavior for deterministic single-kind fields
 - add schema and semantic fixtures for every target kind
+
+Status: the reusable common definitions and selected strict Actor and human
+override fields are implemented. Broad migration of existing scalar fields and
+complete semantic fixtures have not begun.
 
 ### Stage 3: Deprecate Unsafe Unqualified Forms
 

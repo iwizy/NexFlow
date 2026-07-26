@@ -347,6 +347,9 @@ contract closes the allowed target kinds and determines whether scope or a
 legacy scalar form is accepted. Actor relationship fields are assembly-scoped
 and prohibit authored scope.
 
+See [Typed References](typed-references.md) for the complete shared shape,
+lexical rules, migration forms, and validation boundary.
+
 References are case-sensitive and MUST preserve declaration spelling and
 separator style. Authors and tools MUST NOT silently lowercase, trim, rewrite
 separators, infer aliases, or search unrelated target kinds. Compact strings
@@ -360,10 +363,10 @@ validation checks uniqueness, existence, scope, ambiguity, and graph
 consistency.
 
 [RFC-0015: Typed References](../rfcs/RFC-0015-typed-references.md) remains Draft.
-Only the common primitive, Actor relationship contracts documented in
-[Actor Model](actor-model.md), and the human override authority contract are
-implemented. Other fields retain their current forms until migrated
-deliberately.
+The common primitive, focused structural checks, Actor relationship contracts
+documented in [Actor Model](actor-model.md), and the human override authority
+contract are implemented. Other fields retain their current forms until
+migrated deliberately.
 
 Event types are not IDs. They use a separate dotted lowercase form such as `task.completed` and are referenced from event-related fields such as `emits`, `auditEvents`, audit `events`, and event-driven `triggers`. A non-event trigger such as `manual` is not an event type.
 

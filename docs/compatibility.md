@@ -124,6 +124,21 @@ or grant boundary may break `NF-SEMANTIC` validators even when the source field
 remains schema-valid. A validator must not infer compatibility by searching
 every namespace for the same scalar ID.
 
+## Typed Reference Compatibility
+
+The shared typed-reference primitives are additive in the unreleased `0.1`
+draft. Existing scalar reference fields retain their current syntax unless
+their field-specific migration contract says otherwise.
+
+Adding an optional typed form alongside a deterministic scalar form may preserve
+`NF-MANIFEST` compatibility. Requiring an object where a scalar was accepted,
+changing an allowed target kind or scope, removing a transitional scalar form,
+or changing strict kind-specific semantics may break `NF-MANIFEST`,
+`NF-SCHEMA`, and `NF-SEMANTIC` consumers.
+
+See [Typed References](typed-references.md) for the current shared shapes and
+migration rules.
+
 ## Human Override Compatibility
 
 The structured human override policy is optional and additive in `0.1`.
@@ -178,6 +193,7 @@ Examples:
 | Remove deprecated AgentSet behavior fields or change stable identity meaning | May affect `NF-MANIFEST`, `NF-SCHEMA`, `NF-SEMANTIC`, migration, and future effective configuration. |
 | Change unique active-definition selection or active completeness requirements | May affect `NF-SCHEMA`, `NF-SEMANTIC`, safety, migration, audit, and future runtime compatibility. |
 | Change a standardized Agent Assembly field, state, ordering rule, or diagnostic code | May affect `NF-CLI`, `NF-SEMANTIC`, inspection consumers, and audit tooling without changing manifest shape. |
+| Require, remove, or reinterpret a typed-reference form, target kind, or scope | May affect `NF-MANIFEST`, `NF-SCHEMA`, `NF-SEMANTIC`, migration tooling, and future runtime binding. |
 | Change network defaults, destination scope, transport constraints, approvals, or audit semantics | May affect `NF-SEMANTIC`, `NF-RUNTIME`, integrations, privacy, audit, and safety compatibility. |
 | Change human override authority, response, resume, operation, or audit semantics | May affect `NF-SCHEMA`, `NF-SEMANTIC`, `NF-RUNTIME`, safety, authority, and audit compatibility. |
 | Change event envelope identity, actor, subject, correlation, causation, payload, audit, or redaction semantics | May affect `NF-SEMANTIC`, `NF-RUNTIME`, audit, traceability, privacy, and safety compatibility. |

@@ -12,7 +12,8 @@ Related documents:
 
 - [Validation](validation.md)
 - [Schema Design Notes](schema-design-notes.md)
-- [Typed References](../rfcs/RFC-0015-typed-references.md)
+- [Typed References](typed-references.md)
+- [RFC-0015: Typed References](../rfcs/RFC-0015-typed-references.md)
 - [Effective Agent Configuration](effective-agent-configuration.md)
 - [Core Profile And Logical Discovery](../rfcs/RFC-0016-core-profile-and-discovery.md)
 

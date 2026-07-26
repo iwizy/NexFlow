@@ -93,7 +93,8 @@
         "handoff",
         "artifact",
         "extension"
-      ]
+      ],
+      "examples": ["agent", "workflow-step", "context-source"]
     },
     "typedReferenceScope": {
       "title": "Typed Reference Scope",
@@ -108,7 +109,13 @@
         "id": {
           "$ref": "#/$defs/id"
         }
-      }
+      },
+      "examples": [
+        {
+          "kind": "workflow",
+          "id": "release-workflow"
+        }
+      ]
     },
     "typedReference": {
       "title": "Typed Reference",
@@ -126,7 +133,21 @@
         "scope": {
           "$ref": "#/$defs/typedReferenceScope"
         }
-      }
+      },
+      "examples": [
+        {
+          "kind": "agent",
+          "id": "docs-agent"
+        },
+        {
+          "kind": "workflow-step",
+          "id": "publish-release",
+          "scope": {
+            "kind": "workflow",
+            "id": "release-workflow"
+          }
+        }
+      ]
     },
     "resourceReference": {
       "title": "Transitional Resource Reference",
@@ -137,6 +158,13 @@
         },
         {
           "$ref": "#/$defs/typedReference"
+        }
+      ],
+      "examples": [
+        "docs-agent",
+        {
+          "kind": "agent",
+          "id": "docs-agent"
         }
       ]
     },

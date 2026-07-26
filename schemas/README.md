@@ -15,6 +15,10 @@ See the [Semantic Reference Inventory](../docs/semantic-reference-inventory.md)
 for target namespaces, validator priorities, current smoke coverage, and
 reference fields that remain unsafe to resolve generically.
 
+See [Typed References](../docs/typed-references.md) for the shared reference
+definitions, lexical rules, field-contract categories, migration forms, and
+validation boundary.
+
 ## Current Scope
 
 The schemas currently target `specVersion: "0.1"` and use JSON Schema draft 2020-12.
@@ -180,12 +184,17 @@ For complete validation of every reference manifest against the schema selected 
 npm ci
 npm run validate
 npm run negative-schema-fixtures
+npm run typed-reference-schema-smoke
 npm run actor-schema-smoke
 npm run agent-identity-schema-smoke
 npm run agent-definition-authority-smoke
 npm run human-override-schema-smoke
 npm run semantic-smoke
 ```
+
+The typed-reference command checks the shared primitive definitions directly.
+It covers authored structure and lexical boundaries, not target existence,
+cross-manifest resolution, or complete semantic conformance.
 
 The Node.js dependency is limited to repository maintenance tooling and does not select the language of a future NexFlow runtime.
 

@@ -43,6 +43,7 @@ NexFlow treats validation as a layered process.
 | Syntax | Supported through local checks | Confirm JSON schemas parse and YAML manifests are readable. |
 | Schema | Draft schemas exist | Check required fields, field types, enums, simple patterns, and manifest shape. |
 | Negative schema fixtures | Four rejection categories implemented | Confirm representative required-field, enum, ID-format, and unknown-kind failures remain rejected for the intended reason. |
+| Typed reference primitive checks | 53 focused cases implemented | Confirm generic, scoped, transitional, and kind-specific shared definitions accept and reject the documented authored shapes. |
 | Manifest inventory | Future validation work | Confirm all expected manifest files are present and routed by `kind`. |
 | Semantic validation | Partial repository smoke coverage plus a documented inventory | Check prioritized cross-manifest references, ActorSet bridges, active agent definition authority, human override authorities, graph consistency, permission coverage, memory boundaries, and extension requirements. Full semantic conformance remains future work. |
 | Runtime preflight | Future runtime work | Check credentials, sandboxing, provider behavior, tool access, and execution safety before any runtime action. |
@@ -108,7 +109,15 @@ must preserve without guessing.
 
 `common.schema.json` defines the lexical boundary for IDs and dotted event types. The same ID pattern applies to declarations and references, while the containing field determines which resource kind a reference targets. Schemas do not infer aliases or prove that a referenced declaration exists.
 
-[RFC-0015: Typed References](../rfcs/RFC-0015-typed-references.md) defines the broader proposed field-contract model. `common.schema.json` now implements the shared typed-reference primitive and scalar-compatible migration unions, while `ActorSet` uses strict typed references for `agentRef`, `operatedBy`, `representedBy`, and `integrationRef`. Existing manifest fields retain their unqualified `0.1` syntax until their own migration contracts are accepted and implemented.
+[Typed References](typed-references.md) defines the implemented shared shapes,
+lexical rules, migration forms, and focused validation boundary.
+[RFC-0015: Typed References](../rfcs/RFC-0015-typed-references.md) defines the
+broader proposed field-contract model. `common.schema.json` implements the
+shared typed-reference primitive and scalar-compatible migration unions, while
+`ActorSet` uses strict typed references for `agentRef`, `operatedBy`,
+`representedBy`, and `integrationRef`. Existing manifest fields retain their
+unqualified `0.1` syntax until their own migration contracts are accepted and
+implemented.
 
 ## Extension Flexibility
 

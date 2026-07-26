@@ -44,12 +44,17 @@ tag or release has been published, and manifest `specVersion` remains `"0.1"`.
 - Added a P0-P3 semantic reference inventory covering target namespaces,
   deterministic resolution, current smoke coverage, known gaps, deferred
   ambiguous fields, non-reference lookalikes, and maintenance rules.
+- Added a standalone typed-reference guide and focused schema checks covering 53
+  accepted and rejected cases across shared generic, scoped, transitional,
+  actor, agent, and extension reference definitions.
 
 ### Changed
 
 - Refreshed the README support snapshot, navigation, near-term priorities, and
   known limitations using evidence from the compatibility matrix and repository
   validation workflow.
+- Added machine-readable examples to common typed-reference definitions and
+  wired the focused primitive check into CI.
 - Added a roadmap checkpoint separating candidate evidence, release decisions,
   known draft boundaries, and post-`0.1` work.
 - Simplified the required AgentSet shape to stable AI identity, role,

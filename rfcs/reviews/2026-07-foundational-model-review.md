@@ -15,8 +15,10 @@ recorded here: shared typed and scalar-compatible reference primitives, closed
 Actor relationship contracts, an `ActorSet` schema, explicit `agentRef`, one maintained example
 migration, compatibility guidance, and focused validation checks.
 
-This follow-up does not accept RFC-0013 or RFC-0015 in full. Typed references
-outside the Actor relationship fields, effective definition authority, core
+As of 2026-07-26, the shared reference shapes also have a standalone contract,
+lexical and migration guidance, schema examples, and 53 focused structural
+cases. This follow-up does not accept RFC-0013 or RFC-0015 in full. Field
+migrations outside Actor relationships and human override authorities, core
 profile changes, and broader example migration remain open.
 
 As of 2026-07-24, the first AgentSet simplification slice classifies the six
@@ -287,7 +289,7 @@ the draft is not acceptable.
 | --- | --- | --- |
 | RFC-0013 | Initial Actor identity and compact AgentSet slices implemented; remains Draft | Review broader migration before claiming the full model. |
 | RFC-0014 | Compact identity, authoritative unique-active selection, and Agent Assembly documentation slices implemented; remains Draft | Standardize machine-readable inspection, scoped binding, and broader migration before claiming the full model. |
-| RFC-0015 | Common tuple and Actor relationship contracts implemented; remains Draft | Define authoritative contracts and migrate remaining fields deliberately. |
+| RFC-0015 | Common primitive, focused structural evidence, and Actor relationship contracts implemented; remains Draft | Define field-specific contracts and migrate remaining fields deliberately. |
 | RFC-0016 | Core profile and logical assembly direction accepted for planning; remains Draft | Stabilize participant inventory and reference contracts before schema migration. |
 
 ## Exit Criteria For Schema Work

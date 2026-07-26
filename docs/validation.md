@@ -13,6 +13,7 @@ Related design notes:
 
 - [Schema Design Notes](schema-design-notes.md)
 - [Semantic Reference Inventory](semantic-reference-inventory.md)
+- [Typed References](typed-references.md)
 - [Compatibility Matrix](compatibility-matrix.md)
 
 ## Validation Goals
@@ -35,6 +36,7 @@ The repository supports basic validation through:
 - A reproducible command that validates every example manifest against its JSON Schema.
 - Four cataloged negative fixture categories for required fields, enum values,
   ID formats, and unknown manifest kinds.
+- Focused shared typed-reference shape and lexical-boundary checks.
 - Focused ActorSet, AgentSet identity, agent definition authority, and human
   override boundary checks.
 - A semantic reference smoke command for selected cross-manifest references in examples.
@@ -95,12 +97,27 @@ is missing from the catalog or unexpectedly becomes valid.
 Negative fixtures are not reference examples. They do not test cross-manifest
 meaning, policy safety, diagnostic wording stability, or runtime enforcement.
 
+Run focused typed-reference primitive checks:
+
+```sh
+npm run typed-reference-schema-smoke
+```
+
+This command exercises 53 accepted and rejected cases across the shared generic,
+scoped, scalar-compatible, actor, agent, and extension reference definitions.
+It checks authored shape, closed target kinds, ID lexical rules, scope shape,
+strict kind-specific forms, and duplicate list values.
+
+It does not prove that targets exist, resolve field contracts across manifests,
+detect semantic ambiguity, or establish complete typed-reference conformance.
+
 The GitHub Actions workflow runs the same smoke script, schema validation, and
 focused boundary commands so pull requests exercise schema JSON parsing,
 example YAML parsing, manifest kind discovery, schema compilation, example
-manifest validation, compact agent identity compatibility, and human override
-fail-closed shape. It also checks active agent definition completeness and
-unique unscoped selection cases, plus the cataloged negative schema boundaries.
+manifest validation, typed-reference primitive boundaries, compact agent
+identity compatibility, and human override fail-closed shape. It also checks
+active agent definition completeness and unique unscoped selection cases, plus
+the cataloged negative schema boundaries.
 
 Run semantic reference smoke checks:
 

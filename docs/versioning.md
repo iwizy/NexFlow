@@ -42,6 +42,12 @@ mandatory, rejecting legacy human entries in `AgentSet`, removing fallback, or
 requiring typed objects in existing participant fields. See
 [Actor Model Migration](actor-model-migration.md).
 
+The shared typed-reference shapes and lexical boundaries are documented in
+[Typed References](typed-references.md). Requiring typed objects in an existing
+scalar field, changing its allowed target kinds or scope, or removing a
+transitional scalar form requires an explicit compatibility and version
+decision.
+
 ## Agent Identity Version Decision
 
 The compact AgentSet migration remains in `specVersion: "0.1"`. The schema

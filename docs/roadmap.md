@@ -76,8 +76,12 @@ boundaries.
 Agent Assembly checkpoint: its documentation now defines a derived inspection
 projection with authority, provenance, blocker, serialization, security, and
 conformance boundaries. A resolver and machine-readable output remain future
-tooling. Typed reference primitives and field normalization are the next
-foundational slices.
+tooling.
+
+Typed reference primitive checkpoint: shared generic, scoped, transitional, and
+kind-specific shapes now have lexical rules, migration guidance, and 53 focused
+structural cases. Deliberate field normalization and complete semantic
+resolution remain the next foundational slices.
 
 ## Milestone 2: Community Review
 
@@ -112,6 +116,8 @@ Relevant docs: [Security Model](security-model.md), [Capability Model](capabilit
   projection before standardizing machine-readable inspection output.
 - Maintain the P0-P3 semantic reference inventory as fields are normalized and
   smoke coverage expands.
+- Maintain focused typed-reference primitive checks and migrate fields only
+  after their target-kind, scope, and compatibility contracts are explicit.
 - Define conformance expectations for validators.
 - Refine draft conformance levels for manifests, validators, CLIs, runtimes, and extensions.
 

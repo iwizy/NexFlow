@@ -41,6 +41,7 @@ enforced.
 | Agent definition authority smoke | 13 structural and selection cases | Implemented | `npm run agent-definition-authority-smoke` | Checks active completeness and unique unscoped selection, not full policy resolution or runtime execution. |
 | Agent Assembly inspection view | Documentation contract for a derived effective-configuration projection | Specified | `docs/agent-assembly.md`, RFC-0014 | No resolver, serializer, JSON Schema, reference CLI output, or runtime implementation exists. |
 | Human override boundary smoke | 11 accepted and rejected structural cases | Implemented | `npm run human-override-schema-smoke` | Checks policy shape, not authentication, interruption, revocation, or runtime enforcement. |
+| Typed reference primitives | Common typed, scoped, transitional, and kind-specific definitions with 53 focused cases | Implemented | `schemas/common.schema.json`, `npm run typed-reference-schema-smoke` | Shape and lexical evidence only; no complete field-contract or semantic resolution conformance. |
 | Semantic reference inventory | P0-P3 target namespaces, coverage, gaps, and deferred fields | Specified | `docs/semantic-reference-inventory.md` | Documentation contract only; it is not a manifest, generated registry, validator, or conformance suite. |
 | Semantic reference smoke | Selected cross-manifest reference, active definition authority, and duplicate checks | Partial | `npm run semantic-smoke`, semantic reference inventory | Does not cover every inventoried field or establish full `NF-SEMANTIC` conformance, graph safety, or policy correctness. |
 | Reference CLI | Validation-only scope proposed | Planned | RFC-0011 | No `nexflow` executable or `NF-CLI` implementation exists. |
@@ -75,6 +76,7 @@ actor boundary smoke: scripts/actor-schema-smoke.mjs
 agent identity boundary smoke: scripts/agent-identity-schema-smoke.mjs
 agent definition authority smoke: scripts/agent-definition-authority-smoke.mjs
 human override boundary smoke: scripts/human-override-schema-smoke.mjs
+typed reference primitive smoke: scripts/typed-reference-schema-smoke.mjs
 semantic smoke: scripts/semantic-reference-smoke.mjs
 reference CLI: absent
 runtime: absent
@@ -220,6 +222,21 @@ required reason, audit fields, and event syntax.
 
 It does not authenticate authorities, interrupt work, revoke live credentials,
 or establish runtime conformance.
+
+### Typed Reference Primitive Smoke
+
+Command:
+
+```sh
+npm run typed-reference-schema-smoke
+```
+
+Compatible with the current common schema snapshot. It checks 53 accepted and
+rejected cases across six shared generic, transitional, and kind-specific
+reference definitions.
+
+It does not resolve target existence, apply every field contract, detect
+semantic ambiguity, or establish complete `NF-SEMANTIC` conformance.
 
 ### Semantic Reference Smoke
 

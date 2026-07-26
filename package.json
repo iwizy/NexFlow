@@ -10,6 +10,7 @@
     "human-override-schema-smoke": "node scripts/human-override-schema-smoke.mjs",
     "negative-schema-fixtures": "node scripts/negative-schema-fixtures.mjs",
     "semantic-smoke": "node scripts/semantic-reference-smoke.mjs",
+    "typed-reference-schema-smoke": "node scripts/typed-reference-schema-smoke.mjs",
     "validate": "node scripts/validate-schemas.mjs"
   },
   "engines": {

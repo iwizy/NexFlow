@@ -77,6 +77,25 @@ The [Semantic Reference Inventory](semantic-reference-inventory.md) defines the
 recommended P0-P3 implementation order, target namespaces, current coverage,
 known gaps, and fields that remain unsafe to resolve generically.
 
+### Typed Reference Support
+
+The repository implements shared typed-reference shapes and focused structural
+checks. This evidence supports the schema definitions described in
+[Typed References](typed-references.md); it does not establish
+`NF-SEMANTIC` conformance.
+
+A tool claiming complete typed-reference support MUST cover:
+
+- every reference field contract included in the claim
+- allowed target kinds and effective scope
+- exact target resolution and uniqueness
+- duplicate, missing, wrong-kind, and ambiguous outcomes
+- version-specific scalar-to-object migration behavior
+- diagnostics required by the claimed specification version
+
+Parsing a valid `{kind, id, scope}` object is not sufficient for a semantic
+support claim.
+
 ### Agent Assembly Inspection
 
 Agent Assembly is a derived projection of Effective Agent Configuration, not a

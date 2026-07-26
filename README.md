@@ -23,6 +23,7 @@ Current release posture: **`0.1` draft, preparing for candidate review**. No
 | JSON Schemas | Implemented for 17 manifest kinds plus common definitions | [Schemas](schemas/), [Schema Guide](schemas/README.md) |
 | Reference examples | Implemented as 7 project sets containing 113 schema-backed manifests | [Examples](examples/), [Examples Guide](examples/README.md) |
 | Structural validation | Implemented for all maintained examples, four negative schema categories, and focused model boundaries | `npm run validate`, `npm run negative-schema-fixtures`, [Validation](docs/validation.md) |
+| Typed reference primitives | Implemented for shared structural shapes and lexical boundaries | `npm run typed-reference-schema-smoke`, [Typed References](docs/typed-references.md) |
 | Semantic reference checks | Partial repository smoke coverage | `npm run semantic-smoke`, [Validation](docs/validation.md) |
 | Governance and RFC process | Implemented in documentation | [Governance](docs/governance.md), [RFCs](rfcs/README.md) |
 | Foundational model changes | ActorSet, compact AgentSet, and authoritative unique-active-definition slices implemented; RFCs remain Draft | [Actor Model](docs/actor-model.md), [Effective Agent Configuration](docs/effective-agent-configuration.md), [Foundational Model Review](rfcs/reviews/2026-07-foundational-model-review.md) |
@@ -179,6 +180,7 @@ NexFlow is intentionally split into layers:
 - [Compatibility Matrix](docs/compatibility-matrix.md): current support and explicit implementation gaps
 - [Validation](docs/validation.md): repository checks and their boundaries
 - [Semantic Reference Inventory](docs/semantic-reference-inventory.md): prioritized cross-manifest reference contracts and current coverage
+- [Typed References](docs/typed-references.md): shared reference shapes, lexical rules, field contracts, and migration guidance
 - [Actor Model](docs/actor-model.md): first-class participant identity and kind-specific relationships
 - [Actor Model Migration](docs/actor-model-migration.md): staged transition from mixed AgentSet identity
 - [Agent Identity Migration](docs/agent-identity-migration.md): transition from duplicated AgentSet behavior fields to compact stable identity
@@ -196,6 +198,7 @@ NexFlow is intentionally split into layers:
 | --- | --- |
 | Understand the vocabulary | [Concepts](docs/concepts.md), [Glossary](docs/glossary.md) |
 | Model participant identity | [Actor Model](docs/actor-model.md), [Actor Model Migration](docs/actor-model-migration.md) |
+| Model resource references | [Typed References](docs/typed-references.md), [Semantic Reference Inventory](docs/semantic-reference-inventory.md), [Manifest Reference](docs/manifest-reference.md) |
 | See every manifest shape | [Manifest Reference](docs/manifest-reference.md) |
 | Understand safety boundaries | [Security Model](docs/security-model.md), [Human Override](docs/human-override.md), [Network Access Policy](docs/network-access-policy.md), [Approval Gates](docs/approval-gates.md) |
 | Version and select agent behavior | [Effective Agent Configuration](docs/effective-agent-configuration.md), [Agent Assembly](docs/agent-assembly.md), [Agent Definitions](docs/agent-definitions.md), [Versioning](docs/versioning.md), [Event Model](docs/events.md) |
@@ -215,8 +218,8 @@ The current priorities are:
 1. Complete the `0.1` candidate checkpoint with validation evidence, known
    limitations, compatibility notes, and an explicit release decision.
 2. Review the ActorSet, compact AgentSet, active-definition authority, human
-   override, and Agent Assembly inspection slices before broader example
-   migration.
+   override, Agent Assembly inspection, and typed-reference primitive slices
+   before broader field or example migration.
 3. Add positive fixtures, expand maintained negative fixtures, stabilize
    diagnostics, and broaden semantic checks.
 4. Complete the **Runtime Architecture Decision** before selecting an

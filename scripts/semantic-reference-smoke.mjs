@@ -6,6 +6,11 @@ import { fileURLToPath } from "node:url";
 
 import { parseDocument } from "yaml";
 
+import {
+  validateArtifactNamespace,
+  validateWorkflowStepNamespace
+} from "./lib/work-reference-namespaces.mjs";
+
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const examplesDirectory = path.join(root, "examples");
 const diagnostics = [];
@@ -152,26 +157,6 @@ function providerRefsFromModelProfile(profile) {
   return refs;
 }
 
-function collectArtifacts(tasks) {
-  const artifacts = new Set();
-  for (const task of tasks) {
-    for (const artifact of asArray(task.artifacts)) {
-      if (typeof artifact?.id === "string") artifacts.add(artifact.id);
-    }
-  }
-  return artifacts;
-}
-
-function collectWorkflowSteps(workflow) {
-  const steps = new Set();
-  for (const stage of asArray(workflow?.stages)) {
-    for (const step of asArray(stage.steps)) {
-      if (typeof step?.id === "string") steps.add(step.id);
-    }
-  }
-  return steps;
-}
-
 function validateProjectSet(directory, manifests) {
   const projectFile = manifests.get("Project")?.file ?? directory;
   const project = manifests.get("Project")?.data?.project ?? {};
@@ -195,7 +180,6 @@ function validateProjectSet(directory, manifests) {
   const agents = new Set();
   const actors = new Set();
   const tasks = new Set();
-  const workflowSteps = new Set();
   const approvalGates = new Set();
   const permissions = new Set();
   const capabilities = new Set();
@@ -251,9 +235,17 @@ function validateProjectSet(directory, manifests) {
   }
 
   const taskData = asArray(manifests.get("TaskSet")?.data?.tasks);
-  const artifacts = collectArtifacts(taskData);
+  const handoffData = asArray(manifests.get("HandoffSet")?.data?.handoffs);
+  const artifactNamespace = validateArtifactNamespace(taskData, handoffData);
+  for (const diagnostic of artifactNamespace.diagnostics) {
+    report(diagnostic.source === "handoffs" ? handoffFile : taskFile, diagnostic.message);
+  }
+
   const workflow = manifests.get("Workflow")?.data?.workflow;
-  for (const step of collectWorkflowSteps(workflow)) workflowSteps.add(step);
+  const workflowNamespace = validateWorkflowStepNamespace(workflow);
+  for (const diagnostic of workflowNamespace.diagnostics) {
+    report(workflowFile, diagnostic.message);
+  }
 
   for (const permission of asArray(manifests.get("PermissionSet")?.data?.permissions)) {
     addUnique(permissionsFile, permissions, permission?.id, "permission");
@@ -454,22 +446,15 @@ function validateProjectSet(directory, manifests) {
     for (const step of asArray(stage.steps)) {
       const label = `workflow step ${JSON.stringify(step?.id)}`;
       requireRefs(workflowFile, [step?.task], tasks, label, "task");
-      requireRefs(workflowFile, step?.dependsOn, workflowSteps, label, "workflow step");
       requireRefs(workflowFile, step?.approvalGates, approvalGates, label, "approval gate");
       requireRefs(workflowFile, step?.emits, eventTypes, label, "event type");
     }
   }
 
-  for (const dependency of asArray(workflow?.dependencies)) {
-    const label = `workflow dependency ${JSON.stringify(dependency?.from)} -> ${JSON.stringify(dependency?.to)}`;
-    requireRefs(workflowFile, [dependency?.from, dependency?.to], workflowSteps, label, "workflow step");
-  }
-
-  for (const handoff of asArray(manifests.get("HandoffSet")?.data?.handoffs)) {
+  for (const handoff of handoffData) {
     const label = `handoff ${JSON.stringify(handoff?.id)}`;
     requireRefs(handoffFile, handoff?.from, actors, label, "actor");
     requireRefs(handoffFile, handoff?.to, actors, label, "actor");
-    requireRefs(handoffFile, handoff?.artifacts, artifacts, label, "artifact");
   }
 
   for (const permission of asArray(manifests.get("PermissionSet")?.data?.permissions)) {

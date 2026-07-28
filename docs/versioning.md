@@ -48,6 +48,17 @@ scalar field, changing its allowed target kinds or scope, or removing a
 transitional scalar form requires an explicit compatibility and version
 decision.
 
+## Work Reference Namespace Version Decision
+
+Workflow-wide step identity and assembly-wide task artifact identity remain in
+`specVersion: "0.1"`. This clarifies the documented scope of current scalar
+dependency and handoff references without changing their authored shape.
+
+Changing steps to stage-scoped identity, artifacts to task-scoped identity,
+allowing implicit cross-workflow lookup, or requiring typed objects in these
+fields requires an explicit compatibility and version decision. See
+[Work Reference Namespaces](work-reference-namespaces.md).
+
 ## Agent Identity Version Decision
 
 The compact AgentSet migration remains in `specVersion: "0.1"`. The schema

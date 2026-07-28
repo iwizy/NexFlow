@@ -21,7 +21,8 @@
       "required": ["id", "displayName", "stages"],
       "properties": {
         "id": {
-          "$ref": "common.schema.json#/$defs/id"
+          "$ref": "common.schema.json#/$defs/id",
+          "description": "Workflow identity and owner scope for stage and step namespaces."
         },
         "displayName": {
           "type": "string"
@@ -33,6 +34,7 @@
           "$ref": "common.schema.json#/$defs/stringList"
         },
         "stages": {
+          "description": "Workflow-scoped stages. Stage IDs must be unique within this workflow.",
           "type": "array",
           "minItems": 1,
           "items": {
@@ -41,12 +43,14 @@
             "required": ["id", "displayName", "steps"],
             "properties": {
               "id": {
-                "$ref": "common.schema.json#/$defs/id"
+                "$ref": "common.schema.json#/$defs/id",
+                "description": "Stage ID unique within the containing workflow."
               },
               "displayName": {
                 "type": "string"
               },
               "steps": {
+                "description": "Steps whose IDs are unique across every stage in the containing workflow.",
                 "type": "array",
                 "items": {
                   "type": "object",
@@ -54,13 +58,15 @@
                   "required": ["id", "task"],
                   "properties": {
                     "id": {
-                      "$ref": "common.schema.json#/$defs/id"
+                      "$ref": "common.schema.json#/$defs/id",
+                      "description": "Workflow-scoped step ID, unique across all stages in the containing workflow."
                     },
                     "task": {
                       "$ref": "common.schema.json#/$defs/id"
                     },
                     "dependsOn": {
-                      "$ref": "common.schema.json#/$defs/idList"
+                      "$ref": "common.schema.json#/$defs/idList",
+                      "description": "Exact step IDs resolved in the containing workflow, including steps in other stages."
                     },
                     "approvalGates": {
                       "$ref": "common.schema.json#/$defs/idList"
@@ -75,6 +81,7 @@
           }
         },
         "dependencies": {
+          "description": "Edges between exact step IDs in this workflow's workflow-wide step namespace.",
           "type": "array",
           "items": {
             "type": "object",
@@ -82,10 +89,12 @@
             "required": ["from", "to"],
             "properties": {
               "from": {
-                "$ref": "common.schema.json#/$defs/id"
+                "$ref": "common.schema.json#/$defs/id",
+                "description": "Source step ID in the containing workflow."
               },
               "to": {
-                "$ref": "common.schema.json#/$defs/id"
+                "$ref": "common.schema.json#/$defs/id",
+                "description": "Target step ID in the containing workflow."
               },
               "type": {
                 "type": "string"

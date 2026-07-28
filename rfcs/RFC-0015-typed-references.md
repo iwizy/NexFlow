@@ -475,7 +475,7 @@ specification.
 | `task` | `TaskSet.tasks[]` | Manifest assembly |
 | `workflow` | `Workflow.workflow` | Manifest assembly |
 | `handoff` | `HandoffSet.handoffs[]` | Manifest assembly |
-| `artifact` | Task artifact declarations under current `TaskSet` rules | Manifest assembly in current `0.1` drafts |
+| `artifact` | `TaskSet.tasks[].artifacts[]` | Manifest assembly |
 | `extension` | `ExtensionSet.extensions[]` | Manifest assembly |
 
 ### Nested Target Kinds
@@ -582,6 +582,16 @@ scope.
 
 Current workflow rules that require step IDs to be unique across stages within
 one workflow remain unchanged.
+
+Task artifacts use a separate assembly-wide namespace:
+
+```text
+(assembly, artifact, change_set)
+```
+
+Task nesting records expected provenance and does not create task-local
+identity. [Work Reference Namespaces](../docs/work-reference-namespaces.md)
+defines the implemented step dependency and handoff artifact field contracts.
 
 ### Bundle Neutrality
 
@@ -1024,6 +1034,19 @@ RFC-0012 requires bundle expansion to preserve manifest meaning.
 Reference symbol tables are built after expansion. Logical paths are retained for
 diagnostics, but bundle structure and physical paths do not alter namespaces.
 
+## Relationship To Work Reference Namespaces
+
+The current workflow and handoff contracts use deterministic scalar forms:
+
+- workflow steps are unique across all stages in the containing workflow
+- step dependencies resolve only in that workflow
+- task artifacts are unique across the logical manifest assembly
+- handoff artifact references resolve only in the assembly artifact namespace
+
+These decisions implement specific field contracts without requiring typed
+objects or accepting cross-workflow dependencies. See
+[Work Reference Namespaces](../docs/work-reference-namespaces.md).
+
 ## Relationship To Extension Namespaces
 
 RFC-0006 governs extension namespace ownership and lifecycle.
@@ -1126,10 +1149,14 @@ complete semantic fixtures have not begun.
 
 ### Stage 5: Evaluate Nested Scope Changes
 
-- decide whether artifacts remain assembly-scoped or become task-scoped
+- keep artifacts assembly-scoped for the current `0.1` contract
 - decide whether multiple workflows per assembly are supported
 - add explicit scope only where the domain model requires it
 - avoid changing scope merely for syntactic uniformity
+
+Status: workflow-wide step and assembly-wide artifact namespaces are
+implemented for current scalar fields. Cross-workflow references and any future
+task-scoped artifact model require separate compatibility decisions.
 
 ## Migration Algorithm For Tools
 
@@ -1251,7 +1278,6 @@ resolution expectations too early.
   accepted?
 - Should `actor` typing wait until `ActorSet` is accepted, or advance in the same
   specification version?
-- Should artifact identity remain unique across `TaskSet` or become task-scoped?
 - Should a future assembly support more than one `Workflow` declaration?
 - Should prompt entries become independently referenceable core resources?
 - Where should normative field contracts live: docs, schemas, a generated

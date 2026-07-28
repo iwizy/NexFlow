@@ -44,6 +44,7 @@ NexFlow treats validation as a layered process.
 | Schema | Draft schemas exist | Check required fields, field types, enums, simple patterns, and manifest shape. |
 | Negative schema fixtures | Four rejection categories implemented | Confirm representative required-field, enum, ID-format, and unknown-kind failures remain rejected for the intended reason. |
 | Typed reference primitive checks | 53 focused cases implemented | Confirm generic, scoped, transitional, and kind-specific shared definitions accept and reject the documented authored shapes. |
+| Work reference namespace checks | 13 focused cases implemented | Confirm workflow-wide step and assembly-wide artifact identity, duplicate rejection, and exact dependency and handoff lookup. |
 | Manifest inventory | Future validation work | Confirm all expected manifest files are present and routed by `kind`. |
 | Semantic validation | Partial repository smoke coverage plus a documented inventory | Check prioritized cross-manifest references, ActorSet bridges, active agent definition authority, human override authorities, graph consistency, permission coverage, memory boundaries, and extension requirements. Full semantic conformance remains future work. |
 | Runtime preflight | Future runtime work | Check credentials, sandboxing, provider behavior, tool access, and execution safety before any runtime action. |
@@ -86,6 +87,8 @@ These checks belong to future semantic validation:
 - declared IDs are unique in their owning collections
 - identifier references resolve exactly, without case or separator normalization
 - multi-kind references do not resolve ambiguously
+- workflow step IDs remain unique across stages in one workflow
+- task artifact IDs remain unique across the logical manifest assembly
 - permission IDs referenced by agents exist
 - capability IDs referenced by permissions exist
 - workflow steps reference existing tasks
@@ -118,6 +121,10 @@ shared typed-reference primitive and scalar-compatible migration unions, while
 `representedBy`, and `integrationRef`. Existing manifest fields retain their
 unqualified `0.1` syntax until their own migration contracts are accepted and
 implemented.
+
+[Work Reference Namespaces](work-reference-namespaces.md) defines the semantic
+uniqueness and lookup rules that JSON Schema annotations can describe but
+cannot enforce across nested arrays and manifests.
 
 ## Extension Flexibility
 

@@ -19,6 +19,10 @@ See [Typed References](../docs/typed-references.md) for the shared reference
 definitions, lexical rules, field-contract categories, migration forms, and
 validation boundary.
 
+See [Work Reference Namespaces](../docs/work-reference-namespaces.md) for the
+semantic uniqueness and exact lookup rules applied to workflow steps and task
+artifacts.
+
 ## Current Scope
 
 The schemas currently target `specVersion: "0.1"` and use JSON Schema draft 2020-12.
@@ -185,6 +189,7 @@ npm ci
 npm run validate
 npm run negative-schema-fixtures
 npm run typed-reference-schema-smoke
+npm run work-reference-namespace-smoke
 npm run actor-schema-smoke
 npm run agent-identity-schema-smoke
 npm run agent-definition-authority-smoke
@@ -195,6 +200,10 @@ npm run semantic-smoke
 The typed-reference command checks the shared primitive definitions directly.
 It covers authored structure and lexical boundaries, not target existence,
 cross-manifest resolution, or complete semantic conformance.
+
+The work-reference namespace command checks workflow-wide step and
+assembly-wide artifact identity, duplicate rejection, and exact dependency and
+handoff lookup. It does not validate graph ordering or artifact provenance.
 
 The Node.js dependency is limited to repository maintenance tooling and does not select the language of a future NexFlow runtime.
 

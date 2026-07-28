@@ -139,6 +139,20 @@ or changing strict kind-specific semantics may break `NF-MANIFEST`,
 See [Typed References](typed-references.md) for the current shared shapes and
 migration rules.
 
+## Work Reference Namespace Compatibility
+
+Workflow step IDs are unique across all stages in one workflow. Task artifact
+IDs are unique across the logical manifest assembly, and handoffs use exact
+unqualified artifact IDs. These rules clarify existing `0.1` scalar fields
+without changing their authored shape.
+
+Changing steps to stage-scoped identity, artifacts to task-scoped identity,
+allowing implicit cross-workflow lookup, or selecting duplicate declarations by
+file or array order would break `NF-SEMANTIC` compatibility. Requiring explicit
+typed objects in these fields would also affect `NF-MANIFEST` and `NF-SCHEMA`.
+
+See [Work Reference Namespaces](work-reference-namespaces.md).
+
 ## Human Override Compatibility
 
 The structured human override policy is optional and additive in `0.1`.
@@ -194,6 +208,7 @@ Examples:
 | Change unique active-definition selection or active completeness requirements | May affect `NF-SCHEMA`, `NF-SEMANTIC`, safety, migration, audit, and future runtime compatibility. |
 | Change a standardized Agent Assembly field, state, ordering rule, or diagnostic code | May affect `NF-CLI`, `NF-SEMANTIC`, inspection consumers, and audit tooling without changing manifest shape. |
 | Require, remove, or reinterpret a typed-reference form, target kind, or scope | May affect `NF-MANIFEST`, `NF-SCHEMA`, `NF-SEMANTIC`, migration tooling, and future runtime binding. |
+| Change workflow step or task artifact uniqueness scope or fallback behavior | May affect `NF-SEMANTIC`, graph tooling, handoff evidence resolution, migration, and future runtime binding. |
 | Change network defaults, destination scope, transport constraints, approvals, or audit semantics | May affect `NF-SEMANTIC`, `NF-RUNTIME`, integrations, privacy, audit, and safety compatibility. |
 | Change human override authority, response, resume, operation, or audit semantics | May affect `NF-SCHEMA`, `NF-SEMANTIC`, `NF-RUNTIME`, safety, authority, and audit compatibility. |
 | Change event envelope identity, actor, subject, correlation, causation, payload, audit, or redaction semantics | May affect `NF-SEMANTIC`, `NF-RUNTIME`, audit, traceability, privacy, and safety compatibility. |

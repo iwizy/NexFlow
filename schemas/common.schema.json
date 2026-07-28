@@ -633,12 +633,15 @@
       "enum": ["ephemeral", "task", "project", "team", "user", "organization"]
     },
     "artifact": {
+      "title": "Task Artifact",
+      "description": "Artifact declaration with an ID unique in the manifest assembly artifact namespace. The declaring task records provenance but does not create a task-local identity scope.",
       "type": "object",
       "additionalProperties": true,
       "required": ["id", "type"],
       "properties": {
         "id": {
-          "$ref": "#/$defs/id"
+          "$ref": "#/$defs/id",
+          "description": "Assembly-scoped artifact ID used by unqualified handoff artifact references."
         },
         "type": {
           "type": "string"

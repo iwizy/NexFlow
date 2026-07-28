@@ -38,7 +38,8 @@
             "$ref": "common.schema.json#/$defs/handoffStatus"
           },
           "artifacts": {
-            "$ref": "common.schema.json#/$defs/idList"
+            "$ref": "common.schema.json#/$defs/idList",
+            "description": "Exact IDs resolved in the assembly-wide task artifact namespace."
           },
           "notes": {
             "$ref": "common.schema.json#/$defs/stringList"

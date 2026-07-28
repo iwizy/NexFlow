@@ -45,6 +45,7 @@
             "$ref": "common.schema.json#/$defs/idList"
           },
           "artifacts": {
+            "description": "Artifact declarations. IDs must be unique across all tasks in the logical manifest assembly.",
             "type": "array",
             "items": {
               "$ref": "common.schema.json#/$defs/artifact"

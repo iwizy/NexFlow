@@ -21,6 +21,12 @@ cases. This follow-up does not accept RFC-0013 or RFC-0015 in full. Field
 migrations outside Actor relationships and human override authorities, core
 profile changes, and broader example migration remain open.
 
+As of 2026-07-28, workflow steps use one workflow-wide namespace across stages,
+and task artifacts use one assembly-wide namespace across tasks. Focused and
+repository semantic checks cover duplicate and unresolved step and artifact
+references. Cross-workflow dependencies and task-scoped artifact identity
+remain unsupported.
+
 As of 2026-07-24, the first AgentSet simplification slice classifies the six
 stable identity fields, marks duplicated behavior and access fields deprecated,
 migrates the Minimal Team, and adds focused compatibility checks. A separate
@@ -210,9 +216,12 @@ remain open.
 ### Phase 4: Reference Normalization
 
 - migrate multi-kind approval targets to explicit typed references
-- establish workflow-step and artifact namespace contracts
+- maintain the implemented workflow-step and artifact namespace contracts
 - add semantic fixtures for ambiguity, scope, and wrong-kind failures
 - retain scalar IDs for deterministic single-kind fields
+
+Status: workflow step and artifact namespace contracts are implemented.
+Approval target migration and broader typed-reference fixtures remain open.
 
 ### Phase 5: Profiles And Discovery
 
@@ -235,7 +244,7 @@ remain open.
 
 | Blocker | Blocks | Required resolution |
 | --- | --- | --- |
-| Typed-reference contracts outside ActorSet relationships remain incomplete | Broader multi-kind and nested reference migration | Reuse the implemented common tuple and define each remaining field contract deliberately. |
+| Typed-reference contracts outside implemented Actor, human override, workflow step, and artifact fields remain incomplete | Broader multi-kind reference migration | Reuse the implemented common tuple and define each remaining field contract deliberately. |
 | Actor policy and configuration bindings beyond the initial identity slice remain undecided | Complete participant model | Keep ActorSet identity-only until policy ownership and effective configuration are accepted. |
 | Scoped actor-to-agent activation and lifecycle binding remains incomplete | Multiple scoped effective configurations | Preserve the implemented explicit stable identity `agentRef` and unique unscoped active selection; define scoped binding separately. |
 | Future explicit standing agent constraints are undecided | Complete identity/configuration split | The initial compact shape classifies duplicated behavior fields as deprecated compatibility data; introduce any future ceiling explicitly. |
@@ -243,7 +252,7 @@ remain open.
 | Context and memory intent lacks read/write/promotion typing | Complete effective configuration semantics | Define intent without treating access references as grants. |
 | Provider support and project action capabilities share ambiguous vocabulary | Provider capability resolution | Separate provider feature support from actor action capability identifiers. |
 | `memoryPolicyRef` has no stable target contract | Memory policy selection | Define its target kind and relationship to `MemorySet` before normative use. |
-| Approval targets and nested workflow resources lack final contracts | Full typed-reference migration | Define allowed kinds, owner scope, and migration behavior for each field. |
+| Approval targets lack a final multi-kind contract | Full typed-reference migration | Define allowed kinds, owner scope, and migration behavior without changing the implemented workflow step and artifact namespaces implicitly. |
 | Normative field-contract storage is undecided | Portable semantic validators | Choose a generated or shared schema-backed registry with one authoritative source. |
 | Project source/index shape is undecided | Reduced profile and multiple-workflow schemas | Define a transport-neutral representation that preserves logical assembly semantics. |
 | Specification version transition is undecided | First breaking schema migration | Make an explicit coordinated version decision with migration and compatibility notes. |

@@ -96,6 +96,24 @@ A tool claiming complete typed-reference support MUST cover:
 Parsing a valid `{kind, id, scope}` object is not sufficient for a semantic
 support claim.
 
+### Work Reference Namespace Support
+
+The repository implements workflow-wide step and assembly-wide task artifact
+namespace checks described in
+[Work Reference Namespaces](work-reference-namespaces.md).
+
+A tool claiming this support MUST:
+
+- reject duplicate stage IDs within one workflow
+- reject duplicate step IDs across all stages in one workflow
+- resolve step dependencies only in the containing workflow
+- reject duplicate task artifact IDs across the logical assembly
+- resolve handoff artifact IDs only in the assembly artifact namespace
+- avoid file-order, nearest-container, or cross-workflow fallback
+
+This support does not establish workflow graph correctness, artifact provenance,
+policy enforcement, or complete `NF-SEMANTIC` conformance.
+
 ### Agent Assembly Inspection
 
 Agent Assembly is a derived projection of Effective Agent Configuration, not a

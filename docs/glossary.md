@@ -79,6 +79,9 @@ Approval gates should identify approvers, evidence, decision state, scope, and a
 
 A produced or consumed work product, such as a branch, patch, pull request, design, document, test report, build log, deployment record, or decision note.
 
+Task artifact IDs use one assembly-wide namespace in the current draft; the
+declaring task records provenance rather than identity scope.
+
 ### Autonomy Level
 
 A declared level of allowed agent independence. NexFlow defines `manual_only`, `suggest_only`, `ask_before_changes`, `autonomous_safe`, and `autonomous_extended`.

@@ -319,6 +319,10 @@ IDs MUST be unique within the namespace from which references resolve:
 - Task artifact IDs MUST be unique across the `TaskSet` while handoffs use unqualified artifact references.
 - Other nested IDs MUST be unique within their immediate owning collection unless another field references them from a broader scope.
 
+The normative lookup rules for stages, steps, dependency edges, task artifacts,
+and handoff artifact references are defined in
+[Work Reference Namespaces](work-reference-namespaces.md).
+
 The same string MAY appear in distinct resource namespaces only when the reference field identifies exactly one target kind. Multi-kind reference fields, including the draft `approvalGate.appliesTo` field, MUST NOT resolve to more than one declared resource. Authors SHOULD avoid collisions across possible target kinds, and future semantic validators MUST reject ambiguous matches.
 
 ## Identifier References

@@ -208,7 +208,10 @@ scope:
 ```
 
 The generic primitive validates this shape. No current workflow or artifact
-field is migrated by this document.
+field accepts the explicit object. Current workflow step fields instead use the
+containing workflow as implicit scope, while handoff artifact references use the
+assembly-wide artifact namespace defined in
+[Work Reference Namespaces](work-reference-namespaces.md).
 
 ## Migration Rules
 
@@ -344,6 +347,7 @@ Implemented:
 - closed target-kind and ID lexical validation
 - strict ActorSet relationship fields
 - strict human override authority references
+- workflow-wide step and assembly-wide artifact namespace contracts
 - focused primitive schema checks
 - ActorSet structural and selected semantic reference checks
 - migration guidance for the implemented slice
@@ -355,7 +359,7 @@ Specified but not fully implemented:
 - field-contract registry
 - generic semantic resolver
 - approval target normalization
-- nested workflow and artifact scope migration
+- explicit cross-workflow step references and task-scoped artifact references
 - complete typed-reference conformance fixtures
 
 No runtime, reference CLI, provider integration, or orchestration behavior is

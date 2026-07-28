@@ -83,6 +83,12 @@ kind-specific shapes now have lexical rules, migration guidance, and 53 focused
 structural cases. Deliberate field normalization and complete semantic
 resolution remain the next foundational slices.
 
+Work reference namespace checkpoint: workflow steps now resolve in one
+workflow-wide namespace across stages, while task artifacts resolve in one
+assembly-wide namespace across tasks. Thirteen focused cases and repository
+semantic smoke checks cover duplicate and unresolved references; graph and
+provenance validation remain future work.
+
 ## Milestone 2: Community Review
 
 - Collect feedback from agent tool builders, open-source maintainers, startups, enterprises, and researchers.
@@ -118,6 +124,8 @@ Relevant docs: [Security Model](security-model.md), [Capability Model](capabilit
   smoke coverage expands.
 - Maintain focused typed-reference primitive checks and migrate fields only
   after their target-kind, scope, and compatibility contracts are explicit.
+- Keep workflow step and artifact namespace checks aligned with discovery,
+  graph, handoff, and migration decisions.
 - Define conformance expectations for validators.
 - Refine draft conformance levels for manifests, validators, CLIs, runtimes, and extensions.
 

@@ -49,6 +49,10 @@ A handoff SHOULD explain:
 - what acceptance criteria apply
 - what the next action is
 
+Artifact IDs resolve in the assembly-wide task artifact namespace. See
+[Work Reference Namespaces](work-reference-namespaces.md) for duplicate,
+resolution, and compatibility rules.
+
 ## Handoff Events
 
 Handoffs should emit:

@@ -47,6 +47,8 @@ tag or release has been published, and manifest `specVersion` remains `"0.1"`.
 - Added a standalone typed-reference guide and focused schema checks covering 53
   accepted and rejected cases across shared generic, scoped, transitional,
   actor, agent, and extension reference definitions.
+- Added deterministic workflow-wide step and assembly-wide task artifact
+  namespace contracts with 13 focused positive and negative cases.
 
 ### Changed
 
@@ -55,6 +57,9 @@ tag or release has been published, and manifest `specVersion` remains `"0.1"`.
   validation workflow.
 - Added machine-readable examples to common typed-reference definitions and
   wired the focused primitive check into CI.
+- Extended semantic reference smoke checks to reject duplicate workflow stages,
+  workflow steps, and task artifacts while resolving step dependencies and
+  handoff artifacts through the accepted namespaces.
 - Added a roadmap checkpoint separating candidate evidence, release decisions,
   known draft boundaries, and post-`0.1` work.
 - Simplified the required AgentSet shape to stable AI identity, role,

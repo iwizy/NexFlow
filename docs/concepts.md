@@ -92,6 +92,9 @@ A structured transfer of responsibility from one or more actors to one or more a
 
 A produced or consumed work product such as a branch, patch, pull request, design, document, test report, build log, or deployment record.
 
+Task artifact IDs are unique across the logical manifest assembly so handoffs
+can reference them without inferring a task-local scope.
+
 ## Capability
 
 A technical action an actor or integration can perform, such as `read_repository`, `execute_command`, or `create_pull_request`.

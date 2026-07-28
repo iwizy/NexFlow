@@ -76,6 +76,7 @@ Do not tag a candidate if the repository implies runtime behavior, provider inte
 - [ ] `npm run validate` succeeds.
 - [ ] `npm run negative-schema-fixtures` succeeds.
 - [ ] `npm run typed-reference-schema-smoke` succeeds.
+- [ ] `npm run work-reference-namespace-smoke` succeeds.
 - [ ] `npm run actor-schema-smoke` succeeds.
 - [ ] `npm run agent-identity-schema-smoke` succeeds.
 - [ ] `npm run agent-definition-authority-smoke` succeeds.
@@ -84,9 +85,9 @@ Do not tag a candidate if the repository implies runtime behavior, provider inte
 - [ ] Markdown link checks succeed.
 - [ ] `git diff --check` succeeds.
 - [ ] CI runs schema smoke, schema validation, negative fixtures, typed
-  reference primitives, ActorSet, agent identity, agent definition authority,
-  human override boundaries, and semantic reference smoke checks on pull
-  requests.
+  reference primitives, work reference namespaces, ActorSet, agent identity,
+  agent definition authority, human override boundaries, and semantic reference
+  smoke checks on pull requests.
 - [ ] Validation docs explain the difference between syntax checks, schema validation, semantic smoke checks, future semantic validation, and runtime enforcement.
 - [ ] Semantic reference inventory target namespaces and coverage labels match
   the current schemas, examples, and semantic smoke implementation.
@@ -109,6 +110,8 @@ Do not tag a candidate if the repository implies runtime behavior, provider inte
 - [ ] Compatibility and migration docs explain unique active-definition authority and the stricter active shape.
 - [ ] Typed-reference migrations state allowed target kinds, scope, legacy form
   compatibility, and semantic validation limits.
+- [ ] Workflow step and task artifact namespace changes include reference and
+  migration compatibility notes.
 - [ ] Conformance doc distinguishes manifest, schema, semantic, CLI, runtime, extension, and audit support surfaces.
 - [ ] Release notes separate implemented behavior, specified behavior, and planned behavior.
 - [ ] `specVersion: "0.1"` remains accurate for current manifests.

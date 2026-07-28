@@ -33,6 +33,9 @@ jobs:
       - name: Run typed reference primitive checks
         run: npm run typed-reference-schema-smoke
 
+      - name: Run work reference namespace checks
+        run: npm run work-reference-namespace-smoke
+
       - name: Run ActorSet schema boundary checks
         run: npm run actor-schema-smoke
 

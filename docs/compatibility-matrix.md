@@ -42,6 +42,7 @@ enforced.
 | Agent Assembly inspection view | Documentation contract for a derived effective-configuration projection | Specified | `docs/agent-assembly.md`, RFC-0014 | No resolver, serializer, JSON Schema, reference CLI output, or runtime implementation exists. |
 | Human override boundary smoke | 11 accepted and rejected structural cases | Implemented | `npm run human-override-schema-smoke` | Checks policy shape, not authentication, interruption, revocation, or runtime enforcement. |
 | Typed reference primitives | Common typed, scoped, transitional, and kind-specific definitions with 53 focused cases | Implemented | `schemas/common.schema.json`, `npm run typed-reference-schema-smoke` | Shape and lexical evidence only; no complete field-contract or semantic resolution conformance. |
+| Work reference namespaces | Workflow-wide step and assembly-wide artifact rules with 13 focused cases | Implemented | `docs/work-reference-namespaces.md`, `npm run work-reference-namespace-smoke` | Identity and exact lookup evidence only; no cycle, ordering, provenance, disclosure, or runtime enforcement. |
 | Semantic reference inventory | P0-P3 target namespaces, coverage, gaps, and deferred fields | Specified | `docs/semantic-reference-inventory.md` | Documentation contract only; it is not a manifest, generated registry, validator, or conformance suite. |
 | Semantic reference smoke | Selected cross-manifest reference, active definition authority, and duplicate checks | Partial | `npm run semantic-smoke`, semantic reference inventory | Does not cover every inventoried field or establish full `NF-SEMANTIC` conformance, graph safety, or policy correctness. |
 | Reference CLI | Validation-only scope proposed | Planned | RFC-0011 | No `nexflow` executable or `NF-CLI` implementation exists. |
@@ -77,6 +78,7 @@ agent identity boundary smoke: scripts/agent-identity-schema-smoke.mjs
 agent definition authority smoke: scripts/agent-definition-authority-smoke.mjs
 human override boundary smoke: scripts/human-override-schema-smoke.mjs
 typed reference primitive smoke: scripts/typed-reference-schema-smoke.mjs
+work reference namespace smoke: scripts/work-reference-namespace-smoke.mjs
 semantic smoke: scripts/semantic-reference-smoke.mjs
 reference CLI: absent
 runtime: absent
@@ -238,6 +240,21 @@ reference definitions.
 It does not resolve target existence, apply every field contract, detect
 semantic ambiguity, or establish complete `NF-SEMANTIC` conformance.
 
+### Work Reference Namespace Smoke
+
+Command:
+
+```sh
+npm run work-reference-namespace-smoke
+```
+
+Compatible with the current Workflow, TaskSet, and HandoffSet contracts. It
+checks 13 cases covering workflow-wide step identity, cross-stage references,
+assembly-wide artifact identity, duplicate rejection, and exact handoff lookup.
+
+It does not validate graph cycles, execution order, artifact production,
+provenance, disclosure policy, content integrity, or runtime behavior.
+
 ### Semantic Reference Smoke
 
 Command:
@@ -253,8 +270,8 @@ It checks selected:
 
 - duplicate declarations
 - ActorSet identity, agent bridges, relationship cycles, and legacy participant references
-- task and workflow references
-- artifact references
+- task references plus workflow-scoped step and dependency references
+- assembly-scoped artifact declarations and handoff references
 - capability and permission references
 - approval gate references
 - structured network policy rule and destination references

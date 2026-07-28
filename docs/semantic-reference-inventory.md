@@ -13,6 +13,7 @@ Related documents:
 - [Validation](validation.md)
 - [Schema Design Notes](schema-design-notes.md)
 - [Typed References](typed-references.md)
+- [Work Reference Namespaces](work-reference-namespaces.md)
 - [RFC-0015: Typed References](../rfcs/RFC-0015-typed-references.md)
 - [Effective Agent Configuration](effective-agent-configuration.md)
 - [Core Profile And Logical Discovery](../rfcs/RFC-0016-core-profile-and-discovery.md)
@@ -157,15 +158,17 @@ not merge inputs, standing grants, or effective behavior sources.
 | `TaskSet.tasks[].approvalGates[]` | `Project.project.approvalGates[].id` | Checked | Resolve task gates without satisfying them. |
 | `TaskSet.tasks[].artifacts[].producedBy` | Actor identity | Gap | Resolve the declared producer; producer identity does not prove that the artifact was created or accepted. |
 | `Workflow.workflow.stages[].steps[].task` | `TaskSet.tasks[].id` | Checked | Resolve the task represented by each step. |
-| `Workflow.workflow.stages[].steps[].dependsOn[]` | Workflow step ID | Partial | Resolve step edges; full graph validity remains future work. |
-| `Workflow.workflow.dependencies[].from` and `.to` | Workflow step ID | Partial | Resolve both endpoints without inferring cross-workflow ordering. |
+| `Workflow.workflow.stages[].steps[].dependsOn[]` | Workflow-wide step ID in the containing workflow | Partial | Exact resolution and duplicate detection are checked; cycles, reachability, and terminal-state validity remain future work. |
+| `Workflow.workflow.dependencies[].from` and `.to` | Workflow-wide step ID in the containing workflow | Partial | Exact endpoint resolution and duplicate detection are checked; cross-workflow ordering is unsupported. |
 | `Workflow.workflow.stages[].steps[].approvalGates[]` | `Project.project.approvalGates[].id` | Checked | Resolve gates attached to workflow steps. |
 | `Workflow.workflow.stages[].steps[].emits[]` | `EventSet.events[].type` | Checked | Resolve declared event types without implying emission. |
 | `HandoffSet.handoffs[].from[]` and `.to[]` | Actor identity | Checked | Resolve all handoff endpoints for one-to-one, one-to-many, and many-to-many transfers. |
-| `HandoffSet.handoffs[].artifacts[]` | Artifact IDs declared by `TaskSet.tasks[].artifacts[]` | Partial | Resolve artifact existence; producer order and acceptance evidence remain broader semantic checks. |
+| `HandoffSet.handoffs[].artifacts[]` | Assembly-wide artifact IDs declared by `TaskSet.tasks[].artifacts[]` | Partial | Exact existence and duplicate declaration checks are implemented; producer order and acceptance evidence remain broader semantic checks. |
 
-Artifact IDs currently form a project-level inventory collected from task
-declarations. A future scoped reference contract may narrow this namespace.
+Workflow stages group steps but do not scope step identity. Task declarations
+record artifact provenance but do not scope artifact identity. See
+[Work Reference Namespaces](work-reference-namespaces.md) for the normative
+lookup and compatibility rules.
 
 ## P3: Review, Lifecycle, And Migration Links
 
@@ -263,11 +266,17 @@ same-ID resource exists elsewhere.
 - scans the seven maintained project examples
 - builds in-memory indexes for current manifest kinds and nested resources
 - checks duplicate IDs in selected namespaces
+- rejects duplicate workflow stages, workflow steps, and task artifacts
+- resolves step dependencies in the containing workflow and handoff artifacts
+  in the assembly artifact namespace
 - resolves the fields marked **Checked** or **Partial**
 - checks typed ActorSet relationship kinds and actor relationship cycles
 - checks unique unscoped active agent definition selection
 - checks selected prompt and retrieval lifecycle requirements
 - reports one generic semantic diagnostic family
+
+`npm run work-reference-namespace-smoke` exercises the same workflow step and
+artifact namespace implementation with 13 focused positive and negative cases.
 
 It does not:
 

@@ -6,9 +6,12 @@
   "scripts": {
     "agent-definition-authority-smoke": "node scripts/agent-definition-authority-smoke.mjs",
     "agent-identity-schema-smoke": "node scripts/agent-identity-schema-smoke.mjs",
+    "approval-gate-target-schema-smoke": "node scripts/approval-gate-target-schema-smoke.mjs",
     "actor-schema-smoke": "node scripts/actor-schema-smoke.mjs",
+    "conformance-claim-smoke": "node scripts/conformance-claim-smoke.mjs",
     "human-override-schema-smoke": "node scripts/human-override-schema-smoke.mjs",
     "negative-schema-fixtures": "node scripts/negative-schema-fixtures.mjs",
+    "provider-feature-schema-smoke": "node scripts/provider-feature-schema-smoke.mjs",
     "semantic-smoke": "node scripts/semantic-reference-smoke.mjs",
     "typed-reference-schema-smoke": "node scripts/typed-reference-schema-smoke.mjs",
     "work-reference-namespace-smoke": "node scripts/work-reference-namespace-smoke.mjs",

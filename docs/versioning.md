@@ -26,6 +26,26 @@ All manifests in one project SHOULD use the same `specVersion`.
 
 A future runtime MAY support mixed versions during migration, but it MUST make compatibility behavior explicit.
 
+## Conformance Claim Versioning
+
+Conformance claims use `claimVersion`, which is independent from manifest
+`specVersion` and the evaluated subject's release version.
+
+The initial standalone claim format is:
+
+```yaml
+claimVersion: "0.1"
+kind: NexFlowConformanceClaim
+```
+
+Changing claim status vocabulary, required scope, required conformance levels,
+evidence rules, or attestation meaning requires a claim-format compatibility
+decision. Breaking changes require a new `claimVersion` and migration guidance.
+
+Publishing a claim, changing a subject's conformance status, or updating evidence
+does not by itself change manifest `specVersion`. See
+[Conformance Claims](conformance-claims.md).
+
 ## Actor Model Version Decision
 
 The first `ActorSet` schema and typed-reference primitives remain in
@@ -48,6 +68,18 @@ scalar field, changing its allowed target kinds or scope, or removing a
 transitional scalar form requires an explicit compatibility and version
 decision.
 
+## Approval Gate Target Version Decision
+
+Typed approval gate `targets` remains in `specVersion: "0.1"`. It is additive
+inside the unreleased draft. Maintained examples use the new typed form, while
+deprecated scalar `appliesTo` remains schema-valid only for migration and cannot
+coexist with `targets`.
+
+Removing `appliesTo`, changing the accepted target kinds, changing workflow
+scope, or allowing implicit cross-kind resolution requires an explicit
+compatibility and version decision. See
+[Approval Gate Targets](approval-gate-targets.md).
+
 ## Work Reference Namespace Version Decision
 
 Workflow-wide step identity and assembly-wide task artifact identity remain in
@@ -58,6 +90,17 @@ Changing steps to stage-scoped identity, artifacts to task-scoped identity,
 allowing implicit cross-workflow lookup, or requiring typed objects in these
 fields requires an explicit compatibility and version decision. See
 [Work Reference Namespaces](work-reference-namespaces.md).
+
+## Provider Feature Version Decision
+
+Provider `features` remains in `specVersion: "0.1"`. It is additive inside the
+unreleased draft, while legacy provider `capabilities` remains schema-valid only
+for migration and cannot coexist with `features`.
+
+Removing the legacy field, changing the closed core feature vocabulary, changing
+a feature meaning, or coupling provider features to action capability grants
+requires an explicit compatibility and version decision. See
+[Provider Features](provider-features.md).
 
 ## Agent Identity Version Decision
 

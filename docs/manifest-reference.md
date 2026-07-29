@@ -216,7 +216,20 @@ See [Memory Model](memory-model.md) for sensitivity rules, ownership guidance, a
 
 Declares provider abstractions and preferences without binding the spec to a vendor.
 
-Related docs: [Provider Abstraction](provider-abstraction.md), [Runtime Options](runtime-options.md), [Security Model](security-model.md), [RFC-0010](../rfcs/RFC-0010-provider-selection.md).
+Provider declarations may include:
+
+- `id`, `type`, and `description`
+- optional closed `features` describing model support signals
+- provider-level constraints
+- selection and explainability metadata
+
+Provider features are not action capabilities and do not reference
+`CapabilitySet`. Legacy provider `capabilities` is deprecated, migration-only,
+and cannot coexist with `features`.
+
+Related docs: [Provider Abstraction](provider-abstraction.md),
+[Provider Features](provider-features.md), [Runtime Options](runtime-options.md),
+[Security Model](security-model.md), [RFC-0010](../rfcs/RFC-0010-provider-selection.md).
 
 ### `model-profiles.yaml`
 
@@ -323,7 +336,10 @@ The normative lookup rules for stages, steps, dependency edges, task artifacts,
 and handoff artifact references are defined in
 [Work Reference Namespaces](work-reference-namespaces.md).
 
-The same string MAY appear in distinct resource namespaces only when the reference field identifies exactly one target kind. Multi-kind reference fields, including the draft `approvalGate.appliesTo` field, MUST NOT resolve to more than one declared resource. Authors SHOULD avoid collisions across possible target kinds, and future semantic validators MUST reject ambiguous matches.
+The same string MAY appear in distinct resource namespaces when the reference
+field identifies its target kind. Approval gate declarations use typed `targets`
+so a task and context source may share an ID without ambiguous lookup. Deprecated
+`approvalGate.appliesTo` scalars MUST NOT be resolved through cross-kind search.
 
 ## Identifier References
 
@@ -337,8 +353,8 @@ capabilityRefs:
   - modify_documentation
 ```
 
-The first migrated Actor relationship fields and human override authorities
-require typed objects:
+The first migrated Actor relationship fields, human override authorities, and
+approval gate targets require typed objects:
 
 ```yaml
 agentRef:
@@ -352,7 +368,9 @@ legacy scalar form is accepted. Actor relationship fields are assembly-scoped
 and prohibit authored scope.
 
 See [Typed References](typed-references.md) for the complete shared shape,
-lexical rules, migration forms, and validation boundary.
+lexical rules, migration forms, and validation boundary. See
+[Approval Gate Targets](approval-gate-targets.md) for the accepted gate target
+kinds and scope rules.
 
 References are case-sensitive and MUST preserve declaration spelling and
 separator style. Authors and tools MUST NOT silently lowercase, trim, rewrite

@@ -216,6 +216,11 @@ Model profiles describe how a project expects a model to be selected for a behav
 
 Provider declarations and model profiles do not grant access. Capabilities, permissions, context access, memory access, autonomy, and approval gates remain separate and authoritative.
 
+Provider `features` are static model support signals, not action capabilities.
+The current model profile schema does not define feature requirements, so tools
+must not infer them from free text or action capability references. See
+[Provider Features](provider-features.md).
+
 ## Relationship To Agent Definitions
 
 Agent definitions reference model profiles through `modelProfileRef`. The

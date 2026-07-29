@@ -38,9 +38,12 @@ The repository supports basic validation through:
 - Four cataloged negative fixture categories for required fields, enum values,
   ID formats, and unknown manifest kinds.
 - Focused shared typed-reference shape and lexical-boundary checks.
+- Focused approval gate target kind and scope checks.
 - Focused workflow step and task artifact namespace checks.
+- Focused provider feature vocabulary and capability-separation checks.
 - Focused ActorSet, AgentSet identity, agent definition authority, and human
   override boundary checks.
+- A focused standalone conformance claim schema and template check.
 - A semantic reference smoke command for selected cross-manifest references in examples.
 - A prioritized semantic reference inventory that distinguishes checked,
   partial, missing, and deferred field contracts.
@@ -113,6 +116,20 @@ strict kind-specific forms, and duplicate list values.
 It does not prove that targets exist, resolve field contracts across manifests,
 detect semantic ambiguity, or establish complete typed-reference conformance.
 
+Run focused approval gate target checks:
+
+```sh
+npm run approval-gate-target-schema-smoke
+```
+
+This command exercises 16 accepted and rejected cases for allowed target kinds,
+assembly-scoped resources, workflow-scoped stages and steps, deprecated
+`appliesTo` coexistence, duplicate targets, ID syntax, and closed typed objects.
+
+It does not prove target existence, gate coverage, approver eligibility,
+approval state, or runtime enforcement. Maintained target existence is checked
+separately by `npm run semantic-smoke`.
+
 Run focused work reference namespace checks:
 
 ```sh
@@ -127,13 +144,42 @@ implementation for maintained examples.
 It does not validate workflow cycles, execution order, artifact production,
 content integrity, disclosure policy, or runtime behavior.
 
+Run focused provider feature checks:
+
+```sh
+npm run provider-feature-schema-smoke
+```
+
+This command exercises 11 accepted and rejected cases for the closed provider
+feature vocabulary, non-empty unique lists, deprecated `capabilities`
+coexistence, and rejection of project action capability IDs.
+
+It does not prove provider availability, model quality, model profile
+compatibility, permission, tool access, network access, or runtime behavior.
+
+Run the standalone conformance claim format checks:
+
+```sh
+npm run conformance-claim-smoke
+```
+
+This command exercises 13 accepted and rejected cases for claim identity, scope,
+level status, evidence, limitations, lifecycle, timestamps, and self-declared
+assurance. It also checks that the Markdown template contains every required
+section and all six current conformance levels.
+
+It validates claim structure only. It does not inspect external tools, verify
+evidence, certify implementations, or establish any conformance level.
+
 The GitHub Actions workflow runs the same smoke script, schema validation, and
 focused boundary commands so pull requests exercise schema JSON parsing,
 example YAML parsing, manifest kind discovery, schema compilation, example
 manifest validation, typed-reference primitive boundaries, work reference
-namespaces, compact agent identity compatibility, and human override fail-closed
-shape. It also checks active agent definition completeness and unique unscoped
-selection cases, plus the cataloged negative schema boundaries.
+namespaces, approval gate target kinds and scope, provider feature vocabulary,
+compact agent identity compatibility, human override fail-closed shape, and
+conformance claim format boundaries. It also checks active agent definition
+completeness and unique unscoped selection cases, plus the cataloged negative
+schema boundaries.
 
 Run semantic reference smoke checks:
 
@@ -146,10 +192,10 @@ bridges, active agent definition authority, tasks, workflow steps, artifacts,
 permissions, capabilities,
 structured network policies, context sources, memory scopes, providers, model
 profiles, prompt sets, retrieval profiles, agent definitions, approval gates,
-human override authorities and audit references, events, and extensions. It
-reports `NF-SEMANTIC` diagnostics for missing
-references, duplicate IDs, duplicate agent bridges, and actor relationship
-cycles.
+typed approval gate targets, human override authorities and audit references,
+events, and extensions. It reports `NF-SEMANTIC` diagnostics for missing
+references, deprecated ambiguous gate targets, deprecated provider capability
+labels, duplicate IDs, duplicate agent bridges, and actor relationship cycles.
 
 The command is intentionally a smoke check. It does not prove workflow graph correctness, policy safety, approval sufficiency, runtime enforceability, provider compatibility, or full semantic conformance.
 

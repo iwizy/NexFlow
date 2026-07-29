@@ -44,7 +44,9 @@ NexFlow treats validation as a layered process.
 | Schema | Draft schemas exist | Check required fields, field types, enums, simple patterns, and manifest shape. |
 | Negative schema fixtures | Four rejection categories implemented | Confirm representative required-field, enum, ID-format, and unknown-kind failures remain rejected for the intended reason. |
 | Typed reference primitive checks | 53 focused cases implemented | Confirm generic, scoped, transitional, and kind-specific shared definitions accept and reject the documented authored shapes. |
+| Approval gate target checks | 16 focused cases implemented | Confirm closed gate target kinds, assembly and workflow scope, legacy coexistence, duplicate rejection, and typed object boundaries. |
 | Work reference namespace checks | 13 focused cases implemented | Confirm workflow-wide step and assembly-wide artifact identity, duplicate rejection, and exact dependency and handoff lookup. |
+| Provider feature checks | 11 focused cases implemented | Confirm closed provider support signals, legacy coexistence, uniqueness, and separation from project action capability IDs. |
 | Manifest inventory | Future validation work | Confirm all expected manifest files are present and routed by `kind`. |
 | Semantic validation | Partial repository smoke coverage plus a documented inventory | Check prioritized cross-manifest references, ActorSet bridges, active agent definition authority, human override authorities, graph consistency, permission coverage, memory boundaries, and extension requirements. Full semantic conformance remains future work. |
 | Runtime preflight | Future runtime work | Check credentials, sandboxing, provider behavior, tool access, and execution safety before any runtime action. |
@@ -63,6 +65,7 @@ Schemas should be strict where the specification has stable structure:
 - common object shapes
 - required IDs for declared entities
 - lexical form for IDs and event types
+- closed provider feature vocabulary and separation from action capabilities
 - common approval gate, artifact, memory, and extension attachment shapes
 - typed reference structure and kind-specific ActorSet relationship boundaries
 - compact AgentSet identity requiredness and deprecated compatibility fields
@@ -114,13 +117,15 @@ must preserve without guessing.
 
 [Typed References](typed-references.md) defines the implemented shared shapes,
 lexical rules, migration forms, and focused validation boundary.
+[Approval Gate Targets](approval-gate-targets.md) applies a strict field-specific
+typed contract to reusable project gate targets.
 [RFC-0015: Typed References](../rfcs/RFC-0015-typed-references.md) defines the
 broader proposed field-contract model. `common.schema.json` implements the
 shared typed-reference primitive and scalar-compatible migration unions, while
 `ActorSet` uses strict typed references for `agentRef`, `operatedBy`,
-`representedBy`, and `integrationRef`. Existing manifest fields retain their
-unqualified `0.1` syntax until their own migration contracts are accepted and
-implemented.
+`representedBy`, and `integrationRef`. Approval gates use strict typed `targets`;
+their deprecated scalar `appliesTo` form remains structurally readable but is
+not semantically resolved.
 
 [Work Reference Namespaces](work-reference-namespaces.md) defines the semantic
 uniqueness and lookup rules that JSON Schema annotations can describe but

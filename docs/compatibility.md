@@ -35,6 +35,7 @@ For the current supported combinations and explicit implementation gaps, see the
 - changing a pinned model reference
 - changing a floating model alias policy
 - changing provider preference precedence, provider selection constraints, fallback eligibility, or provider selection explainability expectations
+- changing the provider feature vocabulary, feature meaning, or separation from action capabilities
 - broadening provider eligibility, training use, or tool use in a model profile
 - changing a prompt revision used by an active agent definition
 - changing safety prompt material
@@ -139,6 +140,20 @@ or changing strict kind-specific semantics may break `NF-MANIFEST`,
 See [Typed References](typed-references.md) for the current shared shapes and
 migration rules.
 
+## Approval Gate Target Compatibility
+
+Approval gate `targets` is an additive strict typed field in the unreleased
+`0.1` draft. It closes the accepted target kinds, prohibits scope for
+assembly-scoped resources, and requires explicit workflow scope for stages and
+steps.
+
+Deprecated scalar `appliesTo` remains structurally valid for migration, cannot
+coexist with `targets`, and is not semantically resolved. Removing it, changing
+the accepted kind set, changing workflow scope, or adding cross-kind fallback may
+break `NF-MANIFEST`, `NF-SCHEMA`, and `NF-SEMANTIC` consumers.
+
+See [Approval Gate Targets](approval-gate-targets.md).
+
 ## Work Reference Namespace Compatibility
 
 Workflow step IDs are unique across all stages in one workflow. Task artifact
@@ -152,6 +167,22 @@ file or array order would break `NF-SEMANTIC` compatibility. Requiring explicit
 typed objects in these fields would also affect `NF-MANIFEST` and `NF-SCHEMA`.
 
 See [Work Reference Namespaces](work-reference-namespaces.md).
+
+## Provider Feature Compatibility
+
+Provider `features` is additive inside the unreleased `specVersion: "0.1"`
+draft. It uses a closed model support vocabulary that is independent from
+`CapabilitySet` action identifiers.
+
+Legacy provider `capabilities` remains structurally valid for migration, cannot
+coexist with `features`, and must not resolve against project action
+capabilities. Maintained examples use `features`.
+
+Removing the legacy field, adding or removing a core feature, changing feature
+meaning, or treating feature support as permission affects schema, semantic,
+provider-selection, and safety compatibility.
+
+See [Provider Features](provider-features.md).
 
 ## Human Override Compatibility
 
@@ -179,7 +210,15 @@ Future runtimes should publish:
 - validation behavior
 - enforcement limitations
 
-See [Conformance](conformance.md) for draft vocabulary that tools can use when describing support levels.
+See [Conformance](conformance.md) for draft vocabulary and
+[Conformance Claims](conformance-claims.md) for the standalone versioned schema
+and publication templates.
+
+A published claim applies only to its named subject version, spec versions,
+manifest kinds, extension namespaces, evidence, and limitations. Consumers must
+not infer support for omitted or `not-evaluated` surfaces. Claim format
+compatibility is versioned through `claimVersion`, independently from manifest
+`specVersion`.
 
 [RFC-0007](../rfcs/RFC-0007-approval-gates.md) proposes approval semantics that may affect `NF-SEMANTIC`, `NF-RUNTIME`, safety, and audit compatibility when approval meaning changes.
 
@@ -208,6 +247,7 @@ Examples:
 | Change unique active-definition selection or active completeness requirements | May affect `NF-SCHEMA`, `NF-SEMANTIC`, safety, migration, audit, and future runtime compatibility. |
 | Change a standardized Agent Assembly field, state, ordering rule, or diagnostic code | May affect `NF-CLI`, `NF-SEMANTIC`, inspection consumers, and audit tooling without changing manifest shape. |
 | Require, remove, or reinterpret a typed-reference form, target kind, or scope | May affect `NF-MANIFEST`, `NF-SCHEMA`, `NF-SEMANTIC`, migration tooling, and future runtime binding. |
+| Change approval gate target kinds, workflow scope, legacy coexistence, or exact resolution | May affect `NF-MANIFEST`, `NF-SCHEMA`, `NF-SEMANTIC`, approval coverage, safety, and migration. |
 | Change workflow step or task artifact uniqueness scope or fallback behavior | May affect `NF-SEMANTIC`, graph tooling, handoff evidence resolution, migration, and future runtime binding. |
 | Change network defaults, destination scope, transport constraints, approvals, or audit semantics | May affect `NF-SEMANTIC`, `NF-RUNTIME`, integrations, privacy, audit, and safety compatibility. |
 | Change human override authority, response, resume, operation, or audit semantics | May affect `NF-SCHEMA`, `NF-SEMANTIC`, `NF-RUNTIME`, safety, authority, and audit compatibility. |

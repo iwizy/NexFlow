@@ -42,7 +42,10 @@ enforced.
 | Agent Assembly inspection view | Documentation contract for a derived effective-configuration projection | Specified | `docs/agent-assembly.md`, RFC-0014 | No resolver, serializer, JSON Schema, reference CLI output, or runtime implementation exists. |
 | Human override boundary smoke | 11 accepted and rejected structural cases | Implemented | `npm run human-override-schema-smoke` | Checks policy shape, not authentication, interruption, revocation, or runtime enforcement. |
 | Typed reference primitives | Common typed, scoped, transitional, and kind-specific definitions with 53 focused cases | Implemented | `schemas/common.schema.json`, `npm run typed-reference-schema-smoke` | Shape and lexical evidence only; no complete field-contract or semantic resolution conformance. |
+| Approval gate targets | Closed typed target kinds, assembly and workflow scope, migrated examples, and exact semantic lookup | Implemented | `docs/approval-gate-targets.md`, `npm run approval-gate-target-schema-smoke`, `npm run semantic-smoke` | Target resolution only; no gate coverage, decision state, approver authentication, or runtime enforcement. |
 | Work reference namespaces | Workflow-wide step and assembly-wide artifact rules with 13 focused cases | Implemented | `docs/work-reference-namespaces.md`, `npm run work-reference-namespace-smoke` | Identity and exact lookup evidence only; no cycle, ordering, provenance, disclosure, or runtime enforcement. |
+| Provider feature vocabulary | Closed model support signals, migrated examples, and legacy capability separation | Implemented | `docs/provider-features.md`, `npm run provider-feature-schema-smoke`, `npm run semantic-smoke` | Structural and migration evidence only; no provider selection, live availability, permission, or runtime support. |
+| Conformance claim format | Standalone `claimVersion: "0.1"` schema plus YAML and Markdown templates | Implemented | `conformance/`, `npm run conformance-claim-smoke` | Self-declared claim structure only; no certification, external evidence verification, registry, or conformance test suite. |
 | Semantic reference inventory | P0-P3 target namespaces, coverage, gaps, and deferred fields | Specified | `docs/semantic-reference-inventory.md` | Documentation contract only; it is not a manifest, generated registry, validator, or conformance suite. |
 | Semantic reference smoke | Selected cross-manifest reference, active definition authority, and duplicate checks | Partial | `npm run semantic-smoke`, semantic reference inventory | Does not cover every inventoried field or establish full `NF-SEMANTIC` conformance, graph safety, or policy correctness. |
 | Reference CLI | Validation-only scope proposed | Planned | RFC-0011 | No `nexflow` executable or `NF-CLI` implementation exists. |
@@ -78,7 +81,10 @@ agent identity boundary smoke: scripts/agent-identity-schema-smoke.mjs
 agent definition authority smoke: scripts/agent-definition-authority-smoke.mjs
 human override boundary smoke: scripts/human-override-schema-smoke.mjs
 typed reference primitive smoke: scripts/typed-reference-schema-smoke.mjs
+approval gate target smoke: scripts/approval-gate-target-schema-smoke.mjs
 work reference namespace smoke: scripts/work-reference-namespace-smoke.mjs
+provider feature smoke: scripts/provider-feature-schema-smoke.mjs
+conformance claim format smoke: scripts/conformance-claim-smoke.mjs
 semantic smoke: scripts/semantic-reference-smoke.mjs
 reference CLI: absent
 runtime: absent
@@ -108,7 +114,7 @@ example and is validated in CI.
 | `PermissionSet` | `permissions.schema.json` | All 7 project sets | Full structural check | Permission, subject, capability, and approval gate references |
 | `ContextSet` | `context.schema.json` | All 7 project sets | Full structural check | Context source and selected actor/gate references |
 | `MemorySet` | `memory.schema.json` | All 7 project sets | Full structural check | Memory scope and selected actor/gate references |
-| `ProviderSet` | `providers.schema.json` | All 7 project sets | Full structural check | Provider inventory and selected references |
+| `ProviderSet` | `providers.schema.json` | All 7 project sets | Full structural check | Provider inventory, closed feature vocabulary, and legacy feature migration diagnostics |
 | `ModelProfileSet` | `model-profiles.schema.json` | All 7 project sets | Full structural check | Provider references and selected actor references |
 | `PromptSet` | `prompt-sets.schema.json` | All 7 project sets | Full structural check | Selected owner, approver, and agent references |
 | `RetrievalProfileSet` | `retrieval-profiles.schema.json` | All 7 project sets | Full structural check | Selected context source, owner, approver, and agent references |
@@ -240,6 +246,23 @@ reference definitions.
 It does not resolve target existence, apply every field contract, detect
 semantic ambiguity, or establish complete `NF-SEMANTIC` conformance.
 
+### Approval Gate Target Schema Smoke
+
+Command:
+
+```sh
+npm run approval-gate-target-schema-smoke
+```
+
+Compatible with the current common and Project schema snapshot. It checks 16
+accepted and rejected cases covering the closed target-kind set, assembly and
+workflow scope, deprecated scalar coexistence, duplicate rejection, ID syntax,
+and closed typed objects.
+
+The semantic smoke command resolves maintained typed targets in exact
+kind-specific namespaces. Neither command evaluates gate coverage, approval
+decisions, approver authority, expiry, revocation, or runtime enforcement.
+
 ### Work Reference Namespace Smoke
 
 Command:
@@ -254,6 +277,37 @@ assembly-wide artifact identity, duplicate rejection, and exact handoff lookup.
 
 It does not validate graph cycles, execution order, artifact production,
 provenance, disclosure policy, content integrity, or runtime behavior.
+
+### Provider Feature Schema Smoke
+
+Command:
+
+```sh
+npm run provider-feature-schema-smoke
+```
+
+Compatible with the current ProviderSet schema and maintained examples. It
+checks 11 accepted and rejected cases covering the closed core vocabulary,
+non-empty unique lists, deprecated field coexistence, and rejection of project
+action capability IDs.
+
+It does not select providers, inspect live models, grant tool or network access,
+evaluate permissions, or establish runtime conformance.
+
+### Conformance Claim Format Smoke
+
+Command:
+
+```sh
+npm run conformance-claim-smoke
+```
+
+Compatible with standalone conformance claim `claimVersion: "0.1"`. It checks 13
+accepted and rejected schema cases plus the required human-readable template
+sections and six current conformance levels.
+
+It does not verify external evidence, evaluate implementations, operate a
+registry, issue certification, or establish any conformance level.
 
 ### Semantic Reference Smoke
 
@@ -277,7 +331,7 @@ It checks selected:
 - structured network policy rule and destination references
 - human override authority, resume gate, and audit event references
 - context and memory references
-- provider and agent component references
+- provider and agent component references plus deprecated provider feature-field migration
 - event references
 - extension references
 
@@ -437,31 +491,24 @@ A tool producing NexFlow manifests should:
 
 ## Compatibility Record Template
 
-Future validators, CLIs, runtimes, and extensions should publish a compact record
-like this:
+Validators, CLIs, runtimes, and extensions should publish the standalone
+[YAML conformance claim](../conformance/conformance-claim.template.yaml) and the
+matching
+[human-readable conformance claim](../conformance/CONFORMANCE-CLAIM.template.md).
 
-```yaml
-implementation:
-  name: example-tool
-  version: 0.1.0
-supports:
-  specVersions:
-    - "0.1"
-  schemaSnapshot: nexflow-tag-or-commit
-  manifestKinds:
-    - Project
-    - AgentSet
-    - TaskSet
-  conformance:
-    - NF-MANIFEST
-    - NF-SCHEMA
-  extensionNamespaces: []
-limitations:
-  - No runtime execution.
-  - No full semantic validation.
+The templates require a named subject version, exact scope, explicit status for
+all six levels, evidence for supported or partial levels, separate validation
+and enforcement descriptions, limitations, and a self-declared attestation.
+
+The machine-readable format is validated by:
+
+```sh
+npm run conformance-claim-smoke
 ```
 
-This is documentation guidance, not a new NexFlow manifest kind.
+This is a compatibility record, not a NexFlow project manifest, certification,
+permission grant, approval, or runtime safety guarantee. See
+[Conformance Claims](conformance-claims.md).
 
 ## Updating This Matrix
 

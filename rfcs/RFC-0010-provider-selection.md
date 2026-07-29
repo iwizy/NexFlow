@@ -90,8 +90,8 @@ Example:
 providers:
   - id: general_reasoning
     type: abstract
-    description: Provider-neutral reasoning capability.
-    capabilities:
+    description: Provider-neutral reasoning class.
+    features:
       - text_generation
       - tool_reasoning
     constraints:
@@ -105,6 +105,13 @@ providers:
 
 Provider declarations do not grant access and do not call providers.
 
+The implemented `features` field uses a closed provider support vocabulary. It
+is not a reference to `CapabilitySet`, and a feature does not grant an actor a
+project action. Legacy provider `capabilities` remains structurally valid only
+for `0.1` migration, cannot coexist with `features`, and must not be resolved as
+action capabilities. See
+[Provider Features](../docs/provider-features.md).
+
 ### Provider Preference
 
 An agent or agent definition may express provider preferences.
@@ -117,7 +124,7 @@ Example:
 providerPreferences:
   - provider: general_reasoning
     priority: preferred
-    reason: Requires strong reasoning and code review capability.
+    reason: Requires strong reasoning and code review support.
 ```
 
 Preferences should not override:
@@ -155,7 +162,7 @@ A future runtime should evaluate provider selection from the following inputs wh
 | --- | --- |
 | Agent definition | Determines which model profile and behavioral release are active. |
 | Model profile | Defines model class, selection mode, constraints, fallback, review, and audit expectations. |
-| Provider declaration | Defines provider abstraction, capabilities, and provider-level constraints. |
+| Provider declaration | Defines provider abstraction, model support features, and provider-level constraints. |
 | Project policy | Adds organization or repository rules. |
 | Permissions | Determines whether the actor may perform the requested action. |
 | Approval gates | Determines whether selection, fallback, or sensitive data use needs approval. |
@@ -255,7 +262,8 @@ Recommended order:
 4. Identify context and memory that may be shared.
 5. Apply project and organization policy.
 6. Apply model profile constraints.
-7. Filter provider declarations by provider refs and capabilities.
+7. Filter provider declarations by provider refs and any explicitly accepted
+   provider feature requirements.
 8. Filter by training-use, data residency, tool-use, sensitivity, cost, and latency constraints.
 9. Apply selection mode: pinned, floating, or policy.
 10. If no candidate remains, use approved fallback only if allowed.
@@ -325,6 +333,9 @@ Model profile constraints may describe:
 For high-risk actions, `provider_native_tools` should require explicit review and permission modeling.
 
 Tool availability from a provider must not grant NexFlow capabilities by itself.
+
+Likewise, provider `tool_reasoning` is only a model support signal. It does not
+mean that a tool exists or that an actor may use one.
 
 ## Sensitivity
 
@@ -548,6 +559,8 @@ modelProfiles:
 JSON Schema can validate:
 
 - provider declarations have required top-level fields
+- provider features use the closed core vocabulary
+- provider `features` does not coexist with deprecated `capabilities`
 - model profiles have selection mode and audit objects
 - optional explainability fields are structurally valid
 - known selection modes use stable enum values
@@ -555,7 +568,10 @@ JSON Schema can validate:
 Future semantic validators may check:
 
 - referenced provider IDs exist
-- provider capabilities satisfy model profile expectations
+- deprecated provider `capabilities` values are reported for migration rather
+  than resolved against `CapabilitySet`
+- provider features satisfy explicit model profile expectations only after such
+  a field contract is accepted
 - selection mode has enough metadata
 - fallback candidates reference declared providers
 - model profile constraints are compatible with project policy
@@ -587,9 +603,11 @@ A future runtime must not:
 
 ## Compatibility Impact
 
-This RFC is additive and semantic.
+The implemented provider feature slice is additive inside the unreleased `0.1`
+draft and semantic.
 
-It clarifies provider selection expectations without changing required manifest fields.
+It adds optional `features`, deprecates the ambiguous provider `capabilities`
+field name, and migrates maintained examples without changing required fields.
 
 Adding optional explainability metadata is compatible with existing manifests.
 
@@ -597,6 +615,7 @@ Potentially breaking changes may include:
 
 - changing the meaning of selection modes
 - changing provider preference precedence
+- changing the core provider feature vocabulary or feature meaning
 - broadening provider eligibility
 - changing training-use interpretation
 - changing data residency interpretation
@@ -620,7 +639,7 @@ Risks include:
 - losing reproducibility after floating alias changes
 - hiding provider-specific behavior inside extensions
 - logging sensitive provider traces
-- confusing provider capabilities with NexFlow permissions
+- confusing provider features with NexFlow action capabilities or permissions
 
 This RFC reduces risk by requiring provider selection to be explainable, constrained, auditable, and subordinate to project policy, permissions, context boundaries, memory boundaries, and approval gates.
 

@@ -50,15 +50,19 @@ A tool or project claiming NexFlow support should publish:
 - validation behavior
 - enforcement behavior, if any
 
-Example:
+The repository provides a standalone, versioned conformance claim schema and
+matching YAML and Markdown templates. The format requires an explicit status for
+all six levels and evidence for supported or partial claims. It is not a core
+manifest kind and does not change project manifest discovery.
 
-```text
-Supports: NF-MANIFEST, NF-SCHEMA
-Does not support: NF-SEMANTIC, NF-CLI, NF-RUNTIME
-Spec versions: 0.1
-Manifest kinds: Project, AgentSet, Workflow, TaskSet
-Limitations: no cross-manifest reference validation
-```
+See [Conformance Claims](../docs/conformance-claims.md).
+
+Published claims should use the
+[machine-readable template](../conformance/conformance-claim.template.yaml) and
+matching
+[human-readable template](../conformance/CONFORMANCE-CLAIM.template.md). Both
+forms require the complete scope, all six level statuses, evidence, limitations,
+and separate validation and enforcement descriptions.
 
 ### Required Boundaries
 
@@ -112,6 +116,10 @@ The following claims should be considered non-conforming:
 
 This RFC does not change manifest structure.
 
+The standalone conformance claim format uses its own `claimVersion` and does not
+change manifest `specVersion`. A breaking change to the claim document requires a
+claim-format version decision and migration guidance.
+
 If accepted, future compatibility notes should identify impacted conformance levels when a change affects validators, CLIs, runtimes, or extensions.
 
 ## Security and Safety Impact
@@ -143,7 +151,6 @@ This would violate provider neutrality and would make provider behavior part of 
 ## Open Questions
 
 - Should future versions add a formal conformance test suite?
-- Should conformance claims have a machine-readable manifest?
 - Should extension conformance require a public namespace registry?
 - Should `NF-CLI` be split into validation, inspection, and graph sublevels?
 - What evidence should be required before a tool can claim `NF-RUNTIME`?

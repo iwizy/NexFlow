@@ -27,6 +27,11 @@ repository semantic checks cover duplicate and unresolved step and artifact
 references. Cross-workflow dependencies and task-scoped artifact identity
 remain unsupported.
 
+As of 2026-07-29, provider model support uses the closed `features` vocabulary
+instead of the ambiguous `capabilities` field name. Maintained examples are
+migrated, legacy values remain structurally readable but deprecated, and
+provider features do not resolve against project action capabilities.
+
 As of 2026-07-24, the first AgentSet simplification slice classifies the six
 stable identity fields, marks duplicated behavior and access fields deprecated,
 migrates the Minimal Team, and adds focused compatibility checks. A separate
@@ -221,7 +226,9 @@ remain open.
 - retain scalar IDs for deterministic single-kind fields
 
 Status: workflow step and artifact namespace contracts are implemented.
-Approval target migration and broader typed-reference fixtures remain open.
+Approval targets now use a closed typed-reference contract, maintained examples
+are migrated, and focused fixtures cover shape, kind, scope, and coexistence
+failures. Broader typed-reference fixtures remain open.
 
 ### Phase 5: Profiles And Discovery
 
@@ -250,9 +257,7 @@ Approval target migration and broader typed-reference fixtures remain open.
 | Future explicit standing agent constraints are undecided | Complete identity/configuration split | The initial compact shape classifies duplicated behavior fields as deprecated compatibility data; introduce any future ceiling explicitly. |
 | Scoped active-definition binding has no accepted field | Multiple simultaneous active releases per agent | Use one unscoped active definition initially; specify scoped binding separately. |
 | Context and memory intent lacks read/write/promotion typing | Complete effective configuration semantics | Define intent without treating access references as grants. |
-| Provider support and project action capabilities share ambiguous vocabulary | Provider capability resolution | Separate provider feature support from actor action capability identifiers. |
 | `memoryPolicyRef` has no stable target contract | Memory policy selection | Define its target kind and relationship to `MemorySet` before normative use. |
-| Approval targets lack a final multi-kind contract | Full typed-reference migration | Define allowed kinds, owner scope, and migration behavior without changing the implemented workflow step and artifact namespaces implicitly. |
 | Normative field-contract storage is undecided | Portable semantic validators | Choose a generated or shared schema-backed registry with one authoritative source. |
 | Project source/index shape is undecided | Reduced profile and multiple-workflow schemas | Define a transport-neutral representation that preserves logical assembly semantics. |
 | Specification version transition is undecided | First breaking schema migration | Make an explicit coordinated version decision with migration and compatibility notes. |

@@ -85,7 +85,8 @@ Breaking schema changes require migration guidance and should be routed through 
 Use `common.schema.json` for shared concepts:
 
 - IDs
-- typed references, scalar-compatible migration unions, and the closed target-kind vocabulary
+- typed references, scalar-compatible migration unions, closed target-kind
+  vocabularies, and approval gate targets
 - dotted event types
 - metadata
 - autonomy levels
@@ -189,11 +190,14 @@ npm ci
 npm run validate
 npm run negative-schema-fixtures
 npm run typed-reference-schema-smoke
+npm run approval-gate-target-schema-smoke
 npm run work-reference-namespace-smoke
 npm run actor-schema-smoke
 npm run agent-identity-schema-smoke
 npm run agent-definition-authority-smoke
 npm run human-override-schema-smoke
+npm run provider-feature-schema-smoke
+npm run conformance-claim-smoke
 npm run semantic-smoke
 ```
 
@@ -201,9 +205,21 @@ The typed-reference command checks the shared primitive definitions directly.
 It covers authored structure and lexical boundaries, not target existence,
 cross-manifest resolution, or complete semantic conformance.
 
+The approval gate target command checks the strict field-specific target kinds,
+assembly and workflow scope, legacy coexistence boundary, duplicate rejection,
+and closed object shape. Semantic target existence remains a separate check.
+
 The work-reference namespace command checks workflow-wide step and
 assembly-wide artifact identity, duplicate rejection, and exact dependency and
 handoff lookup. It does not validate graph ordering or artifact provenance.
+
+The provider feature command checks the closed model support vocabulary,
+non-empty unique lists, migration coexistence, and separation from project
+action capability IDs. It does not select or call providers.
+
+The conformance claim command validates the standalone schema and templates
+under `conformance/`. Those artifacts are not core manifest schemas and do not
+add a manifest kind.
 
 The Node.js dependency is limited to repository maintenance tooling and does not select the language of a future NexFlow runtime.
 

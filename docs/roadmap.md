@@ -19,7 +19,8 @@ The repository currently provides the following candidate evidence:
   smoke commands
 - a prioritized semantic reference inventory with explicit current coverage,
   gaps, and deferred ambiguous fields
-- explicit conformance vocabulary and a current compatibility matrix
+- explicit conformance vocabulary, standalone claim templates, and a current
+  compatibility matrix
 - a public readiness checklist, release plan, known limitations, and governance
   process
 - a cross-RFC review for the Actor Model, Effective Agent Configuration, Typed
@@ -102,6 +103,8 @@ provenance validation remain future work.
 - Review RFC-0009 event envelope identity, actor, subject, correlation, causation, payload, audit, redaction, ordering, and extension expectations.
 - Review model profile selection modes, pinned and floating references, constraints, fallback, and audit expectations.
 - Review RFC-0010 provider preference, constraint, fallback, explainability, and runtime audit semantics.
+- Maintain the closed provider feature vocabulary and its separation from
+  project action capabilities as provider selection evolves.
 - Review prompt set identifiers, revisions, source references, safety review status, and compatibility impact.
 - Review retrieval source references, index versions, chunking, freshness, citations, sensitivity, and audit expectations.
 - Review agent definition component references, lifecycle status, activation criteria, autonomy, and audit expectations.
@@ -124,12 +127,20 @@ Relevant docs: [Security Model](security-model.md), [Capability Model](capabilit
   smoke coverage expands.
 - Maintain focused typed-reference primitive checks and migrate fields only
   after their target-kind, scope, and compatibility contracts are explicit.
+- Keep approval gate target kinds, workflow scope, migration diagnostics, and
+  semantic resolution aligned with broader approval coverage work.
 - Keep workflow step and artifact namespace checks aligned with discovery,
   graph, handoff, and migration decisions.
 - Define conformance expectations for validators.
 - Refine draft conformance levels for manifests, validators, CLIs, runtimes, and extensions.
+- Maintain the versioned machine-readable and human-readable conformance claim
+  templates as validation behavior becomes more precise.
 
-Relevant docs: [Validation](validation.md), [Conformance](conformance.md), [Compatibility](compatibility.md), [Schema Guide](../schemas/README.md), [Examples Guide](../examples/README.md).
+Relevant docs: [Validation](validation.md), [Conformance](conformance.md),
+[Conformance Claims](conformance-claims.md),
+[Approval Gate Targets](approval-gate-targets.md),
+[Compatibility](compatibility.md), [Schema Guide](../schemas/README.md),
+[Examples Guide](../examples/README.md).
 
 ## Milestone 4: Runtime Architecture Decision
 

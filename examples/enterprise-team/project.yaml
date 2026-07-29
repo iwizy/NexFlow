@@ -36,31 +36,40 @@ project:
       description: Enterprise architect approval required for design direction.
       requiredApprovers:
         - enterprise-architect
-      appliesTo:
-        - architecture-assessment
-        - implement-enterprise-change
+      targets:
+        - kind: task
+          id: architecture-assessment
+        - kind: task
+          id: implement-enterprise-change
     - id: security_review
       description: Security reviewer approval required for sensitive changes.
       requiredApprovers:
         - security-reviewer
-      appliesTo:
-        - security-review
-        - security_knowledge
-        - mcp_tools
+      targets:
+        - kind: task
+          id: security-review
+        - kind: context-source
+          id: security_knowledge
+        - kind: context-source
+          id: mcp_tools
     - id: compliance_review
       description: Compliance reviewer approval required for evidence packets, audit summaries, and restricted durable memory.
       requiredApprovers:
         - compliance-reviewer
-      appliesTo:
-        - compliance-signoff
-        - compliance_evidence
-        - audit_register
+      targets:
+        - kind: task
+          id: compliance-signoff
+        - kind: context-source
+          id: compliance_evidence
+        - kind: context-source
+          id: audit_register
     - id: release_approval
       description: Release manager approval required for deployment.
       requiredApprovers:
         - release-manager
-      appliesTo:
-        - release-approval
+      targets:
+        - kind: task
+          id: release-approval
 manifests:
   agents: agents.yaml
   agentDefinitions: agent-definitions.yaml

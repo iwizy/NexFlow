@@ -251,9 +251,19 @@ Prompt sets can describe prompt source references, content digests, ownership, s
 
 ### Provider
 
-A model or service provider abstraction. Providers can describe preferences and constraints without becoming part of the core specification.
+A model or service provider abstraction. Providers can describe model support
+features, preferences, and constraints without granting project action
+capabilities.
 
 NexFlow is provider neutral.
+
+### Provider Feature
+
+A provider or model support signal such as `text_generation`,
+`code_reasoning`, or `tool_reasoning`.
+
+Provider features are selection metadata, not references to `CapabilitySet`,
+permissions, tool access, network access, or runtime grants.
 
 ## R
 

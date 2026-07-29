@@ -66,6 +66,7 @@ Examples include:
 - agent definition permission references resolve to existing permission IDs
 - deprecated AgentSet behavior fields do not broaden effective configuration
 - permission capabilities reference existing capability IDs
+- approval gate targets resolve by their declared kind and required scope
 - tasks reference existing owners and dependencies
 - workflow steps reference existing tasks
 - handoffs reference existing actors and artifacts
@@ -81,7 +82,8 @@ known gaps, and fields that remain unsafe to resolve generically.
 
 The repository implements shared typed-reference shapes and focused structural
 checks. This evidence supports the schema definitions described in
-[Typed References](typed-references.md); it does not establish
+[Typed References](typed-references.md), including the closed approval target
+contract described in [Approval Gate Targets](approval-gate-targets.md); it does not establish
 `NF-SEMANTIC` conformance.
 
 A tool claiming complete typed-reference support MUST cover:
@@ -113,6 +115,23 @@ A tool claiming this support MUST:
 
 This support does not establish workflow graph correctness, artifact provenance,
 policy enforcement, or complete `NF-SEMANTIC` conformance.
+
+### Provider Feature Support
+
+The repository implements the closed provider feature vocabulary described in
+[Provider Features](provider-features.md).
+
+A tool claiming this support MUST:
+
+- keep provider features separate from `CapabilitySet` action identifiers
+- reject unknown, duplicate, and empty feature declarations
+- reject simultaneous `features` and legacy `capabilities`
+- treat legacy provider `capabilities` as migration data, not references
+- avoid inferring permission, tool access, network access, or provider
+  availability from a feature
+
+This support does not establish provider selection, live model capability,
+provider availability, authorization, or runtime conformance.
 
 ### Agent Assembly Inspection
 
@@ -188,26 +207,35 @@ A conforming extension MUST:
 
 ## Conformance Claims
 
-Tools SHOULD state conformance claims explicitly.
+Tools SHOULD publish explicit, versioned conformance claims. NexFlow provides a
+[machine-readable schema and YAML template](../conformance/README.md) plus a
+matching [human-readable template](../conformance/CONFORMANCE-CLAIM.template.md).
+The complete contract is documented in
+[Conformance Claims](conformance-claims.md).
 
-Example:
+Every claim identifies:
 
-```text
-Supports: NF-MANIFEST, NF-SCHEMA
-Does not support: NF-SEMANTIC, NF-RUNTIME
-Spec versions: 0.1
-```
-
-Runtime or CLI documentation SHOULD also list:
-
+- one exact subject version
+- supported NexFlow `specVersion` values
 - supported manifest kinds
-- supported `specVersion` values
-- unsupported fields
 - supported extension namespaces
-- validation limitations
-- enforcement limitations
+- a status for every current conformance level
+- validation behavior and enforcement behavior
+- evidence and limitations
+- a responsible party
 
-Conformance claims are compatibility claims. A change can affect one conformance level without affecting another. For example, an optional schema field may preserve `NF-SCHEMA`, while a change to approval gate meaning may affect `NF-RUNTIME`.
+Level status is one of `supported`, `partial`, `unsupported`,
+`not-applicable`, or `not-evaluated`. `supported` and `partial` require evidence.
+`partial` also requires explicit limitations. Missing or unevaluated support MUST
+NOT be inferred as compatibility.
+
+Claims are self-declared compatibility statements. They are not NexFlow
+certification, permission grants, approvals, or proof of runtime safety.
+
+Conformance claims are compatibility claims. A change can affect one conformance
+level without affecting another. For example, an optional schema field may
+preserve `NF-SCHEMA`, while a change to approval gate meaning may affect
+`NF-RUNTIME`.
 
 ## Non-Conforming Behavior
 
@@ -233,6 +261,7 @@ This repository currently provides:
 - `NF-SCHEMA` draft schemas
 - reference examples
 - full schema validation for maintained examples
+- standalone machine-readable and human-readable conformance claim templates
 - limited semantic reference smoke checks that do not establish complete `NF-SEMANTIC` conformance
 - validation guidance
 

@@ -40,6 +40,8 @@ Examples are part of the specification surface. They should remain small enough 
 - [ ] Context source IDs are defined in `context.yaml` before use.
 - [ ] Memory scope names are declared or standard.
 - [ ] Provider IDs are defined in `providers.yaml` before use.
+- [ ] Provider declarations use `features`, not deprecated `capabilities`.
+- [ ] Provider features use the closed core vocabulary and are not treated as `CapabilitySet` references.
 - [ ] Model profile IDs are defined in `model-profiles.yaml` before use.
 - [ ] Prompt set IDs are defined in `prompt-sets.yaml` before use.
 - [ ] Retrieval profile IDs are defined in `retrieval-profiles.yaml` before use.
@@ -71,6 +73,9 @@ Examples are part of the specification surface. They should remain small enough 
 - [ ] Permissions describe allow, deny, or approval-required policy decisions.
 - [ ] High-risk capabilities are denied or approval-gated.
 - [ ] Approval gates reference existing approvers.
+- [ ] Approval gate targets use an accepted typed kind and the required scope.
+- [ ] Approval gate targets resolve exactly within their declared namespace.
+- [ ] Maintained examples do not use deprecated approval gate `appliesTo` values.
 - [ ] Approval gate IDs are reused consistently across project policy, permissions, tasks, workflows, and agent definitions.
 - [ ] Dangerous actions do not rely on implied approval.
 - [ ] Provider, extension, network, command, deployment, and destructive actions remain explicit.

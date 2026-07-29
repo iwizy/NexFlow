@@ -1,0 +1,364 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nexflow.dev/conformance/conformance-claim.schema.json",
+  "title": "NexFlow Conformance Claim",
+  "description": "A standalone, self-declared compatibility claim. This document is not a NexFlow project manifest, certification, permission grant, approval, or runtime guarantee.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "claimVersion",
+    "kind",
+    "metadata",
+    "subject",
+    "scope",
+    "claims",
+    "behavior",
+    "limitations",
+    "attestation"
+  ],
+  "properties": {
+    "claimVersion": {
+      "const": "0.1",
+      "description": "Version of the standalone conformance claim format, independent of manifest specVersion."
+    },
+    "kind": {
+      "const": "NexFlowConformanceClaim"
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "status",
+        "issuedAt"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "status": {
+          "enum": [
+            "draft",
+            "published",
+            "withdrawn"
+          ]
+        },
+        "issuedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "subject": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "version",
+        "type"
+      ],
+      "properties": {
+        "name": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "version": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "type": {
+          "enum": [
+            "project",
+            "validator",
+            "cli",
+            "runtime",
+            "extension",
+            "library",
+            "service",
+            "other"
+          ]
+        },
+        "description": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "homepage": {
+          "type": "string",
+          "format": "uri"
+        },
+        "sourceRepository": {
+          "type": "string",
+          "format": "uri"
+        }
+      }
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "specVersions",
+        "manifestKinds",
+        "extensionNamespaces"
+      ],
+      "properties": {
+        "specVersions": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^[0-9]+\\.[0-9]+$"
+          }
+        },
+        "schemaSnapshots": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "specVersion",
+              "revision",
+              "source"
+            ],
+            "properties": {
+              "specVersion": {
+                "type": "string",
+                "pattern": "^[0-9]+\\.[0-9]+$"
+              },
+              "revision": {
+                "$ref": "#/$defs/nonEmptyString"
+              },
+              "source": {
+                "type": "string",
+                "format": "uri"
+              }
+            }
+          }
+        },
+        "manifestKinds": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Z][A-Za-z0-9]*$"
+          }
+        },
+        "extensionNamespaces": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/nonEmptyString"
+          }
+        },
+        "unsupportedFields": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/nonEmptyString"
+          }
+        }
+      }
+    },
+    "claims": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "NF-MANIFEST",
+        "NF-SCHEMA",
+        "NF-SEMANTIC",
+        "NF-CLI",
+        "NF-RUNTIME",
+        "NF-EXTENSION"
+      ],
+      "properties": {
+        "NF-MANIFEST": {
+          "$ref": "#/$defs/levelClaim"
+        },
+        "NF-SCHEMA": {
+          "$ref": "#/$defs/levelClaim"
+        },
+        "NF-SEMANTIC": {
+          "$ref": "#/$defs/levelClaim"
+        },
+        "NF-CLI": {
+          "$ref": "#/$defs/levelClaim"
+        },
+        "NF-RUNTIME": {
+          "$ref": "#/$defs/levelClaim"
+        },
+        "NF-EXTENSION": {
+          "$ref": "#/$defs/levelClaim"
+        }
+      }
+    },
+    "behavior": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "validation",
+        "enforcement"
+      ],
+      "properties": {
+        "validation": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "enforcement": {
+          "$ref": "#/$defs/nonEmptyString"
+        }
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/nonEmptyString"
+      }
+    },
+    "attestation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "assurance",
+        "responsibleParty"
+      ],
+      "properties": {
+        "assurance": {
+          "const": "self-declared"
+        },
+        "responsibleParty": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "contact": {
+          "type": "string",
+          "format": "uri"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9]*(?:[-_][a-z0-9]+)*$"
+    },
+    "nonEmptyString": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": ".*\\S.*"
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "description"
+      ],
+      "properties": {
+        "type": {
+          "enum": [
+            "documentation",
+            "test-suite",
+            "fixture-suite",
+            "audit",
+            "other"
+          ]
+        },
+        "description": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "uri": {
+          "type": "string",
+          "format": "uri"
+        },
+        "revision": {
+          "$ref": "#/$defs/nonEmptyString"
+        }
+      }
+    },
+    "levelClaim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "summary"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "supported",
+            "partial",
+            "unsupported",
+            "not-applicable",
+            "not-evaluated"
+          ]
+        },
+        "summary": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "evidence": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/evidence"
+          }
+        },
+        "limitations": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/nonEmptyString"
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "required": [
+              "status"
+            ],
+            "properties": {
+              "status": {
+                "enum": [
+                  "supported",
+                  "partial"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "evidence"
+            ],
+            "properties": {
+              "evidence": {
+                "minItems": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "required": [
+              "status"
+            ],
+            "properties": {
+              "status": {
+                "const": "partial"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "limitations"
+            ],
+            "properties": {
+              "limitations": {
+                "minItems": 1
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

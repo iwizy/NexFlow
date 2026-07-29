@@ -13,6 +13,7 @@ Related documents:
 - [Validation](validation.md)
 - [Schema Design Notes](schema-design-notes.md)
 - [Typed References](typed-references.md)
+- [Approval Gate Targets](approval-gate-targets.md)
 - [Work Reference Namespaces](work-reference-namespaces.md)
 - [RFC-0015: Typed References](../rfcs/RFC-0015-typed-references.md)
 - [Effective Agent Configuration](effective-agent-configuration.md)
@@ -119,6 +120,7 @@ not merge inputs, standing grants, or effective behavior sources.
 | `PermissionSet.permissions[].subjects[]` | Actor identity | Checked | Resolve policy subjects without treating actor presence as authority. |
 | `PermissionSet.permissions[].capabilities[]` | `CapabilitySet.capabilities[].id` | Checked | Resolve the capability vocabulary before applying `allow`, `deny`, or `approval_required`. |
 | `PermissionSet.permissions[].approvalGate` | `Project.project.approvalGates[].id` | Checked | Require a resolvable gate when the permission contract calls for approval. |
+| `Project.project.approvalGates[].targets[]` | Kind-specific agent definition, capability, permission, context source, memory scope, provider, task, workflow, workflow stage, workflow step, or extension ID | Checked | Require a typed target, exact kind-specific lookup, and explicit workflow scope for stages or steps. Target resolution does not satisfy the gate or grant access. |
 | `ContextSet.contextSources[].access.allowedActors[]` | Actor identity | Checked | Resolve allow-list entries; this does not override explicit deny or broader policy. |
 | `ContextSet.contextSources[].access.deniedActors[]` | Actor identity | Gap | Resolve deny-list entries before calculating readable context. |
 | `ContextSet.contextSources[].approvalGates[]` | `Project.project.approvalGates[].id` | Checked | Resolve every gate associated with source access. |
@@ -140,7 +142,6 @@ not merge inputs, standing grants, or effective behavior sources.
 | `networkAccess.audit.events[]` | `EventSet.events[].type` | Checked | Resolve required network decision event types. |
 | `humanOverride.audit.events[]` | `EventSet.events[].type` | Checked | Resolve human-control audit event types. |
 | `Project.project.approvalGates[].events[]` | `EventSet.events[].type` | Gap | Resolve gate lifecycle event types. |
-| `ProviderSet.providers[].capabilities[]` | `CapabilitySet.capabilities[].id` | Gap | Resolve advertised capability vocabulary; provider support does not grant actor access. |
 | `ModelProfileSet.modelProfiles[].selection.providerRefs[]` | `ProviderSet.providers[].id` | Checked | Resolve eligible providers. |
 | `selection.pinnedModel.providerRef` | `ProviderSet.providers[].id` | Checked | Resolve the provider while keeping `modelId` provider-local. |
 | `fallback.candidateProviderRefs[]` | `ProviderSet.providers[].id` | Checked | Resolve fallback candidates; policy still determines eligibility. |
@@ -202,11 +203,10 @@ safely through a generic ID search:
 
 | Field | Current ambiguity | Required direction |
 | --- | --- | --- |
-| `Project.project.approvalGates[].appliesTo[]` | Current examples use task-like and capability-like IDs, while future proposals include multiple target kinds. | Adopt a typed or target-specific field contract before semantic resolution. |
 | `PromptSet.promptSets[].prompts[].appliesTo[]` | A prompt may target roles, agents, tasks, workflows, tools, or other prompt-local concepts. | Define the allowed target kinds and scope per prompt kind. |
 
-A validator MUST preserve these values, may report that their semantic contract
-is unsupported, and MUST NOT resolve them by searching every namespace.
+A validator MUST preserve this value, may report that its semantic contract
+is unsupported, and MUST NOT resolve it by searching every namespace.
 
 ## Reference-Like Values Outside This Inventory
 
@@ -217,6 +217,7 @@ These values are not core cross-manifest references:
 | `Project.manifests.*` | Discovery locator or authoring hint, not resource identity. |
 | Prompt `sourceRef` and review `evidenceRefs` | Content or evidence locators whose schemes are not core resource namespaces. |
 | Context `mcp.serverId` | Integration-local server handle, not an `ExtensionSet` resource reference. |
+| Provider `features` and deprecated provider `capabilities` | Provider feature labels, not `CapabilitySet` resource references. Maintained manifests use `features`; semantic smoke reports legacy `capabilities`. |
 | Provider `modelId` and model revision | Provider-local identifiers resolved after provider eligibility. |
 | Extension `namespace` and `appliesTo` | Extension ownership and domain labels, not resource IDs. |
 | Event payload field names | Payload expectations, not references to declared resources. |
@@ -271,12 +272,17 @@ same-ID resource exists elsewhere.
   in the assembly artifact namespace
 - resolves the fields marked **Checked** or **Partial**
 - checks typed ActorSet relationship kinds and actor relationship cycles
+- resolves typed approval gate targets and reports deprecated ambiguous
+  `appliesTo`
 - checks unique unscoped active agent definition selection
 - checks selected prompt and retrieval lifecycle requirements
 - reports one generic semantic diagnostic family
 
 `npm run work-reference-namespace-smoke` exercises the same workflow step and
 artifact namespace implementation with 13 focused positive and negative cases.
+
+`npm run approval-gate-target-schema-smoke` exercises approval target authored
+kind and scope boundaries with 16 focused positive and negative cases.
 
 It does not:
 

@@ -119,7 +119,11 @@ Memory scopes describe retention, ownership, visibility, update rules, sensitivi
 
 ## Provider
 
-A model or service provider abstraction. Providers can describe capabilities and preferences without becoming part of the core specification.
+A model or service provider abstraction. Providers can describe model support
+features, preferences, and constraints without granting project action
+capabilities or becoming vendor requirements in the core specification.
+
+Provider features and action capabilities are separate namespaces.
 
 ## Model Profile
 

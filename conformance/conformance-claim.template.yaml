@@ -1,0 +1,80 @@
+# Template only. Replace every example value before publishing a claim.
+# A claim is self-declared compatibility information, not NexFlow certification.
+claimVersion: "0.1"
+kind: NexFlowConformanceClaim
+
+metadata:
+  id: example-tool-0-1-0
+  status: draft
+  issuedAt: "2026-01-01T00:00:00Z"
+
+subject:
+  name: Example Tool
+  version: "0.1.0"
+  type: validator
+  description: Replace with a factual description of the evaluated artifact.
+  homepage: https://example.com/example-tool
+  sourceRepository: https://example.com/example-tool/source
+
+scope:
+  specVersions:
+    - "0.1"
+  schemaSnapshots:
+    - specVersion: "0.1"
+      revision: replace-with-tag-or-commit
+      source: https://github.com/iwizy/NexFlow
+  manifestKinds:
+    - Project
+  extensionNamespaces: []
+  unsupportedFields:
+    - Replace with unsupported fields, or remove this property when none are known.
+
+claims:
+  NF-MANIFEST:
+    status: not-evaluated
+    summary: Replace with the evaluated manifest authoring or consumption scope.
+    evidence: []
+    limitations:
+      - Replace with known limitations.
+  NF-SCHEMA:
+    status: not-evaluated
+    summary: Replace with the evaluated structural validation scope.
+    evidence: []
+    limitations:
+      - Replace with known limitations.
+  NF-SEMANTIC:
+    status: not-evaluated
+    summary: Replace with the evaluated cross-manifest validation scope.
+    evidence: []
+    limitations:
+      - Replace with known limitations.
+  NF-CLI:
+    status: not-evaluated
+    summary: Replace with the evaluated command and output scope.
+    evidence: []
+    limitations:
+      - Replace with known limitations.
+  NF-RUNTIME:
+    status: not-evaluated
+    summary: Replace with the evaluated enforcement scope.
+    evidence: []
+    limitations:
+      - Replace with known limitations.
+  NF-EXTENSION:
+    status: not-evaluated
+    summary: Replace with the evaluated extension namespace and lifecycle scope.
+    evidence: []
+    limitations:
+      - Replace with known limitations.
+
+behavior:
+  validation: Replace with what is parsed, checked, rejected, preserved, or skipped.
+  enforcement: Replace with what is enforced at runtime, or state that no enforcement exists.
+
+limitations:
+  - Replace with limitations that apply to the claim as a whole.
+
+attestation:
+  assurance: self-declared
+  responsibleParty: Replace with the person or organization responsible for the claim.
+  contact: mailto:conformance@example.com

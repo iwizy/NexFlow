@@ -93,6 +93,62 @@ function requireTypedRefs(file, value, targets, label, targetLabel, expectedKind
   return ids;
 }
 
+function requireApprovalGateTargets(file, gate, namespaces, workflow) {
+  const label = `approval gate ${JSON.stringify(gate?.id)}`;
+
+  for (const legacyTarget of stringItems(gate?.appliesTo)) {
+    report(
+      file,
+      `${label} uses deprecated ambiguous appliesTo target ${JSON.stringify(legacyTarget)}; migrate it to a typed targets entry`
+    );
+  }
+
+  for (const target of asArray(gate?.targets)) {
+    if (target === null || typeof target !== "object" || Array.isArray(target)) {
+      report(file, `${label} contains a non-object typed target`);
+      continue;
+    }
+
+    const targetKind = target.kind;
+    const targetId = target.id;
+    const targetLabel = `${label} target ${JSON.stringify(targetKind)}:${JSON.stringify(targetId)}`;
+
+    if (targetKind === "workflow-stage" || targetKind === "workflow-step") {
+      if (target.scope?.kind !== "workflow" || typeof target.scope?.id !== "string") {
+        report(file, `${targetLabel} requires explicit workflow scope`);
+        continue;
+      }
+
+      if (target.scope.id !== workflow?.id) {
+        report(
+          file,
+          `${targetLabel} references unknown workflow scope ${JSON.stringify(target.scope.id)}`
+        );
+        continue;
+      }
+
+      const scopedTargets = targetKind === "workflow-stage"
+        ? namespaces.get("workflow-stage")
+        : namespaces.get("workflow-step");
+      requireRefs(file, [targetId], scopedTargets, targetLabel, targetKind);
+      continue;
+    }
+
+    if (target.scope !== undefined) {
+      report(file, `${targetLabel} must not declare scope`);
+      continue;
+    }
+
+    const targetNamespace = namespaces.get(targetKind);
+    if (!targetNamespace) {
+      report(file, `${targetLabel} uses unsupported approval target kind`);
+      continue;
+    }
+
+    requireRefs(file, [targetId], targetNamespace, targetLabel, targetKind);
+  }
+}
+
 function isHumanControlledActor(id, actorById, visiting = new Set()) {
   if (visiting.has(id)) return false;
 
@@ -180,6 +236,9 @@ function validateProjectSet(directory, manifests) {
   const agents = new Set();
   const actors = new Set();
   const tasks = new Set();
+  const workflows = new Set();
+  const workflowStages = new Set();
+  const workflowSteps = new Set();
   const approvalGates = new Set();
   const permissions = new Set();
   const capabilities = new Set();
@@ -246,6 +305,13 @@ function validateProjectSet(directory, manifests) {
   for (const diagnostic of workflowNamespace.diagnostics) {
     report(workflowFile, diagnostic.message);
   }
+  addUnique(workflowFile, workflows, workflow?.id, "workflow");
+  for (const stage of asArray(workflow?.stages)) {
+    if (typeof stage?.id === "string" && stage.id.length > 0) {
+      workflowStages.add(stage.id);
+    }
+  }
+  for (const stepId of workflowNamespace.ids) workflowSteps.add(stepId);
 
   for (const permission of asArray(manifests.get("PermissionSet")?.data?.permissions)) {
     addUnique(permissionsFile, permissions, permission?.id, "permission");
@@ -265,6 +331,12 @@ function validateProjectSet(directory, manifests) {
 
   for (const provider of asArray(manifests.get("ProviderSet")?.data?.providers)) {
     addUnique(providersFile, providers, provider?.id, "provider");
+    for (const legacyFeature of stringItems(provider?.capabilities)) {
+      report(
+        providersFile,
+        `provider ${JSON.stringify(provider?.id)} uses deprecated capabilities value ${JSON.stringify(legacyFeature)}; migrate it to the provider-local features field`
+      );
+    }
   }
 
   for (const profile of asArray(manifests.get("ModelProfileSet")?.data?.modelProfiles)) {
@@ -316,6 +388,24 @@ function validateProjectSet(directory, manifests) {
 
   for (const gate of asArray(project.approvalGates)) {
     requireRefs(projectFile, gate?.requiredApprovers, actors, `approval gate ${JSON.stringify(gate?.id)}`, "actor");
+    requireApprovalGateTargets(
+      projectFile,
+      gate,
+      new Map([
+        ["agent-definition", agentDefinitions],
+        ["capability", capabilities],
+        ["permission", permissions],
+        ["context-source", contextSources],
+        ["memory-scope", memoryScopes],
+        ["provider", providers],
+        ["task", tasks],
+        ["workflow", workflows],
+        ["workflow-stage", workflowStages],
+        ["workflow-step", workflowSteps],
+        ["extension", extensions]
+      ]),
+      workflow
+    );
   }
 
   if (hasActorSet) {
@@ -595,6 +685,6 @@ if (diagnostics.length > 0) {
   process.exitCode = 1;
 } else {
   console.log(`Semantic reference smoke checks passed for ${projects.size} example project(s).`);
-  console.log("Checked core actor identity, agent bridges, active definition authority, task, workflow, artifact, permission, network policy, human override, context, profile, gate, event, and extension references.");
+  console.log("Checked core actor identity, agent bridges, active definition authority, approval targets, provider feature migration, task, workflow, artifact, permission, network policy, human override, context, profile, gate, event, and extension references.");
   console.log("This is a repository smoke check, not full semantic validation.");
 }

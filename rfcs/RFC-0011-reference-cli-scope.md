@@ -373,15 +373,11 @@ Runtime preflight checks remain out of scope until runtime behavior is specified
 
 A CLI may claim `NF-CLI` conformance only for supported commands and spec versions.
 
-Example claim:
-
-```text
-Supports: NF-MANIFEST, NF-SCHEMA, NF-CLI
-Partial: NF-SEMANTIC
-Does not support: NF-RUNTIME
-Spec versions: 0.1
-Commands: validate, inspect
-```
+A CLI claim should use the standalone
+[conformance claim templates](../docs/conformance-claims.md), identify the exact
+CLI version and supported spec versions, and describe supported commands in the
+`NF-CLI` summary and evidence. It must assign an explicit status to every
+current conformance level.
 
 The CLI must not claim `NF-RUNTIME` conformance unless it actually implements runtime enforcement under a future accepted runtime specification.
 

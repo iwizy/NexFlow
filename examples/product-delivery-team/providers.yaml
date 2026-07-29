@@ -6,7 +6,7 @@ providers:
   - id: product_reasoning
     type: abstract
     description: Provider-neutral product and UX reasoning class.
-    capabilities:
+    features:
       - text_generation
       - visual_reasoning
     constraints:
@@ -16,7 +16,7 @@ providers:
   - id: coding_reasoning
     type: abstract
     description: Provider-neutral coding and testing reasoning class.
-    capabilities:
+    features:
       - text_generation
       - code_reasoning
       - tool_reasoning

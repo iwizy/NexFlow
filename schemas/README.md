@@ -85,7 +85,8 @@ Breaking schema changes require migration guidance and should be routed through 
 Use `common.schema.json` for shared concepts:
 
 - IDs
-- typed references, scalar-compatible migration unions, and the closed target-kind vocabulary
+- typed references, scalar-compatible migration unions, closed target-kind
+  vocabularies, and approval gate targets
 - dotted event types
 - metadata
 - autonomy levels
@@ -189,6 +190,7 @@ npm ci
 npm run validate
 npm run negative-schema-fixtures
 npm run typed-reference-schema-smoke
+npm run approval-gate-target-schema-smoke
 npm run work-reference-namespace-smoke
 npm run actor-schema-smoke
 npm run agent-identity-schema-smoke
@@ -201,6 +203,10 @@ npm run semantic-smoke
 The typed-reference command checks the shared primitive definitions directly.
 It covers authored structure and lexical boundaries, not target existence,
 cross-manifest resolution, or complete semantic conformance.
+
+The approval gate target command checks the strict field-specific target kinds,
+assembly and workflow scope, legacy coexistence boundary, duplicate rejection,
+and closed object shape. Semantic target existence remains a separate check.
 
 The work-reference namespace command checks workflow-wide step and
 assembly-wide artifact identity, duplicate rejection, and exact dependency and

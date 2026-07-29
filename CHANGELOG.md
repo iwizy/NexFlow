@@ -49,6 +49,9 @@ tag or release has been published, and manifest `specVersion` remains `"0.1"`.
   actor, agent, and extension reference definitions.
 - Added deterministic workflow-wide step and assembly-wide task artifact
   namespace contracts with 13 focused positive and negative cases.
+- Added typed approval gate targets with closed resource kinds, explicit workflow
+  scope, 16 focused schema cases, semantic target resolution, and migration
+  guidance for deprecated ambiguous `appliesTo`.
 - Added a standalone `0.1` conformance claim schema, synchronized YAML and
   Markdown templates, evidence and limitation rules, publication guidance, and
   13 focused positive and negative format checks.
@@ -63,6 +66,8 @@ tag or release has been published, and manifest `specVersion` remains `"0.1"`.
 - Extended semantic reference smoke checks to reject duplicate workflow stages,
   workflow steps, and task artifacts while resolving step dependencies and
   handoff artifacts through the accepted namespaces.
+- Migrated maintained approval gate target examples from scalar `appliesTo`
+  values to exact typed task and context-source references.
 - Added a roadmap checkpoint separating candidate evidence, release decisions,
   known draft boundaries, and post-`0.1` work.
 - Simplified the required AgentSet shape to stable AI identity, role,

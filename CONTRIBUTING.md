@@ -72,6 +72,7 @@ npm ci
 npm run validate
 npm run negative-schema-fixtures
 npm run typed-reference-schema-smoke
+npm run approval-gate-target-schema-smoke
 npm run work-reference-namespace-smoke
 npm run actor-schema-smoke
 npm run agent-identity-schema-smoke

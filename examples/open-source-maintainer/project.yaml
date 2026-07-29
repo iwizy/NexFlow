@@ -26,27 +26,32 @@ project:
       description: Maintainer approval required for issue scope, labels, and accepted work.
       requiredApprovers:
         - maintainer
-      appliesTo:
-        - triage-issue
-        - accept-maintainer-scope
+      targets:
+        - kind: task
+          id: triage-issue
+        - kind: task
+          id: accept-maintainer-scope
     - id: docs_review
       description: Maintainer approval required before documentation changes are proposed.
       requiredApprovers:
         - maintainer
-      appliesTo:
-        - update-docs
+      targets:
+        - kind: task
+          id: update-docs
     - id: pr_review
       description: Maintainer approval required before review findings become an approval decision.
       requiredApprovers:
         - maintainer
-      appliesTo:
-        - review-pull-request
+      targets:
+        - kind: task
+          id: review-pull-request
     - id: release_note_approval
       description: Maintainer approval required before release notes are published or attached to a release.
       requiredApprovers:
         - maintainer
-      appliesTo:
-        - prepare-release-notes
+      targets:
+        - kind: task
+          id: prepare-release-notes
 manifests:
   agents: agents.yaml
   agentDefinitions: agent-definitions.yaml

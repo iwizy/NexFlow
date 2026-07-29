@@ -76,9 +76,11 @@ approvalGates:
     description: Reviewer approval required before merge.
     requiredApprovers:
       - reviewer
-    appliesTo:
-      - write_repository
-      - create_pull_request
+    targets:
+      - kind: capability
+        id: write_repository
+      - kind: capability
+        id: create_pull_request
     events:
       - review.requested
       - review.completed
@@ -93,6 +95,16 @@ The declaration should identify:
 - events expected for audit
 
 An approval gate declaration is not an approval decision. It does not authorize an action by itself.
+
+The implemented `targets` slice uses closed typed references for accepted
+agent-definition, capability, permission, context-source, memory-scope, provider,
+task, workflow, workflow-stage, workflow-step, and extension targets. Workflow
+stages and steps require explicit workflow scope; other accepted kinds are
+assembly-scoped.
+
+Legacy `appliesTo` remains schema-valid as a deprecated `0.1` migration form. It
+cannot coexist with `targets` and must not be resolved through cross-kind search.
+See [Approval Gate Targets](../docs/approval-gate-targets.md).
 
 ## Approval Request
 
@@ -340,6 +352,9 @@ Unsupported approval behavior MUST NOT be treated as allowed behavior.
 Future semantic validators should check:
 
 - referenced approval gates exist
+- typed gate targets use accepted kinds and scope
+- typed gate targets resolve exactly in the declared namespace
+- legacy `appliesTo` values are reported as unsupported ambiguity
 - required approvers reference declared actors, roles, teams, or policy authorities
 - permissions with `approval_required` include an approval gate
 - high-risk capabilities have explicit deny or approval gates
@@ -353,7 +368,9 @@ Validators should report warnings separately from hard errors when project polic
 
 ## Compatibility Impact
 
-This RFC does not change manifest structure.
+The implemented typed-target slice adds optional `targets` to the compact gate
+declaration and deprecates ambiguous scalar `appliesTo`. Maintained examples have
+been migrated.
 
 If accepted, it may guide:
 
@@ -363,7 +380,8 @@ If accepted, it may guide:
 - future runtime conformance requirements
 - future schema additions for richer approval request or decision metadata
 
-No existing schema, example, or manifest needs migration because of this RFC.
+Earlier unreleased `0.1` manifests using `appliesTo` need an intent-preserving
+migration to typed targets before semantic target resolution is supported.
 
 Future changes to approval meaning can affect `NF-SEMANTIC`, `NF-RUNTIME`, safety, and audit compatibility.
 

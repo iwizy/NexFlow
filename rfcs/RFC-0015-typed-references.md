@@ -777,14 +777,22 @@ task: release-review
 workflow: release-review
 ```
 
-Example legacy field:
+Example deprecated legacy field:
 
 ```yaml
 appliesTo:
   - release-review
 ```
 
-A validator must require the author to choose a kind.
+A validator must report that the target cannot be resolved safely and require the
+author to choose a kind. The current approval gate contract replaces this shape
+with `targets`:
+
+```yaml
+targets:
+  - kind: task
+    id: release-review
+```
 
 ### Wrong Kind
 
@@ -905,7 +913,7 @@ Example:
       "path": "$.workflow.id"
     }
   ],
-  "message": "Reference matches more than one allowed target kind; add an explicit kind."
+  "message": "Deprecated approval target matches more than one allowed target kind; migrate to targets with an explicit kind."
 }
 ```
 
@@ -999,11 +1007,14 @@ behavior.
 
 ## Relationship To Approval Gates
 
-RFC-0007 includes fields such as `appliesTo` whose targets may span multiple
-resource kinds.
+RFC-0007 now defines `approvalGates[].targets[]` as a closed typed-reference
+contract for the accepted approval target kinds. Workflow stages and steps
+require explicit workflow scope; assembly-scoped target kinds prohibit scope.
 
-These fields are primary candidates for mandatory explicit typing because adding
-a new same-ID declaration must not silently change gate scope.
+The deprecated `appliesTo` field remains structurally accepted only as a
+migration input. Semantic validation reports it instead of searching multiple
+namespaces, because adding a new same-ID declaration must not silently change
+gate scope.
 
 ## Relationship To Validation Strategy
 

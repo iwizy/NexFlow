@@ -36,6 +36,9 @@ jobs:
       - name: Run work reference namespace checks
         run: npm run work-reference-namespace-smoke
 
+      - name: Run approval gate target schema checks
+        run: npm run approval-gate-target-schema-smoke
+
       - name: Run ActorSet schema boundary checks
         run: npm run actor-schema-smoke
 

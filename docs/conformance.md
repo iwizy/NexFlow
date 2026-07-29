@@ -66,6 +66,7 @@ Examples include:
 - agent definition permission references resolve to existing permission IDs
 - deprecated AgentSet behavior fields do not broaden effective configuration
 - permission capabilities reference existing capability IDs
+- approval gate targets resolve by their declared kind and required scope
 - tasks reference existing owners and dependencies
 - workflow steps reference existing tasks
 - handoffs reference existing actors and artifacts
@@ -81,7 +82,8 @@ known gaps, and fields that remain unsafe to resolve generically.
 
 The repository implements shared typed-reference shapes and focused structural
 checks. This evidence supports the schema definitions described in
-[Typed References](typed-references.md); it does not establish
+[Typed References](typed-references.md), including the closed approval target
+contract described in [Approval Gate Targets](approval-gate-targets.md); it does not establish
 `NF-SEMANTIC` conformance.
 
 A tool claiming complete typed-reference support MUST cover:

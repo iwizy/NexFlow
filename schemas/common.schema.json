@@ -177,6 +177,97 @@
       },
       "uniqueItems": true
     },
+    "approvalGateTargetKind": {
+      "title": "Approval Gate Target Kind",
+      "description": "Closed resource kinds that a reusable approval gate declaration may target.",
+      "type": "string",
+      "enum": [
+        "agent-definition",
+        "capability",
+        "permission",
+        "context-source",
+        "memory-scope",
+        "provider",
+        "task",
+        "workflow",
+        "workflow-stage",
+        "workflow-step",
+        "extension"
+      ]
+    },
+    "approvalGateTarget": {
+      "title": "Approval Gate Target",
+      "description": "Typed reference to a resource governed by an approval gate. Workflow stages and steps require explicit workflow scope; all other accepted targets are assembly-scoped.",
+      "allOf": [
+        {
+          "$ref": "#/$defs/typedReference"
+        },
+        {
+          "properties": {
+            "kind": {
+              "$ref": "#/$defs/approvalGateTargetKind"
+            }
+          }
+        },
+        {
+          "oneOf": [
+            {
+              "properties": {
+                "kind": {
+                  "enum": [
+                    "agent-definition",
+                    "capability",
+                    "permission",
+                    "context-source",
+                    "memory-scope",
+                    "provider",
+                    "task",
+                    "workflow",
+                    "extension"
+                  ]
+                },
+                "scope": false
+              }
+            },
+            {
+              "required": ["scope"],
+              "properties": {
+                "kind": {
+                  "enum": [
+                    "workflow-stage",
+                    "workflow-step"
+                  ]
+                },
+                "scope": {
+                  "allOf": [
+                    {
+                      "$ref": "#/$defs/typedReferenceScope"
+                    },
+                    {
+                      "properties": {
+                        "kind": {
+                          "const": "workflow"
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "approvalGateTargetList": {
+      "title": "Approval Gate Target List",
+      "description": "Unique typed targets governed by an approval gate declaration.",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/approvalGateTarget"
+      },
+      "uniqueItems": true
+    },
     "actorReference": {
       "title": "Actor Reference",
       "description": "Assembly-scoped typed reference to an ActorSet declaration.",
@@ -671,13 +762,29 @@
         "requiredApprovers": {
           "$ref": "#/$defs/idList"
         },
+        "targets": {
+          "$ref": "#/$defs/approvalGateTargetList"
+        },
         "appliesTo": {
-          "$ref": "#/$defs/idList"
+          "allOf": [
+            {
+              "$ref": "#/$defs/idList"
+            }
+          ],
+          "deprecated": true,
+          "description": "Deprecated ambiguous scalar targets retained only for 0.1 migration. New declarations use typed targets."
         },
         "events": {
           "$ref": "#/$defs/eventTypeList"
         }
-      }
+      },
+      "allOf": [
+        {
+          "not": {
+            "required": ["targets", "appliesTo"]
+          }
+        }
+      ]
     },
     "extensionAttachment": {
       "type": "object",

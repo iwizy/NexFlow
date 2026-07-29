@@ -4,7 +4,10 @@ Approval gates define when human or policy approval is required before an actor 
 
 An approval gate is not a runtime by itself. It is a declarative policy object that future validators and runtimes can inspect and enforce.
 
-Related RFC: [RFC-0007: Approval Gates](../rfcs/RFC-0007-approval-gates.md).
+Related documents:
+
+- [Approval Gate Targets](approval-gate-targets.md)
+- [RFC-0007: Approval Gates](../rfcs/RFC-0007-approval-gates.md)
 
 ## Goals
 
@@ -31,7 +34,7 @@ The same gate ID may be referenced by multiple manifests when the approval polic
 
 ## Gate Declaration
 
-Current schemas support a compact approval gate shape:
+Current schemas support a compact approval gate declaration with typed targets:
 
 ```yaml
 approvalGates:
@@ -39,15 +42,39 @@ approvalGates:
     description: Reviewer approval required before merge.
     requiredApprovers:
       - reviewer
-    appliesTo:
-      - write_repository
-      - create_pull_request
+    targets:
+      - kind: capability
+        id: write_repository
+      - kind: capability
+        id: create_pull_request
     events:
       - review.requested
       - review.completed
 ```
 
 Future versions may add richer fields for quorum, expiry, revocation, evidence, and delegation.
+
+## Gate Targets
+
+`targets` identifies declared resources governed by the reusable gate:
+
+- agent definitions
+- capabilities and permissions
+- context sources and memory scopes
+- providers and extensions
+- tasks and workflows
+- workflow stages and steps with explicit workflow scope
+
+Every target uses a closed typed reference. Assembly-scoped resources prohibit
+authored scope. Workflow stages and steps require `scope.kind: workflow` and the
+exact owning workflow ID.
+
+Legacy `appliesTo` scalar lists remain schema-valid only for migration. They are
+ambiguous, deprecated, cannot coexist with `targets`, and must not be resolved by
+searching every namespace.
+
+See [Approval Gate Targets](approval-gate-targets.md) for the complete kind,
+scope, resolution, migration, compatibility, and validation contract.
 
 ## Approval Actors
 
@@ -240,6 +267,8 @@ The following behavior should be treated as non-conforming:
 
 - treating approval as implied by a capability
 - treating approval as permanent without policy
+- resolving deprecated `appliesTo` by first match across resource namespaces
+- accepting a typed target with the wrong kind or workflow scope
 - allowing an approval gate to override `deny`
 - letting agents self-approve high-risk actions
 - approving production actions without a human authority

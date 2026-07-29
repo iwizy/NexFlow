@@ -29,27 +29,32 @@ project:
       description: Principal investigator approval required for research scope and literature interpretation.
       requiredApprovers:
         - principal-investigator
-      appliesTo:
-        - review-literature
+      targets:
+        - kind: task
+          id: review-literature
     - id: experiment_approval
       description: Principal investigator approval required before experiment execution or result recording.
       requiredApprovers:
         - principal-investigator
-      appliesTo:
-        - design-experiment
-        - run-experiment
+      targets:
+        - kind: task
+          id: design-experiment
+        - kind: task
+          id: run-experiment
     - id: reproducibility_review
       description: Reproducibility reviewer approval required before findings are used in summaries.
       requiredApprovers:
         - reproducibility-reviewer
-      appliesTo:
-        - review-reproducibility
+      targets:
+        - kind: task
+          id: review-reproducibility
     - id: publication_review
       description: Principal investigator approval required before publication claims or summaries are accepted.
       requiredApprovers:
         - principal-investigator
-      appliesTo:
-        - prepare-research-summary
+      targets:
+        - kind: task
+          id: prepare-research-summary
 manifests:
   agents: agents.yaml
   agentDefinitions: agent-definitions.yaml

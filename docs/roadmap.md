@@ -125,6 +125,8 @@ Relevant docs: [Security Model](security-model.md), [Capability Model](capabilit
   smoke coverage expands.
 - Maintain focused typed-reference primitive checks and migrate fields only
   after their target-kind, scope, and compatibility contracts are explicit.
+- Keep approval gate target kinds, workflow scope, migration diagnostics, and
+  semantic resolution aligned with broader approval coverage work.
 - Keep workflow step and artifact namespace checks aligned with discovery,
   graph, handoff, and migration decisions.
 - Define conformance expectations for validators.
@@ -133,8 +135,10 @@ Relevant docs: [Security Model](security-model.md), [Capability Model](capabilit
   templates as validation behavior becomes more precise.
 
 Relevant docs: [Validation](validation.md), [Conformance](conformance.md),
-[Conformance Claims](conformance-claims.md), [Compatibility](compatibility.md),
-[Schema Guide](../schemas/README.md), [Examples Guide](../examples/README.md).
+[Conformance Claims](conformance-claims.md),
+[Approval Gate Targets](approval-gate-targets.md),
+[Compatibility](compatibility.md), [Schema Guide](../schemas/README.md),
+[Examples Guide](../examples/README.md).
 
 ## Milestone 4: Runtime Architecture Decision
 

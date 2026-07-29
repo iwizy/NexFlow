@@ -62,6 +62,9 @@ URLs, versions, credentials, provider preferences, or inline policy.
 | `typedReference` | Generic `kind`, `id`, and optional `scope` object. |
 | `resourceReference` | Transitional union of one scalar ID or typed object. |
 | `resourceReferenceList` | Unique list of transitional scalar or typed references. |
+| `approvalGateTargetKind` | Closed kinds accepted by approval gate declarations. |
+| `approvalGateTarget` | Strict target with kind-specific assembly or workflow scope. |
+| `approvalGateTargetList` | Unique typed targets for one gate. |
 | `actorReference` | Strict assembly-scoped reference with `kind: actor`. |
 | `agentReference` | Strict assembly-scoped reference with `kind: agent`. |
 | `extensionReference` | Strict assembly-scoped reference with `kind: extension`. |
@@ -172,7 +175,8 @@ agentRef:
 
 ActorSet `agentRef`, `operatedBy`, `representedBy`, and `integrationRef` use
 strict typed contracts today. Human override `authorities` reuses the strict
-actor reference.
+actor reference. Approval gate `targets` uses a strict multi-kind contract with
+closed kind and scope rules.
 
 ### Transitional Field
 
@@ -262,9 +266,10 @@ first match. A safe migration requires:
 6. negative fixtures for missing, ambiguous, wrong-kind, and invalid-scope
    inputs
 
-Current approval gate targets remain unchanged until their field-specific
-contract is accepted. The generic primitive alone does not make those scalar
-values safe or typed.
+Approval gate targets now use the field-specific `targets` contract documented
+in [Approval Gate Targets](approval-gate-targets.md). Deprecated scalar
+`appliesTo` remains structurally readable for migration but is not semantically
+resolved.
 
 ### Rollback
 
@@ -347,6 +352,7 @@ Implemented:
 - closed target-kind and ID lexical validation
 - strict ActorSet relationship fields
 - strict human override authority references
+- strict approval gate target kinds and workflow scope
 - workflow-wide step and assembly-wide artifact namespace contracts
 - focused primitive schema checks
 - ActorSet structural and selected semantic reference checks
@@ -358,7 +364,6 @@ Specified but not fully implemented:
 - stable `NF-REF-*` diagnostics
 - field-contract registry
 - generic semantic resolver
-- approval target normalization
 - explicit cross-workflow step references and task-scoped artifact references
 - complete typed-reference conformance fixtures
 

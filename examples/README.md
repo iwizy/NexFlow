@@ -29,7 +29,7 @@ authoritative unscoped selection.
 
 | File | Purpose |
 | --- | --- |
-| `project.yaml` | Project identity, maintainers, policies including network access and human override, approval gates, and manifest locations. |
+| `project.yaml` | Project identity, maintainers, policies including network access and human override, approval gates with typed targets, and manifest locations. |
 | `actors.yaml` | Optional first-class participant identity inventory; currently implemented by `minimal-team`. |
 | `agents.yaml` | Stable AI identity, plus deprecated behavior-field and mixed-participant compatibility during migration. |
 | `agent-definitions.yaml` | Versioned behavioral releases that assemble model, prompt, retrieval, permission, context, memory, autonomy, and extension references. |
@@ -93,6 +93,7 @@ All examples follow the same safety pattern:
   without granting access
 - draft definitions remain declaration and review data
 - risky capabilities are approval-gated
+- approval gate targets use explicit resource kinds and workflow scope where required
 - outbound network access is fail-closed and selected independently from capability and permission grants
 - human override can only narrow activity, remains blocked on failure, and requires approval before resume
 - context access is explicit

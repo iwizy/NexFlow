@@ -221,7 +221,9 @@ remain open.
 - retain scalar IDs for deterministic single-kind fields
 
 Status: workflow step and artifact namespace contracts are implemented.
-Approval target migration and broader typed-reference fixtures remain open.
+Approval targets now use a closed typed-reference contract, maintained examples
+are migrated, and focused fixtures cover shape, kind, scope, and coexistence
+failures. Broader typed-reference fixtures remain open.
 
 ### Phase 5: Profiles And Discovery
 

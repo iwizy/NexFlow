@@ -68,6 +68,18 @@ scalar field, changing its allowed target kinds or scope, or removing a
 transitional scalar form requires an explicit compatibility and version
 decision.
 
+## Approval Gate Target Version Decision
+
+Typed approval gate `targets` remains in `specVersion: "0.1"`. It is additive
+inside the unreleased draft. Maintained examples use the new typed form, while
+deprecated scalar `appliesTo` remains schema-valid only for migration and cannot
+coexist with `targets`.
+
+Removing `appliesTo`, changing the accepted target kinds, changing workflow
+scope, or allowing implicit cross-kind resolution requires an explicit
+compatibility and version decision. See
+[Approval Gate Targets](approval-gate-targets.md).
+
 ## Work Reference Namespace Version Decision
 
 Workflow-wide step identity and assembly-wide task artifact identity remain in

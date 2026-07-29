@@ -42,6 +42,7 @@ enforced.
 | Agent Assembly inspection view | Documentation contract for a derived effective-configuration projection | Specified | `docs/agent-assembly.md`, RFC-0014 | No resolver, serializer, JSON Schema, reference CLI output, or runtime implementation exists. |
 | Human override boundary smoke | 11 accepted and rejected structural cases | Implemented | `npm run human-override-schema-smoke` | Checks policy shape, not authentication, interruption, revocation, or runtime enforcement. |
 | Typed reference primitives | Common typed, scoped, transitional, and kind-specific definitions with 53 focused cases | Implemented | `schemas/common.schema.json`, `npm run typed-reference-schema-smoke` | Shape and lexical evidence only; no complete field-contract or semantic resolution conformance. |
+| Approval gate targets | Closed typed target kinds, assembly and workflow scope, migrated examples, and exact semantic lookup | Implemented | `docs/approval-gate-targets.md`, `npm run approval-gate-target-schema-smoke`, `npm run semantic-smoke` | Target resolution only; no gate coverage, decision state, approver authentication, or runtime enforcement. |
 | Work reference namespaces | Workflow-wide step and assembly-wide artifact rules with 13 focused cases | Implemented | `docs/work-reference-namespaces.md`, `npm run work-reference-namespace-smoke` | Identity and exact lookup evidence only; no cycle, ordering, provenance, disclosure, or runtime enforcement. |
 | Conformance claim format | Standalone `claimVersion: "0.1"` schema plus YAML and Markdown templates | Implemented | `conformance/`, `npm run conformance-claim-smoke` | Self-declared claim structure only; no certification, external evidence verification, registry, or conformance test suite. |
 | Semantic reference inventory | P0-P3 target namespaces, coverage, gaps, and deferred fields | Specified | `docs/semantic-reference-inventory.md` | Documentation contract only; it is not a manifest, generated registry, validator, or conformance suite. |
@@ -79,6 +80,7 @@ agent identity boundary smoke: scripts/agent-identity-schema-smoke.mjs
 agent definition authority smoke: scripts/agent-definition-authority-smoke.mjs
 human override boundary smoke: scripts/human-override-schema-smoke.mjs
 typed reference primitive smoke: scripts/typed-reference-schema-smoke.mjs
+approval gate target smoke: scripts/approval-gate-target-schema-smoke.mjs
 work reference namespace smoke: scripts/work-reference-namespace-smoke.mjs
 conformance claim format smoke: scripts/conformance-claim-smoke.mjs
 semantic smoke: scripts/semantic-reference-smoke.mjs
@@ -241,6 +243,23 @@ reference definitions.
 
 It does not resolve target existence, apply every field contract, detect
 semantic ambiguity, or establish complete `NF-SEMANTIC` conformance.
+
+### Approval Gate Target Schema Smoke
+
+Command:
+
+```sh
+npm run approval-gate-target-schema-smoke
+```
+
+Compatible with the current common and Project schema snapshot. It checks 16
+accepted and rejected cases covering the closed target-kind set, assembly and
+workflow scope, deprecated scalar coexistence, duplicate rejection, ID syntax,
+and closed typed objects.
+
+The semantic smoke command resolves maintained typed targets in exact
+kind-specific namespaces. Neither command evaluates gate coverage, approval
+decisions, approver authority, expiry, revocation, or runtime enforcement.
 
 ### Work Reference Namespace Smoke
 

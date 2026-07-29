@@ -196,6 +196,7 @@ npm run actor-schema-smoke
 npm run agent-identity-schema-smoke
 npm run agent-definition-authority-smoke
 npm run human-override-schema-smoke
+npm run provider-feature-schema-smoke
 npm run conformance-claim-smoke
 npm run semantic-smoke
 ```
@@ -211,6 +212,10 @@ and closed object shape. Semantic target existence remains a separate check.
 The work-reference namespace command checks workflow-wide step and
 assembly-wide artifact identity, duplicate rejection, and exact dependency and
 handoff lookup. It does not validate graph ordering or artifact provenance.
+
+The provider feature command checks the closed model support vocabulary,
+non-empty unique lists, migration coexistence, and separation from project
+action capability IDs. It does not select or call providers.
 
 The conformance claim command validates the standalone schema and templates
 under `conformance/`. Those artifacts are not core manifest schemas and do not

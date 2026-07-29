@@ -51,6 +51,9 @@ jobs:
       - name: Run human override schema boundary checks
         run: npm run human-override-schema-smoke
 
+      - name: Run provider feature schema checks
+        run: npm run provider-feature-schema-smoke
+
       - name: Run conformance claim format checks
         run: npm run conformance-claim-smoke
 

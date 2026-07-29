@@ -216,7 +216,20 @@ See [Memory Model](memory-model.md) for sensitivity rules, ownership guidance, a
 
 Declares provider abstractions and preferences without binding the spec to a vendor.
 
-Related docs: [Provider Abstraction](provider-abstraction.md), [Runtime Options](runtime-options.md), [Security Model](security-model.md), [RFC-0010](../rfcs/RFC-0010-provider-selection.md).
+Provider declarations may include:
+
+- `id`, `type`, and `description`
+- optional closed `features` describing model support signals
+- provider-level constraints
+- selection and explainability metadata
+
+Provider features are not action capabilities and do not reference
+`CapabilitySet`. Legacy provider `capabilities` is deprecated, migration-only,
+and cannot coexist with `features`.
+
+Related docs: [Provider Abstraction](provider-abstraction.md),
+[Provider Features](provider-features.md), [Runtime Options](runtime-options.md),
+[Security Model](security-model.md), [RFC-0010](../rfcs/RFC-0010-provider-selection.md).
 
 ### `model-profiles.yaml`
 

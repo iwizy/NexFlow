@@ -35,6 +35,7 @@ For the current supported combinations and explicit implementation gaps, see the
 - changing a pinned model reference
 - changing a floating model alias policy
 - changing provider preference precedence, provider selection constraints, fallback eligibility, or provider selection explainability expectations
+- changing the provider feature vocabulary, feature meaning, or separation from action capabilities
 - broadening provider eligibility, training use, or tool use in a model profile
 - changing a prompt revision used by an active agent definition
 - changing safety prompt material
@@ -166,6 +167,22 @@ file or array order would break `NF-SEMANTIC` compatibility. Requiring explicit
 typed objects in these fields would also affect `NF-MANIFEST` and `NF-SCHEMA`.
 
 See [Work Reference Namespaces](work-reference-namespaces.md).
+
+## Provider Feature Compatibility
+
+Provider `features` is additive inside the unreleased `specVersion: "0.1"`
+draft. It uses a closed model support vocabulary that is independent from
+`CapabilitySet` action identifiers.
+
+Legacy provider `capabilities` remains structurally valid for migration, cannot
+coexist with `features`, and must not resolve against project action
+capabilities. Maintained examples use `features`.
+
+Removing the legacy field, adding or removing a core feature, changing feature
+meaning, or treating feature support as permission affects schema, semantic,
+provider-selection, and safety compatibility.
+
+See [Provider Features](provider-features.md).
 
 ## Human Override Compatibility
 

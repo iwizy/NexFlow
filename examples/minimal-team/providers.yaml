@@ -5,8 +5,8 @@ metadata:
 providers:
   - id: general_reasoning
     type: abstract
-    description: Provider-neutral reasoning capability.
-    capabilities:
+    description: Provider-neutral reasoning class.
+    features:
       - text_generation
       - tool_reasoning
     constraints:

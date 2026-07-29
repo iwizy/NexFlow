@@ -82,6 +82,7 @@ Do not tag a candidate if the repository implies runtime behavior, provider inte
 - [ ] `npm run agent-identity-schema-smoke` succeeds.
 - [ ] `npm run agent-definition-authority-smoke` succeeds.
 - [ ] `npm run human-override-schema-smoke` succeeds.
+- [ ] `npm run provider-feature-schema-smoke` succeeds.
 - [ ] `npm run conformance-claim-smoke` succeeds.
 - [ ] `npm run semantic-smoke` succeeds.
 - [ ] Markdown link checks succeed.
@@ -89,8 +90,8 @@ Do not tag a candidate if the repository implies runtime behavior, provider inte
 - [ ] CI runs schema smoke, schema validation, negative fixtures, typed
   reference primitives, approval gate targets, work reference namespaces,
   ActorSet, agent identity, agent definition authority, human override
-  boundaries, conformance claim format checks, and semantic reference smoke
-  checks on pull requests.
+  boundaries, provider features, conformance claim format checks, and semantic
+  reference smoke checks on pull requests.
 - [ ] Validation docs explain the difference between syntax checks, schema validation, semantic smoke checks, future semantic validation, and runtime enforcement.
 - [ ] Semantic reference inventory target namespaces and coverage labels match
   the current schemas, examples, and semantic smoke implementation.
@@ -115,6 +116,8 @@ Do not tag a candidate if the repository implies runtime behavior, provider inte
   compatibility, and semantic validation limits.
 - [ ] Approval gate target migration distinguishes typed resource targets from
   deprecated ambiguous `appliesTo` values.
+- [ ] Provider feature migration keeps model support signals separate from
+  action capabilities and documents deprecated provider `capabilities`.
 - [ ] Workflow step and task artifact namespace changes include reference and
   migration compatibility notes.
 - [ ] Conformance doc distinguishes manifest, schema, semantic, CLI, runtime, extension, and audit support surfaces.

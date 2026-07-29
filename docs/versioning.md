@@ -91,6 +91,17 @@ allowing implicit cross-workflow lookup, or requiring typed objects in these
 fields requires an explicit compatibility and version decision. See
 [Work Reference Namespaces](work-reference-namespaces.md).
 
+## Provider Feature Version Decision
+
+Provider `features` remains in `specVersion: "0.1"`. It is additive inside the
+unreleased draft, while legacy provider `capabilities` remains schema-valid only
+for migration and cannot coexist with `features`.
+
+Removing the legacy field, changing the closed core feature vocabulary, changing
+a feature meaning, or coupling provider features to action capability grants
+requires an explicit compatibility and version decision. See
+[Provider Features](provider-features.md).
+
 ## Agent Identity Version Decision
 
 The compact AgentSet migration remains in `specVersion: "0.1"`. The schema

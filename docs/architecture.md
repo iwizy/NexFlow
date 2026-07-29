@@ -96,6 +96,10 @@ The current repository does not execute workflows.
 
 Providers are abstract. The specification may describe desired model traits, routing preferences, and constraints, but it must not require any specific vendor.
 
+Provider features occupy a separate namespace from project action capabilities.
+Feature support may narrow provider selection but cannot grant an actor an
+action, permission, connection, credential, or tool.
+
 ## Integration Boundary
 
 Integrations are described through extension manifests and context sources. Integrations must not silently expand permissions. Access must be represented through capabilities, permissions, and approval gates.

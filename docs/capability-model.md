@@ -4,6 +4,10 @@ Capabilities describe what an actor or integration can technically do. Permissio
 
 Capabilities are intentionally separate from roles, skills, and permissions.
 
+They are also separate from provider `features`. A provider feature describes a
+model support signal such as `code_reasoning`; it is not a project action and
+does not resolve against `CapabilitySet`.
+
 ## Why Capabilities and Permissions Are Separate
 
 NexFlow separates "can do" from "may do".
@@ -12,6 +16,8 @@ NexFlow separates "can do" from "may do".
 - A **capability** says an actor or integration has a technical action available.
 - A **permission** says whether using that capability is allowed, denied, or requires approval.
 - An **approval gate** says who or what must approve a gated action before it proceeds.
+- A **provider feature** says what model support is advertised for provider
+  selection, without granting an action.
 
 This separation keeps manifests auditable. A reviewer can see that an agent may be technically connected to a repository, issue tracker, MCP server, or deployment system without assuming the agent is authorized to use every action exposed by that system.
 
@@ -84,6 +90,19 @@ NexFlow defines three draft permission effects:
 | `approval_required` | The subject may use the listed capabilities only after the referenced approval gate is satisfied. | An implementation agent may write repository files after review. |
 
 ## Practical Scenarios
+
+### Provider Feature Is Not An Action Capability
+
+```yaml
+features:
+  - code_reasoning
+  - tool_reasoning
+```
+
+This provider declaration does not grant `read_repository`,
+`write_repository`, `execute_command`, `access_network`, or any integration
+capability. Those actions require declarations in `CapabilitySet` and effective
+permission. See [Provider Features](provider-features.md).
 
 ### Capability Exists, Permission Missing
 

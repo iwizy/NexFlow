@@ -331,6 +331,12 @@ function validateProjectSet(directory, manifests) {
 
   for (const provider of asArray(manifests.get("ProviderSet")?.data?.providers)) {
     addUnique(providersFile, providers, provider?.id, "provider");
+    for (const legacyFeature of stringItems(provider?.capabilities)) {
+      report(
+        providersFile,
+        `provider ${JSON.stringify(provider?.id)} uses deprecated capabilities value ${JSON.stringify(legacyFeature)}; migrate it to the provider-local features field`
+      );
+    }
   }
 
   for (const profile of asArray(manifests.get("ModelProfileSet")?.data?.modelProfiles)) {
@@ -679,6 +685,6 @@ if (diagnostics.length > 0) {
   process.exitCode = 1;
 } else {
   console.log(`Semantic reference smoke checks passed for ${projects.size} example project(s).`);
-  console.log("Checked core actor identity, agent bridges, active definition authority, approval targets, task, workflow, artifact, permission, network policy, human override, context, profile, gate, event, and extension references.");
+  console.log("Checked core actor identity, agent bridges, active definition authority, approval targets, provider feature migration, task, workflow, artifact, permission, network policy, human override, context, profile, gate, event, and extension references.");
   console.log("This is a repository smoke check, not full semantic validation.");
 }

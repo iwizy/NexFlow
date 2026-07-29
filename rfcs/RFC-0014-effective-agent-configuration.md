@@ -558,7 +558,8 @@ Resolution then follows RFC-0010:
 1. Resolve the selected model profile.
 2. Apply project and organization policy.
 3. Apply model profile constraints.
-4. Filter provider declarations by allowed references and capabilities.
+4. Filter provider declarations by allowed references and any explicit provider
+   feature requirements.
 5. Apply data residency, training-use, tool-use, sensitivity, cost, and latency
    constraints.
 6. Apply pinned, floating, or policy selection behavior.

@@ -40,6 +40,8 @@ Examples are part of the specification surface. They should remain small enough 
 - [ ] Context source IDs are defined in `context.yaml` before use.
 - [ ] Memory scope names are declared or standard.
 - [ ] Provider IDs are defined in `providers.yaml` before use.
+- [ ] Provider declarations use `features`, not deprecated `capabilities`.
+- [ ] Provider features use the closed core vocabulary and are not treated as `CapabilitySet` references.
 - [ ] Model profile IDs are defined in `model-profiles.yaml` before use.
 - [ ] Prompt set IDs are defined in `prompt-sets.yaml` before use.
 - [ ] Retrieval profile IDs are defined in `retrieval-profiles.yaml` before use.

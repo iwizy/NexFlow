@@ -6,7 +6,7 @@ providers:
   - id: enterprise_reasoning
     type: abstract
     description: Provider-neutral enterprise-approved reasoning class.
-    capabilities:
+    features:
       - text_generation
       - code_reasoning
       - policy_reasoning

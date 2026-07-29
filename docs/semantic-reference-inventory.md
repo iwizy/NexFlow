@@ -142,7 +142,6 @@ not merge inputs, standing grants, or effective behavior sources.
 | `networkAccess.audit.events[]` | `EventSet.events[].type` | Checked | Resolve required network decision event types. |
 | `humanOverride.audit.events[]` | `EventSet.events[].type` | Checked | Resolve human-control audit event types. |
 | `Project.project.approvalGates[].events[]` | `EventSet.events[].type` | Gap | Resolve gate lifecycle event types. |
-| `ProviderSet.providers[].capabilities[]` | `CapabilitySet.capabilities[].id` | Gap | Resolve advertised capability vocabulary; provider support does not grant actor access. |
 | `ModelProfileSet.modelProfiles[].selection.providerRefs[]` | `ProviderSet.providers[].id` | Checked | Resolve eligible providers. |
 | `selection.pinnedModel.providerRef` | `ProviderSet.providers[].id` | Checked | Resolve the provider while keeping `modelId` provider-local. |
 | `fallback.candidateProviderRefs[]` | `ProviderSet.providers[].id` | Checked | Resolve fallback candidates; policy still determines eligibility. |
@@ -218,6 +217,7 @@ These values are not core cross-manifest references:
 | `Project.manifests.*` | Discovery locator or authoring hint, not resource identity. |
 | Prompt `sourceRef` and review `evidenceRefs` | Content or evidence locators whose schemes are not core resource namespaces. |
 | Context `mcp.serverId` | Integration-local server handle, not an `ExtensionSet` resource reference. |
+| Provider `features` and deprecated provider `capabilities` | Provider feature labels, not `CapabilitySet` resource references. Maintained manifests use `features`; semantic smoke reports legacy `capabilities`. |
 | Provider `modelId` and model revision | Provider-local identifiers resolved after provider eligibility. |
 | Extension `namespace` and `appliesTo` | Extension ownership and domain labels, not resource IDs. |
 | Event payload field names | Payload expectations, not references to declared resources. |

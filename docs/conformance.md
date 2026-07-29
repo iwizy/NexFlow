@@ -116,6 +116,23 @@ A tool claiming this support MUST:
 This support does not establish workflow graph correctness, artifact provenance,
 policy enforcement, or complete `NF-SEMANTIC` conformance.
 
+### Provider Feature Support
+
+The repository implements the closed provider feature vocabulary described in
+[Provider Features](provider-features.md).
+
+A tool claiming this support MUST:
+
+- keep provider features separate from `CapabilitySet` action identifiers
+- reject unknown, duplicate, and empty feature declarations
+- reject simultaneous `features` and legacy `capabilities`
+- treat legacy provider `capabilities` as migration data, not references
+- avoid inferring permission, tool access, network access, or provider
+  availability from a feature
+
+This support does not establish provider selection, live model capability,
+provider availability, authorization, or runtime conformance.
+
 ### Agent Assembly Inspection
 
 Agent Assembly is a derived projection of Effective Agent Configuration, not a

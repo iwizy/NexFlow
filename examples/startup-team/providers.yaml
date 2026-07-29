@@ -6,7 +6,7 @@ providers:
   - id: coding_reasoning
     type: abstract
     description: Provider-neutral coding model class.
-    capabilities:
+    features:
       - code_reasoning
       - text_generation
       - tool_reasoning
@@ -17,7 +17,7 @@ providers:
   - id: general_reasoning
     type: abstract
     description: Provider-neutral product and design reasoning class.
-    capabilities:
+    features:
       - text_generation
       - visual_reasoning
     constraints:

@@ -2,7 +2,10 @@
 
 NexFlow is provider neutral.
 
-Related RFC: [RFC-0010: Provider Selection](../rfcs/RFC-0010-provider-selection.md).
+Related documents:
+
+- [Provider Features](provider-features.md)
+- [RFC-0010: Provider Selection](../rfcs/RFC-0010-provider-selection.md)
 
 Providers may include:
 
@@ -25,7 +28,7 @@ description: Provider suitable for reasoning-heavy software design.
 constraints:
   dataResidency: unspecified
   allowTrainingUse: false
-capabilities:
+features:
   - text_generation
   - tool_reasoning
 selection:
@@ -34,6 +37,23 @@ selection:
     recordSelectionReason: true
     recordConstraintsApplied: true
 ```
+
+## Provider Features
+
+Provider `features` describe model or provider support signals. They belong to a
+closed provider feature vocabulary and are not references to project action
+capabilities.
+
+For example, `tool_reasoning` indicates a model class intended to reason about
+tool requests and results. It does not expose a tool, grant `execute_command`,
+authorize network access, or satisfy a permission.
+
+Legacy provider `capabilities` remains structurally valid only for `0.1`
+migration. It is deprecated, cannot coexist with `features`, and must never
+resolve against `CapabilitySet`.
+
+See [Provider Features](provider-features.md) for the vocabulary, namespace,
+migration, and validation contract.
 
 ## Provider Selection Requests
 
@@ -50,7 +70,10 @@ policy, human override, or project policy.
 
 Model profiles are a separate layer from provider declarations.
 
-Providers describe available provider abstractions and broad constraints. Model profiles describe how a project expects a model to be selected for a behaviorally meaningful purpose, such as code review, documentation drafting, summarization, or policy analysis.
+Providers describe available provider abstractions, model support features, and
+broad constraints. Model profiles describe how a project expects a model to be
+selected for a behaviorally meaningful purpose, such as code review,
+documentation drafting, summarization, or policy analysis.
 
 A model profile may be:
 
@@ -67,6 +90,9 @@ See [Model Profiles](model-profiles.md).
 Provider configuration MUST NOT bypass permissions, autonomy levels, context boundaries, or approval gates.
 
 Provider-specific extensions should be namespaced and optional.
+
+Provider feature support MUST NOT be interpreted as an actor capability,
+permission, integration connection, provider credential, or runtime grant.
 
 Declaring or selecting a provider does not authorize a connection to it. A
 provider request also requires the `access_network` capability, effective

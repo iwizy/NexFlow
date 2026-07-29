@@ -40,7 +40,7 @@ authoritative unscoped selection.
 | `capabilities.yaml` | Capability definitions, risk levels, categories, default approval expectations, and audit guidance. |
 | `context.yaml` | Context sources, source types, access modes, classifications, and refresh policies. |
 | `memory.yaml` | Memory scopes, retention, ownership, visibility, update rules, sensitivity, and allowed consumers. |
-| `providers.yaml` | Provider-neutral model classes and selection constraints. |
+| `providers.yaml` | Provider-neutral model classes, closed support features, and selection constraints. |
 | `model-profiles.yaml` | Provider-neutral model selection profiles, pinned or floating references, constraints, fallback, review triggers, and audit expectations. |
 | `prompt-sets.yaml` | Versioned prompt material, prompt revisions, source references, safety review status, compatibility impact, and audit expectations. |
 | `retrieval-profiles.yaml` | Retrieval expectations for context sources, index versions, chunking, freshness, citations, sensitivity, and audit metadata. |
@@ -66,7 +66,13 @@ After that, follow the work:
 
 Finally, check `context.yaml`, `retrieval-profiles.yaml`, and `memory.yaml` to understand what actors may know, retrieve, cite, retain, or reuse.
 
-Read `providers.yaml`, `model-profiles.yaml`, `prompt-sets.yaml`, and `retrieval-profiles.yaml` together: providers describe available provider abstractions, model profiles describe how model selection should be reviewed, constrained, and audited, prompt sets describe versioned prompt material without requiring raw prompt text in public manifests, and retrieval profiles describe how declared context should be selected, assembled, refreshed, cited, and audited.
+Read `providers.yaml`, `model-profiles.yaml`, `prompt-sets.yaml`, and
+`retrieval-profiles.yaml` together: providers describe available abstractions
+and model support features, model profiles describe how model selection should
+be reviewed, constrained, and audited, prompt sets describe versioned prompt
+material without requiring raw prompt text in public manifests, and retrieval
+profiles describe how declared context should be selected, assembled, refreshed,
+cited, and audited. Provider features do not grant project action capabilities.
 
 ## Choosing an Example
 
@@ -99,6 +105,7 @@ All examples follow the same safety pattern:
 - context access is explicit
 - memory access is scoped
 - model profile selection is explicit and provider-neutral
+- provider features remain separate from action capabilities and permissions
 - prompt sets are versioned and reviewable
 - retrieval profiles cite declared context sources and preserve context boundaries
 - handoffs include artifacts and next actions

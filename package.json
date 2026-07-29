@@ -7,6 +7,7 @@
     "agent-definition-authority-smoke": "node scripts/agent-definition-authority-smoke.mjs",
     "agent-identity-schema-smoke": "node scripts/agent-identity-schema-smoke.mjs",
     "actor-schema-smoke": "node scripts/actor-schema-smoke.mjs",
+    "conformance-claim-smoke": "node scripts/conformance-claim-smoke.mjs",
     "human-override-schema-smoke": "node scripts/human-override-schema-smoke.mjs",
     "negative-schema-fixtures": "node scripts/negative-schema-fixtures.mjs",
     "semantic-smoke": "node scripts/semantic-reference-smoke.mjs",

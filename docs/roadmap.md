@@ -19,7 +19,8 @@ The repository currently provides the following candidate evidence:
   smoke commands
 - a prioritized semantic reference inventory with explicit current coverage,
   gaps, and deferred ambiguous fields
-- explicit conformance vocabulary and a current compatibility matrix
+- explicit conformance vocabulary, standalone claim templates, and a current
+  compatibility matrix
 - a public readiness checklist, release plan, known limitations, and governance
   process
 - a cross-RFC review for the Actor Model, Effective Agent Configuration, Typed
@@ -128,8 +129,12 @@ Relevant docs: [Security Model](security-model.md), [Capability Model](capabilit
   graph, handoff, and migration decisions.
 - Define conformance expectations for validators.
 - Refine draft conformance levels for manifests, validators, CLIs, runtimes, and extensions.
+- Maintain the versioned machine-readable and human-readable conformance claim
+  templates as validation behavior becomes more precise.
 
-Relevant docs: [Validation](validation.md), [Conformance](conformance.md), [Compatibility](compatibility.md), [Schema Guide](../schemas/README.md), [Examples Guide](../examples/README.md).
+Relevant docs: [Validation](validation.md), [Conformance](conformance.md),
+[Conformance Claims](conformance-claims.md), [Compatibility](compatibility.md),
+[Schema Guide](../schemas/README.md), [Examples Guide](../examples/README.md).
 
 ## Milestone 4: Runtime Architecture Decision
 

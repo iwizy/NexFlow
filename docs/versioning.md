@@ -26,6 +26,26 @@ All manifests in one project SHOULD use the same `specVersion`.
 
 A future runtime MAY support mixed versions during migration, but it MUST make compatibility behavior explicit.
 
+## Conformance Claim Versioning
+
+Conformance claims use `claimVersion`, which is independent from manifest
+`specVersion` and the evaluated subject's release version.
+
+The initial standalone claim format is:
+
+```yaml
+claimVersion: "0.1"
+kind: NexFlowConformanceClaim
+```
+
+Changing claim status vocabulary, required scope, required conformance levels,
+evidence rules, or attestation meaning requires a claim-format compatibility
+decision. Breaking changes require a new `claimVersion` and migration guidance.
+
+Publishing a claim, changing a subject's conformance status, or updating evidence
+does not by itself change manifest `specVersion`. See
+[Conformance Claims](conformance-claims.md).
+
 ## Actor Model Version Decision
 
 The first `ActorSet` schema and typed-reference primitives remain in

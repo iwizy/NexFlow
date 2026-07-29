@@ -48,5 +48,8 @@ jobs:
       - name: Run human override schema boundary checks
         run: npm run human-override-schema-smoke
 
+      - name: Run conformance claim format checks
+        run: npm run conformance-claim-smoke
+
       - name: Run semantic reference smoke checks
         run: npm run semantic-smoke

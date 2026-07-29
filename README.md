@@ -25,6 +25,7 @@ Current release posture: **`0.1` draft, preparing for candidate review**. No
 | Structural validation | Implemented for all maintained examples, four negative schema categories, and focused model boundaries | `npm run validate`, `npm run negative-schema-fixtures`, [Validation](docs/validation.md) |
 | Typed reference primitives | Implemented for shared structural shapes and lexical boundaries | `npm run typed-reference-schema-smoke`, [Typed References](docs/typed-references.md) |
 | Work reference namespaces | Implemented for workflow-scoped steps and assembly-scoped task artifacts | `npm run work-reference-namespace-smoke`, [Work Reference Namespaces](docs/work-reference-namespaces.md) |
+| Conformance claim format | Implemented as standalone schema plus YAML and Markdown templates | `npm run conformance-claim-smoke`, [Conformance Claims](docs/conformance-claims.md) |
 | Semantic reference checks | Partial repository smoke coverage | `npm run semantic-smoke`, [Validation](docs/validation.md) |
 | Governance and RFC process | Implemented in documentation | [Governance](docs/governance.md), [RFCs](rfcs/README.md) |
 | Foundational model changes | ActorSet, compact AgentSet, and authoritative unique-active-definition slices implemented; RFCs remain Draft | [Actor Model](docs/actor-model.md), [Effective Agent Configuration](docs/effective-agent-configuration.md), [Foundational Model Review](rfcs/reviews/2026-07-foundational-model-review.md) |
@@ -173,6 +174,7 @@ NexFlow is intentionally split into layers:
 - [Schema Guide](schemas/README.md): schema scope, update rules, and validation boundaries
 - [examples/](examples/): complete reference team configurations
 - [Examples Guide](examples/README.md): overview of reference teams and manifest file sets
+- [conformance/](conformance/): standalone conformance claim schema and publication templates
 - [fixtures/schema/invalid/](fixtures/schema/invalid/): intentionally invalid
   manifests for stable schema rejection checks
 - [rfcs/](rfcs/README.md): governance and design proposal process
@@ -210,6 +212,7 @@ NexFlow is intentionally split into layers:
 | Model prompt revisions and safety review | [Prompt Sets](docs/prompt-sets.md), [Versioning](docs/versioning.md), [Event Model](docs/events.md) |
 | Model retrieval, freshness, and citations | [Retrieval Profiles](docs/retrieval-profiles.md), [Context Model](docs/context-model.md), [Event Model](docs/events.md) |
 | Validate manifests | [Validation](docs/validation.md), [Semantic Reference Inventory](docs/semantic-reference-inventory.md), [Schema Guide](schemas/README.md), [Conformance](docs/conformance.md), [Compatibility Matrix](docs/compatibility-matrix.md) |
+| Publish a support claim | [Conformance Claims](docs/conformance-claims.md), [Claim Templates](conformance/README.md), [Compatibility Matrix](docs/compatibility-matrix.md) |
 | Extend or integrate NexFlow | [Extension Model](docs/extensions.md), [Integrations](docs/integrations.md), [Provider Abstraction](docs/provider-abstraction.md) |
 | Review future implementation choices | [Runtime Options](docs/runtime-options.md), [Roadmap](docs/roadmap.md), [Release Plan](docs/release-plan.md), [0.1 Readiness Checklist](docs/readiness-checklist.md) |
 

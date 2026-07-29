@@ -77,6 +77,7 @@ npm run actor-schema-smoke
 npm run agent-identity-schema-smoke
 npm run agent-definition-authority-smoke
 npm run human-override-schema-smoke
+npm run conformance-claim-smoke
 npm run semantic-smoke
 ```
 
@@ -87,6 +88,9 @@ commands exercise documented structural and namespace boundaries. The semantic
 smoke command checks selected references in examples, but it is not full
 semantic validation. See [Validation](docs/validation.md) for the boundary
 between schema, semantic, and runtime validation.
+
+The conformance claim command validates the maintained standalone claim schema
+and templates. It does not certify external tools or verify their evidence.
 
 The repository GitHub Actions workflow runs the same smoke script, schema
 validation, focused checks, and semantic reference smoke command on pull

@@ -22,7 +22,7 @@ The documentation is the canonical source for the specification. Schemas and exa
 | New project visitor | [Vision](vision.md) -> [Concepts](concepts.md) -> [Glossary](glossary.md) -> [Manifest Reference](manifest-reference.md) |
 | Manifest author | [Manifest Reference](manifest-reference.md) -> [Actor Model](actor-model.md) -> [Context Model](context-model.md) -> [Memory Model](memory-model.md) -> [Examples Guide](../examples/README.md) |
 | Safety reviewer | [Security Model](security-model.md) -> [Human Override](human-override.md) -> [Network Access Policy](network-access-policy.md) -> [Approval Gates](approval-gates.md) -> [Capability Model](capability-model.md) -> [Autonomy Model](autonomy-model.md) |
-| Validator author | [Validation](validation.md) -> [Semantic Reference Inventory](semantic-reference-inventory.md) -> [Typed References](typed-references.md) -> [Work Reference Namespaces](work-reference-namespaces.md) -> [Schema Design Notes](schema-design-notes.md) -> [Schema Guide](../schemas/README.md) -> [Conformance](conformance.md) -> [Compatibility Matrix](compatibility-matrix.md) |
+| Validator author | [Validation](validation.md) -> [Semantic Reference Inventory](semantic-reference-inventory.md) -> [Typed References](typed-references.md) -> [Work Reference Namespaces](work-reference-namespaces.md) -> [Schema Design Notes](schema-design-notes.md) -> [Schema Guide](../schemas/README.md) -> [Conformance](conformance.md) -> [Conformance Claims](conformance-claims.md) -> [Compatibility Matrix](compatibility-matrix.md) |
 | Runtime implementer | [Architecture](architecture.md) -> [Runtime Options](runtime-options.md) -> [Provider Abstraction](provider-abstraction.md) -> [Roadmap](roadmap.md) |
 | Extension author | [Extension Model](extensions.md) -> [Integrations](integrations.md) -> [Provider Abstraction](provider-abstraction.md) -> [Conformance](conformance.md) |
 
@@ -58,6 +58,7 @@ The documentation is the canonical source for the specification. Schemas and exa
 | [Actor Model Migration](actor-model-migration.md) | Defines the staged, identity-preserving transition from legacy participant resolution. |
 | [Agent Identity Migration](agent-identity-migration.md) | Defines the transition from duplicated AgentSet behavior fields to compact stable AI identity. |
 | [Conformance](conformance.md) | Draft support levels for manifests, validators, CLIs, runtimes, and extensions. |
+| [Conformance Claims](conformance-claims.md) | Versioned machine-readable and human-readable support statements, evidence requirements, and trust boundaries. |
 | [Validation](validation.md) | Structural validation workflow and semantic validation boundary. |
 | [Semantic Reference Inventory](semantic-reference-inventory.md) | Prioritizes cross-manifest reference resolution and records current smoke-check coverage and gaps. |
 | [Typed References](typed-references.md) | Defines shared typed, scoped, transitional, and kind-specific reference shapes, lexical boundaries, and migration rules. |

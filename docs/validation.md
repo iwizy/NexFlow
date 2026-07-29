@@ -41,6 +41,7 @@ The repository supports basic validation through:
 - Focused workflow step and task artifact namespace checks.
 - Focused ActorSet, AgentSet identity, agent definition authority, and human
   override boundary checks.
+- A focused standalone conformance claim schema and template check.
 - A semantic reference smoke command for selected cross-manifest references in examples.
 - A prioritized semantic reference inventory that distinguishes checked,
   partial, missing, and deferred field contracts.
@@ -127,13 +128,28 @@ implementation for maintained examples.
 It does not validate workflow cycles, execution order, artifact production,
 content integrity, disclosure policy, or runtime behavior.
 
+Run the standalone conformance claim format checks:
+
+```sh
+npm run conformance-claim-smoke
+```
+
+This command exercises 13 accepted and rejected cases for claim identity, scope,
+level status, evidence, limitations, lifecycle, timestamps, and self-declared
+assurance. It also checks that the Markdown template contains every required
+section and all six current conformance levels.
+
+It validates claim structure only. It does not inspect external tools, verify
+evidence, certify implementations, or establish any conformance level.
+
 The GitHub Actions workflow runs the same smoke script, schema validation, and
 focused boundary commands so pull requests exercise schema JSON parsing,
 example YAML parsing, manifest kind discovery, schema compilation, example
 manifest validation, typed-reference primitive boundaries, work reference
-namespaces, compact agent identity compatibility, and human override fail-closed
-shape. It also checks active agent definition completeness and unique unscoped
-selection cases, plus the cataloged negative schema boundaries.
+namespaces, compact agent identity compatibility, human override fail-closed
+shape, and conformance claim format boundaries. It also checks active agent
+definition completeness and unique unscoped selection cases, plus the cataloged
+negative schema boundaries.
 
 Run semantic reference smoke checks:
 

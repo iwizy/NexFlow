@@ -188,26 +188,35 @@ A conforming extension MUST:
 
 ## Conformance Claims
 
-Tools SHOULD state conformance claims explicitly.
+Tools SHOULD publish explicit, versioned conformance claims. NexFlow provides a
+[machine-readable schema and YAML template](../conformance/README.md) plus a
+matching [human-readable template](../conformance/CONFORMANCE-CLAIM.template.md).
+The complete contract is documented in
+[Conformance Claims](conformance-claims.md).
 
-Example:
+Every claim identifies:
 
-```text
-Supports: NF-MANIFEST, NF-SCHEMA
-Does not support: NF-SEMANTIC, NF-RUNTIME
-Spec versions: 0.1
-```
-
-Runtime or CLI documentation SHOULD also list:
-
+- one exact subject version
+- supported NexFlow `specVersion` values
 - supported manifest kinds
-- supported `specVersion` values
-- unsupported fields
 - supported extension namespaces
-- validation limitations
-- enforcement limitations
+- a status for every current conformance level
+- validation behavior and enforcement behavior
+- evidence and limitations
+- a responsible party
 
-Conformance claims are compatibility claims. A change can affect one conformance level without affecting another. For example, an optional schema field may preserve `NF-SCHEMA`, while a change to approval gate meaning may affect `NF-RUNTIME`.
+Level status is one of `supported`, `partial`, `unsupported`,
+`not-applicable`, or `not-evaluated`. `supported` and `partial` require evidence.
+`partial` also requires explicit limitations. Missing or unevaluated support MUST
+NOT be inferred as compatibility.
+
+Claims are self-declared compatibility statements. They are not NexFlow
+certification, permission grants, approvals, or proof of runtime safety.
+
+Conformance claims are compatibility claims. A change can affect one conformance
+level without affecting another. For example, an optional schema field may
+preserve `NF-SCHEMA`, while a change to approval gate meaning may affect
+`NF-RUNTIME`.
 
 ## Non-Conforming Behavior
 
@@ -233,6 +242,7 @@ This repository currently provides:
 - `NF-SCHEMA` draft schemas
 - reference examples
 - full schema validation for maintained examples
+- standalone machine-readable and human-readable conformance claim templates
 - limited semantic reference smoke checks that do not establish complete `NF-SEMANTIC` conformance
 - validation guidance
 

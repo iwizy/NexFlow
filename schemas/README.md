@@ -194,6 +194,7 @@ npm run actor-schema-smoke
 npm run agent-identity-schema-smoke
 npm run agent-definition-authority-smoke
 npm run human-override-schema-smoke
+npm run conformance-claim-smoke
 npm run semantic-smoke
 ```
 
@@ -204,6 +205,10 @@ cross-manifest resolution, or complete semantic conformance.
 The work-reference namespace command checks workflow-wide step and
 assembly-wide artifact identity, duplicate rejection, and exact dependency and
 handoff lookup. It does not validate graph ordering or artifact provenance.
+
+The conformance claim command validates the standalone schema and templates
+under `conformance/`. Those artifacts are not core manifest schemas and do not
+add a manifest kind.
 
 The Node.js dependency is limited to repository maintenance tooling and does not select the language of a future NexFlow runtime.
 

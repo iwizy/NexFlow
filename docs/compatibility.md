@@ -179,7 +179,15 @@ Future runtimes should publish:
 - validation behavior
 - enforcement limitations
 
-See [Conformance](conformance.md) for draft vocabulary that tools can use when describing support levels.
+See [Conformance](conformance.md) for draft vocabulary and
+[Conformance Claims](conformance-claims.md) for the standalone versioned schema
+and publication templates.
+
+A published claim applies only to its named subject version, spec versions,
+manifest kinds, extension namespaces, evidence, and limitations. Consumers must
+not infer support for omitted or `not-evaluated` surfaces. Claim format
+compatibility is versioned through `claimVersion`, independently from manifest
+`specVersion`.
 
 [RFC-0007](../rfcs/RFC-0007-approval-gates.md) proposes approval semantics that may affect `NF-SEMANTIC`, `NF-RUNTIME`, safety, and audit compatibility when approval meaning changes.
 

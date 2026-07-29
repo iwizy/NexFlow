@@ -49,6 +49,9 @@ tag or release has been published, and manifest `specVersion` remains `"0.1"`.
   actor, agent, and extension reference definitions.
 - Added deterministic workflow-wide step and assembly-wide task artifact
   namespace contracts with 13 focused positive and negative cases.
+- Added a standalone `0.1` conformance claim schema, synchronized YAML and
+  Markdown templates, evidence and limitation rules, publication guidance, and
+  13 focused positive and negative format checks.
 
 ### Changed
 

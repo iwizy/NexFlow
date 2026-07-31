@@ -98,6 +98,7 @@
       "additionalProperties": false,
       "required": [
         "specVersions",
+        "profiles",
         "manifestKinds",
         "extensionNamespaces"
       ],
@@ -135,6 +136,26 @@
                 "format": "uri"
               }
             }
+          }
+        },
+        "profiles": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "core",
+              "policy",
+              "work-planning",
+              "workflow",
+              "handoff",
+              "context",
+              "memory",
+              "agent-behavior",
+              "provider-inventory",
+              "events-audit",
+              "extensions"
+            ]
           }
         },
         "manifestKinds": {

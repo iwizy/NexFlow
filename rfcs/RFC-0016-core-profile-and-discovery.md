@@ -2,20 +2,22 @@
 
 ## Status
 
-Draft
+Draft; Core Profile contract implemented
 
 ## Cross-RFC Review
 
 The [Foundational Model Cross-RFC Review](reviews/2026-07-foundational-model-review.md)
 accepts the core-profile and logical-assembly direction for implementation
-planning and defers profile schema migration until participant identity and
-reference contracts are stable. This RFC remains Draft.
+planning. The minimum profile, optional module qualifiers, dependency policy,
+and reduced Project source-hint shape are now implemented. General discovery,
+multiple workflow loading, project indexes, and stable discovery diagnostics
+remain Draft.
 
 ## Summary
 
-This RFC proposes a minimum useful NexFlow core profile, optional manifest
-modules, incremental adoption rules, support for multiple workflows, and a
-logical discovery model independent of file names and directory layout.
+This RFC defines a minimum useful NexFlow core profile, optional manifest
+modules, incremental adoption rules, and the proposed logical discovery model
+independent of file names and directory layout.
 
 The proposal defines:
 
@@ -30,17 +32,19 @@ The proposal defines:
 - multiple workflow documents identified by workflow ID
 - diagnostics for incomplete profiles, missing dependencies, duplicate logical
   resources, and unsafe discovery
-- staged migration from the current all-manifests-required `0.1` project shape
+- staged migration from the legacy all-manifests-required `0.1` project shape
 
 The central rule is:
 
 > File layout helps locate manifests. Declared identity, kind, scope, and
 > references determine their meaning.
 
-This RFC does not change current schemas or examples by itself. The current
-`0.1` repository continues to validate the complete 16-manifest base example
-sets; the Minimal Team additionally carries the optional ActorSet migration
-manifest. Reduced profiles remain unimplemented.
+The Core Profile slice is represented by
+[`profiles/core.yaml`](../profiles/core.yaml), focused conformance checks, and a
+Project schema that no longer requires source hints for every optional module.
+The current complete examples remain valid and continue to exercise all 16 base
+manifest kinds; the Minimal Team additionally carries ActorSet. General reduced
+project discovery remains unimplemented.
 
 ## Motivation
 
@@ -50,9 +54,9 @@ from the original set to include agent definitions, model profiles, prompt sets,
 and retrieval profiles.
 
 Current reference examples contain the 16-kind base set, and the Minimal Team
-also covers `ActorSet`. The current `Project` schema requires a `manifests` map with paths for agents,
-workflow, tasks, handoffs, permissions, capabilities, context, memory, providers,
-events, and extensions.
+also covers `ActorSet`. Earlier `0.1` schema snapshots required a `manifests`
+map with paths for every historical module. The current schema treats the map
+as optional source-loading hints.
 
 That complete shape is useful as a specification fixture. It is not a good
 minimum adoption boundary.
@@ -111,11 +115,8 @@ This RFC aims to:
 
 ## Non-Goals
 
-This RFC does not:
+The remaining discovery proposal does not:
 
-- change current JSON Schemas immediately
-- make current reduced manifest sets schema-valid immediately
-- accept the Actor Model or `ActorSet` schema
 - define a runtime or orchestration engine
 - define workflow scheduling or cross-workflow execution
 - permit remote manifest fetching by default
@@ -156,14 +157,13 @@ The repository later added draft schemas and examples for:
 
 ### Current Project Schema
 
-The current `Project` schema requires a `manifests` object and requires path
-entries for 11 module names.
+The current `Project` schema accepts an optional `manifests` source-hint map.
+Complete historical maps remain valid, while reduced projects may omit the map
+or list only adopted modules.
 
-This has three effects:
-
-1. A reduced project cannot pass the current schema.
-2. Discovery is strongly associated with a project path map.
-3. The singular `workflow` entry does not represent multiple workflow documents.
+This removes empty-file pressure but does not define general discovery. The
+singular conventional `workflow` key still does not represent multiple workflow
+documents, and source paths remain loading hints rather than resource identity.
 
 ### Current Examples
 
@@ -313,12 +313,12 @@ their applicable namespace rules. Discovery order cannot select a winner.
 
 ## Minimum Core Profile
 
-The proposed minimum core profile has two required slots.
+The implemented minimum core profile has two required slots.
 
-| Slot | Current `0.1` manifest | Future direction | Purpose |
-| --- | --- | --- | --- |
-| Project identity and policy | `Project` | Remains `Project` | Declares project identity, maintainers, broad policy, and spec version. |
-| Participant inventory | `AgentSet` | `ActorSet` if RFC-0013 is accepted | Declares at least one participant and stable responsibility metadata. |
+| Slot | Current `0.1` resolution | Purpose |
+| --- | --- | --- |
+| Project identity and policy | Exactly one `Project` | Declares project identity, maintainers, broad policy, and spec version. |
+| Participant inventory | `ActorSet` when present; otherwise legacy `AgentSet` | Declares at least one participant and stable responsibility metadata. |
 
 A core profile is useful for:
 
@@ -332,14 +332,31 @@ A core profile alone does not describe executable work.
 
 ### Current Core Profile Constraints
 
-While `AgentSet` supplies participant inventory:
+- `ActorSet` is authoritative for participant identity when present.
+- `AgentSet` remains the participant fallback for unmigrated `0.1` assemblies.
+- When both are present, AgentSet supplies stable AI identity for explicit
+  ActorSet agent bridges; it is not a second participant authority.
+- References to permission, capability, context, memory, provider, and extension
+  resources require their target modules.
+- Autonomy remains a declared posture, not permission.
+- Elevated autonomy without corresponding policy modules does not grant actions
+  and should produce a review warning.
 
-- at least one participant is required by the current schema
-- permission, capability, context, memory, provider, and extension references
-  should be empty unless their target modules are present
-- autonomy remains a declared posture, not permission
-- an elevated autonomy value without corresponding policy modules does not grant
-  actions and should produce a review warning
+### Machine-Readable Contract
+
+The profile definition in [`profiles/core.yaml`](../profiles/core.yaml)
+records:
+
+- required profile slots and participant authority precedence
+- optional module qualifiers and their minimum manifest kinds
+- major field-to-module dependency edges
+- transitive dependency closure
+- fail-closed missing and unsupported target behavior
+- omission semantics that contribute no authority
+
+Profile qualifiers are derived by validation or explicitly requested by a
+conformance claim or tool invocation. They are not authored project manifests
+and do not add runtime authority.
 
 ### Core Profile Safety Posture
 
@@ -967,7 +984,7 @@ RFC-0002 remains the accepted initial separate-manifest decision.
 This RFC proposes to refine requiredness and discovery without returning to one
 large runtime-specific configuration file.
 
-If accepted, RFC-0002 should be updated to distinguish:
+RFC-0002 now distinguishes:
 
 - the complete core vocabulary
 - the minimum core profile
@@ -1027,9 +1044,9 @@ complete component dependency closure becomes required.
 The current compatibility matrix documents complete `0.1` examples and current
 repository tooling.
 
-Until this RFC is accepted and implemented, reduced core profiles and multiple
-workflow assemblies remain specified proposals, not supported current schema
-combinations.
+The Core Profile contract and reduced Project source-hint shape are implemented.
+Multiple workflow discovery and general logical assembly discovery remain
+specified proposals rather than supported combinations.
 
 ## Conformance Impact
 
@@ -1047,10 +1064,10 @@ If accepted, this RFC affects existing conformance surfaces.
 Profiles should be published as qualifiers on existing conformance claims, not
 as evidence of runtime support.
 
-Example future claim:
+Example profile-qualified claim:
 
 ```text
-Spec versions: 0.2
+Spec versions: 0.1
 Conformance: NF-MANIFEST, NF-SCHEMA
 Profiles: core, policy, work-planning
 Does not support: workflow, runtime, extension execution
@@ -1060,16 +1077,22 @@ This is documentation guidance, not a new manifest format.
 
 ## Compatibility Impact
 
-This RFC is planning-oriented and changes no current manifest requirements by
-itself.
+The implemented Core Profile slice broadens the current Project schema by
+making `Project.manifests` and its historical per-module paths optional.
+Complete projects remain valid.
 
-Potentially compatible changes:
+Implemented compatible changes:
 
 - documenting conventional file names as non-semantic
+- making previously required empty module source hints optional
+- defining profile qualifiers outside authored manifests
+- preserving all current complete project maps
+
+Potentially compatible future changes:
+
 - adding discovery diagnostics
 - exposing a logical assembly in inspection output
 - accepting multiple unique Workflow documents through a new explicit mode
-- making previously required empty modules optional in a new schema version
 
 Potentially breaking changes:
 
@@ -1103,7 +1126,7 @@ Migration should be staged.
 - expose discovered project, kinds, resources, and source paths
 - add duplicate and project mismatch diagnostics
 
-### Stage 2: Define Profile Contracts
+### Stage 2: Define Profile Contracts - Implemented
 
 - accept or revise the core profile
 - publish module dependency tables
@@ -1111,12 +1134,12 @@ Migration should be staged.
 - add conformance fixtures for reduced profiles without adding unnecessary public
   team examples
 
-### Stage 3: Update Project Schema
+### Stage 3: Update Project Schema - Partially Implemented
 
-- make optional modules genuinely optional
+- make optional module source hints genuinely optional - implemented
 - define a migration path from the required path map
 - add a source/index representation capable of multiple workflows
-- decide the required `specVersion` change
+- decide the required `specVersion` change - current widening remains `0.1`
 - keep current complete projects valid
 
 ### Stage 4: Add Multiple Workflow Support
@@ -1231,12 +1254,8 @@ absent unless explicitly authored or generated and reviewed.
 
 ## Open Questions
 
-- Is Project plus participant inventory the correct minimum core profile?
 - Should policy manifests be required in the core profile even when no action is
   modeled?
-- Which future spec version first permits reduced profiles?
-- Should projects declare adopted profiles explicitly or should tools derive
-  them from present manifests?
 - What exact schema should replace or supplement the current
   `Project.manifests` path map?
 - Should multiple workflows be represented through a project index, a discovery
@@ -1249,5 +1268,5 @@ absent unless explicitly authored or generated and reviewed.
   remains inside the discovery root?
 - Should YAML multi-document streams be accepted before manifest bundles?
 - Which profile and discovery diagnostic codes must stabilize before CLI work?
-- How should profile qualifiers appear in machine-readable conformance records?
-- Which migration step requires a manifest `specVersion` change?
+- Which future discovery or index migration first requires a manifest
+  `specVersion` change?

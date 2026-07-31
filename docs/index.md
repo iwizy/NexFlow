@@ -12,6 +12,7 @@ The documentation is the canonical source for the specification. Schemas and exa
 - [Actor Model](actor-model.md)
 - [Human Override](human-override.md)
 - [Architecture](architecture.md)
+- [Core Profile](core-profile.md)
 - [Manifest Reference](manifest-reference.md)
 - [Security Model](security-model.md)
 
@@ -20,7 +21,7 @@ The documentation is the canonical source for the specification. Schemas and exa
 | Reader | Recommended Path |
 | --- | --- |
 | New project visitor | [Vision](vision.md) -> [Concepts](concepts.md) -> [Glossary](glossary.md) -> [Manifest Reference](manifest-reference.md) |
-| Manifest author | [Manifest Reference](manifest-reference.md) -> [Actor Model](actor-model.md) -> [Context Model](context-model.md) -> [Memory Model](memory-model.md) -> [Examples Guide](../examples/README.md) |
+| Manifest author | [Core Profile](core-profile.md) -> [Manifest Reference](manifest-reference.md) -> [Actor Model](actor-model.md) -> [Context Model](context-model.md) -> [Memory Model](memory-model.md) -> [Examples Guide](../examples/README.md) |
 | Safety reviewer | [Security Model](security-model.md) -> [Human Override](human-override.md) -> [Network Access Policy](network-access-policy.md) -> [Approval Gates](approval-gates.md) -> [Approval Gate Targets](approval-gate-targets.md) -> [Capability Model](capability-model.md) -> [Autonomy Model](autonomy-model.md) |
 | Validator author | [Validation](validation.md) -> [Semantic Reference Inventory](semantic-reference-inventory.md) -> [Typed References](typed-references.md) -> [Approval Gate Targets](approval-gate-targets.md) -> [Work Reference Namespaces](work-reference-namespaces.md) -> [Schema Design Notes](schema-design-notes.md) -> [Schema Guide](../schemas/README.md) -> [Conformance](conformance.md) -> [Conformance Claims](conformance-claims.md) -> [Compatibility Matrix](compatibility-matrix.md) |
 | Runtime implementer | [Architecture](architecture.md) -> [Runtime Options](runtime-options.md) -> [Provider Abstraction](provider-abstraction.md) -> [Provider Features](provider-features.md) -> [Roadmap](roadmap.md) |
@@ -30,6 +31,7 @@ The documentation is the canonical source for the specification. Schemas and exa
 
 | Model | Purpose |
 | --- | --- |
+| [Core Profile](core-profile.md) | Defines the minimum Project and participant assembly, optional module qualifiers, dependency closure, and fail-closed incremental adoption. |
 | [Actor Model](actor-model.md) | Defines first-class human, agent, automation, service, and authority identity plus migration behavior. |
 | [Capability Model](capability-model.md) | Defines technical actions separately from authorization. |
 | [Autonomy Model](autonomy-model.md) | Defines how independently actors may act. |

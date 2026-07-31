@@ -14,7 +14,7 @@ An agent definition is the versioned assembly of the parts that can materially c
 - prompt set
 - retrieval profile
 - context access
-- memory policy
+- memory scope selection
 - permissions and capabilities
 - autonomy level
 - extension configuration
@@ -121,7 +121,6 @@ Recommended references include:
 | `capabilityRefs` | Technical actions expected by the behavioral release. |
 | `contextSourceRefs` | Declared context sources expected by the behavioral release. |
 | `memoryScopes` | Allowed memory scope references. |
-| `memoryPolicyRef` | Optional reference to a versioned memory policy when a project defines one. |
 | `extensionRefs` | Versioned extension configuration that may affect tools, context, or events. |
 
 These references do not grant access by themselves. Permissions and approval gates remain authoritative.
@@ -195,11 +194,10 @@ Retrieval profile changes can affect correctness, privacy, and reproducibility. 
 
 ### Memory Scope And Policy Versioning
 
-The `memoryScopes` component should identify which declared scopes an agent definition expects to use. Projects may also use `memoryPolicyRef` when they define a separate versioned memory policy.
+The `memoryScopes` component identifies which declared scopes an agent
+definition expects to use. Each value resolves to
+`MemorySet.memoryScopes[].scope`. The matching MemorySet entry owns:
 
-Versioned memory policy references should preserve:
-
-- allowed scopes
 - retention expectations
 - ownership
 - visibility
@@ -209,6 +207,16 @@ Versioned memory policy references should preserve:
 - update modes
 
 A broader memory policy should be treated as a safety-significant change.
+
+The earlier `memoryPolicyRef` proposal is removed. NexFlow has no
+`MemoryPolicy` manifest kind or stable target namespace, and an extension-owned
+resource cannot silently become a core reference target. The schema therefore
+rejects the field instead of accepting an unresolvable ID.
+
+Early `0.1` draft manifests should remove `memoryPolicyRef`, preserve the
+intended values in `memoryScopes`, and move retention, ownership, visibility,
+consumer, writer, sensitivity, update, promotion, audit, and approval rules to
+the matching entries in `memory.yaml`.
 
 ### Permission and Autonomy Versioning
 
@@ -259,9 +267,16 @@ Deprecating or retiring an agent definition should identify the replacement when
 
 ## Compatibility Impact
 
-This RFC does not change current manifest schemas. The repository includes a draft schema and examples for `agent-definitions.yaml`, but this RFC remains draft until accepted through the governance process.
+The repository includes a draft schema and examples for
+`agent-definitions.yaml`, but this RFC remains draft until accepted through the
+governance process.
 
 If accepted, later work may refine manifests or fields for agent definitions and versioned references.
+
+The current draft rejects the unsupported `memoryPolicyRef` field. This is a
+pre-release `0.1` correction rather than a `specVersion` transition: no
+published NexFlow version defined a resolvable target for the field. The
+migration is to use `memoryScopes` and the authoritative `MemorySet` entries.
 
 Compatibility guidance:
 
@@ -321,3 +336,5 @@ This would violate provider neutrality and make the core specification depend on
 - Which agent definition changes should require an RFC versus a normal pull request?
 - Should `active` agent definitions require an explicit approval gate in the manifest?
 - How should private prompt references be represented in public open-source repositories?
+- Should a future RFC define an independently versioned memory policy resource,
+  and if so, how would it compose with or replace `MemorySet` authority?

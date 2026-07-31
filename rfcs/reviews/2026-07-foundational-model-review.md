@@ -239,6 +239,11 @@ failures. Broader typed-reference fixtures remain open.
 - add multiple-workflow discovery and duplicate-workflow diagnostics
 - keep cross-workflow dependencies unsupported
 
+Status: Core Profile required slots, optional qualifiers, dependency rules,
+fail-closed omission, reduced Project source hints, and focused conformance
+fixtures are implemented. Source indexes, general discovery, and
+multiple-workflow loading remain open.
+
 ### Phase 6: Stabilization
 
 - align documentation, schemas, examples, compatibility guidance, and migration
@@ -257,10 +262,16 @@ failures. Broader typed-reference fixtures remain open.
 | Future explicit standing agent constraints are undecided | Complete identity/configuration split | The initial compact shape classifies duplicated behavior fields as deprecated compatibility data; introduce any future ceiling explicitly. |
 | Scoped active-definition binding has no accepted field | Multiple simultaneous active releases per agent | Use one unscoped active definition initially; specify scoped binding separately. |
 | Context and memory intent lacks read/write/promotion typing | Complete effective configuration semantics | Define intent without treating access references as grants. |
-| `memoryPolicyRef` has no stable target contract | Memory policy selection | Define its target kind and relationship to `MemorySet` before normative use. |
 | Normative field-contract storage is undecided | Portable semantic validators | Choose a generated or shared schema-backed registry with one authoritative source. |
 | Project source/index shape is undecided | Reduced profile and multiple-workflow schemas | Define a transport-neutral representation that preserves logical assembly semantics. |
 | Specification version transition is undecided | First breaking schema migration | Make an explicit coordinated version decision with migration and compatibility notes. |
+
+## Resolved Blockers
+
+| Blocker | Resolution |
+| --- | --- |
+| `memoryPolicyRef` had no stable target contract | The unsupported field is rejected; `memoryScopes` resolves directly to authoritative `MemorySet` entries. |
+| Required Project paths forced every optional module into the minimum shape | `Project.manifests` is now optional, complete maps remain valid, and the machine-readable Core Profile defines required slots separately from source hints. |
 
 ## Deferred Non-Blockers
 
@@ -304,7 +315,7 @@ the draft is not acceptable.
 | RFC-0013 | Initial Actor identity and compact AgentSet slices implemented; remains Draft | Review broader migration before claiming the full model. |
 | RFC-0014 | Compact identity, authoritative unique-active selection, and Agent Assembly documentation slices implemented; remains Draft | Standardize machine-readable inspection, scoped binding, and broader migration before claiming the full model. |
 | RFC-0015 | Common primitive, focused structural evidence, and Actor relationship contracts implemented; remains Draft | Define field-specific contracts and migrate remaining fields deliberately. |
-| RFC-0016 | Core profile and logical assembly direction accepted for planning; remains Draft | Stabilize participant inventory and reference contracts before schema migration. |
+| RFC-0016 | Core Profile contract and reduced Project source-hint slice implemented; discovery portions remain Draft | Define source indexes, general discovery, multiple-workflow loading, and stable diagnostics separately. |
 
 ## Exit Criteria For Schema Work
 

@@ -1,0 +1,352 @@
+profileVersion: "0.1"
+profileId: core
+specVersion: "0.1"
+status: implemented
+description: Minimum useful NexFlow project identity and participant profile.
+
+requiredSlots:
+  - id: project
+    description: Exactly one project identity and policy document.
+    cardinality: exactly_one_document
+    resolution: require_exact
+    alternatives:
+      - kind: Project
+        role: authoritative
+
+  - id: participant_inventory
+    description: One authoritative inventory of project participants.
+    cardinality: one_authoritative_source
+    resolution: prefer_first_available
+    alternatives:
+      - kind: ActorSet
+        role: authoritative
+      - kind: AgentSet
+        role: legacy_fallback
+
+optionalModules:
+  - id: policy
+    description: Action vocabulary and authorization policy.
+    manifestKinds:
+      - CapabilitySet
+      - PermissionSet
+    qualifierRequiredKinds:
+      - CapabilitySet
+      - PermissionSet
+    omittedMeaning: No action capability or authorization effect is declared.
+
+  - id: work-planning
+    description: Tasks, ownership, dependencies, artifacts, and acceptance criteria.
+    manifestKinds:
+      - TaskSet
+    qualifierRequiredKinds:
+      - TaskSet
+    omittedMeaning: No project work item is declared.
+
+  - id: workflow
+    description: Inspectable workflow stages, steps, dependencies, and gates.
+    manifestKinds:
+      - Workflow
+    qualifierRequiredKinds:
+      - Workflow
+    omittedMeaning: No orchestration flow or ordering is declared.
+
+  - id: handoff
+    description: Explicit transfers of responsibility and artifacts.
+    manifestKinds:
+      - HandoffSet
+    qualifierRequiredKinds:
+      - HandoffSet
+    omittedMeaning: No responsibility transfer is declared.
+
+  - id: context
+    description: External and project information sources with access policy.
+    manifestKinds:
+      - ContextSet
+    qualifierRequiredKinds:
+      - ContextSet
+    omittedMeaning: No context source access is declared.
+
+  - id: memory
+    description: Retention, ownership, visibility, and reuse boundaries.
+    manifestKinds:
+      - MemorySet
+    qualifierRequiredKinds:
+      - MemorySet
+    omittedMeaning: No memory scope or durable retention is declared.
+
+  - id: agent-behavior
+    description: Versioned agent behavior and its component resources.
+    manifestKinds:
+      - AgentDefinitionSet
+      - ModelProfileSet
+      - PromptSet
+      - RetrievalProfileSet
+    qualifierRequiredKinds:
+      - AgentDefinitionSet
+    omittedMeaning: No versioned agent behavioral release is declared.
+
+  - id: provider-inventory
+    description: Provider-neutral availability and selection constraints.
+    manifestKinds:
+      - ProviderSet
+    qualifierRequiredKinds:
+      - ProviderSet
+    omittedMeaning: No model provider availability is declared.
+
+  - id: events-audit
+    description: Event type, payload, retention, and audit declarations.
+    manifestKinds:
+      - EventSet
+    qualifierRequiredKinds:
+      - EventSet
+    omittedMeaning: No event contract or emission behavior is declared.
+
+  - id: extensions
+    description: Namespaced integration declarations and lifecycle metadata.
+    manifestKinds:
+      - ExtensionSet
+    qualifierRequiredKinds:
+      - ExtensionSet
+    omittedMeaning: No extension or integration behavior is declared.
+
+dependencyRules:
+  - id: actor-agent
+    sourceKind: ActorSet
+    sourceField: actors[].agentRef
+    when: reference_present
+    target:
+      kind: AgentSet
+
+  - id: actor-operator
+    sourceKind: ActorSet
+    sourceField: actors[].operatedBy[]
+    when: reference_present
+    target:
+      slot: participant_inventory
+
+  - id: actor-representative
+    sourceKind: ActorSet
+    sourceField: actors[].representedBy[]
+    when: reference_present
+    target:
+      slot: participant_inventory
+
+  - id: actor-integration
+    sourceKind: ActorSet
+    sourceField: actors[].integrationRef
+    when: reference_present
+    target:
+      kind: ExtensionSet
+
+  - id: agent-definition-agent
+    sourceKind: AgentDefinitionSet
+    sourceField: agentDefinitions[].agentRef
+    when: reference_present
+    target:
+      kind: AgentSet
+
+  - id: agent-definition-model
+    sourceKind: AgentDefinitionSet
+    sourceField: agentDefinitions[].components.modelProfileRef
+    when: reference_present
+    target:
+      kind: ModelProfileSet
+
+  - id: agent-definition-prompts
+    sourceKind: AgentDefinitionSet
+    sourceField: agentDefinitions[].components.promptSetRef
+    when: reference_present
+    target:
+      kind: PromptSet
+
+  - id: agent-definition-retrieval
+    sourceKind: AgentDefinitionSet
+    sourceField: agentDefinitions[].components.retrievalProfileRef
+    when: reference_present
+    target:
+      kind: RetrievalProfileSet
+
+  - id: agent-definition-permissions
+    sourceKind: AgentDefinitionSet
+    sourceField: agentDefinitions[].components.permissionRefs[]
+    when: reference_present
+    target:
+      kind: PermissionSet
+
+  - id: agent-definition-capabilities
+    sourceKind: AgentDefinitionSet
+    sourceField: agentDefinitions[].components.capabilityRefs[]
+    when: reference_present
+    target:
+      kind: CapabilitySet
+
+  - id: agent-definition-context
+    sourceKind: AgentDefinitionSet
+    sourceField: agentDefinitions[].components.contextSourceRefs[]
+    when: reference_present
+    target:
+      kind: ContextSet
+
+  - id: agent-definition-memory
+    sourceKind: AgentDefinitionSet
+    sourceField: agentDefinitions[].components.memoryScopes[]
+    when: reference_present
+    target:
+      kind: MemorySet
+
+  - id: agent-definition-extensions
+    sourceKind: AgentDefinitionSet
+    sourceField: agentDefinitions[].components.extensionRefs[]
+    when: reference_present
+    target:
+      kind: ExtensionSet
+
+  - id: task-participants
+    sourceKind: TaskSet
+    sourceField: tasks[].owner|participants[]
+    when: reference_present
+    target:
+      slot: participant_inventory
+
+  - id: task-capabilities
+    sourceKind: TaskSet
+    sourceField: tasks[].capabilitiesRequired[]
+    when: reference_present
+    target:
+      kind: CapabilitySet
+
+  - id: task-gates
+    sourceKind: TaskSet
+    sourceField: tasks[].approvalGates[]
+    when: reference_present
+    target:
+      kind: Project
+
+  - id: workflow-tasks
+    sourceKind: Workflow
+    sourceField: workflow.stages[].steps[].task
+    when: reference_present
+    target:
+      kind: TaskSet
+
+  - id: workflow-gates
+    sourceKind: Workflow
+    sourceField: workflow.stages[].steps[].approvalGates[]
+    when: reference_present
+    target:
+      kind: Project
+
+  - id: workflow-events
+    sourceKind: Workflow
+    sourceField: workflow.stages[].steps[].emits[]
+    when: reference_present
+    target:
+      kind: EventSet
+
+  - id: handoff-participants
+    sourceKind: HandoffSet
+    sourceField: handoffs[].from[]|to[]
+    when: reference_present
+    target:
+      slot: participant_inventory
+
+  - id: handoff-artifacts
+    sourceKind: HandoffSet
+    sourceField: handoffs[].artifacts[]
+    when: reference_present
+    target:
+      kind: TaskSet
+
+  - id: permission-subjects
+    sourceKind: PermissionSet
+    sourceField: permissions[].subjects[]
+    when: reference_present
+    target:
+      slot: participant_inventory
+
+  - id: permission-capabilities
+    sourceKind: PermissionSet
+    sourceField: permissions[].capabilities[]
+    when: reference_present
+    target:
+      kind: CapabilitySet
+
+  - id: permission-gate
+    sourceKind: PermissionSet
+    sourceField: permissions[].approvalGate
+    when: reference_present
+    target:
+      kind: Project
+
+  - id: context-actors
+    sourceKind: ContextSet
+    sourceField: contextSources[].access.allowedActors[]|deniedActors[]
+    when: reference_present
+    target:
+      slot: participant_inventory
+
+  - id: context-gates
+    sourceKind: ContextSet
+    sourceField: contextSources[].approvalGates[]
+    when: reference_present
+    target:
+      kind: Project
+
+  - id: memory-actors
+    sourceKind: MemorySet
+    sourceField: memoryScopes[].allowedConsumers[]|allowedWriters[]
+    when: reference_present
+    target:
+      slot: participant_inventory
+
+  - id: memory-gate
+    sourceKind: MemorySet
+    sourceField: memoryScopes[].approvalGate
+    when: reference_present
+    target:
+      kind: Project
+
+  - id: memory-events
+    sourceKind: MemorySet
+    sourceField: memoryScopes[].auditEvents[]
+    when: reference_present
+    target:
+      kind: EventSet
+
+  - id: model-provider-list
+    sourceKind: ModelProfileSet
+    sourceField: modelProfiles[].selection.providerRefs[]
+    when: reference_present
+    target:
+      kind: ProviderSet
+
+  - id: model-pinned-provider
+    sourceKind: ModelProfileSet
+    sourceField: modelProfiles[].selection.pinnedModel.providerRef
+    when: reference_present
+    target:
+      kind: ProviderSet
+
+  - id: retrieval-context
+    sourceKind: RetrievalProfileSet
+    sourceField: retrievalProfiles[].sources[].contextSourceRef
+    when: reference_present
+    target:
+      kind: ContextSet
+
+  - id: extension-capabilities
+    sourceKind: ExtensionSet
+    sourceField: extensions[].requiredCapabilities[]
+    when: reference_present
+    target:
+      kind: CapabilitySet
+
+dependencyPolicy:
+  closure: transitive
+  missingTarget: error
+  unsupportedTarget: error
+
+safety:
+  omittedModule: no_declaration_or_authority
+  profileConformance: no_runtime_authority
+  unknownModule: no_core_semantics

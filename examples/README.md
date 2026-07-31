@@ -4,6 +4,10 @@ This directory contains complete reference manifest sets for different team shap
 
 The examples are not runtime fixtures. They are readable specification examples that show how actors, agents, agent definitions, permissions, capabilities, context, memory, tasks, workflows, handoffs, events, providers, model profiles, prompt sets, retrieval profiles, and extensions fit together.
 
+Complete examples are not the minimum adoption requirement. See the
+[Core Profile](../docs/core-profile.md) for the reduced Project and participant
+shape and fail-closed optional module rules.
+
 Use the [Example Matrix](MATRIX.md) to compare examples by complexity, context, autonomy, approval gates, integrations, and learning path.
 
 Use the [Example Consistency Checklist](CHECKLIST.md) before adding or changing an example.

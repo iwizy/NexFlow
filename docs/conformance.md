@@ -35,10 +35,33 @@ A conforming manifest set MUST:
 
 - include `specVersion`
 - use documented `kind` values
-- follow the core manifest model
+- satisfy its claimed authoring profiles and dependency closure
 - declare capabilities separately from permissions
 - declare context and memory access explicitly
 - avoid raw secrets
+
+### Core Profile Conformance
+
+The `core` authoring profile requires exactly one `Project` and one
+authoritative participant inventory. `ActorSet` is authoritative when present;
+`AgentSet` remains the legacy `0.1` fallback.
+
+A Core Profile claim MUST:
+
+- validate every present supported document structurally
+- satisfy both required profile slots
+- satisfy every additionally claimed module qualifier
+- close authored dependencies transitively
+- reject missing or unsupported required modules
+- treat omitted modules as contributing no declaration or authority
+
+The machine-readable contract is
+[`profiles/core.yaml`](../profiles/core.yaml). Repository evidence is provided
+by `npm run core-profile-smoke`.
+
+Core Profile conformance is not a new conformance level. It qualifies
+`NF-MANIFEST`, `NF-SCHEMA`, or `NF-SEMANTIC` claims and does not imply
+`NF-RUNTIME`, execution, permission enforcement, or provider support.
 
 ### Schema Validator
 

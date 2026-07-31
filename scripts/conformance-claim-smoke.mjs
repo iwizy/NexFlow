@@ -87,6 +87,20 @@ const cases = [
     expected: false
   },
   {
+    name: "duplicate profile qualifier",
+    value: changed((claim) => {
+      claim.scope.profiles = ["core", "core"];
+    }),
+    expected: false
+  },
+  {
+    name: "unknown profile qualifier",
+    value: changed((claim) => {
+      claim.scope.profiles = ["everything"];
+    }),
+    expected: false
+  },
+  {
     name: "unknown conformance level",
     value: changed((claim) => {
       claim.claims["NF-PROVIDER"] = {

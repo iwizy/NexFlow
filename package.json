@@ -9,6 +9,7 @@
     "approval-gate-target-schema-smoke": "node scripts/approval-gate-target-schema-smoke.mjs",
     "actor-schema-smoke": "node scripts/actor-schema-smoke.mjs",
     "conformance-claim-smoke": "node scripts/conformance-claim-smoke.mjs",
+    "core-profile-smoke": "node scripts/core-profile-smoke.mjs",
     "human-override-schema-smoke": "node scripts/human-override-schema-smoke.mjs",
     "negative-schema-fixtures": "node scripts/negative-schema-fixtures.mjs",
     "provider-feature-schema-smoke": "node scripts/provider-feature-schema-smoke.mjs",

@@ -14,6 +14,7 @@ Related artifacts:
 - [Machine-readable schema](../conformance/conformance-claim.schema.json)
 - [YAML template](../conformance/conformance-claim.template.yaml)
 - [Markdown template](../conformance/CONFORMANCE-CLAIM.template.md)
+- [Core Profile qualifiers](core-profile.md)
 - [Conformance](conformance.md)
 - [Compatibility Matrix](compatibility-matrix.md)
 
@@ -79,6 +80,7 @@ evidence or correct wording for the same subject version, but should update
 Every claim lists:
 
 - supported NexFlow `specVersion` values
+- supported authoring profiles, including an explicit empty list when none apply
 - supported manifest kinds, including an explicit empty list when none apply
 - supported extension namespaces, including an explicit empty list when none apply
 
@@ -91,8 +93,18 @@ An `NF-SCHEMA` claim SHOULD identify the evaluated schema snapshot. An
 `NF-EXTENSION` claim MUST list every namespace covered by the claim. Empty or
 omitted scope must never be interpreted as "all."
 
-Draft RFC vocabulary, future profiles, and unpublished schema combinations are
-outside the scope unless the claim identifies them as non-standard limitations.
+Profile values use the closed qualifiers defined by the current Core Profile
+contract. Listing a profile narrows the evaluated declaration shape; it does not
+claim runtime support or replace the required conformance level evidence.
+
+Migration from earlier unreleased `claimVersion: "0.1"` drafts: add
+`scope.profiles` with every evaluated qualifier, or an explicit empty list when
+no profile was evaluated. The claim version remains `0.1` because no claim
+format release has been published.
+
+Draft RFC vocabulary, unknown future profiles, and unpublished schema
+combinations are outside the scope unless the claim identifies them as
+non-standard limitations.
 
 ## Level Status
 
@@ -176,7 +188,7 @@ explain evidence and tradeoffs, but MUST NOT claim broader support.
 ## Publication Workflow
 
 1. Evaluate one exact subject version against one or more NexFlow spec versions.
-2. Record the schema revisions and manifest kinds actually exercised.
+2. Record the profiles, schema revisions, and manifest kinds actually exercised.
 3. Assign a status to every conformance level.
 4. Link evidence for every `supported` or `partial` level.
 5. Record partial and overall limitations.

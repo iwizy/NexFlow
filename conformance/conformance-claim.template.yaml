@@ -23,8 +23,12 @@ scope:
     - specVersion: "0.1"
       revision: replace-with-tag-or-commit
       source: https://github.com/iwizy/NexFlow
+  profiles:
+    - core
   manifestKinds:
     - Project
+    - ActorSet
+    - AgentSet
   extensionNamespaces: []
   unsupportedFields:
     - Replace with unsupported fields, or remove this property when none are known.

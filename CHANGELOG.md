@@ -56,7 +56,10 @@ tag or release has been published, and manifest `specVersion` remains `"0.1"`.
   an explicit boundary from project action capabilities and permissions.
 - Added a standalone `0.1` conformance claim schema, synchronized YAML and
   Markdown templates, evidence and limitation rules, publication guidance, and
-  13 focused positive and negative format checks.
+  15 focused positive and negative format checks including profile qualifiers.
+- Added a machine-readable Core Profile definition with required Project and
+  participant slots, optional module qualifiers, dependency rules, fail-closed
+  omission semantics, and 16 focused conformance cases.
 
 ### Changed
 
@@ -72,6 +75,15 @@ tag or release has been published, and manifest `specVersion` remains `"0.1"`.
   values to exact typed task and context-source references.
 - Migrated maintained provider declarations from ambiguous `capabilities` to
   `features`; the legacy field remains structurally valid but deprecated.
+- Removed the unresolvable AgentDefinition `memoryPolicyRef` draft field,
+  established `memoryScopes` to `MemorySet` as the only core memory selection
+  contract, and added migration guidance plus focused rejection checks.
+- Made `Project.manifests` an optional source-hint map so reduced Core Profile
+  projects do not require empty files for unadopted modules; existing complete
+  maps remain valid.
+- Added required explicit `scope.profiles` qualifiers to the unreleased
+  `claimVersion: "0.1"` conformance claim format and synchronized both
+  templates and focused checks.
 - Added a roadmap checkpoint separating candidate evidence, release decisions,
   known draft boundaries, and post-`0.1` work.
 - Simplified the required AgentSet shape to stable AI identity, role,

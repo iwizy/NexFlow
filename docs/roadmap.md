@@ -90,6 +90,12 @@ assembly-wide namespace across tasks. Thirteen focused cases and repository
 semantic smoke checks cover duplicate and unresolved references; graph and
 provenance validation remain future work.
 
+Core Profile checkpoint: the minimum Project and participant slots, ActorSet
+authority with AgentSet fallback, optional module qualifiers, transitive
+dependency policy, fail-closed omission, reduced Project source hints, and 16
+focused cases are implemented. General discovery, multiple workflow loading,
+and stable profile diagnostics remain future work.
+
 ## Milestone 2: Community Review
 
 - Collect feedback from agent tool builders, open-source maintainers, startups, enterprises, and researchers.

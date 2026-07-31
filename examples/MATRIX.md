@@ -2,7 +2,9 @@
 
 This matrix compares the reference examples by learning order, complexity, context shape, autonomy posture, approval gates, integrations, and validation focus.
 
-Use it to choose an example to read, adapt, or validate. The examples are specification material, not runtime fixtures, and no example grants access or executes work by itself.
+Use it to choose an example to read, adapt, or validate. The examples are
+complete specification material, not minimum Core Profile fixtures or runtime
+fixtures, and no example grants access or executes work by itself.
 
 ## Learning Path
 

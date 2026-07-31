@@ -85,7 +85,8 @@
                 "uniqueItems": true
               },
               "memoryPolicyRef": {
-                "$ref": "common.schema.json#/$defs/id"
+                "description": "Unsupported field from an earlier 0.1 draft. Memory policy is selected through components.memoryScopes and resolved against MemorySet.memoryScopes[].scope.",
+                "not": {}
               },
               "extensionRefs": {
                 "$ref": "common.schema.json#/$defs/idList"

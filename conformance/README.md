@@ -35,7 +35,8 @@ level and required section.
 
 1. Copy both templates into the subject's own release or documentation area.
 2. Replace every placeholder with facts about one exact subject version.
-3. Use the same scope, status, evidence, and limitations in both formats.
+3. Use the same profile-qualified scope, status, evidence, and limitations in
+   both formats.
 4. Validate the YAML claim against the schema.
 5. Publish both files together and link them from release or compatibility docs.
 6. Withdraw or replace the files when the claim becomes inaccurate.

@@ -81,6 +81,7 @@ Do not tag a candidate if the repository implies runtime behavior, provider inte
 - [ ] `npm run actor-schema-smoke` succeeds.
 - [ ] `npm run agent-identity-schema-smoke` succeeds.
 - [ ] `npm run agent-definition-authority-smoke` succeeds.
+- [ ] `npm run core-profile-smoke` succeeds.
 - [ ] `npm run human-override-schema-smoke` succeeds.
 - [ ] `npm run provider-feature-schema-smoke` succeeds.
 - [ ] `npm run conformance-claim-smoke` succeeds.
@@ -89,9 +90,9 @@ Do not tag a candidate if the repository implies runtime behavior, provider inte
 - [ ] `git diff --check` succeeds.
 - [ ] CI runs schema smoke, schema validation, negative fixtures, typed
   reference primitives, approval gate targets, work reference namespaces,
-  ActorSet, agent identity, agent definition authority, human override
-  boundaries, provider features, conformance claim format checks, and semantic
-  reference smoke checks on pull requests.
+  ActorSet, agent identity, agent definition authority, Core Profile, human
+  override boundaries, provider features, conformance claim format checks, and
+  semantic reference smoke checks on pull requests.
 - [ ] Validation docs explain the difference between syntax checks, schema validation, semantic smoke checks, future semantic validation, and runtime enforcement.
 - [ ] Semantic reference inventory target namespaces and coverage labels match
   the current schemas, examples, and semantic smoke implementation.

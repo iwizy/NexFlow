@@ -8,6 +8,22 @@ For a quick terminology reference, see [Glossary](glossary.md).
 
 A repository, product, service, or workstream governed by NexFlow manifests.
 
+## Profile
+
+A named authoring and validation contract for a minimum declaration purpose.
+Profiles qualify conformance claims; they do not execute work or grant
+authority.
+
+The implemented [Core Profile](core-profile.md) requires one Project and one
+authoritative participant inventory. Optional module qualifiers become required
+when claimed, and referenced modules become required through dependency closure.
+
+## Module
+
+A coherent optional area of the manifest vocabulary, such as policy, workflow,
+context, memory, provider inventory, events, or extensions. An omitted module
+contributes no declaration or authority.
+
 ## Team
 
 A collection of humans, agents, and automation systems that collaborate on a project.

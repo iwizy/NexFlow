@@ -1,0 +1,245 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nexflow.dev/profiles/core-profile.schema.json",
+  "title": "NexFlow Core Profile Definition",
+  "description": "Machine-readable authoring profile metadata. This is not a NexFlow project manifest and does not grant runtime behavior.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "profileVersion",
+    "profileId",
+    "specVersion",
+    "status",
+    "description",
+    "requiredSlots",
+    "optionalModules",
+    "dependencyRules",
+    "dependencyPolicy",
+    "safety"
+  ],
+  "properties": {
+    "profileVersion": {
+      "const": "0.1"
+    },
+    "profileId": {
+      "const": "core"
+    },
+    "specVersion": {
+      "const": "0.1"
+    },
+    "status": {
+      "const": "implemented"
+    },
+    "description": {
+      "$ref": "#/$defs/nonEmptyString"
+    },
+    "requiredSlots": {
+      "type": "array",
+      "minItems": 2,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "description",
+          "cardinality",
+          "resolution",
+          "alternatives"
+        ],
+        "properties": {
+          "id": {
+            "$ref": "#/$defs/id"
+          },
+          "description": {
+            "$ref": "#/$defs/nonEmptyString"
+          },
+          "cardinality": {
+            "type": "string",
+            "enum": ["exactly_one_document", "one_authoritative_source"]
+          },
+          "resolution": {
+            "type": "string",
+            "enum": ["require_exact", "prefer_first_available"]
+          },
+          "alternatives": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["kind", "role"],
+              "properties": {
+                "kind": {
+                  "$ref": "#/$defs/manifestKind"
+                },
+                "role": {
+                  "type": "string",
+                  "enum": ["authoritative", "legacy_fallback"]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "optionalModules": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "description",
+          "manifestKinds",
+          "qualifierRequiredKinds",
+          "omittedMeaning"
+        ],
+        "properties": {
+          "id": {
+            "$ref": "#/$defs/id"
+          },
+          "description": {
+            "$ref": "#/$defs/nonEmptyString"
+          },
+          "manifestKinds": {
+            "$ref": "#/$defs/manifestKindList"
+          },
+          "qualifierRequiredKinds": {
+            "$ref": "#/$defs/manifestKindList"
+          },
+          "omittedMeaning": {
+            "$ref": "#/$defs/nonEmptyString"
+          }
+        }
+      }
+    },
+    "dependencyRules": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "sourceKind", "sourceField", "when", "target"],
+        "properties": {
+          "id": {
+            "$ref": "#/$defs/id"
+          },
+          "sourceKind": {
+            "$ref": "#/$defs/manifestKind"
+          },
+          "sourceField": {
+            "$ref": "#/$defs/nonEmptyString"
+          },
+          "when": {
+            "const": "reference_present"
+          },
+          "target": {
+            "oneOf": [
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["kind"],
+                "properties": {
+                  "kind": {
+                    "$ref": "#/$defs/manifestKind"
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["slot"],
+                "properties": {
+                  "slot": {
+                    "$ref": "#/$defs/id"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    "dependencyPolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["closure", "missingTarget", "unsupportedTarget"],
+      "properties": {
+        "closure": {
+          "const": "transitive"
+        },
+        "missingTarget": {
+          "const": "error"
+        },
+        "unsupportedTarget": {
+          "const": "error"
+        }
+      }
+    },
+    "safety": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "omittedModule",
+        "profileConformance",
+        "unknownModule"
+      ],
+      "properties": {
+        "omittedModule": {
+          "const": "no_declaration_or_authority"
+        },
+        "profileConformance": {
+          "const": "no_runtime_authority"
+        },
+        "unknownModule": {
+          "const": "no_core_semantics"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9]*(?:[-_][a-z0-9]+)*$"
+    },
+    "nonEmptyString": {
+      "type": "string",
+      "minLength": 1
+    },
+    "manifestKind": {
+      "type": "string",
+      "enum": [
+        "Project",
+        "ActorSet",
+        "AgentSet",
+        "AgentDefinitionSet",
+        "CapabilitySet",
+        "PermissionSet",
+        "TaskSet",
+        "Workflow",
+        "HandoffSet",
+        "ContextSet",
+        "MemorySet",
+        "ProviderSet",
+        "ModelProfileSet",
+        "PromptSet",
+        "RetrievalProfileSet",
+        "EventSet",
+        "ExtensionSet"
+      ]
+    },
+    "manifestKindList": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/manifestKind"
+      }
+    }
+  }
+}

@@ -4,7 +4,7 @@
   "title": "NexFlow Project Manifest",
   "type": "object",
   "additionalProperties": true,
-  "required": ["specVersion", "kind", "metadata", "project", "manifests"],
+  "required": ["specVersion", "kind", "metadata", "project"],
   "properties": {
     "specVersion": {
       "$ref": "common.schema.json#/$defs/specVersion"
@@ -99,23 +99,11 @@
       }
     },
     "manifests": {
+      "description": "Optional source-loading hints for adopted manifests. Paths are not resource identity and do not grant behavior.",
       "type": "object",
       "additionalProperties": {
         "type": "string"
-      },
-      "required": [
-        "agents",
-        "workflow",
-        "tasks",
-        "handoffs",
-        "permissions",
-        "capabilities",
-        "context",
-        "memory",
-        "providers",
-        "events",
-        "extensions"
-      ]
+      }
     }
   }
 }

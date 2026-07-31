@@ -23,13 +23,18 @@ See [Work Reference Namespaces](../docs/work-reference-namespaces.md) for the
 semantic uniqueness and exact lookup rules applied to workflow steps and task
 artifacts.
 
+The Core Profile is a non-manifest specification asset under `profiles/`.
+Its standalone schema intentionally lives beside the profile definition so it
+is not counted as another project manifest kind. See
+[Core Profile](../docs/core-profile.md).
+
 ## Current Scope
 
 The schemas currently target `specVersion: "0.1"` and use JSON Schema draft 2020-12.
 
 | Schema | Manifest `kind` | Purpose |
 | --- | --- | --- |
-| `project.schema.json` | `Project` | Project identity, policies including structured network access and human override, maintainers, approval gates, and manifest locations. |
+| `project.schema.json` | `Project` | Project identity, policies including structured network access and human override, maintainers, approval gates, and optional manifest source hints. |
 | `actors.schema.json` | `ActorSet` | First-class human, agent, automation, service, and authority identity with kind-specific typed relationships. |
 | `agents.schema.json` | `AgentSet` | Stable AI identity, with deprecated behavior fields and legacy mixed-participant compatibility during migration. |
 | `agent-definitions.schema.json` | `AgentDefinitionSet` | Versioned agent behavioral releases with complete reviewed active-definition requirements and component references. |
@@ -74,7 +79,9 @@ When changing a manifest shape:
 
 1. Update the relevant documentation in `docs/`.
 2. Update the matching schema in this directory.
-3. Update at least one example under `examples/`.
+3. Update at least one maintained example or a focused fixture. Compatibility
+   widening that intentionally preserves all complete examples may use focused
+   fixtures and must document why no example migration is needed.
 4. Update `CHANGELOG.md` for user-visible changes.
 5. Consider whether an RFC is required.
 

@@ -17,7 +17,13 @@ Related documents:
 - [Work Reference Namespaces](work-reference-namespaces.md)
 - [RFC-0015: Typed References](../rfcs/RFC-0015-typed-references.md)
 - [Effective Agent Configuration](effective-agent-configuration.md)
+- [Core Profile](core-profile.md)
 - [Core Profile And Logical Discovery](../rfcs/RFC-0016-core-profile-and-discovery.md)
+
+The machine-readable Core Profile records major field-to-module dependency
+edges for closure checks. This inventory remains authoritative for exact target
+namespaces and semantic coverage. Changes to either table must keep both views
+consistent.
 
 ## Why An Inventory Is Needed
 
@@ -107,6 +113,10 @@ definitions fail closed.
 | `review.approvers[]` | Actor identity | Checked | Resolve declared reviewers; existence does not authenticate review evidence. |
 | `review.approvalGate` | `Project.project.approvalGates[].id` | Checked | Resolve the activation gate; existence does not satisfy it. |
 | `audit.events[]` | `EventSet.events[].type` | Checked | Resolve declared audit event types without implying emission. |
+
+`components.memoryPolicyRef` is intentionally absent: the field had no target
+namespace and is rejected by the AgentDefinitionSet schema. Memory intent uses
+`components.memoryScopes[]`, while MemorySet owns the corresponding policy.
 
 Deprecated AgentSet fields `permissions`, `capabilities`, `contextAccess`,
 `memoryAccess`, `providerPreferences[].provider`, and `extensions` are checked

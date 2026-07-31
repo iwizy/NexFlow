@@ -242,6 +242,8 @@ Examples:
 | Rename required manifest field | Breaks `NF-MANIFEST` and `NF-SCHEMA`. |
 | Change approval gate meaning | May break `NF-RUNTIME` safety expectations. |
 | Change memory retention, visibility, sensitivity, consumers, writers, or promotion paths | May affect `NF-SEMANTIC`, `NF-RUNTIME`, privacy, audit, and safety compatibility. |
+| Add, remove, or reinterpret an AgentDefinition memory selector | May affect `NF-MANIFEST`, `NF-SCHEMA`, `NF-SEMANTIC`, memory authority, migration, privacy, and safety compatibility. |
+| Change Core Profile slots, participant precedence, module qualifiers, omission semantics, or dependency closure | May affect `NF-MANIFEST`, `NF-SCHEMA`, `NF-SEMANTIC`, conformance claims, migration, and safety compatibility. |
 | Change actor kind, identity mode, agent bridge, operator, representative, or integration relationship | May affect `NF-MANIFEST`, `NF-SCHEMA`, `NF-SEMANTIC`, `NF-RUNTIME`, authority, and audit compatibility. |
 | Remove deprecated AgentSet behavior fields or change stable identity meaning | May affect `NF-MANIFEST`, `NF-SCHEMA`, `NF-SEMANTIC`, migration, and future effective configuration. |
 | Change unique active-definition selection or active completeness requirements | May affect `NF-SCHEMA`, `NF-SEMANTIC`, safety, migration, audit, and future runtime compatibility. |

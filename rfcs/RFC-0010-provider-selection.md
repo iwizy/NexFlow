@@ -95,7 +95,10 @@ providers:
       - text_generation
       - tool_reasoning
     constraints:
-      allowTrainingUse: false
+      trainingUse: prohibited
+      dataResidency: project_policy
+      toolUse: declared_tools_only
+      maxSensitivity: internal
     selection:
       strategy: project_policy
       explainability:
@@ -111,6 +114,12 @@ project action. Legacy provider `capabilities` remains structurally valid only
 for `0.1` migration, cannot coexist with `features`, and must not be resolved as
 action capabilities. See
 [Provider Features](../docs/provider-features.md).
+
+The implemented provider constraint vocabulary describes static candidate
+eligibility facts for training use, residency, tool use, sensitivity, cost,
+latency, deployment, network posture, approval, and retention. It remains
+separate from model-profile requirements and authorization. See
+[Provider Constraints](../docs/provider-constraints.md).
 
 ### Provider Preference
 
@@ -274,7 +283,13 @@ The order should be conservative. A broad provider preference should not overrid
 
 ## Constraints
 
-Provider selection constraints may include:
+Provider selection uses two constraint layers:
+
+- provider constraints describe static candidate eligibility facts and policy
+  boundaries
+- model-profile constraints describe requirements for one behavioral use
+
+The implemented `ProviderSet` constraint vocabulary includes:
 
 - training use
 - data residency
@@ -289,6 +304,11 @@ Provider selection constraints may include:
 - extension namespace requirements
 
 Constraints should be explicit when the selected provider may see sensitive context, prompt material, memory, customer data, production data, or security-relevant information.
+
+A future selector must intersect both layers with project and organization
+policy. Omitted, `unspecified`, unknown, or externally resolved facts do not
+satisfy a restrictive requirement by themselves. Clear conflicts reject the
+candidate; material uncertainty should fail closed or require approval.
 
 ## Training Use
 
@@ -309,12 +329,14 @@ Data residency constraints describe where data may be processed or stored.
 
 NexFlow should not define legal compliance rules itself.
 
-Projects may use:
+Provider declarations may use:
 
 - `project_policy`
 - `organization_policy`
-- region names
-- local-only requirements
+- `regions` with a non-empty `allowedRegions` list
+- `local_only`
+- `any`
+- `unspecified`
 - extension-scoped residency policies
 
 Future runtimes should record which residency rule was applied when safe.
@@ -513,8 +535,10 @@ providers:
     type: abstract
     description: Provider-neutral coding and review model class.
     constraints:
-      allowTrainingUse: false
+      trainingUse: prohibited
       dataResidency: project_policy
+      toolUse: declared_tools_only
+      maxSensitivity: confidential
     selection:
       strategy: project_policy
       explainability:
@@ -561,6 +585,11 @@ JSON Schema can validate:
 - provider declarations have required top-level fields
 - provider features use the closed core vocabulary
 - provider `features` does not coexist with deprecated `capabilities`
+- provider constraints use the core training, residency, region, tool,
+  sensitivity, cost, latency, deployment, network, approval, and retention
+  shapes
+- structured `trainingUse` does not coexist with deprecated
+  `allowTrainingUse`
 - model profiles have selection mode and audit objects
 - optional explainability fields are structurally valid
 - known selection modes use stable enum values
@@ -575,6 +604,8 @@ Future semantic validators may check:
 - selection mode has enough metadata
 - fallback candidates reference declared providers
 - model profile constraints are compatible with project policy
+- provider constraints satisfy applicable model-profile requirements, with
+  material unknown facts reported as blockers or approval requirements
 - agent definitions reference existing model profiles
 - event audit fields are requested for high-risk selection modes
 
@@ -603,11 +634,17 @@ A future runtime must not:
 
 ## Compatibility Impact
 
-The implemented provider feature slice is additive inside the unreleased `0.1`
-draft and semantic.
+The implemented provider feature and constraint slices remain inside the
+unreleased `0.1` draft.
 
 It adds optional `features`, deprecates the ambiguous provider `capabilities`
 field name, and migrates maintained examples without changing required fields.
+
+It also replaces the previously open provider constraint shape with explicit
+core values, migrates maintained `allowTrainingUse` booleans to `trainingUse`,
+and keeps the legacy boolean schema-valid but deprecated. Existing custom
+constraint metadata remains preservable, but it cannot satisfy a core
+constraint automatically.
 
 Adding optional explainability metadata is compatible with existing manifests.
 
@@ -673,7 +710,8 @@ This is premature and would likely become provider-specific. The current draft s
 
 - Should `provider.selected` become a core event type in `0.1`?
 - Should provider selection decisions have first-class IDs?
-- Should model profile constraints use stricter enums for cost, latency, and residency?
+- Which provider and model-profile constraint comparisons should become
+  normative semantic validation before `1.0`?
 - Should provider catalogs be standardized as a future manifest kind or extension?
 - How should local model selection be represented when no external provider is used?
 - Should provider fallback always require approval for high-autonomy agents?

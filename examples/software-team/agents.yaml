@@ -16,6 +16,7 @@ agents:
     permissions:
       - implementation_branch_work
       - approved_network_access
+      - mcp_tool_access
     capabilities:
       - read_repository
       - write_repository
@@ -23,10 +24,12 @@ agents:
       - execute_command
       - read_context
       - access_network
+      - access_mcp
     contextAccess:
       - repository
       - issue_tracker
       - docs
+      - mcp_tools
     memoryAccess:
       - ephemeral
       - task
@@ -36,6 +39,7 @@ agents:
         priority: preferred
     extensions:
       - namespace: io.nexflow.github
+      - namespace: io.nexflow.mcp
   - id: qa-agent
     displayName: QA Agent
     role: quality_engineer
@@ -49,14 +53,17 @@ agents:
     permissions:
       - qa_test_execution
       - approved_network_access
+      - mcp_tool_access
     capabilities:
       - read_repository
       - execute_command
       - read_context
       - access_network
+      - access_mcp
     contextAccess:
       - repository
       - issue_tracker
+      - mcp_tools
     memoryAccess:
       - ephemeral
       - task
@@ -64,7 +71,8 @@ agents:
     providerPreferences:
       - provider: coding_reasoning
         priority: preferred
-    extensions: []
+    extensions:
+      - namespace: io.nexflow.mcp
   - id: reviewer
     displayName: Reviewer
     role: maintainer

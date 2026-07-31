@@ -11,7 +11,14 @@ providers:
       - code_reasoning
       - policy_reasoning
     constraints:
-      allowTrainingUse: false
+      trainingUse: prohibited
       dataResidency: organization_policy
+      toolUse: declared_tools_only
+      maxSensitivity: restricted
+      costTier: high
+      latencyClass: batch
+      approvalRequired: true
+      dataRetention:
+        mode: organization_policy
     selection:
       strategy: governed_provider_policy

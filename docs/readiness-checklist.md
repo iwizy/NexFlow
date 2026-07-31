@@ -83,7 +83,9 @@ Do not tag a candidate if the repository implies runtime behavior, provider inte
 - [ ] `npm run agent-definition-authority-smoke` succeeds.
 - [ ] `npm run core-profile-smoke` succeeds.
 - [ ] `npm run human-override-schema-smoke` succeeds.
+- [ ] `npm run mcp-extension-smoke` succeeds.
 - [ ] `npm run provider-feature-schema-smoke` succeeds.
+- [ ] `npm run provider-constraint-schema-smoke` succeeds.
 - [ ] `npm run conformance-claim-smoke` succeeds.
 - [ ] `npm run semantic-smoke` succeeds.
 - [ ] Markdown link checks succeed.
@@ -91,8 +93,9 @@ Do not tag a candidate if the repository implies runtime behavior, provider inte
 - [ ] CI runs schema smoke, schema validation, negative fixtures, typed
   reference primitives, approval gate targets, work reference namespaces,
   ActorSet, agent identity, agent definition authority, Core Profile, human
-  override boundaries, provider features, conformance claim format checks, and
-  semantic reference smoke checks on pull requests.
+  override boundaries, MCP extension profile, provider features, provider
+  constraints, conformance claim format checks, and semantic reference smoke
+  checks on pull requests.
 - [ ] Validation docs explain the difference between syntax checks, schema validation, semantic smoke checks, future semantic validation, and runtime enforcement.
 - [ ] Semantic reference inventory target namespaces and coverage labels match
   the current schemas, examples, and semantic smoke implementation.
@@ -103,7 +106,7 @@ Do not tag a candidate if the repository implies runtime behavior, provider inte
 - [ ] RFC index explains proposal, review, acceptance, breaking change, and deprecation processes.
 - [ ] Project vision RFC records the purpose and non-goals.
 - [ ] Core manifest model RFC records the initial manifest vocabulary.
-- [ ] Conformance, agent definition versioning, validation, extension namespace, approval gate, memory retention, event envelope, provider selection, reference CLI, manifest bundling, actor, effective configuration, typed reference, discovery, and human override RFCs are discoverable.
+- [ ] Conformance, agent definition versioning, validation, extension namespace, approval gate, memory retention, event envelope, provider selection, reference CLI, manifest bundling, actor, effective configuration, typed reference, discovery, human override, and MCP extension RFCs are discoverable.
 - [ ] Draft RFCs are marked as draft unless accepted.
 - [ ] Accepted or deferred decisions are reflected in docs, schemas, examples, and changelog.
 - [ ] Breaking or behavior-significant changes include compatibility notes.
@@ -119,6 +122,11 @@ Do not tag a candidate if the repository implies runtime behavior, provider inte
   deprecated ambiguous `appliesTo` values.
 - [ ] Provider feature migration keeps model support signals separate from
   action capabilities and documents deprecated provider `capabilities`.
+- [ ] Provider constraint migration documents deprecated `allowTrainingUse`,
+  explicit replacement values, model-profile composition, and unknown-fact
+  behavior.
+- [ ] MCP profile migration documents required server and surface metadata,
+  action allow-lists, approval posture, and the absence of runtime support.
 - [ ] Workflow step and task artifact namespace changes include reference and
   migration compatibility notes.
 - [ ] Conformance doc distinguishes manifest, schema, semantic, CLI, runtime, extension, and audit support surfaces.

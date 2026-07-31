@@ -4,6 +4,10 @@ Extensions allow NexFlow to grow without forcing every integration into the core
 
 Related RFC: [RFC-0006: Extension Namespaces](../rfcs/RFC-0006-extension-namespaces.md).
 
+The first machine-readable maintained profile is the
+[MCP Extension Draft](../extensions/mcp/README.md), proposed by
+[RFC-0018](../rfcs/RFC-0018-mcp-extension-profile.md).
+
 ## Goals
 
 - support integrations such as GitHub, GitLab, Jira, Linear, Figma, Slack, Discord, Telegram, MCP, notes, and custom systems
@@ -75,3 +79,13 @@ namespace: com.example.platform
 ```
 
 Custom extensions should include a public or internal reference document when possible.
+
+## Maintained Draft Profiles
+
+| Namespace | Status | Evidence | Runtime support |
+| --- | --- | --- | --- |
+| `io.nexflow.mcp` | Draft / experimental | Profile schema, RFC-0018, Software Team binding, and `npm run mcp-extension-smoke` | Not implemented |
+
+A maintained profile defines a policy mapping and validation evidence. It does
+not load an integration, install software, negotiate an external protocol,
+obtain credentials, or establish runtime conformance.

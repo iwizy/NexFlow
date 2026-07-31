@@ -74,3 +74,14 @@ selection.
 ## MCP
 
 MCP can expose both context and tools. NexFlow should model MCP servers explicitly so teams can see what data and actions are available.
+
+The [MCP Extension Draft](../extensions/mcp/README.md) maps MCP-facing context,
+resources, prompts, tools, and actions to existing NexFlow policy domains.
+
+Action-bearing surfaces require an explicit tool allow-list, `access_mcp`, an
+action-specific capability, effective permissions, approval in the initial draft, and
+audit evidence. Networked transports additionally require `access_network` and
+a matching structured network rule. Credentials remain outside manifests.
+
+The draft does not implement MCP, choose a protocol version, discover live
+servers or tools, or treat connection success as authorization.

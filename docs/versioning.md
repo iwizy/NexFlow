@@ -118,6 +118,34 @@ a feature meaning, or coupling provider features to action capability grants
 requires an explicit compatibility and version decision. See
 [Provider Features](provider-features.md).
 
+## Provider Constraint Version Decision
+
+The structured provider constraint vocabulary remains in
+`specVersion: "0.1"`. It tightens an open object inside the unreleased draft,
+migrates maintained examples to explicit enum values, and keeps deprecated
+`allowTrainingUse` readable without allowing it to coexist with `trainingUse`.
+
+Early manifests should map `allowTrainingUse: false` to
+`trainingUse: prohibited`. A true legacy value requires policy review before it
+is mapped to `allowed`, `requires_approval`, or `unspecified`.
+
+Removing the legacy field, changing a constraint meaning, changing composition
+or unknown-fact behavior, or making a field required needs an explicit later
+version decision. See [Provider Constraints](provider-constraints.md).
+
+## MCP Extension Draft Version Decision
+
+The `io.nexflow.mcp` profile and stricter MCP context shape remain in
+`specVersion: "0.1"` while RFC-0018 is Draft. The profile has its own
+`profileVersion: "0.1-draft"` because external extension compatibility must not
+be inferred only from the core manifest version.
+
+Earlier MCP sources should add `mcp.serverId`, a non-empty `mcp.exposes`
+inventory, and, for tools or actions, a non-empty allow-list plus explicit
+approval posture. Changing surface authority, protocol compatibility claims,
+or failure policy requires explicit compatibility review. See the
+[MCP Extension Draft](../extensions/mcp/README.md).
+
 ## Agent Identity Version Decision
 
 The compact AgentSet migration remains in `specVersion: "0.1"`. The schema

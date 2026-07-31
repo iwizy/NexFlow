@@ -105,10 +105,10 @@ Initial semantic validation should focus on:
 | Permissions | Permission rules reference declared capabilities and do not silently override deny rules. |
 | Approval gates | High-risk actions, broad autonomy, deployments, destructive operations, and credential access have gates where required by project policy. |
 | Effective agent configuration | Agent definitions reference existing model profiles, prompt sets, retrieval profiles, permissions, capabilities, context sources, memory scopes, and extensions; a future Agent Assembly view preserves provenance and blockers. |
-| Context | Context source classifications, freshness rules, web boundaries, and MCP context/tool separation are coherent. |
+| Context | Context source classifications, freshness rules, web boundaries, and MCP profile context/action, allow-list, approval, capability, permission, network, and audit dependencies are coherent. |
 | Memory | Scope access, ownership, allowed writers, allowed consumers, retention, and promotion rules preserve sensitivity boundaries. |
 | Workflows | Workflow steps, tasks, dependencies, handoffs, and emitted events form a coherent graph. |
-| Providers | Provider references and model profile constraints are declared and compatible with project policy. |
+| Providers | Provider references, structured candidate constraints, model-profile requirements, fallback, and unknown-fact handling are declared and compatible with project policy. |
 | Prompts | Prompt set owners, approvers, source references, safety review status, classifications, and compatibility notes are coherent. |
 | Retrieval | Retrieval profile sources, excluded sources, index metadata, freshness, citations, sensitivity, and review triggers are compatible with context policy. |
 | Extensions | Extension namespaces, lifecycle state, required capabilities, and permission implications are declared. |

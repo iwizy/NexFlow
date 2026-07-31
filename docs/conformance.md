@@ -14,6 +14,7 @@ Related RFCs:
 - [RFC-0009: Event Envelope](../rfcs/RFC-0009-event-envelope.md)
 - [RFC-0010: Provider Selection](../rfcs/RFC-0010-provider-selection.md)
 - [RFC-0011: Reference CLI Scope](../rfcs/RFC-0011-reference-cli-scope.md)
+- [RFC-0018: MCP Extension Profile](../rfcs/RFC-0018-mcp-extension-profile.md)
 
 See the [Compatibility Matrix](compatibility-matrix.md) for the repository's current evidence-backed support claims.
 
@@ -216,6 +217,11 @@ A conforming extension MUST:
 - document required capabilities
 - document permission implications
 - avoid redefining core semantics incompatibly
+
+An `NF-EXTENSION` claim for `io.nexflow.mcp` should also identify the supported
+MCP profile version and external protocol versions in evidence or limitations.
+Listing the namespace alone does not claim transport, discovery, credential,
+client, server, or runtime execution support.
 
 ## Draft Conformance Levels
 

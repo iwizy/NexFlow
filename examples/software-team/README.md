@@ -2,7 +2,8 @@
 
 A conventional software delivery team with implementation, QA, review, and documentation roles.
 
-This example emphasizes task dependencies, pull request review, and capability separation.
+This example emphasizes task dependencies, pull request review, capability
+separation, and the experimental MCP extension boundary.
 
 ## What This Example Teaches
 
@@ -58,6 +59,12 @@ Skipped checks should be visible. They should not be treated as successful valid
 - The reviewer is the only actor that can approve changes.
 - QA may run approved checks, but does not approve release readiness.
 - Extensions declare integration surfaces but do not grant access without matching capabilities and permissions.
+- MCP context and allow-listed read-only tools require `access_mcp`, an
+  effective permission, and approval; they do not imply command execution or
+  network access.
+
+See the [MCP Extension Draft](../../extensions/mcp/README.md) for the profile
+validated by this example.
 
 ## Local Check
 

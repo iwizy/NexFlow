@@ -224,6 +224,12 @@ A provider-neutral declaration of model selection expectations for a behaviorall
 
 Model profiles can describe pinned model references, floating aliases, policy-based selection, fallback behavior, constraints, and audit expectations. They do not call providers or grant access.
 
+### MCP Extension Profile
+
+The experimental `io.nexflow.mcp` policy mapping for MCP-facing context,
+resources, prompts, tools, and actions. It does not implement MCP or authorize a
+server, tool, transport, credential, or project action.
+
 ### Module
 
 A coherent optional area of the manifest vocabulary, such as policy, workflow,
@@ -276,6 +282,13 @@ features, preferences, and constraints without granting project action
 capabilities.
 
 NexFlow is provider neutral.
+
+### Provider Constraint
+
+A static provider eligibility fact or policy boundary such as training use,
+residency, tool mode, sensitivity, cost, latency, deployment, network posture,
+approval, or retention. Provider constraints must be composed with
+model-profile requirements and do not grant access.
 
 ### Provider Feature
 

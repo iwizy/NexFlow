@@ -93,6 +93,11 @@ An `NF-SCHEMA` claim SHOULD identify the evaluated schema snapshot. An
 `NF-EXTENSION` claim MUST list every namespace covered by the claim. Empty or
 omitted scope must never be interpreted as "all."
 
+For a versioned extension profile such as `io.nexflow.mcp`, evidence SHOULD name
+the supported profile version and external protocol versions. The current claim
+format keeps those details in evidence or limitations; the namespace field does
+not imply all profile or protocol versions.
+
 Profile values use the closed qualifiers defined by the current Core Profile
 contract. Listing a profile narrows the evaluated declaration shape; it does not
 claim runtime support or replace the required conformance level evidence.

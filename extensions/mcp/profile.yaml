@@ -1,0 +1,64 @@
+profileVersion: "0.1-draft"
+namespace: io.nexflow.mcp
+displayName: MCP Extension Draft
+status: draft
+protocol:
+  name: Model Context Protocol
+  authority: external
+  versionPolicy: explicit_compatibility_claim
+surfaces:
+  - id: context
+    class: context
+    contextSourceRequired: true
+    actionCapabilityRequired: false
+  - id: resources
+    class: context
+    contextSourceRequired: true
+    actionCapabilityRequired: false
+  - id: prompts
+    class: context
+    contextSourceRequired: true
+    actionCapabilityRequired: false
+  - id: tools
+    class: action
+    contextSourceRequired: true
+    actionCapabilityRequired: true
+  - id: actions
+    class: action
+    contextSourceRequired: true
+    actionCapabilityRequired: true
+requirements:
+  extension:
+    lifecycle:
+      - experimental
+    appliesTo:
+      - context
+      - capabilities
+      - permissions
+      - events
+    requiredCapabilities:
+      - access_mcp
+  contextSource:
+    type: mcp
+    requiredMcpFields:
+      - serverId
+      - exposes
+  actionSurfaces:
+    allowlistRequired: true
+    permissionRequired: true
+    approvalPolicy: required_initial_draft
+  network:
+    policy: required_when_transport_is_networked
+    capability: access_network
+  credentials:
+    handling: external_only
+  audit:
+    requiredFor:
+      - tool_execution
+      - action_execution
+      - approval_decision
+      - network_decision
+failurePolicy:
+  unknownSurface: preserve_do_not_execute
+  unsupportedProfile: fail_closed
+  missingDependency: fail_closed

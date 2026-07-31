@@ -57,3 +57,16 @@ permissions:
     approvalGate: network_access_review
     conditions:
       - The request must match actor, purpose, destination, transport, and classification constraints.
+  - id: mcp_tool_access
+    description: Implementation and QA agents may use only approved local MCP context and read-only tools.
+    subjects:
+      - implementation-agent
+      - qa-agent
+    capabilities:
+      - access_mcp
+      - read_context
+    effect: approval_required
+    approvalGate: mcp_tool_review
+    conditions:
+      - The server and tool must be declared by the mcp_tools context source.
+      - MCP access must not imply command execution, repository writes, or network access.

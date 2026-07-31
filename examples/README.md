@@ -133,3 +133,7 @@ See the [Compatibility Matrix](../docs/compatibility-matrix.md) for the exact st
 Example extension declarations are illustrative and draft-level. They do not implement integrations and do not grant access by themselves.
 
 An extension should always be paired with explicit capabilities, permissions, context declarations, and approval gates where needed.
+
+The Software Team example carries the first complete experimental
+`io.nexflow.mcp` binding. It is validated offline and does not connect to or run
+an MCP server.

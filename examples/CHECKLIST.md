@@ -120,11 +120,15 @@ Examples are part of the specification surface. They should remain small enough 
 ## Providers, Models, Prompts, And Extensions
 
 - [ ] Provider declarations remain provider-neutral unless the example intentionally demonstrates an extension.
+- [ ] Provider constraints use explicit core values, remain compatible with
+  model-profile requirements, and do not imply live provider availability.
 - [ ] Model profiles explain selection mode, constraints, fallback, audit, and review triggers.
 - [ ] Prompt sets avoid raw sensitive prompts when references or digests are enough.
 - [ ] Prompt set owners and approvers exist.
 - [ ] Extensions declare lifecycle state and required capabilities.
 - [ ] Extensions do not grant access without matching capabilities and permissions.
+- [ ] MCP tool or action surfaces have a non-empty allow-list, explicit approval
+  posture, and separate action capabilities where effects go beyond MCP access.
 
 ## Events And Audit
 

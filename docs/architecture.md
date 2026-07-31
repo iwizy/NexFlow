@@ -25,6 +25,7 @@ flowchart TD
 
 - `docs/` defines intended semantics.
 - `profiles/` defines machine-readable authoring profile contracts.
+- `extensions/` defines versioned non-core integration policy profiles.
 - `schemas/` provides practical validation.
 - `examples/` demonstrates coherent configurations.
 - `rfcs/` records design proposals and accepted decisions.

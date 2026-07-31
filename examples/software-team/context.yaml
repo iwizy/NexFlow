@@ -70,4 +70,4 @@ contextSources:
         - dependency-graph-reader
       requiresApprovalForTools: true
     approvalGates:
-      - dependency_approval
+      - mcp_tool_review

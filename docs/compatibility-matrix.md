@@ -46,12 +46,14 @@ enforced.
 | Approval gate targets | Closed typed target kinds, assembly and workflow scope, migrated examples, and exact semantic lookup | Implemented | `docs/approval-gate-targets.md`, `npm run approval-gate-target-schema-smoke`, `npm run semantic-smoke` | Target resolution only; no gate coverage, decision state, approver authentication, or runtime enforcement. |
 | Work reference namespaces | Workflow-wide step and assembly-wide artifact rules with 13 focused cases | Implemented | `docs/work-reference-namespaces.md`, `npm run work-reference-namespace-smoke` | Identity and exact lookup evidence only; no cycle, ordering, provenance, disclosure, or runtime enforcement. |
 | Provider feature vocabulary | Closed model support signals, migrated examples, and legacy capability separation | Implemented | `docs/provider-features.md`, `npm run provider-feature-schema-smoke`, `npm run semantic-smoke` | Structural and migration evidence only; no provider selection, live availability, permission, or runtime support. |
+| Provider constraint vocabulary | Structured provider eligibility fields, migrated examples, legacy training boolean, and 17 focused cases | Implemented | `docs/provider-constraints.md`, `npm run provider-constraint-schema-smoke` | Structural and migration evidence only; no complete constraint solver, live provider facts, selection, or runtime enforcement. |
+| MCP extension draft | Machine-readable `io.nexflow.mcp` profile, stricter ContextSet boundary, Software Team binding, and 10 focused cases | Implemented | `extensions/mcp/`, RFC-0018, `npm run mcp-extension-smoke` | Policy mapping only; no MCP client, server, transport, discovery, credential, protocol negotiation, or execution support. |
 | Conformance claim format | Standalone `claimVersion: "0.1"` schema plus profile-qualified YAML and Markdown templates | Implemented | `conformance/`, `npm run conformance-claim-smoke` | Self-declared claim structure only; no certification, external evidence verification, registry, or conformance test suite. |
 | Semantic reference inventory | P0-P3 target namespaces, coverage, gaps, and deferred fields | Specified | `docs/semantic-reference-inventory.md` | Documentation contract only; it is not a manifest, generated registry, validator, or conformance suite. |
 | Semantic reference smoke | Selected cross-manifest reference, active definition authority, and duplicate checks | Partial | `npm run semantic-smoke`, semantic reference inventory | Does not cover every inventoried field or establish full `NF-SEMANTIC` conformance, graph safety, or policy correctness. |
 | Reference CLI | Validation-only scope proposed | Planned | RFC-0011 | No `nexflow` executable or `NF-CLI` implementation exists. |
 | Runtime | Provider-neutral requirements documented | Planned | Architecture, runtime options, roadmap | No orchestration, enforcement, provider calling, task execution, or `NF-RUNTIME` implementation exists. |
-| Extensions | Core declaration schema and draft namespace/lifecycle rules | Partial | `extensions.schema.json`, extension docs, examples | No registry, loader, live integration, plugin execution, or supported namespace catalog exists. |
+| Extensions | Core declaration schema, namespace/lifecycle rules, and one maintained experimental MCP profile | Partial | `extensions.schema.json`, `extensions/mcp/`, extension docs, examples | No registry, loader, live integration, protocol implementation, or plugin execution exists. |
 
 ## Version Compatibility Matrix
 
@@ -86,8 +88,11 @@ agent definition authority smoke: scripts/agent-definition-authority-smoke.mjs
 core profile definition: profiles/core.yaml
 core profile smoke: scripts/core-profile-smoke.mjs
 human override boundary smoke: scripts/human-override-schema-smoke.mjs
+mcp extension profile: extensions/mcp/profile.yaml
+mcp extension smoke: scripts/mcp-extension-smoke.mjs
 typed reference primitive smoke: scripts/typed-reference-schema-smoke.mjs
 approval gate target smoke: scripts/approval-gate-target-schema-smoke.mjs
+provider constraint smoke: scripts/provider-constraint-schema-smoke.mjs
 work reference namespace smoke: scripts/work-reference-namespace-smoke.mjs
 provider feature smoke: scripts/provider-feature-schema-smoke.mjs
 conformance claim format smoke: scripts/conformance-claim-smoke.mjs
@@ -419,6 +424,8 @@ Current extension support includes:
 - applicable manifest declarations
 - required capability declarations
 - example extension records
+- an experimental `io.nexflow.mcp` policy profile with machine-readable
+  structure and focused offline validation
 
 Current extension support does not include:
 
@@ -427,6 +434,7 @@ Current extension support does not include:
 - namespace ownership verification
 - a public extension registry
 - live GitHub, GitLab, Jira, Linear, Figma, Slack, MCP, or custom integrations
+- MCP transport, protocol negotiation, discovery, client, or server behavior
 - credential acquisition or secret management
 - extension-provided runtime behavior
 

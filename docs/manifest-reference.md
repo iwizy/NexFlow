@@ -142,6 +142,14 @@ compatibility notes, approved review with an approver and gate, activation
 criteria, enabled audit flags, and declared audit events. Draft definitions may
 remain incomplete for authoring and review.
 
+`components.memoryScopes` resolves directly to
+`MemorySet.memoryScopes[].scope`. The earlier `memoryPolicyRef` draft field is
+unsupported and rejected because the core specification defines no
+`MemoryPolicy` target. Migrate by removing the field, listing the intended
+standard scopes in `memoryScopes`, and declaring their policy in `memory.yaml`.
+See [Agent Definitions](agent-definitions.md#memory-policy-boundary) for the
+complete migration and version decision.
+
 Agent definitions do not run agents, call providers, load prompts, retrieve
 context, grant permissions, or replace approval gates. Referenced policy
 manifests remain authoritative in their own domains.

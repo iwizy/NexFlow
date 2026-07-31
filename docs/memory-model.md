@@ -126,6 +126,11 @@ pass all of these checks:
 - any approval gate is satisfied
 - project policy and autonomy level allow the operation
 
+Agent definitions select memory intent only through `components.memoryScopes`.
+Each value resolves to the matching `MemorySet.memoryScopes[].scope`; the full
+matching entry is the policy. NexFlow does not currently define a separate
+`MemoryPolicy` resource or a `memoryPolicyRef` target.
+
 ## Cross-Scope Leakage
 
 Cross-scope leakage happens when information retained for one boundary is reused in another boundary without explicit permission.

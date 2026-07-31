@@ -133,6 +133,22 @@ const structuralCases = [
     name: "active definition without compatibility record",
     value: changed((definition) => delete definition.compatibility),
     expected: false
+  },
+  {
+    name: "active definition with unsupported memory policy reference",
+    value: changed((definition) => {
+      definition.components.memoryPolicyRef = "default_memory_policy";
+    }),
+    expected: false
+  },
+  {
+    name: "draft definition with unsupported memory policy reference",
+    value: (() => {
+      const definition = structuredClone(draftDefinition);
+      definition.components.memoryPolicyRef = "default_memory_policy";
+      return manifest([definition]);
+    })(),
+    expected: false
   }
 ];
 

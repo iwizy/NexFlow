@@ -72,6 +72,9 @@ tag or release has been published, and manifest `specVersion` remains `"0.1"`.
   values to exact typed task and context-source references.
 - Migrated maintained provider declarations from ambiguous `capabilities` to
   `features`; the legacy field remains structurally valid but deprecated.
+- Removed the unresolvable AgentDefinition `memoryPolicyRef` draft field,
+  established `memoryScopes` to `MemorySet` as the only core memory selection
+  contract, and added migration guidance plus focused rejection checks.
 - Added a roadmap checkpoint separating candidate evidence, release decisions,
   known draft boundaries, and post-`0.1` work.
 - Simplified the required AgentSet shape to stable AI identity, role,

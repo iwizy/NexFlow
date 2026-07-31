@@ -257,10 +257,15 @@ failures. Broader typed-reference fixtures remain open.
 | Future explicit standing agent constraints are undecided | Complete identity/configuration split | The initial compact shape classifies duplicated behavior fields as deprecated compatibility data; introduce any future ceiling explicitly. |
 | Scoped active-definition binding has no accepted field | Multiple simultaneous active releases per agent | Use one unscoped active definition initially; specify scoped binding separately. |
 | Context and memory intent lacks read/write/promotion typing | Complete effective configuration semantics | Define intent without treating access references as grants. |
-| `memoryPolicyRef` has no stable target contract | Memory policy selection | Define its target kind and relationship to `MemorySet` before normative use. |
 | Normative field-contract storage is undecided | Portable semantic validators | Choose a generated or shared schema-backed registry with one authoritative source. |
 | Project source/index shape is undecided | Reduced profile and multiple-workflow schemas | Define a transport-neutral representation that preserves logical assembly semantics. |
 | Specification version transition is undecided | First breaking schema migration | Make an explicit coordinated version decision with migration and compatibility notes. |
+
+## Resolved Blockers
+
+| Blocker | Resolution |
+| --- | --- |
+| `memoryPolicyRef` had no stable target contract | The unsupported field is rejected; `memoryScopes` resolves directly to authoritative `MemorySet` entries. |
 
 ## Deferred Non-Blockers
 

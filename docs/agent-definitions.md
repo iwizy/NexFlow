@@ -154,6 +154,38 @@ Common component references include:
 
 Component references do not grant access by themselves.
 
+## Memory Policy Boundary
+
+`memoryScopes` is the only core AgentDefinition component that selects memory
+intent. Each value resolves exactly to `MemorySet.memoryScopes[].scope`.
+The matching MemorySet entry remains authoritative for retention, ownership,
+visibility, consumers, writers, update rules, sensitivity, promotion paths,
+audit events, and approval gates.
+
+The earlier `memoryPolicyRef` draft field is unsupported and rejected by the
+AgentDefinitionSet schema. NexFlow does not define a `MemoryPolicy` resource,
+so accepting that field would create a reference with no portable target.
+
+Migrate an early draft manifest as follows:
+
+1. Remove `components.memoryPolicyRef`.
+2. List every requested standard scope in `components.memoryScopes`.
+3. Declare the policy for each selected scope in `memory.yaml`.
+4. Confirm selected scopes resolve exactly and review any broader retention,
+   consumer, writer, sensitivity, or promotion policy as safety-significant.
+
+```yaml
+components:
+  memoryScopes:
+    - ephemeral
+    - task
+```
+
+This correction keeps `specVersion: "0.1"` because no released NexFlow version
+defined a resolvable `memoryPolicyRef` target. A future independently versioned
+memory policy resource would require its own RFC, target namespace, authority
+relationship, migration, and compatibility decision.
+
 ## Lifecycle
 
 Agent definitions use this lifecycle:

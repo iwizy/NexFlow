@@ -108,6 +108,10 @@ definitions fail closed.
 | `review.approvalGate` | `Project.project.approvalGates[].id` | Checked | Resolve the activation gate; existence does not satisfy it. |
 | `audit.events[]` | `EventSet.events[].type` | Checked | Resolve declared audit event types without implying emission. |
 
+`components.memoryPolicyRef` is intentionally absent: the field had no target
+namespace and is rejected by the AgentDefinitionSet schema. Memory intent uses
+`components.memoryScopes[]`, while MemorySet owns the corresponding policy.
+
 Deprecated AgentSet fields `permissions`, `capabilities`, `contextAccess`,
 `memoryAccess`, `providerPreferences[].provider`, and `extensions` are checked
 against their corresponding namespaces for migration compatibility. They are

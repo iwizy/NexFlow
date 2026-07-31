@@ -61,8 +61,8 @@ Published claims should use the
 [machine-readable template](../conformance/conformance-claim.template.yaml) and
 matching
 [human-readable template](../conformance/CONFORMANCE-CLAIM.template.md). Both
-forms require the complete scope, all six level statuses, evidence, limitations,
-and separate validation and enforcement descriptions.
+forms require the complete profile-qualified scope, all six level statuses,
+evidence, limitations, and separate validation and enforcement descriptions.
 
 ### Required Boundaries
 

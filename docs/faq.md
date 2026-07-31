@@ -45,6 +45,13 @@ work.
 
 Probably, but only after the manifest model stabilizes. The first CLI should validate and inspect manifests, not orchestrate work.
 
+## Do I need every manifest to start?
+
+No. The [Core Profile](core-profile.md) requires one `Project` and one
+authoritative participant inventory. Other modules are optional until claimed
+or referenced, and omission never grants behavior. The maintained examples are
+complete learning fixtures rather than the minimum required project shape.
+
 ## What is the difference between capabilities and permissions?
 
 A capability says an actor or integration can technically do something. A permission rule applies an `allow`, `deny`, or `approval_required` effect to that capability.

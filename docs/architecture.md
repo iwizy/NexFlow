@@ -24,6 +24,7 @@ flowchart TD
 ## Repository Architecture
 
 - `docs/` defines intended semantics.
+- `profiles/` defines machine-readable authoring profile contracts.
 - `schemas/` provides practical validation.
 - `examples/` demonstrates coherent configurations.
 - `rfcs/` records design proposals and accepted decisions.
@@ -32,7 +33,12 @@ flowchart TD
 
 Manifests should be interpreted as one logical project assembly after deterministic discovery. Declared `specVersion`, `kind`, project identity, resource IDs, and references determine meaning; conventional file names remain authoring aids rather than semantic identity.
 
-[RFC-0016](../rfcs/RFC-0016-core-profile-and-discovery.md) proposes a minimum core profile, optional modules, multiple workflows, and bounded discovery rules. These rules remain draft and do not change the current complete `0.1` examples or schemas yet.
+The [Core Profile](core-profile.md) implements the minimum Project and
+participant contract, optional module qualifiers, dependency closure, and
+fail-closed omission semantics from
+[RFC-0016](../rfcs/RFC-0016-core-profile-and-discovery.md). General logical
+discovery, multiple workflow loading, source indexes, and stable discovery
+diagnostics remain Draft.
 
 ## Actor Identity View
 

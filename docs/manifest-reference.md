@@ -30,11 +30,18 @@ metadata:
   description: Optional description
 ```
 
-## Core Manifests
+## Core Profile And Manifest Vocabulary
 
-The current `0.1` maintained examples use the existing complete manifest set.
-`ActorSet` is an additive migration manifest and is currently present only in
-the Minimal Team reference path. [RFC-0016: Core Profile And Logical Discovery](../rfcs/RFC-0016-core-profile-and-discovery.md) proposes a future minimum profile, optional modules, multiple workflows, and reference-driven dependency closure. Reduced profiles are not supported by the current schemas unless that RFC is accepted and implemented.
+The minimum [Core Profile](core-profile.md) requires exactly one `Project` plus
+an authoritative participant inventory. `ActorSet` supplies participant
+identity when present; otherwise `AgentSet` remains the legacy `0.1` fallback.
+All other current manifest kinds are optional before use and required when
+selected by a claimed profile qualifier or dependency closure.
+
+The maintained examples intentionally use the complete manifest vocabulary.
+`ActorSet` is currently present only in the Minimal Team reference path.
+General discovery and multiple workflow loading from
+[RFC-0016](../rfcs/RFC-0016-core-profile-and-discovery.md) remain Draft.
 
 ### `project.yaml`
 
@@ -49,7 +56,11 @@ Key fields:
 - `project.maintainers`
 - `project.defaultAutonomy`
 - `project.policies`
-- `manifests`
+- optional `manifests` source-loading hints
+
+`manifests` paths are not resource identity and do not grant behavior. Existing
+complete path maps remain valid; reduced projects may omit the map or include
+only adopted modules.
 
 `project.policies.networkAccess` accepts a structured, fail-closed outbound
 network policy. Its `default` is `deny`; rules identify actors, purposes,

@@ -26,6 +26,18 @@ All manifests in one project SHOULD use the same `specVersion`.
 
 A future runtime MAY support mixed versions during migration, but it MUST make compatibility behavior explicit.
 
+## Core Profile Version Decision
+
+The Core Profile and optional `Project.manifests` source hints remain in
+`specVersion: "0.1"`. This is a compatibility-widening change inside the
+unreleased draft: complete Project path maps remain valid, while reduced
+projects no longer need placeholder paths for unadopted modules.
+
+Changing required profile slots, participant authority precedence, omission
+semantics, or dependency closure may be breaking. A future source-index or
+multiple-workflow shape requires its own explicit version decision. See
+[Core Profile](core-profile.md).
+
 ## Conformance Claim Versioning
 
 Conformance claims use `claimVersion`, which is independent from manifest
@@ -41,6 +53,10 @@ kind: NexFlowConformanceClaim
 Changing claim status vocabulary, required scope, required conformance levels,
 evidence rules, or attestation meaning requires a claim-format compatibility
 decision. Breaking changes require a new `claimVersion` and migration guidance.
+
+The current unreleased `claimVersion: "0.1"` draft requires an explicit
+`scope.profiles` list. Earlier draft claims should add evaluated Core Profile
+qualifiers or an empty list. No published claim format is being migrated.
 
 Publishing a claim, changing a subject's conformance status, or updating evidence
 does not by itself change manifest `specVersion`. See

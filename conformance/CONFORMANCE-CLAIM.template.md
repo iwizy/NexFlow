@@ -28,6 +28,7 @@
 
 - **NexFlow spec versions:** [for example, `0.1`]
 - **Schema snapshots:** [tag or commit for each spec version]
+- **Profiles:** [complete list such as `core`, or none]
 - **Manifest kinds:** [complete list, or none]
 - **Extension namespaces:** [complete list, or none]
 - **Unsupported fields:** [complete list, or none known]

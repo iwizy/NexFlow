@@ -48,6 +48,9 @@ jobs:
       - name: Run agent definition authority checks
         run: npm run agent-definition-authority-smoke
 
+      - name: Run Core Profile conformance checks
+        run: npm run core-profile-smoke
+
       - name: Run human override schema boundary checks
         run: npm run human-override-schema-smoke
 

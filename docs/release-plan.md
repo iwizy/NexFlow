@@ -57,7 +57,8 @@ Release readiness:
 - validation commands are documented and reproducible
 - schema compilation and example validation run in CI
 - focused typed-reference, work-reference namespace, ActorSet, agent identity,
-  agent definition authority, and human override boundaries are covered
+  agent definition authority, Core Profile, and human override boundaries are
+  covered
 - required field, enum value, ID format, and unknown manifest kind rejection
   fixtures run in CI
 - diagnostic categories are stable enough for early tooling

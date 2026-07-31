@@ -8,6 +8,7 @@ Thank you for helping shape NexFlow. This project is specification-first, so doc
 - propose manifest changes
 - add or improve examples
 - improve JSON Schemas
+- refine authoring profiles and dependency contracts
 - review security and autonomy rules
 - write RFCs
 - report ambiguity or unsafe defaults
@@ -77,6 +78,7 @@ npm run work-reference-namespace-smoke
 npm run actor-schema-smoke
 npm run agent-identity-schema-smoke
 npm run agent-definition-authority-smoke
+npm run core-profile-smoke
 npm run human-override-schema-smoke
 npm run provider-feature-schema-smoke
 npm run conformance-claim-smoke

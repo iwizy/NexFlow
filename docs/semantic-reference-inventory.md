@@ -17,7 +17,13 @@ Related documents:
 - [Work Reference Namespaces](work-reference-namespaces.md)
 - [RFC-0015: Typed References](../rfcs/RFC-0015-typed-references.md)
 - [Effective Agent Configuration](effective-agent-configuration.md)
+- [Core Profile](core-profile.md)
 - [Core Profile And Logical Discovery](../rfcs/RFC-0016-core-profile-and-discovery.md)
+
+The machine-readable Core Profile records major field-to-module dependency
+edges for closure checks. This inventory remains authoritative for exact target
+namespaces and semantic coverage. Changes to either table must keep both views
+consistent.
 
 ## Why An Inventory Is Needed
 

@@ -39,13 +39,14 @@ enforced.
 | Actor schema boundary smoke | 9 accepted and rejected structural cases | Implemented | `npm run actor-schema-smoke` | Focused ActorSet schema evidence, not full semantic or runtime conformance. |
 | Agent identity boundary smoke | 7 compact and legacy structural cases | Implemented | `npm run agent-identity-schema-smoke` | Checks identity migration compatibility, not definition selection or effective configuration. |
 | Agent definition authority smoke | 15 structural and selection cases | Implemented | `npm run agent-definition-authority-smoke` | Checks active completeness, unique unscoped selection, and rejection of unsupported memory policy references, not full policy resolution or runtime execution. |
+| Core Profile contract | Machine-readable required slots, optional qualifiers, dependency rules, and 16 focused cases | Implemented | `profiles/core.yaml`, `docs/core-profile.md`, `npm run core-profile-smoke` | Consumes normalized kind inventories; general discovery, arbitrary assembly validation, multi-workflow loading, and runtime preflight are absent. |
 | Agent Assembly inspection view | Documentation contract for a derived effective-configuration projection | Specified | `docs/agent-assembly.md`, RFC-0014 | No resolver, serializer, JSON Schema, reference CLI output, or runtime implementation exists. |
 | Human override boundary smoke | 11 accepted and rejected structural cases | Implemented | `npm run human-override-schema-smoke` | Checks policy shape, not authentication, interruption, revocation, or runtime enforcement. |
 | Typed reference primitives | Common typed, scoped, transitional, and kind-specific definitions with 53 focused cases | Implemented | `schemas/common.schema.json`, `npm run typed-reference-schema-smoke` | Shape and lexical evidence only; no complete field-contract or semantic resolution conformance. |
 | Approval gate targets | Closed typed target kinds, assembly and workflow scope, migrated examples, and exact semantic lookup | Implemented | `docs/approval-gate-targets.md`, `npm run approval-gate-target-schema-smoke`, `npm run semantic-smoke` | Target resolution only; no gate coverage, decision state, approver authentication, or runtime enforcement. |
 | Work reference namespaces | Workflow-wide step and assembly-wide artifact rules with 13 focused cases | Implemented | `docs/work-reference-namespaces.md`, `npm run work-reference-namespace-smoke` | Identity and exact lookup evidence only; no cycle, ordering, provenance, disclosure, or runtime enforcement. |
 | Provider feature vocabulary | Closed model support signals, migrated examples, and legacy capability separation | Implemented | `docs/provider-features.md`, `npm run provider-feature-schema-smoke`, `npm run semantic-smoke` | Structural and migration evidence only; no provider selection, live availability, permission, or runtime support. |
-| Conformance claim format | Standalone `claimVersion: "0.1"` schema plus YAML and Markdown templates | Implemented | `conformance/`, `npm run conformance-claim-smoke` | Self-declared claim structure only; no certification, external evidence verification, registry, or conformance test suite. |
+| Conformance claim format | Standalone `claimVersion: "0.1"` schema plus profile-qualified YAML and Markdown templates | Implemented | `conformance/`, `npm run conformance-claim-smoke` | Self-declared claim structure only; no certification, external evidence verification, registry, or conformance test suite. |
 | Semantic reference inventory | P0-P3 target namespaces, coverage, gaps, and deferred fields | Specified | `docs/semantic-reference-inventory.md` | Documentation contract only; it is not a manifest, generated registry, validator, or conformance suite. |
 | Semantic reference smoke | Selected cross-manifest reference, active definition authority, and duplicate checks | Partial | `npm run semantic-smoke`, semantic reference inventory | Does not cover every inventoried field or establish full `NF-SEMANTIC` conformance, graph safety, or policy correctness. |
 | Reference CLI | Validation-only scope proposed | Planned | RFC-0011 | No `nexflow` executable or `NF-CLI` implementation exists. |
@@ -64,7 +65,10 @@ The `0.1` row does not mean that every draft RFC is accepted or represented in
 schemas. RFC proposals remain proposals until their docs, schemas, examples,
 compatibility notes, and versioning impact are accepted and synchronized.
 
-[RFC-0016](../rfcs/RFC-0016-core-profile-and-discovery.md) proposes reduced core profiles, optional modules, and multiple workflow discovery. Those combinations are not part of the current supported matrix unless the proposal is accepted and implemented.
+[RFC-0016](../rfcs/RFC-0016-core-profile-and-discovery.md) now has an
+implemented Core Profile slice with optional module qualifiers and reduced
+Project source hints. General discovery, source indexes, and multiple workflow
+loading remain outside the current supported matrix.
 
 ## Current Artifact Pairing
 
@@ -79,6 +83,8 @@ negative schema fixtures: fixtures/schema/invalid/ via scripts/negative-schema-f
 actor boundary smoke: scripts/actor-schema-smoke.mjs
 agent identity boundary smoke: scripts/agent-identity-schema-smoke.mjs
 agent definition authority smoke: scripts/agent-definition-authority-smoke.mjs
+core profile definition: profiles/core.yaml
+core profile smoke: scripts/core-profile-smoke.mjs
 human override boundary smoke: scripts/human-override-schema-smoke.mjs
 typed reference primitive smoke: scripts/typed-reference-schema-smoke.mjs
 approval gate target smoke: scripts/approval-gate-target-schema-smoke.mjs
@@ -106,7 +112,7 @@ example and is validated in CI.
 
 | Manifest `kind` | Schema | Example coverage | `npm run validate` | `npm run semantic-smoke` |
 | --- | --- | --- | --- | --- |
-| `Project` | `project.schema.json` | All 7 project sets | Full structural check | Selected project, maintainer, approval gate, network policy, and human override checks |
+| `Project` | `project.schema.json` | All 7 complete project sets plus reduced focused fixtures | Full structural check | Optional source hints, selected project, maintainer, approval gate, network policy, and human override checks |
 | `ActorSet` | `actors.schema.json` | Minimal Team migration path | Full structural check | Actor identity, agent bridge, operator, representative, integration, and relationship cycle checks |
 | `AgentSet` | `agents.schema.json` | All 7 project sets | Full structural check | Agent identity inventory plus deprecated compatibility-field references where present |
 | `AgentDefinitionSet` | `agent-definitions.schema.json` | All 7 project sets | Full structural check | Selected agent and component references |
@@ -302,9 +308,10 @@ Command:
 npm run conformance-claim-smoke
 ```
 
-Compatible with standalone conformance claim `claimVersion: "0.1"`. It checks 13
-accepted and rejected schema cases plus the required human-readable template
-sections and six current conformance levels.
+Compatible with standalone conformance claim `claimVersion: "0.1"`. It checks
+15 accepted and rejected schema cases, including profile-qualified scope, plus
+the required human-readable template sections and six current conformance
+levels.
 
 It does not verify external evidence, evaluate implementations, operate a
 registry, issue certification, or establish any conformance level.
@@ -465,13 +472,14 @@ A future tool consuming NexFlow manifests should:
 1. Read `specVersion` before interpreting fields.
 2. Reject an unsupported version with a clear diagnostic.
 3. Discover the complete logical manifest set.
-4. Reject unsupported manifest kinds or report explicitly preserved unknown data.
-5. Select the schema snapshot mapped to the declared spec version.
-6. Run structural validation.
-7. Run the semantic validation layers the tool claims.
-8. Report unsupported RFC vocabulary that has not entered the accepted schema.
-9. Resolve extension namespaces only through explicit support declarations.
-10. Refuse runtime execution when required enforcement semantics are unsupported.
+4. Assess required profile slots, claimed qualifiers, and dependency closure.
+5. Reject unsupported manifest kinds or report explicitly preserved unknown data.
+6. Select the schema snapshot mapped to the declared spec version.
+7. Run structural validation.
+8. Run the semantic validation layers the tool claims.
+9. Report unsupported RFC vocabulary that has not entered the accepted schema.
+10. Resolve extension namespaces only through explicit support declarations.
+11. Refuse runtime execution when required enforcement semantics are unsupported.
 
 Tools must not choose the closest known version, silently downgrade manifests,
 or treat a draft RFC as implemented schema behavior.
@@ -481,13 +489,14 @@ or treat a draft RFC as implemented schema behavior.
 A tool producing NexFlow manifests should:
 
 1. Declare the exact `specVersion` it targets.
-2. Emit only fields accepted for that version unless namespaced extension rules
+2. Identify the authoring profiles its output is intended to satisfy.
+3. Emit only fields accepted for that version unless namespaced extension rules
    explicitly allow additional metadata.
-3. Validate output against the matching schema snapshot.
-4. Avoid generating runtime claims from schema validity alone.
-5. Record tool and template versions when reproducibility matters.
-6. Preserve unsupported extension data when round-tripping is safe.
-7. Provide migration guidance when output format behavior changes.
+4. Validate output against the matching schema snapshot.
+5. Avoid generating runtime claims from schema validity alone.
+6. Record tool and template versions when reproducibility matters.
+7. Preserve unsupported extension data when round-tripping is safe.
+8. Provide migration guidance when output format behavior changes.
 
 ## Compatibility Record Template
 
@@ -496,9 +505,10 @@ Validators, CLIs, runtimes, and extensions should publish the standalone
 matching
 [human-readable conformance claim](../conformance/CONFORMANCE-CLAIM.template.md).
 
-The templates require a named subject version, exact scope, explicit status for
-all six levels, evidence for supported or partial levels, separate validation
-and enforcement descriptions, limitations, and a self-declared attestation.
+The templates require a named subject version, exact profile-qualified scope,
+explicit status for all six levels, evidence for supported or partial levels,
+separate validation and enforcement descriptions, limitations, and a
+self-declared attestation.
 
 The machine-readable format is validated by:
 

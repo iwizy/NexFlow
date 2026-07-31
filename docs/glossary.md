@@ -108,6 +108,14 @@ A claim about how much of NexFlow a manifest set, validator, CLI, runtime, or ex
 
 Conformance claims should be specific. A schema validator, semantic validator, CLI, runtime, and extension do not all support the same surface area.
 
+### Core Profile
+
+The minimum authoring profile containing exactly one `Project` and one
+authoritative participant inventory. `ActorSet` is preferred when present;
+`AgentSet` is the legacy `0.1` fallback.
+
+Core Profile conformance does not grant behavior or establish runtime support.
+
 ### Context
 
 Information available to an actor from declared sources.
@@ -216,6 +224,12 @@ A provider-neutral declaration of model selection expectations for a behaviorall
 
 Model profiles can describe pinned model references, floating aliases, policy-based selection, fallback behavior, constraints, and audit expectations. They do not call providers or grant access.
 
+### Module
+
+A coherent optional area of the manifest vocabulary, such as policy, workflow,
+context, memory, events, or extensions. An omitted module contributes no
+declaration or authority.
+
 ## N
 
 ### Network Access Policy
@@ -242,6 +256,12 @@ A repository, product, service, workstream, or software effort governed by NexFl
 ### Project Policy
 
 Rules that apply across a project, such as default autonomy, required reviews, secret handling, network access, destructive actions, and production boundaries.
+
+### Profile
+
+A named authoring and validation contract for minimum declarations. Profiles
+qualify conformance claims; they are not project manifests and do not execute
+work.
 
 ### Prompt Set
 

@@ -47,6 +47,7 @@ NexFlow treats validation as a layered process.
 | Approval gate target checks | 16 focused cases implemented | Confirm closed gate target kinds, assembly and workflow scope, legacy coexistence, duplicate rejection, and typed object boundaries. |
 | Work reference namespace checks | 13 focused cases implemented | Confirm workflow-wide step and assembly-wide artifact identity, duplicate rejection, and exact dependency and handoff lookup. |
 | Provider feature checks | 11 focused cases implemented | Confirm closed provider support signals, legacy coexistence, uniqueness, and separation from project action capability IDs. |
+| Core Profile checks | 16 focused cases implemented | Confirm reduced Project structure, participant authority, optional qualifiers, dependency closure, and fail-closed unsupported modules. |
 | Manifest inventory | Future validation work | Confirm all expected manifest files are present and routed by `kind`. |
 | Semantic validation | Partial repository smoke coverage plus a documented inventory | Check prioritized cross-manifest references, ActorSet bridges, active agent definition authority, human override authorities, graph consistency, permission coverage, memory boundaries, and extension requirements. Full semantic conformance remains future work. |
 | Runtime preflight | Future runtime work | Check credentials, sandboxing, provider behavior, tool access, and execution safety before any runtime action. |

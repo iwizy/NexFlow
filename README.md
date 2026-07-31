@@ -23,11 +23,12 @@ Current release posture: **`0.1` draft, preparing for candidate review**. No
 | JSON Schemas | Implemented for 17 manifest kinds plus common definitions | [Schemas](schemas/), [Schema Guide](schemas/README.md) |
 | Reference examples | Implemented as 7 project sets containing 113 schema-backed manifests | [Examples](examples/), [Examples Guide](examples/README.md) |
 | Structural validation | Implemented for all maintained examples, four negative schema categories, and focused model boundaries | `npm run validate`, `npm run negative-schema-fixtures`, [Validation](docs/validation.md) |
+| Core Profile | Implemented for minimum Project and participant slots, optional module qualifiers, dependency closure, and fail-closed omission | `npm run core-profile-smoke`, [Core Profile](docs/core-profile.md), [Profile Definition](profiles/core.yaml) |
 | Typed reference primitives | Implemented for shared structural shapes and lexical boundaries | `npm run typed-reference-schema-smoke`, [Typed References](docs/typed-references.md) |
 | Approval gate targets | Implemented as closed typed target kinds with exact semantic resolution | `npm run approval-gate-target-schema-smoke`, [Approval Gate Targets](docs/approval-gate-targets.md) |
 | Work reference namespaces | Implemented for workflow-scoped steps and assembly-scoped task artifacts | `npm run work-reference-namespace-smoke`, [Work Reference Namespaces](docs/work-reference-namespaces.md) |
 | Provider feature vocabulary | Implemented as closed model support signals separate from action capabilities | `npm run provider-feature-schema-smoke`, [Provider Features](docs/provider-features.md) |
-| Conformance claim format | Implemented as standalone schema plus YAML and Markdown templates | `npm run conformance-claim-smoke`, [Conformance Claims](docs/conformance-claims.md) |
+| Conformance claim format | Implemented as standalone schema plus profile-qualified YAML and Markdown templates | `npm run conformance-claim-smoke`, [Conformance Claims](docs/conformance-claims.md) |
 | Semantic reference checks | Partial repository smoke coverage | `npm run semantic-smoke`, [Validation](docs/validation.md) |
 | Governance and RFC process | Implemented in documentation | [Governance](docs/governance.md), [RFCs](rfcs/README.md) |
 | Foundational model changes | ActorSet, compact AgentSet, and authoritative unique-active-definition slices implemented; RFCs remain Draft | [Actor Model](docs/actor-model.md), [Effective Agent Configuration](docs/effective-agent-configuration.md), [Foundational Model Review](rfcs/reviews/2026-07-foundational-model-review.md) |
@@ -88,6 +89,7 @@ The goal is to make AI-assisted software delivery inspectable before anything ru
 
 ## Core Concepts
 
+- **Core Profile**: the minimum Project and participant assembly, with optional modules that become required when claimed or referenced.
 - **Project**: the repository, product, or workstream governed by NexFlow manifests.
 - **Team**: humans, agents, automation systems, and review authorities.
 - **Actor**: a first-class human, agent, automation, service, or authority identity participating in project work.
@@ -173,6 +175,7 @@ NexFlow is intentionally split into layers:
 ## Repository Map
 
 - [Documentation Index](docs/index.md): specification documentation and reading paths
+- [profiles/](profiles/): machine-readable authoring profile definitions
 - [schemas/](schemas/): draft JSON Schemas for core manifests
 - [Schema Guide](schemas/README.md): schema scope, update rules, and validation boundaries
 - [examples/](examples/): complete reference team configurations
@@ -206,6 +209,7 @@ NexFlow is intentionally split into layers:
 | Need | Start Here |
 | --- | --- |
 | Understand the vocabulary | [Concepts](docs/concepts.md), [Glossary](docs/glossary.md) |
+| Start with the minimum project shape | [Core Profile](docs/core-profile.md), [Manifest Reference](docs/manifest-reference.md) |
 | Model participant identity | [Actor Model](docs/actor-model.md), [Actor Model Migration](docs/actor-model-migration.md) |
 | Model resource references | [Typed References](docs/typed-references.md), [Approval Gate Targets](docs/approval-gate-targets.md), [Work Reference Namespaces](docs/work-reference-namespaces.md), [Semantic Reference Inventory](docs/semantic-reference-inventory.md), [Manifest Reference](docs/manifest-reference.md) |
 | See every manifest shape | [Manifest Reference](docs/manifest-reference.md) |

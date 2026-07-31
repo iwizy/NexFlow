@@ -15,6 +15,7 @@ Related design notes:
 - [Semantic Reference Inventory](semantic-reference-inventory.md)
 - [Typed References](typed-references.md)
 - [Work Reference Namespaces](work-reference-namespaces.md)
+- [Core Profile](core-profile.md)
 - [Compatibility Matrix](compatibility-matrix.md)
 
 ## Validation Goals
@@ -43,6 +44,8 @@ The repository supports basic validation through:
 - Focused provider feature vocabulary and capability-separation checks.
 - Focused ActorSet, AgentSet identity, agent definition authority, and human
   override boundary checks.
+- Focused Core Profile definition, reduced Project, participant authority,
+  optional qualifier, and dependency-closure checks.
 - A focused standalone conformance claim schema and template check.
 - A semantic reference smoke command for selected cross-manifest references in examples.
 - A prioritized semantic reference inventory that distinguishes checked,
@@ -163,10 +166,11 @@ Run the standalone conformance claim format checks:
 npm run conformance-claim-smoke
 ```
 
-This command exercises 13 accepted and rejected cases for claim identity, scope,
-level status, evidence, limitations, lifecycle, timestamps, and self-declared
-assurance. It also checks that the Markdown template contains every required
-section and all six current conformance levels.
+This command exercises 15 accepted and rejected cases for claim identity,
+profile-qualified scope, level status, evidence, limitations, lifecycle,
+timestamps, and self-declared assurance. It also checks that the Markdown
+template contains every required section and all six current conformance
+levels.
 
 It validates claim structure only. It does not inspect external tools, verify
 evidence, certify implementations, or establish any conformance level.
@@ -176,10 +180,10 @@ focused boundary commands so pull requests exercise schema JSON parsing,
 example YAML parsing, manifest kind discovery, schema compilation, example
 manifest validation, typed-reference primitive boundaries, work reference
 namespaces, approval gate target kinds and scope, provider feature vocabulary,
-compact agent identity compatibility, human override fail-closed shape, and
-conformance claim format boundaries. It also checks active agent definition
-completeness and unique unscoped selection cases, plus the cataloged negative
-schema boundaries.
+compact agent identity compatibility, Core Profile conformance boundaries,
+human override fail-closed shape, and conformance claim format boundaries. It
+also checks active agent definition completeness and unique unscoped selection
+cases, plus the cataloged negative schema boundaries.
 
 Run semantic reference smoke checks:
 
@@ -235,6 +239,22 @@ This command checks complete active definitions, approved review and audit
 requirements, draft compatibility, unique active selection, missing active
 selection, and ambiguous active selection. It does not resolve full policy,
 authenticate reviewers, execute agents, or prove runtime enforcement.
+
+Run focused Core Profile checks:
+
+```sh
+npm run core-profile-smoke
+```
+
+This command validates `profiles/core.yaml` against its standalone schema and
+exercises 16 cases for reduced Project structure, ActorSet authority, legacy
+AgentSet fallback, optional and claimed qualifiers, missing dependencies,
+transitive closure, and unsupported required modules.
+
+The cases consume normalized manifest-kind inventories. They do not discover
+files, validate arbitrary project assemblies, load multiple workflows, execute
+work, or establish complete `NF-MANIFEST`, `NF-SCHEMA`, or `NF-SEMANTIC`
+conformance.
 
 Run focused human override boundary checks:
 

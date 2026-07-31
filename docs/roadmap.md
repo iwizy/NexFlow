@@ -109,6 +109,8 @@ and stable profile diagnostics remain future work.
 - Review RFC-0009 event envelope identity, actor, subject, correlation, causation, payload, audit, redaction, ordering, and extension expectations.
 - Review model profile selection modes, pinned and floating references, constraints, fallback, and audit expectations.
 - Review RFC-0010 provider preference, constraint, fallback, explainability, and runtime audit semantics.
+- Review structured provider constraint composition, legacy training-use
+  migration, unknown-fact handling, and static-versus-live evidence boundaries.
 - Maintain the closed provider feature vocabulary and its separation from
   project action capabilities as provider selection evolves.
 - Review prompt set identifiers, revisions, source references, safety review status, and compatibility impact.
@@ -116,6 +118,8 @@ and stable profile diagnostics remain future work.
 - Review agent definition component references, lifecycle status, activation criteria, autonomy, and audit expectations.
 - Review human override authority, interruption boundaries, fail-closed behavior, resume gates, and audit expectations.
 - Review extension namespace ownership, lifecycle transitions, registry expectations, and unsupported-extension behavior.
+- Review RFC-0018 MCP context/action mapping, allow-lists, protocol-version
+  claims, network transports, and failure behavior without implementing MCP.
 
 Relevant docs: [Security Model](security-model.md), [Capability Model](capability-model.md), [Autonomy Model](autonomy-model.md), [Provider Abstraction](provider-abstraction.md), [Agent Assembly](agent-assembly.md), [Agent Definitions](agent-definitions.md), [Model Profiles](model-profiles.md), [Prompt Sets](prompt-sets.md), [Retrieval Profiles](retrieval-profiles.md), [Extension Model](extensions.md), [Integrations](integrations.md).
 

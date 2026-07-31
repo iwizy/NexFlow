@@ -28,3 +28,15 @@ extensions:
     requiredCapabilities:
       - manage_tasks
       - access_network
+  - id: mcp_local
+    namespace: io.nexflow.mcp
+    displayName: Local Development MCP
+    description: Approved local context and read-only development tools.
+    lifecycle: experimental
+    appliesTo:
+      - context
+      - capabilities
+      - permissions
+      - events
+    requiredCapabilities:
+      - access_mcp

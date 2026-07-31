@@ -211,6 +211,16 @@ If an MCP server only exposes resources, model it as context. If it performs act
 
 `access_mcp` does not imply `execute_command`, repository write access, credential access, or deployment permission.
 
+In the current draft, every `type: mcp` source requires `mcp.serverId` and a
+non-empty `mcp.exposes` inventory. Sources exposing `tools` or `actions` also
+require a non-empty `allowedTools` list and
+`requiresApprovalForTools: true`. These structural rules do not prove that a
+tool is safe or authorize its project effect.
+
+See the [MCP Extension Draft](../extensions/mcp/README.md) and
+[RFC-0018](../rfcs/RFC-0018-mcp-extension-profile.md) for profile identity,
+surface mapping, network, credential, failure, and validation boundaries.
+
 ## Context Requests In Agent Definitions
 
 Agent definitions refer to context sources by ID.

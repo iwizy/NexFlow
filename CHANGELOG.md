@@ -60,6 +60,14 @@ tag or release has been published, and manifest `specVersion` remains `"0.1"`.
 - Added a machine-readable Core Profile definition with required Project and
   participant slots, optional module qualifiers, dependency rules, fail-closed
   omission semantics, and 16 focused conformance cases.
+- Added RFC-0018 and a machine-readable experimental `io.nexflow.mcp` extension
+  profile with explicit context/action, capability, permission, approval,
+  network, credential, audit, and fail-closed boundaries.
+- Added 10 focused MCP profile and ContextSet checks plus a complete Software
+  Team MCP extension, capability, permission, and source binding.
+- Added a structured provider constraint vocabulary covering training use,
+  residency, tool use, sensitivity, cost, latency, deployment, network posture,
+  approval, and retention, with 17 focused schema cases.
 
 ### Changed
 
@@ -75,6 +83,12 @@ tag or release has been published, and manifest `specVersion` remains `"0.1"`.
   values to exact typed task and context-source references.
 - Migrated maintained provider declarations from ambiguous `capabilities` to
   `features`; the legacy field remains structurally valid but deprecated.
+- Migrated maintained provider training policy from deprecated
+  `allowTrainingUse` booleans to explicit `trainingUse` values and documented
+  provider-versus-model-profile constraint composition.
+- Tightened MCP ContextSet sources to require server and surface inventory;
+  tool and action surfaces now require a non-empty allow-list and explicit
+  approval posture in the draft schema.
 - Removed the unresolvable AgentDefinition `memoryPolicyRef` draft field,
   established `memoryScopes` to `MemorySet` as the only core memory selection
   contract, and added migration guidance plus focused rejection checks.

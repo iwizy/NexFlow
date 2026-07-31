@@ -28,6 +28,10 @@ Its standalone schema intentionally lives beside the profile definition so it
 is not counted as another project manifest kind. See
 [Core Profile](../docs/core-profile.md).
 
+Versioned extension policy profiles and their schemas live under `extensions/`
+for the same reason. The first is the experimental
+[MCP Extension Draft](../extensions/mcp/README.md).
+
 ## Current Scope
 
 The schemas currently target `specVersion: "0.1"` and use JSON Schema draft 2020-12.
@@ -43,9 +47,9 @@ The schemas currently target `specVersion: "0.1"` and use JSON Schema draft 2020
 | `handoffs.schema.json` | `HandoffSet` | Responsibility transfers between actors. |
 | `permissions.schema.json` | `PermissionSet` | Allow, deny, and approval-required rules for capabilities. |
 | `capabilities.schema.json` | `CapabilitySet` | Capability vocabulary, categories, risk levels, and audit guidance. |
-| `context.schema.json` | `ContextSet` | Context sources, access modes, classifications, freshness, web boundaries, and MCP metadata. |
+| `context.schema.json` | `ContextSet` | Context sources, access modes, classifications, freshness, web boundaries, and fail-closed MCP surface metadata. |
 | `memory.schema.json` | `MemorySet` | Memory scopes, retention, ownership, visibility, sensitivity, consumers, writers, update modes, audit events, and promotion boundaries. |
-| `providers.schema.json` | `ProviderSet` | Provider abstractions, selection constraints, and optional explainability hints. |
+| `providers.schema.json` | `ProviderSet` | Provider abstractions, features, structured eligibility constraints, legacy migration, and optional explainability hints. |
 | `model-profiles.schema.json` | `ModelProfileSet` | Provider-neutral model profiles, selection modes, constraints, fallback rules, review triggers, and audit expectations. |
 | `prompt-sets.schema.json` | `PromptSet` | Versioned prompt material, prompt revisions, source references, safety review status, compatibility impact, and audit expectations. |
 | `retrieval-profiles.schema.json` | `RetrievalProfileSet` | Retrieval profiles for context source selection, index versions, chunking, freshness, citations, sensitivity, review triggers, and audit expectations. |
@@ -144,12 +148,14 @@ Examples of future semantic checks:
 - network rules reference declared actors, capabilities, context sources, providers, extensions, and approval gates
 - network audit event references resolve to declared event types
 - network rules are coherent with effective permissions, context boundaries, transport constraints, and destination resolution
+- MCP extension, context source, capability, permission, approval, network, and audit declarations compose without hidden authority
 - human override authorities resolve to human-controlled actors
 - human override resume gates and audit event references resolve
 - handoff artifacts are produced by previous tasks
 - memory access is consistent with project policy
 - memory writers, prohibited content, and promotion paths are consistent with sensitivity
 - referenced provider IDs in model profiles exist
+- provider constraints satisfy model-profile requirements and project policy
 - model profile references in agent definitions exist
 - prompt source references exist
 - prompt set owners and approvers exist
@@ -202,8 +208,11 @@ npm run work-reference-namespace-smoke
 npm run actor-schema-smoke
 npm run agent-identity-schema-smoke
 npm run agent-definition-authority-smoke
+npm run core-profile-smoke
 npm run human-override-schema-smoke
+npm run mcp-extension-smoke
 npm run provider-feature-schema-smoke
+npm run provider-constraint-schema-smoke
 npm run conformance-claim-smoke
 npm run semantic-smoke
 ```

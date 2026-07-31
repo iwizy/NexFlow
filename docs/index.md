@@ -24,8 +24,8 @@ The documentation is the canonical source for the specification. Schemas and exa
 | Manifest author | [Core Profile](core-profile.md) -> [Manifest Reference](manifest-reference.md) -> [Actor Model](actor-model.md) -> [Context Model](context-model.md) -> [Memory Model](memory-model.md) -> [Examples Guide](../examples/README.md) |
 | Safety reviewer | [Security Model](security-model.md) -> [Human Override](human-override.md) -> [Network Access Policy](network-access-policy.md) -> [Approval Gates](approval-gates.md) -> [Approval Gate Targets](approval-gate-targets.md) -> [Capability Model](capability-model.md) -> [Autonomy Model](autonomy-model.md) |
 | Validator author | [Validation](validation.md) -> [Semantic Reference Inventory](semantic-reference-inventory.md) -> [Typed References](typed-references.md) -> [Approval Gate Targets](approval-gate-targets.md) -> [Work Reference Namespaces](work-reference-namespaces.md) -> [Schema Design Notes](schema-design-notes.md) -> [Schema Guide](../schemas/README.md) -> [Conformance](conformance.md) -> [Conformance Claims](conformance-claims.md) -> [Compatibility Matrix](compatibility-matrix.md) |
-| Runtime implementer | [Architecture](architecture.md) -> [Runtime Options](runtime-options.md) -> [Provider Abstraction](provider-abstraction.md) -> [Provider Features](provider-features.md) -> [Roadmap](roadmap.md) |
-| Extension author | [Extension Model](extensions.md) -> [Integrations](integrations.md) -> [Provider Abstraction](provider-abstraction.md) -> [Conformance](conformance.md) |
+| Runtime implementer | [Architecture](architecture.md) -> [Runtime Options](runtime-options.md) -> [Provider Abstraction](provider-abstraction.md) -> [Provider Features](provider-features.md) -> [Provider Constraints](provider-constraints.md) -> [Roadmap](roadmap.md) |
+| Extension author | [Extension Model](extensions.md) -> [MCP Extension Draft](../extensions/mcp/README.md) -> [Integrations](integrations.md) -> [Provider Abstraction](provider-abstraction.md) -> [Conformance](conformance.md) |
 
 ## Core Models
 
@@ -46,11 +46,13 @@ The documentation is the canonical source for the specification. Schemas and exa
 | [Memory Model](memory-model.md) | Defines retention, ownership, sensitivity, and cross-scope reuse boundaries. |
 | [Model Profiles](model-profiles.md) | Defines provider-neutral model selection, pinned and floating references, constraints, and audit expectations. |
 | [Provider Features](provider-features.md) | Defines closed model support signals separately from project action capabilities and permissions. |
+| [Provider Constraints](provider-constraints.md) | Defines structured provider-side eligibility facts, model-profile composition, migration, and validation boundaries. |
 | [Prompt Sets](prompt-sets.md) | Defines versioned prompt material, prompt revisions, ownership, safety review, and compatibility impact. |
 | [Retrieval Profiles](retrieval-profiles.md) | Defines context source selection, index versions, chunking, freshness, citations, sensitivity, and audit expectations. |
 | [Handoff Protocol](handoff-protocol.md) | Defines structured responsibility transfer between actors. |
 | [Event Model](events.md) | Defines auditable state transitions and payload expectations. |
 | [Extension Model](extensions.md) | Defines namespaced extension lifecycle and integration surface. |
+| [MCP Extension Draft](../extensions/mcp/README.md) | Maps MCP context and action surfaces to independent capability, permission, approval, network, credential, and audit boundaries. |
 | [Provider Abstraction](provider-abstraction.md) | Defines provider-neutral preferences, features, and constraints. |
 
 ## Project Process

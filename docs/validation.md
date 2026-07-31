@@ -42,6 +42,9 @@ The repository supports basic validation through:
 - Focused approval gate target kind and scope checks.
 - Focused workflow step and task artifact namespace checks.
 - Focused provider feature vocabulary and capability-separation checks.
+- Focused structured provider constraint and legacy migration checks.
+- Focused MCP extension profile, context/action surface, allow-list, approval,
+  and example dependency checks.
 - Focused ActorSet, AgentSet identity, agent definition authority, and human
   override boundary checks.
 - Focused Core Profile definition, reduced Project, participant authority,
@@ -160,6 +163,31 @@ coexistence, and rejection of project action capability IDs.
 It does not prove provider availability, model quality, model profile
 compatibility, permission, tool access, network access, or runtime behavior.
 
+Run focused provider constraint checks:
+
+```sh
+npm run provider-constraint-schema-smoke
+```
+
+This command exercises 17 accepted and rejected cases for structured and
+legacy training policy, residency and region coupling, tool use, sensitivity,
+network posture, retention, and namespaced extension preservation.
+
+It does not compare every provider constraint with model-profile requirements,
+query live provider policy, verify pricing or latency, authorize a provider, or
+establish runtime support.
+
+Run the MCP extension draft checks:
+
+```sh
+npm run mcp-extension-smoke
+```
+
+This command validates the machine-readable `io.nexflow.mcp` profile, exercises
+10 ContextSet cases, and checks the Software Team extension, capability,
+permission, and context declarations. It does not connect to an MCP server,
+discover tools, negotiate protocol versions, or execute an action.
+
 Run the standalone conformance claim format checks:
 
 ```sh
@@ -180,6 +208,7 @@ focused boundary commands so pull requests exercise schema JSON parsing,
 example YAML parsing, manifest kind discovery, schema compilation, example
 manifest validation, typed-reference primitive boundaries, work reference
 namespaces, approval gate target kinds and scope, provider feature vocabulary,
+provider constraint structure, MCP extension profile boundaries,
 compact agent identity compatibility, Core Profile conformance boundaries,
 human override fail-closed shape, and conformance claim format boundaries. It
 also checks active agent definition completeness and unique unscoped selection

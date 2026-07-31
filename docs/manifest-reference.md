@@ -209,10 +209,15 @@ Context sources define:
 - `classification`
 - optional `refreshPolicy` and `freshness`
 - optional web boundaries such as `allowedDomains` and `disallowedDomains`
-- optional `mcp` metadata for MCP servers that expose context, tools, or both
+- required `mcp.serverId` and non-empty `mcp.exposes` metadata for `type: mcp`
+  sources; tool or action surfaces also require an allow-list and approval
+  posture
 - optional `approvalGates` for sensitive source use
 
-See [Context Model](context-model.md) for source taxonomy, freshness guidance, web context, and MCP behavior.
+See [Context Model](context-model.md) for source taxonomy, freshness guidance,
+web context, and MCP behavior. See the
+[MCP Extension Draft](../extensions/mcp/README.md) for the experimental
+`io.nexflow.mcp` profile.
 
 ### `memory.yaml`
 
@@ -239,7 +244,9 @@ Provider declarations may include:
 
 - `id`, `type`, and `description`
 - optional closed `features` describing model support signals
-- provider-level constraints
+- optional structured provider constraints for training use, residency, tool
+  use, sensitivity, cost, latency, deployment, network posture, approval, and
+  retention
 - selection and explainability metadata
 
 Provider features are not action capabilities and do not reference
@@ -247,7 +254,8 @@ Provider features are not action capabilities and do not reference
 and cannot coexist with `features`.
 
 Related docs: [Provider Abstraction](provider-abstraction.md),
-[Provider Features](provider-features.md), [Runtime Options](runtime-options.md),
+[Provider Features](provider-features.md),
+[Provider Constraints](provider-constraints.md), [Runtime Options](runtime-options.md),
 [Security Model](security-model.md), [RFC-0010](../rfcs/RFC-0010-provider-selection.md).
 
 ### `model-profiles.yaml`

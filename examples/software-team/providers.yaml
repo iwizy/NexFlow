@@ -11,7 +11,12 @@ providers:
       - code_reasoning
       - tool_reasoning
     constraints:
-      allowTrainingUse: false
+      trainingUse: prohibited
+      dataResidency: project_policy
+      toolUse: declared_tools_only
+      maxSensitivity: confidential
+      costTier: medium
+      latencyClass: interactive
     selection:
       strategy: project_policy
   - id: general_reasoning
@@ -20,6 +25,11 @@ providers:
     features:
       - text_generation
     constraints:
-      allowTrainingUse: false
+      trainingUse: prohibited
+      dataResidency: project_policy
+      toolUse: declared_tools_only
+      maxSensitivity: confidential
+      costTier: medium
+      latencyClass: interactive
     selection:
       strategy: project_policy

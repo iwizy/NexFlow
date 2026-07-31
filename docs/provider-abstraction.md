@@ -5,6 +5,7 @@ NexFlow is provider neutral.
 Related documents:
 
 - [Provider Features](provider-features.md)
+- [Provider Constraints](provider-constraints.md)
 - [RFC-0010: Provider Selection](../rfcs/RFC-0010-provider-selection.md)
 
 Providers may include:
@@ -27,7 +28,9 @@ type: abstract
 description: Provider suitable for reasoning-heavy software design.
 constraints:
   dataResidency: unspecified
-  allowTrainingUse: false
+  trainingUse: prohibited
+  toolUse: declared_tools_only
+  maxSensitivity: internal
 features:
   - text_generation
   - tool_reasoning
@@ -54,6 +57,24 @@ resolve against `CapabilitySet`.
 
 See [Provider Features](provider-features.md) for the vocabulary, namespace,
 migration, and validation contract.
+
+## Provider Constraints
+
+Provider `constraints` describe static candidate eligibility and policy
+boundaries. The current provider-neutral vocabulary covers training use, data
+residency and regions, tool use, maximum sensitivity, cost and latency classes,
+deployment, network posture, approval, and data retention.
+
+Provider constraints are not the same as model-profile requirements. A provider
+declaration says what a candidate advertises or permits; a model profile says
+what a behavioral use requires. A future selector must intersect both with
+project policy and fail closed on material conflicts or unresolved restrictive
+facts.
+
+Legacy `constraints.allowTrainingUse` remains schema-valid but deprecated for
+the `0.1` migration window. New declarations use the explicit `trainingUse`
+enum. See [Provider Constraints](provider-constraints.md) for the complete
+vocabulary, composition rules, migration, and 17 focused checks.
 
 ## Provider Selection Requests
 
@@ -90,6 +111,9 @@ See [Model Profiles](model-profiles.md).
 Provider configuration MUST NOT bypass permissions, autonomy levels, context boundaries, or approval gates.
 
 Provider-specific extensions should be namespaced and optional.
+
+Provider constraints MUST NOT be interpreted as live availability, benchmark
+evidence, current price, credentials, permission, approval, or network access.
 
 Provider feature support MUST NOT be interpreted as an actor capability,
 permission, integration connection, provider credential, or runtime grant.

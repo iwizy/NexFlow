@@ -47,6 +47,8 @@ NexFlow treats validation as a layered process.
 | Approval gate target checks | 16 focused cases implemented | Confirm closed gate target kinds, assembly and workflow scope, legacy coexistence, duplicate rejection, and typed object boundaries. |
 | Work reference namespace checks | 13 focused cases implemented | Confirm workflow-wide step and assembly-wide artifact identity, duplicate rejection, and exact dependency and handoff lookup. |
 | Provider feature checks | 11 focused cases implemented | Confirm closed provider support signals, legacy coexistence, uniqueness, and separation from project action capability IDs. |
+| Provider constraint checks | 17 focused cases implemented | Confirm structured provider eligibility vocabulary, legacy training-use migration, coupled residency fields, retention, and invalid policy values. |
+| MCP extension checks | 10 focused cases implemented | Confirm the machine-readable profile, context/action surface boundary, required MCP metadata, action allow-lists, approval posture, and example dependencies. |
 | Core Profile checks | 16 focused cases implemented | Confirm reduced Project structure, participant authority, optional qualifiers, dependency closure, and fail-closed unsupported modules. |
 | Manifest inventory | Future validation work | Confirm all expected manifest files are present and routed by `kind`. |
 | Semantic validation | Partial repository smoke coverage plus a documented inventory | Check prioritized cross-manifest references, ActorSet bridges, active agent definition authority, human override authorities, graph consistency, permission coverage, memory boundaries, and extension requirements. Full semantic conformance remains future work. |
@@ -67,6 +69,8 @@ Schemas should be strict where the specification has stable structure:
 - required IDs for declared entities
 - lexical form for IDs and event types
 - closed provider feature vocabulary and separation from action capabilities
+- structured provider constraint vocabulary and explicit legacy migration
+- fail-closed MCP context and action-surface shape
 - common approval gate, artifact, memory, and extension attachment shapes
 - typed reference structure and kind-specific ActorSet relationship boundaries
 - compact AgentSet identity requiredness and deprecated compatibility fields

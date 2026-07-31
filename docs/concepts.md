@@ -141,6 +141,11 @@ capabilities or becoming vendor requirements in the core specification.
 
 Provider features and action capabilities are separate namespaces.
 
+Provider constraints describe candidate eligibility facts and policy
+boundaries. Model-profile constraints describe requirements for a behavioral
+use. Neither layer grants access, and future selection must compose both with
+project policy.
+
 ## Model Profile
 
 A provider-neutral declaration of model selection expectations, constraints, fallback behavior, and audit requirements for a behaviorally meaningful use of a model.
@@ -192,6 +197,10 @@ An auditable state transition emitted by a workflow, task, agent, integration, o
 ## Extension
 
 A namespaced addition to the specification for integrations, custom fields, or implementation-specific metadata.
+
+The experimental `io.nexflow.mcp` profile maps MCP context and action surfaces
+to existing NexFlow policy domains without implementing or replacing the
+external protocol.
 
 ## Integration
 

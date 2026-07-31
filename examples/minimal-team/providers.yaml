@@ -10,7 +10,12 @@ providers:
       - text_generation
       - tool_reasoning
     constraints:
-      allowTrainingUse: false
+      trainingUse: prohibited
+      dataResidency: project_policy
+      toolUse: declared_tools_only
+      maxSensitivity: internal
+      costTier: low
+      latencyClass: interactive
     selection:
       strategy: project_policy
       explainability:

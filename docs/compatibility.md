@@ -255,9 +255,11 @@ Examples:
 | Change human override authority, response, resume, operation, or audit semantics | May affect `NF-SCHEMA`, `NF-SEMANTIC`, `NF-RUNTIME`, safety, authority, and audit compatibility. |
 | Change event envelope identity, actor, subject, correlation, causation, payload, audit, or redaction semantics | May affect `NF-SEMANTIC`, `NF-RUNTIME`, audit, traceability, privacy, and safety compatibility. |
 | Change provider selection precedence, constraints, fallback, or explainability expectations | May affect `NF-SEMANTIC`, `NF-RUNTIME`, audit, privacy, cost, safety, and compatibility. |
+| Change provider constraint vocabulary, composition, unknown-fact behavior, or legacy migration | May affect `NF-MANIFEST`, `NF-SCHEMA`, `NF-SEMANTIC`, provider eligibility, privacy, cost, audit, and safety compatibility. |
 | Change reference CLI command names, exit codes, diagnostic codes, or output formats | May affect `NF-CLI`, CI workflows, editor integrations, and developer tooling compatibility. |
 | Add semantic cross-reference rule | May affect `NF-SEMANTIC` validators. |
 | Change extension namespace lifecycle | May affect `NF-EXTENSION` compatibility. |
+| Change the MCP profile surface class, allow-list, approval, network, credential, failure, or protocol-claim boundary | May affect `NF-SCHEMA`, `NF-SEMANTIC`, `NF-EXTENSION`, `NF-RUNTIME`, integration safety, privacy, and audit compatibility. |
 | Change active agent definition components or autonomy | May affect `NF-SEMANTIC`, `NF-RUNTIME`, safety, and audit compatibility. |
 | Change model profile selection or constraints | May affect `NF-SEMANTIC`, `NF-RUNTIME`, and audit compatibility. |
 | Change prompt set revisions or safety review status | May affect `NF-SEMANTIC`, `NF-RUNTIME`, safety, and audit compatibility. |

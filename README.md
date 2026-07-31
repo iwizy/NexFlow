@@ -28,6 +28,8 @@ Current release posture: **`0.1` draft, preparing for candidate review**. No
 | Approval gate targets | Implemented as closed typed target kinds with exact semantic resolution | `npm run approval-gate-target-schema-smoke`, [Approval Gate Targets](docs/approval-gate-targets.md) |
 | Work reference namespaces | Implemented for workflow-scoped steps and assembly-scoped task artifacts | `npm run work-reference-namespace-smoke`, [Work Reference Namespaces](docs/work-reference-namespaces.md) |
 | Provider feature vocabulary | Implemented as closed model support signals separate from action capabilities | `npm run provider-feature-schema-smoke`, [Provider Features](docs/provider-features.md) |
+| Provider constraint vocabulary | Implemented as structured candidate eligibility fields with legacy migration | `npm run provider-constraint-schema-smoke`, [Provider Constraints](docs/provider-constraints.md) |
+| MCP extension draft | Implemented as an offline policy profile and focused schema checks; no live integration | `npm run mcp-extension-smoke`, [MCP Extension Draft](extensions/mcp/README.md) |
 | Conformance claim format | Implemented as standalone schema plus profile-qualified YAML and Markdown templates | `npm run conformance-claim-smoke`, [Conformance Claims](docs/conformance-claims.md) |
 | Semantic reference checks | Partial repository smoke coverage | `npm run semantic-smoke`, [Validation](docs/validation.md) |
 | Governance and RFC process | Implemented in documentation | [Governance](docs/governance.md), [RFCs](rfcs/README.md) |
@@ -103,12 +105,18 @@ The goal is to make AI-assisted software delivery inspectable before anything ru
 - **Memory Scope**: a declared retention and visibility boundary for remembered information.
 - **Model Profile**: a provider-neutral model selection profile with pinned, floating, or policy-based selection and audit expectations.
 - **Provider Feature**: a model support signal that is separate from project action capabilities and permissions.
+- **Provider Constraint**: a provider-side eligibility fact or policy boundary
+  that must be intersected with model-profile requirements and project policy.
 - **Prompt Set**: versioned prompt material with source references, revisions, safety review, compatibility impact, and audit expectations.
 - **Retrieval Profile**: versioned retrieval expectations for context sources, indexes, chunking, freshness, citations, sensitivity, and audit.
 - **Workflow**: an ordered or event-driven set of tasks, dependencies, gates, and handoffs.
 - **Handoff**: a structured transfer of responsibility between actors.
 - **Event**: an auditable state transition such as `task.completed` or `review.requested`.
 - **Extension**: a namespaced integration surface for tools such as GitHub, Linear, Figma, Slack, MCP, or custom systems.
+
+The experimental [`io.nexflow.mcp` profile](extensions/mcp/README.md) is the
+first machine-readable extension draft. It specifies policy boundaries only;
+no MCP client, server, or live integration is implemented.
 
 See [Concepts](docs/concepts.md) for the full domain model and [Glossary](docs/glossary.md) for quick terminology reference.
 
@@ -176,6 +184,7 @@ NexFlow is intentionally split into layers:
 
 - [Documentation Index](docs/index.md): specification documentation and reading paths
 - [profiles/](profiles/): machine-readable authoring profile definitions
+- [extensions/](extensions/): maintained versioned extension policy profiles
 - [schemas/](schemas/): draft JSON Schemas for core manifests
 - [Schema Guide](schemas/README.md): schema scope, update rules, and validation boundaries
 - [examples/](examples/): complete reference team configurations
@@ -193,6 +202,8 @@ NexFlow is intentionally split into layers:
 - [Approval Gate Targets](docs/approval-gate-targets.md): typed gate targets, exact namespaces, workflow scope, and legacy migration
 - [Work Reference Namespaces](docs/work-reference-namespaces.md): deterministic workflow step and task artifact identity
 - [Provider Features](docs/provider-features.md): closed provider support vocabulary and capability separation
+- [Provider Constraints](docs/provider-constraints.md): structured provider eligibility, composition, migration, and validation boundaries
+- [MCP Extension Draft](extensions/mcp/README.md): experimental MCP context/action policy mapping without runtime behavior
 - [Actor Model](docs/actor-model.md): first-class participant identity and kind-specific relationships
 - [Actor Model Migration](docs/actor-model-migration.md): staged transition from mixed AgentSet identity
 - [Agent Identity Migration](docs/agent-identity-migration.md): transition from duplicated AgentSet behavior fields to compact stable identity
@@ -217,12 +228,12 @@ NexFlow is intentionally split into layers:
 | Version and select agent behavior | [Effective Agent Configuration](docs/effective-agent-configuration.md), [Agent Assembly](docs/agent-assembly.md), [Agent Definitions](docs/agent-definitions.md), [Versioning](docs/versioning.md), [Event Model](docs/events.md) |
 | Model what agents can and may do | [Capability Model](docs/capability-model.md), [Autonomy Model](docs/autonomy-model.md) |
 | Model what agents may know or retain | [Context Model](docs/context-model.md), [Memory Model](docs/memory-model.md) |
-| Model provider-neutral model selection | [Model Profiles](docs/model-profiles.md), [Provider Abstraction](docs/provider-abstraction.md), [Provider Features](docs/provider-features.md), [Versioning](docs/versioning.md) |
+| Model provider-neutral model selection | [Model Profiles](docs/model-profiles.md), [Provider Abstraction](docs/provider-abstraction.md), [Provider Features](docs/provider-features.md), [Provider Constraints](docs/provider-constraints.md), [Versioning](docs/versioning.md) |
 | Model prompt revisions and safety review | [Prompt Sets](docs/prompt-sets.md), [Versioning](docs/versioning.md), [Event Model](docs/events.md) |
 | Model retrieval, freshness, and citations | [Retrieval Profiles](docs/retrieval-profiles.md), [Context Model](docs/context-model.md), [Event Model](docs/events.md) |
 | Validate manifests | [Validation](docs/validation.md), [Semantic Reference Inventory](docs/semantic-reference-inventory.md), [Schema Guide](schemas/README.md), [Conformance](docs/conformance.md), [Compatibility Matrix](docs/compatibility-matrix.md) |
 | Publish a support claim | [Conformance Claims](docs/conformance-claims.md), [Claim Templates](conformance/README.md), [Compatibility Matrix](docs/compatibility-matrix.md) |
-| Extend or integrate NexFlow | [Extension Model](docs/extensions.md), [Integrations](docs/integrations.md), [Provider Abstraction](docs/provider-abstraction.md) |
+| Extend or integrate NexFlow | [Extension Profiles](extensions/README.md), [Extension Model](docs/extensions.md), [MCP Extension Draft](extensions/mcp/README.md), [Integrations](docs/integrations.md), [Provider Abstraction](docs/provider-abstraction.md) |
 | Review future implementation choices | [Runtime Options](docs/runtime-options.md), [Roadmap](docs/roadmap.md), [Release Plan](docs/release-plan.md), [0.1 Readiness Checklist](docs/readiness-checklist.md) |
 
 ## Roadmap

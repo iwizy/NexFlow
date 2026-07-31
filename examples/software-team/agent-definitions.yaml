@@ -15,22 +15,26 @@ agentDefinitions:
       retrievalProfileRef: implementation_review_retrieval
       permissionRefs:
         - implementation_branch_work
+        - mcp_tool_access
       capabilityRefs:
         - read_repository
         - write_repository
         - create_branch
         - execute_command
         - read_context
+        - access_mcp
       contextSourceRefs:
         - repository
         - issue_tracker
         - docs
+        - mcp_tools
       memoryScopes:
         - ephemeral
         - task
       extensionRefs:
         - github_basic
         - linear_basic
+        - mcp_local
     autonomyLevel: ask_before_changes
     changeSummary: Assembles reviewed model, prompt, and retrieval profiles for implementation work while keeping writes approval-gated.
     review:
@@ -69,17 +73,21 @@ agentDefinitions:
       retrievalProfileRef: implementation_review_retrieval
       permissionRefs:
         - qa_test_execution
+        - mcp_tool_access
       capabilityRefs:
         - read_repository
         - execute_command
         - read_context
+        - access_mcp
       contextSourceRefs:
         - repository
         - issue_tracker
+        - mcp_tools
       memoryScopes:
         - ephemeral
         - task
-      extensionRefs: []
+      extensionRefs:
+        - mcp_local
     autonomyLevel: ask_before_changes
     changeSummary: Establishes QA behavior around approved test commands, retrieval-backed risk summaries, and review handoff evidence.
     review:

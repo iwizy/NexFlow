@@ -156,6 +156,11 @@ An agent may have `read_repository` allowed while `write_repository` is absent o
 
 An MCP integration may expose tools, but `access_mcp` does not automatically imply `execute_command`. These capabilities should be granted or gated separately.
 
+The initial [MCP Extension Draft](../extensions/mcp/README.md) additionally
+requires an allow-list and approval posture for action-bearing surfaces. A
+networked MCP transport must satisfy network policy separately, and credentials
+must remain outside manifests.
+
 ### Pull Request Creation With Review
 
 An implementation agent may draft changes but require approval before `create_pull_request`. The review gate should be visible in permissions, tasks, or workflow steps.

@@ -228,8 +228,10 @@ These values are not core cross-manifest references:
 | Prompt `sourceRef` and review `evidenceRefs` | Content or evidence locators whose schemes are not core resource namespaces. |
 | Context `mcp.serverId` | Integration-local server handle, not an `ExtensionSet` resource reference. |
 | Provider `features` and deprecated provider `capabilities` | Provider feature labels, not `CapabilitySet` resource references. Maintained manifests use `features`; semantic smoke reports legacy `capabilities`. |
+| Provider constraint values, region labels, and retention durations | Policy vocabulary or opaque policy values, not resource references. They participate in future eligibility comparison, not ID lookup. |
 | Provider `modelId` and model revision | Provider-local identifiers resolved after provider eligibility. |
 | Extension `namespace` and `appliesTo` | Extension ownership and domain labels, not resource IDs. |
+| MCP profile surface IDs and `allowedTools` | Extension-owned surface and tool labels; they do not resolve as core capabilities or authorize execution. |
 | Event payload field names | Payload expectations, not references to declared resources. |
 | Agent Assembly provenance entries | Derived inspection output, not authored resolution inputs. |
 

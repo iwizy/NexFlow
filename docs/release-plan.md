@@ -90,6 +90,8 @@ Release readiness:
 - memory retention and visibility semantics have testable expectations
 - event envelope requirements are aligned across docs, schemas, and examples
 - provider selection and fallback semantics are explainable without provider-specific assumptions
+- provider-side constraints and model-profile requirements have explicit
+  composition and unknown-fact behavior
 - unique active agent definition selection and authority are deterministic and
   testable
 - the derived Agent Assembly projection clearly separates requested behavior,
@@ -164,7 +166,8 @@ Release readiness:
 - extension namespace ownership rules are clear
 - lifecycle states are stable enough for tools to preserve unsupported extensions safely
 - integration metadata expectations are documented
-- MCP-like context and tool surfaces remain separated
+- the experimental MCP profile keeps context and action surfaces, capabilities,
+  permissions, approvals, network access, credentials, and audit boundaries separate
 - extension compatibility expectations are represented in conformance language
 
 ## `0.8` Interoperability Review

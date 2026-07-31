@@ -168,6 +168,11 @@ A future runtime or validator MUST NOT silently treat a removed extension as sup
 
 This RFC does not create a central extension registry.
 
+The repository now carries one maintained experimental profile,
+`io.nexflow.mcp`, under [RFC-0018](RFC-0018-mcp-extension-profile.md). That
+profile is evidence that the namespace model can express a policy mapping; it
+does not create a general registry or imply runtime integration support.
+
 A future registry may be useful after extension usage grows. It should be optional at first and should not block private extensions.
 
 A future public registry entry may include:

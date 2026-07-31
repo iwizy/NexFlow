@@ -73,6 +73,13 @@ project:
       description: Maintainer approval required before installing dependencies.
       requiredApprovers:
         - reviewer
+    - id: mcp_tool_review
+      description: Reviewer approval required before an agent uses an allow-listed MCP tool.
+      requiredApprovers:
+        - reviewer
+      targets:
+        - kind: context-source
+          id: mcp_tools
     - id: network_access_review
       description: Reviewer approval required before an agent initiates an allowed outbound connection.
       requiredApprovers:

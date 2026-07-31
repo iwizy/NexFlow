@@ -24,6 +24,139 @@
       "items": {
         "$ref": "#/$defs/providerFeature"
       }
+    },
+    "providerConstraints": {
+      "title": "Provider Constraints",
+      "description": "Static provider eligibility facts and policy boundaries. Constraints do not authorize provider use, grant network access, or prove live availability.",
+      "type": "object",
+      "additionalProperties": true,
+      "minProperties": 1,
+      "properties": {
+        "trainingUse": {
+          "type": "string",
+          "enum": ["allowed", "prohibited", "requires_approval", "unspecified"]
+        },
+        "allowTrainingUse": {
+          "type": "boolean",
+          "deprecated": true,
+          "description": "Deprecated 0.1 migration form. Use trainingUse with an explicit policy value."
+        },
+        "dataResidency": {
+          "type": "string",
+          "enum": [
+            "any",
+            "project_policy",
+            "organization_policy",
+            "regions",
+            "local_only",
+            "unspecified"
+          ]
+        },
+        "allowedRegions": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"
+          }
+        },
+        "toolUse": {
+          "type": "string",
+          "enum": ["none", "declared_tools_only", "provider_native_tools", "unspecified"]
+        },
+        "maxSensitivity": {
+          "$ref": "common.schema.json#/$defs/classification"
+        },
+        "costTier": {
+          "type": "string",
+          "enum": ["low", "medium", "high", "custom", "unspecified"]
+        },
+        "latencyClass": {
+          "type": "string",
+          "enum": ["interactive", "batch", "background", "custom", "unspecified"]
+        },
+        "deployment": {
+          "type": "string",
+          "enum": ["remote", "local", "hybrid", "unspecified"]
+        },
+        "networkAccess": {
+          "type": "string",
+          "enum": ["required", "optional", "prohibited", "unspecified"]
+        },
+        "approvalRequired": {
+          "type": "boolean"
+        },
+        "dataRetention": {
+          "type": "object",
+          "additionalProperties": true,
+          "required": ["mode"],
+          "properties": {
+            "mode": {
+              "type": "string",
+              "enum": [
+                "none",
+                "bounded",
+                "provider_policy",
+                "organization_policy",
+                "unspecified"
+              ]
+            },
+            "maxDuration": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "mode": {
+                    "const": "bounded"
+                  }
+                },
+                "required": ["mode"]
+              },
+              "then": {
+                "required": ["maxDuration"]
+              }
+            }
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "not": {
+            "required": ["trainingUse", "allowTrainingUse"]
+          }
+        },
+        {
+          "if": {
+            "required": ["allowedRegions"]
+          },
+          "then": {
+            "properties": {
+              "dataResidency": {
+                "const": "regions"
+              }
+            },
+            "required": ["dataResidency"]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "dataResidency": {
+                "const": "regions"
+              }
+            },
+            "required": ["dataResidency"]
+          },
+          "then": {
+            "required": ["allowedRegions"]
+          }
+        }
+      ]
     }
   },
   "type": "object",
@@ -69,8 +202,7 @@
             "description": "Deprecated provider feature vocabulary retained only for 0.1 migration. It does not reference CapabilitySet. New declarations use features."
           },
           "constraints": {
-            "type": "object",
-            "additionalProperties": true
+            "$ref": "#/$defs/providerConstraints"
           },
           "selection": {
             "type": "object",

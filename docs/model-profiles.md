@@ -132,6 +132,12 @@ Common constraints include:
 
 Projects SHOULD avoid vague constraints when the model may see confidential or restricted information.
 
+Model-profile constraints are requirements for a behavioral use. They are not
+the static provider-side facts declared in `ProviderSet`. Future selection must
+intersect both layers with project policy; it must not let a broader provider
+declaration weaken a narrower model profile. See
+[Provider Constraints](provider-constraints.md).
+
 ## Fallbacks
 
 Fallbacks describe what should happen if the preferred model is unavailable.

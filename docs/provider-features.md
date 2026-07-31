@@ -9,6 +9,7 @@ activate a tool, grant network access, satisfy a permission, or call a provider.
 Related documents:
 
 - [Provider Abstraction](provider-abstraction.md)
+- [Provider Constraints](provider-constraints.md)
 - [Capability Model](capability-model.md)
 - [Model Profiles](model-profiles.md)
 - [RFC-0010: Provider Selection](../rfcs/RFC-0010-provider-selection.md)
@@ -27,7 +28,7 @@ providers:
       - code_reasoning
       - tool_reasoning
     constraints:
-      allowTrainingUse: false
+      trainingUse: prohibited
     selection:
       strategy: project_policy
 ```

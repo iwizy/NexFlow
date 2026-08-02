@@ -4,6 +4,11 @@ This checklist helps maintainers decide whether NexFlow is ready for a `0.1` can
 
 It is not a release announcement, a delivery schedule, or a guarantee that every item is already complete. It is a public review tool for checking whether the draft specification is coherent enough to tag as a candidate.
 
+The human-readable checklist on this page is paired with a standalone,
+machine-readable [candidate readiness record](../release/README.md). The record
+captures one review outcome without creating a new NexFlow manifest kind or
+changing manifest `specVersion`.
+
 ## Candidate Goal
 
 A `0.1` candidate should show that NexFlow has a useful specification foundation:
@@ -17,17 +22,52 @@ A `0.1` candidate should show that NexFlow has a useful specification foundation
 
 ## Release Decision
 
+Start from
+[`release/0.1-candidate-readiness.template.yaml`](../release/0.1-candidate-readiness.template.yaml)
+and keep its decision at `not-evaluated` until the evidence has been reviewed.
 Before tagging a `0.1` candidate, maintainers should record:
 
 - candidate version label
+- proposed tag and exact candidate commit
 - changelog entry
 - validation commands run
 - compatibility impact
 - known limitations
 - unresolved blockers
+- reviewer identity, evaluation time, and decision rationale
 - whether `specVersion` remains `"0.1"`
 
 Do not tag a candidate if the repository implies runtime behavior, provider integrations, orchestration, deployment, or autonomous enforcement that does not exist.
+
+## Machine-Readable Gates
+
+The candidate record groups this detailed checklist into eight stable gates:
+
+| Gate | Checklist Coverage |
+| --- | --- |
+| `documentation` | Documentation completeness, navigation, terminology, and implementation claims. |
+| `schemas` | Core manifest coverage, schema compilation, design boundaries, and synchronized changes. |
+| `examples` | Maintained example coverage, consistency, and safe public content. |
+| `validation` | Pinned local and CI checks, diagnostics, and stated validation limits. |
+| `rfc-governance` | RFC state, accepted decisions, review process, and breaking-change policy. |
+| `compatibility-migrations` | Version impact, deprecated forms, migrations, and tested artifact pairing. |
+| `security-limitations` | Least privilege, human authority, dangerous operations, credentials, and explicit non-goals. |
+| `release-evidence` | Candidate commit, changelog, tag proposal, evidence locations, blockers, and final decision. |
+
+Use only `not-evaluated`, `passed`, `failed`, `blocked`, or `not-applicable` for
+gate status. A passed gate requires at least one evidence item. Evidence may
+point to a command, repository document, pull request, issue, audit, or another
+reviewable source and should identify the exact revision when that matters.
+
+Run the record-format checks with:
+
+```sh
+npm run candidate-readiness-smoke
+```
+
+This command validates record structure and release decision guards. It does
+not run the referenced commands, inspect external evidence, approve a tag, or
+publish a release.
 
 ## Documentation Checklist
 
@@ -82,20 +122,23 @@ Do not tag a candidate if the repository implies runtime behavior, provider inte
 - [ ] `npm run agent-identity-schema-smoke` succeeds.
 - [ ] `npm run agent-definition-authority-smoke` succeeds.
 - [ ] `npm run core-profile-smoke` succeeds.
+- [ ] `npm run manifest-discovery-smoke` succeeds.
 - [ ] `npm run human-override-schema-smoke` succeeds.
 - [ ] `npm run mcp-extension-smoke` succeeds.
 - [ ] `npm run provider-feature-schema-smoke` succeeds.
 - [ ] `npm run provider-constraint-schema-smoke` succeeds.
 - [ ] `npm run conformance-claim-smoke` succeeds.
+- [ ] `npm run candidate-readiness-smoke` succeeds.
 - [ ] `npm run semantic-smoke` succeeds.
 - [ ] Markdown link checks succeed.
 - [ ] `git diff --check` succeeds.
 - [ ] CI runs schema smoke, schema validation, negative fixtures, typed
   reference primitives, approval gate targets, work reference namespaces,
   ActorSet, agent identity, agent definition authority, Core Profile, human
-  override boundaries, MCP extension profile, provider features, provider
-  constraints, conformance claim format checks, and semantic reference smoke
-  checks on pull requests.
+  override boundaries, manifest discovery, multiple workflows, MCP extension
+  profile, provider features, provider constraints, conformance claim format,
+  candidate readiness record, and semantic reference smoke checks on pull
+  requests.
 - [ ] Validation docs explain the difference between syntax checks, schema validation, semantic smoke checks, future semantic validation, and runtime enforcement.
 - [ ] Semantic reference inventory target namespaces and coverage labels match
   the current schemas, examples, and semantic smoke implementation.
@@ -163,12 +206,14 @@ A `0.1` candidate should be blocked if any of the following are true:
 
 For each `0.1` candidate, maintainers should capture:
 
-- commit hash
+- full 40-character commit hash
+- proposed tag and evaluation timestamp
 - changelog section
 - validation command output summary
 - compatibility notes
 - known limitations
 - unresolved issues or RFCs that remain intentionally draft
+- reviewer identity and decision rationale
 
 Evidence should be factual and source-grounded. It should not invent implementation status, user adoption, runtime capabilities, or integration support.
 
@@ -178,8 +223,15 @@ After review, classify the candidate as one of:
 
 | Outcome | Meaning |
 | --- | --- |
+| Not evaluated | The template or review is incomplete and makes no tag decision. |
 | Ready | Criteria are satisfied and only acceptable draft limitations remain. |
 | Ready with notes | Criteria are mostly satisfied, with documented limitations that do not block a candidate tag. |
 | Blocked | One or more candidate blockers must be resolved before tagging. |
+| Deferred | Maintainers intentionally postpone the decision without claiming readiness. |
 
-The `0.1` candidate should remain a draft specification release. It should not imply `1.0` stability or runtime readiness.
+`Ready` and `Ready with notes` require every machine-readable gate to be
+`passed` or `not-applicable` and require no unresolved blockers. `Blocked`
+requires at least one recorded blocker. Every outcome other than `Not evaluated`
+requires an exact candidate commit, evaluation timestamp, decision maker, and
+rationale. The `0.1` candidate should remain a draft specification release. It
+should not imply `1.0` stability or runtime readiness.

@@ -1,0 +1,14 @@
+specVersion: "0.1"
+kind: Project
+metadata:
+  project: discovery-fixture
+project:
+  id: discovery-fixture
+  displayName: Discovery Fixture
+  description: Focused manifest discovery and multiple-workflow validation fixture.
+manifests:
+  agents: people/team.yml
+  tasks: work/items.yml
+  workflows:
+    - flows/release.yml
+    - flows/documentation.yml

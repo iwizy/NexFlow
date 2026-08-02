@@ -1,0 +1,17 @@
+specVersion: "0.1"
+kind: TaskSet
+metadata:
+  project: discovery-fixture
+tasks:
+  - id: prepare-change
+    title: Prepare a reviewed change
+    status: ready
+    owner: docs-agent
+    acceptanceCriteria:
+      - The proposed change is ready for review.
+  - id: review-change
+    title: Review a prepared change
+    status: proposed
+    owner: docs-agent
+    acceptanceCriteria:
+      - Review evidence is recorded.

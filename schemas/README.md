@@ -32,13 +32,18 @@ Versioned extension policy profiles and their schemas live under `extensions/`
 for the same reason. The first is the experimental
 [MCP Extension Draft](../extensions/mcp/README.md).
 
+Standalone release evidence formats and their schemas live under `release/`.
+They validate repository release records, not authored NexFlow project
+manifests, and are not counted as manifest kinds. See
+[Release Evidence](../release/README.md).
+
 ## Current Scope
 
 The schemas currently target `specVersion: "0.1"` and use JSON Schema draft 2020-12.
 
 | Schema | Manifest `kind` | Purpose |
 | --- | --- | --- |
-| `project.schema.json` | `Project` | Project identity, policies including structured network access and human override, maintainers, approval gates, and optional manifest source hints. |
+| `project.schema.json` | `Project` | Project identity, policies including structured network access and human override, maintainers, approval gates, optional source hints, and singular or plural Workflow sources. |
 | `actors.schema.json` | `ActorSet` | First-class human, agent, automation, service, and authority identity with kind-specific typed relationships. |
 | `agents.schema.json` | `AgentSet` | Stable AI identity, with deprecated behavior fields and legacy mixed-participant compatibility during migration. |
 | `agent-definitions.schema.json` | `AgentDefinitionSet` | Versioned agent behavioral releases with complete reviewed active-definition requirements and component references. |

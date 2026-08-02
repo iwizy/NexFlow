@@ -1,0 +1,53 @@
+# Template only. Replace placeholders and attach factual evidence before review.
+# This record does not announce, approve, tag, or publish a NexFlow release.
+recordVersion: "0.1"
+kind: NexFlowCandidateReadiness
+
+candidate:
+  label: NexFlow 0.1 candidate
+  specVersion: "0.1"
+  proposedTag: replace-with-proposed-tag
+  changelog: CHANGELOG.md#unreleased
+
+decision:
+  outcome: not-evaluated
+  rationale: Candidate evidence has not yet been evaluated.
+
+checks:
+  documentation:
+    status: not-evaluated
+    summary: Review documentation completeness and consistency.
+    evidence: []
+  schemas:
+    status: not-evaluated
+    summary: Review schema coverage, compilation, and compatibility boundaries.
+    evidence: []
+  examples:
+    status: not-evaluated
+    summary: Review maintained example coverage and validation results.
+    evidence: []
+  validation:
+    status: not-evaluated
+    summary: Run and record the complete candidate validation command set.
+    evidence: []
+  rfc-governance:
+    status: not-evaluated
+    summary: Review RFC states, decisions, and governance requirements.
+    evidence: []
+  compatibility-migrations:
+    status: not-evaluated
+    summary: Review compatibility impact and migration guidance.
+    evidence: []
+  security-limitations:
+    status: not-evaluated
+    summary: Review security boundaries, human authority, and known limitations.
+    evidence: []
+  release-evidence:
+    status: not-evaluated
+    summary: Review commit, changelog, tag proposal, and evidence traceability.
+    evidence: []
+
+limitations:
+  - No runtime, provider integration, orchestration engine, or policy enforcement is implemented.
+
+blockers: []

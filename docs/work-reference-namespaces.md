@@ -16,6 +16,7 @@ implicit nearest-container lookup rule.
 Related documents:
 
 - [Typed References](typed-references.md)
+- [Manifest Discovery](manifest-discovery.md)
 - [Semantic Reference Inventory](semantic-reference-inventory.md)
 - [Manifest Reference](manifest-reference.md#identifier-namespaces)
 - [Workflow and Task Concepts](concepts.md)
@@ -52,6 +53,11 @@ scheme, file path, or new manifest field.
 
 Physical file names, stage order, task order, YAML order, and bundle entry order
 do not change these identities.
+
+When discovery retains multiple Workflow documents, each `workflow.id` owns an
+independent stage and step namespace. The same stage or step ID may appear in a
+different workflow. Current scalar step references never cross that boundary;
+cross-workflow syntax and ordering remain unsupported.
 
 ## Workflow Stage Namespace
 

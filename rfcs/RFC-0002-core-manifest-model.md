@@ -41,7 +41,9 @@ Schemas should validate useful structure without attempting to encode every sema
 [RFC-0016](RFC-0016-core-profile-and-discovery.md) now distinguishes this
 complete manifest vocabulary from the implemented minimum Core Profile and its
 optional module qualifiers. The separate-manifest decision remains unchanged.
-General logical discovery and multiple-workflow loading remain Draft.
+Explicit local source discovery and multiple unique Workflow inventory have a
+focused validation implementation. Directory, bundle, general index, CLI, and
+runtime discovery remain Draft.
 
 ## Compatibility Impact
 

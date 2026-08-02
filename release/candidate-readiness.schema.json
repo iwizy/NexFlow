@@ -1,0 +1,398 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nexflow.dev/release/candidate-readiness.schema.json",
+  "title": "NexFlow Candidate Readiness Record",
+  "description": "A standalone release evidence record. It is not a NexFlow manifest, release announcement, conformance certificate, permission grant, or runtime guarantee.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "recordVersion",
+    "kind",
+    "candidate",
+    "decision",
+    "checks",
+    "limitations",
+    "blockers"
+  ],
+  "properties": {
+    "recordVersion": {
+      "const": "0.1",
+      "description": "Version of this standalone record format, independent of manifest specVersion."
+    },
+    "kind": {
+      "const": "NexFlowCandidateReadiness"
+    },
+    "candidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "label",
+        "specVersion",
+        "proposedTag",
+        "changelog"
+      ],
+      "properties": {
+        "label": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "specVersion": {
+          "const": "0.1"
+        },
+        "proposedTag": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "commit": {
+          "type": "string",
+          "pattern": "^[0-9a-fA-F]{40}$"
+        },
+        "evaluatedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "changelog": {
+          "$ref": "#/$defs/nonEmptyString"
+        }
+      }
+    },
+    "decision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "outcome",
+        "rationale"
+      ],
+      "properties": {
+        "outcome": {
+          "enum": [
+            "not-evaluated",
+            "ready",
+            "ready-with-notes",
+            "blocked",
+            "deferred"
+          ]
+        },
+        "decidedBy": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "rationale": {
+          "$ref": "#/$defs/nonEmptyString"
+        }
+      }
+    },
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "documentation",
+        "schemas",
+        "examples",
+        "validation",
+        "rfc-governance",
+        "compatibility-migrations",
+        "security-limitations",
+        "release-evidence"
+      ],
+      "properties": {
+        "documentation": {
+          "$ref": "#/$defs/check"
+        },
+        "schemas": {
+          "$ref": "#/$defs/check"
+        },
+        "examples": {
+          "$ref": "#/$defs/check"
+        },
+        "validation": {
+          "$ref": "#/$defs/check"
+        },
+        "rfc-governance": {
+          "$ref": "#/$defs/check"
+        },
+        "compatibility-migrations": {
+          "$ref": "#/$defs/check"
+        },
+        "security-limitations": {
+          "$ref": "#/$defs/check"
+        },
+        "release-evidence": {
+          "$ref": "#/$defs/check"
+        }
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/nonEmptyString"
+      }
+    },
+    "blockers": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/blocker"
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "decision": {
+            "properties": {
+              "outcome": {
+                "enum": [
+                  "ready",
+                  "ready-with-notes",
+                  "blocked",
+                  "deferred"
+                ]
+              }
+            },
+            "required": [
+              "outcome"
+            ]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "candidate": {
+            "required": [
+              "commit",
+              "evaluatedAt"
+            ]
+          },
+          "decision": {
+            "required": [
+              "decidedBy"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "decision": {
+            "properties": {
+              "outcome": {
+                "enum": [
+                  "ready",
+                  "ready-with-notes"
+                ]
+              }
+            },
+            "required": [
+              "outcome"
+            ]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "checks": {
+            "$ref": "#/$defs/completedChecks"
+          },
+          "blockers": {
+            "maxItems": 0
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "decision": {
+            "properties": {
+              "outcome": {
+                "const": "blocked"
+              }
+            },
+            "required": [
+              "outcome"
+            ]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "blockers": {
+            "minItems": 1
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "nonEmptyString": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": ".*\\S.*"
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "description",
+        "location"
+      ],
+      "properties": {
+        "type": {
+          "enum": [
+            "command",
+            "document",
+            "pull-request",
+            "issue",
+            "audit",
+            "other"
+          ]
+        },
+        "description": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "location": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/nonEmptyString"
+            },
+            {
+              "format": "uri-reference"
+            }
+          ]
+        },
+        "revision": {
+          "$ref": "#/$defs/nonEmptyString"
+        }
+      }
+    },
+    "check": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "summary",
+        "evidence"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "not-evaluated",
+            "passed",
+            "failed",
+            "blocked",
+            "not-applicable"
+          ]
+        },
+        "summary": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidence"
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "passed"
+              }
+            },
+            "required": [
+              "status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "evidence": {
+                "minItems": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    "completedCheck": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/check"
+        },
+        {
+          "properties": {
+            "status": {
+              "enum": [
+                "passed",
+                "not-applicable"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "completedChecks": {
+      "type": "object",
+      "properties": {
+        "documentation": {
+          "$ref": "#/$defs/completedCheck"
+        },
+        "schemas": {
+          "$ref": "#/$defs/completedCheck"
+        },
+        "examples": {
+          "$ref": "#/$defs/completedCheck"
+        },
+        "validation": {
+          "$ref": "#/$defs/completedCheck"
+        },
+        "rfc-governance": {
+          "$ref": "#/$defs/completedCheck"
+        },
+        "compatibility-migrations": {
+          "$ref": "#/$defs/completedCheck"
+        },
+        "security-limitations": {
+          "$ref": "#/$defs/completedCheck"
+        },
+        "release-evidence": {
+          "$ref": "#/$defs/completedCheck"
+        }
+      }
+    },
+    "blocker": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "summary"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$"
+        },
+        "summary": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "owner": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "evidence": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/nonEmptyString"
+            },
+            {
+              "format": "uri-reference"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

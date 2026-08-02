@@ -39,7 +39,8 @@ enforced.
 | Actor schema boundary smoke | 9 accepted and rejected structural cases | Implemented | `npm run actor-schema-smoke` | Focused ActorSet schema evidence, not full semantic or runtime conformance. |
 | Agent identity boundary smoke | 7 compact and legacy structural cases | Implemented | `npm run agent-identity-schema-smoke` | Checks identity migration compatibility, not definition selection or effective configuration. |
 | Agent definition authority smoke | 15 structural and selection cases | Implemented | `npm run agent-definition-authority-smoke` | Checks active completeness, unique unscoped selection, and rejection of unsupported memory policy references, not full policy resolution or runtime execution. |
-| Core Profile contract | Machine-readable required slots, optional qualifiers, dependency rules, and 16 focused cases | Implemented | `profiles/core.yaml`, `docs/core-profile.md`, `npm run core-profile-smoke` | Consumes normalized kind inventories; general discovery, arbitrary assembly validation, multi-workflow loading, and runtime preflight are absent. |
+| Core Profile contract | Machine-readable required slots, optional qualifiers, dependency rules, and 16 focused cases | Implemented | `profiles/core.yaml`, `docs/core-profile.md`, `npm run core-profile-smoke` | Consumes normalized kind inventories; arbitrary assembly validation, complete dependency resolution, and runtime preflight are absent. |
+| Manifest discovery and multiple workflows | Explicit local file lists, Project source hints, conservative cardinality, unique workflow inventory, and 24 focused cases | Implemented | `docs/manifest-discovery.md`, `scripts/lib/manifest-discovery.mjs`, `npm run manifest-discovery-smoke` | Focused repository validation helper only; no directory scan, bundle input, general index, stable CLI contract, workflow selection, cross-workflow execution, or runtime loading. |
 | Agent Assembly inspection view | Documentation contract for a derived effective-configuration projection | Specified | `docs/agent-assembly.md`, RFC-0014 | No resolver, serializer, JSON Schema, reference CLI output, or runtime implementation exists. |
 | Human override boundary smoke | 11 accepted and rejected structural cases | Implemented | `npm run human-override-schema-smoke` | Checks policy shape, not authentication, interruption, revocation, or runtime enforcement. |
 | Typed reference primitives | Common typed, scoped, transitional, and kind-specific definitions with 53 focused cases | Implemented | `schemas/common.schema.json`, `npm run typed-reference-schema-smoke` | Shape and lexical evidence only; no complete field-contract or semantic resolution conformance. |
@@ -49,6 +50,7 @@ enforced.
 | Provider constraint vocabulary | Structured provider eligibility fields, migrated examples, legacy training boolean, and 17 focused cases | Implemented | `docs/provider-constraints.md`, `npm run provider-constraint-schema-smoke` | Structural and migration evidence only; no complete constraint solver, live provider facts, selection, or runtime enforcement. |
 | MCP extension draft | Machine-readable `io.nexflow.mcp` profile, stricter ContextSet boundary, Software Team binding, and 10 focused cases | Implemented | `extensions/mcp/`, RFC-0018, `npm run mcp-extension-smoke` | Policy mapping only; no MCP client, server, transport, discovery, credential, protocol negotiation, or execution support. |
 | Conformance claim format | Standalone `claimVersion: "0.1"` schema plus profile-qualified YAML and Markdown templates | Implemented | `conformance/`, `npm run conformance-claim-smoke` | Self-declared claim structure only; no certification, external evidence verification, registry, or conformance test suite. |
+| Candidate readiness record | Standalone `recordVersion: "0.1"` schema, eight-gate template, and 14 focused cases | Implemented | `release/`, `npm run candidate-readiness-smoke` | Record structure and decision guards only; no evidence execution, release approval, tag, publication, or conformance claim. |
 | Semantic reference inventory | P0-P3 target namespaces, coverage, gaps, and deferred fields | Specified | `docs/semantic-reference-inventory.md` | Documentation contract only; it is not a manifest, generated registry, validator, or conformance suite. |
 | Semantic reference smoke | Selected cross-manifest reference, active definition authority, and duplicate checks | Partial | `npm run semantic-smoke`, semantic reference inventory | Does not cover every inventoried field or establish full `NF-SEMANTIC` conformance, graph safety, or policy correctness. |
 | Reference CLI | Validation-only scope proposed | Planned | RFC-0011 | No `nexflow` executable or `NF-CLI` implementation exists. |
@@ -69,8 +71,10 @@ compatibility notes, and versioning impact are accepted and synchronized.
 
 [RFC-0016](../rfcs/RFC-0016-core-profile-and-discovery.md) now has an
 implemented Core Profile slice with optional module qualifiers and reduced
-Project source hints. General discovery, source indexes, and multiple workflow
-loading remain outside the current supported matrix.
+Project source hints, plus a focused explicit local discovery and
+multiple-workflow validation slice. Directory discovery, general source indexes,
+bundle equivalence, and runtime loading remain outside the current supported
+matrix.
 
 ## Current Artifact Pairing
 
@@ -87,6 +91,9 @@ agent identity boundary smoke: scripts/agent-identity-schema-smoke.mjs
 agent definition authority smoke: scripts/agent-definition-authority-smoke.mjs
 core profile definition: profiles/core.yaml
 core profile smoke: scripts/core-profile-smoke.mjs
+manifest discovery helper: scripts/lib/manifest-discovery.mjs
+manifest discovery smoke: scripts/manifest-discovery-smoke.mjs
+multi-workflow fixture: fixtures/discovery/multi-workflow/
 human override boundary smoke: scripts/human-override-schema-smoke.mjs
 mcp extension profile: extensions/mcp/profile.yaml
 mcp extension smoke: scripts/mcp-extension-smoke.mjs
@@ -96,6 +103,7 @@ provider constraint smoke: scripts/provider-constraint-schema-smoke.mjs
 work reference namespace smoke: scripts/work-reference-namespace-smoke.mjs
 provider feature smoke: scripts/provider-feature-schema-smoke.mjs
 conformance claim format smoke: scripts/conformance-claim-smoke.mjs
+candidate readiness record smoke: scripts/candidate-readiness-smoke.mjs
 semantic smoke: scripts/semantic-reference-smoke.mjs
 reference CLI: absent
 runtime: absent
@@ -110,6 +118,25 @@ outside this repository is required.
 Do not describe an arbitrary mix of schemas, examples, and scripts from different
 repository revisions as a tested compatibility set.
 
+### Manifest Discovery And Multiple-Workflow Smoke
+
+Command:
+
+```sh
+npm run manifest-discovery-smoke
+```
+
+Compatible with explicit local file-list input, current Project source hints,
+the plural `manifests.workflows` shape, one Project, zero or more unique
+Workflow documents, and one document for every other current manifest kind. It
+checks 24 schema, source-boundary, association, cardinality, ordering, and
+workflow-local namespace cases.
+
+It does not recursively discover directories, read ignore files, expand
+bundles, fetch remote sources, aggregate collection manifests, compute complete
+semantic closure, select a workflow, define cross-workflow state, or establish
+CLI or runtime conformance.
+
 ## Manifest Kind Coverage
 
 Every current schema-backed manifest kind appears in at least one maintained
@@ -117,7 +144,7 @@ example and is validated in CI.
 
 | Manifest `kind` | Schema | Example coverage | `npm run validate` | `npm run semantic-smoke` |
 | --- | --- | --- | --- | --- |
-| `Project` | `project.schema.json` | All 7 complete project sets plus reduced focused fixtures | Full structural check | Optional source hints, selected project, maintainer, approval gate, network policy, and human override checks |
+| `Project` | `project.schema.json` | All 7 complete project sets plus reduced and discovery fixtures | Full structural check | Optional source hints, singular or plural Workflow sources, selected project, maintainer, approval gate, network policy, and human override checks |
 | `ActorSet` | `actors.schema.json` | Minimal Team migration path | Full structural check | Actor identity, agent bridge, operator, representative, integration, and relationship cycle checks |
 | `AgentSet` | `agents.schema.json` | All 7 project sets | Full structural check | Agent identity inventory plus deprecated compatibility-field references where present |
 | `AgentDefinitionSet` | `agent-definitions.schema.json` | All 7 project sets | Full structural check | Selected agent and component references |
@@ -320,6 +347,22 @@ levels.
 
 It does not verify external evidence, evaluate implementations, operate a
 registry, issue certification, or establish any conformance level.
+
+### Candidate Readiness Record Smoke
+
+Command:
+
+```sh
+npm run candidate-readiness-smoke
+```
+
+Compatible with standalone candidate readiness `recordVersion: "0.1"`. It
+checks 14 accepted and rejected schema cases, the exact eight-gate registry,
+non-claiming template defaults, passed-gate evidence, evaluated-outcome
+metadata, and blocker guards.
+
+It does not execute evidence commands, verify links, evaluate release quality,
+approve a tag, publish a release, or establish specification conformance.
 
 ### Semantic Reference Smoke
 

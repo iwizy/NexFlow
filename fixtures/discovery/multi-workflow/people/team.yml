@@ -1,0 +1,13 @@
+specVersion: "0.1"
+kind: AgentSet
+metadata:
+  project: discovery-fixture
+agents:
+  - id: docs-agent
+    displayName: Documentation Agent
+    role: technical_writer
+    description: Maintains specification and release documentation.
+    responsibilities:
+      - Prepare documentation and release notes for review.
+    skills:
+      - specification_writing

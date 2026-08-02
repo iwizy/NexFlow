@@ -39,8 +39,10 @@ All other current manifest kinds are optional before use and required when
 selected by a claimed profile qualifier or dependency closure.
 
 The maintained examples intentionally use the complete manifest vocabulary.
-`ActorSet` is currently present only in the Minimal Team reference path.
-General discovery and multiple workflow loading from
+`ActorSet` is currently present only in the Minimal Team reference path. The
+focused [Manifest Discovery](manifest-discovery.md) implementation supports
+explicit local sources and multiple unique Workflow documents. Directory,
+bundle, and runtime discovery from
 [RFC-0016](../rfcs/RFC-0016-core-profile-and-discovery.md) remain Draft.
 
 ### `project.yaml`
@@ -61,6 +63,11 @@ Key fields:
 `manifests` paths are not resource identity and do not grant behavior. Existing
 complete path maps remain valid; reduced projects may omit the map or include
 only adopted modules.
+
+Use `manifests.workflow` for one Workflow source or `manifests.workflows` for a
+non-empty list of Workflow sources. The forms cannot coexist. Every discovered
+Workflow must declare a unique `workflow.id`; source order and file name do not
+select or replace a workflow.
 
 `project.policies.networkAccess` accepts a structured, fail-closed outbound
 network policy. Its `default` is `deny`; rules identify actors, purposes,
@@ -171,7 +178,11 @@ Related docs: [Agent Definitions](agent-definitions.md), [Effective Agent Config
 
 Declares workflow stages, steps, dependencies, and approval gates.
 
-Related docs: [Handoff Protocol](handoff-protocol.md), [Approval Gates](approval-gates.md), [Event Model](events.md), [Validation](validation.md).
+A project assembly may contain multiple Workflow documents. Workflow IDs are
+unique across the assembly, while stage and step IDs are local to the containing
+workflow. Scalar dependencies do not create cross-workflow ordering.
+
+Related docs: [Manifest Discovery](manifest-discovery.md), [Work Reference Namespaces](work-reference-namespaces.md), [Handoff Protocol](handoff-protocol.md), [Approval Gates](approval-gates.md), [Event Model](events.md), [Validation](validation.md).
 
 ### `tasks.yaml`
 

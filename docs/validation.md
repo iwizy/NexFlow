@@ -49,7 +49,10 @@ The repository supports basic validation through:
   override boundary checks.
 - Focused Core Profile definition, reduced Project, participant authority,
   optional qualifier, and dependency-closure checks.
+- Focused explicit-file and Project source-hint discovery, conservative
+  cardinality, and multiple-workflow checks.
 - A focused standalone conformance claim schema and template check.
+- A focused standalone candidate readiness record schema and decision-guard check.
 - A semantic reference smoke command for selected cross-manifest references in examples.
 - A prioritized semantic reference inventory that distinguishes checked,
   partial, missing, and deferred field contracts.
@@ -203,6 +206,21 @@ levels.
 It validates claim structure only. It does not inspect external tools, verify
 evidence, certify implementations, or establish any conformance level.
 
+Run the standalone candidate readiness record checks:
+
+```sh
+npm run candidate-readiness-smoke
+```
+
+This command exercises 14 accepted and rejected cases for the `0.1` candidate
+record, including the complete eight-gate registry, ready-state commit and
+review metadata, evidence requirements, unresolved blockers, known limitations,
+and non-claiming template defaults.
+
+It validates record structure and decision guards only. It does not execute
+the commands named as evidence, verify links, evaluate release quality, approve
+a tag, publish a release, or establish specification conformance.
+
 The GitHub Actions workflow runs the same smoke script, schema validation, and
 focused boundary commands so pull requests exercise schema JSON parsing,
 example YAML parsing, manifest kind discovery, schema compilation, example
@@ -210,9 +228,10 @@ manifest validation, typed-reference primitive boundaries, work reference
 namespaces, approval gate target kinds and scope, provider feature vocabulary,
 provider constraint structure, MCP extension profile boundaries,
 compact agent identity compatibility, Core Profile conformance boundaries,
-human override fail-closed shape, and conformance claim format boundaries. It
-also checks active agent definition completeness and unique unscoped selection
-cases, plus the cataloged negative schema boundaries.
+manifest discovery and multiple-workflow boundaries, human override fail-closed
+shape, and conformance claim format boundaries. It also checks candidate
+readiness record boundaries, active agent definition completeness and unique
+unscoped selection cases, plus the cataloged negative schema boundaries.
 
 Run semantic reference smoke checks:
 
@@ -284,6 +303,23 @@ The cases consume normalized manifest-kind inventories. They do not discover
 files, validate arbitrary project assemblies, load multiple workflows, execute
 work, or establish complete `NF-MANIFEST`, `NF-SCHEMA`, or `NF-SEMANTIC`
 conformance.
+
+Run focused manifest discovery and multiple-workflow checks:
+
+```sh
+npm run manifest-discovery-smoke
+```
+
+This command exercises 24 cases for the plural Project workflow source-hint
+shape, explicit local file discovery, source order independence, project and
+version association, expected kinds, source and parser boundaries,
+conservative singleton cardinality, unique workflow identity, and two
+workflow-local step namespaces.
+
+The helper produces a logical validation inventory. It does not recursively
+scan directories, expand bundles, fetch remote sources, compute complete
+dependency closure, select a workflow, execute tasks, or define cross-workflow
+runtime state. See [Manifest Discovery](manifest-discovery.md).
 
 Run focused human override boundary checks:
 

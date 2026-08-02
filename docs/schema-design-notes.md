@@ -50,7 +50,8 @@ NexFlow treats validation as a layered process.
 | Provider constraint checks | 17 focused cases implemented | Confirm structured provider eligibility vocabulary, legacy training-use migration, coupled residency fields, retention, and invalid policy values. |
 | MCP extension checks | 10 focused cases implemented | Confirm the machine-readable profile, context/action surface boundary, required MCP metadata, action allow-lists, approval posture, and example dependencies. |
 | Core Profile checks | 16 focused cases implemented | Confirm reduced Project structure, participant authority, optional qualifiers, dependency closure, and fail-closed unsupported modules. |
-| Manifest inventory | Future validation work | Confirm all expected manifest files are present and routed by `kind`. |
+| Manifest discovery checks | 24 focused cases implemented | Confirm explicit local sources, expected kinds, project association, conservative document cardinality, unique workflow identity, and source safety boundaries. |
+| General manifest inventory | Partial | Focused discovery builds an inventory for explicit files and Project hints; directory, bundle, general index, and complete dependency-driven inventory remain future work. |
 | Semantic validation | Partial repository smoke coverage plus a documented inventory | Check prioritized cross-manifest references, ActorSet bridges, active agent definition authority, human override authorities, graph consistency, permission coverage, memory boundaries, and extension requirements. Full semantic conformance remains future work. |
 | Runtime preflight | Future runtime work | Check credentials, sandboxing, provider behavior, tool access, and execution safety before any runtime action. |
 

@@ -52,6 +52,13 @@ authoritative participant inventory. Other modules are optional until claimed
 or referenced, and omission never grants behavior. The maintained examples are
 complete learning fixtures rather than the minimum required project shape.
 
+## Can one project declare multiple workflows?
+
+Yes. A Project may use `manifests.workflows` to list multiple local Workflow
+documents. Every workflow needs a unique `workflow.id`; stage and step IDs stay
+local to that workflow. The focused discovery helper validates inventory only.
+It does not select, schedule, merge, or execute workflows.
+
 ## What is the difference between capabilities and permissions?
 
 A capability says an actor or integration can technically do something. A permission rule applies an `allow`, `deny`, or `approval_required` effect to that capability.

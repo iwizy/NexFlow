@@ -51,6 +51,9 @@ jobs:
       - name: Run Core Profile conformance checks
         run: npm run core-profile-smoke
 
+      - name: Run manifest discovery and multi-workflow checks
+        run: npm run manifest-discovery-smoke
+
       - name: Run human override schema boundary checks
         run: npm run human-override-schema-smoke
 
@@ -65,6 +68,9 @@ jobs:
 
       - name: Run conformance claim format checks
         run: npm run conformance-claim-smoke
+
+      - name: Run candidate readiness record checks
+        run: npm run candidate-readiness-smoke
 
       - name: Run semantic reference smoke checks
         run: npm run semantic-smoke

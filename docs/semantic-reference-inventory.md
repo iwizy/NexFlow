@@ -224,7 +224,7 @@ These values are not core cross-manifest references:
 
 | Value | Meaning |
 | --- | --- |
-| `Project.manifests.*` | Discovery locator or authoring hint, not resource identity. |
+| `Project.manifests.*` | Discovery locator or authoring hint, not resource identity. The focused discovery helper verifies supported hint keys, expected kinds, project association, source safety, and Workflow cardinality without treating paths as references. |
 | Prompt `sourceRef` and review `evidenceRefs` | Content or evidence locators whose schemes are not core resource namespaces. |
 | Context `mcp.serverId` | Integration-local server handle, not an `ExtensionSet` resource reference. |
 | Provider `features` and deprecated provider `capabilities` | Provider feature labels, not `CapabilitySet` resource references. Maintained manifests use `features`; semantic smoke reports legacy `capabilities`. |

@@ -2,16 +2,17 @@
 
 ## Status
 
-Draft; Core Profile contract implemented
+Draft; Core Profile and explicit local discovery slices implemented
 
 ## Cross-RFC Review
 
 The [Foundational Model Cross-RFC Review](reviews/2026-07-foundational-model-review.md)
 accepts the core-profile and logical-assembly direction for implementation
 planning. The minimum profile, optional module qualifiers, dependency policy,
-and reduced Project source-hint shape are now implemented. General discovery,
-multiple workflow loading, project indexes, and stable discovery diagnostics
-remain Draft.
+reduced Project source-hint shape, explicit local source discovery, and multiple
+unique Workflow loading are now implemented as repository validation tooling.
+Directory discovery, separate project indexes, bundle equivalence, stable CLI
+diagnostics, and runtime loading remain Draft.
 
 ## Summary
 
@@ -43,8 +44,8 @@ The Core Profile slice is represented by
 [`profiles/core.yaml`](../profiles/core.yaml), focused conformance checks, and a
 Project schema that no longer requires source hints for every optional module.
 The current complete examples remain valid and continue to exercise all 16 base
-manifest kinds; the Minimal Team additionally carries ActorSet. General reduced
-project discovery remains unimplemented.
+manifest kinds; the Minimal Team additionally carries ActorSet. A focused
+fixture now exercises a reduced explicit assembly with two Workflow documents.
 
 ## Motivation
 
@@ -161,9 +162,9 @@ The current `Project` schema accepts an optional `manifests` source-hint map.
 Complete historical maps remain valid, while reduced projects may omit the map
 or list only adopted modules.
 
-This removes empty-file pressure but does not define general discovery. The
-singular conventional `workflow` key still does not represent multiple workflow
-documents, and source paths remain loading hints rather than resource identity.
+This removes empty-file pressure. The singular conventional `workflow` key
+remains valid, while the additive `workflows` list represents multiple Workflow
+documents. Source paths remain loading hints rather than resource identity.
 
 ### Current Examples
 
@@ -175,11 +176,11 @@ profiles merely to demonstrate this proposal.
 
 ### Current Repository Tooling
 
-The repository scripts discover YAML under `examples/`, identify manifests by
-their declared `kind`, and currently expect one manifest per kind in each example
-directory.
-
-This is repository maintenance behavior, not yet a general discovery contract.
+The repository includes a focused discovery helper for explicit file lists and
+Project source hints. It enforces a local root, source and parser limits, project
+association, conservative cardinality, and multiple unique Workflow documents.
+It produces validation inventory only and remains repository maintenance tooling
+rather than a reference CLI or runtime.
 
 ## Terminology
 
@@ -837,8 +838,8 @@ A conforming discovery tool should use deterministic phases.
 
 ## Project Manifest And Discovery Hints
 
-The current `project.manifests` map is a useful explicit loading mechanism, but it
-should not remain the only semantic model.
+The current `project.manifests` map is an implemented explicit loading mechanism,
+but it should not remain the only discovery input.
 
 Future schema work should separate:
 
@@ -847,11 +848,15 @@ Future schema work should separate:
 - source discovery hints
 - logical resource identity
 
-Possible migration-compatible source representations include:
+The implemented migration-compatible representation supports:
 
 - current named path map for one-document module kinds
-- a list of source entries with expected kind
-- multiple workflow source entries
+- a `workflows` list for multiple Workflow source entries
+- explicit file-list input with optional expected kinds
+
+Future representations may include:
+
+- a general list of persisted source entries with expected kind
 - a bundle index
 - explicit CLI input without a stored index
 
@@ -903,11 +908,14 @@ Candidate diagnostic codes:
 | `NF-DISCOVERY-PROJECT-MISMATCH` | Error | A document belongs to a different project. |
 | `NF-DISCOVERY-UNSUPPORTED-VERSION` | Error | A document uses an unsupported spec version. |
 | `NF-DISCOVERY-UNSUPPORTED-KIND` | Error or warning by explicit preservation policy | A document kind is unsupported. |
+| `NF-DISCOVERY-KIND-MISMATCH` | Error | A source hint's expected kind differs from the document kind. |
+| `NF-DISCOVERY-DUPLICATE-SOURCE` | Error | A source locator is declared more than once or incompatible source hints coexist. |
 | `NF-DISCOVERY-DUPLICATE-SINGLETON` | Error | More than one document exists for a singleton set kind. |
 | `NF-DISCOVERY-DUPLICATE-WORKFLOW` | Error | Multiple workflows declare the same workflow ID. |
 | `NF-DISCOVERY-OUTSIDE-ROOT` | Error | A source escapes the allowed discovery root. |
 | `NF-DISCOVERY-UNSAFE-SOURCE` | Error | A symlink, remote locator, tag, archive entry, or source violates discovery policy. |
 | `NF-DISCOVERY-LIMIT-EXCEEDED` | Error | Source count, size, depth, alias, or parser limits were exceeded. |
+| `NF-DISCOVERY-UNSUPPORTED-HINT` | Error | A Project source-hint key is unsupported by the selected discovery mode. |
 | `NF-PROFILE-INCOMPLETE` | Error | Required core profile slot is absent. |
 | `NF-PROFILE-MISSING-DEPENDENCY` | Error | A present module references an absent required module or declaration. |
 | `NF-PROFILE-UNSUPPORTED-MODULE` | Error | A required module is not supported by the tool's claim. |
@@ -930,13 +938,14 @@ Diagnostics should include:
 
 ### Structural Validation
 
-Future schemas may validate:
+Current schemas validate:
 
 - a reduced core Project shape
 - optional module or profile declarations
-- future discovery index shape
-- arrays or records for multiple workflow sources
+- singular or plural Workflow source hints
 - per-document `specVersion`, `kind`, and metadata
+
+Future schemas may validate a separate general discovery index or bundle shape.
 
 JSON Schema cannot fully validate:
 
@@ -1044,8 +1053,10 @@ complete component dependency closure becomes required.
 The current compatibility matrix documents complete `0.1` examples and current
 repository tooling.
 
-The Core Profile contract and reduced Project source-hint shape are implemented.
-Multiple workflow discovery and general logical assembly discovery remain
+The Core Profile contract, reduced Project source-hint shape, explicit local
+file discovery, and multiple unique Workflow inventory are implemented as
+repository validation tooling. Directory discovery, separate source indexes,
+bundle equivalence, complete dependency closure, and runtime loading remain
 specified proposals rather than supported combinations.
 
 ## Conformance Impact
@@ -1092,13 +1103,13 @@ Potentially compatible future changes:
 
 - adding discovery diagnostics
 - exposing a logical assembly in inspection output
-- accepting multiple unique Workflow documents through a new explicit mode
+- adding bounded directory or bundle input modes without weakening safety
 
 Potentially breaking changes:
 
 - changing required `Project.manifests` fields
 - changing the shape of `Project.manifests`
-- treating a previously ignored second Workflow document as part of the assembly
+- changing the implemented multiple Workflow identity or selection rules
 - changing singleton rules for collection manifests
 - changing directory scan depth or ignore behavior
 - changing missing-module behavior in validators
@@ -1118,13 +1129,15 @@ Migration should be staged.
 - inventory current discovery assumptions
 - keep current schemas and examples unchanged
 
-### Stage 1: Introduce Logical Assembly Internally
+### Stage 1: Introduce Logical Assembly Internally - Partially Implemented
 
-- refactor future validation tooling to distinguish source discovery from logical
-  inventory
-- preserve current one-document-per-kind behavior
-- expose discovered project, kinds, resources, and source paths
-- add duplicate and project mismatch diagnostics
+- distinguish explicit source discovery from logical inventory - implemented in
+  focused repository tooling
+- preserve current one-document-per-kind behavior except Workflow - implemented
+- expose discovered project, kinds, resources, workflows, and source paths -
+  implemented in the helper result
+- add duplicate and project mismatch diagnostics - implemented for the focused
+  input modes
 
 ### Stage 2: Define Profile Contracts - Implemented
 
@@ -1138,17 +1151,20 @@ Migration should be staged.
 
 - make optional module source hints genuinely optional - implemented
 - define a migration path from the required path map
-- add a source/index representation capable of multiple workflows
-- decide the required `specVersion` change - current widening remains `0.1`
+- add a source representation capable of multiple workflows - implemented as
+  `Project.manifests.workflows`
+- decide the required `specVersion` change - additive unreleased widening remains
+  `0.1`
 - keep current complete projects valid
 
-### Stage 4: Add Multiple Workflow Support
+### Stage 4: Add Multiple Workflow Support - Validation Slice Implemented
 
-- accept multiple unique Workflow documents
-- update schema discovery and semantic fixtures
-- add workflow selection to inspection and graph plans
-- reject duplicate workflow IDs
-- keep cross-workflow dependencies unsupported until separately specified
+- accept multiple unique Workflow documents - implemented
+- update schema discovery and focused semantic fixtures - implemented
+- add workflow selection to inspection and graph plans - remains future CLI work
+- reject duplicate workflow IDs - implemented
+- keep cross-workflow dependencies unsupported until separately specified -
+  implemented boundary
 
 ### Stage 5: Stabilize Discovery
 
@@ -1256,16 +1272,16 @@ absent unless explicitly authored or generated and reviewed.
 
 - Should policy manifests be required in the core profile even when no action is
   modeled?
-- What exact schema should replace or supplement the current
-  `Project.manifests` path map?
-- Should multiple workflows be represented through a project index, a discovery
-  list, bounded scan, or all accepted input modes?
+- Should a general source-entry index supplement the implemented
+  `Project.manifests.workflows` list?
+- Which additional multiple-workflow inputs should follow explicit file lists
+  and Project source hints: bounded scan, bundle, standard input, or API input?
 - Should more than one `TaskSet` or `AgentSet` document be allowed later?
 - How should set-level metadata merge if collection splitting is accepted?
 - Which directory ignore rules belong in the specification versus a reference
   CLI?
-- Should symlinks be forbidden initially or allowed only when their resolved path
-  remains inside the discovery root?
+- Should a future input mode relax the current fail-closed rejection of all
+  symbolic-link sources?
 - Should YAML multi-document streams be accepted before manifest bundles?
 - Which profile and discovery diagnostic codes must stabilize before CLI work?
 - Which future discovery or index migration first requires a manifest

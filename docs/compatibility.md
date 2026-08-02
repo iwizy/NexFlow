@@ -55,6 +55,7 @@ For the current supported combinations and explicit implementation gaps, see the
 - changing network defaults, rule effects, actor or purpose scope, destination selectors, transport constraints, approval requirements, or audit semantics
 - changing human override authority eligibility, operation meaning, fail-closed response, resume requirements, or audit semantics
 - changing event envelope identity, actor, subject, correlation, causation, payload, audit, or redaction semantics
+- changing discovery root containment, source-hint cardinality, document cardinality, or workflow identity rules
 - changing reference CLI command names, exit code meanings, diagnostic code meanings, or machine-readable output formats
 - removing fields
 - changing required fields
@@ -168,6 +169,22 @@ typed objects in these fields would also affect `NF-MANIFEST` and `NF-SCHEMA`.
 
 See [Work Reference Namespaces](work-reference-namespaces.md).
 
+## Manifest Discovery Compatibility
+
+`Project.manifests.workflows` is additive in the unreleased `0.1` draft. The
+singular `Project.manifests.workflow` source hint remains valid for projects
+that adopt one Workflow document; the singular and plural forms cannot coexist
+in one Project manifest.
+
+The focused discovery contract treats source order as non-semantic, requires
+exactly one Project document, retains each Workflow by unique `workflow.id`,
+and keeps workflow stage and step namespaces local to that Workflow. Changing
+root containment, supported source forms, singleton cardinality, workflow ID
+uniqueness, or source precedence may break `NF-SEMANTIC` consumers even when
+individual documents remain schema-valid.
+
+See [Manifest Discovery](manifest-discovery.md).
+
 ## Provider Feature Compatibility
 
 Provider `features` is additive inside the unreleased `specVersion: "0.1"`
@@ -251,6 +268,7 @@ Examples:
 | Require, remove, or reinterpret a typed-reference form, target kind, or scope | May affect `NF-MANIFEST`, `NF-SCHEMA`, `NF-SEMANTIC`, migration tooling, and future runtime binding. |
 | Change approval gate target kinds, workflow scope, legacy coexistence, or exact resolution | May affect `NF-MANIFEST`, `NF-SCHEMA`, `NF-SEMANTIC`, approval coverage, safety, and migration. |
 | Change workflow step or task artifact uniqueness scope or fallback behavior | May affect `NF-SEMANTIC`, graph tooling, handoff evidence resolution, migration, and future runtime binding. |
+| Change discovery root, source ordering, document cardinality, or multiple-workflow identity rules | May affect `NF-SCHEMA`, `NF-SEMANTIC`, validation tooling, migration, and future runtime loading. |
 | Change network defaults, destination scope, transport constraints, approvals, or audit semantics | May affect `NF-SEMANTIC`, `NF-RUNTIME`, integrations, privacy, audit, and safety compatibility. |
 | Change human override authority, response, resume, operation, or audit semantics | May affect `NF-SCHEMA`, `NF-SEMANTIC`, `NF-RUNTIME`, safety, authority, and audit compatibility. |
 | Change event envelope identity, actor, subject, correlation, causation, payload, audit, or redaction semantics | May affect `NF-SEMANTIC`, `NF-RUNTIME`, audit, traceability, privacy, and safety compatibility. |

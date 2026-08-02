@@ -24,6 +24,7 @@ Current release posture: **`0.1` draft, preparing for candidate review**. No
 | Reference examples | Implemented as 7 project sets containing 113 schema-backed manifests | [Examples](examples/), [Examples Guide](examples/README.md) |
 | Structural validation | Implemented for all maintained examples, four negative schema categories, and focused model boundaries | `npm run validate`, `npm run negative-schema-fixtures`, [Validation](docs/validation.md) |
 | Core Profile | Implemented for minimum Project and participant slots, optional module qualifiers, dependency closure, and fail-closed omission | `npm run core-profile-smoke`, [Core Profile](docs/core-profile.md), [Profile Definition](profiles/core.yaml) |
+| Manifest discovery | Implemented for explicit local files, Project source hints, conservative cardinality, and multiple unique workflows | `npm run manifest-discovery-smoke`, [Manifest Discovery](docs/manifest-discovery.md) |
 | Typed reference primitives | Implemented for shared structural shapes and lexical boundaries | `npm run typed-reference-schema-smoke`, [Typed References](docs/typed-references.md) |
 | Approval gate targets | Implemented as closed typed target kinds with exact semantic resolution | `npm run approval-gate-target-schema-smoke`, [Approval Gate Targets](docs/approval-gate-targets.md) |
 | Work reference namespaces | Implemented for workflow-scoped steps and assembly-scoped task artifacts | `npm run work-reference-namespace-smoke`, [Work Reference Namespaces](docs/work-reference-namespaces.md) |
@@ -192,6 +193,7 @@ NexFlow is intentionally split into layers:
 - [Examples Guide](examples/README.md): overview of reference teams and manifest file sets
 - [conformance/](conformance/): standalone conformance claim schema and publication templates
 - [release/](release/): standalone candidate readiness schema, template, and release evidence guidance
+- [fixtures/discovery/](fixtures/discovery/): focused logical assembly and multiple-workflow validation evidence
 - [fixtures/schema/invalid/](fixtures/schema/invalid/): intentionally invalid
   manifests for stable schema rejection checks
 - [rfcs/](rfcs/README.md): governance and design proposal process
@@ -199,6 +201,7 @@ NexFlow is intentionally split into layers:
 - [Conformance](docs/conformance.md): draft support levels for manifests, validators, CLIs, runtimes, and extensions
 - [Compatibility Matrix](docs/compatibility-matrix.md): current support and explicit implementation gaps
 - [Validation](docs/validation.md): repository checks and their boundaries
+- [Manifest Discovery](docs/manifest-discovery.md): explicit source boundaries, logical inventory, cardinality, and multiple-workflow rules
 - [Semantic Reference Inventory](docs/semantic-reference-inventory.md): prioritized cross-manifest reference contracts and current coverage
 - [Typed References](docs/typed-references.md): shared reference shapes, lexical rules, field contracts, and migration guidance
 - [Approval Gate Targets](docs/approval-gate-targets.md): typed gate targets, exact namespaces, workflow scope, and legacy migration
@@ -223,6 +226,7 @@ NexFlow is intentionally split into layers:
 | --- | --- |
 | Understand the vocabulary | [Concepts](docs/concepts.md), [Glossary](docs/glossary.md) |
 | Start with the minimum project shape | [Core Profile](docs/core-profile.md), [Manifest Reference](docs/manifest-reference.md) |
+| Discover one logical project assembly | [Manifest Discovery](docs/manifest-discovery.md), [Core Profile](docs/core-profile.md), [Validation](docs/validation.md) |
 | Model participant identity | [Actor Model](docs/actor-model.md), [Actor Model Migration](docs/actor-model-migration.md) |
 | Model resource references | [Typed References](docs/typed-references.md), [Approval Gate Targets](docs/approval-gate-targets.md), [Work Reference Namespaces](docs/work-reference-namespaces.md), [Semantic Reference Inventory](docs/semantic-reference-inventory.md), [Manifest Reference](docs/manifest-reference.md) |
 | See every manifest shape | [Manifest Reference](docs/manifest-reference.md) |
@@ -279,7 +283,11 @@ See [Governance](docs/governance.md) and [RFCs](rfcs/README.md).
   normal effective configuration.
 - Six maintained examples use the legacy 16-manifest participant inventory; the
   Minimal Team adds `ActorSet` as a reviewed migration path. Reduced core
-  profiles, optional modules, and multiple workflow discovery remain draft.
+  profiles and multiple-workflow discovery have focused validation evidence,
+  while the maintained team examples intentionally remain complete.
+- Discovery is limited to explicit local files and Project source hints;
+  directory scans, general indexes, bundles, remote sources, workflow selection,
+  and runtime loading are not implemented.
 - Schemas are not yet distributed as an independently versioned package. Use a
   repository release, tag, or commit to identify a reproducible schema snapshot.
 - Draft RFCs may describe behavior that has not yet been incorporated into the

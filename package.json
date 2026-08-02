@@ -12,6 +12,7 @@
     "conformance-claim-smoke": "node scripts/conformance-claim-smoke.mjs",
     "core-profile-smoke": "node scripts/core-profile-smoke.mjs",
     "human-override-schema-smoke": "node scripts/human-override-schema-smoke.mjs",
+    "manifest-discovery-smoke": "node scripts/manifest-discovery-smoke.mjs",
     "mcp-extension-smoke": "node scripts/mcp-extension-smoke.mjs",
     "negative-schema-fixtures": "node scripts/negative-schema-fixtures.mjs",
     "provider-constraint-schema-smoke": "node scripts/provider-constraint-schema-smoke.mjs",

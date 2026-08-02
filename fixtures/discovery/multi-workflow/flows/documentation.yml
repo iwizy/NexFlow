@@ -1,0 +1,17 @@
+specVersion: "0.1"
+kind: Workflow
+metadata:
+  project: discovery-fixture
+workflow:
+  id: docs-delivery
+  displayName: Documentation Delivery
+  stages:
+    - id: delivery
+      displayName: Delivery
+      steps:
+        - id: prepare
+          task: prepare-change
+        - id: review
+          task: review-change
+          dependsOn:
+            - prepare

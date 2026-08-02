@@ -71,6 +71,9 @@ tag or release has been published, and manifest `specVersion` remains `"0.1"`.
 - Added a standalone `0.1` candidate readiness record with eight explicit gates,
   evidence requirements, release decision guards, a non-claiming template, and
   14 focused positive and negative checks wired into CI.
+- Added explicit local manifest discovery for file lists and Project source
+  hints, conservative document cardinality, multiple unique Workflow inventory,
+  a five-document focused fixture, and 24 boundary checks wired into CI.
 
 ### Changed
 
@@ -98,6 +101,8 @@ tag or release has been published, and manifest `specVersion` remains `"0.1"`.
 - Made `Project.manifests` an optional source-hint map so reduced Core Profile
   projects do not require empty files for unadopted modules; existing complete
   maps remain valid.
+- Added migration-compatible plural `Project.manifests.workflows` source hints
+  while preserving the singular `workflow` form and rejecting coexistence.
 - Added required explicit `scope.profiles` qualifiers to the unreleased
   `claimVersion: "0.1"` conformance claim format and synchronized both
   templates and focused checks.

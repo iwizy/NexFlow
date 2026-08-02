@@ -39,7 +39,8 @@ enforced.
 | Actor schema boundary smoke | 9 accepted and rejected structural cases | Implemented | `npm run actor-schema-smoke` | Focused ActorSet schema evidence, not full semantic or runtime conformance. |
 | Agent identity boundary smoke | 7 compact and legacy structural cases | Implemented | `npm run agent-identity-schema-smoke` | Checks identity migration compatibility, not definition selection or effective configuration. |
 | Agent definition authority smoke | 15 structural and selection cases | Implemented | `npm run agent-definition-authority-smoke` | Checks active completeness, unique unscoped selection, and rejection of unsupported memory policy references, not full policy resolution or runtime execution. |
-| Core Profile contract | Machine-readable required slots, optional qualifiers, dependency rules, and 16 focused cases | Implemented | `profiles/core.yaml`, `docs/core-profile.md`, `npm run core-profile-smoke` | Consumes normalized kind inventories; general discovery, arbitrary assembly validation, multi-workflow loading, and runtime preflight are absent. |
+| Core Profile contract | Machine-readable required slots, optional qualifiers, dependency rules, and 16 focused cases | Implemented | `profiles/core.yaml`, `docs/core-profile.md`, `npm run core-profile-smoke` | Consumes normalized kind inventories; arbitrary assembly validation, complete dependency resolution, and runtime preflight are absent. |
+| Manifest discovery and multiple workflows | Explicit local file lists, Project source hints, conservative cardinality, unique workflow inventory, and 24 focused cases | Implemented | `docs/manifest-discovery.md`, `scripts/lib/manifest-discovery.mjs`, `npm run manifest-discovery-smoke` | Focused repository validation helper only; no directory scan, bundle input, general index, stable CLI contract, workflow selection, cross-workflow execution, or runtime loading. |
 | Agent Assembly inspection view | Documentation contract for a derived effective-configuration projection | Specified | `docs/agent-assembly.md`, RFC-0014 | No resolver, serializer, JSON Schema, reference CLI output, or runtime implementation exists. |
 | Human override boundary smoke | 11 accepted and rejected structural cases | Implemented | `npm run human-override-schema-smoke` | Checks policy shape, not authentication, interruption, revocation, or runtime enforcement. |
 | Typed reference primitives | Common typed, scoped, transitional, and kind-specific definitions with 53 focused cases | Implemented | `schemas/common.schema.json`, `npm run typed-reference-schema-smoke` | Shape and lexical evidence only; no complete field-contract or semantic resolution conformance. |
@@ -70,8 +71,10 @@ compatibility notes, and versioning impact are accepted and synchronized.
 
 [RFC-0016](../rfcs/RFC-0016-core-profile-and-discovery.md) now has an
 implemented Core Profile slice with optional module qualifiers and reduced
-Project source hints. General discovery, source indexes, and multiple workflow
-loading remain outside the current supported matrix.
+Project source hints, plus a focused explicit local discovery and
+multiple-workflow validation slice. Directory discovery, general source indexes,
+bundle equivalence, and runtime loading remain outside the current supported
+matrix.
 
 ## Current Artifact Pairing
 
@@ -88,6 +91,9 @@ agent identity boundary smoke: scripts/agent-identity-schema-smoke.mjs
 agent definition authority smoke: scripts/agent-definition-authority-smoke.mjs
 core profile definition: profiles/core.yaml
 core profile smoke: scripts/core-profile-smoke.mjs
+manifest discovery helper: scripts/lib/manifest-discovery.mjs
+manifest discovery smoke: scripts/manifest-discovery-smoke.mjs
+multi-workflow fixture: fixtures/discovery/multi-workflow/
 human override boundary smoke: scripts/human-override-schema-smoke.mjs
 mcp extension profile: extensions/mcp/profile.yaml
 mcp extension smoke: scripts/mcp-extension-smoke.mjs
@@ -112,6 +118,25 @@ outside this repository is required.
 Do not describe an arbitrary mix of schemas, examples, and scripts from different
 repository revisions as a tested compatibility set.
 
+### Manifest Discovery And Multiple-Workflow Smoke
+
+Command:
+
+```sh
+npm run manifest-discovery-smoke
+```
+
+Compatible with explicit local file-list input, current Project source hints,
+the plural `manifests.workflows` shape, one Project, zero or more unique
+Workflow documents, and one document for every other current manifest kind. It
+checks 24 schema, source-boundary, association, cardinality, ordering, and
+workflow-local namespace cases.
+
+It does not recursively discover directories, read ignore files, expand
+bundles, fetch remote sources, aggregate collection manifests, compute complete
+semantic closure, select a workflow, define cross-workflow state, or establish
+CLI or runtime conformance.
+
 ## Manifest Kind Coverage
 
 Every current schema-backed manifest kind appears in at least one maintained
@@ -119,7 +144,7 @@ example and is validated in CI.
 
 | Manifest `kind` | Schema | Example coverage | `npm run validate` | `npm run semantic-smoke` |
 | --- | --- | --- | --- | --- |
-| `Project` | `project.schema.json` | All 7 complete project sets plus reduced focused fixtures | Full structural check | Optional source hints, selected project, maintainer, approval gate, network policy, and human override checks |
+| `Project` | `project.schema.json` | All 7 complete project sets plus reduced and discovery fixtures | Full structural check | Optional source hints, singular or plural Workflow sources, selected project, maintainer, approval gate, network policy, and human override checks |
 | `ActorSet` | `actors.schema.json` | Minimal Team migration path | Full structural check | Actor identity, agent bridge, operator, representative, integration, and relationship cycle checks |
 | `AgentSet` | `agents.schema.json` | All 7 project sets | Full structural check | Agent identity inventory plus deprecated compatibility-field references where present |
 | `AgentDefinitionSet` | `agent-definitions.schema.json` | All 7 project sets | Full structural check | Selected agent and component references |

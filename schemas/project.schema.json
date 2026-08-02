@@ -99,11 +99,40 @@
       }
     },
     "manifests": {
-      "description": "Optional source-loading hints for adopted manifests. Paths are not resource identity and do not grant behavior.",
+      "description": "Optional local source-loading hints for adopted manifests. Paths are not resource identity and do not grant behavior. Use workflow for one Workflow document or workflows for multiple documents, but not both.",
       "type": "object",
       "additionalProperties": {
-        "type": "string"
-      }
+        "$ref": "#/$defs/sourcePath"
+      },
+      "properties": {
+        "workflow": {
+          "$ref": "#/$defs/sourcePath",
+          "description": "Legacy-compatible source hint for one Workflow document."
+        },
+        "workflows": {
+          "description": "Source hints for multiple Workflow documents. Discovery retains every document and keys it by workflow.id.",
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/sourcePath"
+          }
+        }
+      },
+      "allOf": [
+        {
+          "not": {
+            "required": ["workflow", "workflows"]
+          }
+        }
+      ]
+    }
+  },
+  "$defs": {
+    "sourcePath": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": ".*\\S.*"
     }
   }
 }

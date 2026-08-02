@@ -38,8 +38,11 @@ The [Core Profile](core-profile.md) implements the minimum Project and
 participant contract, optional module qualifiers, dependency closure, and
 fail-closed omission semantics from
 [RFC-0016](../rfcs/RFC-0016-core-profile-and-discovery.md). General logical
-discovery, multiple workflow loading, source indexes, and stable discovery
-diagnostics remain Draft.
+discovery now has a focused validation implementation for explicit local files
+and Project source hints, including multiple unique Workflow documents.
+Directory scanning, separate source indexes, bundles, stable CLI diagnostics,
+and runtime loading remain Draft. See
+[Manifest Discovery](manifest-discovery.md).
 
 ## Actor Identity View
 

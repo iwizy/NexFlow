@@ -46,6 +46,12 @@ The previous schema required paths for every historical module. Existing
 complete maps remain valid. Reduced projects may omit the map or list only
 adopted modules.
 
+The map now accepts either the existing singular `workflow` hint or a
+non-empty, unique `workflows` list. The forms cannot coexist. The focused
+[Manifest Discovery](manifest-discovery.md) slice resolves these hints within
+one explicit local root, verifies expected kinds and project association, and
+retains every unique workflow by `workflow.id`.
+
 This change keeps `specVersion: "0.1"` because no candidate or stable `0.1`
 release has been published and the change broadens authoring compatibility
 without invalidating complete projects.
@@ -138,8 +144,11 @@ The repository currently provides:
 - the machine-readable Core Profile definition and schema
 - a Project schema that accepts reduced source-hint maps
 - focused conformance and dependency-closure fixtures
+- focused explicit-file and Project source-hint discovery with multiple unique
+  Workflow documents
 - complete examples that remain backward-compatible
 
-The repository does not yet provide general project discovery, a project index,
-multiple-workflow loading, stable profile diagnostics, a reference CLI, or
-runtime preflight. Those remain separate specification and tooling work.
+The repository does not yet provide directory scanning, a separate project
+index, bundle discovery, stable CLI diagnostics, complete dependency closure
+over discovered documents, a reference CLI, or runtime preflight. Those remain
+separate specification and tooling work.

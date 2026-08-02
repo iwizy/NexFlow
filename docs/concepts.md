@@ -24,6 +24,18 @@ A coherent optional area of the manifest vocabulary, such as policy, workflow,
 context, memory, provider inventory, events, or extensions. An omitted module
 contributes no declaration or authority.
 
+## Logical Manifest Assembly
+
+The normalized set of manifest documents associated with one Project for one
+validation or inspection operation. Discovery records source locations for
+diagnostics, but `specVersion`, `kind`, project identity, resource IDs, and
+scope determine meaning.
+
+The focused [Manifest Discovery](manifest-discovery.md) implementation accepts
+explicit local files or Project source hints and retains multiple unique
+Workflow documents. A logical assembly is derived validation input, not an
+authored manifest or runtime execution plan.
+
 ## Team
 
 A collection of humans, agents, and automation systems that collaborate on a project.

@@ -241,8 +241,10 @@ failures. Broader typed-reference fixtures remain open.
 
 Status: Core Profile required slots, optional qualifiers, dependency rules,
 fail-closed omission, reduced Project source hints, and focused conformance
-fixtures are implemented. Source indexes, general discovery, and
-multiple-workflow loading remain open.
+fixtures are implemented. Explicit local files, Project source hints, multiple
+unique workflows, and duplicate-workflow diagnostics now have a focused
+validation implementation. Directory discovery, general source indexes, bundle
+equivalence, stable CLI diagnostics, and runtime loading remain open.
 
 ### Phase 6: Stabilization
 
@@ -315,7 +317,7 @@ the draft is not acceptable.
 | RFC-0013 | Initial Actor identity and compact AgentSet slices implemented; remains Draft | Review broader migration before claiming the full model. |
 | RFC-0014 | Compact identity, authoritative unique-active selection, and Agent Assembly documentation slices implemented; remains Draft | Standardize machine-readable inspection, scoped binding, and broader migration before claiming the full model. |
 | RFC-0015 | Common primitive, focused structural evidence, and Actor relationship contracts implemented; remains Draft | Define field-specific contracts and migrate remaining fields deliberately. |
-| RFC-0016 | Core Profile contract and reduced Project source-hint slice implemented; discovery portions remain Draft | Define source indexes, general discovery, multiple-workflow loading, and stable diagnostics separately. |
+| RFC-0016 | Core Profile, explicit local discovery, and multiple-workflow validation slices implemented; broader discovery remains Draft | Define directory and bundle inputs, general source indexes, stable CLI diagnostics, and runtime loading separately. |
 
 ## Exit Criteria For Schema Work
 

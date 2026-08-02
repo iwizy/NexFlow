@@ -93,8 +93,14 @@ provenance validation remain future work.
 Core Profile checkpoint: the minimum Project and participant slots, ActorSet
 authority with AgentSet fallback, optional module qualifiers, transitive
 dependency policy, fail-closed omission, reduced Project source hints, and 16
-focused cases are implemented. General discovery, multiple workflow loading,
-and stable profile diagnostics remain future work.
+focused cases are implemented.
+
+Manifest discovery checkpoint: explicit local files and Project source hints,
+the plural `manifests.workflows` shape, conservative document cardinality,
+multiple unique Workflow inventory, workflow-local step namespaces, and 24
+focused cases are implemented. Directory scanning, general source indexes,
+bundle equivalence, stable CLI diagnostics, complete dependency closure, and
+runtime loading remain future work.
 
 ## Milestone 2: Community Review
 

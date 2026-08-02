@@ -140,6 +140,12 @@ NexFlow manifests should not contain raw credentials.
 
 A relationship indicating that one task, workflow step, artifact, approval, or external condition depends on another.
 
+### Discovery Root
+
+The explicit local directory boundary within which a discovery operation may
+load listed manifest sources. It is a safety and diagnostics boundary, not
+project or resource identity.
+
 ### Draft Specification
 
 The current state of NexFlow before a stable release. Draft behavior may change, but changes should remain documented and reviewable.
@@ -195,6 +201,14 @@ Identifier references do not grant capabilities, permissions, context access, me
 A connection to an external system such as GitHub, GitLab, Jira, Linear, Figma, Slack, Discord, Telegram, MCP, notes, or a custom service.
 
 An integration can expose capabilities or context, but it should not authorize actors by presence alone.
+
+## L
+
+### Logical Manifest Assembly
+
+A normalized, source-grounded set of manifest documents associated with one
+Project for validation or inspection. It may retain multiple unique Workflow
+documents. It is not an authored manifest, permission source, or runtime state.
 
 ## M
 
@@ -329,6 +343,12 @@ The principle that the specification should not depend on TypeScript, Python, Ru
 Validation of cross-manifest meaning, such as whether referenced actors exist, task owners have permissions, approval gates cover risky actions, or memory promotion rules preserve sensitivity.
 
 Semantic validation is future work.
+
+### Source Locator
+
+The physical location from which a manifest document was loaded. A source
+locator supports loading and diagnostics but does not define manifest kind,
+project identity, resource identity, authority, or precedence.
 
 ### Skill
 

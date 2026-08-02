@@ -34,9 +34,27 @@ unreleased draft: complete Project path maps remain valid, while reduced
 projects no longer need placeholder paths for unadopted modules.
 
 Changing required profile slots, participant authority precedence, omission
-semantics, or dependency closure may be breaking. A future source-index or
-multiple-workflow shape requires its own explicit version decision. See
+semantics, or dependency closure may be breaking. Discovery and multiple
+Workflow compatibility are recorded separately below. See
 [Core Profile](core-profile.md).
+
+## Manifest Discovery Version Decision
+
+The explicit local discovery slice and plural `Project.manifests.workflows`
+source hint remain in `specVersion: "0.1"`. Existing projects using the singular
+`workflow` hint remain valid; projects may replace it with a non-empty unique
+list when they adopt multiple Workflow documents. The singular and plural forms
+cannot coexist.
+
+This is an additive change inside the unreleased draft. It defines validation
+inventory behavior only and does not select, schedule, execute, or merge
+workflows.
+
+Removing the singular hint, changing Workflow identity or cardinality, allowing
+multiple documents for another current singleton kind, stabilizing diagnostics,
+adding directory or bundle discovery, or enabling cross-workflow dependencies
+requires an explicit compatibility and version decision. See
+[Manifest Discovery](manifest-discovery.md).
 
 ## Conformance Claim Versioning
 

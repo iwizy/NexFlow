@@ -43,7 +43,7 @@ The schemas currently target `specVersion: "0.1"` and use JSON Schema draft 2020
 
 | Schema | Manifest `kind` | Purpose |
 | --- | --- | --- |
-| `project.schema.json` | `Project` | Project identity, policies including structured network access and human override, maintainers, approval gates, and optional manifest source hints. |
+| `project.schema.json` | `Project` | Project identity, policies including structured network access and human override, maintainers, approval gates, optional source hints, and singular or plural Workflow sources. |
 | `actors.schema.json` | `ActorSet` | First-class human, agent, automation, service, and authority identity with kind-specific typed relationships. |
 | `agents.schema.json` | `AgentSet` | Stable AI identity, with deprecated behavior fields and legacy mixed-participant compatibility during migration. |
 | `agent-definitions.schema.json` | `AgentDefinitionSet` | Versioned agent behavioral releases with complete reviewed active-definition requirements and component references. |

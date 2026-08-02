@@ -68,6 +68,9 @@ tag or release has been published, and manifest `specVersion` remains `"0.1"`.
 - Added a structured provider constraint vocabulary covering training use,
   residency, tool use, sensitivity, cost, latency, deployment, network posture,
   approval, and retention, with 17 focused schema cases.
+- Added a standalone `0.1` candidate readiness record with eight explicit gates,
+  evidence requirements, release decision guards, a non-claiming template, and
+  14 focused positive and negative checks wired into CI.
 
 ### Changed
 

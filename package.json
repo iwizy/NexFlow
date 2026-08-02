@@ -8,6 +8,7 @@
     "agent-identity-schema-smoke": "node scripts/agent-identity-schema-smoke.mjs",
     "approval-gate-target-schema-smoke": "node scripts/approval-gate-target-schema-smoke.mjs",
     "actor-schema-smoke": "node scripts/actor-schema-smoke.mjs",
+    "candidate-readiness-smoke": "node scripts/candidate-readiness-smoke.mjs",
     "conformance-claim-smoke": "node scripts/conformance-claim-smoke.mjs",
     "core-profile-smoke": "node scripts/core-profile-smoke.mjs",
     "human-override-schema-smoke": "node scripts/human-override-schema-smoke.mjs",

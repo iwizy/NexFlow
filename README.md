@@ -31,6 +31,7 @@ Current release posture: **`0.1` draft, preparing for candidate review**. No
 | Provider constraint vocabulary | Implemented as structured candidate eligibility fields with legacy migration | `npm run provider-constraint-schema-smoke`, [Provider Constraints](docs/provider-constraints.md) |
 | MCP extension draft | Implemented as an offline policy profile and focused schema checks; no live integration | `npm run mcp-extension-smoke`, [MCP Extension Draft](extensions/mcp/README.md) |
 | Conformance claim format | Implemented as standalone schema plus profile-qualified YAML and Markdown templates | `npm run conformance-claim-smoke`, [Conformance Claims](docs/conformance-claims.md) |
+| Candidate readiness record | Implemented as a standalone eight-gate schema and non-claiming `0.1` template | `npm run candidate-readiness-smoke`, [0.1 Readiness Checklist](docs/readiness-checklist.md), [Release Evidence](release/README.md) |
 | Semantic reference checks | Partial repository smoke coverage | `npm run semantic-smoke`, [Validation](docs/validation.md) |
 | Governance and RFC process | Implemented in documentation | [Governance](docs/governance.md), [RFCs](rfcs/README.md) |
 | Foundational model changes | ActorSet, compact AgentSet, and authoritative unique-active-definition slices implemented; RFCs remain Draft | [Actor Model](docs/actor-model.md), [Effective Agent Configuration](docs/effective-agent-configuration.md), [Foundational Model Review](rfcs/reviews/2026-07-foundational-model-review.md) |
@@ -190,6 +191,7 @@ NexFlow is intentionally split into layers:
 - [examples/](examples/): complete reference team configurations
 - [Examples Guide](examples/README.md): overview of reference teams and manifest file sets
 - [conformance/](conformance/): standalone conformance claim schema and publication templates
+- [release/](release/): standalone candidate readiness schema, template, and release evidence guidance
 - [fixtures/schema/invalid/](fixtures/schema/invalid/): intentionally invalid
   manifests for stable schema rejection checks
 - [rfcs/](rfcs/README.md): governance and design proposal process
@@ -211,7 +213,7 @@ NexFlow is intentionally split into layers:
 - [Human Override](docs/human-override.md): fail-closed human-control policy, resume gate, and audit contract
 - [Network Access Policy](docs/network-access-policy.md): fail-closed outbound connection rules and migration from advisory strings
 - [Release Plan](docs/release-plan.md): public readiness criteria from `0.1` draft through `1.0`
-- [0.1 Readiness Checklist](docs/readiness-checklist.md): candidate review checklist for docs, schemas, examples, RFCs, compatibility, and limitations
+- [0.1 Readiness Checklist](docs/readiness-checklist.md): candidate gates, evidence rules, decision outcomes, and release blockers
 - [CONTRIBUTING.md](CONTRIBUTING.md): contribution workflow
 - [SECURITY.md](SECURITY.md): vulnerability and safety reporting policy
 

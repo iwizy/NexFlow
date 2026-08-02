@@ -49,6 +49,7 @@ enforced.
 | Provider constraint vocabulary | Structured provider eligibility fields, migrated examples, legacy training boolean, and 17 focused cases | Implemented | `docs/provider-constraints.md`, `npm run provider-constraint-schema-smoke` | Structural and migration evidence only; no complete constraint solver, live provider facts, selection, or runtime enforcement. |
 | MCP extension draft | Machine-readable `io.nexflow.mcp` profile, stricter ContextSet boundary, Software Team binding, and 10 focused cases | Implemented | `extensions/mcp/`, RFC-0018, `npm run mcp-extension-smoke` | Policy mapping only; no MCP client, server, transport, discovery, credential, protocol negotiation, or execution support. |
 | Conformance claim format | Standalone `claimVersion: "0.1"` schema plus profile-qualified YAML and Markdown templates | Implemented | `conformance/`, `npm run conformance-claim-smoke` | Self-declared claim structure only; no certification, external evidence verification, registry, or conformance test suite. |
+| Candidate readiness record | Standalone `recordVersion: "0.1"` schema, eight-gate template, and 14 focused cases | Implemented | `release/`, `npm run candidate-readiness-smoke` | Record structure and decision guards only; no evidence execution, release approval, tag, publication, or conformance claim. |
 | Semantic reference inventory | P0-P3 target namespaces, coverage, gaps, and deferred fields | Specified | `docs/semantic-reference-inventory.md` | Documentation contract only; it is not a manifest, generated registry, validator, or conformance suite. |
 | Semantic reference smoke | Selected cross-manifest reference, active definition authority, and duplicate checks | Partial | `npm run semantic-smoke`, semantic reference inventory | Does not cover every inventoried field or establish full `NF-SEMANTIC` conformance, graph safety, or policy correctness. |
 | Reference CLI | Validation-only scope proposed | Planned | RFC-0011 | No `nexflow` executable or `NF-CLI` implementation exists. |
@@ -96,6 +97,7 @@ provider constraint smoke: scripts/provider-constraint-schema-smoke.mjs
 work reference namespace smoke: scripts/work-reference-namespace-smoke.mjs
 provider feature smoke: scripts/provider-feature-schema-smoke.mjs
 conformance claim format smoke: scripts/conformance-claim-smoke.mjs
+candidate readiness record smoke: scripts/candidate-readiness-smoke.mjs
 semantic smoke: scripts/semantic-reference-smoke.mjs
 reference CLI: absent
 runtime: absent
@@ -320,6 +322,22 @@ levels.
 
 It does not verify external evidence, evaluate implementations, operate a
 registry, issue certification, or establish any conformance level.
+
+### Candidate Readiness Record Smoke
+
+Command:
+
+```sh
+npm run candidate-readiness-smoke
+```
+
+Compatible with standalone candidate readiness `recordVersion: "0.1"`. It
+checks 14 accepted and rejected schema cases, the exact eight-gate registry,
+non-claiming template defaults, passed-gate evidence, evaluated-outcome
+metadata, and blocker guards.
+
+It does not execute evidence commands, verify links, evaluate release quality,
+approve a tag, publish a release, or establish specification conformance.
 
 ### Semantic Reference Smoke
 

@@ -34,7 +34,11 @@ NexFlow uses `0.x` releases while the specification is still stabilizing. The `1
 
 The `0.1` line establishes the shape of the project.
 
-Use the [0.1 Readiness Checklist](readiness-checklist.md) when reviewing whether the draft is ready for a candidate tag.
+Use the [0.1 Readiness Checklist](readiness-checklist.md) when reviewing whether
+the draft is ready for a candidate tag. Record the review in the standalone
+[candidate readiness template](../release/0.1-candidate-readiness.template.yaml)
+so the commit, evidence, blockers, limitations, and final decision can be
+validated without treating the record as a NexFlow project manifest.
 
 Release readiness:
 
@@ -45,6 +49,7 @@ Release readiness:
 - governance and RFC process are documented
 - security, approval, context, memory, handoff, event, provider, extension, and runtime option docs exist
 - repository checks can parse schemas and examples reproducibly
+- candidate evidence can be recorded against eight explicit release gates
 
 `0.1` remains a draft. It can add clarifications, examples, and compatible draft vocabulary without bumping the manifest `specVersion`.
 
@@ -220,7 +225,10 @@ Before tagging a release, maintainers should verify:
 - runtime and provider claims match implemented reality
 - release notes clearly separate implemented behavior, specified behavior, and planned behavior
 
-For the `0.1` line, use the more detailed [0.1 Readiness Checklist](readiness-checklist.md).
+For the `0.1` line, use the more detailed
+[0.1 Readiness Checklist](readiness-checklist.md), validate its standalone
+record with `npm run candidate-readiness-smoke`, and keep the outcome
+`not-evaluated` until evidence review is complete.
 
 ## Relationship to Project Planning
 

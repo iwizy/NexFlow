@@ -62,6 +62,28 @@ Publishing a claim, changing a subject's conformance status, or updating evidenc
 does not by itself change manifest `specVersion`. See
 [Conformance Claims](conformance-claims.md).
 
+## Candidate Readiness Record Versioning
+
+Candidate readiness records use `recordVersion`, independently from manifest
+`specVersion`, conformance `claimVersion`, and the proposed release tag.
+
+The initial standalone record format is:
+
+```yaml
+recordVersion: "0.1"
+kind: NexFlowCandidateReadiness
+```
+
+Changing the required gate registry, gate status vocabulary, ready-state
+guards, blocker meaning, or evidence shape requires a record-format
+compatibility decision. A breaking format change requires a new
+`recordVersion` and migration guidance.
+
+Completing a readiness record or approving a candidate does not by itself
+change manifest `specVersion`. The candidate commit determines the exact schema,
+example, documentation, and validation snapshot under review. See the
+[0.1 Readiness Checklist](readiness-checklist.md).
+
 ## Actor Model Version Decision
 
 The first `ActorSet` schema and typed-reference primitives remain in

@@ -32,6 +32,11 @@ Versioned extension policy profiles and their schemas live under `extensions/`
 for the same reason. The first is the experimental
 [MCP Extension Draft](../extensions/mcp/README.md).
 
+Standalone release evidence formats and their schemas live under `release/`.
+They validate repository release records, not authored NexFlow project
+manifests, and are not counted as manifest kinds. See
+[Release Evidence](../release/README.md).
+
 ## Current Scope
 
 The schemas currently target `specVersion: "0.1"` and use JSON Schema draft 2020-12.

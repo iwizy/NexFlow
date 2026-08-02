@@ -73,7 +73,7 @@ The documentation is the canonical source for the specification. Schemas and exa
 | [Compatibility](compatibility.md) | Compatibility expectations and breaking change guidance. |
 | [Compatibility Matrix](compatibility-matrix.md) | Current support across spec versions, schemas, examples, validators, CLI, runtime, and extensions. |
 | [Release Plan](release-plan.md) | Public readiness criteria from `0.1` draft through `1.0`. |
-| [0.1 Readiness Checklist](readiness-checklist.md) | Candidate review checklist for docs, schemas, examples, RFCs, compatibility, and limitations. |
+| [0.1 Readiness Checklist](readiness-checklist.md) | Candidate review criteria and machine-readable release evidence workflow for docs, schemas, examples, RFCs, compatibility, safety, and limitations. |
 | [Runtime Options](runtime-options.md) | Runtime language evaluation criteria without choosing an implementation. |
 | [Integrations](integrations.md) | Integration modeling rules and safety expectations. |
 | [Roadmap](roadmap.md) | Specification, review, schema, CLI, runtime, and ecosystem milestones. |

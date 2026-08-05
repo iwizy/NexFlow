@@ -16,6 +16,7 @@ Related design notes:
 - [Typed References](typed-references.md)
 - [Work Reference Namespaces](work-reference-namespaces.md)
 - [Core Profile](core-profile.md)
+- [MCP And A2A Boundaries](mcp-a2a-boundaries.md)
 - [Compatibility Matrix](compatibility-matrix.md)
 
 ## Validation Goals
@@ -45,6 +46,8 @@ The repository supports basic validation through:
 - Focused structured provider constraint and legacy migration checks.
 - Focused MCP extension profile, context/action surface, allow-list, approval,
   and example dependency checks.
+- Focused A2A profile checks for external identity, task, artifact, permission,
+  network callback, credential, audit, and fail-closed boundaries.
 - Focused ActorSet, AgentSet identity, agent definition authority, and human
   override boundary checks.
 - Focused Core Profile definition, reduced Project, participant authority,
@@ -191,6 +194,23 @@ This command validates the machine-readable `io.nexflow.mcp` profile, exercises
 permission, and context declarations. It does not connect to an MCP server,
 discover tools, negotiate protocol versions, or execute an action.
 
+Run the A2A extension draft checks:
+
+```sh
+npm run a2a-extension-smoke
+```
+
+This command exercises 13 accepted and rejected cases for the machine-readable
+`io.nexflow.a2a` profile. It checks external protocol ownership, opaque remote
+identity, no automatic Actor or typed-reference binding, TaskSet and Handoff
+separation, provenance-preserving artifact import, permissions, project-effect
+capabilities, network callbacks, credential handling, and fail-closed behavior.
+
+It does not fetch an Agent Card, discover a remote agent, negotiate a protocol
+version or binding, authenticate, invoke, poll, stream, cancel, receive a push
+callback, import an artifact, or implement A2A. See
+[MCP And A2A Boundaries](mcp-a2a-boundaries.md).
+
 Run the standalone conformance claim format checks:
 
 ```sh
@@ -226,7 +246,7 @@ focused boundary commands so pull requests exercise schema JSON parsing,
 example YAML parsing, manifest kind discovery, schema compilation, example
 manifest validation, typed-reference primitive boundaries, work reference
 namespaces, approval gate target kinds and scope, provider feature vocabulary,
-provider constraint structure, MCP extension profile boundaries,
+provider constraint structure, MCP and A2A extension profile boundaries,
 compact agent identity compatibility, Core Profile conformance boundaries,
 manifest discovery and multiple-workflow boundaries, human override fail-closed
 shape, and conformance claim format boundaries. It also checks candidate

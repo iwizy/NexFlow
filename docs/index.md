@@ -25,7 +25,7 @@ The documentation is the canonical source for the specification. Schemas and exa
 | Safety reviewer | [Security Model](security-model.md) -> [Human Override](human-override.md) -> [Network Access Policy](network-access-policy.md) -> [Approval Gates](approval-gates.md) -> [Approval Gate Targets](approval-gate-targets.md) -> [Capability Model](capability-model.md) -> [Autonomy Model](autonomy-model.md) |
 | Validator author | [Validation](validation.md) -> [Manifest Discovery](manifest-discovery.md) -> [Semantic Reference Inventory](semantic-reference-inventory.md) -> [Typed References](typed-references.md) -> [Approval Gate Targets](approval-gate-targets.md) -> [Work Reference Namespaces](work-reference-namespaces.md) -> [Schema Design Notes](schema-design-notes.md) -> [Schema Guide](../schemas/README.md) -> [Conformance](conformance.md) -> [Conformance Claims](conformance-claims.md) -> [Compatibility Matrix](compatibility-matrix.md) |
 | Runtime implementer | [Architecture](architecture.md) -> [Runtime Options](runtime-options.md) -> [Provider Abstraction](provider-abstraction.md) -> [Provider Features](provider-features.md) -> [Provider Constraints](provider-constraints.md) -> [Roadmap](roadmap.md) |
-| Extension author | [Extension Model](extensions.md) -> [MCP Extension Draft](../extensions/mcp/README.md) -> [Integrations](integrations.md) -> [Provider Abstraction](provider-abstraction.md) -> [Conformance](conformance.md) |
+| Extension author | [Extension Model](extensions.md) -> [MCP And A2A Boundaries](mcp-a2a-boundaries.md) -> [MCP Extension Draft](../extensions/mcp/README.md) -> [A2A Extension Draft](../extensions/a2a/README.md) -> [Integrations](integrations.md) -> [Conformance](conformance.md) |
 
 ## Core Models
 
@@ -53,6 +53,8 @@ The documentation is the canonical source for the specification. Schemas and exa
 | [Event Model](events.md) | Defines auditable state transitions and payload expectations. |
 | [Extension Model](extensions.md) | Defines namespaced extension lifecycle and integration surface. |
 | [MCP Extension Draft](../extensions/mcp/README.md) | Maps MCP context and action surfaces to independent capability, permission, approval, network, credential, and audit boundaries. |
+| [A2A Extension Draft](../extensions/a2a/README.md) | Maps remote agent, skill, message, task, and artifact surfaces without treating external metadata as local authority. |
+| [MCP And A2A Boundaries](mcp-a2a-boundaries.md) | Defines protocol ownership, namespace collisions, identity binding, work correlation, artifact import, and cross-protocol authority rules. |
 | [Provider Abstraction](provider-abstraction.md) | Defines provider-neutral preferences, features, and constraints. |
 
 ## Project Process

@@ -6,6 +6,7 @@ integration behavior.
 | Namespace | Profile | Status |
 | --- | --- | --- |
 | `io.nexflow.mcp` | [MCP Extension Draft](mcp/README.md) | Draft / experimental |
+| `io.nexflow.a2a` | [A2A Extension Draft](a2a/README.md) | Draft / experimental |
 
 Profiles are specification assets, not NexFlow manifests. They are not
 discovered as part of a project assembly and do not load code, install

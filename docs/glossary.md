@@ -28,6 +28,13 @@ A declared way to use a context source, such as `none`, `read`, `query`, `write`
 
 Access mode does not grant authorization by itself. Permissions, capabilities, autonomy, and approval gates still apply.
 
+### A2A Extension Profile
+
+The experimental `io.nexflow.a2a` policy mapping for externally owned Agent
+Cards, agents, skills, messages, tasks, and artifacts. It does not implement
+A2A or turn remote metadata and state into local NexFlow identity, authority,
+work, Handoffs, or artifacts automatically.
+
 ### Actor
 
 A first-class project participant identity with kind `human`, `agent`,

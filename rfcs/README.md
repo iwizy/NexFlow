@@ -24,6 +24,7 @@ RFCs are design proposals for meaningful changes to NexFlow.
 | [RFC-0016](RFC-0016-core-profile-and-discovery.md) | Core Profile And Logical Discovery | Draft; Core Profile and explicit local discovery slices implemented |
 | [RFC-0017](RFC-0017-human-override.md) | Human Override | Draft |
 | [RFC-0018](RFC-0018-mcp-extension-profile.md) | MCP Extension Profile | Draft; machine-readable profile implemented |
+| [RFC-0019](RFC-0019-mcp-a2a-boundaries.md) | MCP And A2A Boundaries | Draft; boundary map and A2A profile implemented |
 
 ## Cross-RFC Reviews
 

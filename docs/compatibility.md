@@ -56,6 +56,7 @@ For the current supported combinations and explicit implementation gaps, see the
 - changing human override authority eligibility, operation meaning, fail-closed response, resume requirements, or audit semantics
 - changing event envelope identity, actor, subject, correlation, causation, payload, audit, or redaction semantics
 - changing discovery root containment, source-hint cardinality, document cardinality, or workflow identity rules
+- changing MCP or A2A external ownership, identity binding, task correlation, artifact import, callback, or transitive-authority rules
 - changing reference CLI command names, exit code meanings, diagnostic code meanings, or machine-readable output formats
 - removing fields
 - changing required fields
@@ -217,6 +218,21 @@ Extensions MUST declare a namespace and lifecycle state. A runtime that does not
 
 [RFC-0006](../rfcs/RFC-0006-extension-namespaces.md) proposes namespace ownership, lifecycle transition, registry, and compatibility expectations for extensions.
 
+## MCP And A2A Compatibility
+
+The `io.nexflow.mcp` and `io.nexflow.a2a` profiles version their policy mapping
+independently from manifest `specVersion`. External MCP and A2A protocol
+versions and bindings are governed independently and must be named in an
+implementation's conformance evidence.
+
+Changing an externally owned surface into local authority, automatically
+creating a local Actor or capability, merging external and NexFlow task IDs,
+importing remote artifacts without provenance, treating messages as Handoffs,
+or allowing callbacks without policy is safety-significant and may break
+`NF-EXTENSION`, `NF-SEMANTIC`, or `NF-RUNTIME` consumers.
+
+See [MCP And A2A Boundaries](mcp-a2a-boundaries.md).
+
 ## Runtime Compatibility
 
 Future runtimes should publish:
@@ -278,6 +294,7 @@ Examples:
 | Add semantic cross-reference rule | May affect `NF-SEMANTIC` validators. |
 | Change extension namespace lifecycle | May affect `NF-EXTENSION` compatibility. |
 | Change the MCP profile surface class, allow-list, approval, network, credential, failure, or protocol-claim boundary | May affect `NF-SCHEMA`, `NF-SEMANTIC`, `NF-EXTENSION`, `NF-RUNTIME`, integration safety, privacy, and audit compatibility. |
+| Change the A2A profile identity, task, artifact, permission, callback, credential, audit, or failure boundary | May affect `NF-SEMANTIC`, `NF-EXTENSION`, `NF-RUNTIME`, identity safety, provenance, privacy, and audit compatibility. |
 | Change active agent definition components or autonomy | May affect `NF-SEMANTIC`, `NF-RUNTIME`, safety, and audit compatibility. |
 | Change model profile selection or constraints | May affect `NF-SEMANTIC`, `NF-RUNTIME`, and audit compatibility. |
 | Change prompt set revisions or safety review status | May affect `NF-SEMANTIC`, `NF-RUNTIME`, safety, and audit compatibility. |

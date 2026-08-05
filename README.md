@@ -31,6 +31,7 @@ Current release posture: **`0.1` draft, preparing for candidate review**. No
 | Provider feature vocabulary | Implemented as closed model support signals separate from action capabilities | `npm run provider-feature-schema-smoke`, [Provider Features](docs/provider-features.md) |
 | Provider constraint vocabulary | Implemented as structured candidate eligibility fields with legacy migration | `npm run provider-constraint-schema-smoke`, [Provider Constraints](docs/provider-constraints.md) |
 | MCP extension draft | Implemented as an offline policy profile and focused schema checks; no live integration | `npm run mcp-extension-smoke`, [MCP Extension Draft](extensions/mcp/README.md) |
+| A2A extension draft | Implemented as an offline external-agent/task/artifact policy profile; no live integration | `npm run a2a-extension-smoke`, [A2A Extension Draft](extensions/a2a/README.md), [MCP And A2A Boundaries](docs/mcp-a2a-boundaries.md) |
 | Conformance claim format | Implemented as standalone schema plus profile-qualified YAML and Markdown templates | `npm run conformance-claim-smoke`, [Conformance Claims](docs/conformance-claims.md) |
 | Candidate readiness record | Implemented as a standalone eight-gate schema and non-claiming `0.1` template | `npm run candidate-readiness-smoke`, [0.1 Readiness Checklist](docs/readiness-checklist.md), [Release Evidence](release/README.md) |
 | Semantic reference checks | Partial repository smoke coverage | `npm run semantic-smoke`, [Validation](docs/validation.md) |
@@ -114,11 +115,12 @@ The goal is to make AI-assisted software delivery inspectable before anything ru
 - **Workflow**: an ordered or event-driven set of tasks, dependencies, gates, and handoffs.
 - **Handoff**: a structured transfer of responsibility between actors.
 - **Event**: an auditable state transition such as `task.completed` or `review.requested`.
-- **Extension**: a namespaced integration surface for tools such as GitHub, Linear, Figma, Slack, MCP, or custom systems.
+- **Extension**: a namespaced integration surface for tools and protocols such as GitHub, Linear, Figma, Slack, MCP, A2A, or custom systems.
 
-The experimental [`io.nexflow.mcp` profile](extensions/mcp/README.md) is the
-first machine-readable extension draft. It specifies policy boundaries only;
-no MCP client, server, or live integration is implemented.
+The experimental [`io.nexflow.mcp`](extensions/mcp/README.md) and
+[`io.nexflow.a2a`](extensions/a2a/README.md) profiles specify policy boundaries
+only. No MCP or A2A client, server, protocol binding, or live integration is
+implemented. See [MCP And A2A Boundaries](docs/mcp-a2a-boundaries.md).
 
 See [Concepts](docs/concepts.md) for the full domain model and [Glossary](docs/glossary.md) for quick terminology reference.
 
@@ -209,6 +211,8 @@ NexFlow is intentionally split into layers:
 - [Provider Features](docs/provider-features.md): closed provider support vocabulary and capability separation
 - [Provider Constraints](docs/provider-constraints.md): structured provider eligibility, composition, migration, and validation boundaries
 - [MCP Extension Draft](extensions/mcp/README.md): experimental MCP context/action policy mapping without runtime behavior
+- [A2A Extension Draft](extensions/a2a/README.md): experimental remote-agent, task, and artifact policy mapping without runtime behavior
+- [MCP And A2A Boundaries](docs/mcp-a2a-boundaries.md): protocol ownership, identity, authority, work, artifact, network, and audit boundaries
 - [Actor Model](docs/actor-model.md): first-class participant identity and kind-specific relationships
 - [Actor Model Migration](docs/actor-model-migration.md): staged transition from mixed AgentSet identity
 - [Agent Identity Migration](docs/agent-identity-migration.md): transition from duplicated AgentSet behavior fields to compact stable identity
@@ -239,7 +243,7 @@ NexFlow is intentionally split into layers:
 | Model retrieval, freshness, and citations | [Retrieval Profiles](docs/retrieval-profiles.md), [Context Model](docs/context-model.md), [Event Model](docs/events.md) |
 | Validate manifests | [Validation](docs/validation.md), [Semantic Reference Inventory](docs/semantic-reference-inventory.md), [Schema Guide](schemas/README.md), [Conformance](docs/conformance.md), [Compatibility Matrix](docs/compatibility-matrix.md) |
 | Publish a support claim | [Conformance Claims](docs/conformance-claims.md), [Claim Templates](conformance/README.md), [Compatibility Matrix](docs/compatibility-matrix.md) |
-| Extend or integrate NexFlow | [Extension Profiles](extensions/README.md), [Extension Model](docs/extensions.md), [MCP Extension Draft](extensions/mcp/README.md), [Integrations](docs/integrations.md), [Provider Abstraction](docs/provider-abstraction.md) |
+| Extend or integrate NexFlow | [Extension Profiles](extensions/README.md), [Extension Model](docs/extensions.md), [MCP And A2A Boundaries](docs/mcp-a2a-boundaries.md), [MCP Extension Draft](extensions/mcp/README.md), [A2A Extension Draft](extensions/a2a/README.md), [Integrations](docs/integrations.md), [Provider Abstraction](docs/provider-abstraction.md) |
 | Review future implementation choices | [Runtime Options](docs/runtime-options.md), [Roadmap](docs/roadmap.md), [Release Plan](docs/release-plan.md), [0.1 Readiness Checklist](docs/readiness-checklist.md) |
 
 ## Roadmap
@@ -295,6 +299,9 @@ See [Governance](docs/governance.md) and [RFCs](rfcs/README.md).
 - No reference CLI, runtime engine, provider adapter, extension loader, live
   integration, task execution, workflow orchestration, or deployment support
   exists.
+- MCP and A2A profiles are offline policy maps. They do not discover endpoints,
+  negotiate protocol versions, authenticate, invoke tools or remote agents,
+  synchronize task state, import artifacts, stream, or receive callbacks.
 - Security and approval requirements constrain future implementations, but this
   repository does not enforce them at runtime.
 - Human override manifests describe required pause, stop, revocation, resume,

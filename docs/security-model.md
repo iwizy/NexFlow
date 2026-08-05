@@ -161,6 +161,21 @@ requires an allow-list and approval posture for action-bearing surfaces. A
 networked MCP transport must satisfy network policy separately, and credentials
 must remain outside manifests.
 
+### Remote Agent Metadata Without Local Authority
+
+An A2A Agent Card may advertise agents, skills, authentication requirements,
+and protocol capabilities, but none of that metadata grants local authority.
+The [A2A Extension Draft](../extensions/a2a/README.md) requires explicit local
+identity binding, `access_a2a`, action-specific capabilities, permissions,
+approvals, network policy, external credentials, provenance, and audit.
+
+Remote tasks cannot transition local work automatically. Remote artifacts must
+not enter the NexFlow artifact namespace without explicit classification,
+integrity checks, provenance-preserving import, and collision handling. A2A
+push callbacks remain unsupported until an inbound network policy is defined.
+
+See [MCP And A2A Boundaries](mcp-a2a-boundaries.md).
+
 ### Pull Request Creation With Review
 
 An implementation agent may draft changes but require approval before `create_pull_request`. The review gate should be visible in permissions, tasks, or workflow steps.

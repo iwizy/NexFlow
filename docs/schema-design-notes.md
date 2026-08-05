@@ -49,6 +49,7 @@ NexFlow treats validation as a layered process.
 | Provider feature checks | 11 focused cases implemented | Confirm closed provider support signals, legacy coexistence, uniqueness, and separation from project action capability IDs. |
 | Provider constraint checks | 17 focused cases implemented | Confirm structured provider eligibility vocabulary, legacy training-use migration, coupled residency fields, retention, and invalid policy values. |
 | MCP extension checks | 10 focused cases implemented | Confirm the machine-readable profile, context/action surface boundary, required MCP metadata, action allow-lists, approval posture, and example dependencies. |
+| A2A extension checks | 13 focused cases implemented | Confirm external protocol ownership, opaque remote identity, task and artifact separation, permission, network callback, credential, audit, and fail-closed boundaries. |
 | Core Profile checks | 16 focused cases implemented | Confirm reduced Project structure, participant authority, optional qualifiers, dependency closure, and fail-closed unsupported modules. |
 | Manifest discovery checks | 24 focused cases implemented | Confirm explicit local sources, expected kinds, project association, conservative document cardinality, unique workflow identity, and source safety boundaries. |
 | General manifest inventory | Partial | Focused discovery builds an inventory for explicit files and Project hints; directory, bundle, general index, and complete dependency-driven inventory remain future work. |
@@ -72,6 +73,7 @@ Schemas should be strict where the specification has stable structure:
 - closed provider feature vocabulary and separation from action capabilities
 - structured provider constraint vocabulary and explicit legacy migration
 - fail-closed MCP context and action-surface shape
+- fail-closed A2A external identity, work-instance, artifact, and callback policy mapping
 - common approval gate, artifact, memory, and extension attachment shapes
 - typed reference structure and kind-specific ActorSet relationship boundaries
 - compact AgentSet identity requiredness and deprecated compatibility fields

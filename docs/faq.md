@@ -16,6 +16,15 @@ AI developer tooling is fragmented. A shared declarative model is useful before 
 
 No. Provider abstraction is part of the spec, but no provider is required.
 
+## Does NexFlow implement MCP or A2A?
+
+No. NexFlow can declare policy around MCP and A2A interoperability, but it does
+not discover endpoints, negotiate protocol versions, authenticate, invoke
+tools or remote agents, synchronize external tasks, import artifacts, stream,
+receive callbacks, or run protocol clients and servers. External protocol
+metadata never grants local NexFlow authority by itself. See
+[MCP And A2A Boundaries](mcp-a2a-boundaries.md).
+
 ## Does NexFlow require YAML?
 
 YAML is the reference authoring format. The data model should remain compatible with JSON and JSON Schema validation.

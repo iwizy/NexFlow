@@ -1,0 +1,83 @@
+profileVersion: "0.1-draft"
+namespace: io.nexflow.a2a
+displayName: A2A Extension Draft
+status: draft
+protocol:
+  name: Agent2Agent Protocol
+  authority: external
+  versionPolicy: explicit_compatibility_claim
+surfaces:
+  - id: agent_card
+    class: discovery
+    protocolOwned: true
+    nexflowTreatment: external_metadata
+  - id: agent
+    class: identity
+    protocolOwned: true
+    nexflowTreatment: external_identity
+  - id: skill
+    class: advertisement
+    protocolOwned: true
+    nexflowTreatment: external_claim
+  - id: message
+    class: exchange
+    protocolOwned: true
+    nexflowTreatment: external_message
+  - id: task
+    class: work_instance
+    protocolOwned: true
+    nexflowTreatment: external_instance
+  - id: artifact
+    class: output
+    protocolOwned: true
+    nexflowTreatment: external_output
+requirements:
+  extension:
+    lifecycle:
+      - experimental
+    appliesTo:
+      - agents
+      - tasks
+      - handoffs
+      - capabilities
+      - permissions
+      - events
+    requiredCapabilities:
+      - access_a2a
+  references:
+    identifiers: integration_scoped_opaque
+    coreTypedReferences: not_defined
+    remoteAgentToActor: explicit_binding_only
+  authority:
+    agentCard: metadata_not_authority
+    skills: claims_not_capabilities
+    remotePolicy: cannot_expand_local_policy
+  work:
+    tasks: external_instances_not_taskset
+    artifacts: explicit_import_with_provenance
+    messages: not_handoffs
+    contextIds: not_context_sources_or_memory
+  operations:
+    permissionRequired: true
+    projectEffectCapabilityRequired: true
+    approvalPolicy: required_when_local_policy_requires
+  network:
+    outboundPolicy: required_for_remote_calls
+    outboundCapability: access_network
+    inboundCallbacks: unsupported_without_declared_inbound_policy
+  credentials:
+    handling: external_only
+    agentCardSecrets: forbidden
+  audit:
+    requiredFor:
+      - discovery_decision
+      - invocation_decision
+      - approval_decision
+      - remote_task_transition
+      - artifact_import
+      - network_decision
+failurePolicy:
+  unknownAgent: preserve_do_not_invoke
+  unknownSkill: preserve_do_not_invoke
+  unsupportedProtocol: fail_closed
+  missingDependency: fail_closed

@@ -114,6 +114,13 @@ action, permission, connection, credential, or tool.
 
 Integrations are described through extension manifests and context sources. Integrations must not silently expand permissions. Access must be represented through capabilities, permissions, and approval gates.
 
+MCP and A2A remain externally governed protocol layers. MCP resources, prompts,
+and tools do not become NexFlow context authority, prompt authority, or action
+grants automatically. A2A Agent Cards, agents, skills, messages, tasks, and
+artifacts do not become local Actors, capabilities, Handoffs, TaskSet entries,
+or artifacts automatically. See
+[MCP And A2A Boundaries](mcp-a2a-boundaries.md).
+
 ## Audit Boundary
 
 Every future runtime should be able to explain:

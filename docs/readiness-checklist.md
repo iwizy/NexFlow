@@ -125,6 +125,7 @@ publish a release.
 - [ ] `npm run manifest-discovery-smoke` succeeds.
 - [ ] `npm run human-override-schema-smoke` succeeds.
 - [ ] `npm run mcp-extension-smoke` succeeds.
+- [ ] `npm run a2a-extension-smoke` succeeds.
 - [ ] `npm run provider-feature-schema-smoke` succeeds.
 - [ ] `npm run provider-constraint-schema-smoke` succeeds.
 - [ ] `npm run conformance-claim-smoke` succeeds.
@@ -135,8 +136,8 @@ publish a release.
 - [ ] CI runs schema smoke, schema validation, negative fixtures, typed
   reference primitives, approval gate targets, work reference namespaces,
   ActorSet, agent identity, agent definition authority, Core Profile, human
-  override boundaries, manifest discovery, multiple workflows, MCP extension
-  profile, provider features, provider constraints, conformance claim format,
+  override boundaries, manifest discovery, multiple workflows, MCP and A2A
+  extension profiles, provider features, provider constraints, conformance claim format,
   candidate readiness record, and semantic reference smoke checks on pull
   requests.
 - [ ] Validation docs explain the difference between syntax checks, schema validation, semantic smoke checks, future semantic validation, and runtime enforcement.
@@ -149,7 +150,7 @@ publish a release.
 - [ ] RFC index explains proposal, review, acceptance, breaking change, and deprecation processes.
 - [ ] Project vision RFC records the purpose and non-goals.
 - [ ] Core manifest model RFC records the initial manifest vocabulary.
-- [ ] Conformance, agent definition versioning, validation, extension namespace, approval gate, memory retention, event envelope, provider selection, reference CLI, manifest bundling, actor, effective configuration, typed reference, discovery, human override, and MCP extension RFCs are discoverable.
+- [ ] Conformance, agent definition versioning, validation, extension namespace, approval gate, memory retention, event envelope, provider selection, reference CLI, manifest bundling, actor, effective configuration, typed reference, discovery, human override, MCP extension, and MCP/A2A boundary RFCs are discoverable.
 - [ ] Draft RFCs are marked as draft unless accepted.
 - [ ] Accepted or deferred decisions are reflected in docs, schemas, examples, and changelog.
 - [ ] Breaking or behavior-significant changes include compatibility notes.
@@ -170,6 +171,8 @@ publish a release.
   behavior.
 - [ ] MCP profile migration documents required server and surface metadata,
   action allow-lists, approval posture, and the absence of runtime support.
+- [ ] A2A profile compatibility keeps remote identity, skills, messages, tasks,
+  artifacts, callbacks, credentials, and protocol claims outside local authority.
 - [ ] Workflow step and task artifact namespace changes include reference and
   migration compatibility notes.
 - [ ] Conformance doc distinguishes manifest, schema, semantic, CLI, runtime, extension, and audit support surfaces.

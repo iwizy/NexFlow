@@ -1,0 +1,343 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nexflow.dev/extensions/a2a/profile.schema.json",
+  "title": "NexFlow A2A Extension Draft Profile",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "profileVersion",
+    "namespace",
+    "displayName",
+    "status",
+    "protocol",
+    "surfaces",
+    "requirements",
+    "failurePolicy"
+  ],
+  "properties": {
+    "profileVersion": {
+      "type": "string",
+      "pattern": "^0\\.[0-9]+-draft$"
+    },
+    "namespace": {
+      "const": "io.nexflow.a2a"
+    },
+    "displayName": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "const": "draft"
+    },
+    "protocol": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "authority", "versionPolicy"],
+      "properties": {
+        "name": {
+          "const": "Agent2Agent Protocol"
+        },
+        "authority": {
+          "const": "external"
+        },
+        "versionPolicy": {
+          "const": "explicit_compatibility_claim"
+        }
+      }
+    },
+    "surfaces": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "class", "protocolOwned", "nexflowTreatment"],
+        "properties": {
+          "id": {
+            "enum": [
+              "agent_card",
+              "agent",
+              "skill",
+              "message",
+              "task",
+              "artifact"
+            ]
+          },
+          "class": {
+            "enum": [
+              "discovery",
+              "identity",
+              "advertisement",
+              "exchange",
+              "work_instance",
+              "output"
+            ]
+          },
+          "protocolOwned": {
+            "const": true
+          },
+          "nexflowTreatment": {
+            "enum": [
+              "external_metadata",
+              "external_identity",
+              "external_claim",
+              "external_message",
+              "external_instance",
+              "external_output"
+            ]
+          }
+        },
+        "allOf": [
+          {
+            "oneOf": [
+              {
+                "properties": {
+                  "id": { "const": "agent_card" },
+                  "class": { "const": "discovery" },
+                  "nexflowTreatment": { "const": "external_metadata" }
+                }
+              },
+              {
+                "properties": {
+                  "id": { "const": "agent" },
+                  "class": { "const": "identity" },
+                  "nexflowTreatment": { "const": "external_identity" }
+                }
+              },
+              {
+                "properties": {
+                  "id": { "const": "skill" },
+                  "class": { "const": "advertisement" },
+                  "nexflowTreatment": { "const": "external_claim" }
+                }
+              },
+              {
+                "properties": {
+                  "id": { "const": "message" },
+                  "class": { "const": "exchange" },
+                  "nexflowTreatment": { "const": "external_message" }
+                }
+              },
+              {
+                "properties": {
+                  "id": { "const": "task" },
+                  "class": { "const": "work_instance" },
+                  "nexflowTreatment": { "const": "external_instance" }
+                }
+              },
+              {
+                "properties": {
+                  "id": { "const": "artifact" },
+                  "class": { "const": "output" },
+                  "nexflowTreatment": { "const": "external_output" }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "requirements": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "extension",
+        "references",
+        "authority",
+        "work",
+        "operations",
+        "network",
+        "credentials",
+        "audit"
+      ],
+      "properties": {
+        "extension": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["lifecycle", "appliesTo", "requiredCapabilities"],
+          "properties": {
+            "lifecycle": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": {
+                "const": "experimental"
+              }
+            },
+            "appliesTo": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": {
+                "enum": [
+                  "agents",
+                  "tasks",
+                  "handoffs",
+                  "capabilities",
+                  "permissions",
+                  "events"
+                ]
+              }
+            },
+            "requiredCapabilities": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": {
+                "const": "access_a2a"
+              }
+            }
+          }
+        },
+        "references": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["identifiers", "coreTypedReferences", "remoteAgentToActor"],
+          "properties": {
+            "identifiers": {
+              "const": "integration_scoped_opaque"
+            },
+            "coreTypedReferences": {
+              "const": "not_defined"
+            },
+            "remoteAgentToActor": {
+              "const": "explicit_binding_only"
+            }
+          }
+        },
+        "authority": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["agentCard", "skills", "remotePolicy"],
+          "properties": {
+            "agentCard": {
+              "const": "metadata_not_authority"
+            },
+            "skills": {
+              "const": "claims_not_capabilities"
+            },
+            "remotePolicy": {
+              "const": "cannot_expand_local_policy"
+            }
+          }
+        },
+        "work": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["tasks", "artifacts", "messages", "contextIds"],
+          "properties": {
+            "tasks": {
+              "const": "external_instances_not_taskset"
+            },
+            "artifacts": {
+              "const": "explicit_import_with_provenance"
+            },
+            "messages": {
+              "const": "not_handoffs"
+            },
+            "contextIds": {
+              "const": "not_context_sources_or_memory"
+            }
+          }
+        },
+        "operations": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "permissionRequired",
+            "projectEffectCapabilityRequired",
+            "approvalPolicy"
+          ],
+          "properties": {
+            "permissionRequired": {
+              "const": true
+            },
+            "projectEffectCapabilityRequired": {
+              "const": true
+            },
+            "approvalPolicy": {
+              "const": "required_when_local_policy_requires"
+            }
+          }
+        },
+        "network": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["outboundPolicy", "outboundCapability", "inboundCallbacks"],
+          "properties": {
+            "outboundPolicy": {
+              "const": "required_for_remote_calls"
+            },
+            "outboundCapability": {
+              "const": "access_network"
+            },
+            "inboundCallbacks": {
+              "const": "unsupported_without_declared_inbound_policy"
+            }
+          }
+        },
+        "credentials": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["handling", "agentCardSecrets"],
+          "properties": {
+            "handling": {
+              "const": "external_only"
+            },
+            "agentCardSecrets": {
+              "const": "forbidden"
+            }
+          }
+        },
+        "audit": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["requiredFor"],
+          "properties": {
+            "requiredFor": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": {
+                "enum": [
+                  "discovery_decision",
+                  "invocation_decision",
+                  "approval_decision",
+                  "remote_task_transition",
+                  "artifact_import",
+                  "network_decision"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "failurePolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "unknownAgent",
+        "unknownSkill",
+        "unsupportedProtocol",
+        "missingDependency"
+      ],
+      "properties": {
+        "unknownAgent": {
+          "const": "preserve_do_not_invoke"
+        },
+        "unknownSkill": {
+          "const": "preserve_do_not_invoke"
+        },
+        "unsupportedProtocol": {
+          "const": "fail_closed"
+        },
+        "missingDependency": {
+          "const": "fail_closed"
+        }
+      }
+    }
+  }
+}

@@ -221,6 +221,11 @@ See the [MCP Extension Draft](../extensions/mcp/README.md) and
 [RFC-0018](../rfcs/RFC-0018-mcp-extension-profile.md) for profile identity,
 surface mapping, network, credential, failure, and validation boundaries.
 
+An A2A `contextId` is not a NexFlow Context Source. It is an externally owned
+protocol grouping identifier and does not grant access, select memory, define
+retention, or permit cross-task reuse. See
+[MCP And A2A Boundaries](mcp-a2a-boundaries.md).
+
 ## Context Requests In Agent Definitions
 
 Agent definitions refer to context sources by ID.

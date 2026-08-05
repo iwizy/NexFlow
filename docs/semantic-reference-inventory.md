@@ -232,6 +232,7 @@ These values are not core cross-manifest references:
 | Provider `modelId` and model revision | Provider-local identifiers resolved after provider eligibility. |
 | Extension `namespace` and `appliesTo` | Extension ownership and domain labels, not resource IDs. |
 | MCP profile surface IDs and `allowedTools` | Extension-owned surface and tool labels; they do not resolve as core capabilities or authorize execution. |
+| A2A Agent Card locators, agent handles, skill IDs, task IDs, context IDs, artifact IDs, and extension URIs | Integration-scoped protocol values. They do not resolve as core Actors, Skills, capabilities, tasks, Context Sources, Memory Scopes, or artifacts without a future explicit binding or import contract. |
 | Event payload field names | Payload expectations, not references to declared resources. |
 | Agent Assembly provenance entries | Derived inspection output, not authored resolution inputs. |
 

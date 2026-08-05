@@ -15,6 +15,7 @@ Related RFCs:
 - [RFC-0010: Provider Selection](../rfcs/RFC-0010-provider-selection.md)
 - [RFC-0011: Reference CLI Scope](../rfcs/RFC-0011-reference-cli-scope.md)
 - [RFC-0018: MCP Extension Profile](../rfcs/RFC-0018-mcp-extension-profile.md)
+- [RFC-0019: MCP And A2A Boundaries](../rfcs/RFC-0019-mcp-a2a-boundaries.md)
 
 See the [Compatibility Matrix](compatibility-matrix.md) for the repository's current evidence-backed support claims.
 
@@ -222,6 +223,12 @@ An `NF-EXTENSION` claim for `io.nexflow.mcp` should also identify the supported
 MCP profile version and external protocol versions in evidence or limitations.
 Listing the namespace alone does not claim transport, discovery, credential,
 client, server, or runtime execution support.
+
+An `NF-EXTENSION` claim for `io.nexflow.a2a` should identify the supported A2A
+profile version, protocol versions, bindings, discovery and authentication
+modes, remote identity binding, operation and task behavior, artifact import
+provenance, callback support, and fail-closed limitations. Fetching an Agent
+Card or using an A2A SDK is not sufficient evidence by itself.
 
 ## Draft Conformance Levels
 

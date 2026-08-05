@@ -214,6 +214,12 @@ The experimental `io.nexflow.mcp` profile maps MCP context and action surfaces
 to existing NexFlow policy domains without implementing or replacing the
 external protocol.
 
+The experimental `io.nexflow.a2a` profile treats Agent Cards, remote agents,
+skills, messages, tasks, and artifacts as externally owned protocol surfaces.
+They do not become NexFlow Actors, capabilities, Handoffs, TaskSet entries, or
+task artifacts automatically. See [MCP And A2A Boundaries](mcp-a2a-boundaries.md).
+
 ## Integration
 
-A connection to an external system such as GitHub, GitLab, Jira, Linear, Figma, Slack, Discord, Telegram, MCP, notes, or a custom service.
+A connection to an external system or protocol such as GitHub, GitLab, Jira,
+Linear, Figma, Slack, Discord, Telegram, MCP, A2A, notes, or a custom service.

@@ -186,6 +186,25 @@ approval posture. Changing surface authority, protocol compatibility claims,
 or failure policy requires explicit compatibility review. See the
 [MCP Extension Draft](../extensions/mcp/README.md).
 
+## A2A Extension Draft Version Decision
+
+The `io.nexflow.a2a` profile and MCP/A2A ownership map remain in
+`specVersion: "0.1"` while RFC-0019 is Draft. The profile uses its own
+`profileVersion: "0.1-draft"`; external A2A protocol versions and bindings are
+declared separately by implementations in conformance evidence.
+
+The profile adds no core manifest kind and does not require existing projects
+to adopt A2A. Remote identifiers remain integration-scoped and opaque. Agent
+Cards, skills, messages, tasks, context IDs, and artifacts do not become local
+identity, capabilities, Handoffs, TaskSet entries, Context Sources, Memory
+Scopes, or artifacts automatically.
+
+Changing identity binding, task correlation, artifact provenance, inbound
+callback policy, credential handling, external ownership, or fail-closed
+behavior requires explicit compatibility review. See the
+[A2A Extension Draft](../extensions/a2a/README.md) and
+[MCP And A2A Boundaries](mcp-a2a-boundaries.md).
+
 ## Agent Identity Version Decision
 
 The compact AgentSet migration remains in `specVersion: "0.1"`. The schema

@@ -105,7 +105,7 @@ Initial semantic validation should focus on:
 | Permissions | Permission rules reference declared capabilities and do not silently override deny rules. |
 | Approval gates | High-risk actions, broad autonomy, deployments, destructive operations, and credential access have gates where required by project policy. |
 | Effective agent configuration | Agent definitions reference existing model profiles, prompt sets, retrieval profiles, permissions, capabilities, context sources, memory scopes, and extensions; a future Agent Assembly view preserves provenance and blockers. |
-| Context | Context source classifications, freshness rules, web boundaries, and MCP profile context/action, allow-list, approval, capability, permission, network, and audit dependencies are coherent. |
+| Context and protocol boundaries | Context source classifications, freshness rules, web boundaries, MCP context/action policy, and A2A external identity, task, artifact, permission, network, provenance, and audit dependencies are coherent. |
 | Memory | Scope access, ownership, allowed writers, allowed consumers, retention, and promotion rules preserve sensitivity boundaries. |
 | Workflows | Workflow steps, tasks, dependencies, handoffs, and emitted events form a coherent graph. |
 | Providers | Provider references, structured candidate constraints, model-profile requirements, fallback, and unknown-fact handling are declared and compatible with project policy. |

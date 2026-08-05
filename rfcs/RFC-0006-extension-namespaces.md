@@ -73,6 +73,7 @@ Examples:
 
 - `io.nexflow.github`
 - `io.nexflow.mcp`
+- `io.nexflow.a2a`
 - `com.example.platform`
 - `org.example.research_lab`
 
@@ -168,10 +169,12 @@ A future runtime or validator MUST NOT silently treat a removed extension as sup
 
 This RFC does not create a central extension registry.
 
-The repository now carries one maintained experimental profile,
-`io.nexflow.mcp`, under [RFC-0018](RFC-0018-mcp-extension-profile.md). That
-profile is evidence that the namespace model can express a policy mapping; it
-does not create a general registry or imply runtime integration support.
+The repository now carries maintained experimental `io.nexflow.mcp` and
+`io.nexflow.a2a` profiles under
+[RFC-0018](RFC-0018-mcp-extension-profile.md) and
+[RFC-0019](RFC-0019-mcp-a2a-boundaries.md). These profiles are evidence that
+the namespace model can express policy mappings; they do not create a general
+registry or imply runtime integration support.
 
 A future registry may be useful after extension usage grows. It should be optional at first and should not block private extensions.
 

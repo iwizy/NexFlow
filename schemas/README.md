@@ -154,6 +154,9 @@ Examples of future semantic checks:
 - network audit event references resolve to declared event types
 - network rules are coherent with effective permissions, context boundaries, transport constraints, and destination resolution
 - MCP extension, context source, capability, permission, approval, network, and audit declarations compose without hidden authority
+- A2A extension, remote identity, skill claims, messages, tasks, artifacts,
+  permissions, network callbacks, credentials, provenance, and audit boundaries
+  compose without hidden authority
 - human override authorities resolve to human-controlled actors
 - human override resume gates and audit event references resolve
 - handoff artifacts are produced by previous tasks
@@ -216,6 +219,7 @@ npm run agent-definition-authority-smoke
 npm run core-profile-smoke
 npm run human-override-schema-smoke
 npm run mcp-extension-smoke
+npm run a2a-extension-smoke
 npm run provider-feature-schema-smoke
 npm run provider-constraint-schema-smoke
 npm run conformance-claim-smoke

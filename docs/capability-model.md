@@ -50,6 +50,7 @@ This separation keeps manifests auditable. A reviewer can see that an agent may 
 | `access_jira` | Access declared Jira project data or actions. | Medium |
 | `access_figma` | Access declared Figma files, components, or design metadata. | Medium |
 | `access_mcp` | Access declared MCP servers for context, tools, or both. | High |
+| `access_a2a` | Access declared A2A remote-agent surfaces under explicit local policy. | High |
 | `manage_tasks` | Create, update, or transition tasks in declared systems. | Medium |
 | `approve_changes` | Approve gated changes, reviews, or workflow transitions. | High |
 | `deploy_application` | Trigger or approve application deployment. | Critical |

@@ -16,6 +16,7 @@ Integrations that need non-core metadata should use extension namespaces. See [E
 - Telegram
 - notes
 - MCP
+- A2A
 - custom systems
 
 ## Integration Roles
@@ -85,3 +86,23 @@ a matching structured network rule. Credentials remain outside manifests.
 
 The draft does not implement MCP, choose a protocol version, discover live
 servers or tools, or treat connection success as authorization.
+
+## A2A
+
+A2A describes discovery and collaboration with remote agent systems. NexFlow
+does not copy Agent Cards, skills, messages, tasks, artifacts, protocol
+bindings, or lifecycle operations into core manifests.
+
+The [A2A Extension Draft](../extensions/a2a/README.md) maps those externally
+owned surfaces to local identity, capability, permission, approval, network,
+credential, provenance, and audit policy. `access_a2a` is a technical
+dependency, not a grant. Remote project effects require action-specific
+capabilities and effective local permission.
+
+An Agent Card does not create a NexFlow Actor, an advertised skill does not
+become a CapabilitySet grant, an A2A Task does not become a TaskSet task, and an
+A2A Artifact does not enter the local artifact namespace without explicit
+provenance-preserving import.
+
+See [MCP And A2A Boundaries](mcp-a2a-boundaries.md) for collision, identity,
+work, Handoff, network, credential, and cross-protocol rules.

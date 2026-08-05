@@ -110,6 +110,8 @@ runtime loading remain future work.
 - Review approval gate semantics with maintainers and runtime implementers.
 - Review RFC-0007 approval request, decision, evidence, scope, expiry, revocation, and enforcement boundary semantics.
 - Review context source taxonomy, freshness rules, web boundaries, and MCP context/tool separation.
+- Review MCP/A2A protocol ownership, remote identity, task correlation,
+  artifact provenance, callback, and transitive-authority boundaries.
 - Review memory sensitivity, ownership, allowed consumers, and cross-scope promotion rules.
 - Review RFC-0008 memory retention, ownership, visibility, allowed consumers, allowed writers, correction, deletion, expiry, and audit expectations.
 - Review RFC-0009 event envelope identity, actor, subject, correlation, causation, payload, audit, redaction, ordering, and extension expectations.
@@ -126,8 +128,10 @@ runtime loading remain future work.
 - Review extension namespace ownership, lifecycle transitions, registry expectations, and unsupported-extension behavior.
 - Review RFC-0018 MCP context/action mapping, allow-lists, protocol-version
   claims, network transports, and failure behavior without implementing MCP.
+- Review RFC-0019 A2A external identity, skill, message, task, artifact,
+  network, credential, and conformance boundaries without implementing A2A.
 
-Relevant docs: [Security Model](security-model.md), [Capability Model](capability-model.md), [Autonomy Model](autonomy-model.md), [Provider Abstraction](provider-abstraction.md), [Agent Assembly](agent-assembly.md), [Agent Definitions](agent-definitions.md), [Model Profiles](model-profiles.md), [Prompt Sets](prompt-sets.md), [Retrieval Profiles](retrieval-profiles.md), [Extension Model](extensions.md), [Integrations](integrations.md).
+Relevant docs: [Security Model](security-model.md), [Capability Model](capability-model.md), [Autonomy Model](autonomy-model.md), [Provider Abstraction](provider-abstraction.md), [Agent Assembly](agent-assembly.md), [Agent Definitions](agent-definitions.md), [Model Profiles](model-profiles.md), [Prompt Sets](prompt-sets.md), [Retrieval Profiles](retrieval-profiles.md), [Extension Model](extensions.md), [MCP And A2A Boundaries](mcp-a2a-boundaries.md), [Integrations](integrations.md).
 
 ## Milestone 3: Schema Hardening
 

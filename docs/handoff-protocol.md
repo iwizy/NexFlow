@@ -53,6 +53,12 @@ Artifact IDs resolve in the assembly-wide task artifact namespace. See
 [Work Reference Namespaces](work-reference-namespaces.md) for duplicate,
 resolution, and compatibility rules.
 
+An A2A Message, remote Task transition, or returned Artifact does not create,
+accept, reject, or complete a NexFlow Handoff automatically. A future adapter
+may transport handoff content through A2A, but the authored local Handoff
+remains authoritative and external artifacts require explicit provenance-
+preserving import. See [MCP And A2A Boundaries](mcp-a2a-boundaries.md).
+
 ## Handoff Events
 
 Handoffs should emit:

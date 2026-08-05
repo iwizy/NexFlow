@@ -153,9 +153,10 @@ credentials, or treat discovery success as authorization.
 - [RFC-0015](RFC-0015-typed-references.md) keeps MCP server IDs opaque until a target kind exists.
 - [RFC-0017](RFC-0017-human-override.md) keeps human pause, stop, block, revoke, and resume authority effective.
 
-A future MCP and agent-to-agent interoperability RFC may add broader protocol
-mapping. It must not make this extension profile a runtime or duplicate an
-external protocol.
+[RFC-0019](RFC-0019-mcp-a2a-boundaries.md) defines the broader MCP and A2A
+ownership map, including roots, sampling, elicitation, external protocol tasks,
+remote-agent identity, and artifact boundaries. It does not make this extension
+profile a runtime or duplicate either external protocol.
 
 ## Compatibility Impact
 
@@ -210,4 +211,5 @@ or private extension declarations.
 - Should tool schemas or content digests be reviewable artifacts?
 - Which audit events should become core rather than extension-scoped?
 - How should dynamic tool-list changes trigger review?
-- How should MCP sampling and elicitation map to provider and human approval policy?
+- Which roots, sampling, elicitation, and MCP task surfaces should enter a
+  future profile revision after the RFC-0019 ownership boundary?

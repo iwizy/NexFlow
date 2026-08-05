@@ -74,6 +74,12 @@ tag or release has been published, and manifest `specVersion` remains `"0.1"`.
 - Added explicit local manifest discovery for file lists and Project source
   hints, conservative document cardinality, multiple unique Workflow inventory,
   a five-document focused fixture, and 24 boundary checks wired into CI.
+- Added RFC-0019, a normative MCP/A2A ownership map, and the experimental
+  `io.nexflow.a2a` policy profile for external agent, skill, message, task, and
+  artifact boundaries without copying either protocol.
+- Added 13 focused A2A profile checks for external authority, opaque identity,
+  work and artifact separation, permissions, network callbacks, credentials,
+  audit expectations, and fail-closed behavior, wired into CI.
 
 ### Changed
 

@@ -60,6 +60,9 @@ jobs:
       - name: Run MCP extension profile checks
         run: npm run mcp-extension-smoke
 
+      - name: Run A2A extension profile checks
+        run: npm run a2a-extension-smoke
+
       - name: Run provider feature schema checks
         run: npm run provider-feature-schema-smoke
 

@@ -102,6 +102,20 @@ Future runtimes SHOULD also record:
 
 See [RFC-0009](../rfcs/RFC-0009-event-envelope.md) for event identity, correlation, causation, payload, audit, redaction, ordering, and extension guidance.
 
+## External Protocol State
+
+An MCP task transition or A2A Task status update is external protocol state. It
+does not emit a NexFlow event instance or transition a local TaskSet task,
+Workflow, Handoff, Actor, or artifact automatically.
+
+A future adapter must preserve the external protocol, integration, task or
+artifact identifier, source ordering, correlation, and provenance, then apply
+an accepted event mapping before recording local state. External messages and
+logs are supporting evidence, not proof that a NexFlow transition occurred.
+
+See [MCP And A2A Boundaries](mcp-a2a-boundaries.md). Event-format mappings to
+general interoperability standards remain separate work.
+
 ## Event Payload Examples
 
 ### `task.blocked`

@@ -19,6 +19,20 @@ Related design notes:
 - [MCP And A2A Boundaries](mcp-a2a-boundaries.md)
 - [Compatibility Matrix](compatibility-matrix.md)
 
+## Validation Asset Map
+
+| Resource | Role in validation |
+| --- | --- |
+| [Schema Guide](../schemas/README.md) | Structural contract inventory, design rules, and schema maintenance guidance. |
+| [Fixtures Guide](../fixtures/README.md) | Focused inputs with explicit pass or rejection expectations. |
+| [Examples Guide](../examples/README.md) | Complete reference manifest sets expected to pass maintained checks. |
+| [Conformance](conformance.md) | Requirements for claiming schema, semantic, CLI, runtime, or extension support. |
+| [Compatibility Matrix](compatibility-matrix.md) | Evidence-backed status and explicit implementation gaps. |
+
+Examples and fixtures serve different purposes. Examples demonstrate coherent
+authoring patterns; fixtures isolate specific validation contracts. Neither is
+evidence of runtime execution or enforcement.
+
 ## Validation Goals
 
 - Catch structural manifest errors early.
@@ -113,6 +127,8 @@ is missing from the catalog or unexpectedly becomes valid.
 
 Negative fixtures are not reference examples. They do not test cross-manifest
 meaning, policy safety, diagnostic wording stability, or runtime enforcement.
+The [Fixtures Guide](../fixtures/README.md) lists all maintained fixture sets and
+their owning checks.
 
 Run focused typed-reference primitive checks:
 

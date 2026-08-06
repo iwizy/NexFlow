@@ -11,6 +11,9 @@ tag or release has been published, and manifest `specVersion` remains `"0.1"`.
 
 ### Added
 
+- Added a fixture inventory and cross-linked schema, validation, conformance,
+  fixture, and example guides so validation evidence is easier to discover and
+  interpret without overstating its scope.
 - Added the optional `ActorSet` manifest, shared typed-reference primitives,
   kind-specific actor relationships, and an identity-preserving Minimal Team
   migration guide.

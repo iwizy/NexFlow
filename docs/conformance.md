@@ -19,6 +19,19 @@ Related RFCs:
 
 See the [Compatibility Matrix](compatibility-matrix.md) for the repository's current evidence-backed support claims.
 
+## Evidence Navigation
+
+| Resource | Conformance relevance |
+| --- | --- |
+| [Schema Guide](../schemas/README.md) | Defines the structural contracts covered by `NF-SCHEMA` evidence. |
+| [Validation](validation.md) | Explains each maintained check and the limits of its result. |
+| [Fixtures Guide](../fixtures/README.md) | Catalogs focused positive and negative inputs used as validation evidence. |
+| [Examples Guide](../examples/README.md) | Documents complete reference manifest sets covered by repository validation. |
+| [Compatibility Matrix](compatibility-matrix.md) | Records the repository's current support status and gaps. |
+
+Passing examples or focused fixtures can support a scoped claim, but do not by
+themselves establish semantic, CLI, runtime, or extension conformance.
+
 ## Goals
 
 - Make compatibility claims precise.

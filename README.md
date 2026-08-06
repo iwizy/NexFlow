@@ -195,6 +195,7 @@ NexFlow is intentionally split into layers:
 - [Examples Guide](examples/README.md): overview of reference teams and manifest file sets
 - [conformance/](conformance/): standalone conformance claim schema and publication templates
 - [release/](release/): standalone candidate readiness schema, template, and release evidence guidance
+- [Fixtures Guide](fixtures/README.md): focused validation inputs, expected outcomes, and maintenance rules
 - [fixtures/discovery/](fixtures/discovery/): focused logical assembly and multiple-workflow validation evidence
 - [fixtures/schema/invalid/](fixtures/schema/invalid/): intentionally invalid
   manifests for stable schema rejection checks

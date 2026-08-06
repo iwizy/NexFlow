@@ -12,6 +12,20 @@ Use the [Example Matrix](MATRIX.md) to compare examples by complexity, context, 
 
 Use the [Example Consistency Checklist](CHECKLIST.md) before adding or changing an example.
 
+## Related Validation Assets
+
+| Resource | Relationship to examples |
+| --- | --- |
+| [Schema Guide](../schemas/README.md) | Defines the structural contracts every example must follow. |
+| [Validation](../docs/validation.md) | Lists commands that parse and validate all maintained examples. |
+| [Fixtures Guide](../fixtures/README.md) | Covers narrower positive and negative inputs that are not reference teams. |
+| [Conformance](../docs/conformance.md) | Explains what passing examples does and does not prove. |
+| [Compatibility Matrix](../docs/compatibility-matrix.md) | Records current example and validator support. |
+
+Examples teach project-level composition. Fixtures isolate one validation
+boundary and may be intentionally invalid, so they must not be presented as
+starter configurations.
+
 ## Quick Matrix
 
 | Example | Best For | Team Shape | Autonomy Posture | Main Context Sources | Approval Emphasis |
@@ -125,6 +139,9 @@ ruby -ryaml -e 'Dir["examples/**/*.yaml"].sort.each { |p| YAML.load_file(p); put
 ```
 
 See [Validation](../docs/validation.md) for current validation guidance and known limits.
+
+See the [Fixtures Guide](../fixtures/README.md) for focused validation evidence
+that is intentionally kept outside the complete reference teams.
 
 See the [Compatibility Matrix](../docs/compatibility-matrix.md) for the exact status of example, schema, validator, CLI, runtime, and extension support.
 

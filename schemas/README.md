@@ -204,6 +204,11 @@ See [RFC-0008](../rfcs/RFC-0008-memory-retention.md) for draft memory retention 
 
 See [RFC-0009](../rfcs/RFC-0009-event-envelope.md) for draft event envelope semantics beyond schema shape.
 
+See [Event Interoperability](../docs/event-interoperability.md) for the draft
+CloudEvents and OpenTelemetry projections. This directory does not contain an
+event-instance or external representation schema; `events.schema.json`
+validates declarations only.
+
 See [RFC-0010](../rfcs/RFC-0010-provider-selection.md) for draft provider selection semantics beyond schema shape.
 
 See [RFC-0011](../rfcs/RFC-0011-reference-cli-scope.md) for draft reference CLI scope for schema validation, inspection, graph output, and initialization without orchestration.

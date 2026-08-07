@@ -82,6 +82,10 @@ After that, follow the work:
 3. `handoffs.yaml` shows how responsibility moves between actors.
 4. `events.yaml` shows the event types and event envelope expectations for audit trails from meaningful state changes.
 
+Event declarations do not configure CloudEvents transport or OpenTelemetry
+export. See [Event Interoperability](../docs/event-interoperability.md) for
+external projection rules and current implementation limits.
+
 Finally, check `context.yaml`, `retrieval-profiles.yaml`, and `memory.yaml` to understand what actors may know, retrieve, cite, retain, or reuse.
 
 Read `providers.yaml`, `model-profiles.yaml`, `prompt-sets.yaml`, and

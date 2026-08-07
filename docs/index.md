@@ -24,7 +24,7 @@ The documentation is the canonical source for the specification. Schemas and exa
 | Manifest author | [Core Profile](core-profile.md) -> [Manifest Reference](manifest-reference.md) -> [Actor Model](actor-model.md) -> [Context Model](context-model.md) -> [Memory Model](memory-model.md) -> [Examples Guide](../examples/README.md) |
 | Safety reviewer | [Security Model](security-model.md) -> [Human Override](human-override.md) -> [Network Access Policy](network-access-policy.md) -> [Approval Gates](approval-gates.md) -> [Approval Gate Targets](approval-gate-targets.md) -> [Capability Model](capability-model.md) -> [Autonomy Model](autonomy-model.md) |
 | Validator author | [Validation](validation.md) -> [Fixtures Guide](../fixtures/README.md) -> [Manifest Discovery](manifest-discovery.md) -> [Semantic Reference Inventory](semantic-reference-inventory.md) -> [Typed References](typed-references.md) -> [Approval Gate Targets](approval-gate-targets.md) -> [Work Reference Namespaces](work-reference-namespaces.md) -> [Schema Design Notes](schema-design-notes.md) -> [Schema Guide](../schemas/README.md) -> [Conformance](conformance.md) -> [Conformance Claims](conformance-claims.md) -> [Compatibility Matrix](compatibility-matrix.md) |
-| Runtime implementer | [Architecture](architecture.md) -> [Runtime Options](runtime-options.md) -> [Provider Abstraction](provider-abstraction.md) -> [Provider Features](provider-features.md) -> [Provider Constraints](provider-constraints.md) -> [Roadmap](roadmap.md) |
+| Runtime implementer | [Architecture](architecture.md) -> [Event Model](events.md) -> [Event Interoperability](event-interoperability.md) -> [Runtime Options](runtime-options.md) -> [Provider Abstraction](provider-abstraction.md) -> [Provider Features](provider-features.md) -> [Provider Constraints](provider-constraints.md) -> [Roadmap](roadmap.md) |
 | Extension author | [Extension Model](extensions.md) -> [MCP And A2A Boundaries](mcp-a2a-boundaries.md) -> [MCP Extension Draft](../extensions/mcp/README.md) -> [A2A Extension Draft](../extensions/a2a/README.md) -> [Integrations](integrations.md) -> [Conformance](conformance.md) |
 
 ## Core Models
@@ -51,6 +51,7 @@ The documentation is the canonical source for the specification. Schemas and exa
 | [Retrieval Profiles](retrieval-profiles.md) | Defines context source selection, index versions, chunking, freshness, citations, sensitivity, and audit expectations. |
 | [Handoff Protocol](handoff-protocol.md) | Defines structured responsibility transfer between actors. |
 | [Event Model](events.md) | Defines auditable state transitions and payload expectations. |
+| [Event Interoperability](event-interoperability.md) | Maps NexFlow event instances to CloudEvents and OpenTelemetry without selecting transport, storage, or runtime behavior. |
 | [Extension Model](extensions.md) | Defines namespaced extension lifecycle and integration surface. |
 | [MCP Extension Draft](../extensions/mcp/README.md) | Maps MCP context and action surfaces to independent capability, permission, approval, network, credential, and audit boundaries. |
 | [A2A Extension Draft](../extensions/a2a/README.md) | Maps remote agent, skill, message, task, and artifact surfaces without treating external metadata as local authority. |

@@ -32,6 +32,7 @@ Current release posture: **`0.1` draft, preparing for candidate review**. No
 | Provider constraint vocabulary | Implemented as structured candidate eligibility fields with legacy migration | `npm run provider-constraint-schema-smoke`, [Provider Constraints](docs/provider-constraints.md) |
 | MCP extension draft | Implemented as an offline policy profile and focused schema checks; no live integration | `npm run mcp-extension-smoke`, [MCP Extension Draft](extensions/mcp/README.md) |
 | A2A extension draft | Implemented as an offline external-agent/task/artifact policy profile; no live integration | `npm run a2a-extension-smoke`, [A2A Extension Draft](extensions/a2a/README.md), [MCP And A2A Boundaries](docs/mcp-a2a-boundaries.md) |
+| Event interoperability | Specified as CloudEvents and OpenTelemetry EventRecord mappings; no exporter or transport | [Event Interoperability](docs/event-interoperability.md), [Event Model](docs/events.md) |
 | Conformance claim format | Implemented as standalone schema plus profile-qualified YAML and Markdown templates | `npm run conformance-claim-smoke`, [Conformance Claims](docs/conformance-claims.md) |
 | Candidate readiness record | Implemented as a standalone eight-gate schema and non-claiming `0.1` template | `npm run candidate-readiness-smoke`, [0.1 Readiness Checklist](docs/readiness-checklist.md), [Release Evidence](release/README.md) |
 | Semantic reference checks | Partial repository smoke coverage | `npm run semantic-smoke`, [Validation](docs/validation.md) |
@@ -209,6 +210,7 @@ NexFlow is intentionally split into layers:
 - [Typed References](docs/typed-references.md): shared reference shapes, lexical rules, field contracts, and migration guidance
 - [Approval Gate Targets](docs/approval-gate-targets.md): typed gate targets, exact namespaces, workflow scope, and legacy migration
 - [Work Reference Namespaces](docs/work-reference-namespaces.md): deterministic workflow step and task artifact identity
+- [Event Interoperability](docs/event-interoperability.md): CloudEvents and OpenTelemetry mappings without transport or storage commitments
 - [Provider Features](docs/provider-features.md): closed provider support vocabulary and capability separation
 - [Provider Constraints](docs/provider-constraints.md): structured provider eligibility, composition, migration, and validation boundaries
 - [MCP Extension Draft](extensions/mcp/README.md): experimental MCP context/action policy mapping without runtime behavior
@@ -242,6 +244,7 @@ NexFlow is intentionally split into layers:
 | Model provider-neutral model selection | [Model Profiles](docs/model-profiles.md), [Provider Abstraction](docs/provider-abstraction.md), [Provider Features](docs/provider-features.md), [Provider Constraints](docs/provider-constraints.md), [Versioning](docs/versioning.md) |
 | Model prompt revisions and safety review | [Prompt Sets](docs/prompt-sets.md), [Versioning](docs/versioning.md), [Event Model](docs/events.md) |
 | Model retrieval, freshness, and citations | [Retrieval Profiles](docs/retrieval-profiles.md), [Context Model](docs/context-model.md), [Event Model](docs/events.md) |
+| Map event evidence to external standards | [Event Model](docs/events.md), [Event Interoperability](docs/event-interoperability.md), [Conformance](docs/conformance.md) |
 | Validate manifests | [Validation](docs/validation.md), [Semantic Reference Inventory](docs/semantic-reference-inventory.md), [Schema Guide](schemas/README.md), [Conformance](docs/conformance.md), [Compatibility Matrix](docs/compatibility-matrix.md) |
 | Publish a support claim | [Conformance Claims](docs/conformance-claims.md), [Claim Templates](conformance/README.md), [Compatibility Matrix](docs/compatibility-matrix.md) |
 | Extend or integrate NexFlow | [Extension Profiles](extensions/README.md), [Extension Model](docs/extensions.md), [MCP And A2A Boundaries](docs/mcp-a2a-boundaries.md), [MCP Extension Draft](extensions/mcp/README.md), [A2A Extension Draft](extensions/a2a/README.md), [Integrations](docs/integrations.md), [Provider Abstraction](docs/provider-abstraction.md) |

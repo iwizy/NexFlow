@@ -205,6 +205,27 @@ behavior requires explicit compatibility review. See the
 [A2A Extension Draft](../extensions/a2a/README.md) and
 [MCP And A2A Boundaries](mcp-a2a-boundaries.md).
 
+## Event Interoperability Version Decision
+
+The CloudEvents and OpenTelemetry mappings remain documentation-level draft
+profiles within `specVersion: "0.1"`:
+
+- `nexflow-cloudevents/0.1-draft`
+- `nexflow-opentelemetry/0.1-draft`
+
+They add no manifest kind or required `EventSet` field. CloudEvents versions,
+OpenTelemetry specification and semantic convention versions, adapter versions,
+and mapping directions must be declared separately in conformance evidence.
+
+Changing interoperable event names, projected fields, CloudEvents extension
+attributes, OpenTelemetry attribute names, severity normalization,
+trace-context separation, or import authority requires explicit compatibility
+review and migration guidance. Transport bindings, SDKs, OTLP, collectors,
+brokers, sinks, and storage remain implementation concerns and do not inherit
+compatibility from the mapping profile.
+
+See [Event Interoperability](event-interoperability.md).
+
 ## Agent Identity Version Decision
 
 The compact AgentSet migration remains in `specVersion: "0.1"`. The schema

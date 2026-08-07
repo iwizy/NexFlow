@@ -206,6 +206,11 @@ narrow behavior. Resume requires a declared approval gate and reason.
 
 An auditable state transition emitted by a workflow, task, agent, integration, or runtime.
 
+`EventSet` declares event types; a future event instance records an occurrence.
+CloudEvents and OpenTelemetry representations are derived interoperability and
+observability projections, not local state authority. See
+[Event Interoperability](event-interoperability.md).
+
 ## Extension
 
 A namespaced addition to the specification for integrations, custom fields, or implementation-specific metadata.

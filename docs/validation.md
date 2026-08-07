@@ -78,6 +78,11 @@ The repository supports basic validation through:
 
 This is enough to catch many authoring mistakes, but not enough to prove that a full project is semantically consistent.
 
+The repository does not validate emitted event instances, CloudEvents
+representations, or OpenTelemetry EventRecords. The draft mappings in
+[Event Interoperability](event-interoperability.md) are documentation contracts
+without an encoder, importer, external schema, or conformance suite.
+
 Agent Assembly is outside the current schema-validation surface because it is a
 derived inspection projection rather than an authored manifest. The repository
 does not validate an assembly document, and the semantic smoke command does not

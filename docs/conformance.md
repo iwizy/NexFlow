@@ -220,6 +220,21 @@ Runtime conformance is planned future work. A future conforming runtime MUST enf
 
 Unsupported extension behavior MUST NOT silently grant additional access.
 
+### Event Interoperability
+
+CloudEvents and OpenTelemetry support are separate, versioned implementation
+claims. A tool claiming either mapping MUST identify the mapping profile,
+external specification versions, supported direction, event type coverage,
+source identity rules, lossy fields, severity and trace-context behavior,
+redaction policy, and evidence.
+
+Mapping a NexFlow event to CloudEvents or an OpenTelemetry EventRecord does not
+establish `NF-RUNTIME` conformance. Importing a CloudEvent as a local transition
+requires a separately declared, authenticated, fail-closed importer. Importing
+OpenTelemetry telemetry as control-plane state is unsupported.
+
+See [Event Interoperability](event-interoperability.md).
+
 ### Extension
 
 An extension adds namespaced behavior for integrations or implementation-specific metadata.
@@ -298,6 +313,8 @@ The following behavior is non-conforming:
 - writing memory outside declared scopes
 - treating provider preferences or provider availability as permission to call a provider
 - emitting audit events that omit required envelope metadata while claiming complete runtime audit conformance
+- treating a CloudEvent or OpenTelemetry record as automatic authority for a local state transition
+- deriving OpenTelemetry trace or span identity from NexFlow correlation or causation IDs
 - executing workflows while claiming validation-only behavior
 - a reference CLI calling providers, executing commands, writing memory, or mutating remote systems while claiming validation-only `NF-CLI` behavior
 - silently accepting unsupported spec versions
@@ -312,6 +329,8 @@ This repository currently provides:
 - full schema validation for maintained examples
 - standalone machine-readable and human-readable conformance claim templates
 - limited semantic reference smoke checks that do not establish complete `NF-SEMANTIC` conformance
+- draft CloudEvents and OpenTelemetry event mapping documentation without an
+  encoder, importer, SDK, transport, collector, or storage implementation
 - validation guidance
 
 It does not currently provide:

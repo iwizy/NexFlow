@@ -114,7 +114,9 @@ runtime loading remain future work.
   artifact provenance, callback, and transitive-authority boundaries.
 - Review memory sensitivity, ownership, allowed consumers, and cross-scope promotion rules.
 - Review RFC-0008 memory retention, ownership, visibility, allowed consumers, allowed writers, correction, deletion, expiry, and audit expectations.
-- Review RFC-0009 event envelope identity, actor, subject, correlation, causation, payload, audit, redaction, ordering, and extension expectations.
+- Review RFC-0009 event envelope identity, actor, subject, correlation,
+  causation, payload, audit, redaction, ordering, extension expectations, and
+  CloudEvents and OpenTelemetry mapping profiles.
 - Review model profile selection modes, pinned and floating references, constraints, fallback, and audit expectations.
 - Review RFC-0010 provider preference, constraint, fallback, explainability, and runtime audit semantics.
 - Review structured provider constraint composition, legacy training-use

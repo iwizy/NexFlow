@@ -28,6 +28,10 @@ Important state changes should emit events and preserve enough context for later
 
 [RFC-0009](../rfcs/RFC-0009-event-envelope.md) proposes draft event envelope semantics for event identity, actor, subject, correlation, causation, payload, audit metadata, redaction, ordering, and future runtime boundaries.
 
+[Event Interoperability](event-interoperability.md) defines how those fields may
+be projected to CloudEvents and OpenTelemetry while keeping external records
+non-authoritative and transport, collectors, and storage out of scope.
+
 ### Credential Handling
 
 Credentials must never be implied by context access. Future runtimes must isolate secrets and avoid exposing them to agents unless explicitly authorized.

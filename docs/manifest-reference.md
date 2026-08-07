@@ -333,7 +333,11 @@ Declares event types, payload expectations, retention, audit requirements, and o
 
 `events.yaml` is not an event log. It describes the event types and envelope expectations that future runtimes, validators, or audit exports may use.
 
-Related docs: [Event Model](events.md), [Approval Gates](approval-gates.md), [Memory Model](memory-model.md), [Conformance](conformance.md), [RFC-0009](../rfcs/RFC-0009-event-envelope.md).
+Related docs: [Event Model](events.md),
+[Event Interoperability](event-interoperability.md),
+[Approval Gates](approval-gates.md), [Memory Model](memory-model.md),
+[Conformance](conformance.md), and
+[RFC-0009](../rfcs/RFC-0009-event-envelope.md).
 
 ### `extensions.yaml`
 

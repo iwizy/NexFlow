@@ -3,6 +3,8 @@
 Events describe auditable state transitions.
 
 Related RFC: [RFC-0009: Event Envelope](../rfcs/RFC-0009-event-envelope.md).
+See [Event Interoperability](event-interoperability.md) for the draft
+CloudEvents and OpenTelemetry mappings.
 
 `events.yaml` declares event types, payload expectations, retention, and audit requirements. It is not an event log. Future runtimes may emit event instances that follow the common envelope model.
 
@@ -50,7 +52,12 @@ event:
   type: task.completed
   occurredAt: "2026-05-29T10:00:00Z"
   recordedAt: "2026-05-29T10:00:02Z"
-  actor: docs-architect
+  source:
+    kind: runtime
+    id: reference-runtime
+  actor:
+    kind: agent
+    id: docs-architect
   subject:
     kind: task
     id: write-manifest-reference
@@ -113,8 +120,29 @@ artifact identifier, source ordering, correlation, and provenance, then apply
 an accepted event mapping before recording local state. External messages and
 logs are supporting evidence, not proof that a NexFlow transition occurred.
 
-See [MCP And A2A Boundaries](mcp-a2a-boundaries.md). Event-format mappings to
-general interoperability standards remain separate work.
+See [MCP And A2A Boundaries](mcp-a2a-boundaries.md).
+
+## Interoperability Summary
+
+NexFlow-defined event types use `dev.nexflow.<type>` when projected into
+CloudEvents `type` or OpenTelemetry `EventName`. For example,
+`task.completed` becomes `dev.nexflow.task.completed`.
+
+| NexFlow concept | CloudEvents | OpenTelemetry EventRecord |
+| --- | --- | --- |
+| `eventId` | `id` | `dev.nexflow.event.id` attribute |
+| `type` | Reverse-DNS `type` | `EventName` |
+| `occurredAt` | `time` | `Timestamp` |
+| `recordedAt` | `nexflowrecordedat` extension | Preserved attribute; not automatically `ObservedTimestamp` |
+| `correlationId` | `nexflowcorrelationid` extension | `dev.nexflow.event.correlation_id` attribute |
+| `causationId` | `nexflowcausationid` extension | `dev.nexflow.event.causation_id` attribute |
+| Structured source, Actor, subject, payload, and audit data | `data.nexflow` | Complex `dev.nexflow.event.data` attribute or protected data reference |
+
+`correlationId` is not a trace ID, `causationId` is not a span ID, and an
+incoming CloudEvent or telemetry record is not automatic authority for a local
+state transition. The complete mappings, severity normalization, import rules,
+conformance expectations, and transport boundary are defined in
+[Event Interoperability](event-interoperability.md).
 
 ## Event Payload Examples
 

@@ -131,3 +131,10 @@ Every future runtime should be able to explain:
 - which context sources were used
 - which memory scopes were read or written
 - which event was emitted
+
+CloudEvents and OpenTelemetry may carry derived event representations, but they
+do not become the source of local state or authority. Event export must preserve
+NexFlow identity, correlation, causation, redaction, and audit meaning without
+turning `correlationId` into trace identity. Transport and telemetry storage are
+future runtime concerns. See
+[Event Interoperability](event-interoperability.md).

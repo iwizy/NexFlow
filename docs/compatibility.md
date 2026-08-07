@@ -257,7 +257,11 @@ compatibility is versioned through `claimVersion`, independently from manifest
 
 [RFC-0008](../rfcs/RFC-0008-memory-retention.md) proposes memory retention semantics that may affect `NF-SEMANTIC`, `NF-RUNTIME`, privacy, audit, and safety compatibility.
 
-[RFC-0009](../rfcs/RFC-0009-event-envelope.md) proposes event envelope semantics that may affect `NF-SEMANTIC`, `NF-RUNTIME`, audit, traceability, privacy, and safety compatibility.
+[RFC-0009](../rfcs/RFC-0009-event-envelope.md) proposes event envelope
+semantics that may affect `NF-SEMANTIC`, `NF-RUNTIME`, audit, traceability,
+privacy, and safety compatibility. The
+[Event Interoperability](event-interoperability.md) profiles version CloudEvents
+and OpenTelemetry projections separately from transport and storage.
 
 [RFC-0010](../rfcs/RFC-0010-provider-selection.md) proposes provider selection semantics that may affect `NF-SEMANTIC`, `NF-RUNTIME`, audit, privacy, cost, safety, and compatibility.
 
@@ -288,6 +292,7 @@ Examples:
 | Change network defaults, destination scope, transport constraints, approvals, or audit semantics | May affect `NF-SEMANTIC`, `NF-RUNTIME`, integrations, privacy, audit, and safety compatibility. |
 | Change human override authority, response, resume, operation, or audit semantics | May affect `NF-SCHEMA`, `NF-SEMANTIC`, `NF-RUNTIME`, safety, authority, and audit compatibility. |
 | Change event envelope identity, actor, subject, correlation, causation, payload, audit, or redaction semantics | May affect `NF-SEMANTIC`, `NF-RUNTIME`, audit, traceability, privacy, and safety compatibility. |
+| Change interoperable event names, CloudEvents attributes, OpenTelemetry fields, severity mapping, trace-context separation, or import authority | May affect event exporters, telemetry queries, round-trip behavior, `NF-RUNTIME`, audit, privacy, and external compatibility claims. |
 | Change provider selection precedence, constraints, fallback, or explainability expectations | May affect `NF-SEMANTIC`, `NF-RUNTIME`, audit, privacy, cost, safety, and compatibility. |
 | Change provider constraint vocabulary, composition, unknown-fact behavior, or legacy migration | May affect `NF-MANIFEST`, `NF-SCHEMA`, `NF-SEMANTIC`, provider eligibility, privacy, cost, audit, and safety compatibility. |
 | Change reference CLI command names, exit codes, diagnostic codes, or output formats | May affect `NF-CLI`, CI workflows, editor integrations, and developer tooling compatibility. |

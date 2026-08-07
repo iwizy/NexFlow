@@ -25,6 +25,14 @@ receive callbacks, or run protocol clients and servers. External protocol
 metadata never grants local NexFlow authority by itself. See
 [MCP And A2A Boundaries](mcp-a2a-boundaries.md).
 
+## Does NexFlow implement CloudEvents or OpenTelemetry?
+
+No. NexFlow specifies draft mappings from its future event-instance envelope to
+CloudEvents and OpenTelemetry EventRecords. It does not provide an encoder,
+importer, SDK, protocol binding, OTLP exporter, collector, broker, sink, or
+event store. External event and telemetry records do not change local NexFlow
+state automatically. See [Event Interoperability](event-interoperability.md).
+
 ## Does NexFlow require YAML?
 
 YAML is the reference authoring format. The data model should remain compatible with JSON and JSON Schema validation.

@@ -164,6 +164,9 @@ The current state of NexFlow before a stable release. Draft behavior may change,
 An auditable state transition emitted by a workflow, task, agent, integration, runtime, approval, or memory operation.
 
 Events should preserve enough metadata to explain what happened and why.
+CloudEvents and OpenTelemetry EventRecords may carry projections of an event
+instance, but they do not replace the `EventSet` declaration or become local
+transition authority. See [Event Interoperability](event-interoperability.md).
 
 ### Extension
 

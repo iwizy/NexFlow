@@ -63,6 +63,7 @@ The documentation is the canonical source for the specification. Schemas and exa
 | Process Area | Purpose |
 | --- | --- |
 | [Governance](governance.md) | Contribution, review, and decision rules. |
+| [Licensing And Patent Rationale](licensing-and-patent-rationale.md) | Records the current MIT decision, the Apache-2.0 patent tradeoff, and mandatory review triggers. |
 | [Versioning](versioning.md) | Spec versioning and migration policy. |
 | [Actor Model Migration](actor-model-migration.md) | Defines the staged, identity-preserving transition from legacy participant resolution. |
 | [Agent Identity Migration](agent-identity-migration.md) | Defines the transition from duplicated AgentSet behavior fields to compact stable AI identity. |

@@ -26,6 +26,17 @@ Material changes require an RFC:
 - security model changes
 - extension lifecycle changes
 - compatibility policy changes
+- project or component license changes
+
+## License And Patent Policy
+
+The current license decision and its review triggers are recorded in
+[Licensing And Patent Rationale](licensing-and-patent-rationale.md).
+
+Maintainers must not change the repository or component license as a mechanical
+documentation update. A proposed change requires a written decision, an
+inventory of contribution rights, qualified legal review, and a migration plan
+for notices, package metadata, documentation, and releases.
 
 ## RFC Stages
 

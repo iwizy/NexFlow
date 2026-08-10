@@ -102,4 +102,9 @@ requests and pushes to `main` or `develop`.
 
 ## License
 
-By contributing, you agree that your contribution is provided under the MIT License.
+By contributing, you agree that your contribution is provided under the
+[MIT License](LICENSE). See the
+[Licensing And Patent Rationale](docs/licensing-and-patent-rationale.md) for the
+current decision, the Apache-2.0 tradeoff, and the events that require a future
+review. A review does not change the terms of an existing contribution by
+itself.

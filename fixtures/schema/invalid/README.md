@@ -2,6 +2,9 @@
 
 These fixtures are intentionally invalid NexFlow manifests.
 
+See the [Fixtures Guide](../../README.md) for the repository-wide fixture
+inventory and the distinction between fixtures and reference examples.
+
 They provide stable negative evidence for schema and manifest-kind boundaries.
 They are not examples, templates, or runtime inputs, and the normal example
 validator does not discover them.
@@ -28,3 +31,10 @@ When adding a fixture:
 4. Use only public, fictional project data.
 5. Update validation and compatibility documentation when the covered boundary
    changes.
+
+Related guidance:
+
+- [Schema Guide](../../../schemas/README.md)
+- [Validation](../../../docs/validation.md)
+- [Conformance](../../../docs/conformance.md)
+- [Examples Guide](../../../examples/README.md)

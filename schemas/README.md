@@ -11,6 +11,20 @@ conformance contract.
 
 See [Schema Design Notes](../docs/schema-design-notes.md) for the design rationale, strictness boundaries, extension flexibility, and non-goals behind these schemas.
 
+## Schema Evidence Map
+
+| Resource | Use it for |
+| --- | --- |
+| [Validation](../docs/validation.md) | Commands, validation layers, diagnostics, and known limits. |
+| [Fixtures Guide](../fixtures/README.md) | Focused positive and negative validation evidence. |
+| [Examples Guide](../examples/README.md) | Complete reference manifest sets that should validate successfully. |
+| [Conformance](../docs/conformance.md) | Requirements for evidence-backed schema and semantic support claims. |
+| [Compatibility Matrix](../docs/compatibility-matrix.md) | Current support across schemas, examples, validators, and planned tooling. |
+
+Schemas define structural contracts. Examples demonstrate recommended
+composition, fixtures isolate validation boundaries, and conformance claims
+must cite evidence without extending what that evidence proves.
+
 See the [Semantic Reference Inventory](../docs/semantic-reference-inventory.md)
 for target namespaces, validator priorities, current smoke coverage, and
 reference fields that remain unsafe to resolve generically.
@@ -29,8 +43,8 @@ is not counted as another project manifest kind. See
 [Core Profile](../docs/core-profile.md).
 
 Versioned extension policy profiles and their schemas live under `extensions/`
-for the same reason. The first is the experimental
-[MCP Extension Draft](../extensions/mcp/README.md).
+for the same reason. Current experimental profiles cover
+[MCP](../extensions/mcp/README.md) and [A2A](../extensions/a2a/README.md).
 
 Standalone release evidence formats and their schemas live under `release/`.
 They validate repository release records, not authored NexFlow project
@@ -190,6 +204,11 @@ See [RFC-0008](../rfcs/RFC-0008-memory-retention.md) for draft memory retention 
 
 See [RFC-0009](../rfcs/RFC-0009-event-envelope.md) for draft event envelope semantics beyond schema shape.
 
+See [Event Interoperability](../docs/event-interoperability.md) for the draft
+CloudEvents and OpenTelemetry projections. This directory does not contain an
+event-instance or external representation schema; `events.schema.json`
+validates declarations only.
+
 See [RFC-0010](../rfcs/RFC-0010-provider-selection.md) for draft provider selection semantics beyond schema shape.
 
 See [RFC-0011](../rfcs/RFC-0011-reference-cli-scope.md) for draft reference CLI scope for schema validation, inspection, graph output, and initialization without orchestration.
@@ -252,7 +271,9 @@ The files under `fixtures/schema/invalid/` are intentionally invalid and are
 excluded from normal example validation. Their `index.json` catalog records the
 expected rejection category and path. `npm run negative-schema-fixtures`
 ensures each fixture remains invalid for the intended reason and that no YAML
-fixture is omitted from the catalog.
+fixture is omitted from the catalog. See the [Fixtures Guide](../fixtures/README.md)
+for the complete fixture inventory and the boundary between fixtures and
+reference examples.
 
 ## Extension Policy
 

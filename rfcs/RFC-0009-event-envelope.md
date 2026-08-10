@@ -19,6 +19,7 @@ The proposal defines:
 - redaction and sensitivity rules
 - idempotency, ordering, and replay guidance
 - extension fields for runtime-specific metadata
+- CloudEvents and OpenTelemetry interoperability boundaries
 - validation and future runtime boundaries
 
 The goal is to make audit events useful across tools without turning NexFlow into a logging platform or binding the specification to one runtime.
@@ -519,6 +520,33 @@ Extensions MUST NOT grant permissions, approval, context access, memory access, 
 
 See [RFC-0006](RFC-0006-extension-namespaces.md) for extension namespace expectations.
 
+## Interoperability Mappings
+
+The common envelope is the canonical NexFlow event-instance model. External
+representations are derived projections, not competing sources of truth.
+
+The draft mappings are defined in
+[Event Interoperability](../docs/event-interoperability.md):
+
+- `nexflow-cloudevents/0.1-draft` maps one event instance to one CloudEvent
+- `nexflow-opentelemetry/0.1-draft` maps one event instance to one
+  OpenTelemetry EventRecord
+
+For NexFlow-defined event types in the current draft, both mappings use the
+interoperable name `dev.nexflow.<event-type>`. Project-specific or
+extension-owned types require
+an explicit owner-controlled mapping and must not be placed under the NexFlow
+namespace automatically.
+
+The mappings preserve `correlationId` and `causationId` separately from trace
+context. They forbid automatic substitution of correlation IDs for trace IDs,
+causation IDs for span IDs, or incoming external records for verified local
+state transitions.
+
+CloudEvents protocol bindings and OpenTelemetry SDKs, OTLP, collectors,
+exporters, sampling, storage, and backends remain outside this RFC. `EventSet`
+does not gain transport or sink configuration from these mappings.
+
 ## EventSet Manifest Guidance
 
 `events.yaml` should remain a declaration manifest.
@@ -595,6 +623,8 @@ A future runtime may:
 
 - emit event instances
 - export event traces
+- project event instances into explicitly supported CloudEvents or
+  OpenTelemetry mapping profiles
 - validate emitted events against declarations
 - preserve audit retention metadata
 - redact sensitive fields
@@ -607,6 +637,8 @@ A future runtime must not:
 - bypass approval gates because an audit event will be emitted
 - silently expand context or memory because an event sink supports it
 - require a provider-specific event model for core conformance
+- treat a received CloudEvent or telemetry record as local transition authority
+- derive trace IDs or span IDs from NexFlow correlation or causation IDs
 
 ## Compatibility Impact
 
@@ -626,6 +658,8 @@ Potentially breaking changes may include:
 - making optional envelope fields required without migration guidance
 - changing payload compatibility expectations
 - weakening redaction or audit requirements
+- changing interoperable event names, projection fields, severity mappings,
+  trace-context boundaries, or import authority rules
 
 Tools should identify whether changes affect `NF-MANIFEST`, `NF-SCHEMA`, `NF-SEMANTIC`, or `NF-RUNTIME`.
 

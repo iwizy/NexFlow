@@ -11,6 +11,9 @@ tag or release has been published, and manifest `specVersion` remains `"0.1"`.
 
 ### Added
 
+- Added a licensing and patent rationale that retains MIT for the `0.1`
+  specification phase, records the Apache-2.0 patent tradeoff, and defines
+  mandatory review triggers without changing the repository license.
 - Added draft CloudEvents 1.0.2 and OpenTelemetry EventRecord mapping profiles
   with canonical event names, field projections, severity normalization,
   trace-context separation, import authority, and transport and storage

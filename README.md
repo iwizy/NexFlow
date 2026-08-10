@@ -326,7 +326,9 @@ Yes. Teams can use NexFlow manifests as auditable documentation, planning artifa
 YAML is readable in repositories and familiar to software teams. JSON compatibility is preserved through schemas.
 
 **Which license does NexFlow use?**  
-MIT. The goal is broad adoption across hobby, commercial, research, and enterprise contexts.
+MIT during the current specification-first phase. The project has documented
+the Apache-2.0 patent tradeoff and the events that require a future license
+review in [Licensing And Patent Rationale](docs/licensing-and-patent-rationale.md).
 
 ## Contributing
 
@@ -334,4 +336,6 @@ Start with [CONTRIBUTING.md](CONTRIBUTING.md). Changes that alter the model, man
 
 ## License
 
-NexFlow is licensed under the [MIT License](LICENSE).
+NexFlow is licensed under the [MIT License](LICENSE). See
+[Licensing And Patent Rationale](docs/licensing-and-patent-rationale.md) for the
+current decision and mandatory review triggers.

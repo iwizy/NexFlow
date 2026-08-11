@@ -6,6 +6,9 @@ For version-by-version readiness criteria from `0.1` draft through `1.0`, see th
 
 For the first candidate review, see the [0.1 Readiness Checklist](readiness-checklist.md).
 
+The exact feature boundary is frozen in the
+[0.1 Candidate Scope](0.1-scope.md).
+
 ## Current Checkpoint: `0.1` Candidate Preparation
 
 Status: preparation in progress. No `0.1` candidate tag has been published.
@@ -31,16 +34,12 @@ The repository currently provides the following candidate evidence:
 - an explicit fail-closed human override policy, audit vocabulary, and focused
   schema checks without runtime enforcement
 
-Before publishing a candidate, maintainers still need to:
-
-1. Run the readiness checklist against one exact candidate commit.
-2. Record the candidate label, commit hash, validation results, compatibility
-   notes, known limitations, and unresolved RFCs or blockers.
-3. Classify the outcome as Ready, Ready with notes, or Blocked.
-4. Confirm that the README, changelog, schemas, examples, and support claims
-   describe the same repository state.
-5. Confirm that draft RFC proposals are either intentionally deferred or
-   represented by synchronized specification changes and migration guidance.
+Scope is frozen, but candidate readiness remains blocked. Maintainers still
+need to select an exact commit and tag, evaluate the readiness record, capture
+the complete check set against that commit, complete the cross-surface review,
+and publish a concrete private vulnerability reporting path. The blocker IDs
+and closure evidence are maintained in the
+[0.1 Candidate Scope](0.1-scope.md).
 
 The candidate boundary is deliberately narrow:
 
@@ -54,6 +53,7 @@ The candidate boundary is deliberately narrow:
   decision is recorded
 
 Relevant evidence: [Compatibility Matrix](compatibility-matrix.md),
+[0.1 Candidate Scope](0.1-scope.md),
 [0.1 Readiness Checklist](readiness-checklist.md), [Release Plan](release-plan.md),
 and [Foundational Model Cross-RFC Review](../rfcs/reviews/2026-07-foundational-model-review.md).
 
@@ -166,7 +166,8 @@ Relevant docs: [Validation](validation.md), [Conformance](conformance.md),
 
 ## Milestone 4: Runtime Architecture Decision
 
-- Compare implementation languages.
+- Compare TypeScript, Python, Rust, and Go through identical validation-only
+  prototypes, hard gates, weighted criteria, and reviewable evidence.
 - Define reference CLI scope.
 - Review RFC-0011 validation-only reference CLI command boundaries.
 - Define security and extension loading boundaries.
@@ -174,7 +175,9 @@ Relevant docs: [Validation](validation.md), [Conformance](conformance.md),
 
 This milestone must happen before runtime implementation begins.
 
-Relevant docs: [Architecture](architecture.md), [Runtime Options](runtime-options.md), [Provider Abstraction](provider-abstraction.md), [Security Model](security-model.md).
+Relevant docs: [Architecture](architecture.md), [Runtime Options](runtime-options.md),
+[Runtime Language Evaluation Matrix](language-evaluation-matrix.md),
+[Provider Abstraction](provider-abstraction.md), [Security Model](security-model.md).
 
 ## Milestone 5: Reference CLI
 

@@ -8,7 +8,8 @@ already exist.
 
 For compatibility rules and breaking change guidance, see
 [Compatibility](compatibility.md). For support claim vocabulary, see
-[Conformance](conformance.md).
+[Conformance](conformance.md). For the feature boundary used by the first
+candidate review, see [0.1 Candidate Scope](0.1-scope.md).
 
 ## How To Read This Matrix
 
@@ -31,6 +32,7 @@ enforced.
 
 | Surface | Current contract | Status | Evidence | Explicit limitation |
 | --- | --- | --- | --- | --- |
+| `0.1` candidate scope | Frozen 17-kind baseline with explicit RFC treatment, optional surfaces, migration-only forms, and deferred work | Specified | `docs/0.1-scope.md` | Scope freeze only; five release blockers remain and no candidate decision has been recorded. |
 | Specification | `specVersion: "0.1"` draft | Specified | Core docs, manifest reference, RFCs | Pre-`1.0`; fields and semantics may change with migration guidance. |
 | JSON Schemas | `0.1` across 17 manifest kinds plus common definitions | Implemented | `schemas/*.schema.json` | Structural validation only; schemas do not prove cross-manifest meaning or safety. |
 | Reference examples | 7 project sets, 113 schema-backed manifests, all using `0.1` | Implemented | `examples/` | Authoring and validation fixtures, not executable teams or runtime demonstrations. |
@@ -55,6 +57,7 @@ enforced.
 | Candidate readiness record | Standalone `recordVersion: "0.1"` schema, eight-gate template, and 14 focused cases | Implemented | `release/`, `npm run candidate-readiness-smoke` | Record structure and decision guards only; no evidence execution, release approval, tag, publication, or conformance claim. |
 | Semantic reference inventory | P0-P3 target namespaces, coverage, gaps, and deferred fields | Specified | `docs/semantic-reference-inventory.md` | Documentation contract only; it is not a manifest, generated registry, validator, or conformance suite. |
 | Semantic reference smoke | Selected cross-manifest reference, active definition authority, and duplicate checks | Partial | `npm run semantic-smoke`, semantic reference inventory | Does not cover every inventoried field or establish full `NF-SEMANTIC` conformance, graph safety, or policy correctness. |
+| Runtime language evaluation | Hard gates, weighted criteria, common prototype, and evidence record for TypeScript, Python, Rust, and Go | Specified | `docs/language-evaluation-matrix.md`, `docs/runtime-options.md` | No prototypes, scores, language selection, package layout, or Runtime Architecture Decision exists. |
 | Reference CLI | Validation-only scope proposed | Planned | RFC-0011 | No `nexflow` executable or `NF-CLI` implementation exists. |
 | Runtime | Provider-neutral requirements documented | Planned | Architecture, runtime options, roadmap | No orchestration, enforcement, provider calling, task execution, or `NF-RUNTIME` implementation exists. |
 | Extensions | Core declaration schema, namespace/lifecycle rules, and maintained experimental MCP and A2A profiles | Partial | `extensions.schema.json`, `extensions/mcp/`, `extensions/a2a/`, extension docs, examples | No registry, loader, live integration, protocol implementation, or plugin execution exists. |

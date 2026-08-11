@@ -8,9 +8,14 @@ Language-specific repository maintenance tooling, including schema validation de
 
 Reference CLI scope is a separate planning step. See [RFC-0011](../rfcs/RFC-0011-reference-cli-scope.md) for the draft validation-only CLI boundary.
 
-## Evaluation Criteria
+## Evaluation Framework
 
-Candidate runtimes should be evaluated on:
+The [Runtime Language Evaluation Matrix](language-evaluation-matrix.md) defines
+hard gates, weighted criteria, a common validation-only prototype, evidence
+records, target testing, and the decision procedure. No candidate has a score
+until the same prototype and measurements have been completed for all four.
+
+Candidate runtimes are evaluated on:
 
 - specification fidelity
 - JSON Schema and YAML support
@@ -23,6 +28,11 @@ Candidate runtimes should be evaluated on:
 - contributor accessibility
 - packaging and upgrade story
 - ability to remain provider neutral
+
+Hard gates cover specification fidelity, deterministic diagnostics, offline
+operation, reproducible dependencies, distribution targets, security
+boundaries, supply-chain evidence, provider neutrality, and scope integrity.
+Weighted scores cannot compensate for a failed hard gate.
 
 ## TypeScript
 
@@ -38,6 +48,7 @@ Risks:
 - Node runtime assumptions
 - supply chain complexity
 - sandboxing requires care
+- single-executable distribution requires explicit maturity and target review
 
 ## Python
 
@@ -52,6 +63,7 @@ Risks:
 - packaging fragmentation
 - runtime environment drift
 - slower startup for some CLI use cases
+- virtual environments do not provide an application security sandbox
 
 ## Rust
 
@@ -66,6 +78,7 @@ Risks:
 - higher contribution barrier
 - slower iteration for some teams
 - integration ecosystem may require more work
+- build scripts, unsafe code, and native dependencies require separate review
 
 ## Go
 
@@ -79,6 +92,10 @@ Risks:
 
 - less expressive schema modeling than some alternatives
 - dependency ergonomics vary by integration domain
+- cgo and native dependencies can change distribution and security assumptions
+
+These strengths and risks are hypotheses for the common prototype. They are not
+scores or a language recommendation.
 
 ## Required Milestone
 
@@ -92,3 +109,7 @@ That RFC should choose:
 - security model
 - extension loading model
 - conformance test strategy
+
+It should also publish the completed evidence records, hard-gate results,
+weighted scorecards, target matrix, reviewer rationale, and any reason the
+decision differs from the numerical ranking.

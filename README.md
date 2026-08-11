@@ -17,6 +17,10 @@ It is **not** an AI coding agent, an LLM API wrapper, a chat application, or a p
 Current release posture: **`0.1` draft, preparing for candidate review**. No
 `0.1` candidate tag has been published.
 
+The [`0.1` Candidate Scope](docs/0.1-scope.md) is frozen for evaluation. The
+freeze defines the baseline, optional and migration-only surfaces, deferred
+work, and five blockers that must be closed before a candidate tag.
+
 | Surface | Current State | Evidence |
 | --- | --- | --- |
 | Specification | Specified in draft form | [Documentation](docs/index.md), [Manifest Reference](docs/manifest-reference.md) |
@@ -248,7 +252,8 @@ NexFlow is intentionally split into layers:
 | Validate manifests | [Validation](docs/validation.md), [Semantic Reference Inventory](docs/semantic-reference-inventory.md), [Schema Guide](schemas/README.md), [Conformance](docs/conformance.md), [Compatibility Matrix](docs/compatibility-matrix.md) |
 | Publish a support claim | [Conformance Claims](docs/conformance-claims.md), [Claim Templates](conformance/README.md), [Compatibility Matrix](docs/compatibility-matrix.md) |
 | Extend or integrate NexFlow | [Extension Profiles](extensions/README.md), [Extension Model](docs/extensions.md), [MCP And A2A Boundaries](docs/mcp-a2a-boundaries.md), [MCP Extension Draft](extensions/mcp/README.md), [A2A Extension Draft](extensions/a2a/README.md), [Integrations](docs/integrations.md), [Provider Abstraction](docs/provider-abstraction.md) |
-| Review future implementation choices | [Runtime Options](docs/runtime-options.md), [Roadmap](docs/roadmap.md), [Release Plan](docs/release-plan.md), [0.1 Readiness Checklist](docs/readiness-checklist.md) |
+| Review the `0.1` candidate boundary | [0.1 Candidate Scope](docs/0.1-scope.md), [0.1 Readiness Checklist](docs/readiness-checklist.md), [Compatibility Matrix](docs/compatibility-matrix.md) |
+| Review future implementation choices | [Runtime Options](docs/runtime-options.md), [Roadmap](docs/roadmap.md), [Release Plan](docs/release-plan.md) |
 
 ## Roadmap
 
@@ -262,13 +267,15 @@ The current priorities are:
 3. Add positive fixtures, expand maintained negative fixtures, stabilize
    diagnostics, and broaden semantic checks.
 4. Complete the **Runtime Architecture Decision** before selecting an
-   implementation language or starting runtime work.
+   implementation language or starting runtime work, using the
+   [Runtime Language Evaluation Matrix](docs/language-evaluation-matrix.md).
 5. Build a validation-focused reference CLI for `init`, `validate`, `inspect`,
    and `graph`; it must not orchestrate work.
 6. Explore a runtime prototype only after its permission, approval, credential,
    network, extension, and audit boundaries are specified.
 
 See [Roadmap](docs/roadmap.md), [Release Plan](docs/release-plan.md),
+[0.1 Candidate Scope](docs/0.1-scope.md),
 [0.1 Readiness Checklist](docs/readiness-checklist.md), and the
 [Foundational Model Review](rfcs/reviews/2026-07-foundational-model-review.md).
 

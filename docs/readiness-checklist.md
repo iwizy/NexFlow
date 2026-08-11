@@ -9,6 +9,10 @@ machine-readable [candidate readiness record](../release/README.md). The record
 captures one review outcome without creating a new NexFlow manifest kind or
 changing manifest `specVersion`.
 
+The [`0.1` Candidate Scope](0.1-scope.md) defines the frozen baseline, optional
+and migration-only surfaces, deferred work, and current blockers. Readiness is
+evaluated against that boundary, not against every planned NexFlow feature.
+
 ## Candidate Goal
 
 A `0.1` candidate should show that NexFlow has a useful specification foundation:
@@ -19,6 +23,8 @@ A `0.1` candidate should show that NexFlow has a useful specification foundation
 - examples demonstrate realistic AI developer team configurations
 - governance, compatibility, and limitation boundaries are explicit
 - runtime and provider behavior remain planned unless implemented
+- every included, optional, migration-only, and deferred surface matches the
+  frozen candidate scope
 
 ## Release Decision
 
@@ -34,6 +40,7 @@ Before tagging a `0.1` candidate, maintainers should record:
 - compatibility impact
 - known limitations
 - unresolved blockers
+- candidate scope document and revision used for the review
 - reviewer identity, evaluation time, and decision rationale
 - whether `specVersion` remains `"0.1"`
 
@@ -53,6 +60,23 @@ The candidate record groups this detailed checklist into eight stable gates:
 | `compatibility-migrations` | Version impact, deprecated forms, migrations, and tested artifact pairing. |
 | `security-limitations` | Least privilege, human authority, dangerous operations, credentials, and explicit non-goals. |
 | `release-evidence` | Candidate commit, changelog, tag proposal, evidence locations, blockers, and final decision. |
+
+## Scope Freeze Checklist
+
+- [ ] The evaluated commit matches the [0.1 Candidate Scope](0.1-scope.md) or a
+  reviewed successor that explicitly reopened and refroze scope.
+- [ ] The repository contains exactly the 17 schema-backed manifest kinds in
+  the frozen baseline; supporting profiles and release records are not counted
+  as project manifest kinds.
+- [ ] RFC-backed features use the candidate treatment recorded in the scope
+  document without silently promoting a Draft or experimental surface.
+- [ ] Migration-only fields remain non-authoritative and link to replacement
+  guidance.
+- [ ] Deferred work is not required by examples, Core Profile conformance, or
+  candidate support claims.
+- [ ] No new CLI, runtime, provider, live integration, extension loading,
+  orchestration, deployment, or policy enforcement claim has entered `0.1`.
+- [ ] Every listed candidate blocker has factual closure evidence.
 
 Use only `not-evaluated`, `passed`, `failed`, `blocked`, or `not-applicable` for
 gate status. A passed gate requires at least one evidence item. Evidence may
@@ -197,6 +221,7 @@ publish a release.
 
 A `0.1` candidate should be blocked if any of the following are true:
 
+- the evaluated feature set exceeds or contradicts the frozen candidate scope
 - core docs contradict each other on manifest meaning
 - examples fail repository validation checks
 - schemas are missing for current core manifest kinds
@@ -204,6 +229,7 @@ A `0.1` candidate should be blocked if any of the following are true:
 - safety-critical permission, memory, context, or approval behavior is ambiguous
 - known breaking changes lack migration notes or RFC context
 - public docs expose private project process, personal data, credentials, or local machine state
+- no concrete private vulnerability reporting path is available
 
 ## Evidence to Capture
 
@@ -216,6 +242,7 @@ For each `0.1` candidate, maintainers should capture:
 - compatibility notes
 - known limitations
 - unresolved issues or RFCs that remain intentionally draft
+- frozen scope revision and closure evidence for every candidate blocker
 - reviewer identity and decision rationale
 
 Evidence should be factual and source-grounded. It should not invent implementation status, user adoption, runtime capabilities, or integration support.

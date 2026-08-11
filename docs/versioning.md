@@ -20,11 +20,28 @@ For public release readiness criteria across `0.1` through `1.0`, see the [Relea
 
 For the currently tested pairing of spec version, schemas, examples, validators, CLI, runtime, and extensions, see the [Compatibility Matrix](compatibility-matrix.md).
 
+For the exact feature boundary under candidate review, see the
+[0.1 Candidate Scope](0.1-scope.md).
+
 ## Manifest Versioning
 
 All manifests in one project SHOULD use the same `specVersion`.
 
 A future runtime MAY support mixed versions during migration, but it MUST make compatibility behavior explicit.
+
+## 0.1 Scope Freeze Version Decision
+
+Freezing the `0.1` candidate scope does not change manifest `specVersion`. The
+freeze selects the current 17-kind draft authoring and repository-validation
+boundary for candidate review; it does not add fields, stabilize runtime
+behavior, accept every draft RFC, or publish a release.
+
+Corrections that remain inside the frozen boundary may keep
+`specVersion: "0.1"`. Adding a manifest kind, adding a required top-level field,
+promoting an optional or experimental surface, changing authority or safety
+defaults, or relying on deferred behavior requires an explicit scope and
+version compatibility decision. Candidate evidence must then be regenerated
+for the new exact commit.
 
 ## Core Profile Version Decision
 

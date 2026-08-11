@@ -11,6 +11,15 @@ tag or release has been published, and manifest `specVersion` remains `"0.1"`.
 
 ### Added
 
+- Added a neutral Runtime Language Evaluation Matrix for TypeScript, Python,
+  Rust, and Go with hard gates, weighted criteria, identical validation-only
+  prototypes, evidence records, target measurements, and no language choice.
+- Froze the future `0.1` candidate scope with a 17-kind manifest baseline,
+  explicit treatment for RFC-0001 through RFC-0019, migration-only and deferred
+  surfaces, five remaining blockers, and scope-change rules.
+- Added a licensing and patent rationale that retains MIT for the `0.1`
+  specification phase, records the Apache-2.0 patent tradeoff, and defines
+  mandatory review triggers without changing the repository license.
 - Added draft CloudEvents 1.0.2 and OpenTelemetry EventRecord mapping profiles
   with canonical event names, field projections, severity normalization,
   trace-context separation, import authority, and transport and storage

@@ -63,6 +63,7 @@ The documentation is the canonical source for the specification. Schemas and exa
 | Process Area | Purpose |
 | --- | --- |
 | [Governance](governance.md) | Contribution, review, and decision rules. |
+| [Licensing And Patent Rationale](licensing-and-patent-rationale.md) | Records the current MIT decision, the Apache-2.0 patent tradeoff, and mandatory review triggers. |
 | [Versioning](versioning.md) | Spec versioning and migration policy. |
 | [Actor Model Migration](actor-model-migration.md) | Defines the staged, identity-preserving transition from legacy participant resolution. |
 | [Agent Identity Migration](agent-identity-migration.md) | Defines the transition from duplicated AgentSet behavior fields to compact stable AI identity. |
@@ -78,8 +79,10 @@ The documentation is the canonical source for the specification. Schemas and exa
 | [Compatibility](compatibility.md) | Compatibility expectations and breaking change guidance. |
 | [Compatibility Matrix](compatibility-matrix.md) | Current support across spec versions, schemas, examples, validators, CLI, runtime, and extensions. |
 | [Release Plan](release-plan.md) | Public readiness criteria from `0.1` draft through `1.0`. |
+| [0.1 Candidate Scope](0.1-scope.md) | Freezes the 17-kind baseline, RFC-backed feature treatment, deferred work, and remaining candidate blockers. |
 | [0.1 Readiness Checklist](readiness-checklist.md) | Candidate review criteria and machine-readable release evidence workflow for docs, schemas, examples, RFCs, compatibility, safety, and limitations. |
 | [Runtime Options](runtime-options.md) | Runtime language evaluation criteria without choosing an implementation. |
+| [Runtime Language Evaluation Matrix](language-evaluation-matrix.md) | Defines hard gates, weighted criteria, common prototypes, evidence records, and a neutral decision process for TypeScript, Python, Rust, and Go. |
 | [Integrations](integrations.md) | Integration modeling rules and safety expectations. |
 | [Roadmap](roadmap.md) | Specification, review, schema, CLI, runtime, and ecosystem milestones. |
 | [FAQ](faq.md) | Short answers to common project questions. |

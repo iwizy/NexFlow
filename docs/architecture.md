@@ -102,6 +102,11 @@ The runtime is future work. A conforming runtime is expected to:
 
 The current repository does not execute workflows.
 
+The future implementation language must be selected through the
+[Runtime Language Evaluation Matrix](language-evaluation-matrix.md) and a
+reviewed Runtime Architecture Decision. Existing JavaScript maintenance scripts
+do not select TypeScript, Python, Rust, Go, or any other runtime language.
+
 ## Provider Boundary
 
 Providers are abstract. The specification may describe desired model traits, routing preferences, and constraints, but it must not require any specific vendor.

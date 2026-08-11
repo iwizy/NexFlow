@@ -121,6 +121,9 @@ The `0.4` line should prepare the project for a runtime architecture decision wi
 Release readiness:
 
 - runtime evaluation criteria are complete
+- TypeScript, Python, Rust, and Go have comparable hard-gate results, weighted
+  scorecards, target measurements, and pinned evidence from one specification
+  revision
 - reference CLI scope is accepted or clearly bounded
 - extension loading and sandbox expectations are documented
 - security boundaries for network, filesystem, credentials, and destructive actions are explicit

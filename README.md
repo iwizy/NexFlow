@@ -267,7 +267,8 @@ The current priorities are:
 3. Add positive fixtures, expand maintained negative fixtures, stabilize
    diagnostics, and broaden semantic checks.
 4. Complete the **Runtime Architecture Decision** before selecting an
-   implementation language or starting runtime work.
+   implementation language or starting runtime work, using the
+   [Runtime Language Evaluation Matrix](docs/language-evaluation-matrix.md).
 5. Build a validation-focused reference CLI for `init`, `validate`, `inspect`,
    and `graph`; it must not orchestrate work.
 6. Explore a runtime prototype only after its permission, approval, credential,

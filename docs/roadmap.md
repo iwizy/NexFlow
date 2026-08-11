@@ -166,7 +166,8 @@ Relevant docs: [Validation](validation.md), [Conformance](conformance.md),
 
 ## Milestone 4: Runtime Architecture Decision
 
-- Compare implementation languages.
+- Compare TypeScript, Python, Rust, and Go through identical validation-only
+  prototypes, hard gates, weighted criteria, and reviewable evidence.
 - Define reference CLI scope.
 - Review RFC-0011 validation-only reference CLI command boundaries.
 - Define security and extension loading boundaries.
@@ -174,7 +175,9 @@ Relevant docs: [Validation](validation.md), [Conformance](conformance.md),
 
 This milestone must happen before runtime implementation begins.
 
-Relevant docs: [Architecture](architecture.md), [Runtime Options](runtime-options.md), [Provider Abstraction](provider-abstraction.md), [Security Model](security-model.md).
+Relevant docs: [Architecture](architecture.md), [Runtime Options](runtime-options.md),
+[Runtime Language Evaluation Matrix](language-evaluation-matrix.md),
+[Provider Abstraction](provider-abstraction.md), [Security Model](security-model.md).
 
 ## Milestone 5: Reference CLI
 

@@ -16,7 +16,7 @@ decision:
 checks:
   documentation:
     status: not-evaluated
-    summary: Review documentation completeness and consistency.
+    summary: Review documentation completeness, consistency, and frozen scope alignment.
     evidence: []
   schemas:
     status: not-evaluated
@@ -32,7 +32,7 @@ checks:
     evidence: []
   rfc-governance:
     status: not-evaluated
-    summary: Review RFC states, decisions, and governance requirements.
+    summary: Review RFC states, candidate treatment, decisions, and governance requirements.
     evidence: []
   compatibility-migrations:
     status: not-evaluated
@@ -44,10 +44,11 @@ checks:
     evidence: []
   release-evidence:
     status: not-evaluated
-    summary: Review commit, changelog, tag proposal, and evidence traceability.
+    summary: Review frozen scope revision, blocker closure, commit, changelog, tag proposal, and evidence traceability.
     evidence: []
 
 limitations:
   - No runtime, provider integration, orchestration engine, or policy enforcement is implemented.
+  - Experimental extension profiles and deferred tooling are outside the core candidate baseline.
 
 blockers: []

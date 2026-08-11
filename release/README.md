@@ -12,6 +12,8 @@ announcements, conformance certificates, or runtime guarantees.
   is the authoring template for a candidate review.
 - [0.1 Readiness Checklist](../docs/readiness-checklist.md) defines the review
   criteria and evidence expectations.
+- [0.1 Candidate Scope](../docs/0.1-scope.md) defines the frozen baseline,
+  feature treatment, deferred work, and blockers used by the review.
 
 The template starts in `not-evaluated` state. Before making a release decision,
 maintainers should replace every placeholder, attach factual evidence, and run:
@@ -36,6 +38,9 @@ verify external links, approve a tag, publish a release, or prove runtime safety
 Every outcome other than `not-evaluated` requires an exact candidate commit,
 evaluation timestamp, decision maker, and rationale so the decision remains
 auditable.
+
+A ready decision must also identify the scope document revision used for the
+review and include factual closure evidence for every blocker listed there.
 
 The record format uses `recordVersion`, independently from manifest
 `specVersion`, conformance `claimVersion`, and any eventual release tag.

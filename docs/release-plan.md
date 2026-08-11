@@ -40,6 +40,11 @@ the draft is ready for a candidate tag. Record the review in the standalone
 so the commit, evidence, blockers, limitations, and final decision can be
 validated without treating the record as a NexFlow project manifest.
 
+The [0.1 Candidate Scope](0.1-scope.md) freezes the 17-kind manifest baseline,
+RFC-backed feature treatment, optional and migration-only surfaces, deferred
+work, and blockers for that review. A scope expansion requires an explicit
+review and a new readiness evaluation.
+
 Release readiness:
 
 - core domain vocabulary is documented
@@ -50,6 +55,7 @@ Release readiness:
 - security, approval, context, memory, handoff, event, provider, extension, and runtime option docs exist
 - repository checks can parse schemas and examples reproducibly
 - candidate evidence can be recorded against eight explicit release gates
+- candidate treatment is explicit for every current manifest kind and RFC
 
 `0.1` remains a draft. It can add clarifications, examples, and compatible draft vocabulary without bumping the manifest `specVersion`.
 

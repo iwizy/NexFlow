@@ -8,7 +8,8 @@ already exist.
 
 For compatibility rules and breaking change guidance, see
 [Compatibility](compatibility.md). For support claim vocabulary, see
-[Conformance](conformance.md).
+[Conformance](conformance.md). For the feature boundary used by the first
+candidate review, see [0.1 Candidate Scope](0.1-scope.md).
 
 ## How To Read This Matrix
 
@@ -31,6 +32,7 @@ enforced.
 
 | Surface | Current contract | Status | Evidence | Explicit limitation |
 | --- | --- | --- | --- | --- |
+| `0.1` candidate scope | Frozen 17-kind baseline with explicit RFC treatment, optional surfaces, migration-only forms, and deferred work | Specified | `docs/0.1-scope.md` | Scope freeze only; five release blockers remain and no candidate decision has been recorded. |
 | Specification | `specVersion: "0.1"` draft | Specified | Core docs, manifest reference, RFCs | Pre-`1.0`; fields and semantics may change with migration guidance. |
 | JSON Schemas | `0.1` across 17 manifest kinds plus common definitions | Implemented | `schemas/*.schema.json` | Structural validation only; schemas do not prove cross-manifest meaning or safety. |
 | Reference examples | 7 project sets, 113 schema-backed manifests, all using `0.1` | Implemented | `examples/` | Authoring and validation fixtures, not executable teams or runtime demonstrations. |

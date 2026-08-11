@@ -26,6 +26,10 @@ RFCs are design proposals for meaningful changes to NexFlow.
 | [RFC-0018](RFC-0018-mcp-extension-profile.md) | MCP Extension Profile | Draft; machine-readable profile implemented |
 | [RFC-0019](RFC-0019-mcp-a2a-boundaries.md) | MCP And A2A Boundaries | Draft; boundary map and A2A profile implemented |
 
+The [0.1 Candidate Scope](../docs/0.1-scope.md) records how each RFC is treated
+by the frozen candidate boundary. That treatment does not change an RFC's stage
+or imply that an implemented slice accepts the entire RFC.
+
 ## Cross-RFC Reviews
 
 - [Foundational Model Cross-RFC Review](reviews/2026-07-foundational-model-review.md)

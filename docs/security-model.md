@@ -98,6 +98,21 @@ memory scopes, higher autonomy, new high-risk capabilities, or less restrictive
 approval gates, require a complete approved active definition. Missing or
 ambiguous active selection must fail closed.
 
+### Extension Loading Boundaries
+
+Extension declarations and maintained profiles are data, not trusted executable
+code. Future runtimes must separate project declaration discovery from
+implementation discovery, resolve implementations only from explicit
+runtime-owned sources, verify immutable artifact identity, reject ambiguity,
+and isolate loaded code from ambient filesystem, network, process, credential,
+context, memory, and provider access.
+
+Installation, enablement, loading, and activation do not grant authority. Every
+extension operation must still satisfy capability, permission, approval,
+autonomy, context, memory, network, credential, and human-override policy.
+Unsupported behavior must remain inert and fail closed. See
+[Extension Loading Boundary](extension-loading-boundary.md).
+
 ### Human Override
 
 Humans must be able to stop or override future runtime activity through an
@@ -130,6 +145,8 @@ remaining runtime questions.
 - allowing agents, automations, or services to act as human override authorities
 - silent network access
 - treating context, provider, extension, DNS, redirect, or proxy metadata as an implicit network grant
+- discovering executable extensions through ambient paths or installing them because a namespace is declared
+- treating an extension signature, installation, enablement, or activation as an action grant
 - following redirects or resolved private addresses without re-evaluating policy
 - automatic deployment
 - destructive actions without approval
@@ -200,6 +217,7 @@ A conforming runtime should:
 - log sensitive events
 - reject unsupported manifest versions
 - clearly report unsupported extension behavior
+- resolve extension implementations from explicit sources, verify immutable artifacts, isolate loaded code, and authorize every operation independently
 - deny outbound requests that lack a matching structured network policy rule
 - re-evaluate DNS results and redirects against private-network, loopback, scheme, port, and destination constraints
 - redact credentials, headers, query data, and payloads from network audit records

@@ -218,6 +218,14 @@ Extensions MUST declare a namespace and lifecycle state. A runtime that does not
 
 [RFC-0006](../rfcs/RFC-0006-extension-namespaces.md) proposes namespace ownership, lifecycle transition, registry, and compatibility expectations for extensions.
 
+The [Extension Loading Boundary](extension-loading-boundary.md) separates
+declaration discovery, implementation discovery, exact resolution, verification,
+enablement, loading, activation, and per-operation authorization. Changing
+ambient discovery defaults, implementation precedence, integrity requirements,
+host interfaces, isolation, partial-support behavior, lifecycle rejection, or
+authorization order may break `NF-EXTENSION` and `NF-RUNTIME` consumers without
+changing the `ExtensionSet` schema.
+
 ## MCP And A2A Compatibility
 
 The `io.nexflow.mcp` and `io.nexflow.a2a` profiles version their policy mapping
@@ -298,6 +306,7 @@ Examples:
 | Change reference CLI command names, exit codes, diagnostic codes, or output formats | May affect `NF-CLI`, CI workflows, editor integrations, and developer tooling compatibility. |
 | Add semantic cross-reference rule | May affect `NF-SEMANTIC` validators. |
 | Change extension namespace lifecycle | May affect `NF-EXTENSION` compatibility. |
+| Change extension discovery, implementation resolution, integrity, isolation, activation, or unsupported-behavior rules | May affect `NF-EXTENSION`, `NF-RUNTIME`, supply-chain, authority, audit, and safety compatibility. |
 | Change the MCP profile surface class, allow-list, approval, network, credential, failure, or protocol-claim boundary | May affect `NF-SCHEMA`, `NF-SEMANTIC`, `NF-EXTENSION`, `NF-RUNTIME`, integration safety, privacy, and audit compatibility. |
 | Change the A2A profile identity, task, artifact, permission, callback, credential, audit, or failure boundary | May affect `NF-SEMANTIC`, `NF-EXTENSION`, `NF-RUNTIME`, identity safety, provenance, privacy, and audit compatibility. |
 | Change active agent definition components or autonomy | May affect `NF-SEMANTIC`, `NF-RUNTIME`, safety, and audit compatibility. |

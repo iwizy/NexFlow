@@ -4,6 +4,11 @@ Extensions allow NexFlow to grow without forcing every integration into the core
 
 Related RFC: [RFC-0006: Extension Namespaces](../rfcs/RFC-0006-extension-namespaces.md).
 
+Future executable discovery and activation must follow the
+[Extension Loading Boundary](extension-loading-boundary.md). An extension
+declaration, maintained profile, installed package, or successful validation is
+not evidence that executable behavior is trusted, loaded, or authorized.
+
 The maintained machine-readable profiles are the
 [MCP Extension Draft](../extensions/mcp/README.md), proposed by
 [RFC-0018](../rfcs/RFC-0018-mcp-extension-profile.md), and the
@@ -92,3 +97,15 @@ Custom extensions should include a public or internal reference document when po
 A maintained profile defines a policy mapping and validation evidence. It does
 not load an integration, install software, negotiate an external protocol,
 obtain credentials, or establish runtime conformance.
+
+## Future Loading Boundary
+
+Project declaration discovery and implementation discovery are separate.
+Future runtimes must resolve implementations only from explicit runtime-owned
+sources, verify one immutable implementation, fail closed for unsupported or
+ambiguous behavior, isolate loaded code, and re-evaluate authorization for each
+operation. Loading never grants capabilities, permissions, approvals, network,
+credentials, context, memory, autonomy, or local identity.
+
+See [Extension Loading Boundary](extension-loading-boundary.md) for the complete
+runtime-neutral contract. No extension loader is implemented.

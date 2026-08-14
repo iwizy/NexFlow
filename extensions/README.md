@@ -12,6 +12,10 @@ Profiles are specification assets, not NexFlow manifests. They are not
 discovered as part of a project assembly and do not load code, install
 integrations, obtain credentials, or grant runtime authority.
 
+The [Extension Loading Boundary](../docs/extension-loading-boundary.md) defines
+how a future runtime must keep these profiles separate from executable package
+discovery, verification, enablement, loading, and per-operation authorization.
+
 Each maintained profile should include:
 
 - a stable namespace

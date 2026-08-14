@@ -60,7 +60,7 @@ enforced.
 | Runtime language evaluation | Hard gates, weighted criteria, common prototype, and evidence record for TypeScript, Python, Rust, and Go | Specified | `docs/language-evaluation-matrix.md`, `docs/runtime-options.md` | No prototypes, scores, language selection, package layout, or Runtime Architecture Decision exists. |
 | Reference CLI | Validation-only scope proposed | Planned | RFC-0011 | No `nexflow` executable or `NF-CLI` implementation exists. |
 | Runtime | Provider-neutral requirements documented | Planned | Architecture, runtime options, roadmap | No orchestration, enforcement, provider calling, task execution, or `NF-RUNTIME` implementation exists. |
-| Extensions | Core declaration schema, namespace/lifecycle rules, and maintained experimental MCP and A2A profiles | Partial | `extensions.schema.json`, `extensions/mcp/`, `extensions/a2a/`, extension docs, examples | No registry, loader, live integration, protocol implementation, or plugin execution exists. |
+| Extensions | Core declaration schema, namespace/lifecycle rules, future loading boundary, and maintained experimental MCP and A2A profiles | Partial | `extensions.schema.json`, `docs/extension-loading-boundary.md`, `extensions/mcp/`, `extensions/a2a/`, extension docs, examples | Loading is specified only as a safety boundary; no registry, loader, live integration, protocol implementation, or plugin execution exists. |
 
 ## Version Compatibility Matrix
 
@@ -465,6 +465,12 @@ Parsing manifests is not enough for `NF-RUNTIME` conformance.
 
 The repository currently implements structural validation for `ExtensionSet` and
 documents draft extension namespace and lifecycle rules.
+
+It also specifies a future
+[Extension Loading Boundary](extension-loading-boundary.md) that separates
+project declarations from executable discovery, exact implementation
+resolution, verification, enablement, isolation, activation, and
+per-operation authorization. This is documentation, not loader support.
 
 Current extension support includes:
 

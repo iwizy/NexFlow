@@ -34,6 +34,12 @@ Extensions give the ecosystem room to grow, but they introduce risks:
 
 The extension namespace model should make extension ownership, lifecycle, and safety implications explicit before a runtime or registry exists.
 
+The runtime-neutral
+[Extension Loading Boundary](../docs/extension-loading-boundary.md) builds on
+this RFC by separating declaration discovery from implementation discovery,
+verification, enablement, isolation, activation, and per-operation
+authorization. It does not implement a loader or change this RFC's Draft state.
+
 ## Proposal
 
 NexFlow should treat extension namespaces as stable identifiers for non-core behavior.

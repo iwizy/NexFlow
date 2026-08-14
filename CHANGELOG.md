@@ -11,6 +11,11 @@ tag or release has been published, and manifest `specVersion` remains `"0.1"`.
 
 ### Added
 
+- Defined a runtime-neutral extension loading boundary with separate project
+  and implementation discovery, exact immutable resolution, fail-closed
+  unsupported handling, host isolation, per-operation authorization, update
+  controls, audit evidence, and conformance requirements without implementing a
+  loader or registry.
 - Added a neutral Runtime Language Evaluation Matrix for TypeScript, Python,
   Rust, and Go with hard gates, weighted criteria, identical validation-only
   prototypes, evidence records, target measurements, and no language choice.

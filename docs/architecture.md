@@ -119,6 +119,14 @@ action, permission, connection, credential, or tool.
 
 Integrations are described through extension manifests and context sources. Integrations must not silently expand permissions. Access must be represented through capabilities, permissions, and approval gates.
 
+Project declaration discovery is separate from executable implementation
+discovery. A future runtime must use an explicit runtime-owned implementation
+catalog, select and verify one immutable artifact, fail closed for unsupported
+or ambiguous behavior, isolate loaded code, and authorize each operation
+independently. A namespace, profile, installed package, or successful load does
+not grant authority. See
+[Extension Loading Boundary](extension-loading-boundary.md).
+
 MCP and A2A remain externally governed protocol layers. MCP resources, prompts,
 and tools do not become NexFlow context authority, prompt authority, or action
 grants automatically. A2A Agent Cards, agents, skills, messages, tasks, and

@@ -247,6 +247,13 @@ A conforming extension MUST:
 - document permission implications
 - avoid redefining core semantics incompatibly
 
+Executable extension support additionally requires the runtime to satisfy the
+[Extension Loading Boundary](extension-loading-boundary.md): explicit
+implementation sources, immutable resolution, integrity and compatibility
+verification, fail-closed unsupported handling, isolation, and independent
+authorization for each operation. Recognizing a namespace or loading a package
+is not sufficient evidence.
+
 An `NF-EXTENSION` claim for `io.nexflow.mcp` should also identify the supported
 MCP profile version and external protocol versions in evidence or limitations.
 Listing the namespace alone does not claim transport, discovery, credential,

@@ -177,6 +177,7 @@ This milestone must happen before runtime implementation begins.
 
 Relevant docs: [Architecture](architecture.md), [Runtime Options](runtime-options.md),
 [Runtime Language Evaluation Matrix](language-evaluation-matrix.md),
+[Extension Loading Boundary](extension-loading-boundary.md),
 [Provider Abstraction](provider-abstraction.md), [Security Model](security-model.md).
 
 ## Milestone 5: Reference CLI

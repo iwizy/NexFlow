@@ -113,3 +113,8 @@ That RFC should choose:
 It should also publish the completed evidence records, hard-gate results,
 weighted scorecards, target matrix, reviewer rationale, and any reason the
 decision differs from the numerical ranking.
+
+The extension loading model must satisfy the runtime-neutral
+[Extension Loading Boundary](extension-loading-boundary.md). The architecture
+decision still needs to choose the package, catalog, lock, integrity, host
+interface, isolation, update, rollback, diagnostic, and audit mechanisms.

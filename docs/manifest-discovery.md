@@ -183,7 +183,10 @@ documents remains future work and must not be inferred by concatenation.
 | `NF-DISCOVERY-UNSUPPORTED-HINT` | A Project source-hint key is not in the implemented registry. |
 
 These diagnostics are repository evidence for the draft model. Their wording
-is not yet a stable reference CLI contract.
+is not yet a stable reference CLI contract. The
+[Diagnostic Code Catalog](diagnostic-code-catalog.md) classifies them as
+Implemented draft and centralizes severity, message, remediation, redaction,
+and compatibility rules.
 
 ## Validation
 

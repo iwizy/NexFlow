@@ -214,8 +214,10 @@ Candidate diagnostics include:
 - `NF-EFFECTIVE-CONFIG-APPROVAL-PENDING`
 - `NF-EFFECTIVE-CONFIG-RUNTIME-UNSUPPORTED`
 
-These names remain draft until a diagnostic catalog is accepted. Tools should
-report precise resource and field locations without exposing sensitive content.
+The [Diagnostic Code Catalog](diagnostic-code-catalog.md) classifies these names
+as Candidate. They remain draft and are not emitted by a complete effective
+configuration resolver. Tools should report precise resource and field
+locations without exposing sensitive content.
 
 ## Serialization Boundary
 

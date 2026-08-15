@@ -27,10 +27,17 @@ See the [Compatibility Matrix](compatibility-matrix.md) for the repository's cur
 | [Validation](validation.md) | Explains each maintained check and the limits of its result. |
 | [Fixtures Guide](../fixtures/README.md) | Catalogs focused positive and negative inputs used as validation evidence. |
 | [Examples Guide](../examples/README.md) | Documents complete reference manifest sets covered by repository validation. |
+| [Diagnostic Code Catalog](diagnostic-code-catalog.md) | Distinguishes implemented draft, candidate, and reserved diagnostics plus severity and remediation semantics. |
 | [Compatibility Matrix](compatibility-matrix.md) | Records the repository's current support status and gaps. |
 
 Passing examples or focused fixtures can support a scoped claim, but do not by
 themselves establish semantic, CLI, runtime, or extension conformance.
+
+A tool claiming machine-readable diagnostic support should identify the exact
+[Diagnostic Code Catalog](diagnostic-code-catalog.md) revision, implemented
+code statuses and families, structured output version, severity policy, and
+known omissions. Recognizing one code from a family is not support for the
+whole family.
 
 ## Goals
 

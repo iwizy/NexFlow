@@ -8,9 +8,15 @@ coverage, and fail-closed resolution expectations for the current
 `specVersion: "0.1"` draft. It is not a manifest, schema, generated registry,
 diagnostic catalog, CLI contract, or runtime implementation.
 
+The separate [Diagnostic Code Catalog](diagnostic-code-catalog.md) owns shared
+families and candidate `NF-REF-*` meanings. This inventory remains authoritative
+for which fields are references, their target namespaces, implementation
+priority, and current semantic coverage.
+
 Related documents:
 
 - [Validation](validation.md)
+- [Diagnostic Code Catalog](diagnostic-code-catalog.md)
 - [Schema Design Notes](schema-design-notes.md)
 - [Typed References](typed-references.md)
 - [Approval Gate Targets](approval-gate-targets.md)

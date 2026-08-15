@@ -273,6 +273,12 @@ Example machine-readable diagnostic:
 
 Diagnostic codes should be stable once the CLI is public enough for CI usage.
 
+The [Diagnostic Code Catalog](../docs/diagnostic-code-catalog.md) records the
+current draft code inventory, status, severity, message, remediation, redaction,
+and compatibility rules. A future CLI must identify which catalog revision and
+code statuses it implements rather than treating all Candidate or Reserved
+families as supported.
+
 [RFC-0015](RFC-0015-typed-references.md) proposes the typed-reference resolution model and candidate stable `NF-REF-*` diagnostics that a future CLI should expose consistently.
 
 ## Output Modes

@@ -190,7 +190,9 @@ extension must be blocked instead of degraded silently.
 
 Diagnostics should distinguish at least namespace, version, implementation,
 integrity, lifecycle, policy, authority, isolation, and ambiguity failures.
-This document defines categories, not stable CLI diagnostic codes.
+This document defines categories, not stable CLI diagnostic codes. The
+[Diagnostic Code Catalog](diagnostic-code-catalog.md) reserves `NF-EXT` for
+future reviewed extension diagnostics.
 
 ## Authorization Is Evaluated After Loading
 

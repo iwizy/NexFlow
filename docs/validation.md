@@ -11,6 +11,7 @@ Related RFCs:
 
 Related design notes:
 
+- [Diagnostic Code Catalog](diagnostic-code-catalog.md)
 - [Schema Design Notes](schema-design-notes.md)
 - [Semantic Reference Inventory](semantic-reference-inventory.md)
 - [Typed References](typed-references.md)
@@ -26,6 +27,7 @@ Related design notes:
 | [Schema Guide](../schemas/README.md) | Structural contract inventory, design rules, and schema maintenance guidance. |
 | [Fixtures Guide](../fixtures/README.md) | Focused inputs with explicit pass or rejection expectations. |
 | [Examples Guide](../examples/README.md) | Complete reference manifest sets expected to pass maintained checks. |
+| [Diagnostic Code Catalog](diagnostic-code-catalog.md) | Draft code families, severities, messages, remediation, and implementation status. |
 | [Conformance](conformance.md) | Requirements for claiming schema, semantic, CLI, runtime, or extension support. |
 | [Compatibility Matrix](compatibility-matrix.md) | Evidence-backed status and explicit implementation gaps. |
 
@@ -118,6 +120,12 @@ npm run validate
 The command requires Node.js 20 or newer. It safely parses each YAML file under `examples/`, selects a schema from the manifest `kind`, compiles the draft 2020-12 schemas, and reports syntax or schema diagnostics with file and instance paths. `package-lock.json` pins AJV, YAML parsing, and format validation dependencies.
 
 This Node.js command is repository maintenance tooling, not a reference CLI or runtime implementation. It does not choose a future NexFlow runtime language and does not perform semantic validation.
+
+Its broad `NF-SYNTAX` and `NF-SCHEMA` codes are classified as Implemented draft
+in the [Diagnostic Code Catalog](diagnostic-code-catalog.md). The catalog also
+records implemented discovery and Core Profile codes, candidate refinements,
+default severity, suggested messages, and safe remediation. No current command
+implements the complete catalog or a stable machine-readable output contract.
 
 Verify the intentionally invalid schema fixtures:
 

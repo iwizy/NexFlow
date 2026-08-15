@@ -140,6 +140,8 @@ Relevant docs: [Security Model](security-model.md), [Capability Model](capabilit
 - Improve cross-manifest consistency.
 - Document validation workflow and current validation limits.
 - Review RFC-0005 validation strategy for syntax, schema, semantic, diagnostic, and runtime preflight boundaries.
+- Maintain the diagnostic code catalog as draft codes gain fixtures,
+  structured details, implementation evidence, and compatibility status.
 - Maintain cataloged negative schema fixtures and add positive schema fixtures.
 - Review the initial ActorSet boundary cases before migrating another example.
 - Review compact AgentSet and human override boundary cases before broader migration.
@@ -159,6 +161,7 @@ Relevant docs: [Security Model](security-model.md), [Capability Model](capabilit
   templates as validation behavior becomes more precise.
 
 Relevant docs: [Validation](validation.md), [Conformance](conformance.md),
+[Diagnostic Code Catalog](diagnostic-code-catalog.md),
 [Conformance Claims](conformance-claims.md),
 [Approval Gate Targets](approval-gate-targets.md),
 [Compatibility](compatibility.md), [Schema Guide](../schemas/README.md),

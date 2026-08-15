@@ -346,6 +346,20 @@ manifest compatibility.
 For the current draft, Agent Assembly remains documentation for
 `specVersion: "0.1"` and is not a stable machine-readable or runtime contract.
 
+## Diagnostic Output Versioning
+
+The [Diagnostic Code Catalog](diagnostic-code-catalog.md) records draft output
+vocabulary for validators and future CLIs. Diagnostic codes are tool output,
+not authored manifest fields, so adding or clarifying a draft code does not by
+itself require a manifest `specVersion` change.
+
+No diagnostic code is Stable yet. A future stable catalog or CLI contract must
+version code meaning, default severity, required structured details, and output
+format separately from manifest `specVersion`. Renaming, merging, splitting,
+removing, or materially reclassifying a stable code requires deprecation and
+migration guidance. If the diagnostic changes because authored manifest
+semantics changed, the underlying specification version must also be reviewed.
+
 ## Model Profile Versioning
 
 Model profiles describe provider-neutral model selection expectations. A model profile can be behavior-changing even when the agent identity and manifest `specVersion` stay the same.

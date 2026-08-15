@@ -62,6 +62,13 @@ For the current supported combinations and explicit implementation gaps, see the
 - changing required fields
 - changing event payload structure
 
+The [Diagnostic Code Catalog](diagnostic-code-catalog.md) records current code
+status and compatibility rules. No code is Stable yet. Once stable, changing a
+code's condition, default severity, required structured details, or remediation
+safety may break validator, editor, CI, and `NF-CLI` consumers even when
+manifest schemas remain unchanged. Message-only clarification is normally
+compatible when machine meaning does not change.
+
 ## Actor Model Compatibility
 
 `ActorSet` is optional in the current `0.1` draft. Its presence explicitly

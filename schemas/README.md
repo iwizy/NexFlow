@@ -16,6 +16,7 @@ See [Schema Design Notes](../docs/schema-design-notes.md) for the design rationa
 | Resource | Use it for |
 | --- | --- |
 | [Validation](../docs/validation.md) | Commands, validation layers, diagnostics, and known limits. |
+| [Diagnostic Code Catalog](../docs/diagnostic-code-catalog.md) | Draft diagnostic families, severities, suggested messages, remediation, and code status. |
 | [Fixtures Guide](../fixtures/README.md) | Focused positive and negative validation evidence. |
 | [Examples Guide](../examples/README.md) | Complete reference manifest sets that should validate successfully. |
 | [Conformance](../docs/conformance.md) | Requirements for evidence-backed schema and semantic support claims. |

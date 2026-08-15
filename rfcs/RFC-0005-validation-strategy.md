@@ -156,7 +156,12 @@ Warnings should be visible and machine-readable, but projects may decide whether
 
 Future validators should use stable diagnostic code families.
 
-Proposed families:
+The [Diagnostic Code Catalog](../docs/diagnostic-code-catalog.md) now
+centralizes the draft family registry, implemented and candidate codes,
+severity, suggested messages, remediation, redaction, and compatibility rules.
+No code is Stable yet, and the catalog does not imply a public CLI.
+
+Initial families proposed by this RFC:
 
 | Prefix | Purpose |
 | --- | --- |
@@ -169,7 +174,9 @@ Proposed families:
 | `NF-EXT` | Extension namespace, lifecycle, capability, or compatibility issues. |
 | `NF-AUDIT` | Missing or incomplete audit metadata expectations. |
 
-This RFC does not require final numeric codes. A future RFC or CLI design may define exact codes.
+This RFC does not require numeric codes. The catalog defines exact draft
+textual codes and statuses; a future accepted validator or CLI contract must
+decide which become Stable.
 
 [RFC-0015](RFC-0015-typed-references.md) proposes exact `NF-REF-*` codes for malformed, unresolved, ambiguous, duplicate, wrong-kind, and invalid-scope resource references.
 
@@ -198,7 +205,7 @@ Example:
   "diagnostics": [
     {
       "severity": "error",
-      "code": "NF-SCHEMA-INVALID-AUTONOMY",
+      "code": "NF-SCHEMA-ENUM",
       "file": "examples/minimal-team/agents.yaml",
       "kind": "AgentSet",
       "path": "$.agents[0].autonomyLevel",

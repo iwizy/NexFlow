@@ -11,6 +11,12 @@ tag or release has been published, and manifest `specVersion` remains `"0.1"`.
 
 ### Added
 
+- Added a central draft diagnostic code catalog with status and family
+  registries, severity semantics, suggested messages, safe remediation,
+  deterministic output and redaction guidance, implemented discovery and Core
+  Profile codes, candidate schema, reference, bundle, and effective
+  configuration codes, and explicit reserved areas without claiming a stable
+  CLI contract.
 - Defined a runtime-neutral extension loading boundary with separate project
   and implementation discovery, exact immutable resolution, fail-closed
   unsupported handling, host isolation, per-operation authorization, update

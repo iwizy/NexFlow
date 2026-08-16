@@ -4,6 +4,7 @@ NexFlow is provider neutral.
 
 Related documents:
 
+- [Provider Adapter Boundary](provider-adapter-boundary.md)
 - [Provider Features](provider-features.md)
 - [Provider Constraints](provider-constraints.md)
 - [RFC-0010: Provider Selection](../rfcs/RFC-0010-provider-selection.md)
@@ -139,3 +140,9 @@ A future runtime should make provider selection explainable:
 - memory scopes used
 
 See [RFC-0010](../rfcs/RFC-0010-provider-selection.md) for the draft provider selection decision path, fallback expectations, and audit guidance.
+
+Selection and invocation are separate. The runtime host selects and authorizes
+one target; a future adapter may only translate that target, use mediated
+credential and network handles, and return normalized output or failure.
+Adapters must not choose hidden provider or model fallback. See
+[Provider Adapter Boundary](provider-adapter-boundary.md).

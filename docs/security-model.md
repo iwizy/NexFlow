@@ -63,6 +63,12 @@ Provider preferences and provider declarations do not grant access. Future runti
 
 [RFC-0010](../rfcs/RFC-0010-provider-selection.md) proposes draft provider selection semantics for preferences, constraints, fallback, explainability, audit, and future runtime boundaries.
 
+Selection does not authorize invocation. The future
+[Provider Adapter Boundary](provider-adapter-boundary.md) keeps provider-specific
+translation subordinate to host policy, requires mediated credential and
+network handles, forbids adapter-local fallback and direct tool execution, and
+requires normalized redacted audit evidence.
+
 ### Context Boundaries
 
 Context sources should be classified conservatively and should not be expanded through provider defaults, extensions, cached data, or MCP tools. Web context should define freshness and domain boundaries where possible.
@@ -218,6 +224,7 @@ A conforming runtime should:
 - reject unsupported manifest versions
 - clearly report unsupported extension behavior
 - resolve extension implementations from explicit sources, verify immutable artifacts, isolate loaded code, and authorize every operation independently
+- keep provider selection host-owned, constrain adapters to one authorized target, and route fallback through a fresh policy decision
 - deny outbound requests that lack a matching structured network policy rule
 - re-evaluate DNS results and redirects against private-network, loopback, scheme, port, and destination constraints
 - redact credentials, headers, query data, and payloads from network audit records

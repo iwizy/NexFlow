@@ -174,6 +174,8 @@ Relevant docs: [Validation](validation.md), [Conformance](conformance.md),
 - Define reference CLI scope.
 - Review RFC-0011 validation-only reference CLI command boundaries.
 - Define security and extension loading boundaries.
+- Define the provider adapter boundary between host-owned selection and
+  provider-specific invocation.
 - Decide packaging and conformance test strategy.
 
 This milestone must happen before runtime implementation begins.
@@ -181,6 +183,7 @@ This milestone must happen before runtime implementation begins.
 Relevant docs: [Architecture](architecture.md), [Runtime Options](runtime-options.md),
 [Runtime Language Evaluation Matrix](language-evaluation-matrix.md),
 [Extension Loading Boundary](extension-loading-boundary.md),
+[Provider Adapter Boundary](provider-adapter-boundary.md),
 [Provider Abstraction](provider-abstraction.md), [Security Model](security-model.md).
 
 ## Milestone 5: Reference CLI

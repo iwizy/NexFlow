@@ -115,6 +115,14 @@ Provider features occupy a separate namespace from project action capabilities.
 Feature support may narrow provider selection but cannot grant an actor an
 action, permission, connection, credential, or tool.
 
+Provider selection and provider invocation are separate runtime stages. The
+host owns selection, constraints, permission, approval, context, memory,
+network, credential, fallback, and human-override decisions. A future provider
+adapter receives one authorized target, translates it without semantic
+broadening, and returns a normalized result or failure. It cannot select hidden
+fallback or execute model-requested tools. See
+[Provider Adapter Boundary](provider-adapter-boundary.md).
+
 ## Integration Boundary
 
 Integrations are described through extension manifests and context sources. Integrations must not silently expand permissions. Access must be represented through capabilities, permissions, and approval gates.

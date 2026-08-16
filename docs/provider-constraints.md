@@ -10,6 +10,7 @@ tool access, permission, or runtime authority.
 Related documents:
 
 - [Provider Abstraction](provider-abstraction.md)
+- [Provider Adapter Boundary](provider-adapter-boundary.md)
 - [Provider Features](provider-features.md)
 - [Model Profiles](model-profiles.md)
 - [Network Access Policy](network-access-policy.md)
@@ -109,6 +110,12 @@ A future selector should:
 7. Evaluate permissions, context, memory, network, credentials, and approvals
    independently.
 8. Record the constraints used and the reason for selection or rejection.
+
+After selection, the future
+[Provider Adapter Boundary](provider-adapter-boundary.md) prevents an adapter
+from replacing the target, weakening constraints through provider defaults, or
+performing fallback locally. A fallback must return to the selector and repeat
+policy, approval, context, memory, network, and credential evaluation.
 
 Static validation must not call provider APIs, infer current pricing, test
 latency, acquire credentials, or treat a declared candidate as available.

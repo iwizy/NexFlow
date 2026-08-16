@@ -108,6 +108,7 @@ That RFC should choose:
 - validation scope
 - security model
 - extension loading model
+- provider adapter model
 - conformance test strategy
 
 It should also publish the completed evidence records, hard-gate results,
@@ -118,3 +119,9 @@ The extension loading model must satisfy the runtime-neutral
 [Extension Loading Boundary](extension-loading-boundary.md). The architecture
 decision still needs to choose the package, catalog, lock, integrity, host
 interface, isolation, update, rollback, diagnostic, and audit mechanisms.
+
+The provider adapter model must satisfy the runtime-neutral
+[Provider Adapter Boundary](provider-adapter-boundary.md). The architecture
+decision still needs to choose invocation and result interfaces, adapter
+packaging, credential and network mediation, retry and fallback policy, error
+normalization, and audit evidence formats.

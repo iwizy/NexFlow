@@ -115,6 +115,9 @@ The goal is to make AI-assisted software delivery inspectable before anything ru
 - **Provider Feature**: a model support signal that is separate from project action capabilities and permissions.
 - **Provider Constraint**: a provider-side eligibility fact or policy boundary
   that must be intersected with model-profile requirements and project policy.
+- **Provider Adapter**: a future bounded translator for one host-selected and
+  authorized provider invocation; it does not own selection, fallback, or tool
+  execution.
 - **Prompt Set**: versioned prompt material with source references, revisions, safety review, compatibility impact, and audit expectations.
 - **Retrieval Profile**: versioned retrieval expectations for context sources, indexes, chunking, freshness, citations, sensitivity, and audit.
 - **Workflow**: an ordered or event-driven set of tasks, dependencies, gates, and handoffs.
@@ -245,7 +248,7 @@ NexFlow is intentionally split into layers:
 | Version and select agent behavior | [Effective Agent Configuration](docs/effective-agent-configuration.md), [Agent Assembly](docs/agent-assembly.md), [Agent Definitions](docs/agent-definitions.md), [Versioning](docs/versioning.md), [Event Model](docs/events.md) |
 | Model what agents can and may do | [Capability Model](docs/capability-model.md), [Autonomy Model](docs/autonomy-model.md) |
 | Model what agents may know or retain | [Context Model](docs/context-model.md), [Memory Model](docs/memory-model.md) |
-| Model provider-neutral model selection | [Model Profiles](docs/model-profiles.md), [Provider Abstraction](docs/provider-abstraction.md), [Provider Features](docs/provider-features.md), [Provider Constraints](docs/provider-constraints.md), [Versioning](docs/versioning.md) |
+| Model provider-neutral model selection | [Model Profiles](docs/model-profiles.md), [Provider Abstraction](docs/provider-abstraction.md), [Provider Features](docs/provider-features.md), [Provider Constraints](docs/provider-constraints.md), [Provider Adapter Boundary](docs/provider-adapter-boundary.md), [Versioning](docs/versioning.md) |
 | Model prompt revisions and safety review | [Prompt Sets](docs/prompt-sets.md), [Versioning](docs/versioning.md), [Event Model](docs/events.md) |
 | Model retrieval, freshness, and citations | [Retrieval Profiles](docs/retrieval-profiles.md), [Context Model](docs/context-model.md), [Event Model](docs/events.md) |
 | Map event evidence to external standards | [Event Model](docs/events.md), [Event Interoperability](docs/event-interoperability.md), [Conformance](docs/conformance.md) |

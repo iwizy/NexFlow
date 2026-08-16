@@ -224,8 +224,16 @@ Runtime conformance is planned future work. A future conforming runtime MUST enf
 - context access boundaries
 - memory scope boundaries
 - audit event expectations
+- host-owned provider selection and fallback decisions
+- provider adapter request, credential, network, tool, response, error, retry,
+  and redaction boundaries for every claimed provider surface
 
 Unsupported extension behavior MUST NOT silently grant additional access.
+
+A provider execution claim must identify exact selector, adapter, provider API,
+host interface, model and operation mappings, retry and fallback behavior,
+credential and network enforcement, audit evidence, and limitations. See
+[Provider Adapter Boundary](provider-adapter-boundary.md).
 
 ### Event Interoperability
 

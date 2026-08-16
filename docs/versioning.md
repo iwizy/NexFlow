@@ -190,6 +190,19 @@ Removing the legacy field, changing a constraint meaning, changing composition
 or unknown-fact behavior, or making a field required needs an explicit later
 version decision. See [Provider Constraints](provider-constraints.md).
 
+## Provider Adapter Version Decision
+
+The [Provider Adapter Boundary](provider-adapter-boundary.md) adds no manifest
+fields and does not change `specVersion`. Adapter versions, provider API
+versions, host-interface versions, and runtime support claims are separate from
+manifest versioning.
+
+Changing request translation, material defaults, actual-model detection, tool
+or streaming mapping, retry and fallback behavior, error or usage
+normalization, credential or network scope, remote session reuse, audit, or
+redaction may require an adapter and runtime compatibility decision even when
+the manifests remain unchanged.
+
 ## MCP Extension Draft Version Decision
 
 The `io.nexflow.mcp` profile and stricter MCP context shape remain in

@@ -151,6 +151,11 @@ Fallbacks SHOULD say:
 
 Fallbacks can be behavior-changing. A fallback from a reviewed pinned model to an unreviewed floating alias SHOULD be treated as safety-significant.
 
+A provider adapter must not execute fallback itself. It may report a normalized
+failure or routing fact, but the runtime host must rerun selection and every
+affected policy boundary before authorizing another target. See
+[Provider Adapter Boundary](provider-adapter-boundary.md).
+
 ## Audit Expectations
 
 Future events involving an agent definition SHOULD be able to include model profile metadata.

@@ -209,6 +209,20 @@ provider-selection, and safety compatibility.
 
 See [Provider Features](provider-features.md).
 
+## Provider Adapter Compatibility
+
+Provider selection and provider invocation are separate. A future adapter must
+not replace the selected target, relax constraints through provider defaults,
+execute tools, or perform fallback without returning control to the runtime
+host.
+
+Adapter identity, request translation, material defaults, actual-model
+detection, tool and streaming mappings, retry and fallback signaling, error and
+usage normalization, credential and network scope, remote session behavior,
+audit, and redaction may change behavior even when manifests do not. Such
+changes may break `NF-RUNTIME`, privacy, safety, cost, and audit compatibility.
+See [Provider Adapter Boundary](provider-adapter-boundary.md).
+
 ## Human Override Compatibility
 
 The structured human override policy is optional and additive in `0.1`.
@@ -310,6 +324,7 @@ Examples:
 | Change interoperable event names, CloudEvents attributes, OpenTelemetry fields, severity mapping, trace-context separation, or import authority | May affect event exporters, telemetry queries, round-trip behavior, `NF-RUNTIME`, audit, privacy, and external compatibility claims. |
 | Change provider selection precedence, constraints, fallback, or explainability expectations | May affect `NF-SEMANTIC`, `NF-RUNTIME`, audit, privacy, cost, safety, and compatibility. |
 | Change provider constraint vocabulary, composition, unknown-fact behavior, or legacy migration | May affect `NF-MANIFEST`, `NF-SCHEMA`, `NF-SEMANTIC`, provider eligibility, privacy, cost, audit, and safety compatibility. |
+| Change provider adapter selection, request mapping, defaults, retries, fallback signaling, error normalization, credential or network scope, audit, or redaction | May affect `NF-RUNTIME`, provider behavior, privacy, cost, reproducibility, audit, and safety compatibility. |
 | Change reference CLI command names, exit codes, diagnostic codes, or output formats | May affect `NF-CLI`, CI workflows, editor integrations, and developer tooling compatibility. |
 | Add semantic cross-reference rule | May affect `NF-SEMANTIC` validators. |
 | Change extension namespace lifecycle | May affect `NF-EXTENSION` compatibility. |

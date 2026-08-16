@@ -11,6 +11,12 @@ tag or release has been published, and manifest `specVersion` remains `"0.1"`.
 
 ### Added
 
+- Defined a runtime-neutral provider adapter boundary with host-owned selection
+  and fallback, explicit support records and invocation plans, deterministic
+  request translation, mediated credentials and network access, tool and
+  streaming boundaries, normalized failures and responses, retry rules, audit
+  explanations, and conformance requirements without implementing provider
+  clients or runtime calls.
 - Added a central draft diagnostic code catalog with status and family
   registries, severity semantics, suggested messages, safe remediation,
   deterministic output and redaction guidance, implemented discovery and Core

@@ -613,6 +613,13 @@ Validators should not call provider APIs or resolve live model catalogs unless t
 
 ## Future Runtime Boundaries
 
+The [Provider Adapter Boundary](../docs/provider-adapter-boundary.md) separates
+this RFC's host-owned selection and fallback decisions from provider-specific
+request translation and invocation. It requires one authorized target,
+mediated credential and network handles, normalized results and failures, no
+direct tool execution, and adapter evidence for runtime audit. It does not
+implement an adapter or change this RFC's Draft state.
+
 A future runtime may:
 
 - resolve model profiles into provider calls

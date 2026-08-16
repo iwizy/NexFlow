@@ -51,6 +51,7 @@ enforced.
 | Work reference namespaces | Workflow-wide step and assembly-wide artifact rules with 13 focused cases | Implemented | `docs/work-reference-namespaces.md`, `npm run work-reference-namespace-smoke` | Identity and exact lookup evidence only; no cycle, ordering, provenance, disclosure, or runtime enforcement. |
 | Provider feature vocabulary | Closed model support signals, migrated examples, and legacy capability separation | Implemented | `docs/provider-features.md`, `npm run provider-feature-schema-smoke`, `npm run semantic-smoke` | Structural and migration evidence only; no provider selection, live availability, permission, or runtime support. |
 | Provider constraint vocabulary | Structured provider eligibility fields, migrated examples, legacy training boolean, and 17 focused cases | Implemented | `docs/provider-constraints.md`, `npm run provider-constraint-schema-smoke` | Structural and migration evidence only; no complete constraint solver, live provider facts, selection, or runtime enforcement. |
+| Provider adapter boundary | Host-owned selection and fallback, bounded request translation, mediated credentials and network, normalized results and failures, and audit explanations | Specified | `docs/provider-adapter-boundary.md`, RFC-0010 | No adapter API, provider client, live call, retry engine, fallback engine, credential broker, or provider execution conformance evidence exists. |
 | MCP extension draft | Machine-readable `io.nexflow.mcp` profile, stricter ContextSet boundary, Software Team binding, and 10 focused cases | Implemented | `extensions/mcp/`, RFC-0018, `npm run mcp-extension-smoke` | Policy mapping only; no MCP client, server, transport, discovery, credential, protocol negotiation, or execution support. |
 | A2A extension draft | Machine-readable `io.nexflow.a2a` profile, protocol ownership map, and 13 focused cases | Implemented | `extensions/a2a/`, RFC-0019, `docs/mcp-a2a-boundaries.md`, `npm run a2a-extension-smoke` | Policy mapping only; no A2A client, server, binding, discovery, authentication, invocation, remote task synchronization, artifact import, streaming, or callbacks. |
 | Event interoperability mappings | `nexflow-cloudevents/0.1-draft` and `nexflow-opentelemetry/0.1-draft` | Specified | `docs/event-interoperability.md`, RFC-0009 | No event-instance schema, encoder, importer, SDK, CloudEvents binding, OpenTelemetry instrumentation, OTLP exporter, collector, sink, storage, or conformance suite. |
@@ -457,6 +458,8 @@ A future runtime must publish at least:
 - context and memory boundary coverage
 - event and audit coverage
 - provider and model selection coverage
+- provider adapter versions, provider API mappings, retry and fallback behavior,
+  credential and network enforcement, error normalization, and audit coverage
 - supported extension namespaces and versions
 - unsupported or advisory-only semantics
 

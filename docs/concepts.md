@@ -208,8 +208,11 @@ An auditable state transition emitted by a workflow, task, agent, integration, o
 
 `EventSet` declares event types; a future event instance records an occurrence.
 CloudEvents and OpenTelemetry representations are derived interoperability and
-observability projections, not local state authority. See
-[Event Interoperability](event-interoperability.md).
+observability projections, not local state authority. A durably retained audit
+record is an event instance accepted under an explicit storage policy; its
+store supports review but does not authorize the recorded action. See
+[Event Interoperability](event-interoperability.md) and
+[Event And Audit Storage Boundary](event-audit-storage-boundary.md).
 
 ## Extension
 

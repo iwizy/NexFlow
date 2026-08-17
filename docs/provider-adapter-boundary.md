@@ -18,6 +18,7 @@ Related documents:
 - [Model Profiles](model-profiles.md)
 - [Network Access Policy](network-access-policy.md)
 - [Extension Loading Boundary](extension-loading-boundary.md)
+- [Event And Audit Storage Boundary](event-audit-storage-boundary.md)
 - [Security Model](security-model.md)
 - [RFC-0010: Provider Selection](../rfcs/RFC-0010-provider-selection.md)
 
@@ -423,7 +424,9 @@ provider-specific evidence and must not become local authority.
 
 Audit records must not contain raw credentials, authorization headers, complete
 prompts, unbounded context or memory, sensitive tool outputs, or unnecessary
-personal data. The broader audit storage boundary remains separate future work.
+personal data. Persistence, retention, deletion, ordering, integrity, and
+storage failure follow the
+[Event And Audit Storage Boundary](event-audit-storage-boundary.md).
 
 ## Conformance Claims
 

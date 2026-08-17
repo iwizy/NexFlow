@@ -157,5 +157,14 @@ CloudEvents and OpenTelemetry may carry derived event representations, but they
 do not become the source of local state or authority. Event export must preserve
 NexFlow identity, correlation, causation, redaction, and audit meaning without
 turning `correlationId` into trace identity. Transport and telemetry storage are
-future runtime concerns. See
+future runtime concerns.
+
+The host constructs event meaning and applies classification, minimization,
+redaction, and policy before persistence or export. A future audit store may be
+authoritative for a stated retention and completeness claim, but not for
+permission, approval, workflow, memory, or human-override state. Runtime claims
+must distinguish the designated audit store from queues, indexes, telemetry,
+archives, and evidence stores, and must expose duplicates, gaps, partial writes,
+ordering scope, retention, deletion, and integrity limitations. See
+[Event And Audit Storage Boundary](event-audit-storage-boundary.md) and
 [Event Interoperability](event-interoperability.md).

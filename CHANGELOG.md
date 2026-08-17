@@ -11,6 +11,12 @@ tag or release has been published, and manifest `specVersion` remains `"0.1"`.
 
 ### Added
 
+- Defined a runtime-neutral event and audit storage boundary that separates
+  event declarations, event instances, audit records, evidence, projections,
+  receipts, stores, indexes, and telemetry; requires redaction before
+  persistence or export; and documents ordering, duplicates, durability,
+  retention, deletion, access, integrity, gaps, recovery, compatibility, and
+  conformance without selecting or implementing storage technology.
 - Defined a runtime-neutral provider adapter boundary with host-owned selection
   and fallback, explicit support records and invocation plans, deterministic
   request translation, mediated credentials and network access, tool and

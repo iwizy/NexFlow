@@ -224,11 +224,20 @@ Runtime conformance is planned future work. A future conforming runtime MUST enf
 - context access boundaries
 - memory scope boundaries
 - audit event expectations
+- event construction, classification, minimization, redaction, persistence,
+  ordering, retention, deletion, access, integrity, gap, and recovery boundaries
 - host-owned provider selection and fallback decisions
 - provider adapter request, credential, network, tool, response, error, retry,
   and redaction boundaries for every claimed provider surface
 
 Unsupported extension behavior MUST NOT silently grant additional access.
+
+An event or audit persistence claim must identify designated audit store,
+index, archive, projection, and evidence roles; stable identity and duplicate
+behavior; ordering scope; redaction stage; pre-effect failure posture;
+durability, retention, deletion, access, integrity, gap, and recovery
+limitations. Telemetry export alone is not audit persistence. See
+[Event And Audit Storage Boundary](event-audit-storage-boundary.md).
 
 A provider execution claim must identify exact selector, adapter, provider API,
 host interface, model and operation mappings, retry and fallback behavior,

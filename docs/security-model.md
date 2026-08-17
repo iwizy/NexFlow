@@ -32,6 +32,12 @@ Important state changes should emit events and preserve enough context for later
 be projected to CloudEvents and OpenTelemetry while keeping external records
 non-authoritative and transport, collectors, and storage out of scope.
 
+[Event And Audit Storage Boundary](event-audit-storage-boundary.md) requires
+classification, minimization, and redaction before persistence or export;
+separates audit records from telemetry and evidence; and makes ordering,
+retention, deletion, access, integrity, durability, and failure claims explicit.
+Audit persistence never grants authority for the recorded action.
+
 ### Credential Handling
 
 Credentials must never be implied by context access. Future runtimes must isolate secrets and avoid exposing them to agents unless explicitly authorized.
@@ -225,6 +231,8 @@ A conforming runtime should:
 - clearly report unsupported extension behavior
 - resolve extension implementations from explicit sources, verify immutable artifacts, isolate loaded code, and authorize every operation independently
 - keep provider selection host-owned, constrain adapters to one authorized target, and route fallback through a fresh policy decision
+- classify, minimize, redact, and validate audit records before persistence or export, and fail closed when required pre-effect audit cannot be recorded
+- distinguish designated audit storage from queues, indexes, telemetry, archives, and evidence stores, with explicit ordering, retention, deletion, access, integrity, and gap behavior
 - deny outbound requests that lack a matching structured network policy rule
 - re-evaluate DNS results and redirects against private-network, loopback, scheme, port, and destination constraints
 - redact credentials, headers, query data, and payloads from network audit records

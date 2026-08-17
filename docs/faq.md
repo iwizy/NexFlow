@@ -31,7 +31,8 @@ No. NexFlow specifies draft mappings from its future event-instance envelope to
 CloudEvents and OpenTelemetry EventRecords. It does not provide an encoder,
 importer, SDK, protocol binding, OTLP exporter, collector, broker, sink, or
 event store. External event and telemetry records do not change local NexFlow
-state automatically. See [Event Interoperability](event-interoperability.md).
+state automatically. See [Event Interoperability](event-interoperability.md)
+and [Event And Audit Storage Boundary](event-audit-storage-boundary.md).
 
 ## Does NexFlow require YAML?
 

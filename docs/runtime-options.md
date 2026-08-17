@@ -109,6 +109,7 @@ That RFC should choose:
 - security model
 - extension loading model
 - provider adapter model
+- event and audit storage model
 - conformance test strategy
 
 It should also publish the completed evidence records, hard-gate results,
@@ -125,3 +126,9 @@ The provider adapter model must satisfy the runtime-neutral
 decision still needs to choose invocation and result interfaces, adapter
 packaging, credential and network mediation, retry and fallback policy, error
 normalization, and audit evidence formats.
+
+The event and audit storage model must satisfy the runtime-neutral
+[Event And Audit Storage Boundary](event-audit-storage-boundary.md). The
+architecture decision still needs to choose event-instance interfaces, audit
+store and evidence roles, redaction pipeline, ordering scopes, durability,
+retention, deletion, access, integrity, gap handling, and conformance evidence.

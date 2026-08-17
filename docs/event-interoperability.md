@@ -8,6 +8,7 @@ without selecting a transport, broker, collector, storage engine, or runtime.
 Related documents:
 
 - [Event Model](events.md)
+- [Event And Audit Storage Boundary](event-audit-storage-boundary.md)
 - [RFC-0009: Event Envelope](../rfcs/RFC-0009-event-envelope.md)
 - [Conformance](conformance.md)
 - [Compatibility](compatibility.md)
@@ -40,7 +41,7 @@ convention, mapping profile, and implementation versions it supports.
 | Portable event representation | CloudEvents | Describes event data and context for interoperable exchange. |
 | Observability event representation | OpenTelemetry EventRecord | Records a named point-in-time occurrence as telemetry. |
 | Transport and delivery | Runtime or deployment | Selects HTTP, messaging, OTLP, retries, ordering, authentication, and delivery guarantees. |
-| Storage and retention | Runtime, sink, and project policy | Selects event stores, telemetry backends, indexes, retention, deletion, and access control. |
+| Storage and retention | Runtime, sink, and project policy | Selects event stores, telemetry backends, indexes, retention, deletion, and access control under the [Event And Audit Storage Boundary](event-audit-storage-boundary.md). |
 
 CloudEvents and OpenTelemetry are projections of a NexFlow event instance. They
 do not replace the authored `EventSet`, project policy, or local state model.
@@ -434,6 +435,12 @@ Do not export:
 Redaction must be recorded without placing the removed value in another field.
 Sampling, dropped telemetry, broker loss, or backend retention must be visible
 limitations; absence from telemetry is not proof that an event did not occur.
+
+Successful projection or exporter delivery does not prove durable acceptance by
+the designated audit store. Sink acceptance time, broker offsets, object keys,
+and trace IDs remain namespaced storage or transport evidence; they do not
+replace NexFlow event identity, occurrence time, correlation, or causation. See
+[Event And Audit Storage Boundary](event-audit-storage-boundary.md).
 
 ## Out Of Scope
 

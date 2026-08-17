@@ -150,7 +150,7 @@ Future runtimes SHOULD include these fields when safe and available:
 
 | Field | Purpose |
 | --- | --- |
-| `recordedAt` | Time the event was recorded by the runtime or sink. |
+| `recordedAt` | Time the event was first recorded by the runtime's chosen audit or export path. |
 | `source` | Runtime, extension, integration, CLI, or validator that emitted the event. |
 | `causationId` | Event that directly caused this event. |
 | `sequence` | Monotonic sequence within a source or correlation. |
@@ -187,7 +187,11 @@ IDs should not encode private user data, secrets, provider account IDs, or raw p
 
 `occurredAt` records when the transition happened.
 
-`recordedAt` records when the event was persisted, exported, or accepted by an event sink.
+`recordedAt` records when the event was first accepted into the runtime's chosen
+audit or export path. It remains stable across retries and later projections.
+Each sink's acceptance time, partition, offset, or receipt remains namespaced
+storage metadata and must not overwrite the core field. A `recordedAt` value by
+itself does not prove durable audit persistence.
 
 Both should use ISO 8601 timestamps with timezone or `Z`.
 
@@ -619,6 +623,14 @@ Validators should not call providers, inspect event sinks, or replay events unle
 
 ## Future Runtime Boundaries
 
+The
+[Event And Audit Storage Boundary](../docs/event-audit-storage-boundary.md)
+separates this RFC's event-instance meaning from persistence, evidence,
+projection, indexing, and telemetry roles. It defines redaction-before-storage,
+honest ordering, duplicate and gap handling, retention, deletion, access,
+integrity, durability, and failure requirements without selecting a store or
+changing this RFC's Draft state.
+
 A future runtime may:
 
 - emit event instances
@@ -709,8 +721,11 @@ This is premature. The current draft should define common envelope semantics and
 - Should `eventId` have a recommended format such as ULID?
 - Should approval events become required core event types in `0.1`?
 - Should event severity use a fixed enum or remain project-defined?
-- Should event retention be inherited from `events.yaml`, project policy, or event sink policy when they differ?
+- What structured policy vocabulary should resolve minimum audit retention and
+  maximum privacy retention when declarations, project policy, and sink limits
+  differ?
 - Should future CLIs support validating exported event traces?
 - Should event envelopes support cryptographic signatures or hashes?
 - Should event redaction require machine-readable reason codes?
-- How should event ordering be represented across distributed runtimes?
+- Which sequence-scope and storage-receipt fields should become stable after
+  runtime prototypes demonstrate distributed ordering and reconciliation?

@@ -123,6 +123,8 @@ The goal is to make AI-assisted software delivery inspectable before anything ru
 - **Workflow**: an ordered or event-driven set of tasks, dependencies, gates, and handoffs.
 - **Handoff**: a structured transfer of responsibility between actors.
 - **Event**: an auditable state transition such as `task.completed` or `review.requested`.
+- **Audit Record**: an event instance accepted for durable review under an
+  explicit storage policy; persistence does not authorize the recorded action.
 - **Extension**: a namespaced integration surface for tools and protocols such as GitHub, Linear, Figma, Slack, MCP, A2A, or custom systems.
 
 The experimental [`io.nexflow.mcp`](extensions/mcp/README.md) and
@@ -251,7 +253,7 @@ NexFlow is intentionally split into layers:
 | Model provider-neutral model selection | [Model Profiles](docs/model-profiles.md), [Provider Abstraction](docs/provider-abstraction.md), [Provider Features](docs/provider-features.md), [Provider Constraints](docs/provider-constraints.md), [Provider Adapter Boundary](docs/provider-adapter-boundary.md), [Versioning](docs/versioning.md) |
 | Model prompt revisions and safety review | [Prompt Sets](docs/prompt-sets.md), [Versioning](docs/versioning.md), [Event Model](docs/events.md) |
 | Model retrieval, freshness, and citations | [Retrieval Profiles](docs/retrieval-profiles.md), [Context Model](docs/context-model.md), [Event Model](docs/events.md) |
-| Map event evidence to external standards | [Event Model](docs/events.md), [Event Interoperability](docs/event-interoperability.md), [Conformance](docs/conformance.md) |
+| Model event evidence and audit storage | [Event Model](docs/events.md), [Event And Audit Storage Boundary](docs/event-audit-storage-boundary.md), [Event Interoperability](docs/event-interoperability.md), [Conformance](docs/conformance.md) |
 | Validate manifests | [Validation](docs/validation.md), [Diagnostic Code Catalog](docs/diagnostic-code-catalog.md), [Semantic Reference Inventory](docs/semantic-reference-inventory.md), [Schema Guide](schemas/README.md), [Conformance](docs/conformance.md), [Compatibility Matrix](docs/compatibility-matrix.md) |
 | Publish a support claim | [Conformance Claims](docs/conformance-claims.md), [Claim Templates](conformance/README.md), [Compatibility Matrix](docs/compatibility-matrix.md) |
 | Extend or integrate NexFlow | [Extension Profiles](extensions/README.md), [Extension Model](docs/extensions.md), [Extension Loading Boundary](docs/extension-loading-boundary.md), [MCP And A2A Boundaries](docs/mcp-a2a-boundaries.md), [MCP Extension Draft](extensions/mcp/README.md), [A2A Extension Draft](extensions/a2a/README.md), [Integrations](docs/integrations.md), [Provider Abstraction](docs/provider-abstraction.md) |

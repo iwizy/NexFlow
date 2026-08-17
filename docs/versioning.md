@@ -256,6 +256,19 @@ compatibility from the mapping profile.
 
 See [Event Interoperability](event-interoperability.md).
 
+## Event And Audit Storage Version Decision
+
+The [Event And Audit Storage Boundary](event-audit-storage-boundary.md) adds no
+manifest kind or required `EventSet` field and does not change `specVersion`.
+Audit store, persistence adapter, policy, projection, evidence-store, and
+runtime versions remain separate implementation compatibility dimensions.
+
+Changing designated store roles, event identity, duplicate or collision
+handling, redaction timing, timestamp or sequence meaning, audit-before-effect,
+durability, buffering, retention, deletion, access, integrity, correction,
+gap, recovery, or telemetry authority requires explicit runtime compatibility
+review even when manifests and event mapping profiles remain unchanged.
+
 ## Agent Identity Version Decision
 
 The compact AgentSet migration remains in `specVersion: "0.1"`. The schema

@@ -55,6 +55,7 @@ For the current supported combinations and explicit implementation gaps, see the
 - changing network defaults, rule effects, actor or purpose scope, destination selectors, transport constraints, approval requirements, or audit semantics
 - changing human override authority eligibility, operation meaning, fail-closed response, resume requirements, or audit semantics
 - changing event envelope identity, actor, subject, correlation, causation, payload, audit, or redaction semantics
+- changing audit storage authority, redaction timing, ordering scope, retention, deletion, access, integrity, durability, or failure behavior
 - changing discovery root containment, source-hint cardinality, document cardinality, or workflow identity rules
 - changing MCP or A2A external ownership, identity binding, task correlation, artifact import, callback, or transitive-authority rules
 - changing reference CLI command names, exit code meanings, diagnostic code meanings, or machine-readable output formats
@@ -223,6 +224,21 @@ audit, and redaction may change behavior even when manifests do not. Such
 changes may break `NF-RUNTIME`, privacy, safety, cost, and audit compatibility.
 See [Provider Adapter Boundary](provider-adapter-boundary.md).
 
+## Event And Audit Storage Compatibility
+
+Event declarations, event instances, audit records, evidence, projections,
+delivery records, and storage receipts remain separate. A future store may
+support a runtime's audit retention and completeness claim, but it must not
+become permission, approval, workflow, memory, or human-override authority.
+
+Changing designated-store roles, event identity, duplicate handling,
+redaction timing, timestamp or sequence interpretation, audit-before-effect,
+durability, buffering, gaps, retention, deletion, access, integrity,
+correction, or telemetry authority may change runtime and audit behavior even
+when manifests do not. Such changes may break `NF-RUNTIME`, privacy, safety,
+traceability, and interoperability compatibility. See
+[Event And Audit Storage Boundary](event-audit-storage-boundary.md).
+
 ## Human Override Compatibility
 
 The structured human override policy is optional and additive in `0.1`.
@@ -290,7 +306,9 @@ compatibility is versioned through `claimVersion`, independently from manifest
 semantics that may affect `NF-SEMANTIC`, `NF-RUNTIME`, audit, traceability,
 privacy, and safety compatibility. The
 [Event Interoperability](event-interoperability.md) profiles version CloudEvents
-and OpenTelemetry projections separately from transport and storage.
+and OpenTelemetry projections separately from transport and storage. The
+[Event And Audit Storage Boundary](event-audit-storage-boundary.md) versions
+future persistence behavior separately from both manifest and mapping profiles.
 
 [RFC-0010](../rfcs/RFC-0010-provider-selection.md) proposes provider selection semantics that may affect `NF-SEMANTIC`, `NF-RUNTIME`, audit, privacy, cost, safety, and compatibility.
 
@@ -321,6 +339,7 @@ Examples:
 | Change network defaults, destination scope, transport constraints, approvals, or audit semantics | May affect `NF-SEMANTIC`, `NF-RUNTIME`, integrations, privacy, audit, and safety compatibility. |
 | Change human override authority, response, resume, operation, or audit semantics | May affect `NF-SCHEMA`, `NF-SEMANTIC`, `NF-RUNTIME`, safety, authority, and audit compatibility. |
 | Change event envelope identity, actor, subject, correlation, causation, payload, audit, or redaction semantics | May affect `NF-SEMANTIC`, `NF-RUNTIME`, audit, traceability, privacy, and safety compatibility. |
+| Change audit store roles, redaction timing, ordering scope, duplicate handling, pre-effect persistence, retention, deletion, access, integrity, durability, gaps, or recovery | May affect `NF-RUNTIME`, audit completeness, traceability, privacy, safety, and interoperability compatibility. |
 | Change interoperable event names, CloudEvents attributes, OpenTelemetry fields, severity mapping, trace-context separation, or import authority | May affect event exporters, telemetry queries, round-trip behavior, `NF-RUNTIME`, audit, privacy, and external compatibility claims. |
 | Change provider selection precedence, constraints, fallback, or explainability expectations | May affect `NF-SEMANTIC`, `NF-RUNTIME`, audit, privacy, cost, safety, and compatibility. |
 | Change provider constraint vocabulary, composition, unknown-fact behavior, or legacy migration | May affect `NF-MANIFEST`, `NF-SCHEMA`, `NF-SEMANTIC`, provider eligibility, privacy, cost, audit, and safety compatibility. |

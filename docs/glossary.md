@@ -82,6 +82,25 @@ A declared condition that must be satisfied before a gated action, task transiti
 
 Approval gates should identify approvers, evidence, decision state, scope, and audit expectations.
 
+### Audit Record
+
+An event instance accepted for durable review under an effective audit policy.
+Storage metadata, receipts, indexes, and projections may accompany it without
+changing core event meaning.
+
+An audit record supports accountability but does not grant permission, approve
+an action, transition workflow state, or authorize access to referenced
+evidence. See
+[Event And Audit Storage Boundary](event-audit-storage-boundary.md).
+
+### Audit Store
+
+A future runtime storage role designated to preserve audit records under stated
+durability, access, retention, deletion, integrity, and completeness claims.
+
+An audit store is not automatically a context source, memory store, telemetry
+backend, evidence store, or source of project authority.
+
 ### Artifact
 
 A produced or consumed work product, such as a branch, patch, pull request, design, document, test report, build log, deployment record, or decision note.
@@ -166,7 +185,9 @@ An auditable state transition emitted by a workflow, task, agent, integration, r
 Events should preserve enough metadata to explain what happened and why.
 CloudEvents and OpenTelemetry EventRecords may carry projections of an event
 instance, but they do not replace the `EventSet` declaration or become local
-transition authority. See [Event Interoperability](event-interoperability.md).
+transition authority. Durable audit handling follows the
+[Event And Audit Storage Boundary](event-audit-storage-boundary.md). See also
+[Event Interoperability](event-interoperability.md).
 
 ### Extension
 

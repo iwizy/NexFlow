@@ -5,6 +5,9 @@ Events describe auditable state transitions.
 Related RFC: [RFC-0009: Event Envelope](../rfcs/RFC-0009-event-envelope.md).
 See [Event Interoperability](event-interoperability.md) for the draft
 CloudEvents and OpenTelemetry mappings.
+See [Event And Audit Storage Boundary](event-audit-storage-boundary.md) for
+future persistence, redaction, ordering, retention, access, integrity, and
+failure responsibilities.
 
 `events.yaml` declares event types, payload expectations, retention, and audit requirements. It is not an event log. Future runtimes may emit event instances that follow the common envelope model.
 
@@ -108,6 +111,20 @@ Future runtimes SHOULD also record:
 - redaction status and retention policy for audit-sensitive events
 
 See [RFC-0009](../rfcs/RFC-0009-event-envelope.md) for event identity, correlation, causation, payload, audit, redaction, ordering, and extension guidance.
+
+## Event And Audit Storage
+
+An event instance and a durably retained audit record are related but distinct.
+The runtime constructs and authorizes event meaning; a storage component may
+preserve an already classified, minimized, redacted, and validated record. The
+store does not grant permission, approve an action, transition project state,
+or turn a received external record into local authority.
+
+`occurredAt`, `recordedAt`, source-scoped sequence, causation, sink acceptance
+time, and transport offset represent different ordering facts. A future runtime
+must preserve those differences, stable event identity, duplicates, gaps,
+partial writes, and storage uncertainty. See
+[Event And Audit Storage Boundary](event-audit-storage-boundary.md).
 
 ## External Protocol State
 
@@ -354,6 +371,12 @@ Events should prefer retrieval profile references, context source IDs, corpus ve
 Events related to approvals, human override, destructive actions, production
 actions, credential access, and memory updates SHOULD be retained according to
 project policy.
+
+Retention guidance in `events.yaml` does not configure a store or prove that a
+record was durably written, redacted, protected, expired, or deleted. Future
+runtimes must identify the designated audit store, enforce classification and
+redaction before persistence or export, and report storage failures without
+silently continuing through a weaker sink.
 
 See [Approval Gates](approval-gates.md) for how approval decisions relate to review events and future approval-specific events.
 

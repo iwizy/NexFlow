@@ -4,6 +4,11 @@ NexFlow does not choose a runtime language yet.
 
 A runtime architecture decision must happen before implementation begins.
 
+The decision must be evaluated against the
+[Runtime Architecture Decision Review](../rfcs/reviews/runtime-architecture-decision-review.md).
+The current review outcome is `not-ready`: no decision RFC, common prototype
+evidence, completed scorecards, or accepted implementation choice exists.
+
 Language-specific repository maintenance tooling, including schema validation dependencies, does not constitute a runtime implementation or a Runtime Architecture Decision.
 
 Reference CLI scope is a separate planning step. See
@@ -119,6 +124,11 @@ That RFC should choose:
 It should also publish the completed evidence records, hard-gate results,
 weighted scorecards, target matrix, reviewer rationale, and any reason the
 decision differs from the numerical ranking.
+
+Acceptance requires every mandatory review gate to pass, every blocker to be
+closed, and the reviewed RFC, specification baseline, prototype evidence, and
+sign-off revisions to be pinned. A preferred language or the highest weighted
+score is not sufficient by itself.
 
 The extension loading model must satisfy the runtime-neutral
 [Extension Loading Boundary](extension-loading-boundary.md). The architecture

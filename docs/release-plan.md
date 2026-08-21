@@ -130,6 +130,9 @@ Release readiness:
 - security boundaries for network, filesystem, credentials, and destructive actions are explicit
 - packaging and distribution criteria are documented
 - conformance test strategy is described
+- the Runtime Architecture Decision review record identifies exact RFC,
+  specification, prototype, and evidence revisions; every mandatory gate passes
+  and every blocker is closed before acceptance
 
 Non-goals:
 

@@ -11,6 +11,10 @@ tag or release has been published, and manifest `specVersion` remains `"0.1"`.
 
 ### Added
 
+- Added a Runtime Architecture Decision review framework with pinned evidence
+  requirements, eleven mandatory gates, blocker and follow-up classification,
+  a reproducible review record, explicit acceptance rules, and a factual
+  `not-ready` baseline without selecting a language or implementing a runtime.
 - Defined a language-neutral CLI and runtime responsibility boundary with
   command-specific effect budgets, offline and filesystem rules, static versus
   runtime fact ownership, explicit runtime-preflight separation, inert

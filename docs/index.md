@@ -88,6 +88,7 @@ The documentation is the canonical source for the specification. Schemas and exa
 | [0.1 Readiness Checklist](readiness-checklist.md) | Candidate review criteria and machine-readable release evidence workflow for docs, schemas, examples, RFCs, compatibility, safety, and limitations. |
 | [Runtime Options](runtime-options.md) | Runtime language evaluation criteria without choosing an implementation. |
 | [Runtime Language Evaluation Matrix](language-evaluation-matrix.md) | Defines hard gates, weighted criteria, common prototypes, evidence records, and a neutral decision process for TypeScript, Python, Rust, and Go. |
+| [Runtime Architecture Decision Review](../rfcs/reviews/runtime-architecture-decision-review.md) | Defines mandatory evidence, review gates, blocker classes, acceptance rules, and the current not-ready decision baseline. |
 | [Integrations](integrations.md) | Integration modeling rules and safety expectations. |
 | [Roadmap](roadmap.md) | Specification, review, schema, CLI, runtime, and ecosystem milestones. |
 | [FAQ](faq.md) | Short answers to common project questions. |

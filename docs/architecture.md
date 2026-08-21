@@ -122,6 +122,12 @@ The future implementation language must be selected through the
 reviewed Runtime Architecture Decision. Existing JavaScript maintenance scripts
 do not select TypeScript, Python, Rust, Go, or any other runtime language.
 
+The decision is accepted only after it satisfies the
+[Runtime Architecture Decision Review](../rfcs/reviews/runtime-architecture-decision-review.md),
+including comparative evidence, CLI/runtime separation, security, packaging,
+extension, provider, audit, conformance, compatibility, and ownership gates.
+The current outcome is `not-ready`, so runtime implementation remains blocked.
+
 ## Provider Boundary
 
 Providers are abstract. The specification may describe desired model traits, routing preferences, and constraints, but it must not require any specific vendor.

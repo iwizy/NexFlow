@@ -181,6 +181,10 @@ Relevant docs: [Validation](validation.md), [Conformance](conformance.md),
 - Define the event and audit storage boundary for authority, redaction,
   ordering, retention, integrity, access, durability, and failures.
 - Decide packaging and conformance test strategy.
+- Review the decision RFC against the
+  [Runtime Architecture Decision Review](../rfcs/reviews/runtime-architecture-decision-review.md),
+  pin all evidence revisions, close every blocker, and record an explicit
+  outcome before implementation begins.
 
 This milestone must happen before runtime implementation begins.
 
@@ -190,6 +194,7 @@ Relevant docs: [Architecture](architecture.md), [Runtime Options](runtime-option
 [Extension Loading Boundary](extension-loading-boundary.md),
 [Provider Adapter Boundary](provider-adapter-boundary.md),
 [Event And Audit Storage Boundary](event-audit-storage-boundary.md),
+[Runtime Architecture Decision Review](../rfcs/reviews/runtime-architecture-decision-review.md),
 [Provider Abstraction](provider-abstraction.md), [Security Model](security-model.md).
 
 ## Milestone 5: Reference CLI

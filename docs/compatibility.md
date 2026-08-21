@@ -56,6 +56,7 @@ For the current supported combinations and explicit implementation gaps, see the
 - changing human override authority eligibility, operation meaning, fail-closed response, resume requirements, or audit semantics
 - changing event envelope identity, actor, subject, correlation, causation, payload, audit, or redaction semantics
 - changing audit storage authority, redaction timing, ordering scope, retention, deletion, access, integrity, durability, or failure behavior
+- changing CLI command effect budgets, offline behavior, runtime-preflight separation, extension loading, shared-library initialization, or conformance claim boundaries
 - changing discovery root containment, source-hint cardinality, document cardinality, or workflow identity rules
 - changing MCP or A2A external ownership, identity binding, task correlation, artifact import, callback, or transitive-authority rules
 - changing reference CLI command names, exit code meanings, diagnostic code meanings, or machine-readable output formats
@@ -278,6 +279,21 @@ or allowing callbacks without policy is safety-significant and may break
 
 See [MCP And A2A Boundaries](mcp-a2a-boundaries.md).
 
+## CLI And Runtime Boundary Compatibility
+
+The initial reference CLI remains validation-only even when it shares pure
+specification libraries, a repository, language, binary, or release with a
+future runtime. Runtime preflight, credentials, network clients, executable
+extensions, providers, context and memory backends, audit stores, schedulers,
+and effect handlers must not initialize for validation commands.
+
+Changing command effect budgets, discovery, local writes, overwrite defaults,
+offline posture, process or plugin access, unresolved runtime-fact handling,
+shared-library dependency direction, or the separation of `NF-CLI` and
+`NF-RUNTIME` claims may break CI, editor, safety, privacy, and tooling
+compatibility. See
+[CLI And Runtime Responsibility Boundary](cli-runtime-boundary.md).
+
 ## Runtime Compatibility
 
 Future runtimes should publish:
@@ -344,6 +360,7 @@ Examples:
 | Change provider selection precedence, constraints, fallback, or explainability expectations | May affect `NF-SEMANTIC`, `NF-RUNTIME`, audit, privacy, cost, safety, and compatibility. |
 | Change provider constraint vocabulary, composition, unknown-fact behavior, or legacy migration | May affect `NF-MANIFEST`, `NF-SCHEMA`, `NF-SEMANTIC`, provider eligibility, privacy, cost, audit, and safety compatibility. |
 | Change provider adapter selection, request mapping, defaults, retries, fallback signaling, error normalization, credential or network scope, audit, or redaction | May affect `NF-RUNTIME`, provider behavior, privacy, cost, reproducibility, audit, and safety compatibility. |
+| Change CLI command effects, offline guarantees, discovery or write boundaries, runtime-preflight separation, executable extension handling, shared-library initialization, or claim separation | May affect `NF-CLI`, `NF-RUNTIME`, CI, editors, developer safety, privacy, and compatibility. |
 | Change reference CLI command names, exit codes, diagnostic codes, or output formats | May affect `NF-CLI`, CI workflows, editor integrations, and developer tooling compatibility. |
 | Add semantic cross-reference rule | May affect `NF-SEMANTIC` validators. |
 | Change extension namespace lifecycle | May affect `NF-EXTENSION` compatibility. |

@@ -36,6 +36,10 @@ or imply that an implemented slice accepts the entire RFC.
   records compatibility, safety, migration dependencies, blockers, and the
   implementation order for RFC-0013 through RFC-0016. The reviewed RFCs remain
   Draft.
+- [Runtime Architecture Decision Review](reviews/runtime-architecture-decision-review.md)
+  defines the mandatory evidence, review gates, blocker classes, and acceptance
+  rule for the future Runtime Architecture Decision RFC. No runtime decision
+  has been accepted.
 
 ## When to Write an RFC
 
@@ -103,6 +107,11 @@ An RFC should not be accepted until it explains:
 - how it affects safety and approvals
 - how it affects compatibility
 - how examples and schemas will change
+
+Runtime architecture RFCs must also satisfy the
+[Runtime Architecture Decision Review](reviews/runtime-architecture-decision-review.md).
+Its mandatory gates cannot be waived by an implementation preference, a vote,
+or a high score without reproducible evidence.
 
 ## Breaking Changes
 

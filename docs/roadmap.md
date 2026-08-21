@@ -173,20 +173,28 @@ Relevant docs: [Validation](validation.md), [Conformance](conformance.md),
   prototypes, hard gates, weighted criteria, and reviewable evidence.
 - Define reference CLI scope.
 - Review RFC-0011 validation-only reference CLI command boundaries.
+- Freeze CLI command effect budgets and separation from runtime preflight,
+  executable extensions, credentials, network access, and shared runtime code.
 - Define security and extension loading boundaries.
 - Define the provider adapter boundary between host-owned selection and
   provider-specific invocation.
 - Define the event and audit storage boundary for authority, redaction,
   ordering, retention, integrity, access, durability, and failures.
 - Decide packaging and conformance test strategy.
+- Review the decision RFC against the
+  [Runtime Architecture Decision Review](../rfcs/reviews/runtime-architecture-decision-review.md),
+  pin all evidence revisions, close every blocker, and record an explicit
+  outcome before implementation begins.
 
 This milestone must happen before runtime implementation begins.
 
 Relevant docs: [Architecture](architecture.md), [Runtime Options](runtime-options.md),
 [Runtime Language Evaluation Matrix](language-evaluation-matrix.md),
+[CLI And Runtime Responsibility Boundary](cli-runtime-boundary.md),
 [Extension Loading Boundary](extension-loading-boundary.md),
 [Provider Adapter Boundary](provider-adapter-boundary.md),
 [Event And Audit Storage Boundary](event-audit-storage-boundary.md),
+[Runtime Architecture Decision Review](../rfcs/reviews/runtime-architecture-decision-review.md),
 [Provider Abstraction](provider-abstraction.md), [Security Model](security-model.md).
 
 ## Milestone 5: Reference CLI
@@ -199,6 +207,9 @@ Possible commands:
 - `nexflow graph`
 
 The CLI should validate and inspect manifests only. It should not orchestrate real work.
+Its commands must preserve the offline, filesystem, process, extension,
+credential, and runtime-preflight limits in the
+[CLI And Runtime Responsibility Boundary](cli-runtime-boundary.md).
 
 Relevant docs: [Validation](validation.md), [Conformance](conformance.md), [Compatibility](compatibility.md).
 

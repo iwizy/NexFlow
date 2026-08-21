@@ -20,6 +20,12 @@ The proposal defines:
 
 The goal is to make NexFlow manifests easier to author and review without implementing orchestration behavior before the specification is ready.
 
+The detailed
+[CLI And Runtime Responsibility Boundary](../docs/cli-runtime-boundary.md)
+defines command effect budgets, static-versus-runtime fact ownership, offline
+and extension handling, shared-library rules, and separate conformance claims.
+It does not change this RFC's Draft state.
+
 ## Motivation
 
 NexFlow is specification-first.
@@ -79,6 +85,23 @@ The initial reference CLI must not:
 - require a hosted service
 
 The CLI may validate that such behavior is declared correctly. It must not perform the behavior.
+
+## CLI And Runtime Responsibility Boundary
+
+The initial CLI owns syntax validation, schema validation, implemented static
+semantic validation, source-grounded inspection, static graphs, and bounded
+starter-file generation. A future runtime owns live preflight, credentials,
+network access, executable extensions, provider and integration calls, current
+approval state, context and memory backends, audit persistence, scheduling, and
+effects.
+
+The difference is the evidence source and effect budget, not the executable
+name. A command-line interface that contacts live services or initializes
+runtime authority is not validation-only merely because it is called
+`validate`.
+
+The initial command budgets and shared-library rules are defined in
+[CLI And Runtime Responsibility Boundary](../docs/cli-runtime-boundary.md).
 
 ## Command Scope
 
@@ -373,7 +396,9 @@ Future support may include:
 - graph output
 - extension-aware checks
 
-Runtime preflight checks remain out of scope until runtime behavior is specified.
+Runtime preflight checks remain out of the initial `NF-CLI` scope. They belong
+to a future runtime or an explicitly runtime-scoped tool after runtime behavior
+is specified, and must not be hidden behind ordinary validation.
 
 ## Relationship To Conformance
 
@@ -401,6 +426,12 @@ The future Runtime Architecture Decision RFC should evaluate whether CLI and run
 - graph builders
 - conformance tests
 - extension loading boundaries
+
+Shared libraries must remain free of ambient runtime authority. Selecting a
+validation command must not initialize credentials, network clients, provider
+SDKs, executable extensions, context or memory backends, schedulers, audit
+stores, or effect handlers. CLI and runtime support claims remain separate even
+when one binary or release implements both.
 
 ## Compatibility Impact
 

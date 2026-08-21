@@ -47,6 +47,13 @@ for notices, package metadata, documentation, and releases.
 5. **Superseded**: proposal is replaced by a later RFC.
 6. **Rejected**: proposal is closed without adoption.
 
+Runtime architecture decisions also use the
+[Runtime Architecture Decision Review](../rfcs/reviews/runtime-architecture-decision-review.md).
+That review requires pinned comparative evidence, mandatory security and
+boundary gates, explicit ownership, and closure of every blocker before an RFC
+may become Accepted. The specialized checklist supplements rather than
+replaces maintainer approval.
+
 ## Breaking Changes Policy
 
 Breaking changes require:

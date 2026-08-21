@@ -4,9 +4,17 @@ NexFlow does not choose a runtime language yet.
 
 A runtime architecture decision must happen before implementation begins.
 
+The decision must be evaluated against the
+[Runtime Architecture Decision Review](../rfcs/reviews/runtime-architecture-decision-review.md).
+The current review outcome is `not-ready`: no decision RFC, common prototype
+evidence, completed scorecards, or accepted implementation choice exists.
+
 Language-specific repository maintenance tooling, including schema validation dependencies, does not constitute a runtime implementation or a Runtime Architecture Decision.
 
-Reference CLI scope is a separate planning step. See [RFC-0011](../rfcs/RFC-0011-reference-cli-scope.md) for the draft validation-only CLI boundary.
+Reference CLI scope is a separate planning step. See
+[RFC-0011](../rfcs/RFC-0011-reference-cli-scope.md) and the
+[CLI And Runtime Responsibility Boundary](cli-runtime-boundary.md) for the
+draft validation-only command, effect, and shared-library boundaries.
 
 ## Evaluation Framework
 
@@ -106,6 +114,7 @@ That RFC should choose:
 - initial implementation language
 - packaging strategy
 - validation scope
+- CLI and runtime responsibility split
 - security model
 - extension loading model
 - provider adapter model
@@ -116,10 +125,21 @@ It should also publish the completed evidence records, hard-gate results,
 weighted scorecards, target matrix, reviewer rationale, and any reason the
 decision differs from the numerical ranking.
 
+Acceptance requires every mandatory review gate to pass, every blocker to be
+closed, and the reviewed RFC, specification baseline, prototype evidence, and
+sign-off revisions to be pinned. A preferred language or the highest weighted
+score is not sufficient by itself.
+
 The extension loading model must satisfy the runtime-neutral
 [Extension Loading Boundary](extension-loading-boundary.md). The architecture
 decision still needs to choose the package, catalog, lock, integrity, host
 interface, isolation, update, rollback, diagnostic, and audit mechanisms.
+
+The CLI and runtime split must satisfy the
+[CLI And Runtime Responsibility Boundary](cli-runtime-boundary.md). The
+architecture decision still needs to choose artifact and package ownership,
+pure shared-library interfaces, command dispatch, privilege initialization,
+offline enforcement, release versioning, and separate conformance evidence.
 
 The provider adapter model must satisfy the runtime-neutral
 [Provider Adapter Boundary](provider-adapter-boundary.md). The architecture

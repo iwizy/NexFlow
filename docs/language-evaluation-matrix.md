@@ -18,6 +18,8 @@ Related documents:
 - [Architecture](architecture.md)
 - [Security Model](security-model.md)
 - [Validation](validation.md)
+- [CLI And Runtime Responsibility Boundary](cli-runtime-boundary.md)
+- [Runtime Architecture Decision Review](../rfcs/reviews/runtime-architecture-decision-review.md)
 - [Conformance](conformance.md)
 - [RFC-0011: Reference CLI Scope](../rfcs/RFC-0011-reference-cli-scope.md)
 - [Roadmap](roadmap.md)
@@ -38,6 +40,12 @@ distribution, policy isolation, or integration boundaries.
 The first comparison targets a validation-only executable and reusable
 specification libraries. Workflow execution, provider calls, credential use,
 extension loading, and remote mutation remain outside the prototype.
+
+Every candidate layout must preserve the
+[CLI And Runtime Responsibility Boundary](cli-runtime-boundary.md). Shared
+packages or a shared binary must not initialize runtime authority for
+validation commands; separate languages or repositories do not count as
+isolation without testable effect boundaries.
 
 ## Hard Gates
 
@@ -226,6 +234,12 @@ repository schema commitment.
 7. Compare single-language and split-language architecture costs.
 8. Publish the evidence with the Runtime Architecture Decision RFC.
 
+The completed reports then enter the mandatory gates in the
+[Runtime Architecture Decision Review](../rfcs/reviews/runtime-architecture-decision-review.md).
+The evaluation matrix determines candidate evidence and scoring; the review
+also evaluates package ownership, runtime boundaries, security, distribution,
+conformance, compatibility, rationale, and maintenance obligations.
+
 The highest numerical score does not automatically win. A decision may prefer
 a lower-scoring candidate when a documented architectural constraint is more
 important than the aggregate, but the RFC must explain the deviation. A tie is
@@ -237,4 +251,4 @@ arbitrary selection.
 No common prototypes, completed scorecards, or architecture decision exist.
 TypeScript, Python, Rust, and Go remain candidates. Runtime implementation must
 not begin until the evidence is reviewed and the Runtime Architecture Decision
-is accepted.
+is accepted under the published review gates.

@@ -61,7 +61,10 @@ work.
 
 ## Will there be a CLI?
 
-Probably, but only after the manifest model stabilizes. The first CLI should validate and inspect manifests, not orchestrate work.
+Probably, but only after the manifest model stabilizes. The first CLI should
+validate, inspect, graph, and initialize manifests within explicit offline and
+filesystem limits. It must not perform runtime preflight or orchestrate work.
+See [CLI And Runtime Responsibility Boundary](cli-runtime-boundary.md).
 
 ## Do I need every manifest to start?
 

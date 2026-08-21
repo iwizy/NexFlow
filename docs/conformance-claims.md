@@ -16,6 +16,7 @@ Related artifacts:
 - [Markdown template](../conformance/CONFORMANCE-CLAIM.template.md)
 - [Core Profile qualifiers](core-profile.md)
 - [Conformance](conformance.md)
+- [CLI And Runtime Responsibility Boundary](cli-runtime-boundary.md)
 - [Compatibility Matrix](compatibility-matrix.md)
 
 ## Status And Scope
@@ -173,7 +174,9 @@ Validation behavior should state what the subject:
 
 Enforcement behavior should state what the subject actually controls during
 execution. Validation-only tools should state that they provide no runtime
-enforcement.
+preflight or enforcement and should disclose command-specific filesystem,
+network, process, credential, extension, and remote-system effects. A shared
+binary or library does not merge `NF-CLI` and `NF-RUNTIME` evidence.
 
 Overall limitations apply to the complete claim. Level limitations apply only to
 one conformance level. Neither list may silently broaden the evaluated scope.

@@ -12,6 +12,7 @@ audit, or runtime validation.
 Related documents:
 
 - [Validation](validation.md)
+- [CLI And Runtime Responsibility Boundary](cli-runtime-boundary.md)
 - [Conformance](conformance.md)
 - [Compatibility](compatibility.md)
 - [Semantic Reference Inventory](semantic-reference-inventory.md)

@@ -269,6 +269,20 @@ durability, buffering, retention, deletion, access, integrity, correction,
 gap, recovery, or telemetry authority requires explicit runtime compatibility
 review even when manifests and event mapping profiles remain unchanged.
 
+## CLI And Runtime Boundary Version Decision
+
+The [CLI And Runtime Responsibility Boundary](cli-runtime-boundary.md) adds no
+manifest field and does not change `specVersion`. CLI artifacts, commands,
+diagnostic catalogs, output formats, static validation profiles, runtime
+artifacts, and runtime interfaces require independent versioning and support
+claims.
+
+Changing a command's effect budget, offline guarantee, discovery or write
+boundary, runtime-preflight separation, executable extension behavior,
+shared-library initialization, unresolved-fact meaning, or `NF-CLI` and
+`NF-RUNTIME` claim separation requires explicit compatibility review even when
+accepted manifests remain unchanged.
+
 ## Agent Identity Version Decision
 
 The compact AgentSet migration remains in `specVersion: "0.1"`. The schema

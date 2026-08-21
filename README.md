@@ -43,7 +43,7 @@ work, and five blockers that must be closed before a candidate tag.
 | Governance and RFC process | Implemented in documentation | [Governance](docs/governance.md), [RFCs](rfcs/README.md) |
 | Foundational model changes | ActorSet, compact AgentSet, and authoritative unique-active-definition slices implemented; RFCs remain Draft | [Actor Model](docs/actor-model.md), [Effective Agent Configuration](docs/effective-agent-configuration.md), [Foundational Model Review](rfcs/reviews/2026-07-foundational-model-review.md) |
 | Human override policy | Structured fail-closed manifest model implemented; runtime enforcement absent | [Human Override](docs/human-override.md), [RFC-0017](rfcs/RFC-0017-human-override.md) |
-| Reference CLI | Planned, not implemented | [RFC-0011](rfcs/RFC-0011-reference-cli-scope.md) |
+| Reference CLI | Validation-only boundary specified; not implemented | [CLI And Runtime Responsibility Boundary](docs/cli-runtime-boundary.md), [RFC-0011](rfcs/RFC-0011-reference-cli-scope.md) |
 | Runtime and provider execution | Planned, not implemented | [Architecture](docs/architecture.md), [Runtime Options](docs/runtime-options.md) |
 | Live integrations and extension loading | Not implemented | [Compatibility Matrix](docs/compatibility-matrix.md) |
 
@@ -254,6 +254,7 @@ NexFlow is intentionally split into layers:
 | Model prompt revisions and safety review | [Prompt Sets](docs/prompt-sets.md), [Versioning](docs/versioning.md), [Event Model](docs/events.md) |
 | Model retrieval, freshness, and citations | [Retrieval Profiles](docs/retrieval-profiles.md), [Context Model](docs/context-model.md), [Event Model](docs/events.md) |
 | Model event evidence and audit storage | [Event Model](docs/events.md), [Event And Audit Storage Boundary](docs/event-audit-storage-boundary.md), [Event Interoperability](docs/event-interoperability.md), [Conformance](docs/conformance.md) |
+| Separate validation tooling from runtime execution | [CLI And Runtime Responsibility Boundary](docs/cli-runtime-boundary.md), [Validation](docs/validation.md), [Runtime Options](docs/runtime-options.md), [Conformance](docs/conformance.md) |
 | Validate manifests | [Validation](docs/validation.md), [Diagnostic Code Catalog](docs/diagnostic-code-catalog.md), [Semantic Reference Inventory](docs/semantic-reference-inventory.md), [Schema Guide](schemas/README.md), [Conformance](docs/conformance.md), [Compatibility Matrix](docs/compatibility-matrix.md) |
 | Publish a support claim | [Conformance Claims](docs/conformance-claims.md), [Claim Templates](conformance/README.md), [Compatibility Matrix](docs/compatibility-matrix.md) |
 | Extend or integrate NexFlow | [Extension Profiles](extensions/README.md), [Extension Model](docs/extensions.md), [Extension Loading Boundary](docs/extension-loading-boundary.md), [MCP And A2A Boundaries](docs/mcp-a2a-boundaries.md), [MCP Extension Draft](extensions/mcp/README.md), [A2A Extension Draft](extensions/a2a/README.md), [Integrations](docs/integrations.md), [Provider Abstraction](docs/provider-abstraction.md) |

@@ -125,6 +125,20 @@ autonomy, context, memory, network, credential, and human-override policy.
 Unsupported behavior must remain inert and fail closed. See
 [Extension Loading Boundary](extension-loading-boundary.md).
 
+### Validation Tool Boundaries
+
+The initial reference CLI must operate offline on explicit local inputs. Static
+validation, inspection, and graph commands may not resolve credentials, load
+executable extensions, call providers or integrations, start manifest-selected
+processes, perform runtime preflight, or mutate project state. `init` and
+explicit output files are the only bounded authoring writes.
+
+Shared parsing and validation libraries must not initialize runtime services or
+ambient authority when a validation command is selected. A successful CLI
+result is not approval or evidence that the current deployment can execute the
+project. See
+[CLI And Runtime Responsibility Boundary](cli-runtime-boundary.md).
+
 ### Human Override
 
 Humans must be able to stop or override future runtime activity through an

@@ -345,6 +345,17 @@ permissions, tool access, network access, or runtime grants.
 
 ## R
 
+### Reference CLI
+
+A future validation-focused command-line tool for authoring, validating,
+inspecting, and statically graphing NexFlow manifests.
+
+The initial reference CLI operates within explicit offline and filesystem
+effect budgets. It does not perform runtime preflight, load executable
+extensions, acquire credentials, call providers, orchestrate work, or enforce
+runtime policy. See
+[CLI And Runtime Responsibility Boundary](cli-runtime-boundary.md).
+
 ### Retrieval Profile
 
 A provider-neutral declaration of retrieval expectations for a behaviorally meaningful use of context.
@@ -359,7 +370,11 @@ Roles describe responsibility. They do not grant access by themselves.
 
 ### Runtime
 
-A future implementation that validates, interprets, or executes NexFlow manifests.
+A future implementation that performs deployment-specific preflight and
+executes or coordinates work while enforcing NexFlow permissions, approvals,
+autonomy, context, memory, provider, network, credential, extension, and audit
+boundaries. It may reuse pure validation libraries without turning validation
+success into execution authority.
 
 This repository does not currently implement a runtime engine.
 

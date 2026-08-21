@@ -15,6 +15,7 @@ Related documents:
 - [Architecture](architecture.md)
 - [Security Model](security-model.md)
 - [Manifest Discovery](manifest-discovery.md)
+- [CLI And Runtime Responsibility Boundary](cli-runtime-boundary.md)
 - [Network Access Policy](network-access-policy.md)
 - [Conformance](conformance.md)
 
@@ -39,6 +40,12 @@ This document does not:
 - install, load, or execute the maintained MCP or A2A profiles
 - make a schema-valid extension safe or supported
 - allow an extension to enforce core policy on behalf of the runtime
+
+The initial validation-only CLI does not use this runtime loading boundary to
+discover or execute extension implementations. It may apply built-in versioned
+static checks to supported extension profiles while keeping unknown executable
+behavior inert. See
+[CLI And Runtime Responsibility Boundary](cli-runtime-boundary.md).
 
 ## Separate Trust Domains
 

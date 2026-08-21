@@ -136,7 +136,11 @@ It may check:
 - context and memory backend availability
 - event sink availability
 
-Runtime preflight is not part of the current repository. It belongs to future runtime or CLI work and must not be implied by schema validation.
+Runtime preflight is not part of the current repository or the initial
+validation-only CLI. It belongs to a future runtime or an explicitly
+runtime-scoped tool and must not be implied by schema or semantic validation.
+See the
+[CLI And Runtime Responsibility Boundary](../docs/cli-runtime-boundary.md).
 
 ## Diagnostic Severity
 
@@ -233,7 +237,12 @@ Validation should not:
 - expand permissions because an extension is present
 - treat passing validation as approval to perform dangerous actions
 
-Live checks against external systems, if introduced later, should be opt-in and clearly separated from offline validation.
+Live checks against external systems, if introduced by a future runtime-scoped
+tool, should be opt-in and clearly separated from offline validation.
+
+For the initial reference CLI, live checks remain outside `NF-CLI` rather than
+an opt-in validation mode. A future runtime-scoped preflight may perform them
+only through its own network, credential, extension, and audit boundaries.
 
 ## Relationship To Conformance
 

@@ -11,6 +11,7 @@ Related RFCs:
 
 Related design notes:
 
+- [CLI And Runtime Responsibility Boundary](cli-runtime-boundary.md)
 - [Diagnostic Code Catalog](diagnostic-code-catalog.md)
 - [Schema Design Notes](schema-design-notes.md)
 - [Semantic Reference Inventory](semantic-reference-inventory.md)
@@ -508,6 +509,12 @@ Validation cannot by itself enforce:
 
 Those responsibilities belong to a future runtime.
 
+Runtime preflight is also outside the initial validation-only CLI. Checks for
+live provider availability, installed executable extensions, credentials,
+network routes, current approvals, context or memory backends, and event sinks
+use runtime facts and authority. See
+[CLI And Runtime Responsibility Boundary](cli-runtime-boundary.md).
+
 ## Expected Validator Output
 
 A validator should prefer precise, actionable messages.
@@ -534,3 +541,6 @@ Validation supports the `NF-SCHEMA` and future `NF-SEMANTIC` conformance levels 
 Current repository checks are draft validation aids. A future `nexflow validate` command should make these checks easier to run consistently.
 
 See [RFC-0011](../rfcs/RFC-0011-reference-cli-scope.md) for the draft scope of `nexflow validate`, `nexflow inspect`, `nexflow graph`, and `nexflow init`.
+See [CLI And Runtime Responsibility Boundary](cli-runtime-boundary.md) for each
+command's effect budget and the separation from runtime preflight and
+enforcement.

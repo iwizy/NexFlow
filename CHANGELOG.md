@@ -11,6 +11,12 @@ tag or release has been published, and manifest `specVersion` remains `"0.1"`.
 
 ### Added
 
+- Defined a language-neutral CLI and runtime responsibility boundary with
+  command-specific effect budgets, offline and filesystem rules, static versus
+  runtime fact ownership, explicit runtime-preflight separation, inert
+  extension handling, safe shared-library dependencies, deterministic output,
+  and independent `NF-CLI` and `NF-RUNTIME` conformance claims without
+  implementing a CLI or runtime.
 - Defined a runtime-neutral event and audit storage boundary that separates
   event declarations, event instances, audit records, evidence, projections,
   receipts, stores, indexes, and telemetry; requires redaction before

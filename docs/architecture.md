@@ -88,6 +88,21 @@ this relationship in documentation but does not implement the resolver or view
 serializer. See [Agent Assembly](agent-assembly.md) and
 [Effective Agent Configuration](effective-agent-configuration.md).
 
+## Reference CLI Boundary
+
+The future reference CLI is an authoring, validation, inspection, and static
+graph tool. Its initial commands operate offline on explicit local inputs. Only
+`init` and explicitly requested output files may write within a visible local
+destination; no validation command acquires credentials, loads executable
+extensions, calls providers or integrations, starts processes, or performs
+runtime preflight.
+
+Pure parsing, schema, semantic, diagnostic, inventory, and graph libraries may
+be shared with a runtime. Validation command selection must not initialize
+runtime services or authority, and CLI success must not replace current runtime
+preflight or operation authorization. See
+[CLI And Runtime Responsibility Boundary](cli-runtime-boundary.md).
+
 ## Runtime Boundary
 
 The runtime is future work. A conforming runtime is expected to:

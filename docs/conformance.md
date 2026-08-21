@@ -25,6 +25,7 @@ See the [Compatibility Matrix](compatibility-matrix.md) for the repository's cur
 | --- | --- |
 | [Schema Guide](../schemas/README.md) | Defines the structural contracts covered by `NF-SCHEMA` evidence. |
 | [Validation](validation.md) | Explains each maintained check and the limits of its result. |
+| [CLI And Runtime Responsibility Boundary](cli-runtime-boundary.md) | Defines validation command effect budgets, runtime-preflight separation, and independent `NF-CLI` claims. |
 | [Fixtures Guide](../fixtures/README.md) | Catalogs focused positive and negative inputs used as validation evidence. |
 | [Examples Guide](../examples/README.md) | Documents complete reference manifest sets covered by repository validation. |
 | [Diagnostic Code Catalog](diagnostic-code-catalog.md) | Distinguishes implemented draft, candidate, and reserved diagnostics plus severity and remediation semantics. |
@@ -205,9 +206,18 @@ A future reference CLI may support commands such as:
 - `nexflow inspect`
 - `nexflow graph`
 
-An initial conforming CLI SHOULD focus on validation and inspection. It MUST NOT imply orchestration behavior unless that behavior is specified.
+An initial conforming CLI SHOULD focus on validation, inspection, static
+graphing, and bounded starter-file generation. It MUST operate within the
+command effect budgets defined by the
+[CLI And Runtime Responsibility Boundary](cli-runtime-boundary.md) and MUST NOT
+imply runtime preflight, orchestration, or enforcement.
 
 [RFC-0011](../rfcs/RFC-0011-reference-cli-scope.md) proposes the initial validation-only reference CLI scope for `validate`, `inspect`, `graph`, and `init`.
+
+An `NF-CLI` claim must identify supported validation layers, command-specific
+writes, discovery and overwrite behavior, network and process posture,
+extension handling, output compatibility, redaction, and unsupported runtime
+facts. Sharing a binary or library with a runtime does not imply `NF-RUNTIME`.
 
 ### Runtime
 
@@ -348,6 +358,7 @@ The following behavior is non-conforming:
 - deriving OpenTelemetry trace or span identity from NexFlow correlation or causation IDs
 - executing workflows while claiming validation-only behavior
 - a reference CLI calling providers, executing commands, writing memory, or mutating remote systems while claiming validation-only `NF-CLI` behavior
+- a reference CLI performing live runtime preflight, loading executable extensions, resolving credentials, or initializing runtime services while claiming validation-only `NF-CLI` behavior
 - silently accepting unsupported spec versions
 
 ## Current Repository Status

@@ -124,7 +124,8 @@ Release readiness:
 - TypeScript, Python, Rust, and Go have comparable hard-gate results, weighted
   scorecards, target measurements, and pinned evidence from one specification
   revision
-- reference CLI scope is accepted or clearly bounded
+- reference CLI scope, command effect budgets, and separation from runtime
+  preflight and enforcement are accepted or clearly bounded
 - extension loading and sandbox expectations are documented
 - security boundaries for network, filesystem, credentials, and destructive actions are explicit
 - packaging and distribution criteria are documented
@@ -145,6 +146,10 @@ Release readiness:
 - `nexflow validate` behavior is aligned with the validation model
 - `nexflow inspect` output is useful for humans and future machine consumers
 - `nexflow graph` remains explanatory and does not orchestrate work
+- validation commands operate offline without credentials, executable
+  extensions, runtime services, or hidden remote checks
+- CLI and runtime packages or shared libraries preserve separate initialization
+  and conformance claims
 - CLI diagnostics are documented and compatible with conformance language
 
 Non-goals:
@@ -152,6 +157,7 @@ Non-goals:
 - no task execution
 - no LLM calls
 - no autonomous workflow execution
+- no runtime preflight presented as validation-only CLI behavior
 - no deployment or production action support
 
 ## `0.6` Runtime Prototype Boundary

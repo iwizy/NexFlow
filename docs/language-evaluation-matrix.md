@@ -18,6 +18,7 @@ Related documents:
 - [Architecture](architecture.md)
 - [Security Model](security-model.md)
 - [Validation](validation.md)
+- [CLI And Runtime Responsibility Boundary](cli-runtime-boundary.md)
 - [Conformance](conformance.md)
 - [RFC-0011: Reference CLI Scope](../rfcs/RFC-0011-reference-cli-scope.md)
 - [Roadmap](roadmap.md)
@@ -38,6 +39,12 @@ distribution, policy isolation, or integration boundaries.
 The first comparison targets a validation-only executable and reusable
 specification libraries. Workflow execution, provider calls, credential use,
 extension loading, and remote mutation remain outside the prototype.
+
+Every candidate layout must preserve the
+[CLI And Runtime Responsibility Boundary](cli-runtime-boundary.md). Shared
+packages or a shared binary must not initialize runtime authority for
+validation commands; separate languages or repositories do not count as
+isolation without testable effect boundaries.
 
 ## Hard Gates
 

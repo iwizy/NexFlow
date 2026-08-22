@@ -169,6 +169,67 @@ Relevant docs: [Validation](validation.md), [Conformance](conformance.md),
 
 ## Milestone 4: Runtime Architecture Decision
 
+Status: evidence preparation. The published review outcome is `not-ready`; no
+runtime language, package layout, supported target matrix, or implementation
+authorization has been accepted.
+
+### Completed Review Inputs
+
+- neutral hard gates, weighted criteria, and a common validation-only prototype
+  contract for TypeScript, Python, Rust, and Go
+- validation-only CLI command scope and effect budgets
+- runtime-neutral extension loading, provider adapter, and event and audit
+  storage boundaries
+- mandatory architecture review gates, evidence rules, blocker classes, and
+  acceptance criteria
+
+These inputs constrain a future decision. They are not a substitute for the
+decision RFC or candidate evidence.
+
+### Open Acceptance Blockers
+
+- no Runtime Architecture Decision RFC proposes a language, architecture
+  layout, package ownership, and exact release targets
+- no comparable candidate prototypes, hard-gate reports, weighted scorecards,
+  target measurements, or reviewer reconciliation records are published
+- package boundaries, cross-package version ownership, and distribution
+  mechanisms remain undecided
+- complete runtime threat and credential boundaries are not available as
+  decision evidence
+- CLI, runtime, and extension conformance test ownership is not complete
+- artifact signing, provenance, installation, upgrade, rollback, and
+  maintenance ownership have not been demonstrated
+
+### Decision Closure Sequence
+
+1. Publish a draft decision RFC that states the candidate architectures,
+   mandatory decisions, non-goals, and evidence still required.
+2. Complete the package layout, threat, credential, and conformance strategy
+   inputs without choosing a language by assumption.
+3. Freeze one specification and fixture revision for all candidate prototypes.
+4. Run the common prototype, target, security, supply-chain, distribution, and
+   maintenance evaluations for every candidate.
+5. Reconcile independent reviewer scorecards and record ties, dissent,
+   confidence, failed gates, and residual risks.
+6. Review the pinned RFC and evidence against every mandatory gate.
+7. Record exactly one decision outcome before changing implementation status.
+
+### Outcome-Dependent Work
+
+| Review outcome | Permitted next work |
+| --- | --- |
+| `not-ready` | Close the recorded blockers and repeat the review. Do not start CLI or runtime implementation. |
+| `changes-requested` | Revise the proposal or evidence within the recorded scope, then repeat all affected gates. |
+| `accepted` | Synchronize architecture, runtime options, compatibility, release, and conformance documents to the exact accepted revision before opening implementation work. |
+| `rejected` | Do not implement the rejected proposal; document whether a materially different RFC will follow. |
+| `superseded` | Continue only from the newer reviewed RFC and preserve the earlier decision record. |
+
+Even after `accepted`, implementation is limited to the scope authorized by the
+RFC. A validation-focused CLI does not authorize orchestration, and a runtime
+architecture choice does not create an `NF-RUNTIME` conformance claim.
+
+### Milestone Scope
+
 - Compare TypeScript, Python, Rust, and Go through identical validation-only
   prototypes, hard gates, weighted criteria, and reviewable evidence.
 - Define reference CLI scope.
@@ -186,7 +247,8 @@ Relevant docs: [Validation](validation.md), [Conformance](conformance.md),
   pin all evidence revisions, close every blocker, and record an explicit
   outcome before implementation begins.
 
-This milestone must happen before runtime implementation begins.
+This milestone must reach an explicit `accepted` outcome before reference CLI
+or runtime implementation begins.
 
 Relevant docs: [Architecture](architecture.md), [Runtime Options](runtime-options.md),
 [Runtime Language Evaluation Matrix](language-evaluation-matrix.md),

@@ -16,6 +16,41 @@ Reference CLI scope is a separate planning step. See
 [CLI And Runtime Responsibility Boundary](cli-runtime-boundary.md) for the
 draft validation-only command, effect, and shared-library boundaries.
 
+## Current Decision State
+
+The architecture process has completed its neutral evaluation framework and
+several runtime-independent boundary contracts. It has not completed the
+evidence needed to select an implementation architecture.
+
+Available inputs:
+
+- language hard gates, weighted criteria, and a common prototype contract
+- explicit CLI command effect budgets and runtime-preflight separation
+- extension loading, provider adapter, and event and audit storage boundaries
+- a mandatory review checklist and acceptance rule
+
+Open decision blockers:
+
+- no decision RFC proposes one language, architecture layout, package model,
+  and exact target matrix
+- no candidate has a completed comparable prototype, hard-gate record,
+  scorecard, or distribution evidence
+- package ownership and cross-package compatibility remain undecided
+- runtime threat, credential, and conformance evidence is incomplete
+- signing, provenance, install, upgrade, rollback, and maintenance ownership
+  are not demonstrated for any candidate
+
+The next step is evidence closure, not implementation. The project must draft
+the decision proposal, complete the missing boundary inputs, freeze one common
+specification revision, evaluate every candidate, and then record an explicit
+review outcome. Existing JavaScript validation tooling gives no candidate a
+presumptive advantage.
+
+An `accepted` outcome permits only the implementation scope named by the RFC.
+Any `not-ready`, `changes-requested`, `rejected`, or `superseded` outcome keeps
+implementation blocked until the corresponding review path is completed. See
+the [Roadmap](roadmap.md) for the ordered closure sequence.
+
 ## Evaluation Framework
 
 The [Runtime Language Evaluation Matrix](language-evaluation-matrix.md) defines

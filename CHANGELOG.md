@@ -132,6 +132,10 @@ tag or release has been published, and manifest `specVersion` remains `"0.1"`.
 
 ### Changed
 
+- Refreshed the public architecture status and roadmap after the decision review:
+  the outcome remains `not-ready`, evidence-closure work is ordered, each review
+  outcome has an explicit next path, and CLI or runtime implementation remains
+  blocked until a revision-pinned RFC is accepted.
 - Refreshed the README support snapshot, navigation, near-term priorities, and
   known limitations using evidence from the compatibility matrix and repository
   validation workflow.

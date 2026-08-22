@@ -43,6 +43,7 @@ work, and five blockers that must be closed before a candidate tag.
 | Governance and RFC process | Implemented in documentation | [Governance](docs/governance.md), [RFCs](rfcs/README.md) |
 | Foundational model changes | ActorSet, compact AgentSet, and authoritative unique-active-definition slices implemented; RFCs remain Draft | [Actor Model](docs/actor-model.md), [Effective Agent Configuration](docs/effective-agent-configuration.md), [Foundational Model Review](rfcs/reviews/2026-07-foundational-model-review.md) |
 | Human override policy | Structured fail-closed manifest model implemented; runtime enforcement absent | [Human Override](docs/human-override.md), [RFC-0017](rfcs/RFC-0017-human-override.md) |
+| Runtime architecture decision | Review framework published; current outcome is `not-ready`, with no language or package layout selected | [Runtime Architecture Decision Review](rfcs/reviews/runtime-architecture-decision-review.md), [Runtime Options](docs/runtime-options.md), [Roadmap](docs/roadmap.md) |
 | Reference CLI | Validation-only boundary specified; not implemented | [CLI And Runtime Responsibility Boundary](docs/cli-runtime-boundary.md), [RFC-0011](rfcs/RFC-0011-reference-cli-scope.md) |
 | Runtime and provider execution | Planned, not implemented | [Architecture](docs/architecture.md), [Runtime Options](docs/runtime-options.md) |
 | Live integrations and extension loading | Not implemented | [Compatibility Matrix](docs/compatibility-matrix.md) |
@@ -51,6 +52,11 @@ Today, NexFlow can be used to author and review declarative team manifests,
 validate the maintained examples structurally, and run limited cross-manifest
 reference checks. It cannot execute tasks, call model providers, enforce policy,
 load extensions, or orchestrate workflows.
+
+The architecture review has not selected an implementation. The next runtime
+milestone is to close the published decision blockers with comparable,
+revision-pinned evidence and record an explicit review outcome. CLI and runtime
+implementation remain blocked while the outcome is `not-ready`.
 
 See the [Compatibility Matrix](docs/compatibility-matrix.md) for the exact tested
 artifact pairing and the [0.1 Readiness Checklist](docs/readiness-checklist.md)
@@ -272,13 +278,17 @@ The current priorities are:
    before broader field or example migration.
 3. Add positive fixtures, expand maintained negative fixtures, stabilize
    diagnostics, and broaden semantic checks.
-4. Complete the **Runtime Architecture Decision** before selecting an
-   implementation language or starting runtime work, using the
-   [Runtime Language Evaluation Matrix](docs/language-evaluation-matrix.md) and
-   mandatory [Runtime Architecture Decision Review](rfcs/reviews/runtime-architecture-decision-review.md).
-5. Build a validation-focused reference CLI for `init`, `validate`, `inspect`,
+4. Close the Runtime Architecture Decision blockers: publish the proposal,
+   complete package, threat, credential, and conformance inputs, and produce
+   comparable candidate evidence using the
+   [Runtime Language Evaluation Matrix](docs/language-evaluation-matrix.md).
+5. Record an explicit outcome under the mandatory
+   [Runtime Architecture Decision Review](rfcs/reviews/runtime-architecture-decision-review.md);
+   no language or implementation is selected while the outcome is `not-ready`.
+6. After an accepted decision, build a validation-focused reference CLI for
+   `init`, `validate`, `inspect`,
    and `graph`; it must not orchestrate work.
-6. Explore a runtime prototype only after its permission, approval, credential,
+7. Explore a runtime prototype only after its permission, approval, credential,
    network, extension, and audit boundaries are specified.
 
 See [Roadmap](docs/roadmap.md), [Release Plan](docs/release-plan.md),

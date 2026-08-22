@@ -128,6 +128,30 @@ including comparative evidence, CLI/runtime separation, security, packaging,
 extension, provider, audit, conformance, compatibility, and ownership gates.
 The current outcome is `not-ready`, so runtime implementation remains blocked.
 
+### Architecture Decision Gate
+
+Architecture status changes only through a reviewed, revision-pinned decision
+record:
+
+| Decision state | Architecture effect |
+| --- | --- |
+| `not-ready` | Preserve runtime neutrality, close evidence blockers, and do not create implementation packages. |
+| `changes-requested` | Revise only the reviewed proposal or evidence and rerun every affected gate. |
+| `accepted` | Adopt the exact language, package, target, security, conformance, and ownership boundaries recorded by the accepted RFC. |
+| `rejected` | Do not implement the rejected architecture. |
+| `superseded` | Treat the replacement RFC as the only active decision candidate. |
+
+Before implementation begins after acceptance, Architecture, Runtime Options,
+Compatibility, Release Plan, Conformance, and the README status must all point
+to the same accepted RFC and evidence revision. Package creation, dependency
+selection, or a CLI skeleton must not be used to make the decision implicitly.
+
+Acceptance authorizes no behavior beyond the RFC. In particular, a
+validation-only CLI remains non-executing, and runtime packages may not claim
+permission enforcement, provider invocation, extension loading, audit
+durability, or `NF-RUNTIME` support until those behaviors exist and have
+conformance evidence.
+
 ## Provider Boundary
 
 Providers are abstract. The specification may describe desired model traits, routing preferences, and constraints, but it must not require any specific vendor.

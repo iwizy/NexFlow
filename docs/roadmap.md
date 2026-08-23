@@ -9,10 +9,10 @@ For the first candidate review, see the [0.1 Readiness Checklist](readiness-chec
 The exact feature boundary is frozen in the
 [0.1 Candidate Scope](0.1-scope.md).
 
-## Current Checkpoint: `v0.1.0-rc.1`
+## Current Checkpoint: `v0.1.0`
 
-Status: draft specification release candidate published. Stable `v0.1.0`
-remains pending candidate review and feedback.
+Status: draft specification foundation released. Candidate review is complete;
+`0.2` validation and conformance work is next.
 
 The repository currently provides the following candidate evidence:
 
@@ -37,7 +37,7 @@ The repository currently provides the following candidate evidence:
 
 Candidate readiness was evaluated against one exact commit. The completed
 readiness record, command output, and cross-surface review are attached to the
-[`v0.1.0-rc.1` release](https://github.com/iwizy/NexFlow/releases/tag/v0.1.0-rc.1).
+[`v0.1.0` release](https://github.com/iwizy/NexFlow/releases/tag/v0.1.0).
 The blocker IDs and closure evidence are maintained in the
 [0.1 Candidate Scope](0.1-scope.md). Candidate publication does not resolve the
 separate Runtime Architecture Decision, whose current outcome remains
@@ -67,7 +67,8 @@ and [Foundational Model Cross-RFC Review](../rfcs/reviews/2026-07-foundational-m
 - Add examples.
 - Create governance and RFC process.
 
-Status: release candidate published; stable release decision pending.
+Status: `v0.1.0` released; post-release corrections follow the published
+compatibility and migration rules.
 
 Relevant docs: [Concepts](concepts.md), [Glossary](glossary.md), [Manifest Reference](manifest-reference.md), [Actor Model](actor-model.md), [Actor Model Migration](actor-model-migration.md), [Agent Identity Migration](agent-identity-migration.md), [Agent Definitions](agent-definitions.md), [Human Override](human-override.md), [Context Model](context-model.md), [Memory Model](memory-model.md), [Approval Gates](approval-gates.md), [Prompt Sets](prompt-sets.md), [Retrieval Profiles](retrieval-profiles.md).
 

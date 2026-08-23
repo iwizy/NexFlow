@@ -300,7 +300,7 @@ constraints. See [Agent Identity Migration](agent-identity-migration.md).
 ## Agent Definition Authority Version Decision
 
 The unique unscoped active-definition authority rule remains in
-`specVersion: "0.1"`. It is included in `v0.1.0-rc.1`, so subsequent changes to
+`specVersion: "0.1"`. It is included in `v0.1.0`, so subsequent changes to
 the candidate contract require explicit compatibility review and synchronized
 migration guidance even though the specification remains pre-`1.0`.
 

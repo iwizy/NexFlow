@@ -6,7 +6,18 @@ This project follows a specification-first process. Breaking changes must includ
 
 ## [Unreleased]
 
-No changes have been recorded since `v0.1.0-rc.1`.
+No changes have been recorded since `v0.1.0`.
+
+## [0.1.0] - 2026-08-23
+
+### Changed
+
+- Promoted the reviewed `v0.1.0-rc.1` specification snapshot after repeating
+  the full repository check set against the exact stable commit.
+- Synchronized release status, roadmap priorities, and historical version
+  rationale discovered during post-publication candidate review.
+- Preserved manifest `specVersion: "0.1"` and every documented limitation; this
+  release does not add runtime, provider, integration, or orchestration support.
 
 ## [0.1.0-rc.1] - 2026-08-23
 
@@ -203,7 +214,7 @@ provider, integration, or orchestration support.
 - Reference CLI work remains blocked until the decision review reaches
   `accepted`; the checkpoint alone grants no implementation or conformance
   status.
-- The candidate, if approved, remains a draft specification release rather than
+- The release candidate remains a draft specification release rather than
   a runtime, CLI, provider integration, or orchestration release.
 - Current repository evidence covers 17 schema-backed manifest kinds, 7
   maintained project examples, 113 structurally validated manifests, and

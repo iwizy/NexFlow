@@ -1,7 +1,7 @@
 # NexFlow
 
 ![Spec Version](https://img.shields.io/badge/spec-0.1--draft-orange)
-![Release](https://img.shields.io/badge/release-v0.1.0--rc.1-yellow)
+![Release](https://img.shields.io/badge/release-v0.1.0-brightgreen)
 ![Status](https://img.shields.io/badge/status-specification--first-blue)
 ![Runtime](https://img.shields.io/badge/runtime-not%20implemented-lightgrey)
 ![Provider Neutral](https://img.shields.io/badge/provider-neutral-brightgreen)
@@ -15,14 +15,14 @@ It is **not** an AI coding agent, an LLM API wrapper, a chat application, or a p
 
 ## Status
 
-Current release posture: **`v0.1.0-rc.1`**, a pre-`1.0` draft specification
-release candidate. Manifest `specVersion` remains `"0.1"`.
+Current release: **`v0.1.0`**, the first published foundation release of the
+pre-`1.0` draft specification. Manifest `specVersion` remains `"0.1"`.
 
 The [`0.1` Candidate Scope](docs/0.1-scope.md) is frozen for evaluation. The
 freeze defines the baseline, optional and migration-only surfaces, and deferred
 work. The exact commit, evaluated readiness record, check output, and
 cross-surface review are published with the
-[`v0.1.0-rc.1` release](https://github.com/iwizy/NexFlow/releases/tag/v0.1.0-rc.1).
+[`v0.1.0` release](https://github.com/iwizy/NexFlow/releases/tag/v0.1.0).
 
 | Surface | Current State | Evidence |
 | --- | --- | --- |
@@ -41,7 +41,7 @@ cross-surface review are published with the
 | A2A extension draft | Implemented as an offline external-agent/task/artifact policy profile; no live integration | `npm run a2a-extension-smoke`, [A2A Extension Draft](extensions/a2a/README.md), [MCP And A2A Boundaries](docs/mcp-a2a-boundaries.md) |
 | Event interoperability | Specified as CloudEvents and OpenTelemetry EventRecord mappings; no exporter or transport | [Event Interoperability](docs/event-interoperability.md), [Event Model](docs/events.md) |
 | Conformance claim format | Implemented as standalone schema plus profile-qualified YAML and Markdown templates | `npm run conformance-claim-smoke`, [Conformance Claims](docs/conformance-claims.md) |
-| Candidate readiness record | Implemented as a standalone eight-gate schema and non-claiming `0.1` template; evaluated evidence is published for `v0.1.0-rc.1` | `npm run candidate-readiness-smoke`, [0.1 Readiness Checklist](docs/readiness-checklist.md), [Release Evidence](release/README.md) |
+| Candidate readiness record | Implemented as a standalone eight-gate schema and non-claiming `0.1` template; evaluated release evidence is published for `v0.1.0` | `npm run candidate-readiness-smoke`, [0.1 Readiness Checklist](docs/readiness-checklist.md), [Release Evidence](release/README.md) |
 | Semantic reference checks | Partial repository smoke coverage | `npm run semantic-smoke`, [Validation](docs/validation.md) |
 | Governance and RFC process | Implemented in documentation | [Governance](docs/governance.md), [RFCs](rfcs/README.md) |
 | Foundational model changes | ActorSet, compact AgentSet, and authoritative unique-active-definition slices implemented; RFCs remain Draft | [Actor Model](docs/actor-model.md), [Effective Agent Configuration](docs/effective-agent-configuration.md), [Foundational Model Review](rfcs/reviews/2026-07-foundational-model-review.md) |
@@ -274,8 +274,8 @@ NexFlow is intentionally split into layers:
 
 The current priorities are:
 
-1. Complete the `0.1` candidate checkpoint with validation evidence, known
-   limitations, compatibility notes, and an explicit release decision.
+1. Review `v0.1.0` feedback and begin the `0.2` validation and conformance
+   work without widening runtime claims.
 2. Review the ActorSet, compact AgentSet, active-definition authority, human
    override, Agent Assembly inspection, and typed-reference primitive slices
    before broader field or example migration.

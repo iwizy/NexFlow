@@ -52,8 +52,8 @@ non-empty, unique `workflows` list. The forms cannot coexist. The focused
 one explicit local root, verifies expected kinds and project association, and
 retains every unique workflow by `workflow.id`.
 
-This change keeps `specVersion: "0.1"` because no candidate or stable `0.1`
-release has been published and the change broadens authoring compatibility
+This additive compatibility change entered `specVersion: "0.1"` before
+`v0.1.0-rc.1` and remains part of `v0.1.0`. It broadens authoring compatibility
 without invalidating complete projects.
 
 ## Optional Module Qualifiers

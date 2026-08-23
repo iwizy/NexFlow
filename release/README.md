@@ -4,6 +4,10 @@ This directory contains standalone artifacts for recording release decisions.
 They are repository maintenance records, not NexFlow project manifests, release
 announcements, conformance certificates, or runtime guarantees.
 
+Completed commit-bound records may be published as GitHub release assets. This
+avoids embedding a self-referential commit hash in the commit being evaluated
+while keeping the record, check output, and review attached to the exact tag.
+
 ## 0.1 Candidate Record
 
 - [`candidate-readiness.schema.json`](candidate-readiness.schema.json) validates

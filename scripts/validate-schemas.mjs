@@ -39,6 +39,14 @@ const schemaFiles = await filesUnder(schemaDirectory, (name) => name.endsWith(".
 const manifestFiles = await filesUnder(examplesDirectory, (name) => /\.ya?ml$/u.test(name));
 const schemas = [];
 
+if (schemaFiles.length === 0) {
+  report(schemaDirectory, "NF-SCHEMA", "no schema files found under schemas/");
+}
+
+if (manifestFiles.length === 0) {
+  report(examplesDirectory, "NF-SCHEMA", "no example manifests found under examples/");
+}
+
 for (const file of schemaFiles) {
   try {
     const schema = JSON.parse(await readFile(file, "utf8"));
@@ -89,13 +97,14 @@ for (const { file, schema } of schemas) {
 }
 
 let validatedManifests = 0;
+const manifestKindCounts = new Map();
 
 for (const file of manifestFiles) {
   let manifest;
 
   try {
     const document = parseDocument(await readFile(file, "utf8"), {
-      maxAliasCount: 100,
+      maxAliasCount: 0,
       uniqueKeys: true
     });
 
@@ -106,7 +115,7 @@ for (const file of manifestFiles) {
       continue;
     }
 
-    manifest = document.toJS({ maxAliasCount: 100 });
+    manifest = document.toJS({ maxAliasCount: 0 });
   } catch (error) {
     report(file, "NF-SYNTAX", `invalid YAML: ${error.message}`);
     continue;
@@ -122,6 +131,8 @@ for (const file of manifestFiles) {
     report(file, "NF-SCHEMA", "manifest must declare a non-empty string kind");
     continue;
   }
+
+  manifestKindCounts.set(kind, (manifestKindCounts.get(kind) ?? 0) + 1);
 
   const schemaEntry = schemaByKind.get(kind);
   if (!schemaEntry) {
@@ -145,6 +156,12 @@ for (const file of manifestFiles) {
   }
 }
 
+for (const [kind, schemaEntry] of schemaByKind) {
+  if (!manifestKindCounts.has(kind)) {
+    report(schemaEntry.file, "NF-SCHEMA", `no example manifest uses kind ${JSON.stringify(kind)}`);
+  }
+}
+
 if (diagnostics.length > 0) {
   console.error(`NexFlow schema validation failed with ${diagnostics.length} diagnostic(s):`);
   for (const diagnostic of diagnostics) {
@@ -152,6 +169,8 @@ if (diagnostics.length > 0) {
   }
   process.exitCode = 1;
 } else {
+  console.log(`Parsed ${schemaFiles.length} schema files and ${manifestFiles.length} example manifests.`);
+  console.log(`Matched ${manifestKindCounts.size} manifest kinds to ${schemaByKind.size} schemas.`);
   console.log(`Validated ${validatedManifests} manifests against ${schemaByKind.size} schemas.`);
   console.log("Schema validation passed. Semantic validation was not performed.");
 }

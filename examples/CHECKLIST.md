@@ -161,24 +161,10 @@ Examples are part of the specification surface. They should remain small enough 
 
 ## Local Checks
 
-- [ ] Check YAML syntax:
+- [ ] Run the unified syntax, discovery, and structural schema validator:
 
 ```sh
-ruby -ryaml -e 'Dir["examples/**/*.yaml"].sort.each { |p| YAML.load_file(p); puts "ok #{p}" }'
-```
-
-- [ ] Check schema JSON syntax when schemas changed:
-
-```sh
-python3 - <<'PY'
-import json
-from pathlib import Path
-
-for path in sorted(Path("schemas").glob("*.schema.json")):
-    with path.open(encoding="utf-8") as handle:
-        json.load(handle)
-    print(f"ok {path}")
-PY
+npm run validate
 ```
 
 - [ ] Inspect `git status --ignored` before staging and keep local-only files ignored.

@@ -93,32 +93,27 @@ compute a complete Agent Assembly view.
 
 ## Recommended Local Checks
 
-Run the repository smoke checks from the repository root:
+Install the pinned dependencies and run the unified repository validator from
+the repository root:
 
 ```sh
-./scripts/schema-smoke
-```
-
-The script checks:
-
-- every `schemas/*.schema.json` file parses as JSON
-- every example YAML manifest parses safely
-- every example manifest declares a non-empty `kind`
-- every discovered manifest kind has a matching schema
-- every schema-backed manifest kind appears in at least one example
-
-The script uses Ruby and standard-library JSON and YAML support as repository maintenance tooling. This does not select or constrain a future NexFlow runtime language.
-
-These checks do not validate example contents against JSON Schemas and do not perform semantic validation. They confirm that files are syntactically readable and that the discovered manifest kinds have schema coverage.
-
-Install the pinned validation dependencies and run full schema validation:
-
-```sh
-npm ci
+npm ci --ignore-scripts
 npm run validate
 ```
 
-The command requires Node.js 20 or newer. It safely parses each YAML file under `examples/`, selects a schema from the manifest `kind`, compiles the draft 2020-12 schemas, and reports syntax or schema diagnostics with file and instance paths. `package-lock.json` pins AJV, YAML parsing, and format validation dependencies.
+The command checks:
+
+- every `schemas/*.schema.json` file parses as JSON
+- every example YAML manifest parses without aliases or duplicate mapping keys
+- every example manifest declares a non-empty `kind`
+- every discovered manifest kind has a matching schema
+- every schema-backed manifest kind appears in at least one example
+- every schema has an identifier, registers, and compiles
+- every example validates against the schema selected by its `kind`
+
+The command requires Node.js 20 or newer and reports syntax or schema
+diagnostics with file and instance paths. `package-lock.json` pins AJV, YAML
+parsing, and format validation dependencies.
 
 This Node.js command is repository maintenance tooling, not a reference CLI or runtime implementation. It does not choose a future NexFlow runtime language and does not perform semantic validation.
 

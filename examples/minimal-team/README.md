@@ -109,7 +109,7 @@ Use the larger examples when those concerns matter.
 The example should parse as YAML:
 
 ```sh
-ruby -ryaml -e 'Dir["examples/minimal-team/*.yaml"].sort.each { |p| YAML.load_file(p); puts "ok #{p}" }'
+npm run validate
 ```
 
 For broader example review, use the [Example Consistency Checklist](../CHECKLIST.md).

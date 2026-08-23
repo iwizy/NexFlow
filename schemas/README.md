@@ -214,21 +214,25 @@ See [RFC-0010](../rfcs/RFC-0010-provider-selection.md) for draft provider select
 
 See [RFC-0011](../rfcs/RFC-0011-reference-cli-scope.md) for draft reference CLI scope for schema validation, inspection, graph output, and initialization without orchestration.
 
-## Local Smoke Checks
+## Local Validation
 
-Run the repository smoke checks from the repository root:
+Install the pinned repository dependencies and run the unified validator from
+the repository root:
 
 ```sh
-./scripts/schema-smoke
+npm ci --ignore-scripts
+npm run validate
 ```
 
-The script checks schema JSON syntax, example YAML syntax, and manifest kind discovery. It intentionally does not validate manifests against these schemas or perform semantic validation; see [Validation](../docs/validation.md) for those boundaries.
+The command checks schema JSON syntax and compilation, safe example YAML
+parsing, manifest-kind discovery and example coverage, and every reference
+manifest against the schema selected by its `kind`. It does not perform
+complete semantic validation; see [Validation](../docs/validation.md) for those
+boundaries.
 
-For complete validation of every reference manifest against the schema selected by its `kind`, install the pinned repository dependencies and run:
+Run the focused validation checks with:
 
 ```sh
-npm ci
-npm run validate
 npm run negative-schema-fixtures
 npm run typed-reference-schema-smoke
 npm run approval-gate-target-schema-smoke

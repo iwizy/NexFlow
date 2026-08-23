@@ -58,18 +58,12 @@ Avoid implying that planned runtime behavior already exists.
 
 ## Local Validation
 
-This repository currently provides JSON Schemas but no official validation CLI. Run the repository smoke checks before opening a pull request:
+This repository currently provides JSON Schemas but no official validation CLI.
+Install the pinned repository tooling and run the unified repository validator
+before opening a pull request:
 
 ```sh
-./scripts/schema-smoke
-```
-
-The script checks schema JSON syntax, example YAML syntax, and whether every discovered example manifest kind has a matching schema. It also checks that each schema-backed manifest kind appears in the examples.
-
-Install the pinned repository tooling and validate every example manifest against the schema selected by its `kind`:
-
-```sh
-npm ci
+npm ci --ignore-scripts
 npm run validate
 npm run negative-schema-fixtures
 npm run typed-reference-schema-smoke
@@ -85,7 +79,13 @@ npm run conformance-claim-smoke
 npm run semantic-smoke
 ```
 
-The command requires Node.js 20 or newer. `package-lock.json` pins the validation dependencies for reproducible contributor and CI use. Node.js is used only for repository maintenance tooling; this does not select or constrain a future NexFlow runtime language.
+The command requires Node.js 20 or newer. It checks schema JSON and example YAML
+syntax, rejects aliases and duplicate mapping keys, verifies manifest-kind
+discovery and example coverage, compiles every schema, and validates every
+example against the schema selected by its `kind`. `package-lock.json` pins the
+validation dependencies for reproducible contributor and CI use. Node.js is
+used only for repository maintenance tooling; this does not select or constrain
+a future NexFlow runtime language.
 
 Schema validation does not perform cross-manifest or policy checks. Focused
 commands exercise documented structural and namespace boundaries. The semantic

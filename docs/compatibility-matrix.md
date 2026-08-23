@@ -178,32 +178,6 @@ does not mean full semantic validation for that manifest kind.
 
 ## Validator Compatibility
 
-### Repository Smoke Script
-
-Command:
-
-```sh
-./scripts/schema-smoke
-```
-
-Compatible with:
-
-- the current repository layout
-- current schema JSON files
-- current example YAML files
-- current manifest-kind discovery rules
-
-It checks:
-
-- schema JSON syntax
-- example YAML syntax
-- non-empty manifest `kind`
-- a matching schema for every discovered kind
-- at least one example for every schema-backed kind
-
-It does not validate examples against JSON Schema and does not perform semantic
-validation.
-
 ### Repository Schema Validator
 
 Command:
@@ -219,6 +193,10 @@ Compatible with:
 - current draft 2020-12 JSON Schemas
 - example manifests under `examples/`
 - exact `specVersion: "0.1"`
+
+It checks schema and YAML syntax, rejects aliases and duplicate mapping keys,
+verifies bidirectional manifest-kind discovery, compiles the schemas, and
+validates every maintained example against its selected schema.
 
 It supports a repository-level `NF-SCHEMA` draft claim for the maintained
 examples. It is not a published CLI compatibility promise.

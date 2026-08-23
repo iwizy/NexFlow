@@ -6,8 +6,13 @@ This project follows a specification-first process. Breaking changes must includ
 
 ## [Unreleased]
 
-This section records preparation for a possible `0.1` candidate. No candidate
-tag or release has been published, and manifest `specVersion` remains `"0.1"`.
+No changes have been recorded since `v0.1.0-rc.1`.
+
+## [0.1.0-rc.1] - 2026-08-23
+
+This release candidate records the first evaluated `0.1` repository snapshot.
+Manifest `specVersion` remains `"0.1"`; the release does not imply runtime,
+provider, integration, or orchestration support.
 
 ### Added
 
@@ -188,6 +193,8 @@ tag or release has been published, and manifest `specVersion` remains `"0.1"`.
 
 ### Candidate Notes
 
+- The exact release commit, evaluated readiness record, complete check output,
+  and cross-surface review are attached to the `v0.1.0-rc.1` GitHub release.
 - The `0.3` architecture preparation checkpoint is prepared but not passed. It
   is a public evidence and blocker summary, not a release tag or Runtime
   Architecture Decision.
@@ -204,9 +211,9 @@ tag or release has been published, and manifest `specVersion` remains `"0.1"`.
 - Draft RFCs remain proposals unless their decisions are accepted and reflected
   consistently in documentation, schemas, examples, compatibility guidance,
   migrations, and release notes.
-- A candidate tag requires a recorded readiness outcome, commit hash, validation
-  results, compatibility notes, known limitations, and unresolved RFCs or
-  blockers.
+- Release evidence records the readiness outcome, exact commit, validation
+  results, compatibility notes, known limitations, and blocker closure without
+  changing manifest `specVersion`.
 
 ## [0.1.0-draft] - 2026-05-29
 

@@ -15,7 +15,10 @@ Please do not open public issues for vulnerabilities involving:
 - schema ambiguity that could authorize unintended behavior
 - future runtime security flaws
 
-Until a dedicated security email is established, open a private maintainer contact channel if available. If none exists, open a public issue with minimal detail and request a private disclosure path.
+Report vulnerabilities through
+[GitHub private vulnerability reporting](https://github.com/iwizy/NexFlow/security/advisories/new).
+Repository maintainers own triage and coordinated follow-up. Do not include
+vulnerability details in a public issue.
 
 ## Security Principles
 

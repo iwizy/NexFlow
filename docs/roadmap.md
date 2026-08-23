@@ -167,6 +167,57 @@ Relevant docs: [Validation](validation.md), [Conformance](conformance.md),
 [Compatibility](compatibility.md), [Schema Guide](../schemas/README.md),
 [Examples Guide](../examples/README.md).
 
+## `0.3` Architecture Preparation Checkpoint
+
+Checkpoint state: **prepared with decision blockers**.
+
+This checkpoint records architecture boundary work completed alongside the
+`0.3` semantic-consistency workstream. It does not redefine the public version
+line: the [Release Plan](release-plan.md) keeps `0.3` focused on semantic
+consistency and `0.4` focused on Runtime Architecture Decision readiness.
+
+Preparing this checkpoint does not publish a `0.3` release, change manifest
+`specVersion: "0.1"`, accept a Runtime Architecture Decision, select an
+implementation language, or authorize a CLI or runtime package.
+
+### Checkpoint Evidence
+
+| Area | Current state | Evidence |
+| --- | --- | --- |
+| Language evaluation | Ready as a neutral process; no candidate scored or selected | [Runtime Language Evaluation Matrix](language-evaluation-matrix.md) |
+| CLI/runtime separation | Command effect budgets and static-versus-runtime fact ownership specified | [CLI And Runtime Responsibility Boundary](cli-runtime-boundary.md) |
+| Extension loading | Runtime-neutral discovery, verification, isolation, activation, and authorization boundary specified | [Extension Loading Boundary](extension-loading-boundary.md) |
+| Provider adapters | Host-owned selection and fallback plus bounded adapter responsibilities specified | [Provider Adapter Boundary](provider-adapter-boundary.md) |
+| Event and audit storage | Authority, redaction, ordering, retention, durability, and failure boundary specified | [Event And Audit Storage Boundary](event-audit-storage-boundary.md) |
+| Decision governance | Mandatory evidence, review gates, blocker classes, and acceptance rule published | [Runtime Architecture Decision Review](../rfcs/reviews/runtime-architecture-decision-review.md) |
+| Public status | Architecture outcome and outcome-dependent next work documented as `not-ready` | [Architecture](architecture.md), [Runtime Options](runtime-options.md) |
+
+### Checkpoint Blockers
+
+The checkpoint cannot become an accepted architecture decision because:
+
+- no Runtime Architecture Decision RFC proposes one language, architecture
+  layout, package ownership model, and exact target matrix
+- TypeScript, Python, Rust, and Go do not have comparable prototype evidence,
+  completed hard-gate results, scorecards, or reviewer reconciliation
+- package boundaries and cross-package compatibility remain undecided
+- complete threat, credential, and conformance test strategies are not
+  available as pinned decision evidence
+- no candidate has demonstrated target artifacts, signing, provenance,
+  installation, upgrade, rollback, or accepted maintenance ownership
+
+The authoritative blocker and acceptance rules remain in the
+[Runtime Architecture Decision Review](../rfcs/reviews/runtime-architecture-decision-review.md).
+This checkpoint summarizes them; it does not create a second decision process.
+
+### Exit Statement
+
+The `0.3` architecture preparation checkpoint is ready to publish as a factual
+status snapshot. It is **not ready to pass** the Runtime Architecture Decision
+gate. Milestone 4 remains in evidence preparation, and Milestone 5 Reference
+CLI work must not begin until a revision-pinned decision RFC reaches
+`accepted`.
+
 ## Milestone 4: Runtime Architecture Decision
 
 Status: evidence preparation. The published review outcome is `not-ready`; no

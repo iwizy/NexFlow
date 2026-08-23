@@ -132,6 +132,13 @@ tag or release has been published, and manifest `specVersion` remains `"0.1"`.
 
 ### Changed
 
+- Prepared the `0.3` architecture checkpoint as a blocker-bearing status
+  snapshot: neutral evaluation, CLI/runtime, extension, provider, audit, and
+  review boundaries are documented, while the decision RFC, comparable
+  prototypes, package model, security evidence, conformance strategy, target
+  artifacts, and ownership evidence remain unresolved. The checkpoint does not
+  publish a release, change `specVersion`, select a language, or unblock
+  implementation.
 - Refreshed the public architecture status and roadmap after the decision review:
   the outcome remains `not-ready`, evidence-closure work is ordered, each review
   outcome has an explicit next path, and CLI or runtime implementation remains
@@ -181,6 +188,14 @@ tag or release has been published, and manifest `specVersion` remains `"0.1"`.
 
 ### Candidate Notes
 
+- The `0.3` architecture preparation checkpoint is prepared but not passed. It
+  is a public evidence and blocker summary, not a release tag or Runtime
+  Architecture Decision.
+- The public version line remains unchanged: `0.3` covers semantic consistency,
+  while Runtime Architecture Decision readiness remains a `0.4` outcome.
+- Reference CLI work remains blocked until the decision review reaches
+  `accepted`; the checkpoint alone grants no implementation or conformance
+  status.
 - The candidate, if approved, remains a draft specification release rather than
   a runtime, CLI, provider integration, or orchestration release.
 - Current repository evidence covers 17 schema-backed manifest kinds, 7

@@ -167,7 +167,6 @@ notes, migration tooling, and release notes under the selected `specVersion`.
 Run from the repository root:
 
 ```sh
-./scripts/schema-smoke
 npm run validate
 npm run actor-schema-smoke
 npm run semantic-smoke

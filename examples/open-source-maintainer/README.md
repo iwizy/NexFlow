@@ -67,7 +67,7 @@ Each handoff should make unresolved questions visible. A handoff does not imply 
 The example should parse as YAML:
 
 ```sh
-ruby -ryaml -e 'Dir["examples/open-source-maintainer/*.yaml"].sort.each { |p| YAML.load_file(p); puts "ok #{p}" }'
+npm run validate
 ```
 
 For broader example review, use the [Example Consistency Checklist](../CHECKLIST.md).

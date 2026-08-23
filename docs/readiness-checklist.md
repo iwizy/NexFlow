@@ -136,7 +136,6 @@ publish a release.
 ## Validation Checklist
 
 - [ ] `npm ci --ignore-scripts` succeeds.
-- [ ] `./scripts/schema-smoke` succeeds.
 - [ ] `npm run validate` succeeds.
 - [ ] `npm run negative-schema-fixtures` succeeds.
 - [ ] `npm run typed-reference-schema-smoke` succeeds.

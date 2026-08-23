@@ -136,10 +136,10 @@ All examples follow the same safety pattern:
 
 ## Validation
 
-The examples should parse as YAML:
+Validate the maintained examples from the repository root:
 
 ```sh
-ruby -ryaml -e 'Dir["examples/**/*.yaml"].sort.each { |p| YAML.load_file(p); puts "ok #{p}" }'
+npm run validate
 ```
 
 See [Validation](../docs/validation.md) for current validation guidance and known limits.

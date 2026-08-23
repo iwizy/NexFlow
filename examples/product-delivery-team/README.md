@@ -79,7 +79,7 @@ The launch coordinator owns launch authority, but does not own product acceptanc
 The example should parse as YAML:
 
 ```sh
-ruby -ryaml -e 'Dir["examples/product-delivery-team/*.yaml"].sort.each { |p| YAML.load_file(p); puts "ok #{p}" }'
+npm run validate
 ```
 
 For broader example review, use the [Example Consistency Checklist](../CHECKLIST.md).

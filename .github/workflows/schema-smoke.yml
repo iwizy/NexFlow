@@ -21,10 +21,7 @@ jobs:
       - name: Install validation tooling
         run: npm ci --ignore-scripts
 
-      - name: Run repository smoke checks
-        run: ./scripts/schema-smoke
-
-      - name: Validate example manifests against schemas
+      - name: Validate repository schemas and example manifests
         run: npm run validate
 
       - name: Verify negative schema fixtures

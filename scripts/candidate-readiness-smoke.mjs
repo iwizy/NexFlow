@@ -31,7 +31,7 @@ const expectedCheckIds = [
 const evidence = {
   type: "command",
   description: "Pinned repository validation completed successfully.",
-  location: "scripts/schema-smoke",
+  location: "scripts/validate-schemas.mjs",
   revision: "0123456789abcdef0123456789abcdef01234567"
 };
 

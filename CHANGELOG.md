@@ -6,7 +6,12 @@ This project follows a specification-first process. Breaking changes must includ
 
 ## [Unreleased]
 
-No changes have been recorded since `v0.1.0`.
+### Changed
+
+- Consolidated repository syntax, manifest discovery, example coverage, schema
+  compilation, and structural validation in the Node-based `npm run validate`
+  command; removed the redundant legacy smoke command and synchronized CI and
+  contributor documentation.
 
 ## [0.1.0] - 2026-08-23
 

@@ -75,7 +75,7 @@ Each handoff should make unresolved assumptions visible rather than treating the
 The example should parse as YAML:
 
 ```sh
-ruby -ryaml -e 'Dir["examples/startup-team/*.yaml"].sort.each { |p| YAML.load_file(p); puts "ok #{p}" }'
+npm run validate
 ```
 
 For broader example review, use the [Example Consistency Checklist](../CHECKLIST.md).

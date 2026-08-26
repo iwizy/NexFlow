@@ -18,18 +18,24 @@ It is **not** an AI coding agent, an LLM API wrapper, a chat application, or a p
 Current release: **`v0.1.0`**, the first published foundation release of the
 pre-`1.0` draft specification. Manifest `specVersion` remains `"0.1"`.
 
-The [`0.1` Candidate Scope](docs/0.1-scope.md) is frozen for evaluation. The
-freeze defines the baseline, optional and migration-only surfaces, and deferred
-work. The exact commit, evaluated readiness record, check output, and
-cross-surface review are published with the
+The [`v0.1.0` release scope](docs/0.1-scope.md) remains frozen as the evaluated
+foundation baseline. It defines the baseline, optional and migration-only
+surfaces, and deferred work. The exact commit, evaluated readiness record,
+check output, and cross-surface review are published with the
 [`v0.1.0` release](https://github.com/iwizy/NexFlow/releases/tag/v0.1.0).
+
+Current development is focused on the planned **`0.2` validation and
+conformance track**. Work on this track is unreleased and does not publish a new
+manifest `specVersion`, select a runtime, or widen implementation claims. See
+the [Unreleased changelog](CHANGELOG.md#unreleased) for the repository delta
+after `v0.1.0`.
 
 | Surface | Current State | Evidence |
 | --- | --- | --- |
 | Specification | Specified in draft form | [Documentation](docs/index.md), [Manifest Reference](docs/manifest-reference.md) |
 | JSON Schemas | Implemented for 17 manifest kinds plus common definitions | [Schemas](schemas/), [Schema Guide](schemas/README.md) |
 | Reference examples | Implemented as 7 project sets containing 113 schema-backed manifests | [Examples](examples/), [Examples Guide](examples/README.md) |
-| Structural validation | Implemented for all maintained examples, four negative schema categories, and focused model boundaries | `npm run validate`, `npm run negative-schema-fixtures`, [Validation](docs/validation.md) |
+| Structural validation | Unified Node-based repository validation is implemented for schema and YAML syntax, manifest discovery and kind coverage, schema compilation, and all maintained examples; focused negative and model-boundary checks remain separate | `npm run validate`, `npm run negative-schema-fixtures`, [Validation](docs/validation.md) |
 | Core Profile | Implemented for minimum Project and participant slots, optional module qualifiers, dependency closure, and fail-closed omission | `npm run core-profile-smoke`, [Core Profile](docs/core-profile.md), [Profile Definition](profiles/core.yaml) |
 | Manifest discovery | Implemented for explicit local files, Project source hints, conservative cardinality, and multiple unique workflows | `npm run manifest-discovery-smoke`, [Manifest Discovery](docs/manifest-discovery.md) |
 | Typed reference primitives | Implemented for shared structural shapes and lexical boundaries | `npm run typed-reference-schema-smoke`, [Typed References](docs/typed-references.md) |
@@ -42,6 +48,7 @@ cross-surface review are published with the
 | Event interoperability | Specified as CloudEvents and OpenTelemetry EventRecord mappings; no exporter or transport | [Event Interoperability](docs/event-interoperability.md), [Event Model](docs/events.md) |
 | Conformance claim format | Implemented as standalone schema plus profile-qualified YAML and Markdown templates | `npm run conformance-claim-smoke`, [Conformance Claims](docs/conformance-claims.md) |
 | Candidate readiness record | Implemented as a standalone eight-gate schema and non-claiming `0.1` template; evaluated release evidence is published for `v0.1.0` | `npm run candidate-readiness-smoke`, [0.1 Readiness Checklist](docs/readiness-checklist.md), [Release Evidence](release/README.md) |
+| Current development line | Unreleased `0.2` validation and conformance hardening; no `0.2` release, new manifest `specVersion`, or runtime implementation | [Unreleased Changelog](CHANGELOG.md#unreleased), [Roadmap](docs/roadmap.md) |
 | Semantic reference checks | Partial repository smoke coverage | `npm run semantic-smoke`, [Validation](docs/validation.md) |
 | Governance and RFC process | Implemented in documentation | [Governance](docs/governance.md), [RFCs](rfcs/README.md) |
 | Foundational model changes | ActorSet, compact AgentSet, and authoritative unique-active-definition slices implemented; RFCs remain Draft | [Actor Model](docs/actor-model.md), [Effective Agent Configuration](docs/effective-agent-configuration.md), [Foundational Model Review](rfcs/reviews/2026-07-foundational-model-review.md) |
@@ -63,8 +70,9 @@ implementation remain blocked while the outcome is `not-ready`.
 
 See the [Compatibility Matrix](docs/compatibility-matrix.md) for the exact tested
 artifact pairing and the [0.1 Readiness Checklist](docs/readiness-checklist.md)
-for candidate criteria. `Specified`, `Partial`, and `Implemented` are distinct
-support claims; documented future behavior is not an implementation claim.
+for the evidence criteria used to publish `v0.1.0`. `Specified`, `Partial`, and
+`Implemented` are distinct support claims; documented future behavior is not an
+implementation claim.
 
 ## Repository History Note
 
@@ -267,14 +275,14 @@ NexFlow is intentionally split into layers:
 | Validate manifests | [Validation](docs/validation.md), [Diagnostic Code Catalog](docs/diagnostic-code-catalog.md), [Semantic Reference Inventory](docs/semantic-reference-inventory.md), [Schema Guide](schemas/README.md), [Conformance](docs/conformance.md), [Compatibility Matrix](docs/compatibility-matrix.md) |
 | Publish a support claim | [Conformance Claims](docs/conformance-claims.md), [Claim Templates](conformance/README.md), [Compatibility Matrix](docs/compatibility-matrix.md) |
 | Extend or integrate NexFlow | [Extension Profiles](extensions/README.md), [Extension Model](docs/extensions.md), [Extension Loading Boundary](docs/extension-loading-boundary.md), [MCP And A2A Boundaries](docs/mcp-a2a-boundaries.md), [MCP Extension Draft](extensions/mcp/README.md), [A2A Extension Draft](extensions/a2a/README.md), [Integrations](docs/integrations.md), [Provider Abstraction](docs/provider-abstraction.md) |
-| Review the `0.1` candidate boundary | [0.1 Candidate Scope](docs/0.1-scope.md), [0.1 Readiness Checklist](docs/readiness-checklist.md), [Compatibility Matrix](docs/compatibility-matrix.md) |
+| Review the `v0.1.0` release boundary and evidence | [0.1 Candidate Scope](docs/0.1-scope.md), [0.1 Readiness Checklist](docs/readiness-checklist.md), [Compatibility Matrix](docs/compatibility-matrix.md) |
 | Review future implementation choices | [Runtime Options](docs/runtime-options.md), [Runtime Language Evaluation Matrix](docs/language-evaluation-matrix.md), [Runtime Architecture Decision Review](rfcs/reviews/runtime-architecture-decision-review.md), [Roadmap](docs/roadmap.md), [Release Plan](docs/release-plan.md) |
 
 ## Roadmap
 
 The current priorities are:
 
-1. Review `v0.1.0` feedback and begin the `0.2` validation and conformance
+1. Review `v0.1.0` feedback and continue the `0.2` validation and conformance
    work without widening runtime claims.
 2. Review the ActorSet, compact AgentSet, active-definition authority, human
    override, Agent Assembly inspection, and typed-reference primitive slices

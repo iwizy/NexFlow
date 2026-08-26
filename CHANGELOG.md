@@ -12,6 +12,8 @@ This project follows a specification-first process. Breaking changes must includ
   compilation, and structural validation in the Node-based `npm run validate`
   command; removed the redundant legacy smoke command and synchronized CI and
   contributor documentation.
+- Refreshed the README status to distinguish the frozen `v0.1.0` release
+  baseline from unreleased `0.2` validation and conformance work.
 
 ## [0.1.0] - 2026-08-23
 

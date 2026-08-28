@@ -69,7 +69,7 @@ The repository supports basic validation through:
   override boundary checks.
 - Focused Core Profile definition, reduced Project, participant authority,
   optional qualifier, and dependency-closure checks.
-- Focused explicit-file and Project source-hint discovery, conservative
+- Focused explicit-file, Project source-hint, and bounded Project-entry discovery, conservative
   cardinality, and multiple-workflow checks.
 - A focused standalone conformance claim schema and template check.
 - A focused standalone candidate readiness record schema and decision-guard check.

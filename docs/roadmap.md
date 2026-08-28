@@ -98,9 +98,10 @@ authority with AgentSet fallback, optional module qualifiers, transitive
 dependency policy, fail-closed omission, reduced Project source hints, and 16
 focused cases are implemented.
 
-Manifest discovery checkpoint: explicit local files and Project source hints,
+Manifest discovery checkpoint: explicit local files, Project source hints,
+bounded selection of one root `project.yaml` or `project.yml`,
 the plural `manifests.workflows` shape, conservative document cardinality,
-multiple unique Workflow inventory, workflow-local step namespaces, and 24
+multiple unique Workflow inventory, workflow-local step namespaces, and
 focused cases are implemented. Directory scanning, general source indexes,
 bundle equivalence, stable CLI diagnostics, complete dependency closure, and
 runtime loading remain future work.

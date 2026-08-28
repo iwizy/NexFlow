@@ -43,7 +43,7 @@ enforced.
 | Agent identity boundary smoke | 7 compact and legacy structural cases | Implemented | `npm run agent-identity-schema-smoke` | Checks identity migration compatibility, not definition selection or effective configuration. |
 | Agent definition authority smoke | 15 structural and selection cases | Implemented | `npm run agent-definition-authority-smoke` | Checks active completeness, unique unscoped selection, and rejection of unsupported memory policy references, not full policy resolution or runtime execution. |
 | Core Profile contract | Machine-readable required slots, optional qualifiers, dependency rules, and 16 focused cases | Implemented | `profiles/core.yaml`, `docs/core-profile.md`, `npm run core-profile-smoke` | Consumes normalized kind inventories; arbitrary assembly validation, complete dependency resolution, and runtime preflight are absent. |
-| Manifest discovery and multiple workflows | Explicit local file lists, Project source hints, conservative cardinality, unique workflow inventory, and 24 focused cases | Implemented | `docs/manifest-discovery.md`, `scripts/lib/manifest-discovery.mjs`, `npm run manifest-discovery-smoke` | Focused repository validation helper only; no directory scan, bundle input, general index, stable CLI contract, workflow selection, cross-workflow execution, or runtime loading. |
+| Manifest discovery and multiple workflows | Explicit local file lists, Project source hints, two-filename Project entry selection, conservative cardinality, and unique workflow inventory | Implemented | `docs/manifest-discovery.md`, `scripts/lib/manifest-discovery.mjs`, `npm run manifest-discovery-smoke` | Focused repository validation helper only; no directory scan, bundle input, general index, stable CLI contract, workflow selection, cross-workflow execution, or runtime loading. |
 | Agent Assembly inspection view | Documentation contract for a derived effective-configuration projection | Specified | `docs/agent-assembly.md`, RFC-0014 | No resolver, serializer, JSON Schema, reference CLI output, or runtime implementation exists. |
 | Human override boundary smoke | 11 accepted and rejected structural cases | Implemented | `npm run human-override-schema-smoke` | Checks policy shape, not authentication, interruption, revocation, or runtime enforcement. |
 | Typed reference primitives | Common typed, scoped, transitional, and kind-specific definitions with 53 focused cases | Implemented | `schemas/common.schema.json`, `npm run typed-reference-schema-smoke` | Shape and lexical evidence only; no complete field-contract or semantic resolution conformance. |
@@ -81,7 +81,8 @@ compatibility notes, and versioning impact are accepted and synchronized.
 [RFC-0016](../rfcs/RFC-0016-core-profile-and-discovery.md) now has an
 implemented Core Profile slice with optional module qualifiers and reduced
 Project source hints, plus a focused explicit local discovery and
-multiple-workflow validation slice. Directory discovery, general source indexes,
+multiple-workflow validation slice. Root Project entry selection now delegates
+to source-hint loading without a directory walk. Directory scanning, general source indexes,
 bundle equivalence, and runtime loading remain outside the current supported
 matrix.
 
@@ -138,10 +139,11 @@ npm run manifest-discovery-smoke
 ```
 
 Compatible with explicit local file-list input, current Project source hints,
-the plural `manifests.workflows` shape, one Project, zero or more unique
-Workflow documents, and one document for every other current manifest kind. It
-checks 24 schema, source-boundary, association, cardinality, ordering, and
-workflow-local namespace cases.
+bounded root Project entry selection, the plural `manifests.workflows` shape,
+one Project, zero or more unique Workflow documents, and one document for every
+other current manifest kind. Focused checks cover entry ambiguity, parser and
+resource limits, exact supported versions, source boundaries, association,
+cardinality, deterministic ordering, and workflow-local namespaces.
 
 It does not recursively discover directories, read ignore files, expand
 bundles, fetch remote sources, aggregate collection manifests, compute complete

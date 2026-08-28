@@ -6,6 +6,12 @@ This project follows a specification-first process. Breaking changes must includ
 
 ## [Unreleased]
 
+### Added
+
+- Added bounded directory Project selection for exactly one `project.yaml` or
+  `project.yml`, reusing explicit-file and Project-hint discovery without
+  scanning unrelated files, expanding bundles, or executing manifests.
+
 ### Changed
 
 - Consolidated repository syntax, manifest discovery, example coverage, schema
@@ -14,6 +20,9 @@ This project follows a specification-first process. Breaking changes must includ
   contributor documentation.
 - Refreshed the README status to distinguish the frozen `v0.1.0` release
   baseline from unreleased `0.2` validation and conformance work.
+- Hardened discovery against unsupported Project versions, inherited hint
+  names, unsafe YAML, invalid resource limits, oversized reads, and symlinked
+  source paths; diagnostics no longer echo raw parser or filesystem errors.
 
 ## [0.1.0] - 2026-08-23
 

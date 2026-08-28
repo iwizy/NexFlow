@@ -8,9 +8,14 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Added
 
+- Added a non-distributed repository CLI prototype with help, unreleased
+  version identification, strict argument handling, explicit unsupported
+  commands, and a discovery-only inventory. It does not select a runtime or
+  replace the pending reference CLI architecture decision.
 - Added bounded directory Project selection for exactly one `project.yaml` or
   `project.yml`, reusing explicit-file and Project-hint discovery without
   scanning unrelated files, expanding bundles, or executing manifests.
+- Added discovery and CLI prototype regression checks to repository CI.
 
 ### Changed
 

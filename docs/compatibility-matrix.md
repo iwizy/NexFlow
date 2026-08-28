@@ -61,8 +61,9 @@ enforced.
 | Candidate readiness record | Standalone `recordVersion: "0.1"` schema, eight-gate template, and 14 focused cases | Implemented | `release/`, `npm run candidate-readiness-smoke`, `v0.1.0` release assets | Repository checks validate record structure and decision guards; the published decision is maintainer-reviewed evidence, not automated approval or a conformance certificate. |
 | Semantic reference inventory | P0-P3 target namespaces, coverage, gaps, and deferred fields | Specified | `docs/semantic-reference-inventory.md` | Documentation contract only; it is not a manifest, generated registry, validator, or conformance suite. |
 | Semantic reference smoke | Selected cross-manifest reference, active definition authority, and duplicate checks | Partial | `npm run semantic-smoke`, semantic reference inventory | Does not cover every inventoried field or establish full `NF-SEMANTIC` conformance, graph safety, or policy correctness. |
-| Runtime language evaluation | Hard gates, weighted criteria, common prototype, and evidence record for TypeScript, Python, Rust, and Go | Specified | `docs/language-evaluation-matrix.md`, `docs/runtime-options.md` | No prototypes, scores, language selection, package layout, or Runtime Architecture Decision exists. |
+| Runtime language evaluation | Hard gates, weighted criteria, common prototype, and evidence record for TypeScript, Python, Rust, and Go | Specified | `docs/language-evaluation-matrix.md`, `docs/runtime-options.md` | No comparable candidate prototypes, scores, language selection, package layout, or accepted Runtime Architecture Decision exists. |
 | Reference CLI | Validation-only scope proposed | Planned | RFC-0011 | No `nexflow` executable or `NF-CLI` implementation exists. |
+| Repository CLI prototype | Help, unreleased version, command dispatch, and discovery-only inventory | Partial | `docs/cli-prototype.md`, `npm run cli-prototype-smoke` | Disposable maintenance tooling, not a reference CLI alpha or completed architecture candidate; no schema-validation command, stable JSON envelope, package, or conformance claim. |
 | Runtime | Provider-neutral requirements documented | Planned | Architecture, runtime options, roadmap | No orchestration, enforcement, provider calling, task execution, or `NF-RUNTIME` implementation exists. |
 | Extensions | Core declaration schema, namespace/lifecycle rules, future loading boundary, and maintained experimental MCP and A2A profiles | Partial | `extensions.schema.json`, `docs/extension-loading-boundary.md`, `extensions/mcp/`, `extensions/a2a/`, extension docs, examples | Loading is specified only as a safety boundary; no registry, loader, live integration, protocol implementation, or plugin execution exists. |
 
@@ -103,6 +104,8 @@ core profile definition: profiles/core.yaml
 core profile smoke: scripts/core-profile-smoke.mjs
 manifest discovery helper: scripts/lib/manifest-discovery.mjs
 manifest discovery smoke: scripts/manifest-discovery-smoke.mjs
+repository CLI prototype: scripts/cli-prototype.mjs (unreleased, discovery only)
+repository CLI prototype smoke: scripts/cli-prototype-smoke.mjs
 multi-workflow fixture: fixtures/discovery/multi-workflow/
 human override boundary smoke: scripts/human-override-schema-smoke.mjs
 mcp extension profile: extensions/mcp/profile.yaml
@@ -388,6 +391,13 @@ by the specification and RFCs. Passing it must not be presented as complete
 ## CLI Compatibility
 
 No reference CLI is implemented.
+
+The [repository CLI prototype](cli-prototype.md) is an unreleased command
+skeleton with a discovery-only operation. It uses existing maintenance
+dependencies, does not provide any of the public commands below, and does not
+select a language or satisfy the architecture decision gates. Its checks cover
+dispatch, explicit input modes, safe failure, redaction, and deterministic
+inventory rather than `NF-CLI` conformance.
 
 The following command names are proposals, not available commands:
 

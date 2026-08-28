@@ -117,6 +117,22 @@ parsing, and format validation dependencies.
 
 This Node.js command is repository maintenance tooling, not a reference CLI or runtime implementation. It does not choose a future NexFlow runtime language and does not perform semantic validation.
 
+Discovery and the disposable command skeleton have separate checks:
+
+```sh
+npm run manifest-discovery-smoke
+npm run cli-prototype-smoke
+npm run cli-prototype -- discover --root examples/minimal-team
+```
+
+The last command prints an inventory only, not a validation result. The
+[repository CLI prototype](cli-prototype.md) supports explicit files, Project
+source hints, and a bounded choice between root `project.yaml` and `project.yml`.
+It has no implemented `validate`, `inspect`, `graph`, or `init` command, no
+reference CLI package, and no `NF-CLI` claim. The architecture decision remains
+`not-ready`. See [Manifest Discovery](manifest-discovery.md) for exact source
+and parser boundaries.
+
 Its broad `NF-SYNTAX` and `NF-SCHEMA` codes are classified as Implemented draft
 in the [Diagnostic Code Catalog](diagnostic-code-catalog.md). The catalog also
 records implemented discovery and Core Profile codes, candidate refinements,

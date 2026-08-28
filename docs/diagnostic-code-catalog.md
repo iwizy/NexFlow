@@ -249,6 +249,10 @@ including an entire assembly authored at the same unknown version. Invalid
 limit options and unsafe YAML conversion use `UNSAFE-SOURCE`; count and byte
 overruns use `LIMIT-EXCEEDED`.
 
+The [repository CLI prototype](cli-prototype.md) emits these existing draft
+codes with generic messages and redacted rejected locators. It does not
+stabilize the catalog or add standard codes for its usage and internal errors.
+
 ## Core Profile Codes
 
 | Code | Status | Default severity | Suggested message | Remediation |

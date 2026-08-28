@@ -39,6 +39,9 @@ to the caller's root. Explicit-file mode does not follow Project hints. A
 Project without hints contributes only itself in the other modes; discovering
 it does not imply Core Profile completeness or infer optional files.
 
+The [repository CLI prototype](cli-prototype.md) exercises these modes without
+installing or releasing a reference CLI.
+
 ## Project Source Hints
 
 `Project.manifests` remains optional. The historical singular workflow hint is
@@ -135,6 +138,11 @@ Discovery performs these steps:
 7. Enforce one document for current singleton kinds while retaining multiple
    unique Workflow documents.
 8. Produce a source-grounded inventory for later schema and semantic checks.
+
+Filesystem and parser errors use bounded generic messages, not raw exception
+text or source excerpts. In-memory source locators are retained for callers;
+the CLI prototype redacts rejected absolute, remote, and escaping locators
+before printing. Loaded manifests are input data, not safe diagnostic output.
 
 Illustrative inspection shape:
 

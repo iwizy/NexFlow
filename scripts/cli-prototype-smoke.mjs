@@ -41,9 +41,9 @@ function run(args, cwd = root) {
 }
 
 const noReadCases = [
-  [[], 0], [["--help"], 0], [["-h"], 0], [["discover", "--help"], 0],
+  [[], 0], [["--help"], 0], [["-h"], 0], [["discover", "--help"], 0], [["validate", "--help"], 0],
   [["--version"], 0], [["-v"], 0],
-  [["unknown"], 2], [["discover"], 2], [["discover", "extra", "--root", "."], 2],
+  [["unknown"], 2], [["discover"], 2], [["validate"], 2], [["discover", "extra", "--root", "."], 2],
   [["--root", "."], 2], [["discover", "--root", ""], 2],
   [["discover", "--root", ".", "--project", ""], 2],
   [["discover", "--root", ".", "--file", ""], 2],
@@ -53,7 +53,7 @@ const noReadCases = [
   [["discover", "--root", ".", "--format", "json"], 2],
   [["--help", "--version"], 2], [["--help", "--root", "."], 2],
   [["--help", "--help"], 2], [["discover", "--version"], 2],
-  ...["validate", "inspect", "graph", "init"].map((command) => [[command, "--root", "not-read"], 3])
+  ...["inspect", "graph", "init"].map((command) => [[command, "--root", "not-read"], 3])
 ];
 for (const [args, expected] of noReadCases) {
   let reads = 0;

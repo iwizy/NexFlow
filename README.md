@@ -55,7 +55,7 @@ after `v0.1.0`.
 | Human override policy | Structured fail-closed manifest model implemented; runtime enforcement absent | [Human Override](docs/human-override.md), [RFC-0017](rfcs/RFC-0017-human-override.md) |
 | Runtime architecture decision | Review framework published; current outcome is `not-ready`, with no language or package layout selected | [Runtime Architecture Decision Review](rfcs/reviews/runtime-architecture-decision-review.md), [Runtime Options](docs/runtime-options.md), [Roadmap](docs/roadmap.md) |
 | Reference CLI | Validation-only boundary specified; not implemented | [CLI And Runtime Responsibility Boundary](docs/cli-runtime-boundary.md), [RFC-0011](rfcs/RFC-0011-reference-cli-scope.md) |
-| Repository CLI prototype | Experimental help, dispatch, and local discovery inventory only; not a reference CLI alpha, language decision, or `NF-CLI` claim | `npm run cli-prototype -- --help`, `npm run cli-prototype-smoke`, [Prototype Scope](docs/cli-prototype.md) |
+| Repository CLI prototype | Experimental local discovery and JSON Schema validation; not a reference CLI alpha, language decision, or `NF-CLI` claim | `npm run cli-prototype -- --help`, `npm run cli-validation-smoke`, [Prototype Scope](docs/cli-prototype.md) |
 | Runtime and provider execution | Planned, not implemented | [Architecture](docs/architecture.md), [Runtime Options](docs/runtime-options.md) |
 | Live integrations and extension loading | Not implemented | [Compatibility Matrix](docs/compatibility-matrix.md) |
 
@@ -69,9 +69,12 @@ milestone is to close the published decision blockers with comparable,
 revision-pinned evidence and record an explicit review outcome. CLI and runtime
 implementation remain blocked while the outcome is `not-ready`.
 
-A disposable repository CLI prototype exercises local discovery using the
-existing maintenance dependencies. It is not an accepted architecture candidate
-or a released `nexflow` command; schema validation stays in `npm run validate`.
+A disposable repository CLI prototype exercises local discovery and structural
+validation using existing maintenance dependencies. Try
+`npm run cli-prototype -- validate --root examples/minimal-team` to check a
+selected assembly. It is not an accepted architecture candidate or a released
+`nexflow` command; `npm run validate` remains the repository-wide schema and
+example check. Neither command performs full semantic validation.
 
 See the [Compatibility Matrix](docs/compatibility-matrix.md) for the exact tested
 artifact pairing and the [0.1 Readiness Checklist](docs/readiness-checklist.md)

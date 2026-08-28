@@ -75,6 +75,7 @@ npm run agent-definition-authority-smoke
 npm run core-profile-smoke
 npm run manifest-discovery-smoke
 npm run cli-prototype-smoke
+npm run cli-validation-smoke
 npm run human-override-schema-smoke
 npm run provider-feature-schema-smoke
 npm run conformance-claim-smoke
@@ -90,9 +91,12 @@ used only for repository maintenance tooling; this does not select or constrain
 a future NexFlow runtime language.
 
 The [repository CLI prototype](docs/cli-prototype.md) is also maintenance and
-evaluation tooling, not a reference CLI alpha. Its discovery command reports
-inventory only and does not replace `npm run validate` or accept the pending
-architecture decision.
+evaluation tooling, not a reference CLI alpha. Its `discover` command reports
+inventory only; its `validate` command adds JSON Schema checks for the selected
+assembly. Neither replaces the repository-wide `npm run validate` and focused
+checks or accepts the pending architecture decision. Changes to either command
+must keep its documented selection, diagnostic, non-mutation, and safety
+boundaries synchronized with the smoke checks.
 
 Schema validation does not perform cross-manifest or policy checks. Focused
 commands exercise documented structural and namespace boundaries. The semantic

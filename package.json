@@ -12,6 +12,7 @@
     "candidate-readiness-smoke": "node scripts/candidate-readiness-smoke.mjs",
     "cli-prototype": "node scripts/cli-prototype.mjs",
     "cli-prototype-smoke": "node scripts/cli-prototype-smoke.mjs",
+    "cli-validation-smoke": "node scripts/cli-validation-smoke.mjs",
     "conformance-claim-smoke": "node scripts/conformance-claim-smoke.mjs",
     "core-profile-smoke": "node scripts/core-profile-smoke.mjs",
     "human-override-schema-smoke": "node scripts/human-override-schema-smoke.mjs",

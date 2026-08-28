@@ -74,6 +74,7 @@ The documentation is the canonical source for the specification. Schemas and exa
 | [Conformance Claims](conformance-claims.md) | Versioned machine-readable and human-readable support statements, evidence requirements, and trust boundaries. |
 | [Validation](validation.md) | Structural validation workflow and semantic validation boundary. |
 | [CLI And Runtime Responsibility Boundary](cli-runtime-boundary.md) | Separates offline static validation and bounded authoring commands from runtime preflight, executable extensions, credentials, remote access, orchestration, and enforcement. |
+| [Repository CLI Prototype](cli-prototype.md) | Documents the unreleased command skeleton, bounded local discovery, failure behavior, and remaining architecture gates; not the reference CLI alpha. |
 | [Diagnostic Code Catalog](diagnostic-code-catalog.md) | Central draft registry for diagnostic families, severity, messages, remediation, status, redaction, and compatibility. |
 | [Fixtures Guide](../fixtures/README.md) | Focused positive and negative validation evidence, owning checks, and maintenance rules. |
 | [Manifest Discovery](manifest-discovery.md) | Defines explicit local source boundaries, Project source hints, logical inventory, document cardinality, and multiple-workflow rules. |

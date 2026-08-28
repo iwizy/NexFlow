@@ -73,6 +73,8 @@ npm run actor-schema-smoke
 npm run agent-identity-schema-smoke
 npm run agent-definition-authority-smoke
 npm run core-profile-smoke
+npm run manifest-discovery-smoke
+npm run cli-prototype-smoke
 npm run human-override-schema-smoke
 npm run provider-feature-schema-smoke
 npm run conformance-claim-smoke
@@ -86,6 +88,11 @@ example against the schema selected by its `kind`. `package-lock.json` pins the
 validation dependencies for reproducible contributor and CI use. Node.js is
 used only for repository maintenance tooling; this does not select or constrain
 a future NexFlow runtime language.
+
+The [repository CLI prototype](docs/cli-prototype.md) is also maintenance and
+evaluation tooling, not a reference CLI alpha. Its discovery command reports
+inventory only and does not replace `npm run validate` or accept the pending
+architecture decision.
 
 Schema validation does not perform cross-manifest or policy checks. Focused
 commands exercise documented structural and namespace boundaries. The semantic

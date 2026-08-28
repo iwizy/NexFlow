@@ -2,7 +2,7 @@
 
 ## Status
 
-Draft; Core Profile and explicit local discovery slices implemented
+Draft; Core Profile and bounded local discovery slices implemented
 
 ## Cross-RFC Review
 
@@ -11,7 +11,8 @@ accepts the core-profile and logical-assembly direction for implementation
 planning. The minimum profile, optional module qualifiers, dependency policy,
 reduced Project source-hint shape, explicit local source discovery, and multiple
 unique Workflow loading are now implemented as repository validation tooling.
-Directory discovery, separate project indexes, bundle equivalence, stable CLI
+An opt-in two-filename Project entry selector now delegates to the same source
+hint loader. Directory scanning, separate project indexes, bundle equivalence, stable CLI
 diagnostics, and runtime loading remain Draft.
 
 ## Summary

@@ -37,7 +37,7 @@ after `v0.1.0`.
 | Reference examples | Implemented as 7 project sets containing 113 schema-backed manifests | [Examples](examples/), [Examples Guide](examples/README.md) |
 | Structural validation | Unified Node-based repository validation is implemented for schema and YAML syntax, manifest discovery and kind coverage, schema compilation, and all maintained examples; focused negative and model-boundary checks remain separate | `npm run validate`, `npm run negative-schema-fixtures`, [Validation](docs/validation.md) |
 | Core Profile | Implemented for minimum Project and participant slots, optional module qualifiers, dependency closure, and fail-closed omission | `npm run core-profile-smoke`, [Core Profile](docs/core-profile.md), [Profile Definition](profiles/core.yaml) |
-| Manifest discovery | Implemented for explicit local files, Project source hints, conservative cardinality, and multiple unique workflows | `npm run manifest-discovery-smoke`, [Manifest Discovery](docs/manifest-discovery.md) |
+| Manifest discovery | Implemented for explicit local files, Project source hints, bounded Project filename selection, conservative cardinality, and multiple unique workflows | `npm run manifest-discovery-smoke`, [Manifest Discovery](docs/manifest-discovery.md) |
 | Typed reference primitives | Implemented for shared structural shapes and lexical boundaries | `npm run typed-reference-schema-smoke`, [Typed References](docs/typed-references.md) |
 | Approval gate targets | Implemented as closed typed target kinds with exact semantic resolution | `npm run approval-gate-target-schema-smoke`, [Approval Gate Targets](docs/approval-gate-targets.md) |
 | Work reference namespaces | Implemented for workflow-scoped steps and assembly-scoped task artifacts | `npm run work-reference-namespace-smoke`, [Work Reference Namespaces](docs/work-reference-namespaces.md) |
@@ -55,6 +55,7 @@ after `v0.1.0`.
 | Human override policy | Structured fail-closed manifest model implemented; runtime enforcement absent | [Human Override](docs/human-override.md), [RFC-0017](rfcs/RFC-0017-human-override.md) |
 | Runtime architecture decision | Review framework published; current outcome is `not-ready`, with no language or package layout selected | [Runtime Architecture Decision Review](rfcs/reviews/runtime-architecture-decision-review.md), [Runtime Options](docs/runtime-options.md), [Roadmap](docs/roadmap.md) |
 | Reference CLI | Validation-only boundary specified; not implemented | [CLI And Runtime Responsibility Boundary](docs/cli-runtime-boundary.md), [RFC-0011](rfcs/RFC-0011-reference-cli-scope.md) |
+| Repository CLI prototype | Experimental help, dispatch, and local discovery inventory only; not a reference CLI alpha, language decision, or `NF-CLI` claim | `npm run cli-prototype -- --help`, `npm run cli-prototype-smoke`, [Prototype Scope](docs/cli-prototype.md) |
 | Runtime and provider execution | Planned, not implemented | [Architecture](docs/architecture.md), [Runtime Options](docs/runtime-options.md) |
 | Live integrations and extension loading | Not implemented | [Compatibility Matrix](docs/compatibility-matrix.md) |
 
@@ -67,6 +68,10 @@ The architecture review has not selected an implementation. The next runtime
 milestone is to close the published decision blockers with comparable,
 revision-pinned evidence and record an explicit review outcome. CLI and runtime
 implementation remain blocked while the outcome is `not-ready`.
+
+A disposable repository CLI prototype exercises local discovery using the
+existing maintenance dependencies. It is not an accepted architecture candidate
+or a released `nexflow` command; schema validation stays in `npm run validate`.
 
 See the [Compatibility Matrix](docs/compatibility-matrix.md) for the exact tested
 artifact pairing and the [0.1 Readiness Checklist](docs/readiness-checklist.md)

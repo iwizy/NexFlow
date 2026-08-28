@@ -235,12 +235,23 @@ All codes in this table are Implemented draft and default to Error.
 | `NF-DISCOVERY-DUPLICATE-WORKFLOW` | `Workflow ID <id> is declared more than once.` | Give each workflow a unique ID or remove the unintended duplicate. |
 | `NF-DISCOVERY-OUTSIDE-ROOT` | `Source <source> is outside the allowed discovery root.` | Move the source inside the root or configure a different explicit root; do not weaken containment implicitly. |
 | `NF-DISCOVERY-UNSAFE-SOURCE` | `Source <source> violates discovery safety policy.` | Replace the symlink, remote-like locator, unsupported file, unsafe YAML, or other rejected source with an allowed explicit local source. |
-| `NF-DISCOVERY-LIMIT-EXCEEDED` | `Discovery limit <limit> was exceeded.` | Reduce the bounded input or raise the explicit limit only after resource and trust review. |
+| `NF-DISCOVERY-LIMIT-EXCEEDED` | `Discovery limit <limit> was exceeded.` | Reduce the bounded input; repository helper overrides may lower limits only. Raising defaults requires resource and trust review. |
 | `NF-DISCOVERY-UNSUPPORTED-HINT` | `Project source hint <hint> is unsupported.` | Use a supported explicit source key or a supported direct file list. |
 
 The focused implementation currently emits Error for unsupported kinds rather
 than preserving them as warnings. A future preservation mode must publish its
 severity policy and must never interpret unsupported behavior.
+
+The bounded directory entry selector reuses `NO-PROJECT` when neither
+`project.yaml` nor `project.yml` exists and `MULTIPLE-PROJECTS` when both exist.
+Version checks reject anything other than the exact supported string `"0.1"`,
+including an entire assembly authored at the same unknown version. Invalid
+limit options and unsafe YAML conversion use `UNSAFE-SOURCE`; count and byte
+overruns use `LIMIT-EXCEEDED`.
+
+The [repository CLI prototype](cli-prototype.md) emits these existing draft
+codes with generic messages and redacted rejected locators. It does not
+stabilize the catalog or add standard codes for its usage and internal errors.
 
 ## Core Profile Codes
 

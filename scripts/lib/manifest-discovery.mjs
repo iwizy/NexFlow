@@ -1,6 +1,7 @@
+import { constants } from "node:fs";
 import {
   lstat,
-  readFile,
+  open,
   realpath,
   stat
 } from "node:fs/promises";
@@ -40,6 +41,46 @@ export const SUPPORTED_MANIFEST_KINDS = Object.freeze([
 
 const supportedKinds = new Set(SUPPORTED_MANIFEST_KINDS);
 const supportedExtensions = new Set([".yaml", ".yml"]);
+const projectEntrypoints = ["project.yaml", "project.yml"];
+
+function compareText(left, right) {
+  return left < right ? -1 : left > right ? 1 : 0;
+}
+
+function validLimits(limits) {
+  return limits && typeof limits === "object" && !Array.isArray(limits)
+    && Object.entries(limits).every(([key, value]) => Object.hasOwn(DEFAULT_DISCOVERY_LIMITS, key)
+      && Number.isSafeInteger(value) && value >= (key === "maxAliasCount" ? 0 : 1)
+      && value <= DEFAULT_DISCOVERY_LIMITS[key]);
+}
+
+function jsonCompatible(value) {
+  const active = new WeakSet();
+  const visited = new WeakSet();
+  const pending = [{ value, leave: false }];
+  while (pending.length > 0) {
+    const entry = pending.pop();
+    const current = entry.value;
+    if (current === null || typeof current === "string" || typeof current === "boolean") continue;
+    if (typeof current === "number") {
+      if (!Number.isFinite(current)) return false;
+      continue;
+    }
+    if (typeof current !== "object") return false;
+    if (entry.leave) {
+      active.delete(current);
+      visited.add(current);
+      continue;
+    }
+    if (active.has(current)) return false;
+    if (visited.has(current)) continue;
+    if (!Array.isArray(current) && Object.getPrototypeOf(current) !== Object.prototype) return false;
+    active.add(current);
+    pending.push({ value: current, leave: true });
+    for (const child of Object.values(current)) pending.push({ value: child, leave: false });
+  }
+  return true;
+}
 
 function diagnostic(code, source, message, relatedSources = []) {
   return {
@@ -85,12 +126,17 @@ function emptyResult(inputMode, diagnostics) {
 
 async function canonicalRoot(root, diagnostics) {
   try {
-    return await realpath(path.resolve(root));
-  } catch (error) {
+    if (typeof root !== "string" || !root.trim() || /^[A-Za-z][A-Za-z0-9+.-]*:\/\//u.test(root)) {
+      throw new Error("invalid root");
+    }
+    const resolved = await realpath(path.resolve(root));
+    if (!(await stat(resolved)).isDirectory()) throw new Error("not a directory");
+    return resolved;
+  } catch {
     diagnostics.push(diagnostic(
       "NF-DISCOVERY-UNSAFE-SOURCE",
-      String(root),
-      `discovery root is unavailable: ${error.message}`
+      "<root>",
+      "discovery root must be an available local directory"
     ));
     return null;
   }
@@ -143,6 +189,17 @@ async function loadSource(root, sourceEntry, limits, diagnostics) {
   }
 
   try {
+    // Reject symlinked ancestors before inspecting or opening their children.
+    let componentPath = root;
+    for (const component of path.relative(root, candidate).split(path.sep)) {
+      componentPath = path.join(componentPath, component);
+      if ((await lstat(componentPath)).isSymbolicLink()) {
+        diagnostics.push(diagnostic(
+          "NF-DISCOVERY-UNSAFE-SOURCE", source, "symbolic-link manifest paths are not followed"
+        ));
+        return null;
+      }
+    }
     const sourceInfo = await lstat(candidate);
     if (sourceInfo.isSymbolicLink()) {
       diagnostics.push(diagnostic(
@@ -171,40 +228,74 @@ async function loadSource(root, sourceEntry, limits, diagnostics) {
       return null;
     }
 
-    const sourceStats = await stat(candidate);
-    if (sourceStats.size > limits.maxFileBytes) {
+    let contents;
+    const handle = await open(candidate, constants.O_RDONLY | (constants.O_NOFOLLOW ?? 0) | (constants.O_NONBLOCK ?? 0));
+    try {
+      const openedInfo = await handle.stat();
+      if (!openedInfo.isFile()) throw new Error("not a regular file");
+      if (openedInfo.size > limits.maxFileBytes) {
+        diagnostics.push(diagnostic(
+          "NF-DISCOVERY-LIMIT-EXCEEDED", source, "manifest source exceeds the file size limit"
+        ));
+        return null;
+      }
+      // Bound actual bytes read as well as the pre-read size check.
+      const buffer = Buffer.alloc(limits.maxFileBytes + 1);
+      let total = 0;
+      while (total < buffer.length) {
+        const { bytesRead } = await handle.read(buffer, total, buffer.length - total, null);
+        if (bytesRead === 0) break;
+        total += bytesRead;
+      }
+      if (total > limits.maxFileBytes) {
+        diagnostics.push(diagnostic(
+          "NF-DISCOVERY-LIMIT-EXCEEDED", source, "manifest source exceeds the file size limit"
+        ));
+        return null;
+      }
+      contents = new TextDecoder("utf-8", { fatal: true }).decode(buffer.subarray(0, total));
+    } finally {
+      await handle.close();
+    }
+
+    const document = parseDocument(contents, {
+      maxAliasCount: limits.maxAliasCount,
+      uniqueKeys: true,
+      stringKeys: true,
+      prettyErrors: false
+    });
+
+    if (document.errors.length > 0 || document.warnings.length > 0) {
       diagnostics.push(diagnostic(
-        "NF-DISCOVERY-LIMIT-EXCEEDED",
-        source,
-        `manifest source exceeds the ${limits.maxFileBytes} byte limit`
+        "NF-DISCOVERY-UNSAFE-SOURCE", source,
+        "manifest must contain one valid YAML document with unique string keys and supported tags"
       ));
       return null;
     }
 
-    const document = parseDocument(await readFile(candidate, "utf8"), {
-      maxAliasCount: limits.maxAliasCount,
-      uniqueKeys: true
-    });
-
-    if (document.errors.length > 0) {
-      for (const error of document.errors) {
-        diagnostics.push(diagnostic(
-          "NF-DISCOVERY-UNSAFE-SOURCE",
-          source,
-          error.message.split("\n", 1)[0]
-        ));
-      }
+    let manifest;
+    try {
+      manifest = document.toJS({ maxAliasCount: limits.maxAliasCount });
+    } catch {
+      diagnostics.push(diagnostic(
+        "NF-DISCOVERY-UNSAFE-SOURCE", source, "YAML conversion failed or exceeded the alias-expansion budget"
+      ));
       return null;
     }
-
-    const manifest = document.toJS({ maxAliasCount: limits.maxAliasCount });
-    if (manifest === null || typeof manifest !== "object" || Array.isArray(manifest)) {
+    if (manifest === null || typeof manifest !== "object" || Array.isArray(manifest) || !jsonCompatible(manifest)) {
       diagnostics.push(diagnostic(
         "NF-DISCOVERY-UNSAFE-SOURCE",
         source,
-        "manifest root must be a mapping"
+        "manifest must be a JSON-compatible mapping without cycles or non-finite numbers"
       ));
       return null;
+    }
+
+    if (manifest.specVersion !== "0.1") {
+      diagnostics.push(diagnostic(
+        "NF-DISCOVERY-UNSUPPORTED-VERSION", source, 'only specVersion "0.1" is supported'
+      ));
+      return { source, expectedKind: sourceEntry.expectedKind, manifest, supported: false };
     }
 
     const kind = manifest.kind;
@@ -221,7 +312,7 @@ async function loadSource(root, sourceEntry, limits, diagnostics) {
       diagnostics.push(diagnostic(
         "NF-DISCOVERY-UNSUPPORTED-KIND",
         source,
-        `manifest kind ${JSON.stringify(kind)} is not supported by this discovery slice`
+        "manifest kind is not supported by this discovery slice"
       ));
       return { source, expectedKind: sourceEntry.expectedKind, manifest, supported: false };
     }
@@ -230,7 +321,7 @@ async function loadSource(root, sourceEntry, limits, diagnostics) {
       diagnostics.push(diagnostic(
         "NF-DISCOVERY-KIND-MISMATCH",
         source,
-        `source hint expects ${JSON.stringify(sourceEntry.expectedKind)}, found ${JSON.stringify(kind)}`
+        "source hint expected kind differs from the declared manifest kind"
       ));
     }
 
@@ -240,11 +331,11 @@ async function loadSource(root, sourceEntry, limits, diagnostics) {
       manifest,
       supported: true
     };
-  } catch (error) {
+  } catch {
     diagnostics.push(diagnostic(
       "NF-DISCOVERY-UNSAFE-SOURCE",
       source,
-      `manifest source is unavailable: ${error.message}`
+      "manifest source could not be read safely as a local UTF-8 file"
     ));
     return null;
   }
@@ -301,7 +392,7 @@ function buildAssembly(inputMode, documents, diagnostics) {
       diagnostics.push(diagnostic(
         "NF-DISCOVERY-UNSUPPORTED-VERSION",
         document.source,
-        `manifest specVersion ${JSON.stringify(manifest.specVersion)} does not match project version ${JSON.stringify(specVersion)}`
+        "manifest specVersion does not match the selected Project version"
       ));
       continue;
     }
@@ -310,7 +401,7 @@ function buildAssembly(inputMode, documents, diagnostics) {
       diagnostics.push(diagnostic(
         "NF-DISCOVERY-PROJECT-MISMATCH",
         document.source,
-        `manifest belongs to project ${JSON.stringify(manifest.metadata?.project)}, expected ${JSON.stringify(projectId)}`
+        "manifest project association does not match the selected Project"
       ));
       continue;
     }
@@ -345,7 +436,7 @@ function buildAssembly(inputMode, documents, diagnostics) {
       diagnostics.push(diagnostic(
         "NF-DISCOVERY-DUPLICATE-WORKFLOW",
         workflowById.get(workflowId).source,
-        `workflow ID ${JSON.stringify(workflowId)} is duplicated`,
+        "workflow ID is duplicated",
         [document.source]
       ));
     } else {
@@ -359,11 +450,11 @@ function buildAssembly(inputMode, documents, diagnostics) {
       ...(resourceIdFor(document.manifest) ? { resourceId: resourceIdFor(document.manifest) } : {}),
       source: document.source
     }))
-    .sort((left, right) => left.source.localeCompare(right.source));
+    .sort((left, right) => compareText(left.source, right.source));
 
   const workflows = [...workflowById]
     .map(([id, document]) => ({ id, source: document.source }))
-    .sort((left, right) => left.id.localeCompare(right.id));
+    .sort((left, right) => compareText(left.id, right.id));
 
   return {
     projectId,
@@ -385,6 +476,11 @@ export async function discoverManifestAssembly({
   limits = {}
 }) {
   const diagnostics = [];
+  if (!validLimits(limits)) {
+    return emptyResult(inputMode, [diagnostic(
+      "NF-DISCOVERY-UNSAFE-SOURCE", "<limits>", "discovery limits must be valid integers no higher than the defaults"
+    )]);
+  }
   const effectiveLimits = { ...DEFAULT_DISCOVERY_LIMITS, ...limits };
   const resolvedRoot = await canonicalRoot(root, diagnostics);
   if (!resolvedRoot) return emptyResult(inputMode, diagnostics);
@@ -432,7 +528,7 @@ export async function discoverManifestAssembly({
     uniqueSources.push(source);
   }
 
-  uniqueSources.sort((left, right) => String(left.path).localeCompare(String(right.path)));
+  uniqueSources.sort((left, right) => compareText(String(left.path), String(right.path)));
   const documents = [];
   for (const source of uniqueSources) {
     const document = await loadSource(resolvedRoot, source, effectiveLimits, diagnostics);
@@ -485,12 +581,12 @@ export function sourceEntriesFromProject(projectManifest) {
       continue;
     }
 
-    const expectedKind = PROJECT_SOURCE_HINT_KINDS[key];
+    const expectedKind = Object.hasOwn(PROJECT_SOURCE_HINT_KINDS, key) ? PROJECT_SOURCE_HINT_KINDS[key] : undefined;
     if (!expectedKind) {
       diagnostics.push(diagnostic(
         "NF-DISCOVERY-UNSUPPORTED-HINT",
         `<Project.manifests.${key}>`,
-        `source hint key ${JSON.stringify(key)} is not supported by this discovery slice`
+        "source hint key is not supported by this discovery slice"
       ));
       continue;
     }
@@ -514,9 +610,12 @@ export async function discoverFromProjectHints({
 
   const projectManifest = projectOnly.assembly?.loadedDocuments
     .find((document) => document.manifest.kind === "Project")?.manifest;
-  if (!projectManifest) return projectOnly;
+  if (!projectOnly.valid || !projectManifest) return projectOnly;
 
   const normalized = sourceEntriesFromProject(projectManifest);
+  if (normalized.diagnostics.length > 0) {
+    return emptyResult("project-source-hints", normalized.diagnostics);
+  }
   const result = await discoverManifestAssembly({
     root,
     sources: [
@@ -530,4 +629,38 @@ export async function discoverFromProjectHints({
   result.diagnostics.unshift(...normalized.diagnostics);
   result.valid = result.assembly !== null && result.diagnostics.length === 0;
   return result;
+}
+
+export async function discoverFromDirectory({ root, limits = {} }) {
+  const inputMode = "directory-project";
+  const diagnostics = [];
+  const resolvedRoot = await canonicalRoot(root, diagnostics);
+  if (!resolvedRoot) return emptyResult(inputMode, diagnostics);
+
+  const found = [];
+  for (const entry of projectEntrypoints) {
+    try {
+      await lstat(path.join(resolvedRoot, entry));
+      found.push(entry);
+    } catch (error) {
+      if (error.code !== "ENOENT") {
+        diagnostics.push(diagnostic(
+          "NF-DISCOVERY-UNSAFE-SOURCE", entry, "Project entry point could not be inspected safely"
+        ));
+      }
+    }
+  }
+  if (diagnostics.length > 0) return emptyResult(inputMode, diagnostics);
+  if (found.length === 0) {
+    return emptyResult(inputMode, [diagnostic(
+      "NF-DISCOVERY-NO-PROJECT", "<root>", "directory must contain project.yaml or project.yml"
+    )]);
+  }
+  if (found.length > 1) {
+    return emptyResult(inputMode, [diagnostic(
+      "NF-DISCOVERY-MULTIPLE-PROJECTS", found[0], "directory contains ambiguous Project entry points", found.slice(1)
+    )]);
+  }
+  const result = await discoverFromProjectHints({ root: resolvedRoot, projectPath: found[0], limits });
+  return { ...result, inputMode };
 }

@@ -10,6 +10,8 @@
     "approval-gate-target-schema-smoke": "node scripts/approval-gate-target-schema-smoke.mjs",
     "actor-schema-smoke": "node scripts/actor-schema-smoke.mjs",
     "candidate-readiness-smoke": "node scripts/candidate-readiness-smoke.mjs",
+    "cli-prototype": "node scripts/cli-prototype.mjs",
+    "cli-prototype-smoke": "node scripts/cli-prototype-smoke.mjs",
     "conformance-claim-smoke": "node scripts/conformance-claim-smoke.mjs",
     "core-profile-smoke": "node scripts/core-profile-smoke.mjs",
     "human-override-schema-smoke": "node scripts/human-override-schema-smoke.mjs",

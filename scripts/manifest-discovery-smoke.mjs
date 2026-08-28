@@ -2,9 +2,11 @@
 
 import {
   cp,
+  mkdir,
   mkdtemp,
   readFile,
   readdir,
+  rename,
   rm,
   symlink,
   writeFile
@@ -18,8 +20,10 @@ import addFormats from "ajv-formats";
 import { parseDocument } from "yaml";
 
 import {
+  discoverFromDirectory,
   discoverFromProjectHints,
-  discoverManifestAssembly
+  discoverManifestAssembly,
+  sourceEntriesFromProject
 } from "./lib/manifest-discovery.mjs";
 import { validateWorkflowStepNamespace } from "./lib/work-reference-namespaces.mjs";
 
@@ -291,6 +295,146 @@ const duplicateSource = await discoverManifestAssembly({
   sources: [sourceList[0], sourceList[0]]
 });
 check("duplicate source locator", hasCode(duplicateSource, "NF-DISCOVERY-DUPLICATE-SOURCE"));
+
+const directoryResult = await discoverFromDirectory({ root: fixtureSource });
+check("directory entry point matches explicit hints", directoryResult.valid
+  && directoryResult.inputMode === "directory-project"
+  && JSON.stringify(directoryResult.assembly) === JSON.stringify(discovered.assembly));
+
+for (const entry of await readdir(path.join(root, "examples"), { withFileTypes: true })) {
+  if (!entry.isDirectory()) continue;
+  const result = await discoverFromDirectory({ root: path.join(root, "examples", entry.name) });
+  check(`maintained example discovery: ${entry.name}`, result.valid, JSON.stringify(result.diagnostics));
+}
+
+await withFixture(async (fixtureRoot) => {
+  await rename(path.join(fixtureRoot, "project.yaml"), path.join(fixtureRoot, "project.yml"));
+  const result = await discoverFromDirectory({ root: fixtureRoot });
+  check("project.yml entry point", result.valid && result.assembly?.documents.length === 5);
+});
+
+await withFixture(async (fixtureRoot) => {
+  await cp(path.join(fixtureRoot, "project.yaml"), path.join(fixtureRoot, "project.yml"));
+  const result = await discoverFromDirectory({ root: fixtureRoot });
+  check("ambiguous Project filenames fail without precedence", !result.valid
+    && result.assembly === null && hasCode(result, "NF-DISCOVERY-MULTIPLE-PROJECTS"));
+  check("explicit Project disambiguates filenames", (await discoverFromProjectHints({ root: fixtureRoot })).valid);
+});
+
+await withFixture(async (fixtureRoot) => {
+  await rename(path.join(fixtureRoot, "project.yaml"), path.join(fixtureRoot, "team-project.yml"));
+  const missing = await discoverFromDirectory({ root: fixtureRoot });
+  check("no implicit directory scan or filename inference", !missing.valid && hasCode(missing, "NF-DISCOVERY-NO-PROJECT"));
+  check("explicit nonconventional Project filename", (await discoverFromProjectHints({
+    root: fixtureRoot, projectPath: "team-project.yml"
+  })).valid);
+  await mkdir(path.join(fixtureRoot, "project.yaml"));
+  check("directory masquerading as Project", hasCode(await discoverFromDirectory({ root: fixtureRoot }), "NF-DISCOVERY-UNSAFE-SOURCE"));
+});
+
+await withFixture(async (fixtureRoot) => {
+  await mkdir(path.join(fixtureRoot, "config"));
+  await rename(path.join(fixtureRoot, "project.yaml"), path.join(fixtureRoot, "config", "team.yml"));
+  const result = await discoverFromProjectHints({ root: fixtureRoot, projectPath: "config/team.yml" });
+  check("nested Project hints remain root-relative", result.valid && result.assembly?.documents.length === 5);
+});
+
+await withFixture(async (fixtureRoot) => {
+  await writeFile(path.join(fixtureRoot, "unlisted.yaml"), "broken: [\n");
+  check("unlisted files ignored by directory entry point", (await discoverFromDirectory({ root: fixtureRoot })).valid);
+  check("explicit malformed source rejected", hasCode(await discoverManifestAssembly({
+    root: fixtureRoot, sources: ["project.yaml", "unlisted.yaml"]
+  }), "NF-DISCOVERY-UNSAFE-SOURCE"));
+  const result = await discoverManifestAssembly({ root: fixtureRoot, sources: ["project.yaml"] });
+  check("explicit file mode does not follow hints", result.valid && result.assembly?.documents.length === 1);
+});
+
+await withFixture(async (fixtureRoot) => {
+  const project = clone(fixtureProject);
+  delete project.manifests;
+  await writeFile(path.join(fixtureRoot, "project.yaml"), JSON.stringify(project));
+  const result = await discoverFromDirectory({ root: fixtureRoot });
+  check("missing hints do not auto-discover other modules", result.valid && result.assembly?.documents.length === 1);
+});
+
+await withFixture(async (fixtureRoot) => {
+  await symlink("people", path.join(fixtureRoot, "linked-people"), "dir");
+  const result = await discoverManifestAssembly({ root: fixtureRoot, sources: ["project.yaml", "linked-people/team.yml"] });
+  check("symlinked path component rejected", hasCode(result, "NF-DISCOVERY-UNSAFE-SOURCE"));
+  await rename(path.join(fixtureRoot, "project.yaml"), path.join(fixtureRoot, "real-project.yaml"));
+  await symlink("real-project.yaml", path.join(fixtureRoot, "project.yaml"));
+  check("symlinked Project entry point rejected", hasCode(await discoverFromDirectory({ root: fixtureRoot }), "NF-DISCOVERY-UNSAFE-SOURCE"));
+});
+
+for (const version of ["0.2", "1.0", 0.1, null, undefined]) {
+  await withFixture(async (fixtureRoot) => {
+    const project = clone(fixtureProject);
+    project.specVersion = version;
+    project.manifests = { agents: "missing.yaml" };
+    await writeFile(path.join(fixtureRoot, "project.yaml"), JSON.stringify(project));
+    const result = await discoverFromDirectory({ root: fixtureRoot });
+    check(`unsupported Project version: ${version}`, !result.valid && hasCode(result, "NF-DISCOVERY-UNSUPPORTED-VERSION"));
+    check(`unsupported Project hints not followed: ${version}`, !hasCode(result, "NF-DISCOVERY-UNSAFE-SOURCE"));
+  });
+}
+
+for (const hint of ["constructor", "toString", "__proto__", "bundle"]) {
+  const result = sourceEntriesFromProject({ manifests: { [hint]: "missing.yaml" } });
+  check(`unknown or inherited hint rejected: ${hint}`, result.entries.length === 0
+    && result.diagnostics.some((entry) => entry.code === "NF-DISCOVERY-UNSUPPORTED-HINT"));
+}
+
+const malformedSources = [
+  ["duplicate keys", "kind: Project\nkind: AgentSet\n"],
+  ["multiple documents", "kind: Project\n---\nkind: AgentSet\n"],
+  ["custom tag", "kind: !custom Project\n"],
+  ["collection mapping key", "? [one, two]\n: value\n"],
+  ["root sequence", "- item\n"],
+  ["root scalar", "text\n"],
+  ["root null", "null\n"],
+  ["non-finite number", "kind: Project\nvalue: .nan\n"],
+  ["alias cycle", "kind: Project\nvalue: &cycle [*cycle]\n"],
+  ["invalid UTF-8", Buffer.from([0xff, 0xfe, 0x61])]
+];
+for (const [name, contents] of malformedSources) {
+  await withFixture(async (fixtureRoot) => {
+    await writeFile(path.join(fixtureRoot, "bad.yaml"), contents);
+    const result = await discoverManifestAssembly({ root: fixtureRoot, sources: ["project.yaml", "bad.yaml"] });
+    check(`safe YAML rejection: ${name}`, !result.valid && hasCode(result, "NF-DISCOVERY-UNSAFE-SOURCE"));
+  });
+}
+
+await withFixture(async (fixtureRoot) => {
+  const projectFile = path.join(fixtureRoot, "project.yaml");
+  const yaml = `${await readFile(projectFile, "utf8")}\nextra: &value [one, two]\ncopy: *value\n`;
+  await writeFile(projectFile, yaml);
+  check("bounded acyclic aliases retained", (await discoverFromProjectHints({ root: fixtureRoot })).valid);
+  check("zero alias budget enforced", hasCode(await discoverFromProjectHints({
+    root: fixtureRoot, limits: { maxAliasCount: 0 }
+  }), "NF-DISCOVERY-UNSAFE-SOURCE"));
+});
+
+for (const limits of [{ maxDocuments: 0 }, { maxFileBytes: -1 }, { maxAliasCount: -1 }, { maxDocuments: 129 }, { maxFileBytes: NaN }, { extra: 1 }, null]) {
+  const result = await discoverManifestAssembly({ root: fixtureSource, sources: sourceList, limits });
+  check(`invalid limits: ${JSON.stringify(limits)}`, !result.valid && hasCode(result, "NF-DISCOVERY-UNSAFE-SOURCE"));
+}
+const projectBytes = (await readFile(path.join(fixtureSource, "project.yaml"))).length;
+check("file size boundary accepted", (await discoverManifestAssembly({
+  root: fixtureSource, sources: ["project.yaml"], limits: { maxFileBytes: projectBytes }
+})).valid);
+check("file size boundary rejected", hasCode(await discoverManifestAssembly({
+  root: fixtureSource, sources: ["project.yaml"], limits: { maxFileBytes: projectBytes - 1 }
+}), "NF-DISCOVERY-LIMIT-EXCEEDED"));
+check("document count boundary accepted", (await discoverManifestAssembly({
+  root: fixtureSource, sources: sourceList, limits: { maxDocuments: 5 }
+})).valid);
+check("root must be a directory", hasCode(await discoverFromDirectory({
+  root: path.join(fixtureSource, "project.yaml")
+}), "NF-DISCOVERY-UNSAFE-SOURCE"));
+check("root must be explicit", hasCode(await discoverFromDirectory({ root: "" }), "NF-DISCOVERY-UNSAFE-SOURCE"));
+
+const normalizedDuplicate = await discoverManifestAssembly({ root: fixtureSource, sources: ["project.yaml", "./project.yaml"] });
+check("normalized duplicate source rejected", hasCode(normalizedDuplicate, "NF-DISCOVERY-DUPLICATE-SOURCE"));
 
 if (failures.length > 0) {
   console.error(`Manifest discovery checks failed with ${failures.length} failure(s):`);

@@ -8,6 +8,12 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Added
 
+- Added structural `validate` to the unreleased repository CLI prototype,
+  using bounded discovery and the repository-owned schemas for all 17 kinds.
+  It checks formats without coercing, filling, or rewriting input, reports
+  bounded and redacted `NF-SCHEMA` diagnostics, and returns failure for unsafe,
+  unsupported, or invalid input. Focused CLI validation checks run in CI.
+  This is not a reference CLI alpha, full semantic validation, or a runtime.
 - Added a non-distributed repository CLI prototype with help, unreleased
   version identification, strict argument handling, explicit unsupported
   commands, and a discovery-only inventory. It does not select a runtime or

@@ -117,27 +117,39 @@ parsing, and format validation dependencies.
 
 This Node.js command is repository maintenance tooling, not a reference CLI or runtime implementation. It does not choose a future NexFlow runtime language and does not perform semantic validation.
 
-Discovery and the disposable command skeleton have separate checks:
+Discovery and the disposable CLI prototype have separate checks:
 
 ```sh
 npm run manifest-discovery-smoke
 npm run cli-prototype-smoke
+npm run cli-validation-smoke
 npm run cli-prototype -- discover --root examples/minimal-team
+npm run cli-prototype -- validate --root examples/minimal-team
 ```
 
-The last command prints an inventory only, not a validation result. The
-[repository CLI prototype](cli-prototype.md) supports explicit files, Project
-source hints, and a bounded choice between root `project.yaml` and `project.yml`.
-It has no implemented `validate`, `inspect`, `graph`, or `init` command, no
-reference CLI package, and no `NF-CLI` claim. The architecture decision remains
-`not-ready`. See [Manifest Discovery](manifest-discovery.md) for exact source
-and parser boundaries.
+`discover` prints an inventory only; `validate` additionally checks every
+selected manifest against the repository-owned schemas with format validation
+and no data mutation. The [repository CLI prototype](cli-prototype.md) supports
+explicit files, Project source hints, and a bounded choice between root
+`project.yaml` and `project.yml`. All modes require one Project. Schema success
+covers only selected input, not Core Profile, semantic or extension-profile
+conformance, source completeness, or execution readiness. Unsafe syntax or
+unsupported inputs stop before schema validation; schema failures include a
+sanitized field pointer and return nonzero status.
 
-Its broad `NF-SYNTAX` and `NF-SCHEMA` codes are classified as Implemented draft
+`inspect`, `graph`, and `init` remain unimplemented. There is no reference CLI
+package or `NF-CLI` claim, and the architecture decision remains `not-ready`.
+See [Manifest Discovery](manifest-discovery.md) for exact source and parser
+boundaries. The prototype does not replace repository-wide maintenance checks.
+
+The maintenance check's broad `NF-SYNTAX` and `NF-SCHEMA` codes are Implemented draft
 in the [Diagnostic Code Catalog](diagnostic-code-catalog.md). The catalog also
 records implemented discovery and Core Profile codes, candidate refinements,
 default severity, suggested messages, and safe remediation. No current command
 implements the complete catalog or a stable machine-readable output contract.
+The prototype uses discovery codes for parsing and source failures and the
+coarse `NF-SCHEMA` code for structural failures; it does not promote the
+catalog's candidate refinements to stable codes.
 
 Verify the intentionally invalid schema fixtures:
 

@@ -252,6 +252,13 @@ overruns use `LIMIT-EXCEEDED`.
 The [repository CLI prototype](cli-prototype.md) emits these existing draft
 codes with generic messages and redacted rejected locators. It does not
 stabilize the catalog or add standard codes for its usage and internal errors.
+Its `validate` command additionally emits the coarse `NF-SCHEMA` code for
+structural failures, with a known kind, sanitized JSON Pointer, safe constraint
+keyword, and generic message. Required fields extend the pointer; unknown or
+rejected additional property names are redacted. Schema diagnostics are
+bounded, and truncation remains a failure. Parser failures retain their
+discovery codes. This does not implement candidate schema-code refinements,
+full semantic validation, or a stable JSON diagnostic envelope.
 
 ## Core Profile Codes
 

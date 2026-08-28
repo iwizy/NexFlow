@@ -2,7 +2,7 @@ import path from "node:path";
 import { parseArgs } from "node:util";
 
 const version = "NexFlow repository CLI prototype (unreleased; spec 0.1)";
-const reservedCommands = new Set(["validate", "inspect", "graph", "init"]);
+const reservedCommands = new Set(["inspect", "graph", "init"]);
 const unsupportedCodes = new Set([
   "NF-DISCOVERY-UNSUPPORTED-VERSION",
   "NF-DISCOVERY-UNSUPPORTED-KIND",
@@ -15,10 +15,13 @@ Usage:
   npm run cli-prototype -- --help
   npm run cli-prototype -- --version
   npm run cli-prototype -- discover --root <directory> [--project <file> | --file <file> ...]
+  npm run cli-prototype -- validate --root <directory> [--project <file> | --file <file> ...]
 
 discover builds a source inventory only. Schema and semantic validation are not performed.
+validate checks the discovered manifests against the local spec 0.1 JSON Schemas only.
+Neither command performs full semantic validation or authorizes execution.
 With no source flag, exactly one root project.yaml or project.yml must exist.
-validate, inspect, graph, and init are not implemented.
+inspect, graph, and init are not implemented.
 `;
 
 function parseRequest(args) {
@@ -42,7 +45,7 @@ function parseRequest(args) {
     seen.add(token.name);
   }
   const [command] = positionals;
-  if (positionals.length > 1 || (command && command !== "discover" && !reservedCommands.has(command))) {
+  if (positionals.length > 1 || (command && !["discover", "validate"].includes(command) && !reservedCommands.has(command))) {
     throw new Error("unknown command or positional argument");
   }
   if (values.project !== undefined && values.file !== undefined) throw new Error("conflicting modes");
@@ -79,10 +82,16 @@ async function discoverInput({ root, projectPath, sources }) {
   return discoverFromDirectory({ root });
 }
 
+async function validateInput(assembly) {
+  const { loadRepositorySchemaRegistry, validateManifestAssembly } = await import("./schema-validation.mjs");
+  return validateManifestAssembly(assembly, await loadRepositorySchemaRegistry());
+}
+
 export async function runCliPrototype(args, {
   stdout = process.stdout,
   stderr = process.stderr,
-  discover = discoverInput
+  discover = discoverInput,
+  validate = validateInput
 } = {}) {
   let request;
   try {
@@ -111,6 +120,19 @@ export async function runCliPrototype(args, {
         stderr.write(`${entry.code} ${sourceLabel(entry.source)}: ${entry.message}\n`);
       }
       return result.diagnostics.some((entry) => unsupportedCodes.has(entry.code)) ? 3 : 1;
+    }
+    if (request.command === "validate") {
+      const validation = await validate(result.assembly);
+      if (!validation.valid) {
+        for (const entry of validation.diagnostics) {
+          stderr.write(`${entry.code} ${sourceLabel(entry.source)} ${entry.kind} ${JSON.stringify(entry.instancePath)} [${entry.keyword}]: ${entry.message}\n`);
+        }
+        if (validation.truncated) stderr.write("Additional schema diagnostics omitted; validation failed.\n");
+        return 1;
+      }
+      stdout.write(`Validated ${validation.documentCount} manifest(s) against the local spec 0.1 schemas (${result.inputMode}).\n`);
+      stdout.write("Schema validation only. Core Profile and full semantic validation were not performed; no execution is authorized.\n");
+      return 0;
     }
     stdout.write(`Discovered ${result.assembly.documents.length} manifest(s) (${result.inputMode}).\n`);
     for (const document of result.assembly.documents) {

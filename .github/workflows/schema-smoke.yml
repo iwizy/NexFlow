@@ -54,6 +54,9 @@ jobs:
       - name: Run repository CLI prototype checks
         run: npm run cli-prototype-smoke
 
+      - name: Run CLI structural validation checks
+        run: npm run cli-validation-smoke
+
       - name: Run human override schema boundary checks
         run: npm run human-override-schema-smoke
 

@@ -2,15 +2,15 @@
 
 This matrix compares the reference examples by learning order, complexity, context shape, autonomy posture, approval gates, integrations, and validation focus.
 
-Use it to choose an example to read, adapt, or validate. The examples are
-complete specification material, not minimum Core Profile fixtures or runtime
-fixtures, and no example grants access or executes work by itself.
+Use it to choose an example to read, adapt, or validate. Minimal Team is a
+reduced Core Profile example; the other six are complete specification
+examples. No example grants access or executes work by itself.
 
 ## Learning Path
 
 | Order | Example | Start Here When | Main Concepts To Learn |
 | --- | --- | --- | --- |
-| 1 | [Minimal Team](minimal-team/) | You want the smallest complete manifest set and the first identity and active-definition authority path. | Typed actor identity, compact AgentSet, unique active definition, explicit agent bridge, human override, project policy, and one simple workflow. |
+| 1 | [Minimal Team](minimal-team/) | You want the smallest useful identity and responsibility description. | Project, typed actor identity, compact AgentSet, explicit agent bridge, fail-closed omission, and the path to optional modules. |
 | 2 | [Software Team](software-team/) | You want a conventional repository workflow. | Implementation, review, QA, docs handoff, dependency approval, GitHub and task context. |
 | 3 | [Startup Team](startup-team/) | You want fast iteration with human launch control. | Product decisions, design review, release review, safe autonomy, product context. |
 | 4 | [Product Delivery Team](product-delivery-team/) | You want cross-functional delivery. | Product acceptance, UX handoff, QA evidence, launch readiness, many-to-many handoffs. |
@@ -22,7 +22,7 @@ fixtures, and no example grants access or executes work by itself.
 
 | Example | Complexity | Context Sources | Autonomy Posture | Approval Gates | Integration Footprint | Best Validation Focus |
 | --- | --- | --- | --- | --- | --- | --- |
-| [Minimal Team](minimal-team/) | 1 - Small | Local files, docs | `manual_only`, `ask_before_changes` | Human documentation review and override resume | Local repository extension | ActorSet identity, compact AgentSet, unique active definition, agent bridge, human override, minimal references |
+| [Minimal Team](minimal-team/) | 1 - Core | None declared | None declared | None declared | None declared | Core Profile identity, compact AgentSet, explicit agent bridge, fail-closed omission |
 | [Software Team](software-team/) | 2 - Standard | GitHub, Linear, docs, MCP | Mostly `ask_before_changes`, human review | Code review, dependency approval, docs review | GitHub, Linear, and MCP extensions | Task ownership, capability use, MCP context/action separation, dependency and review gates |
 | [Startup Team](startup-team/) | 3 - Product-heavy | GitHub, Linear, Figma, research, docs | `autonomous_safe` for low-risk work, human release control | Product review, design review, release review | GitHub, Linear, Figma extensions | Product scope, launch gates, design and release handoffs |
 | [Product Delivery Team](product-delivery-team/) | 3 - Cross-functional | GitHub, Jira, Figma, customer docs | Safe autonomy with staged review | Product acceptance, quality gate, launch gate | GitHub, Jira, Figma extensions | Many-to-many handoffs, QA evidence, launch readiness |
@@ -30,9 +30,10 @@ fixtures, and no example grants access or executes work by itself.
 | [Enterprise Team](enterprise-team/) | 4 - Governed | GitHub, Jira, Confluence, knowledge base, MCP | Strict, mostly human-owned approvals | Architecture review, security review, compliance review, release approval | GitHub, Jira, MCP extensions | Least privilege, restricted memory, compliance evidence, release controls |
 | [Research Lab](research-lab/) | 4 - Evidence-heavy | Papers, citations, datasets, lab notes, experiment artifacts, web | `suggest_only` research support, approval-gated experiment work | Research scope review, experiment approval, reproducibility review, publication review | Web, GitHub, local files, docs extensions | Citation boundaries, artifact provenance, memory limits, claim approval |
 
-Only Minimal Team currently declares an active agent definition. The other six
-examples intentionally keep all definitions in `draft` and cannot produce a
-normal selected effective configuration.
+No maintained example currently declares an active agent definition. The six
+complete examples intentionally keep all definitions in `draft`; Minimal Team
+stops before AgentDefinitionSet. Active completeness and unique selection are
+covered by focused repository checks.
 
 ## Selection Guide
 
@@ -50,7 +51,6 @@ normal selected effective configuration.
 
 | Gate Pattern | Examples | What It Teaches |
 | --- | --- | --- |
-| Single human review | `minimal-team` | The smallest useful approval model. |
 | Code and dependency review | `software-team` | Repository work should separate technical capability from approval. |
 | Product and release review | `startup-team`, `product-delivery-team` | Launch authority should remain explicit even when low-risk work is delegated. |
 | Maintainer-owned review | `open-source-maintainer` | Public repository authority remains with maintainers, not helper agents. |
@@ -61,7 +61,7 @@ normal selected effective configuration.
 
 | Pattern | Examples | Notes |
 | --- | --- | --- |
-| Local or documentation context | `minimal-team` | Good first place to inspect context access and memory scope basics. |
+| No context or memory module | `minimal-team` | Demonstrates that omitted optional modules grant no access or retention. |
 | Repository plus task tracker context | `software-team`, `startup-team`, `product-delivery-team` | Shows how delivery context can be declared without implying hidden external access. |
 | Public collaboration context | `open-source-maintainer` | Shows issue, PR, docs, and release history boundaries. |
 | Restricted organizational context | `enterprise-team` | Shows confidential context, compliance evidence, restricted memory, and audit pressure. |

@@ -35,7 +35,7 @@ enforced.
 | `0.1` release scope | Frozen 17-kind baseline with explicit RFC treatment, optional surfaces, migration-only forms, and deferred work | Specified | `docs/0.1-scope.md`, `v0.1.0` release evidence | The release decision covers one exact repository snapshot; it does not imply runtime behavior, accepted draft RFCs, or `1.0` stability. |
 | Specification | `specVersion: "0.1"` draft | Specified | Core docs, manifest reference, RFCs | Pre-`1.0`; fields and semantics may change with migration guidance. |
 | JSON Schemas | `0.1` across 17 manifest kinds plus common definitions | Implemented | `schemas/*.schema.json` | Structural validation only; schemas do not prove cross-manifest meaning or safety. |
-| Reference examples | 7 project sets, 113 schema-backed manifests, all using `0.1` | Implemented | `examples/` | Authoring and validation fixtures, not executable teams or runtime demonstrations. |
+| Reference examples | One reduced Core Profile project plus 6 complete project sets, totaling 99 schema-backed manifests using `0.1` | Implemented | `examples/` | Authoring and validation material, not executable teams or runtime demonstrations. |
 | Repository schema validator | Current repository schema snapshot and reference examples | Implemented | `npm run validate` | Maintenance tooling, not a published `nexflow` CLI or general runtime preflight. |
 | Negative schema fixtures | Required field, enum value, ID format, and unknown kind rejection | Implemented | `npm run negative-schema-fixtures`, `fixtures/schema/invalid/` | Four focused rejection categories, not a complete invalid-input or diagnostic conformance suite. |
 | Diagnostic code catalog | Families, severity, messages, remediation, implemented draft codes, candidate codes, and reserved areas | Specified | `docs/diagnostic-code-catalog.md`, RFC-0005, RFC-0011, RFC-0015, RFC-0016 | No code is Stable; no complete catalog emitter, machine-readable output schema, or public CLI contract exists. |
@@ -162,23 +162,23 @@ example and is validated in CI.
 
 | Manifest `kind` | Schema | Example coverage | `npm run validate` | `npm run semantic-smoke` |
 | --- | --- | --- | --- | --- |
-| `Project` | `project.schema.json` | All 7 complete project sets plus reduced and discovery fixtures | Full structural check | Optional source hints, singular or plural Workflow sources, selected project, maintainer, approval gate, network policy, and human override checks |
+| `Project` | `project.schema.json` | One reduced and 6 complete project sets, plus focused fixtures | Full structural check | Optional source hints, singular or plural Workflow sources, selected project, maintainer, approval gate, network policy, and human override checks |
 | `ActorSet` | `actors.schema.json` | Minimal Team migration path | Full structural check | Actor identity, agent bridge, operator, representative, integration, and relationship cycle checks |
 | `AgentSet` | `agents.schema.json` | All 7 project sets | Full structural check | Agent identity inventory plus deprecated compatibility-field references where present |
-| `AgentDefinitionSet` | `agent-definitions.schema.json` | All 7 project sets | Full structural check | Selected agent and component references |
-| `CapabilitySet` | `capabilities.schema.json` | All 7 project sets | Full structural check | Capability inventory and selected references |
-| `PermissionSet` | `permissions.schema.json` | All 7 project sets | Full structural check | Permission, subject, capability, and approval gate references |
-| `ContextSet` | `context.schema.json` | All 7 project sets | Full structural check | Context source and selected actor/gate references |
-| `MemorySet` | `memory.schema.json` | All 7 project sets | Full structural check | Memory scope and selected actor/gate references |
-| `ProviderSet` | `providers.schema.json` | All 7 project sets | Full structural check | Provider inventory, closed feature vocabulary, and legacy feature migration diagnostics |
-| `ModelProfileSet` | `model-profiles.schema.json` | All 7 project sets | Full structural check | Provider references and selected actor references |
-| `PromptSet` | `prompt-sets.schema.json` | All 7 project sets | Full structural check | Selected owner, approver, and agent references |
-| `RetrievalProfileSet` | `retrieval-profiles.schema.json` | All 7 project sets | Full structural check | Selected context source, owner, approver, and agent references |
-| `TaskSet` | `tasks.schema.json` | All 7 project sets | Full structural check | Task dependency, actor, capability, gate, artifact, and event references |
-| `Workflow` | `workflow.schema.json` | All 7 project sets | Full structural check | Task, step dependency, gate, and event references |
-| `HandoffSet` | `handoffs.schema.json` | All 7 project sets | Full structural check | Endpoint and artifact references |
-| `EventSet` | `events.schema.json` | All 7 project sets | Full structural check | Event type inventory and selected event references |
-| `ExtensionSet` | `extensions.schema.json` | All 7 project sets | Full structural check | Extension inventory and required capability references |
+| `AgentDefinitionSet` | `agent-definitions.schema.json` | 6 complete project sets | Full structural check | Selected agent and component references |
+| `CapabilitySet` | `capabilities.schema.json` | 6 complete project sets | Full structural check | Capability inventory and selected references |
+| `PermissionSet` | `permissions.schema.json` | 6 complete project sets | Full structural check | Permission, subject, capability, and approval gate references |
+| `ContextSet` | `context.schema.json` | 6 complete project sets | Full structural check | Context source and selected actor/gate references |
+| `MemorySet` | `memory.schema.json` | 6 complete project sets | Full structural check | Memory scope and selected actor/gate references |
+| `ProviderSet` | `providers.schema.json` | 6 complete project sets | Full structural check | Provider inventory, closed feature vocabulary, and legacy feature migration diagnostics |
+| `ModelProfileSet` | `model-profiles.schema.json` | 6 complete project sets | Full structural check | Provider references and selected actor references |
+| `PromptSet` | `prompt-sets.schema.json` | 6 complete project sets | Full structural check | Selected owner, approver, and agent references |
+| `RetrievalProfileSet` | `retrieval-profiles.schema.json` | 6 complete project sets | Full structural check | Selected context source, owner, approver, and agent references |
+| `TaskSet` | `tasks.schema.json` | 6 complete project sets | Full structural check | Task dependency, actor, capability, gate, artifact, and event references |
+| `Workflow` | `workflow.schema.json` | 6 complete project sets | Full structural check | Task, step dependency, gate, and event references |
+| `HandoffSet` | `handoffs.schema.json` | 6 complete project sets | Full structural check | Endpoint and artifact references |
+| `EventSet` | `events.schema.json` | 6 complete project sets | Full structural check | Event type inventory and selected event references |
+| `ExtensionSet` | `extensions.schema.json` | 6 complete project sets | Full structural check | Extension inventory and required capability references |
 
 `Full structural check` means validation against the matching JSON Schema. It
 does not mean full semantic validation for that manifest kind.

@@ -122,7 +122,9 @@ publish a release.
 
 ## Examples Checklist
 
-- [ ] Minimal team example remains the easiest first reading path and demonstrates the staged ActorSet-to-AgentSet bridge, compact AgentSet, authoritative active definition, and fail-closed human override.
+- [ ] For the pinned `0.1` candidate, Minimal Team remains the easiest first
+  reading path and demonstrates the staged ActorSet-to-AgentSet bridge, compact
+  AgentSet, authoritative active definition, and fail-closed human override.
 - [ ] Software team example demonstrates implementation, QA, review, docs, and handoffs.
 - [ ] Startup team example demonstrates product, design, implementation, and release review.
 - [ ] Enterprise team example demonstrates security, compliance, audit evidence, restricted context, and gated release controls.

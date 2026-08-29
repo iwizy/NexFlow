@@ -38,8 +38,9 @@ identity when present; otherwise `AgentSet` remains the legacy `0.1` fallback.
 All other current manifest kinds are optional before use and required when
 selected by a claimed profile qualifier or dependency closure.
 
-The maintained examples intentionally use the complete manifest vocabulary.
-`ActorSet` is currently present only in the Minimal Team reference path. The
+Six maintained domain examples intentionally use the complete manifest
+vocabulary. Minimal Team is a reduced Core Profile path. `ActorSet` is currently
+present only in that Minimal Team reference path. The
 focused [Manifest Discovery](manifest-discovery.md) implementation supports
 explicit local sources and multiple unique Workflow documents. Directory,
 bundle, and runtime discovery from

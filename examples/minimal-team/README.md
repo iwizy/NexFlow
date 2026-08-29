@@ -1,115 +1,103 @@
 # Minimal Team Example
 
-A tiny project with one human maintainer and one documentation-focused agent.
+Minimal Team is the shortest maintained path into NexFlow. It describes one
+project, one human maintainer, and one AI participant in three manifests:
 
-This example shows the smallest useful NexFlow shape: explicit capabilities, gated documentation writes, project context, task memory, workflow dependencies, and a review handoff.
+```text
+project.yaml -> actors.yaml -> agents.yaml
+```
 
-## What This Example Teaches
+This is a Core Profile authoring example, not an executable team. It declares
+identity and responsibility only. It grants no capability, permission,
+context, memory, provider, extension, network access, or runtime authority.
 
-Use this example to learn the core NexFlow pattern without enterprise policy, multi-agent coordination, external issue trackers, or release gates.
+## Start Here
 
-It demonstrates:
+From the repository root:
 
-- one human actor as the final authority
-- one AI agent with approval-gated documentation responsibilities
-- an authoritative `ActorSet` with an explicit typed actor-to-agent bridge
-- a compact AgentSet that contains stable AI identity without duplicated behavior fields
-- one complete active agent definition that is authoritative for requested
-  behavior
-- fail-closed human override with approval-gated resume and audit events
-- separate capability and permission declarations
-- one approval gate reused across project policy, permissions, tasks, workflow, and agent definition review
-- explicit context sources for repository and documentation access
-- ephemeral, task, and project memory boundaries
-- provider-neutral model, prompt, and retrieval references
-- a two-step workflow with one handoff from agent to human
+```sh
+npm ci --ignore-scripts
+npm run cli-prototype -- validate --root examples/minimal-team
+```
 
-## Reading Path
+The command performs bounded discovery and structural JSON Schema validation.
+It does not perform complete semantic validation or execute the manifests.
 
 Read the files in this order:
 
-1. `project.yaml` defines the project, maintainer, default autonomy, network and human override policies, approval gate, and manifest file map.
-2. `actors.yaml` declares the human and agent participant identities.
-3. `agents.yaml` declares the stable AI identity linked by the agent actor.
-4. `capabilities.yaml` defines what actors can technically do.
-5. `permissions.yaml` decides which capabilities are allowed or approval-gated.
-6. `agent-definitions.yaml` selects the docs agent's unique active behavioral
-   release and requests model, prompt, retrieval, permission, context, memory,
-   autonomy, and extension components.
-7. `tasks.yaml` shows the work units and required capabilities.
-8. `workflow.yaml` orders the draft and review tasks.
-9. `handoffs.yaml` transfers responsibility from the docs agent to the maintainer.
-10. `events.yaml` declares the audit events expected around tasks, reviews, and handoffs.
-11. `context.yaml`, `retrieval-profiles.yaml`, and `memory.yaml` explain what the agent may read, cite, and retain.
-12. `providers.yaml`, `model-profiles.yaml`, `prompt-sets.yaml`, and `extensions.yaml` show provider-neutral configuration references without implementing provider calls or integrations.
+1. [`project.yaml`](project.yaml) names the project and its human maintainer,
+   then points to the adopted participant manifests.
+2. [`actors.yaml`](actors.yaml) is the authoritative participant inventory. It
+   distinguishes the human from the AI actor and keeps final human authority
+   visible.
+3. [`agents.yaml`](agents.yaml) defines stable AI identity. The explicit
+   `agentRef` in `actors.yaml` is the bridge; matching IDs alone are not.
 
-## Smallest Useful Flow
+That is enough to describe who participates and what each participant is
+responsible for. Omitted modules stay absent and grant nothing.
 
-```text
-docs-agent drafts docs_patch
-  -> human_review gate
-  -> human-maintainer reviews
-  -> review.completed event
-```
+## What To Change First
 
-The workflow is intentionally conservative. The docs agent can draft documentation work, but the human maintainer remains the authority for accepting changes.
+When adapting the example, choose a lowercase project ID and update it in:
 
-## Key Reference Chain
+- `project.id`
+- every `metadata.project`
+- the maintainer and participant IDs when their identities differ
+- each explicit typed reference after an ID changes
 
-| Concept | Example ID | Where It Appears |
-| --- | --- | --- |
-| Human authority | `human-maintainer` | `actors.yaml`, `project.yaml`, `permissions.yaml`, `tasks.yaml`, `handoffs.yaml` |
-| AI participant | `docs-agent` | `actors.yaml`, `agents.yaml`, `agent-definitions.yaml`, `tasks.yaml`, `handoffs.yaml` |
-| Approval gate | `human_review` | `project.yaml`, `permissions.yaml`, `tasks.yaml`, `workflow.yaml`, `agent-definitions.yaml` |
-| Human override | `humanOverride` | `project.yaml`, `events.yaml` |
-| Documentation task | `draft-doc-update` | `tasks.yaml`, `workflow.yaml` |
-| Review task | `review-doc-update` | `tasks.yaml`, `workflow.yaml` |
-| Handoff | `docs-to-maintainer` | `handoffs.yaml` |
-| Behavioral release | `docs_agent_2026_06` | `agent-definitions.yaml` |
-| Model profile | `docs_agent_balanced` | `model-profiles.yaml`, `agent-definitions.yaml` |
-| Prompt set | `docs_agent_prompts` | `prompt-sets.yaml`, `agent-definitions.yaml` |
-| Retrieval profile | `docs_agent_retrieval` | `retrieval-profiles.yaml`, `agent-definitions.yaml` |
+Keep the actor-to-agent bridge explicit. Do not add empty manifests merely to
+make the directory look complete.
 
-## Safety Notes
+## Grow In Layers
 
-- `read_repository` is allowed for the maintainer and available to the docs agent through approval-gated documentation work.
-- `modify_documentation` is approval-gated for the docs agent.
-- `approve_changes` belongs to the human maintainer.
-- The active definition is authoritative for requested behavior but does not
-  grant any capability, permission, context, memory, provider, or network
-  access.
-- The active prompt and retrieval profiles are reviewed lifecycle components;
-  their status still does not execute or authorize them.
-- Network access is disabled unless a task explicitly requests approval.
-- Human override blocks new target actions, requests a stop for in-flight work, remains blocked on failure, and requires `human_review` plus a reason before resume.
-- Destructive and production actions are not part of this example.
-- Raw secrets, credentials, and private prompt text are not stored in manifests.
+Add only the layer the project needs, and close every dependency introduced by
+its references.
 
-The active lifecycle demonstrates selection and validation semantics only. No
-agent, provider, workflow, or event is executed by this repository.
+| Step | Add | Read first | What it does not imply |
+| ---: | --- | --- | --- |
+| 1 | `CapabilitySet` and `PermissionSet`, plus approval gates when needed | [Capability Model](../../docs/capability-model.md), [Approval Gates](../../docs/approval-gates.md) | A declared capability is not permission or execution. |
+| 2 | `TaskSet`, then optional `Workflow` and `HandoffSet` | [Core Profile](../../docs/core-profile.md), [Handoff Protocol](../../docs/handoff-protocol.md) | Authored work is not scheduled or run. |
+| 3 | `ContextSet` and `MemorySet` | [Context Model](../../docs/context-model.md), [Memory Model](../../docs/memory-model.md) | A source or scope is not live access or storage. |
+| 4 | `AgentDefinitionSet` and every referenced policy, model, prompt, retrieval, context, memory, and extension component | [Agent Identity Migration](../../docs/agent-identity-migration.md), [Effective Agent Configuration](../../docs/effective-agent-configuration.md) | A definition requests behavior but grants no authority. |
+| 5 | Providers, events, and extensions when they are actually adopted | [Provider Abstraction](../../docs/provider-abstraction.md), [Events](../../docs/events.md), [Extensions](../../docs/extensions.md) | Declarations do not connect to external systems. |
 
-## What Is Intentionally Omitted
+The [Core Profile](../../docs/core-profile.md) defines required slots, optional
+qualifiers, and dependency closure. The sequence above is a learning path, not
+a mandatory lifecycle.
 
-This example does not model:
+## Advanced Agent Versioning
 
-- pull request creation
-- dependency installation
-- deployment
-- production access
-- external issue trackers
-- live provider resolution
-- runtime orchestration
-- long-term organization memory
-- multi-agent review loops
+Do not begin onboarding by selecting models and prompts. First establish stable
+actor and agent identity. Then add versioned behavior in this order:
 
-Use the larger examples when those concerns matter.
+1. Keep identity in `AgentSet` compact and stable.
+2. Add one draft `AgentDefinitionSet` entry that references the agent.
+3. Add only the component manifests referenced by that definition.
+4. Review component lifecycle, compatibility impact, permissions, and data
+   boundaries.
+5. Mark exactly one unscoped definition active only after it satisfies the
+   complete active-definition contract.
 
-## Local Check
+Use these documents for that transition:
 
-The example should parse as YAML:
+- [Agent Identity Migration](../../docs/agent-identity-migration.md)
+- [Agent Definitions](../../docs/agent-definitions.md)
+- [Effective Agent Configuration](../../docs/effective-agent-configuration.md)
+- [Model Profiles](../../docs/model-profiles.md)
+- [Prompt Sets](../../docs/prompt-sets.md)
+- [Retrieval Profiles](../../docs/retrieval-profiles.md)
 
-```sh
-npm run validate
-```
+Focused repository checks demonstrate active-definition completeness and
+selection failures. Minimal Team intentionally stops before behavior selection
+so the first useful example stays small.
 
-For broader example review, use the [Example Consistency Checklist](../CHECKLIST.md).
+## Next Example
+
+Read [Software Team](../software-team/) when you need a complete project-level
+composition with tasks, workflow, policy, context, memory, providers, events,
+and extensions. Its agent definitions are draft declarations, not active
+runtime configuration.
+
+Use the [Example Matrix](../MATRIX.md) to choose a domain-specific example and
+the [Example Consistency Checklist](../CHECKLIST.md) before changing a complete
+example.

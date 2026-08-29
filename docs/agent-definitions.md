@@ -299,15 +299,17 @@ Agent definitions assemble existing manifest concepts. They do not replace them.
 - `memory.yaml` declares retention and reuse boundaries.
 - `extensions.yaml` declares integration namespaces and lifecycle metadata.
 
-Maintained semantic smoke checks verify exact component references, no more than
-one active definition per agent, active prompt and retrieval lifecycle, and
-prompt safety review for the active Minimal Team definition. Broader policy
-composition remains future semantic validation.
+Maintained semantic smoke checks verify exact component references and no more
+than one active definition per agent. Focused authority checks verify active
+definition completeness, approved review, audit requirements, and unique
+unscoped selection. Broader policy composition remains future semantic
+validation.
 
 ## Current Status
 
 Agent definitions remain draft specification vocabulary in `0.1`, but the
 unique-active authority slice is implemented in documentation, schema,
-repository checks, and the Minimal Team example.
+and focused repository checks. Minimal Team intentionally stops before behavior
+selection and links to the versioning path.
 
 This repository provides documentation, schema, and examples only. It does not implement agent execution, provider calls, prompt loading, retrieval, memory persistence, permission enforcement, event emission, or runtime orchestration.

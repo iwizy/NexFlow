@@ -6,85 +6,12 @@ metadata:
 project:
   id: minimal-team
   displayName: Minimal Team
-  description: Smallest useful NexFlow configuration.
+  description: Minimum useful NexFlow identity and responsibility description.
   license: MIT
   maintainers:
     - id: human-maintainer
       name: Human Maintainer
       role: maintainer
-  defaultAutonomy: ask_before_changes
-  policies:
-    requireReview: true
-    secretHandling: Raw secrets are never stored in manifests.
-    networkAccess:
-      default: deny
-      rules: []
-      transport:
-        requireTls: true
-        allowPrivateNetworks: false
-        allowLoopback: false
-        followRedirects: false
-        maxRedirects: 0
-      audit:
-        events:
-          - network.decision
-        recordDecisions: true
-        recordDestination: true
-        recordPurpose: true
-        redactQuery: true
-        redactHeaders: true
-    humanOverride:
-      authorities:
-        - kind: actor
-          id: human-maintainer
-      operations:
-        - pause_agent
-        - stop_agent
-        - pause_workflow
-        - stop_workflow
-        - cancel_task
-        - block_action
-        - revoke_approval
-        - revoke_authorization
-      response:
-        blockNewActions: true
-        inFlightActions: request_stop
-        onFailure: remain_blocked
-      resume:
-        mode: approval_required
-        approvalGate: human_review
-        requireReason: true
-      audit:
-        events:
-          - override.requested
-          - override.applied
-          - override.failed
-          - override.resumed
-        recordAuthority: true
-        recordReason: true
-        recordTarget: true
-        recordOutcome: true
-    destructiveActions: Human approval required.
-    productionActions: Not applicable.
-  approvalGates:
-    - id: human_review
-      description: A maintainer must review before changes are accepted.
-      requiredApprovers:
-        - human-maintainer
 manifests:
   actors: actors.yaml
   agents: agents.yaml
-  agentDefinitions: agent-definitions.yaml
-  workflow: workflow.yaml
-  tasks: tasks.yaml
-  handoffs: handoffs.yaml
-  permissions: permissions.yaml
-  capabilities: capabilities.yaml
-  context: context.yaml
-  memory: memory.yaml
-  providers: providers.yaml
-  modelProfiles: model-profiles.yaml
-  promptSets: prompt-sets.yaml
-  retrievalProfiles: retrieval-profiles.yaml
-  events: events.yaml
-  extensions: extensions.yaml

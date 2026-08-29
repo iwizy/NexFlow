@@ -113,7 +113,7 @@ for (const entry of (await readdir(path.join(root, "examples"), { withFileTypes:
   exampleCount += 1;
   manifestCount += result.documentCount;
 }
-check("all maintained example sets exercised", exampleCount === 7 && manifestCount === 113);
+check("all maintained example sets exercised", exampleCount === 7 && manifestCount === 99);
 
 const directory = run(["validate", "--root", fixture]);
 const hinted = run(["validate", "--root", fixture, "--project", "project.yaml"]);
@@ -178,9 +178,13 @@ try {
     && JSON.stringify(discoveredInvalid.assembly) === beforeValidation);
 
   await writeManifest("project.yaml", project());
-  const context = parse(await readFile(path.join(root, "examples", "minimal-team", "context.yaml"), "utf8"));
-  context.metadata.project = "validation-fixture";
-  context.contextSources[0].freshness = { lastReviewed: "private-test-date" };
+  const context = manifest("ContextSet", {
+    contextSources: [{
+      id: "repository", type: "local_files", description: "Local repository.",
+      access: { default: "read" }, classification: "internal",
+      freshness: { lastReviewed: "private-test-date" }
+    }]
+  });
   await writeManifest("context.yaml", context);
   const date = await capture([...selected, "--file", "context.yaml"]);
   check("format validation is enabled", date.code === 1

@@ -8,6 +8,9 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Added
 
+- Added a maintainer guide for change routing, synchronized specification
+  surfaces, local validation, pull request review, RFC stages, release evidence,
+  security corrections, and factual handoffs.
 - Added structural `validate` to the unreleased repository CLI prototype,
   using bounded discovery and the repository-owned schemas for all 17 kinds.
   It checks formats without coercing, filling, or rewriting input, reports

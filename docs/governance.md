@@ -2,6 +2,10 @@
 
 NexFlow uses lightweight open governance centered on maintainers, public discussion, and RFCs.
 
+The [Maintainer Guide](maintainer-guide.md) turns these governance rules into a
+repository review, validation, merge, and release workflow. It does not replace
+the RFC process or specialized security and architecture reviews.
+
 ## Maintainers
 
 Maintainers are responsible for:

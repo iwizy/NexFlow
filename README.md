@@ -259,6 +259,8 @@ NexFlow is intentionally split into layers:
 - [Release Plan](docs/release-plan.md): public readiness criteria from `0.1` draft through `1.0`
 - [0.1 Readiness Checklist](docs/readiness-checklist.md): candidate gates, evidence rules, decision outcomes, and release blockers
 - [CONTRIBUTING.md](CONTRIBUTING.md): contribution workflow
+- [Maintainer Guide](docs/maintainer-guide.md): review, synchronization,
+  validation, merge, RFC, release, and handoff workflow
 - [SECURITY.md](SECURITY.md): vulnerability and safety reporting policy
 
 ## Specification Guide
@@ -376,7 +378,8 @@ review in [Licensing And Patent Rationale](docs/licensing-and-patent-rationale.m
 
 ## Contributing
 
-Start with [CONTRIBUTING.md](CONTRIBUTING.md). Changes that alter the model,
+Start with [CONTRIBUTING.md](CONTRIBUTING.md). Maintainers should also follow
+the [Maintainer Guide](docs/maintainer-guide.md). Changes that alter the model,
 manifests, schemas, or compatibility expectations should go through the RFC
 process.
 

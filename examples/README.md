@@ -1,8 +1,12 @@
 # NexFlow Examples
 
-This directory contains complete reference manifest sets for different team shapes.
+This directory contains one reduced onboarding project and six complete
+reference manifest sets for different team shapes.
 
-The examples are not runtime fixtures. They are readable specification examples that show how actors, agents, agent definitions, permissions, capabilities, context, memory, tasks, workflows, handoffs, events, providers, model profiles, prompt sets, retrieval profiles, and extensions fit together.
+The examples are not runtime fixtures. Minimal Team shows the minimum useful
+identity and responsibility shape. The complete examples show how agents, agent
+definitions, permissions, capabilities, context, memory, tasks, workflows,
+handoffs, events, providers, profiles, and extensions fit together.
 
 Complete examples are not the minimum adoption requirement. See the
 [Core Profile](../docs/core-profile.md) for the reduced Project and participant
@@ -30,7 +34,7 @@ starter configurations.
 
 | Example | Best For | Team Shape | Autonomy Posture | Main Context Sources | Approval Emphasis |
 | --- | --- | --- | --- | --- | --- |
-| [Minimal Team](minimal-team/) | Learning the smallest useful NexFlow setup | One human maintainer and one docs agent | Conservative | Local files and docs | Human review for documentation changes |
+| [Minimal Team](minimal-team/) | Learning the Core Profile in three manifests | One human maintainer and one docs agent | Not declared | None | Identity and responsibility only |
 | [Software Team](software-team/) | Conventional feature delivery | Implementation, QA, reviewer, docs | Approval-gated | GitHub, Linear, docs, MCP | Code review and dependency approval |
 | [Startup Team](startup-team/) | Fast product iteration | Product, design, fullstack, release | Safe autonomy with human launch control | GitHub, Linear, Figma, research, docs | Product and release review |
 | [Enterprise Team](enterprise-team/) | Governed sensitive change control | Architecture, implementation, security, compliance, release | Strict and audit-heavy | GitHub, Jira, Confluence, knowledge base, MCP | Architecture, security, compliance, and release gates |
@@ -38,17 +42,20 @@ starter configurations.
 | [Open Source Maintainer](open-source-maintainer/) | Public repository maintenance | Maintainer, triage, docs, PR review, release notes | Maintainer-owned approvals | GitHub issues, PRs, docs, release history | Maintainer triage, docs review, PR review, release notes approval |
 | [Research Lab](research-lab/) | Research workflows | Principal investigator, literature, experiments, reproducibility, writing | Approval-gated and evidence-heavy | Papers, citations, datasets, lab notes, experiment artifacts | Scope, experiment, reproducibility, and publication review |
 
-## Common File Set
+## Complete File Set
 
-Six examples retain the complete legacy participant file set and draft agent
-definitions. `minimal-team` adds `actors.yaml` as the first maintained ActorSet
-migration path and contains the only active definition used to demonstrate
-authoritative unscoped selection.
+Minimal Team contains only `project.yaml`, `actors.yaml`, and `agents.yaml`.
+It is the first maintained ActorSet migration path and deliberately stops before
+policy, work, context, memory, provider, event, extension, and behavior modules.
+
+The other six examples retain the complete legacy 16-manifest file set and
+draft agent definitions. Focused repository checks, rather than an overloaded
+starter project, demonstrate complete active definitions and unique selection.
 
 | File | Purpose |
 | --- | --- |
 | `project.yaml` | Project identity, maintainers, policies including network access and human override, approval gates with typed targets, and manifest locations. |
-| `actors.yaml` | Optional first-class participant identity inventory; currently implemented by `minimal-team`. |
+| `actors.yaml` | Optional first-class participant identity inventory; currently implemented by the reduced `minimal-team` path. |
 | `agents.yaml` | Stable AI identity, plus deprecated behavior-field and mixed-participant compatibility during migration. |
 | `agent-definitions.yaml` | Versioned behavioral releases that assemble model, prompt, retrieval, permission, context, memory, autonomy, and extension references. |
 | `workflow.yaml` | Workflow stages, steps, dependencies, approval gates, and emitted events. |
@@ -67,7 +74,11 @@ authoritative unscoped selection.
 
 ## How to Read an Example
 
-Start with `project.yaml` to understand the project policy and approval gates.
+Start with [Minimal Team](minimal-team/) to understand Project, ActorSet, and
+AgentSet without optional modules. Its README gives a short path from Core
+Profile identity to policy, work, data, and versioned behavior.
+
+For a complete example, start with `project.yaml` to understand the project policy and approval gates.
 When `actors.yaml` is present, read it next for participant identity and actor
 kind. Then read `agents.yaml`, `agent-definitions.yaml`, and
 `capabilities.yaml` together: agents describe stable AI identity, agent
@@ -98,7 +109,8 @@ cited, and audited. Provider features do not grant project action capabilities.
 
 ## Choosing an Example
 
-Use `minimal-team` when learning the manifest model for the first time.
+Use `minimal-team` when learning the Core Profile or creating an identity-first
+project without empty optional modules.
 
 Use `software-team` when modeling a normal repository-based engineering workflow.
 
@@ -114,7 +126,8 @@ Use `research-lab` when papers, experiments, reproducibility artifacts, citation
 
 ## Safety Pattern
 
-All examples follow the same safety pattern:
+The six complete examples follow this safety pattern. Minimal Team instead
+demonstrates that omitted optional modules grant nothing:
 
 - capabilities are declared separately from permissions
 - the unique active agent definition is authoritative for requested behavior

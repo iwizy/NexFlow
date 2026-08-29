@@ -22,6 +22,9 @@ Read:
 - [docs/index.md](docs/index.md)
 - [rfcs/README.md](rfcs/README.md)
 
+Maintainers should also use the [Maintainer Guide](docs/maintainer-guide.md) for
+change routing, synchronized review, merge, release, and security boundaries.
+
 ## Change Types
 
 Small clarifications may be proposed directly in a pull request.

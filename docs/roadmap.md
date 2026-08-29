@@ -18,7 +18,9 @@ The repository currently provides the following candidate evidence:
 
 - a documented draft specification and manifest reference
 - practical JSON Schemas for 17 manifest kinds plus common definitions
-- 7 maintained project examples containing 113 schema-backed manifests
+- a published `v0.1.0` baseline of 7 project examples containing 113
+  schema-backed manifests; the Unreleased line reduces Minimal Team to a
+  three-manifest Core Profile path and currently validates 99 manifests
 - reproducible schema syntax, structural validation, and semantic reference
   smoke commands
 - a prioritized semantic reference inventory with explicit current coverage,
@@ -72,10 +74,10 @@ compatibility and migration rules.
 
 Relevant docs: [Concepts](concepts.md), [Glossary](glossary.md), [Manifest Reference](manifest-reference.md), [Actor Model](actor-model.md), [Actor Model Migration](actor-model-migration.md), [Agent Identity Migration](agent-identity-migration.md), [Agent Definitions](agent-definitions.md), [Human Override](human-override.md), [Context Model](context-model.md), [Memory Model](memory-model.md), [Approval Gates](approval-gates.md), [Prompt Sets](prompt-sets.md), [Retrieval Profiles](retrieval-profiles.md).
 
-Agent definition authority checkpoint: implemented for the Minimal Team
-reference path. The unique unscoped active definition owns requested behavior;
-schemas and repository checks enforce active completeness and ambiguity
-boundaries.
+Agent definition authority checkpoint: implemented in documentation, schemas,
+and focused repository checks. The unique unscoped active definition owns
+requested behavior; Minimal Team remains a smaller identity-first onboarding
+path and points to the versioning sequence.
 
 Agent Assembly checkpoint: its documentation now defines a derived inspection
 projection with authority, provenance, blocker, serialization, security, and

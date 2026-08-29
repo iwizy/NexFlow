@@ -8,6 +8,9 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Added
 
+- Added a maintainer guide for change routing, synchronized specification
+  surfaces, local validation, pull request review, RFC stages, release evidence,
+  security corrections, and factual handoffs.
 - Added structural `validate` to the unreleased repository CLI prototype,
   using bounded discovery and the repository-owned schemas for all 17 kinds.
   It checks formats without coercing, filling, or rewriting input, reports
@@ -25,6 +28,10 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Changed
 
+- Reduced Minimal Team from 17 manifests to a three-manifest Core Profile
+  onboarding path with Project, ActorSet, and compact AgentSet. Its guide now
+  gives a staged path to policy, work, data boundaries, and advanced agent
+  versioning without implying execution or access.
 - Consolidated repository syntax, manifest discovery, example coverage, schema
   compilation, and structural validation in the Node-based `npm run validate`
   command; removed the redundant legacy smoke command and synchronized CI and

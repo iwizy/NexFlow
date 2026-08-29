@@ -140,7 +140,7 @@ Example output:
 ```text
 ok examples/minimal-team/project.yaml Project
 ok examples/minimal-team/agents.yaml AgentSet
-warning examples/minimal-team/tasks.yaml tasks[0].approvalGates: semantic validation not implemented
+warning examples/software-team/tasks.yaml tasks[0].approvalGates: semantic validation not implemented
 ```
 
 ### `nexflow inspect`

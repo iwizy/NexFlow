@@ -21,6 +21,7 @@ The documentation is the canonical source for the specification. Schemas and exa
 | Reader | Recommended Path |
 | --- | --- |
 | New project visitor | [Vision](vision.md) -> [Concepts](concepts.md) -> [Glossary](glossary.md) -> [Manifest Reference](manifest-reference.md) |
+| Maintainer | [Maintainer Guide](maintainer-guide.md) -> [Governance](governance.md) -> [Compatibility Matrix](compatibility-matrix.md) -> [Validation](validation.md) -> [Release Plan](release-plan.md) |
 | Manifest author | [Core Profile](core-profile.md) -> [Manifest Reference](manifest-reference.md) -> [Actor Model](actor-model.md) -> [Context Model](context-model.md) -> [Memory Model](memory-model.md) -> [Examples Guide](../examples/README.md) |
 | Safety reviewer | [Security Model](security-model.md) -> [Human Override](human-override.md) -> [Network Access Policy](network-access-policy.md) -> [Extension Loading Boundary](extension-loading-boundary.md) -> [Provider Adapter Boundary](provider-adapter-boundary.md) -> [Event And Audit Storage Boundary](event-audit-storage-boundary.md) -> [Approval Gates](approval-gates.md) -> [Approval Gate Targets](approval-gate-targets.md) -> [Capability Model](capability-model.md) -> [Autonomy Model](autonomy-model.md) |
 | Validator author | [Validation](validation.md) -> [CLI And Runtime Responsibility Boundary](cli-runtime-boundary.md) -> [Diagnostic Code Catalog](diagnostic-code-catalog.md) -> [Fixtures Guide](../fixtures/README.md) -> [Manifest Discovery](manifest-discovery.md) -> [Semantic Reference Inventory](semantic-reference-inventory.md) -> [Typed References](typed-references.md) -> [Approval Gate Targets](approval-gate-targets.md) -> [Work Reference Namespaces](work-reference-namespaces.md) -> [Schema Design Notes](schema-design-notes.md) -> [Schema Guide](../schemas/README.md) -> [Conformance](conformance.md) -> [Conformance Claims](conformance-claims.md) -> [Compatibility Matrix](compatibility-matrix.md) |
@@ -66,6 +67,7 @@ The documentation is the canonical source for the specification. Schemas and exa
 | Process Area | Purpose |
 | --- | --- |
 | [Governance](governance.md) | Contribution, review, and decision rules. |
+| [Maintainer Guide](maintainer-guide.md) | Change routing, synchronization, validation, review, merge, RFC, release, security, and handoff workflow for maintainers. |
 | [Licensing And Patent Rationale](licensing-and-patent-rationale.md) | Records the current MIT decision, the Apache-2.0 patent tradeoff, and mandatory review triggers. |
 | [Versioning](versioning.md) | Spec versioning and migration policy. |
 | [Actor Model Migration](actor-model-migration.md) | Defines the staged, identity-preserving transition from legacy participant resolution. |

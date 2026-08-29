@@ -34,7 +34,7 @@ after `v0.1.0`.
 | --- | --- | --- |
 | Specification | Specified in draft form | [Documentation](docs/index.md), [Manifest Reference](docs/manifest-reference.md) |
 | JSON Schemas | Implemented for 17 manifest kinds plus common definitions | [Schemas](schemas/), [Schema Guide](schemas/README.md) |
-| Reference examples | Implemented as 7 project sets containing 113 schema-backed manifests | [Examples](examples/), [Examples Guide](examples/README.md) |
+| Reference examples | Implemented as one reduced Core Profile example and 6 complete project sets containing 99 schema-backed manifests | [Examples](examples/), [Examples Guide](examples/README.md) |
 | Structural validation | Unified Node-based repository validation is implemented for schema and YAML syntax, manifest discovery and kind coverage, schema compilation, and all maintained examples; focused negative and model-boundary checks remain separate | `npm run validate`, `npm run negative-schema-fixtures`, [Validation](docs/validation.md) |
 | Core Profile | Implemented for minimum Project and participant slots, optional module qualifiers, dependency closure, and fail-closed omission | `npm run core-profile-smoke`, [Core Profile](docs/core-profile.md), [Profile Definition](profiles/core.yaml) |
 | Manifest discovery | Implemented for explicit local files, Project source hints, bounded Project filename selection, conservative cardinality, and multiple unique workflows | `npm run manifest-discovery-smoke`, [Manifest Discovery](docs/manifest-discovery.md) |
@@ -259,6 +259,8 @@ NexFlow is intentionally split into layers:
 - [Release Plan](docs/release-plan.md): public readiness criteria from `0.1` draft through `1.0`
 - [0.1 Readiness Checklist](docs/readiness-checklist.md): candidate gates, evidence rules, decision outcomes, and release blockers
 - [CONTRIBUTING.md](CONTRIBUTING.md): contribution workflow
+- [Maintainer Guide](docs/maintainer-guide.md): review, synchronization,
+  validation, merge, RFC, release, and handoff workflow
 - [SECURITY.md](SECURITY.md): vulnerability and safety reporting policy
 
 ## Specification Guide
@@ -266,6 +268,7 @@ NexFlow is intentionally split into layers:
 | Need | Start Here |
 | --- | --- |
 | Understand the vocabulary | [Concepts](docs/concepts.md), [Glossary](docs/glossary.md) |
+| Onboard with the smallest useful project | [Minimal Team](examples/minimal-team/), [Core Profile](docs/core-profile.md) |
 | Start with the minimum project shape | [Core Profile](docs/core-profile.md), [Manifest Reference](docs/manifest-reference.md) |
 | Discover one logical project assembly | [Manifest Discovery](docs/manifest-discovery.md), [Core Profile](docs/core-profile.md), [Validation](docs/validation.md) |
 | Model participant identity | [Actor Model](docs/actor-model.md), [Actor Model Migration](docs/actor-model-migration.md) |
@@ -329,13 +332,13 @@ See [Governance](docs/governance.md) and [RFCs](rfcs/README.md).
   meaning, policy correctness, graph safety, or runtime enforceability.
 - Semantic reference checks cover selected repository invariants only and do not
   establish full `NF-SEMANTIC` conformance.
-- Minimal Team demonstrates authoritative active-definition selection; the
-  other six examples intentionally remain draft-only and cannot be selected for
-  normal effective configuration.
-- Six maintained examples use the legacy 16-manifest participant inventory; the
-  Minimal Team adds `ActorSet` as a reviewed migration path. Reduced core
-  profiles and multiple-workflow discovery have focused validation evidence,
-  while the maintained team examples intentionally remain complete.
+- Minimal Team intentionally stops at Project, ActorSet, and compact AgentSet.
+  Active-definition authority is demonstrated by focused checks and
+  documentation; the six complete examples retain draft definitions and cannot
+  produce a normal selected effective configuration.
+- Six maintained examples use the legacy 16-manifest participant inventory;
+  Minimal Team is the reduced maintained ActorSet migration and Core Profile
+  onboarding path.
 - Discovery is limited to explicit local files and Project source hints;
   directory scans, general indexes, bundles, remote sources, workflow selection,
   and runtime loading are not implemented.
@@ -375,7 +378,10 @@ review in [Licensing And Patent Rationale](docs/licensing-and-patent-rationale.m
 
 ## Contributing
 
-Start with [CONTRIBUTING.md](CONTRIBUTING.md). Changes that alter the model, manifests, schemas, or compatibility expectations should go through the RFC process.
+Start with [CONTRIBUTING.md](CONTRIBUTING.md). Maintainers should also follow
+the [Maintainer Guide](docs/maintainer-guide.md). Changes that alter the model,
+manifests, schemas, or compatibility expectations should go through the RFC
+process.
 
 ## License
 

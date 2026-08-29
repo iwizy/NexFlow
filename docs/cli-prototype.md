@@ -163,7 +163,7 @@ npm run validate
 
 The checks cover dispatch and exit status, source selection, deterministic
 inventory, failed-discovery suppression, redaction, and source safety. The
-validation checks additionally exercise all seven example sets, existing
+validation checks additionally exercise all seven example projects, existing
 negative schema fixtures, local registry failures, formats, bounded errors,
 and non-mutating behavior. CI runs them alongside existing repository checks.
 No schema or example migration is needed; no manifest fields or accepted

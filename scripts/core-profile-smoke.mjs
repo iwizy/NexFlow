@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { readFile } from "node:fs/promises";
+import { readFile, readdir } from "node:fs/promises";
 
 import Ajv2020 from "ajv/dist/2020.js";
 import { parseDocument } from "yaml";
@@ -71,6 +71,31 @@ for (const rule of profile.dependencyRules) {
       `dependency rule ${JSON.stringify(rule.id)} targets unknown slot ${JSON.stringify(rule.target.slot)}`
     );
   }
+}
+
+const minimalDirectory = "examples/minimal-team";
+const minimalFiles = (await readdir(minimalDirectory))
+  .filter((name) => /\.ya?ml$/u.test(name))
+  .sort();
+const expectedMinimalFiles = ["actors.yaml", "agents.yaml", "project.yaml"];
+if (JSON.stringify(minimalFiles) !== JSON.stringify(expectedMinimalFiles)) {
+  registryErrors.push("Minimal Team must contain exactly the three Core Profile manifests");
+}
+const minimalManifests = [];
+for (const name of minimalFiles) {
+  const document = parseDocument(await readFile(`${minimalDirectory}/${name}`, "utf8"), {
+    maxAliasCount: 100,
+    uniqueKeys: true
+  });
+  if (document.errors.length > 0) {
+    registryErrors.push(`Minimal Team ${name} must parse as safe YAML`);
+  } else {
+    minimalManifests.push(document.toJS({ maxAliasCount: 100 }));
+  }
+}
+const minimalProject = minimalManifests.find((manifest) => manifest.kind === "Project");
+if (JSON.stringify(Object.keys(minimalProject?.manifests ?? {}).sort()) !== JSON.stringify(["actors", "agents"])) {
+  registryErrors.push("Minimal Team Project must hint only the actor and agent inventories");
 }
 
 const registeredProfiles = [
@@ -264,8 +289,8 @@ const assessmentCases = [
     expected: { conformant: true, participantKind: "AgentSet" }
   },
   {
-    name: "ActorSet takes participant authority when AgentSet also exists",
-    input: { documentKinds: ["Project", "ActorSet", "AgentSet"] },
+    name: "Minimal Team uses ActorSet authority with compact AgentSet identity",
+    input: { documentKinds: minimalManifests.map((manifest) => manifest.kind) },
     expected: { conformant: true, participantKind: "ActorSet" }
   },
   {

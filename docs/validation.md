@@ -74,6 +74,8 @@ The repository supports basic validation through:
 - A focused standalone conformance claim schema and template check.
 - A focused standalone candidate readiness record schema and decision-guard check.
 - A semantic reference smoke command for selected cross-manifest references in examples.
+- Experimental CLI JSON diagnostics with a separate output schema, safe
+  locations, explicit check states, truncation, and focused contract checks.
 - A prioritized semantic reference inventory that distinguishes checked,
   partial, missing, and deferred field contracts.
 - Draft JSON Schemas in `schemas/`.
@@ -123,8 +125,10 @@ Discovery and the disposable CLI prototype have separate checks:
 npm run manifest-discovery-smoke
 npm run cli-prototype-smoke
 npm run cli-validation-smoke
+npm run cli-diagnostics-smoke
 npm run cli-prototype -- discover --root examples/minimal-team
 npm run cli-prototype -- validate --root examples/minimal-team
+node scripts/cli-prototype.mjs validate --root examples/minimal-team --format json
 ```
 
 `discover` prints an inventory only; `validate` additionally checks every
@@ -136,6 +140,13 @@ covers only selected input, not Core Profile, semantic or extension-profile
 conformance, source completeness, or execution readiness. Unsafe syntax or
 unsupported inputs stop before schema validation; schema failures include a
 sanitized field pointer and return nonzero status.
+
+The opt-in [JSON diagnostic format](cli-diagnostics.md) serializes success and
+every failure class as one versioned stdout object. It exposes codes, safe
+locations, related sources, and performed check states without raw input
+values, partial success inventories, or execution authority. Text defaults and
+exit meanings are unchanged; the JSON schema is a tooling output contract,
+not another manifest schema.
 
 `inspect`, `graph`, and `init` remain unimplemented. There is no reference CLI
 package or `NF-CLI` claim, and the architecture decision remains `not-ready`.

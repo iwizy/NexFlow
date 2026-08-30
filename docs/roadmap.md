@@ -109,7 +109,8 @@ bundle equivalence, stable CLI diagnostics, complete dependency closure, and
 runtime loading remain future work.
 
 A [disposable repository CLI prototype](cli-prototype.md) exercises command
-dispatch, discovery inventory, and local JSON Schema validation. It is not a
+dispatch, discovery inventory, local JSON Schema validation, and an experimental
+versioned [JSON diagnostic envelope](cli-diagnostics.md). It is not a
 reference CLI alpha or a completed language-evaluation candidate; the architecture decision is still
 `not-ready`, and no runtime or package layout has been selected.
 

@@ -8,6 +8,12 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Added
 
+- Added opt-in `--format json` to the repository CLI prototype, with an
+  independent `0.1-draft` output schema, structured diagnostics and check states,
+  safe related locations, deterministic ordering, and explicit truncation.
+  All command outcomes use one JSON result on stdout; default text output and
+  exit meanings remain compatible. Focused diagnostic checks run in CI.
+  This does not stabilize the catalog, release a CLI, or change manifest versions.
 - Added a maintainer guide for change routing, synchronized specification
   surfaces, local validation, pull request review, RFC stages, release evidence,
   security corrections, and factual handoffs.

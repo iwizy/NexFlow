@@ -40,6 +40,11 @@ code statuses and families, structured output version, severity policy, and
 known omissions. Recognizing one code from a family is not support for the
 whole family.
 
+The prototype's [JSON diagnostic checks](cli-diagnostics.md) provide bounded
+evidence for an experimental envelope, streams, exit status, redaction, and
+truncation. They do not establish stable catalog support, semantic validation,
+or `NF-CLI` conformance.
+
 ## Goals
 
 - Make compatibility claims precise.

@@ -57,6 +57,9 @@ jobs:
       - name: Run CLI structural validation checks
         run: npm run cli-validation-smoke
 
+      - name: Run CLI machine-readable diagnostic checks
+        run: npm run cli-diagnostics-smoke
+
       - name: Run human override schema boundary checks
         run: npm run human-override-schema-smoke
 

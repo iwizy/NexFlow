@@ -79,7 +79,7 @@ const noValidationCases = [
   [["validate"], 2], [["validate", "extra", "--root", fixture], 2],
   [["validate", "--root", fixture, "--project", "project.yaml", "--file", "project.yaml"], 2],
   [["validate", "--root", fixture, "--root", fixture], 2],
-  [["validate", "--root", fixture, "--format", "json"], 2],
+  [["validate", "--root", fixture, "--format", "yaml"], 2],
   [["validate", "--root", fixture, "--schema", "untrusted.json"], 2],
   [["inspect", "--root", fixture], 3], [["discover", "--root", fixture], 0],
   [["validate", "--root", fixture, "--file", "missing.yaml"], 1],

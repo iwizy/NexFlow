@@ -318,6 +318,13 @@ Future output modes may include:
 
 Machine-readable formats should avoid unstable prose where structured fields are available.
 
+The unreleased repository prototype now exercises opt-in `--format json` with
+an independently versioned experimental envelope and output schema. See
+[CLI Machine-Readable Diagnostics](../docs/cli-diagnostics.md) for its implemented
+subset, codes, redaction, and compatibility limits. This is implementation
+evidence for evaluation, not acceptance of this RFC, a language decision, or a
+stable public CLI output contract. SARIF, Mermaid, and DOT remain unimplemented.
+
 ## Exit Codes
 
 Suggested exit codes:

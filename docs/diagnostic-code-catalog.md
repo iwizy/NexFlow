@@ -12,6 +12,7 @@ audit, or runtime validation.
 Related documents:
 
 - [Validation](validation.md)
+- [CLI Machine-Readable Diagnostics](cli-diagnostics.md)
 - [CLI And Runtime Responsibility Boundary](cli-runtime-boundary.md)
 - [Conformance](conformance.md)
 - [Compatibility](compatibility.md)
@@ -24,8 +25,8 @@ Related documents:
 ## Catalog Status
 
 The catalog is part of the unreleased `specVersion: "0.1"` draft. It is
-identified by the repository revision until a future independently versioned
-diagnostic artifact or CLI output contract exists.
+identified by the repository revision. The prototype's experimental output
+version identifies its envelope, not an independently released catalog.
 
 No code is marked stable yet. Existing repository scripts provide implementation
 evidence for a bounded subset, but their text output is maintenance tooling and
@@ -141,7 +142,10 @@ Example shape:
 }
 ```
 
-This is an illustrative diagnostic, not a versioned CLI output schema.
+This is an illustrative diagnostic, not the prototype output schema. The
+implemented bounded subset and its versioned envelope are documented in
+[CLI Machine-Readable Diagnostics](cli-diagnostics.md); richer details,
+suggestions, and the candidate reference code above remain future work.
 
 Consumers must use `code` and structured fields for automation. Suggested
 message templates in this catalog are human guidance and may be localized or
@@ -252,13 +256,19 @@ overruns use `LIMIT-EXCEEDED`.
 The [repository CLI prototype](cli-prototype.md) emits these existing draft
 codes with generic messages and redacted rejected locators. It does not
 stabilize the catalog or add standard codes for its usage and internal errors.
+JSON mode instead uses implementation-owned `NEXFLOW-PROTOTYPE-USAGE`,
+`NEXFLOW-PROTOTYPE-UNIMPLEMENTED`, and `NEXFLOW-PROTOTYPE-INTERNAL` codes with
+their existing exit meanings. These are not a new `NF-*` family.
 Its `validate` command additionally emits the coarse `NF-SCHEMA` code for
 structural failures, with a known kind, sanitized JSON Pointer, safe constraint
 keyword, and generic message. Required fields extend the pointer; unknown or
 rejected additional property names are redacted. Schema diagnostics are
 bounded, and truncation remains a failure. Parser failures retain their
 discovery codes. This does not implement candidate schema-code refinements,
-full semantic validation, or a stable JSON diagnostic envelope.
+full semantic validation, or a stable public JSON diagnostic contract. The
+prototype implements an opt-in `0.1-draft` JSON envelope with an output schema,
+related safe sources, check states, deterministic ordering, and explicit
+truncation; no code is promoted to Stable by serialization.
 
 ## Core Profile Codes
 

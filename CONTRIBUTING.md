@@ -79,6 +79,7 @@ npm run core-profile-smoke
 npm run manifest-discovery-smoke
 npm run cli-prototype-smoke
 npm run cli-validation-smoke
+npm run cli-diagnostics-smoke
 npm run human-override-schema-smoke
 npm run provider-feature-schema-smoke
 npm run conformance-claim-smoke
@@ -100,6 +101,10 @@ assembly. Neither replaces the repository-wide `npm run validate` and focused
 checks or accepts the pending architecture decision. Changes to either command
 must keep its documented selection, diagnostic, non-mutation, and safety
 boundaries synchronized with the smoke checks.
+
+JSON output changes must also synchronize the
+[output contract](docs/cli-diagnostics.md), its schema in `scripts/contracts/`,
+the diagnostic catalog, versioning guidance, and focused diagnostic checks.
 
 Schema validation does not perform cross-manifest or policy checks. Focused
 commands exercise documented structural and namespace boundaries. The semantic

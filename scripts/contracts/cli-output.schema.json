@@ -1,0 +1,138 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nexflow.dev/tooling/cli-prototype/0.1-draft/output.schema.json",
+  "title": "Experimental repository CLI output, not a NexFlow manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["formatVersion", "tool", "supportedSpecVersions", "command", "success", "exitCode", "inputMode", "checks", "executionAuthorized", "diagnostics", "truncated", "result"],
+  "properties": {
+    "formatVersion": { "const": "0.1-draft" },
+    "tool": { "const": { "name": "nexflow-repository-cli-prototype", "version": "unreleased" } },
+    "supportedSpecVersions": { "const": ["0.1"] },
+    "command": { "enum": [null, "help", "version", "discover", "validate", "inspect", "graph", "init"] },
+    "success": { "type": "boolean" },
+    "exitCode": { "enum": [0, 1, 2, 3, 4] },
+    "inputMode": { "enum": [null, "directory-project", "project-source-hints", "explicit-file-list"] },
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["discovery", "schema", "coreProfile", "semantic", "extensionProfiles"],
+      "properties": {
+        "discovery": { "$ref": "#/$defs/check" },
+        "schema": { "$ref": "#/$defs/check" },
+        "coreProfile": { "const": "not-run" },
+        "semantic": { "const": "not-run" },
+        "extensionProfiles": { "const": "not-run" }
+      }
+    },
+    "executionAuthorized": { "const": false },
+    "diagnostics": {
+      "type": "array",
+      "maxItems": 200,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["severity", "code", "message", "file", "kind", "path", "keyword", "related"],
+        "properties": {
+          "severity": { "const": "error" },
+          "code": { "type": "string", "pattern": "^(NF-[A-Z0-9-]+|NEXFLOW-PROTOTYPE-[A-Z-]+)$" },
+          "message": { "type": "string", "minLength": 1 },
+          "file": { "$ref": "#/$defs/locator" },
+          "kind": { "type": ["string", "null"] },
+          "path": { "type": ["string", "null"], "maxLength": 512, "pattern": "^(|/.*|<redacted-field>)$" },
+          "keyword": { "type": ["string", "null"] },
+          "related": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["file"],
+              "properties": { "file": { "$ref": "#/$defs/locator" } }
+            }
+          }
+        }
+      }
+    },
+    "truncated": { "type": "boolean" },
+    "result": {
+      "oneOf": [
+        { "type": "null" },
+        {
+          "type": "object", "additionalProperties": false,
+          "required": ["text"], "properties": { "text": { "type": "string" } }
+        },
+        {
+          "type": "object", "additionalProperties": false,
+          "required": ["documentCount", "documents"],
+          "properties": {
+            "documentCount": { "type": "integer", "minimum": 1, "maximum": 128 },
+            "documents": {
+              "type": "array", "minItems": 1, "maxItems": 128,
+              "items": {
+                "type": "object", "additionalProperties": false,
+                "required": ["file", "kind"],
+                "properties": {
+                  "file": { "type": "string", "maxLength": 512 },
+                  "kind": { "type": "string", "minLength": 1 }
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "exitCode": { "const": 0 } } },
+      "then": {
+        "properties": {
+          "success": { "const": true },
+          "command": { "enum": ["help", "version", "discover", "validate"] },
+          "diagnostics": { "maxItems": 0 },
+          "truncated": { "const": false },
+          "result": { "type": "object" }
+        }
+      },
+      "else": {
+        "properties": {
+          "success": { "const": false },
+          "diagnostics": { "minItems": 1 },
+          "result": { "type": "null" }
+        }
+      }
+    },
+    {
+      "if": { "properties": { "exitCode": { "const": 0 }, "command": { "enum": ["help", "version"] } } },
+      "then": {
+        "properties": {
+          "inputMode": { "type": "null" },
+          "result": { "required": ["text"] },
+          "checks": { "properties": { "discovery": { "const": "not-run" }, "schema": { "const": "not-run" } } }
+        }
+      }
+    },
+    {
+      "if": { "properties": { "exitCode": { "const": 0 }, "command": { "enum": ["discover", "validate"] } } },
+      "then": {
+        "properties": {
+          "inputMode": { "type": "string" },
+          "result": { "required": ["documents", "documentCount"] },
+          "checks": { "properties": { "discovery": { "const": "passed" } } }
+        }
+      }
+    },
+    {
+      "if": { "properties": { "exitCode": { "const": 0 }, "command": { "const": "validate" } } },
+      "then": { "properties": { "checks": { "properties": { "schema": { "const": "passed" } } } } }
+    },
+    {
+      "if": { "properties": { "command": { "const": "discover" } } },
+      "then": { "properties": { "checks": { "properties": { "schema": { "const": "not-run" } } } } }
+    }
+  ],
+  "$defs": {
+    "check": { "enum": ["not-run", "passed", "failed", "unavailable"] },
+    "locator": { "type": ["string", "null"], "maxLength": 512 }
+  }
+}

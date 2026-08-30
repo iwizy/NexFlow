@@ -50,7 +50,7 @@ const noReadCases = [
   [["discover", "--root", ".", "--root", "."], 2],
   [["discover", "--root", ".", "--project", "a.yml", "--project", "b.yml"], 2],
   [["discover", "--root", ".", "--project", "a.yml", "--file", "b.yml"], 2],
-  [["discover", "--root", ".", "--format", "json"], 2],
+  [["discover", "--root", ".", "--format", "yaml"], 2],
   [["--help", "--version"], 2], [["--help", "--root", "."], 2],
   [["--help", "--help"], 2], [["discover", "--version"], 2],
   ...["inspect", "graph", "init"].map((command) => [[command, "--root", "not-read"], 3])

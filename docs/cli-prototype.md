@@ -4,7 +4,7 @@ Status: Unreleased, disposable repository tooling; not the reference CLI alpha.
 
 The [Runtime Architecture Decision Review](../rfcs/reviews/runtime-architecture-decision-review.md)
 is still `not-ready`. This prototype exercises command dispatch, local
-manifest discovery, and structural validation using the existing maintenance
+manifest discovery, structural validation, and experimental JSON diagnostics using the existing maintenance
 dependencies. It does not select a CLI or runtime language, establish a package layout, install a
 `nexflow` executable, or claim `NF-CLI` conformance. It is not a completed
 candidate for the [common language evaluation](language-evaluation-matrix.md).
@@ -50,6 +50,7 @@ npm run cli-prototype -- discover --root fixtures/discovery/multi-workflow --fil
 npm run cli-prototype -- validate --root examples/minimal-team
 npm run cli-prototype -- validate --root fixtures/discovery/multi-workflow --project project.yaml
 npm run cli-prototype -- validate --root fixtures/discovery/multi-workflow --file project.yaml --file people/team.yml
+node scripts/cli-prototype.mjs validate --root examples/minimal-team --format json
 ```
 
 An explicit `--root` is required. There is no implicit current-directory or
@@ -81,8 +82,9 @@ expansion, stdin input, remote fetching, or source auto-completion.
 Text output is experimental and identified by the repository revision, not a
 published CLI version. `--version` reports an unreleased prototype targeting
 manifest `specVersion: "0.1"`; it must not borrow the specification release
-number as a CLI release number. JSON and stable diagnostic envelopes remain
-future work.
+number as a CLI release number. `--format json` now emits a versioned
+experimental envelope, documented in [CLI Machine-Readable Diagnostics](cli-diagnostics.md).
+It is not a stable public CLI output contract. `--format text` is the default.
 
 | Exit status | Meaning |
 | ---: | --- |
@@ -106,17 +108,24 @@ known kind, sanitized JSON Pointer, constraint keyword, and generic message:
 NF-SCHEMA "project.yaml" Project "/project/description" [required]: Required field is missing.
 ```
 
-The pointer is an experimental display locator, not a stable diagnostic
-envelope. The empty pointer `""` denotes the document root. Missing required
+The pointer is an experimental display locator. JSON mode carries it in the
+envelope's `path` field. The empty pointer `""` denotes the document root. Missing required
 fields are appended to the pointer. Property names not declared by the local
 schemas, and names of rejected additional properties, become `<redacted>`;
 numeric segments are preserved only for array positions. Overlong pointers
 are redacted. Raw AJV messages and error parameters are not printed.
 
-Errors are emitted in discovery's deterministic source order and the pinned
+Text errors are emitted in discovery's deterministic source order and the pinned
 validator's constraint order. At most 200 schema diagnostics are printed per
 invocation; an explicit omission notice retains exit status `1`. No partial
 success summary is printed when any selected document fails.
+
+JSON mode writes one result to stdout and keeps stderr empty, including on
+usage and internal errors. It adds a deterministic diagnostic ordering,
+related source locations, explicit check states, and a 200-diagnostic output
+cap with `truncated: true` on omission. Use the direct `node` invocation above
+to avoid npm lifecycle logging when consuming JSON. The dedicated format guide
+defines versioning, schema, failure, and redaction details.
 
 ## Schema Selection
 
@@ -157,6 +166,7 @@ are not isolation guarantees supplied by this prototype.
 ```sh
 npm run cli-prototype-smoke
 npm run cli-validation-smoke
+npm run cli-diagnostics-smoke
 npm run manifest-discovery-smoke
 npm run validate
 ```
@@ -165,12 +175,14 @@ The checks cover dispatch and exit status, source selection, deterministic
 inventory, failed-discovery suppression, redaction, and source safety. The
 validation checks additionally exercise all seven example projects, existing
 negative schema fixtures, local registry failures, formats, bounded errors,
-and non-mutating behavior. CI runs them alongside existing repository checks.
+and non-mutating behavior. JSON checks cover the output schema, all exit
+classes, clean streams, deterministic ordering, redaction, and truncation.
+CI runs them alongside existing repository checks.
 No schema or example migration is needed; no manifest fields or accepted
 schema versions change.
 
 Still required before a reference CLI alpha: the accepted architecture
 decision, package and distribution ownership, agreed semantic coverage,
-inspection and other accepted commands, versioned output, target evidence,
+inspection and other accepted commands, a stable output contract, target evidence,
 and a bounded support claim. This structural validation slice does not
 satisfy those release gates.

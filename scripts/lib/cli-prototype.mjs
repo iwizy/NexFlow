@@ -1,5 +1,6 @@
-import path from "node:path";
 import { parseArgs } from "node:util";
+
+import { writeCliResult } from "./cli-output.mjs";
 
 const version = "NexFlow repository CLI prototype (unreleased; spec 0.1)";
 const reservedCommands = new Set(["inspect", "graph", "init"]);
@@ -14,8 +15,11 @@ Not a reference CLI release; no runtime or conformance claim.
 Usage:
   npm run cli-prototype -- --help
   npm run cli-prototype -- --version
-  npm run cli-prototype -- discover --root <directory> [--project <file> | --file <file> ...]
-  npm run cli-prototype -- validate --root <directory> [--project <file> | --file <file> ...]
+  npm run cli-prototype -- discover --root <directory> [--project <file> | --file <file> ...] [--format text|json]
+  npm run cli-prototype -- validate --root <directory> [--project <file> | --file <file> ...] [--format text|json]
+
+For JSON without npm logging: node scripts/cli-prototype.mjs <command> --root <directory> --format json
+JSON is one experimental versioned result on stdout, including errors; stderr stays empty.
 
 discover builds a source inventory only. Schema and semantic validation are not performed.
 validate checks the discovered manifests against the local spec 0.1 JSON Schemas only.
@@ -24,19 +28,30 @@ With no source flag, exactly one root project.yaml or project.yml must exist.
 inspect, graph, and init are not implemented.
 `;
 
+const options = {
+  help: { type: "boolean", short: "h" },
+  version: { type: "boolean", short: "v" },
+  root: { type: "string" },
+  project: { type: "string" },
+  file: { type: "string", multiple: true },
+  format: { type: "string" }
+};
+
+// Detect an explicit JSON option even when strict usage validation will fail.
+// Tokenization keeps option values and everything after -- from selecting output.
+function requestedFormat(args) {
+  const { tokens } = parseArgs({ args, options, tokens: true, allowPositionals: true, strict: false });
+  return tokens.some((token) => token.kind === "option" && token.name === "format" && token.value === "json")
+    ? "json" : "text";
+}
+
 function parseRequest(args) {
   const { values, positionals, tokens } = parseArgs({
     args,
     allowPositionals: true,
     strict: true,
     tokens: true,
-    options: {
-      help: { type: "boolean", short: "h" },
-      version: { type: "boolean", short: "v" },
-      root: { type: "string" },
-      project: { type: "string" },
-      file: { type: "string", multiple: true }
-    }
+    options
   });
   const seen = new Set();
   for (const token of tokens) {
@@ -44,6 +59,7 @@ function parseRequest(args) {
     if (seen.has(token.name)) throw new Error("duplicate option");
     seen.add(token.name);
   }
+  if (values.format !== undefined && !["text", "json"].includes(values.format)) throw new Error("unknown format");
   const [command] = positionals;
   if (positionals.length > 1 || (command && !["discover", "validate"].includes(command) && !reservedCommands.has(command))) {
     throw new Error("unknown command or positional argument");
@@ -62,16 +78,6 @@ function parseRequest(args) {
     throw new Error("missing input");
   }
   return { command, root: values.root, projectPath: values.project, sources: values.file };
-}
-
-function sourceLabel(source) {
-  if (typeof source !== "string" || source.length > 512) return "<redacted-source>";
-  if (source.startsWith("<") && source.endsWith(">")) return "<input>";
-  const normalized = path.posix.normalize(source);
-  if (path.posix.isAbsolute(source) || source.includes("\\") || /^[A-Za-z][A-Za-z0-9+.-]*:/u.test(source)
-    || normalized === ".." || normalized.startsWith("../")) return "<redacted-source>";
-  return JSON.stringify(source).replace(/[\u007f-\uffff]/gu,
-    (character) => `\\u${character.charCodeAt(0).toString(16).padStart(4, "0")}`);
 }
 
 async function discoverInput({ root, projectPath, sources }) {
@@ -94,54 +100,52 @@ export async function runCliPrototype(args, {
   validate = validateInput
 } = {}) {
   let request;
+  let format = "text";
+  let inputMode = null;
+  const checks = {
+    discovery: "not-run", schema: "not-run", coreProfile: "not-run",
+    semantic: "not-run", extensionProfiles: "not-run"
+  };
+  const finish = (exitCode, details = {}) => writeCliResult({
+    command: request?.command ?? null, exitCode, inputMode, checks, ...details
+  }, format, { stdout, stderr });
+  const failure = (exitCode, code, message) => finish(exitCode, { diagnostics: [{ code, severity: "error", message }] });
   try {
+    format = requestedFormat(args);
     request = parseRequest(args);
   } catch {
-    stderr.write("Invalid prototype usage. Run with --help for supported commands and options.\n");
-    return 2;
+    return failure(2, "NEXFLOW-PROTOTYPE-USAGE", "Invalid prototype usage. Run with --help for supported commands and options.");
   }
   if (request.command === "help") {
-    stdout.write(help);
-    return 0;
+    return finish(0, { result: { text: help } });
   }
   if (request.command === "version") {
-    stdout.write(`${version}\n`);
-    return 0;
+    return finish(0, { result: { text: `${version}\n` } });
   }
   if (reservedCommands.has(request.command)) {
-    stderr.write(`${request.command} is not implemented in the repository CLI prototype.\n`);
-    return 3;
+    return failure(3, "NEXFLOW-PROTOTYPE-UNIMPLEMENTED", `${request.command} is not implemented in the repository CLI prototype.`);
   }
 
   try {
+    checks.discovery = "unavailable";
     const result = await discover(request);
+    inputMode = result.inputMode;
+    checks.discovery = result.valid ? "passed" : "failed";
     if (!result.valid) {
-      for (const entry of result.diagnostics) {
-        stderr.write(`${entry.code} ${sourceLabel(entry.source)}: ${entry.message}\n`);
-      }
-      return result.diagnostics.some((entry) => unsupportedCodes.has(entry.code)) ? 3 : 1;
+      return finish(result.diagnostics.some((entry) => unsupportedCodes.has(entry.code)) ? 3 : 1,
+        { diagnostics: result.diagnostics });
     }
     if (request.command === "validate") {
+      checks.schema = "unavailable";
       const validation = await validate(result.assembly);
+      checks.schema = validation.valid ? "passed" : "failed";
       if (!validation.valid) {
-        for (const entry of validation.diagnostics) {
-          stderr.write(`${entry.code} ${sourceLabel(entry.source)} ${entry.kind} ${JSON.stringify(entry.instancePath)} [${entry.keyword}]: ${entry.message}\n`);
-        }
-        if (validation.truncated) stderr.write("Additional schema diagnostics omitted; validation failed.\n");
-        return 1;
+        return finish(1, { diagnostics: validation.diagnostics, truncated: validation.truncated });
       }
-      stdout.write(`Validated ${validation.documentCount} manifest(s) against the local spec 0.1 schemas (${result.inputMode}).\n`);
-      stdout.write("Schema validation only. Core Profile and full semantic validation were not performed; no execution is authorized.\n");
-      return 0;
+      return finish(0, { result: { documentCount: validation.documentCount, documents: result.assembly.documents } });
     }
-    stdout.write(`Discovered ${result.assembly.documents.length} manifest(s) (${result.inputMode}).\n`);
-    for (const document of result.assembly.documents) {
-      stdout.write(`${sourceLabel(document.source)} ${document.kind}\n`);
-    }
-    stdout.write("Discovery only. Schema and semantic validation were not performed; no execution is authorized.\n");
-    return 0;
+    return finish(0, { result: { documentCount: result.assembly.documents.length, documents: result.assembly.documents } });
   } catch {
-    stderr.write("Internal prototype failure. No validation or execution result is available.\n");
-    return 4;
+    return failure(4, "NEXFLOW-PROTOTYPE-INTERNAL", "Internal prototype failure. No validation or execution result is available.");
   }
 }

@@ -38,7 +38,7 @@ enforced.
 | Reference examples | One reduced Core Profile project plus 6 complete project sets, totaling 99 schema-backed manifests using `0.1` | Implemented | `examples/` | Authoring and validation material, not executable teams or runtime demonstrations. |
 | Repository schema validator | Current repository schema snapshot and reference examples | Implemented | `npm run validate` | Maintenance tooling, not a published `nexflow` CLI or general runtime preflight. |
 | Negative schema fixtures | Required field, enum value, ID format, and unknown kind rejection | Implemented | `npm run negative-schema-fixtures`, `fixtures/schema/invalid/` | Four focused rejection categories, not a complete invalid-input or diagnostic conformance suite. |
-| Diagnostic code catalog | Families, severity, messages, remediation, implemented draft codes, candidate codes, and reserved areas | Specified | `docs/diagnostic-code-catalog.md`, RFC-0005, RFC-0011, RFC-0015, RFC-0016 | No code is Stable; no complete catalog emitter, machine-readable output schema, or public CLI contract exists. |
+| Diagnostic code catalog | Families, severity, messages, remediation, implemented draft codes, candidate codes, and reserved areas | Specified | `docs/diagnostic-code-catalog.md`, RFC-0005, RFC-0011, RFC-0015, RFC-0016 | No code is Stable; the prototype serializes only implemented discovery and schema diagnostics, not the complete catalog. |
 | Actor schema boundary smoke | 9 accepted and rejected structural cases | Implemented | `npm run actor-schema-smoke` | Focused ActorSet schema evidence, not full semantic or runtime conformance. |
 | Agent identity boundary smoke | 7 compact and legacy structural cases | Implemented | `npm run agent-identity-schema-smoke` | Checks identity migration compatibility, not definition selection or effective configuration. |
 | Agent definition authority smoke | 15 structural and selection cases | Implemented | `npm run agent-definition-authority-smoke` | Checks active completeness, unique unscoped selection, and rejection of unsupported memory policy references, not full policy resolution or runtime execution. |
@@ -63,7 +63,8 @@ enforced.
 | Semantic reference smoke | Selected cross-manifest reference, active definition authority, and duplicate checks | Partial | `npm run semantic-smoke`, semantic reference inventory | Does not cover every inventoried field or establish full `NF-SEMANTIC` conformance, graph safety, or policy correctness. |
 | Runtime language evaluation | Hard gates, weighted criteria, common prototype, and evidence record for TypeScript, Python, Rust, and Go | Specified | `docs/language-evaluation-matrix.md`, `docs/runtime-options.md` | No comparable candidate prototypes, scores, language selection, package layout, or accepted Runtime Architecture Decision exists. |
 | Reference CLI | Validation-only scope proposed | Planned | RFC-0011 | No `nexflow` executable or `NF-CLI` implementation exists. |
-| Repository CLI prototype | Help, unreleased version, local discovery, and structural `validate` command | Partial | `docs/cli-prototype.md`, `npm run cli-prototype-smoke`, `npm run cli-validation-smoke` | Disposable maintenance tooling, not a reference CLI alpha or completed architecture candidate; no full semantic validation, stable JSON envelope, package, or conformance claim. |
+| Repository CLI prototype | Help, unreleased version, local discovery, structural `validate`, and opt-in JSON output | Partial | `docs/cli-prototype.md`, `npm run cli-prototype-smoke`, `npm run cli-validation-smoke` | Disposable maintenance tooling, not a reference CLI alpha or completed architecture candidate; no full semantic validation, stable JSON envelope, package, or conformance claim. |
+| Prototype JSON diagnostics | Experimental `formatVersion: "0.1-draft"` envelope and separate output schema | Implemented | `docs/cli-diagnostics.md`, `scripts/contracts/cli-output.schema.json`, `npm run cli-diagnostics-smoke` | Versioned repository output, not stable catalog or public CLI conformance; no semantic diagnostics, SARIF, automatic fixes, or runtime authority. |
 | Runtime | Provider-neutral requirements documented | Planned | Architecture, runtime options, roadmap | No orchestration, enforcement, provider calling, task execution, or `NF-RUNTIME` implementation exists. |
 | Extensions | Core declaration schema, namespace/lifecycle rules, future loading boundary, and maintained experimental MCP and A2A profiles | Partial | `extensions.schema.json`, `docs/extension-loading-boundary.md`, `extensions/mcp/`, `extensions/a2a/`, extension docs, examples | Loading is specified only as a safety boundary; no registry, loader, live integration, protocol implementation, or plugin execution exists. |
 
@@ -108,6 +109,8 @@ repository CLI prototype: scripts/cli-prototype.mjs (unreleased, discovery and s
 repository CLI prototype smoke: scripts/cli-prototype-smoke.mjs
 repository CLI schema validation helper: scripts/lib/schema-validation.mjs
 repository CLI validation smoke: scripts/cli-validation-smoke.mjs
+repository CLI JSON output: scripts/contracts/cli-output.schema.json (formatVersion 0.1-draft)
+repository CLI diagnostic smoke: scripts/cli-diagnostics-smoke.mjs
 multi-workflow fixture: fixtures/discovery/multi-workflow/
 human override boundary smoke: scripts/human-override-schema-smoke.mjs
 mcp extension profile: extensions/mcp/profile.yaml
@@ -402,6 +405,10 @@ Its `validate` command applies the local core schemas to selected input after
 discovery; it does not perform full semantic or extension-profile validation.
 Checks cover dispatch, explicit input modes, schema selection, safe failure,
 redaction, non-mutation, and deterministic output, not `NF-CLI` conformance.
+Opt-in JSON output has a separate experimental schema and version, with
+structured errors, check states, clean streams, related sources, and explicit
+truncation. Default text and exit meanings remain unchanged. See
+[CLI Machine-Readable Diagnostics](cli-diagnostics.md) for the bounded contract.
 
 The following command names are proposals, not available commands:
 

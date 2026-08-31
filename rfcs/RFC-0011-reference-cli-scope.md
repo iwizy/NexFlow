@@ -147,6 +147,13 @@ warning examples/software-team/tasks.yaml tasks[0].approvalGates: semantic valid
 
 `nexflow inspect` should summarize a manifest set.
 
+The unreleased repository prototype now implements a bounded
+[declared-only inspection subset](../docs/cli-inspection.md), following local
+discovery and schema validation. It lists safe identities and selected
+unresolved references, not arbitrary metadata, effective configuration, or
+Agent Assembly. This does not accept the RFC, resolve the architecture decision,
+or distribute the proposed `nexflow` executable.
+
 Initial scope:
 
 - list manifest files

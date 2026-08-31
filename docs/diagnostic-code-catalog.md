@@ -258,15 +258,18 @@ codes with generic messages and redacted rejected locators. It does not
 stabilize the catalog or add standard codes for its usage and internal errors.
 JSON mode instead uses implementation-owned `NEXFLOW-PROTOTYPE-USAGE`,
 `NEXFLOW-PROTOTYPE-UNIMPLEMENTED`, and `NEXFLOW-PROTOTYPE-INTERNAL` codes with
-their existing exit meanings. These are not a new `NF-*` family.
-Its `validate` command additionally emits the coarse `NF-SCHEMA` code for
+their existing exit meanings. Inspection also uses the implementation-owned
+`NEXFLOW-PROTOTYPE-INSPECTION-LIMIT` code with exit `1` when its resource or
+reference output budget is exceeded, without a partial result. These are not
+a new `NF-*` family.
+Its `validate` and `inspect` commands emit the coarse `NF-SCHEMA` code for
 structural failures, with a known kind, sanitized JSON Pointer, safe constraint
 keyword, and generic message. Required fields extend the pointer; unknown or
 rejected additional property names are redacted. Schema diagnostics are
 bounded, and truncation remains a failure. Parser failures retain their
 discovery codes. This does not implement candidate schema-code refinements,
 full semantic validation, or a stable public JSON diagnostic contract. The
-prototype implements an opt-in `0.1-draft` JSON envelope with an output schema,
+prototype implements an opt-in `0.2-draft` JSON envelope with an output schema,
 related safe sources, check states, deterministic ordering, and explicit
 truncation; no code is promoted to Stable by serialization.
 

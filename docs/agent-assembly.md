@@ -280,6 +280,10 @@ conformance.
 
 ## Current Status
 
+The prototype's [declared inspection](cli-inspection.md) is a separate inventory
+of authored resources and selected unresolved references. It does not compute
+effective configuration and must not be presented as Agent Assembly support.
+
 The current slice defines Agent Assembly as a documentation-level inspection
 projection in the unreleased NexFlow `0.1` draft.
 

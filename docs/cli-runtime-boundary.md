@@ -154,6 +154,11 @@ environment.
 
 ## `inspect` Boundary
 
+The current repository prototype implements only the bounded
+[declared inspection](cli-inspection.md) subset after schema validation. It
+does not resolve effective configuration or produce an Agent Assembly view;
+the broader boundary below is not a claim of implemented reference CLI support.
+
 `nexflow inspect` may present a source-grounded projection of the selected
 manifest assembly, including inventory, references, declared policies,
 provenance, unsupported areas, and blockers.

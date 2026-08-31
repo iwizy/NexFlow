@@ -45,6 +45,11 @@ evidence for an experimental envelope, streams, exit status, redaction, and
 truncation. They do not establish stable catalog support, semantic validation,
 or `NF-CLI` conformance.
 
+The [declared inspection checks](cli-inspection.md) add evidence for schema-first
+projection, selected reference fields, workflow scope, and output limits. They
+do not establish reference resolution, effective configuration, or Agent
+Assembly conformance. Inspection IDs are declarations, not validated authority.
+
 ## Goals
 
 - Make compatibility claims precise.

@@ -53,7 +53,8 @@ const noReadCases = [
   [["discover", "--root", ".", "--format", "yaml"], 2],
   [["--help", "--version"], 2], [["--help", "--root", "."], 2],
   [["--help", "--help"], 2], [["discover", "--version"], 2],
-  ...["inspect", "graph", "init"].map((command) => [[command, "--root", "not-read"], 3])
+  [["inspect"], 2], [["inspect", "--help"], 0],
+  ...["graph", "init"].map((command) => [[command, "--root", "not-read"], 3])
 ];
 for (const [args, expected] of noReadCases) {
   let reads = 0;

@@ -1,6 +1,6 @@
 # CLI Machine-Readable Diagnostics
 
-Status: implemented experimental repository output, `formatVersion: "0.1-draft"`.
+Status: implemented experimental repository output, `formatVersion: "0.2-draft"`.
 This is not a stable public CLI contract, catalog release, or `NF-CLI` claim.
 The [repository CLI prototype](cli-prototype.md) remains unreleased maintenance
 tooling and does not resolve the pending architecture decision.
@@ -8,7 +8,7 @@ tooling and does not resolve the pending architecture decision.
 ## Usage And Streams
 
 Select `--format json` or `--format=json`. The default is `text`; explicit
-`--format text` preserves it. The format applies to discovery, validation,
+`--format text` preserves it. The format applies to discovery, validation, inspection,
 help, version, usage errors, reserved commands, and internal failures.
 
 For machine consumers, invoke the entry point directly:
@@ -16,6 +16,7 @@ For machine consumers, invoke the entry point directly:
 ```sh
 node scripts/cli-prototype.mjs validate --root examples/minimal-team --format json
 node scripts/cli-prototype.mjs discover --root examples/minimal-team --format=json
+node scripts/cli-prototype.mjs inspect --root examples/minimal-team --format json
 node scripts/cli-prototype.mjs --version --format json
 ```
 
@@ -33,9 +34,9 @@ duplicated. A format-like string consumed as another option's value, or placed
 after the `--` terminator, does not select JSON. Without a recognized JSON
 option, usage errors retain text output. No invalid argument value is echoed.
 
-Exit codes are unchanged: `0` success or informational output, `1` discovery
-or schema failure, `2` usage error, `3` unsupported input or reserved command,
-and `4` internal failure. Consumers should require both process status `0` and
+Exit classes are `0` success or informational output, `1` discovery or schema
+failure or inspection output limit, `2` usage error, `3` unsupported input or
+reserved command, and `4` internal failure. Consumers should require process status `0` and
 a well-formed successful envelope. Missing, malformed, truncated transport,
 or unknown-version output is not success.
 
@@ -49,7 +50,7 @@ add a manifest kind or enter the manifest schema registry.
 
 | Field | Meaning |
 | --- | --- |
-| `formatVersion` | Experimental envelope version, currently `0.1-draft`. |
+| `formatVersion` | Experimental envelope version, currently `0.2-draft`. |
 | `tool` | Fixed repository prototype name and `version: "unreleased"`; not the specification release. |
 | `supportedSpecVersions` | Accepted input versions, currently `["0.1"]`; never copied from unsupported input. |
 | `command` | Validated command name, or `null` for usage failures. Command help is reported as `help`. |
@@ -69,6 +70,10 @@ Schema setup or evaluation failure leaves schema `unavailable`; earlier
 successful discovery can still be recorded as `passed`, but no inventory is
 published with the failure.
 
+An unexpected inspection failure can leave discovery and schema `passed` while
+the command fails with exit `4` and `result: null`. These check states alone do
+not establish successful output projection.
+
 `checks.coreProfile`, `checks.semantic`, and `checks.extensionProfiles` remain
 `not-run`. Discovery association checks are not full semantic validation.
 Core `ExtensionSet` schema validation is not MCP or A2A profile validation.
@@ -77,6 +82,11 @@ On successful `discover` or `validate`, `result` contains `documentCount` and
 `documents`, each with only `file` and known `kind`. No project or resource IDs,
 manifest bodies, or resolved configuration are serialized. `validate` success
 covers the selected files only, not source completeness or execution readiness.
+Successful `inspect` adds `result.inspection`: a declared-only Project identity,
+per-kind counts, resource occurrences, and selected unresolved references.
+Only this command intentionally exposes allowlisted authored IDs and reference
+targets. See [CLI Declared Inspection](cli-inspection.md) for coverage, workflow
+scope, limits, and disclosure rules; it is not an Agent Assembly view.
 For help and version, `result` contains `text` and all checks remain `not-run`.
 
 ## Diagnostic Fields
@@ -109,11 +119,14 @@ The following implementation-owned JSON codes are not standard `NF-*` codes:
 
 | Code | Exit | Meaning and next step |
 | --- | ---: | --- |
+| `NEXFLOW-PROTOTYPE-INSPECTION-LIMIT` | 1 | Inspection exceeds its resource or reference budget; no partial result is available. Review the selected input set. |
 | `NEXFLOW-PROTOTYPE-USAGE` | 2 | Invalid arguments; consult the prototype help. |
-| `NEXFLOW-PROTOTYPE-UNIMPLEMENTED` | 3 | Reserved `inspect`, `graph`, or `init`; do not treat it as implemented. |
+| `NEXFLOW-PROTOTYPE-UNIMPLEMENTED` | 3 | Reserved `graph` or `init`; do not treat it as implemented. |
 | `NEXFLOW-PROTOTYPE-INTERNAL` | 4 | No usable result from an attempted operation; review the trusted checkout and local schema setup. |
 
-Default text mode retains its previous generic messages for these three cases.
+Default text mode retains its previous generic usage, reserved-command, and
+internal-failure messages. Inspection limits use the new code in JSON and a
+fixed failure message in text.
 
 ## Example Failure
 
@@ -127,7 +140,7 @@ Exit code is `1`. The complete result is:
 
 ```json
 {
-  "formatVersion": "0.1-draft",
+  "formatVersion": "0.2-draft",
   "tool": { "name": "nexflow-repository-cli-prototype", "version": "unreleased" },
   "supportedSpecVersions": ["0.1"],
   "command": "validate",
@@ -175,7 +188,8 @@ Absolute, remote, escaping, Windows-style, and overlong source locators are
 redacted. Non-ASCII and control characters are escaped in the JSON byte stream;
 JSON decoding restores characters in legitimate filenames, so consumers must
 escape decoded strings when displaying them in terminals or markup. Relative
-filenames remain visible and should not contain secrets. Raw manifest values,
+filenames remain visible and should not contain secrets. Outside the explicit
+inspection ID and reference projection, raw manifest values,
 private field names, prompt content, environment data, and caught exception
 messages are not included.
 
@@ -183,9 +197,20 @@ messages are not included.
 
 Consumers should pin the repository revision and `formatVersion` together.
 This version identifies the envelope, not a stable diagnostic catalog revision
-or a released executable. Adding JSON is opt-in; existing text callers and exit
-codes do not need migration. No manifest schema, `specVersion`, dependency, or
+or a released executable. JSON is opt-in; discovery and validation text callers
+and exit codes do not need migration. No manifest schema, `specVersion`, dependency, or
 package release changes are required.
+
+### Migration From `0.1-draft` To `0.2-draft`
+
+All output now uses `0.2-draft`, including errors, help, and existing commands.
+The prior closed schema could not represent successful `inspect` or its
+additional `result.inspection`. Update the pinned output schema and accepted
+version together; no old-format switch is provided. Discovery and validation
+result shapes are unchanged. `inspect` is no longer reserved: it requires an
+explicit root and follows discovery, schema, and inspection failure rules
+instead of always returning exit `3`. Usage without its required root returns
+exit `2`. The new inspection-limit error uses exit `1`.
 
 An incompatible change to fields, types, state meanings, stream or exit
 contracts, ordering, or redaction requires a new output version and migration
@@ -197,5 +222,5 @@ Run `npm run cli-diagnostics-smoke` for schema-backed JSON contract checks,
 all seven maintained examples, process and stream checks, no-read dispatch,
 error classes, deterministic ordering, redaction, and truncation. CI runs it
 alongside the existing text and structural-validation checks. No complete
-catalog emitter, semantic validator, SARIF output, inspection serializer, or
+catalog emitter, semantic validator, SARIF output, Agent Assembly serializer, or
 runtime behavior is implemented by this output format.

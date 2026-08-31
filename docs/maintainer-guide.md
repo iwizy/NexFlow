@@ -135,6 +135,7 @@ npm run manifest-discovery-smoke
 npm run cli-prototype-smoke
 npm run cli-validation-smoke
 npm run cli-diagnostics-smoke
+npm run cli-inspection-smoke
 npm run human-override-schema-smoke
 npm run mcp-extension-smoke
 npm run a2a-extension-smoke

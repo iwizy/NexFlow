@@ -8,6 +8,12 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Added
 
+- Added schema-first `inspect` to the repository CLI prototype, with Project
+  summaries, declaration occurrences, and selected unresolved references for
+  all 17 manifest kinds. Text and JSON preserve source pointers and workflow
+  scope, omit free text and credential fields, and fail without partial output
+  on resource or reference budget overflow. Focused inspection checks run in CI.
+  This is not effective configuration, Agent Assembly, or a reference CLI alpha.
 - Added opt-in `--format json` to the repository CLI prototype, with an
   independent `0.1-draft` output schema, structured diagnostics and check states,
   safe related locations, deterministic ordering, and explicit truncation.
@@ -34,6 +40,10 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Changed
 
+- Advanced the experimental CLI output contract from `0.1-draft` to `0.2-draft`
+  to represent successful inspection and its result shape. All commands emit
+  the new version; migration requires updating the accepted output schema and
+  version together. No manifest `specVersion` or specification release changes.
 - Reduced Minimal Team from 17 manifests to a three-manifest Core Profile
   onboarding path with Project, ActorSet, and compact AgentSet. Its guide now
   gives a staged path to policy, work, data boundaries, and advanced agent

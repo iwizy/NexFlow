@@ -60,6 +60,9 @@ jobs:
       - name: Run CLI machine-readable diagnostic checks
         run: npm run cli-diagnostics-smoke
 
+      - name: Run CLI declared inspection checks
+        run: npm run cli-inspection-smoke
+
       - name: Run human override schema boundary checks
         run: npm run human-override-schema-smoke
 

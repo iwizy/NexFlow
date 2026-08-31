@@ -126,9 +126,11 @@ npm run manifest-discovery-smoke
 npm run cli-prototype-smoke
 npm run cli-validation-smoke
 npm run cli-diagnostics-smoke
+npm run cli-inspection-smoke
 npm run cli-prototype -- discover --root examples/minimal-team
 npm run cli-prototype -- validate --root examples/minimal-team
 node scripts/cli-prototype.mjs validate --root examples/minimal-team --format json
+node scripts/cli-prototype.mjs inspect --root examples/minimal-team --format json
 ```
 
 `discover` prints an inventory only; `validate` additionally checks every
@@ -141,14 +143,21 @@ conformance, source completeness, or execution readiness. Unsafe syntax or
 unsupported inputs stop before schema validation; schema failures include a
 sanitized field pointer and return nonzero status.
 
+`inspect` uses the same discovery and schema checks, then adds a bounded
+[declared-only projection](cli-inspection.md) of Project identity, per-kind
+counts, resources, and selected unresolved references. It is not a semantic
+validator or Agent Assembly resolver. Resource or reference output overflow
+fails with exit `1` and no partial result.
+
 The opt-in [JSON diagnostic format](cli-diagnostics.md) serializes success and
 every failure class as one versioned stdout object. It exposes codes, safe
 locations, related sources, and performed check states without raw input
-values, partial success inventories, or execution authority. Text defaults and
-exit meanings are unchanged; the JSON schema is a tooling output contract,
+values outside the allowlisted inspection fields, partial success inventories,
+or execution authority. Discovery and validation text defaults and exit
+meanings are unchanged; the JSON schema is a tooling output contract,
 not another manifest schema.
 
-`inspect`, `graph`, and `init` remain unimplemented. There is no reference CLI
+`graph` and `init` remain unimplemented. There is no reference CLI
 package or `NF-CLI` claim, and the architecture decision remains `not-ready`.
 See [Manifest Discovery](manifest-discovery.md) for exact source and parser
 boundaries. The prototype does not replace repository-wide maintenance checks.

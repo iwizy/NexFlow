@@ -78,6 +78,7 @@ The documentation is the canonical source for the specification. Schemas and exa
 | [CLI And Runtime Responsibility Boundary](cli-runtime-boundary.md) | Separates offline static validation and bounded authoring commands from runtime preflight, executable extensions, credentials, remote access, orchestration, and enforcement. |
 | [Repository CLI Prototype](cli-prototype.md) | Documents unreleased local discovery, structural validation, declared inspection, safe diagnostics, and remaining architecture gates; not the reference CLI alpha. |
 | [CLI Declared Inspection](cli-inspection.md) | Documents schema-first summaries, declarations, selected unresolved references, disclosure limits, and the experimental inspect output. |
+| [CLI Static Graph](cli-graph.md) | Documents bounded declaration nodes, selected reference edges, static resolution labels, safety limits, and the experimental graph output. |
 | [CLI Machine-Readable Diagnostics](cli-diagnostics.md) | Experimental JSON envelope, output schema, check states, streams, exit codes, redaction, and output versioning. |
 | [Diagnostic Code Catalog](diagnostic-code-catalog.md) | Central draft registry for diagnostic families, severity, messages, remediation, status, redaction, and compatibility. |
 | [Fixtures Guide](../fixtures/README.md) | Focused positive and negative validation evidence, owning checks, and maintenance rules. |

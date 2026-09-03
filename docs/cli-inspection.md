@@ -55,7 +55,7 @@ association and Workflow identity checks still apply before this projection.
 ## JSON Contract
 
 Use the direct Node invocation for machine consumers, avoiding npm lifecycle
-logging. The [JSON envelope](cli-diagnostics.md) has `formatVersion: "0.2-draft"`.
+logging. The [JSON envelope](cli-diagnostics.md) has `formatVersion: "0.3-draft"`.
 Successful `inspect` retains `result.documentCount` and `result.documents`, and
 adds `result.inspection`. Any failure has `result: null`.
 
@@ -172,13 +172,11 @@ check the overall failure state, not infer success from that field.
 
 ## Compatibility And Verification
 
-The output contract advances from `0.1-draft` to `0.2-draft` for every command,
-including help and errors. The prior closed contract did not permit successful
-`inspect` or its result shape. Update the accepted version and schema together;
-there is no old-format switch. Existing `discover` and `validate` result shapes
-remain unchanged apart from the envelope version. Manifest `specVersion`,
-schemas, release tags, and the README release badge do not change with this
-experimental tooling format.
+The current output contract is `0.3-draft`. Inspection was introduced in
+`0.2-draft`; static graph output subsequently advanced the shared envelope.
+Update the accepted version and schema together. Existing inspection fields are
+unchanged by `0.3-draft`. Manifest `specVersion`, schemas, release tags, and the
+README release badge do not change with this experimental tooling format.
 
 ```sh
 npm run cli-inspection-smoke
@@ -187,6 +185,7 @@ npm run cli-inspection-smoke
 CI exercises all maintained examples and manifest kinds, schema-first failures,
 all source-selection modes, scoped references, unresolved and duplicate
 declarations, exact limits and overflow, deterministic JSON and text,
-redaction, and non-mutation. No extra maintained example project is introduced.
+redaction, and non-mutation. The command does not require a dedicated example
+project.
 The Runtime Architecture Decision, reference CLI distribution, full semantic
 validation, Agent Assembly resolution, and runtime execution remain separate.

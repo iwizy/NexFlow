@@ -35,7 +35,7 @@ enforced.
 | `0.1` release scope | Frozen 17-kind baseline with explicit RFC treatment, optional surfaces, migration-only forms, and deferred work | Specified | `docs/0.1-scope.md`, `v0.1.0` release evidence | The release decision covers one exact repository snapshot; it does not imply runtime behavior, accepted draft RFCs, or `1.0` stability. |
 | Specification | `specVersion: "0.1"` draft | Specified | Core docs, manifest reference, RFCs | Pre-`1.0`; fields and semantics may change with migration guidance. |
 | JSON Schemas | `0.1` across 17 manifest kinds plus common definitions | Implemented | `schemas/*.schema.json` | Structural validation only; schemas do not prove cross-manifest meaning or safety. |
-| Reference examples | One reduced Core Profile project plus 6 complete project sets, totaling 99 schema-backed manifests using `0.1` | Implemented | `examples/` | Authoring and validation material, not executable teams or runtime demonstrations. |
+| Reference examples | Two compact projects plus 6 complete project sets, totaling 109 schema-backed manifests using `0.1` | Implemented | `examples/` | Authoring and validation material, not executable teams or runtime demonstrations. |
 | Repository schema validator | Current repository schema snapshot and reference examples | Implemented | `npm run validate` | Maintenance tooling, not a published `nexflow` CLI or general runtime preflight. |
 | Negative schema fixtures | Required field, enum value, ID format, and unknown kind rejection | Implemented | `npm run negative-schema-fixtures`, `fixtures/schema/invalid/` | Four focused rejection categories, not a complete invalid-input or diagnostic conformance suite. |
 | Diagnostic code catalog | Families, severity, messages, remediation, implemented draft codes, candidate codes, and reserved areas | Specified | `docs/diagnostic-code-catalog.md`, RFC-0005, RFC-0011, RFC-0015, RFC-0016 | No code is Stable; the prototype serializes only implemented discovery and schema diagnostics, not the complete catalog. |
@@ -63,9 +63,10 @@ enforced.
 | Semantic reference smoke | Selected cross-manifest reference, active definition authority, and duplicate checks | Partial | `npm run semantic-smoke`, semantic reference inventory | Does not cover every inventoried field or establish full `NF-SEMANTIC` conformance, graph safety, or policy correctness. |
 | Runtime language evaluation | Hard gates, weighted criteria, common prototype, and evidence record for TypeScript, Python, Rust, and Go | Specified | `docs/language-evaluation-matrix.md`, `docs/runtime-options.md` | No comparable candidate prototypes, scores, language selection, package layout, or accepted Runtime Architecture Decision exists. |
 | Reference CLI | Validation-only scope proposed | Planned | RFC-0011 | No `nexflow` executable or `NF-CLI` implementation exists. |
-| Repository CLI prototype | Help, unreleased version, local discovery, structural `validate`, declared-only `inspect`, and opt-in JSON output | Partial | `docs/cli-prototype.md`, `npm run cli-prototype-smoke`, `npm run cli-validation-smoke` | Disposable maintenance tooling, not a reference CLI alpha or completed architecture candidate; no full semantic validation, stable JSON envelope, package, or conformance claim. |
-| Prototype JSON diagnostics | Experimental `formatVersion: "0.2-draft"` envelope and separate output schema | Implemented | `docs/cli-diagnostics.md`, `scripts/contracts/cli-output.schema.json`, `npm run cli-diagnostics-smoke` | Versioned repository output, not stable catalog or public CLI conformance; no semantic diagnostics, SARIF, automatic fixes, or runtime authority. |
+| Repository CLI prototype | Help, unreleased version, local discovery, structural `validate`, declared-only `inspect`, static `graph`, and opt-in JSON output | Partial | `docs/cli-prototype.md`, `npm run cli-prototype-smoke`, `npm run cli-validation-smoke` | Disposable maintenance tooling, not a reference CLI alpha or completed architecture candidate; no full semantic validation, stable JSON envelope, package, or conformance claim. |
+| Prototype JSON diagnostics | Experimental `formatVersion: "0.3-draft"` envelope and separate output schema | Implemented | `docs/cli-diagnostics.md`, `scripts/contracts/cli-output.schema.json`, `npm run cli-diagnostics-smoke` | Versioned repository output, not stable catalog or public CLI conformance; no semantic diagnostics, SARIF, automatic fixes, or runtime authority. |
 | Prototype declared inspection | Schema-first Project summary, declaration occurrences, and selected unresolved references across all 17 kinds | Implemented | `docs/cli-inspection.md`, `npm run cli-inspection-smoke` | Bounded, allowlisted projection only; no complete reference inventory, effective configuration, Agent Assembly resolver, or execution authority. |
+| Prototype static graph | Declaration nodes and selected reference edges with static resolution labels | Implemented | `docs/cli-graph.md`, `npm run cli-graph-smoke` | Text and JSON only; no full semantic graph, cycle analysis, execution order, renderer, external state, or runtime authority. |
 | Runtime | Provider-neutral requirements documented | Planned | Architecture, runtime options, roadmap | No orchestration, enforcement, provider calling, task execution, or `NF-RUNTIME` implementation exists. |
 | Extensions | Core declaration schema, namespace/lifecycle rules, future loading boundary, and maintained experimental MCP and A2A profiles | Partial | `extensions.schema.json`, `docs/extension-loading-boundary.md`, `extensions/mcp/`, `extensions/a2a/`, extension docs, examples | Loading is specified only as a safety boundary; no registry, loader, live integration, protocol implementation, or plugin execution exists. |
 
@@ -73,7 +74,7 @@ enforced.
 
 | Manifest `specVersion` | Schema snapshot | Reference examples | Repository validator | Reference CLI | Runtime | Extensions | Repository support |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| `0.1` | Current 17-kind draft schema set | 7 maintained project sets | Schema validation implemented; semantic references partial | Not implemented | Not implemented | Declaration shape implemented; behavior not implemented | Current supported authoring and repository validation target |
+| `0.1` | Current 17-kind draft schema set | 8 maintained project sets | Schema validation implemented; semantic references partial | Not implemented | Not implemented | Declaration shape implemented; behavior not implemented | Current supported authoring and repository validation target |
 | Any other `0.x` | No published schema mapping | None | Must report unsupported version | Not implemented | Not implemented | Unsupported | Unsupported |
 | `1.0` | Not published | None | Must report unsupported version | Planned only | Planned only | Planned only | Future target, not currently supported |
 
@@ -106,14 +107,16 @@ core profile definition: profiles/core.yaml
 core profile smoke: scripts/core-profile-smoke.mjs
 manifest discovery helper: scripts/lib/manifest-discovery.mjs
 manifest discovery smoke: scripts/manifest-discovery-smoke.mjs
-repository CLI prototype: scripts/cli-prototype.mjs (unreleased, discovery, schema validation, declared inspection)
+repository CLI prototype: scripts/cli-prototype.mjs (unreleased, discovery, schema validation, declared inspection, static graph)
 repository CLI prototype smoke: scripts/cli-prototype-smoke.mjs
 repository CLI schema validation helper: scripts/lib/schema-validation.mjs
 repository CLI validation smoke: scripts/cli-validation-smoke.mjs
-repository CLI JSON output: scripts/contracts/cli-output.schema.json (formatVersion 0.2-draft)
+repository CLI JSON output: scripts/contracts/cli-output.schema.json (formatVersion 0.3-draft)
 repository CLI diagnostic smoke: scripts/cli-diagnostics-smoke.mjs
 repository CLI inspection helper: scripts/lib/manifest-inspection.mjs
 repository CLI inspection smoke: scripts/cli-inspection-smoke.mjs
+repository CLI graph helper: scripts/lib/manifest-graph.mjs
+repository CLI graph smoke: scripts/cli-graph-smoke.mjs
 multi-workflow fixture: fixtures/discovery/multi-workflow/
 human override boundary smoke: scripts/human-override-schema-smoke.mjs
 mcp extension profile: extensions/mcp/profile.yaml
@@ -168,22 +171,22 @@ example and is validated in CI.
 
 | Manifest `kind` | Schema | Example coverage | `npm run validate` | `npm run semantic-smoke` |
 | --- | --- | --- | --- | --- |
-| `Project` | `project.schema.json` | One reduced and 6 complete project sets, plus focused fixtures | Full structural check | Optional source hints, singular or plural Workflow sources, selected project, maintainer, approval gate, network policy, and human override checks |
-| `ActorSet` | `actors.schema.json` | Minimal Team migration path | Full structural check | Actor identity, agent bridge, operator, representative, integration, and relationship cycle checks |
-| `AgentSet` | `agents.schema.json` | All 7 project sets | Full structural check | Agent identity inventory plus deprecated compatibility-field references where present |
+| `Project` | `project.schema.json` | 2 compact and 6 complete project sets, plus focused fixtures | Full structural check | Optional source hints, singular or plural Workflow sources, selected project, maintainer, approval gate, network policy, and human override checks |
+| `ActorSet` | `actors.schema.json` | Minimal Team and Solo Developer migration paths | Full structural check | Actor identity, agent bridge, operator, representative, integration, and relationship cycle checks |
+| `AgentSet` | `agents.schema.json` | All 8 project sets | Full structural check | Agent identity inventory plus deprecated compatibility-field references where present |
 | `AgentDefinitionSet` | `agent-definitions.schema.json` | 6 complete project sets | Full structural check | Selected agent and component references |
-| `CapabilitySet` | `capabilities.schema.json` | 6 complete project sets | Full structural check | Capability inventory and selected references |
-| `PermissionSet` | `permissions.schema.json` | 6 complete project sets | Full structural check | Permission, subject, capability, and approval gate references |
-| `ContextSet` | `context.schema.json` | 6 complete project sets | Full structural check | Context source and selected actor/gate references |
+| `CapabilitySet` | `capabilities.schema.json` | 6 complete project sets plus Solo Developer | Full structural check | Capability inventory and selected references |
+| `PermissionSet` | `permissions.schema.json` | 6 complete project sets plus Solo Developer | Full structural check | Permission, subject, capability, and approval gate references |
+| `ContextSet` | `context.schema.json` | 6 complete project sets plus Solo Developer | Full structural check | Context source and selected actor/gate references |
 | `MemorySet` | `memory.schema.json` | 6 complete project sets | Full structural check | Memory scope and selected actor/gate references |
 | `ProviderSet` | `providers.schema.json` | 6 complete project sets | Full structural check | Provider inventory, closed feature vocabulary, and legacy feature migration diagnostics |
 | `ModelProfileSet` | `model-profiles.schema.json` | 6 complete project sets | Full structural check | Provider references and selected actor references |
 | `PromptSet` | `prompt-sets.schema.json` | 6 complete project sets | Full structural check | Selected owner, approver, and agent references |
 | `RetrievalProfileSet` | `retrieval-profiles.schema.json` | 6 complete project sets | Full structural check | Selected context source, owner, approver, and agent references |
-| `TaskSet` | `tasks.schema.json` | 6 complete project sets | Full structural check | Task dependency, actor, capability, gate, artifact, and event references |
-| `Workflow` | `workflow.schema.json` | 6 complete project sets | Full structural check | Task, step dependency, gate, and event references |
-| `HandoffSet` | `handoffs.schema.json` | 6 complete project sets | Full structural check | Endpoint and artifact references |
-| `EventSet` | `events.schema.json` | 6 complete project sets | Full structural check | Event type inventory and selected event references |
+| `TaskSet` | `tasks.schema.json` | 6 complete project sets plus Solo Developer | Full structural check | Task dependency, actor, capability, gate, artifact, and event references |
+| `Workflow` | `workflow.schema.json` | 6 complete project sets plus Solo Developer | Full structural check | Task, step dependency, gate, and event references |
+| `HandoffSet` | `handoffs.schema.json` | 6 complete project sets plus Solo Developer | Full structural check | Endpoint and artifact references |
+| `EventSet` | `events.schema.json` | 6 complete project sets plus Solo Developer | Full structural check | Event type inventory and selected event references |
 | `ExtensionSet` | `extensions.schema.json` | 6 complete project sets | Full structural check | Extension inventory and required capability references |
 
 `Full structural check` means validation against the matching JSON Schema. It
@@ -401,7 +404,7 @@ by the specification and RFCs. Passing it must not be presented as complete
 No reference CLI is implemented.
 
 The [repository CLI prototype](cli-prototype.md) is an unreleased command
-tool with discovery, structural validation, and declared inspection operations. It uses existing
+tool with discovery, structural validation, declared inspection, and static graph operations. It uses existing
 maintenance dependencies without installing any of the public executables
 below, selecting a language, or satisfying the architecture decision gates.
 Its `validate` command applies the local core schemas to selected input after
@@ -409,6 +412,9 @@ discovery; it does not perform full semantic or extension-profile validation.
 Its `inspect` command adds a bounded, allowlisted declaration and selected
 reference projection after schema validation, not effective configuration or
 Agent Assembly. See [CLI Declared Inspection](cli-inspection.md).
+Its `graph` command matches selected references against that bounded inventory,
+with explicit unresolved, ambiguous, and redacted states. See
+[CLI Static Graph](cli-graph.md).
 Checks cover dispatch, explicit input modes, schema selection, safe failure,
 redaction, non-mutation, and deterministic output, not `NF-CLI` conformance.
 Opt-in JSON output has a separate experimental schema and version, with

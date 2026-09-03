@@ -1,10 +1,11 @@
 # NexFlow Examples
 
-This directory contains one reduced onboarding project and six complete
+This directory contains two compact learning projects and six complete
 reference manifest sets for different team shapes.
 
 The examples are not runtime fixtures. Minimal Team shows the minimum useful
-identity and responsibility shape. The complete examples show how agents, agent
+identity and responsibility shape. Solo Developer adds a focused, human-owned
+work and review path. The complete examples show how agents, agent
 definitions, permissions, capabilities, context, memory, tasks, workflows,
 handoffs, events, providers, profiles, and extensions fit together.
 
@@ -35,6 +36,7 @@ starter configurations.
 | Example | Best For | Team Shape | Autonomy Posture | Main Context Sources | Approval Emphasis |
 | --- | --- | --- | --- | --- | --- |
 | [Minimal Team](minimal-team/) | Learning the Core Profile in three manifests | One human maintainer and one docs agent | Not declared | None | Identity and responsibility only |
+| [Solo Developer](solo-developer/) | Human-owned coding assistance without a full platform stack | One developer and one coding assistant | Changes require human review | Local repository files | Repository writes, commands, and final acceptance |
 | [Software Team](software-team/) | Conventional feature delivery | Implementation, QA, reviewer, docs | Approval-gated | GitHub, Linear, docs, MCP | Code review and dependency approval |
 | [Startup Team](startup-team/) | Fast product iteration | Product, design, fullstack, release | Safe autonomy with human launch control | GitHub, Linear, Figma, research, docs | Product and release review |
 | [Enterprise Team](enterprise-team/) | Governed sensitive change control | Architecture, implementation, security, compliance, release | Strict and audit-heavy | GitHub, Jira, Confluence, knowledge base, MCP | Architecture, security, compliance, and release gates |
@@ -51,6 +53,10 @@ policy, work, context, memory, provider, event, extension, and behavior modules.
 The other six examples retain the complete legacy 16-manifest file set and
 draft agent definitions. Focused repository checks, rather than an overloaded
 starter project, demonstrate complete active definitions and unique selection.
+
+Solo Developer is the middle path: ten manifests add capability, permission,
+task, workflow, handoff, context, and event declarations while deliberately
+omitting behavior assembly, providers, memory, extensions, and runtime setup.
 
 | File | Purpose |
 | --- | --- |
@@ -112,6 +118,9 @@ cited, and audited. Provider features do not grant project action capabilities.
 Use `minimal-team` when learning the Core Profile or creating an identity-first
 project without empty optional modules.
 
+Use `solo-developer` when one human wants an explicit AI-assisted change and
+review workflow without modeling a larger delivery organization.
+
 Use `software-team` when modeling a normal repository-based engineering workflow.
 
 Use `startup-team` when product scope, design context, and release readiness matter more than enterprise governance.
@@ -126,8 +135,9 @@ Use `research-lab` when papers, experiments, reproducibility artifacts, citation
 
 ## Safety Pattern
 
-The six complete examples follow this safety pattern. Minimal Team instead
-demonstrates that omitted optional modules grant nothing:
+The six complete examples follow this safety pattern. Minimal Team demonstrates
+that omitted optional modules grant nothing; Solo Developer adopts only the
+policy and work modules needed for its scoped scenario:
 
 - capabilities are declared separately from permissions
 - the unique active agent definition is authoritative for requested behavior

@@ -1,0 +1,19 @@
+specVersion: "0.1"
+kind: ContextSet
+metadata:
+  project: solo-developer
+contextSources:
+  - id: local-repository
+    type: local_files
+    description: Source code and documentation in the selected local repository.
+    uri: ./
+    contentTypes:
+      - source_code
+      - documentation
+    access:
+      default: read
+      allowedActors:
+        - solo-maintainer
+        - coding-assistant
+    classification: internal
+    refreshPolicy: on_request

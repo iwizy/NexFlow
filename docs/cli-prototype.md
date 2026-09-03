@@ -4,7 +4,8 @@ Status: Unreleased, disposable repository tooling; not the reference CLI alpha.
 
 The [Runtime Architecture Decision Review](../rfcs/reviews/runtime-architecture-decision-review.md)
 is still `not-ready`. This prototype exercises command dispatch, local
-manifest discovery, structural validation, declared inspection, and experimental JSON output using the existing maintenance
+manifest discovery, structural validation, declared inspection, static graphing,
+and experimental JSON output using the existing maintenance
 dependencies. It does not select a CLI or runtime language, establish a package layout, install a
 `nexflow` executable, or claim `NF-CLI` conformance. It is not a completed
 candidate for the [common language evaluation](language-evaluation-matrix.md).
@@ -14,9 +15,9 @@ Promotion to a reference CLI still requires the accepted architecture decision.
 
 The entry point is [`scripts/cli-prototype.mjs`](../scripts/cli-prototype.mjs).
 Argument handling and output are separate from the discovery, schema
-validation, and inspection helpers. Help, version, usage failures, and unsupported commands do
+validation, inspection, and graph helpers. Help, version, usage failures, and unsupported commands do
 not load manifests or schemas. Schema loading starts only after successful
-discovery for `validate` or `inspect`.
+discovery for `validate`, `inspect`, or `graph`.
 
 The working operations are:
 
@@ -30,6 +31,9 @@ The working operations are:
   projection of Project identity, per-kind counts, resources, and selected
   unresolved reference fields. See [CLI Declared Inspection](cli-inspection.md)
   for exact coverage and output limits.
+- `graph`: the same schema-first inspection followed by static matching of
+  selected reference edges to declaration nodes. See
+  [CLI Static Graph](cli-graph.md) for resolution and disclosure boundaries.
 
 None of these commands performs Core Profile checks, full semantic validation, Agent
 Assembly inspection, or extension-profile validation. Association and
@@ -37,7 +41,7 @@ cardinality checks during discovery are not complete reference resolution.
 Missing actors, unresolved dependencies, and policy conflicts may therefore
 remain in structurally valid input. Success never authorizes execution.
 
-`graph` and `init` remain reserved, unimplemented commands that fail
+`init` remains a reserved, unimplemented command that fails
 explicitly. A discovery-only operation never prints a validation result.
 
 ## Usage
@@ -57,6 +61,8 @@ npm run cli-prototype -- validate --root fixtures/discovery/multi-workflow --fil
 node scripts/cli-prototype.mjs validate --root examples/minimal-team --format json
 node scripts/cli-prototype.mjs inspect --root examples/minimal-team
 node scripts/cli-prototype.mjs inspect --root examples/software-team --format json
+node scripts/cli-prototype.mjs graph --root examples/minimal-team
+node scripts/cli-prototype.mjs graph --root examples/software-team --format json
 ```
 
 An explicit `--root` is required. There is no implicit current-directory or
@@ -69,7 +75,7 @@ of three ways:
 | `--project relative/path.yml` | Load that Project and its source hints. Hints are relative to `--root`, not to the Project's parent directory. |
 | Repeated `--file relative/path.yml` | Load only the explicit list. Project hints are not followed. |
 
-All three commands use this same selection contract, including the requirement for
+All four commands use this same selection contract, including the requirement for
 exactly one Project. A lone AgentSet is not a supported input assembly. In
 explicit-file mode, files named by Project hints are not loaded or validated
 unless explicitly selected; a pass covers only the supplied files, not
@@ -94,7 +100,7 @@ It is not a stable public CLI output contract. `--format text` is the default.
 
 | Exit status | Meaning |
 | ---: | --- |
-| `0` | Help, prototype version, successful `discover`, structural `validate`, or declared-only `inspect`. |
+| `0` | Help, prototype version, successful `discover`, structural `validate`, declared-only `inspect`, or static `graph`. |
 | `1` | Invalid, missing, ambiguous, or unsafe discovery input, a schema-invalid manifest, or an inspection output limit. |
 | `2` | Invalid command-line usage. |
 | `3` | Known unimplemented command or unsupported version, kind, or source hint. |
@@ -175,19 +181,22 @@ npm run cli-prototype-smoke
 npm run cli-validation-smoke
 npm run cli-diagnostics-smoke
 npm run cli-inspection-smoke
+npm run cli-graph-smoke
 npm run manifest-discovery-smoke
 npm run validate
 ```
 
 The checks cover dispatch and exit status, source selection, deterministic
 inventory, failed-discovery suppression, redaction, and source safety. The
-validation checks additionally exercise all seven example projects, existing
+validation checks additionally exercise all eight example projects, existing
 negative schema fixtures, local registry failures, formats, bounded errors,
 and non-mutating behavior. JSON checks cover the output schema, all exit
 classes, clean streams, deterministic ordering, redaction, and truncation.
 Inspection checks cover all supported manifest kinds, selected reference
 coverage, workflow scope, duplicate and unresolved identities, bounded output,
-and disclosure controls. CI runs them alongside existing repository checks.
+and disclosure controls. Graph checks additionally cover static target matching,
+scoped resolution, ambiguity, unresolved and redacted targets, and closed output
+projection. CI runs them alongside existing repository checks.
 No schema or example migration is needed; no manifest fields or accepted
 schema versions change.
 

@@ -1,0 +1,38 @@
+specVersion: "0.1"
+kind: PermissionSet
+metadata:
+  project: solo-developer
+permissions:
+  - id: assistant-read
+    description: The coding assistant may inspect declared project files and context.
+    subjects:
+      - coding-assistant
+    capabilities:
+      - read_repository
+      - read_context
+    effect: allow
+    conditions:
+      - Access remains inside the selected local project context.
+  - id: assistant-change
+    description: Repository writes and local command execution require human review.
+    subjects:
+      - coding-assistant
+    capabilities:
+      - write_repository
+      - execute_command
+    effect: approval_required
+    approvalGate: human-change-review
+    conditions:
+      - Work must match the selected task and acceptance criteria.
+      - Dependency installation, network access, deployment, and destructive actions are not granted.
+  - id: maintainer-control
+    description: The human maintainer retains review and acceptance authority.
+    subjects:
+      - solo-maintainer
+    capabilities:
+      - read_repository
+      - read_context
+      - write_repository
+      - execute_command
+      - approve_changes
+    effect: allow

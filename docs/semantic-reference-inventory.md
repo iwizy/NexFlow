@@ -283,7 +283,7 @@ same-ID resource exists elsewhere.
 
 `npm run semantic-smoke` currently:
 
-- scans the seven maintained project examples
+- scans the eight maintained project examples
 - builds in-memory indexes for current manifest kinds and nested resources
 - checks duplicate IDs in selected namespaces
 - rejects duplicate workflow stages, workflow steps, and task artifacts

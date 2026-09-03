@@ -1,0 +1,36 @@
+specVersion: "0.1"
+kind: ActorSet
+metadata:
+  project: solo-developer
+actors:
+  - id: solo-maintainer
+    kind: human
+    displayName: Solo Maintainer
+    description: Owns scope, review decisions, credentials, and final project authority.
+    roles:
+      - maintainer
+      - reviewer
+    responsibilities:
+      - Define the intended change and acceptance criteria.
+      - Review every proposed repository modification.
+      - Decide whether work is accepted, revised, or rejected.
+    skills:
+      - project_maintenance
+      - code_review
+  - id: coding-assistant
+    kind: agent
+    displayName: Coding Assistant
+    description: Drafts scoped changes and validation evidence for human review.
+    roles:
+      - implementation
+    responsibilities:
+      - Work only inside the selected task scope.
+      - Report changed files, checks, risks, and unresolved questions.
+      - Stop when approval or undeclared authority is required.
+    skills:
+      - code_analysis
+      - implementation
+      - test_planning
+    agentRef:
+      kind: agent
+      id: coding-assistant

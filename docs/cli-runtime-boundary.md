@@ -179,6 +179,11 @@ in default output.
 
 ## `graph` Boundary
 
+The current repository prototype implements the bounded
+[static graph](cli-graph.md) subset over declared inspection. It does not emit
+Mermaid or DOT, inspect external state, infer execution order, or satisfy the
+broader reference CLI proposal below.
+
 `nexflow graph` may derive static nodes and edges from declared resources and
 implemented reference rules. It must label unresolved, unsupported,
 ambiguous, and external references honestly.

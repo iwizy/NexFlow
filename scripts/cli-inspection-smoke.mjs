@@ -63,7 +63,7 @@ for (const [args, expected] of [
   [["inspect", "--root", fixture, "--file", "project.yaml", "--project", "project.yaml"], 2],
   [["inspect", "--root", fixture, "--root", fixture], 2],
   [["inspect", "--root", fixture, "--agent", "private-test-agent"], 2],
-  [["inspect", "--root", fixture, "extra"], 2], [["graph"], 3], [["init"], 3]
+  [["inspect", "--root", fixture, "extra"], 2], [["graph"], 2], [["init"], 3]
 ]) {
   let calls = 0;
   const forbidden = async () => { calls += 1; throw new Error("private-test-must-not-run"); };
@@ -94,7 +94,7 @@ for (const entry of (await readdir(path.join(root, "examples"), { withFileTypes:
   for (const row of inspection.summary) coveredKinds.add(row.kind);
   exampleCount += 1;
 }
-check("all seven projects and 17 manifest kinds inspected", exampleCount === 7 && coveredKinds.size === 17);
+check("all eight projects and 17 manifest kinds inspected", exampleCount === 8 && coveredKinds.size === 17);
 
 const args = ["inspect", "--root", minimalRoot, "--format=json"];
 const minimalResult = run(args);

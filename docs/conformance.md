@@ -50,6 +50,11 @@ projection, selected reference fields, workflow scope, and output limits. They
 do not establish reference resolution, effective configuration, or Agent
 Assembly conformance. Inspection IDs are declarations, not validated authority.
 
+The [static graph checks](cli-graph.md) add bounded evidence for declaration
+nodes and selected reference resolution labels. They do not establish complete
+semantic graph coverage, dependency safety, execution order, or `NF-CLI`
+conformance.
+
 ## Goals
 
 - Make compatibility claims precise.

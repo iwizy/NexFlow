@@ -54,7 +54,7 @@ const noReadCases = [
   [["--help", "--version"], 2], [["--help", "--root", "."], 2],
   [["--help", "--help"], 2], [["discover", "--version"], 2],
   [["inspect"], 2], [["inspect", "--help"], 0],
-  ...["graph", "init"].map((command) => [[command, "--root", "not-read"], 3])
+  [["graph"], 2], [["graph", "--help"], 0], [["init", "--root", "not-read"], 3]
 ];
 for (const [args, expected] of noReadCases) {
   let reads = 0;

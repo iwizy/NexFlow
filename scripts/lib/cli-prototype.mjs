@@ -3,7 +3,7 @@ import { parseArgs } from "node:util";
 import { writeCliResult } from "./cli-output.mjs";
 
 const version = "NexFlow repository CLI prototype (unreleased; spec 0.1)";
-const reservedCommands = new Set(["graph", "init"]);
+const reservedCommands = new Set(["init"]);
 const unsupportedCodes = new Set([
   "NF-DISCOVERY-UNSUPPORTED-VERSION",
   "NF-DISCOVERY-UNSUPPORTED-KIND",
@@ -18,6 +18,7 @@ Usage:
   npm run cli-prototype -- discover --root <directory> [--project <file> | --file <file> ...] [--format text|json]
   npm run cli-prototype -- validate --root <directory> [--project <file> | --file <file> ...] [--format text|json]
   npm run cli-prototype -- inspect --root <directory> [--project <file> | --file <file> ...] [--format text|json]
+  npm run cli-prototype -- graph --root <directory> [--project <file> | --file <file> ...] [--format text|json]
 
 For JSON without npm logging: node scripts/cli-prototype.mjs <command> --root <directory> --format json
 JSON is one experimental versioned result on stdout, including errors; stderr stays empty.
@@ -25,9 +26,10 @@ JSON is one experimental versioned result on stdout, including errors; stderr st
 discover builds a source inventory only. Schema and semantic validation are not performed.
 validate checks the discovered manifests against the local spec 0.1 JSON Schemas only.
 inspect summarizes declarations and selected references after discovery and schema validation.
+graph derives static nodes and reference edges from the declared inspection.
 No command performs full semantic validation, resolves Agent Assembly, or authorizes execution.
 With no source flag, exactly one root project.yaml or project.yml must exist.
-graph and init are not implemented.
+init is not implemented.
 `;
 
 const options = {
@@ -63,7 +65,7 @@ function parseRequest(args) {
   }
   if (values.format !== undefined && !["text", "json"].includes(values.format)) throw new Error("unknown format");
   const [command] = positionals;
-  if (positionals.length > 1 || (command && !["discover", "validate", "inspect"].includes(command) && !reservedCommands.has(command))) {
+  if (positionals.length > 1 || (command && !["discover", "validate", "inspect", "graph"].includes(command) && !reservedCommands.has(command))) {
     throw new Error("unknown command or positional argument");
   }
   if (values.project !== undefined && values.file !== undefined) throw new Error("conflicting modes");
@@ -100,12 +102,18 @@ async function inspectInput(assembly) {
   return inspectManifestAssembly(assembly);
 }
 
+async function graphInput(inspection) {
+  const { graphManifestInspection } = await import("./manifest-graph.mjs");
+  return graphManifestInspection(inspection);
+}
+
 export async function runCliPrototype(args, {
   stdout = process.stdout,
   stderr = process.stderr,
   discover = discoverInput,
   validate = validateInput,
-  inspect = inspectInput
+  inspect = inspectInput,
+  graph = graphInput
 } = {}) {
   let request;
   let format = "text";
@@ -143,7 +151,7 @@ export async function runCliPrototype(args, {
       return finish(result.diagnostics.some((entry) => unsupportedCodes.has(entry.code)) ? 3 : 1,
         { diagnostics: result.diagnostics });
     }
-    if (["validate", "inspect"].includes(request.command)) {
+    if (["validate", "inspect", "graph"].includes(request.command)) {
       checks.schema = "unavailable";
       const validation = await validate(result.assembly);
       checks.schema = validation.valid ? "passed" : "failed";
@@ -151,10 +159,13 @@ export async function runCliPrototype(args, {
         return finish(1, { diagnostics: validation.diagnostics, truncated: validation.truncated });
       }
       const inventory = { documentCount: validation.documentCount, documents: result.assembly.documents };
-      if (request.command === "inspect") {
+      if (["inspect", "graph"].includes(request.command)) {
         const inspection = await inspect(result.assembly);
         if (!inspection.valid) return finish(1, { diagnostics: inspection.diagnostics });
-        return finish(0, { result: { ...inventory, inspection: inspection.inspection } });
+        if (request.command === "inspect") {
+          return finish(0, { result: { ...inventory, inspection: inspection.inspection } });
+        }
+        return finish(0, { result: { ...inventory, graph: await graph(inspection.inspection) } });
       }
       return finish(0, { result: inventory });
     }

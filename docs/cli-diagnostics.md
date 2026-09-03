@@ -1,6 +1,6 @@
 # CLI Machine-Readable Diagnostics
 
-Status: implemented experimental repository output, `formatVersion: "0.2-draft"`.
+Status: implemented experimental repository output, `formatVersion: "0.3-draft"`.
 This is not a stable public CLI contract, catalog release, or `NF-CLI` claim.
 The [repository CLI prototype](cli-prototype.md) remains unreleased maintenance
 tooling and does not resolve the pending architecture decision.
@@ -8,7 +8,8 @@ tooling and does not resolve the pending architecture decision.
 ## Usage And Streams
 
 Select `--format json` or `--format=json`. The default is `text`; explicit
-`--format text` preserves it. The format applies to discovery, validation, inspection,
+`--format text` preserves it. The format applies to discovery, validation,
+inspection, graphing,
 help, version, usage errors, reserved commands, and internal failures.
 
 For machine consumers, invoke the entry point directly:
@@ -17,6 +18,7 @@ For machine consumers, invoke the entry point directly:
 node scripts/cli-prototype.mjs validate --root examples/minimal-team --format json
 node scripts/cli-prototype.mjs discover --root examples/minimal-team --format=json
 node scripts/cli-prototype.mjs inspect --root examples/minimal-team --format json
+node scripts/cli-prototype.mjs graph --root examples/minimal-team --format json
 node scripts/cli-prototype.mjs --version --format json
 ```
 
@@ -50,7 +52,7 @@ add a manifest kind or enter the manifest schema registry.
 
 | Field | Meaning |
 | --- | --- |
-| `formatVersion` | Experimental envelope version, currently `0.2-draft`. |
+| `formatVersion` | Experimental envelope version, currently `0.3-draft`. |
 | `tool` | Fixed repository prototype name and `version: "unreleased"`; not the specification release. |
 | `supportedSpecVersions` | Accepted input versions, currently `["0.1"]`; never copied from unsupported input. |
 | `command` | Validated command name, or `null` for usage failures. Command help is reported as `help`. |
@@ -70,7 +72,7 @@ Schema setup or evaluation failure leaves schema `unavailable`; earlier
 successful discovery can still be recorded as `passed`, but no inventory is
 published with the failure.
 
-An unexpected inspection failure can leave discovery and schema `passed` while
+An unexpected inspection or graph failure can leave discovery and schema `passed` while
 the command fails with exit `4` and `result: null`. These check states alone do
 not establish successful output projection.
 
@@ -87,6 +89,9 @@ per-kind counts, resource occurrences, and selected unresolved references.
 Only this command intentionally exposes allowlisted authored IDs and reference
 targets. See [CLI Declared Inspection](cli-inspection.md) for coverage, workflow
 scope, limits, and disclosure rules; it is not an Agent Assembly view.
+Successful `graph` instead adds `result.graph`: static declaration nodes and
+selected reference edges with explicit resolution status. See
+[CLI Static Graph](cli-graph.md). Graph output is not an execution plan.
 For help and version, `result` contains `text` and all checks remain `not-run`.
 
 ## Diagnostic Fields
@@ -121,7 +126,7 @@ The following implementation-owned JSON codes are not standard `NF-*` codes:
 | --- | ---: | --- |
 | `NEXFLOW-PROTOTYPE-INSPECTION-LIMIT` | 1 | Inspection exceeds its resource or reference budget; no partial result is available. Review the selected input set. |
 | `NEXFLOW-PROTOTYPE-USAGE` | 2 | Invalid arguments; consult the prototype help. |
-| `NEXFLOW-PROTOTYPE-UNIMPLEMENTED` | 3 | Reserved `graph` or `init`; do not treat it as implemented. |
+| `NEXFLOW-PROTOTYPE-UNIMPLEMENTED` | 3 | Reserved `init`; do not treat it as implemented. |
 | `NEXFLOW-PROTOTYPE-INTERNAL` | 4 | No usable result from an attempted operation; review the trusted checkout and local schema setup. |
 
 Default text mode retains its previous generic usage, reserved-command, and
@@ -140,7 +145,7 @@ Exit code is `1`. The complete result is:
 
 ```json
 {
-  "formatVersion": "0.2-draft",
+  "formatVersion": "0.3-draft",
   "tool": { "name": "nexflow-repository-cli-prototype", "version": "unreleased" },
   "supportedSpecVersions": ["0.1"],
   "command": "validate",
@@ -189,7 +194,7 @@ redacted. Non-ASCII and control characters are escaped in the JSON byte stream;
 JSON decoding restores characters in legitimate filenames, so consumers must
 escape decoded strings when displaying them in terminals or markup. Relative
 filenames remain visible and should not contain secrets. Outside the explicit
-inspection ID and reference projection, raw manifest values,
+inspection and graph identity and reference projections, raw manifest values,
 private field names, prompt content, environment data, and caught exception
 messages are not included.
 
@@ -203,7 +208,8 @@ package release changes are required.
 
 ### Migration From `0.1-draft` To `0.2-draft`
 
-All output now uses `0.2-draft`, including errors, help, and existing commands.
+At that migration step, all output moved to `0.2-draft`, including errors,
+help, and existing commands.
 The prior closed schema could not represent successful `inspect` or its
 additional `result.inspection`. Update the pinned output schema and accepted
 version together; no old-format switch is provided. Discovery and validation
@@ -212,6 +218,15 @@ explicit root and follows discovery, schema, and inspection failure rules
 instead of always returning exit `3`. Usage without its required root returns
 exit `2`. The new inspection-limit error uses exit `1`.
 
+### Migration From `0.2-draft` To `0.3-draft`
+
+All output now uses `0.3-draft`. The prior closed schema could not represent
+successful `graph` or `result.graph`. Update the pinned output schema and
+accepted version together; no old-format switch is provided. `graph` is no
+longer reserved: it requires an explicit root and performs discovery, schema
+validation, declared inspection, and static graph construction. Existing
+command result shapes are otherwise unchanged.
+
 An incompatible change to fields, types, state meanings, stream or exit
 contracts, ordering, or redaction requires a new output version and migration
 notes. Code meaning remains governed by the diagnostic catalog. Unknown codes
@@ -219,7 +234,7 @@ must not be silently downgraded or treated as success. Stabilizing this format
 requires a separate accepted public CLI compatibility decision.
 
 Run `npm run cli-diagnostics-smoke` for schema-backed JSON contract checks,
-all seven maintained examples, process and stream checks, no-read dispatch,
+all eight maintained examples, process and stream checks, no-read dispatch,
 error classes, deterministic ordering, redaction, and truncation. CI runs it
 alongside the existing text and structural-validation checks. No complete
 catalog emitter, semantic validator, SARIF output, Agent Assembly serializer, or

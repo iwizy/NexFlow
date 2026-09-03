@@ -1,0 +1,24 @@
+specVersion: "0.1"
+kind: HandoffSet
+metadata:
+  project: solo-developer
+handoffs:
+  - id: assistant-to-maintainer
+    from:
+      - coding-assistant
+    to:
+      - solo-maintainer
+    reason: The proposed patch and validation report are ready for human review.
+    status: pending
+    artifacts:
+      - proposed-patch
+      - validation-report
+    notes:
+      - The handoff transfers review responsibility, not approval authority.
+      - Failed or skipped checks remain visible.
+    blockingIssues: []
+    acceptanceCriteria:
+      - The maintainer can identify every changed file and validation result.
+      - Scope changes and unresolved questions are explicit.
+      - No result is described as accepted before the maintainer decides.
+    nextAction: Review the patch and record an accepted, revised, or rejected decision.

@@ -34,7 +34,7 @@ after `v0.1.0`.
 | --- | --- | --- |
 | Specification | Specified in draft form | [Documentation](docs/index.md), [Manifest Reference](docs/manifest-reference.md) |
 | JSON Schemas | Implemented for 17 manifest kinds plus common definitions | [Schemas](schemas/), [Schema Guide](schemas/README.md) |
-| Reference examples | Implemented as one reduced Core Profile example and 6 complete project sets containing 99 schema-backed manifests | [Examples](examples/), [Examples Guide](examples/README.md) |
+| Reference examples | Implemented as two compact learning examples and 6 complete project sets containing 109 schema-backed manifests | [Examples](examples/), [Examples Guide](examples/README.md) |
 | Structural validation | Unified Node-based repository validation is implemented for schema and YAML syntax, manifest discovery and kind coverage, schema compilation, and all maintained examples; focused negative and model-boundary checks remain separate | `npm run validate`, `npm run negative-schema-fixtures`, [Validation](docs/validation.md) |
 | Core Profile | Implemented for minimum Project and participant slots, optional module qualifiers, dependency closure, and fail-closed omission | `npm run core-profile-smoke`, [Core Profile](docs/core-profile.md), [Profile Definition](profiles/core.yaml) |
 | Manifest discovery | Implemented for explicit local files, Project source hints, bounded Project filename selection, conservative cardinality, and multiple unique workflows | `npm run manifest-discovery-smoke`, [Manifest Discovery](docs/manifest-discovery.md) |
@@ -55,7 +55,7 @@ after `v0.1.0`.
 | Human override policy | Structured fail-closed manifest model implemented; runtime enforcement absent | [Human Override](docs/human-override.md), [RFC-0017](rfcs/RFC-0017-human-override.md) |
 | Runtime architecture decision | Review framework published; current outcome is `not-ready`, with no language or package layout selected | [Runtime Architecture Decision Review](rfcs/reviews/runtime-architecture-decision-review.md), [Runtime Options](docs/runtime-options.md), [Roadmap](docs/roadmap.md) |
 | Reference CLI | Validation-only boundary specified; not implemented | [CLI And Runtime Responsibility Boundary](docs/cli-runtime-boundary.md), [RFC-0011](rfcs/RFC-0011-reference-cli-scope.md) |
-| Repository CLI prototype | Experimental local discovery, JSON Schema validation, declared inspection, and versioned JSON output; not a reference CLI alpha, language decision, or `NF-CLI` claim | `npm run cli-prototype -- --help`, [Prototype Scope](docs/cli-prototype.md), [JSON Diagnostics](docs/cli-diagnostics.md), [Declared Inspection](docs/cli-inspection.md) |
+| Repository CLI prototype | Experimental local discovery, JSON Schema validation, declared inspection, static graphing, and versioned JSON output; not a reference CLI alpha, language decision, or `NF-CLI` claim | `npm run cli-prototype -- --help`, [Prototype Scope](docs/cli-prototype.md), [JSON Diagnostics](docs/cli-diagnostics.md), [Declared Inspection](docs/cli-inspection.md), [Static Graph](docs/cli-graph.md) |
 | Runtime and provider execution | Planned, not implemented | [Architecture](docs/architecture.md), [Runtime Options](docs/runtime-options.md) |
 | Live integrations and extension loading | Not implemented | [Compatibility Matrix](docs/compatibility-matrix.md) |
 
@@ -80,6 +80,11 @@ To see declarations and selected references, run
 `node scripts/cli-prototype.mjs inspect --root examples/minimal-team`.
 This [declared-only view](docs/cli-inspection.md) checks schemas first, but does
 not resolve references, compute effective configuration, or expose prompt bodies.
+
+To derive nodes and selected reference edges from the same bounded inventory,
+run `node scripts/cli-prototype.mjs graph --root examples/minimal-team`. The
+[static graph](docs/cli-graph.md) labels unresolved and ambiguous targets but
+does not infer execution order, runtime state, or authority.
 
 For machine consumers, use
 `node scripts/cli-prototype.mjs validate --root examples/minimal-team --format json`.

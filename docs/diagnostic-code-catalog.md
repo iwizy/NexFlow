@@ -269,7 +269,7 @@ rejected additional property names are redacted. Schema diagnostics are
 bounded, and truncation remains a failure. Parser failures retain their
 discovery codes. This does not implement candidate schema-code refinements,
 full semantic validation, or a stable public JSON diagnostic contract. The
-prototype implements an opt-in `0.2-draft` JSON envelope with an output schema,
+prototype implements an opt-in `0.3-draft` JSON envelope with an output schema,
 related safe sources, check states, deterministic ordering, and explicit
 truncation; no code is promoted to Stable by serialization.
 

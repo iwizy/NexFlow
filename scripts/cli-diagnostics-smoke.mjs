@@ -60,7 +60,8 @@ check("output format and diagnostic cap match their schema", outputSchema.proper
 const noReadCases = [
   [["--help"], 0, "help"], [["--version"], 0, "version"], [["validate", "--help"], 0, "help"],
   [["inspect", "--help"], 0, "help"], [["inspect"], 2, null],
-  ...["graph", "init"].map((command) => [[command, "--root", "not-read"], 3, command]),
+  [["graph", "--help"], 0, "help"], [["graph"], 2, null],
+  [["init", "--root", "not-read"], 3, "init"],
   [["validate"], 2, null], [["unknown-private-test-command"], 2, null],
   [["validate", "--root", fixture, "--unknown-private-test-option"], 2, null],
   [["validate", "--root", fixture, "extra-private-test-value"], 2, null],
@@ -93,7 +94,7 @@ const normalVersion = await capture(["--version"]);
 check("explicit text mode preserves default output", (await capture(["--version", "--format", "text"])).stdout === normalVersion.stdout);
 const jsonVersion = envelope("JSON version", run(["--format=json", "--version"]));
 check("tool and output versions are separate from manifest specVersion", jsonVersion?.tool.version === "unreleased"
-  && jsonVersion?.formatVersion === "0.2-draft" && jsonVersion?.supportedSpecVersions.join() === "0.1"
+  && jsonVersion?.formatVersion === "0.3-draft" && jsonVersion?.supportedSpecVersions.join() === "0.1"
   && jsonVersion?.result.text === normalVersion.stdout);
 
 let exampleCount = 0;
@@ -107,7 +108,7 @@ for (const entry of (await readdir(path.join(root, "examples"), { withFileTypes:
   }
   exampleCount += 1;
 }
-check("all seven maintained examples exercised in both JSON commands", exampleCount === 7);
+check("all eight maintained examples exercised in both JSON commands", exampleCount === 8);
 
 const directoryArgs = ["validate", "--root", fixture, "--format=json"];
 const directory = run(directoryArgs);

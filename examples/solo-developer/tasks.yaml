@@ -1,0 +1,76 @@
+specVersion: "0.1"
+kind: TaskSet
+metadata:
+  project: solo-developer
+tasks:
+  - id: define-change
+    title: Define a small project change
+    description: The maintainer records scope, acceptance criteria, and constraints before implementation.
+    status: ready
+    owner: solo-maintainer
+    participants:
+      - coding-assistant
+    dependsOn: []
+    artifacts:
+      - id: change-brief
+        type: brief
+        description: Reviewable scope, constraints, and acceptance criteria.
+        producedBy: solo-maintainer
+    capabilitiesRequired:
+      - read_repository
+      - read_context
+    acceptanceCriteria:
+      - The intended behavior and excluded work are explicit.
+      - Required validation is named before files are changed.
+      - Missing authority or context is recorded as a blocker.
+  - id: draft-change
+    title: Draft and validate the scoped change
+    description: The coding assistant prepares a patch and reports validation results without expanding scope.
+    status: proposed
+    owner: coding-assistant
+    participants:
+      - solo-maintainer
+    dependsOn:
+      - define-change
+    artifacts:
+      - id: proposed-patch
+        type: patch
+        description: Proposed repository changes for human review.
+        producedBy: coding-assistant
+      - id: validation-report
+        type: report
+        description: Commands run, outcomes, skipped checks, and remaining risks.
+        producedBy: coding-assistant
+    capabilitiesRequired:
+      - read_repository
+      - read_context
+      - write_repository
+      - execute_command
+    approvalGates:
+      - human-change-review
+    acceptanceCriteria:
+      - The patch changes only files required by the approved scope.
+      - Validation outcomes distinguish passed, failed, skipped, and not-run checks.
+      - No network, dependency, deployment, secret, or destructive authority is inferred.
+  - id: review-change
+    title: Review and decide
+    description: The maintainer reviews the patch and evidence and records a final decision.
+    status: proposed
+    owner: solo-maintainer
+    participants:
+      - coding-assistant
+    dependsOn:
+      - draft-change
+    artifacts:
+      - id: review-decision
+        type: decision
+        description: Accepted, revised, or rejected outcome with reasons and follow-up work.
+        producedBy: solo-maintainer
+    capabilitiesRequired:
+      - approve_changes
+    approvalGates:
+      - human-change-review
+    acceptanceCriteria:
+      - The maintainer reviews changed files and validation evidence.
+      - Remaining risks are accepted, assigned, or treated as blockers.
+      - Only the human maintainer records final acceptance.

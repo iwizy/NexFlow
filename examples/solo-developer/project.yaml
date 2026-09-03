@@ -1,0 +1,35 @@
+specVersion: "0.1"
+kind: Project
+metadata:
+  project: solo-developer
+  name: Solo Developer
+project:
+  id: solo-developer
+  displayName: Solo Developer
+  description: A human-owned project with one AI coding assistant and explicit review boundaries.
+  license: MIT
+  maintainers:
+    - id: solo-maintainer
+      name: Solo Maintainer
+      role: maintainer
+  defaultAutonomy: ask_before_changes
+  policies:
+    requireReview: true
+    secretHandling: Use secret references only; never place secrets in manifests.
+    destructiveActions: Denied unless a separate reviewed policy explicitly allows them.
+    productionActions: Not declared.
+  approvalGates:
+    - id: human-change-review
+      description: The solo maintainer reviews repository writes, command execution, and final acceptance.
+      requiredApprovers:
+        - solo-maintainer
+manifests:
+  actors: actors.yaml
+  agents: agents.yaml
+  capabilities: capabilities.yaml
+  permissions: permissions.yaml
+  tasks: tasks.yaml
+  workflow: workflow.yaml
+  handoffs: handoffs.yaml
+  context: context.yaml
+  events: events.yaml

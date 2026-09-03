@@ -20,7 +20,8 @@ The repository currently provides the following candidate evidence:
 - practical JSON Schemas for 17 manifest kinds plus common definitions
 - a published `v0.1.0` baseline of 7 project examples containing 113
   schema-backed manifests; the Unreleased line reduces Minimal Team to a
-  three-manifest Core Profile path and currently validates 99 manifests
+  three-manifest Core Profile path, adds the compact Solo Developer path, and
+  currently validates 109 manifests across 8 projects
 - reproducible schema syntax, structural validation, and semantic reference
   smoke commands
 - a prioritized semantic reference inventory with explicit current coverage,
@@ -110,7 +111,7 @@ runtime loading remain future work.
 
 A [disposable repository CLI prototype](cli-prototype.md) exercises command
 dispatch, discovery inventory, local JSON Schema validation, declared-only
-[inspection](cli-inspection.md), and an experimental
+[inspection](cli-inspection.md), bounded [static graphing](cli-graph.md), and an experimental
 versioned [JSON diagnostic envelope](cli-diagnostics.md). It is not a
 reference CLI alpha or a completed language-evaluation candidate; the architecture decision is still
 `not-ready`, and no runtime or package layout has been selected.

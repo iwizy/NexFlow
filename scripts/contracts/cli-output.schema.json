@@ -1,12 +1,12 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://nexflow.dev/tooling/cli-prototype/0.2-draft/output.schema.json",
+  "$id": "https://nexflow.dev/tooling/cli-prototype/0.3-draft/output.schema.json",
   "title": "Experimental repository CLI output, not a NexFlow manifest",
   "type": "object",
   "additionalProperties": false,
   "required": ["formatVersion", "tool", "supportedSpecVersions", "command", "success", "exitCode", "inputMode", "checks", "executionAuthorized", "diagnostics", "truncated", "result"],
   "properties": {
-    "formatVersion": { "const": "0.2-draft" },
+    "formatVersion": { "const": "0.3-draft" },
     "tool": { "const": { "name": "nexflow-repository-cli-prototype", "version": "unreleased" } },
     "supportedSpecVersions": { "const": ["0.1"] },
     "command": { "enum": [null, "help", "version", "discover", "validate", "inspect", "graph", "init"] },
@@ -67,6 +67,7 @@
           "properties": {
             "documentCount": { "type": "integer", "minimum": 1, "maximum": 128 },
             "inspection": { "$ref": "#/$defs/inspection" },
+            "graph": { "$ref": "#/$defs/graph" },
             "documents": {
               "type": "array", "minItems": 1, "maxItems": 128,
               "items": {
@@ -89,7 +90,7 @@
       "then": {
         "properties": {
           "success": { "const": true },
-          "command": { "enum": ["help", "version", "discover", "validate", "inspect"] },
+          "command": { "enum": ["help", "version", "discover", "validate", "inspect", "graph"] },
           "diagnostics": { "maxItems": 0 },
           "truncated": { "const": false },
           "result": { "type": "object" }
@@ -114,7 +115,7 @@
       }
     },
     {
-      "if": { "properties": { "exitCode": { "const": 0 }, "command": { "enum": ["discover", "validate", "inspect"] } } },
+      "if": { "properties": { "exitCode": { "const": 0 }, "command": { "enum": ["discover", "validate", "inspect", "graph"] } } },
       "then": {
         "properties": {
           "inputMode": { "type": "string" },
@@ -124,7 +125,7 @@
       }
     },
     {
-      "if": { "properties": { "exitCode": { "const": 0 }, "command": { "enum": ["validate", "inspect"] } } },
+      "if": { "properties": { "exitCode": { "const": 0 }, "command": { "enum": ["validate", "inspect", "graph"] } } },
       "then": { "properties": { "checks": { "properties": { "schema": { "const": "passed" } } } } }
     },
     {
@@ -135,19 +136,25 @@
       "if": { "properties": { "exitCode": { "const": 0 }, "command": { "const": "inspect" } } },
       "then": { "properties": { "result": { "required": ["inspection"] } } },
       "else": { "properties": { "result": { "not": { "type": "object", "required": ["inspection"] } } } }
+    },
+    {
+      "if": { "properties": { "exitCode": { "const": 0 }, "command": { "const": "graph" } } },
+      "then": { "properties": { "result": { "required": ["graph"] } } },
+      "else": { "properties": { "result": { "not": { "type": "object", "required": ["graph"] } } } }
     }
   ],
   "$defs": {
     "check": { "enum": ["not-run", "passed", "failed", "unavailable"] },
     "locator": { "type": ["string", "null"], "maxLength": 512 },
     "inspectionId": { "type": "string", "maxLength": 128, "pattern": "^(<redacted-id>|[a-z][a-z0-9]*(?:[-_.][a-z0-9]+)*)$" },
+    "inspectionKind": { "enum": ["project", "approval-gate", "actor", "agent", "participant", "agent-definition", "capability", "permission", "task", "artifact", "workflow", "workflow-stage", "workflow-step", "handoff", "context-source", "memory-scope", "provider", "model-profile", "prompt-set", "retrieval-profile", "event", "extension"] },
     "inspectionRecord": {
       "type": "object", "additionalProperties": false,
       "required": ["file", "path", "kind", "id", "scope"],
       "properties": {
         "file": { "type": "string", "maxLength": 512 },
         "path": { "type": "string", "maxLength": 512, "pattern": "^/" },
-        "kind": { "enum": ["project", "approval-gate", "actor", "agent", "participant", "agent-definition", "capability", "permission", "task", "artifact", "workflow", "workflow-stage", "workflow-step", "handoff", "context-source", "memory-scope", "provider", "model-profile", "prompt-set", "retrieval-profile", "event", "extension"] },
+        "kind": { "$ref": "#/$defs/inspectionKind" },
         "id": { "$ref": "#/$defs/inspectionId" },
         "scope": {
           "oneOf": [
@@ -196,6 +203,76 @@
         },
         "resources": { "type": "array", "minItems": 1, "maxItems": 1000, "items": { "$ref": "#/$defs/inspectionRecord" } },
         "references": { "type": "array", "maxItems": 2000, "items": { "$ref": "#/$defs/inspectionRecord" } }
+      }
+    },
+    "graphScope": {
+      "oneOf": [
+        { "type": "null" },
+        {
+          "type": "object", "additionalProperties": false,
+          "required": ["kind", "id"],
+          "properties": { "kind": { "const": "workflow" }, "id": { "$ref": "#/$defs/inspectionId" } }
+        }
+      ]
+    },
+    "graphNode": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "kind", "identity", "scope", "file", "path"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^n[0-9]+$" },
+        "kind": { "$ref": "#/$defs/inspectionKind" },
+        "identity": { "$ref": "#/$defs/inspectionId" },
+        "scope": { "$ref": "#/$defs/graphScope" },
+        "file": { "type": "string", "maxLength": 512 },
+        "path": { "type": "string", "maxLength": 512, "pattern": "^/" }
+      },
+      "allOf": [{
+        "if": { "properties": { "kind": { "enum": ["workflow-stage", "workflow-step"] } } },
+        "then": { "properties": { "scope": { "type": "object" } } },
+        "else": { "properties": { "scope": { "type": "null" } } }
+      }]
+    },
+    "graphEdge": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "from", "to", "candidates", "relation", "target", "status", "file", "path"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^e[0-9]+$" },
+        "from": { "type": "string", "pattern": "^n[0-9]+$" },
+        "to": { "type": ["string", "null"], "pattern": "^n[0-9]+$" },
+        "candidates": {
+          "type": "array", "maxItems": 1000, "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^n[0-9]+$" }
+        },
+        "relation": { "type": "string", "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$", "maxLength": 128 },
+        "target": {
+          "type": "object", "additionalProperties": false,
+          "required": ["kind", "identity", "scope"],
+          "properties": {
+            "kind": { "$ref": "#/$defs/inspectionKind" },
+            "identity": { "$ref": "#/$defs/inspectionId" },
+            "scope": { "$ref": "#/$defs/graphScope" }
+          }
+        },
+        "status": { "enum": ["resolved", "unresolved", "ambiguous", "redacted"] },
+        "file": { "type": "string", "maxLength": 512 },
+        "path": { "type": "string", "maxLength": 512, "pattern": "^/" }
+      },
+      "allOf": [{
+        "if": { "properties": { "target": { "properties": { "kind": { "const": "workflow-step" } } } } },
+        "then": { "properties": { "target": { "properties": { "scope": { "type": "object" } } } } },
+        "else": { "properties": { "target": { "properties": { "scope": { "type": "null" } } } } }
+      }]
+    },
+    "graph": {
+      "type": "object", "additionalProperties": false,
+      "required": ["mode", "referenceCoverage", "nodeCount", "edgeCount", "nodes", "edges"],
+      "properties": {
+        "mode": { "const": "static-declared" },
+        "referenceCoverage": { "const": "selected-fields" },
+        "nodeCount": { "type": "integer", "minimum": 1, "maximum": 1000 },
+        "edgeCount": { "type": "integer", "minimum": 0, "maximum": 2000 },
+        "nodes": { "type": "array", "minItems": 1, "maxItems": 1000, "items": { "$ref": "#/$defs/graphNode" } },
+        "edges": { "type": "array", "maxItems": 2000, "items": { "$ref": "#/$defs/graphEdge" } }
       }
     }
   }

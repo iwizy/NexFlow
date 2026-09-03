@@ -127,10 +127,12 @@ npm run cli-prototype-smoke
 npm run cli-validation-smoke
 npm run cli-diagnostics-smoke
 npm run cli-inspection-smoke
+npm run cli-graph-smoke
 npm run cli-prototype -- discover --root examples/minimal-team
 npm run cli-prototype -- validate --root examples/minimal-team
 node scripts/cli-prototype.mjs validate --root examples/minimal-team --format json
 node scripts/cli-prototype.mjs inspect --root examples/minimal-team --format json
+node scripts/cli-prototype.mjs graph --root examples/minimal-team --format json
 ```
 
 `discover` prints an inventory only; `validate` additionally checks every
@@ -157,7 +159,11 @@ or execution authority. Discovery and validation text defaults and exit
 meanings are unchanged; the JSON schema is a tooling output contract,
 not another manifest schema.
 
-`graph` and `init` remain unimplemented. There is no reference CLI
+`graph` derives a bounded [static declaration graph](cli-graph.md) after the
+same checks. Its resolution labels cover only selected inspection references;
+they do not establish full semantic validity, execution order, or authority.
+
+`init` remains unimplemented. There is no reference CLI
 package or `NF-CLI` claim, and the architecture decision remains `not-ready`.
 See [Manifest Discovery](manifest-discovery.md) for exact source and parser
 boundaries. The prototype does not replace repository-wide maintenance checks.

@@ -55,7 +55,7 @@ after `v0.1.0`.
 | Human override policy | Structured fail-closed manifest model implemented; runtime enforcement absent | [Human Override](docs/human-override.md), [RFC-0017](rfcs/RFC-0017-human-override.md) |
 | Runtime architecture decision | Review framework published; current outcome is `not-ready`, with no language or package layout selected | [Runtime Architecture Decision Review](rfcs/reviews/runtime-architecture-decision-review.md), [Runtime Options](docs/runtime-options.md), [Roadmap](docs/roadmap.md) |
 | Reference CLI | Validation-only boundary specified; not implemented | [CLI And Runtime Responsibility Boundary](docs/cli-runtime-boundary.md), [RFC-0011](rfcs/RFC-0011-reference-cli-scope.md) |
-| Repository CLI prototype | Experimental local discovery, JSON Schema validation, declared inspection, and versioned JSON output; not a reference CLI alpha, language decision, or `NF-CLI` claim | `npm run cli-prototype -- --help`, [Prototype Scope](docs/cli-prototype.md), [JSON Diagnostics](docs/cli-diagnostics.md), [Declared Inspection](docs/cli-inspection.md) |
+| Repository CLI prototype | Experimental local discovery, JSON Schema validation, declared inspection, static graphing, and versioned JSON output; not a reference CLI alpha, language decision, or `NF-CLI` claim | `npm run cli-prototype -- --help`, [Prototype Scope](docs/cli-prototype.md), [JSON Diagnostics](docs/cli-diagnostics.md), [Declared Inspection](docs/cli-inspection.md), [Static Graph](docs/cli-graph.md) |
 | Runtime and provider execution | Planned, not implemented | [Architecture](docs/architecture.md), [Runtime Options](docs/runtime-options.md) |
 | Live integrations and extension loading | Not implemented | [Compatibility Matrix](docs/compatibility-matrix.md) |
 
@@ -80,6 +80,11 @@ To see declarations and selected references, run
 `node scripts/cli-prototype.mjs inspect --root examples/minimal-team`.
 This [declared-only view](docs/cli-inspection.md) checks schemas first, but does
 not resolve references, compute effective configuration, or expose prompt bodies.
+
+To derive nodes and selected reference edges from the same bounded inventory,
+run `node scripts/cli-prototype.mjs graph --root examples/minimal-team`. The
+[static graph](docs/cli-graph.md) labels unresolved and ambiguous targets but
+does not infer execution order, runtime state, or authority.
 
 For machine consumers, use
 `node scripts/cli-prototype.mjs validate --root examples/minimal-team --format json`.

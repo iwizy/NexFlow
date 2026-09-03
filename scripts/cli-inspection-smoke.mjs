@@ -63,7 +63,7 @@ for (const [args, expected] of [
   [["inspect", "--root", fixture, "--file", "project.yaml", "--project", "project.yaml"], 2],
   [["inspect", "--root", fixture, "--root", fixture], 2],
   [["inspect", "--root", fixture, "--agent", "private-test-agent"], 2],
-  [["inspect", "--root", fixture, "extra"], 2], [["graph"], 3], [["init"], 3]
+  [["inspect", "--root", fixture, "extra"], 2], [["graph"], 2], [["init"], 3]
 ]) {
   let calls = 0;
   const forbidden = async () => { calls += 1; throw new Error("private-test-must-not-run"); };

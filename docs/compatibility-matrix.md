@@ -63,9 +63,10 @@ enforced.
 | Semantic reference smoke | Selected cross-manifest reference, active definition authority, and duplicate checks | Partial | `npm run semantic-smoke`, semantic reference inventory | Does not cover every inventoried field or establish full `NF-SEMANTIC` conformance, graph safety, or policy correctness. |
 | Runtime language evaluation | Hard gates, weighted criteria, common prototype, and evidence record for TypeScript, Python, Rust, and Go | Specified | `docs/language-evaluation-matrix.md`, `docs/runtime-options.md` | No comparable candidate prototypes, scores, language selection, package layout, or accepted Runtime Architecture Decision exists. |
 | Reference CLI | Validation-only scope proposed | Planned | RFC-0011 | No `nexflow` executable or `NF-CLI` implementation exists. |
-| Repository CLI prototype | Help, unreleased version, local discovery, structural `validate`, declared-only `inspect`, and opt-in JSON output | Partial | `docs/cli-prototype.md`, `npm run cli-prototype-smoke`, `npm run cli-validation-smoke` | Disposable maintenance tooling, not a reference CLI alpha or completed architecture candidate; no full semantic validation, stable JSON envelope, package, or conformance claim. |
-| Prototype JSON diagnostics | Experimental `formatVersion: "0.2-draft"` envelope and separate output schema | Implemented | `docs/cli-diagnostics.md`, `scripts/contracts/cli-output.schema.json`, `npm run cli-diagnostics-smoke` | Versioned repository output, not stable catalog or public CLI conformance; no semantic diagnostics, SARIF, automatic fixes, or runtime authority. |
+| Repository CLI prototype | Help, unreleased version, local discovery, structural `validate`, declared-only `inspect`, static `graph`, and opt-in JSON output | Partial | `docs/cli-prototype.md`, `npm run cli-prototype-smoke`, `npm run cli-validation-smoke` | Disposable maintenance tooling, not a reference CLI alpha or completed architecture candidate; no full semantic validation, stable JSON envelope, package, or conformance claim. |
+| Prototype JSON diagnostics | Experimental `formatVersion: "0.3-draft"` envelope and separate output schema | Implemented | `docs/cli-diagnostics.md`, `scripts/contracts/cli-output.schema.json`, `npm run cli-diagnostics-smoke` | Versioned repository output, not stable catalog or public CLI conformance; no semantic diagnostics, SARIF, automatic fixes, or runtime authority. |
 | Prototype declared inspection | Schema-first Project summary, declaration occurrences, and selected unresolved references across all 17 kinds | Implemented | `docs/cli-inspection.md`, `npm run cli-inspection-smoke` | Bounded, allowlisted projection only; no complete reference inventory, effective configuration, Agent Assembly resolver, or execution authority. |
+| Prototype static graph | Declaration nodes and selected reference edges with static resolution labels | Implemented | `docs/cli-graph.md`, `npm run cli-graph-smoke` | Text and JSON only; no full semantic graph, cycle analysis, execution order, renderer, external state, or runtime authority. |
 | Runtime | Provider-neutral requirements documented | Planned | Architecture, runtime options, roadmap | No orchestration, enforcement, provider calling, task execution, or `NF-RUNTIME` implementation exists. |
 | Extensions | Core declaration schema, namespace/lifecycle rules, future loading boundary, and maintained experimental MCP and A2A profiles | Partial | `extensions.schema.json`, `docs/extension-loading-boundary.md`, `extensions/mcp/`, `extensions/a2a/`, extension docs, examples | Loading is specified only as a safety boundary; no registry, loader, live integration, protocol implementation, or plugin execution exists. |
 
@@ -106,14 +107,16 @@ core profile definition: profiles/core.yaml
 core profile smoke: scripts/core-profile-smoke.mjs
 manifest discovery helper: scripts/lib/manifest-discovery.mjs
 manifest discovery smoke: scripts/manifest-discovery-smoke.mjs
-repository CLI prototype: scripts/cli-prototype.mjs (unreleased, discovery, schema validation, declared inspection)
+repository CLI prototype: scripts/cli-prototype.mjs (unreleased, discovery, schema validation, declared inspection, static graph)
 repository CLI prototype smoke: scripts/cli-prototype-smoke.mjs
 repository CLI schema validation helper: scripts/lib/schema-validation.mjs
 repository CLI validation smoke: scripts/cli-validation-smoke.mjs
-repository CLI JSON output: scripts/contracts/cli-output.schema.json (formatVersion 0.2-draft)
+repository CLI JSON output: scripts/contracts/cli-output.schema.json (formatVersion 0.3-draft)
 repository CLI diagnostic smoke: scripts/cli-diagnostics-smoke.mjs
 repository CLI inspection helper: scripts/lib/manifest-inspection.mjs
 repository CLI inspection smoke: scripts/cli-inspection-smoke.mjs
+repository CLI graph helper: scripts/lib/manifest-graph.mjs
+repository CLI graph smoke: scripts/cli-graph-smoke.mjs
 multi-workflow fixture: fixtures/discovery/multi-workflow/
 human override boundary smoke: scripts/human-override-schema-smoke.mjs
 mcp extension profile: extensions/mcp/profile.yaml
@@ -401,7 +404,7 @@ by the specification and RFCs. Passing it must not be presented as complete
 No reference CLI is implemented.
 
 The [repository CLI prototype](cli-prototype.md) is an unreleased command
-tool with discovery, structural validation, and declared inspection operations. It uses existing
+tool with discovery, structural validation, declared inspection, and static graph operations. It uses existing
 maintenance dependencies without installing any of the public executables
 below, selecting a language, or satisfying the architecture decision gates.
 Its `validate` command applies the local core schemas to selected input after
@@ -409,6 +412,9 @@ discovery; it does not perform full semantic or extension-profile validation.
 Its `inspect` command adds a bounded, allowlisted declaration and selected
 reference projection after schema validation, not effective configuration or
 Agent Assembly. See [CLI Declared Inspection](cli-inspection.md).
+Its `graph` command matches selected references against that bounded inventory,
+with explicit unresolved, ambiguous, and redacted states. See
+[CLI Static Graph](cli-graph.md).
 Checks cover dispatch, explicit input modes, schema selection, safe failure,
 redaction, non-mutation, and deterministic output, not `NF-CLI` conformance.
 Opt-in JSON output has a separate experimental schema and version, with

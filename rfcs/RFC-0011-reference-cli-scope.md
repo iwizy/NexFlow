@@ -181,6 +181,12 @@ nexflow inspect examples/software-team
 
 `nexflow graph` should produce a static relationship graph from manifests.
 
+The unreleased repository prototype now implements a bounded
+[static graph subset](../docs/cli-graph.md) over schema-validated declared
+inspection. It emits text or JSON nodes and selected reference edges with
+resolution labels. It does not add Mermaid or DOT output, accept this RFC,
+resolve the architecture decision, or distribute a `nexflow` executable.
+
 Initial graph views may include:
 
 - task dependencies

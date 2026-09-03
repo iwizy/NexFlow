@@ -8,6 +8,11 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Added
 
+- Added schema-first `graph` to the repository CLI prototype, deriving static
+  declaration nodes and selected reference edges from bounded inspection.
+  Edges distinguish resolved, unresolved, ambiguous, and redacted targets while
+  preserving Workflow scope. Focused graph checks run in CI. This is not an
+  execution plan, full semantic graph, renderer, or reference CLI alpha.
 - Added schema-first `inspect` to the repository CLI prototype, with Project
   summaries, declaration occurrences, and selected unresolved references for
   all 17 manifest kinds. Text and JSON preserve source pointers and workflow
@@ -40,6 +45,9 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Changed
 
+- Advanced the experimental CLI output contract from `0.2-draft` to `0.3-draft`
+  for successful static graph results. All commands emit the new version; no
+  manifest `specVersion`, schema snapshot, or specification release changes.
 - Advanced the experimental CLI output contract from `0.1-draft` to `0.2-draft`
   to represent successful inspection and its result shape. All commands emit
   the new version; migration requires updating the accepted output schema and

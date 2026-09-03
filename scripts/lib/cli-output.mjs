@@ -1,6 +1,6 @@
 import path from "node:path";
 
-export const CLI_OUTPUT_VERSION = "0.2-draft";
+export const CLI_OUTPUT_VERSION = "0.3-draft";
 export const MAX_JSON_DIAGNOSTICS = 200;
 
 function safeSource(source) {
@@ -53,10 +53,29 @@ function inspectionProjection(inspection) {
   };
 }
 
+function graphProjection(graph) {
+  const scope = (value) => value === null ? null : { kind: value.kind, id: value.id };
+  return {
+    mode: graph.mode, referenceCoverage: graph.referenceCoverage,
+    nodeCount: graph.nodeCount, edgeCount: graph.edgeCount,
+    nodes: graph.nodes.map((node) => ({
+      id: node.id, kind: node.kind, identity: node.identity, scope: scope(node.scope),
+      file: safeSource(node.file), path: node.path
+    })),
+    edges: graph.edges.map((edge) => ({
+      id: edge.id, from: edge.from, to: edge.to, candidates: [...edge.candidates],
+      relation: edge.relation,
+      target: { kind: edge.target.kind, identity: edge.target.identity, scope: scope(edge.target.scope) },
+      status: edge.status, file: safeSource(edge.file), path: edge.path
+    }))
+  };
+}
+
 // Raw manifests and helper details are never spread into the output contract.
 export function writeCliResult(outcome, format, { stdout, stderr }) {
   const { command, exitCode, inputMode, checks, diagnostics = [], truncated = false, result = null } = outcome;
   const inspection = command === "inspect" && exitCode === 0 ? inspectionProjection(result.inspection) : null;
+  const graph = command === "graph" && exitCode === 0 ? graphProjection(result.graph) : null;
   if (format === "json") {
     const entries = diagnostics.map(jsonDiagnostic).sort((left, right) => {
       for (const key of ["file", "path", "severity", "code", "kind", "keyword", "message"]) {
@@ -77,7 +96,8 @@ export function writeCliResult(outcome, format, { stdout, stderr }) {
         documentCount: result.documentCount,
         documents: result.documents.map((document) => ({ file: safeSource(document.source), kind: document.kind }))
           .sort((left, right) => compareText(left.file, right.file)),
-        ...(inspection ? { inspection } : {})
+        ...(inspection ? { inspection } : {}),
+        ...(graph ? { graph } : {})
       }
     }, 2)}\n`);
     return exitCode;
@@ -109,6 +129,21 @@ export function writeCliResult(outcome, format, { stdout, stderr }) {
       }
     }
     stdout.write("Declared inventory only. References are not resolved; effective configuration and Agent Assembly are not computed.\n");
+    stdout.write("Schema validation only. Core Profile and full semantic validation were not performed; no execution is authorized.\n");
+  } else if (command === "graph") {
+    stdout.write(`Graphed ${graph.nodeCount} node(s) and ${graph.edgeCount} edge(s) from ${result.documentCount} manifest(s) (${inputMode}).\n`);
+    stdout.write("Nodes:\n");
+    for (const node of graph.nodes) {
+      const scope = node.scope === null ? "" : ` in ${node.scope.kind} ${asciiJson(node.scope.id)}`;
+      stdout.write(`  [${node.id}] ${node.kind} ${asciiJson(node.identity)}${scope} at ${sourceLabel(node.file)} ${asciiJson(node.path)}\n`);
+    }
+    stdout.write("Reference edges:\n");
+    for (const edge of graph.edges) {
+      const destination = edge.to ?? (edge.candidates.length ? `[${edge.candidates.join(",")}]` : "?");
+      const scope = edge.target.scope === null ? "" : ` in ${edge.target.scope.kind} ${asciiJson(edge.target.scope.id)}`;
+      stdout.write(`  [${edge.id}] ${edge.from} -> ${destination} ${edge.relation} ${edge.target.kind} ${asciiJson(edge.target.identity)}${scope} (${edge.status}) at ${sourceLabel(edge.file)} ${asciiJson(edge.path)}\n`);
+    }
+    stdout.write("Static declared graph only. Selected references are resolved only against this bounded inventory; no order, runtime state, or execution is inferred.\n");
     stdout.write("Schema validation only. Core Profile and full semantic validation were not performed; no execution is authorized.\n");
   } else if (command === "validate") {
     stdout.write(`Validated ${result.documentCount} manifest(s) against the local spec 0.1 schemas (${inputMode}).\n`);

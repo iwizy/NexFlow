@@ -1,0 +1,48 @@
+specVersion: "0.1"
+kind: EventSet
+metadata:
+  project: solo-developer
+events:
+  - type: task.created
+    description: A scoped change task is created.
+    auditRequired: true
+    payload:
+      required:
+        - taskId
+        - owner
+  - type: task.completed
+    description: A declared task reaches its authored completion condition.
+    auditRequired: true
+    payload:
+      required:
+        - taskId
+        - artifacts
+  - type: handoff.created
+    description: Review responsibility is handed to the human maintainer.
+    auditRequired: true
+    payload:
+      required:
+        - handoffId
+        - from
+        - to
+  - type: review.requested
+    description: The assistant requests human review of a proposed patch.
+    auditRequired: true
+    payload:
+      required:
+        - taskId
+        - artifacts
+  - type: review.completed
+    description: The maintainer records the review outcome.
+    auditRequired: true
+    payload:
+      required:
+        - taskId
+        - result
+  - type: workflow.completed
+    description: The small-change workflow reaches the human-reviewed outcome.
+    auditRequired: true
+    payload:
+      required:
+        - workflowId
+        - outcome

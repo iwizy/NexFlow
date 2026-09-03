@@ -234,7 +234,7 @@ must not be silently downgraded or treated as success. Stabilizing this format
 requires a separate accepted public CLI compatibility decision.
 
 Run `npm run cli-diagnostics-smoke` for schema-backed JSON contract checks,
-all seven maintained examples, process and stream checks, no-read dispatch,
+all eight maintained examples, process and stream checks, no-read dispatch,
 error classes, deterministic ordering, redaction, and truncation. CI runs it
 alongside the existing text and structural-validation checks. No complete
 catalog emitter, semantic validator, SARIF output, Agent Assembly serializer, or

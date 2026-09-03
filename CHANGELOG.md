@@ -8,6 +8,10 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Added
 
+- Added a compact Solo Developer example with one human maintainer, one AI
+  coding assistant, approval-gated repository changes, local context, a
+  three-task workflow, review handoff, and audit event declarations. Its ten
+  manifests intentionally omit provider and runtime configuration.
 - Added schema-first `graph` to the repository CLI prototype, deriving static
   declaration nodes and selected reference edges from bounded inspection.
   Edges distinguish resolved, unresolved, ambiguous, and redacted targets while

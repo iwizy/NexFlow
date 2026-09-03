@@ -1,0 +1,51 @@
+specVersion: "0.1"
+kind: Workflow
+metadata:
+  project: solo-developer
+workflow:
+  id: small-change
+  displayName: Small Change
+  description: Human scope, assisted implementation, and human acceptance for a solo project.
+  triggers:
+    - task.created
+  stages:
+    - id: scope
+      displayName: Scope
+      steps:
+        - id: step-define
+          task: define-change
+          dependsOn: []
+          emits:
+            - task.completed
+    - id: implementation
+      displayName: Implementation
+      steps:
+        - id: step-draft
+          task: draft-change
+          dependsOn:
+            - step-define
+          approvalGates:
+            - human-change-review
+          emits:
+            - task.completed
+            - handoff.created
+            - review.requested
+    - id: review
+      displayName: Review
+      steps:
+        - id: step-review
+          task: review-change
+          dependsOn:
+            - step-draft
+          approvalGates:
+            - human-change-review
+          emits:
+            - review.completed
+            - workflow.completed
+  dependencies:
+    - from: step-define
+      to: step-draft
+      type: blocks
+    - from: step-draft
+      to: step-review
+      type: blocks

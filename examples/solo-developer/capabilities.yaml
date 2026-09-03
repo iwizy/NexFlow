@@ -1,0 +1,35 @@
+specVersion: "0.1"
+kind: CapabilitySet
+metadata:
+  project: solo-developer
+capabilities:
+  - id: read_repository
+    description: Read files from the selected project repository.
+    risk: low
+    category: repository
+    requiresApprovalByDefault: false
+    auditRecommended: false
+  - id: read_context
+    description: Read the declared local project context.
+    risk: low
+    category: context
+    requiresApprovalByDefault: false
+    auditRecommended: true
+  - id: write_repository
+    description: Modify files inside an approved task scope.
+    risk: high
+    category: repository
+    requiresApprovalByDefault: true
+    auditRecommended: true
+  - id: execute_command
+    description: Run explicitly reviewed local validation commands.
+    risk: high
+    category: runtime
+    requiresApprovalByDefault: true
+    auditRecommended: true
+  - id: approve_changes
+    description: Record the human decision to accept or reject a proposed change.
+    risk: high
+    category: governance
+    requiresApprovalByDefault: false
+    auditRecommended: true

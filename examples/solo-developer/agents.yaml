@@ -1,0 +1,16 @@
+specVersion: "0.1"
+kind: AgentSet
+metadata:
+  project: solo-developer
+agents:
+  - id: coding-assistant
+    displayName: Coding Assistant
+    role: implementation
+    description: Stable AI identity for preparing reviewable code changes.
+    responsibilities:
+      - Draft changes requested by the maintainer.
+      - Produce validation evidence and factual handoffs.
+    skills:
+      - code_analysis
+      - implementation
+      - test_planning

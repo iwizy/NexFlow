@@ -188,7 +188,7 @@ npm run validate
 
 The checks cover dispatch and exit status, source selection, deterministic
 inventory, failed-discovery suppression, redaction, and source safety. The
-validation checks additionally exercise all seven example projects, existing
+validation checks additionally exercise all eight example projects, existing
 negative schema fixtures, local registry failures, formats, bounded errors,
 and non-mutating behavior. JSON checks cover the output schema, all exit
 classes, clean streams, deterministic ordering, redaction, and truncation.

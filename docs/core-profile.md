@@ -146,8 +146,8 @@ The repository currently provides:
 - focused conformance and dependency-closure fixtures
 - focused explicit-file and Project source-hint discovery with multiple unique
   Workflow documents
-- one reduced maintained Core Profile example and six complete examples that
-  remain backward-compatible
+- two compact maintained examples, including the reduced Core Profile start,
+  and six complete examples that remain backward-compatible
 
 The repository does not yet provide directory scanning, a separate project
 index, bundle discovery, stable CLI diagnostics, complete dependency closure

@@ -108,7 +108,7 @@ for (const entry of (await readdir(path.join(root, "examples"), { withFileTypes:
   }
   exampleCount += 1;
 }
-check("all seven maintained examples exercised in both JSON commands", exampleCount === 7);
+check("all eight maintained examples exercised in both JSON commands", exampleCount === 8);
 
 const directoryArgs = ["validate", "--root", fixture, "--format=json"];
 const directory = run(directoryArgs);

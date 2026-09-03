@@ -94,7 +94,7 @@ for (const entry of (await readdir(path.join(root, "examples"), { withFileTypes:
   for (const row of inspection.summary) coveredKinds.add(row.kind);
   exampleCount += 1;
 }
-check("all seven projects and 17 manifest kinds inspected", exampleCount === 7 && coveredKinds.size === 17);
+check("all eight projects and 17 manifest kinds inspected", exampleCount === 8 && coveredKinds.size === 17);
 
 const args = ["inspect", "--root", minimalRoot, "--format=json"];
 const minimalResult = run(args);

@@ -77,7 +77,14 @@ for (const entry of (await readdir(path.join(root, "examples"), { withFileTypes:
     && graph.edges.every((edge, index) => edge.id === `e${index}`));
   exampleCount += 1;
 }
-check("all seven maintained projects graph successfully", exampleCount === 7);
+check("all eight maintained projects graph successfully", exampleCount === 8);
+
+const solo = envelope("Solo Developer graph", run([
+  "graph", "--root", path.join(root, "examples", "solo-developer"), "--format=json"
+]));
+check("Solo Developer keeps every selected relationship explicit", solo?.result.documentCount === 10
+  && solo?.result.graph.nodeCount === 35 && solo?.result.graph.edgeCount === 55
+  && solo?.result.graph.edges.every((edge) => edge.status === "resolved"));
 
 const args = ["graph", "--root", minimalRoot, "--format=json"];
 const minimalResult = run(args);

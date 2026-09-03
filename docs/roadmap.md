@@ -20,7 +20,8 @@ The repository currently provides the following candidate evidence:
 - practical JSON Schemas for 17 manifest kinds plus common definitions
 - a published `v0.1.0` baseline of 7 project examples containing 113
   schema-backed manifests; the Unreleased line reduces Minimal Team to a
-  three-manifest Core Profile path and currently validates 99 manifests
+  three-manifest Core Profile path, adds the compact Solo Developer path, and
+  currently validates 109 manifests across 8 projects
 - reproducible schema syntax, structural validation, and semantic reference
   smoke commands
 - a prioritized semantic reference inventory with explicit current coverage,

@@ -113,7 +113,7 @@ for (const entry of (await readdir(path.join(root, "examples"), { withFileTypes:
   exampleCount += 1;
   manifestCount += result.documentCount;
 }
-check("all maintained example sets exercised", exampleCount === 7 && manifestCount === 99);
+check("all maintained example sets exercised", exampleCount === 8 && manifestCount === 109);
 
 const directory = run(["validate", "--root", fixture]);
 const hinted = run(["validate", "--root", fixture, "--project", "project.yaml"]);

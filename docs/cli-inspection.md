@@ -185,6 +185,7 @@ npm run cli-inspection-smoke
 CI exercises all maintained examples and manifest kinds, schema-first failures,
 all source-selection modes, scoped references, unresolved and duplicate
 declarations, exact limits and overflow, deterministic JSON and text,
-redaction, and non-mutation. No extra maintained example project is introduced.
+redaction, and non-mutation. The command does not require a dedicated example
+project.
 The Runtime Architecture Decision, reference CLI distribution, full semantic
 validation, Agent Assembly resolution, and runtime execution remain separate.

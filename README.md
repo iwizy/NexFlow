@@ -56,7 +56,7 @@ after `v0.1.0`.
 | Credential handling policy | Structured fail-closed manifest model and focused checks implemented; credential broker, values, and runtime mediation absent | `npm run credential-handling-schema-smoke`, [Credential Handling](docs/credential-handling.md) |
 | Runtime architecture decision | Review framework published; current outcome is `not-ready`, with no language or package layout selected | [Runtime Architecture Decision Review](rfcs/reviews/runtime-architecture-decision-review.md), [Runtime Options](docs/runtime-options.md), [Roadmap](docs/roadmap.md) |
 | Reference CLI | Validation-only boundary specified; not implemented | [CLI And Runtime Responsibility Boundary](docs/cli-runtime-boundary.md), [RFC-0011](rfcs/RFC-0011-reference-cli-scope.md) |
-| Repository CLI prototype | Experimental local discovery, JSON Schema validation, declared inspection, static graphing, and versioned JSON output; not a reference CLI alpha, language decision, or `NF-CLI` claim | `npm run cli-prototype -- --help`, [Prototype Scope](docs/cli-prototype.md), [JSON Diagnostics](docs/cli-diagnostics.md), [Declared Inspection](docs/cli-inspection.md), [Static Graph](docs/cli-graph.md) |
+| Repository CLI prototype | Experimental local discovery, JSON Schema validation, declared inspection, static graphing, bounded starter initialization, and versioned JSON output; not a reference CLI alpha, language decision, or `NF-CLI` claim | `npm run cli-prototype -- --help`, [Prototype Scope](docs/cli-prototype.md), [JSON Diagnostics](docs/cli-diagnostics.md), [Declared Inspection](docs/cli-inspection.md), [Static Graph](docs/cli-graph.md), [Starter Initialization](docs/cli-init.md) |
 | Runtime and provider execution | Planned, not implemented | [Architecture](docs/architecture.md), [Runtime Options](docs/runtime-options.md) |
 | Live integrations and extension loading | Not implemented | [Compatibility Matrix](docs/compatibility-matrix.md) |
 
@@ -86,6 +86,12 @@ To derive nodes and selected reference edges from the same bounded inventory,
 run `node scripts/cli-prototype.mjs graph --root examples/minimal-team`. The
 [static graph](docs/cli-graph.md) labels unresolved and ambiguous targets but
 does not infer execution order, runtime state, or authority.
+
+To create a minimal human-led starter in an existing directory, run
+`node scripts/cli-prototype.mjs init --root path/to/project --id my-project`.
+The [bounded initializer](docs/cli-init.md) creates three provider-neutral
+manifests, skips exact matches, and refuses conflicting target files without an
+overwrite mode.
 
 For machine consumers, use
 `node scripts/cli-prototype.mjs validate --root examples/minimal-team --format json`.

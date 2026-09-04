@@ -8,6 +8,13 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Added
 
+- Added bounded `init` to the repository CLI prototype. It writes a built-in,
+  versioned three-manifest Core Profile starter into an explicit existing
+  directory, uses provider-neutral `suggest_only` and human-review defaults,
+  skips exact template matches, and refuses conflicting files or symbolic
+  links without an overwrite mode. Focused init checks run in CI. This does not
+  initialize a runtime, install dependencies, configure providers, or create a
+  reference CLI release.
 - Added a structured, fail-closed credential handling policy with opaque
   requirement references, exact actor, purpose, capability, and target scope,
   operation-only leases, fixed no-ambient and no-exposure controls, approval,
@@ -55,6 +62,10 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Changed
 
+- Advanced the experimental CLI output contract from `0.3-draft` to
+  `0.4-draft` for successful initialization reports and init-specific failure
+  diagnostics. Existing read-only command results are unchanged; no manifest
+  `specVersion`, schema snapshot, or specification release changes.
 - Advanced the experimental CLI output contract from `0.2-draft` to `0.3-draft`
   for successful static graph results. All commands emit the new version; no
   manifest `specVersion`, schema snapshot, or specification release changes.

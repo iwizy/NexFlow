@@ -121,12 +121,15 @@ runtime loading remain future work.
 
 A [disposable repository CLI prototype](cli-prototype.md) exercises command
 dispatch, discovery inventory, local JSON Schema validation, declared-only
-[inspection](cli-inspection.md), bounded [static graphing](cli-graph.md), and an experimental
+[inspection](cli-inspection.md), bounded [static graphing](cli-graph.md),
+[starter initialization](cli-init.md), and an experimental
 versioned [JSON diagnostic envelope](cli-diagnostics.md). It is not a
 reference CLI alpha or a completed language-evaluation candidate; the architecture decision is still
 `not-ready`, and no runtime or package layout has been selected.
 Inspection lists declarations and selected references without resolving them;
 it does not implement the separate Agent Assembly contract.
+Initialization writes only a three-manifest, provider-neutral Core Profile
+starter into an explicit local destination and does not initialize a runtime.
 
 ## Milestone 2: Community Review
 

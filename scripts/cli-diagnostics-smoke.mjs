@@ -61,7 +61,7 @@ const noReadCases = [
   [["--help"], 0, "help"], [["--version"], 0, "version"], [["validate", "--help"], 0, "help"],
   [["inspect", "--help"], 0, "help"], [["inspect"], 2, null],
   [["graph", "--help"], 0, "help"], [["graph"], 2, null],
-  [["init", "--root", "not-read"], 3, "init"],
+  [["init", "--root", "not-read"], 2, null],
   [["validate"], 2, null], [["unknown-private-test-command"], 2, null],
   [["validate", "--root", fixture, "--unknown-private-test-option"], 2, null],
   [["validate", "--root", fixture, "extra-private-test-value"], 2, null],
@@ -75,9 +75,9 @@ const noReadCases = [
 for (const [args, expected, command] of noReadCases) {
   let reads = 0;
   const forbidden = async () => { reads += 1; throw new Error("private-test-no-read"); };
-  const result = await capture(["--format=json", ...args], { discover: forbidden, validate: forbidden });
+  const result = await capture(["--format=json", ...args], { discover: forbidden, validate: forbidden, initialize: forbidden });
   const output = envelope(`no-read ${JSON.stringify(args)}`, result);
-  check("usage, help, version, and reserved commands never load input", reads === 0 && result.code === expected
+  check("usage, help, and version never perform project work", reads === 0 && result.code === expected
     && output?.command === command && output?.checks.discovery === "not-run" && output?.checks.schema === "not-run"
     && !result.stdout.includes("private-test-") && !result.stdout.includes(fixture));
 }
@@ -94,7 +94,7 @@ const normalVersion = await capture(["--version"]);
 check("explicit text mode preserves default output", (await capture(["--version", "--format", "text"])).stdout === normalVersion.stdout);
 const jsonVersion = envelope("JSON version", run(["--format=json", "--version"]));
 check("tool and output versions are separate from manifest specVersion", jsonVersion?.tool.version === "unreleased"
-  && jsonVersion?.formatVersion === "0.3-draft" && jsonVersion?.supportedSpecVersions.join() === "0.1"
+  && jsonVersion?.formatVersion === "0.4-draft" && jsonVersion?.supportedSpecVersions.join() === "0.1"
   && jsonVersion?.result.text === normalVersion.stdout);
 
 let exampleCount = 0;

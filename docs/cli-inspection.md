@@ -55,7 +55,7 @@ association and Workflow identity checks still apply before this projection.
 ## JSON Contract
 
 Use the direct Node invocation for machine consumers, avoiding npm lifecycle
-logging. The [JSON envelope](cli-diagnostics.md) has `formatVersion: "0.3-draft"`.
+logging. The [JSON envelope](cli-diagnostics.md) has `formatVersion: "0.4-draft"`.
 Successful `inspect` retains `result.documentCount` and `result.documents`, and
 adds `result.inspection`. Any failure has `result: null`.
 
@@ -172,10 +172,11 @@ check the overall failure state, not infer success from that field.
 
 ## Compatibility And Verification
 
-The current output contract is `0.3-draft`. Inspection was introduced in
-`0.2-draft`; static graph output subsequently advanced the shared envelope.
-Update the accepted version and schema together. Existing inspection fields are
-unchanged by `0.3-draft`. Manifest `specVersion`, schemas, release tags, and the
+The current output contract is `0.4-draft`. Inspection was introduced in
+`0.2-draft`; static graph and starter initialization subsequently advanced the
+shared envelope. Update the accepted version and schema together. Existing
+inspection fields are unchanged by `0.3-draft` and `0.4-draft`. Manifest
+`specVersion`, schemas, release tags, and the
 README release badge do not change with this experimental tooling format.
 
 ```sh

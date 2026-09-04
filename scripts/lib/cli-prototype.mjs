@@ -3,7 +3,8 @@ import { parseArgs } from "node:util";
 import { writeCliResult } from "./cli-output.mjs";
 
 const version = "NexFlow repository CLI prototype (unreleased; spec 0.1)";
-const reservedCommands = new Set(["init"]);
+const projectIdPattern = /^[a-z][a-z0-9]*(?:[-_][a-z0-9]+)*$/u;
+const unsafeDisplayNamePattern = /[\u0000-\u001f\u007f-\u009f\u202a-\u202e\u2066-\u2069]/u;
 const unsupportedCodes = new Set([
   "NF-DISCOVERY-UNSUPPORTED-VERSION",
   "NF-DISCOVERY-UNSUPPORTED-KIND",
@@ -19,6 +20,7 @@ Usage:
   npm run cli-prototype -- validate --root <directory> [--project <file> | --file <file> ...] [--format text|json]
   npm run cli-prototype -- inspect --root <directory> [--project <file> | --file <file> ...] [--format text|json]
   npm run cli-prototype -- graph --root <directory> [--project <file> | --file <file> ...] [--format text|json]
+  npm run cli-prototype -- init --root <directory> --id <project-id> [--name <display-name>] [--format text|json]
 
 For JSON without npm logging: node scripts/cli-prototype.mjs <command> --root <directory> --format json
 JSON is one experimental versioned result on stdout, including errors; stderr stays empty.
@@ -27,9 +29,9 @@ discover builds a source inventory only. Schema and semantic validation are not 
 validate checks the discovered manifests against the local spec 0.1 JSON Schemas only.
 inspect summarizes declarations and selected references after discovery and schema validation.
 graph derives static nodes and reference edges from the declared inspection.
+init writes a minimal human-led starter into an explicit existing directory.
 No command performs full semantic validation, resolves Agent Assembly, or authorizes execution.
 With no source flag, exactly one root project.yaml or project.yml must exist.
-init is not implemented.
 `;
 
 const options = {
@@ -38,8 +40,19 @@ const options = {
   root: { type: "string" },
   project: { type: "string" },
   file: { type: "string", multiple: true },
-  format: { type: "string" }
+  format: { type: "string" },
+  id: { type: "string" },
+  name: { type: "string" }
 };
+
+function validProjectId(value) {
+  return typeof value === "string" && value.length <= 128 && projectIdPattern.test(value);
+}
+
+function validDisplayName(value) {
+  return typeof value === "string" && value.trim() === value && value.length > 0
+    && value.length <= 128 && !unsafeDisplayNamePattern.test(value);
+}
 
 // Detect an explicit JSON option even when strict usage validation will fail.
 // Tokenization keeps option values and everything after -- from selecting output.
@@ -65,19 +78,27 @@ function parseRequest(args) {
   }
   if (values.format !== undefined && !["text", "json"].includes(values.format)) throw new Error("unknown format");
   const [command] = positionals;
-  if (positionals.length > 1 || (command && !["discover", "validate", "inspect", "graph"].includes(command) && !reservedCommands.has(command))) {
+  if (positionals.length > 1 || (command && !["discover", "validate", "inspect", "graph", "init"].includes(command))) {
     throw new Error("unknown command or positional argument");
   }
   if (values.project !== undefined && values.file !== undefined) throw new Error("conflicting modes");
   if (values.help && values.version) throw new Error("conflicting informational options");
   if (values.help || values.version || args.length === 0) {
-    if (values.root !== undefined || values.project !== undefined || values.file !== undefined || (values.version && command)) {
+    if (values.root !== undefined || values.project !== undefined || values.file !== undefined
+      || values.id !== undefined || values.name !== undefined || (values.version && command)) {
       throw new Error("unexpected input options");
     }
     return { command: values.version ? "version" : "help" };
   }
   if (!command) throw new Error("missing command");
-  if (reservedCommands.has(command)) return { command };
+  if (command === "init") {
+    if (!values.root?.trim() || values.project !== undefined || values.file !== undefined
+      || !validProjectId(values.id) || (values.name !== undefined && !validDisplayName(values.name))) {
+      throw new Error("invalid init input");
+    }
+    return { command, root: values.root, projectId: values.id, displayName: values.name };
+  }
+  if (values.id !== undefined || values.name !== undefined) throw new Error("unexpected init option");
   if (!values.root?.trim() || values.project?.trim() === "" || values.file?.some((file) => !file.trim())) {
     throw new Error("missing input");
   }
@@ -107,13 +128,19 @@ async function graphInput(inspection) {
   return graphManifestInspection(inspection);
 }
 
+async function initProject(request) {
+  const { initializeProject } = await import("./project-init.mjs");
+  return initializeProject(request);
+}
+
 export async function runCliPrototype(args, {
   stdout = process.stdout,
   stderr = process.stderr,
   discover = discoverInput,
   validate = validateInput,
   inspect = inspectInput,
-  graph = graphInput
+  graph = graphInput,
+  initialize = initProject
 } = {}) {
   let request;
   let format = "text";
@@ -138,8 +165,14 @@ export async function runCliPrototype(args, {
   if (request.command === "version") {
     return finish(0, { result: { text: `${version}\n` } });
   }
-  if (reservedCommands.has(request.command)) {
-    return failure(3, "NEXFLOW-PROTOTYPE-UNIMPLEMENTED", `${request.command} is not implemented in the repository CLI prototype.`);
+  if (request.command === "init") {
+    try {
+      const initialized = await initialize(request);
+      if (!initialized.valid) return finish(1, { diagnostics: initialized.diagnostics });
+      return finish(0, { result: initialized });
+    } catch {
+      return failure(4, "NEXFLOW-PROTOTYPE-INTERNAL", "Internal prototype failure. No successful initialization or execution result is available.");
+    }
   }
 
   try {

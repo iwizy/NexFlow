@@ -56,14 +56,14 @@ function envelope(name, result) {
 for (const [args, expected] of [
   [["graph"], 2], [["graph", "--help"], 0], [["graph", "--root", ""], 2],
   [["graph", "--root", fixture, "--file", "project.yaml", "--project", "project.yaml"], 2],
-  [["graph", "--root", fixture, "extra"], 2], [["init"], 3]
+  [["graph", "--root", fixture, "extra"], 2], [["init"], 2]
 ]) {
   let calls = 0;
   const forbidden = async () => { calls += 1; throw new Error("private-test-must-not-run"); };
   const output = envelope("no-read graph dispatch", await capture([...args, "--format=json"], {
     discover: forbidden, validate: forbidden, inspect: forbidden, graph: forbidden
   }));
-  check("help, usage errors, and reserved commands perform no work", calls === 0 && output?.exitCode === expected);
+  check("help and usage errors perform no work", calls === 0 && output?.exitCode === expected);
 }
 
 let exampleCount = 0;

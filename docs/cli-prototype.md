@@ -5,7 +5,7 @@ Status: Unreleased, disposable repository tooling; not the reference CLI alpha.
 The [Runtime Architecture Decision Review](../rfcs/reviews/runtime-architecture-decision-review.md)
 is still `not-ready`. This prototype exercises command dispatch, local
 manifest discovery, structural validation, declared inspection, static graphing,
-and experimental JSON output using the existing maintenance
+bounded starter initialization, and experimental JSON output using the existing maintenance
 dependencies. It does not select a CLI or runtime language, establish a package layout, install a
 `nexflow` executable, or claim `NF-CLI` conformance. It is not a completed
 candidate for the [common language evaluation](language-evaluation-matrix.md).
@@ -15,7 +15,7 @@ Promotion to a reference CLI still requires the accepted architecture decision.
 
 The entry point is [`scripts/cli-prototype.mjs`](../scripts/cli-prototype.mjs).
 Argument handling and output are separate from the discovery, schema
-validation, inspection, and graph helpers. Help, version, usage failures, and unsupported commands do
+validation, inspection, graph, and initialization helpers. Help, version, and usage failures do
 not load manifests or schemas. Schema loading starts only after successful
 discovery for `validate`, `inspect`, or `graph`.
 
@@ -34,6 +34,10 @@ The working operations are:
 - `graph`: the same schema-first inspection followed by static matching of
   selected reference edges to declaration nodes. See
   [CLI Static Graph](cli-graph.md) for resolution and disclosure boundaries.
+- `init`: writes the built-in `minimal-team@0.1-draft` starter into an explicit
+  existing directory, without overwriting conflicts. See
+  [CLI Starter Initialization](cli-init.md) for its file, identity, write, and
+  safety contract.
 
 None of these commands performs Core Profile checks, full semantic validation, Agent
 Assembly inspection, or extension-profile validation. Association and
@@ -41,8 +45,9 @@ cardinality checks during discovery are not complete reference resolution.
 Missing actors, unresolved dependencies, and policy conflicts may therefore
 remain in structurally valid input. Success never authorizes execution.
 
-`init` remains a reserved, unimplemented command that fails
-explicitly. A discovery-only operation never prints a validation result.
+A discovery-only operation never prints a validation result. Initialization
+does not run discovery or schema validation while writing; template validity is
+covered by repository checks.
 
 ## Usage
 
@@ -63,6 +68,8 @@ node scripts/cli-prototype.mjs inspect --root examples/minimal-team
 node scripts/cli-prototype.mjs inspect --root examples/software-team --format json
 node scripts/cli-prototype.mjs graph --root examples/minimal-team
 node scripts/cli-prototype.mjs graph --root examples/software-team --format json
+mkdir /tmp/nexflow-starter
+node scripts/cli-prototype.mjs init --root /tmp/nexflow-starter --id nexflow-starter
 ```
 
 An explicit `--root` is required. There is no implicit current-directory or
@@ -75,7 +82,7 @@ of three ways:
 | `--project relative/path.yml` | Load that Project and its source hints. Hints are relative to `--root`, not to the Project's parent directory. |
 | Repeated `--file relative/path.yml` | Load only the explicit list. Project hints are not followed. |
 
-All four commands use this same selection contract, including the requirement for
+The four read-only project commands use this same selection contract, including the requirement for
 exactly one Project. A lone AgentSet is not a supported input assembly. In
 explicit-file mode, files named by Project hints are not loaded or validated
 unless explicitly selected; a pass covers only the supplied files, not
@@ -89,6 +96,11 @@ containment, version, kind, parsing, size, count, and cardinality rules.
 There is no recursive scan, glob expansion, ignore-file processing, bundle
 expansion, stdin input, remote fetching, or source auto-completion.
 
+`init` instead requires `--root` and `--id`; optional `--name` sets the display
+name. It does not accept `--project` or `--file`. The destination must already
+be a non-symlinked directory. Exact starter matches are skipped, while any
+different file, directory, or symlink at a target name prevents every write.
+
 ## Output And Exit Status
 
 Text output is experimental and identified by the repository revision, not a
@@ -100,10 +112,10 @@ It is not a stable public CLI output contract. `--format text` is the default.
 
 | Exit status | Meaning |
 | ---: | --- |
-| `0` | Help, prototype version, successful `discover`, structural `validate`, declared-only `inspect`, or static `graph`. |
-| `1` | Invalid, missing, ambiguous, or unsafe discovery input, a schema-invalid manifest, or an inspection output limit. |
+| `0` | Help, prototype version, successful `discover`, structural `validate`, declared-only `inspect`, static `graph`, or bounded `init`. |
+| `1` | Invalid, missing, ambiguous, or unsafe discovery input, a schema-invalid manifest, an inspection output limit, or an init destination or target conflict. |
 | `2` | Invalid command-line usage. |
-| `3` | Known unimplemented command or unsupported version, kind, or source hint. |
+| `3` | Unsupported manifest version, kind, or source hint. |
 | `4` | Unexpected internal failure, including an unavailable or uncompilable local schema snapshot, without a raw exception or stack trace. |
 
 Any discovery error suppresses the success inventory. Diagnostic codes remain
@@ -163,7 +175,9 @@ of discovery. It is not a replacement for the repository check suite.
 ## Safety Boundary
 
 The prototype reads selected local manifests, its own tooling, and, for
-`validate` and `inspect`, the repository-owned schemas. It writes only stdout and stderr.
+`validate`, `inspect`, and `graph`, the repository-owned schemas. Read-only
+commands write only stdout and stderr. `init` may create only its three named
+starter files inside the explicit destination; it has no overwrite mode.
 It has no network, provider SDK, credential, subprocess, executable
 extension, runtime, or output-file mode. Commands and remote locators found in
 manifest content remain inert data. Missing modules are not auto-discovered
@@ -182,6 +196,7 @@ npm run cli-validation-smoke
 npm run cli-diagnostics-smoke
 npm run cli-inspection-smoke
 npm run cli-graph-smoke
+npm run cli-init-smoke
 npm run manifest-discovery-smoke
 npm run validate
 ```
@@ -197,6 +212,8 @@ coverage, workflow scope, duplicate and unresolved identities, bounded output,
 and disclosure controls. Graph checks additionally cover static target matching,
 scoped resolution, ambiguity, unresolved and redacted targets, and closed output
 projection. CI runs them alongside existing repository checks.
+Init checks cover schema-valid generation, idempotence, conflict handling,
+symlink rejection, relative reporting, and the closed JSON result.
 No schema or example migration is needed; no manifest fields or accepted
 schema versions change.
 

@@ -13,6 +13,7 @@
     "cli-prototype": "node scripts/cli-prototype.mjs",
     "cli-diagnostics-smoke": "node scripts/cli-diagnostics-smoke.mjs",
     "cli-graph-smoke": "node scripts/cli-graph-smoke.mjs",
+    "cli-init-smoke": "node scripts/cli-init-smoke.mjs",
     "cli-inspection-smoke": "node scripts/cli-inspection-smoke.mjs",
     "cli-prototype-smoke": "node scripts/cli-prototype-smoke.mjs",
     "cli-validation-smoke": "node scripts/cli-validation-smoke.mjs",

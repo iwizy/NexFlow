@@ -118,12 +118,13 @@ replay, task update, or file write. `checks.semantic` remains `not-run` and
 
 ## Compatibility And Verification
 
-The experimental output contract advances from `0.2-draft` to `0.3-draft` for
-every command. The previous closed schema did not permit successful `graph` or
+Static graph output was introduced when the experimental contract advanced
+from `0.2-draft` to `0.3-draft`. The previous closed schema did not permit successful `graph` or
 `result.graph`. Consumers must update the accepted output schema and version
-together; there is no old-format switch. Existing `discover`, `validate`, and
-`inspect` result shapes are otherwise unchanged. Manifest `specVersion`, schema
-snapshots, release tags, and the README release badge do not change.
+together; there is no old-format switch. The current shared envelope is
+`0.4-draft` after adding starter initialization; graph fields remain unchanged.
+Manifest `specVersion`, schema snapshots, release tags, and the README release
+badge do not change.
 
 ```sh
 npm run cli-graph-smoke

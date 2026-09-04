@@ -101,3 +101,15 @@ events:
         - decision
         - ruleIds
         - redactionApplied
+  - type: credential.decision
+    description: A credential policy decision is recorded without credential material or broker locators.
+    retention: Project policy.
+    auditRequired: true
+    payload:
+      required:
+        - actor
+        - credentialRef
+        - purpose
+        - target
+        - decision
+        - redactionApplied

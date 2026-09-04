@@ -256,9 +256,11 @@ overruns use `LIMIT-EXCEEDED`.
 The [repository CLI prototype](cli-prototype.md) emits these existing draft
 codes with generic messages and redacted rejected locators. It does not
 stabilize the catalog or add standard codes for its usage and internal errors.
-JSON mode instead uses implementation-owned `NEXFLOW-PROTOTYPE-USAGE`,
-`NEXFLOW-PROTOTYPE-UNIMPLEMENTED`, and `NEXFLOW-PROTOTYPE-INTERNAL` codes with
-their existing exit meanings. Inspection also uses the implementation-owned
+JSON mode instead uses implementation-owned `NEXFLOW-PROTOTYPE-USAGE` and
+`NEXFLOW-PROTOTYPE-INTERNAL` codes with their existing exit meanings.
+Initialization uses `NEXFLOW-PROTOTYPE-INIT-CONFLICT` and
+`NEXFLOW-PROTOTYPE-INIT-DESTINATION` with exit `1`; these describe bounded
+authoring failures, not manifest validity. Inspection also uses the implementation-owned
 `NEXFLOW-PROTOTYPE-INSPECTION-LIMIT` code with exit `1` when its resource or
 reference output budget is exceeded, without a partial result. These are not
 a new `NF-*` family.
@@ -269,7 +271,7 @@ rejected additional property names are redacted. Schema diagnostics are
 bounded, and truncation remains a failure. Parser failures retain their
 discovery codes. This does not implement candidate schema-code refinements,
 full semantic validation, or a stable public JSON diagnostic contract. The
-prototype implements an opt-in `0.3-draft` JSON envelope with an output schema,
+prototype implements an opt-in `0.4-draft` JSON envelope with an output schema,
 related safe sources, check states, deterministic ordering, and explicit
 truncation; no code is promoted to Stable by serialization.
 

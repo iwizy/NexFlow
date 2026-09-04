@@ -215,10 +215,14 @@ grant. Before each operation, a future runtime must intersect:
 7. autonomy limits
 8. context and memory access boundaries
 9. network access policy
-10. credential bindings
+10. credential handling policy and an operation-scoped external binding
 11. current human-override state
 
 An empty or unresolved intersection denies the operation.
+
+Credential references and bindings follow the separate
+[Credential Handling](credential-handling.md) model; extension installation or
+activation cannot create either credential authority or direct actor exposure.
 
 `requiredCapabilities` is a precondition declaration. It does not create a
 capability, attach it to an actor, grant permission, satisfy approval, open a

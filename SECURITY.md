@@ -31,6 +31,11 @@ vulnerability details in a public issue.
 - Auditable events for meaningful state changes.
 - Clear memory retention and visibility boundaries.
 
+The specification's [Credential Handling](docs/credential-handling.md) model
+requires external-only values, deny-by-default policy, operation-scoped
+mediation, no ambient discovery or direct actor exposure, and redacted audit.
+This repository does not implement a credential broker or runtime enforcement.
+
 ## Supported Versions
 
 Only the current draft specification is maintained:

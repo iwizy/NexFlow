@@ -316,6 +316,7 @@ policy.
 - [Security Model](security-model.md)
 - [Capability Model](capability-model.md)
 - [Approval Gates](approval-gates.md)
+- [Credential Handling](credential-handling.md)
 - [Context Model](context-model.md)
 - [Provider Abstraction](provider-abstraction.md)
 - [Integrations](integrations.md)

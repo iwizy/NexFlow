@@ -1,6 +1,6 @@
 import path from "node:path";
 
-export const CLI_OUTPUT_VERSION = "0.3-draft";
+export const CLI_OUTPUT_VERSION = "0.4-draft";
 export const MAX_JSON_DIAGNOSTICS = 200;
 
 function safeSource(source) {
@@ -71,11 +71,24 @@ function graphProjection(graph) {
   };
 }
 
+function initProjection(result) {
+  return {
+    template: {
+      name: result.template.name,
+      version: result.template.version,
+      specVersion: result.template.specVersion
+    },
+    files: result.files.map(({ file, status }) => ({ file: safeSource(file), status })),
+    reviewRequired: result.reviewRequired
+  };
+}
+
 // Raw manifests and helper details are never spread into the output contract.
 export function writeCliResult(outcome, format, { stdout, stderr }) {
   const { command, exitCode, inputMode, checks, diagnostics = [], truncated = false, result = null } = outcome;
   const inspection = command === "inspect" && exitCode === 0 ? inspectionProjection(result.inspection) : null;
   const graph = command === "graph" && exitCode === 0 ? graphProjection(result.graph) : null;
+  const initialized = command === "init" && exitCode === 0 ? initProjection(result) : null;
   if (format === "json") {
     const entries = diagnostics.map(jsonDiagnostic).sort((left, right) => {
       for (const key of ["file", "path", "severity", "code", "kind", "keyword", "message"]) {
@@ -92,7 +105,7 @@ export function writeCliResult(outcome, format, { stdout, stderr }) {
       executionAuthorized: false,
       diagnostics: entries.slice(0, MAX_JSON_DIAGNOSTICS),
       truncated: truncated || entries.length > MAX_JSON_DIAGNOSTICS,
-      result: result === null ? null : result.text !== undefined ? { text: result.text } : {
+      result: result === null ? null : result.text !== undefined ? { text: result.text } : initialized ?? {
         documentCount: result.documentCount,
         documents: result.documents.map((document) => ({ file: safeSource(document.source), kind: document.kind }))
           .sort((left, right) => compareText(left.file, right.file)),
@@ -115,6 +128,12 @@ export function writeCliResult(outcome, format, { stdout, stderr }) {
     if (truncated) stderr.write("Additional schema diagnostics omitted; validation failed.\n");
   } else if (result.text !== undefined) {
     stdout.write(result.text);
+  } else if (command === "init") {
+    const created = initialized.files.filter(({ status }) => status === "created").length;
+    const skipped = initialized.files.filter(({ status }) => status === "skipped").length;
+    stdout.write(`Initialized starter manifests from ${initialized.template.name}@${initialized.template.version}: ${created} created, ${skipped} unchanged.\n`);
+    for (const entry of initialized.files) stdout.write(`${entry.status} ${sourceLabel(entry.file)}\n`);
+    stdout.write("Review the generated manifests before use. No runtime behavior or execution authority was configured.\n");
   } else if (command === "inspect") {
     stdout.write(`Inspected ${result.documentCount} manifest(s) (${inputMode}).\n`);
     stdout.write(`Project ${asciiJson(inspection.project.id)} at ${sourceLabel(inspection.project.file)} ${asciiJson(inspection.project.path)}\n`);

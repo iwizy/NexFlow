@@ -57,6 +57,17 @@ permissions:
     approvalGate: network_access_review
     conditions:
       - The request must match actor, purpose, destination, transport, and classification constraints.
+  - id: approved_credential_use
+    description: The implementation agent may request mediated use of the coding provider credential after review.
+    subjects:
+      - implementation-agent
+    capabilities:
+      - use_credential
+    effect: approval_required
+    approvalGate: credential_access_review
+    conditions:
+      - The request must match credential reference, kind, purpose, target, and operation scope.
+      - Credential material must not be exposed to the actor, persisted, delegated, or discovered from ambient state.
   - id: mcp_tool_access
     description: Implementation and QA agents may use only approved local MCP context and read-only tools.
     subjects:

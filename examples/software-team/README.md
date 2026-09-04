@@ -3,7 +3,8 @@
 A conventional software delivery team with implementation, QA, review, and documentation roles.
 
 This example emphasizes task dependencies, pull request review, capability
-separation, and the experimental MCP extension boundary.
+separation, mediated provider credential requirements, and the experimental MCP
+extension boundary.
 
 ## What This Example Teaches
 
@@ -57,14 +58,19 @@ Skipped checks should be visible. They should not be treated as successful valid
 - Repository writes, command execution, and documentation writes are approval-gated.
 - Dependency installation is explicitly outside normal implementation permission and requires `dependency_approval`.
 - The reviewer is the only actor that can approve changes.
+- Provider credential use is limited to the implementation agent, one provider
+  target, one operation at a time, and a separate approval gate. The opaque
+  reference does not contain or prove the existence of a credential.
 - QA may run approved checks, but does not approve release readiness.
 - Extensions declare integration surfaces but do not grant access without matching capabilities and permissions.
 - MCP context and allow-listed read-only tools require `access_mcp`, an
   effective permission, and approval; they do not imply command execution or
   network access.
 
-See the [MCP Extension Draft](../../extensions/mcp/README.md) for the profile
-validated by this example.
+See [Credential Handling](../../docs/credential-handling.md) for the external
+binding and mediation boundary, and the
+[MCP Extension Draft](../../extensions/mcp/README.md) for the profile validated
+by this example.
 
 ## Local Check
 

@@ -48,12 +48,13 @@ NexFlow treats validation as a layered process.
 | Work reference namespace checks | 13 focused cases implemented | Confirm workflow-wide step and assembly-wide artifact identity, duplicate rejection, and exact dependency and handoff lookup. |
 | Provider feature checks | 11 focused cases implemented | Confirm closed provider support signals, legacy coexistence, uniqueness, and separation from project action capability IDs. |
 | Provider constraint checks | 17 focused cases implemented | Confirm structured provider eligibility vocabulary, legacy training-use migration, coupled residency fields, retention, and invalid policy values. |
+| Credential handling checks | 21 focused cases implemented | Confirm deny-by-default policy, opaque references, closed scope, operation leases, approval coupling, fixed no-ambient and no-exposure controls, and redaction. |
 | MCP extension checks | 10 focused cases implemented | Confirm the machine-readable profile, context/action surface boundary, required MCP metadata, action allow-lists, approval posture, and example dependencies. |
 | A2A extension checks | 13 focused cases implemented | Confirm external protocol ownership, opaque remote identity, task and artifact separation, permission, network callback, credential, audit, and fail-closed boundaries. |
 | Core Profile checks | 16 focused cases implemented | Confirm reduced Project structure, participant authority, optional qualifiers, dependency closure, and fail-closed unsupported modules. |
 | Manifest discovery checks | 24 focused cases implemented | Confirm explicit local sources, expected kinds, project association, conservative document cardinality, unique workflow identity, and source safety boundaries. |
 | General manifest inventory | Partial | Focused discovery builds an inventory for explicit files and Project hints; directory, bundle, general index, and complete dependency-driven inventory remain future work. |
-| Semantic validation | Partial repository smoke coverage plus a documented inventory | Check prioritized cross-manifest references, ActorSet bridges, active agent definition authority, human override authorities, graph consistency, permission coverage, memory boundaries, and extension requirements. Full semantic conformance remains future work. |
+| Semantic validation | Partial repository smoke coverage plus a documented inventory | Check prioritized cross-manifest references, ActorSet bridges, active agent definition authority, credential and human override policies, graph consistency, permission coverage, memory boundaries, and extension requirements. Full semantic conformance remains future work. |
 | Runtime preflight | Future runtime work | Check credentials, sandboxing, provider behavior, tool access, and execution safety before any runtime action. |
 
 Schema validation is one layer. It should not pretend to cover the responsibilities of later layers.
@@ -79,6 +80,7 @@ Schemas should be strict where the specification has stable structure:
 - compact AgentSet identity requiredness and deprecated compatibility fields
 - complete review, compatibility, component, and audit shape for active agent
   definitions
+- fail-closed credential policy, operation lease, exposure, and redaction shape
 - fail-closed human override policy shape
 
 Strictness is useful when it prevents obvious mistakes without blocking legitimate extension or draft use.
@@ -95,6 +97,7 @@ These checks belong to future semantic validation:
 - ActorSet identities are unique and agent actors bridge explicitly to AgentSet declarations
 - ActorSet operator and representative relationships resolve and remain acyclic
 - human override authorities are fully human-controlled and its gate and event references resolve
+- credential rules resolve actors, capabilities, targets, approval gates, and audit events without implying an external binding
 - declared IDs are unique in their owning collections
 - identifier references resolve exactly, without case or separator normalization
 - multi-kind references do not resolve ambiguously

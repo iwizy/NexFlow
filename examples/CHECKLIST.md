@@ -143,6 +143,8 @@ Examples are part of the specification surface. They should remain small enough 
 ## Safety And Privacy
 
 - [ ] No raw secrets, credentials, tokens, passwords, private keys, or local machine paths are present.
+- [ ] Credential references are opaque requirements, not environment names, broker paths, account IDs, or proof of an external binding.
+- [ ] Credential use is deny-by-default, operation-scoped, separately permissioned and approved where needed, and not directly exposed to an actor.
 - [ ] No personal notes, local plans, or private workflow files are included.
 - [ ] No manifest implies hidden network access.
 - [ ] No manifest implies autonomous execution beyond declared autonomy and permissions.

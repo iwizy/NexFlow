@@ -16,6 +16,42 @@ project:
   policies:
     requireReview: true
     secretHandling: Use secret references only.
+    credentialHandling:
+      default: deny
+      rules:
+        - id: coding-provider-credential
+          description: Permit reviewed model requests through the selected coding provider adapter.
+          credentialRef: coding-provider-access
+          kind: api_key
+          effect: approval_required
+          actors:
+            - implementation-agent
+          capabilities:
+            - use_credential
+          purposes:
+            - provider_request
+          targets:
+            providers:
+              - coding_reasoning
+          lease:
+            scope: operation
+            renewal: reauthorize
+            maxDurationSeconds: 900
+          approvalGate: credential_access_review
+      controls:
+        valuesInManifests: forbidden
+        ambientDiscovery: deny
+        directActorExposure: deny
+        delegation: deny
+        persistence: deny
+      audit:
+        events:
+          - credential.decision
+        recordDecisions: true
+        recordActor: true
+        recordCredentialRef: true
+        recordTarget: true
+        redactValues: true
     networkAccess:
       default: deny
       rules:
@@ -82,6 +118,10 @@ project:
           id: mcp_tools
     - id: network_access_review
       description: Reviewer approval required before an agent initiates an allowed outbound connection.
+      requiredApprovers:
+        - reviewer
+    - id: credential_access_review
+      description: Reviewer approval required before mediated use of the coding provider credential.
       requiredApprovers:
         - reviewer
 manifests:

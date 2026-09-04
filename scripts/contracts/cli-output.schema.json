@@ -1,12 +1,12 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://nexflow.dev/tooling/cli-prototype/0.3-draft/output.schema.json",
+  "$id": "https://nexflow.dev/tooling/cli-prototype/0.4-draft/output.schema.json",
   "title": "Experimental repository CLI output, not a NexFlow manifest",
   "type": "object",
   "additionalProperties": false,
   "required": ["formatVersion", "tool", "supportedSpecVersions", "command", "success", "exitCode", "inputMode", "checks", "executionAuthorized", "diagnostics", "truncated", "result"],
   "properties": {
-    "formatVersion": { "const": "0.3-draft" },
+    "formatVersion": { "const": "0.4-draft" },
     "tool": { "const": { "name": "nexflow-repository-cli-prototype", "version": "unreleased" } },
     "supportedSpecVersions": { "const": ["0.1"] },
     "command": { "enum": [null, "help", "version", "discover", "validate", "inspect", "graph", "init"] },
@@ -80,6 +80,38 @@
               }
             }
           }
+        },
+        {
+          "type": "object", "additionalProperties": false,
+          "required": ["template", "files", "reviewRequired"],
+          "properties": {
+            "template": {
+              "type": "object", "additionalProperties": false,
+              "required": ["name", "version", "specVersion"],
+              "properties": {
+                "name": { "const": "minimal-team" },
+                "version": { "const": "0.1-draft" },
+                "specVersion": { "const": "0.1" }
+              }
+            },
+            "files": {
+              "type": "array", "minItems": 3, "maxItems": 3, "uniqueItems": true,
+              "allOf": [
+                { "contains": { "required": ["file"], "properties": { "file": { "const": "project.yaml" } } }, "minContains": 1, "maxContains": 1 },
+                { "contains": { "required": ["file"], "properties": { "file": { "const": "actors.yaml" } } }, "minContains": 1, "maxContains": 1 },
+                { "contains": { "required": ["file"], "properties": { "file": { "const": "agents.yaml" } } }, "minContains": 1, "maxContains": 1 }
+              ],
+              "items": {
+                "type": "object", "additionalProperties": false,
+                "required": ["file", "status"],
+                "properties": {
+                  "file": { "enum": ["project.yaml", "actors.yaml", "agents.yaml"] },
+                  "status": { "enum": ["created", "skipped"] }
+                }
+              }
+            },
+            "reviewRequired": { "const": true }
+          }
         }
       ]
     }
@@ -90,7 +122,7 @@
       "then": {
         "properties": {
           "success": { "const": true },
-          "command": { "enum": ["help", "version", "discover", "validate", "inspect", "graph"] },
+          "command": { "enum": ["help", "version", "discover", "validate", "inspect", "graph", "init"] },
           "diagnostics": { "maxItems": 0 },
           "truncated": { "const": false },
           "result": { "type": "object" }
@@ -127,6 +159,17 @@
     {
       "if": { "properties": { "exitCode": { "const": 0 }, "command": { "enum": ["validate", "inspect", "graph"] } } },
       "then": { "properties": { "checks": { "properties": { "schema": { "const": "passed" } } } } }
+    },
+    {
+      "if": { "properties": { "exitCode": { "const": 0 }, "command": { "const": "init" } } },
+      "then": {
+        "properties": {
+          "inputMode": { "type": "null" },
+          "result": { "required": ["template", "files", "reviewRequired"] },
+          "checks": { "properties": { "discovery": { "const": "not-run" }, "schema": { "const": "not-run" } } }
+        }
+      },
+      "else": { "properties": { "result": { "not": { "type": "object", "required": ["template"] } } } }
     },
     {
       "if": { "properties": { "command": { "const": "discover" } } },

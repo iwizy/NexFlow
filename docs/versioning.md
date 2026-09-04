@@ -394,7 +394,7 @@ not authored manifest fields, so adding or clarifying a draft code does not by
 itself require a manifest `specVersion` change.
 
 The [repository CLI JSON envelope](cli-diagnostics.md) now carries its own
-experimental `formatVersion: "0.3-draft"`, separate from the prototype's
+experimental `formatVersion: "0.4-draft"`, separate from the prototype's
 `unreleased` tool version, supported input `specVersion: "0.1"`, and specification
 release tags. Pin the repository revision as well as the output version.
 Incompatible envelope, exit, stream, state, ordering, or redaction changes
@@ -409,6 +409,11 @@ version and output schema together. See the [migration notes](cli-diagnostics.md
 The advance from `0.2-draft` to `0.3-draft` adds successful static `graph` and
 its closed result shape. Other command result shapes are unchanged. See the
 [graph migration notes](cli-diagnostics.md#migration-from-02-draft-to-03-draft).
+
+The advance from `0.3-draft` to `0.4-draft` adds successful `init`, its closed
+template and file-outcome result, and implementation-owned destination and
+conflict diagnostics. Existing read-only command result shapes are unchanged.
+See the [init migration notes](cli-diagnostics.md#migration-from-03-draft-to-04-draft).
 
 No diagnostic code is Stable yet. A future stable catalog or CLI contract must
 version code meaning, default severity, required structured details, and output

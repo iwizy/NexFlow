@@ -1,6 +1,6 @@
 # CLI Machine-Readable Diagnostics
 
-Status: implemented experimental repository output, `formatVersion: "0.3-draft"`.
+Status: implemented experimental repository output, `formatVersion: "0.4-draft"`.
 This is not a stable public CLI contract, catalog release, or `NF-CLI` claim.
 The [repository CLI prototype](cli-prototype.md) remains unreleased maintenance
 tooling and does not resolve the pending architecture decision.
@@ -9,8 +9,8 @@ tooling and does not resolve the pending architecture decision.
 
 Select `--format json` or `--format=json`. The default is `text`; explicit
 `--format text` preserves it. The format applies to discovery, validation,
-inspection, graphing,
-help, version, usage errors, reserved commands, and internal failures.
+inspection, graphing, starter initialization,
+help, version, usage errors, and internal failures.
 
 For machine consumers, invoke the entry point directly:
 
@@ -19,6 +19,7 @@ node scripts/cli-prototype.mjs validate --root examples/minimal-team --format js
 node scripts/cli-prototype.mjs discover --root examples/minimal-team --format=json
 node scripts/cli-prototype.mjs inspect --root examples/minimal-team --format json
 node scripts/cli-prototype.mjs graph --root examples/minimal-team --format json
+node scripts/cli-prototype.mjs init --root path/to/empty-directory --id my-project --format json
 node scripts/cli-prototype.mjs --version --format json
 ```
 
@@ -27,7 +28,8 @@ Diagnostics are inside that object, including on failure; the CLI writes no
 text to stderr in JSON mode. This does not control errors emitted before the
 entry point loads, OS termination, or a broken output stream. `npm run` can add
 its own lifecycle logging, so use the direct invocation above when parsing
-stdout. JSON mode creates no report files and does not mutate inputs.
+stdout. Read-only JSON commands create no report files and do not mutate
+inputs; `init` has the bounded write behavior documented separately.
 
 Unknown formats and duplicate format options are usage errors, not fallbacks.
 If tolerant argument tokenization finds an explicit JSON format option, usage
@@ -36,9 +38,9 @@ duplicated. A format-like string consumed as another option's value, or placed
 after the `--` terminator, does not select JSON. Without a recognized JSON
 option, usage errors retain text output. No invalid argument value is echoed.
 
-Exit classes are `0` success or informational output, `1` discovery or schema
-failure or inspection output limit, `2` usage error, `3` unsupported input or
-reserved command, and `4` internal failure. Consumers should require process status `0` and
+Exit classes are `0` success or informational output, `1` discovery, schema,
+inspection-limit, or initialization failure, `2` usage error, `3` unsupported
+manifest input, and `4` internal failure. Consumers should require process status `0` and
 a well-formed successful envelope. Missing, malformed, truncated transport,
 or unknown-version output is not success.
 
@@ -52,17 +54,17 @@ add a manifest kind or enter the manifest schema registry.
 
 | Field | Meaning |
 | --- | --- |
-| `formatVersion` | Experimental envelope version, currently `0.3-draft`. |
+| `formatVersion` | Experimental envelope version, currently `0.4-draft`. |
 | `tool` | Fixed repository prototype name and `version: "unreleased"`; not the specification release. |
 | `supportedSpecVersions` | Accepted input versions, currently `["0.1"]`; never copied from unsupported input. |
 | `command` | Validated command name, or `null` for usage failures. Command help is reported as `help`. |
 | `success`, `exitCode` | Process outcome, not project safety or conformance. Success is true only for exit code `0`. |
-| `inputMode` | Discovery's `directory-project`, `project-source-hints`, or `explicit-file-list`, or `null` before a discovery result exists. |
+| `inputMode` | Discovery's `directory-project`, `project-source-hints`, or `explicit-file-list`; `null` before discovery and for `init`, which has an output destination rather than a manifest input assembly. |
 | `checks` | Status of each named layer, as described below. |
 | `executionAuthorized` | Always `false`; output grants no authority. |
 | `diagnostics` | Ordered error records. Empty on success. |
 | `truncated` | More diagnostics exist than were retained. This never turns failure into success. |
-| `result` | Successful inventory or informational text; always `null` on any error. |
+| `result` | Successful inventory, initialization report, or informational text; always `null` on any error. |
 
 `checks.discovery` and `checks.schema` use `not-run`, `passed`, `failed`, or
 `unavailable`. `unavailable` means that an attempted layer did not return a
@@ -92,6 +94,10 @@ scope, limits, and disclosure rules; it is not an Agent Assembly view.
 Successful `graph` instead adds `result.graph`: static declaration nodes and
 selected reference edges with explicit resolution status. See
 [CLI Static Graph](cli-graph.md). Graph output is not an execution plan.
+Successful `init` returns its template identity, all three relative starter
+file names with `created` or `skipped` status, and `reviewRequired: true`. Its
+discovery and schema checks remain `not-run`; generation is not a validation
+result. See [CLI Starter Initialization](cli-init.md).
 For help and version, `result` contains `text` and all checks remain `not-run`.
 
 ## Diagnostic Fields
@@ -104,7 +110,7 @@ warning or suppression policy is introduced.
   identities from the [Diagnostic Code Catalog](diagnostic-code-catalog.md).
 - `file` is a safe root-relative source locator, `<input>` for an assembly or
   other non-file input location, or `<redacted-source>` for a rejected locator.
-  It is `null` for usage, unimplemented-command, and internal failures.
+  It is `null` for usage, destination-level, and internal failures.
 - `kind` is known for schema errors and otherwise `null`. Unsupported kind
   values are not echoed or guessed.
 - `path` is the sanitized JSON Pointer for schema errors, otherwise `null`.
@@ -125,13 +131,14 @@ The following implementation-owned JSON codes are not standard `NF-*` codes:
 | Code | Exit | Meaning and next step |
 | --- | ---: | --- |
 | `NEXFLOW-PROTOTYPE-INSPECTION-LIMIT` | 1 | Inspection exceeds its resource or reference budget; no partial result is available. Review the selected input set. |
+| `NEXFLOW-PROTOTYPE-INIT-CONFLICT` | 1 | A starter target differs, has an incompatible type, or appeared during reservation; no successful initialization result is available. Review the named relative file. |
+| `NEXFLOW-PROTOTYPE-INIT-DESTINATION` | 1 | The explicit destination is missing, unavailable, not a directory, or a symbolic link. Select an existing non-symlinked local directory. |
 | `NEXFLOW-PROTOTYPE-USAGE` | 2 | Invalid arguments; consult the prototype help. |
-| `NEXFLOW-PROTOTYPE-UNIMPLEMENTED` | 3 | Reserved `init`; do not treat it as implemented. |
 | `NEXFLOW-PROTOTYPE-INTERNAL` | 4 | No usable result from an attempted operation; review the trusted checkout and local schema setup. |
 
-Default text mode retains its previous generic usage, reserved-command, and
-internal-failure messages. Inspection limits use the new code in JSON and a
-fixed failure message in text.
+Default text mode retains its previous generic usage and internal-failure
+messages. Inspection and initialization failures use fixed messages that do
+not expose manifest contents or destination paths.
 
 ## Example Failure
 
@@ -145,7 +152,7 @@ Exit code is `1`. The complete result is:
 
 ```json
 {
-  "formatVersion": "0.3-draft",
+  "formatVersion": "0.4-draft",
   "tool": { "name": "nexflow-repository-cli-prototype", "version": "unreleased" },
   "supportedSpecVersions": ["0.1"],
   "command": "validate",
@@ -226,6 +233,15 @@ accepted version together; no old-format switch is provided. `graph` is no
 longer reserved: it requires an explicit root and performs discovery, schema
 validation, declared inspection, and static graph construction. Existing
 command result shapes are otherwise unchanged.
+
+### Migration From `0.3-draft` To `0.4-draft`
+
+All output now uses `0.4-draft`. The prior closed schema could not represent a
+successful `init` result. Update the pinned output schema and accepted version
+together; no old-format switch is provided. `init` is no longer reserved: it
+requires an explicit existing destination and project ID, reports its built-in
+template and every starter-file outcome, and fails closed on conflicts. Existing
+command result shapes are unchanged.
 
 An incompatible change to fields, types, state meanings, stream or exit
 contracts, ordering, or redaction requires a new output version and migration

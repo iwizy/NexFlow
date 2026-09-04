@@ -145,6 +145,8 @@ policy and work modules needed for its scoped scenario:
 - draft definitions remain declaration and review data
 - risky capabilities are approval-gated
 - approval gate targets use explicit resource kinds and workflow scope where required
+- credential use is external-only, operation-scoped, separately permissioned,
+  and never directly exposed to an actor
 - outbound network access is fail-closed and selected independently from capability and permission grants
 - human override can only narrow activity, remains blocked on failure, and requires approval before resume
 - context access is explicit

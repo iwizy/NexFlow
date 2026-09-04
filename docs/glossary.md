@@ -156,9 +156,24 @@ Context sources describe access mode, classification, freshness, ownership, and 
 
 ### Credential
 
-A secret, token, key, certificate, password, or other sensitive material used to access systems.
+A secret, token, key, certificate, password, workload identity, or other
+authentication authority used to access systems.
 
-NexFlow manifests should not contain raw credentials.
+NexFlow manifests must not contain raw credentials. See
+[Credential Handling](credential-handling.md).
+
+### Credential Reference
+
+A non-secret project-local handle that names one credential requirement. It is
+not a value, secret-store locator, external binding, or proof that a credential
+exists. A future runtime may resolve it only through independently authorized,
+operation-scoped mediation.
+
+### Credential Lease
+
+Future runtime authority to use one externally bound credential reference for
+one operation. It cannot be reused, delegated, persisted, or renewed without a
+new authorization decision.
 
 ## D
 

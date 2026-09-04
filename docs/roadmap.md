@@ -37,6 +37,9 @@ The repository currently provides the following candidate evidence:
 - a compact AgentSet migration with legacy compatibility checks
 - an explicit fail-closed human override policy, audit vocabulary, and focused
   schema checks without runtime enforcement
+- a structured credential handling policy with opaque references,
+  operation-scoped leases, no ambient discovery or direct actor exposure, and
+  focused checks without a broker or runtime enforcement
 
 Candidate readiness was evaluated against one exact commit. The completed
 readiness record, command output, and cross-surface review are attached to the
@@ -73,7 +76,7 @@ and [Foundational Model Cross-RFC Review](../rfcs/reviews/2026-07-foundational-m
 Status: `v0.1.0` released; post-release corrections follow the published
 compatibility and migration rules.
 
-Relevant docs: [Concepts](concepts.md), [Glossary](glossary.md), [Manifest Reference](manifest-reference.md), [Actor Model](actor-model.md), [Actor Model Migration](actor-model-migration.md), [Agent Identity Migration](agent-identity-migration.md), [Agent Definitions](agent-definitions.md), [Human Override](human-override.md), [Context Model](context-model.md), [Memory Model](memory-model.md), [Approval Gates](approval-gates.md), [Prompt Sets](prompt-sets.md), [Retrieval Profiles](retrieval-profiles.md).
+Relevant docs: [Concepts](concepts.md), [Glossary](glossary.md), [Manifest Reference](manifest-reference.md), [Actor Model](actor-model.md), [Actor Model Migration](actor-model-migration.md), [Agent Identity Migration](agent-identity-migration.md), [Agent Definitions](agent-definitions.md), [Human Override](human-override.md), [Credential Handling](credential-handling.md), [Context Model](context-model.md), [Memory Model](memory-model.md), [Approval Gates](approval-gates.md), [Prompt Sets](prompt-sets.md), [Retrieval Profiles](retrieval-profiles.md).
 
 Agent definition authority checkpoint: implemented in documentation, schemas,
 and focused repository checks. The unique unscoped active definition owns
@@ -101,6 +104,13 @@ authority with AgentSet fallback, optional module qualifiers, transitive
 dependency policy, fail-closed omission, reduced Project source hints, and 16
 focused cases are implemented.
 
+Credential handling checkpoint: the Project policy shape, opaque external
+requirement references, exact actor, purpose, capability, and target scope,
+operation-only leases, fixed no-ambient and no-exposure controls, approval,
+audit, Software Team composition, and focused structural and semantic checks
+are implemented. Credential values, broker integration, authentication,
+injection, rotation, revocation, and runtime isolation remain future work.
+
 Manifest discovery checkpoint: explicit local files, Project source hints,
 bounded selection of one root `project.yaml` or `project.yml`,
 the plural `manifests.workflows` shape, conservative document cardinality,
@@ -111,12 +121,15 @@ runtime loading remain future work.
 
 A [disposable repository CLI prototype](cli-prototype.md) exercises command
 dispatch, discovery inventory, local JSON Schema validation, declared-only
-[inspection](cli-inspection.md), bounded [static graphing](cli-graph.md), and an experimental
+[inspection](cli-inspection.md), bounded [static graphing](cli-graph.md),
+[starter initialization](cli-init.md), and an experimental
 versioned [JSON diagnostic envelope](cli-diagnostics.md). It is not a
 reference CLI alpha or a completed language-evaluation candidate; the architecture decision is still
 `not-ready`, and no runtime or package layout has been selected.
 Inspection lists declarations and selected references without resolving them;
 it does not implement the separate Agent Assembly contract.
+Initialization writes only a three-manifest, provider-neutral Core Profile
+starter into an explicit local destination and does not initialize a runtime.
 
 ## Milestone 2: Community Review
 
@@ -143,6 +156,8 @@ it does not implement the separate Agent Assembly contract.
 - Review retrieval source references, index versions, chunking, freshness, citations, sensitivity, and audit expectations.
 - Review agent definition component references, lifecycle status, activation criteria, autonomy, and audit expectations.
 - Review human override authority, interruption boundaries, fail-closed behavior, resume gates, and audit expectations.
+- Review credential reference scope, broker ownership, operation leases,
+  approval, rotation and revocation behavior, redaction, and runtime isolation.
 - Review extension namespace ownership, lifecycle transitions, registry expectations, and unsupported-extension behavior.
 - Review RFC-0018 MCP context/action mapping, allow-lists, protocol-version
   claims, network transports, and failure behavior without implementing MCP.

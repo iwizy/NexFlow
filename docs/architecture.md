@@ -168,6 +168,18 @@ broadening, and returns a normalized result or failure. It cannot select hidden
 fallback or execute model-requested tools. See
 [Provider Adapter Boundary](provider-adapter-boundary.md).
 
+## Credential Boundary
+
+Credential requirements are project policy, while credential values and
+bindings are external runtime deployment state. A future host must evaluate
+actor, capability, permission, approval, target, network, human override, and
+credential policy before asking a broker for one operation-scoped binding.
+
+No manifest, provider declaration, extension, context source, environment
+variable, installed SDK, or successful validation result grants credential use.
+The [Credential Handling](credential-handling.md) model defines the authored
+boundary without selecting a secret manager or implementing mediation.
+
 ## Integration Boundary
 
 Integrations are described through extension manifests and context sources. Integrations must not silently expand permissions. Access must be represented through capabilities, permissions, and approval gates.

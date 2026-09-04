@@ -206,10 +206,11 @@ and audit requirements. A provider SDK's telemetry, update, discovery, or
 fallback endpoint is a separate destination and must not inherit access from
 the primary API endpoint.
 
-The broader credential boundary remains separate runtime architecture work.
-Until that work is complete, this document requires opaque, least-privilege,
-operation-scoped credential handling without selecting a secret manager or
-broker design.
+The structured [Credential Handling](credential-handling.md) model defines the
+authored opaque reference, scope, approval, lease, failure, redaction, and audit
+boundary. Credential storage, broker selection and integration, authentication,
+injection, rotation, revocation, and runtime isolation remain separate future
+architecture work.
 
 ## Provider-Specific Extensions
 

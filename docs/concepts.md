@@ -182,7 +182,13 @@ A future implementation that validates, interprets, or executes NexFlow manifest
 
 ## Project Policy
 
-Rules that apply across a project, such as default autonomy, required reviews, secret handling, and network access boundaries.
+Rules that apply across a project, such as default autonomy, required reviews,
+credential handling, secret guidance, and network access boundaries.
+
+The structured [Credential Handling](credential-handling.md) policy defines
+opaque external credential requirements, operation-scoped mediation, approval,
+failure, and redacted audit separately from the protected action and network
+decision.
 
 The structured [Network Access Policy](network-access-policy.md) defines
 fail-closed outbound connection rules separately from capabilities,

@@ -39,6 +39,12 @@ capabilities:
     category: network
     requiresApprovalByDefault: true
     auditRecommended: true
+  - id: use_credential
+    description: Request mediated operation-scoped use of a declared credential reference.
+    risk: high
+    category: security
+    requiresApprovalByDefault: true
+    auditRecommended: true
   - id: access_mcp
     description: Access declared MCP context and allow-listed tools.
     risk: high

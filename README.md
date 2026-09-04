@@ -53,6 +53,7 @@ after `v0.1.0`.
 | Governance and RFC process | Implemented in documentation | [Governance](docs/governance.md), [RFCs](rfcs/README.md) |
 | Foundational model changes | ActorSet, compact AgentSet, and authoritative unique-active-definition slices implemented; RFCs remain Draft | [Actor Model](docs/actor-model.md), [Effective Agent Configuration](docs/effective-agent-configuration.md), [Foundational Model Review](rfcs/reviews/2026-07-foundational-model-review.md) |
 | Human override policy | Structured fail-closed manifest model implemented; runtime enforcement absent | [Human Override](docs/human-override.md), [RFC-0017](rfcs/RFC-0017-human-override.md) |
+| Credential handling policy | Structured fail-closed manifest model and focused checks implemented; credential broker, values, and runtime mediation absent | `npm run credential-handling-schema-smoke`, [Credential Handling](docs/credential-handling.md) |
 | Runtime architecture decision | Review framework published; current outcome is `not-ready`, with no language or package layout selected | [Runtime Architecture Decision Review](rfcs/reviews/runtime-architecture-decision-review.md), [Runtime Options](docs/runtime-options.md), [Roadmap](docs/roadmap.md) |
 | Reference CLI | Validation-only boundary specified; not implemented | [CLI And Runtime Responsibility Boundary](docs/cli-runtime-boundary.md), [RFC-0011](rfcs/RFC-0011-reference-cli-scope.md) |
 | Repository CLI prototype | Experimental local discovery, JSON Schema validation, declared inspection, static graphing, and versioned JSON output; not a reference CLI alpha, language decision, or `NF-CLI` claim | `npm run cli-prototype -- --help`, [Prototype Scope](docs/cli-prototype.md), [JSON Diagnostics](docs/cli-diagnostics.md), [Declared Inspection](docs/cli-inspection.md), [Static Graph](docs/cli-graph.md) |
@@ -149,6 +150,7 @@ The goal is to make AI-assisted software delivery inspectable before anything ru
 - **Capability**: something an actor can technically do, such as `read_repository` or `create_pull_request`.
 - **Permission**: a policy rule with an `allow`, `deny`, or `approval_required` effect for capabilities.
 - **Human Override**: a fail-closed project policy for human-controlled pause, stop, cancellation, blocking, revocation, and approval-gated resume.
+- **Credential Reference**: a non-secret project-local requirement handle that a future runtime may bind through an external broker after independent authorization.
 - **Context Source**: a repository, docs system, issue tracker, design file, web source, MCP server, or custom data source.
 - **Memory Scope**: a declared retention and visibility boundary for remembered information.
 - **Model Profile**: a provider-neutral model selection profile with pinned, floating, or policy-based selection and audit expectations.
@@ -270,6 +272,7 @@ NexFlow is intentionally split into layers:
 - [Agent Identity Migration](docs/agent-identity-migration.md): transition from duplicated AgentSet behavior fields to compact stable identity
 - [Effective Agent Configuration](docs/effective-agent-configuration.md): authoritative active-definition selection, policy boundaries, migration, and validation
 - [Human Override](docs/human-override.md): fail-closed human-control policy, resume gate, and audit contract
+- [Credential Handling](docs/credential-handling.md): external-only references, operation-scoped mediation, failure, redaction, and audit rules
 - [Network Access Policy](docs/network-access-policy.md): fail-closed outbound connection rules and migration from advisory strings
 - [Release Plan](docs/release-plan.md): public readiness criteria from `0.1` draft through `1.0`
 - [0.1 Readiness Checklist](docs/readiness-checklist.md): candidate gates, evidence rules, decision outcomes, and release blockers
@@ -289,7 +292,7 @@ NexFlow is intentionally split into layers:
 | Model participant identity | [Actor Model](docs/actor-model.md), [Actor Model Migration](docs/actor-model-migration.md) |
 | Model resource references | [Typed References](docs/typed-references.md), [Approval Gate Targets](docs/approval-gate-targets.md), [Work Reference Namespaces](docs/work-reference-namespaces.md), [Semantic Reference Inventory](docs/semantic-reference-inventory.md), [Manifest Reference](docs/manifest-reference.md) |
 | See every manifest shape | [Manifest Reference](docs/manifest-reference.md) |
-| Understand safety boundaries | [Security Model](docs/security-model.md), [Human Override](docs/human-override.md), [Network Access Policy](docs/network-access-policy.md), [Approval Gates](docs/approval-gates.md) |
+| Understand safety boundaries | [Security Model](docs/security-model.md), [Human Override](docs/human-override.md), [Credential Handling](docs/credential-handling.md), [Network Access Policy](docs/network-access-policy.md), [Approval Gates](docs/approval-gates.md) |
 | Version and select agent behavior | [Effective Agent Configuration](docs/effective-agent-configuration.md), [Agent Assembly](docs/agent-assembly.md), [Agent Definitions](docs/agent-definitions.md), [Versioning](docs/versioning.md), [Event Model](docs/events.md) |
 | Model what agents can and may do | [Capability Model](docs/capability-model.md), [Autonomy Model](docs/autonomy-model.md) |
 | Model what agents may know or retain | [Context Model](docs/context-model.md), [Memory Model](docs/memory-model.md) |

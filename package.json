@@ -18,6 +18,7 @@
     "cli-validation-smoke": "node scripts/cli-validation-smoke.mjs",
     "conformance-claim-smoke": "node scripts/conformance-claim-smoke.mjs",
     "core-profile-smoke": "node scripts/core-profile-smoke.mjs",
+    "credential-handling-schema-smoke": "node scripts/credential-handling-schema-smoke.mjs",
     "human-override-schema-smoke": "node scripts/human-override-schema-smoke.mjs",
     "manifest-discovery-smoke": "node scripts/manifest-discovery-smoke.mjs",
     "mcp-extension-smoke": "node scripts/mcp-extension-smoke.mjs",

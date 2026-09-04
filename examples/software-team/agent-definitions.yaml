@@ -3,9 +3,9 @@ kind: AgentDefinitionSet
 metadata:
   project: software-team
 agentDefinitions:
-  - id: implementation_agent_2026_06
+  - id: implementation_agent_2026_09
     agentRef: implementation-agent
-    definitionVersion: "2026.06.0"
+    definitionVersion: "2026.09.0"
     status: draft
     owner: reviewer
     description: Implementation agent release for scoped branch work and reviewable patch drafting.
@@ -15,6 +15,8 @@ agentDefinitions:
       retrievalProfileRef: implementation_review_retrieval
       permissionRefs:
         - implementation_branch_work
+        - approved_network_access
+        - approved_credential_use
         - mcp_tool_access
       capabilityRefs:
         - read_repository
@@ -22,6 +24,8 @@ agentDefinitions:
         - create_branch
         - execute_command
         - read_context
+        - access_network
+        - use_credential
         - access_mcp
       contextSourceRefs:
         - repository
@@ -36,7 +40,7 @@ agentDefinitions:
         - linear_basic
         - mcp_local
     autonomyLevel: ask_before_changes
-    changeSummary: Assembles reviewed model, prompt, and retrieval profiles for implementation work while keeping writes approval-gated.
+    changeSummary: Adds reviewed, mediated provider credential use while keeping writes and external access separately approval-gated.
     review:
       required: true
       approvers:
@@ -46,6 +50,7 @@ agentDefinitions:
         - Repository writes remain approval-gated.
         - Dependency installation still requires separate approval.
         - Retrieval sources match declared context access.
+        - Credential use remains operation-scoped, mediated, and separately approval-gated.
     compatibility:
       impact: behavior_changing
       notes: Changes may alter implementation scope, patch behavior, or review evidence.

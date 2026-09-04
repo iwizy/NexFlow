@@ -66,6 +66,9 @@ jobs:
       - name: Run CLI static graph checks
         run: npm run cli-graph-smoke
 
+      - name: Run credential handling schema boundary checks
+        run: npm run credential-handling-schema-smoke
+
       - name: Run human override schema boundary checks
         run: npm run human-override-schema-smoke
 

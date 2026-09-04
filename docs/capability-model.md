@@ -30,6 +30,9 @@ This separation keeps manifests auditable. A reviewer can see that an agent may 
 - Future runtimes should audit high-risk capability use.
 - Network-dependent actions should require both an effective `access_network`
   permission and a matching structured project network rule.
+- Credential-dependent actions should require an effective `use_credential`
+  permission and a matching structured credential rule. The credential value
+  remains mediated outside the actor.
 - When permission rules conflict, explicit deny rules should be treated as stronger than allow rules.
 - Approval-required rules should be treated as pending authorization, not as successful authorization.
 
@@ -43,6 +46,7 @@ This separation keeps manifests auditable. A reviewer can see that an agent may 
 | `create_pull_request` | Open or update a pull request. | Medium |
 | `execute_command` | Run local, CI, or sandboxed commands. | High |
 | `access_network` | Initiate an outbound connection that also matches project network policy. | High |
+| `use_credential` | Request mediated operation-scoped use of one externally bound credential reference. | High |
 | `read_documentation` | Read declared documentation sources. | Low |
 | `modify_documentation` | Modify documentation, changelog, or specification files. | Medium |
 | `read_context` | Read declared context sources. | Low to medium |
@@ -180,6 +184,17 @@ Likewise, a matching network rule does not grant the actor `read_context`,
 runtimes must evaluate the action capability, permissions, approval gates, and
 network policy together.
 
+### Credential Capability Is Not Secret Access
+
+`use_credential` permits only a policy request for mediated use. It does not
+permit an actor to read, list, export, copy, rotate, revoke, persist, or delegate
+credential material.
+
+The request must also match the structured
+[Credential Handling](credential-handling.md) policy, any required approval,
+the protected action capability, target policy, and network policy. A matching
+credential rule does not grant any of those independent layers.
+
 ## Review Checklist
 
 When reviewing capabilities and permissions, check:
@@ -191,6 +206,7 @@ When reviewing capabilities and permissions, check:
 - agents do not list capabilities that their permissions never allow or gate
 - deployment and destructive capabilities require human approval
 - network capabilities have explicit permissions and matching destination rules
+- credential use has explicit permissions, matching policy scope, and no direct actor exposure
 - audit-recommended capabilities are represented in event expectations
 
 ## Future Work

@@ -382,6 +382,270 @@
       "type": "string",
       "enum": ["public", "internal", "confidential", "restricted"]
     },
+    "credentialKind": {
+      "title": "Credential Kind",
+      "description": "Credential mechanism expected by a project policy rule. The value describes a requirement and never contains credential material.",
+      "type": "string",
+      "enum": [
+        "api_key",
+        "access_token",
+        "oauth_token",
+        "password",
+        "ssh_key",
+        "client_certificate",
+        "workload_identity",
+        "custom"
+      ]
+    },
+    "credentialPurpose": {
+      "title": "Credential Purpose",
+      "description": "Closed initial vocabulary for the operation that requires mediated credential use.",
+      "type": "string",
+      "enum": [
+        "context_read",
+        "provider_request",
+        "integration_read",
+        "integration_write",
+        "package_download",
+        "artifact_transfer",
+        "webhook_delivery",
+        "custom"
+      ]
+    },
+    "credentialHandlingPolicy": {
+      "title": "Credential Handling Policy",
+      "description": "Fail-closed project policy for externally stored, operation-scoped credential use. It does not contain credential values, secret-store locators, or runtime bindings and does not grant an action.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["default", "rules", "controls", "audit"],
+      "properties": {
+        "default": {
+          "const": "deny",
+          "description": "Unmatched credential requests are denied."
+        },
+        "rules": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "description",
+              "credentialRef",
+              "kind",
+              "effect",
+              "actors",
+              "purposes",
+              "targets",
+              "lease"
+            ],
+            "properties": {
+              "id": {
+                "$ref": "#/$defs/id"
+              },
+              "description": {
+                "$ref": "#/$defs/nonEmptyString"
+              },
+              "credentialRef": {
+                "$ref": "#/$defs/id",
+                "description": "Opaque project-local requirement handle resolved only by a future runtime-owned credential broker. It is not a secret or secret-store locator."
+              },
+              "kind": {
+                "$ref": "#/$defs/credentialKind"
+              },
+              "effect": {
+                "$ref": "#/$defs/permissionEffect"
+              },
+              "actors": {
+                "allOf": [
+                  {
+                    "$ref": "#/$defs/idList"
+                  }
+                ],
+                "minItems": 1
+              },
+              "capabilities": {
+                "allOf": [
+                  {
+                    "$ref": "#/$defs/idList"
+                  }
+                ],
+                "minItems": 1
+              },
+              "purposes": {
+                "type": "array",
+                "minItems": 1,
+                "uniqueItems": true,
+                "items": {
+                  "$ref": "#/$defs/credentialPurpose"
+                }
+              },
+              "targets": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "domains": {
+                    "type": "array",
+                    "minItems": 1,
+                    "uniqueItems": true,
+                    "items": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 253,
+                      "pattern": "^[a-z0-9](?:[a-z0-9.-]*[a-z0-9])?$"
+                    }
+                  },
+                  "contextSources": {
+                    "allOf": [
+                      {
+                        "$ref": "#/$defs/idList"
+                      }
+                    ],
+                    "minItems": 1
+                  },
+                  "providers": {
+                    "allOf": [
+                      {
+                        "$ref": "#/$defs/idList"
+                      }
+                    ],
+                    "minItems": 1
+                  },
+                  "extensions": {
+                    "allOf": [
+                      {
+                        "$ref": "#/$defs/idList"
+                      }
+                    ],
+                    "minItems": 1
+                  }
+                },
+                "anyOf": [
+                  {
+                    "required": ["domains"]
+                  },
+                  {
+                    "required": ["contextSources"]
+                  },
+                  {
+                    "required": ["providers"]
+                  },
+                  {
+                    "required": ["extensions"]
+                  }
+                ]
+              },
+              "lease": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["scope", "renewal"],
+                "properties": {
+                  "scope": {
+                    "const": "operation"
+                  },
+                  "renewal": {
+                    "const": "reauthorize"
+                  },
+                  "maxDurationSeconds": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 86400
+                  }
+                }
+              },
+              "approvalGate": {
+                "$ref": "#/$defs/id"
+              }
+            },
+            "allOf": [
+              {
+                "if": {
+                  "required": ["effect"],
+                  "properties": {
+                    "effect": {
+                      "const": "approval_required"
+                    }
+                  }
+                },
+                "then": {
+                  "required": ["approvalGate"]
+                },
+                "else": {
+                  "not": {
+                    "required": ["approvalGate"]
+                  }
+                }
+              }
+            ]
+          }
+        },
+        "controls": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "valuesInManifests",
+            "ambientDiscovery",
+            "directActorExposure",
+            "delegation",
+            "persistence"
+          ],
+          "properties": {
+            "valuesInManifests": {
+              "const": "forbidden"
+            },
+            "ambientDiscovery": {
+              "const": "deny"
+            },
+            "directActorExposure": {
+              "const": "deny"
+            },
+            "delegation": {
+              "const": "deny"
+            },
+            "persistence": {
+              "const": "deny"
+            }
+          }
+        },
+        "audit": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "events",
+            "recordDecisions",
+            "recordActor",
+            "recordCredentialRef",
+            "recordTarget",
+            "redactValues"
+          ],
+          "properties": {
+            "events": {
+              "allOf": [
+                {
+                  "$ref": "#/$defs/eventTypeList"
+                }
+              ],
+              "minItems": 1
+            },
+            "recordDecisions": {
+              "const": true
+            },
+            "recordActor": {
+              "const": true
+            },
+            "recordCredentialRef": {
+              "const": true
+            },
+            "recordTarget": {
+              "const": true
+            },
+            "redactValues": {
+              "const": true
+            }
+          }
+        }
+      }
+    },
     "networkAccessPolicy": {
       "title": "Network Access Policy",
       "description": "Fail-closed project policy for outbound network requests. This policy narrows connectivity and does not grant capabilities, permissions, credentials, context, provider access, or integration access.",

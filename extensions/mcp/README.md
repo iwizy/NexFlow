@@ -24,11 +24,16 @@ is the intersection of:
 - an action-specific capability and approval for tools that perform project actions
 - `access_network` and a matching structured network rule when the selected
   transport initiates an outbound connection
-- credentials supplied outside manifests
+- a matching structured credential handling rule and operation-scoped external
+  binding when authentication is required
 - runtime support for the profile and the external MCP protocol version
 
 No single declaration grants access. A missing or unsupported boundary blocks
 the operation.
+
+Credential material remains outside manifests and follows the
+[Credential Handling](../../docs/credential-handling.md) no-ambient,
+no-direct-exposure, and reauthorization rules.
 
 ## Surface Mapping
 

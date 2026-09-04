@@ -18,6 +18,7 @@ Related design notes:
 - [Typed References](typed-references.md)
 - [Work Reference Namespaces](work-reference-namespaces.md)
 - [Core Profile](core-profile.md)
+- [Credential Handling](credential-handling.md)
 - [MCP And A2A Boundaries](mcp-a2a-boundaries.md)
 - [Compatibility Matrix](compatibility-matrix.md)
 
@@ -61,6 +62,8 @@ The repository supports basic validation through:
 - Focused workflow step and task artifact namespace checks.
 - Focused provider feature vocabulary and capability-separation checks.
 - Focused structured provider constraint and legacy migration checks.
+- Focused credential policy default, kind, target, lease, approval, exposure,
+  persistence, and redaction checks.
 - Focused MCP extension profile, context/action surface, allow-list, approval,
   and example dependency checks.
 - Focused A2A profile checks for external identity, task, artifact, permission,
@@ -327,8 +330,8 @@ manifest validation, typed-reference primitive boundaries, work reference
 namespaces, approval gate target kinds and scope, provider feature vocabulary,
 provider constraint structure, MCP and A2A extension profile boundaries,
 compact agent identity compatibility, Core Profile conformance boundaries,
-manifest discovery and multiple-workflow boundaries, human override fail-closed
-shape, and conformance claim format boundaries. It also checks candidate
+manifest discovery and multiple-workflow boundaries, credential handling and
+human override fail-closed shapes, and conformance claim format boundaries. It also checks candidate
 readiness record boundaries, active agent definition completeness and unique
 unscoped selection cases, plus the cataloged negative schema boundaries.
 
@@ -341,7 +344,7 @@ npm run semantic-smoke
 This command checks core example references across ActorSet identity and agent
 bridges, active agent definition authority, tasks, workflow steps, artifacts,
 permissions, capabilities,
-structured network policies, context sources, memory scopes, providers, model
+structured credential and network policies, context sources, memory scopes, providers, model
 profiles, prompt sets, retrieval profiles, agent definitions, approval gates,
 typed approval gate targets, human override authorities and audit references,
 events, and extensions. It reports `NF-SEMANTIC` diagnostics for missing
@@ -419,6 +422,19 @@ The helper produces a logical validation inventory. It does not recursively
 scan directories, expand bundles, fetch remote sources, compute complete
 dependency closure, select a workflow, execute tasks, or define cross-workflow
 runtime state. See [Manifest Discovery](manifest-discovery.md).
+
+Run focused credential handling boundary checks:
+
+```sh
+npm run credential-handling-schema-smoke
+```
+
+This command exercises 21 accepted and rejected cases for explicit deny,
+closed credential kinds and purposes, actor and target shape, operation-only
+leases, approval coupling, no ambient discovery, no direct exposure, no
+delegation or persistence, unknown-field rejection, and mandatory redaction.
+It does not resolve an external binding, authenticate an actor, inspect a
+secret store, or prove broker and runtime isolation.
 
 Run focused human override boundary checks:
 
@@ -502,6 +518,8 @@ JSON Schema does not fully check:
 - whether web sources have domain and freshness policies
 - whether MCP sources distinguish context from tools
 - whether approval gates are sufficient for a risky action
+- whether credential policy matches action permission, target, approval,
+  network scope, and an external deployment binding
 - whether human override authorities resolve to human-controlled actors
 - whether a future runtime can actually pause, stop, revoke, or resume activity
 
@@ -524,6 +542,10 @@ Future semantic validators should check:
 - task ownership and dependency consistency
 - workflow graph validity
 - approval gate coverage
+- credential rule identifiers and references to actors, capabilities, targets,
+  approval gates, and audit event types
+- credential policy coherence with protected action permissions, network rules,
+  external bindings, leases, revocation, isolation, and audit policy
 - human override authority, resume gate, event, and fail-closed consistency
 - network rule identifiers and references to actors, capabilities, destinations, approval gates, and audit event types
 - network rule coherence with permissions, context boundaries, transport constraints, DNS resolution, redirects, and audit policy

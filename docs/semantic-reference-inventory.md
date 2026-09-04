@@ -145,10 +145,17 @@ not merge inputs, standing grants, or effective behavior sources.
 | `MemorySet.memoryScopes[].approvalGate` | `Project.project.approvalGates[].id` | Checked | Resolve the gate for approval-controlled updates or access. |
 | `MemorySet.memoryScopes[].auditEvents[]` | `EventSet.events[].type` | Gap | Resolve audit event types without implying persistence or emission. |
 
-### Network, Provider, Extension, And Audit
+### Credential, Network, Provider, Extension, And Audit
 
 | Source field | Target namespace | Current coverage | Required semantic behavior |
 | --- | --- | --- | --- |
+| `credentialHandling.rules[].actors[]` | Actor identity | Checked | Resolve requesters without granting use or proving an external credential binding. |
+| `credentialHandling.rules[].capabilities[]` | `CapabilitySet.capabilities[].id` | Checked | Resolve narrowing capability references; the credential rule does not grant them. |
+| `credentialHandling.rules[].targets.contextSources[]` | `ContextSet.contextSources[].id` | Checked | Resolve the exact protected context source without granting context or network access. |
+| `credentialHandling.rules[].targets.providers[]` | `ProviderSet.providers[].id` | Checked | Resolve the exact protected provider without selecting or authenticating it. |
+| `credentialHandling.rules[].targets.extensions[]` | `ExtensionSet.extensions[].id` | Checked | Resolve the exact protected extension without loading or authorizing it. |
+| `credentialHandling.rules[].approvalGate` | `Project.project.approvalGates[].id` | Checked | Resolve approval-required use; gate existence does not satisfy approval or bind a value. |
+| `credentialHandling.audit.events[]` | `EventSet.events[].type` | Checked | Resolve redacted credential decision event types without implying emission or storage. |
 | `networkAccess.rules[].actors[]` | Actor identity | Checked | Resolve the actors constrained by the rule. |
 | `networkAccess.rules[].capabilities[]` | `CapabilitySet.capabilities[].id` | Checked | Resolve required network-related capabilities; the rule does not grant them. |
 | `networkAccess.rules[].destinations.contextSources[]` | `ContextSet.contextSources[].id` | Checked | Resolve context-bound destinations without bypassing ContextSet policy. |

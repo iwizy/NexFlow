@@ -39,8 +39,8 @@ All other current manifest kinds are optional before use and required when
 selected by a claimed profile qualifier or dependency closure.
 
 Six maintained domain examples intentionally use the complete manifest
-vocabulary. Minimal Team is a reduced Core Profile path. `ActorSet` is currently
-present only in that Minimal Team reference path. The
+vocabulary. Minimal Team is a reduced Core Profile path, and Solo Developer is
+a compact applied path. `ActorSet` is present in both compact examples. The
 focused [Manifest Discovery](manifest-discovery.md) implementation supports
 explicit local sources and multiple unique Workflow documents. Directory,
 bundle, and runtime discovery from
@@ -77,6 +77,13 @@ required approval gate. Its audit event references resolve through
 `events.yaml`. Legacy free-text values remain schema-valid during the `0.1`
 draft but are advisory only and MUST NOT grant connectivity.
 
+`project.policies.credentialHandling` declares a fail-closed set of opaque
+credential requirement references, exact actor, capability, purpose, and target
+scope, operation-only leases, fixed no-ambient and no-direct-exposure controls,
+approval, and redacted audit events. It never contains credential values or
+secret-store locators. A matching rule does not grant an action, network access,
+or prove that an external runtime binding exists.
+
 `project.policies.humanOverride` declares typed human-controlled authorities, a
 closed operation set, new-action and in-flight response, fail-closed behavior,
 approval-gated resume, and required audit events. The policy requires
@@ -89,7 +96,7 @@ inventory and draft versioning manifests such as
 `promptSets: prompt-sets.yaml`, and
 `retrievalProfiles: retrieval-profiles.yaml`.
 
-Related docs: [Project Policy](concepts.md#project-policy), [Human Override](human-override.md), [Network Access Policy](network-access-policy.md), [Autonomy Model](autonomy-model.md), [Approval Gates](approval-gates.md), [Versioning](versioning.md), [Agent Definitions](agent-definitions.md), [Model Profiles](model-profiles.md), [Prompt Sets](prompt-sets.md), [Retrieval Profiles](retrieval-profiles.md).
+Related docs: [Project Policy](concepts.md#project-policy), [Human Override](human-override.md), [Credential Handling](credential-handling.md), [Network Access Policy](network-access-policy.md), [Autonomy Model](autonomy-model.md), [Approval Gates](approval-gates.md), [Versioning](versioning.md), [Agent Definitions](agent-definitions.md), [Model Profiles](model-profiles.md), [Prompt Sets](prompt-sets.md), [Retrieval Profiles](retrieval-profiles.md).
 
 ### `actors.yaml`
 

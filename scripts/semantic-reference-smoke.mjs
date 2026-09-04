@@ -251,6 +251,7 @@ function validateProjectSet(directory, manifests) {
   const agentDefinitions = new Set();
   const eventTypes = new Set();
   const extensions = new Set();
+  const credentialRules = new Set();
   const networkRules = new Set();
   const hasActorSet = manifests.has("ActorSet");
   const actorData = asArray(manifests.get("ActorSet")?.data?.actors);
@@ -375,12 +376,22 @@ function validateProjectSet(directory, manifests) {
     && !Array.isArray(configuredNetworkAccess)
     ? configuredNetworkAccess
     : null;
+  const configuredCredentialHandling = project.policies?.credentialHandling;
+  const credentialHandling = configuredCredentialHandling !== null
+    && typeof configuredCredentialHandling === "object"
+    && !Array.isArray(configuredCredentialHandling)
+    ? configuredCredentialHandling
+    : null;
   const configuredHumanOverride = project.policies?.humanOverride;
   const humanOverride = configuredHumanOverride !== null
     && typeof configuredHumanOverride === "object"
     && !Array.isArray(configuredHumanOverride)
     ? configuredHumanOverride
     : null;
+
+  for (const rule of asArray(credentialHandling?.rules)) {
+    addUnique(projectFile, credentialRules, rule?.id, "credential handling rule");
+  }
 
   for (const rule of asArray(networkAccess?.rules)) {
     addUnique(projectFile, networkRules, rule?.id, "network access rule");
@@ -461,6 +472,24 @@ function validateProjectSet(directory, manifests) {
   }
 
   requireRefs(projectFile, networkAccess?.audit?.events, eventTypes, "network access audit", "event type");
+
+  for (const rule of asArray(credentialHandling?.rules)) {
+    const label = `credential handling rule ${JSON.stringify(rule?.id)}`;
+    requireRefs(projectFile, rule?.actors, actors, label, "actor");
+    requireRefs(projectFile, rule?.capabilities, capabilities, label, "capability");
+    requireRefs(projectFile, rule?.targets?.contextSources, contextSources, label, "context source");
+    requireRefs(projectFile, rule?.targets?.providers, providers, label, "provider");
+    requireRefs(projectFile, rule?.targets?.extensions, extensions, label, "extension");
+    requireRefs(projectFile, [rule?.approvalGate], approvalGates, label, "approval gate");
+  }
+
+  requireRefs(
+    projectFile,
+    credentialHandling?.audit?.events,
+    eventTypes,
+    "credential handling audit",
+    "event type"
+  );
 
   if (humanOverride) {
     const label = "human override policy";
@@ -685,6 +714,6 @@ if (diagnostics.length > 0) {
   process.exitCode = 1;
 } else {
   console.log(`Semantic reference smoke checks passed for ${projects.size} example project(s).`);
-  console.log("Checked core actor identity, agent bridges, active definition authority, approval targets, provider feature migration, task, workflow, artifact, permission, network policy, human override, context, profile, gate, event, and extension references.");
+  console.log("Checked core actor identity, agent bridges, active definition authority, approval targets, provider feature migration, task, workflow, artifact, permission, credential policy, network policy, human override, context, profile, gate, event, and extension references.");
   console.log("This is a repository smoke check, not full semantic validation.");
 }

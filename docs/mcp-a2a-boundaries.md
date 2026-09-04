@@ -200,6 +200,9 @@ resulting local decision.
   requirements but do not contain usable credentials.
 - Tokens, passwords, client secrets, private keys, cookies, and raw credential
   material must remain outside public manifests and derived inspection output.
+- Protected calls require a matching structured
+  [Credential Handling](credential-handling.md) rule and operation-scoped
+  external binding. Protocol metadata cannot supply, delegate, or renew it.
 - Authenticated discovery does not authorize later operations automatically.
 
 ## Audit And Provenance

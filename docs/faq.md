@@ -46,6 +46,15 @@ Yes. The MIT License is intentionally permissive.
 
 Yes. Manifests can serve as reviewable project policy and coordination documents.
 
+## Where do credentials go?
+
+Outside NexFlow manifests. A Project may declare an opaque credential
+requirement and restrictive use policy, but not a value, environment-variable
+name, secret-store path, or runtime binding. A future host must resolve the
+reference through an external broker only after independent capability,
+permission, approval, target, network, and credential checks. See
+[Credential Handling](credential-handling.md).
+
 ## Does human override stop agents today?
 
 No. NexFlow now specifies and structurally validates a fail-closed human

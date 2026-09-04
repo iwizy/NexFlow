@@ -70,7 +70,9 @@ Integrations SHOULD declare:
 Network policy should select the integration or extension destination, allowed
 purposes, actors, schemes, and ports as narrowly as practical. Credentials must
 remain outside public manifests and must not be inferred from destination
-selection.
+selection. Protected actions require a matching structured
+[Credential Handling](credential-handling.md) rule and external runtime binding
+in addition to their action and network authorization.
 
 ## MCP
 
@@ -82,7 +84,8 @@ resources, prompts, tools, and actions to existing NexFlow policy domains.
 Action-bearing surfaces require an explicit tool allow-list, `access_mcp`, an
 action-specific capability, effective permissions, approval in the initial draft, and
 audit evidence. Networked transports additionally require `access_network` and
-a matching structured network rule. Credentials remain outside manifests.
+a matching structured network rule. Credentials remain outside manifests and
+must satisfy the separate credential handling policy.
 
 The draft does not implement MCP, choose a protocol version, discover live
 servers or tools, or treat connection success as authorization.

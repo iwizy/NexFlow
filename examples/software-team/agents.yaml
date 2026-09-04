@@ -16,6 +16,7 @@ agents:
     permissions:
       - implementation_branch_work
       - approved_network_access
+      - approved_credential_use
       - mcp_tool_access
     capabilities:
       - read_repository
@@ -24,6 +25,7 @@ agents:
       - execute_command
       - read_context
       - access_network
+      - use_credential
       - access_mcp
     contextAccess:
       - repository

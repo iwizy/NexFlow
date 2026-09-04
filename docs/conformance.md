@@ -248,6 +248,8 @@ Runtime conformance is planned future work. A future conforming runtime MUST enf
 - autonomy levels
 - context access boundaries
 - memory scope boundaries
+- credential policy, external binding, approval, operation lease, mediation,
+  revocation, failure, redaction, and no-ambient-access boundaries
 - audit event expectations
 - event construction, classification, minimization, redaction, persistence,
   ordering, retention, deletion, access, integrity, gap, and recovery boundaries
@@ -267,7 +269,8 @@ limitations. Telemetry export alone is not audit persistence. See
 A provider execution claim must identify exact selector, adapter, provider API,
 host interface, model and operation mappings, retry and fallback behavior,
 credential and network enforcement, audit evidence, and limitations. See
-[Provider Adapter Boundary](provider-adapter-boundary.md).
+[Provider Adapter Boundary](provider-adapter-boundary.md) and
+[Credential Handling](credential-handling.md).
 
 ### Event Interoperability
 
@@ -365,6 +368,8 @@ The following behavior is non-conforming:
 - granting access through an extension by presence alone
 - ignoring approval gates for high-risk actions
 - ignoring a valid human override or resuming automatically after one
+- discovering ambient credentials, exposing credential material to an actor,
+  or reusing a binding outside its authorized operation scope
 - using undeclared context sources
 - writing memory outside declared scopes
 - treating provider preferences or provider availability as permission to call a provider

@@ -46,6 +46,7 @@ enforced.
 | Manifest discovery and multiple workflows | Explicit local file lists, Project source hints, two-filename Project entry selection, conservative cardinality, and unique workflow inventory | Implemented | `docs/manifest-discovery.md`, `scripts/lib/manifest-discovery.mjs`, `npm run manifest-discovery-smoke` | Focused repository validation helper only; no directory scan, bundle input, general index, stable CLI contract, workflow selection, cross-workflow execution, or runtime loading. |
 | Agent Assembly inspection view | Documentation contract for a derived effective-configuration projection | Specified | `docs/agent-assembly.md`, RFC-0014 | No resolver, serializer, JSON Schema, reference CLI output, or runtime implementation exists. |
 | Human override boundary smoke | 11 accepted and rejected structural cases | Implemented | `npm run human-override-schema-smoke` | Checks policy shape, not authentication, interruption, revocation, or runtime enforcement. |
+| Credential handling model | Structured deny-by-default policy plus 21 focused structural cases and selected semantic references | Implemented | `docs/credential-handling.md`, `npm run credential-handling-schema-smoke`, `npm run semantic-smoke` | Authored policy only; no credential values, secret store, broker, authentication, injection, rotation, revocation, or runtime enforcement. |
 | Typed reference primitives | Common typed, scoped, transitional, and kind-specific definitions with 53 focused cases | Implemented | `schemas/common.schema.json`, `npm run typed-reference-schema-smoke` | Shape and lexical evidence only; no complete field-contract or semantic resolution conformance. |
 | Approval gate targets | Closed typed target kinds, assembly and workflow scope, migrated examples, and exact semantic lookup | Implemented | `docs/approval-gate-targets.md`, `npm run approval-gate-target-schema-smoke`, `npm run semantic-smoke` | Target resolution only; no gate coverage, decision state, approver authentication, or runtime enforcement. |
 | Work reference namespaces | Workflow-wide step and assembly-wide artifact rules with 13 focused cases | Implemented | `docs/work-reference-namespaces.md`, `npm run work-reference-namespace-smoke` | Identity and exact lookup evidence only; no cycle, ordering, provenance, disclosure, or runtime enforcement. |
@@ -118,6 +119,7 @@ repository CLI inspection smoke: scripts/cli-inspection-smoke.mjs
 repository CLI graph helper: scripts/lib/manifest-graph.mjs
 repository CLI graph smoke: scripts/cli-graph-smoke.mjs
 multi-workflow fixture: fixtures/discovery/multi-workflow/
+credential handling boundary smoke: scripts/credential-handling-schema-smoke.mjs
 human override boundary smoke: scripts/human-override-schema-smoke.mjs
 mcp extension profile: extensions/mcp/profile.yaml
 mcp extension smoke: scripts/mcp-extension-smoke.mjs
@@ -171,7 +173,7 @@ example and is validated in CI.
 
 | Manifest `kind` | Schema | Example coverage | `npm run validate` | `npm run semantic-smoke` |
 | --- | --- | --- | --- | --- |
-| `Project` | `project.schema.json` | 2 compact and 6 complete project sets, plus focused fixtures | Full structural check | Optional source hints, singular or plural Workflow sources, selected project, maintainer, approval gate, network policy, and human override checks |
+| `Project` | `project.schema.json` | 2 compact and 6 complete project sets, plus focused fixtures | Full structural check | Optional source hints, singular or plural Workflow sources, selected project, maintainer, approval gate, credential policy, network policy, and human override checks |
 | `ActorSet` | `actors.schema.json` | Minimal Team and Solo Developer migration paths | Full structural check | Actor identity, agent bridge, operator, representative, integration, and relationship cycle checks |
 | `AgentSet` | `agents.schema.json` | All 8 project sets | Full structural check | Agent identity inventory plus deprecated compatibility-field references where present |
 | `AgentDefinitionSet` | `agent-definitions.schema.json` | 6 complete project sets | Full structural check | Selected agent and component references |
@@ -257,6 +259,24 @@ metadata, and legacy behavior-field compatibility.
 
 It does not select an agent definition, resolve components, or establish
 effective behavior.
+
+### Credential Handling Schema Boundary Smoke
+
+Command:
+
+```sh
+npm run credential-handling-schema-smoke
+```
+
+Compatible with the current common and Project schema snapshot. It checks 21
+accepted and rejected cases covering deny-by-default policy, opaque references,
+closed kinds and purposes, exact target shape, operation leases, approval
+coupling, no ambient discovery, no direct exposure, no delegation or
+persistence, unknown-field rejection, and value redaction.
+
+It does not inspect credential material, resolve an external binding,
+authenticate an actor, select a broker, inject a value, or establish runtime
+conformance.
 
 ### Human Override Schema Boundary Smoke
 
@@ -388,6 +408,7 @@ It checks selected:
 - assembly-scoped artifact declarations and handoff references
 - capability and permission references
 - approval gate references
+- structured credential policy actor, capability, target, gate, and audit references
 - structured network policy rule and destination references
 - human override authority, resume gate, and audit event references
 - context and memory references

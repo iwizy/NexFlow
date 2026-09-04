@@ -353,6 +353,7 @@ Examples:
 | Change workflow step or task artifact uniqueness scope or fallback behavior | May affect `NF-SEMANTIC`, graph tooling, handoff evidence resolution, migration, and future runtime binding. |
 | Change discovery root, source ordering, document cardinality, or multiple-workflow identity rules | May affect `NF-SCHEMA`, `NF-SEMANTIC`, validation tooling, migration, and future runtime loading. |
 | Change network defaults, destination scope, transport constraints, approvals, or audit semantics | May affect `NF-SEMANTIC`, `NF-RUNTIME`, integrations, privacy, audit, and safety compatibility. |
+| Change credential defaults, references, kinds, target scope, exposure controls, lease, approval, failure, or audit semantics | May affect `NF-SCHEMA`, `NF-SEMANTIC`, `NF-RUNTIME`, authentication, privacy, audit, and safety compatibility. |
 | Change human override authority, response, resume, operation, or audit semantics | May affect `NF-SCHEMA`, `NF-SEMANTIC`, `NF-RUNTIME`, safety, authority, and audit compatibility. |
 | Change event envelope identity, actor, subject, correlation, causation, payload, audit, or redaction semantics | May affect `NF-SEMANTIC`, `NF-RUNTIME`, audit, traceability, privacy, and safety compatibility. |
 | Change audit store roles, redaction timing, ordering scope, duplicate handling, pre-effect persistence, retention, deletion, access, integrity, durability, gaps, or recovery | May affect `NF-RUNTIME`, audit completeness, traceability, privacy, safety, and interoperability compatibility. |

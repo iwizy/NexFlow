@@ -13,7 +13,7 @@ access or executes work by itself.
 | --- | --- | --- | --- |
 | 1 | [Minimal Team](minimal-team/) | You want the smallest useful identity and responsibility description. | Project, typed actor identity, compact AgentSet, explicit agent bridge, fail-closed omission, and the path to optional modules. |
 | 2 | [Solo Developer](solo-developer/) | One human wants an explicit AI-assisted change and review loop. | Human authority, approval-gated writes and commands, task dependencies, local context, validation handoff. |
-| 3 | [Software Team](software-team/) | You want a conventional repository workflow. | Implementation, review, QA, docs handoff, dependency approval, GitHub and task context. |
+| 3 | [Software Team](software-team/) | You want a conventional repository workflow. | Implementation, review, QA, docs handoff, credential mediation, dependency approval, GitHub and task context. |
 | 4 | [Startup Team](startup-team/) | You want fast iteration with human launch control. | Product decisions, design review, release review, safe autonomy, product context. |
 | 5 | [Product Delivery Team](product-delivery-team/) | You want cross-functional delivery. | Product acceptance, UX handoff, QA evidence, launch readiness, many-to-many handoffs. |
 | 6 | [Open Source Maintainer](open-source-maintainer/) | You want public maintenance workflows. | Issue triage, maintainer decisions, PR review, docs review, release notes. |
@@ -26,7 +26,7 @@ access or executes work by itself.
 | --- | --- | --- | --- | --- | --- | --- |
 | [Minimal Team](minimal-team/) | 1 - Core | None declared | None declared | None declared | None declared | Core Profile identity, compact AgentSet, explicit agent bridge, fail-closed omission |
 | [Solo Developer](solo-developer/) | 2 - Compact | Local repository files | `ask_before_changes` with human final authority | Repository change review | None declared | Capability/permission separation, scoped work, human review handoff, static graph |
-| [Software Team](software-team/) | 2 - Standard | GitHub, Linear, docs, MCP | Mostly `ask_before_changes`, human review | Code review, dependency approval, docs review | GitHub, Linear, and MCP extensions | Task ownership, capability use, MCP context/action separation, dependency and review gates |
+| [Software Team](software-team/) | 2 - Standard | GitHub, Linear, docs, MCP | Mostly `ask_before_changes`, human review | Code, dependency, credential, and docs review | GitHub, Linear, and MCP extensions | Task ownership, capability use, credential mediation, MCP context/action separation, dependency and review gates |
 | [Startup Team](startup-team/) | 3 - Product-heavy | GitHub, Linear, Figma, research, docs | `autonomous_safe` for low-risk work, human release control | Product review, design review, release review | GitHub, Linear, Figma extensions | Product scope, launch gates, design and release handoffs |
 | [Product Delivery Team](product-delivery-team/) | 3 - Cross-functional | GitHub, Jira, Figma, customer docs | Safe autonomy with staged review | Product acceptance, quality gate, launch gate | GitHub, Jira, Figma extensions | Many-to-many handoffs, QA evidence, launch readiness |
 | [Open Source Maintainer](open-source-maintainer/) | 3 - Community-facing | GitHub issues, PRs, docs, release history | `suggest_only` and `ask_before_changes` under maintainer authority | Maintainer decision, docs review, PR review, release note approval | GitHub and docs extensions | Public contribution flow, maintainer authority, release notes |

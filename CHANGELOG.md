@@ -8,6 +8,12 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Added
 
+- Added a structured, fail-closed credential handling policy with opaque
+  requirement references, exact actor, purpose, capability, and target scope,
+  operation-only leases, fixed no-ambient and no-exposure controls, approval,
+  redacted audit, a Software Team example, and focused schema and semantic
+  checks. Credential storage, broker integration, authentication, injection,
+  rotation, revocation, and runtime enforcement remain unimplemented.
 - Added a compact Solo Developer example with one human maintainer, one AI
   coding assistant, approval-gated repository changes, local context, a
   three-task workflow, review handoff, and audit event declarations. Its ten

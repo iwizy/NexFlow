@@ -67,6 +67,9 @@
             "secretHandling": {
               "type": "string"
             },
+            "credentialHandling": {
+              "$ref": "common.schema.json#/$defs/credentialHandlingPolicy"
+            },
             "networkAccess": {
               "description": "Structured outbound network policy or a legacy advisory string. Legacy strings do not grant machine-enforceable access.",
               "oneOf": [

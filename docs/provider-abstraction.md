@@ -123,7 +123,8 @@ Declaring or selecting a provider does not authorize a connection to it. A
 provider request also requires the `access_network` capability, effective
 permission, a matching structured
 [Network Access Policy](network-access-policy.md) rule, and credentials supplied
-through an appropriate secret-management boundary.
+through an externally bound, operation-scoped
+[Credential Handling](credential-handling.md) decision.
 
 ## Future Runtime Expectations
 

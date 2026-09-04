@@ -210,6 +210,21 @@ transport restriction remains binding after approval.
 
 See [Network Access Policy](network-access-policy.md).
 
+## Credential Interaction
+
+A credential rule with `effect: approval_required` must reference a declared
+project approval gate. Its decision should bind the actor, credential rule and
+opaque reference, purpose, action capability, exact target, operation scope,
+time, and expiry.
+
+Approval does not reveal or bind credential material, grant the protected
+action, permit network access, or authorize fallback and renewal. Expired,
+revoked, unavailable, mismatched, or ambiguous external bindings remain denied
+after approval. Approval evidence must not contain credential values or broker
+locators.
+
+See [Credential Handling](credential-handling.md).
+
 ## Human Override Interaction
 
 Human override may revoke an approval or block an action, but it cannot create

@@ -99,10 +99,13 @@ rule in addition to A2A access permission. Agent Card security schemes describe
 remote authentication requirements; they do not supply credentials or grant
 local access.
 
-Credentials remain outside public manifests. Push notification callbacks or
-other inbound listeners remain unsupported unless a future NexFlow policy
-model explicitly covers inbound exposure, callback authentication, replay
-protection, and destination ownership.
+Credentials remain outside public manifests. Protected calls also require a
+matching structured [Credential Handling](../../docs/credential-handling.md)
+rule and operation-scoped external binding; Agent Card metadata cannot grant,
+delegate, or renew one. Push notification callbacks or other inbound listeners
+remain unsupported unless a future NexFlow policy model explicitly covers
+inbound exposure, callback authentication, replay protection, and destination
+ownership.
 
 ## Current Limits
 

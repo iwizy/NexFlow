@@ -58,7 +58,7 @@ The schemas currently target `specVersion: "0.1"` and use JSON Schema draft 2020
 
 | Schema | Manifest `kind` | Purpose |
 | --- | --- | --- |
-| `project.schema.json` | `Project` | Project identity, policies including structured network access and human override, maintainers, approval gates, optional source hints, and singular or plural Workflow sources. |
+| `project.schema.json` | `Project` | Project identity, policies including structured credential handling, network access, and human override, maintainers, approval gates, optional source hints, and singular or plural Workflow sources. |
 | `actors.schema.json` | `ActorSet` | First-class human, agent, automation, service, and authority identity with kind-specific typed relationships. |
 | `agents.schema.json` | `AgentSet` | Stable AI identity, with deprecated behavior fields and legacy mixed-participant compatibility during migration. |
 | `agent-definitions.schema.json` | `AgentDefinitionSet` | Versioned agent behavioral releases with complete reviewed active-definition requirements and component references. |
@@ -75,7 +75,7 @@ The schemas currently target `specVersion: "0.1"` and use JSON Schema draft 2020
 | `retrieval-profiles.schema.json` | `RetrievalProfileSet` | Retrieval profiles for context source selection, index versions, chunking, freshness, citations, sensitivity, review triggers, and audit expectations. |
 | `events.schema.json` | `EventSet` | Event types, optional envelope expectations, payload expectations, retention, and audit requirements. |
 | `extensions.schema.json` | `ExtensionSet` | Extension namespaces, lifecycle state, and required capabilities. |
-| `common.schema.json` | Shared definitions | IDs, metadata, typed references, autonomy levels, risk levels, artifacts, approval gates, network access, human override, and common enums. |
+| `common.schema.json` | Shared definitions | IDs, metadata, typed references, autonomy levels, risk levels, artifacts, approval gates, credential handling, network access, human override, and common enums. |
 
 ## Design Rules
 
@@ -129,6 +129,7 @@ Use `common.schema.json` for shared concepts:
 - memory scopes
 - artifacts
 - approval gates
+- structured credential handling policies
 - structured network access policies
 - fail-closed human override policies
 - extension attachments
@@ -165,6 +166,8 @@ Examples of future semantic checks:
 - workflow dependencies form a coherent graph
 - task owners have required permissions
 - approval gates cover high-risk capabilities
+- credential rules reference declared actors, capabilities, context sources, providers, extensions, approval gates, and audit events
+- credential policy remains coherent with action permissions, network scope, external bindings, and no-exposure controls
 - network rules reference declared actors, capabilities, context sources, providers, extensions, and approval gates
 - network audit event references resolve to declared event types
 - network rules are coherent with effective permissions, context boundaries, transport constraints, and destination resolution
@@ -241,6 +244,7 @@ npm run actor-schema-smoke
 npm run agent-identity-schema-smoke
 npm run agent-definition-authority-smoke
 npm run core-profile-smoke
+npm run credential-handling-schema-smoke
 npm run human-override-schema-smoke
 npm run mcp-extension-smoke
 npm run a2a-extension-smoke
@@ -261,6 +265,12 @@ and closed object shape. Semantic target existence remains a separate check.
 The work-reference namespace command checks workflow-wide step and
 assembly-wide artifact identity, duplicate rejection, and exact dependency and
 handoff lookup. It does not validate graph ordering or artifact provenance.
+
+The credential handling command checks the fail-closed default, closed kind and
+purpose vocabularies, exact target shape, operation-only lease, approval
+coupling, fixed no-ambient and no-exposure controls, and mandatory redaction.
+It does not inspect a secret store, resolve bindings, or prove runtime
+isolation.
 
 The provider feature command checks the closed model support vocabulary,
 non-empty unique lists, migration coexistence, and separation from project

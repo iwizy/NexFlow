@@ -40,11 +40,26 @@ Audit persistence never grants authority for the recorded action.
 
 ### Credential Handling
 
-Credentials must never be implied by context access. Future runtimes must isolate secrets and avoid exposing them to agents unless explicitly authorized.
+Credentials must never be implied by context, provider, extension, integration,
+network, or capability access. Raw values and secret-store locators must remain
+outside manifests.
+
+The structured [Credential Handling](credential-handling.md) policy declares
+opaque requirement references, exact actor, capability, purpose, and target
+scope, operation-only leases, independent approval, fixed no-ambient and
+no-direct-exposure controls, fail-closed outcomes, and redacted audit events.
+A matching rule only permits a future runtime to request an external binding;
+it does not grant the protected action or prove that a credential exists.
+
+This repository does not implement credential storage, a broker,
+authentication, injection, rotation, revocation, or runtime isolation.
 
 ### Secret Management
 
-Secret references should be indirect. Manifests should not contain raw secrets.
+Secret creation, storage, rotation, and revocation remain external operational
+responsibilities. Manifests should not contain raw secrets or secret-store
+locators. A credential reference names a project requirement only; it is not a
+deployable secret binding.
 
 ### Destructive Operations
 
@@ -160,6 +175,8 @@ remaining runtime questions.
 - implicit command execution
 - implicit access through integrations or extensions
 - provider access to all context
+- ambient credential discovery or direct credential exposure to an actor
+- credential reuse across actors, targets, purposes, operations, or provider fallback
 - unbounded memory writes
 - automatic cross-scope memory promotion
 - retaining secrets or credential values in memory

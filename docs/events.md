@@ -37,6 +37,7 @@ Event types use dotted lowercase values:
 - `memory.deleted`
 - `memory.promoted`
 - `network.decision`
+- `credential.decision`
 - `override.requested`
 - `override.applied`
 - `override.failed`
@@ -230,6 +231,27 @@ storing authorization headers, cookies, tokens, secret query values, request
 bodies, or response bodies. Destination details remain subject to project audit
 and classification policy. See
 [Network Access Policy](network-access-policy.md).
+
+### `credential.decision`
+
+```yaml
+type: credential.decision
+payload:
+  actor: implementation-agent
+  credentialRef: coding-provider-access
+  purpose: provider_request
+  target:
+    provider: coding_reasoning
+  decision: approval_required
+  ruleIds:
+    - coding-provider-credential
+  redactionApplied: true
+```
+
+Credential decision events record policy outcomes, not credential material.
+They should omit raw or derived values, broker paths, authorization headers,
+account identifiers, request payloads, and authentication responses. See
+[Credential Handling](credential-handling.md).
 
 ### Human override events
 

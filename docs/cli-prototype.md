@@ -188,6 +188,51 @@ Use a stable local checkout: hostile concurrent replacement of ancestor
 directories, hard-link ownership, dependency compromise, and OS permissions
 are not isolation guarantees supplied by this prototype.
 
+### Executable No-Runtime Guardrails
+
+Every accepted prototype command has one immutable effect budget in
+`scripts/lib/cli-boundary.mjs`. The command parser and dispatcher use the same
+closed command inventory. An unknown command or a command without a budget
+fails before project work begins.
+
+All budgets set these effects to `false`:
+
+- network access
+- process execution
+- credential access
+- provider calls
+- executable extension loading
+- runtime preflight
+- workflow execution
+- background work
+
+`discover`, `validate`, `inspect`, and `graph` have no project-write budget.
+`init` has only `fixed-starter-files`; its existing conflict, symlink, exclusive
+creation, and rollback rules remain authoritative. A flag, environment value,
+manifest field, extension declaration, or remote locator cannot widen a budget.
+
+`npm run cli-no-runtime-guardrails-smoke` makes this boundary executable. It:
+
+- checks the exact command inventory and effect-budget fields
+- checks the complete first-party CLI module graph against a reviewed import
+  allowlist and permits only literal dynamic imports
+- rejects ambient environment access, CommonJS loading, dynamic code
+  evaluation, global network clients, and native module loading in that graph
+- proves the deny-harness is active for network, subprocess, and filesystem
+  mutation, then runs every implemented command while common network, server,
+  subprocess, cluster, worker, socket, and write APIs are guarded
+- verifies that read-only commands do not change their selected project
+- verifies that manifest-selected commands and remote locators remain inert
+- verifies that runtime-like commands are rejected without effects
+- verifies that `init` creates only its fixed files and still reports
+  `executionAuthorized: false`
+
+The smoke check is focused regression evidence. It is not an operating-system
+sandbox, a proof about a compromised Node.js process or dependency, a stable
+CLI conformance claim, or a runtime implementation. The reviewed module graph
+must be updated deliberately when a legitimate first-party dependency changes;
+passing the check does not make a new dependency trustworthy.
+
 ## Verification And Remaining Gates
 
 ```sh
@@ -197,6 +242,7 @@ npm run cli-diagnostics-smoke
 npm run cli-inspection-smoke
 npm run cli-graph-smoke
 npm run cli-init-smoke
+npm run cli-no-runtime-guardrails-smoke
 npm run manifest-discovery-smoke
 npm run validate
 ```
@@ -214,6 +260,9 @@ scoped resolution, ambiguity, unresolved and redacted targets, and closed output
 projection. CI runs them alongside existing repository checks.
 Init checks cover schema-valid generation, idempotence, conflict handling,
 symlink rejection, relative reporting, and the closed JSON result.
+No-runtime guardrail checks cover the closed command inventory, immutable effect
+budgets, reviewed module dependencies, denied runtime APIs, inert authored
+content, read-only project snapshots, and the fixed initializer write set.
 No schema or example migration is needed; no manifest fields or accepted
 schema versions change.
 

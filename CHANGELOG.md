@@ -8,6 +8,12 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Added
 
+- Added executable no-runtime guardrails to the repository CLI prototype: a
+  closed immutable effect budget for every command, reviewed first-party module
+  graph, runtime-like command rejection, denied network, process, and filesystem
+  mutation APIs, read-only project snapshots, inert manifest content checks,
+  and a fixed init write-set check now run in CI. This is regression evidence,
+  not an operating-system sandbox, reference CLI conformance claim, or runtime.
 - Added a source-grounded threat model for the current specification repository
   and conditional future runtime, including assets, actors, trust boundaries,
   effective resources, security invariants, assumptions, prioritized attacker

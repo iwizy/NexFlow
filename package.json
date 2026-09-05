@@ -15,6 +15,7 @@
     "cli-graph-smoke": "node scripts/cli-graph-smoke.mjs",
     "cli-init-smoke": "node scripts/cli-init-smoke.mjs",
     "cli-inspection-smoke": "node scripts/cli-inspection-smoke.mjs",
+    "cli-no-runtime-guardrails-smoke": "node scripts/cli-no-runtime-guardrails-smoke.mjs",
     "cli-prototype-smoke": "node scripts/cli-prototype-smoke.mjs",
     "cli-validation-smoke": "node scripts/cli-validation-smoke.mjs",
     "conformance-claim-smoke": "node scripts/conformance-claim-smoke.mjs",

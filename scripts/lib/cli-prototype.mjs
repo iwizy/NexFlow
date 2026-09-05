@@ -1,5 +1,6 @@
 import { parseArgs } from "node:util";
 
+import { assertCliEffectBudget, CLI_OPERATION_COMMANDS } from "./cli-boundary.mjs";
 import { writeCliResult } from "./cli-output.mjs";
 
 const version = "NexFlow repository CLI prototype (unreleased; spec 0.1)";
@@ -78,7 +79,7 @@ function parseRequest(args) {
   }
   if (values.format !== undefined && !["text", "json"].includes(values.format)) throw new Error("unknown format");
   const [command] = positionals;
-  if (positionals.length > 1 || (command && !["discover", "validate", "inspect", "graph", "init"].includes(command))) {
+  if (positionals.length > 1 || (command && !CLI_OPERATION_COMMANDS.includes(command))) {
     throw new Error("unknown command or positional argument");
   }
   if (values.project !== undefined && values.file !== undefined) throw new Error("conflicting modes");
@@ -158,6 +159,11 @@ export async function runCliPrototype(args, {
     request = parseRequest(args);
   } catch {
     return failure(2, "NEXFLOW-PROTOTYPE-USAGE", "Invalid prototype usage. Run with --help for supported commands and options.");
+  }
+  try {
+    assertCliEffectBudget(request.command);
+  } catch {
+    return failure(4, "NEXFLOW-PROTOTYPE-INTERNAL", "Internal prototype effect boundary is unavailable. No project operation or execution result is available.");
   }
   if (request.command === "help") {
     return finish(0, { result: { text: help } });

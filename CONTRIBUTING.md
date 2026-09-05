@@ -82,6 +82,8 @@ npm run cli-validation-smoke
 npm run cli-diagnostics-smoke
 npm run cli-inspection-smoke
 npm run cli-graph-smoke
+npm run cli-init-smoke
+npm run cli-no-runtime-guardrails-smoke
 npm run human-override-schema-smoke
 npm run provider-feature-schema-smoke
 npm run conformance-claim-smoke
@@ -103,6 +105,13 @@ assembly. Neither replaces the repository-wide `npm run validate` and focused
 checks or accepts the pending architecture decision. Changes to either command
 must keep its documented selection, diagnostic, non-mutation, and safety
 boundaries synchronized with the smoke checks.
+
+Changes to the prototype command set, module graph, filesystem effects, or
+runtime-facing imports must also update and pass
+`npm run cli-no-runtime-guardrails-smoke`. The guardrail keeps network,
+subprocess, credential, provider, executable-extension, runtime-preflight,
+workflow-execution, and background-work effects disabled for every prototype
+command. It is regression evidence, not an operating-system sandbox.
 
 JSON output changes must also synchronize the
 [output contract](docs/cli-diagnostics.md), its schema in `scripts/contracts/`,

@@ -4,6 +4,11 @@ NexFlow is currently a specification repository. It does not execute workflows, 
 
 Security still matters because the specification describes future systems that may execute sensitive actions.
 
+The public [Threat Model](docs/threat-model.md) separates current repository
+risks from conditional future-runtime attacker stories and documents scope,
+trust boundaries, mitigations, assumptions, and severity calibration. It does
+not replace private vulnerability reporting.
+
 ## Reporting Security Issues
 
 Please do not open public issues for vulnerabilities involving:

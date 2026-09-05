@@ -69,6 +69,9 @@ jobs:
       - name: Run CLI starter initialization checks
         run: npm run cli-init-smoke
 
+      - name: Run CLI no-runtime guardrail checks
+        run: npm run cli-no-runtime-guardrails-smoke
+
       - name: Run credential handling schema boundary checks
         run: npm run credential-handling-schema-smoke
 

@@ -267,3 +267,11 @@ A conforming runtime should:
 - deny outbound requests that lack a matching structured network policy rule
 - re-evaluate DNS results and redirects against private-network, loopback, scheme, port, and destination constraints
 - redact credentials, headers, query data, and payloads from network audit records
+
+## Threat Model
+
+The [NexFlow Threat Model](threat-model.md) applies these principles to the
+current repository and the conditional future runtime. It identifies assets,
+actors, trust boundaries, prioritized attacker stories, existing and planned
+controls, assumptions, unknowns, and severity calibration. It is not a claim
+that runtime controls are implemented or that a vulnerability has been found.

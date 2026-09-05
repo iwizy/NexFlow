@@ -15,6 +15,7 @@ The documentation is the canonical source for the specification. Schemas and exa
 - [Core Profile](core-profile.md)
 - [Manifest Reference](manifest-reference.md)
 - [Security Model](security-model.md)
+- [Threat Model](threat-model.md)
 
 ## Reading Paths
 
@@ -23,7 +24,7 @@ The documentation is the canonical source for the specification. Schemas and exa
 | New project visitor | [Vision](vision.md) -> [Concepts](concepts.md) -> [Glossary](glossary.md) -> [Manifest Reference](manifest-reference.md) |
 | Maintainer | [Maintainer Guide](maintainer-guide.md) -> [Governance](governance.md) -> [Compatibility Matrix](compatibility-matrix.md) -> [Validation](validation.md) -> [Release Plan](release-plan.md) |
 | Manifest author | [Core Profile](core-profile.md) -> [Manifest Reference](manifest-reference.md) -> [Actor Model](actor-model.md) -> [Context Model](context-model.md) -> [Memory Model](memory-model.md) -> [Examples Guide](../examples/README.md) |
-| Safety reviewer | [Security Model](security-model.md) -> [Human Override](human-override.md) -> [Credential Handling](credential-handling.md) -> [Network Access Policy](network-access-policy.md) -> [Extension Loading Boundary](extension-loading-boundary.md) -> [Provider Adapter Boundary](provider-adapter-boundary.md) -> [Event And Audit Storage Boundary](event-audit-storage-boundary.md) -> [Approval Gates](approval-gates.md) -> [Approval Gate Targets](approval-gate-targets.md) -> [Capability Model](capability-model.md) -> [Autonomy Model](autonomy-model.md) |
+| Safety reviewer | [Threat Model](threat-model.md) -> [Security Model](security-model.md) -> [Human Override](human-override.md) -> [Credential Handling](credential-handling.md) -> [Network Access Policy](network-access-policy.md) -> [Extension Loading Boundary](extension-loading-boundary.md) -> [Provider Adapter Boundary](provider-adapter-boundary.md) -> [Event And Audit Storage Boundary](event-audit-storage-boundary.md) -> [Approval Gates](approval-gates.md) -> [Approval Gate Targets](approval-gate-targets.md) -> [Capability Model](capability-model.md) -> [Autonomy Model](autonomy-model.md) |
 | Validator author | [Validation](validation.md) -> [CLI And Runtime Responsibility Boundary](cli-runtime-boundary.md) -> [Diagnostic Code Catalog](diagnostic-code-catalog.md) -> [Fixtures Guide](../fixtures/README.md) -> [Manifest Discovery](manifest-discovery.md) -> [Semantic Reference Inventory](semantic-reference-inventory.md) -> [Typed References](typed-references.md) -> [Approval Gate Targets](approval-gate-targets.md) -> [Work Reference Namespaces](work-reference-namespaces.md) -> [Schema Design Notes](schema-design-notes.md) -> [Schema Guide](../schemas/README.md) -> [Conformance](conformance.md) -> [Conformance Claims](conformance-claims.md) -> [Compatibility Matrix](compatibility-matrix.md) |
 | Runtime implementer | [Architecture](architecture.md) -> [CLI And Runtime Responsibility Boundary](cli-runtime-boundary.md) -> [Credential Handling](credential-handling.md) -> [Network Access Policy](network-access-policy.md) -> [Event Model](events.md) -> [Event And Audit Storage Boundary](event-audit-storage-boundary.md) -> [Event Interoperability](event-interoperability.md) -> [Runtime Options](runtime-options.md) -> [Extension Loading Boundary](extension-loading-boundary.md) -> [Provider Adapter Boundary](provider-adapter-boundary.md) -> [Provider Abstraction](provider-abstraction.md) -> [Provider Features](provider-features.md) -> [Provider Constraints](provider-constraints.md) -> [Roadmap](roadmap.md) |
 | Extension author | [Extension Model](extensions.md) -> [Extension Loading Boundary](extension-loading-boundary.md) -> [MCP And A2A Boundaries](mcp-a2a-boundaries.md) -> [MCP Extension Draft](../extensions/mcp/README.md) -> [A2A Extension Draft](../extensions/a2a/README.md) -> [Integrations](integrations.md) -> [Conformance](conformance.md) |
@@ -32,6 +33,7 @@ The documentation is the canonical source for the specification. Schemas and exa
 
 | Model | Purpose |
 | --- | --- |
+| [Threat Model](threat-model.md) | Maps current repository and conditional future-runtime assets, actors, trust boundaries, attacker stories, controls, assumptions, and severity. |
 | [Core Profile](core-profile.md) | Defines the minimum Project and participant assembly, optional module qualifiers, dependency closure, and fail-closed incremental adoption. |
 | [Actor Model](actor-model.md) | Defines first-class human, agent, automation, service, and authority identity plus migration behavior. |
 | [Capability Model](capability-model.md) | Defines technical actions separately from authorization. |

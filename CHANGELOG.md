@@ -8,6 +8,11 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Added
 
+- Added a source-grounded threat model for the current specification repository
+  and conditional future runtime, including assets, actors, trust boundaries,
+  effective resources, security invariants, assumptions, prioritized attacker
+  stories, mitigations, severity calibration, and review triggers. It does not
+  report a vulnerability or claim that future runtime controls are implemented.
 - Added bounded `init` to the repository CLI prototype. It writes a built-in,
   versioned three-manifest Core Profile starter into an explicit existing
   directory, uses provider-neutral `suggest_only` and human-review defaults,

@@ -85,7 +85,7 @@ The documentation is the canonical source for the specification. Schemas and exa
 | [CLI Starter Initialization](cli-init.md) | Documents the built-in minimal template, explicit destination, conflict behavior, generated defaults, and bounded write safety. |
 | [CLI Machine-Readable Diagnostics](cli-diagnostics.md) | Experimental JSON envelope, output schema, check states, streams, exit codes, redaction, and output versioning. |
 | [Diagnostic Code Catalog](diagnostic-code-catalog.md) | Central draft registry for diagnostic families, severity, messages, remediation, status, redaction, and compatibility. |
-| [Fixtures Guide](../fixtures/README.md) | Focused positive and negative validation evidence, owning checks, and maintenance rules. |
+| [Fixtures Guide](../fixtures/README.md) | Focused positive and negative validation evidence, cataloged CLI outcomes, owning checks, and maintenance rules. |
 | [Manifest Discovery](manifest-discovery.md) | Defines explicit local source boundaries, Project source hints, logical inventory, document cardinality, and multiple-workflow rules. |
 | [Semantic Reference Inventory](semantic-reference-inventory.md) | Prioritizes cross-manifest reference resolution and records current smoke-check coverage and gaps. |
 | [Typed References](typed-references.md) | Defines shared typed, scoped, transitional, and kind-specific reference shapes, lexical boundaries, and migration rules. |

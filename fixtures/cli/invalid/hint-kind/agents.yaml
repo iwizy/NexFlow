@@ -1,0 +1,13 @@
+specVersion: "0.1"
+kind: AgentSet
+metadata:
+  project: cli-fixture
+agents:
+  - id: fixture-agent
+    displayName: Fixture Agent
+    role: developer
+    description: This valid document is intentionally selected through the wrong source slot.
+    responsibilities:
+      - Provide a stable kind mismatch.
+    skills:
+      - repository_editing

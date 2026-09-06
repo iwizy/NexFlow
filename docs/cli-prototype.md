@@ -243,6 +243,7 @@ npm run cli-inspection-smoke
 npm run cli-graph-smoke
 npm run cli-init-smoke
 npm run cli-no-runtime-guardrails-smoke
+npm run cli-fixture-smoke
 npm run manifest-discovery-smoke
 npm run validate
 ```
@@ -263,6 +264,13 @@ symlink rejection, relative reporting, and the closed JSON result.
 No-runtime guardrail checks cover the closed command inventory, immutable effect
 budgets, reviewed module dependencies, denied runtime APIs, inert authored
 content, read-only project snapshots, and the fixed initializer write set.
+The cataloged CLI fixture check runs 15 reproducible success and rejection
+scenarios from `fixtures/cli/index.json`. It checks JSON envelopes against the
+output schema, exit and check states, diagnostic codes, declared inspection and
+graph sizes, the fixed initializer write set, non-mutation of read-only or
+rejected inputs, and preservation of the source corpus. Fixtures are regression
+evidence for this disposable prototype; they do not establish reference CLI,
+semantic, extension-profile, or runtime conformance.
 No schema or example migration is needed; no manifest fields or accepted
 schema versions change.
 

@@ -79,6 +79,9 @@ The repository supports basic validation through:
 - A semantic reference smoke command for selected cross-manifest references in examples.
 - Experimental CLI JSON diagnostics with a separate output schema, safe
   locations, explicit check states, truncation, and focused contract checks.
+- A cataloged CLI fixture corpus for successful project commands, stable
+  discovery and schema failures, bounded initialization, rejected runtime-like
+  commands, JSON output contracts, and input mutation boundaries.
 - A prioritized semantic reference inventory that distinguishes checked,
   partial, missing, and deferred field contracts.
 - Draft JSON Schemas in `schemas/`.
@@ -131,6 +134,9 @@ npm run cli-validation-smoke
 npm run cli-diagnostics-smoke
 npm run cli-inspection-smoke
 npm run cli-graph-smoke
+npm run cli-init-smoke
+npm run cli-no-runtime-guardrails-smoke
+npm run cli-fixture-smoke
 npm run cli-prototype -- discover --root examples/minimal-team
 npm run cli-prototype -- validate --root examples/minimal-team
 node scripts/cli-prototype.mjs validate --root examples/minimal-team --format json
@@ -166,10 +172,30 @@ not another manifest schema.
 same checks. Its resolution labels cover only selected inspection references;
 they do not establish full semantic validity, execution order, or authority.
 
-`init` remains unimplemented. There is no reference CLI
-package or `NF-CLI` claim, and the architecture decision remains `not-ready`.
+`init` is a bounded repository prototype command that creates only its three
+built-in starter files in an explicit existing directory and refuses conflicts.
+There is no reference CLI package or `NF-CLI` claim, and the architecture
+decision remains `not-ready`.
 See [Manifest Discovery](manifest-discovery.md) for exact source and parser
 boundaries. The prototype does not replace repository-wide maintenance checks.
+
+Verify the cataloged CLI fixtures:
+
+```sh
+npm run cli-fixture-smoke
+```
+
+This command loads `fixtures/cli/index.json`, copies every selected fixture root
+to a temporary directory, invokes the real repository CLI entry point, and
+checks each JSON response against `scripts/contracts/cli-output.schema.json`.
+The catalog records expected exit status, performed checks, diagnostic codes,
+selected result counts, and whether the command may create the fixed starter
+files. Read-only and rejected cases must not mutate their copies, and no case
+may mutate the maintained source corpus.
+
+These cases stabilize repository prototype behavior only. They do not perform
+full semantic or extension-profile validation, prove operating-system
+isolation, authorize execution, or establish a reference CLI conformance claim.
 
 The maintenance check's broad `NF-SYNTAX` and `NF-SCHEMA` codes are Implemented draft
 in the [Diagnostic Code Catalog](diagnostic-code-catalog.md). The catalog also

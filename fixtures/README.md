@@ -11,8 +11,16 @@ verified by repository smoke commands.
 
 | Fixture set | Expected state | Purpose | Check |
 | --- | --- | --- | --- |
+| [`cli/`](cli/) | Mixed, cataloged per case | Exercises successful CLI commands, stable discovery and schema failures, bounded initialization, runtime-like command rejection, JSON output contracts, and input mutation boundaries. | `npm run cli-fixture-smoke` |
 | [`discovery/multi-workflow/`](discovery/multi-workflow/) | Valid | Exercises explicit Project source hints, logical assembly discovery, deterministic source ordering, and multiple Workflow documents. | `npm run manifest-discovery-smoke` |
 | [`schema/invalid/`](schema/invalid/) | Intentionally invalid | Preserves stable rejection evidence for required fields, enum values, ID syntax, and unknown manifest kinds. | `npm run negative-schema-fixtures` |
+
+The CLI corpus is registered in [`cli/index.json`](cli/index.json). Each case
+declares its command, relative fixture root, arguments, exit status, performed
+checks, diagnostic codes, bounded result counts, and mutation expectation. The
+runner copies every fixture root to a temporary directory, validates each JSON
+envelope against the repository-owned output contract, and verifies that the
+source corpus is unchanged.
 
 ## Fixtures And Examples
 
@@ -44,6 +52,8 @@ When adding or changing a fixture:
 5. Update a maintained example as well when the change affects recommended
    authoring practice.
 6. Do not use fixtures to imply runtime execution or enforcement.
+7. Keep CLI cases synchronized with the output contract and documented command
+   boundary whenever a cataloged result changes.
 
 ## Related Guides
 

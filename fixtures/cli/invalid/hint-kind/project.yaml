@@ -1,0 +1,10 @@
+specVersion: "0.1"
+kind: Project
+metadata:
+  project: cli-fixture
+project:
+  id: cli-fixture
+  displayName: CLI Fixture
+  description: References an AgentSet from the ActorSet source slot.
+manifests:
+  actors: agents.yaml

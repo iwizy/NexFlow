@@ -57,7 +57,7 @@ after `v0.1.0`.
 | Threat model | Current repository and conditional future-runtime trust boundaries, attacker stories, mitigations, assumptions, and severity calibration documented; not a vulnerability report or runtime claim | [Threat Model](docs/threat-model.md), [Security Policy](SECURITY.md) |
 | Runtime architecture decision | Review framework published; current outcome is `not-ready`, with no language or package layout selected | [Runtime Architecture Decision Review](rfcs/reviews/runtime-architecture-decision-review.md), [Runtime Options](docs/runtime-options.md), [Roadmap](docs/roadmap.md) |
 | Reference CLI | Validation-only boundary specified; not implemented | [CLI And Runtime Responsibility Boundary](docs/cli-runtime-boundary.md), [RFC-0011](rfcs/RFC-0011-reference-cli-scope.md) |
-| Repository CLI prototype | Experimental local discovery, JSON Schema validation, declared inspection, static graphing, bounded starter initialization, versioned JSON output, and executable no-runtime guardrails; not a reference CLI alpha, language decision, operating-system sandbox, or `NF-CLI` claim | `npm run cli-prototype -- --help`, `npm run cli-no-runtime-guardrails-smoke`, [Prototype Scope](docs/cli-prototype.md), [JSON Diagnostics](docs/cli-diagnostics.md), [Declared Inspection](docs/cli-inspection.md), [Static Graph](docs/cli-graph.md), [Starter Initialization](docs/cli-init.md) |
+| Repository CLI prototype | Experimental local discovery, JSON Schema validation, declared inspection, static graphing, bounded starter initialization, versioned JSON output, executable no-runtime guardrails, and cataloged fixture checks; not a reference CLI alpha, language decision, operating-system sandbox, or `NF-CLI` claim | `npm run cli-prototype -- --help`, `npm run cli-no-runtime-guardrails-smoke`, `npm run cli-fixture-smoke`, [Prototype Scope](docs/cli-prototype.md), [JSON Diagnostics](docs/cli-diagnostics.md), [Declared Inspection](docs/cli-inspection.md), [Static Graph](docs/cli-graph.md), [Starter Initialization](docs/cli-init.md) |
 | Runtime and provider execution | Planned, not implemented | [Architecture](docs/architecture.md), [Runtime Options](docs/runtime-options.md) |
 | Live integrations and extension loading | Not implemented | [Compatibility Matrix](docs/compatibility-matrix.md) |
 
@@ -255,6 +255,8 @@ NexFlow is intentionally split into layers:
 - [conformance/](conformance/): standalone conformance claim schema and publication templates
 - [release/](release/): standalone candidate readiness schema, template, and release evidence guidance
 - [Fixtures Guide](fixtures/README.md): focused validation inputs, expected outcomes, and maintenance rules
+- [fixtures/cli/](fixtures/cli/): cataloged CLI success, rejection, output,
+  initialization, and mutation-boundary fixtures
 - [fixtures/discovery/](fixtures/discovery/): focused logical assembly and multiple-workflow validation evidence
 - [fixtures/schema/invalid/](fixtures/schema/invalid/): intentionally invalid
   manifests for stable schema rejection checks
@@ -323,8 +325,8 @@ The current priorities are:
 2. Review the ActorSet, compact AgentSet, active-definition authority, human
    override, Agent Assembly inspection, and typed-reference primitive slices
    before broader field or example migration.
-3. Add positive fixtures, expand maintained negative fixtures, stabilize
-   diagnostics, and broaden semantic checks.
+3. Expand positive and negative fixtures, stabilize diagnostics, and broaden
+   semantic checks.
 4. Close the Runtime Architecture Decision blockers: publish the proposal,
    complete package, threat, credential, and conformance inputs, and produce
    comparable candidate evidence using the

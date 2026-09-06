@@ -84,6 +84,7 @@ npm run cli-inspection-smoke
 npm run cli-graph-smoke
 npm run cli-init-smoke
 npm run cli-no-runtime-guardrails-smoke
+npm run cli-fixture-smoke
 npm run human-override-schema-smoke
 npm run provider-feature-schema-smoke
 npm run conformance-claim-smoke
@@ -112,6 +113,12 @@ runtime-facing imports must also update and pass
 subprocess, credential, provider, executable-extension, runtime-preflight,
 workflow-execution, and background-work effects disabled for every prototype
 command. It is regression evidence, not an operating-system sandbox.
+
+Cataloged CLI behavior changes must also update
+[`fixtures/cli/index.json`](fixtures/cli/index.json) and pass
+`npm run cli-fixture-smoke`. Keep each case focused, use only public fictional
+data, state the expected diagnostics and mutation boundary explicitly, and do
+not treat fixture success as runtime or reference CLI conformance.
 
 JSON output changes must also synchronize the
 [output contract](docs/cli-diagnostics.md), its schema in `scripts/contracts/`,

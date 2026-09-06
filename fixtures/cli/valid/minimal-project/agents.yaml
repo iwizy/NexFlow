@@ -1,0 +1,13 @@
+specVersion: "0.1"
+kind: AgentSet
+metadata:
+  project: cli-fixture
+agents:
+  - id: fixture-agent
+    displayName: Fixture Agent
+    role: developer
+    description: Drafts changes for human review in this fixture.
+    responsibilities:
+      - Prepare reviewable changes.
+    skills:
+      - repository_editing

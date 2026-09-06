@@ -1,0 +1,8 @@
+specVersion: "0.1"
+kind: Project
+metadata:
+  project: cli-fixture-b
+project:
+  id: cli-fixture-b
+  displayName: CLI Fixture B
+  description: Second ambiguous root Project entry.

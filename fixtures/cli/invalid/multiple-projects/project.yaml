@@ -1,0 +1,8 @@
+specVersion: "0.1"
+kind: Project
+metadata:
+  project: cli-fixture-a
+project:
+  id: cli-fixture-a
+  displayName: CLI Fixture A
+  description: First ambiguous root Project entry.

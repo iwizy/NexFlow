@@ -1,0 +1,308 @@
+{
+  "formatVersion": "0.1-draft",
+  "cases": [
+    {
+      "id": "discover-directory-project",
+      "description": "Discover a valid three-document project through its root Project manifest.",
+      "command": "discover",
+      "root": "valid/minimal-project",
+      "args": [],
+      "expected": {
+        "exitCode": 0,
+        "reportedCommand": "discover",
+        "inputMode": "directory-project",
+        "discovery": "passed",
+        "schema": "not-run",
+        "diagnosticCodes": [],
+        "documentCount": 3,
+        "mutation": "none"
+      }
+    },
+    {
+      "id": "discover-explicit-files",
+      "description": "Discover only an explicitly selected deterministic file list.",
+      "command": "discover",
+      "root": "valid/minimal-project",
+      "args": [
+        "--file",
+        "agents.yaml",
+        "--file",
+        "project.yaml",
+        "--file",
+        "actors.yaml"
+      ],
+      "expected": {
+        "exitCode": 0,
+        "reportedCommand": "discover",
+        "inputMode": "explicit-file-list",
+        "discovery": "passed",
+        "schema": "not-run",
+        "diagnosticCodes": [],
+        "documentCount": 3,
+        "mutation": "none"
+      }
+    },
+    {
+      "id": "validate-project-hints",
+      "description": "Validate the assembly selected by explicit Project source hints.",
+      "command": "validate",
+      "root": "valid/minimal-project",
+      "args": [
+        "--project",
+        "project.yaml"
+      ],
+      "expected": {
+        "exitCode": 0,
+        "reportedCommand": "validate",
+        "inputMode": "project-source-hints",
+        "discovery": "passed",
+        "schema": "passed",
+        "diagnosticCodes": [],
+        "documentCount": 3,
+        "mutation": "none"
+      }
+    },
+    {
+      "id": "inspect-valid-project",
+      "description": "Inspect the allowlisted declarations and references of a valid project.",
+      "command": "inspect",
+      "root": "valid/minimal-project",
+      "args": [],
+      "expected": {
+        "exitCode": 0,
+        "reportedCommand": "inspect",
+        "inputMode": "directory-project",
+        "discovery": "passed",
+        "schema": "passed",
+        "diagnosticCodes": [],
+        "documentCount": 3,
+        "inspection": {
+          "resourceCount": 4,
+          "referenceCount": 2
+        },
+        "mutation": "none"
+      }
+    },
+    {
+      "id": "graph-valid-project",
+      "description": "Build a static graph whose selected references resolve locally.",
+      "command": "graph",
+      "root": "valid/minimal-project",
+      "args": [],
+      "expected": {
+        "exitCode": 0,
+        "reportedCommand": "graph",
+        "inputMode": "directory-project",
+        "discovery": "passed",
+        "schema": "passed",
+        "diagnosticCodes": [],
+        "documentCount": 3,
+        "graph": {
+          "nodeCount": 4,
+          "edgeCount": 2,
+          "statuses": {
+            "resolved": 2
+          }
+        },
+        "mutation": "none"
+      }
+    },
+    {
+      "id": "reject-yaml-syntax",
+      "description": "Reject malformed YAML before schema validation.",
+      "command": "validate",
+      "root": "invalid/yaml-syntax",
+      "args": [],
+      "expected": {
+        "exitCode": 1,
+        "reportedCommand": "validate",
+        "inputMode": "directory-project",
+        "discovery": "failed",
+        "schema": "not-run",
+        "diagnosticCodes": [
+          "NF-DISCOVERY-NO-PROJECT",
+          "NF-DISCOVERY-UNSAFE-SOURCE"
+        ],
+        "mutation": "none"
+      }
+    },
+    {
+      "id": "reject-schema-invalid-project",
+      "description": "Reject a discovered Project that omits a required structural field.",
+      "command": "validate",
+      "root": "invalid/schema",
+      "args": [],
+      "expected": {
+        "exitCode": 1,
+        "reportedCommand": "validate",
+        "inputMode": "directory-project",
+        "discovery": "passed",
+        "schema": "failed",
+        "diagnosticCodes": [
+          "NF-SCHEMA"
+        ],
+        "mutation": "none"
+      }
+    },
+    {
+      "id": "reject-unsupported-version",
+      "description": "Reject a manifest version outside the prototype support window.",
+      "command": "validate",
+      "root": "invalid/unsupported-version",
+      "args": [],
+      "expected": {
+        "exitCode": 3,
+        "reportedCommand": "validate",
+        "inputMode": "directory-project",
+        "discovery": "failed",
+        "schema": "not-run",
+        "diagnosticCodes": [
+          "NF-DISCOVERY-NO-PROJECT",
+          "NF-DISCOVERY-UNSUPPORTED-VERSION"
+        ],
+        "mutation": "none"
+      }
+    },
+    {
+      "id": "reject-unsupported-kind",
+      "description": "Reject a manifest kind without a supported local schema.",
+      "command": "validate",
+      "root": "invalid/unsupported-kind",
+      "args": [],
+      "expected": {
+        "exitCode": 3,
+        "reportedCommand": "validate",
+        "inputMode": "directory-project",
+        "discovery": "failed",
+        "schema": "not-run",
+        "diagnosticCodes": [
+          "NF-DISCOVERY-NO-PROJECT",
+          "NF-DISCOVERY-UNSUPPORTED-KIND"
+        ],
+        "mutation": "none"
+      }
+    },
+    {
+      "id": "reject-ambiguous-project-entry",
+      "description": "Reject a directory containing both supported root Project filenames.",
+      "command": "discover",
+      "root": "invalid/multiple-projects",
+      "args": [],
+      "expected": {
+        "exitCode": 1,
+        "reportedCommand": "discover",
+        "inputMode": "directory-project",
+        "discovery": "failed",
+        "schema": "not-run",
+        "diagnosticCodes": [
+          "NF-DISCOVERY-MULTIPLE-PROJECTS"
+        ],
+        "mutation": "none"
+      }
+    },
+    {
+      "id": "reject-source-outside-root",
+      "description": "Reject a Project source hint that escapes the explicit root.",
+      "command": "validate",
+      "root": "invalid/hint-escape",
+      "args": [],
+      "expected": {
+        "exitCode": 1,
+        "reportedCommand": "validate",
+        "inputMode": "directory-project",
+        "discovery": "failed",
+        "schema": "not-run",
+        "diagnosticCodes": [
+          "NF-DISCOVERY-OUTSIDE-ROOT"
+        ],
+        "mutation": "none"
+      }
+    },
+    {
+      "id": "reject-source-kind-mismatch",
+      "description": "Reject a Project source hint whose document kind does not match the slot.",
+      "command": "validate",
+      "root": "invalid/hint-kind",
+      "args": [],
+      "expected": {
+        "exitCode": 1,
+        "reportedCommand": "validate",
+        "inputMode": "directory-project",
+        "discovery": "failed",
+        "schema": "not-run",
+        "diagnosticCodes": [
+          "NF-DISCOVERY-KIND-MISMATCH"
+        ],
+        "mutation": "none"
+      }
+    },
+    {
+      "id": "init-bounded-starter",
+      "description": "Create only the fixed starter files beside preserved destination content.",
+      "command": "init",
+      "root": "init/empty",
+      "args": [
+        "--id",
+        "fixture-project",
+        "--name",
+        "Fixture Project"
+      ],
+      "expected": {
+        "exitCode": 0,
+        "reportedCommand": "init",
+        "inputMode": null,
+        "discovery": "not-run",
+        "schema": "not-run",
+        "diagnosticCodes": [],
+        "createdFiles": [
+          "actors.yaml",
+          "agents.yaml",
+          "project.yaml"
+        ],
+        "preservedFiles": [
+          "keep.txt"
+        ],
+        "mutation": "starter"
+      }
+    },
+    {
+      "id": "reject-init-conflict",
+      "description": "Reject initialization atomically when a starter target conflicts.",
+      "command": "init",
+      "root": "init/conflict",
+      "args": [
+        "--id",
+        "fixture-project"
+      ],
+      "expected": {
+        "exitCode": 1,
+        "reportedCommand": "init",
+        "inputMode": null,
+        "discovery": "not-run",
+        "schema": "not-run",
+        "diagnosticCodes": [
+          "NEXFLOW-PROTOTYPE-INIT-CONFLICT"
+        ],
+        "mutation": "none"
+      }
+    },
+    {
+      "id": "reject-runtime-command",
+      "description": "Reject a runtime-like command before reading or mutating project content.",
+      "command": "run",
+      "root": "valid/minimal-project",
+      "args": [],
+      "expected": {
+        "exitCode": 2,
+        "reportedCommand": null,
+        "inputMode": null,
+        "discovery": "not-run",
+        "schema": "not-run",
+        "diagnosticCodes": [
+          "NEXFLOW-PROTOTYPE-USAGE"
+        ],
+        "mutation": "none"
+      }
+    }
+  ]
+}

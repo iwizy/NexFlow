@@ -8,6 +8,12 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Added
 
+- Added 15 cataloged repository CLI fixture cases for successful discovery,
+  validation, inspection, and static graphing; bounded starter creation;
+  discovery, schema, and init failures; and runtime-like command rejection. A
+  dedicated CI check validates every result against the JSON output contract
+  and verifies declared input mutation boundaries without making a reference
+  CLI or runtime claim.
 - Added executable no-runtime guardrails to the repository CLI prototype: a
   closed immutable effect budget for every command, reviewed first-party module
   graph, runtime-like command rejection, denied network, process, and filesystem

@@ -10,6 +10,7 @@
     "approval-gate-target-schema-smoke": "node scripts/approval-gate-target-schema-smoke.mjs",
     "actor-schema-smoke": "node scripts/actor-schema-smoke.mjs",
     "candidate-readiness-smoke": "node scripts/candidate-readiness-smoke.mjs",
+    "cli-fixture-smoke": "node scripts/cli-fixture-smoke.mjs",
     "cli-prototype": "node scripts/cli-prototype.mjs",
     "cli-diagnostics-smoke": "node scripts/cli-diagnostics-smoke.mjs",
     "cli-graph-smoke": "node scripts/cli-graph-smoke.mjs",

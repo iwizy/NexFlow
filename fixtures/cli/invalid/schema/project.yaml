@@ -1,0 +1,7 @@
+specVersion: "0.1"
+kind: Project
+metadata:
+  project: cli-fixture
+project:
+  id: cli-fixture
+  displayName: CLI Fixture

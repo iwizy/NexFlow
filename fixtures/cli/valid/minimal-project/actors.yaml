@@ -1,0 +1,28 @@
+specVersion: "0.1"
+kind: ActorSet
+metadata:
+  project: cli-fixture
+actors:
+  - id: human-maintainer
+    kind: human
+    displayName: Human Maintainer
+    description: Final authority for fixture project changes.
+    roles:
+      - maintainer
+    responsibilities:
+      - Review proposed changes.
+    skills:
+      - project_review
+  - id: fixture-agent
+    kind: agent
+    displayName: Fixture Agent
+    description: Drafts changes for human review in this fixture.
+    roles:
+      - developer
+    responsibilities:
+      - Prepare reviewable changes.
+    skills:
+      - repository_editing
+    agentRef:
+      kind: agent
+      id: fixture-agent

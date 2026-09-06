@@ -1,0 +1,19 @@
+specVersion: "0.1"
+kind: Project
+metadata:
+  project: cli-fixture
+  name: CLI Fixture
+project:
+  id: cli-fixture
+  displayName: CLI Fixture
+  description: Stable project input for repository CLI fixture checks.
+  maintainers:
+    - id: human-maintainer
+      name: Human Maintainer
+      role: maintainer
+  defaultAutonomy: suggest_only
+  policies:
+    requireReview: true
+manifests:
+  actors: actors.yaml
+  agents: agents.yaml

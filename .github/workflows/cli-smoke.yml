@@ -1,0 +1,55 @@
+name: CLI Prototype
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - develop
+
+permissions:
+  contents: read
+
+concurrency:
+  group: cli-prototype-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  cli-prototype:
+    name: CLI prototype checks
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: Install validation tooling
+        run: npm ci --ignore-scripts
+
+      - name: Run command and discovery checks
+        run: npm run cli-prototype-smoke
+
+      - name: Run structural validation checks
+        run: npm run cli-validation-smoke
+
+      - name: Run machine-readable diagnostic checks
+        run: npm run cli-diagnostics-smoke
+
+      - name: Run declared inspection checks
+        run: npm run cli-inspection-smoke
+
+      - name: Run static graph checks
+        run: npm run cli-graph-smoke
+
+      - name: Run starter initialization checks
+        run: npm run cli-init-smoke
+
+      - name: Run no-runtime guardrail checks
+        run: npm run cli-no-runtime-guardrails-smoke
+
+      - name: Run cataloged fixture checks
+        run: npm run cli-fixture-smoke

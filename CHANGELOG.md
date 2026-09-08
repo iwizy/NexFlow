@@ -8,6 +8,10 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Added
 
+- Added a dedicated GitHub Actions workflow for all eight repository CLI
+  prototype checks on pull requests and pushes to `main` or `develop`. CLI
+  regressions now have an independent status and timeout while schema,
+  semantic, and model-boundary checks remain in their existing workflow.
 - Added 15 cataloged repository CLI fixture cases for successful discovery,
   validation, inspection, and static graphing; bounded starter creation;
   discovery, schema, and init failures; and runtime-like command rejection. A

@@ -258,7 +258,10 @@ Inspection checks cover all supported manifest kinds, selected reference
 coverage, workflow scope, duplicate and unresolved identities, bounded output,
 and disclosure controls. Graph checks additionally cover static target matching,
 scoped resolution, ambiguity, unresolved and redacted targets, and closed output
-projection. CI runs them alongside existing repository checks.
+projection. The dedicated
+[`CLI Prototype` workflow](../.github/workflows/cli-smoke.yml) runs all eight
+CLI checks independently from the schema and semantic suite on pull requests
+and pushes to `main` or `develop`.
 Init checks cover schema-valid generation, idempotence, conflict handling,
 symlink rejection, relative reporting, and the closed JSON result.
 No-runtime guardrail checks cover the closed command inventory, immutable effect

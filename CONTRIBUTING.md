@@ -133,9 +133,10 @@ between schema, semantic, and runtime validation.
 The conformance claim command validates the maintained standalone claim schema
 and templates. It does not certify external tools or verify their evidence.
 
-The repository GitHub Actions workflow runs the same smoke script, schema
-validation, focused checks, and semantic reference smoke command on pull
-requests and pushes to `main` or `develop`.
+The repository GitHub Actions workflows run the schema, focused model,
+semantic-reference, and CLI prototype checks on pull requests and pushes to
+`main` or `develop`. CLI checks have a dedicated workflow so their status is
+visible independently without duplicating them in schema validation.
 
 ## License
 

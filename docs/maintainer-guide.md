@@ -119,7 +119,8 @@ Run `npm run validate` for every change. It checks schema JSON, example YAML,
 kind coverage, schema compilation, and structural validation.
 
 Run focused checks for the surfaces changed. Before merge, run the complete set
-used by `.github/workflows/schema-smoke.yml`:
+used by `.github/workflows/schema-smoke.yml` and
+`.github/workflows/cli-smoke.yml`:
 
 ```sh
 npm run validate
@@ -137,6 +138,9 @@ npm run cli-validation-smoke
 npm run cli-diagnostics-smoke
 npm run cli-inspection-smoke
 npm run cli-graph-smoke
+npm run cli-init-smoke
+npm run cli-no-runtime-guardrails-smoke
+npm run cli-fixture-smoke
 npm run human-override-schema-smoke
 npm run mcp-extension-smoke
 npm run a2a-extension-smoke

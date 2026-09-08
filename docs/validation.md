@@ -50,7 +50,8 @@ evidence of runtime execution or enforcement.
 The repository supports basic validation through:
 
 - A local repository smoke script.
-- A GitHub Actions validation workflow for pull requests and pushes to `main` or `develop`.
+- Separate GitHub Actions workflows for schema and model checks and for the
+  repository CLI prototype on pull requests and pushes to `main` or `develop`.
 - JSON syntax checks for schema files.
 - YAML parsing checks for example manifests.
 - Example manifest kind discovery against available schemas.
@@ -349,8 +350,8 @@ It validates record structure and decision guards only. It does not execute
 the commands named as evidence, verify links, evaluate release quality, approve
 a tag, publish a release, or establish specification conformance.
 
-The GitHub Actions workflow runs the same smoke script, schema validation, and
-focused boundary commands so pull requests exercise schema JSON parsing,
+The `Schema Validation` GitHub Actions workflow runs the repository validator
+and focused boundary commands so pull requests exercise schema JSON parsing,
 example YAML parsing, manifest kind discovery, schema compilation, example
 manifest validation, typed-reference primitive boundaries, work reference
 namespaces, approval gate target kinds and scope, provider feature vocabulary,
@@ -360,6 +361,12 @@ manifest discovery and multiple-workflow boundaries, credential handling and
 human override fail-closed shapes, and conformance claim format boundaries. It also checks candidate
 readiness record boundaries, active agent definition completeness and unique
 unscoped selection cases, plus the cataloged negative schema boundaries.
+
+The separate `CLI Prototype` workflow runs command dispatch and discovery,
+structural validation, machine-readable diagnostics, declared inspection,
+static graphing, bounded initialization, no-runtime guardrails, and cataloged
+CLI fixtures. Both workflows run on pull requests and pushes to `main` or
+`develop`; an absent result is not evidence that its checks passed.
 
 Run semantic reference smoke checks:
 

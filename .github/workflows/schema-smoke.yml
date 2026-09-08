@@ -51,30 +51,6 @@ jobs:
       - name: Run manifest discovery and multi-workflow checks
         run: npm run manifest-discovery-smoke
 
-      - name: Run repository CLI prototype checks
-        run: npm run cli-prototype-smoke
-
-      - name: Run CLI structural validation checks
-        run: npm run cli-validation-smoke
-
-      - name: Run CLI machine-readable diagnostic checks
-        run: npm run cli-diagnostics-smoke
-
-      - name: Run CLI declared inspection checks
-        run: npm run cli-inspection-smoke
-
-      - name: Run CLI static graph checks
-        run: npm run cli-graph-smoke
-
-      - name: Run CLI starter initialization checks
-        run: npm run cli-init-smoke
-
-      - name: Run CLI no-runtime guardrail checks
-        run: npm run cli-no-runtime-guardrails-smoke
-
-      - name: Run cataloged CLI fixture checks
-        run: npm run cli-fixture-smoke
-
       - name: Run credential handling schema boundary checks
         run: npm run credential-handling-schema-smoke
 

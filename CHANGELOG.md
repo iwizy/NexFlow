@@ -8,6 +8,10 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Added
 
+- Added an examples validation walkthrough covering repository-wide schema
+  checks, Minimal Team validation and declared inspection, static graphing, a
+  complete Software Team assembly, an intentional schema failure, JSON output
+  interpretation, and the limits of successful validation.
 - Added a reference CLI documentation entry point that maps the proposed
   public commands to runnable repository prototype evidence, input and output
   boundaries, effect limits, version separation, verification commands, and

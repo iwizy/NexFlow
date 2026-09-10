@@ -29,6 +29,7 @@ Related design notes:
 | [Schema Guide](../schemas/README.md) | Structural contract inventory, design rules, and schema maintenance guidance. |
 | [Fixtures Guide](../fixtures/README.md) | Focused inputs with explicit pass or rejection expectations. |
 | [Examples Guide](../examples/README.md) | Complete reference manifest sets expected to pass maintained checks. |
+| [Examples Validation Walkthrough](examples-validation-walkthrough.md) | Reproducible path through repository validation, one selected assembly, declared inspection, static graphing, and an intentional failure. |
 | [Diagnostic Code Catalog](diagnostic-code-catalog.md) | Draft code families, severities, messages, remediation, and implementation status. |
 | [Conformance](conformance.md) | Requirements for claiming schema, semantic, CLI, runtime, or extension support. |
 | [Compatibility Matrix](compatibility-matrix.md) | Evidence-backed status and explicit implementation gaps. |
@@ -125,6 +126,10 @@ diagnostics with file and instance paths. `package-lock.json` pins AJV, YAML
 parsing, and format validation dependencies.
 
 This Node.js command is repository maintenance tooling, not a reference CLI or runtime implementation. It does not choose a future NexFlow runtime language and does not perform semantic validation.
+
+For a worked path from the broad repository check through Minimal Team,
+Software Team, static inspection and graphing, and one intentional failure, use
+the [Examples Validation Walkthrough](examples-validation-walkthrough.md).
 
 Discovery and the disposable CLI prototype have separate checks:
 

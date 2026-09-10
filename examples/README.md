@@ -17,6 +17,11 @@ Use the [Example Matrix](MATRIX.md) to compare examples by complexity, context, 
 
 Use the [Example Consistency Checklist](CHECKLIST.md) before adding or changing an example.
 
+Use the [Examples Validation Walkthrough](../docs/examples-validation-walkthrough.md)
+to run repository-wide schema validation, inspect the Minimal Team assembly,
+build its static graph, validate a complete example, and interpret an
+intentional fixture failure.
+
 ## Related Validation Assets
 
 | Resource | Relationship to examples |

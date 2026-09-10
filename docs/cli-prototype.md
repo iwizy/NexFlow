@@ -2,6 +2,9 @@
 
 Status: Unreleased, disposable repository tooling; not the reference CLI alpha.
 
+For a single comparison between the proposed public command surface and this
+runnable repository evidence, see [Reference CLI](reference-cli.md).
+
 The [Runtime Architecture Decision Review](../rfcs/reviews/runtime-architecture-decision-review.md)
 is still `not-ready`. This prototype exercises command dispatch, local
 manifest discovery, structural validation, declared inspection, static graphing,

@@ -143,6 +143,11 @@ Non-goals:
 
 The `0.5` line may introduce validation-focused tooling if the runtime decision process supports it.
 
+The [Draft Reference CLI Alpha Release Notes](cli-alpha-release-notes.md)
+prepare the evidence inventory, limitations, version separation, and
+publication checklist for this milestone. Their blocked status does not make
+the preview implemented or approve an alpha release.
+
 Release readiness:
 
 - a reference CLI can validate and inspect manifests

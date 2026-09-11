@@ -8,6 +8,11 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Added
 
+- Added blocked, pre-publication reference CLI alpha release notes with
+  candidate metadata, source-checkout evidence, safety non-goals, known
+  limitations, independent version domains, artifact verification needs, and
+  explicit publication gates. No CLI package, alpha release, version change,
+  or `NF-CLI` conformance claim is introduced.
 - Added an examples validation walkthrough covering repository-wide schema
   checks, Minimal Team validation and declared inspection, static graphing, a
   complete Software Team assembly, an intentional schema failure, JSON output

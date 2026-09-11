@@ -20,6 +20,11 @@ These are different surfaces:
 Documentation of a command does not mean that the reference CLI implements or
 ships it.
 
+The [Draft Reference CLI Alpha Release Notes](cli-alpha-release-notes.md)
+collect the candidate scope, current evidence, known limitations, version
+boundaries, and publication checklist. They remain blocked and must not be used
+as a release announcement.
+
 ## Command Map
 
 The initial reference CLI proposal contains four public commands. `discover`

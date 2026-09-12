@@ -7,6 +7,9 @@ CLI alpha. They describe the candidate surface using evidence that can be run
 from this repository today, while keeping prototype behavior separate from a
 supported product claim.
 
+The [0.4 Alpha Preparation Checkpoint](0.4-alpha-checkpoint.md) records the
+current gate-by-gate assessment. Its decision is `not-ready`.
+
 Do not publish these notes as a release announcement, create a CLI tag from
 them, or describe the candidate as shipped until every item in
 [Publication Readiness](#publication-readiness) is complete. The current

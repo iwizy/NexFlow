@@ -25,6 +25,11 @@ collect the candidate scope, current evidence, known limitations, version
 boundaries, and publication checklist. They remain blocked and must not be used
 as a release announcement.
 
+The [0.4 Alpha Preparation Checkpoint](0.4-alpha-checkpoint.md) evaluates the
+same candidate against architecture, scope, validation, safety, conformance,
+distribution, ownership, and documentation gates. Its current decision is
+`not-ready`.
+
 ## Command Map
 
 The initial reference CLI proposal contains four public commands. `discover`

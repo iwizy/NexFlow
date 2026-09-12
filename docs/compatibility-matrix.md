@@ -63,7 +63,7 @@ enforced.
 | Semantic reference inventory | P0-P3 target namespaces, coverage, gaps, and deferred fields | Specified | `docs/semantic-reference-inventory.md` | Documentation contract only; it is not a manifest, generated registry, validator, or conformance suite. |
 | Semantic reference smoke | Selected cross-manifest reference, active definition authority, and duplicate checks | Partial | `npm run semantic-smoke`, semantic reference inventory | Does not cover every inventoried field or establish full `NF-SEMANTIC` conformance, graph safety, or policy correctness. |
 | Runtime language evaluation | Hard gates, weighted criteria, common prototype, and evidence record for TypeScript, Python, Rust, and Go | Specified | `docs/language-evaluation-matrix.md`, `docs/runtime-options.md` | No comparable candidate prototypes, scores, language selection, package layout, or accepted Runtime Architecture Decision exists. |
-| Reference CLI | Validation-only target, command map, effect boundary, and promotion gates documented | Planned | `docs/reference-cli.md`, RFC-0011 | No `nexflow` executable, distributed package, stable command or output contract, or `NF-CLI` implementation exists. |
+| Reference CLI | Validation-only target, command map, effect boundary, promotion gates, and blocker-bearing alpha checkpoint documented | Planned | `docs/reference-cli.md`, `docs/0.4-alpha-checkpoint.md`, RFC-0011 | No `nexflow` executable, distributed package, stable command or output contract, or `NF-CLI` implementation exists. |
 | Repository CLI prototype | Help, unreleased version, local discovery, structural `validate`, declared-only `inspect`, static `graph`, bounded `init`, and opt-in JSON output | Partial | `docs/cli-prototype.md`, `npm run cli-prototype-smoke`, `npm run cli-validation-smoke`, `npm run cli-init-smoke` | Disposable maintenance tooling, not a reference CLI alpha or completed architecture candidate; no full semantic validation, stable JSON envelope, package, or conformance claim. |
 | Prototype JSON diagnostics | Experimental `formatVersion: "0.4-draft"` envelope and separate output schema | Implemented | `docs/cli-diagnostics.md`, `scripts/contracts/cli-output.schema.json`, `npm run cli-diagnostics-smoke` | Versioned repository output, not stable catalog or public CLI conformance; no semantic diagnostics, SARIF, automatic fixes, or runtime authority. |
 | Prototype declared inspection | Schema-first Project summary, declaration occurrences, and selected unresolved references across all 17 kinds | Implemented | `docs/cli-inspection.md`, `npm run cli-inspection-smoke` | Bounded, allowlisted projection only; no complete reference inventory, effective configuration, Agent Assembly resolver, or execution authority. |
@@ -426,6 +426,10 @@ by the specification and RFCs. Passing it must not be presented as complete
 ## CLI Compatibility
 
 No reference CLI is implemented.
+
+The [0.4 Alpha Preparation Checkpoint](0.4-alpha-checkpoint.md) records the
+current decision as `not-ready`. Its repository evidence does not change the
+`Planned` reference CLI or `Partial` prototype support levels below.
 
 The [repository CLI prototype](cli-prototype.md) is an unreleased command
 tool with discovery, structural validation, declared inspection, static graph,

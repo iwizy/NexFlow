@@ -96,6 +96,11 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Changed
 
+- Prepared the `0.4` alpha checkpoint as a blocker-bearing readiness
+  assessment across version mapping, architecture, CLI scope, validation,
+  no-runtime safety, conformance, packaging, ownership, and documentation. Its
+  decision is `not-ready`; it does not release a CLI, change any version,
+  accept RFC-0011, or move reference tooling out of the `0.5` preview line.
 - Advanced the experimental CLI output contract from `0.3-draft` to
   `0.4-draft` for successful initialization reports and init-specific failure
   diagnostics. Existing read-only command results are unchanged; no manifest

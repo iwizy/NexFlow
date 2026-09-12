@@ -118,6 +118,11 @@ Non-goals:
 
 The `0.4` line should prepare the project for a runtime architecture decision without choosing a language too early.
 
+The [0.4 Alpha Preparation Checkpoint](0.4-alpha-checkpoint.md) preserves this
+boundary while assessing whether current repository CLI evidence can support
+an alpha. The checkpoint is prepared but not passed: it does not rename this
+version line, approve a CLI package, or move reference tooling out of `0.5`.
+
 Release readiness:
 
 - runtime evaluation criteria are complete

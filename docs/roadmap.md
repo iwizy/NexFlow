@@ -255,6 +255,11 @@ Status: evidence preparation. The published review outcome is `not-ready`; no
 runtime language, package layout, supported target matrix, or implementation
 authorization has been accepted.
 
+The [0.4 Alpha Preparation Checkpoint](0.4-alpha-checkpoint.md) assesses the
+current CLI-related evidence against this gate. It is prepared with blockers
+and records a `not-ready` release decision; the checkpoint label does not alter
+the public version plan or authorize Milestone 5.
+
 ### Completed Review Inputs
 
 - neutral hard gates, weighted criteria, and a common validation-only prototype

@@ -1,0 +1,52 @@
+claimVersion: "0.1"
+kind: NexFlowConformanceClaim
+
+metadata:
+  id: fixture-withdrawn-service
+  status: withdrawn
+  issuedAt: "2026-09-13T00:00:00Z"
+  updatedAt: "2026-09-13T02:00:00Z"
+
+subject:
+  name: Fixture Withdrawn Service
+  version: "3.0.0"
+  type: service
+  description: Fictional withdrawn service used only for claim lifecycle fixtures.
+
+scope:
+  specVersions:
+    - "0.1"
+  profiles: []
+  manifestKinds: []
+  extensionNamespaces: []
+
+claims:
+  NF-MANIFEST:
+    status: unsupported
+    summary: The withdrawn subject has no current manifest support claim.
+  NF-SCHEMA:
+    status: unsupported
+    summary: The withdrawn subject has no current schema support claim.
+  NF-SEMANTIC:
+    status: unsupported
+    summary: The withdrawn subject has no current semantic support claim.
+  NF-CLI:
+    status: not-applicable
+    summary: The withdrawn subject is not a command-line interface.
+  NF-RUNTIME:
+    status: unsupported
+    summary: The withdrawn subject has no current runtime support claim.
+  NF-EXTENSION:
+    status: not-applicable
+    summary: The withdrawn subject is not an extension implementation.
+
+behavior:
+  validation: No current validation behavior is claimed.
+  enforcement: No current runtime enforcement is claimed.
+
+limitations:
+  - This claim is withdrawn and must not be treated as current support.
+
+attestation:
+  assurance: self-declared
+  responsibleParty: Fixture Service Maintainer

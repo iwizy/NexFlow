@@ -1,0 +1,56 @@
+claimVersion: "0.1"
+kind: NexFlowConformanceClaim
+
+metadata:
+  id: fixture-draft-validator
+  status: draft
+  issuedAt: "2026-09-13T00:00:00Z"
+
+subject:
+  name: Fixture Draft Validator
+  version: "0.1.0"
+  type: validator
+  description: Fictional validator used only for conformance claim fixtures.
+
+scope:
+  specVersions:
+    - "0.1"
+  profiles:
+    - core
+  manifestKinds:
+    - Project
+    - ActorSet
+    - AgentSet
+  extensionNamespaces: []
+
+claims:
+  NF-MANIFEST:
+    status: not-evaluated
+    summary: Manifest support has not been evaluated.
+  NF-SCHEMA:
+    status: not-evaluated
+    summary: Schema support has not been evaluated.
+  NF-SEMANTIC:
+    status: not-evaluated
+    summary: Semantic support has not been evaluated.
+  NF-CLI:
+    status: not-applicable
+    summary: This subject is not a command-line interface.
+  NF-RUNTIME:
+    status: not-applicable
+    summary: This subject does not execute NexFlow projects.
+  NF-EXTENSION:
+    status: not-applicable
+    summary: This subject is not an extension implementation.
+
+behavior:
+  validation: No validation behavior has been evaluated.
+  enforcement: No runtime enforcement is provided.
+
+limitations:
+  - This is fictional fixture data and not a published support claim.
+
+attestation:
+  assurance: self-declared
+  responsibleParty: Fixture Maintainer
+  contact: mailto:conformance@example.com

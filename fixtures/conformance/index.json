@@ -1,0 +1,418 @@
+{
+  "formatVersion": "0.1-draft",
+  "cases": [
+    {
+      "id": "accept-draft-validator",
+      "description": "Accept a draft validator claim whose levels are explicitly unevaluated or not applicable.",
+      "base": "valid/draft-validator.yaml",
+      "patch": [],
+      "expected": { "valid": true }
+    },
+    {
+      "id": "accept-published-validator",
+      "description": "Accept a published validator claim with supported and partial evidence-backed levels.",
+      "base": "valid/published-validator.yaml",
+      "patch": [],
+      "expected": { "valid": true }
+    },
+    {
+      "id": "accept-partial-cli",
+      "description": "Accept a draft CLI claim that limits support and separates validation from enforcement.",
+      "base": "valid/partial-cli.yaml",
+      "patch": [],
+      "expected": { "valid": true }
+    },
+    {
+      "id": "accept-published-extension",
+      "description": "Accept a published extension claim scoped to one explicit namespace and evidence record.",
+      "base": "valid/published-extension.yaml",
+      "patch": [],
+      "expected": { "valid": true }
+    },
+    {
+      "id": "accept-withdrawn-service",
+      "description": "Accept an explicitly withdrawn service claim without treating it as current support.",
+      "base": "valid/withdrawn-service.yaml",
+      "patch": [],
+      "expected": { "valid": true }
+    },
+    {
+      "id": "reject-empty-spec-versions",
+      "description": "Reject a claim that does not identify any supported NexFlow specification version.",
+      "base": "valid/draft-validator.yaml",
+      "patch": [
+        { "op": "replace", "path": "/scope/specVersions", "value": [] }
+      ],
+      "expected": { "valid": false, "keyword": "minItems", "instancePath": "/scope/specVersions" }
+    },
+    {
+      "id": "reject-duplicate-spec-version",
+      "description": "Reject duplicate specification versions that make the evaluated scope ambiguous.",
+      "base": "valid/draft-validator.yaml",
+      "patch": [
+        { "op": "add", "path": "/scope/specVersions/-", "value": "0.1" }
+      ],
+      "expected": { "valid": false, "keyword": "uniqueItems", "instancePath": "/scope/specVersions" }
+    },
+    {
+      "id": "reject-invalid-spec-version",
+      "description": "Reject a specification version that does not use the required major-minor form.",
+      "base": "valid/draft-validator.yaml",
+      "patch": [
+        { "op": "replace", "path": "/scope/specVersions/0", "value": "v0.1" }
+      ],
+      "expected": { "valid": false, "keyword": "pattern", "instancePath": "/scope/specVersions/0" }
+    },
+    {
+      "id": "reject-duplicate-manifest-kind",
+      "description": "Reject a claim that repeats a manifest kind inside its evaluated scope.",
+      "base": "valid/draft-validator.yaml",
+      "patch": [
+        { "op": "add", "path": "/scope/manifestKinds/-", "value": "Project" }
+      ],
+      "expected": { "valid": false, "keyword": "uniqueItems", "instancePath": "/scope/manifestKinds" }
+    },
+    {
+      "id": "reject-invalid-manifest-kind",
+      "description": "Reject a manifest kind name that does not use the declared lexical form.",
+      "base": "valid/draft-validator.yaml",
+      "patch": [
+        { "op": "replace", "path": "/scope/manifestKinds/0", "value": "project" }
+      ],
+      "expected": { "valid": false, "keyword": "pattern", "instancePath": "/scope/manifestKinds/0" }
+    },
+    {
+      "id": "reject-duplicate-profile",
+      "description": "Reject a claim that lists the same conformance profile more than once.",
+      "base": "valid/draft-validator.yaml",
+      "patch": [
+        { "op": "add", "path": "/scope/profiles/-", "value": "core" }
+      ],
+      "expected": { "valid": false, "keyword": "uniqueItems", "instancePath": "/scope/profiles" }
+    },
+    {
+      "id": "reject-unknown-profile",
+      "description": "Reject a profile qualifier outside the closed conformance profile vocabulary.",
+      "base": "valid/draft-validator.yaml",
+      "patch": [
+        { "op": "replace", "path": "/scope/profiles/0", "value": "everything" }
+      ],
+      "expected": { "valid": false, "keyword": "enum", "instancePath": "/scope/profiles/0" }
+    },
+    {
+      "id": "reject-duplicate-extension-namespace",
+      "description": "Reject an extension claim that repeats the same owned namespace in its scope.",
+      "base": "valid/published-extension.yaml",
+      "patch": [
+        { "op": "add", "path": "/scope/extensionNamespaces/-", "value": "io.example.audit" }
+      ],
+      "expected": { "valid": false, "keyword": "uniqueItems", "instancePath": "/scope/extensionNamespaces" }
+    },
+    {
+      "id": "reject-blank-unsupported-field",
+      "description": "Reject a blank unsupported-field entry that communicates no useful limitation.",
+      "base": "valid/draft-validator.yaml",
+      "patch": [
+        { "op": "add", "path": "/scope/unsupportedFields", "value": ["   "] }
+      ],
+      "expected": { "valid": false, "keyword": "pattern", "instancePath": "/scope/unsupportedFields/0" }
+    },
+    {
+      "id": "reject-unknown-level",
+      "description": "Reject a conformance level outside the six-level claim vocabulary.",
+      "base": "valid/draft-validator.yaml",
+      "patch": [
+        {
+          "op": "add",
+          "path": "/claims/NF-PROVIDER",
+          "value": { "status": "not-evaluated", "summary": "Unknown level." }
+        }
+      ],
+      "expected": {
+        "valid": false,
+        "keyword": "additionalProperties",
+        "instancePath": "/claims",
+        "params": { "additionalProperty": "NF-PROVIDER" }
+      }
+    },
+    {
+      "id": "reject-missing-required-level",
+      "description": "Reject a claim that omits one of the required conformance level decisions.",
+      "base": "valid/draft-validator.yaml",
+      "patch": [
+        { "op": "remove", "path": "/claims/NF-EXTENSION" }
+      ],
+      "expected": {
+        "valid": false,
+        "keyword": "required",
+        "instancePath": "/claims",
+        "params": { "missingProperty": "NF-EXTENSION" }
+      }
+    },
+    {
+      "id": "reject-supported-without-evidence",
+      "description": "Reject a supported level that does not link any evidence for the assertion.",
+      "base": "valid/draft-validator.yaml",
+      "patch": [
+        {
+          "op": "replace",
+          "path": "/claims/NF-MANIFEST",
+          "value": { "status": "supported", "summary": "Unsupported assertion without evidence." }
+        }
+      ],
+      "expected": {
+        "valid": false,
+        "keyword": "required",
+        "instancePath": "/claims/NF-MANIFEST",
+        "params": { "missingProperty": "evidence" }
+      }
+    },
+    {
+      "id": "reject-partial-without-evidence",
+      "description": "Reject a partial level that lists a limitation but provides no supporting evidence.",
+      "base": "valid/draft-validator.yaml",
+      "patch": [
+        {
+          "op": "replace",
+          "path": "/claims/NF-SCHEMA",
+          "value": {
+            "status": "partial",
+            "summary": "A partial assertion without evidence.",
+            "limitations": ["Only one kind is supported."]
+          }
+        }
+      ],
+      "expected": {
+        "valid": false,
+        "keyword": "required",
+        "instancePath": "/claims/NF-SCHEMA",
+        "params": { "missingProperty": "evidence" }
+      }
+    },
+    {
+      "id": "reject-partial-without-limitation",
+      "description": "Reject a partial level that provides evidence without naming its support gap.",
+      "base": "valid/draft-validator.yaml",
+      "patch": [
+        {
+          "op": "replace",
+          "path": "/claims/NF-SCHEMA",
+          "value": {
+            "status": "partial",
+            "summary": "A partial assertion without a limitation.",
+            "evidence": [
+              { "type": "test-suite", "description": "A fixture evidence record." }
+            ]
+          }
+        }
+      ],
+      "expected": {
+        "valid": false,
+        "keyword": "required",
+        "instancePath": "/claims/NF-SCHEMA",
+        "params": { "missingProperty": "limitations" }
+      }
+    },
+    {
+      "id": "reject-unknown-publication-status",
+      "description": "Reject a publication lifecycle value outside draft, published, and withdrawn.",
+      "base": "valid/draft-validator.yaml",
+      "patch": [
+        { "op": "replace", "path": "/metadata/status", "value": "certified" }
+      ],
+      "expected": { "valid": false, "keyword": "enum", "instancePath": "/metadata/status" }
+    },
+    {
+      "id": "reject-invalid-issued-at",
+      "description": "Reject an issued timestamp that omits the time and timezone components.",
+      "base": "valid/draft-validator.yaml",
+      "patch": [
+        { "op": "replace", "path": "/metadata/issuedAt", "value": "2026-09-13" }
+      ],
+      "expected": { "valid": false, "keyword": "format", "instancePath": "/metadata/issuedAt" }
+    },
+    {
+      "id": "reject-unknown-subject-type",
+      "description": "Reject a subject type that is not part of the closed claim subject vocabulary.",
+      "base": "valid/draft-validator.yaml",
+      "patch": [
+        { "op": "replace", "path": "/subject/type", "value": "agent-team" }
+      ],
+      "expected": { "valid": false, "keyword": "enum", "instancePath": "/subject/type" }
+    },
+    {
+      "id": "reject-unsupported-top-level-field",
+      "description": "Reject certification metadata added outside the closed conformance claim contract.",
+      "base": "valid/draft-validator.yaml",
+      "patch": [
+        { "op": "add", "path": "/certifiedBy", "value": "NexFlow" }
+      ],
+      "expected": {
+        "valid": false,
+        "keyword": "additionalProperties",
+        "instancePath": "",
+        "params": { "additionalProperty": "certifiedBy" }
+      }
+    },
+    {
+      "id": "reject-non-self-declared-assurance",
+      "description": "Reject an assurance value that presents a self-declared claim as certification.",
+      "base": "valid/draft-validator.yaml",
+      "patch": [
+        { "op": "replace", "path": "/attestation/assurance", "value": "officially-certified" }
+      ],
+      "expected": { "valid": false, "keyword": "const", "instancePath": "/attestation/assurance" }
+    },
+    {
+      "id": "reject-missing-responsible-party",
+      "description": "Reject an attestation that does not identify the responsible publishing party.",
+      "base": "valid/draft-validator.yaml",
+      "patch": [
+        { "op": "remove", "path": "/attestation/responsibleParty" }
+      ],
+      "expected": {
+        "valid": false,
+        "keyword": "required",
+        "instancePath": "/attestation",
+        "params": { "missingProperty": "responsibleParty" }
+      }
+    },
+    {
+      "id": "reject-invalid-evidence-uri",
+      "description": "Reject an evidence location that is not an absolute URI.",
+      "base": "valid/published-validator.yaml",
+      "patch": [
+        { "op": "replace", "path": "/claims/NF-SCHEMA/evidence/0/uri", "value": "not a uri" }
+      ],
+      "expected": { "valid": false, "keyword": "format", "instancePath": "/claims/NF-SCHEMA/evidence/0/uri" }
+    },
+    {
+      "id": "reject-duplicate-evidence",
+      "description": "Reject duplicate evidence records inside one conformance level claim.",
+      "base": "valid/published-validator.yaml",
+      "patch": [
+        {
+          "op": "add",
+          "path": "/claims/NF-SCHEMA/evidence/-",
+          "value": {
+            "type": "fixture-suite",
+            "description": "Cataloged fixtures cover supported schema behavior.",
+            "uri": "https://example.com/validator/fixtures",
+            "revision": "v1.2.0"
+          }
+        }
+      ],
+      "expected": { "valid": false, "keyword": "uniqueItems", "instancePath": "/claims/NF-SCHEMA/evidence" }
+    },
+    {
+      "id": "reject-invalid-snapshot-source",
+      "description": "Reject a schema snapshot source that is not represented as an absolute URI.",
+      "base": "valid/published-validator.yaml",
+      "patch": [
+        { "op": "replace", "path": "/scope/schemaSnapshots/0/source", "value": "schemas/local" }
+      ],
+      "expected": { "valid": false, "keyword": "format", "instancePath": "/scope/schemaSnapshots/0/source" }
+    },
+    {
+      "id": "reject-invalid-snapshot-version",
+      "description": "Reject a schema snapshot with an invalid specification version identifier.",
+      "base": "valid/published-validator.yaml",
+      "patch": [
+        { "op": "replace", "path": "/scope/schemaSnapshots/0/specVersion", "value": "latest" }
+      ],
+      "expected": { "valid": false, "keyword": "pattern", "instancePath": "/scope/schemaSnapshots/0/specVersion" }
+    },
+    {
+      "id": "reject-missing-snapshot-revision",
+      "description": "Reject a schema snapshot that does not pin its source revision.",
+      "base": "valid/published-validator.yaml",
+      "patch": [
+        { "op": "remove", "path": "/scope/schemaSnapshots/0/revision" }
+      ],
+      "expected": {
+        "valid": false,
+        "keyword": "required",
+        "instancePath": "/scope/schemaSnapshots/0",
+        "params": { "missingProperty": "revision" }
+      }
+    },
+    {
+      "id": "reject-additional-level-field",
+      "description": "Reject an unsupported certification field inside a conformance level claim.",
+      "base": "valid/published-validator.yaml",
+      "patch": [
+        { "op": "add", "path": "/claims/NF-SCHEMA/certified", "value": true }
+      ],
+      "expected": {
+        "valid": false,
+        "keyword": "additionalProperties",
+        "instancePath": "/claims/NF-SCHEMA",
+        "params": { "additionalProperty": "certified" }
+      }
+    },
+    {
+      "id": "reject-blank-evidence-description",
+      "description": "Reject an evidence record whose description contains only whitespace.",
+      "base": "valid/published-validator.yaml",
+      "patch": [
+        { "op": "replace", "path": "/claims/NF-SCHEMA/evidence/0/description", "value": "   " }
+      ],
+      "expected": { "valid": false, "keyword": "pattern", "instancePath": "/claims/NF-SCHEMA/evidence/0/description" }
+    },
+    {
+      "id": "reject-missing-enforcement-description",
+      "description": "Reject a claim that does not separate runtime enforcement behavior from validation.",
+      "base": "valid/draft-validator.yaml",
+      "patch": [
+        { "op": "remove", "path": "/behavior/enforcement" }
+      ],
+      "expected": {
+        "valid": false,
+        "keyword": "required",
+        "instancePath": "/behavior",
+        "params": { "missingProperty": "enforcement" }
+      }
+    },
+    {
+      "id": "reject-invalid-metadata-id",
+      "description": "Reject a claim identifier that starts with an uppercase character.",
+      "base": "valid/draft-validator.yaml",
+      "patch": [
+        { "op": "replace", "path": "/metadata/id", "value": "Invalid-Claim" }
+      ],
+      "expected": { "valid": false, "keyword": "pattern", "instancePath": "/metadata/id" }
+    },
+    {
+      "id": "reject-blank-subject-version",
+      "description": "Reject a subject version that contains no visible version information.",
+      "base": "valid/draft-validator.yaml",
+      "patch": [
+        { "op": "replace", "path": "/subject/version", "value": "   " }
+      ],
+      "expected": { "valid": false, "keyword": "pattern", "instancePath": "/subject/version" }
+    },
+    {
+      "id": "reject-unknown-evidence-type",
+      "description": "Reject an evidence category outside the closed conformance evidence vocabulary.",
+      "base": "valid/published-validator.yaml",
+      "patch": [
+        { "op": "replace", "path": "/claims/NF-SCHEMA/evidence/0/type", "value": "marketing" }
+      ],
+      "expected": { "valid": false, "keyword": "enum", "instancePath": "/claims/NF-SCHEMA/evidence/0/type" }
+    },
+    {
+      "id": "reject-missing-level-summary",
+      "description": "Reject a conformance level that does not include its factual support summary.",
+      "base": "valid/draft-validator.yaml",
+      "patch": [
+        { "op": "remove", "path": "/claims/NF-MANIFEST/summary" }
+      ],
+      "expected": {
+        "valid": false,
+        "keyword": "required",
+        "instancePath": "/claims/NF-MANIFEST",
+        "params": { "missingProperty": "summary" }
+      }
+    }
+  ]
+}

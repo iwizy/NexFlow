@@ -1,0 +1,84 @@
+claimVersion: "0.1"
+kind: NexFlowConformanceClaim
+
+metadata:
+  id: fixture-published-validator
+  status: published
+  issuedAt: "2026-09-13T00:00:00Z"
+  updatedAt: "2026-09-13T01:00:00Z"
+
+subject:
+  name: Fixture Published Validator
+  version: "1.2.0"
+  type: validator
+  description: Fictional validator used only for conformance claim fixtures.
+  homepage: https://example.com/validator
+  sourceRepository: https://example.com/validator/source
+
+scope:
+  specVersions:
+    - "0.1"
+  schemaSnapshots:
+    - specVersion: "0.1"
+      revision: v0.1.0
+      source: https://example.com/nexflow/schemas
+  profiles:
+    - core
+    - policy
+  manifestKinds:
+    - Project
+    - ActorSet
+    - AgentSet
+    - PermissionSet
+  extensionNamespaces: []
+  unsupportedFields:
+    - PermissionSet.permissions.conditions
+
+claims:
+  NF-MANIFEST:
+    status: supported
+    summary: The scoped manifest kinds are parsed and preserved.
+    evidence:
+      - type: documentation
+        description: Versioned documentation lists the supported manifest kinds.
+        uri: https://example.com/validator/docs
+        revision: v1.2.0
+  NF-SCHEMA:
+    status: supported
+    summary: The scoped manifest kinds are structurally validated.
+    evidence:
+      - type: fixture-suite
+        description: Cataloged fixtures cover supported schema behavior.
+        uri: https://example.com/validator/fixtures
+        revision: v1.2.0
+  NF-SEMANTIC:
+    status: partial
+    summary: Selected references are resolved inside one project assembly.
+    evidence:
+      - type: test-suite
+        description: Versioned tests exercise the selected reference boundaries.
+        uri: https://example.com/validator/tests
+        revision: v1.2.0
+    limitations:
+      - Permission conditions are preserved without interpretation.
+  NF-CLI:
+    status: unsupported
+    summary: No CLI conformance claim is made.
+  NF-RUNTIME:
+    status: not-applicable
+    summary: The validator does not execute NexFlow projects.
+  NF-EXTENSION:
+    status: not-applicable
+    summary: Extension execution is outside the evaluated scope.
+
+behavior:
+  validation: Parses YAML and checks the listed schema and semantic boundaries.
+  enforcement: Performs no runtime preflight or enforcement.
+
+limitations:
+  - External resources and runtime safety are not verified.
+
+attestation:
+  assurance: self-declared
+  responsibleParty: Fixture Maintainer
+  contact: https://example.com/validator/contact

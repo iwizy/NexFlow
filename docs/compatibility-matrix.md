@@ -58,7 +58,7 @@ enforced.
 | MCP extension draft | Machine-readable `io.nexflow.mcp` profile, stricter ContextSet boundary, Software Team binding, and 10 focused cases | Implemented | `extensions/mcp/`, RFC-0018, `npm run mcp-extension-smoke` | Policy mapping only; no MCP client, server, transport, discovery, credential, protocol negotiation, or execution support. |
 | A2A extension draft | Machine-readable `io.nexflow.a2a` profile, protocol ownership map, and 13 focused cases | Implemented | `extensions/a2a/`, RFC-0019, `docs/mcp-a2a-boundaries.md`, `npm run a2a-extension-smoke` | Policy mapping only; no A2A client, server, binding, discovery, authentication, invocation, remote task synchronization, artifact import, streaming, or callbacks. |
 | Event interoperability mappings | `nexflow-cloudevents/0.1-draft` and `nexflow-opentelemetry/0.1-draft` | Specified | `docs/event-interoperability.md`, RFC-0009 | No event-instance schema, encoder, importer, SDK, CloudEvents binding, OpenTelemetry instrumentation, OTLP exporter, collector, sink, storage, or conformance suite. |
-| Conformance claim format | Standalone `claimVersion: "0.1"` schema plus profile-qualified YAML and Markdown templates | Implemented | `conformance/`, `npm run conformance-claim-smoke` | Self-declared claim structure only; no certification, external evidence verification, registry, or conformance test suite. |
+| Conformance claim format | Standalone `claimVersion: "0.1"` schema, profile-qualified YAML and Markdown templates, and 37 cataloged fixture cases | Implemented | `conformance/`, `fixtures/conformance/`, `npm run conformance-claim-smoke` | Claim structure and rejection-boundary evidence only; no certification, subject behavior evaluation, external evidence verification, or registry. |
 | Candidate readiness record | Standalone `recordVersion: "0.1"` schema, eight-gate template, and 14 focused cases | Implemented | `release/`, `npm run candidate-readiness-smoke`, `v0.1.0` release assets | Repository checks validate record structure and decision guards; the published decision is maintainer-reviewed evidence, not automated approval or a conformance certificate. |
 | Semantic reference inventory | P0-P3 target namespaces, coverage, gaps, and deferred fields | Specified | `docs/semantic-reference-inventory.md` | Documentation contract only; it is not a manifest, generated registry, validator, or conformance suite. |
 | Semantic reference smoke | Selected cross-manifest reference, active definition authority, and duplicate checks | Partial | `npm run semantic-smoke`, semantic reference inventory | Does not cover every inventoried field or establish full `NF-SEMANTIC` conformance, graph safety, or policy correctness. |
@@ -134,6 +134,7 @@ provider constraint smoke: scripts/provider-constraint-schema-smoke.mjs
 work reference namespace smoke: scripts/work-reference-namespace-smoke.mjs
 provider feature smoke: scripts/provider-feature-schema-smoke.mjs
 conformance claim format smoke: scripts/conformance-claim-smoke.mjs
+conformance claim fixtures: fixtures/conformance/
 candidate readiness record smoke: scripts/candidate-readiness-smoke.mjs
 semantic smoke: scripts/semantic-reference-smoke.mjs
 reference CLI: absent
@@ -642,6 +643,11 @@ The machine-readable format is validated by:
 ```sh
 npm run conformance-claim-smoke
 ```
+
+The check includes 37 cataloged cases from
+[`fixtures/conformance/`](../fixtures/conformance/) and verifies the expected
+JSON Schema boundary for every invalid claim. It does not evaluate the named
+subject or verify linked evidence.
 
 This is a compatibility record, not a NexFlow project manifest, certification,
 permission grant, approval, or runtime safety guarantee. See

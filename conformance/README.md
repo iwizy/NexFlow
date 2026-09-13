@@ -9,6 +9,9 @@ self-declared NexFlow compatibility claim:
   machine-readable authoring template.
 - [`CONFORMANCE-CLAIM.template.md`](CONFORMANCE-CLAIM.template.md) is the
   corresponding human-readable template.
+- [`../fixtures/conformance/index.json`](../fixtures/conformance/index.json)
+  catalogs reusable positive and negative claim cases derived from fictional
+  validator, CLI, extension, and service claims.
 
 The canonical semantics, status vocabulary, evidence rules, and publication
 workflow are documented in
@@ -27,9 +30,23 @@ Install the pinned repository dependencies and run:
 npm run conformance-claim-smoke
 ```
 
-The command validates the YAML template and focused positive and negative cases.
-It also checks that the human-readable template names every current conformance
-level and required section.
+The command validates the YAML template and 37 cataloged positive and negative
+fixture cases. It also checks that the human-readable template names every
+current conformance level and required section.
+
+## Fixture Catalog
+
+The catalog uses five valid YAML bases under
+[`../fixtures/conformance/valid/`](../fixtures/conformance/valid/) and a bounded
+subset of JSON Patch operations: `add`, `remove`, and `replace`. Each case names
+its base, transformation, expected validity, and exact JSON Schema rejection
+boundary when invalid.
+
+The runner rejects duplicate case IDs, unsafe fixture paths, unsupported patch
+operations, unlisted YAML bases, malformed YAML, unexpected validation results,
+and mismatched error paths. Fixture claims are fictional test data. A passing
+case is not a published support statement, certification, or verification of
+the evidence URI it contains.
 
 ## Publish A Claim
 

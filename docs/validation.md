@@ -331,14 +331,17 @@ Run the standalone conformance claim format checks:
 npm run conformance-claim-smoke
 ```
 
-This command exercises 15 accepted and rejected cases for claim identity,
-profile-qualified scope, level status, evidence, limitations, lifecycle,
-timestamps, and self-declared assurance. It also checks that the Markdown
-template contains every required section and all six current conformance
-levels.
+This command exercises 37 cataloged accepted and rejected cases derived from
+five fictional base claims. Coverage includes claim identity, subject types,
+profile-qualified scope, schema snapshots, level status, evidence, limitations,
+lifecycle, timestamps, validation and enforcement descriptions, closed fields,
+and self-declared assurance. It checks each rejection's JSON Schema keyword and
+instance path, and verifies that the Markdown template contains every required
+section and all six current conformance levels.
 
-It validates claim structure only. It does not inspect external tools, verify
-evidence, certify implementations, or establish any conformance level.
+It validates catalog and claim structure only. It does not inspect external
+tools, follow or verify evidence, certify implementations, or establish any
+conformance level.
 
 Run the standalone candidate readiness record checks:
 

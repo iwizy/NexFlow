@@ -12,6 +12,7 @@ verified by repository smoke commands.
 | Fixture set | Expected state | Purpose | Check |
 | --- | --- | --- | --- |
 | [`cli/`](cli/) | Mixed, cataloged per case | Exercises successful CLI commands, stable discovery and schema failures, bounded initialization, runtime-like command rejection, JSON output contracts, and input mutation boundaries. | `npm run cli-fixture-smoke` |
+| [`conformance/`](conformance/) | Mixed, cataloged per case | Exercises claim lifecycle, subject types, scope uniqueness and syntax, all six levels, evidence, limitations, snapshots, behavior separation, and self-declared attestation. | `npm run conformance-claim-smoke` |
 | [`discovery/multi-workflow/`](discovery/multi-workflow/) | Valid | Exercises explicit Project source hints, logical assembly discovery, deterministic source ordering, and multiple Workflow documents. | `npm run manifest-discovery-smoke` |
 | [`schema/invalid/`](schema/invalid/) | Intentionally invalid | Preserves stable rejection evidence for required fields, enum values, ID syntax, and unknown manifest kinds. | `npm run negative-schema-fixtures` |
 
@@ -21,6 +22,13 @@ checks, diagnostic codes, bounded result counts, and mutation expectation. The
 runner copies every fixture root to a temporary directory, validates each JSON
 envelope against the repository-owned output contract, and verifies that the
 source corpus is unchanged.
+
+The conformance corpus is registered in
+[`conformance/index.json`](conformance/index.json). Five fictional valid claims
+provide reusable bases; cataloged `add`, `remove`, and `replace` operations
+derive focused rejection cases without duplicating whole claim documents. The
+runner validates catalog shape, contained paths, YAML parsing, expected schema
+validity, and the exact keyword and instance path for every rejection.
 
 ## Fixtures And Examples
 
@@ -54,6 +62,8 @@ When adding or changing a fixture:
 6. Do not use fixtures to imply runtime execution or enforcement.
 7. Keep CLI cases synchronized with the output contract and documented command
    boundary whenever a cataloged result changes.
+8. Keep conformance case patches focused on one primary schema boundary and
+   update the expected keyword, path, and parameters together.
 
 ## Related Guides
 

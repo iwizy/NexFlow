@@ -223,5 +223,13 @@ validates the maintained YAML template, focused schema boundaries, and structura
 alignment of the Markdown template. It does not evaluate external tools, verify
 evidence, certify claims, or establish any NexFlow conformance level.
 
-Future conformance fixture suites may evaluate more complete claim behavior. That
-work remains separate from the current template contract.
+The command also loads the cataloged
+[conformance fixtures](../fixtures/conformance/index.json). Five fictional base
+claims cover validator, CLI, extension, service, draft, published, and withdrawn
+shapes; focused catalog patches exercise scope, lifecycle, evidence, limitation,
+behavior, attestation, and closed-field rejection boundaries. The runner checks
+the expected JSON Schema keyword and instance path for every invalid case.
+
+These fixtures make the claim-format contract more reproducible. They do not
+evaluate subject behavior, follow evidence links, issue certificates, or turn a
+fixture claim into a real compatibility statement.

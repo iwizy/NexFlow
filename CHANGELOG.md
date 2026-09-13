@@ -8,6 +8,12 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Added
 
+- Added a cataloged conformance claim fixture suite with five fictional base
+  claims and 37 accepted and rejected cases across subject types, lifecycle,
+  scope, schema snapshots, support levels, evidence, limitations, behavior,
+  closed fields, and attestation. The runner validates catalog integrity and
+  exact JSON Schema rejection boundaries without evaluating implementations,
+  following evidence, or making a conformance claim.
 - Added blocked, pre-publication reference CLI alpha release notes with
   candidate metadata, source-checkout evidence, safety non-goals, known
   limitations, independent version domains, artifact verification needs, and

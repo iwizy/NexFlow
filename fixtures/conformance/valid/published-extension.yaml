@@ -1,0 +1,61 @@
+claimVersion: "0.1"
+kind: NexFlowConformanceClaim
+
+metadata:
+  id: fixture-published-extension
+  status: published
+  issuedAt: "2026-09-13T00:00:00Z"
+
+subject:
+  name: Fixture Audit Extension
+  version: "2.0.0"
+  type: extension
+  description: Fictional extension used only for conformance claim fixtures.
+  sourceRepository: https://example.com/audit-extension/source
+
+scope:
+  specVersions:
+    - "0.1"
+  profiles:
+    - extensions
+  manifestKinds:
+    - ExtensionSet
+  extensionNamespaces:
+    - io.example.audit
+
+claims:
+  NF-MANIFEST:
+    status: not-applicable
+    summary: The extension does not define core manifest support.
+  NF-SCHEMA:
+    status: not-applicable
+    summary: Core schema validation is outside the evaluated scope.
+  NF-SEMANTIC:
+    status: not-applicable
+    summary: Core semantic validation is outside the evaluated scope.
+  NF-CLI:
+    status: not-applicable
+    summary: The extension is not a command-line interface.
+  NF-RUNTIME:
+    status: unsupported
+    summary: Runtime execution support is not claimed.
+  NF-EXTENSION:
+    status: supported
+    summary: The named extension namespace is preserved and validated.
+    evidence:
+      - type: test-suite
+        description: Versioned tests exercise the declared namespace boundary.
+        uri: https://example.com/audit-extension/tests
+        revision: v2.0.0
+
+behavior:
+  validation: Validates configuration owned by the declared extension namespace.
+  enforcement: Performs no workflow execution or runtime policy enforcement.
+
+limitations:
+  - Live integration behavior is outside the evaluated scope.
+
+attestation:
+  assurance: self-declared
+  responsibleParty: Fixture Extension Maintainer
+  contact: mailto:extension@example.com

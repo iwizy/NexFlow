@@ -1,0 +1,70 @@
+claimVersion: "0.1"
+kind: NexFlowConformanceClaim
+
+metadata:
+  id: fixture-partial-cli
+  status: draft
+  issuedAt: "2026-09-13T00:00:00Z"
+
+subject:
+  name: Fixture Manifest CLI
+  version: "0.4.0-alpha.1"
+  type: cli
+  description: Fictional local CLI used only for conformance claim fixtures.
+  homepage: https://example.com/cli
+
+scope:
+  specVersions:
+    - "0.1"
+  profiles:
+    - core
+  manifestKinds:
+    - Project
+    - ActorSet
+    - AgentSet
+  extensionNamespaces: []
+
+claims:
+  NF-MANIFEST:
+    status: not-applicable
+    summary: The CLI does not publish manifest definitions.
+  NF-SCHEMA:
+    status: partial
+    summary: The CLI validates the listed manifest kinds only.
+    evidence:
+      - type: fixture-suite
+        description: Versioned fixtures cover the listed structural boundary.
+        uri: https://example.com/cli/fixtures
+        revision: v0.4.0-alpha.1
+    limitations:
+      - Manifest kinds outside the scoped list are unsupported.
+  NF-SEMANTIC:
+    status: unsupported
+    summary: Cross-manifest semantic validation is not implemented.
+  NF-CLI:
+    status: partial
+    summary: Local validation and inspection commands are evaluated.
+    evidence:
+      - type: test-suite
+        description: Versioned command tests cover local validation and inspection.
+        uri: https://example.com/cli/tests
+        revision: v0.4.0-alpha.1
+    limitations:
+      - Graph and initialization commands are not evaluated.
+  NF-RUNTIME:
+    status: not-applicable
+    summary: The CLI cannot execute workflows or call providers.
+  NF-EXTENSION:
+    status: not-applicable
+    summary: Executable extension loading is unavailable.
+
+behavior:
+  validation: Validates selected local manifests and emits bounded diagnostics.
+  enforcement: Provides no runtime preflight, orchestration, or policy enforcement.
+
+limitations:
+  - This fixture does not describe the NexFlow repository prototype.
+
+attestation:
+  assurance: self-declared
+  responsibleParty: Fixture Maintainer

@@ -174,6 +174,9 @@ Relevant docs: [Security Model](security-model.md), [Capability Model](capabilit
 - Maintain the diagnostic code catalog as draft codes gain fixtures,
   structured details, implementation evidence, and compatibility status.
 - Maintain cataloged negative schema fixtures and add positive schema fixtures.
+- Maintain the schema bundle publication contract and close its index,
+  deterministic-build, integrity, consumer-verification, and ownership gates
+  before distributing an independent schema artifact.
 - Review the initial ActorSet boundary cases before migrating another example.
 - Review compact AgentSet and human override boundary cases before broader migration.
 - Review active agent definition authority and the documented Agent Assembly
@@ -194,6 +197,7 @@ Relevant docs: [Security Model](security-model.md), [Capability Model](capabilit
 Relevant docs: [Validation](validation.md), [Conformance](conformance.md),
 [Diagnostic Code Catalog](diagnostic-code-catalog.md),
 [Conformance Claims](conformance-claims.md),
+[Schema Bundle Publication](schema-bundle-publication.md),
 [Approval Gate Targets](approval-gate-targets.md),
 [Compatibility](compatibility.md), [Schema Guide](../schemas/README.md),
 [Examples Guide](../examples/README.md).

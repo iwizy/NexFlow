@@ -155,6 +155,9 @@ the preview implemented or approve an alpha release.
 
 Release readiness:
 
+- schema distribution has an immutable, language-neutral bundle contract with
+  explicit version, inventory, integrity, reproducibility, and consumer
+  verification boundaries
 - a reference CLI can validate and inspect manifests
 - `nexflow validate` behavior is aligned with the validation model
 - `nexflow inspect` output is useful for humans and future machine consumers

@@ -294,6 +294,20 @@ shared-library dependency direction, or the separation of `NF-CLI` and
 compatibility. See
 [CLI And Runtime Responsibility Boundary](cli-runtime-boundary.md).
 
+## Schema Distribution Compatibility
+
+Schema meaning is versioned by manifest `specVersion`; a published schema
+bundle would additionally have its own immutable artifact version and a
+separately versioned index format. Consumers must not infer that two artifacts
+are interchangeable merely because they target the same `specVersion`.
+
+Any change to an archive's schema bytes, inventory, canonical IDs, paths, or
+integrity metadata requires a new artifact version. An already published
+artifact must not be replaced in place. NexFlow does not currently publish a
+schema bundle or independent schema artifact version; the future publication
+and verification contract is defined in
+[Schema Bundle Publication](schema-bundle-publication.md).
+
 ## Runtime Compatibility
 
 Future runtimes should publish:
@@ -340,6 +354,7 @@ Examples:
 | --- | --- |
 | Add optional schema field | May preserve `NF-SCHEMA`; may require docs and examples updates. |
 | Rename required manifest field | Breaks `NF-MANIFEST` and `NF-SCHEMA`. |
+| Change a published schema bundle's bytes, inventory, IDs, paths, or integrity metadata | Requires a new schema artifact version and may affect offline resolvers, caches, package mirrors, and `NF-SCHEMA` evidence. |
 | Change approval gate meaning | May break `NF-RUNTIME` safety expectations. |
 | Change memory retention, visibility, sensitivity, consumers, writers, or promotion paths | May affect `NF-SEMANTIC`, `NF-RUNTIME`, privacy, audit, and safety compatibility. |
 | Add, remove, or reinterpret an AgentDefinition memory selector | May affect `NF-MANIFEST`, `NF-SCHEMA`, `NF-SEMANTIC`, memory authority, migration, privacy, and safety compatibility. |

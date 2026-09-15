@@ -33,7 +33,7 @@ after `v0.1.0`.
 | Surface | Current State | Evidence |
 | --- | --- | --- |
 | Specification | Specified in draft form | [Documentation](docs/index.md), [Manifest Reference](docs/manifest-reference.md) |
-| JSON Schemas | Implemented for 17 manifest kinds plus common definitions | [Schemas](schemas/), [Schema Guide](schemas/README.md) |
+| JSON Schemas | Implemented for 17 manifest kinds plus common definitions; language-neutral bundle publication is specified but no artifact is released | [Schemas](schemas/), [Schema Guide](schemas/README.md), [Schema Bundle Publication](docs/schema-bundle-publication.md) |
 | Reference examples | Implemented as two compact learning examples and 6 complete project sets containing 109 schema-backed manifests | [Examples](examples/), [Examples Guide](examples/README.md) |
 | Structural validation | Unified Node-based repository validation is implemented for schema and YAML syntax, manifest discovery and kind coverage, schema compilation, and all maintained examples; focused negative and model-boundary checks remain separate | `npm run validate`, `npm run negative-schema-fixtures`, [Validation](docs/validation.md) |
 | Core Profile | Implemented for minimum Project and participant slots, optional module qualifiers, dependency closure, and fail-closed omission | `npm run core-profile-smoke`, [Core Profile](docs/core-profile.md), [Profile Definition](profiles/core.yaml) |
@@ -250,6 +250,8 @@ NexFlow is intentionally split into layers:
 - [extensions/](extensions/): maintained versioned extension policy profiles
 - [schemas/](schemas/): draft JSON Schemas for core manifests
 - [Schema Guide](schemas/README.md): schema scope, update rules, and validation boundaries
+- [Schema Bundle Publication](docs/schema-bundle-publication.md): future
+  language-neutral schema artifact, integrity, and release contract
 - [examples/](examples/): complete reference team configurations
 - [Examples Guide](examples/README.md): overview of reference teams and manifest file sets
 - [conformance/](conformance/): standalone conformance claim schema and publication templates
@@ -369,8 +371,9 @@ See [Governance](docs/governance.md) and [RFCs](rfcs/README.md).
 - Discovery is limited to explicit local files and Project source hints;
   directory scans, general indexes, bundles, remote sources, workflow selection,
   and runtime loading are not implemented.
-- Schemas are not yet distributed as an independently versioned package. Use a
-  repository release, tag, or commit to identify a reproducible schema snapshot.
+- Schema bundle publication is specified, but no independently versioned
+  artifact or package exists. Use a repository release, tag, or commit to
+  identify a reproducible schema snapshot.
 - Draft RFCs may describe behavior that has not yet been incorporated into the
   manifest reference, schemas, examples, or compatibility contract.
 - No reference CLI, runtime engine, provider adapter, extension loader, live

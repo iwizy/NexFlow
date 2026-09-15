@@ -27,6 +27,7 @@ Related design notes:
 | Resource | Role in validation |
 | --- | --- |
 | [Schema Guide](../schemas/README.md) | Structural contract inventory, design rules, and schema maintenance guidance. |
+| [Schema Bundle Publication](schema-bundle-publication.md) | Future immutable schema snapshot, integrity, offline resolution, and consumer verification contract; no artifact exists yet. |
 | [Fixtures Guide](../fixtures/README.md) | Focused inputs with explicit pass or rejection expectations. |
 | [Examples Guide](../examples/README.md) | Complete reference manifest sets expected to pass maintained checks. |
 | [Examples Validation Walkthrough](examples-validation-walkthrough.md) | Reproducible path through repository validation, one selected assembly, declared inspection, static graphing, and an intentional failure. |

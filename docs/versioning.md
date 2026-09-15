@@ -73,6 +73,29 @@ adding directory or bundle discovery, or enabling cross-workflow dependencies
 requires an explicit compatibility and version decision. See
 [Manifest Discovery](manifest-discovery.md).
 
+## Schema Bundle Versioning
+
+A future schema bundle has three independent identifiers:
+
+- manifest `specVersion` for the language accepted by the included schemas
+- schema artifact version for the immutable distributed file set
+- `bundleFormatVersion` for the bundle index and layout contract
+
+The current repository publishes no independent schema bundle or artifact
+version. Until it does, a schema snapshot is identified by an exact repository
+release, tag, or commit.
+
+Any content change to a published bundle requires a new artifact version, even
+when manifest `specVersion` is unchanged. Changing the index fields, archive
+layout, path rules, or integrity meaning incompatibly requires a new
+`bundleFormatVersion`. Neither change silently advances the other version
+domains.
+
+The initial bundle must contain exactly one `specVersion` because current schema
+`$id` values are not version-qualified. See
+[Schema Bundle Publication](schema-bundle-publication.md) for scope, integrity,
+publication, and consumer verification rules.
+
 ## Conformance Claim Versioning
 
 Conformance claims use `claimVersion`, which is independent from manifest

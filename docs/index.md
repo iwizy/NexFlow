@@ -94,6 +94,7 @@ The documentation is the canonical source for the specification. Schemas and exa
 | [Typed References](typed-references.md) | Defines shared typed, scoped, transitional, and kind-specific reference shapes, lexical boundaries, and migration rules. |
 | [Work Reference Namespaces](work-reference-namespaces.md) | Defines workflow-wide step identity, assembly-wide task artifact identity, and deterministic dependency and handoff lookup. |
 | [Schema Design Notes](schema-design-notes.md) | Explains schema goals, non-goals, strictness boundaries, extension flexibility, and semantic validation limits. |
+| [Schema Bundle Publication](schema-bundle-publication.md) | Defines a future language-neutral schema artifact layout, index, independent versions, deterministic assembly, integrity, safe consumption, and publication gates. |
 | [Compatibility](compatibility.md) | Compatibility expectations and breaking change guidance. |
 | [Compatibility Matrix](compatibility-matrix.md) | Current support across spec versions, schemas, examples, validators, CLI, runtime, and extensions. |
 | [Release Plan](release-plan.md) | Public readiness criteria from `0.1` draft through `1.0`. |

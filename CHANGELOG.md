@@ -8,6 +8,12 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Added
 
+- Specified future core schema bundle publication: a language-neutral,
+  single-`specVersion` archive with a machine-readable inventory, independent
+  version domains, per-schema digests, deterministic assembly, safe extraction,
+  offline reference resolution, provider-neutral distribution, consumer
+  verification, and explicit release gates. No bundle, package, hosted schema
+  endpoint, artifact version, or conformance claim is published.
 - Added a cataloged conformance claim fixture suite with five fictional base
   claims and 37 accepted and rejected cases across subject types, lifecycle,
   scope, schema snapshots, support levels, evidence, limitations, behavior,

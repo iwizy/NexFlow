@@ -21,6 +21,7 @@ See [Schema Design Notes](../docs/schema-design-notes.md) for the design rationa
 | [Examples Guide](../examples/README.md) | Complete reference manifest sets that should validate successfully. |
 | [Conformance](../docs/conformance.md) | Requirements for evidence-backed schema and semantic support claims. |
 | [Compatibility Matrix](../docs/compatibility-matrix.md) | Current support across schemas, examples, validators, and planned tooling. |
+| [Schema Bundle Publication](../docs/schema-bundle-publication.md) | Proposed language-neutral artifact layout, index, integrity, versioning, publication, and consumer verification contract. |
 
 Schemas define structural contracts. Examples demonstrate recommended
 composition, fixtures isolate validation boundaries, and conformance claims
@@ -55,6 +56,12 @@ manifests, and are not counted as manifest kinds. See
 ## Current Scope
 
 The schemas currently target `specVersion: "0.1"` and use JSON Schema draft 2020-12.
+
+No independent schema bundle or package is published. The
+[Schema Bundle Publication](../docs/schema-bundle-publication.md) contract
+defines how a future one-version, checksummed, immutable artifact should be
+assembled and verified without conflating schema distribution with manifest
+bundling or runtime packaging.
 
 | Schema | Manifest `kind` | Purpose |
 | --- | --- | --- |

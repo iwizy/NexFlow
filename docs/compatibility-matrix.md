@@ -35,6 +35,7 @@ enforced.
 | `0.1` release scope | Frozen 17-kind baseline with explicit RFC treatment, optional surfaces, migration-only forms, and deferred work | Specified | `docs/0.1-scope.md`, `v0.1.0` release evidence | The release decision covers one exact repository snapshot; it does not imply runtime behavior, accepted draft RFCs, or `1.0` stability. |
 | Specification | `specVersion: "0.1"` draft | Specified | Core docs, manifest reference, RFCs | Pre-`1.0`; fields and semantics may change with migration guidance. |
 | JSON Schemas | `0.1` across 17 manifest kinds plus common definitions | Implemented | `schemas/*.schema.json` | Structural validation only; schemas do not prove cross-manifest meaning or safety. |
+| Schema bundle publication | Language-neutral, single-`specVersion` archive, index, digest, deterministic build, and consumer verification contract | Specified | `docs/schema-bundle-publication.md`, `schemas/README.md` | No bundle, index schema, builder, reproducible artifact, independent artifact version, hosted endpoint, signature, provenance, or package is published. |
 | Reference examples | Two compact projects plus 6 complete project sets, totaling 109 schema-backed manifests using `0.1` | Implemented | `examples/` | Authoring and validation material, not executable teams or runtime demonstrations. |
 | Repository schema validator | Current repository schema snapshot and reference examples | Implemented | `npm run validate` | Maintenance tooling, not a published `nexflow` CLI or general runtime preflight. |
 | Negative schema fixtures | Required field, enum value, ID format, and unknown kind rejection | Implemented | `npm run negative-schema-fixtures`, `fixtures/schema/invalid/` | Four focused rejection categories, not a complete invalid-input or diagnostic conformance suite. |
@@ -142,10 +143,12 @@ runtime: absent
 extension execution: absent
 ```
 
-The schemas do not currently publish an independent package version. Until a
-schema distribution and release process is accepted, a schema snapshot should be
-identified by a NexFlow repository release, tag, or commit when reproducibility
-outside this repository is required.
+The schemas do not currently publish an independent package version. The
+[Schema Bundle Publication](schema-bundle-publication.md) contract specifies a
+future language-neutral distribution, but no artifact exists. Until its release
+gates close, a schema snapshot should be identified by a NexFlow repository
+release, tag, or commit when reproducibility outside this repository is
+required.
 
 Do not describe an arbitrary mix of schemas, examples, and scripts from different
 repository revisions as a tested compatibility set.
@@ -680,7 +683,8 @@ Changes to the matrix must stay synchronized with:
 
 ## Known Gaps
 
-- No independent schema package or schema release version exists.
+- No independent schema bundle, package, or schema artifact version exists;
+  only the publication contract is specified.
 - No complete semantic validator exists.
 - No reference CLI exists.
 - No runtime architecture decision has been accepted.

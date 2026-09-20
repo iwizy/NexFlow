@@ -71,7 +71,7 @@ enforced.
 | Prototype static graph | Declaration nodes and selected reference edges with static resolution labels | Implemented | `docs/cli-graph.md`, `npm run cli-graph-smoke` | Text and JSON only; no full semantic graph, cycle analysis, execution order, renderer, external state, or runtime authority. |
 | Prototype starter initialization | Built-in `minimal-team@0.1-draft` template with explicit destination, exact-match skipping, and fail-closed conflict handling | Implemented | `docs/cli-init.md`, `npm run cli-init-smoke` | Three-file Core Profile starter only; no overwrite, remote template, runtime setup, provider configuration, credential handling, package installation, or execution authority. |
 | Runtime | Provider-neutral requirements documented | Planned | Architecture, runtime options, roadmap | No orchestration, enforcement, provider calling, task execution, or `NF-RUNTIME` implementation exists. |
-| Extensions | Core declaration schema, namespace/lifecycle rules, future loading boundary, and maintained experimental MCP and A2A profiles | Partial | `extensions.schema.json`, `docs/extension-loading-boundary.md`, `extensions/mcp/`, `extensions/a2a/`, extension docs, examples | Loading is specified only as a safety boundary; no registry, loader, live integration, protocol implementation, or plugin execution exists. |
+| Extensions | Core declaration schema, namespace/lifecycle rules, optional registry metadata model, future loading boundary, and maintained experimental MCP and A2A profiles | Partial | `extensions.schema.json`, `docs/extension-registry.md`, `npm run extension-registry-smoke`, `docs/extension-loading-boundary.md`, `extensions/mcp/`, `extensions/a2a/`, extension docs, examples | Registry metadata and loading are specified only as bounded draft models; no registry service, published snapshot, ownership verification, loader, live integration, protocol implementation, or plugin execution exists. |
 
 ## Version Compatibility Matrix
 
@@ -547,13 +547,16 @@ Current extension support includes:
   structure and focused offline validation
 - an experimental `io.nexflow.a2a` policy profile with machine-readable
   external identity, work, artifact, authority, and callback boundaries
+- a standalone `0.1-draft` registry metadata schema, fictional snapshot, and
+  focused structural and deterministic-ordering checks
 
 Current extension support does not include:
 
 - executable extension loading
 - package discovery or installation
 - namespace ownership verification
-- a public extension registry
+- a public extension registry, published snapshot, remote lookup, namespace
+  ownership verification, signing, revocation, or mirror policy
 - live GitHub, GitLab, Jira, Linear, Figma, Slack, MCP, A2A, or custom integrations
 - MCP transport, protocol negotiation, discovery, client, or server behavior
 - A2A protocol bindings, Agent Card discovery, authentication, remote task

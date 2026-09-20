@@ -1,0 +1,393 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nexflow.dev/extensions/registry.schema.json",
+  "title": "NexFlow Extension Registry Draft",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["registryFormatVersion", "kind", "metadata", "entries"],
+  "properties": {
+    "registryFormatVersion": {
+      "const": "0.1-draft"
+    },
+    "kind": {
+      "const": "NexFlowExtensionRegistry"
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["registryId", "displayName", "scope", "generatedAt", "source"],
+      "properties": {
+        "registryId": {
+          "$ref": "#/$defs/id"
+        },
+        "displayName": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160
+        },
+        "scope": {
+          "type": "string",
+          "enum": ["public", "private"]
+        },
+        "generatedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "source": {
+          "$ref": "#/$defs/registrySource"
+        }
+      }
+    },
+    "entries": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/entry"
+      }
+    }
+  },
+  "$defs": {
+    "id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[a-z][a-z0-9]*(?:[._-][a-z0-9]+)*$"
+    },
+    "namespace": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 253,
+      "pattern": "^[a-z][a-z0-9]*(?:[._-][a-z0-9]+)+$"
+    },
+    "httpsUri": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^https://"
+    },
+    "revision": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "repositoryPath": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 512,
+      "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*\\\\)[A-Za-z0-9._/-]+$"
+    },
+    "registrySource": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repository", "revision"],
+      "properties": {
+        "repository": {
+          "$ref": "#/$defs/httpsUri"
+        },
+        "revision": {
+          "$ref": "#/$defs/revision"
+        }
+      }
+    },
+    "profileSource": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repository", "revision", "path", "sha256"],
+      "properties": {
+        "repository": {
+          "$ref": "#/$defs/httpsUri"
+        },
+        "revision": {
+          "$ref": "#/$defs/revision"
+        },
+        "path": {
+          "$ref": "#/$defs/repositoryPath"
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "verification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status"],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["unverified", "self_asserted", "registry_verified"]
+        },
+        "method": {
+          "type": "string",
+          "enum": ["dns", "repository", "manual", "other"]
+        },
+        "evidence": {
+          "$ref": "#/$defs/httpsUri"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": { "const": "registry_verified" }
+            },
+            "required": ["status"]
+          },
+          "then": {
+            "required": ["method", "evidence"]
+          }
+        }
+      ]
+    },
+    "entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "namespace",
+        "displayName",
+        "summary",
+        "owner",
+        "lifecycle",
+        "profile",
+        "compatibility",
+        "requirements",
+        "documentation",
+        "publication"
+      ],
+      "properties": {
+        "namespace": {
+          "$ref": "#/$defs/namespace"
+        },
+        "displayName": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 20,
+          "maxLength": 500
+        },
+        "owner": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["name", "type", "identifier", "verification"],
+          "properties": {
+            "name": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 160
+            },
+            "type": {
+              "type": "string",
+              "enum": ["project", "organization", "community", "individual"]
+            },
+            "identifier": {
+              "$ref": "#/$defs/httpsUri"
+            },
+            "verification": {
+              "$ref": "#/$defs/verification"
+            }
+          }
+        },
+        "lifecycle": {
+          "type": "string",
+          "enum": ["experimental", "stable", "deprecated", "removed"]
+        },
+        "profile": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["version", "status", "specification", "source"],
+          "properties": {
+            "version": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 64,
+              "pattern": "^[0-9A-Za-z][0-9A-Za-z._-]*$"
+            },
+            "status": {
+              "type": "string",
+              "enum": ["draft", "stable", "deprecated", "removed"]
+            },
+            "specification": {
+              "$ref": "#/$defs/httpsUri"
+            },
+            "source": {
+              "$ref": "#/$defs/profileSource"
+            }
+          }
+        },
+        "compatibility": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["specVersions", "profileVersions", "attachmentAreas"],
+          "properties": {
+            "specVersions": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": {
+                "type": "string",
+                "pattern": "^[0-9]+\\.[0-9]+$"
+              }
+            },
+            "profileVersions": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 64
+              }
+            },
+            "attachmentAreas": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": {
+                "type": "string",
+                "enum": [
+                  "project",
+                  "agents",
+                  "workflow",
+                  "tasks",
+                  "handoffs",
+                  "permissions",
+                  "capabilities",
+                  "context",
+                  "retrieval",
+                  "memory",
+                  "providers",
+                  "events",
+                  "extensions"
+                ]
+              }
+            },
+            "conformanceLevels": {
+              "type": "array",
+              "uniqueItems": true,
+              "items": {
+                "type": "string",
+                "enum": [
+                  "NF-MANIFEST",
+                  "NF-SCHEMA",
+                  "NF-SEMANTIC",
+                  "NF-CLI",
+                  "NF-RUNTIME",
+                  "NF-EXTENSION"
+                ]
+              }
+            }
+          }
+        },
+        "requirements": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["capabilities", "networkAccess", "credentials", "executableCode"],
+          "properties": {
+            "capabilities": {
+              "type": "array",
+              "uniqueItems": true,
+              "items": {
+                "$ref": "#/$defs/id"
+              }
+            },
+            "networkAccess": {
+              "type": "string",
+              "enum": ["none", "optional", "required"]
+            },
+            "credentials": {
+              "type": "string",
+              "enum": ["none", "optional", "required"]
+            },
+            "executableCode": {
+              "type": "boolean"
+            }
+          }
+        },
+        "documentation": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["specification", "security"],
+          "properties": {
+            "homepage": {
+              "$ref": "#/$defs/httpsUri"
+            },
+            "specification": {
+              "$ref": "#/$defs/httpsUri"
+            },
+            "security": {
+              "$ref": "#/$defs/httpsUri"
+            }
+          }
+        },
+        "publication": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["status"],
+          "properties": {
+            "status": {
+              "type": "string",
+              "enum": ["draft", "published", "deprecated", "withdrawn"]
+            },
+            "publishedAt": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "updatedAt": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "status": { "const": "published" }
+                },
+                "required": ["status"]
+              },
+              "then": {
+                "required": ["publishedAt"]
+              }
+            }
+          ]
+        },
+        "replacedBy": {
+          "$ref": "#/$defs/namespace"
+        },
+        "limitations": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 500
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "lifecycle": { "const": "stable" }
+            },
+            "required": ["lifecycle"]
+          },
+          "then": {
+            "properties": {
+              "profile": {
+                "properties": {
+                  "status": { "const": "stable" }
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

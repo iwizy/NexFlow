@@ -158,13 +158,15 @@ starter into an explicit local destination and does not initialize a runtime.
 - Review human override authority, interruption boundaries, fail-closed behavior, resume gates, and audit expectations.
 - Review credential reference scope, broker ownership, operation leases,
   approval, rotation and revocation behavior, redaction, and runtime isolation.
-- Review extension namespace ownership, lifecycle transitions, registry expectations, and unsupported-extension behavior.
+- Review extension namespace ownership, lifecycle transitions, the draft
+  registry metadata model, publication and revocation expectations, and
+  unsupported-extension behavior.
 - Review RFC-0018 MCP context/action mapping, allow-lists, protocol-version
   claims, network transports, and failure behavior without implementing MCP.
 - Review RFC-0019 A2A external identity, skill, message, task, artifact,
   network, credential, and conformance boundaries without implementing A2A.
 
-Relevant docs: [Security Model](security-model.md), [Capability Model](capability-model.md), [Autonomy Model](autonomy-model.md), [Provider Abstraction](provider-abstraction.md), [Agent Assembly](agent-assembly.md), [Agent Definitions](agent-definitions.md), [Model Profiles](model-profiles.md), [Prompt Sets](prompt-sets.md), [Retrieval Profiles](retrieval-profiles.md), [Extension Model](extensions.md), [MCP And A2A Boundaries](mcp-a2a-boundaries.md), [Integrations](integrations.md).
+Relevant docs: [Security Model](security-model.md), [Capability Model](capability-model.md), [Autonomy Model](autonomy-model.md), [Provider Abstraction](provider-abstraction.md), [Agent Assembly](agent-assembly.md), [Agent Definitions](agent-definitions.md), [Model Profiles](model-profiles.md), [Prompt Sets](prompt-sets.md), [Retrieval Profiles](retrieval-profiles.md), [Extension Model](extensions.md), [Extension Registry Model](extension-registry.md), [MCP And A2A Boundaries](mcp-a2a-boundaries.md), [Integrations](integrations.md).
 
 ## Milestone 3: Schema Hardening
 

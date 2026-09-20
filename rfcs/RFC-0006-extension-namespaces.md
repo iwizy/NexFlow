@@ -175,6 +175,13 @@ A future runtime or validator MUST NOT silently treat a removed extension as sup
 
 This RFC does not create a central extension registry.
 
+The repository now includes a draft
+[Extension Registry Model](../docs/extension-registry.md) with a standalone
+schema, fictional example, and focused validation evidence. The model refines
+the metadata shape proposed here; it still does not create a registry service,
+perform ownership verification, authorize installation, or imply runtime
+support.
+
 The repository now carries maintained experimental `io.nexflow.mcp` and
 `io.nexflow.a2a` profiles under
 [RFC-0018](RFC-0018-mcp-extension-profile.md) and
@@ -203,6 +210,12 @@ A future public registry entry may include:
 - replacement namespace when deprecated
 
 Private organizations may keep an internal registry with the same fields.
+
+Registry entries are discovery metadata rather than authority. They must not
+be interpreted as project manifests, implementation locks, install
+instructions, permission grants, conformance certificates, or runtime support
+records. Public and private catalogs may share the model without making public
+registration mandatory.
 
 ## Extension Compatibility
 
@@ -306,7 +319,7 @@ If accepted, it may guide:
 - future `docs/extensions.md` updates
 - future `docs/integrations.md` updates
 - future schema additions for optional owner, version, registry, or security metadata
-- future extension registry design
+- future extension registry publication, signing, revocation, and governance
 - future semantic validation checks
 - future compatibility notes for extension namespace changes
 

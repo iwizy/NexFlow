@@ -8,6 +8,13 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Added
 
+- Added a standalone `0.1-draft` extension registry metadata model with a
+  closed JSON Schema, fictional example snapshot, ownership verification
+  states, immutable profile source pins, compatibility and risk signals,
+  publication lifecycle, deterministic namespace rules, and focused checks.
+  The model is optional discovery metadata: no registry service, published
+  snapshot, ownership verification, remote lookup, installation, loading,
+  execution, permission grant, or conformance certification is implemented.
 - Specified future core schema bundle publication: a language-neutral,
   single-`specVersion` archive with a machine-readable inventory, independent
   version domains, per-schema digests, deterministic assembly, safe extraction,

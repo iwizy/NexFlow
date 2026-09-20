@@ -4,6 +4,11 @@ Extensions allow NexFlow to grow without forcing every integration into the core
 
 Related RFC: [RFC-0006: Extension Namespaces](../rfcs/RFC-0006-extension-namespaces.md).
 
+The draft [Extension Registry Model](extension-registry.md) defines portable
+discovery metadata for namespaces, ownership claims, exact profile sources,
+compatibility, requirements, and publication lifecycle. It does not create a
+registry service or grant trust, installation, support, or runtime authority.
+
 Future executable discovery and activation must follow the
 [Extension Loading Boundary](extension-loading-boundary.md). An extension
 declaration, maintained profile, installed package, or successful validation is
@@ -109,3 +114,17 @@ credentials, context, memory, autonomy, or local identity.
 
 See [Extension Loading Boundary](extension-loading-boundary.md) for the complete
 runtime-neutral contract. No extension loader is implemented.
+
+## Registry Boundary
+
+A registry entry may make extension metadata easier to discover, but it is not
+part of a project assembly and is not an executable implementation record.
+Registry lookup must remain optional for private namespaces and offline
+authoring. A future consumer must validate and pin registry metadata, expose
+ownership verification honestly, keep unknown behavior inert, and re-evaluate
+all project and runtime policy independently.
+
+The repository includes a standalone draft schema, a fictional example, and
+focused checks. It does not publish a registry snapshot, verify namespace
+ownership, resolve packages, or perform remote lookup. See
+[Extension Registry Model](extension-registry.md).

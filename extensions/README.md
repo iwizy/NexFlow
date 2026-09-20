@@ -16,6 +16,13 @@ The [Extension Loading Boundary](../docs/extension-loading-boundary.md) defines
 how a future runtime must keep these profiles separate from executable package
 discovery, verification, enablement, loading, and per-operation authorization.
 
+The draft [Extension Registry Model](../docs/extension-registry.md) defines an
+optional metadata snapshot for namespace discovery. Its
+[`registry.schema.json`](registry.schema.json) and
+[`registry.example.yaml`](registry.example.yaml) are specification evidence,
+not a published registry, ownership verification service, package index, or
+installation mechanism.
+
 Each maintained profile should include:
 
 - a stable namespace

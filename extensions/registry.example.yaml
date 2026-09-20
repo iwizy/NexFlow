@@ -1,0 +1,55 @@
+registryFormatVersion: "0.1-draft"
+kind: NexFlowExtensionRegistry
+metadata:
+  registryId: example-extension-registry
+  displayName: Example Extension Registry
+  scope: public
+  generatedAt: "2026-09-20T00:00:00Z"
+  source:
+    repository: https://example.invalid/extension-registry
+    revision: "0000000000000000000000000000000000000000"
+entries:
+  - namespace: com.example.issue_tracker
+    displayName: Example Issue Tracker
+    summary: Fictional extension metadata used only to demonstrate the draft registry format.
+    owner:
+      name: Example Organization
+      type: organization
+      identifier: https://example.invalid/
+      verification:
+        status: self_asserted
+    lifecycle: experimental
+    profile:
+      version: "0.1-draft"
+      status: draft
+      specification: https://example.invalid/extensions/issue-tracker/specification
+      source:
+        repository: https://example.invalid/extensions
+        revision: "0000000000000000000000000000000000000000"
+        path: extensions/issue-tracker/profile.yaml
+        sha256: "0000000000000000000000000000000000000000000000000000000000000000"
+    compatibility:
+      specVersions:
+        - "0.1"
+      profileVersions:
+        - "0.1-draft"
+      attachmentAreas:
+        - context
+        - events
+        - tasks
+      conformanceLevels:
+        - NF-EXTENSION
+    requirements:
+      capabilities:
+        - read_context
+      networkAccess: required
+      credentials: optional
+      executableCode: true
+    documentation:
+      homepage: https://example.invalid/extensions/issue-tracker
+      specification: https://example.invalid/extensions/issue-tracker/specification
+      security: https://example.invalid/security
+    publication:
+      status: draft
+    limitations:
+      - This is fictional metadata and does not identify an installable or supported extension.

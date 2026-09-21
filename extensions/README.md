@@ -7,6 +7,7 @@ integration behavior.
 | --- | --- | --- |
 | `io.nexflow.mcp` | [MCP Extension Draft](mcp/README.md) | Draft / experimental |
 | `io.nexflow.a2a` | [A2A Extension Draft](a2a/README.md) | Draft / experimental |
+| `io.nexflow.issue_tracker` | [Issue Tracker Extension Draft](issue-tracker/README.md) | Draft / experimental |
 
 Profiles are specification assets, not NexFlow manifests. They are not
 discovered as part of a project assembly and do not load code, install

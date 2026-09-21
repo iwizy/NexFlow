@@ -9,6 +9,11 @@ For the first candidate review, see the [0.1 Readiness Checklist](readiness-chec
 The exact feature boundary is frozen in the
 [0.1 Candidate Scope](0.1-scope.md).
 
+The unreleased [Issue Tracker Extension Draft](../extensions/issue-tracker/README.md)
+adds a provider-neutral policy profile and offline validation evidence.
+Provider bindings, live issue operations, synchronization, and inbound events
+remain unimplemented; this does not advance a release or CLI readiness gate.
+
 ## Current Checkpoint: `v0.1.0`
 
 Status: draft specification foundation released. Candidate review is complete;

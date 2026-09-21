@@ -59,6 +59,7 @@ For the current supported combinations and explicit implementation gaps, see the
 - changing CLI command effect budgets, offline behavior, runtime-preflight separation, extension loading, shared-library initialization, or conformance claim boundaries
 - changing discovery root containment, source-hint cardinality, document cardinality, or workflow identity rules
 - changing MCP or A2A external ownership, identity binding, task correlation, artifact import, callback, or transitive-authority rules
+- changing issue-tracker identity scope, operation coverage, task correlation, state authority, approval, concurrency, retry, or event import semantics
 - changing reference CLI command names, exit code meanings, diagnostic code meanings, or machine-readable output formats
 - removing fields
 - changing required fields

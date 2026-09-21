@@ -18,7 +18,10 @@ The maintained machine-readable profiles are the
 [MCP Extension Draft](../extensions/mcp/README.md), proposed by
 [RFC-0018](../rfcs/RFC-0018-mcp-extension-profile.md), and the
 [A2A Extension Draft](../extensions/a2a/README.md), proposed by
-[RFC-0019](../rfcs/RFC-0019-mcp-a2a-boundaries.md).
+[RFC-0019](../rfcs/RFC-0019-mcp-a2a-boundaries.md). The provider-neutral
+[Issue Tracker Extension Draft](../extensions/issue-tracker/README.md), proposed
+by [RFC-0021](../rfcs/RFC-0021-issue-tracker-extension-profile.md), separates
+external issue records and mutations from local task and approval authority.
 
 ## Goals
 
@@ -98,6 +101,7 @@ Custom extensions should include a public or internal reference document when po
 | --- | --- | --- | --- |
 | `io.nexflow.mcp` | Draft / experimental | Profile schema, RFC-0018, Software Team binding, and `npm run mcp-extension-smoke` | Not implemented |
 | `io.nexflow.a2a` | Draft / experimental | Profile schema, RFC-0019, boundary map, and `npm run a2a-extension-smoke` | Not implemented |
+| `io.nexflow.issue_tracker` | Draft / experimental | Profile schema, RFC-0021, fictional declaration fragments, and `npm run issue-tracker-extension-smoke` | Not implemented |
 
 A maintained profile defines a policy mapping and validation evidence. It does
 not load an integration, install software, negotiate an external protocol,

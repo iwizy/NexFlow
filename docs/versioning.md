@@ -258,6 +258,24 @@ behavior requires explicit compatibility review. See the
 [A2A Extension Draft](../extensions/a2a/README.md) and
 [MCP And A2A Boundaries](mcp-a2a-boundaries.md).
 
+## Issue Tracker Extension Draft Version Decision
+
+The standalone `io.nexflow.issue_tracker` profile starts at
+`profileVersion: "0.1-draft"` while RFC-0021 remains Draft. Its schema accepts
+that exact version; pin profile, schema, and repository revision together.
+No manifest field, core schema, CLI command, or output format changes, so
+manifest `specVersion: "0.1"`, existing profiles, and release versions do not
+advance. No release is published by this change.
+
+Existing provider-specific declarations do not silently adopt the profile.
+Adoption requires explicit scoped bindings, bounded context, operation
+dependencies, and independently reviewed policy. Changes to operations,
+identity, task correlation, state authority, approval, concurrency, retries,
+event import, credential scope, or disclosure require compatibility review,
+a profile version decision, and migration guidance. Provider API and adapter
+versions remain independent. See the
+[Issue Tracker Extension Draft](../extensions/issue-tracker/README.md).
+
 ## Event Interoperability Version Decision
 
 The CloudEvents and OpenTelemetry mappings remain documentation-level draft

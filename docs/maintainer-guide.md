@@ -184,6 +184,11 @@ Review findings before summaries. Check:
 - failures, unsupported cases, and compatibility impact are visible
 - the diff contains no unrelated, generated, private, or sensitive material
 
+For provider-related changes, use the
+[Provider Neutrality Checklist](provider-neutrality-checklist.md). Record
+applicable item IDs, evidence, unsupported cases, and gaps in the review;
+a broad neutrality checkbox alone does not substantiate a support claim.
+
 Require at least one appropriate maintainer review for ordinary changes.
 Security-sensitive, breaking, licensing, release, or architecture changes may
 need additional domain review under their owning process.

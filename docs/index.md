@@ -73,6 +73,7 @@ The documentation is the canonical source for the specification. Schemas and exa
 | Process Area | Purpose |
 | --- | --- |
 | [Governance](governance.md) | Contribution, review, and decision rules. |
+| [Provider Neutrality Checklist](provider-neutrality-checklist.md) | Evidence-based review of portable core adoption, provider constraints, independent authority, adapter boundaries, offline tooling, and support claims. |
 | [Maintainer Guide](maintainer-guide.md) | Change routing, synchronization, validation, review, merge, RFC, release, security, and handoff workflow for maintainers. |
 | [Licensing And Patent Rationale](licensing-and-patent-rationale.md) | Records the current MIT decision, the Apache-2.0 patent tradeoff, and mandatory review triggers. |
 | [Versioning](versioning.md) | Spec versioning and migration policy. |

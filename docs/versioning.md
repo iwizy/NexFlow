@@ -239,6 +239,12 @@ approval posture. Changing surface authority, protocol compatibility claims,
 or failure policy requires explicit compatibility review. See the
 [MCP Extension Draft](../extensions/mcp/README.md).
 
+The [MCP Integration Profile](mcp-integration-profile.md) is a review companion
+to that same draft. Its declaration fragments and expanded offline checks add
+no fields or authority and change no accepted manifest shape. Both
+`profileVersion: "0.1-draft"` and `specVersion: "0.1"` remain unchanged; no
+migration, CLI contract change, or release version bump is required.
+
 ## A2A Extension Draft Version Decision
 
 The `io.nexflow.a2a` profile and MCP/A2A ownership map remain in

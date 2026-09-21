@@ -8,6 +8,12 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Added
 
+- Added an MCP integration review companion for the existing experimental
+  `io.nexflow.mcp` profile, with adoption evidence, scoped tool effects,
+  independent policy decisions, transport and credential boundaries, uncertain
+  outcomes, unsupported surfaces, and publication limits. Two fictional
+  declaration fragments and expanded offline checks demonstrate existing
+  shapes without adding a runtime, binding schema, authority, or version bump.
 - Added a standalone `0.1-draft` extension registry metadata model with a
   closed JSON Schema, fictional example snapshot, ownership verification
   states, immutable profile source pins, compatibility and risk signals,

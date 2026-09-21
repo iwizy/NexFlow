@@ -62,6 +62,7 @@ The documentation is the canonical source for the specification. Schemas and exa
 | [Extension Registry Model](extension-registry.md) | Defines optional registry snapshots, namespace ownership claims, pinned profile sources, compatibility and risk metadata, publication lifecycle, and strict no-authority boundaries. |
 | [Extension Loading Boundary](extension-loading-boundary.md) | Defines explicit implementation discovery, immutable resolution, verification, fail-closed unsupported handling, isolation, activation, and per-operation authorization for future runtimes. |
 | [MCP Extension Draft](../extensions/mcp/README.md) | Maps MCP context and action surfaces to independent capability, permission, approval, network, credential, and audit boundaries. |
+| [MCP Integration Profile](mcp-integration-profile.md) | Applies the existing draft mapping to adoption evidence, scoped effects, operation review, declaration fragments, and unsupported behavior. |
 | [A2A Extension Draft](../extensions/a2a/README.md) | Maps remote agent, skill, message, task, and artifact surfaces without treating external metadata as local authority. |
 | [MCP And A2A Boundaries](mcp-a2a-boundaries.md) | Defines protocol ownership, namespace collisions, identity binding, work correlation, artifact import, and cross-protocol authority rules. |
 | [Provider Abstraction](provider-abstraction.md) | Defines provider-neutral preferences, features, and constraints. |

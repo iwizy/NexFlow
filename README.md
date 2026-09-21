@@ -277,6 +277,7 @@ NexFlow is intentionally split into layers:
 - [Provider Features](docs/provider-features.md): closed provider support vocabulary and capability separation
 - [Provider Constraints](docs/provider-constraints.md): structured provider eligibility, composition, migration, and validation boundaries
 - [MCP Extension Draft](extensions/mcp/README.md): experimental MCP context/action policy mapping without runtime behavior
+- [MCP Integration Profile](docs/mcp-integration-profile.md): adoption review, operation boundaries, and fictional declaration fragments for the existing draft
 - [A2A Extension Draft](extensions/a2a/README.md): experimental remote-agent, task, and artifact policy mapping without runtime behavior
 - [Extension Registry Model](docs/extension-registry.md): optional namespace discovery metadata without ownership, installation, trust, or runtime authority
 - [MCP And A2A Boundaries](docs/mcp-a2a-boundaries.md): protocol ownership, identity, authority, work, artifact, network, and audit boundaries

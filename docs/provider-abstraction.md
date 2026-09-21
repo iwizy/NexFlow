@@ -4,6 +4,7 @@ NexFlow is provider neutral.
 
 Related documents:
 
+- [Provider Neutrality Checklist](provider-neutrality-checklist.md)
 - [Provider Adapter Boundary](provider-adapter-boundary.md)
 - [Provider Features](provider-features.md)
 - [Provider Constraints](provider-constraints.md)

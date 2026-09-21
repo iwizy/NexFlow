@@ -8,6 +8,11 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Added
 
+- Added a provider-neutrality review checklist with traceable evidence,
+  failure and unsupported scenarios, existing validation coverage and limits,
+  and links from contribution, pull-request, maintainer, and readiness reviews.
+  This review aid changes no manifest, schema, runtime behavior, or version.
+
 - Added a standalone `0.1-draft` extension registry metadata model with a
   closed JSON Schema, fictional example snapshot, ownership verification
   states, immutable profile source pins, compatibility and risk signals,

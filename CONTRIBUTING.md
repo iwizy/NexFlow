@@ -47,6 +47,8 @@ Use an RFC for:
 - Changelog is updated for user-visible changes.
 - Security and autonomy impact is considered.
 - Provider and runtime neutrality are preserved.
+- Provider-related changes include scoped evidence from the
+  [Provider Neutrality Checklist](docs/provider-neutrality-checklist.md).
 - Any breaking change includes migration guidance.
 
 ## Specification Language

@@ -105,6 +105,9 @@ publish a release.
 - [ ] Autonomy model and approval gates document human authority and sensitive action requirements.
 - [ ] Context model and memory model document access, retention, ownership, visibility, sensitivity, and boundaries.
 - [ ] Provider abstraction remains provider-neutral and does not require one LLM vendor.
+- [ ] Provider-related candidate changes have revision-scoped
+  [neutrality review evidence](provider-neutrality-checklist.md), with applicable
+  item IDs, failure or unsupported cases, and unresolved gaps recorded.
 - [ ] Runtime options compare implementation choices without selecting a final runtime language.
 - [ ] Release plan and roadmap explain what is specified, implemented, and planned.
 - [ ] Known limitations clearly state that no runtime engine or provider integration exists.

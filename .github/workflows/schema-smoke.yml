@@ -63,6 +63,9 @@ jobs:
       - name: Run A2A extension profile checks
         run: npm run a2a-extension-smoke
 
+      - name: Run issue tracker extension profile checks
+        run: npm run issue-tracker-extension-smoke
+
       - name: Run extension registry model checks
         run: npm run extension-registry-smoke
 

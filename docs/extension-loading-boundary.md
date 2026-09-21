@@ -37,7 +37,7 @@ This document does not:
 - define a central extension registry
 - define an executable package or lock-file schema
 - add fields to `ExtensionSet`
-- install, load, or execute the maintained GitHub, MCP, or A2A profiles
+- install, load, or execute the maintained extension policy profiles
 - make a schema-valid extension safe or supported
 - allow an extension to enforce core policy on behalf of the runtime
 

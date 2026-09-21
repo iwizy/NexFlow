@@ -183,6 +183,11 @@ The experimental [`io.nexflow.mcp`](extensions/mcp/README.md) and
 only. No MCP or A2A client, server, protocol binding, or live integration is
 implemented. See [MCP And A2A Boundaries](docs/mcp-a2a-boundaries.md).
 
+The experimental [Issue Tracker Extension Draft](extensions/issue-tracker/README.md)
+adds a provider-neutral policy map for external issues, comments, and state
+transitions. It includes offline validation evidence, not a live adapter or
+task synchronization.
+
 See [Concepts](docs/concepts.md) for the full domain model and [Glossary](docs/glossary.md) for quick terminology reference.
 
 ## Manifest Example
@@ -280,6 +285,7 @@ NexFlow is intentionally split into layers:
 - [GitHub Extension Draft](extensions/github/README.md): experimental repository, revision, pull request, review, check, and webhook policy mapping without live provider behavior
 - [MCP Extension Draft](extensions/mcp/README.md): experimental MCP context/action policy mapping without runtime behavior
 - [A2A Extension Draft](extensions/a2a/README.md): experimental remote-agent, task, and artifact policy mapping without runtime behavior
+- [Issue Tracker Extension Draft](extensions/issue-tracker/README.md): provider-neutral issue identity, mutation, and state authority boundaries without runtime behavior
 - [Extension Registry Model](docs/extension-registry.md): optional namespace discovery metadata without ownership, installation, trust, or runtime authority
 - [MCP And A2A Boundaries](docs/mcp-a2a-boundaries.md): protocol ownership, identity, authority, work, artifact, network, and audit boundaries
 - [Actor Model](docs/actor-model.md): first-class participant identity and kind-specific relationships

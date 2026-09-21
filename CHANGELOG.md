@@ -8,6 +8,13 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Added
 
+- Added the experimental `io.nexflow.issue_tracker` policy profile, closed
+  schema, RFC-0021, fictional declaration fragments, and offline boundary
+  checks in schema CI. The profile separates external issue identity, status,
+  comments, and events from local task, approval, and acceptance authority;
+  specifies scoped mutations, concurrency, retry, network, credential, and
+  audit boundaries; and implements no adapter or synchronization. Manifest
+  `specVersion`, CLI output, and release versions remain unchanged.
 - Added a machine-readable `io.nexflow.github` draft profile, closed schema,
   RFC, documentation, maintained Software Team binding checks, and focused
   regression coverage for provider authority, mutable refs, immutable commit

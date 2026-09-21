@@ -246,7 +246,7 @@ The repository currently provides:
 - one fictional example snapshot
 - focused structural and ordering checks through
   `npm run extension-registry-smoke`
-- maintained MCP and A2A policy profiles that are not registry entries
+- maintained GitHub, MCP, and A2A policy profiles that are not registry entries
 
 The repository does not provide a registry service, a published registry
 snapshot, namespace ownership verification, signed metadata, remote lookup,

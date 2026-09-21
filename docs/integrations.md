@@ -19,6 +19,15 @@ Integrations that need non-core metadata should use extension namespaces. See [E
 - A2A
 - custom systems
 
+## Issue Tracker Policy Profile
+
+The [Issue Tracker Extension Draft](../extensions/issue-tracker/README.md)
+defines `io.nexflow.issue_tracker` as a shared policy boundary for external
+issues, selected mutations, state correlation, and events. Provider bindings
+remain explicit and independently versioned. Existing Jira, Linear, GitHub,
+or custom declarations are not aliases and do not automatically adopt it.
+No tracker adapter or synchronization is implemented.
+
 ## Integration Roles
 
 An integration may be:

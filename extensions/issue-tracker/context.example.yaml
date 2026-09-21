@@ -1,0 +1,14 @@
+specVersion: "0.1"
+kind: ContextSet
+metadata:
+  project: issue-tracker-profile-example
+contextSources:
+  - id: backlog
+    type: custom
+    description: Fictional bounded issue backlog for offline profile evidence.
+    uri: https://example.invalid/workspaces/example/projects/backlog
+    contentTypes: [issues, tickets, metadata]
+    access:
+      default: read
+    classification: internal
+    refreshPolicy: on_request

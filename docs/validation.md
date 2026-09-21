@@ -309,6 +309,20 @@ This command validates the machine-readable `io.nexflow.mcp` profile, exercises
 permission, and context declarations. It does not connect to an MCP server,
 discover tools, negotiate protocol versions, or execute an action.
 
+Run the GitHub extension draft checks:
+
+```sh
+npm run github-extension-smoke
+```
+
+This command validates the machine-readable `io.nexflow.github` profile,
+exercises closed provider authority, immutable revision, operation separation,
+review, network, credential, webhook, and fail-closed boundaries, and checks
+the maintained Software Team extension, capability, context, and network
+declarations. It does not contact GitHub, authenticate, resolve a ref, inspect
+a live repository, receive a webhook, mutate a repository, create or merge a
+pull request, submit a review, or execute Actions.
+
 Run the A2A extension draft checks:
 
 ```sh
@@ -364,7 +378,7 @@ and focused boundary commands so pull requests exercise schema JSON parsing,
 example YAML parsing, manifest kind discovery, schema compilation, example
 manifest validation, typed-reference primitive boundaries, work reference
 namespaces, approval gate target kinds and scope, provider feature vocabulary,
-provider constraint structure, MCP and A2A extension profile boundaries,
+provider constraint structure, GitHub, MCP, and A2A extension profile boundaries,
 compact agent identity compatibility, Core Profile conformance boundaries,
 manifest discovery and multiple-workflow boundaries, credential handling and
 human override fail-closed shapes, and conformance claim format boundaries. It also checks candidate

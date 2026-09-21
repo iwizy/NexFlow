@@ -182,8 +182,9 @@ the metadata shape proposed here; it still does not create a registry service,
 perform ownership verification, authorize installation, or imply runtime
 support.
 
-The repository now carries maintained experimental `io.nexflow.mcp` and
-`io.nexflow.a2a` profiles under
+The repository now carries maintained experimental `io.nexflow.github`,
+`io.nexflow.mcp`, and `io.nexflow.a2a` profiles under
+[RFC-0020](RFC-0020-github-extension-profile.md),
 [RFC-0018](RFC-0018-mcp-extension-profile.md) and
 [RFC-0019](RFC-0019-mcp-a2a-boundaries.md). These profiles are evidence that
 the namespace model can express policy mappings; they do not create a general

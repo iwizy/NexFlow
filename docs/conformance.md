@@ -16,6 +16,7 @@ Related RFCs:
 - [RFC-0011: Reference CLI Scope](../rfcs/RFC-0011-reference-cli-scope.md)
 - [RFC-0018: MCP Extension Profile](../rfcs/RFC-0018-mcp-extension-profile.md)
 - [RFC-0019: MCP And A2A Boundaries](../rfcs/RFC-0019-mcp-a2a-boundaries.md)
+- [RFC-0020: GitHub Extension Profile](../rfcs/RFC-0020-github-extension-profile.md)
 
 See the [Compatibility Matrix](compatibility-matrix.md) for the repository's current evidence-backed support claims.
 

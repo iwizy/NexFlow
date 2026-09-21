@@ -161,12 +161,15 @@ starter into an explicit local destination and does not initialize a runtime.
 - Review extension namespace ownership, lifecycle transitions, the draft
   registry metadata model, publication and revocation expectations, and
   unsupported-extension behavior.
+- Review RFC-0020 GitHub repository identity, immutable revision evidence,
+  operation separation, pull request and review authority, webhooks, network,
+  credentials, and fail-closed behavior without implementing a GitHub client.
 - Review RFC-0018 MCP context/action mapping, allow-lists, protocol-version
   claims, network transports, and failure behavior without implementing MCP.
 - Review RFC-0019 A2A external identity, skill, message, task, artifact,
   network, credential, and conformance boundaries without implementing A2A.
 
-Relevant docs: [Security Model](security-model.md), [Capability Model](capability-model.md), [Autonomy Model](autonomy-model.md), [Provider Abstraction](provider-abstraction.md), [Agent Assembly](agent-assembly.md), [Agent Definitions](agent-definitions.md), [Model Profiles](model-profiles.md), [Prompt Sets](prompt-sets.md), [Retrieval Profiles](retrieval-profiles.md), [Extension Model](extensions.md), [Extension Registry Model](extension-registry.md), [MCP And A2A Boundaries](mcp-a2a-boundaries.md), [Integrations](integrations.md).
+Relevant docs: [Security Model](security-model.md), [Capability Model](capability-model.md), [Autonomy Model](autonomy-model.md), [Provider Abstraction](provider-abstraction.md), [Agent Assembly](agent-assembly.md), [Agent Definitions](agent-definitions.md), [Model Profiles](model-profiles.md), [Prompt Sets](prompt-sets.md), [Retrieval Profiles](retrieval-profiles.md), [Extension Model](extensions.md), [Extension Registry Model](extension-registry.md), [GitHub Extension Draft](../extensions/github/README.md), [MCP And A2A Boundaries](mcp-a2a-boundaries.md), [Integrations](integrations.md).
 
 ## Milestone 3: Schema Hardening
 

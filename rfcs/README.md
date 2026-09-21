@@ -27,6 +27,7 @@ RFCs are design proposals for meaningful changes to NexFlow.
 | [RFC-0019](RFC-0019-mcp-a2a-boundaries.md) | MCP And A2A Boundaries | Draft; boundary map and A2A profile implemented |
 | [RFC-0020](RFC-0020-github-extension-profile.md) | GitHub Extension Profile | Draft; machine-readable profile implemented |
 | [RFC-0021](RFC-0021-issue-tracker-extension-profile.md) | Issue Tracker Extension Profile | Draft; machine-readable policy profile and offline checks implemented |
+| [RFC-0022](RFC-0022-security-policy-composition.md) | Security Policy Composition | Draft |
 
 The [0.1 Candidate Scope](../docs/0.1-scope.md) records how each RFC is treated
 by the frozen candidate boundary. That treatment does not change an RFC's stage

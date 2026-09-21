@@ -2,6 +2,40 @@
 
 NexFlow treats safety as part of the specification, not an implementation afterthought.
 
+## Scope And Status
+
+This model covers authored policy, offline repository tooling, and conditional
+future runtime behavior. It does not establish that a deployment is secure.
+
+| Surface | Current evidence | Boundary |
+| --- | --- | --- |
+| Manifests, schemas, examples, and maintained profiles | Structural validation and selected reference checks. | Valid data is not an authenticated identity, permission decision, or execution grant. |
+| Repository CLI prototype | Offline discovery, validation, inspection, graphing, and bounded authoring, with regression guardrails. | No runtime preflight, provider invocation, credential resolution, executable extension loading, or workflow execution. |
+| Future runtime and integrations | Specification contracts and draft proposals. | Authentication, policy enforcement, isolation, cancellation, and audit durability remain unimplemented. |
+
+The owning domain documents below retain their status and authority.
+[RFC-0022](../rfcs/RFC-0022-security-policy-composition.md) proposes the
+cross-boundary evaluation and failure handling described in the **Draft Policy
+Composition** section. It remains Draft; documenting that proposal does not
+accept it or add a policy evaluator. The [Threat Model](threat-model.md) supplies
+attacker stories and assumptions, while [Validation](validation.md) and the
+[Compatibility Matrix](compatibility-matrix.md) bound implementation claims.
+
+## Trust Boundaries
+
+Each boundary needs its own evidence. Trust in one layer does not transfer
+automatically to another.
+
+| Input or transition | Required distinction | Owning contract |
+| --- | --- | --- |
+| Authored identity to acting principal | A declared actor ID is not authentication; a future host binds the principal to the intended project and actor. | [Actor Model](actor-model.md), [Human Override](human-override.md) |
+| Manifest assembly to requested configuration | Unique active selection describes a request; project and domain policy may only narrow it. | [Effective Agent Configuration](effective-agent-configuration.md) |
+| Context, prompts, retrieved documents, and remote output to local action | Content may propose an action, but cannot become permission, approval, or policy. | [Context Model](context-model.md), [Prompt Sets](prompt-sets.md), [MCP And A2A Boundaries](mcp-a2a-boundaries.md) |
+| Extension metadata to executable implementation | Discovery, integrity, installation, and action authorization are separate decisions. | [Extension Registry Model](extension-registry.md), [Extension Loading Boundary](extension-loading-boundary.md) |
+| Selected provider to invocation | Selection and adapter support do not grant disclosure, connectivity, credentials, or tool execution. | [Provider Adapter Boundary](provider-adapter-boundary.md) |
+| Task-local data to durable or shared memory | Persistence, promotion, reuse, and deletion need explicit scope and handling. | [Memory Model](memory-model.md) |
+| Decision or external event to audit storage | Evidence must be classified and redacted; persistence cannot authorize the recorded action. | [Event And Audit Storage Boundary](event-audit-storage-boundary.md) |
+
 ## Principles
 
 ### Least Privilege
@@ -209,6 +243,159 @@ Recommended behavior:
 7. Emit audit events for high-risk or approval-gated actions.
 
 This order prevents broad allow rules from accidentally bypassing narrower deny or approval-gated rules.
+
+## Draft Policy Composition
+
+This section summarizes the proposal in
+[RFC-0022](../rfcs/RFC-0022-security-policy-composition.md). The sequence is a
+review model for a future host, not an implemented algorithm, runtime API, new
+manifest kind, or replacement for domain-specific rule matching.
+
+### One Operation, All Applicable Boundaries
+
+A proposed action should identify its project, authenticated actor, requested
+capability, purpose, exact target, input classification, and relevant task or
+workflow scope. For an agent, it also identifies the selected active definition
+and component revisions. Descriptions, display names, remote identities, and
+tool-provided scope must not silently substitute for these bindings.
+
+The future host should resolve all applicable policy layers for that operation:
+
+1. Resolve identity and configuration without ambiguous or implicit fallback.
+2. Check human override and effective autonomy. A stop, pause, or revocation
+   cannot be cleared by an allow rule or an approval elsewhere.
+3. Confirm the action capability and evaluate every applicable permission.
+   Explicit deny wins; all applicable approval requirements remain blocking
+   until satisfied. No matching allow or satisfied approval-required rule means
+   no permission. Rule order or a broad allow must not hide a narrower deny.
+4. Constrain data reads, disclosure, retrieval, writes, and memory promotion
+   using the relevant context, memory, classification, and provider policies.
+5. Check extension and adapter support when used. For network or credential
+   use, independently check the relevant capabilities, permissions, structured
+   policy rules, and approvals. Follow each domain's matching algorithm; do
+   not combine rules from different layers to manufacture a grant.
+6. Verify every applicable task, workflow, action, data, network, and credential
+   approval against the intended scope, evidence, decision authority, expiry,
+   and revocation state. One satisfied gate cannot discharge another gate.
+7. Check enforcement support, operation limits, and required pre-effect audit.
+   Recheck mutable authority immediately before the effect, then hand only the
+   bounded operation to the responsible component.
+
+Authorization is the intersection of applicable policy decisions. A layer may
+be inapplicable only for a documented reason based on the operation: an offline
+local read, for example, does not require a network connection or a credential
+lease. Absence of required policy or evidence is not non-applicability.
+
+An unresolved reference, ambiguous identity, unknown restrictive fact,
+unsupported required control, failed policy lookup, or pending approval should
+block the effect. Record the reason accurately; an unresolved check is not a
+successful denial test or a successful authorization. These descriptions do
+not add diagnostic codes or approval states to the current schemas.
+
+### Freshness, Revocation, And Uncertain Outcomes
+
+The proposal binds a decision to the reviewed operation and relevant policy,
+configuration, target, artifact, approval, and input revisions. A decision for
+one scope is not reusable authority for another actor, project, purpose,
+destination, or artifact. The same textual reference does not prove that its
+underlying content is unchanged.
+
+A change to a relevant revision, expired or revoked approval, human override,
+changed destination, or provider fallback should invalidate the affected
+decision and return it to evaluation. Newly required or invalidated approvals
+must be obtained before proceeding. Retry, resume, delegation, and fallback
+should each be reviewed in their actual scope; they cannot inherit authority
+merely because the original operation passed.
+
+Checking before an effect is necessary but does not by itself solve races.
+A future implementation must state how it detects changes between evaluation
+and use, blocks new effects after revocation, invalidates operation handles,
+and reports effects already in flight. It must not claim that cancellation
+rolls back a completed external action.
+
+A timeout or lost acknowledgement may mean the effect completed. In that case,
+block blind replay and record the uncertain outcome. Any reconciliation,
+compensation, or retry is independently authorized, bounded, and audited.
+Exactly-once execution and rollback are not promised by this model.
+
+### Untrusted Content And Delegation
+
+Repository text, retrieved documents, tool descriptions, remote messages,
+model output, and imported events remain data at the authorization boundary.
+Instructions embedded in them cannot change local policy, appoint an approver,
+raise autonomy, disclose credentials, or suppress audit. Provenance and an
+integrity digest can establish origin or content identity; they do not make
+instructions authoritative or prove the content safe.
+
+For example, a retrieved document that asks a reader to upload local files does
+not authorize that upload. A proposed tool call needs its own exact action,
+target, data-disclosure, permission, network, credential, and approval checks.
+Filtering prompt text alone is not an enforcement boundary.
+
+A handoff or remote task also conveys no implicit delegation of local grants.
+The receiver needs its own actor binding and policy evaluation. Returned
+artifacts retain provenance and classification and enter local namespaces only
+through the explicit import rules of the relevant integration. Neither a
+remote success message nor a stored approval event is a local approval token.
+
+### Bounded Work And Audit Failure
+
+The proposed host should set explicit limits for execution time, requests,
+retries, concurrency, data volume, output, and retained state where relevant.
+Exhaustion or unsupported limit enforcement blocks further work rather than
+selecting a less restrictive provider, integration, or storage path. This does
+not add configurable budget fields to current manifests or claim that the
+prototype is protected against every resource-exhaustion attack.
+
+Audit evidence should identify the operation, actor, target, relevant revisions,
+applied policy and approval references, outcome, and uncertainty using minimal
+redacted metadata. Do not copy raw prompts, credentials, or sensitive payloads
+into a denial record. Follow the
+[audit storage failure contract](event-audit-storage-boundary.md): failure to
+record required pre-effect audit blocks the effect; loss after an effect must
+be reported as an audit gap with the actual known outcome. A logging failure
+cannot turn an executed or uncertain action into a claim that nothing happened.
+
+## Security Review Scenarios
+
+These are manual specification review cases, not executable fixtures or proof
+that runtime enforcement exists. Cases involving composition apply to the
+Draft proposal above; linked domain controls keep their existing status.
+
+| Case | Expected boundary | Evidence to review |
+| --- | --- | --- |
+| An offline local read has a bound actor, declared capability, matching permission, and allowed context, with no applicable gate or override. | Eligible only within that exact scope in a future runtime; it grants no write, network, or credential access. | Capability, permission, context, autonomy, and override decisions. |
+| A broad allow and a narrower applicable deny cover the same write. | Block the write regardless of rule order or approval. | All matching permission rules and scope resolution. |
+| A task gate is approved while a required network or credential gate is pending. | Block the effect; approvals do not substitute across layers. | Every applicable gate and the corresponding domain decisions. |
+| Approval covers one artifact revision, but the artifact or target changes before use. | Re-evaluate and satisfy any invalidated approvals before acting. | Reviewed and current revisions plus decision scope. |
+| Retrieved content asks for an upload or returns a tool request naming a different target. | Treat it as an untrusted proposal and check the actual requested effect independently. | Provenance, data classification, target binding, and independent authorization. |
+| A handoff names a local actor or carries a remote success or approval event. | Do not impersonate that actor or transition local state automatically. | Authenticated identity mapping, import rules, and local transition policy. |
+| A provider fails and another target is available. | Re-evaluate the permitted fallback; do not reuse scoped credentials or drop restrictive data policy. | Model profile, adapter, provider constraints, network, and credential scope. |
+| A stop arrives after evaluation or an effect times out without acknowledgement. | Block new work and blind replay; retain the known or uncertain in-flight outcome. | Override, cancellation, handle invalidation, and reconciliation evidence. |
+| Required audit storage is unavailable before an effect. | Block the effect; do not silently use an unapproved sink. | Audit requirement, redaction, storage failure, and gap handling. |
+| A required isolation control or operation limit is unsupported. | Block the affected operation and report unsupported enforcement. | Implementation support and explicit limit evidence. |
+| Schema and CLI guardrail checks pass. | Report only the checked static and prototype behavior. | Exact revision, command results, limitations, and scoped conformance claim. |
+
+## Review Evidence And Compatibility
+
+A security review should record the exact revision and changed surfaces,
+crossed trust boundaries, applicable scenarios, expected outcome, evidence,
+unresolved assumptions, and reviewer decision. Distinguish manual contract
+review, executable structural checks, and future runtime tests. Mark missing
+evidence explicitly instead of treating a proposed control as implemented.
+
+Focused repository checks include approval gate targets, active-definition
+authority, credential handling, human override, provider constraints, extension
+profiles, selected semantic references, and CLI no-runtime guardrails. Run the
+complete suites in the [repository workflows](../.github/workflows/) as well.
+None of those checks evaluates the complete proposed policy intersection,
+authenticates a principal, proves isolation, or tests live cancellation races.
+
+This documentation and Draft RFC add no fields, schema constraints, profile
+version, CLI output, or executable behavior. No version bump or migration is
+needed for this proposal. Acceptance that changes normative authorization
+semantics requires an explicit compatibility and version decision even if the
+manifest shape stays unchanged. See [Versioning](versioning.md).
 
 ## Example Safety Cases
 

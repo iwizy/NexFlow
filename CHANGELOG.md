@@ -8,6 +8,11 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Added
 
+- Expanded the security model with trust boundaries, Draft RFC-0022 policy
+  composition, scoped decisions, revalidation, untrusted content and delegation,
+  uncertain outcomes, operation limits, audit failure handling, and manual
+  review scenarios. No runtime enforcement, manifest fields, schema changes,
+  conformance certification, or release is introduced.
 - Added a provider-neutrality review checklist with traceable evidence,
   failure and unsupported scenarios, existing validation coverage and limits,
   and links from contribution, pull-request, maintainer, and readiness reviews.

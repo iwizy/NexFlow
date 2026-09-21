@@ -39,6 +39,14 @@ Examples and fixtures serve different purposes. Examples demonstrate coherent
 authoring patterns; fixtures isolate specific validation contracts. Neither is
 evidence of runtime execution or enforcement.
 
+The [Security Model review scenarios](security-model.md#security-review-scenarios)
+are manual specification evidence for Draft
+[RFC-0022](../rfcs/RFC-0022-security-policy-composition.md). Existing schema,
+reference, profile, and CLI guardrail checks do not evaluate the complete
+proposed policy intersection, authenticate principals, or test live approval,
+revocation races, isolation, cancellation, or uncertain-effect handling. Record
+those enforcement gaps explicitly in security and conformance claims.
+
 ## Validation Goals
 
 - Catch structural manifest errors early.

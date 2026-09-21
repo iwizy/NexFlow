@@ -34,6 +34,7 @@ The documentation is the canonical source for the specification. Schemas and exa
 | Model | Purpose |
 | --- | --- |
 | [Threat Model](threat-model.md) | Maps current repository and conditional future-runtime assets, actors, trust boundaries, attacker stories, controls, assumptions, and severity. |
+| [Security Model](security-model.md) | Maps safety principles and trust boundaries, with Draft policy composition, failure handling, review scenarios, and evidence limits. |
 | [Core Profile](core-profile.md) | Defines the minimum Project and participant assembly, optional module qualifiers, dependency closure, and fail-closed incremental adoption. |
 | [Actor Model](actor-model.md) | Defines first-class human, agent, automation, service, and authority identity plus migration behavior. |
 | [Capability Model](capability-model.md) | Defines technical actions separately from authorization. |

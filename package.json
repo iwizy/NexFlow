@@ -23,6 +23,7 @@
     "core-profile-smoke": "node scripts/core-profile-smoke.mjs",
     "credential-handling-schema-smoke": "node scripts/credential-handling-schema-smoke.mjs",
     "extension-registry-smoke": "node scripts/extension-registry-smoke.mjs",
+    "github-extension-smoke": "node scripts/github-extension-smoke.mjs",
     "human-override-schema-smoke": "node scripts/human-override-schema-smoke.mjs",
     "manifest-discovery-smoke": "node scripts/manifest-discovery-smoke.mjs",
     "mcp-extension-smoke": "node scripts/mcp-extension-smoke.mjs",

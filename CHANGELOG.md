@@ -8,6 +8,14 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Added
 
+- Added a machine-readable `io.nexflow.github` draft profile, closed schema,
+  RFC, documentation, maintained Software Team binding checks, and focused
+  regression coverage for provider authority, mutable refs, immutable commit
+  evidence, separated repository operations, pull request and review
+  authority, untrusted content, network and credential mediation, webhooks,
+  audit, and fail-closed behavior. No GitHub client, API binding, token flow,
+  webhook receiver, repository mutation, pull request merge, Actions
+  execution, or runtime support is implemented.
 - Added a standalone `0.1-draft` extension registry metadata model with a
   closed JSON Schema, fictional example snapshot, ownership verification
   states, immutable profile source pins, compatibility and risk signals,

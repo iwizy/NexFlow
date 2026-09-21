@@ -1,0 +1,439 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nexflow.dev/extensions/github/profile.schema.json",
+  "title": "NexFlow GitHub Extension Draft Profile",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "profileVersion",
+    "namespace",
+    "displayName",
+    "status",
+    "provider",
+    "surfaces",
+    "requirements",
+    "failurePolicy"
+  ],
+  "properties": {
+    "profileVersion": {
+      "type": "string",
+      "pattern": "^0\\.[0-9]+-draft$"
+    },
+    "namespace": {
+      "const": "io.nexflow.github"
+    },
+    "displayName": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "const": "draft"
+    },
+    "provider": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "authority", "versionPolicy"],
+      "properties": {
+        "name": {
+          "const": "GitHub"
+        },
+        "authority": {
+          "const": "external"
+        },
+        "versionPolicy": {
+          "const": "explicit_compatibility_claim"
+        }
+      }
+    },
+    "surfaces": {
+      "type": "array",
+      "minItems": 7,
+      "maxItems": 7,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "class", "providerOwned", "nexflowTreatment"],
+        "properties": {
+          "id": {
+            "enum": [
+              "repository",
+              "ref",
+              "commit",
+              "pull_request",
+              "review",
+              "check",
+              "webhook"
+            ]
+          },
+          "class": {
+            "enum": [
+              "context",
+              "mutable_reference",
+              "immutable_revision",
+              "review_record",
+              "review_signal",
+              "status_signal",
+              "external_event"
+            ]
+          },
+          "providerOwned": {
+            "const": true
+          },
+          "nexflowTreatment": {
+            "enum": [
+              "declared_context",
+              "mutable_not_identity",
+              "pinned_external_revision",
+              "external_review_record",
+              "not_approval_decision",
+              "evidence_not_authority",
+              "untrusted_event_input"
+            ]
+          }
+        },
+        "oneOf": [
+          {
+            "properties": {
+              "id": { "const": "repository" },
+              "class": { "const": "context" },
+              "nexflowTreatment": { "const": "declared_context" }
+            }
+          },
+          {
+            "properties": {
+              "id": { "const": "ref" },
+              "class": { "const": "mutable_reference" },
+              "nexflowTreatment": { "const": "mutable_not_identity" }
+            }
+          },
+          {
+            "properties": {
+              "id": { "const": "commit" },
+              "class": { "const": "immutable_revision" },
+              "nexflowTreatment": { "const": "pinned_external_revision" }
+            }
+          },
+          {
+            "properties": {
+              "id": { "const": "pull_request" },
+              "class": { "const": "review_record" },
+              "nexflowTreatment": { "const": "external_review_record" }
+            }
+          },
+          {
+            "properties": {
+              "id": { "const": "review" },
+              "class": { "const": "review_signal" },
+              "nexflowTreatment": { "const": "not_approval_decision" }
+            }
+          },
+          {
+            "properties": {
+              "id": { "const": "check" },
+              "class": { "const": "status_signal" },
+              "nexflowTreatment": { "const": "evidence_not_authority" }
+            }
+          },
+          {
+            "properties": {
+              "id": { "const": "webhook" },
+              "class": { "const": "external_event" },
+              "nexflowTreatment": { "const": "untrusted_event_input" }
+            }
+          }
+        ]
+      }
+    },
+    "requirements": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "extension",
+        "contextSource",
+        "identifiers",
+        "content",
+        "operations",
+        "reviewAuthority",
+        "network",
+        "credentials",
+        "events",
+        "audit"
+      ],
+      "properties": {
+        "extension": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["lifecycle", "appliesTo", "requiredCapabilities"],
+          "properties": {
+            "lifecycle": {
+              "type": "array",
+              "minItems": 1,
+              "maxItems": 1,
+              "uniqueItems": true,
+              "items": { "const": "experimental" }
+            },
+            "appliesTo": {
+              "type": "array",
+              "minItems": 6,
+              "maxItems": 6,
+              "uniqueItems": true,
+              "items": {
+                "enum": [
+                  "workflow",
+                  "tasks",
+                  "permissions",
+                  "capabilities",
+                  "context",
+                  "events"
+                ]
+              }
+            },
+            "requiredCapabilities": {
+              "type": "array",
+              "minItems": 4,
+              "maxItems": 4,
+              "uniqueItems": true,
+              "items": {
+                "enum": [
+                  "read_repository",
+                  "create_branch",
+                  "create_pull_request",
+                  "access_network"
+                ]
+              }
+            }
+          }
+        },
+        "contextSource": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["type", "requiredFields", "allowedContentTypes"],
+          "properties": {
+            "type": { "const": "github" },
+            "requiredFields": {
+              "type": "array",
+              "minItems": 4,
+              "maxItems": 4,
+              "uniqueItems": true,
+              "items": {
+                "enum": ["uri", "contentTypes", "access", "classification"]
+              }
+            },
+            "allowedContentTypes": {
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 3,
+              "uniqueItems": true,
+              "items": {
+                "enum": ["source_code", "pull_requests", "metadata"]
+              }
+            }
+          }
+        },
+        "identifiers": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["providerIds", "mutableRefs", "commitRevisions"],
+          "properties": {
+            "providerIds": { "const": "integration_scoped_opaque" },
+            "mutableRefs": { "const": "never_immutable_identity" },
+            "commitRevisions": { "const": "exact_oid_when_evidence_requires_pin" }
+          }
+        },
+        "content": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["trust", "instructions", "classification"],
+          "properties": {
+            "trust": { "const": "untrusted_external_input" },
+            "instructions": { "const": "never_authority" },
+            "classification": { "const": "preserve_or_raise" }
+          }
+        },
+        "operations": {
+          "type": "array",
+          "minItems": 5,
+          "maxItems": 5,
+          "uniqueItems": true,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["id", "effect", "requiredCapabilities", "approvalPolicy"],
+            "properties": {
+              "id": {
+                "enum": [
+                  "read_repository",
+                  "create_branch",
+                  "push_commit",
+                  "create_pull_request",
+                  "submit_review"
+                ]
+              },
+              "effect": {
+                "enum": ["read", "write", "governance"]
+              },
+              "requiredCapabilities": {
+                "type": "array",
+                "minItems": 2,
+                "uniqueItems": true,
+                "items": {
+                  "enum": [
+                    "read_repository",
+                    "write_repository",
+                    "create_branch",
+                    "create_pull_request",
+                    "approve_changes",
+                    "access_network",
+                    "use_credential"
+                  ]
+                }
+              },
+              "approvalPolicy": {
+                "enum": ["local_policy", "required_initial_draft"]
+              }
+            },
+            "oneOf": [
+              {
+                "properties": {
+                  "id": { "const": "read_repository" },
+                  "effect": { "const": "read" },
+                  "requiredCapabilities": {
+                    "const": ["read_repository", "access_network"]
+                  },
+                  "approvalPolicy": { "const": "local_policy" }
+                }
+              },
+              {
+                "properties": {
+                  "id": { "const": "create_branch" },
+                  "effect": { "const": "write" },
+                  "requiredCapabilities": {
+                    "const": ["create_branch", "access_network", "use_credential"]
+                  },
+                  "approvalPolicy": { "const": "required_initial_draft" }
+                }
+              },
+              {
+                "properties": {
+                  "id": { "const": "push_commit" },
+                  "effect": { "const": "write" },
+                  "requiredCapabilities": {
+                    "const": ["write_repository", "access_network", "use_credential"]
+                  },
+                  "approvalPolicy": { "const": "required_initial_draft" }
+                }
+              },
+              {
+                "properties": {
+                  "id": { "const": "create_pull_request" },
+                  "effect": { "const": "write" },
+                  "requiredCapabilities": {
+                    "const": ["create_pull_request", "access_network", "use_credential"]
+                  },
+                  "approvalPolicy": { "const": "required_initial_draft" }
+                }
+              },
+              {
+                "properties": {
+                  "id": { "const": "submit_review" },
+                  "effect": { "const": "governance" },
+                  "requiredCapabilities": {
+                    "const": ["approve_changes", "access_network", "use_credential"]
+                  },
+                  "approvalPolicy": { "const": "required_initial_draft" }
+                }
+              }
+            ]
+          }
+        },
+        "reviewAuthority": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["pullRequest", "providerReview", "merge"],
+          "properties": {
+            "pullRequest": { "const": "not_task_or_handoff" },
+            "providerReview": { "const": "not_approval_gate_decision" },
+            "merge": { "const": "unsupported_initial_draft" }
+          }
+        },
+        "network": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["outboundPolicy", "outboundCapability", "inboundWebhooks"],
+          "properties": {
+            "outboundPolicy": { "const": "required_for_provider_calls" },
+            "outboundCapability": { "const": "access_network" },
+            "inboundWebhooks": {
+              "const": "unsupported_without_declared_inbound_policy"
+            }
+          }
+        },
+        "credentials": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["handling", "capability", "scope", "manifestSecrets"],
+          "properties": {
+            "handling": { "const": "mediated_external_binding" },
+            "capability": { "const": "use_credential" },
+            "scope": { "const": "operation_scoped_least_privilege" },
+            "manifestSecrets": { "const": "forbidden" }
+          }
+        },
+        "events": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["webhookTrust", "deliveryIds", "stateAuthority"],
+          "properties": {
+            "webhookTrust": { "const": "untrusted_until_verified" },
+            "deliveryIds": { "const": "provider_scoped_opaque" },
+            "stateAuthority": { "const": "explicit_mapping_required" }
+          }
+        },
+        "audit": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["requiredFor"],
+          "properties": {
+            "requiredFor": {
+              "type": "array",
+              "minItems": 8,
+              "maxItems": 8,
+              "uniqueItems": true,
+              "items": {
+                "enum": [
+                  "context_read",
+                  "branch_creation",
+                  "repository_write",
+                  "pull_request_creation",
+                  "review_submission",
+                  "credential_decision",
+                  "network_decision",
+                  "webhook_decision"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "failurePolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "unknownOperation",
+        "unsupportedProfile",
+        "missingDependency",
+        "ambiguousRepository",
+        "staleOrMutableEvidence"
+      ],
+      "properties": {
+        "unknownOperation": { "const": "preserve_do_not_execute" },
+        "unsupportedProfile": { "const": "fail_closed" },
+        "missingDependency": { "const": "fail_closed" },
+        "ambiguousRepository": { "const": "fail_closed" },
+        "staleOrMutableEvidence": { "const": "reject_when_pin_required" }
+      }
+    }
+  }
+}

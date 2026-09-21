@@ -5,6 +5,7 @@ integration behavior.
 
 | Namespace | Profile | Status |
 | --- | --- | --- |
+| `io.nexflow.github` | [GitHub Extension Draft](github/README.md) | Draft / experimental |
 | `io.nexflow.mcp` | [MCP Extension Draft](mcp/README.md) | Draft / experimental |
 | `io.nexflow.a2a` | [A2A Extension Draft](a2a/README.md) | Draft / experimental |
 | `io.nexflow.issue_tracker` | [Issue Tracker Extension Draft](issue-tracker/README.md) | Draft / experimental |

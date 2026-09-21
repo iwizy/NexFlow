@@ -265,6 +265,14 @@ host interfaces, isolation, partial-support behavior, lifecycle rejection, or
 authorization order may break `NF-EXTENSION` and `NF-RUNTIME` consumers without
 changing the `ExtensionSet` schema.
 
+The `io.nexflow.github` profile versions its provider policy mapping
+independently from manifest `specVersion`. Adding provider operations,
+accepting mutable refs as immutable evidence, treating reviews or checks as
+local authority, enabling inbound webhooks, or weakening approval, network,
+credential, content-trust, or failure boundaries is safety-significant and may
+break `NF-EXTENSION`, `NF-SEMANTIC`, or `NF-RUNTIME` consumers. See the
+[GitHub Extension Draft](../extensions/github/README.md).
+
 ## MCP And A2A Compatibility
 
 The `io.nexflow.mcp` and `io.nexflow.a2a` profiles version their policy mapping

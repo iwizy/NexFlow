@@ -43,6 +43,7 @@ after `v0.1.0`.
 | Work reference namespaces | Implemented for workflow-scoped steps and assembly-scoped task artifacts | `npm run work-reference-namespace-smoke`, [Work Reference Namespaces](docs/work-reference-namespaces.md) |
 | Provider feature vocabulary | Implemented as closed model support signals separate from action capabilities | `npm run provider-feature-schema-smoke`, [Provider Features](docs/provider-features.md) |
 | Provider constraint vocabulary | Implemented as structured candidate eligibility fields with legacy migration | `npm run provider-constraint-schema-smoke`, [Provider Constraints](docs/provider-constraints.md) |
+| GitHub extension draft | Implemented as an offline repository/review policy profile and focused checks; no live integration | `npm run github-extension-smoke`, [GitHub Extension Draft](extensions/github/README.md) |
 | MCP extension draft | Implemented as an offline policy profile and focused schema checks; no live integration | `npm run mcp-extension-smoke`, [MCP Extension Draft](extensions/mcp/README.md) |
 | A2A extension draft | Implemented as an offline external-agent/task/artifact policy profile; no live integration | `npm run a2a-extension-smoke`, [A2A Extension Draft](extensions/a2a/README.md), [MCP And A2A Boundaries](docs/mcp-a2a-boundaries.md) |
 | Extension registry model | Standalone `0.1-draft` metadata schema, fictional example, and focused checks; no registry service or published snapshot | `npm run extension-registry-smoke`, [Extension Registry Model](docs/extension-registry.md) |
@@ -281,6 +282,7 @@ NexFlow is intentionally split into layers:
 - [Event Interoperability](docs/event-interoperability.md): CloudEvents and OpenTelemetry mappings without transport or storage commitments
 - [Provider Features](docs/provider-features.md): closed provider support vocabulary and capability separation
 - [Provider Constraints](docs/provider-constraints.md): structured provider eligibility, composition, migration, and validation boundaries
+- [GitHub Extension Draft](extensions/github/README.md): experimental repository, revision, pull request, review, check, and webhook policy mapping without live provider behavior
 - [MCP Extension Draft](extensions/mcp/README.md): experimental MCP context/action policy mapping without runtime behavior
 - [A2A Extension Draft](extensions/a2a/README.md): experimental remote-agent, task, and artifact policy mapping without runtime behavior
 - [Issue Tracker Extension Draft](extensions/issue-tracker/README.md): provider-neutral issue identity, mutation, and state authority boundaries without runtime behavior
@@ -322,7 +324,7 @@ NexFlow is intentionally split into layers:
 | Separate validation tooling from runtime execution | [CLI And Runtime Responsibility Boundary](docs/cli-runtime-boundary.md), [Validation](docs/validation.md), [Runtime Options](docs/runtime-options.md), [Conformance](docs/conformance.md) |
 | Validate manifests | [Examples Validation Walkthrough](docs/examples-validation-walkthrough.md), [Validation](docs/validation.md), [Diagnostic Code Catalog](docs/diagnostic-code-catalog.md), [Semantic Reference Inventory](docs/semantic-reference-inventory.md), [Schema Guide](schemas/README.md), [Conformance](docs/conformance.md), [Compatibility Matrix](docs/compatibility-matrix.md) |
 | Publish a support claim | [Conformance Claims](docs/conformance-claims.md), [Claim Templates](conformance/README.md), [Compatibility Matrix](docs/compatibility-matrix.md) |
-| Extend or integrate NexFlow | [Extension Profiles](extensions/README.md), [Extension Model](docs/extensions.md), [Extension Registry Model](docs/extension-registry.md), [Extension Loading Boundary](docs/extension-loading-boundary.md), [MCP And A2A Boundaries](docs/mcp-a2a-boundaries.md), [MCP Extension Draft](extensions/mcp/README.md), [A2A Extension Draft](extensions/a2a/README.md), [Integrations](docs/integrations.md), [Provider Abstraction](docs/provider-abstraction.md) |
+| Extend or integrate NexFlow | [Extension Profiles](extensions/README.md), [Extension Model](docs/extensions.md), [Extension Registry Model](docs/extension-registry.md), [Extension Loading Boundary](docs/extension-loading-boundary.md), [GitHub Extension Draft](extensions/github/README.md), [MCP And A2A Boundaries](docs/mcp-a2a-boundaries.md), [MCP Extension Draft](extensions/mcp/README.md), [A2A Extension Draft](extensions/a2a/README.md), [Integrations](docs/integrations.md), [Provider Abstraction](docs/provider-abstraction.md) |
 | Review the `v0.1.0` release boundary and evidence | [0.1 Candidate Scope](docs/0.1-scope.md), [0.1 Readiness Checklist](docs/readiness-checklist.md), [Compatibility Matrix](docs/compatibility-matrix.md) |
 | Review future implementation choices | [Runtime Options](docs/runtime-options.md), [Runtime Language Evaluation Matrix](docs/language-evaluation-matrix.md), [Runtime Architecture Decision Review](rfcs/reviews/runtime-architecture-decision-review.md), [Roadmap](docs/roadmap.md), [Release Plan](docs/release-plan.md) |
 
@@ -387,9 +389,10 @@ See [Governance](docs/governance.md) and [RFCs](rfcs/README.md).
 - No reference CLI, runtime engine, provider adapter, extension loader, live
   integration, task execution, workflow orchestration, or deployment support
   exists.
-- MCP and A2A profiles are offline policy maps. They do not discover endpoints,
+- GitHub, MCP, and A2A profiles are offline policy maps. They do not discover endpoints,
   negotiate protocol versions, authenticate, invoke tools or remote agents,
-  synchronize task state, import artifacts, stream, or receive callbacks.
+  read or mutate live repositories, synchronize task state, import artifacts,
+  stream, or receive callbacks.
 - Security and approval requirements constrain future implementations, but this
   repository does not enforce them at runtime.
 - Human override manifests describe required pause, stop, revocation, resume,

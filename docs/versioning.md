@@ -239,6 +239,24 @@ approval posture. Changing surface authority, protocol compatibility claims,
 or failure policy requires explicit compatibility review. See the
 [MCP Extension Draft](../extensions/mcp/README.md).
 
+## GitHub Extension Draft Version Decision
+
+The `io.nexflow.github` profile remains additive inside the unreleased
+`specVersion: "0.1"` authoring model while RFC-0020 is Draft. The profile uses
+its own `profileVersion: "0.1-draft"`; GitHub API versions, deployment variants,
+authentication methods, object-ID formats, and feature tiers are independent
+compatibility domains that implementations must claim explicitly.
+
+The profile adds no core manifest kind and does not require existing projects
+to adopt GitHub. Provider identifiers remain integration-scoped, mutable refs
+do not become immutable evidence, and pull requests, reviews, checks, and
+webhooks do not become local authority automatically.
+
+Adding an operation, weakening approval, immutable-revision, network,
+credential, untrusted-content, webhook, or fail-closed rules, or promoting a
+provider signal into local authority requires explicit compatibility review.
+See the [GitHub Extension Draft](../extensions/github/README.md).
+
 ## A2A Extension Draft Version Decision
 
 The `io.nexflow.a2a` profile and MCP/A2A ownership map remain in

@@ -15,6 +15,8 @@ declaration, maintained profile, installed package, or successful validation is
 not evidence that executable behavior is trusted, loaded, or authorized.
 
 The maintained machine-readable profiles are the
+[GitHub Extension Draft](../extensions/github/README.md), proposed by
+[RFC-0020](../rfcs/RFC-0020-github-extension-profile.md), the
 [MCP Extension Draft](../extensions/mcp/README.md), proposed by
 [RFC-0018](../rfcs/RFC-0018-mcp-extension-profile.md), and the
 [A2A Extension Draft](../extensions/a2a/README.md), proposed by
@@ -99,6 +101,7 @@ Custom extensions should include a public or internal reference document when po
 
 | Namespace | Status | Evidence | Runtime support |
 | --- | --- | --- | --- |
+| `io.nexflow.github` | Draft / experimental | Profile schema, RFC-0020, Software Team binding, and `npm run github-extension-smoke` | Not implemented |
 | `io.nexflow.mcp` | Draft / experimental | Profile schema, RFC-0018, Software Team binding, and `npm run mcp-extension-smoke` | Not implemented |
 | `io.nexflow.a2a` | Draft / experimental | Profile schema, RFC-0019, boundary map, and `npm run a2a-extension-smoke` | Not implemented |
 | `io.nexflow.issue_tracker` | Draft / experimental | Profile schema, RFC-0021, fictional declaration fragments, and `npm run issue-tracker-extension-smoke` | Not implemented |

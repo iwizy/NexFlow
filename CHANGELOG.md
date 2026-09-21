@@ -8,6 +8,12 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Added
 
+- Added an MCP integration review companion for the existing experimental
+  `io.nexflow.mcp` profile, with adoption evidence, scoped tool effects,
+  independent policy decisions, transport and credential boundaries, uncertain
+  outcomes, unsupported surfaces, and publication limits. Two fictional
+  declaration fragments and expanded offline checks demonstrate existing
+  shapes without adding a runtime, binding schema, authority, or version bump.
 - Added the experimental `io.nexflow.issue_tracker` policy profile, closed
   schema, RFC-0021, fictional declaration fragments, and offline boundary
   checks in schema CI. The profile separates external issue identity, status,

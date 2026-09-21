@@ -284,6 +284,7 @@ NexFlow is intentionally split into layers:
 - [Provider Constraints](docs/provider-constraints.md): structured provider eligibility, composition, migration, and validation boundaries
 - [GitHub Extension Draft](extensions/github/README.md): experimental repository, revision, pull request, review, check, and webhook policy mapping without live provider behavior
 - [MCP Extension Draft](extensions/mcp/README.md): experimental MCP context/action policy mapping without runtime behavior
+- [MCP Integration Profile](docs/mcp-integration-profile.md): adoption review, operation boundaries, and fictional declaration fragments for the existing draft
 - [A2A Extension Draft](extensions/a2a/README.md): experimental remote-agent, task, and artifact policy mapping without runtime behavior
 - [Issue Tracker Extension Draft](extensions/issue-tracker/README.md): provider-neutral issue identity, mutation, and state authority boundaries without runtime behavior
 - [Extension Registry Model](docs/extension-registry.md): optional namespace discovery metadata without ownership, installation, trust, or runtime authority

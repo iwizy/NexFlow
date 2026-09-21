@@ -307,9 +307,13 @@ npm run mcp-extension-smoke
 ```
 
 This command validates the machine-readable `io.nexflow.mcp` profile, exercises
-10 ContextSet cases, and checks the Software Team extension, capability,
-permission, and context declarations. It does not connect to an MCP server,
-discover tools, negotiate protocol versions, or execute an action.
+25 ContextSet cases, validates two fictional declaration fragments, and checks
+selected Software Team extension, capability, permission, and context
+declarations. The fragments are incomplete examples, not authorized assemblies.
+The [MCP Integration Profile](mcp-integration-profile.md) distinguishes adoption
+review from these structural checks. This command does not resolve all
+references, calculate effective policy, connect to an MCP server, discover
+tools, negotiate protocol versions, or execute an action.
 
 Run the GitHub extension draft checks:
 

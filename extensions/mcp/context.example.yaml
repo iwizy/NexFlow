@@ -1,0 +1,36 @@
+specVersion: "0.1"
+kind: ContextSet
+metadata:
+  project: mcp-integration-example
+contextSources:
+  - id: reference_material
+    type: mcp
+    description: Fictional resource inventory; no access is granted.
+    access:
+      default: read
+      allowedActors:
+        - operator
+    classification: internal
+    refreshPolicy: on_request
+    mcp:
+      serverId: reviewed_server
+      exposes:
+        - resources
+  - id: diagnostic_tools
+    type: mcp
+    description: Fictional tool inventory requiring a separate operation decision.
+    access:
+      default: query
+      allowedActors:
+        - operator
+    classification: internal
+    refreshPolicy: manual
+    mcp:
+      serverId: reviewed_server
+      exposes:
+        - tools
+      allowedTools:
+        - diagnostic-summary
+      requiresApprovalForTools: true
+    approvalGates:
+      - mcp_tool_review

@@ -145,6 +145,11 @@ Future semantic validators may check:
 Static validation must not connect to a server, enumerate live tools, obtain
 credentials, or treat discovery success as authorization.
 
+The [MCP Integration Profile](../docs/mcp-integration-profile.md) applies these
+existing boundaries as an adoption review companion, with fictional declaration
+fragments and additional positive and negative structural checks. It does not
+accept this RFC, add a binding schema, or implement runtime validation.
+
 ## Relationship To Other RFCs
 
 - [RFC-0005](RFC-0005-validation-strategy.md) owns validation layering.

@@ -1,0 +1,12 @@
+specVersion: "0.1"
+kind: ExtensionSet
+metadata:
+  project: issue-tracker-profile-example
+extensions:
+  - id: backlog_readonly
+    namespace: io.nexflow.issue_tracker
+    displayName: Example Backlog Read Only
+    lifecycle: experimental
+    appliesTo: [context, tasks]
+    requiredCapabilities: [read_context, access_network]
+    documentation: extensions/issue-tracker/README.md

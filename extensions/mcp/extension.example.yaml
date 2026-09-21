@@ -1,0 +1,16 @@
+specVersion: "0.1"
+kind: ExtensionSet
+metadata:
+  project: mcp-integration-example
+extensions:
+  - id: reviewed_mcp
+    namespace: io.nexflow.mcp
+    displayName: Reviewed MCP Integration
+    lifecycle: experimental
+    appliesTo:
+      - context
+      - capabilities
+      - permissions
+      - events
+    requiredCapabilities:
+      - access_mcp

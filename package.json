@@ -25,6 +25,7 @@
     "extension-registry-smoke": "node scripts/extension-registry-smoke.mjs",
     "github-extension-smoke": "node scripts/github-extension-smoke.mjs",
     "human-override-schema-smoke": "node scripts/human-override-schema-smoke.mjs",
+    "issue-tracker-extension-smoke": "node scripts/issue-tracker-extension-smoke.mjs",
     "manifest-discovery-smoke": "node scripts/manifest-discovery-smoke.mjs",
     "mcp-extension-smoke": "node scripts/mcp-extension-smoke.mjs",
     "negative-schema-fixtures": "node scripts/negative-schema-fixtures.mjs",

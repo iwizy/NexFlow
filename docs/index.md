@@ -64,6 +64,7 @@ The documentation is the canonical source for the specification. Schemas and exa
 | [Extension Loading Boundary](extension-loading-boundary.md) | Defines explicit implementation discovery, immutable resolution, verification, fail-closed unsupported handling, isolation, activation, and per-operation authorization for future runtimes. |
 | [GitHub Extension Draft](../extensions/github/README.md) | Maps repository, revision, pull request, review, check, and webhook surfaces to independent capability, approval, network, credential, trust, and audit boundaries. |
 | [MCP Extension Draft](../extensions/mcp/README.md) | Maps MCP context and action surfaces to independent capability, permission, approval, network, credential, and audit boundaries. |
+| [MCP Integration Profile](mcp-integration-profile.md) | Applies the existing draft mapping to adoption evidence, scoped effects, operation review, declaration fragments, and unsupported behavior. |
 | [A2A Extension Draft](../extensions/a2a/README.md) | Maps remote agent, skill, message, task, and artifact surfaces without treating external metadata as local authority. |
 | [MCP And A2A Boundaries](mcp-a2a-boundaries.md) | Defines protocol ownership, namespace collisions, identity binding, work correlation, artifact import, and cross-protocol authority rules. |
 | [Provider Abstraction](provider-abstraction.md) | Defines provider-neutral preferences, features, and constraints. |
@@ -73,6 +74,7 @@ The documentation is the canonical source for the specification. Schemas and exa
 | Process Area | Purpose |
 | --- | --- |
 | [Governance](governance.md) | Contribution, review, and decision rules. |
+| [Provider Neutrality Checklist](provider-neutrality-checklist.md) | Evidence-based review of portable core adoption, provider constraints, independent authority, adapter boundaries, offline tooling, and support claims. |
 | [Maintainer Guide](maintainer-guide.md) | Change routing, synchronization, validation, review, merge, RFC, release, security, and handoff workflow for maintainers. |
 | [Licensing And Patent Rationale](licensing-and-patent-rationale.md) | Records the current MIT decision, the Apache-2.0 patent tradeoff, and mandatory review triggers. |
 | [Versioning](versioning.md) | Spec versioning and migration policy. |
@@ -107,6 +109,7 @@ The documentation is the canonical source for the specification. Schemas and exa
 | [Runtime Options](runtime-options.md) | Runtime language evaluation criteria without choosing an implementation. |
 | [Runtime Language Evaluation Matrix](language-evaluation-matrix.md) | Defines hard gates, weighted criteria, common prototypes, evidence records, and a neutral decision process for TypeScript, Python, Rust, and Go. |
 | [Runtime Architecture Decision Review](../rfcs/reviews/runtime-architecture-decision-review.md) | Defines mandatory evidence, review gates, blocker classes, acceptance rules, and the current not-ready decision baseline. |
+| [Issue Tracker Extension Draft](../extensions/issue-tracker/README.md) | Provider-neutral issue identity, mutation, state correlation, and event policy with offline checks only. |
 | [Integrations](integrations.md) | Integration modeling rules and safety expectations. |
 | [Roadmap](roadmap.md) | Specification, review, schema, CLI, runtime, and ecosystem milestones. |
 | [FAQ](faq.md) | Short answers to common project questions. |

@@ -47,6 +47,8 @@ Use an RFC for:
 - Changelog is updated for user-visible changes.
 - Security and autonomy impact is considered.
 - Provider and runtime neutrality are preserved.
+- Provider-related changes include scoped evidence from the
+  [Provider Neutrality Checklist](docs/provider-neutrality-checklist.md).
 - Any breaking change includes migration guidance.
 
 ## Specification Language
@@ -85,6 +87,7 @@ npm run cli-graph-smoke
 npm run cli-init-smoke
 npm run cli-no-runtime-guardrails-smoke
 npm run cli-fixture-smoke
+npm run issue-tracker-extension-smoke
 npm run human-override-schema-smoke
 npm run provider-feature-schema-smoke
 npm run conformance-claim-smoke

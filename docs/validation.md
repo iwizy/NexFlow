@@ -79,6 +79,8 @@ The repository supports basic validation through:
   and example dependency checks.
 - Focused A2A profile checks for external identity, task, artifact, permission,
   network callback, credential, audit, and fail-closed boundaries.
+- Focused issue tracker profile and fictional declaration checks for external
+  identity, local authority separation, mutation, conflict, retry, and event boundaries.
 - Focused ActorSet, AgentSet identity, agent definition authority, and human
   override boundary checks.
 - Focused Core Profile definition, reduced Project, participant authority,
@@ -313,9 +315,13 @@ npm run mcp-extension-smoke
 ```
 
 This command validates the machine-readable `io.nexflow.mcp` profile, exercises
-10 ContextSet cases, and checks the Software Team extension, capability,
-permission, and context declarations. It does not connect to an MCP server,
-discover tools, negotiate protocol versions, or execute an action.
+25 ContextSet cases, validates two fictional declaration fragments, and checks
+selected Software Team extension, capability, permission, and context
+declarations. The fragments are incomplete examples, not authorized assemblies.
+The [MCP Integration Profile](mcp-integration-profile.md) distinguishes adoption
+review from these structural checks. This command does not resolve all
+references, calculate effective policy, connect to an MCP server, discover
+tools, negotiate protocol versions, or execute an action.
 
 Run the GitHub extension draft checks:
 
@@ -347,6 +353,21 @@ It does not fetch an Agent Card, discover a remote agent, negotiate a protocol
 version or binding, authenticate, invoke, poll, stream, cancel, receive a push
 callback, import an artifact, or implement A2A. See
 [MCP And A2A Boundaries](mcp-a2a-boundaries.md).
+
+Run the issue tracker extension draft checks:
+
+```sh
+npm run issue-tracker-extension-smoke
+```
+
+This command validates the closed `io.nexflow.issue_tracker` profile and its
+fictional ExtensionSet and ContextSet fragments. Positive and negative cases
+cover provider identity, task/approval authority separation, operation
+inventories, scoped approval, content, network, credentials, concurrency,
+retries, event trust, audit completeness, and selected adoption boundaries.
+It does not query trackers, validate provider payloads, enforce policy,
+synchronize tasks, or implement an adapter. These standalone assets are
+checked by this command, not by project discovery or `npm run validate`.
 
 Run the standalone conformance claim format checks:
 
@@ -386,7 +407,8 @@ and focused boundary commands so pull requests exercise schema JSON parsing,
 example YAML parsing, manifest kind discovery, schema compilation, example
 manifest validation, typed-reference primitive boundaries, work reference
 namespaces, approval gate target kinds and scope, provider feature vocabulary,
-provider constraint structure, GitHub, MCP, and A2A extension profile boundaries,
+provider constraint structure, GitHub, MCP, A2A, and issue tracker extension
+profile boundaries,
 compact agent identity compatibility, Core Profile conformance boundaries,
 manifest discovery and multiple-workflow boundaries, credential handling and
 human override fail-closed shapes, and conformance claim format boundaries. It also checks candidate

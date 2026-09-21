@@ -141,6 +141,7 @@ npm run cli-graph-smoke
 npm run cli-init-smoke
 npm run cli-no-runtime-guardrails-smoke
 npm run cli-fixture-smoke
+npm run issue-tracker-extension-smoke
 npm run human-override-schema-smoke
 npm run mcp-extension-smoke
 npm run a2a-extension-smoke
@@ -182,6 +183,11 @@ Review findings before summaries. Check:
 - new references have exact namespaces and dependency closure
 - failures, unsupported cases, and compatibility impact are visible
 - the diff contains no unrelated, generated, private, or sensitive material
+
+For provider-related changes, use the
+[Provider Neutrality Checklist](provider-neutrality-checklist.md). Record
+applicable item IDs, evidence, unsupported cases, and gaps in the review;
+a broad neutrality checkbox alone does not substantiate a support claim.
 
 Require at least one appropriate maintainer review for ordinary changes.
 Security-sensitive, breaking, licensing, release, or architecture changes may

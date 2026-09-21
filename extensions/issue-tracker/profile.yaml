@@ -1,0 +1,109 @@
+profileVersion: "0.1-draft"
+namespace: io.nexflow.issue_tracker
+displayName: Issue Tracker Extension Draft
+status: draft
+provider:
+  authority: external
+  binding: explicit_provider_instance_and_container
+  versionPolicy: explicit_compatibility_claim
+surfaces:
+  - id: container
+    class: context_scope
+    providerOwned: true
+    nexflowTreatment: not_nexflow_project
+  - id: issue
+    class: work_record
+    providerOwned: true
+    nexflowTreatment: external_record_not_taskset
+  - id: status
+    class: state_signal
+    providerOwned: true
+    nexflowTreatment: not_local_completion
+  - id: assignee
+    class: identity
+    providerOwned: true
+    nexflowTreatment: not_actor_or_authority
+  - id: comment
+    class: discussion
+    providerOwned: true
+    nexflowTreatment: untrusted_content_not_approval
+  - id: attachment
+    class: external_output
+    providerOwned: true
+    nexflowTreatment: explicit_import_with_provenance
+  - id: webhook
+    class: external_event
+    providerOwned: true
+    nexflowTreatment: untrusted_event_input
+requirements:
+  extension:
+    lifecycle: [experimental]
+    appliesTo: [context, tasks, workflow, permissions, capabilities, events]
+    requiredCapabilities: [read_context, access_network]
+  contextSource:
+    allowedTypes: [github, gitlab, jira, linear, custom]
+    requiredFields: [uri, contentTypes, access, classification]
+    allowedContentTypes: [issues, tickets, metadata]
+  references:
+    identifiers: provider_instance_container_scoped_opaque
+    displayKeys: mutable_not_identity
+    coreTypedReferences: not_defined
+    taskCorrelation: explicit_local_mapping_only
+    actorBinding: explicit_local_binding_only
+  content:
+    trust: untrusted_external_input
+    instructions: never_authority
+    classification: preserve_or_raise
+    linkedContent: separate_authorization_required
+  operations:
+    - id: read_issue
+      effect: read
+      requiredCapabilities: [read_context, access_network]
+      approvalPolicy: local_policy
+    - id: create_issue
+      effect: write
+      requiredCapabilities: [manage_tasks, access_network, use_credential]
+      approvalPolicy: required_initial_draft
+    - id: update_issue
+      effect: write
+      requiredCapabilities: [manage_tasks, access_network, use_credential]
+      approvalPolicy: required_initial_draft
+    - id: add_comment
+      effect: write
+      requiredCapabilities: [manage_tasks, access_network, use_credential]
+      approvalPolicy: required_initial_draft
+    - id: transition_issue
+      effect: write
+      requiredCapabilities: [manage_tasks, access_network, use_credential]
+      approvalPolicy: required_initial_draft
+  authorization:
+    permissionRequired: true
+    operationScope: exact_target_fields_and_effect
+    providerAccess: additional_binding_capability_when_declared
+    remoteState: never_local_approval_or_acceptance
+  synchronization:
+    mode: explicit_one_operation_no_background_sync
+    stateMapping: explicit_provider_transition_only
+    freshness: recheck_expected_revision_before_write
+    conflicts: stop_and_require_new_decision
+    retries: no_blind_retry_after_unknown_outcome
+    echoHandling: correlate_deduplicate_do_not_reauthorize
+  network:
+    outboundPolicy: required_for_provider_calls
+    outboundCapability: access_network
+    inboundWebhooks: unsupported_initial_draft
+  credentials:
+    handling: mediated_external_binding
+    capability: use_credential
+    authenticatedReads: same_credential_boundary_as_writes
+    scope: operation_scoped_least_privilege
+    manifestSecrets: forbidden
+  audit:
+    requiredFor: [context_read, mutation_decision, approval_decision, correlation_decision, conflict_decision, retry_decision, credential_decision, network_decision, event_decision]
+failurePolicy:
+  unknownOperation: preserve_do_not_execute
+  unsupportedProfileOrBinding: fail_closed
+  missingDependency: fail_closed
+  ambiguousIdentityOrMapping: fail_closed
+  staleEvidence: reject_when_freshness_required
+  uncertainWriteOutcome: reconcile_before_new_attempt

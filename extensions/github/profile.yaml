@@ -1,0 +1,140 @@
+profileVersion: "0.1-draft"
+namespace: io.nexflow.github
+displayName: GitHub Extension Draft
+status: draft
+provider:
+  name: GitHub
+  authority: external
+  versionPolicy: explicit_compatibility_claim
+surfaces:
+  - id: repository
+    class: context
+    providerOwned: true
+    nexflowTreatment: declared_context
+  - id: ref
+    class: mutable_reference
+    providerOwned: true
+    nexflowTreatment: mutable_not_identity
+  - id: commit
+    class: immutable_revision
+    providerOwned: true
+    nexflowTreatment: pinned_external_revision
+  - id: pull_request
+    class: review_record
+    providerOwned: true
+    nexflowTreatment: external_review_record
+  - id: review
+    class: review_signal
+    providerOwned: true
+    nexflowTreatment: not_approval_decision
+  - id: check
+    class: status_signal
+    providerOwned: true
+    nexflowTreatment: evidence_not_authority
+  - id: webhook
+    class: external_event
+    providerOwned: true
+    nexflowTreatment: untrusted_event_input
+requirements:
+  extension:
+    lifecycle:
+      - experimental
+    appliesTo:
+      - workflow
+      - tasks
+      - permissions
+      - capabilities
+      - context
+      - events
+    requiredCapabilities:
+      - read_repository
+      - create_branch
+      - create_pull_request
+      - access_network
+  contextSource:
+    type: github
+    requiredFields:
+      - uri
+      - contentTypes
+      - access
+      - classification
+    allowedContentTypes:
+      - source_code
+      - pull_requests
+      - metadata
+  identifiers:
+    providerIds: integration_scoped_opaque
+    mutableRefs: never_immutable_identity
+    commitRevisions: exact_oid_when_evidence_requires_pin
+  content:
+    trust: untrusted_external_input
+    instructions: never_authority
+    classification: preserve_or_raise
+  operations:
+    - id: read_repository
+      effect: read
+      requiredCapabilities:
+        - read_repository
+        - access_network
+      approvalPolicy: local_policy
+    - id: create_branch
+      effect: write
+      requiredCapabilities:
+        - create_branch
+        - access_network
+        - use_credential
+      approvalPolicy: required_initial_draft
+    - id: push_commit
+      effect: write
+      requiredCapabilities:
+        - write_repository
+        - access_network
+        - use_credential
+      approvalPolicy: required_initial_draft
+    - id: create_pull_request
+      effect: write
+      requiredCapabilities:
+        - create_pull_request
+        - access_network
+        - use_credential
+      approvalPolicy: required_initial_draft
+    - id: submit_review
+      effect: governance
+      requiredCapabilities:
+        - approve_changes
+        - access_network
+        - use_credential
+      approvalPolicy: required_initial_draft
+  reviewAuthority:
+    pullRequest: not_task_or_handoff
+    providerReview: not_approval_gate_decision
+    merge: unsupported_initial_draft
+  network:
+    outboundPolicy: required_for_provider_calls
+    outboundCapability: access_network
+    inboundWebhooks: unsupported_without_declared_inbound_policy
+  credentials:
+    handling: mediated_external_binding
+    capability: use_credential
+    scope: operation_scoped_least_privilege
+    manifestSecrets: forbidden
+  events:
+    webhookTrust: untrusted_until_verified
+    deliveryIds: provider_scoped_opaque
+    stateAuthority: explicit_mapping_required
+  audit:
+    requiredFor:
+      - context_read
+      - branch_creation
+      - repository_write
+      - pull_request_creation
+      - review_submission
+      - credential_decision
+      - network_decision
+      - webhook_decision
+failurePolicy:
+  unknownOperation: preserve_do_not_execute
+  unsupportedProfile: fail_closed
+  missingDependency: fail_closed
+  ambiguousRepository: fail_closed
+  staleOrMutableEvidence: reject_when_pin_required

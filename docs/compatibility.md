@@ -59,6 +59,7 @@ For the current supported combinations and explicit implementation gaps, see the
 - changing CLI command effect budgets, offline behavior, runtime-preflight separation, extension loading, shared-library initialization, or conformance claim boundaries
 - changing discovery root containment, source-hint cardinality, document cardinality, or workflow identity rules
 - changing MCP or A2A external ownership, identity binding, task correlation, artifact import, callback, or transitive-authority rules
+- changing issue-tracker identity scope, operation coverage, task correlation, state authority, approval, concurrency, retry, or event import semantics
 - changing reference CLI command names, exit code meanings, diagnostic code meanings, or machine-readable output formats
 - removing fields
 - changing required fields
@@ -263,6 +264,14 @@ ambient discovery defaults, implementation precedence, integrity requirements,
 host interfaces, isolation, partial-support behavior, lifecycle rejection, or
 authorization order may break `NF-EXTENSION` and `NF-RUNTIME` consumers without
 changing the `ExtensionSet` schema.
+
+The `io.nexflow.github` profile versions its provider policy mapping
+independently from manifest `specVersion`. Adding provider operations,
+accepting mutable refs as immutable evidence, treating reviews or checks as
+local authority, enabling inbound webhooks, or weakening approval, network,
+credential, content-trust, or failure boundaries is safety-significant and may
+break `NF-EXTENSION`, `NF-SEMANTIC`, or `NF-RUNTIME` consumers. See the
+[GitHub Extension Draft](../extensions/github/README.md).
 
 ## MCP And A2A Compatibility
 

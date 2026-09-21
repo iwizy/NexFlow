@@ -19,6 +19,15 @@ Integrations that need non-core metadata should use extension namespaces. See [E
 - A2A
 - custom systems
 
+## Issue Tracker Policy Profile
+
+The [Issue Tracker Extension Draft](../extensions/issue-tracker/README.md)
+defines `io.nexflow.issue_tracker` as a shared policy boundary for external
+issues, selected mutations, state correlation, and events. Provider bindings
+remain explicit and independently versioned. Existing Jira, Linear, GitHub,
+or custom declarations are not aliases and do not automatically adopt it.
+No tracker adapter or synchronization is implemented.
+
 ## Integration Roles
 
 An integration may be:
@@ -80,6 +89,10 @@ MCP can expose both context and tools. NexFlow should model MCP servers explicit
 
 The [MCP Extension Draft](../extensions/mcp/README.md) maps MCP-facing context,
 resources, prompts, tools, and actions to existing NexFlow policy domains.
+
+Use the [MCP Integration Profile](mcp-integration-profile.md) to review adoption
+evidence, scoped tool effects, operation decisions, fictional declaration
+fragments, and unsupported behavior against that existing mapping.
 
 Action-bearing surfaces require an explicit tool allow-list, `access_mcp`, an
 action-specific capability, effective permissions, approval in the initial draft, and

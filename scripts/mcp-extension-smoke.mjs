@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 import { readFile } from "node:fs/promises";
+import assert from "node:assert/strict";
 
 import Ajv2020 from "ajv/dist/2020.js";
 import { parseDocument } from "yaml";
@@ -26,6 +27,7 @@ const profileSchema = JSON.parse(
 const profile = await readYaml("extensions/mcp/profile.yaml");
 const commonSchema = JSON.parse(await readFile("schemas/common.schema.json", "utf8"));
 const contextSchema = JSON.parse(await readFile("schemas/context.schema.json", "utf8"));
+const extensionSchema = JSON.parse(await readFile("schemas/extensions.schema.json", "utf8"));
 
 const profileAjv = new Ajv2020({ allErrors: true, strict: false });
 const validateProfile = profileAjv.compile(profileSchema);
@@ -74,6 +76,28 @@ const schemaAjv = new Ajv2020({
 });
 schemaAjv.addSchema(commonSchema);
 const validateContext = schemaAjv.compile(contextSchema);
+const validateExtension = schemaAjv.compile(extensionSchema);
+
+// These fragments demonstrate declarations, not a complete authorized assembly.
+const extensionFragment = await readYaml("extensions/mcp/extension.example.yaml");
+const contextFragment = await readYaml("extensions/mcp/context.example.yaml");
+assert.ok(validateExtension(extensionFragment), JSON.stringify(validateExtension.errors));
+assert.ok(validateContext(contextFragment), JSON.stringify(validateContext.errors));
+assert.equal(extensionFragment.metadata.project, contextFragment.metadata.project);
+assert.equal(extensionFragment.extensions.length, 1);
+const fragmentExtension = extensionFragment.extensions[0];
+assert.equal(fragmentExtension.namespace, profile.namespace);
+assert.ok(profile.requirements.extension.lifecycle.includes(fragmentExtension.lifecycle));
+for (const capability of profile.requirements.extension.requiredCapabilities) {
+  assert.ok(fragmentExtension.requiredCapabilities.includes(capability));
+}
+for (const area of fragmentExtension.appliesTo) {
+  assert.ok(profile.requirements.extension.appliesTo.includes(area));
+}
+assert.equal(contextFragment.contextSources.length, 2);
+assert.ok(contextFragment.contextSources.every((entry) => entry.type === "mcp"));
+assert.ok(contextFragment.contextSources.some((entry) => entry.mcp.exposes.includes("resources")));
+assert.ok(contextFragment.contextSources.some((entry) => entry.mcp.exposes.includes("tools")));
 
 function manifest(source) {
   return {
@@ -147,40 +171,6 @@ const cases = [
     expected: false
   },
   {
-    name: "MCP tool source without allow-list",
-    value: manifest(source({
-      mcp: {
-        serverId: "development_server",
-        exposes: ["tools"],
-        requiresApprovalForTools: true
-      }
-    })),
-    expected: false
-  },
-  {
-    name: "MCP tool source without approval posture",
-    value: manifest(source({
-      mcp: {
-        serverId: "development_server",
-        exposes: ["tools"],
-        allowedTools: ["test-log-reader"]
-      }
-    })),
-    expected: false
-  },
-  {
-    name: "MCP tool source with disabled approval posture",
-    value: manifest(source({
-      mcp: {
-        serverId: "development_server",
-        exposes: ["tools"],
-        allowedTools: ["test-log-reader"],
-        requiresApprovalForTools: false
-      }
-    })),
-    expected: false
-  },
-  {
     name: "unknown MCP surface",
     value: manifest(source({
       mcp: { serverId: "development_server", exposes: ["sampling"] }
@@ -188,6 +178,56 @@ const cases = [
     expected: false
   }
 ];
+
+for (const surface of ["prompts", "actions"]) {
+  cases.push({
+    name: `${surface} source with the declared authority boundary`,
+    value: manifest(source({
+      mcp: {
+        serverId: "development_server",
+        exposes: [surface],
+        ...(surface === "actions" ? {
+          allowedTools: ["diagnostic-summary"],
+          requiresApprovalForTools: true
+        } : {})
+      }
+    })),
+    expected: true
+  });
+}
+
+for (const surface of ["tools", "actions"]) {
+  for (const [name, patch] of [
+    ["empty allow-list", { allowedTools: [] }],
+    ["duplicate tool labels", { allowedTools: ["diagnostic-summary", "diagnostic-summary"] }],
+    ["empty tool label", { allowedTools: [""] }],
+    ["missing allow-list", { allowedTools: undefined }],
+    ["missing approval posture", { requiresApprovalForTools: undefined }],
+    ["disabled approval posture", { requiresApprovalForTools: false }]
+  ]) {
+    cases.push({
+      name: `${surface} source rejects ${name}`,
+      value: manifest(source({
+        mcp: {
+          serverId: "development_server",
+          exposes: [surface],
+          allowedTools: ["diagnostic-summary"],
+          requiresApprovalForTools: true,
+          ...patch
+        }
+      })),
+      expected: false
+    });
+  }
+}
+
+for (const exposes of [["resources", "resources"], ["roots"], ["elicitation"], ["tasks"]]) {
+  cases.push({
+    name: `reject duplicate or unsupported surfaces: ${exposes.join(", ")}`,
+    value: manifest(source({ mcp: { serverId: "development_server", exposes } })),
+    expected: false
+  });
+}
 
 let failed = false;
 
@@ -248,6 +288,6 @@ if (failed) {
 } else {
   console.log(`MCP extension checks passed for ${cases.length} schema cases.`);
   console.log(
-    "Validated the draft profile, surface authority boundaries, and Software Team cross-manifest declarations without connecting to an MCP server."
+    "Validated the draft profile, two fictional declaration fragments, surface authority boundaries, and selected Software Team declarations without connecting to an MCP server."
   );
 }

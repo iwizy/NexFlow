@@ -9,6 +9,11 @@ For the first candidate review, see the [0.1 Readiness Checklist](readiness-chec
 The exact feature boundary is frozen in the
 [0.1 Candidate Scope](0.1-scope.md).
 
+The unreleased [Issue Tracker Extension Draft](../extensions/issue-tracker/README.md)
+adds a provider-neutral policy profile and offline validation evidence.
+Provider bindings, live issue operations, synchronization, and inbound events
+remain unimplemented; this does not advance a release or CLI readiness gate.
+
 ## Current Checkpoint: `v0.1.0`
 
 Status: draft specification foundation released. Candidate review is complete;
@@ -161,12 +166,15 @@ starter into an explicit local destination and does not initialize a runtime.
 - Review extension namespace ownership, lifecycle transitions, the draft
   registry metadata model, publication and revocation expectations, and
   unsupported-extension behavior.
+- Review RFC-0020 GitHub repository identity, immutable revision evidence,
+  operation separation, pull request and review authority, webhooks, network,
+  credentials, and fail-closed behavior without implementing a GitHub client.
 - Review RFC-0018 MCP context/action mapping, allow-lists, protocol-version
   claims, network transports, and failure behavior without implementing MCP.
 - Review RFC-0019 A2A external identity, skill, message, task, artifact,
   network, credential, and conformance boundaries without implementing A2A.
 
-Relevant docs: [Security Model](security-model.md), [Capability Model](capability-model.md), [Autonomy Model](autonomy-model.md), [Provider Abstraction](provider-abstraction.md), [Agent Assembly](agent-assembly.md), [Agent Definitions](agent-definitions.md), [Model Profiles](model-profiles.md), [Prompt Sets](prompt-sets.md), [Retrieval Profiles](retrieval-profiles.md), [Extension Model](extensions.md), [Extension Registry Model](extension-registry.md), [MCP And A2A Boundaries](mcp-a2a-boundaries.md), [Integrations](integrations.md).
+Relevant docs: [Security Model](security-model.md), [Capability Model](capability-model.md), [Autonomy Model](autonomy-model.md), [Provider Abstraction](provider-abstraction.md), [Agent Assembly](agent-assembly.md), [Agent Definitions](agent-definitions.md), [Model Profiles](model-profiles.md), [Prompt Sets](prompt-sets.md), [Retrieval Profiles](retrieval-profiles.md), [Extension Model](extensions.md), [Extension Registry Model](extension-registry.md), [GitHub Extension Draft](../extensions/github/README.md), [MCP And A2A Boundaries](mcp-a2a-boundaries.md), [Integrations](integrations.md).
 
 ## Milestone 3: Schema Hardening
 

@@ -87,6 +87,7 @@ npm run cli-graph-smoke
 npm run cli-init-smoke
 npm run cli-no-runtime-guardrails-smoke
 npm run cli-fixture-smoke
+npm run issue-tracker-extension-smoke
 npm run human-override-schema-smoke
 npm run provider-feature-schema-smoke
 npm run conformance-claim-smoke

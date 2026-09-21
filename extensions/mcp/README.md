@@ -6,11 +6,18 @@ tools, acquire credentials, or authorize an operation.
 
 The machine-readable draft is [profile.yaml](profile.yaml). Its structure is
 validated by [profile.schema.json](profile.schema.json), and the repository
-checks the profile plus focused ContextSet cases with:
+checks the profile, fictional declaration fragments, and focused ContextSet
+cases with:
 
 ```sh
 npm run mcp-extension-smoke
 ```
+
+The [MCP Integration Profile](../../docs/mcp-integration-profile.md) supplies
+an adoption review checklist, operation and effect mapping, transport and
+credential requirements, outcome handling, and publication limits. Its
+[extension](extension.example.yaml) and [context](context.example.yaml)
+fragments are incomplete declaration examples, not an authorized assembly.
 
 ## Authority Boundaries
 

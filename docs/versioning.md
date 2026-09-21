@@ -29,6 +29,21 @@ All manifests in one project SHOULD use the same `specVersion`.
 
 A future runtime MAY support mixed versions during migration, but it MUST make compatibility behavior explicit.
 
+## Security Policy Composition Version Decision
+
+The expanded [Security Model](security-model.md) and Draft
+[RFC-0022](../rfcs/RFC-0022-security-policy-composition.md) add review guidance
+and proposed cross-boundary semantics only. They do not change manifest fields,
+schema constraints, maintained profile versions, CLI output, diagnostic codes,
+or executable behavior. No version bump, migration, tag, or release follows
+from publishing this proposal; `specVersion: "0.1"` remains unchanged.
+
+Accepting new normative permission, approval, identity, delegation, retry,
+revocation, or failure semantics requires an explicit compatibility and version
+decision even with unchanged authored structure. Any future implementation
+also needs independently versioned runtime contracts and scoped conformance
+evidence. Draft review scenarios are not that evidence.
+
 ## 0.1 Scope Freeze Version Decision
 
 Freezing the `0.1` candidate scope does not change manifest `specVersion`. The

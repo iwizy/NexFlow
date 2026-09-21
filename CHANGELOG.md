@@ -8,6 +8,11 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Added
 
+- Expanded the security model with trust boundaries, Draft RFC-0022 policy
+  composition, scoped decisions, revalidation, untrusted content and delegation,
+  uncertain outcomes, operation limits, audit failure handling, and manual
+  review scenarios. No runtime enforcement, manifest fields, schema changes,
+  conformance certification, or release is introduced.
 - Added a machine-readable `io.nexflow.github` draft profile, closed schema,
   RFC, documentation, maintained Software Team binding checks, and focused
   regression coverage for provider authority, mutable refs, immutable commit

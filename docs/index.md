@@ -1,33 +1,41 @@
 # NexFlow Documentation
 
-NexFlow is an open specification and reference framework for describing AI developer teams.
+NexFlow is an open specification and reference framework for describing AI
+developer teams. The documentation is the canonical source for the
+specification. Schemas, examples, profiles, and repository tools provide
+evidence for the written model; they do not replace it.
 
-The documentation is the canonical source for the specification. Schemas and examples support the docs, but they do not replace the written model.
+## Choose A Path
 
-## Start Here
+Start with one route and use the catalog below when you need a deeper contract.
 
-- [Vision](vision.md)
-- [Concepts](concepts.md)
-- [Glossary](glossary.md)
-- [Actor Model](actor-model.md)
-- [Human Override](human-override.md)
-- [Architecture](architecture.md)
-- [Core Profile](core-profile.md)
-- [Manifest Reference](manifest-reference.md)
-- [Security Model](security-model.md)
-- [Threat Model](threat-model.md)
+| Goal | Read In Order | Outcome |
+| --- | --- | --- |
+| Understand NexFlow | [Vision](vision.md) -> [Concepts](concepts.md) -> [Glossary](glossary.md) -> [Minimal Team](../examples/minimal-team/) | Learn the vocabulary and see the smallest maintained project shape. |
+| Author manifests | [Core Profile](core-profile.md) -> [Manifest Reference](manifest-reference.md) -> [Schema Guide](../schemas/README.md) -> [Examples Guide](../examples/README.md) | Choose required documents, author supported shapes, and compare complete project sets. |
+| Validate a project | [Examples Validation Walkthrough](examples-validation-walkthrough.md) -> [Validation](validation.md) -> [Diagnostic Code Catalog](diagnostic-code-catalog.md) -> [Conformance](conformance.md) | Run repository tools and interpret their evidence without widening the claim. |
+| Review safety and authority | [Threat Model](threat-model.md) -> [Security Model](security-model.md) -> [Human Override](human-override.md) -> [Credential Handling](credential-handling.md) -> [Network Access Policy](network-access-policy.md) | Trace trust boundaries, human control, credentials, network access, and fail-closed behavior. |
+| Design an extension | [Extension Profiles](../extensions/README.md) -> [Extension Model](extensions.md) -> [Extension Registry Model](extension-registry.md) -> [Extension Loading Boundary](extension-loading-boundary.md) -> [Integrations](integrations.md) | Separate declaration, discovery, implementation, activation, and per-operation authority. |
+| Implement validation or a future runtime | [Architecture](architecture.md) -> [CLI And Runtime Responsibility Boundary](cli-runtime-boundary.md) -> [Provider Adapter Boundary](provider-adapter-boundary.md) -> [Runtime Options](runtime-options.md) -> [Compatibility Matrix](compatibility-matrix.md) | Preserve current tooling limits while evaluating future implementation boundaries. |
+| Maintain or release the project | [Maintainer Guide](maintainer-guide.md) -> [Governance](governance.md) -> [Provider Neutrality Checklist](provider-neutrality-checklist.md) -> [0.1 Readiness Checklist](readiness-checklist.md) -> [Release Evidence Guide](../release/README.md) | Route changes, collect evidence, review compatibility, and make an explicit release decision. |
 
-## Reading Paths
+## Repository Guides
 
-| Reader | Recommended Path |
-| --- | --- |
-| New project visitor | [Vision](vision.md) -> [Concepts](concepts.md) -> [Glossary](glossary.md) -> [Manifest Reference](manifest-reference.md) |
-| Maintainer | [Maintainer Guide](maintainer-guide.md) -> [Governance](governance.md) -> [Compatibility Matrix](compatibility-matrix.md) -> [Validation](validation.md) -> [Release Plan](release-plan.md) |
-| Manifest author | [Core Profile](core-profile.md) -> [Manifest Reference](manifest-reference.md) -> [Actor Model](actor-model.md) -> [Context Model](context-model.md) -> [Memory Model](memory-model.md) -> [Examples Guide](../examples/README.md) |
-| Safety reviewer | [Threat Model](threat-model.md) -> [Security Model](security-model.md) -> [Human Override](human-override.md) -> [Credential Handling](credential-handling.md) -> [Network Access Policy](network-access-policy.md) -> [Extension Loading Boundary](extension-loading-boundary.md) -> [Provider Adapter Boundary](provider-adapter-boundary.md) -> [Event And Audit Storage Boundary](event-audit-storage-boundary.md) -> [Approval Gates](approval-gates.md) -> [Approval Gate Targets](approval-gate-targets.md) -> [Capability Model](capability-model.md) -> [Autonomy Model](autonomy-model.md) |
-| Validator author | [Validation](validation.md) -> [CLI And Runtime Responsibility Boundary](cli-runtime-boundary.md) -> [Diagnostic Code Catalog](diagnostic-code-catalog.md) -> [Fixtures Guide](../fixtures/README.md) -> [Manifest Discovery](manifest-discovery.md) -> [Semantic Reference Inventory](semantic-reference-inventory.md) -> [Typed References](typed-references.md) -> [Approval Gate Targets](approval-gate-targets.md) -> [Work Reference Namespaces](work-reference-namespaces.md) -> [Schema Design Notes](schema-design-notes.md) -> [Schema Guide](../schemas/README.md) -> [Conformance](conformance.md) -> [Conformance Claims](conformance-claims.md) -> [Compatibility Matrix](compatibility-matrix.md) |
-| Runtime implementer | [Architecture](architecture.md) -> [CLI And Runtime Responsibility Boundary](cli-runtime-boundary.md) -> [Credential Handling](credential-handling.md) -> [Network Access Policy](network-access-policy.md) -> [Event Model](events.md) -> [Event And Audit Storage Boundary](event-audit-storage-boundary.md) -> [Event Interoperability](event-interoperability.md) -> [Runtime Options](runtime-options.md) -> [Extension Loading Boundary](extension-loading-boundary.md) -> [Provider Adapter Boundary](provider-adapter-boundary.md) -> [Provider Abstraction](provider-abstraction.md) -> [Provider Features](provider-features.md) -> [Provider Constraints](provider-constraints.md) -> [Roadmap](roadmap.md) |
-| Extension author | [Extension Model](extensions.md) -> [Extension Registry Model](extension-registry.md) -> [Extension Loading Boundary](extension-loading-boundary.md) -> [GitHub Extension Draft](../extensions/github/README.md) -> [MCP And A2A Boundaries](mcp-a2a-boundaries.md) -> [MCP Extension Draft](../extensions/mcp/README.md) -> [A2A Extension Draft](../extensions/a2a/README.md) -> [Integrations](integrations.md) -> [Conformance](conformance.md) |
+| Area | Entry Point | What It Contains |
+| --- | --- | --- |
+| Specification | [Documentation Catalog](#core-models) | Conceptual models, safety boundaries, compatibility, process, and implementation guidance. |
+| Manifest shapes | [Manifest Reference](manifest-reference.md) and [Schema Guide](../schemas/README.md) | Human-readable field semantics and machine-readable structural contracts. |
+| Learning projects | [Examples Guide](../examples/README.md) | Compact onboarding projects and complete reference teams. |
+| Extension policies | [Extension Profiles](../extensions/README.md) | Maintained provider and protocol policy profiles; no executable integrations. |
+| Validation evidence | [Fixtures Guide](../fixtures/README.md) and [Validation](validation.md) | Positive and negative cases, repository commands, and evidence limits. |
+| Design proposals | [RFC Index](../rfcs/README.md) | Draft proposals, review state, cross-RFC reviews, and decision process. |
+| Support claims | [Conformance Templates](../conformance/README.md) | Claim schema, templates, fixture catalog, and publication workflow. |
+| Release evidence | [Release Evidence Guide](../release/README.md) | Candidate record schema, template, gates, and decision rules. |
+| Project policy | [Contributing](../CONTRIBUTING.md) and [Security Policy](../SECURITY.md) | Contribution requirements, local checks, and reporting boundaries. |
+
+Every first-level `docs/*.md` page is cataloged below. The repository runs
+`npm run documentation-navigation-smoke` to reject missing local link targets,
+uncataloged documentation pages, and missing top-level guide links.
 
 ## Core Models
 
@@ -67,6 +75,7 @@ The documentation is the canonical source for the specification. Schemas and exa
 | [MCP Integration Profile](mcp-integration-profile.md) | Applies the existing draft mapping to adoption evidence, scoped effects, operation review, declaration fragments, and unsupported behavior. |
 | [A2A Extension Draft](../extensions/a2a/README.md) | Maps remote agent, skill, message, task, and artifact surfaces without treating external metadata as local authority. |
 | [MCP And A2A Boundaries](mcp-a2a-boundaries.md) | Defines protocol ownership, namespace collisions, identity binding, work correlation, artifact import, and cross-protocol authority rules. |
+| [Issue Tracker Extension Draft](../extensions/issue-tracker/README.md) | Defines provider-neutral issue identity, mutation, state correlation, event, credential, and authority boundaries with offline checks only. |
 | [Provider Abstraction](provider-abstraction.md) | Defines provider-neutral preferences, features, and constraints. |
 
 ## Project Process
@@ -109,7 +118,6 @@ The documentation is the canonical source for the specification. Schemas and exa
 | [Runtime Options](runtime-options.md) | Runtime language evaluation criteria without choosing an implementation. |
 | [Runtime Language Evaluation Matrix](language-evaluation-matrix.md) | Defines hard gates, weighted criteria, common prototypes, evidence records, and a neutral decision process for TypeScript, Python, Rust, and Go. |
 | [Runtime Architecture Decision Review](../rfcs/reviews/runtime-architecture-decision-review.md) | Defines mandatory evidence, review gates, blocker classes, acceptance rules, and the current not-ready decision baseline. |
-| [Issue Tracker Extension Draft](../extensions/issue-tracker/README.md) | Provider-neutral issue identity, mutation, state correlation, and event policy with offline checks only. |
 | [Integrations](integrations.md) | Integration modeling rules and safety expectations. |
 | [Roadmap](roadmap.md) | Specification, review, schema, CLI, runtime, and ecosystem milestones. |
 | [FAQ](faq.md) | Short answers to common project questions. |

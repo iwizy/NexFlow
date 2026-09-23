@@ -69,6 +69,7 @@ before opening a pull request:
 
 ```sh
 npm ci --ignore-scripts
+npm run documentation-navigation-smoke
 npm run validate
 npm run negative-schema-fixtures
 npm run typed-reference-schema-smoke
@@ -101,6 +102,12 @@ example against the schema selected by its `kind`. `package-lock.json` pins the
 validation dependencies for reproducible contributor and CI use. Node.js is
 used only for repository maintenance tooling; this does not select or constrain
 a future NexFlow runtime language.
+
+Documentation changes must keep local links valid, every first-level
+`docs/*.md` page discoverable from the documentation index, and the root README
+linked to each repository guide. Run `npm run documentation-navigation-smoke`
+to verify those navigation boundaries. The check is offline: it does not fetch
+external URLs or establish that prose is correct or specification-conformant.
 
 The [repository CLI prototype](docs/cli-prototype.md) is also maintenance and
 evaluation tooling, not a reference CLI alpha. Its `discover` command reports

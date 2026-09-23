@@ -159,15 +159,15 @@ publish a release.
 - [ ] `npm run conformance-claim-smoke` succeeds.
 - [ ] `npm run candidate-readiness-smoke` succeeds.
 - [ ] `npm run semantic-smoke` succeeds.
-- [ ] Markdown link checks succeed.
+- [ ] `npm run documentation-navigation-smoke` succeeds.
 - [ ] `git diff --check` succeeds.
-- [ ] CI runs schema smoke, schema validation, negative fixtures, typed
-  reference primitives, approval gate targets, work reference namespaces,
-  ActorSet, agent identity, agent definition authority, Core Profile, human
-  override boundaries, manifest discovery, multiple workflows, MCP and A2A
-  extension profiles, provider features, provider constraints, conformance claim format,
-  candidate readiness record, and semantic reference smoke checks on pull
-  requests.
+- [ ] CI runs documentation navigation, schema smoke, schema validation,
+  negative fixtures, typed reference primitives, approval gate targets, work
+  reference namespaces, ActorSet, agent identity, agent definition authority,
+  Core Profile, human override boundaries, manifest discovery, multiple
+  workflows, MCP and A2A extension profiles, provider features, provider
+  constraints, conformance claim format, candidate readiness record, and
+  semantic reference smoke checks on pull requests.
 - [ ] Validation docs explain the difference between syntax checks, schema validation, semantic smoke checks, future semantic validation, and runtime enforcement.
 - [ ] Semantic reference inventory target namespaces and coverage labels match
   the current schemas, examples, and semantic smoke implementation.

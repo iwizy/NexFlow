@@ -138,6 +138,17 @@ parsing, and format validation dependencies.
 
 This Node.js command is repository maintenance tooling, not a reference CLI or runtime implementation. It does not choose a future NexFlow runtime language and does not perform semantic validation.
 
+Documentation navigation has a separate offline check:
+
+```sh
+npm run documentation-navigation-smoke
+```
+
+The check verifies local Markdown link targets, requires every first-level
+`docs/*.md` page to be linked from the documentation index, and requires the
+root README to link the repository's main guides. It does not fetch external
+URLs, evaluate prose correctness, or establish specification conformance.
+
 For a worked path from the broad repository check through Minimal Team,
 Software Team, static inspection and graphing, and one intentional failure, use
 the [Examples Validation Walkthrough](examples-validation-walkthrough.md).
@@ -402,13 +413,14 @@ It validates record structure and decision guards only. It does not execute
 the commands named as evidence, verify links, evaluate release quality, approve
 a tag, publish a release, or establish specification conformance.
 
-The `Schema Validation` GitHub Actions workflow runs the repository validator
-and focused boundary commands so pull requests exercise schema JSON parsing,
-example YAML parsing, manifest kind discovery, schema compilation, example
-manifest validation, typed-reference primitive boundaries, work reference
-namespaces, approval gate target kinds and scope, provider feature vocabulary,
-provider constraint structure, GitHub, MCP, A2A, and issue tracker extension
-profile boundaries,
+The `Schema Validation` GitHub Actions workflow runs the documentation
+navigation check, repository validator, and focused boundary commands so pull
+requests exercise local Markdown targets and catalog coverage, schema JSON
+parsing, example YAML parsing, manifest kind discovery, schema compilation,
+example manifest validation, typed-reference primitive boundaries, work
+reference namespaces, approval gate target kinds and scope, provider feature
+vocabulary, provider constraint structure, GitHub, MCP, A2A, and issue tracker
+extension profile boundaries,
 compact agent identity compatibility, Core Profile conformance boundaries,
 manifest discovery and multiple-workflow boundaries, credential handling and
 human override fail-closed shapes, and conformance claim format boundaries. It also checks candidate

@@ -252,56 +252,20 @@ NexFlow is intentionally split into layers:
 
 ## Repository Map
 
-- [Documentation Index](docs/index.md): specification documentation and reading paths
-- [profiles/](profiles/): machine-readable authoring profile definitions
-- [extensions/](extensions/): maintained versioned extension policy profiles
-- [schemas/](schemas/): draft JSON Schemas for core manifests
-- [Schema Guide](schemas/README.md): schema scope, update rules, and validation boundaries
-- [Schema Bundle Publication](docs/schema-bundle-publication.md): future
-  language-neutral schema artifact, integrity, and release contract
-- [examples/](examples/): complete reference team configurations
-- [Examples Guide](examples/README.md): overview of reference teams and manifest file sets
-- [conformance/](conformance/): standalone conformance claim schema and publication templates
-- [release/](release/): standalone candidate readiness schema, template, and release evidence guidance
-- [Fixtures Guide](fixtures/README.md): focused validation inputs, expected outcomes, and maintenance rules
-- [fixtures/cli/](fixtures/cli/): cataloged CLI success, rejection, output,
-  initialization, and mutation-boundary fixtures
-- [fixtures/discovery/](fixtures/discovery/): focused logical assembly and multiple-workflow validation evidence
-- [fixtures/schema/invalid/](fixtures/schema/invalid/): intentionally invalid
-  manifests for stable schema rejection checks
-- [rfcs/](rfcs/README.md): governance and design proposal process
-- [Foundational Model Review](rfcs/reviews/2026-07-foundational-model-review.md): compatibility, safety, blockers, and implementation order for RFC-0013 through RFC-0016
-- [Conformance](docs/conformance.md): draft support levels for manifests, validators, CLIs, runtimes, and extensions
-- [Compatibility Matrix](docs/compatibility-matrix.md): current support and explicit implementation gaps
-- [Validation](docs/validation.md): repository checks and their boundaries
-- [Manifest Discovery](docs/manifest-discovery.md): explicit source boundaries, logical inventory, cardinality, and multiple-workflow rules
-- [Semantic Reference Inventory](docs/semantic-reference-inventory.md): prioritized cross-manifest reference contracts and current coverage
-- [Typed References](docs/typed-references.md): shared reference shapes, lexical rules, field contracts, and migration guidance
-- [Approval Gate Targets](docs/approval-gate-targets.md): typed gate targets, exact namespaces, workflow scope, and legacy migration
-- [Work Reference Namespaces](docs/work-reference-namespaces.md): deterministic workflow step and task artifact identity
-- [Event Interoperability](docs/event-interoperability.md): CloudEvents and OpenTelemetry mappings without transport or storage commitments
-- [Provider Features](docs/provider-features.md): closed provider support vocabulary and capability separation
-- [Provider Constraints](docs/provider-constraints.md): structured provider eligibility, composition, migration, and validation boundaries
-- [GitHub Extension Draft](extensions/github/README.md): experimental repository, revision, pull request, review, check, and webhook policy mapping without live provider behavior
-- [MCP Extension Draft](extensions/mcp/README.md): experimental MCP context/action policy mapping without runtime behavior
-- [MCP Integration Profile](docs/mcp-integration-profile.md): adoption review, operation boundaries, and fictional declaration fragments for the existing draft
-- [A2A Extension Draft](extensions/a2a/README.md): experimental remote-agent, task, and artifact policy mapping without runtime behavior
-- [Issue Tracker Extension Draft](extensions/issue-tracker/README.md): provider-neutral issue identity, mutation, and state authority boundaries without runtime behavior
-- [Extension Registry Model](docs/extension-registry.md): optional namespace discovery metadata without ownership, installation, trust, or runtime authority
-- [MCP And A2A Boundaries](docs/mcp-a2a-boundaries.md): protocol ownership, identity, authority, work, artifact, network, and audit boundaries
-- [Actor Model](docs/actor-model.md): first-class participant identity and kind-specific relationships
-- [Actor Model Migration](docs/actor-model-migration.md): staged transition from mixed AgentSet identity
-- [Agent Identity Migration](docs/agent-identity-migration.md): transition from duplicated AgentSet behavior fields to compact stable identity
-- [Effective Agent Configuration](docs/effective-agent-configuration.md): authoritative active-definition selection, policy boundaries, migration, and validation
-- [Human Override](docs/human-override.md): fail-closed human-control policy, resume gate, and audit contract
-- [Credential Handling](docs/credential-handling.md): external-only references, operation-scoped mediation, failure, redaction, and audit rules
-- [Network Access Policy](docs/network-access-policy.md): fail-closed outbound connection rules and migration from advisory strings
-- [Release Plan](docs/release-plan.md): public readiness criteria from `0.1` draft through `1.0`
-- [0.1 Readiness Checklist](docs/readiness-checklist.md): candidate gates, evidence rules, decision outcomes, and release blockers
-- [CONTRIBUTING.md](CONTRIBUTING.md): contribution workflow
-- [Maintainer Guide](docs/maintainer-guide.md): review, synchronization,
-  validation, merge, RFC, release, and handoff workflow
-- [SECURITY.md](SECURITY.md): vulnerability and safety reporting policy
+Use the [Documentation Index](docs/index.md) for goal-based reading paths and
+the complete documentation catalog.
+
+| Area | Entry Point | Purpose |
+| --- | --- | --- |
+| Specification | [Documentation Index](docs/index.md) | Core models, safety boundaries, process, compatibility, and implementation guidance. |
+| Schemas and profiles | [Schema Guide](schemas/README.md), [profiles/](profiles/) | Structural manifest contracts and machine-readable authoring profiles. |
+| Examples | [Examples Guide](examples/README.md) | Compact learning projects and complete reference team configurations. |
+| Extensions | [Extension Profiles](extensions/README.md) | Maintained policy profiles for non-core integration behavior. |
+| Validation evidence | [Fixtures Guide](fixtures/README.md) | Focused positive and negative inputs with expected outcomes and owning checks. |
+| Design proposals | [RFC Index](rfcs/README.md) | Proposal lifecycle, draft RFCs, reviews, and recorded decisions. |
+| Conformance | [Conformance Templates](conformance/README.md) | Support-claim schema, templates, fixtures, and publication workflow. |
+| Releases | [Release Evidence Guide](release/README.md), [Changelog](CHANGELOG.md) | Candidate decision records, release evidence, and unreleased changes. |
+| Contribution and security | [Contributing](CONTRIBUTING.md), [Security Policy](SECURITY.md) | Change workflow, required checks, and reporting policy. |
 
 ## Specification Guide
 

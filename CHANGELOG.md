@@ -8,6 +8,10 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Added
 
+- Added goal-based documentation reading paths, a compact repository guide map,
+  and an offline navigation check that verifies local Markdown targets,
+  first-level documentation index coverage, and top-level README guide links in
+  CI. This changes no specification, schema, runtime behavior, or version.
 - Expanded the security model with trust boundaries, Draft RFC-0022 policy
   composition, scoped decisions, revalidation, untrusted content and delegation,
   uncertain outcomes, operation limits, audit failure handling, and manual

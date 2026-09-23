@@ -38,6 +38,7 @@ enforced.
 | JSON Schemas | `0.1` across 17 manifest kinds plus common definitions | Implemented | `schemas/*.schema.json` | Structural validation only; schemas do not prove cross-manifest meaning or safety. |
 | Schema bundle publication | Language-neutral, single-`specVersion` archive, index, digest, deterministic build, and consumer verification contract | Specified | `docs/schema-bundle-publication.md`, `schemas/README.md` | No bundle, index schema, builder, reproducible artifact, independent artifact version, hosted endpoint, signature, provenance, or package is published. |
 | Reference examples | Two compact projects plus 6 complete project sets, totaling 109 schema-backed manifests using `0.1` | Implemented | `examples/` | Authoring and validation material, not executable teams or runtime demonstrations. |
+| Documentation navigation | Local Markdown target checks, first-level documentation index coverage, and root README guide coverage | Implemented | `docs/index.md`, `npm run documentation-navigation-smoke` | Offline path and catalog evidence only; external URLs, prose correctness, and normative consistency are not evaluated. |
 | Repository schema validator | Current repository schema snapshot and reference examples | Implemented | `npm run validate` | Maintenance tooling, not a published `nexflow` CLI or general runtime preflight. |
 | Negative schema fixtures | Required field, enum value, ID format, and unknown kind rejection | Implemented | `npm run negative-schema-fixtures`, `fixtures/schema/invalid/` | Four focused rejection categories, not a complete invalid-input or diagnostic conformance suite. |
 | Diagnostic code catalog | Families, severity, messages, remediation, implemented draft codes, candidate codes, and reserved areas | Specified | `docs/diagnostic-code-catalog.md`, RFC-0005, RFC-0011, RFC-0015, RFC-0016 | No code is Stable; the prototype serializes only implemented discovery and schema diagnostics, not the complete catalog. |
@@ -104,6 +105,7 @@ The currently tested repository pairing is:
 specVersion: 0.1
 schemas: current repository snapshot
 examples: current repository snapshot
+documentation navigation smoke: scripts/documentation-navigation-smoke.mjs
 schema validator: scripts/validate-schemas.mjs
 negative schema fixtures: fixtures/schema/invalid/ via scripts/negative-schema-fixtures.mjs
 actor boundary smoke: scripts/actor-schema-smoke.mjs

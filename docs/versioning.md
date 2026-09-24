@@ -568,12 +568,20 @@ Breaking changes require:
 - schema updates
 - changelog entry
 
-Migration guides should explain:
+Use the [Migration Guide](migration-guide.md) to select the affected version
+domain, classify the change, complete a reviewable migration record, and define
+validation, ambiguity handling, safe automation, and rollback.
+
+Migration guides must explain:
 
 - old field or behavior
 - new field or behavior
 - compatibility impact
-- suggested automated migration if possible
+- exact source and target versions or revisions
+- support window and removal gate when a compatibility form is deprecated
+- validation evidence and its limits
+- failure, ambiguity, and rollback behavior
+- suggested automation when it can be deterministic and fail closed
 
 ## Stability Expectations
 

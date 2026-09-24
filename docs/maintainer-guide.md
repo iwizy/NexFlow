@@ -57,7 +57,7 @@ Use the owning surface instead of copying a rule into unrelated documents.
 | Minimum adoption | [Core Profile](core-profile.md) and `profiles/core.yaml` |
 | Cross-manifest meaning | [Semantic Reference Inventory](semantic-reference-inventory.md) and focused checks |
 | Diagnostics | [Diagnostic Code Catalog](diagnostic-code-catalog.md) |
-| Compatibility and migration | [Compatibility](compatibility.md), [Versioning](versioning.md), migration guides |
+| Compatibility and migration | [Migration Guide](migration-guide.md), [Compatibility](compatibility.md), [Versioning](versioning.md), and surface-specific migration guides |
 | Current implementation claims | [Compatibility Matrix](compatibility-matrix.md), README status, Unreleased changelog |
 | Safety | [Security Model](security-model.md), approval, network, override, extension, provider, and audit boundaries |
 | Release readiness | [Release Plan](release-plan.md), readiness records, exact release evidence |

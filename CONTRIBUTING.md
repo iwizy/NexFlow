@@ -49,7 +49,9 @@ Use an RFC for:
 - Provider and runtime neutrality are preserved.
 - Provider-related changes include scoped evidence from the
   [Provider Neutrality Checklist](docs/provider-neutrality-checklist.md).
-- Any breaking change includes migration guidance.
+- Any breaking change includes migration guidance based on the
+  [Migration Guide](docs/migration-guide.md), with exact source and target
+  revisions, validation evidence, ambiguity handling, and rollback boundaries.
 
 ## Specification Language
 

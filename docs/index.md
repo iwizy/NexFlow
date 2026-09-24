@@ -18,6 +18,7 @@ Start with one route and use the catalog below when you need a deeper contract.
 | Design an extension | [Extension Profiles](../extensions/README.md) -> [Extension Model](extensions.md) -> [Extension Registry Model](extension-registry.md) -> [Extension Loading Boundary](extension-loading-boundary.md) -> [Integrations](integrations.md) | Separate declaration, discovery, implementation, activation, and per-operation authority. |
 | Implement validation or a future runtime | [Architecture](architecture.md) -> [CLI And Runtime Responsibility Boundary](cli-runtime-boundary.md) -> [Provider Adapter Boundary](provider-adapter-boundary.md) -> [Runtime Options](runtime-options.md) -> [Compatibility Matrix](compatibility-matrix.md) | Preserve current tooling limits while evaluating future implementation boundaries. |
 | Maintain or release the project | [Maintainer Guide](maintainer-guide.md) -> [Governance](governance.md) -> [Provider Neutrality Checklist](provider-neutrality-checklist.md) -> [0.1 Readiness Checklist](readiness-checklist.md) -> [Release Evidence Guide](../release/README.md) | Route changes, collect evidence, review compatibility, and make an explicit release decision. |
+| Plan a migration | [Migration Guide](migration-guide.md) -> [Compatibility](compatibility.md) -> [Versioning](versioning.md) -> [Compatibility Matrix](compatibility-matrix.md) | Classify the change, select the correct version domain, define evidence and rollback, and find current migration routes. |
 
 ## Repository Guides
 
@@ -87,6 +88,7 @@ uncataloged documentation pages, and missing top-level guide links.
 | [Maintainer Guide](maintainer-guide.md) | Change routing, synchronization, validation, review, merge, RFC, release, security, and handoff workflow for maintainers. |
 | [Licensing And Patent Rationale](licensing-and-patent-rationale.md) | Records the current MIT decision, the Apache-2.0 patent tradeoff, and mandatory review triggers. |
 | [Versioning](versioning.md) | Spec versioning and migration policy. |
+| [Migration Guide](migration-guide.md) | Reusable migration record skeleton, version-domain map, safe procedure, validation evidence, rollback boundary, and current migration routes. |
 | [Actor Model Migration](actor-model-migration.md) | Defines the staged, identity-preserving transition from legacy participant resolution. |
 | [Agent Identity Migration](agent-identity-migration.md) | Defines the transition from duplicated AgentSet behavior fields to compact stable AI identity. |
 | [Conformance](conformance.md) | Draft support levels for manifests, validators, CLIs, runtimes, and extensions. |

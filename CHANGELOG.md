@@ -8,6 +8,11 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Added
 
+- Added a central migration guide skeleton with change classification,
+  version-domain selection, a reusable migration record, fail-closed procedure,
+  validation and rollback evidence, safe automation requirements, and links to
+  maintained migration routes. It adds no migration command, deprecation
+  deadline, support promise, release, schema, runtime behavior, or version.
 - Added goal-based documentation reading paths, a compact repository guide map,
   and an offline navigation check that verifies local Markdown targets,
   first-level documentation index coverage, and top-level README guide links in

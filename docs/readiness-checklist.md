@@ -187,6 +187,9 @@ publish a release.
 
 - [ ] Compatibility doc distinguishes compatible changes, potentially breaking changes, and pre-`1.0` instability.
 - [ ] Versioning doc explains manifest `specVersion` and separate behavioral versions for agent definitions, prompt sets, model profiles, and retrieval profiles.
+- [ ] Migration guide provides a reusable record, version-domain selection,
+  fail-closed procedure, validation evidence, rollback boundary, and current
+  migration entry points without implying an automatic migration tool.
 - [ ] Compatibility and migration docs explain unique active-definition authority and the stricter active shape.
 - [ ] Typed-reference migrations state allowed target kinds, scope, legacy form
   compatibility, and semantic validation limits.

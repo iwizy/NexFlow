@@ -2,7 +2,10 @@
 
 NexFlow compatibility is about preserving the meaning of manifests across tools and time.
 
-For the current supported combinations and explicit implementation gaps, see the [Compatibility Matrix](compatibility-matrix.md).
+For the current supported combinations and explicit implementation gaps, see
+the [Compatibility Matrix](compatibility-matrix.md). For the reusable change
+classification, migration record, validation, and rollback structure, see the
+[Migration Guide](migration-guide.md).
 
 ## Compatibility Goals
 

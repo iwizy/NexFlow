@@ -8,6 +8,10 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Added
 
+- Improved public bug report, specification proposal, and pull request
+  templates with revision-scoped evidence, reproduction or validation steps,
+  compatibility and migration impact, safety review, and clear private
+  security reporting guidance. No specification, schema, or version changes.
 - Added a central migration guide skeleton with change classification,
   version-domain selection, a reusable migration record, fail-closed procedure,
   validation and rollback evidence, safe automation requirements, and links to

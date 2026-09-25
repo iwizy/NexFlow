@@ -29,6 +29,13 @@ change routing, synchronized review, merge, release, and security boundaries.
 
 Small clarifications may be proposed directly in a pull request.
 
+Use the repository's bug report or specification proposal issue template when
+opening a public issue. Include a minimal public example and the affected
+revision when known. Use the pull request template to record compatibility,
+safety, validation results, and remaining review questions. Vulnerabilities
+and private data exposure belong in the private reporting path in
+[SECURITY.md](SECURITY.md), never in a public issue or pull request.
+
 Use an RFC for:
 
 - new core concepts

@@ -8,6 +8,10 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Added
 
+- Added an adopter guide covering pilot selection, a pinned tooling checkout,
+  starter creation and customization, incremental module adoption, explicit
+  project validation, troubleshooting, and evidence review. The guide preserves
+  current tooling and support boundaries; no schema, runtime, or version changes.
 - Improved public bug report, specification proposal, and pull request
   templates with revision-scoped evidence, reproduction or validation steps,
   compatibility and migration impact, safety review, and clear private

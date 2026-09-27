@@ -13,6 +13,10 @@ Complete examples are not the minimum adoption requirement. See the
 [Core Profile](../docs/core-profile.md) for the reduced Project and participant
 shape and fail-closed optional module rules.
 
+Use the [Adopter Guide](../docs/adopter-guide.md) to choose a pilot, create a
+separate project from the built-in starter, adapt its identity, add modules,
+and validate the project with pinned repository tooling.
+
 Use the [Example Matrix](MATRIX.md) to compare examples by complexity, context, autonomy, approval gates, integrations, and learning path.
 
 Use the [Example Consistency Checklist](CHECKLIST.md) before adding or changing an example.

@@ -14,6 +14,9 @@ Definition schema:
 [`profiles/core-profile.schema.json`](../profiles/core-profile.schema.json).
 Design source: [RFC-0016](../rfcs/RFC-0016-core-profile-and-discovery.md).
 
+The [Adopter Guide](adopter-guide.md) provides a runnable path from this
+baseline to a separate, reviewed project with explicit validation evidence.
+
 ## Required Slots
 
 | Slot | Requirement | Resolution |

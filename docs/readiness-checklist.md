@@ -98,6 +98,8 @@ publish a release.
 - [ ] README explains vision, problem, solution, status, roadmap, governance, limitations, license, and FAQ.
 - [ ] Documentation index links to all core models and project process docs.
 - [ ] Concepts and glossary define the core domain terms consistently.
+- [ ] Adopter guidance covers a pinned tool checkout, starter customization,
+  incremental modules, project-specific validation, evidence, and support limits.
 - [ ] Actor and agent identity migration guidance distinguish participant identity from effective agent configuration.
 - [ ] Agent Assembly remains a derived inspection projection; no authored manifest, schema, example output, or grant semantics are introduced for it.
 - [ ] Manifest reference describes every core manifest family.

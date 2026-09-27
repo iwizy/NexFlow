@@ -68,6 +68,10 @@ validate the maintained examples structurally, and run limited cross-manifest
 reference checks. It cannot execute tasks, call model providers, enforce policy,
 load extensions, or orchestrate workflows.
 
+Start with the [Adopter Guide](docs/adopter-guide.md) to choose a small pilot,
+create your own manifests, validate the selected project, and record evidence
+and implementation limits.
+
 The architecture review has not selected an implementation. The next runtime
 milestone is to close the published decision blockers with comparable,
 revision-pinned evidence and record an explicit review outcome. CLI and runtime
@@ -272,6 +276,7 @@ the complete documentation catalog.
 | Need | Start Here |
 | --- | --- |
 | Understand the vocabulary | [Concepts](docs/concepts.md), [Glossary](docs/glossary.md) |
+| Adopt NexFlow in a project | [Adopter Guide](docs/adopter-guide.md), [Core Profile](docs/core-profile.md), [Examples Guide](examples/README.md) |
 | Onboard with the smallest useful project | [Minimal Team](examples/minimal-team/), [Core Profile](docs/core-profile.md) |
 | Start with the minimum project shape | [Core Profile](docs/core-profile.md), [Manifest Reference](docs/manifest-reference.md) |
 | Discover one logical project assembly | [Manifest Discovery](docs/manifest-discovery.md), [Core Profile](docs/core-profile.md), [Validation](docs/validation.md) |

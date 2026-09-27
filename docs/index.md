@@ -12,6 +12,7 @@ Start with one route and use the catalog below when you need a deeper contract.
 | Goal | Read In Order | Outcome |
 | --- | --- | --- |
 | Understand NexFlow | [Vision](vision.md) -> [Concepts](concepts.md) -> [Glossary](glossary.md) -> [Minimal Team](../examples/minimal-team/) | Learn the vocabulary and see the smallest maintained project shape. |
+| Adopt NexFlow | [Adopter Guide](adopter-guide.md) -> [Core Profile](core-profile.md) -> [Examples Guide](../examples/README.md) | Choose a pilot, create and validate your own manifests, and record scope and evidence limits. |
 | Author manifests | [Core Profile](core-profile.md) -> [Manifest Reference](manifest-reference.md) -> [Schema Guide](../schemas/README.md) -> [Examples Guide](../examples/README.md) | Choose required documents, author supported shapes, and compare complete project sets. |
 | Validate a project | [Examples Validation Walkthrough](examples-validation-walkthrough.md) -> [Validation](validation.md) -> [Diagnostic Code Catalog](diagnostic-code-catalog.md) -> [Conformance](conformance.md) | Run repository tools and interpret their evidence without widening the claim. |
 | Review safety and authority | [Threat Model](threat-model.md) -> [Security Model](security-model.md) -> [Human Override](human-override.md) -> [Credential Handling](credential-handling.md) -> [Network Access Policy](network-access-policy.md) | Trace trust boundaries, human control, credentials, network access, and fail-closed behavior. |
@@ -83,6 +84,7 @@ uncataloged documentation pages, and missing top-level guide links.
 
 | Process Area | Purpose |
 | --- | --- |
+| [Adopter Guide](adopter-guide.md) | Practical pilot setup, pinned tooling, starter customization, incremental adoption, project validation, troubleshooting, and evidence review. |
 | [Governance](governance.md) | Contribution, review, and decision rules. |
 | [Provider Neutrality Checklist](provider-neutrality-checklist.md) | Evidence-based review of portable core adoption, provider constraints, independent authority, adapter boundaries, offline tooling, and support claims. |
 | [Maintainer Guide](maintainer-guide.md) | Change routing, synchronization, validation, review, merge, RFC, release, security, and handoff workflow for maintainers. |

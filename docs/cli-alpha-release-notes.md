@@ -9,6 +9,8 @@ supported product claim.
 
 The [0.4 Alpha Preparation Checkpoint](0.4-alpha-checkpoint.md) records the
 current gate-by-gate assessment. Its decision is `not-ready`.
+The [Reference CLI Release Dry Run](cli-release-dry-run.md) documents how to
+rehearse and record source-checkout evidence without creating a release.
 
 Do not publish these notes as a release announcement, create a CLI tag from
 them, or describe the candidate as shipped until every item in

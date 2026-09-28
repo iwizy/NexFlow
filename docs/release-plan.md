@@ -152,6 +152,9 @@ The [Draft Reference CLI Alpha Release Notes](cli-alpha-release-notes.md)
 prepare the evidence inventory, limitations, version separation, and
 publication checklist for this milestone. Their blocked status does not make
 the preview implemented or approve an alpha release.
+The [Reference CLI Release Dry Run](cli-release-dry-run.md) rehearses
+source-checkout checks and evidence capture; it does not close package,
+artifact, or release-decision gates.
 
 Release readiness:
 

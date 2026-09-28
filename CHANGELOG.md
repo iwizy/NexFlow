@@ -8,6 +8,10 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Added
 
+- Added reference CLI release dry-run notes with revision-pinned source-checkout
+  checks, isolated starter rehearsal, evidence capture, stop conditions, and
+  explicit artifact and decision gates. No CLI alpha, package, tag, conformance
+  claim, runtime behavior, or version change is introduced.
 - Added an adopter guide covering pilot selection, a pinned tooling checkout,
   starter creation and customization, incremental module adoption, explicit
   project validation, troubleshooting, and evidence review. The guide preserves

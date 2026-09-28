@@ -30,6 +30,10 @@ same candidate against architecture, scope, validation, safety, conformance,
 distribution, ownership, and documentation gates. Its current decision is
 `not-ready`.
 
+The [Reference CLI Release Dry Run](cli-release-dry-run.md) gives maintainers a
+revision-pinned rehearsal of the current source-checkout evidence. It does not
+test an installable alpha artifact or change the checkpoint decision.
+
 ## Command Map
 
 The initial reference CLI proposal contains four public commands. `discover`

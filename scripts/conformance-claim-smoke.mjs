@@ -279,6 +279,70 @@ for (const marker of [...requiredHeadings, ...levelNames]) {
   check(`human-readable template includes ${marker}`, humanTemplate.includes(marker));
 }
 
+const validatorClaimSource = await readFile(
+  path.join(root, "conformance", "repository-validator-claim.yaml"),
+  "utf8"
+);
+const validatorClaimMarkdown = await readFile(
+  path.join(root, "conformance", "REPOSITORY-VALIDATOR-CLAIM.md"),
+  "utf8"
+);
+const validatorClaimDocument = parseDocument(validatorClaimSource, {
+  maxAliasCount: 0,
+  uniqueKeys: true
+});
+check("repository-validator claim parses without errors", validatorClaimDocument.errors.length === 0);
+check("repository-validator forms contain no local path or private key marker",
+  !localHomePathPattern.test(validatorClaimSource + validatorClaimMarkdown)
+    && !privateKeyMarkerPattern.test(validatorClaimSource + validatorClaimMarkdown));
+
+if (validatorClaimDocument.errors.length === 0) {
+  const claim = validatorClaimDocument.toJS({ maxAliasCount: 0 });
+  const revision = claim.subject?.version;
+  check("repository-validator claim satisfies the claim schema", validate(claim));
+  check("repository-validator statement remains a draft about a validator",
+    claim.metadata?.status === "draft" && claim.subject?.type === "validator");
+  check("repository-validator subject is pinned to a full commit",
+    typeof revision === "string" && /^[0-9a-f]{40}$/u.test(revision));
+  check("repository-validator schema and evidence revisions match the subject",
+    claim.scope?.schemaSnapshots?.length === 1
+      && claim.scope.schemaSnapshots[0].revision === revision
+      && claim.claims?.["NF-SCHEMA"]?.evidence?.length > 0
+      && claim.claims["NF-SCHEMA"].evidence.every((item) => item.revision === revision));
+  check("repository-validator claim is limited to partial structural support",
+    claim.claims?.["NF-SCHEMA"]?.status === "partial"
+      && claim.claims?.["NF-SEMANTIC"]?.status === "unsupported"
+      && claim.claims?.["NF-CLI"]?.status === "unsupported"
+      && claim.claims?.["NF-RUNTIME"]?.status === "not-applicable");
+
+  for (const value of [claim.claimVersion, claim.metadata?.id, claim.metadata?.issuedAt,
+    claim.metadata?.status, claim.subject?.name, revision]) {
+    check(`repository-validator Markdown includes ${value}`,
+      typeof value === "string" && validatorClaimMarkdown.includes(value));
+  }
+  for (const kind of claim.scope?.manifestKinds ?? []) {
+    check(`repository-validator Markdown includes manifest kind ${kind}`,
+      validatorClaimMarkdown.includes(`\`${kind}\``));
+  }
+  for (const item of claim.claims?.["NF-SCHEMA"]?.evidence ?? []) {
+    check(`repository-validator Markdown includes evidence URI ${item.uri}`,
+      typeof item.uri === "string" && validatorClaimMarkdown.includes(item.uri));
+  }
+  check("repository-validator Markdown states the empty profile and extension scope",
+    claim.scope?.profiles?.length === 0
+      && claim.scope?.extensionNamespaces?.length === 0
+      && validatorClaimMarkdown.includes("**Profiles:** none claimed")
+      && validatorClaimMarkdown.includes("**Extension namespaces:** none claimed"));
+  for (const marker of requiredHeadings) {
+    check(`repository-validator Markdown includes ${marker}`,
+      validatorClaimMarkdown.includes(marker));
+  }
+  for (const level of levelNames) {
+    check(`repository-validator Markdown matches ${level} status`,
+      validatorClaimMarkdown.includes(`| \`${level}\` | \`${claim.claims?.[level]?.status}\` |`));
+  }
+}
+
 if (failures.length > 0) {
   console.error(`Conformance claim checks failed with ${failures.length} failure(s):`);
   for (const failure of failures) console.error(`- ${failure}`);
@@ -288,7 +352,7 @@ if (failures.length > 0) {
     `Conformance claim checks passed for ${registry.cases.length} cataloged fixture cases and ${checkCount} assertions.`
   );
   console.log(
-    `Maintained templates include ${requiredHeadings.length} required sections and ${levelNames.length} conformance levels.`
+    `Maintained templates and the draft validator statement include ${requiredHeadings.length} required sections and ${levelNames.length} conformance levels.`
   );
   console.log(
     "These checks validate claim structure and cataloged rejection boundaries, not external evidence or implementation conformance."

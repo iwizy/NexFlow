@@ -40,7 +40,7 @@ enforced.
 | Reference examples | Two compact projects plus 6 complete project sets, totaling 109 schema-backed manifests using `0.1` | Implemented | `examples/` | Authoring and validation material, not executable teams or runtime demonstrations. |
 | Documentation navigation | Local Markdown target checks, first-level documentation index coverage, and root README guide coverage | Implemented | `docs/index.md`, `npm run documentation-navigation-smoke` | Offline path and catalog evidence only; external URLs, prose correctness, and normative consistency are not evaluated. |
 | Migration planning | Reusable change classification, version-domain map, migration record skeleton, fail-closed procedure, evidence, rollback, and current route inventory | Specified | `docs/migration-guide.md`, surface-specific migration guides | Planning guidance only; no general migration command, executable rewrite, new support window, deprecation deadline, or version change is introduced. |
-| Repository schema validator | Current repository schema snapshot and reference examples | Implemented | `npm run validate` | Maintenance tooling, not a published `nexflow` CLI or general runtime preflight. |
+| Repository schema validator | Current repository schema snapshot and reference examples | Implemented | `npm run validate`, [draft validator statement](../conformance/REPOSITORY-VALIDATOR-CLAIM.md) | Statement is pinned to one prior commit and marks `NF-SCHEMA` partial for maintained examples; no published validator, general project-input support, complete semantics, CLI conformance, or runtime preflight. |
 | Negative schema fixtures | Required field, enum value, ID format, and unknown kind rejection | Implemented | `npm run negative-schema-fixtures`, `fixtures/schema/invalid/` | Four focused rejection categories, not a complete invalid-input or diagnostic conformance suite. |
 | Diagnostic code catalog | Families, severity, messages, remediation, implemented draft codes, candidate codes, and reserved areas | Specified | `docs/diagnostic-code-catalog.md`, RFC-0005, RFC-0011, RFC-0015, RFC-0016 | No code is Stable; the prototype serializes only implemented discovery and schema diagnostics, not the complete catalog. |
 | Actor schema boundary smoke | 9 accepted and rejected structural cases | Implemented | `npm run actor-schema-smoke` | Focused ActorSet schema evidence, not full semantic or runtime conformance. |
@@ -232,7 +232,9 @@ verifies bidirectional manifest-kind discovery, compiles the schemas, and
 validates every maintained example against its selected schema.
 
 It supports a repository-level `NF-SCHEMA` draft claim for the maintained
-examples. It is not a published CLI compatibility promise.
+examples. The [draft validator statement](../conformance/REPOSITORY-VALIDATOR-CLAIM.md)
+records `partial` status against one exact source revision and CI run. It is
+not a published validator or CLI compatibility promise.
 
 It does not check:
 

@@ -14,6 +14,7 @@ Related artifacts:
 - [Machine-readable schema](../conformance/conformance-claim.schema.json)
 - [YAML template](../conformance/conformance-claim.template.yaml)
 - [Markdown template](../conformance/CONFORMANCE-CLAIM.template.md)
+- [Draft repository-validator statement](../conformance/REPOSITORY-VALIDATOR-CLAIM.md)
 - [Core Profile qualifiers](core-profile.md)
 - [Conformance](conformance.md)
 - [CLI And Runtime Responsibility Boundary](cli-runtime-boundary.md)
@@ -212,6 +213,14 @@ the prior artifact or publication history so consumers can understand what
 changed.
 
 ## Validation Boundary
+
+The repository maintains a [draft, revision-pinned validator statement](../conformance/REPOSITORY-VALIDATOR-CLAIM.md)
+and its [machine-readable form](../conformance/repository-validator-claim.yaml).
+It describes only `npm run validate` over the maintained example corpus at the
+named source revision. Its `NF-SCHEMA` status is `partial`; it is not current
+published validator support, a reference CLI claim, or evidence of complete
+semantic validation. A later validator release requires a new evaluation and
+publication decision.
 
 The repository command:
 

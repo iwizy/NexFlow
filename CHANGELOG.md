@@ -8,6 +8,11 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Added
 
+- Added a paired, revision-pinned draft conformance statement for the
+  repository schema validator, with an explicit `NF-SCHEMA` partial scope,
+  CI evidence, limitations, and matching-form checks. No validator package,
+  published support claim, semantic or CLI conformance, runtime, or version
+  change is introduced.
 - Added reference CLI release dry-run notes with revision-pinned source-checkout
   checks, isolated starter rehearsal, evidence capture, stop conditions, and
   explicit artifact and decision gates. No CLI alpha, package, tag, conformance

@@ -1,0 +1,87 @@
+# Draft statement for the repository maintenance validator at one exact revision.
+# It is not a published validator release or a claim about arbitrary projects.
+claimVersion: "0.1"
+kind: NexFlowConformanceClaim
+
+metadata:
+  id: nexflow-repository-validator-bb8d559
+  status: draft
+  issuedAt: "2026-09-29T08:21:09Z"
+
+subject:
+  name: NexFlow repository schema validator
+  version: bb8d559b665337b1a9f4c007bfa8335dec92a79a
+  type: validator
+  description: Repository maintenance script that checks maintained example manifests against the adjacent schema snapshot.
+  homepage: https://github.com/iwizy/NexFlow
+  sourceRepository: https://github.com/iwizy/NexFlow
+
+scope:
+  specVersions:
+    - "0.1"
+  schemaSnapshots:
+    - specVersion: "0.1"
+      revision: bb8d559b665337b1a9f4c007bfa8335dec92a79a
+      source: https://github.com/iwizy/NexFlow/tree/bb8d559b665337b1a9f4c007bfa8335dec92a79a/schemas
+  profiles: []
+  manifestKinds:
+    - ActorSet
+    - AgentDefinitionSet
+    - AgentSet
+    - CapabilitySet
+    - ContextSet
+    - EventSet
+    - ExtensionSet
+    - HandoffSet
+    - MemorySet
+    - ModelProfileSet
+    - PermissionSet
+    - Project
+    - PromptSet
+    - ProviderSet
+    - RetrievalProfileSet
+    - TaskSet
+    - Workflow
+  extensionNamespaces: []
+
+claims:
+  NF-MANIFEST:
+    status: not-applicable
+    summary: This subject validates the maintained examples; it is not itself a manifest set or authoring profile.
+  NF-SCHEMA:
+    status: partial
+    summary: The pinned npm run validate command checks the maintained example corpus against its adjacent 17-kind schema snapshot.
+    evidence:
+      - type: test-suite
+        description: Successful Schema Validation workflow for the pinned commit, including npm run validate.
+        uri: https://github.com/iwizy/NexFlow/actions/runs/36409277463
+        revision: bb8d559b665337b1a9f4c007bfa8335dec92a79a
+    limitations:
+      - The command selects repository examples rather than arbitrary user-supplied projects.
+      - Unsupported specVersion values fail schema validation but have no dedicated version diagnostic.
+  NF-SEMANTIC:
+    status: unsupported
+    summary: This script does not resolve cross-manifest references or evaluate policy relationships.
+  NF-CLI:
+    status: unsupported
+    summary: The maintenance command is not a released reference CLI or a public command compatibility contract.
+  NF-RUNTIME:
+    status: not-applicable
+    summary: The validator neither executes NexFlow projects nor enforces runtime policy.
+  NF-EXTENSION:
+    status: not-applicable
+    summary: Extension implementation, loading, and execution are outside this validator's scope.
+
+behavior:
+  validation: Parses repository example YAML without aliases or duplicate mapping keys, compiles adjacent JSON Schemas, checks kind-to-schema coverage, and structurally validates each maintained example. Unknown kinds and schema-invalid examples fail; cross-manifest semantics and external inputs are not checked.
+  enforcement: No runtime preflight or enforcement; the script reads local repository files and reports validation results only.
+
+limitations:
+  - Draft, self-declared statement for one repository commit; not a published validator package, certification, or general support promise.
+  - No authoring profile, semantic, CLI, runtime, or executable extension conformance is claimed.
+  - CI success covers this revision and the maintained example corpus, not all possible inputs or runtime safety.
+
+attestation:
+  assurance: self-declared
+  responsibleParty: NexFlow maintainers
+  contact: https://github.com/iwizy/NexFlow/issues

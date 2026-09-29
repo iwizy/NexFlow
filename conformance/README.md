@@ -9,6 +9,10 @@ self-declared NexFlow compatibility claim:
   machine-readable authoring template.
 - [`CONFORMANCE-CLAIM.template.md`](CONFORMANCE-CLAIM.template.md) is the
   corresponding human-readable template.
+- [`repository-validator-claim.yaml`](repository-validator-claim.yaml) and
+  [`REPOSITORY-VALIDATOR-CLAIM.md`](REPOSITORY-VALIDATOR-CLAIM.md) are a matched
+  **draft** statement for the repository maintenance validator at one pinned
+  commit. They do not publish a validator package or general support claim.
 - [`../fixtures/conformance/index.json`](../fixtures/conformance/index.json)
   catalogs reusable positive and negative claim cases derived from fictional
   validator, CLI, extension, and service claims.
@@ -30,9 +34,11 @@ Install the pinned repository dependencies and run:
 npm run conformance-claim-smoke
 ```
 
-The command validates the YAML template and 37 cataloged positive and negative
-fixture cases. It also checks that the human-readable template names every
-current conformance level and required section.
+The command validates the YAML template, the draft repository-validator
+statement, and 37 cataloged positive and negative fixture cases. It also
+checks the human-readable forms for required sections and matching claim
+metadata and level statuses. It does not verify external evidence or evaluate
+validator behavior.
 
 ## Fixture Catalog
 

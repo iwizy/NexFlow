@@ -155,6 +155,9 @@ the preview implemented or approve an alpha release.
 The [Reference CLI Release Dry Run](cli-release-dry-run.md) rehearses
 source-checkout checks and evidence capture; it does not close package,
 artifact, or release-decision gates.
+The [0.5 Beta Readiness Checklist](0.5-beta-readiness-checklist.md) defines
+future candidate review gates; preparing it does not evaluate or approve a
+beta release.
 
 Release readiness:
 

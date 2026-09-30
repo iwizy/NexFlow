@@ -8,6 +8,11 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Added
 
+- Added a non-approving `0.5` reference tooling beta readiness checklist with
+  separate version and decision gates, exact-candidate evidence, bounded CLI
+  behavior, no-runtime safety, artifact verification, compatibility, support,
+  and independent release review. No beta candidate, tag, package, conformance
+  claim, or version change is introduced.
 - Added a paired, revision-pinned draft conformance statement for the
   repository schema validator, with an explicit `NF-SCHEMA` partial scope,
   CI evidence, limitations, and matching-form checks. No validator package,

@@ -5,9 +5,99 @@
   "corpusSha256": "01b116005f0650ac980194b22c02188289eaf1e8626b227aecf3684ece0d8f6b",
   "scope": "validation-only",
   "targets": [
-    {"id": "linux/amd64", "platform": "linux", "architecture": "x64", "runnerLabel": "ubuntu-24.04", "osFamily": "Ubuntu 24.04", "buildMode": "native", "snapshot": null},
-    {"id": "macos/arm64", "platform": "darwin", "architecture": "arm64", "runnerLabel": "macos-15", "osFamily": "macOS 15", "buildMode": "native", "snapshot": null},
-    {"id": "windows/amd64", "platform": "win32", "architecture": "x64", "runnerLabel": "windows-2025", "osFamily": "Windows Server 2025", "buildMode": "native", "snapshot": null}
+    {
+      "id": "linux/amd64",
+      "platform": "linux",
+      "architecture": "x64",
+      "runnerLabel": "ubuntu-24.04",
+      "osFamily": "Ubuntu 24.04",
+      "buildMode": "native",
+      "snapshot": {
+        "target": "linux/amd64",
+        "platform": "linux",
+        "architecture": "x64",
+        "runnerLabel": "ubuntu-24.04",
+        "imageOS": "ubuntu24",
+        "imageVersion": "20260920.314.1",
+        "osVersion": "24.04",
+        "osBuild": "6.17.0-1022-azure",
+        "osCaption": "Ubuntu 24.04.5 LTS",
+        "kernel": "6.17.0-1022-azure",
+        "libc": "glibc 2.39",
+        "cpuModel": "AMD EPYC 9V45 96-Core Processor",
+        "cpuCount": 4,
+        "memoryBytes": 16766414848,
+        "translated": false
+      },
+      "infrastructureResult": "passed",
+      "evidence": {
+        "evaluatedHead": "021079f2d086873d1c8d93244a6f0c8040b769cc",
+        "job": "https://github.com/iwizy/NexFlow/actions/runs/36844655825/job/110311781590",
+        "softwareManifest": "https://github.com/actions/runner-images/blob/ubuntu24/20260920.314/images/ubuntu/Ubuntu2404-Readme.md"
+      }
+    },
+    {
+      "id": "macos/arm64",
+      "platform": "darwin",
+      "architecture": "arm64",
+      "runnerLabel": "macos-15",
+      "osFamily": "macOS 15",
+      "buildMode": "native",
+      "snapshot": {
+        "target": "macos/arm64",
+        "platform": "darwin",
+        "architecture": "arm64",
+        "runnerLabel": "macos-15",
+        "imageOS": "macos15",
+        "imageVersion": "20260907.0337.1",
+        "osVersion": "15.7.9",
+        "osBuild": "24G830",
+        "osCaption": "macOS 15.7.9",
+        "kernel": "24.6.0",
+        "libc": null,
+        "cpuModel": "Apple M1 (Virtual)",
+        "cpuCount": 3,
+        "memoryBytes": 7516192768,
+        "translated": false
+      },
+      "infrastructureResult": "passed",
+      "evidence": {
+        "evaluatedHead": "021079f2d086873d1c8d93244a6f0c8040b769cc",
+        "job": "https://github.com/iwizy/NexFlow/actions/runs/36844655825/job/110311782035",
+        "softwareManifest": "https://github.com/actions/runner-images/blob/macos-15-arm64/20260907.0337/images/macos/macos-15-arm64-Readme.md"
+      }
+    },
+    {
+      "id": "windows/amd64",
+      "platform": "win32",
+      "architecture": "x64",
+      "runnerLabel": "windows-2025",
+      "osFamily": "Windows Server 2025",
+      "buildMode": "native",
+      "snapshot": {
+        "target": "windows/amd64",
+        "platform": "win32",
+        "architecture": "x64",
+        "runnerLabel": "windows-2025",
+        "imageOS": "win25-vs2026",
+        "imageVersion": "20260925.250.1",
+        "osVersion": "10.0.26100",
+        "osBuild": "26100",
+        "osCaption": "Microsoft Windows Server 2025 Datacenter",
+        "kernel": "10.0.26100",
+        "libc": null,
+        "cpuModel": "AMD EPYC 7763 64-Core Processor                ",
+        "cpuCount": 4,
+        "memoryBytes": 17174360064,
+        "translated": false
+      },
+      "infrastructureResult": "passed",
+      "evidence": {
+        "evaluatedHead": "021079f2d086873d1c8d93244a6f0c8040b769cc",
+        "job": "https://github.com/iwizy/NexFlow/actions/runs/36844655825/job/110311781781",
+        "softwareManifest": "https://github.com/actions/runner-images/blob/win25-vs2026/20260925.250/images/windows/Windows2025-VS2026-Readme.md"
+      }
+    }
   ],
   "provisioning": {
     "probeNode": "22.23.2",
@@ -20,21 +110,85 @@
     "cliCases": 11,
     "maintainedManifests": 109,
     "schemaNegativeCases": 4,
-    "throughputCorpusPasses": [1, 10, 100],
+    "throughputCorpusPasses": [
+      1,
+      10,
+      100
+    ],
     "rule": "Use the same pinned bytes, ordered library case inventory and transforms for every candidate. Repetition does not merge documents or change identity namespaces. NF-056-03 supplies the shared library inventory."
   },
   "measurements": {
     "clock": "monotonic external harness; elapsed milliseconds",
     "candidateOrder": "Rotate the four candidates once per repetition; record the actual order.",
-    "limits": {"invocationSeconds": 30, "batchSeconds": 120, "buildSeconds": 600, "jobMinutes": 20},
-    "coldStartMs": {"runs": 10, "warmups": 0, "unit": "ms", "cache": "fresh process; provisioned dependencies; OS file cache uncontrolled and disclosed"},
-    "validationMs": {"runs": 30, "warmups": 1, "unit": "ms", "cache": "warm library process per corpus batch; exclude provisioning and startup"},
-    "peakMemoryBytes": {"runs": 10, "warmups": 0, "unit": "bytes", "cache": "fresh process; external OS peak resident memory including interpreter; disclose child accounting"},
-    "artifactBytes": {"runs": 1, "warmups": 0, "unit": "bytes", "cache": "exact hashed distributable plus separately recorded installed/runtime footprint"},
-    "cleanBuildMs": {"runs": 5, "warmups": 0, "unit": "ms", "cache": "empty project build cache; pinned provisioned dependency cache; network disabled"},
-    "cachedBuildMs": {"runs": 5, "warmups": 1, "unit": "ms", "cache": "unchanged sources and populated project build cache; network disabled"},
-    "ciMs": {"runs": 3, "warmups": 0, "unit": "ms", "cache": "job execution excluding queue time; report provisioning/build/test/upload phases and cache hits separately"},
-    "recordFields": ["candidate", "target", "specificationRevision", "corpusSha256", "evaluationPackageRevision", "prototypeRevision", "artifactSha256", "environmentSnapshotSha256", "measuredAt", "metric", "unit", "dataset", "order", "cacheState", "warmups", "samples", "method", "timeout", "exitStatus"],
+    "limits": {
+      "invocationSeconds": 30,
+      "batchSeconds": 120,
+      "buildSeconds": 600,
+      "jobMinutes": 20
+    },
+    "coldStartMs": {
+      "runs": 10,
+      "warmups": 0,
+      "unit": "ms",
+      "cache": "fresh process; provisioned dependencies; OS file cache uncontrolled and disclosed"
+    },
+    "validationMs": {
+      "runs": 30,
+      "warmups": 1,
+      "unit": "ms",
+      "cache": "warm library process per corpus batch; exclude provisioning and startup"
+    },
+    "peakMemoryBytes": {
+      "runs": 10,
+      "warmups": 0,
+      "unit": "bytes",
+      "cache": "fresh process; external OS peak resident memory including interpreter; disclose child accounting"
+    },
+    "artifactBytes": {
+      "runs": 1,
+      "warmups": 0,
+      "unit": "bytes",
+      "cache": "exact hashed distributable plus separately recorded installed/runtime footprint"
+    },
+    "cleanBuildMs": {
+      "runs": 5,
+      "warmups": 0,
+      "unit": "ms",
+      "cache": "empty project build cache; pinned provisioned dependency cache; network disabled"
+    },
+    "cachedBuildMs": {
+      "runs": 5,
+      "warmups": 1,
+      "unit": "ms",
+      "cache": "unchanged sources and populated project build cache; network disabled"
+    },
+    "ciMs": {
+      "runs": 3,
+      "warmups": 0,
+      "unit": "ms",
+      "cache": "job execution excluding queue time; report provisioning/build/test/upload phases and cache hits separately"
+    },
+    "recordFields": [
+      "candidate",
+      "target",
+      "specificationRevision",
+      "corpusSha256",
+      "evaluationPackageRevision",
+      "prototypeRevision",
+      "artifactSha256",
+      "environmentSnapshotSha256",
+      "measuredAt",
+      "metric",
+      "unit",
+      "dataset",
+      "order",
+      "cacheState",
+      "warmups",
+      "samples",
+      "method",
+      "timeout",
+      "exitStatus"
+    ],
     "summary": "Retain every raw sample and failure. Report count, median, min, max and p95 (nearest rank); do not discard outliers. Compare within one target and identical environment cohort only."
   },
   "comparisonPolicy": "Capture exact image version, OS version/build, kernel/libc where applicable, architecture and hardware. If any fingerprint differs, stop comparison; re-freeze a shared contract and rerun all affected candidates. Hosted labels cannot request an old immutable image.",

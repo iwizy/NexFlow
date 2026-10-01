@@ -9,6 +9,22 @@ execution and cross-build-only results are not interchangeable targets.
 
 ## Exact Environment Freeze
 
+The initial native probes passed on 2026-10-01 at source revision
+`021079f2d086873d1c8d93244a6f0c8040b769cc` in
+[run 36844655825](https://github.com/iwizy/NexFlow/actions/runs/36844655825).
+The committed contract preserves the sanitized snapshots and per-target job
+and included-software links even after short-lived artifacts expire.
+
+| Target | Observed OS/build | Observed image version |
+| --- | --- | --- |
+| Linux AMD64 | Ubuntu 24.04.5, kernel 6.17.0-1022-azure, glibc 2.39 | 20260920.314.1 |
+| macOS ARM64 | macOS 15.7.9, build 24G830, native Apple M1 | 20260907.0337.1 |
+| Windows AMD64 | Windows Server 2025, build 26100 | 20260925.250.1 |
+
+No target-access blocker remains from these probes. Signing/notarization and
+candidate-specific native dependency or packaging availability are still
+not-tested. Image/hardware rotation remains a reproducibility limitation.
+
 The [probe workflow](../.github/workflows/evaluation-environments.yml) uses only
 the existing standard hosted infrastructure, read-only repository access and
 an exact maintenance Node version. It installs no candidate or system packages.

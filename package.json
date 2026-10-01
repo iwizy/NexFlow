@@ -33,6 +33,7 @@
     "provider-constraint-schema-smoke": "node scripts/provider-constraint-schema-smoke.mjs",
     "provider-feature-schema-smoke": "node scripts/provider-feature-schema-smoke.mjs",
     "runtime-evaluation-smoke": "node scripts/runtime-evaluation-smoke.mjs",
+    "runtime-evaluation-environment-smoke": "node scripts/runtime-evaluation-environment-smoke.mjs",
     "runtime-evaluation-report": "node scripts/runtime-evaluation-report.mjs",
     "semantic-smoke": "node scripts/semantic-reference-smoke.mjs",
     "typed-reference-schema-smoke": "node scripts/typed-reference-schema-smoke.mjs",

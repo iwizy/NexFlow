@@ -8,6 +8,10 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Added
 
+- Added a shared three-target runtime evaluation environment and measurement
+  contract, sanitized native infrastructure probes, and fingerprint drift checks.
+  No candidate, signing result, release support or architecture is accepted.
+
 - Added a runtime language evaluation preparation packet with a pinned
   specification corpus and digests, 11 shared validation and inspection cases,
   candidate-neutral diagnostics, non-claiming evidence report templates,

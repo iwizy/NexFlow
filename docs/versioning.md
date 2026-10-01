@@ -74,8 +74,9 @@ for the new exact commit.
 
 The Core Profile and optional `Project.manifests` source hints remain in
 `specVersion: "0.1"`. This is a compatibility-widening change inside the
-unreleased draft: complete Project path maps remain valid, while reduced
-projects no longer need placeholder paths for unadopted modules.
+`0.1` draft baseline, included in `v0.1.0`: complete Project path maps remain
+valid, while reduced projects no longer need placeholder paths for unadopted
+modules.
 
 Changing required profile slots, participant authority precedence, omission
 semantics, or dependency closure may be breaking. Discovery and multiple
@@ -90,7 +91,7 @@ source hint remain in `specVersion: "0.1"`. Existing projects using the singular
 list when they adopt multiple Workflow documents. The singular and plural forms
 cannot coexist.
 
-This is an additive change inside the unreleased draft. It defines validation
+This additive contract was included in `v0.1.0`. It defines validation
 inventory behavior only and does not select, schedule, execute, or merge
 workflows.
 
@@ -139,7 +140,7 @@ Changing claim status vocabulary, required scope, required conformance levels,
 evidence rules, or attestation meaning requires a claim-format compatibility
 decision. Breaking changes require a new `claimVersion` and migration guidance.
 
-The current unreleased `claimVersion: "0.1"` draft requires an explicit
+The repository `claimVersion: "0.1"` draft requires an explicit
 `scope.profiles` list. Earlier draft claims should add evaluated Core Profile
 qualifiers or an empty list. No published claim format is being migrated.
 
@@ -194,8 +195,8 @@ decision.
 ## Approval Gate Target Version Decision
 
 Typed approval gate `targets` remains in `specVersion: "0.1"`. It is additive
-inside the unreleased draft. Maintained examples use the new typed form, while
-deprecated scalar `appliesTo` remains schema-valid only for migration and cannot
+inside the `0.1` draft baseline, included in `v0.1.0`. Maintained examples use
+the new typed form, while deprecated scalar `appliesTo` remains schema-valid only for migration and cannot
 coexist with `targets`.
 
 Removing `appliesTo`, changing the accepted target kinds, changing workflow
@@ -217,8 +218,8 @@ fields requires an explicit compatibility and version decision. See
 ## Provider Feature Version Decision
 
 Provider `features` remains in `specVersion: "0.1"`. It is additive inside the
-unreleased draft, while legacy provider `capabilities` remains schema-valid only
-for migration and cannot coexist with `features`.
+`0.1` draft baseline, included in `v0.1.0`, while legacy provider `capabilities`
+remains schema-valid only for migration and cannot coexist with `features`.
 
 Removing the legacy field, changing the closed core feature vocabulary, changing
 a feature meaning, or coupling provider features to action capability grants
@@ -228,7 +229,7 @@ requires an explicit compatibility and version decision. See
 ## Provider Constraint Version Decision
 
 The structured provider constraint vocabulary remains in
-`specVersion: "0.1"`. It tightens an open object inside the unreleased draft,
+`specVersion: "0.1"`. It tightens an open object in the `0.1` draft baseline,
 migrates maintained examples to explicit enum values, and keeps deprecated
 `allowTrainingUse` readable without allowing it to coexist with `trainingUse`.
 
@@ -274,8 +275,8 @@ migration, CLI contract change, or release version bump is required.
 
 ## GitHub Extension Draft Version Decision
 
-The `io.nexflow.github` profile remains additive inside the unreleased
-`specVersion: "0.1"` authoring model while RFC-0020 is Draft. The profile uses
+The `io.nexflow.github` profile is additive in the reviewed `0.2` snapshot of
+the `specVersion: "0.1"` authoring model while RFC-0020 is Draft. The profile uses
 its own `profileVersion: "0.1-draft"`; GitHub API versions, deployment variants,
 authentication methods, object-ID formats, and feature tiers are independent
 compatibility domains that implementations must claim explicitly.

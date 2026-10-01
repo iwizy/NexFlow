@@ -40,10 +40,10 @@ backdate releases, or rewrite published history.
 The next publication is `0.2`, followed by a separately reviewed `0.3` candidate.
 The [0.2 review packet](../release/0.2-release-review.md) and
 [0.3 review packet](../release/0.3-release-review.md) map the existing evidence
-to their respective criteria. They are preparation records, not approvals or
-published releases. Each final candidate still needs exact-revision checks,
-maintainer review, synchronized release status and changelog, and its own
-commit-bound readiness record.
+to their respective criteria. Their scope, compatibility, and limitations were
+approved by the maintainer on `2026-10-01`; this is not publication. Each final
+candidate still needs exact-revision checks, synchronized release status and
+changelog, and its own commit-bound readiness record.
 
 `0.4` remains blocked by the incomplete comparative runtime evaluation and
 architecture decision. `0.5` cannot bypass that milestone merely because a

@@ -162,9 +162,9 @@ conformance.
 
 ## Compatibility
 
-The structured vocabulary is a compatibility tightening inside the unreleased
-`specVersion: "0.1"` draft. Maintained examples use `trainingUse`; the legacy
-boolean remains readable for migration.
+The structured vocabulary is a compatibility tightening in the
+`specVersion: "0.1"` draft baseline included in `v0.1.0`. Maintained examples use
+`trainingUse`; the legacy boolean remains readable for migration.
 
 Removing a value, changing its meaning, broadening training or tool use,
 raising sensitivity, weakening residency or retention, removing approval, or

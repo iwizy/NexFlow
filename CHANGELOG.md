@@ -6,6 +6,14 @@ This project follows a specification-first process. Breaking changes must includ
 
 ## [Unreleased]
 
+No changes recorded after the approved `0.2.0` snapshot.
+
+## [0.2.0] - 2026-10-01
+
+Validation and conformance milestone. Manifest `specVersion` remains `"0.1"`.
+The entries below record the cumulative delta from `v0.1.0`; later-milestone
+preparation is included without claiming those milestones are complete.
+
 ### Added
 
 - Added separate `0.2` validation/conformance and `0.3` semantic-consistency

@@ -9,22 +9,25 @@ For the first candidate review, see the [0.1 Readiness Checklist](readiness-chec
 The exact feature boundary is frozen in the
 [0.1 Candidate Scope](0.1-scope.md).
 
-The unreleased [Issue Tracker Extension Draft](../extensions/issue-tracker/README.md)
+The experimental [Issue Tracker Extension Draft](../extensions/issue-tracker/README.md)
 adds a provider-neutral policy profile and offline validation evidence.
 Provider bindings, live issue operations, synchronization, and inbound events
 remain unimplemented; this does not advance a release or CLI readiness gate.
 
-## Current Checkpoint: `v0.1.0`
+## Current Checkpoint: Reviewed `v0.2.0` Snapshot
 
-Status: draft specification foundation released. Candidate review is complete;
-`0.2` validation and conformance work is next.
+Status: `v0.1.0` foundation released; the `0.2` validation/conformance scope is
+maintainer-approved for exact-candidate evaluation and publication. The
+following `0.3` semantic-consistency scope is also approved, but requires its
+own final candidate after `0.2`. Both [review packets](../release/README.md)
+preserve partial semantics, Draft RFCs, and blocked architecture/tooling claims.
 
 The repository currently provides the following candidate evidence:
 
 - a documented draft specification and manifest reference
 - practical JSON Schemas for 17 manifest kinds plus common definitions
 - a published `v0.1.0` baseline of 7 project examples containing 113
-  schema-backed manifests; the Unreleased line reduces Minimal Team to a
+  schema-backed manifests; the reviewed `0.2` snapshot reduces Minimal Team to a
   three-manifest Core Profile path, adds the compact Solo Developer path, and
   currently validates 109 manifests across 8 projects
 - reproducible schema syntax, structural validation, and semantic reference
@@ -62,8 +65,8 @@ The candidate boundary is deliberately narrow:
   not create runtime conformance or an independent schema package version
 - no reference CLI, runtime, provider adapter, live integration, workflow
   execution, policy enforcement, or deployment capability is implied
-- post-`0.1` validation and conformance hardening begins only after the candidate
-  decision is recorded
+- post-`0.1` validation and conformance hardening is included in the reviewed
+  `0.2` snapshot; the historical foundation decision is not rewritten
 
 Relevant evidence: [Compatibility Matrix](compatibility-matrix.md),
 [0.1 Candidate Scope](0.1-scope.md),

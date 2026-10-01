@@ -165,7 +165,7 @@ alone is insufficient.
 | Version domain | Current state | Alpha publication requirement |
 | --- | --- | --- |
 | Manifest specification | `specVersion: "0.1"` | State the exact accepted range |
-| NexFlow repository release | `v0.1.0` baseline plus unreleased changes | Identify the source tag or commit |
+| NexFlow repository release | Independently reviewed specification snapshot; not a CLI package version | Identify the exact source tag or commit |
 | Prototype JSON output | `0.4-draft` | Publish and test the supported output contract |
 | Reference CLI package | Not selected | Assign a version without implying manifest compatibility |
 | `NF-CLI` claim | None | Publish a scoped claim and evidence only if conformance rules permit it |

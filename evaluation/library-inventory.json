@@ -1,0 +1,18 @@
+{
+  "formatVersion": "0.1-draft",
+  "corpusId": "nf-056-library-v1",
+  "specificationRevision": "1d1fa238ab5729a79bee9389d5c66cfd20a61256",
+  "sourceCorpusSha256": "01b116005f0650ac980194b22c02188289eaf1e8626b227aecf3684ece0d8f6b",
+  "catalogFile": "evaluation/library-cases.json",
+  "catalogSha256": "f1bf8cb786442a212e14c79eb39279a2cdbf05ec20b09901374359d545d74e90",
+  "caseCount": 352,
+  "operationCounts": {
+    "semantic-fragment": 211,
+    "workflow-namespace": 8,
+    "artifact-namespace": 5,
+    "manifest-schema": 113,
+    "local-schema": 5,
+    "yaml-parse": 3,
+    "discovery": 7
+  }
+}

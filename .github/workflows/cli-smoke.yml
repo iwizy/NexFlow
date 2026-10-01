@@ -59,5 +59,8 @@ jobs:
       - name: Verify the runtime evaluation preparation packet
         run: npm run runtime-evaluation-smoke
 
+      - name: Verify the shared library experiment without selecting a candidate
+        run: npm run runtime-evaluation-library-smoke
+
       - name: Rehearse shared evaluation cases without selecting a candidate
         run: node scripts/runtime-evaluation-run.mjs --command '["node","scripts/cli-prototype.mjs"]'

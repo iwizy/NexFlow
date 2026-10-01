@@ -8,6 +8,11 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Added
 
+- Added declarative common library evaluation cases for maintained schemas,
+  negative fixtures, local references, YAML, discovery and selected semantic
+  boundaries. Historical-library rehearsals do not expand CLI semantic support,
+  choose a language, implement a runtime or accept the architecture decision.
+
 - Added a shared three-target runtime evaluation environment and measurement
   contract, sanitized native infrastructure probes, and fingerprint drift checks.
   No candidate, signing result, release support or architecture is accepted.

@@ -129,16 +129,16 @@ Human review must verify those properties and the
 [architecture decision gates](../rfcs/reviews/runtime-architecture-decision-review.md).
 The helper never returns an accepted architecture decision.
 
-## Target Proposal
+## Confirmed Experiment Targets
 
-The common proposed measurement matrix is:
+Alexander confirmed the common measurement matrix on 2026-10-01:
 
 - Linux AMD64.
 - macOS ARM64.
 - Windows AMD64.
 
-These are experiment targets awaiting maintainer confirmation, not supported
-release targets. Existing project CI checks only Linux. This preparation packet
+These are mandatory experiment targets, not supported release targets.
+Existing project CI checks only Linux. This preparation packet
 does not add successful Windows or macOS CI results or infer support from a
 cross-build. Confirm exact OS versions, runner images, system libraries and
 installation methods before comparison. Apply any matrix change to every
@@ -152,8 +152,9 @@ visible blocker.
 
 ## Ordered Work To Reach NF-056 Review
 
-1. Review and commit this packet; confirm the target matrix and name the
-   prototype owners and two independent evidence reviewers.
+1. Use the committed packet and confirmed target matrix; name the prototype
+   owners and two independent evidence reviewers. The target confirmation
+   does not identify or appoint reviewers.
 2. Prepare four disposable candidate prototypes against the same baseline.
    Pin exact toolchains, YAML and draft 2020-12 schema libraries, transitive
    dependencies, and build commands. No provider calls, credentials, executable

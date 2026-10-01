@@ -9,6 +9,12 @@ import {
 } from "./lib/runtime-evaluation.mjs";
 
 assert.deepEqual(verifyCorpus(), []);
+assert.equal(baseline.targetsConfirmedAt, "2026-10-01");
+assert.deepEqual(baseline.targets.map(target => [target.os, target.architecture, target.selection]), [
+  ["linux", "amd64", "confirmed"],
+  ["macos", "arm64", "confirmed"],
+  ["windows", "amd64", "confirmed"]
+]);
 for (const file of baseline.corpus.files) {
   const committed = execFileSync("git", ["show", baseline.specificationRevision + ":" + file.path],
     { cwd: repositoryRoot, stdio: ["ignore", "pipe", "pipe"], maxBuffer: 4 * 1024 * 1024 });
@@ -95,6 +101,9 @@ complete.measurements = complete.targets.flatMap(target => [
   method: "synthetic unit-test record", evidence: complete.evidence[0]
 })));
 assert.equal(assessReport(complete).outcome, "candidate-evidence-complete");
+const unconfirmed = structuredClone(baseline);
+unconfirmed.targets[0].selection = "proposed";
+assert.ok(assessReport(complete, unconfirmed).blockers.includes("unconfirmed-experiment-targets"));
 const fail = structuredClone(complete);
 fail.hardGates.scopeIntegrity.status = "failed";
 assert.equal(assessReport(fail).outcome, "ineligible");

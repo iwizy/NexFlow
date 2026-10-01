@@ -250,7 +250,7 @@ arbitrary selection.
 ## Current Outcome
 
 The [Runtime Evaluation Packet](../evaluation/README.md) pins the shared
-specification corpus and initial command cases, proposes common experiment
+specification corpus and initial command cases, fixes confirmed experiment
 targets, and provides non-claiming candidate report templates and rehearsal
 checks. It is a preparation milestone, not candidate evidence or an architecture
 decision.

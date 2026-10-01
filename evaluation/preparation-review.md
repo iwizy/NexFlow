@@ -36,7 +36,8 @@ run for this packet at the time of this record.
 
 No TypeScript, Python, Rust or Go prototype has been evaluated. All four
 [candidate records](README.md#candidate-records) remain `not-started`.
-The proposed three-target matrix has not been accepted as a support promise.
+The three-target experiment matrix was confirmed by Alexander on 2026-10-01.
+That confirmation is not a release support promise or a successful target test.
 
 The rehearsal supplies no candidate scores, operating-system sandbox evidence,
 network-denial guarantee, candidate semantic port, distribution lifecycle,

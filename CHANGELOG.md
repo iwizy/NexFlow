@@ -11,7 +11,8 @@ This project follows a specification-first process. Breaking changes must includ
 - Added a runtime language evaluation preparation packet with a pinned
   specification corpus and digests, 11 shared validation and inspection cases,
   candidate-neutral diagnostics, non-claiming evidence report templates,
-  rejection checks, and CI rehearsal. Experiment targets remain proposed;
+  rejection checks, and CI rehearsal. Experiment targets are confirmed as
+  Linux AMD64, macOS ARM64 and Windows AMD64 without a support promise;
   no candidate, runtime language, architecture, release, or support claim
   is selected.
 

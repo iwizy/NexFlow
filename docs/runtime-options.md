@@ -56,7 +56,7 @@ the [Roadmap](roadmap.md) for the ordered closure sequence.
 The [Runtime Evaluation Packet](../evaluation/README.md) provides the first
 evidence-preparation milestone: a revision-pinned corpus, shared command cases,
 candidate-neutral output contract, non-claiming report template, and ordered
-closure work. Its target matrix is proposed, and its historical-prototype
+closure work. Its experiment target matrix is confirmed, and its historical-prototype
 rehearsal is not a TypeScript evaluation or a language selection.
 
 The [Runtime Language Evaluation Matrix](language-evaluation-matrix.md) defines

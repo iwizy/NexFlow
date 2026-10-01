@@ -3,6 +3,7 @@
   "baselineId": "nf-056-2026-10-01",
   "specificationRevision": "1d1fa238ab5729a79bee9389d5c66cfd20a61256",
   "scope": "validation-only",
+  "targetsConfirmedAt": "2026-10-01",
   "candidates": [
     "typescript",
     "python",
@@ -17,17 +18,17 @@
     {
       "os": "linux",
       "architecture": "amd64",
-      "selection": "proposed"
+      "selection": "confirmed"
     },
     {
       "os": "macos",
       "architecture": "arm64",
-      "selection": "proposed"
+      "selection": "confirmed"
     },
     {
       "os": "windows",
       "architecture": "amd64",
-      "selection": "proposed"
+      "selection": "confirmed"
     }
   ],
   "corpus": {

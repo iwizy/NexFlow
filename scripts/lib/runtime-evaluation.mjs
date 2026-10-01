@@ -83,6 +83,8 @@ export function compareOutput(item, output, status, stderr) {
 export function assessReport(report, record = baseline) {
   if (!validateReport(report)) return { outcome: "not-ready", blockers: ["invalid-report"] };
   const blockers = [];
+  if (!Array.isArray(record.targets) || !record.targets.length
+    || record.targets.some(target => target.selection !== "confirmed")) blockers.push("unconfirmed-experiment-targets");
   if (!record.candidates.includes(report.candidate)) blockers.push("candidate-not-selected");
   if (report.status !== "complete") blockers.push("report-not-complete");
   if (report.specificationRevision !== record.specificationRevision || report.corpusSha256 !== record.corpus.sha256) {

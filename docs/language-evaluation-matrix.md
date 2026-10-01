@@ -15,6 +15,7 @@ reference CLI or runtime.
 Related documents:
 
 - [Runtime Options](runtime-options.md)
+- [Runtime Evaluation Packet](../evaluation/README.md)
 - [Architecture](architecture.md)
 - [Security Model](security-model.md)
 - [Validation](validation.md)
@@ -247,6 +248,12 @@ a valid outcome and should trigger focused follow-up experiments rather than an
 arbitrary selection.
 
 ## Current Outcome
+
+The [Runtime Evaluation Packet](../evaluation/README.md) pins the shared
+specification corpus and initial command cases, fixes confirmed experiment
+targets, and provides non-claiming candidate report templates and rehearsal
+checks. It is a preparation milestone, not candidate evidence or an architecture
+decision.
 
 No common prototypes, completed scorecards, or architecture decision exist.
 TypeScript, Python, Rust, and Go remain candidates. Runtime implementation must

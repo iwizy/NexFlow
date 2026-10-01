@@ -1,0 +1,956 @@
+{
+  "formatVersion": "0.1-draft",
+  "baselineId": "nf-056-2026-10-01",
+  "specificationRevision": "1d1fa238ab5729a79bee9389d5c66cfd20a61256",
+  "scope": "validation-only",
+  "targetsConfirmedAt": "2026-10-01",
+  "candidates": [
+    "typescript",
+    "python",
+    "rust",
+    "go"
+  ],
+  "commands": [
+    "validate",
+    "inspect"
+  ],
+  "targets": [
+    {
+      "os": "linux",
+      "architecture": "amd64",
+      "selection": "confirmed"
+    },
+    {
+      "os": "macos",
+      "architecture": "arm64",
+      "selection": "confirmed"
+    },
+    {
+      "os": "windows",
+      "architecture": "amd64",
+      "selection": "confirmed"
+    }
+  ],
+  "corpus": {
+    "sha256": "01b116005f0650ac980194b22c02188289eaf1e8626b227aecf3684ece0d8f6b",
+    "files": [
+      {
+        "path": "examples/CHECKLIST.md",
+        "sha256": "b5de5d5f8a2d4da5644dfb0f2a3dc23ed02144192033f85a99fe46ebd0bee9ad"
+      },
+      {
+        "path": "examples/MATRIX.md",
+        "sha256": "bf0a32c4e31e23114ecf288d159ba5438f47d7b6191b2dcbbd216b1cf96c2d20"
+      },
+      {
+        "path": "examples/README.md",
+        "sha256": "4661ef13a7fe4ffdb0e9afee460d6acaa15f4cad81c98c4863aff31723cbb3a5"
+      },
+      {
+        "path": "examples/enterprise-team/README.md",
+        "sha256": "148a4238c04611eee2656cbc0209fea8459fdae99f45f61425e724dfae71f071"
+      },
+      {
+        "path": "examples/enterprise-team/agent-definitions.yaml",
+        "sha256": "ae6664121697cafcbe3edcb1f34ec8164ec3f4d4814e7ce33c51c5ea581bffb0"
+      },
+      {
+        "path": "examples/enterprise-team/agents.yaml",
+        "sha256": "8ec8e536104ce5281f46ceb8ae375f80fde19ed6093d4bb6df8babcd07fbe270"
+      },
+      {
+        "path": "examples/enterprise-team/capabilities.yaml",
+        "sha256": "25b04c8858c0f8f4fd3007313aff2fc2906efa6b23f920d858c5797992a1991a"
+      },
+      {
+        "path": "examples/enterprise-team/context.yaml",
+        "sha256": "ba17d2090250df79333f52d1edd18a412d3053f89e52989bb356e421dd0c49d8"
+      },
+      {
+        "path": "examples/enterprise-team/events.yaml",
+        "sha256": "7671d5ee5db1ee5def62a8e7a8d8982aef1e9e463ca9508b58ce594d1d45afb5"
+      },
+      {
+        "path": "examples/enterprise-team/extensions.yaml",
+        "sha256": "a7f4c67e0e0ea30bc8f5bc2fb1f4c8f1efdc219a4527974c29408f0cae9cf383"
+      },
+      {
+        "path": "examples/enterprise-team/handoffs.yaml",
+        "sha256": "e869900ae875498c37a3acad0a1dab6b231699c194f8ebff4498c7b8c1d444eb"
+      },
+      {
+        "path": "examples/enterprise-team/memory.yaml",
+        "sha256": "8fa849e899f40ab1bbe695beab618a77b2af88c42124a21977194295c19a8890"
+      },
+      {
+        "path": "examples/enterprise-team/model-profiles.yaml",
+        "sha256": "b9ae52d12cd5ad9ab687cd4188f61a19dd57d7a52c2207b92c762d608d4a0f2b"
+      },
+      {
+        "path": "examples/enterprise-team/permissions.yaml",
+        "sha256": "7c56997c444a494c6fe07be3800dec47ead589d7dc301cdd37005669f3e7d214"
+      },
+      {
+        "path": "examples/enterprise-team/project.yaml",
+        "sha256": "c4a9131240675a9a7e035d779ccd3431920637702650c3c629fae3f120479110"
+      },
+      {
+        "path": "examples/enterprise-team/prompt-sets.yaml",
+        "sha256": "17b64c2c8eceb7c9799c854176aefb60ce7ef865fd4e1a95799ec0bacd96d793"
+      },
+      {
+        "path": "examples/enterprise-team/providers.yaml",
+        "sha256": "9b3dc07b8b1ea30314ec0d049a4c2905141d45e41d8d57129d5da07b05771e47"
+      },
+      {
+        "path": "examples/enterprise-team/retrieval-profiles.yaml",
+        "sha256": "af09798f3ee088c2b01d9d9722b45b2980891f7f6f1b90d58e5bd37f7d98dd1f"
+      },
+      {
+        "path": "examples/enterprise-team/tasks.yaml",
+        "sha256": "21fb4b4532c5c759ea50a26eabca218ad3fd7db2adf95c79d8b014cfdfa5a5b6"
+      },
+      {
+        "path": "examples/enterprise-team/workflow.yaml",
+        "sha256": "0a595b142f8146875afc64b41a19c075937e6d9de85a9d5ba8cc49086ed68303"
+      },
+      {
+        "path": "examples/minimal-team/README.md",
+        "sha256": "1b4860c2463a3f7de2e34aa980593230dd993a3b5e663c783fa89adb3741835f"
+      },
+      {
+        "path": "examples/minimal-team/actors.yaml",
+        "sha256": "b15ada86e692fdd7a9b609330ecae11b92f8213e83040897743051372a3e2a98"
+      },
+      {
+        "path": "examples/minimal-team/agents.yaml",
+        "sha256": "efb3e6b660c37fdeeb732d6fc45a8521ed1b9305c518ff996771d2a95df53433"
+      },
+      {
+        "path": "examples/minimal-team/project.yaml",
+        "sha256": "9378f343486172dcd8758fba5ac8a311697d806032f319b0c4bd8654f0c5cc56"
+      },
+      {
+        "path": "examples/open-source-maintainer/README.md",
+        "sha256": "d1a8f5dfea9ff5389076c1434ce0cc9c3841267353fd363fc76aaffd784c77c7"
+      },
+      {
+        "path": "examples/open-source-maintainer/agent-definitions.yaml",
+        "sha256": "67d7ef8edac5dcc70419e78addbad62836f8abf489f00350594c4a6dac6737f5"
+      },
+      {
+        "path": "examples/open-source-maintainer/agents.yaml",
+        "sha256": "887b329689b021efe39347a28e126f3175287d9d6a42e3979e26e5e1c4dc24ea"
+      },
+      {
+        "path": "examples/open-source-maintainer/capabilities.yaml",
+        "sha256": "9cd197468f204f67fea14399ae1d5be7be285272879a05f622f18c9baf3a0869"
+      },
+      {
+        "path": "examples/open-source-maintainer/context.yaml",
+        "sha256": "351473c0b5d0de14ae65c1b6ccf1744417a08eca38abb92c73a900388dc059d7"
+      },
+      {
+        "path": "examples/open-source-maintainer/events.yaml",
+        "sha256": "99c6619954f425bdcf36a243cd935e3d2d2a1cba4cc51c0055a841cb13d9989c"
+      },
+      {
+        "path": "examples/open-source-maintainer/extensions.yaml",
+        "sha256": "4d30dcebe4488cb245a31688630adda603f0f133a427e5824529c96f8d4fd2b9"
+      },
+      {
+        "path": "examples/open-source-maintainer/handoffs.yaml",
+        "sha256": "c1b68290899570d478edbb72cf0fd54537e24497e678226be920d32bb4306b56"
+      },
+      {
+        "path": "examples/open-source-maintainer/memory.yaml",
+        "sha256": "0c73110a536f2779401d73a12c6951fb3a3f6e0d51ce97dc4ecb72d04a2ac382"
+      },
+      {
+        "path": "examples/open-source-maintainer/model-profiles.yaml",
+        "sha256": "5a85acb5ee84f98a1e07fc7b18487dea905612ba17109a5e70edcd68c7bdbe9e"
+      },
+      {
+        "path": "examples/open-source-maintainer/permissions.yaml",
+        "sha256": "070ab68e0fff64bef22fb71aaea632c791a2ee2d6b2aa1b06d44c6b579ca0fe2"
+      },
+      {
+        "path": "examples/open-source-maintainer/project.yaml",
+        "sha256": "3a6be3835634e05da819dda993d94cbb7f6b9c11cd0bdfb4bb7a5f3dc4a91a09"
+      },
+      {
+        "path": "examples/open-source-maintainer/prompt-sets.yaml",
+        "sha256": "e6b6870c02776cb467f9453babdac3b104efa2fff4922ef60c00e644b51836a2"
+      },
+      {
+        "path": "examples/open-source-maintainer/providers.yaml",
+        "sha256": "855e3b334bd3ca72df73f8300ee4c345d8b891c614b76955245f18bd0b7ed937"
+      },
+      {
+        "path": "examples/open-source-maintainer/retrieval-profiles.yaml",
+        "sha256": "85407d3bbc0da72d4edf654384d4a95b4055ae90fd6309f1b9e548cb5dd04d0f"
+      },
+      {
+        "path": "examples/open-source-maintainer/tasks.yaml",
+        "sha256": "1eb51f0729dae9eb4cdbb7e64b31ce21a8de205939991b96915aa69eb111fdb2"
+      },
+      {
+        "path": "examples/open-source-maintainer/workflow.yaml",
+        "sha256": "53b6adf982d37f74532acb4ae1bbcf63b122df83b13a96011d890651ada06dfb"
+      },
+      {
+        "path": "examples/product-delivery-team/README.md",
+        "sha256": "ea58aab80fcaa8118a93f7801fa4f109912ce0a26cf8486617c81ab55f6abc05"
+      },
+      {
+        "path": "examples/product-delivery-team/agent-definitions.yaml",
+        "sha256": "fa626fc526649dc1259c3388a0d65fbab702b9024ce790efabbf71ab0749e38f"
+      },
+      {
+        "path": "examples/product-delivery-team/agents.yaml",
+        "sha256": "bd2dbdf75c2adb7ef95e74a3f1d82043e8f1025996f23b46ef246d90281d7b07"
+      },
+      {
+        "path": "examples/product-delivery-team/capabilities.yaml",
+        "sha256": "aea496438ab8cf2272cc3825c7a500bb271928fe0e466f44c63c11e650efe891"
+      },
+      {
+        "path": "examples/product-delivery-team/context.yaml",
+        "sha256": "9ac1a946849fbe76423f43f305012c98607b0caef82aa82535f9c7bab7985340"
+      },
+      {
+        "path": "examples/product-delivery-team/events.yaml",
+        "sha256": "d2aad69f024e84f0dd5a6882a5915db3e5226bd010781e50d91119b993e56b31"
+      },
+      {
+        "path": "examples/product-delivery-team/extensions.yaml",
+        "sha256": "e178ea1a077f80e2f6eae396180821de562ac36950dfaabfcbac6223b655a7ce"
+      },
+      {
+        "path": "examples/product-delivery-team/handoffs.yaml",
+        "sha256": "a2fc92f244070ee618be6db4194b23b30f5bd253cae7f07093772463767c6630"
+      },
+      {
+        "path": "examples/product-delivery-team/memory.yaml",
+        "sha256": "cef7a2cedc8702f03c30f0823303845efbfa05fd121f9537aeb264b768550607"
+      },
+      {
+        "path": "examples/product-delivery-team/model-profiles.yaml",
+        "sha256": "57bd49423426ef98efa2ffd20a1c7fb20ff96b6f590914e82a35f7c45c02d073"
+      },
+      {
+        "path": "examples/product-delivery-team/permissions.yaml",
+        "sha256": "fca714c58f1db719d504ad7cbd61f69592386e3fa96ce5d05d191922b2a9e5af"
+      },
+      {
+        "path": "examples/product-delivery-team/project.yaml",
+        "sha256": "2fa38effb2c0bbc31d9a65aba29d55a223542b1257a46751d2e92e8ee78c7483"
+      },
+      {
+        "path": "examples/product-delivery-team/prompt-sets.yaml",
+        "sha256": "1f69ebfd8cb535b55db47522c0fc1e83c81256e885b221de73da1fddc60f59f6"
+      },
+      {
+        "path": "examples/product-delivery-team/providers.yaml",
+        "sha256": "37ab888b3ba7d1cdc32964cdc62d161fcdcd59fdef897ab22cebdba487ba569e"
+      },
+      {
+        "path": "examples/product-delivery-team/retrieval-profiles.yaml",
+        "sha256": "422f44e5ab42aaa5fbbb47ca12e21930bd1cbb365700e8a7c7411e691ab52f1c"
+      },
+      {
+        "path": "examples/product-delivery-team/tasks.yaml",
+        "sha256": "f7e6e529746fa04b34b1d2fc13a09fc8d119824fe1499fe8883bbc4f71960e49"
+      },
+      {
+        "path": "examples/product-delivery-team/workflow.yaml",
+        "sha256": "19c292f045ce72a8595bc18b32d42666db2641278eee8386457949e47926818b"
+      },
+      {
+        "path": "examples/research-lab/README.md",
+        "sha256": "74f3c119ad58ffcae59199d858d73d68c863f25487e3943f97fb6068f76a8e4c"
+      },
+      {
+        "path": "examples/research-lab/agent-definitions.yaml",
+        "sha256": "1d590f708a2391f758a2dcdf7fe7b2d6b790de2886bdfb56604fe2d4b6009ad0"
+      },
+      {
+        "path": "examples/research-lab/agents.yaml",
+        "sha256": "d8be2c72deac164a8742495ea3f6da9997752616f89d0072c05de70765a35c26"
+      },
+      {
+        "path": "examples/research-lab/capabilities.yaml",
+        "sha256": "39f74db9ebf80e6f1038a9beeb68dda33abc0334ab84df944847a66021808b7c"
+      },
+      {
+        "path": "examples/research-lab/context.yaml",
+        "sha256": "9d58997c758212db99e9213dd0c6b6b7b7a5d2cbd681588774cc1fa46f84dc02"
+      },
+      {
+        "path": "examples/research-lab/events.yaml",
+        "sha256": "8c33d1559bede3cf312da0bbb02137adb3083bb1fdaa469ce7d3968876713221"
+      },
+      {
+        "path": "examples/research-lab/extensions.yaml",
+        "sha256": "eff2f1e77524bab81b65164602b021c23c7fa1b8ecf358ad4143726cab4c34ca"
+      },
+      {
+        "path": "examples/research-lab/handoffs.yaml",
+        "sha256": "21cb8f0dff9ccf736d42a0ef02b3c202728644a22d2d5b53c946f33225bd5709"
+      },
+      {
+        "path": "examples/research-lab/memory.yaml",
+        "sha256": "9139b4ff541b845de16262450064a18a8160a8685fe7d39d1cc9504f21f66130"
+      },
+      {
+        "path": "examples/research-lab/model-profiles.yaml",
+        "sha256": "e1d79ab8182c7d6bdf3cc780baab2389f3449383457bfaa271e83653bf504128"
+      },
+      {
+        "path": "examples/research-lab/permissions.yaml",
+        "sha256": "96d04c60631832360bab393e960d7ffecd8256ebc9623b7c30dcf76959573b5f"
+      },
+      {
+        "path": "examples/research-lab/project.yaml",
+        "sha256": "bb4b82b1e02e9846aa1a6f0b1d79c234231204b1e637236ad5067c1255c20125"
+      },
+      {
+        "path": "examples/research-lab/prompt-sets.yaml",
+        "sha256": "61fc6489d6920c50f30e213a2683a7f46d9b7487a23a93e51c7bbb176f1bc821"
+      },
+      {
+        "path": "examples/research-lab/providers.yaml",
+        "sha256": "4634bce912c5a0bf20bfde7cd8f33e92436305930fc3c4743be771f2304d2aac"
+      },
+      {
+        "path": "examples/research-lab/retrieval-profiles.yaml",
+        "sha256": "7edb1340f648d372bace4c33a6ed957d8c9385bc46be82986e77ea3c21070a05"
+      },
+      {
+        "path": "examples/research-lab/tasks.yaml",
+        "sha256": "e7b06b71f8828589883b0c2b2a1cd246c7229d412724e88da2e4d3e6c6921553"
+      },
+      {
+        "path": "examples/research-lab/workflow.yaml",
+        "sha256": "1bf977e1dc48c9b183fe5956eaa4d90936409c7e17f2a8065184e19adfc9df60"
+      },
+      {
+        "path": "examples/software-team/README.md",
+        "sha256": "4a9d9b9e277fab1fd03dd628ef0a2fed34ea3f3e5fb156ece6ece75fe22d9aed"
+      },
+      {
+        "path": "examples/software-team/agent-definitions.yaml",
+        "sha256": "de26b7cf43a99fca353a6ba540e8bcfc3afeac98cff33b63498de810eed288a3"
+      },
+      {
+        "path": "examples/software-team/agents.yaml",
+        "sha256": "802775391f9b991149491ceb96d5fa919224cb804e4a60d8d29a3aa270d10936"
+      },
+      {
+        "path": "examples/software-team/capabilities.yaml",
+        "sha256": "856a8e71f013a558155ea4732cabaa2ad900c0bbb6281aae41041ac26f48ad35"
+      },
+      {
+        "path": "examples/software-team/context.yaml",
+        "sha256": "48063a5e8f233e109ec945e37370af0a8b41f8426d98c5110b4c26a969596833"
+      },
+      {
+        "path": "examples/software-team/events.yaml",
+        "sha256": "0699c370ef3bc1fcab8900cf55be57a2dacf350920ca45fec1c7e5ee1e953d4f"
+      },
+      {
+        "path": "examples/software-team/extensions.yaml",
+        "sha256": "bfde6db7b38dd0fe0daf9d5aae9ad7298b786fd20c9eeb37db00df9f07f0bf1a"
+      },
+      {
+        "path": "examples/software-team/handoffs.yaml",
+        "sha256": "84f28e190d52143c519896a7cbe209f4bd2a9ff8ec3bbe5609c06522c15a8f06"
+      },
+      {
+        "path": "examples/software-team/memory.yaml",
+        "sha256": "1f3b35757ca3685126a9e29bbde0f1e34694147cac52f598996f71ff5fadcfcb"
+      },
+      {
+        "path": "examples/software-team/model-profiles.yaml",
+        "sha256": "e1d16dff14349f7c3997ce884ebe5d5be7c1361d2122a64465a17ac0282a5b51"
+      },
+      {
+        "path": "examples/software-team/permissions.yaml",
+        "sha256": "adf8a6fad711dd30dd1632d07d9ce7d1fe0875e9c2c5f5778b0849992d5b3687"
+      },
+      {
+        "path": "examples/software-team/project.yaml",
+        "sha256": "abe42bb25e2682cd1724f3c60151d127015b3f349a15d8480bad4e40a168bed1"
+      },
+      {
+        "path": "examples/software-team/prompt-sets.yaml",
+        "sha256": "30875f43ec7e710b3f85670f11c7df5c6d7df07daf50012a2f4a0b7db539e6a6"
+      },
+      {
+        "path": "examples/software-team/providers.yaml",
+        "sha256": "96526260fbb4d8bf1353ad2f1dfc1f4a48a157d05a237a3c59931bae030af866"
+      },
+      {
+        "path": "examples/software-team/retrieval-profiles.yaml",
+        "sha256": "443d4b68de3e2302d98f63127dc85f808e166697ac79e0b8cebc0033b5a5c567"
+      },
+      {
+        "path": "examples/software-team/tasks.yaml",
+        "sha256": "45636e5a18594529f86f8e5c0ff8f845df5d4267b13b79d90da8d17fdf28a7e6"
+      },
+      {
+        "path": "examples/software-team/workflow.yaml",
+        "sha256": "3750bdbd5533d807261164cdd45d023b81e74b5f83aa7396559106f37ee81fae"
+      },
+      {
+        "path": "examples/solo-developer/README.md",
+        "sha256": "76b7200756535f1091564dea5c95d75c34d7b8bf9d486d66112eb8121f7cabf9"
+      },
+      {
+        "path": "examples/solo-developer/actors.yaml",
+        "sha256": "836e4233f3ebfbcae58b4f940d3a880791df625a3625ce1fb853eae3c8657671"
+      },
+      {
+        "path": "examples/solo-developer/agents.yaml",
+        "sha256": "3a5181b0a9dba29df263b0b71a560579b1d788e941ae7eff2d56fe82e4906db3"
+      },
+      {
+        "path": "examples/solo-developer/capabilities.yaml",
+        "sha256": "135255cd8d601f175ec8a8e40a5d7e531ee3c4eb1e5db03bc64415a9e2ffe1fe"
+      },
+      {
+        "path": "examples/solo-developer/context.yaml",
+        "sha256": "5c3e867971c6c199856c5f5da8e1a160bccb2fc5fe71b53d91542e6636a6c7b2"
+      },
+      {
+        "path": "examples/solo-developer/events.yaml",
+        "sha256": "c4605096bcd6271b82e2d23b0f6242f632e68a6c53144ab2d31fa7915e0ceed3"
+      },
+      {
+        "path": "examples/solo-developer/handoffs.yaml",
+        "sha256": "50129417ca79431e24f9ab7c95871d3028ccafde75f912e0eb8ad1cce36b622b"
+      },
+      {
+        "path": "examples/solo-developer/permissions.yaml",
+        "sha256": "cf7df45a25e715dcd78410ba152afde92d1c30634b518d792f929da6621e5579"
+      },
+      {
+        "path": "examples/solo-developer/project.yaml",
+        "sha256": "9049e7272c5de05697a5cb1f3e90646aa17c7d9084bc3cb1201ec873c31c612d"
+      },
+      {
+        "path": "examples/solo-developer/tasks.yaml",
+        "sha256": "f7850fe5709960f049fa8451cd118cf62250b0977fdd0617f6a82f1c290765f0"
+      },
+      {
+        "path": "examples/solo-developer/workflow.yaml",
+        "sha256": "1e1d7310c900ed2678bb115fbaa01443d5b51a9f819f9a96cfe69805f34410ee"
+      },
+      {
+        "path": "examples/startup-team/README.md",
+        "sha256": "1d7aa418ca12281c34e4368785dc7c9ac25488844ff807a390ffb789a92ee8d9"
+      },
+      {
+        "path": "examples/startup-team/agent-definitions.yaml",
+        "sha256": "c13fb11e3eb340e5f63554315fa6c08d1ccd64763cd1da8f2a69d7a49dea02a6"
+      },
+      {
+        "path": "examples/startup-team/agents.yaml",
+        "sha256": "a2390e901d47520db65b7916fce6f7a4788bdad50fc5c5ef0f7ff26032271387"
+      },
+      {
+        "path": "examples/startup-team/capabilities.yaml",
+        "sha256": "263946e1780ac2bb052a070a1587ab7585c59b7bcd02651e53b01e7701b0671a"
+      },
+      {
+        "path": "examples/startup-team/context.yaml",
+        "sha256": "31f678b1f646e3f6f3afa02b7c2a01d00aa7001b38696cba3614d33736424586"
+      },
+      {
+        "path": "examples/startup-team/events.yaml",
+        "sha256": "eb90bba402f2780ef9564814bc46ae6d479e8080aaff625f3483bd443452e609"
+      },
+      {
+        "path": "examples/startup-team/extensions.yaml",
+        "sha256": "ca72707bde5ea39b10a64959a2ae0509aff63e4303d2911bf3e448c05cdb4a63"
+      },
+      {
+        "path": "examples/startup-team/handoffs.yaml",
+        "sha256": "7d20f574d27336226cf4fa3f9e36d3f53fec7b2c6e9ea18d1485046106978f6a"
+      },
+      {
+        "path": "examples/startup-team/memory.yaml",
+        "sha256": "c2e724ce937744aa16e6fbaf370a6c9fee7ce41f8b3881d6921a689cb0d14743"
+      },
+      {
+        "path": "examples/startup-team/model-profiles.yaml",
+        "sha256": "6b37395bb0683eb688a4709e88279587253e9c212f62e96e1f7fbc51fe62c70f"
+      },
+      {
+        "path": "examples/startup-team/permissions.yaml",
+        "sha256": "7a6d63a0e9c8dc1160950a9da580ccb6f650d5eb0c92f8f48f2b3104f4ff658d"
+      },
+      {
+        "path": "examples/startup-team/project.yaml",
+        "sha256": "0b9f441a0a554de722c50f5f140e2b7592c9861d6905e0ca9721fda54c921237"
+      },
+      {
+        "path": "examples/startup-team/prompt-sets.yaml",
+        "sha256": "e13c0b563c683e88b79b6fc42c32a055c97cf7edcddc18d966210deaa037ba04"
+      },
+      {
+        "path": "examples/startup-team/providers.yaml",
+        "sha256": "e99a6e3bd24c159603e9a0ac8d3c7e5e6043ffb2ad3e367d5cb7ce58443edb04"
+      },
+      {
+        "path": "examples/startup-team/retrieval-profiles.yaml",
+        "sha256": "8439aac349def59c1d1f02125bba91c75e4e976fd220fa9d836f5de399e95c65"
+      },
+      {
+        "path": "examples/startup-team/tasks.yaml",
+        "sha256": "6bd7d6d499caaf08a61912abdf573d9f93ce332484f44ae7f375b6123cddd544"
+      },
+      {
+        "path": "examples/startup-team/workflow.yaml",
+        "sha256": "90ec42dee97b3a314b96e11816e91d7888ea24a8b04fa19a1cb774dade5b110f"
+      },
+      {
+        "path": "fixtures/README.md",
+        "sha256": "f3cb54555c52166f78e4ee5389ff970dd828d84f7160889611fe32e1048edde6"
+      },
+      {
+        "path": "fixtures/cli/index.json",
+        "sha256": "a7e8b1f85b41803c0250ed420bdcaec7f4d33ce53f6117383805f884492593d4"
+      },
+      {
+        "path": "fixtures/cli/init/conflict/project.yaml",
+        "sha256": "58d6a6629168a1693caf19fc9c01664fe4e4b0708211111ec67495f378447c68"
+      },
+      {
+        "path": "fixtures/cli/init/empty/keep.txt",
+        "sha256": "e8e87a5f1f3ac7b17ec7dd7b9dac16492489ee0626cabee6571f3f4c0945cc5a"
+      },
+      {
+        "path": "fixtures/cli/invalid/hint-escape/project.yaml",
+        "sha256": "985a103c6d0b11868ab43d4d4a9c263d8ece47cf6669e9dbbdab09ef79c3aa21"
+      },
+      {
+        "path": "fixtures/cli/invalid/hint-kind/agents.yaml",
+        "sha256": "ce82340023afb3c1f7e140f85d254ab9fb9da4a13210923ecd327035915fbc94"
+      },
+      {
+        "path": "fixtures/cli/invalid/hint-kind/project.yaml",
+        "sha256": "8787b6ca365ba91dd3cdca18196363a7f6f2e6e419bb6fb4320e9eb9f7c9b74d"
+      },
+      {
+        "path": "fixtures/cli/invalid/multiple-projects/project.yaml",
+        "sha256": "a212431aab6a1e7bde2e0fd013cc98899ef849450e1ae60da108b5c16c48c2d6"
+      },
+      {
+        "path": "fixtures/cli/invalid/multiple-projects/project.yml",
+        "sha256": "e1030cb4c43c527028dca3698145e12a9c036e07a0ced022b95744e1c424bf91"
+      },
+      {
+        "path": "fixtures/cli/invalid/schema/project.yaml",
+        "sha256": "3d371a06c778a7ef45dbb88e7165b959044e0472119279541889f351f93bfad9"
+      },
+      {
+        "path": "fixtures/cli/invalid/unsupported-kind/project.yaml",
+        "sha256": "018590d390606eceb83f8550b0264ec44cc874d86aed32ba2a91ef7c9419d4e9"
+      },
+      {
+        "path": "fixtures/cli/invalid/unsupported-version/project.yaml",
+        "sha256": "977f5dfb624b02e01d9f91b096351f692779219ee55dfcc054e4e02f2ac1e514"
+      },
+      {
+        "path": "fixtures/cli/invalid/yaml-syntax/project.yaml",
+        "sha256": "9eaef41c40bc44bd6fc2a48278e43764888c303ebbf0349435c701b2fff90f0a"
+      },
+      {
+        "path": "fixtures/cli/valid/minimal-project/actors.yaml",
+        "sha256": "99677fd5f708d4b672b87ce2efeb5227295bfe212e2d87d6a0521e4b8a228951"
+      },
+      {
+        "path": "fixtures/cli/valid/minimal-project/agents.yaml",
+        "sha256": "8b88b92d48af9b2b25835028911e78d9b64d8dc4a71ca12f4f2eebfb1a37cffc"
+      },
+      {
+        "path": "fixtures/cli/valid/minimal-project/project.yaml",
+        "sha256": "cc431704bfd339f801ebb24c448aaaa051f433273793e97fb9cdb3389f0e81b3"
+      },
+      {
+        "path": "fixtures/conformance/README.md",
+        "sha256": "ab48759bd5b27534a99b14ed5808717f03f6e4ed8dcef7b0ce0efae93c0cf94a"
+      },
+      {
+        "path": "fixtures/conformance/index.json",
+        "sha256": "db2fe4a11eb96b8b654c765399b8e45051771b0abb3c33c1b33dde7c5a57b0fd"
+      },
+      {
+        "path": "fixtures/conformance/valid/draft-validator.yaml",
+        "sha256": "e1c2288045f33b9e12ef6acf4101203ea70ea51559ce03432373e019bdaf0300"
+      },
+      {
+        "path": "fixtures/conformance/valid/partial-cli.yaml",
+        "sha256": "59d05d126423745eaec0d3505281c3114b2d2b7c0cd39af292f67fe05c522e61"
+      },
+      {
+        "path": "fixtures/conformance/valid/published-extension.yaml",
+        "sha256": "4fc2899242830b77da58fa118243e14fcf38d5fd4c83fe71c5b4cf80245c217e"
+      },
+      {
+        "path": "fixtures/conformance/valid/published-validator.yaml",
+        "sha256": "2817675fcd52dd5a464079a48e0990dccb30e2687a89373ef0d73b3e218aaf6b"
+      },
+      {
+        "path": "fixtures/conformance/valid/withdrawn-service.yaml",
+        "sha256": "7a4d9ac213261d39cd559f0e8214634dee12f46b0a6d61b4d7805d4fa587a539"
+      },
+      {
+        "path": "fixtures/discovery/multi-workflow/flows/documentation.yml",
+        "sha256": "bff418ecf232f02da55efa7cc12d1092ecc1f85ede6220029ae5da36c80bf159"
+      },
+      {
+        "path": "fixtures/discovery/multi-workflow/flows/release.yml",
+        "sha256": "2e8ebe19518ffea9b6032ea0aea8cdb871670904cfc9fd9efc55ba27cf6f0ccd"
+      },
+      {
+        "path": "fixtures/discovery/multi-workflow/people/team.yml",
+        "sha256": "711d8110bd11260eb6fe8ed2e61c6927eab7fc4f228404494e519d6aa2d14efd"
+      },
+      {
+        "path": "fixtures/discovery/multi-workflow/project.yaml",
+        "sha256": "eafb80310508b31317b0e01f5932c95695f9a0a7704f76df8cbbd0a467ace6cb"
+      },
+      {
+        "path": "fixtures/discovery/multi-workflow/work/items.yml",
+        "sha256": "4bd567d955b644c9661218fdbb6572007b3c3c2c96d5f4af25daffd9a667569d"
+      },
+      {
+        "path": "fixtures/schema/invalid/README.md",
+        "sha256": "8aec8554b1049578698f76ea45feeb6632f35503c4548f808c3972fe7ed7e71e"
+      },
+      {
+        "path": "fixtures/schema/invalid/index.json",
+        "sha256": "fb4ed4b53e8516e7d01cb0498ae877d8c6613a189f8751dac02a2525e8bd64fb"
+      },
+      {
+        "path": "fixtures/schema/invalid/invalid-enum.yaml",
+        "sha256": "93659221b356f17b23cb7cd32a04b6c568405a114fd13f3ce33192c8afe4ccb3"
+      },
+      {
+        "path": "fixtures/schema/invalid/invalid-id.yaml",
+        "sha256": "377956a30ba1c775ad5f2a15837ae50c737e698adb56477c196ef0c31c488717"
+      },
+      {
+        "path": "fixtures/schema/invalid/missing-required-field.yaml",
+        "sha256": "caa63166ecf44f910c9d99d47e69499f2d18558c42d99fb7d95ea1befd748b2a"
+      },
+      {
+        "path": "fixtures/schema/invalid/unknown-kind.yaml",
+        "sha256": "cd8be45cc3234d8d4a78e18be9469e1cc35a3bea1ea160502c520a0bb8d14b9b"
+      },
+      {
+        "path": "schemas/README.md",
+        "sha256": "28d1715b391c414c1a4c46410046277e783f5df60768761ea127630c8773a890"
+      },
+      {
+        "path": "schemas/actors.schema.json",
+        "sha256": "fb376254763eaa670696618678629f049cb6f782b7816aa20e0216e9625c21a3"
+      },
+      {
+        "path": "schemas/agent-definitions.schema.json",
+        "sha256": "0faad7750d9fd95914e09ee7ffbfb23236da303fbcfd211ce77c45589bfa68d7"
+      },
+      {
+        "path": "schemas/agents.schema.json",
+        "sha256": "7505ce0ad4ce18eb74a477982b31b77ca06d8069022300171c28e1ada419b24e"
+      },
+      {
+        "path": "schemas/capabilities.schema.json",
+        "sha256": "4fc446a356b2f7709bf259ad6fbf4632a64bc77800a43e77b81354710e5e3026"
+      },
+      {
+        "path": "schemas/common.schema.json",
+        "sha256": "a02f583325e2b20ffbb659efa451206579779a557a5fc89fbb412c10414630cc"
+      },
+      {
+        "path": "schemas/context.schema.json",
+        "sha256": "ad0fc663f5e4bf92eb033d250e38c2ef914947834aa03fc257d601a6226ad7a8"
+      },
+      {
+        "path": "schemas/events.schema.json",
+        "sha256": "d08c9cce4106394c5bf53a034ff8a574bfe11ccf085ac53f508459d7a0e98a65"
+      },
+      {
+        "path": "schemas/extensions.schema.json",
+        "sha256": "1c87855f8ec5eeba871981ab8d0feac4f026c508b943644bfbc350685270a31d"
+      },
+      {
+        "path": "schemas/handoffs.schema.json",
+        "sha256": "40af0a3c48b63f8709e8297badf4a9100fdcc3b22f66cc3c748b88628e5b1ab5"
+      },
+      {
+        "path": "schemas/memory.schema.json",
+        "sha256": "75a655d9b1aa57be73c6ec738e10faea327837838ecf2a4b7a1031e28486fb59"
+      },
+      {
+        "path": "schemas/model-profiles.schema.json",
+        "sha256": "0503322e7f73d62d3bbcad226799d6615ffc36339c2e9d9afe951c542a57ed00"
+      },
+      {
+        "path": "schemas/permissions.schema.json",
+        "sha256": "64084ad81e53b3629dfc4ecab3faf4ebd765105a3072c5f627c5d31daee2fbb0"
+      },
+      {
+        "path": "schemas/project.schema.json",
+        "sha256": "586bc846277b846f723371a734952fc30cf29e8c916d6b52db1897ac32fc0778"
+      },
+      {
+        "path": "schemas/prompt-sets.schema.json",
+        "sha256": "feaff935c6337638e4bd2cffdcd54d7bad516958cad0d0407185261dc2439d02"
+      },
+      {
+        "path": "schemas/providers.schema.json",
+        "sha256": "e3b55c4fbc2a86c05a82be8a7b3ef8126e04a13d425d5654a0e2ee0bca31e4fb"
+      },
+      {
+        "path": "schemas/retrieval-profiles.schema.json",
+        "sha256": "685bce372bc68e454b015afd39f412adc88c386f45c56144842fc11e4ff75ade"
+      },
+      {
+        "path": "schemas/tasks.schema.json",
+        "sha256": "4cf1f1f35396240abf7da7e018e03a0e99b99c71cb9881c4f729c0175a07a250"
+      },
+      {
+        "path": "schemas/workflow.schema.json",
+        "sha256": "1821ec6e26cc1e6060cd2388c22fc51c77a3678cf4ac8c1140934fe612a1b446"
+      },
+      {
+        "path": "scripts/contracts/cli-output.schema.json",
+        "sha256": "3d1d73ff7c197671f86490e2ceb0ff621eb31cab1bf79c3260533de9fee10533"
+      },
+      {
+        "path": "scripts/lib/work-reference-namespaces.mjs",
+        "sha256": "6832618965dc56af765680202a9a0360a3f54713a22e41c62db9e42f29b96d78"
+      },
+      {
+        "path": "scripts/semantic-reference-smoke.mjs",
+        "sha256": "aadca412e812103d81519ec0007980fd3defaaf067cadc64eba0915800b1783c"
+      }
+    ]
+  },
+  "cases": [
+    {
+      "id": "validate-project-hints",
+      "description": "Validate the assembly selected by explicit Project source hints.",
+      "command": "validate",
+      "root": "fixtures/cli/valid/minimal-project",
+      "args": [
+        "--project",
+        "project.yaml"
+      ],
+      "expected": {
+        "exitCode": 0,
+        "reportedCommand": "validate",
+        "inputMode": "project-source-hints",
+        "discovery": "passed",
+        "schema": "passed",
+        "diagnosticCodes": [],
+        "documentCount": 3,
+        "mutation": "none"
+      }
+    },
+    {
+      "id": "inspect-valid-project",
+      "description": "Inspect the allowlisted declarations and references of a valid project.",
+      "command": "inspect",
+      "root": "fixtures/cli/valid/minimal-project",
+      "args": [],
+      "expected": {
+        "exitCode": 0,
+        "reportedCommand": "inspect",
+        "inputMode": "directory-project",
+        "discovery": "passed",
+        "schema": "passed",
+        "diagnosticCodes": [],
+        "documentCount": 3,
+        "inspection": {
+          "resourceCount": 4,
+          "referenceCount": 2
+        },
+        "mutation": "none"
+      }
+    },
+    {
+      "id": "reject-yaml-syntax",
+      "description": "Reject malformed YAML before schema validation.",
+      "command": "validate",
+      "root": "fixtures/cli/invalid/yaml-syntax",
+      "args": [],
+      "expected": {
+        "exitCode": 1,
+        "reportedCommand": "validate",
+        "inputMode": "directory-project",
+        "discovery": "failed",
+        "schema": "not-run",
+        "diagnosticCodes": [
+          "NF-DISCOVERY-NO-PROJECT",
+          "NF-DISCOVERY-UNSAFE-SOURCE"
+        ],
+        "mutation": "none"
+      }
+    },
+    {
+      "id": "reject-schema-invalid-project",
+      "description": "Reject a discovered Project that omits a required structural field.",
+      "command": "validate",
+      "root": "fixtures/cli/invalid/schema",
+      "args": [],
+      "expected": {
+        "exitCode": 1,
+        "reportedCommand": "validate",
+        "inputMode": "directory-project",
+        "discovery": "passed",
+        "schema": "failed",
+        "diagnosticCodes": [
+          "NF-SCHEMA"
+        ],
+        "mutation": "none"
+      }
+    },
+    {
+      "id": "reject-unsupported-version",
+      "description": "Reject a manifest version outside the prototype support window.",
+      "command": "validate",
+      "root": "fixtures/cli/invalid/unsupported-version",
+      "args": [],
+      "expected": {
+        "exitCode": 3,
+        "reportedCommand": "validate",
+        "inputMode": "directory-project",
+        "discovery": "failed",
+        "schema": "not-run",
+        "diagnosticCodes": [
+          "NF-DISCOVERY-NO-PROJECT",
+          "NF-DISCOVERY-UNSUPPORTED-VERSION"
+        ],
+        "mutation": "none"
+      }
+    },
+    {
+      "id": "reject-unsupported-kind",
+      "description": "Reject a manifest kind without a supported local schema.",
+      "command": "validate",
+      "root": "fixtures/cli/invalid/unsupported-kind",
+      "args": [],
+      "expected": {
+        "exitCode": 3,
+        "reportedCommand": "validate",
+        "inputMode": "directory-project",
+        "discovery": "failed",
+        "schema": "not-run",
+        "diagnosticCodes": [
+          "NF-DISCOVERY-NO-PROJECT",
+          "NF-DISCOVERY-UNSUPPORTED-KIND"
+        ],
+        "mutation": "none"
+      }
+    },
+    {
+      "id": "reject-source-outside-root",
+      "description": "Reject a Project source hint that escapes the explicit root.",
+      "command": "validate",
+      "root": "fixtures/cli/invalid/hint-escape",
+      "args": [],
+      "expected": {
+        "exitCode": 1,
+        "reportedCommand": "validate",
+        "inputMode": "directory-project",
+        "discovery": "failed",
+        "schema": "not-run",
+        "diagnosticCodes": [
+          "NF-DISCOVERY-OUTSIDE-ROOT"
+        ],
+        "mutation": "none"
+      }
+    },
+    {
+      "id": "reject-source-kind-mismatch",
+      "description": "Reject a Project source hint whose document kind does not match the slot.",
+      "command": "validate",
+      "root": "fixtures/cli/invalid/hint-kind",
+      "args": [],
+      "expected": {
+        "exitCode": 1,
+        "reportedCommand": "validate",
+        "inputMode": "directory-project",
+        "discovery": "failed",
+        "schema": "not-run",
+        "diagnosticCodes": [
+          "NF-DISCOVERY-KIND-MISMATCH"
+        ],
+        "mutation": "none"
+      }
+    },
+    {
+      "id": "reject-runtime-command",
+      "description": "Reject a runtime-like command before reading or mutating project content.",
+      "command": "run",
+      "root": "fixtures/cli/valid/minimal-project",
+      "args": [],
+      "expected": {
+        "exitCode": 2,
+        "reportedCommand": null,
+        "inputMode": null,
+        "discovery": "not-run",
+        "schema": "not-run",
+        "diagnosticCodes": [
+          "NEXFLOW-PROTOTYPE-USAGE"
+        ],
+        "mutation": "none"
+      }
+    },
+    {
+      "id": "reject-ambiguous-project-entry",
+      "description": "Reject a directory containing both supported root Project filenames.",
+      "command": "validate",
+      "root": "fixtures/cli/invalid/multiple-projects",
+      "args": [],
+      "expected": {
+        "exitCode": 1,
+        "reportedCommand": "validate",
+        "inputMode": "directory-project",
+        "discovery": "failed",
+        "schema": "not-run",
+        "diagnosticCodes": [
+          "NF-DISCOVERY-MULTIPLE-PROJECTS"
+        ],
+        "mutation": "none"
+      }
+    },
+    {
+      "id": "reject-duplicate-root-key",
+      "description": "Reject a duplicated YAML root key without modifying the copied input.",
+      "command": "validate",
+      "root": "fixtures/cli/valid/minimal-project",
+      "args": [],
+      "append": {
+        "file": "project.yaml",
+        "text": "\nkind: Project\n"
+      },
+      "expected": {
+        "exitCode": 1,
+        "reportedCommand": "validate",
+        "inputMode": "directory-project",
+        "discovery": "failed",
+        "schema": "not-run",
+        "diagnosticCodes": [
+          "NF-DISCOVERY-NO-PROJECT",
+          "NF-DISCOVERY-UNSAFE-SOURCE"
+        ],
+        "mutation": "none"
+      }
+    }
+  ]
+}

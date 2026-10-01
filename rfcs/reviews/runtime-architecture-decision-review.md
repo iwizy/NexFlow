@@ -41,6 +41,11 @@ shared contract that they require.
 
 ## Review Inputs
 
+The [Runtime Evaluation Packet](../../evaluation/README.md) supplies a pinned
+starting corpus, shared command cases, report templates, and preparation
+checks. Passing those checks does not satisfy candidate, distribution,
+security, ownership, or decision gates below.
+
 The review must use pinned, public, and reproducible inputs. At minimum, the
 decision RFC must link to:
 

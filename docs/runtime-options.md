@@ -53,6 +53,12 @@ the [Roadmap](roadmap.md) for the ordered closure sequence.
 
 ## Evaluation Framework
 
+The [Runtime Evaluation Packet](../evaluation/README.md) provides the first
+evidence-preparation milestone: a revision-pinned corpus, shared command cases,
+candidate-neutral output contract, non-claiming report template, and ordered
+closure work. Its experiment target matrix is confirmed, and its historical-prototype
+rehearsal is not a TypeScript evaluation or a language selection.
+
 The [Runtime Language Evaluation Matrix](language-evaluation-matrix.md) defines
 hard gates, weighted criteria, a common validation-only prototype, evidence
 records, target testing, and the decision procedure. No candidate has a score

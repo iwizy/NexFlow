@@ -21,6 +21,8 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - uses: actions/setup-node@v4
         with:
@@ -53,3 +55,9 @@ jobs:
 
       - name: Run cataloged fixture checks
         run: npm run cli-fixture-smoke
+
+      - name: Verify the runtime evaluation preparation packet
+        run: npm run runtime-evaluation-smoke
+
+      - name: Rehearse shared evaluation cases without selecting a candidate
+        run: node scripts/runtime-evaluation-run.mjs --command '["node","scripts/cli-prototype.mjs"]'

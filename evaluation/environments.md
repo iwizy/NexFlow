@@ -15,6 +15,12 @@ The initial native probes passed on 2026-10-01 at source revision
 The committed contract preserves the sanitized snapshots and per-target job
 and included-software links even after short-lived artifacts expire.
 
+A subsequent CI invocation exposed nonmatching Linux/Windows fingerprints.
+The probe's capture mode reports current target access and records cohort
+blockers separately. This does not relax the comparison helper's default:
+measurement eligibility still requires exact frozen fingerprints. A fresh
+capture with different hardware or software must not be scored as comparable.
+
 | Target | Observed OS/build | Observed image version |
 | --- | --- | --- |
 | Linux AMD64 | Ubuntu 24.04.5, kernel 6.17.0-1022-azure, glibc 2.39 | 20260920.314.1 |

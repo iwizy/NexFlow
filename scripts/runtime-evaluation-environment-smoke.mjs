@@ -18,6 +18,8 @@ for (const target of contract.targets) {
   assert.deepEqual(checkEnvironment(frozen, record), []);
   assert.ok(checkEnvironment(frozen, { ...record, architecture: "other" }).includes("wrong-native-target"));
   assert.ok(checkEnvironment(frozen, { ...record, imageVersion: "other" }).includes("environment-drift:imageVersion"));
+  assert.deepEqual(checkEnvironment(frozen, { ...record, imageVersion: "other" }, false), []);
+  assert.ok(checkEnvironment(frozen, { ...record, architecture: "other" }, false).includes("wrong-native-target"));
   assert.ok(checkEnvironment(frozen, { ...record, osBuild: "other" }).includes("environment-drift:osBuild"));
   assert.ok(checkEnvironment(frozen, { ...record, cpuCount: record.cpuCount + 1 }).includes("environment-drift:cpuCount"));
   assert.ok(checkEnvironment(frozen, { ...record, imageVersion: "" }).includes("incomplete-environment"));

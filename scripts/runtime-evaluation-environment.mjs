@@ -40,7 +40,11 @@ try {
   }
   const errors = checkEnvironment(contract, snapshot, false);
   if (errors.length) throw new Error(errors.join(","));
-  process.stdout.write(JSON.stringify(snapshot, null, 2) + "\n");
+  const comparisonErrors = checkEnvironment(contract, snapshot);
+  process.stdout.write(JSON.stringify({ ...snapshot,
+    cohortCheck: { fingerprint: comparisonErrors.length ? "not-matched" : "matched", blockers: comparisonErrors,
+      candidateEvaluation: "not-tested" }
+  }, null, 2) + "\n");
 } catch {
   console.error("Environment probe failed; no compatible target evidence was produced.");
   process.exitCode = 1;

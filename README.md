@@ -16,7 +16,8 @@ It is **not** an AI coding agent, an LLM API wrapper, a chat application, or a p
 ## Status
 
 Latest published release: [GitHub release history](https://github.com/iwizy/NexFlow/releases/latest).
-The reviewed **`v0.3.0` semantic-consistency snapshot** follows the separately
+Current release: [**`v0.3.0`**](https://github.com/iwizy/NexFlow/releases/tag/v0.3.0),
+the semantic-consistency milestone. It follows the separately
 published and verified `v0.2.0` validation milestone and `v0.1.0` foundation.
 Manifest `specVersion` remains `"0.1"`.
 
@@ -29,13 +30,15 @@ check output, and cross-surface review are published with the
 The [v0.2.0 release](https://github.com/iwizy/NexFlow/releases/tag/v0.2.0)
 includes its exact-commit checks, completed review, readiness record, and
 checksums. The `0.3` semantic scope, manual specification expectations,
-compatibility, and limitations have received maintainer approval; its final
-candidate evaluation is independent. See the [changelog](CHANGELOG.md).
+compatibility, and limitations received maintainer approval; its independent
+exact-candidate evaluation passed and its own evidence is attached to
+[v0.3.0](https://github.com/iwizy/NexFlow/releases/tag/v0.3.0).
+See the [changelog](CHANGELOG.md).
 
-The approved release sequence is **`0.2` then `0.3`**, with separate
+The published release sequence is **`0.1` → `0.2` → `0.3`**, with separate
 [validation/conformance](release/0.2-release-review.md) and
-[semantic-consistency](release/0.3-release-review.md) review packets. Scope
-approval does not replace final candidate checks or publication. The
+[semantic-consistency](release/0.3-release-review.md) reviews and commit-bound
+evidence. Scope approval does not replace final candidate checks. The
 [release plan](docs/release-plan.md) keeps
 `0.4` architecture readiness ahead of `0.5` tooling publication; later task
 completion does not skip these gates.
@@ -67,8 +70,8 @@ published.
 | Extension registry model | Standalone `0.1-draft` metadata schema, fictional example, and focused checks; no registry service or published snapshot | `npm run extension-registry-smoke`, [Extension Registry Model](docs/extension-registry.md) |
 | Event interoperability | Specified as CloudEvents and OpenTelemetry EventRecord mappings; no exporter or transport | [Event Interoperability](docs/event-interoperability.md), [Event Model](docs/events.md) |
 | Conformance claim format | Implemented as a standalone schema, profile-qualified YAML and Markdown templates, and 37 cataloged claim-format cases; a revision-pinned repository-validator statement remains draft and partial, not an `NF-CLI` claim | `npm run conformance-claim-smoke`, [Conformance Fixtures](fixtures/conformance/), [Draft Validator Statement](conformance/REPOSITORY-VALIDATOR-CLAIM.md), [Conformance Claims](docs/conformance-claims.md) |
-| Candidate readiness record | Implemented as a standalone eight-gate schema and non-claiming `0.1` template; evaluated evidence is published for `v0.1.0` and `v0.2.0` | `npm run candidate-readiness-smoke`, [0.1 Readiness Checklist](docs/readiness-checklist.md), [Release Evidence](release/README.md) |
-| Current milestone | Published `0.2` validation milestone followed by the independently reviewed `0.3` semantic snapshot; `0.4` architecture and `0.5` tooling publication remain blocked | [Changelog](CHANGELOG.md), [Release Reviews](release/README.md), [Roadmap](docs/roadmap.md) |
+| Candidate readiness record | Implemented as a standalone eight-gate schema and non-claiming `0.1` template; evaluated evidence is published for `v0.1.0`, `v0.2.0`, and `v0.3.0` | `npm run candidate-readiness-smoke`, [0.1 Readiness Checklist](docs/readiness-checklist.md), [Release Evidence](release/README.md) |
+| Current milestone | Published `0.3` semantic-consistency milestone after `0.2`; `0.4` architecture and `0.5` tooling publication remain blocked | [Changelog](CHANGELOG.md), [Release Reviews](release/README.md), [Roadmap](docs/roadmap.md) |
 | Semantic reference checks | Partial repository smoke coverage | `npm run semantic-smoke`, [Validation](docs/validation.md) |
 | Governance and RFC process | Implemented in documentation | [Governance](docs/governance.md), [RFCs](rfcs/README.md) |
 | Foundational model changes | ActorSet, compact AgentSet, and authoritative unique-active-definition slices implemented; RFCs remain Draft | [Actor Model](docs/actor-model.md), [Effective Agent Configuration](docs/effective-agent-configuration.md), [Foundational Model Review](rfcs/reviews/2026-07-foundational-model-review.md) |

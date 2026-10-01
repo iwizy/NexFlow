@@ -30,7 +30,7 @@ enforced.
 
 ## Current Compatibility Summary
 
-The published `0.2` and maintainer-reviewed `0.3` snapshots retain manifest
+The published `0.2` and `0.3` snapshots retain manifest
 `specVersion: "0.1"`.
 Repository milestone tags do not create new manifest dialects. The
 [0.2 release review](../release/0.2-release-review.md) and

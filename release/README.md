@@ -53,15 +53,19 @@ The record format uses `recordVersion`, independently from manifest
 
 - [0.2 Validation And Conformance Review](0.2-release-review.md) maps the released
   release to all eight `0.2` criteria and its compatibility boundary.
-- [0.3 Semantic Consistency Review](0.3-release-review.md) maps the following
+- [0.3 Semantic Consistency Review](0.3-release-review.md) maps the released
   release to all twelve `0.3` criteria and distinguishes structural checks,
   partial semantic evidence, manual expectations, and unimplemented behavior.
 - [Preparation Check Results](0.2-0.3-preparation-checks.md) records the exact
   source revision, commands, results, CI links, and evidence limitations.
 
 The maintainer approved the two scopes and sequential publication on
-`2026-10-01`, subject to final candidate checks. Evaluate `0.2` first, then
-select and evaluate a separate `0.3` candidate. `v0.2.0` is now published and
-verified. Preserve real publication dates
-and history. The final eight-gate record must also cite the milestone-specific
-criteria; passing the generic record schema alone does not complete them.
+`2026-10-01`, subject to final candidate checks. Both releases are now published
+and verified, each with its own exact commit, full checks, completed review,
+readiness record, and checksums attached to GitHub:
+[v0.2.0](https://github.com/iwizy/NexFlow/releases/tag/v0.2.0) and
+[v0.3.0](https://github.com/iwizy/NexFlow/releases/tag/v0.3.0).
+
+Preserve real publication dates and history. Each future eight-gate record
+must also cite its milestone-specific criteria; passing the generic record
+schema alone does not complete them.

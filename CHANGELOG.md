@@ -6,7 +6,11 @@ This project follows a specification-first process. Breaking changes must includ
 
 ## [Unreleased]
 
-No changes recorded after the approved `0.3.0` snapshot.
+### Changed
+
+- Synchronized public status and release evidence indexes after publishing and
+  independently verifying `v0.2.0` and `v0.3.0`. Their exact commits, tags, and
+  evidence remain unchanged; no manifest or implementation behavior changes.
 
 ## [0.3.0] - 2026-10-01
 

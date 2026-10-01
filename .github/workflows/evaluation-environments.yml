@@ -1,0 +1,41 @@
+name: Evaluation Environments
+on:
+  pull_request:
+    paths:
+      - 'evaluation/**'
+      - 'scripts/*evaluation*'
+      - 'scripts/lib/evaluation-environment.mjs'
+      - '.github/workflows/evaluation-environments.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  environment:
+    name: Environment (${{ matrix.target }})
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {target: 'linux/amd64', runner: ubuntu-24.04, artifact: linux-amd64}
+          - {target: 'macos/arm64', runner: macos-15, artifact: macos-arm64}
+          - {target: 'windows/amd64', runner: windows-2025, artifact: windows-amd64}
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22.23.2'
+      - name: Check contract and capture sanitized native environment
+        shell: bash
+        run: |
+          node scripts/runtime-evaluation-environment-smoke.mjs
+          node scripts/runtime-evaluation-environment.mjs '${{ matrix.target }}' > environment.json
+          cat environment.json
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: environment-${{ matrix.artifact }}
+          path: environment.json
+          retention-days: 7

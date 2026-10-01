@@ -131,6 +131,10 @@ The helper never returns an accepted architecture decision.
 
 ## Confirmed Experiment Targets
 
+The [common environment and measurement contract](environments.md) fixes native
+runner selection, fingerprint checks, workloads, repetitions and evidence rules.
+Infrastructure probe success does not imply successful candidate evaluation.
+
 Alexander confirmed the common measurement matrix on 2026-10-01:
 
 - Linux AMD64.

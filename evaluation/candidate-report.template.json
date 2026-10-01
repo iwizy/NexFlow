@@ -1,0 +1,83 @@
+{
+  "formatVersion": "0.1-draft",
+  "candidate": null,
+  "status": "not-started",
+  "specificationRevision": "1d1fa238ab5729a79bee9389d5c66cfd20a61256",
+  "corpusSha256": "01b116005f0650ac980194b22c02188289eaf1e8626b227aecf3684ece0d8f6b",
+  "evaluationPackageRevision": null,
+  "prototype": {
+    "revision": null,
+    "source": null,
+    "scope": "validation-only"
+  },
+  "toolchain": {
+    "version": null,
+    "dependencyLock": null,
+    "buildCommand": null
+  },
+  "targets": [
+    {
+      "os": "linux",
+      "architecture": "amd64",
+      "result": "not-tested",
+      "evidence": []
+    },
+    {
+      "os": "macos",
+      "architecture": "arm64",
+      "result": "not-tested",
+      "evidence": []
+    },
+    {
+      "os": "windows",
+      "architecture": "amd64",
+      "result": "not-tested",
+      "evidence": []
+    }
+  ],
+  "hardGates": {
+    "specificationFidelity": {
+      "status": "not-tested",
+      "evidence": []
+    },
+    "deterministicDiagnostics": {
+      "status": "not-tested",
+      "evidence": []
+    },
+    "offlineOperation": {
+      "status": "not-tested",
+      "evidence": []
+    },
+    "reproducibleDependencies": {
+      "status": "not-tested",
+      "evidence": []
+    },
+    "distributionTargets": {
+      "status": "not-tested",
+      "evidence": []
+    },
+    "securityBoundary": {
+      "status": "not-tested",
+      "evidence": []
+    },
+    "supplyChainEvidence": {
+      "status": "not-tested",
+      "evidence": []
+    },
+    "providerNeutrality": {
+      "status": "not-tested",
+      "evidence": []
+    },
+    "scopeIntegrity": {
+      "status": "not-tested",
+      "evidence": []
+    }
+  },
+  "reviewerScorecards": [],
+  "reconciliation": null,
+  "measurements": [],
+  "limitations": [
+    "No candidate prototype has been evaluated."
+  ],
+  "evidence": []
+}

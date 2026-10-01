@@ -8,6 +8,13 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Added
 
+- Added a runtime language evaluation preparation packet with a pinned
+  specification corpus and digests, 11 shared validation and inspection cases,
+  candidate-neutral diagnostics, non-claiming evidence report templates,
+  rejection checks, and CI rehearsal. Experiment targets remain proposed;
+  no candidate, runtime language, architecture, release, or support claim
+  is selected.
+
 - Refreshed README status and navigation for possible `0.5` reference tooling
   beta review while keeping `v0.1.0` as the latest release and the `0.2` track
   unreleased. No beta candidate, package, `NF-CLI` claim, manifest version,

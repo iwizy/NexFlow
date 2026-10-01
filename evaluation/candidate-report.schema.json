@@ -1,0 +1,440 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nexflow.dev/tooling/evaluation/0.1-draft/candidate-report.schema.json",
+  "title": "Runtime language evaluation evidence; not a NexFlow manifest or support claim",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "formatVersion",
+    "candidate",
+    "status",
+    "specificationRevision",
+    "corpusSha256",
+    "evaluationPackageRevision",
+    "prototype",
+    "toolchain",
+    "targets",
+    "hardGates",
+    "reviewerScorecards",
+    "reconciliation",
+    "measurements",
+    "limitations",
+    "evidence"
+  ],
+  "properties": {
+    "formatVersion": {
+      "const": "0.1-draft"
+    },
+    "candidate": {
+      "enum": [
+        null,
+        "typescript",
+        "python",
+        "rust",
+        "go"
+      ]
+    },
+    "status": {
+      "enum": [
+        "not-started",
+        "in-progress",
+        "complete"
+      ]
+    },
+    "specificationRevision": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "corpusSha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "evaluationPackageRevision": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "prototype": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "revision",
+        "source",
+        "scope"
+      ],
+      "properties": {
+        "revision": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[0-9a-f]{40}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "source": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "scope": {
+          "const": "validation-only"
+        }
+      }
+    },
+    "toolchain": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "version",
+        "dependencyLock",
+        "buildCommand"
+      ],
+      "properties": {
+        "version": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "dependencyLock": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "buildCommand": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        }
+      }
+    },
+    "targets": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "os",
+          "architecture",
+          "result",
+          "evidence"
+        ],
+        "properties": {
+          "os": {
+            "enum": [
+              "linux",
+              "macos",
+              "windows"
+            ]
+          },
+          "architecture": {
+            "enum": [
+              "amd64",
+              "arm64"
+            ]
+          },
+          "result": {
+            "enum": [
+              "not-tested",
+              "passed",
+              "failed"
+            ]
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          }
+        }
+      }
+    },
+    "hardGates": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "specificationFidelity",
+        "deterministicDiagnostics",
+        "offlineOperation",
+        "reproducibleDependencies",
+        "distributionTargets",
+        "securityBoundary",
+        "supplyChainEvidence",
+        "providerNeutrality",
+        "scopeIntegrity"
+      ],
+      "properties": {
+        "specificationFidelity": {
+          "$ref": "#/$defs/gate"
+        },
+        "deterministicDiagnostics": {
+          "$ref": "#/$defs/gate"
+        },
+        "offlineOperation": {
+          "$ref": "#/$defs/gate"
+        },
+        "reproducibleDependencies": {
+          "$ref": "#/$defs/gate"
+        },
+        "distributionTargets": {
+          "$ref": "#/$defs/gate"
+        },
+        "securityBoundary": {
+          "$ref": "#/$defs/gate"
+        },
+        "supplyChainEvidence": {
+          "$ref": "#/$defs/gate"
+        },
+        "providerNeutrality": {
+          "$ref": "#/$defs/gate"
+        },
+        "scopeIntegrity": {
+          "$ref": "#/$defs/gate"
+        }
+      }
+    },
+    "reviewerScorecards": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "reviewer",
+          "scores"
+        ],
+        "properties": {
+          "reviewer": {
+            "type": "string",
+            "minLength": 1
+          },
+          "scores": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "specificationAndValidationFidelity",
+              "securityAndIsolationFit",
+              "crossPlatformDistribution",
+              "ecosystemAndIntegrationFit",
+              "contributorAccessibility",
+              "maintainability",
+              "performanceAndResourceUse",
+              "observabilityAndDiagnostics",
+              "embeddingAndInteroperability",
+              "operationalFootprint"
+            ],
+            "properties": {
+              "specificationAndValidationFidelity": {
+                "$ref": "#/$defs/score"
+              },
+              "securityAndIsolationFit": {
+                "$ref": "#/$defs/score"
+              },
+              "crossPlatformDistribution": {
+                "$ref": "#/$defs/score"
+              },
+              "ecosystemAndIntegrationFit": {
+                "$ref": "#/$defs/score"
+              },
+              "contributorAccessibility": {
+                "$ref": "#/$defs/score"
+              },
+              "maintainability": {
+                "$ref": "#/$defs/score"
+              },
+              "performanceAndResourceUse": {
+                "$ref": "#/$defs/score"
+              },
+              "observabilityAndDiagnostics": {
+                "$ref": "#/$defs/score"
+              },
+              "embeddingAndInteroperability": {
+                "$ref": "#/$defs/score"
+              },
+              "operationalFootprint": {
+                "$ref": "#/$defs/score"
+              }
+            }
+          }
+        }
+      }
+    },
+    "reconciliation": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "measurements": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "target",
+          "metric",
+          "value",
+          "runs",
+          "method",
+          "evidence"
+        ],
+        "properties": {
+          "target": {
+            "type": "string",
+            "minLength": 1
+          },
+          "metric": {
+            "enum": [
+              "coldStartMs",
+              "validationMs",
+              "peakMemoryBytes",
+              "artifactBytes",
+              "cleanBuildMs",
+              "cachedBuildMs",
+              "ciMs"
+            ]
+          },
+          "value": {
+            "type": "number",
+            "minimum": 0
+          },
+          "runs": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "method": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evidence": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    }
+  },
+  "$defs": {
+    "gate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "evidence"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "not-tested",
+            "passed",
+            "failed"
+          ]
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "enum": [
+                  "passed",
+                  "failed"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "evidence": {
+                "minItems": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    "score": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "score",
+        "evidence"
+      ],
+      "properties": {
+        "score": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 5
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "score": {
+                "minimum": 1
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "evidence": {
+                "minItems": 1
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -30,6 +30,30 @@ NexFlow uses `0.x` releases while the specification is still stabilizing. The `1
 | `0.9` | Stabilization candidate | Remaining breaking changes are identified, migration guidance is written, and `1.0` compatibility expectations are explicit. |
 | `1.0` | Stable core specification | Core manifests, schemas, conformance levels, compatibility policy, and safety requirements are stable enough for independent adoption. |
 
+## Publication Sequence
+
+Publish the milestone lines in the order above. Preparing later tooling or
+architecture material does not complete an earlier release, and a task number
+does not select a release version. Do not fill missing numbers with empty tags,
+backdate releases, or rewrite published history.
+
+The next publication is `0.2`, followed by a separately reviewed `0.3` candidate.
+The [0.2 review packet](../release/0.2-release-review.md) and
+[0.3 review packet](../release/0.3-release-review.md) map the existing evidence
+to their respective criteria. They are preparation records, not approvals or
+published releases. Each final candidate still needs exact-revision checks,
+maintainer review, synchronized release status and changelog, and its own
+commit-bound readiness record.
+
+`0.4` remains blocked by the incomplete comparative runtime evaluation and
+architecture decision. `0.5` cannot bypass that milestone merely because a
+repository CLI prototype or beta checklist exists.
+
+Repository release tags and manifest `specVersion` are separate identifiers.
+The proposed `v0.2.0` and `v0.3.0` snapshots continue to accept only
+`specVersion: "0.1"`; they do not introduce `0.2` or `0.3` manifest dialects.
+See [Versioning](versioning.md).
+
 ## `0.1` Draft Foundation
 
 The `0.1` line establishes the shape of the project.

@@ -48,3 +48,18 @@ review and include factual closure evidence for every blocker listed there.
 
 The record format uses `recordVersion`, independently from manifest
 `specVersion`, conformance `claimVersion`, and any eventual release tag.
+
+## Next Milestone Reviews
+
+- [0.2 Validation And Conformance Review](0.2-release-review.md) maps the next
+  release to all eight `0.2` criteria and its compatibility boundary.
+- [0.3 Semantic Consistency Review](0.3-release-review.md) maps the following
+  release to all twelve `0.3` criteria and distinguishes structural checks,
+  partial semantic evidence, manual expectations, and unimplemented behavior.
+- [Preparation Check Results](0.2-0.3-preparation-checks.md) records the exact
+  source revision, commands, results, CI links, and evidence limitations.
+
+These packets do not authorize publication. Evaluate `0.2` first, then select
+and evaluate a separate `0.3` candidate. Preserve real publication dates and
+history. The final eight-gate record must also cite the milestone-specific
+criteria; passing the generic record schema alone does not complete them.

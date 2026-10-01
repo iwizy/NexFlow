@@ -30,6 +30,13 @@ manifest `specVersion`, select a runtime, or widen implementation claims. See
 the [Unreleased changelog](CHANGELOG.md#unreleased) for the repository delta
 after `v0.1.0`.
 
+The next release sequence is **`0.2` then `0.3`**, with separate
+[validation/conformance](release/0.2-release-review.md) and
+[semantic-consistency](release/0.3-release-review.md) review packets. Preparation
+does not publish either release. The [release plan](docs/release-plan.md) keeps
+`0.4` architecture readiness ahead of `0.5` tooling publication; later task
+completion does not skip these gates.
+
 Preparation for a possible **`0.5` reference tooling beta** is separate from
 that current release line. The [beta readiness checklist](docs/0.5-beta-readiness-checklist.md)
 defines future review gates, while the [source-checkout dry run](docs/cli-release-dry-run.md)

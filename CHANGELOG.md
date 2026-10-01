@@ -8,6 +8,12 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Added
 
+- Added separate `0.2` validation/conformance and `0.3` semantic-consistency
+  release review packets with revision-pinned preparation checks, criterion
+  mapping, compatibility notes, proposed release notes, and remaining
+  publication gates. The release plan now makes sequential milestone review
+  explicit; no release, tag, manifest dialect, or implementation is introduced.
+
 - Added declarative common library evaluation cases for maintained schemas,
   negative fixtures, local references, YAML, discovery and selected semantic
   boundaries. Historical-library rehearsals do not expand CLI semantic support,

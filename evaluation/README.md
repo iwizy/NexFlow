@@ -29,6 +29,10 @@ The package's later commit does not silently move the specification baseline.
 
 ## Shared Command Contract
 
+The [shared library experiment](library-experiment.md) supplies the separate
+declarative semantic/schema/YAML/discovery cases for all four candidates.
+It does not expand the CLI contract or claim full semantic validation.
+
 Every disposable candidate exposes only `validate` and `inspect`, accepts
 an explicit `--root`, the cataloged `--project` or `--file` selection,
 and `--format json`. Calling `run` is a rejection experiment, not an

@@ -8,6 +8,10 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Added
 
+- Refreshed README status and navigation for possible `0.5` reference tooling
+  beta review while keeping `v0.1.0` as the latest release and the `0.2` track
+  unreleased. No beta candidate, package, `NF-CLI` claim, manifest version,
+  or repository release is introduced.
 - Added a non-approving `0.5` reference tooling beta readiness checklist with
   separate version and decision gates, exact-candidate evidence, bounded CLI
   behavior, no-runtime safety, artifact verification, compatibility, support,

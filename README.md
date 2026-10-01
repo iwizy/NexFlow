@@ -30,6 +30,14 @@ manifest `specVersion`, select a runtime, or widen implementation claims. See
 the [Unreleased changelog](CHANGELOG.md#unreleased) for the repository delta
 after `v0.1.0`.
 
+Preparation for a possible **`0.5` reference tooling beta** is separate from
+that current release line. The [beta readiness checklist](docs/0.5-beta-readiness-checklist.md)
+defines future review gates, while the [source-checkout dry run](docs/cli-release-dry-run.md)
+rehearses evidence collection. The [alpha preparation checkpoint](docs/0.4-alpha-checkpoint.md)
+is still `not-ready`. No beta candidate, installable reference CLI, `NF-CLI`
+claim, `0.5` release, or corresponding version bump has been approved or
+published.
+
 | Surface | Current State | Evidence |
 | --- | --- | --- |
 | Specification | Specified in draft form | [Documentation](docs/index.md), [Manifest Reference](docs/manifest-reference.md) |
@@ -48,9 +56,9 @@ after `v0.1.0`.
 | A2A extension draft | Implemented as an offline external-agent/task/artifact policy profile; no live integration | `npm run a2a-extension-smoke`, [A2A Extension Draft](extensions/a2a/README.md), [MCP And A2A Boundaries](docs/mcp-a2a-boundaries.md) |
 | Extension registry model | Standalone `0.1-draft` metadata schema, fictional example, and focused checks; no registry service or published snapshot | `npm run extension-registry-smoke`, [Extension Registry Model](docs/extension-registry.md) |
 | Event interoperability | Specified as CloudEvents and OpenTelemetry EventRecord mappings; no exporter or transport | [Event Interoperability](docs/event-interoperability.md), [Event Model](docs/events.md) |
-| Conformance claim format | Implemented as a standalone schema, profile-qualified YAML and Markdown templates, and 37 cataloged claim-format cases | `npm run conformance-claim-smoke`, [Conformance Fixtures](fixtures/conformance/), [Conformance Claims](docs/conformance-claims.md) |
+| Conformance claim format | Implemented as a standalone schema, profile-qualified YAML and Markdown templates, and 37 cataloged claim-format cases; a revision-pinned repository-validator statement remains draft and partial, not an `NF-CLI` claim | `npm run conformance-claim-smoke`, [Conformance Fixtures](fixtures/conformance/), [Draft Validator Statement](conformance/REPOSITORY-VALIDATOR-CLAIM.md), [Conformance Claims](docs/conformance-claims.md) |
 | Candidate readiness record | Implemented as a standalone eight-gate schema and non-claiming `0.1` template; evaluated release evidence is published for `v0.1.0` | `npm run candidate-readiness-smoke`, [0.1 Readiness Checklist](docs/readiness-checklist.md), [Release Evidence](release/README.md) |
-| Current development line | Unreleased `0.2` validation and conformance hardening; no `0.2` release, new manifest `specVersion`, or runtime implementation | [Unreleased Changelog](CHANGELOG.md#unreleased), [Roadmap](docs/roadmap.md) |
+| Current development line | Unreleased `0.2` validation and conformance hardening, with separate `0.5` tooling-beta preparation; no new release, manifest `specVersion`, or runtime implementation | [Unreleased Changelog](CHANGELOG.md#unreleased), [Roadmap](docs/roadmap.md), [0.5 Beta Readiness Checklist](docs/0.5-beta-readiness-checklist.md) |
 | Semantic reference checks | Partial repository smoke coverage | `npm run semantic-smoke`, [Validation](docs/validation.md) |
 | Governance and RFC process | Implemented in documentation | [Governance](docs/governance.md), [RFCs](rfcs/README.md) |
 | Foundational model changes | ActorSet, compact AgentSet, and authoritative unique-active-definition slices implemented; RFCs remain Draft | [Actor Model](docs/actor-model.md), [Effective Agent Configuration](docs/effective-agent-configuration.md), [Foundational Model Review](rfcs/reviews/2026-07-foundational-model-review.md) |
@@ -58,7 +66,7 @@ after `v0.1.0`.
 | Credential handling policy | Structured fail-closed manifest model and focused checks implemented; credential broker, values, and runtime mediation absent | `npm run credential-handling-schema-smoke`, [Credential Handling](docs/credential-handling.md) |
 | Threat model | Current repository and conditional future-runtime trust boundaries, attacker stories, mitigations, assumptions, and severity calibration documented; not a vulnerability report or runtime claim | [Threat Model](docs/threat-model.md), [Security Policy](SECURITY.md) |
 | Runtime architecture decision | Review framework published; current outcome is `not-ready`, with no language or package layout selected | [Runtime Architecture Decision Review](rfcs/reviews/runtime-architecture-decision-review.md), [Runtime Options](docs/runtime-options.md), [Roadmap](docs/roadmap.md) |
-| Reference CLI | Validation-only target and command map documented; no package or release implemented | [Reference CLI](docs/reference-cli.md), [CLI Release Dry Run](docs/cli-release-dry-run.md), [CLI And Runtime Responsibility Boundary](docs/cli-runtime-boundary.md), [RFC-0011](rfcs/RFC-0011-reference-cli-scope.md) |
+| Reference CLI | Validation-only target and command map documented; alpha checkpoint is `not-ready` and beta checklist is unevaluated; no installable package or release implemented | [Reference CLI](docs/reference-cli.md), [Alpha Preparation Checkpoint](docs/0.4-alpha-checkpoint.md), [0.5 Beta Readiness Checklist](docs/0.5-beta-readiness-checklist.md), [CLI Release Dry Run](docs/cli-release-dry-run.md), [CLI And Runtime Responsibility Boundary](docs/cli-runtime-boundary.md), [RFC-0011](rfcs/RFC-0011-reference-cli-scope.md) |
 | Repository CLI prototype | Experimental local discovery, JSON Schema validation, declared inspection, static graphing, bounded starter initialization, versioned JSON output, executable no-runtime guardrails, cataloged fixtures, and dedicated CI; not a reference CLI alpha, language decision, operating-system sandbox, or `NF-CLI` claim | `npm run cli-prototype -- --help`, `npm run cli-no-runtime-guardrails-smoke`, `npm run cli-fixture-smoke`, [CLI Workflow](.github/workflows/cli-smoke.yml), [Prototype Scope](docs/cli-prototype.md), [JSON Diagnostics](docs/cli-diagnostics.md), [Declared Inspection](docs/cli-inspection.md), [Static Graph](docs/cli-graph.md), [Starter Initialization](docs/cli-init.md) |
 | Runtime and provider execution | Planned, not implemented | [Architecture](docs/architecture.md), [Runtime Options](docs/runtime-options.md) |
 | Live integrations and extension loading | Not implemented | [Compatibility Matrix](docs/compatibility-matrix.md) |
@@ -297,6 +305,7 @@ the complete documentation catalog.
 | Publish a support claim | [Conformance Claims](docs/conformance-claims.md), [Claim Templates](conformance/README.md), [Compatibility Matrix](docs/compatibility-matrix.md) |
 | Extend or integrate NexFlow | [Extension Profiles](extensions/README.md), [Extension Model](docs/extensions.md), [Extension Registry Model](docs/extension-registry.md), [Extension Loading Boundary](docs/extension-loading-boundary.md), [GitHub Extension Draft](extensions/github/README.md), [MCP And A2A Boundaries](docs/mcp-a2a-boundaries.md), [MCP Extension Draft](extensions/mcp/README.md), [A2A Extension Draft](extensions/a2a/README.md), [Integrations](docs/integrations.md), [Provider Abstraction](docs/provider-abstraction.md) |
 | Review the `v0.1.0` release boundary and evidence | [0.1 Candidate Scope](docs/0.1-scope.md), [0.1 Readiness Checklist](docs/readiness-checklist.md), [Compatibility Matrix](docs/compatibility-matrix.md) |
+| Review possible `0.5` tooling beta readiness | [0.5 Beta Readiness Checklist](docs/0.5-beta-readiness-checklist.md), [Alpha Preparation Checkpoint](docs/0.4-alpha-checkpoint.md), [CLI Release Dry Run](docs/cli-release-dry-run.md), [Release Plan](docs/release-plan.md) |
 | Review future implementation choices | [Runtime Options](docs/runtime-options.md), [Runtime Language Evaluation Matrix](docs/language-evaluation-matrix.md), [Runtime Architecture Decision Review](rfcs/reviews/runtime-architecture-decision-review.md), [Roadmap](docs/roadmap.md), [Release Plan](docs/release-plan.md) |
 
 ## Roadmap
@@ -318,8 +327,9 @@ The current priorities are:
    [Runtime Architecture Decision Review](rfcs/reviews/runtime-architecture-decision-review.md);
    no language or implementation is selected while the outcome is `not-ready`.
 6. After an accepted decision, build a validation-focused reference CLI for
-   `init`, `validate`, `inspect`,
-   and `graph`; it must not orchestrate work.
+   `init`, `validate`, `inspect`, and `graph`; it must not orchestrate work. Review the
+   [0.5 Beta Readiness Checklist](docs/0.5-beta-readiness-checklist.md) before
+   proposing any public tooling beta.
 7. Explore a runtime prototype only after its permission, approval, credential,
    network, extension, and audit boundaries are specified.
 
@@ -359,7 +369,8 @@ See [Governance](docs/governance.md) and [RFCs](rfcs/README.md).
   manifest reference, schemas, examples, or compatibility contract.
 - No reference CLI, runtime engine, provider adapter, extension loader, live
   integration, task execution, workflow orchestration, or deployment support
-  exists.
+  exists. The `0.5` beta checklist is preparation, not a release decision or
+  support claim.
 - GitHub, MCP, and A2A profiles are offline policy maps. They do not discover endpoints,
   negotiate protocol versions, authenticate, invoke tools or remote agents,
   read or mutate live repositories, synchronize task state, import artifacts,

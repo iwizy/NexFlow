@@ -49,9 +49,9 @@ review and include factual closure evidence for every blocker listed there.
 The record format uses `recordVersion`, independently from manifest
 `specVersion`, conformance `claimVersion`, and any eventual release tag.
 
-## Next Milestone Reviews
+## Milestone Reviews
 
-- [0.2 Validation And Conformance Review](0.2-release-review.md) maps the next
+- [0.2 Validation And Conformance Review](0.2-release-review.md) maps the released
   release to all eight `0.2` criteria and its compatibility boundary.
 - [0.3 Semantic Consistency Review](0.3-release-review.md) maps the following
   release to all twelve `0.3` criteria and distinguishes structural checks,
@@ -61,6 +61,7 @@ The record format uses `recordVersion`, independently from manifest
 
 The maintainer approved the two scopes and sequential publication on
 `2026-10-01`, subject to final candidate checks. Evaluate `0.2` first, then
-select and evaluate a separate `0.3` candidate. Preserve real publication dates
+select and evaluate a separate `0.3` candidate. `v0.2.0` is now published and
+verified. Preserve real publication dates
 and history. The final eight-gate record must also cite the milestone-specific
 criteria; passing the generic record schema alone does not complete them.

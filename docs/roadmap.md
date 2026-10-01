@@ -14,13 +14,14 @@ adds a provider-neutral policy profile and offline validation evidence.
 Provider bindings, live issue operations, synchronization, and inbound events
 remain unimplemented; this does not advance a release or CLI readiness gate.
 
-## Current Checkpoint: Reviewed `v0.2.0` Snapshot
+## Current Checkpoint: Reviewed `v0.3.0` Snapshot
 
-Status: `v0.1.0` foundation released; the `0.2` validation/conformance scope is
-maintainer-approved for exact-candidate evaluation and publication. The
-following `0.3` semantic-consistency scope is also approved, but requires its
-own final candidate after `0.2`. Both [review packets](../release/README.md)
-preserve partial semantics, Draft RFCs, and blocked architecture/tooling claims.
+Status: `v0.1.0` foundation and `v0.2.0` validation/conformance released.
+The `0.3` semantic-consistency scope and bounded manual expectations are
+maintainer-approved and undergo their own exact-candidate evaluation. The
+[review packets](../release/README.md) preserve partial semantics, Draft RFCs,
+and blocked architecture/tooling claims. No new runtime implementation is
+implied by the semantic milestone.
 
 The repository currently provides the following candidate evidence:
 

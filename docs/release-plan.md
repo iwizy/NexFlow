@@ -37,7 +37,8 @@ architecture material does not complete an earlier release, and a task number
 does not select a release version. Do not fill missing numbers with empty tags,
 backdate releases, or rewrite published history.
 
-The next publication is `0.2`, followed by a separately reviewed `0.3` candidate.
+`v0.2.0` was published and verified on `2026-10-01`; the next publication is the
+separately reviewed `v0.3.0` semantic-consistency candidate.
 The [0.2 review packet](../release/0.2-release-review.md) and
 [0.3 review packet](../release/0.3-release-review.md) map the existing evidence
 to their respective criteria. Their scope, compatibility, and limitations were
@@ -50,7 +51,7 @@ architecture decision. `0.5` cannot bypass that milestone merely because a
 repository CLI prototype or beta checklist exists.
 
 Repository release tags and manifest `specVersion` are separate identifiers.
-The proposed `v0.2.0` and `v0.3.0` snapshots continue to accept only
+The published `v0.2.0` and reviewed `v0.3.0` snapshots continue to accept only
 `specVersion: "0.1"`; they do not introduce `0.2` or `0.3` manifest dialects.
 See [Versioning](versioning.md).
 

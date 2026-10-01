@@ -6,7 +6,28 @@ This project follows a specification-first process. Breaking changes must includ
 
 ## [Unreleased]
 
-No changes recorded after the approved `0.2.0` snapshot.
+No changes recorded after the approved `0.3.0` snapshot.
+
+## [0.3.0] - 2026-10-01
+
+### Changed
+
+- Completed the separate semantic-consistency milestone review after publishing
+  and verifying `v0.2.0`: exact reference namespaces, workflow step and task
+  artifact identity, approval and human override relationships, memory policy
+  expectations, event declarations, provider constraints and fallback,
+  active-definition authority, and Agent Assembly provenance and blockers.
+- Recorded maintainer approval of the bounded manual semantic expectations,
+  compatibility, coverage gaps, and limitations. This is a cumulative contract
+  review, not a claim that existing semantic foundations were newly implemented
+  between the two releases.
+- Synchronized the semantic milestone, release sequence, and compatibility
+  status while preserving manifest `specVersion: "0.1"`, partial validation,
+  independently versioned experimental tooling, Draft RFCs, and the blocked
+  `0.4` architecture and `0.5` tooling publication gates.
+
+No manifest shape, schema constraint, runtime behavior, reference CLI package,
+provider adapter, live integration, or enforcement implementation changes.
 
 ## [0.2.0] - 2026-10-01
 

@@ -26,8 +26,8 @@ For the exact feature boundary under candidate review, see the
 ## Manifest Versioning
 
 Repository release tags identify reviewed specification and maintenance-tooling
-snapshots. They are not automatically new manifest dialects. The proposed
-`v0.2.0` validation milestone and `v0.3.0` semantic milestone retain
+snapshots. They are not automatically new manifest dialects. The published
+`v0.2.0` validation milestone and reviewed `v0.3.0` semantic milestone retain
 `specVersion: "0.1"`, the 17-kind schema baseline, and the existing independent
 profile, claim, record, and experimental CLI output versions. A tag alone does
 not stabilize diagnostics, accept a Draft RFC, publish a schema bundle, or

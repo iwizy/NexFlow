@@ -30,11 +30,15 @@ enforced.
 
 ## Current Compatibility Summary
 
-The maintainer-reviewed `0.2` snapshot retains manifest `specVersion: "0.1"`.
+The published `0.2` and maintainer-reviewed `0.3` snapshots retain manifest
+`specVersion: "0.1"`.
 Repository milestone tags do not create new manifest dialects. The
-[0.2 release review](../release/0.2-release-review.md) identifies the successor
-scope and compatibility impact; final commit-bound publication evidence is
-attached to the corresponding GitHub release. Historical `v0.1.0` evidence
+[0.2 release review](../release/0.2-release-review.md) and
+[0.3 release review](../release/0.3-release-review.md) identify successor scopes
+and compatibility impact; final commit-bound publication evidence is attached
+to the corresponding GitHub release. `0.3` changes no accepted manifest shape
+or executable behavior from `0.2`; selected semantic checks remain partial.
+Historical `v0.1.0` evidence
 continues to describe only its original snapshot.
 
 | Surface | Current contract | Status | Evidence | Explicit limitation |

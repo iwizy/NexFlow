@@ -1,0 +1,24 @@
+{
+  "formatVersion": "0.1-draft",
+  "scope": "dependency-capability-probe-only",
+  "resources": {
+    "https://nexflow.test/toolchains/common.json": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "https://nexflow.test/toolchains/common.json",
+      "$defs": { "count": { "type": "integer", "minimum": 1 } }
+    }
+  },
+  "cases": [
+    { "id": "local-ref-valid", "operation": "schema", "schema": { "$id": "https://nexflow.test/toolchains/root.json", "type": "object", "properties": { "n": { "$ref": "common.json#/$defs/count" } }, "required": ["n"] }, "instance": { "n": 2 }, "expected": { "valid": true } },
+    { "id": "local-ref-invalid", "operation": "schema", "schema": { "$id": "https://nexflow.test/toolchains/root.json", "type": "object", "properties": { "n": { "$ref": "common.json#/$defs/count" } } }, "instance": { "n": "bad" }, "expected": { "valid": false, "diagnosticPath": "/n", "diagnosticKeyword": "type" } },
+    { "id": "prefix-items-valid", "operation": "schema", "schema": { "type": "array", "prefixItems": [{ "const": true }, { "type": "integer" }], "items": false }, "instance": [true, 1], "expected": { "valid": true } },
+    { "id": "prefix-items-invalid", "operation": "schema", "schema": { "type": "array", "prefixItems": [{ "const": true }, { "type": "integer" }], "items": false }, "instance": [true, "bad"], "expected": { "valid": false, "diagnosticPath": "/1", "diagnosticKeyword": "type" } },
+    { "id": "items-false", "operation": "schema", "schema": { "type": "array", "prefixItems": [{ "const": true }, { "type": "integer" }], "items": false }, "instance": [true, 1, 2], "expected": { "valid": false } },
+    { "id": "invalid-date", "operation": "schema", "schema": { "type": "string", "format": "date" }, "instance": "2026-02-30", "expected": { "valid": false, "diagnosticKeyword": "format" } },
+    { "id": "missing-ref-denied", "operation": "schema", "schema": { "$ref": "https://nexflow.test/toolchains/unavailable.json" }, "instance": {}, "expected": { "valid": false, "unresolvedReference": true } },
+    { "id": "yaml-valid", "operation": "yaml", "text": "kind: Project\nversion: '0.1'\n", "expected": { "valid": true } },
+    { "id": "yaml-duplicate", "operation": "yaml", "text": "kind: Project\nkind: TaskSet\n", "expected": { "valid": false } },
+    { "id": "yaml-malformed", "operation": "yaml", "text": "kind: [unterminated\n", "expected": { "valid": false } },
+    { "id": "yaml-scalar-parity", "operation": "yaml", "text": "word: yes\nmode: on\ndate: 2026-10-02\nflag: true\n", "expected": { "valid": true, "value": { "word": "yes", "mode": "on", "date": "2026-10-02", "flag": true } } }
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "formatVersion": "0.1-draft",
+  "scope": "dependency-capability-probe-only",
+  "target": {
+    "os": "darwin",
+    "architecture": "arm64",
+    "mode": "native"
+  },
+  "probeCasesSha256": "5ce00ab844b056e930db53dc4f86c762fad476b74cacb2d1b093104e0420dcf6",
+  "runs": 2,
+  "determinism": "passed",
+  "inputImmutable": "passed",
+  "stdoutSha256": "3f64a4b713a11c12de8cf1d1067a96271e6c317b9cdd0f264fb842e8e1895b83",
+  "output": {
+    "candidate": "go",
+    "results": [
+      {
+        "diagnostics": [],
+        "id": "local-ref-valid",
+        "valid": true
+      },
+      {
+        "diagnostics": [
+          {
+            "category": "schema",
+            "keyword": "type",
+            "path": "/n"
+          }
+        ],
+        "id": "local-ref-invalid",
+        "valid": false
+      },
+      {
+        "diagnostics": [],
+        "id": "prefix-items-valid",
+        "valid": true
+      },
+      {
+        "diagnostics": [
+          {
+            "category": "schema",
+            "keyword": "type",
+            "path": "/1"
+          }
+        ],
+        "id": "prefix-items-invalid",
+        "valid": false
+      },
+      {
+        "diagnostics": [
+          {
+            "category": "schema",
+            "keyword": "",
+            "path": "/0"
+          }
+        ],
+        "id": "items-false",
+        "valid": false
+      },
+      {
+        "diagnostics": [
+          {
+            "category": "schema",
+            "keyword": "format",
+            "path": ""
+          }
+        ],
+        "id": "invalid-date",
+        "valid": false
+      },
+      {
+        "diagnostics": [
+          {
+            "category": "reference",
+            "keyword": "$ref",
+            "path": ""
+          }
+        ],
+        "id": "missing-ref-denied",
+        "unresolvedReference": true,
+        "valid": false
+      },
+      {
+        "diagnostics": [],
+        "id": "yaml-valid",
+        "valid": true,
+        "value": {
+          "kind": "Project",
+          "version": "0.1"
+        }
+      },
+      {
+        "diagnostics": [
+          {
+            "category": "yaml",
+            "keyword": "parse",
+            "path": ""
+          }
+        ],
+        "id": "yaml-duplicate",
+        "valid": false
+      },
+      {
+        "diagnostics": [
+          {
+            "category": "yaml",
+            "keyword": "parse",
+            "path": ""
+          }
+        ],
+        "id": "yaml-malformed",
+        "valid": false
+      },
+      {
+        "diagnostics": [],
+        "id": "yaml-scalar-parity",
+        "valid": true,
+        "value": {
+          "date": "2026-10-02",
+          "flag": true,
+          "mode": "on",
+          "word": "yes"
+        }
+      }
+    ],
+    "scope": "dependency-capability-probe-only"
+  }
+}

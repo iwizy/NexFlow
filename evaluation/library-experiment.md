@@ -2,6 +2,10 @@
 
 Status: preparation and historical-library rehearsal, not candidate evaluation.
 
+The [toolchain capability probes](toolchains/README.md) test the selected YAML
+and schema dependencies separately. Their smaller generic cases are not substitutes
+for this complete shared library catalog or evidence of candidate diagnostic parity.
+
 [library-cases.json](library-cases.json) provides the same declarative inputs,
 expected result properties and pinned specification rule links for TypeScript,
 Python, Rust and Go. It supplements, but does not replace or change,

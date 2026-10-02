@@ -87,6 +87,7 @@ The initial library implements manifest/local-schema, YAML and discovery cases.
 Semantic-fragment and workflow/artifact namespace cases return `valid: null`,
 `status: not-implemented`, never a false success. Full parity belongs to NF-056-09.
 128 library cases pass; 224 remain not-tested. See the
+[initial evidence](../../evidence/python-initial.json) and
 [candidate record](../../candidates/python.json) for immutable source/evidence
 revisions. Initial unit hooks and static source checks are not an OS deny harness.
 Offline enforcement, supply-chain acceptance, artifact lifecycle, comparable

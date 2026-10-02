@@ -51,7 +51,7 @@ workflow-namespace and artifact-namespace explicitly return `valid: null` and
 
 ## Limits And Evidence
 
-The initial run record will be committed after pinning this source revision. See the
+See [the initial run record](../../evidence/typescript-initial.json) and the
 [candidate record](../../candidates/typescript.json) for immutable revisions and
 actual outcomes. Passing 11 shared CLI cases or 128 implemented library cases
 does not pass full specification fidelity: 224 library cases remain not-tested.

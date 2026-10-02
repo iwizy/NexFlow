@@ -47,7 +47,7 @@ assert.equal(assessReport(template).outcome, "not-ready");
 for (const candidate of baseline.candidates) {
   const record = JSON.parse(readFileSync(path.join(repositoryRoot, "evaluation/candidates/" + candidate + ".json"), "utf8"));
   assert.equal(record.candidate, candidate);
-  assert.equal(record.status, "not-started");
+  assert.equal(record.status, record.prototype.revision ? "in-progress" : "not-started");
   assert.equal(validateReport(record), true);
   assert.equal(assessReport(record).outcome, "not-ready");
 }

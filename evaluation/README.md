@@ -1,6 +1,10 @@
 # Runtime Evaluation Packet
 
-Status: preparation packet; no candidate selected or evaluated.
+Status: evaluation preparation and initial prototypes; no candidate selected.
+
+The [independent TypeScript candidate](prototypes/typescript/README.md) is an
+initial validation-only prototype. Its partial library coverage does not pass
+the architecture gates or establish distribution support.
 
 See the [preparation verification record](preparation-review.md) for performed
 checks and their limits.
@@ -105,7 +109,7 @@ as performance evidence, or as a successful runtime evaluation.
 
 ## Candidate Records
 
-Separate unstarted [TypeScript](candidates/typescript.json),
+Separate [TypeScript](candidates/typescript.json),
 [Python](candidates/python.json), [Rust](candidates/rust.json), and
 [Go](candidates/go.json) records are prepared from
 [candidate-report.template.json](candidate-report.template.json).

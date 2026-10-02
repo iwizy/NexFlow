@@ -1,0 +1,38 @@
+name: TypeScript Candidate
+on:
+  pull_request:
+    paths:
+      - 'evaluation/**'
+      - 'scripts/runtime-typescript*'
+      - 'scripts/runtime-evaluation*'
+      - '.github/workflows/typescript-candidate.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  initial-validation:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22.23.2'
+      - name: Verify pinned runtime and provision reviewed locks
+        run: |
+          test "$(npm --version)" = '10.9.8'
+          npm ci --ignore-scripts
+          npm --prefix evaluation/prototypes/typescript ci --ignore-scripts
+      - name: Build independent candidate and test boundaries
+        run: |
+          npm --prefix evaluation/prototypes/typescript run build
+          npm --prefix evaluation/prototypes/typescript test
+      - name: Verify frozen corpus and run shared cases twice
+        run: |
+          npm run runtime-evaluation-smoke
+          npm run runtime-typescript-prototype-smoke
+          node scripts/runtime-evaluation-run.mjs --command '["node","evaluation/prototypes/typescript/dist/cli.js"]'
+          node scripts/runtime-typescript-library-run.mjs

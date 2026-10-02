@@ -1,19 +1,19 @@
 {
   "formatVersion": "0.1-draft",
   "candidate": "python",
-  "status": "not-started",
+  "status": "in-progress",
   "specificationRevision": "1d1fa238ab5729a79bee9389d5c66cfd20a61256",
   "corpusSha256": "01b116005f0650ac980194b22c02188289eaf1e8626b227aecf3684ece0d8f6b",
-  "evaluationPackageRevision": null,
+  "evaluationPackageRevision": "a8301a7478587c59502dfb2e6bd548489c14ee2b",
   "prototype": {
-    "revision": null,
-    "source": null,
+    "revision": "76141dfbeae265cb636d99a6164b097ce5d3019a",
+    "source": "evaluation/prototypes/python",
     "scope": "validation-only"
   },
   "toolchain": {
-    "version": null,
-    "dependencyLock": null,
-    "buildCommand": null
+    "version": "CPython 3.12.14; pip 26.2.1; PyYAML 6.0.3; jsonschema 4.26.0",
+    "dependencyLock": "evaluation/prototypes/python/requirements.lock",
+    "buildCommand": "python -I -m compileall -q evaluation/prototypes/python"
   },
   "targets": [
     {
@@ -77,7 +77,12 @@
   "reconciliation": null,
   "measurements": [],
   "limitations": [
-    "No candidate prototype has been evaluated."
+    "Independent initial validation-only prototype: 11 shared CLI cases pass twice; 128 library cases pass twice, 224 semantic/namespace cases not-tested.",
+    "Clean hash-locked venv and source compilation tested on native macOS ARM64; this is not OS isolation or installed target distribution acceptance.",
+    "All hard gates and distribution targets remain not-tested; no reviewer scores or comparable measurements exist.",
+    "Semantic parity, denied effects/offline enforcement, supply-chain evidence, artifact lifecycle and independent review remain outstanding."
   ],
-  "evidence": []
+  "evidence": [
+    "evaluation/evidence/python-initial.json"
+  ]
 }

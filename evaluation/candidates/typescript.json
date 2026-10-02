@@ -1,19 +1,19 @@
 {
   "formatVersion": "0.1-draft",
   "candidate": "typescript",
-  "status": "not-started",
+  "status": "in-progress",
   "specificationRevision": "1d1fa238ab5729a79bee9389d5c66cfd20a61256",
   "corpusSha256": "01b116005f0650ac980194b22c02188289eaf1e8626b227aecf3684ece0d8f6b",
-  "evaluationPackageRevision": null,
+  "evaluationPackageRevision": "a8301a7478587c59502dfb2e6bd548489c14ee2b",
   "prototype": {
-    "revision": null,
-    "source": null,
+    "revision": "19ff4889542fe486d95eb2ae868560f5aa966df2",
+    "source": "evaluation/prototypes/typescript",
     "scope": "validation-only"
   },
   "toolchain": {
-    "version": null,
-    "dependencyLock": null,
-    "buildCommand": null
+    "version": "Node 22.23.2; npm 10.9.8; TypeScript 7.0.2",
+    "dependencyLock": "evaluation/prototypes/typescript/package-lock.json",
+    "buildCommand": "npm --prefix evaluation/prototypes/typescript ci --ignore-scripts && npm --prefix evaluation/prototypes/typescript run build"
   },
   "targets": [
     {
@@ -77,7 +77,12 @@
   "reconciliation": null,
   "measurements": [],
   "limitations": [
-    "No candidate prototype has been evaluated."
+    "Initial independent validation-only prototype: 11 CLI cases pass twice, 128 library cases pass twice, 224 semantic and namespace cases remain not-tested.",
+    "Initial schema diagnostic mismatches and YAML multi-document rejection were repaired; original failed results are retained in evidence.",
+    "All architecture hard gates and distribution targets remain not-tested; native initial checks are not full target acceptance.",
+    "OS effect denial, offline enforcement, supply-chain review, measurements and independent reviewer scores remain outstanding."
   ],
-  "evidence": []
+  "evidence": [
+    "evaluation/evidence/typescript-initial.json"
+  ]
 }

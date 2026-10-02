@@ -5,6 +5,10 @@ Status: preparation packet; no candidate selected or evaluated.
 See the [preparation verification record](preparation-review.md) for performed
 checks and their limits.
 
+The [four pinned candidate toolchain plans](toolchains/README.md) add native
+dependency capability probes and checked lockfiles. They do not promote candidate
+scorecards, replace the shared corpus or pass architecture hard gates.
+
 This packet turns the [language evaluation matrix](../docs/language-evaluation-matrix.md)
 into a shared starting point for NF-056. It does not accept an architecture,
 implement a runtime, release a CLI, or make an implementation support claim.

@@ -1,0 +1,254 @@
+{
+  "formatVersion": "0.1-draft",
+  "scope": "dependency-capability-probe-only",
+  "task": "NF-056-04",
+  "specificationRevision": "1d1fa238ab5729a79bee9389d5c66cfd20a61256",
+  "corpusDigest": "01b116005f0650ac980194b22c02188289eaf1e8626b227aecf3684ece0d8f6b",
+  "probeDate": "2026-10-02",
+  "candidateEvaluationStatus": "not-started",
+  "hardGateAssessment": "not-tested",
+  "sourceDigests": {
+    "probe-cases.json": "5ce00ab844b056e930db53dc4f86c762fad476b74cacb2d1b093104e0420dcf6",
+    "typescript/package.json": "628e962d00e0d3cff3396ea398b450a880876c18c6209124650fad46f9927953",
+    "typescript/package-lock.json": "e31ddca0460cb4823c729e837a21836334f593b2b076f9be98426d023943cca8",
+    "typescript/tsconfig.json": "e13941dd0552dacab1213b6d5dcc7355bdf3dcda3d53a343877df48e90181fbe",
+    "typescript/src/probe.ts": "b8e9a7e36c530759d199eda9e76e194085b7766a68ef76cc96d34f13d86c709a",
+    "python/requirements.in": "ea3c75d351cd8d5139af5031b2c39f890b45dfe545f80b5d521d8947c3c62640",
+    "python/requirements.lock": "1c0cf5c9c6e11afd14c878b66e9e70f550f4d56def426b81fd0f15dd20a32dc2",
+    "python/probe.py": "7ef3019b4ffddb39367481105ecf9ca29fd985a8d391dea10c86966f6d4bb0dd",
+    "rust/Cargo.toml": "3e83011e47a131730977dcc33d7dd91bf3ebd550089ca6e193e257cc52c426e9",
+    "rust/Cargo.lock": "0ad366a359425154a26178fd808218fc895fb96962f8c0e2a6341412de0378ae",
+    "rust/rust-toolchain.toml": "515c80a149c1e927d497dbebc399e241822aa0197e8f778c21bf5c136c90afd2",
+    "rust/src/main.rs": "71ded079f4896bd8ee002b28b057448954d57ba26008a36a8c1d7ac8c80151c8",
+    "go/go.mod": "55453744997ea55dbcfeac16a287c53cf2202b6532174426fd55dbdec9552cb4",
+    "go/go.sum": "16cc6ffb149f521791f61a391ddaa5369ca91fe1d0d9c7230f7952ac35e76aca",
+    "go/main.go": "0cd550ee9f9ab9dc2c2b375c459ccfb62fc2d2880b5e36e69d3cfbabff0bf625"
+  },
+  "candidates": [
+    {
+      "id": "typescript",
+      "tools": {
+        "node": "22.23.2",
+        "npm": "10.9.8",
+        "typescript": "7.0.2"
+      },
+      "directDependencies": {
+        "ajv": "8.20.0",
+        "ajv-formats": "3.0.1",
+        "yaml": "2.9.0",
+        "@types/node": "22.20.5",
+        "typescript": "7.0.2"
+      },
+      "locks": [
+        "typescript/package-lock.json"
+      ],
+      "cli": {
+        "library": "node:util.parseArgs",
+        "version": "22.23.2"
+      },
+      "packaging": {
+        "tool": "npm pack",
+        "version": "10.9.8",
+        "artifact": "private npm tarball with external managed Node runtime",
+        "status": "planned"
+      },
+      "provisioning": [
+        "npm ci --ignore-scripts --no-audit --fund=false"
+      ],
+      "offlineBuild": [
+        "npm ci --ignore-scripts --offline --no-audit --fund=false",
+        "npm run build"
+      ],
+      "probeCommand": [
+        "node",
+        "evaluation/toolchains/typescript/dist/probe.js"
+      ],
+      "limitations": [
+        "Capability source is independently compiled TypeScript, not the historical JavaScript prototype.",
+        "Native TypeScript compiler platform packages are locked but only macOS ARM64 was installed here.",
+        "No full NexFlow CLI, library corpus, packaging lifecycle or sandbox evidence."
+      ]
+    },
+    {
+      "id": "python",
+      "tools": {
+        "cpython": "3.12.14",
+        "pip": "26.2.1",
+        "build": "1.3.0",
+        "setuptools": "80.9.0",
+        "wheel": "0.45.1"
+      },
+      "directDependencies": {
+        "PyYAML": "6.0.3",
+        "jsonschema": "4.26.0",
+        "rfc3339-validator": "0.1.4",
+        "build": "1.3.0",
+        "setuptools": "80.9.0",
+        "wheel": "0.45.1",
+        "pip": "26.2.1"
+      },
+      "locks": [
+        "python/requirements.lock"
+      ],
+      "cli": {
+        "library": "argparse",
+        "version": "3.12.14"
+      },
+      "packaging": {
+        "tool": "build / setuptools / wheel",
+        "version": "1.3.0 / 80.9.0 / 0.45.1",
+        "artifact": "wheel plus console entry point and external managed CPython",
+        "status": "planned"
+      },
+      "provisioning": [
+        "python3.12 -m venv TASK_ENV",
+        "TASK_ENV/bin/python -m pip download --require-hashes --only-binary=:all: -r requirements.lock --dest TASK_WHEELHOUSE"
+      ],
+      "offlineBuild": [
+        "TASK_ENV/bin/python -m pip install --no-index --find-links TASK_WHEELHOUSE --require-hashes --only-binary=:all: -r requirements.lock",
+        "TASK_ENV/bin/python -m pip check"
+      ],
+      "probeCommand": [
+        "TASK_ENV/bin/python",
+        "evaluation/toolchains/python/probe.py"
+      ],
+      "limitations": [
+        "PyYAML SafeLoader requires duplicate-key and boolean/timestamp adapters; full YAML 1.2 numeric and alias semantics remain untested.",
+        "Hash lock contains all non-yanked wheels of exact releases; wheel availability on other targets is not yet verified.",
+        "Virtual environments and native wheels do not establish an application security sandbox."
+      ]
+    },
+    {
+      "id": "rust",
+      "tools": {
+        "rustc": "1.99.0",
+        "cargo": "1.99.0"
+      },
+      "directDependencies": {
+        "jsonschema": "0.58.4",
+        "serde_json": "1.0.145",
+        "yaml-rust2": "0.11.0"
+      },
+      "locks": [
+        "rust/Cargo.lock"
+      ],
+      "cli": {
+        "library": "std::env",
+        "version": "1.99.0"
+      },
+      "packaging": {
+        "tool": "cargo build --release --frozen",
+        "version": "1.99.0",
+        "artifact": "native target executable, no additional archive packager",
+        "status": "planned"
+      },
+      "provisioning": [
+        "cargo fetch --locked"
+      ],
+      "offlineBuild": [
+        "cargo build --frozen"
+      ],
+      "probeCommand": [
+        "evaluation/toolchains/rust/target/debug/nexflow-rust-capability-probe"
+      ],
+      "limitations": [
+        "jsonschema default features are disabled and its offline option is explicit; cached Cargo builds still execute reviewed build scripts.",
+        "items:false reports a different instance path from TypeScript/Python; diagnostic normalization remains future work.",
+        "YAML conversion of unusual tags, non-finite numbers and aliases needs full-corpus evidence."
+      ]
+    },
+    {
+      "id": "go",
+      "tools": {
+        "go": "1.27.1"
+      },
+      "directDependencies": {
+        "github.com/santhosh-tekuri/jsonschema/v6": "6.0.2",
+        "go.yaml.in/yaml/v3": "3.0.4"
+      },
+      "locks": [
+        "go/go.mod",
+        "go/go.sum"
+      ],
+      "cli": {
+        "library": "flag",
+        "version": "1.27.1"
+      },
+      "packaging": {
+        "tool": "go build -mod=readonly -trimpath -buildvcs=false",
+        "version": "1.27.1",
+        "artifact": "native target executable with CGO_ENABLED=0; no additional archive packager",
+        "status": "planned"
+      },
+      "provisioning": [
+        "GOTOOLCHAIN=local go mod download",
+        "go mod verify"
+      ],
+      "offlineBuild": [
+        "GOTOOLCHAIN=local GOPROXY=off CGO_ENABLED=0 go build -mod=readonly -trimpath -buildvcs=false -o TASK_OUTPUT ."
+      ],
+      "probeCommand": [
+        "TASK_OUTPUT"
+      ],
+      "limitations": [
+        "yaml.Node conversion preserves timestamp text and rejects duplicate/non-string keys; aliases are unsupported in this probe.",
+        "items:false yields a raw empty keyword and /0 path in this library adapter; do not claim diagnostic parity.",
+        "go.sum verifies module bytes, not OS-level isolation or distribution lifecycle."
+      ]
+    }
+  ],
+  "runtimeArchiveReceipts": [
+    {
+      "tool": "rustc",
+      "version": "1.99.0",
+      "target": "aarch64-apple-darwin",
+      "url": "https://static.rust-lang.org/dist/2026-10-01/rustc-1.99.0-aarch64-apple-darwin.tar.xz",
+      "sha256": "334a66714ca316d71bbe5efe44f71762d0b276cea73be2987374693a837f7450"
+    },
+    {
+      "tool": "rust-std",
+      "version": "1.99.0",
+      "target": "aarch64-apple-darwin",
+      "url": "https://static.rust-lang.org/dist/2026-10-01/rust-std-1.99.0-aarch64-apple-darwin.tar.xz",
+      "sha256": "a7c6de8aa21e7c31163a7656295b321bb85f5dce55ed8ea95ac9ac561202bb5b"
+    },
+    {
+      "tool": "cargo",
+      "version": "1.99.0",
+      "target": "aarch64-apple-darwin",
+      "url": "https://static.rust-lang.org/dist/2026-10-01/cargo-1.99.0-aarch64-apple-darwin.tar.xz",
+      "sha256": "76abff0ad79a10a3152dff640ea0d8b3c37637d9300bf55da41b95c3ddc069c1"
+    },
+    {
+      "tool": "go",
+      "version": "1.27.1",
+      "target": "darwin-arm64",
+      "url": "https://go.dev/dl/go1.27.1.darwin-arm64.tar.gz",
+      "sha256": "ee215d57e0ec269c60cc9ceca68e6bda321ba9ee5afe24f4b0988703c2d87d12"
+    }
+  ],
+  "targets": [
+    {
+      "os": "linux",
+      "architecture": "amd64",
+      "candidateResult": "not-tested"
+    },
+    {
+      "os": "macos",
+      "architecture": "arm64",
+      "candidateResult": "not-tested",
+      "capabilityProbe": "native-only"
+    },
+    {
+      "os": "windows",
+      "architecture": "amd64",
+      "candidateResult": "not-tested"
+    }
+  ],
+  "nonClaims": [
+    "No architecture selection, reviewer scoring, runtime execution or provider access.",
+    "No change to the frozen 176-file corpus, 11 shared CLI cases or 352 library cases.",
+    "No OS-enforced offline, filesystem, subprocess, supply-chain or distribution hard-gate result.",
+    "Node and CPython archive provenance and non-native toolchain downloads remain later evidence."
+  ]
+}

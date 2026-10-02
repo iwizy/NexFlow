@@ -1,0 +1,128 @@
+{
+  "formatVersion": "0.1-draft",
+  "scope": "dependency-capability-probe-only",
+  "target": {
+    "os": "darwin",
+    "architecture": "arm64",
+    "mode": "native"
+  },
+  "probeCasesSha256": "5ce00ab844b056e930db53dc4f86c762fad476b74cacb2d1b093104e0420dcf6",
+  "runs": 2,
+  "determinism": "passed",
+  "inputImmutable": "passed",
+  "stdoutSha256": "acfe9ecf8d38fa3db88979eaa8766fbb163b5c315abf374dcbb36e4a1c7cb455",
+  "output": {
+    "candidate": "typescript",
+    "scope": "dependency-capability-probe-only",
+    "results": [
+      {
+        "id": "local-ref-valid",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "id": "local-ref-invalid",
+        "valid": false,
+        "diagnostics": [
+          {
+            "category": "schema",
+            "path": "/n",
+            "keyword": "type"
+          }
+        ]
+      },
+      {
+        "id": "prefix-items-valid",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "id": "prefix-items-invalid",
+        "valid": false,
+        "diagnostics": [
+          {
+            "category": "schema",
+            "path": "/1",
+            "keyword": "type"
+          }
+        ]
+      },
+      {
+        "id": "items-false",
+        "valid": false,
+        "diagnostics": [
+          {
+            "category": "schema",
+            "path": "",
+            "keyword": "items"
+          }
+        ]
+      },
+      {
+        "id": "invalid-date",
+        "valid": false,
+        "diagnostics": [
+          {
+            "category": "schema",
+            "path": "",
+            "keyword": "format"
+          }
+        ]
+      },
+      {
+        "id": "missing-ref-denied",
+        "valid": false,
+        "unresolvedReference": true,
+        "diagnostics": [
+          {
+            "category": "reference",
+            "path": "",
+            "keyword": "$ref"
+          }
+        ]
+      },
+      {
+        "id": "yaml-valid",
+        "valid": true,
+        "value": {
+          "kind": "Project",
+          "version": "0.1"
+        },
+        "diagnostics": []
+      },
+      {
+        "id": "yaml-duplicate",
+        "valid": false,
+        "diagnostics": [
+          {
+            "category": "yaml",
+            "path": "",
+            "keyword": "parse"
+          }
+        ]
+      },
+      {
+        "id": "yaml-malformed",
+        "valid": false,
+        "diagnostics": [
+          {
+            "category": "yaml",
+            "path": "",
+            "keyword": "parse"
+          }
+        ]
+      },
+      {
+        "id": "yaml-scalar-parity",
+        "valid": true,
+        "value": {
+          "word": "yes",
+          "mode": "on",
+          "date": "2026-10-02",
+          "flag": true
+        },
+        "diagnostics": []
+      }
+    ]
+  }
+}

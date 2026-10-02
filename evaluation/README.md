@@ -2,9 +2,10 @@
 
 Status: evaluation preparation and initial prototypes; no candidate selected.
 
-The [independent Python candidate](prototypes/python/README.md) is an initial
-validation-only prototype with partial library coverage. It does not pass
-architecture gates or establish distribution support.
+The independent [TypeScript](prototypes/typescript/README.md) and
+[Python](prototypes/python/README.md) candidates are initial validation-only
+prototypes with partial library coverage. They do not pass architecture gates
+or establish distribution support.
 
 See the [preparation verification record](preparation-review.md) for performed
 checks and their limits.

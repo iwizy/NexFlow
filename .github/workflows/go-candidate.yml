@@ -1,0 +1,51 @@
+name: Go Candidate
+on:
+  pull_request:
+    paths:
+      - 'evaluation/**'
+      - 'scripts/runtime-go*'
+      - 'scripts/runtime-evaluation*'
+      - '.github/workflows/go-candidate.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  initial-validation:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    env:
+      GOTOOLCHAIN: local
+      CGO_ENABLED: '0'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22.23.2'
+      - uses: actions/setup-go@924ae3a1cded613372ab5595356fb5720e22ba16
+        with:
+          go-version: '1.27.1'
+          cache: false
+      - name: Provision exact modules separately
+        run: |
+          test "$(go version | cut -d ' ' -f 3)" = 'go1.27.1'
+          npm ci --ignore-scripts
+          cd evaluation/prototypes/go
+          go mod download
+          go mod verify
+      - name: Native boundary tests and build without fetching
+        env:
+          GOPROXY: 'off'
+        run: |
+          cd evaluation/prototypes/go
+          go test -mod=readonly -count=1 ./...
+          go build -mod=readonly -trimpath -buildvcs=false -o bin/nexflow-go-evaluation ./cmd/cli
+          go build -mod=readonly -trimpath -buildvcs=false -o bin/library-driver ./cmd/library-driver
+      - name: Verify frozen corpus and shared cases twice
+        run: |
+          npm run runtime-evaluation-smoke
+          npm run runtime-go-prototype-smoke
+          node scripts/runtime-evaluation-run.mjs --command '["evaluation/prototypes/go/bin/nexflow-go-evaluation"]'
+          node scripts/runtime-go-library-run.mjs evaluation/prototypes/go/bin/library-driver

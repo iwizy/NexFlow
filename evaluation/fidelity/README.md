@@ -94,6 +94,33 @@ evidence or an accepted architecture.
 
 ## Evidence
 
+The native macOS ARM64 run uses comparison harness commit
+`4b1a33f9ea973132f231f2c6b78261b8f739a0b3`. The complete case-by-case
+[comparison](comparison.json) contains no supported-result mismatch: all 128
+implemented library cases and 11 CLI meanings agree across four candidates.
+Agreement on 224 unsupported cases is deliberately not a pass.
+
+| Candidate report | CLI cases, JSON/text twice each | Library passed | Library failed | Library not-tested |
+| --- | --- | --- | --- | --- |
+| [TypeScript](typescript.json) | 11 | 128 | 0 | 224 |
+| [Python](python.json) | 11 | 128 | 0 | 224 |
+| [Rust](rust.json) | 11 | 128 | 0 | 224 |
+| [Go](go.json) | 11 | 128 | 0 | 224 |
+
+The implemented 128 consist of all 109 maintained manifests, four negative
+manifest fixtures, five local-schema cases, three YAML cases and seven discovery
+cases. All 211 semantic fragments and 13 workflow/artifact namespace cases are
+unsupported. Each candidate also passes the separately recorded schema-type
+redaction canary in both formats twice. The full catalog's broader unsupported
+inventory remains outside these experiments; this is not complete specification
+coverage.
+
+Each report records specification fidelity as **failed** because mandatory
+semantic/namespace evidence is missing, and full deterministic diagnostics as
+**not-tested**. These scoped findings do not automatically rewrite initial
+candidate scorecard templates or constitute the later NF-056-17 reconciliation.
+No language winner or architecture score is produced.
+
 Run `npm run runtime-fidelity-smoke` to verify source pins, rejection behavior and
 the four committed reports when present. It recomputes normalized agreement,
 checks every frozen identity and retains unsupported/mismatch rows. CI runs

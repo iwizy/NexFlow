@@ -2,6 +2,8 @@
 import assert from "node:assert/strict";
 import { readFileSync, readdirSync } from "node:fs";
 const base = "evaluation/prototypes/rust/";
+assert.match(readFileSync(base + "Cargo.toml", "utf8"), /path = "src\/library_driver\.rs"/u);
+assert.match(readFileSync(base + "src/library_driver.rs", "utf8"), /evaluate_library_case/u);
 assert.equal(readFileSync(base + "rust-toolchain.toml", "utf8"), readFileSync("evaluation/toolchains/rust/rust-toolchain.toml", "utf8"));
 assert.equal(readFileSync(base + "Cargo.lock", "utf8").replace('name = "nexflow-rust-evaluation"', 'name = "nexflow-rust-capability-probe"'), readFileSync("evaluation/toolchains/rust/Cargo.lock", "utf8"));
 for (const name of readdirSync(base + "src", { recursive: true }).filter(name => name.endsWith(".rs"))) {

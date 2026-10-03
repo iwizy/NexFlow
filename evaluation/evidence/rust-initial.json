@@ -4,7 +4,7 @@
   "recordedAt": "2026-10-03",
   "specificationRevision": "1d1fa238ab5729a79bee9389d5c66cfd20a61256",
   "evaluationPackageRevision": "a8301a7478587c59502dfb2e6bd548489c14ee2b",
-  "prototypeRevision": "f2cd8ce5459fcc5406643e88c7506681486c0cf7",
+  "prototypeRevision": "4fdf0cc8e69e050600d0a5d8f7f1f42987f68203",
   "environment": {
     "os": "macos",
     "architecture": "arm64",
@@ -2400,5 +2400,16 @@
     "CLI requires reviewed build-checkout schemas; debug executable is not a relocatable or reproducible distribution artifact.",
     "Source no-follow/nonblocking reads do not eliminate parent replacement races or prove OS isolation; Windows behavior remains untested.",
     "All nine architecture hard gates and three distribution targets remain not-tested; no independent reviewers, scores, lifecycle or performance evidence."
+  ],
+  "initialFailures": [
+    {
+      "scope": "initial-native-ci",
+      "result": "failed",
+      "revision": "991783ad47a4d6813e680785cafb1e9080df9c0a",
+      "evidence": "https://github.com/iwizy/NexFlow/actions/runs/37118892451",
+      "cause": "Library driver under src/bin was excluded by the existing bin/ ignore rule; local untracked source hid the missing committed file.",
+      "repairRevision": "4fdf0cc8e69e050600d0a5d8f7f1f42987f68203",
+      "repair": "Move the native driver into tracked src/library_driver.rs and repeat native build/tests and shared cases. CI must be rerun before task completion."
+    }
   ]
 }

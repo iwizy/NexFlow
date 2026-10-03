@@ -6,7 +6,7 @@
   "corpusSha256": "01b116005f0650ac980194b22c02188289eaf1e8626b227aecf3684ece0d8f6b",
   "evaluationPackageRevision": "a8301a7478587c59502dfb2e6bd548489c14ee2b",
   "prototype": {
-    "revision": "f2cd8ce5459fcc5406643e88c7506681486c0cf7",
+    "revision": "4fdf0cc8e69e050600d0a5d8f7f1f42987f68203",
     "source": "evaluation/prototypes/rust",
     "scope": "validation-only"
   },

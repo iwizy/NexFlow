@@ -15,4 +15,4 @@ path = "src/main.rs"
 
 [[bin]]
 name = "library-driver"
-path = "src/bin/library_driver.rs"
+path = "src/library_driver.rs"

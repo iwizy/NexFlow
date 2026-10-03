@@ -12,6 +12,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - uses: actions/setup-node@v4
         with:
@@ -86,6 +88,9 @@ jobs:
 
       - name: Run candidate readiness record checks
         run: npm run candidate-readiness-smoke
+
+      - name: Verify beta checkpoint preparation and non-approval
+        run: npm run beta-checkpoint-smoke
 
       - name: Verify candidate toolchain locks and capability records
         run: npm run runtime-toolchain-smoke

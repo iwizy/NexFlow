@@ -45,8 +45,10 @@ completion does not skip these gates.
 
 Preparation for a possible **`0.5` reference tooling beta** is separate from
 that current release line. The [beta readiness checklist](docs/0.5-beta-readiness-checklist.md)
-defines future review gates, while the [source-checkout dry run](docs/cli-release-dry-run.md)
-rehearses evidence collection. The [alpha preparation checkpoint](docs/0.4-alpha-checkpoint.md)
+defines future review gates. The [beta preparation checkpoint](docs/0.5-beta-checkpoint.md)
+assesses all eight gates at one exact source revision and remains `not-ready`;
+the [source-checkout dry run](docs/cli-release-dry-run.md) rehearses evidence
+collection. The [alpha preparation checkpoint](docs/0.4-alpha-checkpoint.md)
 is still `not-ready`. No beta candidate, installable reference CLI, `NF-CLI`
 claim, `0.5` release, or corresponding version bump has been approved or
 published.
@@ -79,7 +81,7 @@ published.
 | Credential handling policy | Structured fail-closed manifest model and focused checks implemented; credential broker, values, and runtime mediation absent | `npm run credential-handling-schema-smoke`, [Credential Handling](docs/credential-handling.md) |
 | Threat model | Current repository and conditional future-runtime trust boundaries, attacker stories, mitigations, assumptions, and severity calibration documented; not a vulnerability report or runtime claim | [Threat Model](docs/threat-model.md), [Security Policy](SECURITY.md) |
 | Runtime architecture decision | Review framework published; current outcome is `not-ready`, with no language or package layout selected | [Runtime Architecture Decision Review](rfcs/reviews/runtime-architecture-decision-review.md), [Runtime Options](docs/runtime-options.md), [Roadmap](docs/roadmap.md) |
-| Reference CLI | Validation-only target and command map documented; alpha checkpoint is `not-ready` and beta checklist is unevaluated; no installable package or release implemented | [Reference CLI](docs/reference-cli.md), [Alpha Preparation Checkpoint](docs/0.4-alpha-checkpoint.md), [0.5 Beta Readiness Checklist](docs/0.5-beta-readiness-checklist.md), [CLI Release Dry Run](docs/cli-release-dry-run.md), [CLI And Runtime Responsibility Boundary](docs/cli-runtime-boundary.md), [RFC-0011](rfcs/RFC-0011-reference-cli-scope.md) |
+| Reference CLI | Validation-only target and command map documented; alpha and beta preparation checkpoints are `not-ready`; no installable package or release implemented | [Reference CLI](docs/reference-cli.md), [Alpha Preparation Checkpoint](docs/0.4-alpha-checkpoint.md), [0.5 Beta Readiness Checklist](docs/0.5-beta-readiness-checklist.md), [Beta Preparation Checkpoint](docs/0.5-beta-checkpoint.md), [CLI Release Dry Run](docs/cli-release-dry-run.md), [CLI And Runtime Responsibility Boundary](docs/cli-runtime-boundary.md), [RFC-0011](rfcs/RFC-0011-reference-cli-scope.md) |
 | Repository CLI prototype | Experimental local discovery, JSON Schema validation, declared inspection, static graphing, bounded starter initialization, versioned JSON output, executable no-runtime guardrails, cataloged fixtures, and dedicated CI; not a reference CLI alpha, language decision, operating-system sandbox, or `NF-CLI` claim | `npm run cli-prototype -- --help`, `npm run cli-no-runtime-guardrails-smoke`, `npm run cli-fixture-smoke`, [CLI Workflow](.github/workflows/cli-smoke.yml), [Prototype Scope](docs/cli-prototype.md), [JSON Diagnostics](docs/cli-diagnostics.md), [Declared Inspection](docs/cli-inspection.md), [Static Graph](docs/cli-graph.md), [Starter Initialization](docs/cli-init.md) |
 | Runtime and provider execution | Planned, not implemented | [Architecture](docs/architecture.md), [Runtime Options](docs/runtime-options.md) |
 | Live integrations and extension loading | Not implemented | [Compatibility Matrix](docs/compatibility-matrix.md) |

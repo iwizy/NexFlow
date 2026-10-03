@@ -39,6 +39,7 @@
     "runtime-toolchain-smoke": "node scripts/runtime-toolchain-smoke.mjs",
     "runtime-python-prototype-smoke": "node scripts/runtime-python-prototype-smoke.mjs",
     "runtime-rust-prototype-smoke": "node scripts/runtime-rust-prototype-smoke.mjs",
+    "runtime-go-prototype-smoke": "node scripts/runtime-go-prototype-smoke.mjs",
     "runtime-typescript-prototype-smoke": "node scripts/runtime-typescript-prototype-smoke.mjs",
     "runtime-evaluation-report": "node scripts/runtime-evaluation-report.mjs",
     "semantic-smoke": "node scripts/semantic-reference-smoke.mjs",

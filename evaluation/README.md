@@ -12,6 +12,10 @@ or establish distribution support.
 See the [preparation verification record](preparation-review.md) for performed
 checks and their limits.
 
+The [four-candidate fidelity review](fidelity/README.md) compares immutable
+prototype revisions without changing the common catalog or accepting an
+architecture. Missing semantics remain visible eligibility blockers.
+
 The [four pinned candidate toolchain plans](toolchains/README.md) add native
 dependency capability probes and checked lockfiles. They do not promote candidate
 scorecards, replace the shared corpus or pass architecture hard gates.

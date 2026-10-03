@@ -1,0 +1,13 @@
+{
+  "task": "NF-056-09",
+  "specificationRevision": "1d1fa238ab5729a79bee9389d5c66cfd20a61256",
+  "evaluationPackageRevision": "a8301a7478587c59502dfb2e6bd548489c14ee2b",
+  "corpusSha256": "01b116005f0650ac980194b22c02188289eaf1e8626b227aecf3684ece0d8f6b",
+  "catalogSha256": "f1bf8cb786442a212e14c79eb39279a2cdbf05ec20b09901374359d545d74e90",
+  "candidates": {
+    "typescript": { "sourceRevision": "19ff4889542fe486d95eb2ae868560f5aa966df2", "publishedHead": "024485bf4d6acf601886b7387c2ed2295bceb908", "pullRequest": 96, "ciRun": 37002512553, "toolchain": "Node 22.23.2; npm 10.9.8; TypeScript 7.0.2" },
+    "python": { "sourceRevision": "76141dfbeae265cb636d99a6164b097ce5d3019a", "publishedHead": "f33bbb95e84a768936f9b948de2b1200ed8909bb", "pullRequest": 97, "ciRun": 37028903235, "toolchain": "CPython 3.12.14; PyYAML 6.0.3; jsonschema 4.26.0" },
+    "rust": { "sourceRevision": "4fdf0cc8e69e050600d0a5d8f7f1f42987f68203", "publishedHead": "8919281c40d878552401241a66fccbe9ddba3efd", "pullRequest": 99, "ciRun": 37119053714, "toolchain": "rustc/Cargo 1.99.0; jsonschema 0.58.4; yaml-rust2 0.11.0" },
+    "go": { "sourceRevision": "737396b6488a9f10b179061366b9f1d02591fb9f", "publishedHead": "7181d8cf04d0fe75cce7bbd86aff9a53d9a1e413", "pullRequest": 100, "ciRun": 37121275243, "toolchain": "Go 1.27.1; jsonschema/v6 6.0.2; yaml/v3 3.0.4; CGO_ENABLED=0" }
+  }
+}

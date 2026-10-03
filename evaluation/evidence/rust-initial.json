@@ -1,0 +1,7 @@
+{
+  "formatVersion": "0.1-draft",
+  "task": "NF-056-07",
+  "status": "source-preparation",
+  "prototypeRevision": null,
+  "limitations": ["An immutable source revision and final check evidence will be recorded separately; this preparation record is not completed evaluation."]
+}

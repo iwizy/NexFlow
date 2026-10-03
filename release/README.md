@@ -69,3 +69,17 @@ readiness record, and checksums attached to GitHub:
 Preserve real publication dates and history. Each future eight-gate record
 must also cite its milestone-specific criteria; passing the generic record
 schema alone does not complete them.
+
+## 0.5 Beta Preparation
+
+The [beta preparation checkpoint](../docs/0.5-beta-checkpoint.md) assesses
+B1–B8 at one exact source revision and remains `not-ready`. Its separate
+[source checks](0.5-beta-checkpoint-checks.md) distinguish local maintenance
+results, main CI and historical language experiment evidence from missing
+artifact-level tests and independent release review.
+
+`npm run beta-checkpoint-smoke` checks this preparation record's consistency,
+coverage and non-approval. It does not use the `0.1` readiness schema as a beta
+approval, evaluate a package, accept an architecture, or authorize publication.
+Release evidence for future candidate bytes requires a new exact-candidate
+record, real reviewer decisions, and completion of the preceding `0.4` gates.

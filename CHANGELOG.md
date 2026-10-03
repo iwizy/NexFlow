@@ -6,6 +6,14 @@ This project follows a specification-first process. Breaking changes must includ
 
 ## [Unreleased]
 
+### Added
+
+- Prepared a revision-pinned `0.5` beta checkpoint covering all eight readiness
+  gates, source-check evidence, open blockers and the next closure actions,
+  with an offline CI consistency and non-approval check. The result remains
+  `not-ready`; no beta candidate, installable CLI, conformance claim, release,
+  architecture acceptance or version change is introduced.
+
 ### Changed
 
 - Synchronized public status and release evidence indexes after publishing and

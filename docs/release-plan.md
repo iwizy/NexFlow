@@ -185,6 +185,11 @@ The [0.5 Beta Readiness Checklist](0.5-beta-readiness-checklist.md) defines
 future candidate review gates; preparing it does not evaluate or approve a
 beta release.
 
+The [0.5 Beta Preparation Checkpoint](0.5-beta-checkpoint.md) assesses the eight
+gates at one exact source revision and records `not-ready`, with evidence and
+blocker-closing actions. This later preparation does not complete the preceding
+`0.4` milestone or authorize a tag, package or version change.
+
 Release readiness:
 
 - schema distribution has an immutable, language-neutral bundle contract with

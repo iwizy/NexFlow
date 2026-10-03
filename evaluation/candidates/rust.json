@@ -1,19 +1,19 @@
 {
   "formatVersion": "0.1-draft",
   "candidate": "rust",
-  "status": "not-started",
+  "status": "in-progress",
   "specificationRevision": "1d1fa238ab5729a79bee9389d5c66cfd20a61256",
   "corpusSha256": "01b116005f0650ac980194b22c02188289eaf1e8626b227aecf3684ece0d8f6b",
-  "evaluationPackageRevision": null,
+  "evaluationPackageRevision": "a8301a7478587c59502dfb2e6bd548489c14ee2b",
   "prototype": {
-    "revision": null,
-    "source": null,
+    "revision": "4fdf0cc8e69e050600d0a5d8f7f1f42987f68203",
+    "source": "evaluation/prototypes/rust",
     "scope": "validation-only"
   },
   "toolchain": {
-    "version": null,
-    "dependencyLock": null,
-    "buildCommand": null
+    "version": "rustc 1.99.0; Cargo 1.99.0; yaml-rust2 0.11.0; jsonschema 0.58.4; serde_json 1.0.145",
+    "dependencyLock": "evaluation/prototypes/rust/Cargo.lock",
+    "buildCommand": "cargo +1.99.0 build --frozen --manifest-path evaluation/prototypes/rust/Cargo.toml"
   },
   "targets": [
     {
@@ -77,7 +77,14 @@
   "reconciliation": null,
   "measurements": [],
   "limitations": [
-    "No candidate prototype has been evaluated."
+    "Initial native macOS ARM64 source experiment only; no accepted architecture or distribution support.",
+    "128 shared library cases pass; 224 semantic-fragment/workflow/artifact namespace cases remain explicitly not-implemented and not-tested.",
+    "YAML aliases and explicit tags are rejected; complete scalar/dialect parity remains unproven.",
+    "CLI requires reviewed build-checkout schemas; debug executable is not a relocatable or reproducible distribution artifact.",
+    "Source no-follow/nonblocking reads do not eliminate parent replacement races or prove OS isolation; Windows behavior remains untested.",
+    "All nine architecture hard gates and three distribution targets remain not-tested; no independent reviewers, scores, lifecycle or performance evidence."
   ],
-  "evidence": []
+  "evidence": [
+    "evaluation/evidence/rust-initial.json"
+  ]
 }

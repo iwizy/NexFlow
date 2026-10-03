@@ -2,8 +2,9 @@
 
 Status: evaluation preparation and initial prototypes; no candidate selected.
 
-The independent [TypeScript](prototypes/typescript/README.md) and
-[Python](prototypes/python/README.md) and [Go](prototypes/go/README.md) candidates are initial validation-only
+The independent [TypeScript](prototypes/typescript/README.md),
+[Python](prototypes/python/README.md) and [Go](prototypes/go/README.md)
+candidates are initial validation-only
 prototypes with partial library coverage. They do not pass architecture gates
 or establish distribution support.
 

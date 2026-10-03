@@ -91,7 +91,8 @@ executable-extension operations. Structural success grants no policy authority.
 
 ## Initial Evidence And Remaining Work
 
-The [candidate record](../../candidates/go.json) pins the complete prototype
+The [initial evidence](../../evidence/go-initial.json) and
+[candidate record](../../candidates/go.json) pin the complete prototype
 revision after source checks. The initial native macOS ARM64 run passes all 11
 shared CLI cases twice and 128 library cases twice. The remaining 224 semantic
 and workflow/artifact namespace cases return `valid: null`,

@@ -1,0 +1,2342 @@
+{
+  "formatVersion": "0.1-draft",
+  "task": "NF-056-08",
+  "recordedAt": "2026-10-03",
+  "specificationRevision": "1d1fa238ab5729a79bee9389d5c66cfd20a61256",
+  "evaluationPackageRevision": "a8301a7478587c59502dfb2e6bd548489c14ee2b",
+  "prototypeRevision": "737396b6488a9f10b179061366b9f1d02591fb9f",
+  "prerequisite": {
+    "pullRequest": "https://github.com/iwizy/NexFlow/pull/95",
+    "commit": "a8301a7478587c59502dfb2e6bd548489c14ee2b",
+    "mergeCommit": "d9d2f76fc2bb9469ce52670a1fc0f22af16432a2",
+    "state": "merged"
+  },
+  "environment": {
+    "os": "macos",
+    "architecture": "arm64",
+    "go": "1.27.1",
+    "node": "22.23.2",
+    "mode": "native-local-initial-checks"
+  },
+  "provisioning": {
+    "result": "passed",
+    "method": "Approved task-local compiler and cached module graph; GOTOOLCHAIN=local, GOPROXY=off, go mod verify; no dependency graph change.",
+    "dependencyLocks": [
+      "evaluation/prototypes/go/go.mod",
+      "evaluation/prototypes/go/go.sum"
+    ],
+    "matchesApprovedLocks": [
+      "evaluation/toolchains/go/go.mod (module name only differs)",
+      "evaluation/toolchains/go/go.sum (identical bytes)"
+    ],
+    "isolationClaim": false
+  },
+  "build": {
+    "commands": [
+      "GOTOOLCHAIN=local GOPROXY=off CGO_ENABLED=0 go build -mod=readonly -trimpath -buildvcs=false -o bin/nexflow-go-evaluation ./cmd/cli",
+      "GOTOOLCHAIN=local GOPROXY=off CGO_ENABLED=0 go build -mod=readonly -trimpath -buildvcs=false -o bin/library-driver ./cmd/library-driver"
+    ],
+    "result": "passed",
+    "scope": "Native source-bound binaries in reviewed checkout; no distribution or reproducible-artifact acceptance.",
+    "binaryBuildInfo": {
+      "compiler": "go1.27.1",
+      "CGO_ENABLED": "0",
+      "GOOS": "darwin",
+      "GOARCH": "arm64",
+      "trimpath": true,
+      "vcsEmbedded": false
+    },
+    "binarySha256": {
+      "cli": "9fd7a748f56e038ee9bc0c4a1a1b21615e78387bc07a528d781589b86cb16423",
+      "libraryDriver": "fee8d0264370d530b5e9c1746f4fb102423f54acebb5b7fb0573eddf451a2bda"
+    }
+  },
+  "selfTests": {
+    "command": "GOTOOLCHAIN=local GOPROXY=off CGO_ENABLED=0 go test -mod=readonly -count=1 ./...",
+    "passed": 23,
+    "failed": 0,
+    "skipped": 0
+  },
+  "preparationRepairs": [
+    {
+      "scope": "unit-test fixture selection",
+      "initial": {
+        "passed": 22,
+        "failed": 1
+      },
+      "cause": "The first deterministic-inspection test named a nonexistent examples/basic-project fixture.",
+      "repair": "Changed only the test locator to the frozen examples/minimal-team fixture; final 23 native tests pass."
+    }
+  ],
+  "maintenanceChecks": {
+    "passed": 38,
+    "failed": 0,
+    "excluded": [
+      "cli-prototype (interactive entry)",
+      "runtime-evaluation-report (incomplete candidate must fail)"
+    ]
+  },
+  "cli": {
+    "baselineId": "nf-056-2026-10-01",
+    "specificationRevision": "1d1fa238ab5729a79bee9389d5c66cfd20a61256",
+    "scope": "structural-and-declared-inspection-smoke",
+    "results": [
+      {
+        "id": "validate-project-hints",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "inspect-valid-project",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "reject-yaml-syntax",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "reject-schema-invalid-project",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "reject-unsupported-version",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "reject-unsupported-kind",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "reject-source-outside-root",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "reject-source-kind-mismatch",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "reject-runtime-command",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "reject-ambiguous-project-entry",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "reject-duplicate-root-key",
+        "result": "passed",
+        "errors": []
+      }
+    ],
+    "untested": [
+      "os-sandbox",
+      "offline-enforcement",
+      "semantic-port",
+      "distribution",
+      "supply-chain",
+      "performance",
+      "review"
+    ],
+    "runsPerCase": 2
+  },
+  "library": {
+    "scope": "initial-go-library-entry",
+    "specificationRevision": "1d1fa238ab5729a79bee9389d5c66cfd20a61256",
+    "corpusSha256": "01b116005f0650ac980194b22c02188289eaf1e8626b227aecf3684ece0d8f6b",
+    "catalogSha256": "f1bf8cb786442a212e14c79eb39279a2cdbf05ec20b09901374359d545d74e90",
+    "runsPerCase": 2,
+    "counts": {
+      "passed": 128,
+      "failed": 0,
+      "not-tested": 224
+    },
+    "results": [
+      {
+        "id": "project-project-maintainers-0-id-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "project-project-maintainers-0-id-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "project-project-approvalgates-0-requiredapprovers-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "project-project-approvalgates-0-requiredapprovers-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "actorset-actors-0-operatedby-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "actorset-actors-0-operatedby-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "actorset-actors-0-representedby-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "actorset-actors-0-representedby-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "actorset-actors-0-integrationref-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "actorset-actors-0-integrationref-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "project-project-policies-networkaccess-rules-0-actors-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "project-project-policies-networkaccess-rules-0-actors-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "project-project-policies-networkaccess-rules-0-capabilities-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "project-project-policies-networkaccess-rules-0-capabilities-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "project-project-policies-networkaccess-rules-0-destinations-contextsources-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "project-project-policies-networkaccess-rules-0-destinations-contextsources-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "project-project-policies-networkaccess-rules-0-destinations-providers-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "project-project-policies-networkaccess-rules-0-destinations-providers-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "project-project-policies-networkaccess-rules-0-destinations-extensions-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "project-project-policies-networkaccess-rules-0-destinations-extensions-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "project-project-policies-networkaccess-rules-0-approvalgate-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "project-project-policies-networkaccess-rules-0-approvalgate-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "project-project-policies-networkaccess-audit-events-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "project-project-policies-networkaccess-audit-events-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "project-project-policies-credentialhandling-rules-0-actors-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "project-project-policies-credentialhandling-rules-0-actors-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "project-project-policies-credentialhandling-rules-0-capabilities-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "project-project-policies-credentialhandling-rules-0-capabilities-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "project-project-policies-credentialhandling-rules-0-targets-contextsources-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "project-project-policies-credentialhandling-rules-0-targets-contextsources-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "project-project-policies-credentialhandling-rules-0-targets-providers-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "project-project-policies-credentialhandling-rules-0-targets-providers-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "project-project-policies-credentialhandling-rules-0-targets-extensions-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "project-project-policies-credentialhandling-rules-0-targets-extensions-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "project-project-policies-credentialhandling-rules-0-approvalgate-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "project-project-policies-credentialhandling-rules-0-approvalgate-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "project-project-policies-credentialhandling-audit-events-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "project-project-policies-credentialhandling-audit-events-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "project-project-policies-humanoverride-resume-approvalgate-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "project-project-policies-humanoverride-resume-approvalgate-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "project-project-policies-humanoverride-audit-events-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "project-project-policies-humanoverride-audit-events-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "agentset-agents-0-permissions-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "agentset-agents-0-permissions-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "agentset-agents-0-capabilities-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "agentset-agents-0-capabilities-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "agentset-agents-0-contextaccess-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "agentset-agents-0-contextaccess-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "agentset-agents-0-memoryaccess-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "agentset-agents-0-memoryaccess-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "agentset-agents-0-providerpreferences-0-provider-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "agentset-agents-0-providerpreferences-0-provider-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "agentset-agents-0-extensions-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "agentset-agents-0-extensions-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "taskset-tasks-0-owner-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "taskset-tasks-0-owner-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "taskset-tasks-0-participants-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "taskset-tasks-0-participants-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "taskset-tasks-0-dependson-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "taskset-tasks-0-dependson-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "taskset-tasks-0-capabilitiesrequired-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "taskset-tasks-0-capabilitiesrequired-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "taskset-tasks-0-approvalgates-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "taskset-tasks-0-approvalgates-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "workflow-workflow-stages-0-steps-0-task-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "workflow-workflow-stages-0-steps-0-task-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "workflow-workflow-stages-0-steps-0-approvalgates-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "workflow-workflow-stages-0-steps-0-approvalgates-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "workflow-workflow-stages-0-steps-0-emits-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "workflow-workflow-stages-0-steps-0-emits-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "handoffset-handoffs-0-from-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "handoffset-handoffs-0-from-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "handoffset-handoffs-0-to-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "handoffset-handoffs-0-to-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "permissionset-permissions-0-subjects-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "permissionset-permissions-0-subjects-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "permissionset-permissions-0-capabilities-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "permissionset-permissions-0-capabilities-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "permissionset-permissions-0-approvalgate-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "permissionset-permissions-0-approvalgate-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "contextset-contextsources-0-access-allowedactors-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "contextset-contextsources-0-access-allowedactors-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "contextset-contextsources-0-approvalgates-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "contextset-contextsources-0-approvalgates-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "memoryset-memoryscopes-0-allowedconsumers-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "memoryset-memoryscopes-0-allowedconsumers-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "memoryset-memoryscopes-0-allowedwriters-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "memoryset-memoryscopes-0-allowedwriters-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "memoryset-memoryscopes-0-approvalgate-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "memoryset-memoryscopes-0-approvalgate-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "modelprofileset-modelprofiles-0-selection-providerrefs-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "modelprofileset-modelprofiles-0-selection-providerrefs-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "modelprofileset-modelprofiles-0-selection-providerrefs-0-providerref-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "modelprofileset-modelprofiles-0-selection-providerrefs-0-providerref-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "modelprofileset-modelprofiles-0-fallback-candidateproviderrefs-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "modelprofileset-modelprofiles-0-fallback-candidateproviderrefs-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "modelprofileset-modelprofiles-0-fallback-candidateproviderrefs-0-providerref-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "modelprofileset-modelprofiles-0-fallback-candidateproviderrefs-0-providerref-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "modelprofileset-modelprofiles-0-review-approvers-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "modelprofileset-modelprofiles-0-review-approvers-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "modelprofileset-modelprofiles-0-recommendedfor-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "modelprofileset-modelprofiles-0-recommendedfor-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "promptset-promptsets-0-owner-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "promptset-promptsets-0-owner-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "promptset-promptsets-0-review-approvers-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "promptset-promptsets-0-review-approvers-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "promptset-promptsets-0-compatibility-affectedagents-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "promptset-promptsets-0-compatibility-affectedagents-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "promptset-promptsets-0-recommendedfor-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "promptset-promptsets-0-recommendedfor-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "retrievalprofileset-retrievalprofiles-0-owner-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "retrievalprofileset-retrievalprofiles-0-owner-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "retrievalprofileset-retrievalprofiles-0-review-approvers-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "retrievalprofileset-retrievalprofiles-0-review-approvers-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "retrievalprofileset-retrievalprofiles-0-sources-0-contextsourceref-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "retrievalprofileset-retrievalprofiles-0-sources-0-contextsourceref-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "retrievalprofileset-retrievalprofiles-0-compatibility-affectedagents-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "retrievalprofileset-retrievalprofiles-0-compatibility-affectedagents-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "retrievalprofileset-retrievalprofiles-0-recommendedfor-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "retrievalprofileset-retrievalprofiles-0-recommendedfor-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "agentdefinitionset-agentdefinitions-0-agentref-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "agentdefinitionset-agentdefinitions-0-agentref-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "agentdefinitionset-agentdefinitions-0-compatibility-affectedagents-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "agentdefinitionset-agentdefinitions-0-compatibility-affectedagents-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "agentdefinitionset-agentdefinitions-0-owner-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "agentdefinitionset-agentdefinitions-0-owner-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "agentdefinitionset-agentdefinitions-0-review-approvers-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "agentdefinitionset-agentdefinitions-0-review-approvers-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "agentdefinitionset-agentdefinitions-0-components-modelprofileref-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "agentdefinitionset-agentdefinitions-0-components-modelprofileref-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "agentdefinitionset-agentdefinitions-0-components-promptsetref-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "agentdefinitionset-agentdefinitions-0-components-promptsetref-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "agentdefinitionset-agentdefinitions-0-components-retrievalprofileref-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "agentdefinitionset-agentdefinitions-0-components-retrievalprofileref-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "agentdefinitionset-agentdefinitions-0-components-permissionrefs-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "agentdefinitionset-agentdefinitions-0-components-permissionrefs-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "agentdefinitionset-agentdefinitions-0-components-capabilityrefs-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "agentdefinitionset-agentdefinitions-0-components-capabilityrefs-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "agentdefinitionset-agentdefinitions-0-components-contextsourcerefs-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "agentdefinitionset-agentdefinitions-0-components-contextsourcerefs-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "agentdefinitionset-agentdefinitions-0-components-memoryscopes-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "agentdefinitionset-agentdefinitions-0-components-memoryscopes-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "agentdefinitionset-agentdefinitions-0-components-extensionrefs-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "agentdefinitionset-agentdefinitions-0-components-extensionrefs-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "agentdefinitionset-agentdefinitions-0-review-approvalgate-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "agentdefinitionset-agentdefinitions-0-review-approvalgate-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "agentdefinitionset-agentdefinitions-0-audit-events-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "agentdefinitionset-agentdefinitions-0-audit-events-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "extensionset-extensions-0-requiredcapabilities-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "extensionset-extensions-0-requiredcapabilities-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "duplicate-actor",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "duplicate-agent",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "duplicate-task",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "duplicate-permission",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "duplicate-capability",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "duplicate-context-source",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "duplicate-memory-scope",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "duplicate-provider",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "duplicate-model-profile",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "duplicate-prompt-set",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "duplicate-retrieval-profile",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "duplicate-agent-definition",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "duplicate-event-type",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "duplicate-extension",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "duplicate-approval-gate",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "workflow-cross-stage-resolved",
+        "operation": "workflow-namespace",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "workflow-same-stage-duplicate",
+        "operation": "workflow-namespace",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "workflow-cross-stage-duplicate",
+        "operation": "workflow-namespace",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "workflow-separate-workflow-identity",
+        "operation": "workflow-namespace",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "workflow-inline-unresolved",
+        "operation": "workflow-namespace",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "workflow-edge-resolved",
+        "operation": "workflow-namespace",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "workflow-edge-unresolved",
+        "operation": "workflow-namespace",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "workflow-duplicate-stage",
+        "operation": "workflow-namespace",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "artifact-cross-task-resolved",
+        "operation": "artifact-namespace",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "artifact-same-task-duplicate",
+        "operation": "artifact-namespace",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "artifact-cross-task-duplicate",
+        "operation": "artifact-namespace",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "artifact-unresolved",
+        "operation": "artifact-namespace",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "artifact-separate-assembly-identity",
+        "operation": "artifact-namespace",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "agent-bridge-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "agent-bridge-missing",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "agent-bridge-duplicate",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "actor-reference-wrong-kind",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "actor-relationship-cycle",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "legacy-actor-fallback",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "override-human",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "override-authority",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "override-service",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "override-requires-actors",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "active-definition-ambiguous",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "promptsetref-eligible",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "promptsetref-inactive-component",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "promptsetref-unapproved-component",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "retrievalprofileref-inactive-component",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "provider-legacy-feature",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "gate-scoped-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "gate-scope-missing",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "gate-scope-wrong",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "gate-scoped-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "gate-unscoped-kind-has-scope",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "gate-unsupported-kind",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "gate-legacy-ambiguous",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-enterprise-team-agent-definitions",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-enterprise-team-agents",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-enterprise-team-capabilities",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-enterprise-team-context",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-enterprise-team-events",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-enterprise-team-extensions",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-enterprise-team-handoffs",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-enterprise-team-memory",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-enterprise-team-model-profiles",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-enterprise-team-permissions",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-enterprise-team-project",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-enterprise-team-prompt-sets",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-enterprise-team-providers",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-enterprise-team-retrieval-profiles",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-enterprise-team-tasks",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-enterprise-team-workflow",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-minimal-team-actors",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-minimal-team-agents",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-minimal-team-project",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-open-source-maintainer-agent-definitions",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-open-source-maintainer-agents",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-open-source-maintainer-capabilities",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-open-source-maintainer-context",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-open-source-maintainer-events",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-open-source-maintainer-extensions",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-open-source-maintainer-handoffs",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-open-source-maintainer-memory",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-open-source-maintainer-model-profiles",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-open-source-maintainer-permissions",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-open-source-maintainer-project",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-open-source-maintainer-prompt-sets",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-open-source-maintainer-providers",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-open-source-maintainer-retrieval-profiles",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-open-source-maintainer-tasks",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-open-source-maintainer-workflow",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-product-delivery-team-agent-definitions",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-product-delivery-team-agents",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-product-delivery-team-capabilities",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-product-delivery-team-context",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-product-delivery-team-events",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-product-delivery-team-extensions",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-product-delivery-team-handoffs",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-product-delivery-team-memory",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-product-delivery-team-model-profiles",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-product-delivery-team-permissions",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-product-delivery-team-project",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-product-delivery-team-prompt-sets",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-product-delivery-team-providers",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-product-delivery-team-retrieval-profiles",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-product-delivery-team-tasks",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-product-delivery-team-workflow",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-research-lab-agent-definitions",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-research-lab-agents",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-research-lab-capabilities",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-research-lab-context",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-research-lab-events",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-research-lab-extensions",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-research-lab-handoffs",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-research-lab-memory",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-research-lab-model-profiles",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-research-lab-permissions",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-research-lab-project",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-research-lab-prompt-sets",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-research-lab-providers",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-research-lab-retrieval-profiles",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-research-lab-tasks",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-research-lab-workflow",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-software-team-agent-definitions",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-software-team-agents",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-software-team-capabilities",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-software-team-context",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-software-team-events",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-software-team-extensions",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-software-team-handoffs",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-software-team-memory",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-software-team-model-profiles",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-software-team-permissions",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-software-team-project",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-software-team-prompt-sets",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-software-team-providers",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-software-team-retrieval-profiles",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-software-team-tasks",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-software-team-workflow",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-solo-developer-actors",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-solo-developer-agents",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-solo-developer-capabilities",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-solo-developer-context",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-solo-developer-events",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-solo-developer-handoffs",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-solo-developer-permissions",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-solo-developer-project",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-solo-developer-tasks",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-solo-developer-workflow",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-startup-team-agent-definitions",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-startup-team-agents",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-startup-team-capabilities",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-startup-team-context",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-startup-team-events",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-startup-team-extensions",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-startup-team-handoffs",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-startup-team-memory",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-startup-team-model-profiles",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-startup-team-permissions",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-startup-team-project",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-startup-team-prompt-sets",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-startup-team-providers",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-startup-team-retrieval-profiles",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-startup-team-tasks",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-examples-startup-team-workflow",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-negative-missing-required-field",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-negative-invalid-enum",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-negative-invalid-id",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "schema-negative-unknown-kind",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "local-ref-resolved",
+        "operation": "local-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "local-ref-wrong-type",
+        "operation": "local-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "local-ref-unavailable",
+        "operation": "local-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "draft-2020-prefixitems-accepted",
+        "operation": "local-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "draft-2020-prefixitems-rejected",
+        "operation": "local-schema",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "yaml-unique",
+        "operation": "yaml-parse",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "yaml-duplicate",
+        "operation": "yaml-parse",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "yaml-malformed",
+        "operation": "yaml-parse",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "discovery-validate-project-hints",
+        "operation": "discovery",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "discovery-reject-unsupported-version",
+        "operation": "discovery",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "discovery-reject-unsupported-kind",
+        "operation": "discovery",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "discovery-reject-source-outside-root",
+        "operation": "discovery",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "discovery-reject-source-kind-mismatch",
+        "operation": "discovery",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "discovery-reject-ambiguous-project-entry",
+        "operation": "discovery",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "discovery-multiple-workflows",
+        "operation": "discovery",
+        "result": "passed",
+        "errors": []
+      },
+      {
+        "id": "agent-bridge-wrong-kind",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "agent-bridge-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "override-mixed-representation",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "gate-kind-agent-definition-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "gate-kind-agent-definition-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "gate-kind-capability-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "gate-kind-capability-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "gate-kind-permission-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "gate-kind-permission-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "gate-kind-context-source-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "gate-kind-context-source-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "gate-kind-memory-scope-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "gate-kind-memory-scope-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "gate-kind-provider-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "gate-kind-provider-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "gate-kind-task-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "gate-kind-task-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "gate-kind-extension-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "gate-kind-extension-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "gate-kind-workflow-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "gate-kind-workflow-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "gate-kind-workflow-stage-resolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      },
+      {
+        "id": "gate-kind-workflow-stage-unresolved",
+        "operation": "semantic-fragment",
+        "result": "not-tested",
+        "errors": []
+      }
+    ],
+    "untested": [
+      "semantic-port",
+      "os-sandbox",
+      "offline-enforcement",
+      "distribution",
+      "supply-chain",
+      "performance",
+      "review"
+    ]
+  },
+  "nativeDiagnosticObservations": [
+    {
+      "caseId": "local-ref-resolved",
+      "result": "passed",
+      "diagnostics": []
+    },
+    {
+      "caseId": "local-ref-wrong-type",
+      "result": "passed",
+      "diagnostics": [
+        {
+          "category": "type",
+          "code": "NF-SCHEMA",
+          "instancePath": ""
+        }
+      ]
+    },
+    {
+      "caseId": "local-ref-unavailable",
+      "result": "passed",
+      "diagnostics": [
+        {
+          "category": "unresolved-local-schema",
+          "code": "NF-SCHEMA"
+        }
+      ]
+    },
+    {
+      "caseId": "draft-2020-prefixitems-accepted",
+      "result": "passed",
+      "diagnostics": []
+    },
+    {
+      "caseId": "draft-2020-prefixitems-rejected",
+      "result": "passed",
+      "diagnostics": [
+        {
+          "category": "items",
+          "code": "NF-SCHEMA",
+          "instancePath": "",
+          "nativeDiagnostic": {
+            "category": "",
+            "instancePath": "/0"
+          }
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "224 semantic/namespace library cases remain not-tested; no full specification or diagnostic parity verdict.",
+    "Application code has no other-language backend, provider/runtime execution or executable-extension operations; source guards are not OS isolation evidence.",
+    "Aliases and explicit YAML tags are rejected; native node parsing precedes bounded conversion.",
+    "Trusted schemas are source-bound to the reviewed executable location; no installed artifact or lifecycle test.",
+    "os.OpenRoot and final no-follow/non-blocking opens are not an OS sandbox; mount/device and replacement-race/platform behavior remain untested.",
+    "All architecture hard gates, distribution targets, supply-chain acceptance, comparable measurements and independent review remain not-tested."
+  ]
+}

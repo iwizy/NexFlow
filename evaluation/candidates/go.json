@@ -1,19 +1,19 @@
 {
   "formatVersion": "0.1-draft",
   "candidate": "go",
-  "status": "not-started",
+  "status": "in-progress",
   "specificationRevision": "1d1fa238ab5729a79bee9389d5c66cfd20a61256",
   "corpusSha256": "01b116005f0650ac980194b22c02188289eaf1e8626b227aecf3684ece0d8f6b",
-  "evaluationPackageRevision": null,
+  "evaluationPackageRevision": "a8301a7478587c59502dfb2e6bd548489c14ee2b",
   "prototype": {
-    "revision": null,
-    "source": null,
+    "revision": "737396b6488a9f10b179061366b9f1d02591fb9f",
+    "source": "evaluation/prototypes/go",
     "scope": "validation-only"
   },
   "toolchain": {
-    "version": null,
-    "dependencyLock": null,
-    "buildCommand": null
+    "version": "Go 1.27.1; jsonschema/v6 6.0.2; go.yaml.in/yaml/v3 3.0.4; CGO_ENABLED=0",
+    "dependencyLock": "evaluation/prototypes/go/go.sum",
+    "buildCommand": "GOTOOLCHAIN=local GOPROXY=off CGO_ENABLED=0 go build -mod=readonly -trimpath -buildvcs=false -o bin/nexflow-go-evaluation ./cmd/cli"
   },
   "targets": [
     {
@@ -77,7 +77,14 @@
   "reconciliation": null,
   "measurements": [],
   "limitations": [
-    "No candidate prototype has been evaluated."
+    "224 semantic/namespace library cases remain not-tested; no full specification or diagnostic parity verdict.",
+    "Application code has no other-language backend, provider/runtime execution or executable-extension operations; source guards are not OS isolation evidence.",
+    "Aliases and explicit YAML tags are rejected; native node parsing precedes bounded conversion.",
+    "Trusted schemas are source-bound to the reviewed executable location; no installed artifact or lifecycle test.",
+    "os.OpenRoot and final no-follow/non-blocking opens are not an OS sandbox; mount/device and replacement-race/platform behavior remain untested.",
+    "All architecture hard gates, distribution targets, supply-chain acceptance, comparable measurements and independent review remain not-tested."
   ],
-  "evidence": []
+  "evidence": [
+    "evaluation/evidence/go-initial.json"
+  ]
 }

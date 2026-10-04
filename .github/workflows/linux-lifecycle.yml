@@ -30,20 +30,40 @@ jobs:
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
           node-version: '22.23.2'
+      - name: Reuse already captured immutable evidence when sources match
+        id: plan
+        shell: bash
+        run: |
+          node --input-type=module <<'JS'
+          import fs from 'node:fs';
+          import { createHash } from 'node:crypto';
+          const sha = file => createHash('sha256').update(fs.readFileSync(file)).digest('hex');
+          const file = 'evaluation/lifecycle/linux/${{ matrix.candidate }}.json';
+          let collect = true;
+          if (fs.existsSync(file)) {
+            const record = JSON.parse(fs.readFileSync(file));
+            const pins = JSON.parse(fs.readFileSync('evaluation/fidelity/source-pins.json'));
+            collect = record.sourceRevision !== pins.candidates['${{ matrix.candidate }}'].sourceRevision
+              || ![...record.collectorSources, ...record.sourceManifest].every(row => sha(row.path) === row.sha256);
+          }
+          fs.appendFileSync(process.env.GITHUB_OUTPUT, 'collect=' + collect + '\n');
+          JS
+      - name: Provision pinned maintenance checks
+        run: npm ci --ignore-scripts
       - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1
-        if: matrix.candidate == 'python'
+        if: matrix.candidate == 'python' && steps.plan.outputs.collect == 'true'
         with:
           python-version: '3.12.14'
       - uses: actions/setup-go@924ae3a1cded613372ab5595356fb5720e22ba16
-        if: matrix.candidate == 'go'
+        if: matrix.candidate == 'go' && steps.plan.outputs.collect == 'true'
         with:
           go-version: '1.27.1'
           cache: false
       - name: Provision pinned tools and caches separately
+        if: steps.plan.outputs.collect == 'true'
         shell: bash
         run: |
           set -euo pipefail
-          npm ci --ignore-scripts
           case '${{ matrix.candidate }}' in
             typescript)
               npm --prefix evaluation/prototypes/typescript ci --ignore-scripts
@@ -65,10 +85,12 @@ jobs:
               ;;
           esac
       - name: Build capsule and test isolated clean offline installation
+        if: steps.plan.outputs.collect == 'true'
         shell: bash
         run: |
           node scripts/runtime-linux-lifecycle.mjs '${{ matrix.candidate }}' "$RUNNER_TEMP/lifecycle.json" "$RUNNER_TEMP/evaluation-capsules"
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.plan.outputs.collect == 'true'
         with:
           name: linux-evaluation-${{ matrix.candidate }}-${{ github.event.pull_request.head.sha }}
           path: |
@@ -76,3 +98,6 @@ jobs:
             ${{ runner.temp }}/evaluation-capsules/*.tar.gz
           retention-days: 7
           if-no-files-found: error
+      - name: Verify stored evidence without repeating confirmed native work
+        if: steps.plan.outputs.collect != 'true'
+        run: npm run runtime-linux-lifecycle-smoke

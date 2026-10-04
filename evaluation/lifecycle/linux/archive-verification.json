@@ -1,0 +1,75 @@
+{
+  "task": "NF-056-12",
+  "recordedAt": "2026-10-04 14:42:25 UTC",
+  "collectorRevision": "de6b25428e040a2968493c442e8f2e68d12e48b0",
+  "nativeRunUrl": "https://github.com/iwizy/NexFlow/actions/runs/37209662888",
+  "inspections": [
+    {
+      "candidate": "typescript",
+      "rawReportSha256": "94a283a36bf09fe4b9f3211e19cae9fd6cb8515103283fb12d569324472998e0",
+      "capsuleSha256": "8e4bd06593461a46838b0191585604e6e436c0642c08c20143070eb253ec0456",
+      "capsuleBytes": 488720,
+      "fileCount": 827,
+      "completeManifestMatched": true,
+      "binary": null,
+      "inspectionPlatform": "darwin",
+      "inspectionArchitecture": "arm64",
+      "scope": "Archive/content/ELF inspection only; native executions are the separate recorded Linux CI jobs."
+    },
+    {
+      "candidate": "python",
+      "rawReportSha256": "bef5dcf430443394601642ff5bb2429716f0f79c9ef9270cf573b9ec6d9ea1b1",
+      "capsuleSha256": "51a69a5af1689270e856de1aca64d94331cba005e67859a01e2515a5101d7cea",
+      "capsuleBytes": 4574884,
+      "fileCount": 48,
+      "completeManifestMatched": true,
+      "binary": null,
+      "inspectionPlatform": "darwin",
+      "inspectionArchitecture": "arm64",
+      "scope": "Archive/content/ELF inspection only; native executions are the separate recorded Linux CI jobs."
+    },
+    {
+      "candidate": "rust",
+      "rawReportSha256": "37b1f036b84a0200ffbc3ccf40ae27cc13e90717207d149058c8b38d31312387",
+      "capsuleSha256": "c30e08c9bca9159a67eb9c382fb004772de6de6a928a8f8c9a12ba43a2e0bdca",
+      "capsuleBytes": 2881007,
+      "fileCount": 20,
+      "completeManifestMatched": true,
+      "binary": {
+        "format": "ELF",
+        "classBits": 64,
+        "byteOrder": "little-endian",
+        "machine": "x86-64",
+        "sha256": "75f13f670f1bf8d54c9a13d30495f58ba197527f83466eb3bd82c54f58123f51",
+        "linkageInventory": "not-tested"
+      },
+      "inspectionPlatform": "darwin",
+      "inspectionArchitecture": "arm64",
+      "scope": "Archive/content/ELF inspection only; native executions are the separate recorded Linux CI jobs."
+    },
+    {
+      "candidate": "go",
+      "rawReportSha256": "54470cbbece9ddadede62ffd8f49db46b8c2508ce8c58144fcaec856653d648d",
+      "capsuleSha256": "c7b49a4257f39ede6c4f900aeb809d3a31afbd916e943ca86d7e6a8ef1620dde",
+      "capsuleBytes": 3685596,
+      "fileCount": 20,
+      "completeManifestMatched": true,
+      "binary": {
+        "format": "ELF",
+        "classBits": 64,
+        "byteOrder": "little-endian",
+        "machine": "x86-64",
+        "sha256": "d27c2bdb328055b8cb2495dc35b48c76da97a180a0417200db7cc50c634e1810",
+        "linkageInventory": "not-tested"
+      },
+      "inspectionPlatform": "darwin",
+      "inspectionArchitecture": "arm64",
+      "scope": "Archive/content/ELF inspection only; native executions are the separate recorded Linux CI jobs."
+    }
+  ],
+  "limits": [
+    "Archive hashes and every unpacked file were checked independently after download. ELF class/machine inspection is not additional native execution.",
+    "Target-specific dynamic linkage inventory, interpreter/runtime closure and signature verification are not tested. Native Linux CLI executions are separately bound to immutable jobs.",
+    "CI artifact retention is finite; checksums and stored records remain durable but expired archives require honest unavailable status."
+  ]
+}

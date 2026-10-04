@@ -69,5 +69,52 @@ npm run runtime-linux-lifecycle-smoke
 
 Do not run on ARM, translated execution or macOS and call it Linux evidence.
 The consistency check is offline; it does not re-run installation or promote
-failed/not-tested results. Final four records and immutable job links are added
-only after actual native collection finishes.
+failed/not-tested results.
+
+## Actual Native Results — 2026-10-04
+
+Collector revision `de6b25428e040a2968493c442e8f2e68d12e48b0` ran in
+[native run 37209662888](https://github.com/iwizy/NexFlow/actions/runs/37209662888).
+All four jobs captured real native Linux AMD64 evidence and temporary versioned
+capsules. [Independent archive verification](archive-verification.json) recomputed
+each capsule checksum and compared every unpacked file against its manifest.
+ELF header inspection confirms x86-64 Rust/Go payloads, but that inspection was
+not an additional native execution. Dynamic-linking/runtime closure remains
+not-tested, not silently approved from a successful invocation.
+
+| Candidate record | Capsule bytes | Build / clean extract | Shared cases passed / failed | Offline installed use | Scoped uninstall |
+| --- | ---: | --- | ---: | --- | --- |
+| [TypeScript](typescript.json) | 488720 | passed / passed | 11 / 0 | passed | passed |
+| [Python](python.json) | 4574884 | passed / passed | 11 / 0 | passed | passed |
+| [Rust](rust.json) | 2881007 | passed / passed | 1 / 10 | failed | passed |
+| [Go](go.json) | 3685596 | passed / passed | 11 / 0 | passed | passed |
+
+Each case ran twice: 88 installed process invocations in total, 68 satisfying
+the unchanged expectations and 20 failing. Rust's ten failures returned exit 4
+and `NEXFLOW-PROTOTYPE-INTERNAL` after source schemas were hidden. Only rejecting
+`run` passed. This reproduces its documented source-checkout schema dependency;
+extracting an executable is not a working portable install. The source candidate
+was not repaired and the common expectations were not weakened.
+
+All four namespace controls observed no network routes, `ENETUNREACH` from the
+synthetic TCP attempt and `EROFS` from the read-only input write. Sources, locks,
+corpus and installed capsule content stayed unchanged during invocations.
+These are scoped offline/relocation observations, not complete security gates.
+
+Upgrade, rollback and signing remain `not-tested` for every candidate. Every
+distribution gate stays `partial`, with overall `not-ready`. No second historical
+artifact or product version is invented. Linux image drift occurs in every
+record; CPU/memory drift also occurs in some jobs. The unchanged environment
+probe's cohort result concerns measurement eligibility, not the separate actual
+CLI executions. No comparable benchmark or new frozen cohort is claimed.
+
+The records retain immutable source/tooling revisions, lock hashes, all structured
+attempts, artifact manifests/checksums, runtime/compiler prerequisites and job/
+artifact receipts. Finite seven-day capsule retention is explicit; durable
+records do not make an expired archive available. Root npm tooling, macOS runs
+and fixture checks do not replace these native Linux observations.
+
+When committed records match the current candidate and collector source hashes,
+the workflow verifies their immutable evidence without repeating confirmed
+installation runs or minting a second identical capsule. Native collection is
+performed only when evidence is absent or those source bytes change.

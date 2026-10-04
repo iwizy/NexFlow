@@ -25,6 +25,7 @@
     "credential-handling-schema-smoke": "node scripts/credential-handling-schema-smoke.mjs",
     "documentation-navigation-smoke": "node scripts/documentation-navigation-smoke.mjs",
     "extension-registry-smoke": "node scripts/extension-registry-smoke.mjs",
+    "feature-status-registry-smoke": "node scripts/feature-status-registry-smoke.mjs",
     "github-extension-smoke": "node scripts/github-extension-smoke.mjs",
     "human-override-schema-smoke": "node scripts/human-override-schema-smoke.mjs",
     "issue-tracker-extension-smoke": "node scripts/issue-tracker-extension-smoke.mjs",

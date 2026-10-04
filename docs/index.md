@@ -88,6 +88,7 @@ uncataloged documentation pages, and missing top-level guide links.
 | [Governance](governance.md) | Contribution, review, and decision rules. |
 | [Provider Neutrality Checklist](provider-neutrality-checklist.md) | Evidence-based review of portable core adoption, provider constraints, independent authority, adapter boundaries, offline tooling, and support claims. |
 | [Maintainer Guide](maintainer-guide.md) | Change routing, synchronization, validation, review, merge, RFC, release, security, and handoff workflow for maintainers. |
+| [Feature Status Registry](feature-status-registry.md) | Complete kind/RFC lifecycle inventory with separate experimental, deprecated and planned slices; does not promote implementation evidence into acceptance or runtime support. |
 | [Licensing And Patent Rationale](licensing-and-patent-rationale.md) | Records the current MIT decision, the Apache-2.0 patent tradeoff, and mandatory review triggers. |
 | [Versioning](versioning.md) | Spec versioning and migration policy. |
 | [Migration Guide](migration-guide.md) | Reusable migration record skeleton, version-domain map, safe procedure, validation evidence, rollback boundary, and current migration routes. |

@@ -20,6 +20,10 @@ The [candidate supply-chain review](supply-chain/README.md) collects real
 dependency/license inventories, SBOMs, dated advisory matches and artifact
 receipts. Unknown native/runtime closure and provenance remain open.
 
+The [Linux AMD64 lifecycle review](lifecycle/linux/README.md) tests private
+source-layout evaluation capsules without treating missing upgrade, rollback,
+signing or failed installed execution as distribution approval.
+
 The [offline/denied-effects experiment](isolation/README.md) adds independent
 positive/negative OS controls and bounded native macOS evidence. It keeps
 security residuals, other targets and architecture acceptance separate.

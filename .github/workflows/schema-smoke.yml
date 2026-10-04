@@ -101,5 +101,8 @@ jobs:
       - name: Verify four-candidate fidelity evidence and rejection paths
         run: npm run runtime-fidelity-smoke
 
+      - name: Verify bounded offline and denied-effects evidence
+        run: npm run runtime-isolation-smoke
+
       - name: Run semantic reference smoke checks
         run: npm run semantic-smoke

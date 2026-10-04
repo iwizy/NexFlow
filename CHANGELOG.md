@@ -8,6 +8,11 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Added
 
+- Added a source-bound offline/denied-effects experiment for four validation-only
+  candidates, with independent synthetic OS controls, immutable harness bindings
+  and consistency/rejection checks. Local macOS evidence is bounded; security
+  remains partial, other targets not-tested and architecture not-ready.
+
 - Added a single feature lifecycle registry covering every manifest kind and
   numbered RFC, experimental source/profile slices, existing deprecated fields
   and planned implementations, with offline inventory and status-consistency

@@ -8,6 +8,12 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Added
 
+- Prepared four revision-bound candidate supply-chain inventories, SBOMs,
+  advisory matching and artifact/provenance records with offline consistency
+  and rejection checks. Unknown license/native/runtime closure and untested
+  signing or lifecycle remain open; no dependency repair, architecture approval,
+  release or version change is introduced.
+
 - Added a source-bound offline/denied-effects experiment for four validation-only
   candidates, with independent synthetic OS controls, immutable harness bindings
   and consistency/rejection checks. Local macOS evidence is bounded; security

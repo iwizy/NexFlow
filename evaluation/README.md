@@ -16,6 +16,10 @@ The [four-candidate fidelity review](fidelity/README.md) compares immutable
 prototype revisions without changing the common catalog or accepting an
 architecture. Missing semantics remain visible eligibility blockers.
 
+The [candidate supply-chain review](supply-chain/README.md) collects real
+dependency/license inventories, SBOMs, dated advisory matches and artifact
+receipts. Unknown native/runtime closure and provenance remain open.
+
 The [offline/denied-effects experiment](isolation/README.md) adds independent
 positive/negative OS controls and bounded native macOS evidence. It keeps
 security residuals, other targets and architecture acceptance separate.

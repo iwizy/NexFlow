@@ -1,0 +1,226 @@
+{
+  "$schema": "http://cyclonedx.org/schema/bom-1.6.schema.json",
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-10-04T13:53:54.711Z",
+    "component": {
+      "type": "application",
+      "bom-ref": "candidate:go",
+      "name": "nexflow-go-evaluation",
+      "version": "737396b6488a9f10b179061366b9f1d02591fb9f",
+      "properties": [
+        {
+          "name": "nexflow:scope",
+          "value": "disposable-validation-only-not-release"
+        },
+        {
+          "name": "nexflow:collectorRevision",
+          "value": "f8f66a9122d73a195698966785d968cdd395de7b"
+        }
+      ]
+    }
+  },
+  "components": [
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/github.com/dlclark/regexp2@v1.11.0",
+      "name": "github.com/dlclark/regexp2",
+      "version": "v1.11.0",
+      "purl": "pkg:golang/github.com/dlclark/regexp2@v1.11.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "NOASSERTION"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-test-module"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "go.sum-unused-test-identity"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        },
+        {
+          "name": "nexflow:goModuleSum",
+          "value": "h1:G/nrcoOa7ZXlpoa/91N3X7mM3r8eIlMBBJZvsz/mxKI="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/github.com/santhosh-tekuri/jsonschema/v6@v6.0.2",
+      "name": "github.com/santhosh-tekuri/jsonschema/v6",
+      "version": "v6.0.2",
+      "purl": "pkg:golang/github.com/santhosh-tekuri/jsonschema/v6@v6.0.2",
+      "licenses": [
+        {
+          "license": {
+            "name": "NOASSERTION"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "compiled-module"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "go-list-compiled-module-cache"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        },
+        {
+          "name": "nexflow:goModuleSum",
+          "value": "h1:KRzFb2m7YtdldCEkzs6KqmJw4nqEVZGK7IN2kJkjTuQ="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/go.yaml.in/yaml/v3@v3.0.4",
+      "name": "go.yaml.in/yaml/v3",
+      "version": "v3.0.4",
+      "purl": "pkg:golang/go.yaml.in/yaml/v3@v3.0.4",
+      "licenses": [
+        {
+          "license": {
+            "name": "NOASSERTION"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "compiled-module"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "go-list-compiled-module-cache"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        },
+        {
+          "name": "nexflow:goModuleSum",
+          "value": "h1:tfq32ie2Jv2UxXFdLJdh3jXuOzWiL1fo0bu/FbuKpbc="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/golang.org/x/text@v0.14.0",
+      "name": "golang.org/x/text",
+      "version": "v0.14.0",
+      "purl": "pkg:golang/golang.org/x/text@v0.14.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "NOASSERTION"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "compiled-module"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "go-list-compiled-module-cache"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        },
+        {
+          "name": "nexflow:goModuleSum",
+          "value": "h1:ScX5w1eTa3QqT8oi6+ziP7dTV1S2+ALU0bI+0zXKWiQ="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/gopkg.in/check.v1@v0.0.0-20161208181325-20d25e280405",
+      "name": "gopkg.in/check.v1",
+      "version": "v0.0.0-20161208181325-20d25e280405",
+      "purl": "pkg:golang/gopkg.in/check.v1@v0.0.0-20161208181325-20d25e280405",
+      "licenses": [
+        {
+          "license": {
+            "name": "NOASSERTION"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-test-module"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "go.sum-unused-test-identity"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        },
+        {
+          "name": "nexflow:goModuleSum",
+          "value": "h1:yhCVgyC4o1eVCa2tZl7eS0r+SDo693bJlVdllGtEeKM="
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "candidate:go",
+      "dependsOn": [
+        "pkg:golang/github.com/santhosh-tekuri/jsonschema/v6@v6.0.2",
+        "pkg:golang/go.yaml.in/yaml/v3@v3.0.4"
+      ]
+    },
+    {
+      "ref": "pkg:golang/github.com/dlclark/regexp2@v1.11.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:golang/github.com/santhosh-tekuri/jsonschema/v6@v6.0.2",
+      "dependsOn": [
+        "pkg:golang/golang.org/x/text@v0.14.0"
+      ]
+    },
+    {
+      "ref": "pkg:golang/go.yaml.in/yaml/v3@v3.0.4",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:golang/golang.org/x/text@v0.14.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:golang/gopkg.in/check.v1@v0.0.0-20161208181325-20d25e280405",
+      "dependsOn": []
+    }
+  ],
+  "compositions": [
+    {
+      "aggregate": "incomplete",
+      "assemblies": [
+        "candidate:go"
+      ]
+    }
+  ]
+}

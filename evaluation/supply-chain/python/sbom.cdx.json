@@ -1,0 +1,2552 @@
+{
+  "$schema": "http://cyclonedx.org/schema/bom-1.6.schema.json",
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-10-04T13:53:54.711Z",
+    "component": {
+      "type": "application",
+      "bom-ref": "candidate:python",
+      "name": "nexflow-python-evaluation",
+      "version": "76141dfbeae265cb636d99a6164b097ce5d3019a",
+      "properties": [
+        {
+          "name": "nexflow:scope",
+          "value": "disposable-validation-only-not-release"
+        },
+        {
+          "name": "nexflow:collectorRevision",
+          "value": "f8f66a9122d73a195698966785d968cdd395de7b"
+        }
+      ]
+    }
+  },
+  "components": [
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/archery@1.2.2",
+      "name": "archery",
+      "version": "1.2.2",
+      "purl": "pkg:cargo/archery@1.2.2",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "70e0a5f99dfebb87bb342d0f53bb92c81842e100bbb915223e38349580e5441d"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "wheel-upstream-sbom"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "rpds-py-wheel-embedded-SBOM"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/heck@0.5.0",
+      "name": "heck",
+      "version": "0.5.0",
+      "purl": "pkg:cargo/heck@0.5.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "2304e00983f87ffb38b55b444b5e3b60a884b5d30c0fca7d82fe33449bbe55ea"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "wheel-upstream-sbom"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "rpds-py-wheel-embedded-SBOM"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/libc@0.2.177",
+      "name": "libc",
+      "version": "0.2.177",
+      "purl": "pkg:cargo/libc@0.2.177",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "2874a2af47a2325c2001a6e6fad9b16a53b802102b528163885171cf92b15976"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "wheel-upstream-sbom"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "rpds-py-wheel-embedded-SBOM"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/once_cell@1.21.3",
+      "name": "once_cell",
+      "version": "1.21.3",
+      "purl": "pkg:cargo/once_cell@1.21.3",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "42f5e15c9953c5e4ccceeb2e7382a716482c34515315f7b03532b8b4e8393d2d"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "wheel-upstream-sbom"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "rpds-py-wheel-embedded-SBOM"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/proc-macro2@1.0.103",
+      "name": "proc-macro2",
+      "version": "1.0.103",
+      "purl": "pkg:cargo/proc-macro2@1.0.103",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "5ee95bc4ef87b8d5ba32e8b7714ccc834865276eab0aed5c9958d00ec45f49e8"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "wheel-upstream-sbom"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "rpds-py-wheel-embedded-SBOM"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/pyo3-build-config@0.29.0",
+      "name": "pyo3-build-config",
+      "version": "0.29.0",
+      "purl": "pkg:cargo/pyo3-build-config@0.29.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "c5e2a7d2f0d013342f295c048ad19237add5154a55b1c5a254c0ec93d4109078"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "wheel-upstream-sbom"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "rpds-py-wheel-embedded-SBOM"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/pyo3-ffi@0.29.0",
+      "name": "pyo3-ffi",
+      "version": "0.29.0",
+      "purl": "pkg:cargo/pyo3-ffi@0.29.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "ca85c467da1bbc8d866eea5deff9cf29ea5f7785054a17da36e65bda9c05845b"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "wheel-upstream-sbom"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "rpds-py-wheel-embedded-SBOM"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/pyo3-macros-backend@0.29.0",
+      "name": "pyo3-macros-backend",
+      "version": "0.29.0",
+      "purl": "pkg:cargo/pyo3-macros-backend@0.29.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "4ca3a1557399783172dc5bf39cfca835157732532cba56b71d2292161e53b362"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "wheel-upstream-sbom"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "rpds-py-wheel-embedded-SBOM"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/pyo3-macros@0.29.0",
+      "name": "pyo3-macros",
+      "version": "0.29.0",
+      "purl": "pkg:cargo/pyo3-macros@0.29.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "9ac53762fd065daa3194dd09337a38bd793a188100fd1a9304c4ab312d901771"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "wheel-upstream-sbom"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "rpds-py-wheel-embedded-SBOM"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/pyo3@0.29.0",
+      "name": "pyo3",
+      "version": "0.29.0",
+      "purl": "pkg:cargo/pyo3@0.29.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "cd274650b21d4bfc26a0a47587962c1edb425f69287324355cd040c3ea66071c"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "wheel-upstream-sbom"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "rpds-py-wheel-embedded-SBOM"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/quote@1.0.42",
+      "name": "quote",
+      "version": "1.0.42",
+      "purl": "pkg:cargo/quote@1.0.42",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "a338cc41d27e6cc6dce6cefc13a0729dfbb81c262b1f519331575dd80ef3067f"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "wheel-upstream-sbom"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "rpds-py-wheel-embedded-SBOM"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/rpds@1.2.1",
+      "name": "rpds",
+      "version": "1.2.1",
+      "purl": "pkg:cargo/rpds@1.2.1",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "e025feb26210bc196b908e72deb063b1b4000754304341cbc168a1e72c857ebc"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "wheel-upstream-sbom"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "rpds-py-wheel-embedded-SBOM"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/smallvec@1.15.1",
+      "name": "smallvec",
+      "version": "1.15.1",
+      "purl": "pkg:cargo/smallvec@1.15.1",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "67b1b7a3b5fe4f1376887184045fcf45c69e92af734b7aaddc05fb777b6fbd03"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "wheel-upstream-sbom"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "rpds-py-wheel-embedded-SBOM"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/syn@2.0.111",
+      "name": "syn",
+      "version": "2.0.111",
+      "purl": "pkg:cargo/syn@2.0.111",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "390cc9a294ab71bdb1aa2e99d13be9c753cd2d7bd6560c77118597410c4d2e87"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "wheel-upstream-sbom"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "rpds-py-wheel-embedded-SBOM"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/target-lexicon@0.13.3",
+      "name": "target-lexicon",
+      "version": "0.13.3",
+      "purl": "pkg:cargo/target-lexicon@0.13.3",
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0 WITH LLVM-exception"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "df7f62577c25e07834649fc3b39fafdc597c0a3527dc1c60129201ccfcbaa50c"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "wheel-upstream-sbom"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "rpds-py-wheel-embedded-SBOM"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/triomphe@0.1.15",
+      "name": "triomphe",
+      "version": "0.1.15",
+      "purl": "pkg:cargo/triomphe@0.1.15",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "dd69c5aa8f924c7519d6372789a74eac5b94fb0f8fcf0d4a97eb0bfc3e785f39"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "wheel-upstream-sbom"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "rpds-py-wheel-embedded-SBOM"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/unicode-ident@1.0.22",
+      "name": "unicode-ident",
+      "version": "1.0.22",
+      "purl": "pkg:cargo/unicode-ident@1.0.22",
+      "licenses": [
+        {
+          "license": {
+            "name": "(MIT OR Apache-2.0) AND Unicode-3.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "9312f7c4f6ff9069b165498234ce8be658059c6728633667c526e27dc2cf1df5"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "wheel-upstream-sbom"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "rpds-py-wheel-embedded-SBOM"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/attrs@26.1.0",
+      "name": "attrs",
+      "version": "26.1.0",
+      "purl": "pkg:pypi/attrs@26.1.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "installed"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "installed-wheel-METADATA"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        },
+        {
+          "name": "nexflow:installedMetadataSha256",
+          "value": "4cd40e690f23bf37cbcad34efd6758e062df1df07c86833f7e3ce95bf1fa38cc"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/autocommand@2.2.2?owner=setuptools",
+      "name": "autocommand",
+      "version": "2.2.2",
+      "purl": "pkg:pypi/autocommand@2.2.2?owner=setuptools",
+      "licenses": [
+        {
+          "license": {
+            "name": "LGPLv3"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "vendored-build"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "vendored-wheel-METADATA"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        },
+        {
+          "name": "nexflow:installedMetadataSha256",
+          "value": "3800d9b91dceea2065a6ed6279383362e97ac38b8e56b9343f404ee531860099"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/backports-tarfile@1.2.0?owner=setuptools",
+      "name": "backports-tarfile",
+      "version": "1.2.0",
+      "purl": "pkg:pypi/backports-tarfile@1.2.0?owner=setuptools",
+      "licenses": [
+        {
+          "license": {
+            "name": "NOASSERTION"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "vendored-build"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "vendored-wheel-METADATA"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        },
+        {
+          "name": "nexflow:installedMetadataSha256",
+          "value": "8215c54ead77d9dc5a108a25c6bdc72b5999aa6f62c9499a440359412afa5a51"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/build@1.3.0",
+      "name": "build",
+      "version": "1.3.0",
+      "purl": "pkg:pypi/build@1.3.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "installed"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "installed-wheel-METADATA"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        },
+        {
+          "name": "nexflow:installedMetadataSha256",
+          "value": "8bf61ef1c4aeb139423ab04e5a97248889f4864c5be948b4daf602f5aa531dfc"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/cachecontrol@0.14.4?owner=pip",
+      "name": "cachecontrol",
+      "version": "0.14.4",
+      "purl": "pkg:pypi/cachecontrol@0.14.4?owner=pip",
+      "licenses": [
+        {
+          "license": {
+            "name": "NOASSERTION"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "vendored-build"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "vendor.txt"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/certifi@2026.6.17?owner=pip",
+      "name": "certifi",
+      "version": "2026.6.17",
+      "purl": "pkg:pypi/certifi@2026.6.17?owner=pip",
+      "licenses": [
+        {
+          "license": {
+            "name": "NOASSERTION"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "vendored-build"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "vendor.txt"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/distlib@0.4.2?owner=pip",
+      "name": "distlib",
+      "version": "0.4.2",
+      "purl": "pkg:pypi/distlib@0.4.2?owner=pip",
+      "licenses": [
+        {
+          "license": {
+            "name": "NOASSERTION"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "vendored-build"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "vendor.txt"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/distro@1.9.0?owner=pip",
+      "name": "distro",
+      "version": "1.9.0",
+      "purl": "pkg:pypi/distro@1.9.0?owner=pip",
+      "licenses": [
+        {
+          "license": {
+            "name": "NOASSERTION"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "vendored-build"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "vendor.txt"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/idna@3.18?owner=pip",
+      "name": "idna",
+      "version": "3.18",
+      "purl": "pkg:pypi/idna@3.18?owner=pip",
+      "licenses": [
+        {
+          "license": {
+            "name": "NOASSERTION"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "vendored-build"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "vendor.txt"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/importlib-metadata@8.0.0?owner=setuptools",
+      "name": "importlib-metadata",
+      "version": "8.0.0",
+      "purl": "pkg:pypi/importlib-metadata@8.0.0?owner=setuptools",
+      "licenses": [
+        {
+          "license": {
+            "name": "NOASSERTION"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "vendored-build"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "vendored-wheel-METADATA"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        },
+        {
+          "name": "nexflow:installedMetadataSha256",
+          "value": "6a7b90effee1e09d5b484cdf7232016a43e2d9cc9543bcbb8e494b1ec05e1f59"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/inflect@7.3.1?owner=setuptools",
+      "name": "inflect",
+      "version": "7.3.1",
+      "purl": "pkg:pypi/inflect@7.3.1?owner=setuptools",
+      "licenses": [
+        {
+          "license": {
+            "name": "NOASSERTION"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "vendored-build"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "vendored-wheel-METADATA"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        },
+        {
+          "name": "nexflow:installedMetadataSha256",
+          "value": "66030d634580651b3e53cc19895d9231f8d22aa06b327817c8332cfc20303308"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/jaraco-collections@5.1.0?owner=setuptools",
+      "name": "jaraco-collections",
+      "version": "5.1.0",
+      "purl": "pkg:pypi/jaraco-collections@5.1.0?owner=setuptools",
+      "licenses": [
+        {
+          "license": {
+            "name": "NOASSERTION"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "vendored-build"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "vendored-wheel-METADATA"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        },
+        {
+          "name": "nexflow:installedMetadataSha256",
+          "value": "20c51a96236c0395f53b1f4c5d458e6a0721e51e16c1bff733b7aba76f5d06d8"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/jaraco-context@5.3.0?owner=setuptools",
+      "name": "jaraco-context",
+      "version": "5.3.0",
+      "purl": "pkg:pypi/jaraco-context@5.3.0?owner=setuptools",
+      "licenses": [
+        {
+          "license": {
+            "name": "NOASSERTION"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "vendored-build"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "vendored-wheel-METADATA"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        },
+        {
+          "name": "nexflow:installedMetadataSha256",
+          "value": "c43b60b897a3d2d37d8845c252fc44261d9aef171e21154111a9012d2afffed6"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/jaraco-functools@4.0.1?owner=setuptools",
+      "name": "jaraco-functools",
+      "version": "4.0.1",
+      "purl": "pkg:pypi/jaraco-functools@4.0.1?owner=setuptools",
+      "licenses": [
+        {
+          "license": {
+            "name": "NOASSERTION"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "vendored-build"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "vendored-wheel-METADATA"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        },
+        {
+          "name": "nexflow:installedMetadataSha256",
+          "value": "8b86946900d7fa38dd1102b9c1ebe17a0cb1f09c8b7e29f61f2bda4a4dc51eca"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/jaraco-text@3.12.1?owner=setuptools",
+      "name": "jaraco-text",
+      "version": "3.12.1",
+      "purl": "pkg:pypi/jaraco-text@3.12.1?owner=setuptools",
+      "licenses": [
+        {
+          "license": {
+            "name": "NOASSERTION"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "vendored-build"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "vendored-wheel-METADATA"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        },
+        {
+          "name": "nexflow:installedMetadataSha256",
+          "value": "03359d9ba56231f0ce3e840c7cb5a7db380141218949ccaa78ddbd4dcb965d52"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/jsonschema-specifications@2025.9.1",
+      "name": "jsonschema-specifications",
+      "version": "2025.9.1",
+      "purl": "pkg:pypi/jsonschema-specifications@2025.9.1",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "installed"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "installed-wheel-METADATA"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        },
+        {
+          "name": "nexflow:installedMetadataSha256",
+          "value": "35abd41757f32b4ea24756920ded47b70173d77cbc052a5a6d3ab583b2e8d89d"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/jsonschema@4.26.0",
+      "name": "jsonschema",
+      "version": "4.26.0",
+      "purl": "pkg:pypi/jsonschema@4.26.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "installed"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "installed-wheel-METADATA"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        },
+        {
+          "name": "nexflow:installedMetadataSha256",
+          "value": "05b189866ca98a96da3934bf6b83687ced3ff85325273b77e16b705f6d8b26d2"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/more-itertools@10.3.0?owner=setuptools",
+      "name": "more-itertools",
+      "version": "10.3.0",
+      "purl": "pkg:pypi/more-itertools@10.3.0?owner=setuptools",
+      "licenses": [
+        {
+          "license": {
+            "name": "NOASSERTION"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "vendored-build"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "vendored-wheel-METADATA"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        },
+        {
+          "name": "nexflow:installedMetadataSha256",
+          "value": "0453bdd0ef9f2cd89540ca63ee8212e73b73809514419dd3037d8fe471f737e0"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/msgpack@1.1.2?owner=pip",
+      "name": "msgpack",
+      "version": "1.1.2",
+      "purl": "pkg:pypi/msgpack@1.1.2?owner=pip",
+      "licenses": [
+        {
+          "license": {
+            "name": "NOASSERTION"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "vendored-build"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "vendor.txt"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/packaging@24.0?owner=setuptools%2F_vendor%2Fwheel",
+      "name": "packaging",
+      "version": "24.0",
+      "purl": "pkg:pypi/packaging@24.0?owner=setuptools%2F_vendor%2Fwheel",
+      "licenses": [
+        {
+          "license": {
+            "name": "NOASSERTION"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "vendored-build"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "vendor.txt"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/packaging@24.0?owner=wheel",
+      "name": "packaging",
+      "version": "24.0",
+      "purl": "pkg:pypi/packaging@24.0?owner=wheel",
+      "licenses": [
+        {
+          "license": {
+            "name": "NOASSERTION"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "vendored-build"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "vendor.txt"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/packaging@24.2?owner=setuptools",
+      "name": "packaging",
+      "version": "24.2",
+      "purl": "pkg:pypi/packaging@24.2?owner=setuptools",
+      "licenses": [
+        {
+          "license": {
+            "name": "NOASSERTION"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "vendored-build"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "vendored-wheel-METADATA"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        },
+        {
+          "name": "nexflow:installedMetadataSha256",
+          "value": "a211fceacea4e6621f4316364d2d0b7127c00de3856b8062082f9bc5957ea4db"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/packaging@26.2?owner=pip",
+      "name": "packaging",
+      "version": "26.2",
+      "purl": "pkg:pypi/packaging@26.2?owner=pip",
+      "licenses": [
+        {
+          "license": {
+            "name": "NOASSERTION"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "vendored-build"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "vendor.txt"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/packaging@26.3",
+      "name": "packaging",
+      "version": "26.3",
+      "purl": "pkg:pypi/packaging@26.3",
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0 OR BSD-2-Clause"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "installed"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "installed-wheel-METADATA"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        },
+        {
+          "name": "nexflow:installedMetadataSha256",
+          "value": "70fdb89fc4d4a9a043bf7372b8972bcc883fddff34ab55e9cf80d73875384763"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/pip@26.2.1",
+      "name": "pip",
+      "version": "26.2.1",
+      "purl": "pkg:pypi/pip@26.2.1",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "installed"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "installed-wheel-METADATA"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        },
+        {
+          "name": "nexflow:installedMetadataSha256",
+          "value": "3a561005822841f2c45f442f6c7a7505172c8c376c9fe274d876c8ac912968cb"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/platformdirs@4.10.0?owner=pip",
+      "name": "platformdirs",
+      "version": "4.10.0",
+      "purl": "pkg:pypi/platformdirs@4.10.0?owner=pip",
+      "licenses": [
+        {
+          "license": {
+            "name": "NOASSERTION"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "vendored-build"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "vendor.txt"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/platformdirs@4.2.2?owner=setuptools",
+      "name": "platformdirs",
+      "version": "4.2.2",
+      "purl": "pkg:pypi/platformdirs@4.2.2?owner=setuptools",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "vendored-build"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "vendored-wheel-METADATA"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        },
+        {
+          "name": "nexflow:installedMetadataSha256",
+          "value": "ce6b227b4d46d4cb57474c2022fe57a557933bb89daf4596bdf9b12ac296b869"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/pygments@2.20.0?owner=pip",
+      "name": "pygments",
+      "version": "2.20.0",
+      "purl": "pkg:pypi/pygments@2.20.0?owner=pip",
+      "licenses": [
+        {
+          "license": {
+            "name": "NOASSERTION"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "vendored-build"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "vendor.txt"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/pyproject-hooks@1.2.0?owner=pip",
+      "name": "pyproject-hooks",
+      "version": "1.2.0",
+      "purl": "pkg:pypi/pyproject-hooks@1.2.0?owner=pip",
+      "licenses": [
+        {
+          "license": {
+            "name": "NOASSERTION"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "vendored-build"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "vendor.txt"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/pyproject-hooks@1.3.3",
+      "name": "pyproject-hooks",
+      "version": "1.3.3",
+      "purl": "pkg:pypi/pyproject-hooks@1.3.3",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "installed"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "installed-wheel-METADATA"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        },
+        {
+          "name": "nexflow:installedMetadataSha256",
+          "value": "844e375bb28dcbe42a0502fbd9428d9ba4669db25028ee7a7afaa8dd7ada2e00"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/pyyaml@6.0.3",
+      "name": "pyyaml",
+      "version": "6.0.3",
+      "purl": "pkg:pypi/pyyaml@6.0.3",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "installed"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "installed-wheel-METADATA"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        },
+        {
+          "name": "nexflow:installedMetadataSha256",
+          "value": "03c3b415ed38d09faedc49360e930769b40c58f68585e6de00e2e4916a858d34"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/referencing@0.37.0",
+      "name": "referencing",
+      "version": "0.37.0",
+      "purl": "pkg:pypi/referencing@0.37.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "installed"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "installed-wheel-METADATA"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        },
+        {
+          "name": "nexflow:installedMetadataSha256",
+          "value": "c93b00e6ab1524fd60848376604c189a114374776475c25a31d57be47b29de6a"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/requests@2.34.2?owner=pip",
+      "name": "requests",
+      "version": "2.34.2",
+      "purl": "pkg:pypi/requests@2.34.2?owner=pip",
+      "licenses": [
+        {
+          "license": {
+            "name": "NOASSERTION"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "vendored-build"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "vendor.txt"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/resolvelib@1.2.1?owner=pip",
+      "name": "resolvelib",
+      "version": "1.2.1",
+      "purl": "pkg:pypi/resolvelib@1.2.1?owner=pip",
+      "licenses": [
+        {
+          "license": {
+            "name": "NOASSERTION"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "vendored-build"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "vendor.txt"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/rfc3339-validator@0.1.4",
+      "name": "rfc3339-validator",
+      "version": "0.1.4",
+      "purl": "pkg:pypi/rfc3339-validator@0.1.4",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT license"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "installed"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "installed-wheel-METADATA"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        },
+        {
+          "name": "nexflow:installedMetadataSha256",
+          "value": "ac4dc2cdea6a8b61c16babbf35c0e9fa6e22e45f1c0338e66e089108dde872d2"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/rich@14.2.0?owner=pip",
+      "name": "rich",
+      "version": "14.2.0",
+      "purl": "pkg:pypi/rich@14.2.0?owner=pip",
+      "licenses": [
+        {
+          "license": {
+            "name": "NOASSERTION"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "vendored-build"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "vendor.txt"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/rpds-py@2026.6.3",
+      "name": "rpds-py",
+      "version": "2026.6.3",
+      "purl": "pkg:pypi/rpds-py@2026.6.3",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "installed"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "installed-wheel-METADATA"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        },
+        {
+          "name": "nexflow:installedMetadataSha256",
+          "value": "f8be7b17da3980b2c48596941411a43c70ac41b1e2d530aa531f2c15eab2eb1c"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/setuptools@70.3.0?owner=pip",
+      "name": "setuptools",
+      "version": "70.3.0",
+      "purl": "pkg:pypi/setuptools@70.3.0?owner=pip",
+      "licenses": [
+        {
+          "license": {
+            "name": "NOASSERTION"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "vendored-build"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "vendor.txt"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/setuptools@80.9.0",
+      "name": "setuptools",
+      "version": "80.9.0",
+      "purl": "pkg:pypi/setuptools@80.9.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "installed"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "installed-wheel-METADATA"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        },
+        {
+          "name": "nexflow:installedMetadataSha256",
+          "value": "7f890ca8dbc16b63b568c89312ed6a7f9f0a79d0b2b7f3c83bf796ac3d930615"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/six@1.17.0",
+      "name": "six",
+      "version": "1.17.0",
+      "purl": "pkg:pypi/six@1.17.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "installed"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "installed-wheel-METADATA"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        },
+        {
+          "name": "nexflow:installedMetadataSha256",
+          "value": "562042078c2752549f6d8a7c86dbc5dd708088a7be6d80672ec7b07100b72468"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/tomli-w@1.2.0?owner=pip",
+      "name": "tomli-w",
+      "version": "1.2.0",
+      "purl": "pkg:pypi/tomli-w@1.2.0?owner=pip",
+      "licenses": [
+        {
+          "license": {
+            "name": "NOASSERTION"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "vendored-build"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "vendor.txt"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/tomli@2.0.1?owner=setuptools",
+      "name": "tomli",
+      "version": "2.0.1",
+      "purl": "pkg:pypi/tomli@2.0.1?owner=setuptools",
+      "licenses": [
+        {
+          "license": {
+            "name": "NOASSERTION"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "vendored-build"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "vendored-wheel-METADATA"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        },
+        {
+          "name": "nexflow:installedMetadataSha256",
+          "value": "ccf0dc78a98fc0918b5ad67292b1e2c4bed65575a6246cd9d63c914f9942a0f2"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/tomli@2.4.1?owner=pip",
+      "name": "tomli",
+      "version": "2.4.1",
+      "purl": "pkg:pypi/tomli@2.4.1?owner=pip",
+      "licenses": [
+        {
+          "license": {
+            "name": "NOASSERTION"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "vendored-build"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "vendor.txt"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/truststore@0.10.4?owner=pip",
+      "name": "truststore",
+      "version": "0.10.4",
+      "purl": "pkg:pypi/truststore@0.10.4?owner=pip",
+      "licenses": [
+        {
+          "license": {
+            "name": "NOASSERTION"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "vendored-build"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "vendor.txt"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/typeguard@4.3.0?owner=setuptools",
+      "name": "typeguard",
+      "version": "4.3.0",
+      "purl": "pkg:pypi/typeguard@4.3.0?owner=setuptools",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "vendored-build"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "vendored-wheel-METADATA"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        },
+        {
+          "name": "nexflow:installedMetadataSha256",
+          "value": "cf675c1c0a744f08580855390de87cc77d676b312582e8d4cfdb5bb8fd298d21"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/typing-extensions@4.12.2?owner=setuptools",
+      "name": "typing-extensions",
+      "version": "4.12.2",
+      "purl": "pkg:pypi/typing-extensions@4.12.2?owner=setuptools",
+      "licenses": [
+        {
+          "license": {
+            "name": "NOASSERTION"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "vendored-build"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "vendored-wheel-METADATA"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        },
+        {
+          "name": "nexflow:installedMetadataSha256",
+          "value": "05e51021af1c9d86eb8d6c7e37c4cece733d5065b91a6d8389c5690ed440f16d"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/typing-extensions@4.16.0",
+      "name": "typing-extensions",
+      "version": "4.16.0",
+      "purl": "pkg:pypi/typing-extensions@4.16.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "PSF-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "installed"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "installed-wheel-METADATA"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        },
+        {
+          "name": "nexflow:installedMetadataSha256",
+          "value": "b05084ca1d50879865178d9fff9fabeab61bdfb1f361bfbde95421ffc8f9be46"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/urllib3@2.7.0?owner=pip",
+      "name": "urllib3",
+      "version": "2.7.0",
+      "purl": "pkg:pypi/urllib3@2.7.0?owner=pip",
+      "licenses": [
+        {
+          "license": {
+            "name": "NOASSERTION"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "vendored-build"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "vendor.txt"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/wheel@0.45.1",
+      "name": "wheel",
+      "version": "0.45.1",
+      "purl": "pkg:pypi/wheel@0.45.1",
+      "licenses": [
+        {
+          "license": {
+            "name": "NOASSERTION"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "installed"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "installed-wheel-METADATA"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        },
+        {
+          "name": "nexflow:installedMetadataSha256",
+          "value": "98acfce07ee6ee3b31272cde21c4d53918936f434f315dfd2af3886211a09a30"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/wheel@0.45.1?owner=setuptools",
+      "name": "wheel",
+      "version": "0.45.1",
+      "purl": "pkg:pypi/wheel@0.45.1?owner=setuptools",
+      "licenses": [
+        {
+          "license": {
+            "name": "NOASSERTION"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "vendored-build"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "vendored-wheel-METADATA"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        },
+        {
+          "name": "nexflow:installedMetadataSha256",
+          "value": "98acfce07ee6ee3b31272cde21c4d53918936f434f315dfd2af3886211a09a30"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/zipp@3.19.2?owner=setuptools",
+      "name": "zipp",
+      "version": "3.19.2",
+      "purl": "pkg:pypi/zipp@3.19.2?owner=setuptools",
+      "licenses": [
+        {
+          "license": {
+            "name": "NOASSERTION"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "vendored-build"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "vendored-wheel-METADATA"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        },
+        {
+          "name": "nexflow:installedMetadataSha256",
+          "value": "508ae4fe43081c64b0b0a2828588b3a8cc3430c6693d1676662569400b0dfdb1"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "candidate:python",
+      "dependsOn": [
+        "pkg:pypi/attrs@26.1.0",
+        "pkg:pypi/build@1.3.0",
+        "pkg:pypi/jsonschema-specifications@2025.9.1",
+        "pkg:pypi/jsonschema@4.26.0",
+        "pkg:pypi/packaging@26.3",
+        "pkg:pypi/pip@26.2.1",
+        "pkg:pypi/pyproject-hooks@1.3.3",
+        "pkg:pypi/pyyaml@6.0.3",
+        "pkg:pypi/referencing@0.37.0",
+        "pkg:pypi/rfc3339-validator@0.1.4",
+        "pkg:pypi/rpds-py@2026.6.3",
+        "pkg:pypi/setuptools@80.9.0",
+        "pkg:pypi/six@1.17.0",
+        "pkg:pypi/typing-extensions@4.16.0",
+        "pkg:pypi/wheel@0.45.1"
+      ]
+    },
+    {
+      "ref": "pkg:cargo/archery@1.2.2",
+      "dependsOn": [
+        "pkg:cargo/triomphe@0.1.15"
+      ]
+    },
+    {
+      "ref": "pkg:cargo/heck@0.5.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:cargo/libc@0.2.177",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:cargo/once_cell@1.21.3",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:cargo/proc-macro2@1.0.103",
+      "dependsOn": [
+        "pkg:cargo/unicode-ident@1.0.22"
+      ]
+    },
+    {
+      "ref": "pkg:cargo/pyo3-build-config@0.29.0",
+      "dependsOn": [
+        "pkg:cargo/target-lexicon@0.13.3"
+      ]
+    },
+    {
+      "ref": "pkg:cargo/pyo3-ffi@0.29.0",
+      "dependsOn": [
+        "pkg:cargo/libc@0.2.177",
+        "pkg:cargo/pyo3-build-config@0.29.0"
+      ]
+    },
+    {
+      "ref": "pkg:cargo/pyo3-macros-backend@0.29.0",
+      "dependsOn": [
+        "pkg:cargo/heck@0.5.0",
+        "pkg:cargo/proc-macro2@1.0.103",
+        "pkg:cargo/quote@1.0.42",
+        "pkg:cargo/syn@2.0.111"
+      ]
+    },
+    {
+      "ref": "pkg:cargo/pyo3-macros@0.29.0",
+      "dependsOn": [
+        "pkg:cargo/proc-macro2@1.0.103",
+        "pkg:cargo/pyo3-macros-backend@0.29.0",
+        "pkg:cargo/quote@1.0.42",
+        "pkg:cargo/syn@2.0.111"
+      ]
+    },
+    {
+      "ref": "pkg:cargo/pyo3@0.29.0",
+      "dependsOn": [
+        "pkg:cargo/libc@0.2.177",
+        "pkg:cargo/once_cell@1.21.3",
+        "pkg:cargo/pyo3-build-config@0.29.0",
+        "pkg:cargo/pyo3-ffi@0.29.0",
+        "pkg:cargo/pyo3-macros@0.29.0"
+      ]
+    },
+    {
+      "ref": "pkg:cargo/quote@1.0.42",
+      "dependsOn": [
+        "pkg:cargo/proc-macro2@1.0.103"
+      ]
+    },
+    {
+      "ref": "pkg:cargo/rpds@1.2.1",
+      "dependsOn": [
+        "pkg:cargo/archery@1.2.2",
+        "pkg:cargo/smallvec@1.15.1"
+      ]
+    },
+    {
+      "ref": "pkg:cargo/smallvec@1.15.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:cargo/syn@2.0.111",
+      "dependsOn": [
+        "pkg:cargo/proc-macro2@1.0.103",
+        "pkg:cargo/quote@1.0.42",
+        "pkg:cargo/unicode-ident@1.0.22"
+      ]
+    },
+    {
+      "ref": "pkg:cargo/target-lexicon@0.13.3",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:cargo/triomphe@0.1.15",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:cargo/unicode-ident@1.0.22",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/attrs@26.1.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/autocommand@2.2.2?owner=setuptools",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/backports-tarfile@1.2.0?owner=setuptools",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/build@1.3.0",
+      "dependsOn": [
+        "pkg:pypi/packaging@26.3",
+        "pkg:pypi/pyproject-hooks@1.3.3"
+      ]
+    },
+    {
+      "ref": "pkg:pypi/cachecontrol@0.14.4?owner=pip",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/certifi@2026.6.17?owner=pip",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/distlib@0.4.2?owner=pip",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/distro@1.9.0?owner=pip",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/idna@3.18?owner=pip",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/importlib-metadata@8.0.0?owner=setuptools",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/inflect@7.3.1?owner=setuptools",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/jaraco-collections@5.1.0?owner=setuptools",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/jaraco-context@5.3.0?owner=setuptools",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/jaraco-functools@4.0.1?owner=setuptools",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/jaraco-text@3.12.1?owner=setuptools",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/jsonschema-specifications@2025.9.1",
+      "dependsOn": [
+        "pkg:pypi/referencing@0.37.0"
+      ]
+    },
+    {
+      "ref": "pkg:pypi/jsonschema@4.26.0",
+      "dependsOn": [
+        "pkg:pypi/attrs@26.1.0",
+        "pkg:pypi/jsonschema-specifications@2025.9.1",
+        "pkg:pypi/referencing@0.37.0",
+        "pkg:pypi/rpds-py@2026.6.3"
+      ]
+    },
+    {
+      "ref": "pkg:pypi/more-itertools@10.3.0?owner=setuptools",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/msgpack@1.1.2?owner=pip",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/packaging@24.0?owner=setuptools%2F_vendor%2Fwheel",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/packaging@24.0?owner=wheel",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/packaging@24.2?owner=setuptools",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/packaging@26.2?owner=pip",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/packaging@26.3",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/pip@26.2.1",
+      "dependsOn": [
+        "pkg:pypi/cachecontrol@0.14.4?owner=pip",
+        "pkg:pypi/certifi@2026.6.17?owner=pip",
+        "pkg:pypi/distlib@0.4.2?owner=pip",
+        "pkg:pypi/distro@1.9.0?owner=pip",
+        "pkg:pypi/idna@3.18?owner=pip",
+        "pkg:pypi/msgpack@1.1.2?owner=pip",
+        "pkg:pypi/packaging@26.2?owner=pip",
+        "pkg:pypi/platformdirs@4.10.0?owner=pip",
+        "pkg:pypi/pygments@2.20.0?owner=pip",
+        "pkg:pypi/pyproject-hooks@1.2.0?owner=pip",
+        "pkg:pypi/requests@2.34.2?owner=pip",
+        "pkg:pypi/resolvelib@1.2.1?owner=pip",
+        "pkg:pypi/rich@14.2.0?owner=pip",
+        "pkg:pypi/setuptools@70.3.0?owner=pip",
+        "pkg:pypi/tomli-w@1.2.0?owner=pip",
+        "pkg:pypi/tomli@2.4.1?owner=pip",
+        "pkg:pypi/truststore@0.10.4?owner=pip",
+        "pkg:pypi/urllib3@2.7.0?owner=pip"
+      ]
+    },
+    {
+      "ref": "pkg:pypi/platformdirs@4.10.0?owner=pip",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/platformdirs@4.2.2?owner=setuptools",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/pygments@2.20.0?owner=pip",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/pyproject-hooks@1.2.0?owner=pip",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/pyproject-hooks@1.3.3",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/pyyaml@6.0.3",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/referencing@0.37.0",
+      "dependsOn": [
+        "pkg:pypi/attrs@26.1.0",
+        "pkg:pypi/rpds-py@2026.6.3",
+        "pkg:pypi/typing-extensions@4.16.0"
+      ]
+    },
+    {
+      "ref": "pkg:pypi/requests@2.34.2?owner=pip",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/resolvelib@1.2.1?owner=pip",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/rfc3339-validator@0.1.4",
+      "dependsOn": [
+        "pkg:pypi/six@1.17.0"
+      ]
+    },
+    {
+      "ref": "pkg:pypi/rich@14.2.0?owner=pip",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/rpds-py@2026.6.3",
+      "dependsOn": [
+        "pkg:cargo/archery@1.2.2",
+        "pkg:cargo/pyo3@0.29.0",
+        "pkg:cargo/rpds@1.2.1"
+      ]
+    },
+    {
+      "ref": "pkg:pypi/setuptools@70.3.0?owner=pip",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/setuptools@80.9.0",
+      "dependsOn": [
+        "pkg:pypi/autocommand@2.2.2?owner=setuptools",
+        "pkg:pypi/backports-tarfile@1.2.0?owner=setuptools",
+        "pkg:pypi/importlib-metadata@8.0.0?owner=setuptools",
+        "pkg:pypi/inflect@7.3.1?owner=setuptools",
+        "pkg:pypi/jaraco-collections@5.1.0?owner=setuptools",
+        "pkg:pypi/jaraco-context@5.3.0?owner=setuptools",
+        "pkg:pypi/jaraco-functools@4.0.1?owner=setuptools",
+        "pkg:pypi/jaraco-text@3.12.1?owner=setuptools",
+        "pkg:pypi/more-itertools@10.3.0?owner=setuptools",
+        "pkg:pypi/packaging@24.0?owner=setuptools%2F_vendor%2Fwheel",
+        "pkg:pypi/packaging@24.2?owner=setuptools",
+        "pkg:pypi/platformdirs@4.2.2?owner=setuptools",
+        "pkg:pypi/tomli@2.0.1?owner=setuptools",
+        "pkg:pypi/typeguard@4.3.0?owner=setuptools",
+        "pkg:pypi/typing-extensions@4.12.2?owner=setuptools",
+        "pkg:pypi/wheel@0.45.1?owner=setuptools",
+        "pkg:pypi/zipp@3.19.2?owner=setuptools"
+      ]
+    },
+    {
+      "ref": "pkg:pypi/six@1.17.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/tomli-w@1.2.0?owner=pip",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/tomli@2.0.1?owner=setuptools",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/tomli@2.4.1?owner=pip",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/truststore@0.10.4?owner=pip",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/typeguard@4.3.0?owner=setuptools",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/typing-extensions@4.12.2?owner=setuptools",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/typing-extensions@4.16.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/urllib3@2.7.0?owner=pip",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/wheel@0.45.1",
+      "dependsOn": [
+        "pkg:pypi/packaging@24.0?owner=wheel"
+      ]
+    },
+    {
+      "ref": "pkg:pypi/wheel@0.45.1?owner=setuptools",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/zipp@3.19.2?owner=setuptools",
+      "dependsOn": []
+    }
+  ],
+  "compositions": [
+    {
+      "aggregate": "incomplete",
+      "assemblies": [
+        "candidate:python"
+      ]
+    }
+  ]
+}

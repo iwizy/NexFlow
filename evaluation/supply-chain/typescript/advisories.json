@@ -1,0 +1,670 @@
+{
+  "formatVersion": 1,
+  "scannerVersion": "nf-056-11-osv-v1",
+  "apiVersion": "v1",
+  "api": "https://api.osv.dev/v1",
+  "startedAt": "2026-10-04T13:55:12.207Z",
+  "completedAt": "2026-10-04T13:55:12.772Z",
+  "databaseVersion": "unavailable-live-service-no-snapshot-id",
+  "candidate": "typescript",
+  "sourceRevision": "19ff4889542fe486d95eb2ae868560f5aa966df2",
+  "collectorRevision": "f8f66a9122d73a195698966785d968cdd395de7b",
+  "scope": "exact-version-matching-no-reachability-or-security-certification",
+  "status": "completed",
+  "queries": [
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@types/node"
+        },
+        "version": "22.20.5"
+      },
+      "refs": [
+        "pkg:npm/%40types/node@22.20.5"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@typescript/typescript-aix-ppc64"
+        },
+        "version": "7.0.2"
+      },
+      "refs": [
+        "pkg:npm/%40typescript/typescript-aix-ppc64@7.0.2"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@typescript/typescript-darwin-arm64"
+        },
+        "version": "7.0.2"
+      },
+      "refs": [
+        "pkg:npm/%40typescript/typescript-darwin-arm64@7.0.2"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@typescript/typescript-darwin-x64"
+        },
+        "version": "7.0.2"
+      },
+      "refs": [
+        "pkg:npm/%40typescript/typescript-darwin-x64@7.0.2"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@typescript/typescript-freebsd-arm64"
+        },
+        "version": "7.0.2"
+      },
+      "refs": [
+        "pkg:npm/%40typescript/typescript-freebsd-arm64@7.0.2"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@typescript/typescript-freebsd-x64"
+        },
+        "version": "7.0.2"
+      },
+      "refs": [
+        "pkg:npm/%40typescript/typescript-freebsd-x64@7.0.2"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@typescript/typescript-linux-arm"
+        },
+        "version": "7.0.2"
+      },
+      "refs": [
+        "pkg:npm/%40typescript/typescript-linux-arm@7.0.2"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@typescript/typescript-linux-arm64"
+        },
+        "version": "7.0.2"
+      },
+      "refs": [
+        "pkg:npm/%40typescript/typescript-linux-arm64@7.0.2"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@typescript/typescript-linux-loong64"
+        },
+        "version": "7.0.2"
+      },
+      "refs": [
+        "pkg:npm/%40typescript/typescript-linux-loong64@7.0.2"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@typescript/typescript-linux-mips64el"
+        },
+        "version": "7.0.2"
+      },
+      "refs": [
+        "pkg:npm/%40typescript/typescript-linux-mips64el@7.0.2"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@typescript/typescript-linux-ppc64"
+        },
+        "version": "7.0.2"
+      },
+      "refs": [
+        "pkg:npm/%40typescript/typescript-linux-ppc64@7.0.2"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@typescript/typescript-linux-riscv64"
+        },
+        "version": "7.0.2"
+      },
+      "refs": [
+        "pkg:npm/%40typescript/typescript-linux-riscv64@7.0.2"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@typescript/typescript-linux-s390x"
+        },
+        "version": "7.0.2"
+      },
+      "refs": [
+        "pkg:npm/%40typescript/typescript-linux-s390x@7.0.2"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@typescript/typescript-linux-x64"
+        },
+        "version": "7.0.2"
+      },
+      "refs": [
+        "pkg:npm/%40typescript/typescript-linux-x64@7.0.2"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@typescript/typescript-netbsd-arm64"
+        },
+        "version": "7.0.2"
+      },
+      "refs": [
+        "pkg:npm/%40typescript/typescript-netbsd-arm64@7.0.2"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@typescript/typescript-netbsd-x64"
+        },
+        "version": "7.0.2"
+      },
+      "refs": [
+        "pkg:npm/%40typescript/typescript-netbsd-x64@7.0.2"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@typescript/typescript-openbsd-arm64"
+        },
+        "version": "7.0.2"
+      },
+      "refs": [
+        "pkg:npm/%40typescript/typescript-openbsd-arm64@7.0.2"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@typescript/typescript-openbsd-x64"
+        },
+        "version": "7.0.2"
+      },
+      "refs": [
+        "pkg:npm/%40typescript/typescript-openbsd-x64@7.0.2"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@typescript/typescript-sunos-x64"
+        },
+        "version": "7.0.2"
+      },
+      "refs": [
+        "pkg:npm/%40typescript/typescript-sunos-x64@7.0.2"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@typescript/typescript-win32-arm64"
+        },
+        "version": "7.0.2"
+      },
+      "refs": [
+        "pkg:npm/%40typescript/typescript-win32-arm64@7.0.2"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@typescript/typescript-win32-x64"
+        },
+        "version": "7.0.2"
+      },
+      "refs": [
+        "pkg:npm/%40typescript/typescript-win32-x64@7.0.2"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "ajv-formats"
+        },
+        "version": "3.0.1"
+      },
+      "refs": [
+        "pkg:npm/ajv-formats@3.0.1"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "ajv"
+        },
+        "version": "8.20.0"
+      },
+      "refs": [
+        "pkg:npm/ajv@8.20.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "fast-deep-equal"
+        },
+        "version": "3.1.3"
+      },
+      "refs": [
+        "pkg:npm/fast-deep-equal@3.1.3"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "fast-uri"
+        },
+        "version": "3.1.8"
+      },
+      "refs": [
+        "pkg:npm/fast-uri@3.1.8"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "json-schema-traverse"
+        },
+        "version": "1.0.0"
+      },
+      "refs": [
+        "pkg:npm/json-schema-traverse@1.0.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "require-from-string"
+        },
+        "version": "2.0.2"
+      },
+      "refs": [
+        "pkg:npm/require-from-string@2.0.2"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "typescript"
+        },
+        "version": "7.0.2"
+      },
+      "refs": [
+        "pkg:npm/typescript@7.0.2"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "undici-types"
+        },
+        "version": "6.21.0"
+      },
+      "refs": [
+        "pkg:npm/undici-types@6.21.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "yaml"
+        },
+        "version": "2.9.0"
+      },
+      "refs": [
+        "pkg:npm/yaml@2.9.0"
+      ],
+      "matches": []
+    }
+  ],
+  "pages": [
+    {
+      "queries": [
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "@types/node"
+          },
+          "version": "22.20.5"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "@typescript/typescript-aix-ppc64"
+          },
+          "version": "7.0.2"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "@typescript/typescript-darwin-arm64"
+          },
+          "version": "7.0.2"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "@typescript/typescript-darwin-x64"
+          },
+          "version": "7.0.2"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "@typescript/typescript-freebsd-arm64"
+          },
+          "version": "7.0.2"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "@typescript/typescript-freebsd-x64"
+          },
+          "version": "7.0.2"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "@typescript/typescript-linux-arm"
+          },
+          "version": "7.0.2"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "@typescript/typescript-linux-arm64"
+          },
+          "version": "7.0.2"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "@typescript/typescript-linux-loong64"
+          },
+          "version": "7.0.2"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "@typescript/typescript-linux-mips64el"
+          },
+          "version": "7.0.2"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "@typescript/typescript-linux-ppc64"
+          },
+          "version": "7.0.2"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "@typescript/typescript-linux-riscv64"
+          },
+          "version": "7.0.2"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "@typescript/typescript-linux-s390x"
+          },
+          "version": "7.0.2"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "@typescript/typescript-linux-x64"
+          },
+          "version": "7.0.2"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "@typescript/typescript-netbsd-arm64"
+          },
+          "version": "7.0.2"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "@typescript/typescript-netbsd-x64"
+          },
+          "version": "7.0.2"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "@typescript/typescript-openbsd-arm64"
+          },
+          "version": "7.0.2"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "@typescript/typescript-openbsd-x64"
+          },
+          "version": "7.0.2"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "@typescript/typescript-sunos-x64"
+          },
+          "version": "7.0.2"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "@typescript/typescript-win32-arm64"
+          },
+          "version": "7.0.2"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "@typescript/typescript-win32-x64"
+          },
+          "version": "7.0.2"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "ajv-formats"
+          },
+          "version": "3.0.1"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "ajv"
+          },
+          "version": "8.20.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "fast-deep-equal"
+          },
+          "version": "3.1.3"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "fast-uri"
+          },
+          "version": "3.1.8"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "json-schema-traverse"
+          },
+          "version": "1.0.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "require-from-string"
+          },
+          "version": "2.0.2"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "typescript"
+          },
+          "version": "7.0.2"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "undici-types"
+          },
+          "version": "6.21.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "yaml"
+          },
+          "version": "2.9.0"
+        }
+      ],
+      "response": {
+        "results": [
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {}
+        ]
+      },
+      "responseSha256": "a3b6e84e343325773aeabffee54156ae61fd6cd2fbf589504d8748fe9e8ae32f"
+    }
+  ],
+  "advisories": [],
+  "queryCount": 30,
+  "matchedPackageCount": 0,
+  "advisoryCount": 0,
+  "fixesApplied": false,
+  "untested": [
+    "OS/distribution advisories",
+    "compiler and interpreter bundled native closure",
+    "unpublished vulnerabilities",
+    "independent dependency source audit",
+    "exploit reachability",
+    "runtime/compiler vulnerability matching"
+  ]
+}

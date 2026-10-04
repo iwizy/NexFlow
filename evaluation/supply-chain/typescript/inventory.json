@@ -1,0 +1,970 @@
+{
+  "formatVersion": 1,
+  "task": "NF-056-11",
+  "candidate": "typescript",
+  "collectorVersion": "nf-056-11-v1",
+  "recordedAt": "2026-10-04T13:53:54.711Z",
+  "collectorRevision": "f8f66a9122d73a195698966785d968cdd395de7b",
+  "sourceRevision": "19ff4889542fe486d95eb2ae868560f5aa966df2",
+  "publishedHead": "024485bf4d6acf601886b7387c2ed2295bceb908",
+  "pullRequest": 96,
+  "ciRun": 37002512553,
+  "toolchain": "Node 22.23.2; npm 10.9.8; TypeScript 7.0.2",
+  "specificationRevision": "1d1fa238ab5729a79bee9389d5c66cfd20a61256",
+  "evaluationPackageRevision": "a8301a7478587c59502dfb2e6bd548489c14ee2b",
+  "corpusSha256": "01b116005f0650ac980194b22c02188289eaf1e8626b227aecf3684ece0d8f6b",
+  "catalogSha256": "f1bf8cb786442a212e14c79eb39279a2cdbf05ec20b09901374359d545d74e90",
+  "sourceManifest": [
+    {
+      "file": "evaluation/prototypes/typescript/README.md",
+      "sha256": "57b2e277579870d07f91c630640cdfc39392674f7da754476ba9ea05c7201949",
+      "bytes": 3797
+    },
+    {
+      "file": "evaluation/prototypes/typescript/package-lock.json",
+      "sha256": "99d0a681f265f52b327979754b1f253948df4855671efc4956a4cda1dc008317",
+      "bytes": 16521
+    },
+    {
+      "file": "evaluation/prototypes/typescript/package.json",
+      "sha256": "151bf1e1d991485762937a338825e798ae83f525f61c5370d75297f92d8bc529",
+      "bytes": 523
+    },
+    {
+      "file": "evaluation/prototypes/typescript/src/cli.ts",
+      "sha256": "86ed307e6c0cb01c48c7e6dd08df1fecddc803916be46bb5aad09ca55509472a",
+      "bytes": 2892
+    },
+    {
+      "file": "evaluation/prototypes/typescript/src/diagnostics.ts",
+      "sha256": "a895eaa0ddb70a1fa0f6899f7422b9d01bcef916442cbe9fdff463ce67014f75",
+      "bytes": 1908
+    },
+    {
+      "file": "evaluation/prototypes/typescript/src/discovery.ts",
+      "sha256": "d49f2bf779a305e15eeb1e3ee3a9aba6038e9b56f68f14a6405f0a48424d5ef3",
+      "bytes": 6305
+    },
+    {
+      "file": "evaluation/prototypes/typescript/src/files.ts",
+      "sha256": "455630fb7bdec0091b67e92a88ec6bc93d9642d54a210747dbff29618e7e4225",
+      "bytes": 3123
+    },
+    {
+      "file": "evaluation/prototypes/typescript/src/inspection.ts",
+      "sha256": "74568c3083f9ea4f8ebf31d5fa9b22cd438a68f8d07df7dbf14d4ff7d03cb91d",
+      "bytes": 6507
+    },
+    {
+      "file": "evaluation/prototypes/typescript/src/library.ts",
+      "sha256": "4a97830baaf59cd1d570f1489dee5a62f13a7aac37632546dd4fe4f974d165ca",
+      "bytes": 6737
+    },
+    {
+      "file": "evaluation/prototypes/typescript/src/model.ts",
+      "sha256": "f09630fbdc1c2682552c885df3f2ca8df84c8eb75f0183fdbdff19dc994d9037",
+      "bytes": 3330
+    },
+    {
+      "file": "evaluation/prototypes/typescript/src/schema.ts",
+      "sha256": "c72902565a7af04d2ce530556377ecef16940f75d923fc0df40f67a745708f8d",
+      "bytes": 4112
+    },
+    {
+      "file": "evaluation/prototypes/typescript/src/self-test.ts",
+      "sha256": "54cfd5090162199f378514ecca329815bf24c24ce9b5189c75f726844ff5c67d",
+      "bytes": 7862
+    },
+    {
+      "file": "evaluation/prototypes/typescript/src/yaml.ts",
+      "sha256": "91ed523f57516cd37810658323fa12b3535823e19a61ff4b2f28844420c3ebab",
+      "bytes": 1570
+    },
+    {
+      "file": "evaluation/prototypes/typescript/tsconfig.json",
+      "sha256": "d87eb02469ee54484ba0873efed40f9289c9cef2a196b1ce4affdc922d84bc20",
+      "bytes": 371
+    }
+  ],
+  "target": "macos/arm64",
+  "artifacts": [
+    {
+      "file": "dist/cli.d.ts",
+      "sha256": "43e818adf60173644896298637f47b01d5819b17eda46eaa32d0c7d64724d012",
+      "bytes": 31
+    },
+    {
+      "file": "dist/cli.js",
+      "sha256": "3b1b41a8e2903d19e8c737348ac3c865d0c33730d55d57dab6d9001237a8fedd",
+      "bytes": 3026
+    },
+    {
+      "file": "dist/diagnostics.d.ts",
+      "sha256": "b55acb3403802dde1eeaeae996ca024c74936c1df9086645d56fb074ef74e845",
+      "bytes": 497
+    },
+    {
+      "file": "dist/diagnostics.js",
+      "sha256": "e0503fbd357171d9e0a98597b8843c70c8ccde2609d15a1ac5a282b6c9f496b9",
+      "bytes": 1757
+    },
+    {
+      "file": "dist/discovery.d.ts",
+      "sha256": "b0ec47d0e61fc59f80ddd787dc879bc3c21ae5e7ce3c57412620a96a0fcc8dd2",
+      "bytes": 128
+    },
+    {
+      "file": "dist/discovery.js",
+      "sha256": "8ed176a7eb6484e57f805ad3f28066696c4f377fa1c249e341cb5024912c3b39",
+      "bytes": 7147
+    },
+    {
+      "file": "dist/files.d.ts",
+      "sha256": "51b762bccbd04942153ec7ed800411b80071520afa074130b7ff7f7823234793",
+      "bytes": 320
+    },
+    {
+      "file": "dist/files.js",
+      "sha256": "861671ded50435b298ab94470edd1b0ca87533bf367619844a017ec64a8af366",
+      "bytes": 3581
+    },
+    {
+      "file": "dist/inspection.d.ts",
+      "sha256": "78c92cb25da913b118b4c8cc03fd2509e60d34393c74127174a3988a9ad26853",
+      "bytes": 184
+    },
+    {
+      "file": "dist/inspection.js",
+      "sha256": "4fc5feb787172c3c3b2eab14adf32431c948e92a05c560bfe6785aeb07c89245",
+      "bytes": 6470
+    },
+    {
+      "file": "dist/library.d.ts",
+      "sha256": "349d46db79d671aae1c5a333e2a9769e3ff67fb5f1e3c05f32c0375d2b9ccb5b",
+      "bytes": 1036
+    },
+    {
+      "file": "dist/library.js",
+      "sha256": "32ad35dc205682f1c58cc5e8b66d20729cc5c306e1c5a06b9e812b216a9b23f0",
+      "bytes": 6728
+    },
+    {
+      "file": "dist/model.d.ts",
+      "sha256": "f29d46a6d25c5a49fd9cf0f2b5ba6f0a1b55aaf81deb2b409b5c1ad287de2a0c",
+      "bytes": 3774
+    },
+    {
+      "file": "dist/model.js",
+      "sha256": "764277da055a025a3b6b091d529beb6196a23071790454dc4511e022ecfb4a8d",
+      "bytes": 1368
+    },
+    {
+      "file": "dist/schema.d.ts",
+      "sha256": "bfaaa96ca1271a2d642053235658c8ae031f3a712667f7ad44860f1ae9fab597",
+      "bytes": 654
+    },
+    {
+      "file": "dist/schema.js",
+      "sha256": "48f732b45a7203c1af1c76c5ed723d0596a33e76392bca0a2afa92ebf093441b",
+      "bytes": 4082
+    },
+    {
+      "file": "dist/self-test.d.ts",
+      "sha256": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881",
+      "bytes": 11
+    },
+    {
+      "file": "dist/self-test.js",
+      "sha256": "96e90097dad8cfdb4b5828d7684ff82091a4f8e3507080635b0863d044af6053",
+      "bytes": 7986
+    },
+    {
+      "file": "dist/yaml.d.ts",
+      "sha256": "59a19d5764855f5ba85db57354cf8d609df1b160518b3219b54c038e79a8dd76",
+      "bytes": 206
+    },
+    {
+      "file": "dist/yaml.js",
+      "sha256": "316a2def68394acaefe3f9748e8d9f5ec72db51394a8940bb49410d3c7fe800d",
+      "bytes": 1628
+    }
+  ],
+  "commands": [
+    "npm ci --ignore-scripts --offline --no-audit --fund=false",
+    "npm run build"
+  ],
+  "outcome": "not-ready",
+  "supplyChainAcceptance": "partial",
+  "signedProvenance": "not-tested",
+  "reproducibleBuild": "not-tested",
+  "distributionLifecycle": "not-tested",
+  "limitations": [
+    "Dependency metadata and licenses are declarations, not independent legal approval.",
+    "Checksums bind observed bytes; no signed build attestation, signing or reproducibility claim.",
+    "This native macOS source-bound experiment is not a frozen target cohort or a Linux/Windows distribution.",
+    "OS/runtime/compiler bundled dependency closure and operating-system vulnerability coverage are incomplete.",
+    "No package manager offline flag or virtual environment establishes an OS security boundary.",
+    "Package/version advisory matches do not establish reachability; absence does not certify security."
+  ],
+  "runtime": {
+    "name": "Node",
+    "version": "v22.23.2",
+    "executableSha256": "18e387c90ab8a8400183e8bdd396376e1e875b91b4c874b894dcade7b35bf572",
+    "requiredExternal": true,
+    "licenseFiles": [
+      {
+        "file": "LICENSE",
+        "sha256": "c738ae413cf561f174e34f6961f8ca458aae2369a73640dda6234c629b98bcc4",
+        "bytes": 145485
+      }
+    ]
+  },
+  "tools": {
+    "npm": "10.9.8",
+    "typescript": "7.0.2"
+  },
+  "nativeBuildInputs": [
+    "pkg:npm/%40typescript/typescript-darwin-arm64@7.0.2"
+  ],
+  "locks": [
+    {
+      "file": "evaluation/prototypes/typescript/package-lock.json",
+      "sha256": "99d0a681f265f52b327979754b1f253948df4855671efc4956a4cda1dc008317",
+      "bytes": 16521
+    }
+  ],
+  "components": [
+    {
+      "ref": "pkg:npm/%40types/node@22.20.5",
+      "ecosystem": "npm",
+      "name": "@types/node",
+      "version": "22.20.5",
+      "scope": "installed-build",
+      "license": "MIT",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-U2+DNr+wSjpsTS/wZGYHq7GcwfuSmKiKvoPvK22zwTlRhU91yOniN4qRR5KhIjvif7ysw/dz/hKmfDH0Ris4aA==",
+      "downloadUrl": "https://registry.npmjs.org/@types/node/-/node-22.20.5.tgz",
+      "optional": false,
+      "metadataSource": "package-lock.json",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383",
+          "bytes": 1141
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/%40typescript/typescript-aix-ppc64@7.0.2",
+      "ecosystem": "npm",
+      "name": "@typescript/typescript-aix-ppc64",
+      "version": "7.0.2",
+      "scope": "locked-other-platform",
+      "license": "Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-MTKKkWB7p/0E9xi1d1tHtZ5PiLkGEMIq88pK2CubZjOsLtYTLqhgIgi6zepFa+9GHZ6h05NMCkQxGKiPXMxXtQ==",
+      "downloadUrl": "https://registry.npmjs.org/@typescript/typescript-aix-ppc64/-/typescript-aix-ppc64-7.0.2.tgz",
+      "optional": true,
+      "metadataSource": "package-lock.json",
+      "licenseFiles": []
+    },
+    {
+      "ref": "pkg:npm/%40typescript/typescript-darwin-arm64@7.0.2",
+      "ecosystem": "npm",
+      "name": "@typescript/typescript-darwin-arm64",
+      "version": "7.0.2",
+      "scope": "installed-build",
+      "license": "Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-gowzar9MwS/aRWp6f3a4KUqzRjAZjOsmGNCM6LcTgXum+dBfgsBVMN+AgvOCCbguXyick6LJhpBszxMebJ8syA==",
+      "downloadUrl": "https://registry.npmjs.org/@typescript/typescript-darwin-arm64/-/typescript-darwin-arm64-7.0.2.tgz",
+      "optional": true,
+      "metadataSource": "package-lock.json",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "a7d00bfd54525bc694b6e32f64c7ebcf5e6b7ae3657be5cc12767bce74654a47",
+          "bytes": 9197
+        },
+        {
+          "file": "NOTICE.txt",
+          "sha256": "f5c708b59114507b8b27b48181b6883d106bbca0c1634bbee45b5e344237b66b",
+          "bytes": 48860
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/%40typescript/typescript-darwin-x64@7.0.2",
+      "ecosystem": "npm",
+      "name": "@typescript/typescript-darwin-x64",
+      "version": "7.0.2",
+      "scope": "locked-other-platform",
+      "license": "Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-SZ9xZInqApNlNGc9s0W1VSsktYSOe9cFqNOIqmN1Gs8SmkjKZYFt017G4VwPxASInODuAdbTW7sXiFUf893RgA==",
+      "downloadUrl": "https://registry.npmjs.org/@typescript/typescript-darwin-x64/-/typescript-darwin-x64-7.0.2.tgz",
+      "optional": true,
+      "metadataSource": "package-lock.json",
+      "licenseFiles": []
+    },
+    {
+      "ref": "pkg:npm/%40typescript/typescript-freebsd-arm64@7.0.2",
+      "ecosystem": "npm",
+      "name": "@typescript/typescript-freebsd-arm64",
+      "version": "7.0.2",
+      "scope": "locked-other-platform",
+      "license": "Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-W5NH4y/J0plIIS5b2xvTEkU7JFxyqdMAOgf+Ilhl0vHQXKO5dZoxd+C/jEtq56c4F3wk71RB4BMRQ2XdI+bwYQ==",
+      "downloadUrl": "https://registry.npmjs.org/@typescript/typescript-freebsd-arm64/-/typescript-freebsd-arm64-7.0.2.tgz",
+      "optional": true,
+      "metadataSource": "package-lock.json",
+      "licenseFiles": []
+    },
+    {
+      "ref": "pkg:npm/%40typescript/typescript-freebsd-x64@7.0.2",
+      "ecosystem": "npm",
+      "name": "@typescript/typescript-freebsd-x64",
+      "version": "7.0.2",
+      "scope": "locked-other-platform",
+      "license": "Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-UMGDx5sTpzNw3WiPebH7l90IWfJggEd+egHt/q6p7/Cm3zqoV7VxkGXt+3DxPIw8CcmvAB0j3sVVfbhX+M4Tpw==",
+      "downloadUrl": "https://registry.npmjs.org/@typescript/typescript-freebsd-x64/-/typescript-freebsd-x64-7.0.2.tgz",
+      "optional": true,
+      "metadataSource": "package-lock.json",
+      "licenseFiles": []
+    },
+    {
+      "ref": "pkg:npm/%40typescript/typescript-linux-arm@7.0.2",
+      "ecosystem": "npm",
+      "name": "@typescript/typescript-linux-arm",
+      "version": "7.0.2",
+      "scope": "locked-other-platform",
+      "license": "Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-gffT3xPz9sR7j/YJExkyPntrI0P2EP9XbOyWzth2/Gs0RstK+90RBcO0ncXoXy/beYll1SXw846Nf2zdnEz0QQ==",
+      "downloadUrl": "https://registry.npmjs.org/@typescript/typescript-linux-arm/-/typescript-linux-arm-7.0.2.tgz",
+      "optional": true,
+      "metadataSource": "package-lock.json",
+      "licenseFiles": []
+    },
+    {
+      "ref": "pkg:npm/%40typescript/typescript-linux-arm64@7.0.2",
+      "ecosystem": "npm",
+      "name": "@typescript/typescript-linux-arm64",
+      "version": "7.0.2",
+      "scope": "locked-other-platform",
+      "license": "Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-Qh4eU4/y3yDjnfjjyPYihMj5/ODIlmt+Bzu17OI+fiSRDW57QmU5SiN63exPRNJPKUzcc1INa1NXdrJ+MqHjUQ==",
+      "downloadUrl": "https://registry.npmjs.org/@typescript/typescript-linux-arm64/-/typescript-linux-arm64-7.0.2.tgz",
+      "optional": true,
+      "metadataSource": "package-lock.json",
+      "licenseFiles": []
+    },
+    {
+      "ref": "pkg:npm/%40typescript/typescript-linux-loong64@7.0.2",
+      "ecosystem": "npm",
+      "name": "@typescript/typescript-linux-loong64",
+      "version": "7.0.2",
+      "scope": "locked-other-platform",
+      "license": "Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-uEHck9i8hoAzXPiYRib1O7miOnz23SxIeVl6F4LXox+qov1K35jHcEW6VHKvZI+pyvl7fZEP4MCU5LYvIq1GuQ==",
+      "downloadUrl": "https://registry.npmjs.org/@typescript/typescript-linux-loong64/-/typescript-linux-loong64-7.0.2.tgz",
+      "optional": true,
+      "metadataSource": "package-lock.json",
+      "licenseFiles": []
+    },
+    {
+      "ref": "pkg:npm/%40typescript/typescript-linux-mips64el@7.0.2",
+      "ecosystem": "npm",
+      "name": "@typescript/typescript-linux-mips64el",
+      "version": "7.0.2",
+      "scope": "locked-other-platform",
+      "license": "Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-R4KvAMnE43W5Qeqb0Ly56O3mWMWIAgsMyz36DCaycd5nbg/9kzm0liw3JocfRqyJY0KPmzFjbswozXyW0DnIYA==",
+      "downloadUrl": "https://registry.npmjs.org/@typescript/typescript-linux-mips64el/-/typescript-linux-mips64el-7.0.2.tgz",
+      "optional": true,
+      "metadataSource": "package-lock.json",
+      "licenseFiles": []
+    },
+    {
+      "ref": "pkg:npm/%40typescript/typescript-linux-ppc64@7.0.2",
+      "ecosystem": "npm",
+      "name": "@typescript/typescript-linux-ppc64",
+      "version": "7.0.2",
+      "scope": "locked-other-platform",
+      "license": "Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-DORx5b3sd/4S7eayxm4FQv+A7CrkUIGRaHiwI8oiHTAI1fAPWhF4J0vAlkC8biAlHSVVwxMQ3tjZ2/DVbnQiiA==",
+      "downloadUrl": "https://registry.npmjs.org/@typescript/typescript-linux-ppc64/-/typescript-linux-ppc64-7.0.2.tgz",
+      "optional": true,
+      "metadataSource": "package-lock.json",
+      "licenseFiles": []
+    },
+    {
+      "ref": "pkg:npm/%40typescript/typescript-linux-riscv64@7.0.2",
+      "ecosystem": "npm",
+      "name": "@typescript/typescript-linux-riscv64",
+      "version": "7.0.2",
+      "scope": "locked-other-platform",
+      "license": "Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-wf0jqEDOjrPRnKwYRyyJDRo11KMbvMFrU+q4zqKyChODBzvlkbhNQfKvLxQCcwTpdDaXSHZTVuh0JoCrKCUMHQ==",
+      "downloadUrl": "https://registry.npmjs.org/@typescript/typescript-linux-riscv64/-/typescript-linux-riscv64-7.0.2.tgz",
+      "optional": true,
+      "metadataSource": "package-lock.json",
+      "licenseFiles": []
+    },
+    {
+      "ref": "pkg:npm/%40typescript/typescript-linux-s390x@7.0.2",
+      "ecosystem": "npm",
+      "name": "@typescript/typescript-linux-s390x",
+      "version": "7.0.2",
+      "scope": "locked-other-platform",
+      "license": "Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-IkwJc3L7yhytWd/ewjyxNDfOmswCm9GWMJT/ue/dU4aZNbwZeYAetq42VyLmsmSjvoX7z74X6ZaYCtzAr0EuGw==",
+      "downloadUrl": "https://registry.npmjs.org/@typescript/typescript-linux-s390x/-/typescript-linux-s390x-7.0.2.tgz",
+      "optional": true,
+      "metadataSource": "package-lock.json",
+      "licenseFiles": []
+    },
+    {
+      "ref": "pkg:npm/%40typescript/typescript-linux-x64@7.0.2",
+      "ecosystem": "npm",
+      "name": "@typescript/typescript-linux-x64",
+      "version": "7.0.2",
+      "scope": "locked-other-platform",
+      "license": "Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-EYdf2cNg7rgCWJnxCdJ+F3V39O8ihb37eHAu1LK8oAFizgTQbPOK7zHHXbPt8rX24COqODXeI3sIf0fCXG7H/A==",
+      "downloadUrl": "https://registry.npmjs.org/@typescript/typescript-linux-x64/-/typescript-linux-x64-7.0.2.tgz",
+      "optional": true,
+      "metadataSource": "package-lock.json",
+      "licenseFiles": []
+    },
+    {
+      "ref": "pkg:npm/%40typescript/typescript-netbsd-arm64@7.0.2",
+      "ecosystem": "npm",
+      "name": "@typescript/typescript-netbsd-arm64",
+      "version": "7.0.2",
+      "scope": "locked-other-platform",
+      "license": "Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-+polYF4MF04aPpO5FTkHran9yUQDSXqy5GiSDKpsll5jy3l3+g9QLhpf39T+ePtefhXLOGrLl0QIjkQP6VnelA==",
+      "downloadUrl": "https://registry.npmjs.org/@typescript/typescript-netbsd-arm64/-/typescript-netbsd-arm64-7.0.2.tgz",
+      "optional": true,
+      "metadataSource": "package-lock.json",
+      "licenseFiles": []
+    },
+    {
+      "ref": "pkg:npm/%40typescript/typescript-netbsd-x64@7.0.2",
+      "ecosystem": "npm",
+      "name": "@typescript/typescript-netbsd-x64",
+      "version": "7.0.2",
+      "scope": "locked-other-platform",
+      "license": "Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-8YIT0EHM/3dq10ZOVF/A7pc/YSMtbcecct4rWtexrnSCHOPcpC2KTLXfTCR6vDpnSiY12heNb1GiN/wu+T/FyA==",
+      "downloadUrl": "https://registry.npmjs.org/@typescript/typescript-netbsd-x64/-/typescript-netbsd-x64-7.0.2.tgz",
+      "optional": true,
+      "metadataSource": "package-lock.json",
+      "licenseFiles": []
+    },
+    {
+      "ref": "pkg:npm/%40typescript/typescript-openbsd-arm64@7.0.2",
+      "ecosystem": "npm",
+      "name": "@typescript/typescript-openbsd-arm64",
+      "version": "7.0.2",
+      "scope": "locked-other-platform",
+      "license": "Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-APT8+ClYnuYm1u9+kgGXoMj2VzWzcymwh2gNSQVySHfkRDGOTVkoWLjCmOQSaO+PoqQ57B0flRp9SA+7GnnkzQ==",
+      "downloadUrl": "https://registry.npmjs.org/@typescript/typescript-openbsd-arm64/-/typescript-openbsd-arm64-7.0.2.tgz",
+      "optional": true,
+      "metadataSource": "package-lock.json",
+      "licenseFiles": []
+    },
+    {
+      "ref": "pkg:npm/%40typescript/typescript-openbsd-x64@7.0.2",
+      "ecosystem": "npm",
+      "name": "@typescript/typescript-openbsd-x64",
+      "version": "7.0.2",
+      "scope": "locked-other-platform",
+      "license": "Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-yX7s+Q0Dln0Dt9tEzZsAjXXR/+ytBM7AlglaqyeMPxQszJ1JhlJdZ6jLA+IzldHtflX81em7lDao1xXu+aRRkg==",
+      "downloadUrl": "https://registry.npmjs.org/@typescript/typescript-openbsd-x64/-/typescript-openbsd-x64-7.0.2.tgz",
+      "optional": true,
+      "metadataSource": "package-lock.json",
+      "licenseFiles": []
+    },
+    {
+      "ref": "pkg:npm/%40typescript/typescript-sunos-x64@7.0.2",
+      "ecosystem": "npm",
+      "name": "@typescript/typescript-sunos-x64",
+      "version": "7.0.2",
+      "scope": "locked-other-platform",
+      "license": "Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-dLJDGaLZ1D4HPQn62u1n8mBDkJREwMsAkCdkwd4Ieqw+x3TUyTsqY0YiBCtE6H6OzzgGk3iuZ3vFWRS+E8/d1g==",
+      "downloadUrl": "https://registry.npmjs.org/@typescript/typescript-sunos-x64/-/typescript-sunos-x64-7.0.2.tgz",
+      "optional": true,
+      "metadataSource": "package-lock.json",
+      "licenseFiles": []
+    },
+    {
+      "ref": "pkg:npm/%40typescript/typescript-win32-arm64@7.0.2",
+      "ecosystem": "npm",
+      "name": "@typescript/typescript-win32-arm64",
+      "version": "7.0.2",
+      "scope": "locked-other-platform",
+      "license": "Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-Gyl1Vy6OsWesLzmq+EP0Fb7b4Nid5232AvcA2SFcdYreldpNtYFFofPjnt62y9hQy7VTaZp65ICJjuAQRaVcIQ==",
+      "downloadUrl": "https://registry.npmjs.org/@typescript/typescript-win32-arm64/-/typescript-win32-arm64-7.0.2.tgz",
+      "optional": true,
+      "metadataSource": "package-lock.json",
+      "licenseFiles": []
+    },
+    {
+      "ref": "pkg:npm/%40typescript/typescript-win32-x64@7.0.2",
+      "ecosystem": "npm",
+      "name": "@typescript/typescript-win32-x64",
+      "version": "7.0.2",
+      "scope": "locked-other-platform",
+      "license": "Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-0BQ3HkAHHlKLSp1qRvf3SUhGpGsDuhB/jgFw75guyqbxJqEaS0Cw/VFO8i2nHglJUzQCRtMMR/IBAKE3ETMC4g==",
+      "downloadUrl": "https://registry.npmjs.org/@typescript/typescript-win32-x64/-/typescript-win32-x64-7.0.2.tgz",
+      "optional": true,
+      "metadataSource": "package-lock.json",
+      "licenseFiles": []
+    },
+    {
+      "ref": "pkg:npm/ajv-formats@3.0.1",
+      "ecosystem": "npm",
+      "name": "ajv-formats",
+      "version": "3.0.1",
+      "scope": "installed-runtime",
+      "license": "MIT",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-8iUql50EUR+uUcdRQ3HDqa6EVyo3docL8g5WJ3FNcWmu62IbkGUue/pEyLBW8VGKKucTPgqeks4fIU1DA4yowQ==",
+      "downloadUrl": "https://registry.npmjs.org/ajv-formats/-/ajv-formats-3.0.1.tgz",
+      "optional": false,
+      "metadataSource": "package-lock.json",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "9df3bb69929a3b650ed73b3bfa1756725aaff0ac296461605753547004eafeaf",
+          "bytes": 1074
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/ajv@8.20.0",
+      "ecosystem": "npm",
+      "name": "ajv",
+      "version": "8.20.0",
+      "scope": "installed-runtime",
+      "license": "MIT",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-Thbli+OlOj+iMPYFBVBfJ3OmCAnaSyNn4M1vz9T6Gka5Jt9ba/HIR56joy65tY6kx/FCF5VXNB819Y7/GUrBGA==",
+      "downloadUrl": "https://registry.npmjs.org/ajv/-/ajv-8.20.0.tgz",
+      "optional": false,
+      "metadataSource": "package-lock.json",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "a05350a88e318e4f5f2c2a1ff1e2e88daa4dd38e6e78b71cccae422bdc762cc3",
+          "bytes": 1090
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/fast-deep-equal@3.1.3",
+      "ecosystem": "npm",
+      "name": "fast-deep-equal",
+      "version": "3.1.3",
+      "scope": "installed-runtime",
+      "license": "MIT",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-f3qQ9oQy9j2AhBe/H9VC91wLmKBCCU/gDOnKNAYG5hswO7BLKj09Hc5HYNz9cGI++xlpDCIgDaitVs03ATR84Q==",
+      "downloadUrl": "https://registry.npmjs.org/fast-deep-equal/-/fast-deep-equal-3.1.3.tgz",
+      "optional": false,
+      "metadataSource": "package-lock.json",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "7bf9b2de73a6b356761c948d0e9eeb4be6c1270bd04c79cd489c1e400ffdfc1a",
+          "bytes": 1074
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/fast-uri@3.1.8",
+      "ecosystem": "npm",
+      "name": "fast-uri",
+      "version": "3.1.8",
+      "scope": "installed-runtime",
+      "license": "BSD-3-Clause",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-GZMtZUTNRpOVIECoXwLNZS5xUGE+mVNbTB8h/7Rwh2TFWcBQiPzTgyZi05BF9UMZKkLJv8XBRJTlU7zg8+ZfMg==",
+      "downloadUrl": "https://registry.npmjs.org/fast-uri/-/fast-uri-3.1.8.tgz",
+      "optional": false,
+      "metadataSource": "package-lock.json",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "b010b0dfdfdb23d7396e03b82cd4621fc9bb8f95d6b0aea70b9c24e12074c786",
+          "bytes": 1813
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/json-schema-traverse@1.0.0",
+      "ecosystem": "npm",
+      "name": "json-schema-traverse",
+      "version": "1.0.0",
+      "scope": "installed-runtime",
+      "license": "MIT",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-NM8/P9n3XjXhIZn1lLhkFaACTOURQXjWhV4BA/RnOv8xvgqtqpAX9IO4mRQxSx1Rlo4tqzeqb0sOlruaOy3dug==",
+      "downloadUrl": "https://registry.npmjs.org/json-schema-traverse/-/json-schema-traverse-1.0.0.tgz",
+      "optional": false,
+      "metadataSource": "package-lock.json",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "7bf9b2de73a6b356761c948d0e9eeb4be6c1270bd04c79cd489c1e400ffdfc1a",
+          "bytes": 1074
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/require-from-string@2.0.2",
+      "ecosystem": "npm",
+      "name": "require-from-string",
+      "version": "2.0.2",
+      "scope": "installed-runtime",
+      "license": "MIT",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-Xf0nWe6RseziFMu+Ap9biiUbmplq6S9/p+7w7YXP/JBHhrUDDUhwa+vANyubuqfZWTveU//DYVGsDG7RKL/vEw==",
+      "downloadUrl": "https://registry.npmjs.org/require-from-string/-/require-from-string-2.0.2.tgz",
+      "optional": false,
+      "metadataSource": "package-lock.json",
+      "licenseFiles": [
+        {
+          "file": "license",
+          "sha256": "6ee0feb1f6ef996ff5a68600f8cf98909cf412d39ef3cdceaefd87d636fa1b7f",
+          "bytes": 1128
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/typescript@7.0.2",
+      "ecosystem": "npm",
+      "name": "typescript",
+      "version": "7.0.2",
+      "scope": "installed-build",
+      "license": "Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-8FYau96o3NKOhbjKi/qNvG/W5jhzxkbdm5sj9AbZ/5T5sWqn3hJgLfGx27sRKZWTvyzCP8dLRBTf5tBTSRVUNA==",
+      "downloadUrl": "https://registry.npmjs.org/typescript/-/typescript-7.0.2.tgz",
+      "optional": false,
+      "metadataSource": "package-lock.json",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "a7d00bfd54525bc694b6e32f64c7ebcf5e6b7ae3657be5cc12767bce74654a47",
+          "bytes": 9197
+        },
+        {
+          "file": "NOTICE.txt",
+          "sha256": "f5c708b59114507b8b27b48181b6883d106bbca0c1634bbee45b5e344237b66b",
+          "bytes": 48860
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/undici-types@6.21.0",
+      "ecosystem": "npm",
+      "name": "undici-types",
+      "version": "6.21.0",
+      "scope": "installed-build",
+      "license": "MIT",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-iwDZqg0QAGrg9Rav5H4n0M64c3mkR59cJ6wQp+7C4nI0gsmExaedaYLNO44eT4AtBBwjbTiGPMlt2Md0T9H9JQ==",
+      "downloadUrl": "https://registry.npmjs.org/undici-types/-/undici-types-6.21.0.tgz",
+      "optional": false,
+      "metadataSource": "package-lock.json",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "a6db8096b2707bc0102d256917d4d33f298ba36d8c3f25de067a2b5bb379db27",
+          "bytes": 1090
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/yaml@2.9.0",
+      "ecosystem": "npm",
+      "name": "yaml",
+      "version": "2.9.0",
+      "scope": "installed-runtime",
+      "license": "ISC",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-2AvhNX3mb8zd6Zy7INTtSpl1F15HW6Wnqj0srWlkKLcpYl/gMIMJiyuGq2KeI2YFxUPjdlB+3Lc10seMLtL4cA==",
+      "downloadUrl": "https://registry.npmjs.org/yaml/-/yaml-2.9.0.tgz",
+      "optional": false,
+      "metadataSource": "package-lock.json",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "5bba27375d93e9119f76c1015f7672cf9ad5f70952296e0842fb2243d6376869",
+          "bytes": 738
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "candidate:typescript",
+      "dependsOn": [
+        "pkg:npm/%40types/node@22.20.5",
+        "pkg:npm/ajv-formats@3.0.1",
+        "pkg:npm/ajv@8.20.0",
+        "pkg:npm/typescript@7.0.2",
+        "pkg:npm/yaml@2.9.0"
+      ]
+    },
+    {
+      "ref": "pkg:npm/%40types/node@22.20.5",
+      "dependsOn": [
+        "pkg:npm/undici-types@6.21.0"
+      ]
+    },
+    {
+      "ref": "pkg:npm/%40typescript/typescript-aix-ppc64@7.0.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/%40typescript/typescript-darwin-arm64@7.0.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/%40typescript/typescript-darwin-x64@7.0.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/%40typescript/typescript-freebsd-arm64@7.0.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/%40typescript/typescript-freebsd-x64@7.0.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/%40typescript/typescript-linux-arm@7.0.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/%40typescript/typescript-linux-arm64@7.0.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/%40typescript/typescript-linux-loong64@7.0.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/%40typescript/typescript-linux-mips64el@7.0.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/%40typescript/typescript-linux-ppc64@7.0.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/%40typescript/typescript-linux-riscv64@7.0.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/%40typescript/typescript-linux-s390x@7.0.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/%40typescript/typescript-linux-x64@7.0.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/%40typescript/typescript-netbsd-arm64@7.0.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/%40typescript/typescript-netbsd-x64@7.0.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/%40typescript/typescript-openbsd-arm64@7.0.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/%40typescript/typescript-openbsd-x64@7.0.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/%40typescript/typescript-sunos-x64@7.0.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/%40typescript/typescript-win32-arm64@7.0.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/%40typescript/typescript-win32-x64@7.0.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/ajv-formats@3.0.1",
+      "dependsOn": [
+        "pkg:npm/ajv@8.20.0"
+      ]
+    },
+    {
+      "ref": "pkg:npm/ajv@8.20.0",
+      "dependsOn": [
+        "pkg:npm/fast-deep-equal@3.1.3",
+        "pkg:npm/fast-uri@3.1.8",
+        "pkg:npm/json-schema-traverse@1.0.0",
+        "pkg:npm/require-from-string@2.0.2"
+      ]
+    },
+    {
+      "ref": "pkg:npm/fast-deep-equal@3.1.3",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/fast-uri@3.1.8",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/json-schema-traverse@1.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/require-from-string@2.0.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/typescript@7.0.2",
+      "dependsOn": [
+        "pkg:npm/%40typescript/typescript-aix-ppc64@7.0.2",
+        "pkg:npm/%40typescript/typescript-darwin-arm64@7.0.2",
+        "pkg:npm/%40typescript/typescript-darwin-x64@7.0.2",
+        "pkg:npm/%40typescript/typescript-freebsd-arm64@7.0.2",
+        "pkg:npm/%40typescript/typescript-freebsd-x64@7.0.2",
+        "pkg:npm/%40typescript/typescript-linux-arm64@7.0.2",
+        "pkg:npm/%40typescript/typescript-linux-arm@7.0.2",
+        "pkg:npm/%40typescript/typescript-linux-loong64@7.0.2",
+        "pkg:npm/%40typescript/typescript-linux-mips64el@7.0.2",
+        "pkg:npm/%40typescript/typescript-linux-ppc64@7.0.2",
+        "pkg:npm/%40typescript/typescript-linux-riscv64@7.0.2",
+        "pkg:npm/%40typescript/typescript-linux-s390x@7.0.2",
+        "pkg:npm/%40typescript/typescript-linux-x64@7.0.2",
+        "pkg:npm/%40typescript/typescript-netbsd-arm64@7.0.2",
+        "pkg:npm/%40typescript/typescript-netbsd-x64@7.0.2",
+        "pkg:npm/%40typescript/typescript-openbsd-arm64@7.0.2",
+        "pkg:npm/%40typescript/typescript-openbsd-x64@7.0.2",
+        "pkg:npm/%40typescript/typescript-sunos-x64@7.0.2",
+        "pkg:npm/%40typescript/typescript-win32-arm64@7.0.2",
+        "pkg:npm/%40typescript/typescript-win32-x64@7.0.2"
+      ]
+    },
+    {
+      "ref": "pkg:npm/undici-types@6.21.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/yaml@2.9.0",
+      "dependsOn": []
+    }
+  ],
+  "vendorLists": [],
+  "collectorSources": [
+    {
+      "file": "scripts/runtime-supply-chain-collect.mjs",
+      "sha256": "0d54d9bc209fb50b5046d61e3faa4d6e1d750f1f45397fce05f4bf65378bcbc7"
+    },
+    {
+      "file": "scripts/runtime-supply-chain-scan.mjs",
+      "sha256": "edcab509d9f7099f7530e0c24d54474abf5f9e7a2d31528db17c93260eeca7bc"
+    },
+    {
+      "file": "scripts/runtime-supply-chain-smoke.mjs",
+      "sha256": "d5d4401eb8201c70f55235f273ba43f5d776bc3bdbccb01a50408886f87a7b5e"
+    },
+    {
+      "file": "scripts/lib/supply-chain-python.py",
+      "sha256": "4166a3fb26d424e68ea93fb920668150f37e1ac43fc57e35bbc021dadc609f57"
+    },
+    {
+      "file": "scripts/lib/supply-chain-evidence.mjs",
+      "sha256": "910190f6d32488b6499483dbb8011d61feafa94f54fb2a134159445e13eab333"
+    }
+  ],
+  "buildResult": "passed",
+  "environment": {
+    "os": "macos",
+    "version": "27.0.1",
+    "build": "26A434",
+    "architecture": "arm64",
+    "cohort": "supplemental-local-not-frozen-target"
+  },
+  "prerequisiteEvidence": "../prerequisites.json",
+  "provisioning": {
+    "mode": "separately-cached-offline-build",
+    "dependencyLocksChanged": false,
+    "networkDuringBuild": false,
+    "isolationAssessment": "offline-flags-not-OS-enforcement",
+    "runtimeArchives": [
+      {
+        "tool": "Node",
+        "version": "22.23.2",
+        "target": "darwin-arm64",
+        "url": "https://nodejs.org/dist/v22.23.2/node-v22.23.2-darwin-arm64.tar.gz",
+        "sha256": "61130f394c1630d211dd50aecc4353d379480f36d3ac913cd85dbba1aed585c6",
+        "verification": "observed-archive-official-SHASUMS256-matched-no-signature"
+      }
+    ],
+    "interpreterOrigin": null
+  },
+  "nativeScanner": {
+    "name": "npm audit",
+    "status": "not-run",
+    "reason": "Version matching uses the shared committed OSV API collector; native scanner/reachability coverage is not claimed."
+  },
+  "openRisks": [
+    "no-independent-license-approval",
+    "no-signed-artifact-provenance",
+    "no-reproducible-build-proof",
+    "incomplete-native-runtime-compiler-closure",
+    "no-distribution-lifecycle"
+  ],
+  "licenseUnknownCount": 0,
+  "sbomSha256": "aac325ea7c7ffd6e66f3f49e21ea67936b4945bf285d64c6b1d832f0adba526b",
+  "advisoriesSha256": "cfe2041bed1525330a1c52936dc09fc0f64f90f58ab0423e64293325a7cd5abe",
+  "advisoryReview": {
+    "status": "no-matches-not-security-pass",
+    "reachability": "not-tested",
+    "fixesApplied": false,
+    "queryCount": 30,
+    "matchedPackageCount": 0,
+    "advisoryRecords": 0,
+    "uniqueCveAliases": [],
+    "unprocessedAdvisoryIds": []
+  }
+}

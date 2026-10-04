@@ -89,9 +89,11 @@ turn failed/not-tested results into passes.
 
 ## Reports And Remaining Gates
 
-The individual `typescript.json`, `python.json`, `rust.json` and `go.json`
-records must be added after the final run on this committed harness. The local
-environment is macOS 27.0.1 ARM64, **not** the frozen macos-15 image/cohort. Scoped
+The four [TypeScript](typescript.json), [Python](python.json),
+[Rust](rust.json) and [Go](go.json) reports each passed all 21 scenarios twice
+after their seven paired OS controls. Harness commit:
+`598caa4163f63ba5481cc4851e488fcfd5b4ef3d`. The local environment is
+macOS 27.0.1 ARM64, **not** the frozen macos-15 image/cohort. Scoped
 offlineOperation is passed only if all 21 scenarios pass with active controls;
 securityBoundary remains **partial**, and overall architecture is **not-ready**.
 Linux/Windows deny experiments and all install/distribution lifecycles remain

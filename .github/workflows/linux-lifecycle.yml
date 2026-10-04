@@ -1,0 +1,78 @@
+name: Linux Evaluation Lifecycle
+on:
+  pull_request:
+    paths:
+      - 'evaluation/lifecycle/linux/**'
+      - 'scripts/runtime-linux*'
+      - 'scripts/lib/linux-lifecycle-evidence.mjs'
+      - '.github/workflows/linux-lifecycle.yml'
+permissions:
+  contents: read
+jobs:
+  lifecycle:
+    name: Linux lifecycle (${{ matrix.candidate }})
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        candidate: [typescript, python, rust, go]
+    env:
+      GOTOOLCHAIN: local
+      CGO_ENABLED: '0'
+      TASK_WHEELHOUSE: wheelhouse
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22.23.2'
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1
+        if: matrix.candidate == 'python'
+        with:
+          python-version: '3.12.14'
+      - uses: actions/setup-go@924ae3a1cded613372ab5595356fb5720e22ba16
+        if: matrix.candidate == 'go'
+        with:
+          go-version: '1.27.1'
+          cache: false
+      - name: Provision pinned tools and caches separately
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm ci --ignore-scripts
+          case '${{ matrix.candidate }}' in
+            typescript)
+              npm --prefix evaluation/prototypes/typescript ci --ignore-scripts
+              ;;
+            python)
+              python -I -m venv .venv
+              .venv/bin/python -I -m pip --isolated download --require-hashes --only-binary=:all: -r evaluation/prototypes/python/requirements.lock --dest "$TASK_WHEELHOUSE"
+              .venv/bin/python -I -m pip --isolated install --no-index --find-links "$TASK_WHEELHOUSE" --require-hashes --only-binary=:all: -r evaluation/prototypes/python/requirements.lock
+              .venv/bin/python -I -m pip check
+              ;;
+            rust)
+              rustup toolchain install 1.99.0 --profile minimal --no-self-update
+              cargo +1.99.0 fetch --locked --manifest-path evaluation/prototypes/rust/Cargo.toml
+              ;;
+            go)
+              cd evaluation/prototypes/go
+              go mod download
+              go mod verify
+              ;;
+          esac
+      - name: Build capsule and test isolated clean offline installation
+        shell: bash
+        run: |
+          node scripts/runtime-linux-lifecycle.mjs '${{ matrix.candidate }}' "$RUNNER_TEMP/lifecycle.json" "$RUNNER_TEMP/evaluation-capsules"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: linux-evaluation-${{ matrix.candidate }}-${{ github.event.pull_request.head.sha }}
+          path: |
+            ${{ runner.temp }}/lifecycle.json
+            ${{ runner.temp }}/evaluation-capsules/*.tar.gz
+          retention-days: 7
+          if-no-files-found: error

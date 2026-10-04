@@ -8,6 +8,11 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Added
 
+- Added native Linux AMD64 evaluation-capsule collection and isolated clean
+  install/offline invocation/uninstall evidence tooling. Relocation failures,
+  unavailable prior artifacts and untested upgrade/rollback/signing remain
+  explicit; no product package, architecture acceptance or version change.
+
 - Prepared four revision-bound candidate supply-chain inventories, SBOMs,
   advisory matching and artifact/provenance records with offline consistency
   and rejection checks. Unknown license/native/runtime closure and untested

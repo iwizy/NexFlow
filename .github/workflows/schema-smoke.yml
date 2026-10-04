@@ -26,6 +26,9 @@ jobs:
       - name: Verify documentation navigation
         run: npm run documentation-navigation-smoke
 
+      - name: Verify stored Linux lifecycle evidence without promoting gates
+        run: npm run runtime-linux-lifecycle-smoke
+
       - name: Validate repository schemas and example manifests
         run: npm run validate
 

@@ -1,0 +1,381 @@
+{
+  "task": "NF-056-12",
+  "recordedAt": "2026-10-04 14:27:18 UTC",
+  "sourceBase": "fed105367da915347a92896eb67c0446d9e9b2d7",
+  "pullRequests": [
+    {
+      "headRefOid": "dec5f1a2037ca72dd5a93799a7376e35c5938569",
+      "mergeCommit": {
+        "oid": "e3a8fbee5ac5b509fe8a10b10a56f022f36e527b"
+      },
+      "number": 90,
+      "state": "MERGED",
+      "statusCheckRollup": [
+        {
+          "name": "CLI prototype checks",
+          "workflowName": "CLI Prototype",
+          "conclusion": "SUCCESS",
+          "completedAt": "2026-10-01T10:08:01Z",
+          "detailsUrl": "https://github.com/iwizy/NexFlow/actions/runs/36847082481/job/110319680358"
+        },
+        {
+          "name": "Environment (linux/amd64)",
+          "workflowName": "Evaluation Environments",
+          "conclusion": "SUCCESS",
+          "completedAt": "2026-10-01T10:07:14Z",
+          "detailsUrl": "https://github.com/iwizy/NexFlow/actions/runs/36847082647/job/110319680661"
+        },
+        {
+          "name": "schema-validation",
+          "workflowName": "Schema Validation",
+          "conclusion": "SUCCESS",
+          "completedAt": "2026-10-01T10:07:24Z",
+          "detailsUrl": "https://github.com/iwizy/NexFlow/actions/runs/36847082451/job/110319679338"
+        },
+        {
+          "name": "Environment (macos/arm64)",
+          "workflowName": "Evaluation Environments",
+          "conclusion": "SUCCESS",
+          "completedAt": "2026-10-01T10:07:21Z",
+          "detailsUrl": "https://github.com/iwizy/NexFlow/actions/runs/36847082647/job/110319680143"
+        },
+        {
+          "name": "Environment (windows/amd64)",
+          "workflowName": "Evaluation Environments",
+          "conclusion": "SUCCESS",
+          "completedAt": "2026-10-01T10:07:28Z",
+          "detailsUrl": "https://github.com/iwizy/NexFlow/actions/runs/36847082647/job/110319680578"
+        }
+      ],
+      "url": "https://github.com/iwizy/NexFlow/pull/90"
+    },
+    {
+      "headRefOid": "024485bf4d6acf601886b7387c2ed2295bceb908",
+      "mergeCommit": {
+        "oid": "a3c26c1453ec3a0f15a17baf80c79dec70cebdfd"
+      },
+      "number": 96,
+      "state": "MERGED",
+      "statusCheckRollup": [
+        {
+          "name": "CLI prototype checks",
+          "workflowName": "CLI Prototype",
+          "conclusion": "SUCCESS",
+          "completedAt": "2026-10-02T11:43:55Z",
+          "detailsUrl": "https://github.com/iwizy/NexFlow/actions/runs/37002512370/job/110823207508"
+        },
+        {
+          "name": "Environment (linux/amd64)",
+          "workflowName": "Evaluation Environments",
+          "conclusion": "SUCCESS",
+          "completedAt": "2026-10-02T11:43:01Z",
+          "detailsUrl": "https://github.com/iwizy/NexFlow/actions/runs/37002512333/job/110823207204"
+        },
+        {
+          "name": "schema-validation",
+          "workflowName": "Schema Validation",
+          "conclusion": "SUCCESS",
+          "completedAt": "2026-10-02T11:43:14Z",
+          "detailsUrl": "https://github.com/iwizy/NexFlow/actions/runs/37002512365/job/110823207134"
+        },
+        {
+          "name": "initial-validation",
+          "workflowName": "TypeScript Candidate",
+          "conclusion": "SUCCESS",
+          "completedAt": "2026-10-02T11:43:12Z",
+          "detailsUrl": "https://github.com/iwizy/NexFlow/actions/runs/37002512553/job/110823208235"
+        },
+        {
+          "name": "Environment (macos/arm64)",
+          "workflowName": "Evaluation Environments",
+          "conclusion": "SUCCESS",
+          "completedAt": "2026-10-02T11:43:03Z",
+          "detailsUrl": "https://github.com/iwizy/NexFlow/actions/runs/37002512333/job/110823206978"
+        },
+        {
+          "name": "Environment (windows/amd64)",
+          "workflowName": "Evaluation Environments",
+          "conclusion": "SUCCESS",
+          "completedAt": "2026-10-02T11:43:24Z",
+          "detailsUrl": "https://github.com/iwizy/NexFlow/actions/runs/37002512333/job/110823207153"
+        }
+      ],
+      "url": "https://github.com/iwizy/NexFlow/pull/96"
+    },
+    {
+      "headRefOid": "f33bbb95e84a768936f9b948de2b1200ed8909bb",
+      "mergeCommit": {
+        "oid": "02be255907f868a2e7d6dfb357b6021e58b4e5d4"
+      },
+      "number": 97,
+      "state": "MERGED",
+      "statusCheckRollup": [
+        {
+          "name": "CLI prototype checks",
+          "workflowName": "CLI Prototype",
+          "conclusion": "SUCCESS",
+          "completedAt": "2026-10-02T15:44:02Z",
+          "detailsUrl": "https://github.com/iwizy/NexFlow/actions/runs/37028903641/job/110910480202"
+        },
+        {
+          "name": "Environment (linux/amd64)",
+          "workflowName": "Evaluation Environments",
+          "conclusion": "SUCCESS",
+          "completedAt": "2026-10-02T15:43:02Z",
+          "detailsUrl": "https://github.com/iwizy/NexFlow/actions/runs/37028903130/job/110910477444"
+        },
+        {
+          "name": "initial-validation",
+          "workflowName": "Python Candidate",
+          "conclusion": "SUCCESS",
+          "completedAt": "2026-10-02T15:43:26Z",
+          "detailsUrl": "https://github.com/iwizy/NexFlow/actions/runs/37028903235/job/110910477766"
+        },
+        {
+          "name": "schema-validation",
+          "workflowName": "Schema Validation",
+          "conclusion": "SUCCESS",
+          "completedAt": "2026-10-02T15:43:14Z",
+          "detailsUrl": "https://github.com/iwizy/NexFlow/actions/runs/37028902910/job/110910476662"
+        },
+        {
+          "name": "initial-validation",
+          "workflowName": "TypeScript Candidate",
+          "conclusion": "SUCCESS",
+          "completedAt": "2026-10-02T15:43:10Z",
+          "detailsUrl": "https://github.com/iwizy/NexFlow/actions/runs/37028904001/job/110910480164"
+        },
+        {
+          "name": "Environment (macos/arm64)",
+          "workflowName": "Evaluation Environments",
+          "conclusion": "SUCCESS",
+          "completedAt": "2026-10-02T15:43:03Z",
+          "detailsUrl": "https://github.com/iwizy/NexFlow/actions/runs/37028903130/job/110910477380"
+        },
+        {
+          "name": "Environment (windows/amd64)",
+          "workflowName": "Evaluation Environments",
+          "conclusion": "SUCCESS",
+          "completedAt": "2026-10-02T15:43:18Z",
+          "detailsUrl": "https://github.com/iwizy/NexFlow/actions/runs/37028903130/job/110910477136"
+        }
+      ],
+      "url": "https://github.com/iwizy/NexFlow/pull/97"
+    },
+    {
+      "headRefOid": "8919281c40d878552401241a66fccbe9ddba3efd",
+      "mergeCommit": {
+        "oid": "18e8b16fbe30a5db8b48fa809cbacf187785d561"
+      },
+      "number": 99,
+      "state": "MERGED",
+      "statusCheckRollup": [
+        {
+          "name": "CLI prototype checks",
+          "workflowName": "CLI Prototype",
+          "conclusion": "SUCCESS",
+          "completedAt": "2026-10-03T11:16:20Z",
+          "detailsUrl": "https://github.com/iwizy/NexFlow/actions/runs/37119053662/job/111191442967"
+        },
+        {
+          "name": "Environment (linux/amd64)",
+          "workflowName": "Evaluation Environments",
+          "conclusion": "SUCCESS",
+          "completedAt": "2026-10-03T11:15:24Z",
+          "detailsUrl": "https://github.com/iwizy/NexFlow/actions/runs/37119053725/job/111191443097"
+        },
+        {
+          "name": "initial-validation",
+          "workflowName": "Python Candidate",
+          "conclusion": "SUCCESS",
+          "completedAt": "2026-10-03T11:15:49Z",
+          "detailsUrl": "https://github.com/iwizy/NexFlow/actions/runs/37119053667/job/111191442826"
+        },
+        {
+          "name": "initial-validation",
+          "workflowName": "Rust Candidate",
+          "conclusion": "SUCCESS",
+          "completedAt": "2026-10-03T11:16:02Z",
+          "detailsUrl": "https://github.com/iwizy/NexFlow/actions/runs/37119053714/job/111191443397"
+        },
+        {
+          "name": "schema-validation",
+          "workflowName": "Schema Validation",
+          "conclusion": "SUCCESS",
+          "completedAt": "2026-10-03T11:15:30Z",
+          "detailsUrl": "https://github.com/iwizy/NexFlow/actions/runs/37119053740/job/111191442957"
+        },
+        {
+          "name": "initial-validation",
+          "workflowName": "TypeScript Candidate",
+          "conclusion": "SUCCESS",
+          "completedAt": "2026-10-03T11:15:36Z",
+          "detailsUrl": "https://github.com/iwizy/NexFlow/actions/runs/37119053696/job/111191442952"
+        },
+        {
+          "name": "Environment (macos/arm64)",
+          "workflowName": "Evaluation Environments",
+          "conclusion": "SUCCESS",
+          "completedAt": "2026-10-03T11:15:29Z",
+          "detailsUrl": "https://github.com/iwizy/NexFlow/actions/runs/37119053725/job/111191443042"
+        },
+        {
+          "name": "Environment (windows/amd64)",
+          "workflowName": "Evaluation Environments",
+          "conclusion": "SUCCESS",
+          "completedAt": "2026-10-03T11:15:42Z",
+          "detailsUrl": "https://github.com/iwizy/NexFlow/actions/runs/37119053725/job/111191442937"
+        }
+      ],
+      "url": "https://github.com/iwizy/NexFlow/pull/99"
+    },
+    {
+      "headRefOid": "7181d8cf04d0fe75cce7bbd86aff9a53d9a1e413",
+      "mergeCommit": {
+        "oid": "20c7b20509a785e747ff0cce1cc6712313f2a600"
+      },
+      "number": 100,
+      "state": "MERGED",
+      "statusCheckRollup": [
+        {
+          "name": "CLI prototype checks",
+          "workflowName": "CLI Prototype",
+          "conclusion": "SUCCESS",
+          "completedAt": "2026-10-03T11:58:11Z",
+          "detailsUrl": "https://github.com/iwizy/NexFlow/actions/runs/37121274962/job/111197715053"
+        },
+        {
+          "name": "Environment (linux/amd64)",
+          "workflowName": "Evaluation Environments",
+          "conclusion": "SUCCESS",
+          "completedAt": "2026-10-03T11:57:15Z",
+          "detailsUrl": "https://github.com/iwizy/NexFlow/actions/runs/37121275056/job/111197715126"
+        },
+        {
+          "name": "initial-validation",
+          "workflowName": "Go Candidate",
+          "conclusion": "SUCCESS",
+          "completedAt": "2026-10-03T11:57:51Z",
+          "detailsUrl": "https://github.com/iwizy/NexFlow/actions/runs/37121275243/job/111197715779"
+        },
+        {
+          "name": "initial-validation",
+          "workflowName": "Python Candidate",
+          "conclusion": "SUCCESS",
+          "completedAt": "2026-10-03T11:57:40Z",
+          "detailsUrl": "https://github.com/iwizy/NexFlow/actions/runs/37121275050/job/111197715043"
+        },
+        {
+          "name": "schema-validation",
+          "workflowName": "Schema Validation",
+          "conclusion": "SUCCESS",
+          "completedAt": "2026-10-03T11:57:28Z",
+          "detailsUrl": "https://github.com/iwizy/NexFlow/actions/runs/37121274957/job/111197714738"
+        },
+        {
+          "name": "initial-validation",
+          "workflowName": "TypeScript Candidate",
+          "conclusion": "SUCCESS",
+          "completedAt": "2026-10-03T11:58:01Z",
+          "detailsUrl": "https://github.com/iwizy/NexFlow/actions/runs/37121275047/job/111197715031"
+        },
+        {
+          "name": "Environment (macos/arm64)",
+          "workflowName": "Evaluation Environments",
+          "conclusion": "SUCCESS",
+          "completedAt": "2026-10-03T11:57:17Z",
+          "detailsUrl": "https://github.com/iwizy/NexFlow/actions/runs/37121275056/job/111197714983"
+        },
+        {
+          "name": "Environment (windows/amd64)",
+          "workflowName": "Evaluation Environments",
+          "conclusion": "SUCCESS",
+          "completedAt": "2026-10-03T11:57:41Z",
+          "detailsUrl": "https://github.com/iwizy/NexFlow/actions/runs/37121275056/job/111197715113"
+        }
+      ],
+      "url": "https://github.com/iwizy/NexFlow/pull/100"
+    },
+    {
+      "headRefOid": "fed105367da915347a92896eb67c0446d9e9b2d7",
+      "mergeCommit": null,
+      "number": 104,
+      "state": "OPEN",
+      "statusCheckRollup": [
+        {
+          "name": "CLI prototype checks",
+          "workflowName": "CLI Prototype",
+          "conclusion": "SUCCESS",
+          "completedAt": "2026-10-04T14:06:43Z",
+          "detailsUrl": "https://github.com/iwizy/NexFlow/actions/runs/37207987009/job/111453107890"
+        },
+        {
+          "name": "Environment (linux/amd64)",
+          "workflowName": "Evaluation Environments",
+          "conclusion": "SUCCESS",
+          "completedAt": "2026-10-04T14:05:51Z",
+          "detailsUrl": "https://github.com/iwizy/NexFlow/actions/runs/37207987028/job/111453107802"
+        },
+        {
+          "name": "initial-validation",
+          "workflowName": "Go Candidate",
+          "conclusion": "SUCCESS",
+          "completedAt": "2026-10-04T14:06:25Z",
+          "detailsUrl": "https://github.com/iwizy/NexFlow/actions/runs/37207987022/job/111453107933"
+        },
+        {
+          "name": "initial-validation",
+          "workflowName": "Python Candidate",
+          "conclusion": "SUCCESS",
+          "completedAt": "2026-10-04T14:06:17Z",
+          "detailsUrl": "https://github.com/iwizy/NexFlow/actions/runs/37207987088/job/111453107849"
+        },
+        {
+          "name": "initial-validation",
+          "workflowName": "Rust Candidate",
+          "conclusion": "SUCCESS",
+          "completedAt": "2026-10-04T14:06:26Z",
+          "detailsUrl": "https://github.com/iwizy/NexFlow/actions/runs/37207986991/job/111453107596"
+        },
+        {
+          "name": "schema-validation",
+          "workflowName": "Schema Validation",
+          "conclusion": "SUCCESS",
+          "completedAt": "2026-10-04T14:06:00Z",
+          "detailsUrl": "https://github.com/iwizy/NexFlow/actions/runs/37207986993/job/111453107612"
+        },
+        {
+          "name": "initial-validation",
+          "workflowName": "TypeScript Candidate",
+          "conclusion": "SUCCESS",
+          "completedAt": "2026-10-04T14:05:59Z",
+          "detailsUrl": "https://github.com/iwizy/NexFlow/actions/runs/37207987002/job/111453107766"
+        },
+        {
+          "name": "Environment (macos/arm64)",
+          "workflowName": "Evaluation Environments",
+          "conclusion": "SUCCESS",
+          "completedAt": "2026-10-04T14:05:51Z",
+          "detailsUrl": "https://github.com/iwizy/NexFlow/actions/runs/37207987028/job/111453107858"
+        },
+        {
+          "name": "Environment (windows/amd64)",
+          "workflowName": "Evaluation Environments",
+          "conclusion": "SUCCESS",
+          "completedAt": "2026-10-04T14:05:59Z",
+          "detailsUrl": "https://github.com/iwizy/NexFlow/actions/runs/37207987028/job/111453107884"
+        }
+      ],
+      "url": "https://github.com/iwizy/NexFlow/pull/104"
+    }
+  ],
+  "previousArtifactSearch": {
+    "candidate_artifacts": [],
+    "environment_count": 40,
+    "total_count": 40,
+    "scope": "Full artifact catalog, per_page=100; total_count=40; no candidate artifacts",
+    "result": "unavailable",
+    "upgrade": "not-tested",
+    "rollback": "not-tested"
+  }
+}

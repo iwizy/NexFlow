@@ -24,6 +24,10 @@ The [Linux AMD64 lifecycle review](lifecycle/linux/README.md) tests private
 source-layout evaluation capsules without treating missing upgrade, rollback,
 signing or failed installed execution as distribution approval.
 
+The [offline/denied-effects experiment](isolation/README.md) adds independent
+positive/negative OS controls and bounded native macOS evidence. It keeps
+security residuals, other targets and architecture acceptance separate.
+
 The [four pinned candidate toolchain plans](toolchains/README.md) add native
 dependency capability probes and checked lockfiles. They do not promote candidate
 scorecards, replace the shared corpus or pass architecture hard gates.

@@ -29,6 +29,9 @@ jobs:
       - name: Verify stored Linux lifecycle evidence without promoting gates
         run: npm run runtime-linux-lifecycle-smoke
 
+      - name: Verify feature lifecycle inventory and claim boundaries
+        run: npm run feature-status-registry-smoke
+
       - name: Validate repository schemas and example manifests
         run: npm run validate
 
@@ -103,6 +106,9 @@ jobs:
 
       - name: Verify candidate supply-chain evidence and rejection paths
         run: npm run runtime-supply-chain-smoke
+
+      - name: Verify bounded offline and denied-effects evidence
+        run: npm run runtime-isolation-smoke
 
       - name: Run semantic reference smoke checks
         run: npm run semantic-smoke

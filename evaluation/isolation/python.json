@@ -1,0 +1,261 @@
+{
+  "formatVersion": "0.1-draft",
+  "task": "NF-056-10",
+  "candidate": "python",
+  "recordedAt": "2026-10-04T12:55:54.752Z",
+  "harnessRevision": "598caa4163f63ba5481cc4851e488fcfd5b4ef3d",
+  "prototypeRevision": "76141dfbeae265cb636d99a6164b097ce5d3019a",
+  "publishedHead": "f33bbb95e84a768936f9b948de2b1200ed8909bb",
+  "prerequisite": {
+    "pullRequest": "https://github.com/iwizy/NexFlow/pull/97",
+    "ciRun": 37028903235
+  },
+  "specificationRevision": "1d1fa238ab5729a79bee9389d5c66cfd20a61256",
+  "evaluationPackageRevision": "a8301a7478587c59502dfb2e6bd548489c14ee2b",
+  "corpusSha256": "01b116005f0650ac980194b22c02188289eaf1e8626b227aecf3684ece0d8f6b",
+  "catalogSha256": "f1bf8cb786442a212e14c79eb39279a2cdbf05ec20b09901374359d545d74e90",
+  "environment": {
+    "platform": "darwin",
+    "architecture": "arm64",
+    "osVersion": "27.0.1",
+    "osBuild": "26A434",
+    "node": "v22.23.2",
+    "mode": "native-source-bound-os-deny",
+    "inheritedEnvironment": "allowlisted",
+    "inheritedDescriptors": "stdio-only-by-spawn-contract"
+  },
+  "targetContractMatch": false,
+  "controls": {
+    "positive": {
+      "read": 0,
+      "write": 0,
+      "connect": 0,
+      "bind": 0,
+      "fork": 0,
+      "spawn": 0,
+      "spawnSelf": 0
+    },
+    "denied": {
+      "read": 1,
+      "write": 1,
+      "connect": 1,
+      "bind": 1,
+      "fork": 1,
+      "spawn": 1,
+      "spawnSelf": 1
+    },
+    "result": "passed",
+    "beforeCandidate": true,
+    "scope": "synthetic file read, outside write, loopback connect/bind, fork, spawn, self-spawn"
+  },
+  "artifacts": {
+    "executableSha256": "ac60cfe0268614638d0ffa35f3b0284fc7b3a11482723793455e17eeb278509e",
+    "entrySha256": "ac602e08999c07b14215c577b38b411e3c298b902f5700db681a61839c5d1fe5",
+    "canarySha256": "51a76864e1429bbdf7e14d0885899ba45446162ccc7b2e941fd884b53c8d94fc",
+    "profileSha256": "b398ef6977a4e0641c3e98691c01af5f3426503c718f94da0bf159e88dc0b1ba",
+    "profileTemplateSha256": "44e9bd539b75abdd387e5e2f15f05b164b10ce8a0aeffea51053fa8896e70688",
+    "runnerSourceSha256": "ec1795ac92c76f48d6a274abdd3e6988642978808774f34b68b4cb2c5f6d999b",
+    "canarySourceSha256": "da8229510b0112e27d05992701c5ea83c4e06debcd358a5f9aaeb33bbd473e6a"
+  },
+  "toolchain": "CPython 3.12.14; PyYAML 6.0.3; jsonschema 4.26.0",
+  "results": [
+    {
+      "id": "validate-project-hints",
+      "result": "passed",
+      "errors": [],
+      "processRuns": 2,
+      "exitCode": 0,
+      "stdoutSha256": "f9897e21c8f7bc61e5c370f5bff7d35302b41fe4316011fcbbe0ef983a332546"
+    },
+    {
+      "id": "inspect-valid-project",
+      "result": "passed",
+      "errors": [],
+      "processRuns": 2,
+      "exitCode": 0,
+      "stdoutSha256": "5f8703a6245d364fd9361ea8a55134131d288765fef339c2faa4f37a3621fad7"
+    },
+    {
+      "id": "reject-yaml-syntax",
+      "result": "passed",
+      "errors": [],
+      "processRuns": 2,
+      "exitCode": 1,
+      "stdoutSha256": "a0d4ca2d56d601f1c5151e217b0e8474eaf2feb812fc1cbe8002901147dd8645"
+    },
+    {
+      "id": "reject-schema-invalid-project",
+      "result": "passed",
+      "errors": [],
+      "processRuns": 2,
+      "exitCode": 1,
+      "stdoutSha256": "1abdd770c8bc9effc5d0cb826d2f5587907195cf0cf35c411aaafd066c2f88c6"
+    },
+    {
+      "id": "reject-unsupported-version",
+      "result": "passed",
+      "errors": [],
+      "processRuns": 2,
+      "exitCode": 3,
+      "stdoutSha256": "ff739974be699970a5db365d997d3da43466a6944bbf0f8b46d868006d2176e5"
+    },
+    {
+      "id": "reject-unsupported-kind",
+      "result": "passed",
+      "errors": [],
+      "processRuns": 2,
+      "exitCode": 3,
+      "stdoutSha256": "046efe1747a29d0b0eacda280660739a0d569c964fc59803bb4ca5b21fd47c53"
+    },
+    {
+      "id": "reject-source-outside-root",
+      "result": "passed",
+      "errors": [],
+      "processRuns": 2,
+      "exitCode": 1,
+      "stdoutSha256": "63010d716259393ab0c5d75d8f85dcdfe368b2583510a8ee67ec38a910047150"
+    },
+    {
+      "id": "reject-source-kind-mismatch",
+      "result": "passed",
+      "errors": [],
+      "processRuns": 2,
+      "exitCode": 1,
+      "stdoutSha256": "1eba0fc1f9040063d9776186a185cf1771c69974ef2d5221fbcf77404aab6eb0"
+    },
+    {
+      "id": "reject-runtime-command",
+      "result": "passed",
+      "errors": [],
+      "processRuns": 2,
+      "exitCode": 2,
+      "stdoutSha256": "3392f48bf22ad78a34c385fceff9c4ed7a12838a0c5e267ebec5668477cfd642"
+    },
+    {
+      "id": "reject-ambiguous-project-entry",
+      "result": "passed",
+      "errors": [],
+      "processRuns": 2,
+      "exitCode": 1,
+      "stdoutSha256": "03b60d0893fa54d8b7a9b6d96bf7350a29a3a20c7a19f286cb706e2b76830f68"
+    },
+    {
+      "id": "reject-duplicate-root-key",
+      "result": "passed",
+      "errors": [],
+      "processRuns": 2,
+      "exitCode": 1,
+      "stdoutSha256": "a0d4ca2d56d601f1c5151e217b0e8474eaf2feb812fc1cbe8002901147dd8645"
+    },
+    {
+      "id": "absolute-file",
+      "result": "passed",
+      "errors": [],
+      "processRuns": 2,
+      "exitCode": 1,
+      "stdoutSha256": "02ad3bf6c69cc9c0d7b944496a16fc3eb76ae484397f5ea8e28bfc41fe364d01"
+    },
+    {
+      "id": "parent-traversal-file",
+      "result": "passed",
+      "errors": [],
+      "processRuns": 2,
+      "exitCode": 1,
+      "stdoutSha256": "02ad3bf6c69cc9c0d7b944496a16fc3eb76ae484397f5ea8e28bfc41fe364d01"
+    },
+    {
+      "id": "remote-file-locator",
+      "result": "passed",
+      "errors": [],
+      "processRuns": 2,
+      "exitCode": 1,
+      "stdoutSha256": "02ad3bf6c69cc9c0d7b944496a16fc3eb76ae484397f5ea8e28bfc41fe364d01"
+    },
+    {
+      "id": "file-symlink",
+      "result": "passed",
+      "errors": [],
+      "processRuns": 2,
+      "exitCode": 1,
+      "stdoutSha256": "66abe03bde79d049258123aebead25f4f72d16a1c339d2f16f1ed03d5971b2cc"
+    },
+    {
+      "id": "root-symlink-reviewed-alias",
+      "result": "passed",
+      "errors": [],
+      "processRuns": 2,
+      "exitCode": 0,
+      "stdoutSha256": "947254361f598051e42e414fdff730705e73039218bb71355b1ae87ad5e67273"
+    },
+    {
+      "id": "root-symlink-protected-directory",
+      "result": "passed",
+      "errors": [],
+      "processRuns": 2,
+      "exitCode": 1,
+      "stdoutSha256": "a0d4ca2d56d601f1c5151e217b0e8474eaf2feb812fc1cbe8002901147dd8645"
+    },
+    {
+      "id": "unknown-effect-command",
+      "result": "passed",
+      "errors": [],
+      "processRuns": 2,
+      "exitCode": 2,
+      "stdoutSha256": "3392f48bf22ad78a34c385fceff9c4ed7a12838a0c5e267ebec5668477cfd642"
+    },
+    {
+      "id": "inert-command-remote-credential-declarations",
+      "result": "passed",
+      "errors": [],
+      "processRuns": 2,
+      "exitCode": 0,
+      "stdoutSha256": "947254361f598051e42e414fdff730705e73039218bb71355b1ae87ad5e67273"
+    },
+    {
+      "id": "inert-inspection",
+      "result": "passed",
+      "errors": [],
+      "processRuns": 2,
+      "exitCode": 0,
+      "stdoutSha256": "5f8703a6245d364fd9361ea8a55134131d288765fef339c2faa4f37a3621fad7"
+    },
+    {
+      "id": "synthetic-value-redaction",
+      "result": "passed",
+      "errors": [],
+      "processRuns": 2,
+      "exitCode": 1,
+      "stdoutSha256": "e3c72c29237d1e94121b82802c79ed6c31da62599c702a94ff5b4fdab2077755"
+    }
+  ],
+  "corpusAfter": "unchanged",
+  "sourceAfter": "unchanged",
+  "offlineOperation": {
+    "status": "passed",
+    "scope": "21 CLI scenarios twice after separate cached provisioning with active OS network denial"
+  },
+  "securityBoundary": {
+    "status": "partial",
+    "scope": "tested deny controls and bounded CLI scenarios, not complete architecture security approval"
+  },
+  "otherTargets": [
+    {
+      "target": "linux/amd64",
+      "status": "not-tested"
+    },
+    {
+      "target": "windows/amd64",
+      "status": "not-tested"
+    }
+  ],
+  "outcome": "not-ready",
+  "selection": null,
+  "limitations": [
+    "Local macOS 27 ARM64 is supplemental, not the frozen macos-15 CI image/cohort; no target lifecycle or performance evidence.",
+    "Seatbelt profile starts allow-default then denies network/process/file effects; system reads, parent-directory enumeration and global file metadata remain allowed.",
+    "Mach IPC, keychain brokers, inherited OS facilities, replacement races, devices, resource exhaustion and every possible secret channel are not fully tested.",
+    "Synthetic canaries are not real credentials; redaction checks cover only declared scenarios and do not establish a general secret detector.",
+    "Compiled source artifacts and separate pinned caches are not signed provenance, release artifacts or supply-chain acceptance.",
+    "Original candidate scorecards and all failed fidelity/unsupported semantic gates remain unchanged."
+  ]
+}

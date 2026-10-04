@@ -2,6 +2,11 @@
 
 RFCs are design proposals for meaningful changes to NexFlow.
 
+The [Feature Status Registry](../docs/feature-status-registry.md) inventories every
+RFC-backed feature and manifest kind alongside experimental, deprecated and
+planned implementation slices. This index still records the owning RFC stage;
+schema or prototype implementation does not change a Draft RFC to Accepted.
+
 ## RFC Index
 
 | RFC | Title | Status |

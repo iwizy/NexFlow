@@ -20,6 +20,10 @@ The [candidate supply-chain review](supply-chain/README.md) collects real
 dependency/license inventories, SBOMs, dated advisory matches and artifact
 receipts. Unknown native/runtime closure and provenance remain open.
 
+The [offline/denied-effects experiment](isolation/README.md) adds independent
+positive/negative OS controls and bounded native macOS evidence. It keeps
+security residuals, other targets and architecture acceptance separate.
+
 The [four pinned candidate toolchain plans](toolchains/README.md) add native
 dependency capability probes and checked lockfiles. They do not promote candidate
 scorecards, replace the shared corpus or pass architecture hard gates.

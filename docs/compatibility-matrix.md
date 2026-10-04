@@ -6,6 +6,12 @@ CLI, runtime, and extension combinations are supported by the repository today.
 It is a statement of current evidence, not a promise that planned components
 already exist.
 
+The [Feature Status Registry](feature-status-registry.md) separately owns the
+cross-surface lifecycle inventory. Accepted, Draft, Experimental, Deprecated
+and Planned lifecycle rows do not replace the evidence/support states below.
+A deprecated field can remain schema-valid, and an implemented experimental
+slice does not accept its owning Draft RFC.
+
 For compatibility rules and breaking change guidance, see
 [Compatibility](compatibility.md). For support claim vocabulary, see
 [Conformance](conformance.md). For the feature boundary used by the first
@@ -79,7 +85,7 @@ continues to describe only its original snapshot.
 | Candidate readiness record | Standalone `recordVersion: "0.1"` schema, eight-gate template, and 14 focused cases | Implemented | `release/`, `npm run candidate-readiness-smoke`, `v0.1.0` release assets | Repository checks validate record structure and decision guards; the published decision is maintainer-reviewed evidence, not automated approval or a conformance certificate. |
 | Semantic reference inventory | P0-P3 target namespaces, coverage, gaps, and deferred fields | Specified | `docs/semantic-reference-inventory.md` | Documentation contract only; it is not a manifest, generated registry, validator, or conformance suite. |
 | Semantic reference smoke | Selected cross-manifest reference, active definition authority, and duplicate checks | Partial | `npm run semantic-smoke`, semantic reference inventory | Does not cover every inventoried field or establish full `NF-SEMANTIC` conformance, graph safety, or policy correctness. |
-| Runtime language evaluation | Hard gates, weighted criteria, common prototype, and evidence record for TypeScript, Python, Rust, and Go | Specified | `docs/language-evaluation-matrix.md`, `docs/runtime-options.md` | No comparable candidate prototypes, scores, language selection, package layout, or accepted Runtime Architecture Decision exists. |
+| Runtime language evaluation | Hard gates, weighted criteria, four independent validation-only source prototypes and immutable fidelity/diagnostic comparison | Partial | [Evaluation Packet](../evaluation/README.md), [Fidelity Review](../evaluation/fidelity/README.md), `docs/language-evaluation-matrix.md` | Each candidate supports 128 library cases and leaves 224 semantic/namespace cases not-tested; specification fidelity failed, full deterministic diagnostics not-tested. No accepted target lifecycle, comparable performance, independent scores, language selection, package layout or Runtime Architecture Decision. |
 | Reference CLI | Validation-only target, command map, effect boundary, promotion gates, and blocker-bearing alpha checkpoint documented | Planned | `docs/reference-cli.md`, `docs/0.4-alpha-checkpoint.md`, RFC-0011 | No `nexflow` executable, distributed package, stable command or output contract, or `NF-CLI` implementation exists. |
 | Repository CLI prototype | Help, unreleased version, local discovery, structural `validate`, declared-only `inspect`, static `graph`, bounded `init`, and opt-in JSON output | Partial | `docs/cli-prototype.md`, `npm run cli-prototype-smoke`, `npm run cli-validation-smoke`, `npm run cli-init-smoke` | Disposable maintenance tooling, not a reference CLI alpha or completed architecture candidate; no full semantic validation, stable JSON envelope, package, or conformance claim. |
 | Prototype JSON diagnostics | Experimental `formatVersion: "0.4-draft"` envelope and separate output schema | Implemented | `docs/cli-diagnostics.md`, `scripts/contracts/cli-output.schema.json`, `npm run cli-diagnostics-smoke` | Versioned repository output, not stable catalog or public CLI conformance; no semantic diagnostics, SARIF, automatic fixes, or runtime authority. |
@@ -518,7 +524,9 @@ No NexFlow runtime is implemented or selected.
 
 The repository intentionally does not choose TypeScript, Python, Rust, or Go for
 a runtime. Documentation and RFCs define evaluation criteria and future
-behavioral requirements only.
+behavioral requirements; the four disposable source prototypes exercise local
+structural validation and declared inspection only. Their [fidelity comparison](../evaluation/fidelity/README.md)
+preserves unsupported semantic cases and does not implement or select a runtime.
 
 There is currently no supported pairing between `specVersion: "0.1"` and an
 executable runtime.
@@ -697,6 +705,7 @@ Update this matrix when a change affects any of the following:
 Changes to the matrix must stay synchronized with:
 
 - [README status](../README.md#status)
+- [Feature Status Registry](feature-status-registry.md)
 - [Compatibility](compatibility.md)
 - [Conformance](conformance.md)
 - [Validation](validation.md)

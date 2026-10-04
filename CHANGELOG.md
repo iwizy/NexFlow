@@ -8,6 +8,12 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Added
 
+- Added a single feature lifecycle registry covering every manifest kind and
+  numbered RFC, experimental source/profile slices, existing deprecated fields
+  and planned implementations, with offline inventory and status-consistency
+  rejection checks. Lifecycle, support evidence and RFC stage remain separate;
+  no RFC acceptance, new deprecation, runtime, release or version change.
+
 - Prepared a revision-pinned `0.5` beta checkpoint covering all eight readiness
   gates, source-check evidence, open blockers and the next closure actions,
   with an offline CI consistency and non-approval check. The result remains

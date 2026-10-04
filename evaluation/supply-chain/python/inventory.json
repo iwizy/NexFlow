@@ -1,0 +1,2995 @@
+{
+  "formatVersion": 1,
+  "task": "NF-056-11",
+  "candidate": "python",
+  "collectorVersion": "nf-056-11-v1",
+  "recordedAt": "2026-10-04T13:53:54.711Z",
+  "collectorRevision": "f8f66a9122d73a195698966785d968cdd395de7b",
+  "sourceRevision": "76141dfbeae265cb636d99a6164b097ce5d3019a",
+  "publishedHead": "f33bbb95e84a768936f9b948de2b1200ed8909bb",
+  "pullRequest": 97,
+  "ciRun": 37028903235,
+  "toolchain": "CPython 3.12.14; PyYAML 6.0.3; jsonschema 4.26.0",
+  "specificationRevision": "1d1fa238ab5729a79bee9389d5c66cfd20a61256",
+  "evaluationPackageRevision": "a8301a7478587c59502dfb2e6bd548489c14ee2b",
+  "corpusSha256": "01b116005f0650ac980194b22c02188289eaf1e8626b227aecf3684ece0d8f6b",
+  "catalogSha256": "f1bf8cb786442a212e14c79eb39279a2cdbf05ec20b09901374359d545d74e90",
+  "sourceManifest": [
+    {
+      "file": "evaluation/prototypes/python/.python-version",
+      "sha256": "f50159fad3f4319868eb38717b91d55843c41e9803014c8de05e116a6d0bcfdc",
+      "bytes": 8
+    },
+    {
+      "file": "evaluation/prototypes/python/README.md",
+      "sha256": "cc2cf2b7af5b23b8e85f318a5e51f20754fbde1a88ac084262b1edb0a557383c",
+      "bytes": 5302
+    },
+    {
+      "file": "evaluation/prototypes/python/cli.py",
+      "sha256": "ac602e08999c07b14215c577b38b411e3c298b902f5700db681a61839c5d1fe5",
+      "bytes": 3112
+    },
+    {
+      "file": "evaluation/prototypes/python/library_driver.py",
+      "sha256": "8ac9022f2ca7189949eb2a82f5931a84d2f345667dfbb950999e9f3753a42989",
+      "bytes": 1321
+    },
+    {
+      "file": "evaluation/prototypes/python/nexflow_python_evaluation/__init__.py",
+      "sha256": "f015f1cd4e1fa45461731c05c28dff01b5667304df86ae7fea12b012afeef220",
+      "bytes": 470
+    },
+    {
+      "file": "evaluation/prototypes/python/nexflow_python_evaluation/discovery.py",
+      "sha256": "42e101935704f55f43b57252e5c9b60f1fb21186f1adc687e76831a6dc45ca88",
+      "bytes": 6431
+    },
+    {
+      "file": "evaluation/prototypes/python/nexflow_python_evaluation/files.py",
+      "sha256": "4bbf3e9894d39e0309c00198783c983c312c119618e3612889e5eebb3ee74eaf",
+      "bytes": 2757
+    },
+    {
+      "file": "evaluation/prototypes/python/nexflow_python_evaluation/inspection.py",
+      "sha256": "5a49f74f3ed434e462f0b64403f91af33685681e0b5f2d801cb238fd25aee0c7",
+      "bytes": 6396
+    },
+    {
+      "file": "evaluation/prototypes/python/nexflow_python_evaluation/library.py",
+      "sha256": "f3f41fdcf853c65fa9324fb8169d52b96d2157ef373a56495712d20766d5b373",
+      "bytes": 5336
+    },
+    {
+      "file": "evaluation/prototypes/python/nexflow_python_evaluation/model.py",
+      "sha256": "2429b1e2ac8ca511f6074a43f28a1d2f8e287675fc8cffbcf1ee573a3334a440",
+      "bytes": 3787
+    },
+    {
+      "file": "evaluation/prototypes/python/nexflow_python_evaluation/schema.py",
+      "sha256": "19438a6510f72a00d2b8b8f5a680295cef071d88e327e3540ca92c6959c99bd9",
+      "bytes": 4297
+    },
+    {
+      "file": "evaluation/prototypes/python/nexflow_python_evaluation/yaml_input.py",
+      "sha256": "4c460e98505c283e46dee355b500afcab3a18aa807e75384d816e4cdab8daa63",
+      "bytes": 3827
+    },
+    {
+      "file": "evaluation/prototypes/python/requirements.in",
+      "sha256": "ea3c75d351cd8d5139af5031b2c39f890b45dfe545f80b5d521d8947c3c62640",
+      "bytes": 116
+    },
+    {
+      "file": "evaluation/prototypes/python/requirements.lock",
+      "sha256": "1c0cf5c9c6e11afd14c878b66e9e70f550f4d56def426b81fd0f15dd20a32dc2",
+      "bytes": 17490
+    },
+    {
+      "file": "evaluation/prototypes/python/self_test.py",
+      "sha256": "d8ef910edaf75233bd2aa59cbb5b777d658af599012f4a85bf7ce5241d1aca8b",
+      "bytes": 11574
+    }
+  ],
+  "target": "macos/arm64",
+  "artifacts": [
+    {
+      "file": "__pycache__/cli.cpython-312.pyc",
+      "sha256": "4691aa87b343b08b21d1ea6f8f313984c716d3c522e88d6f16a6360fbda0ec76",
+      "bytes": 5432,
+      "kind": "compiled-bytecode"
+    },
+    {
+      "file": "__pycache__/library_driver.cpython-312.pyc",
+      "sha256": "9b8c099b96bfb0d23c7b5eaf139355210481b1e84e3bc9afb49d86bee6ce7f46",
+      "bytes": 2483,
+      "kind": "compiled-bytecode"
+    },
+    {
+      "file": "__pycache__/self_test.cpython-312.pyc",
+      "sha256": "2acc629c46f2e5b7c4877d5c8fd498718755655b0df1d11fb0317e7f640e4184",
+      "bytes": 21019,
+      "kind": "compiled-bytecode"
+    },
+    {
+      "file": "cli.py",
+      "sha256": "ac602e08999c07b14215c577b38b411e3c298b902f5700db681a61839c5d1fe5",
+      "bytes": 3112,
+      "kind": "source-entry"
+    },
+    {
+      "file": "library_driver.py",
+      "sha256": "8ac9022f2ca7189949eb2a82f5931a84d2f345667dfbb950999e9f3753a42989",
+      "bytes": 1321,
+      "kind": "source-entry"
+    },
+    {
+      "file": "nexflow_python_evaluation/__init__.py",
+      "sha256": "f015f1cd4e1fa45461731c05c28dff01b5667304df86ae7fea12b012afeef220",
+      "bytes": 470,
+      "kind": "source-entry"
+    },
+    {
+      "file": "nexflow_python_evaluation/__pycache__/__init__.cpython-312.pyc",
+      "sha256": "6c63e6e5c52f95b87688590b3b791a42da0995c6d806af06190437e99453c811",
+      "bytes": 710,
+      "kind": "compiled-bytecode"
+    },
+    {
+      "file": "nexflow_python_evaluation/__pycache__/discovery.cpython-312.pyc",
+      "sha256": "2b5b2c2bea54a62d2df0cb68c11cb015b5bd1f1eee0c5ce4e477271ae183f8e3",
+      "bytes": 9319,
+      "kind": "compiled-bytecode"
+    },
+    {
+      "file": "nexflow_python_evaluation/__pycache__/files.cpython-312.pyc",
+      "sha256": "c3bc1da65f675f4fccef1397089ef5b360ed8fd1a49948947831af6fc51f65ee",
+      "bytes": 4785,
+      "kind": "compiled-bytecode"
+    },
+    {
+      "file": "nexflow_python_evaluation/__pycache__/inspection.cpython-312.pyc",
+      "sha256": "0bf0d8ebae397e491164205ab252328b5d9d8c574573cdc07ee2708632b87795",
+      "bytes": 9546,
+      "kind": "compiled-bytecode"
+    },
+    {
+      "file": "nexflow_python_evaluation/__pycache__/library.cpython-312.pyc",
+      "sha256": "967cb2509e54786737d114411ab78916636cd6c6074a9da35efbe4ef16206d8a",
+      "bytes": 7073,
+      "kind": "compiled-bytecode"
+    },
+    {
+      "file": "nexflow_python_evaluation/__pycache__/model.cpython-312.pyc",
+      "sha256": "aa6cbdced60eb1377a7147563d693f8dc2e7adade2f6ef127a019eb25a3b1017",
+      "bytes": 6627,
+      "kind": "compiled-bytecode"
+    },
+    {
+      "file": "nexflow_python_evaluation/__pycache__/schema.cpython-312.pyc",
+      "sha256": "59f05d10d87c3b6249394a4b0abe98dc0e59076d39cdf07ada8e2c0672bf18c8",
+      "bytes": 8237,
+      "kind": "compiled-bytecode"
+    },
+    {
+      "file": "nexflow_python_evaluation/__pycache__/yaml_input.cpython-312.pyc",
+      "sha256": "69592d96d262a18681d8259e3c4163880af06db7106fca4ae4fe610546ac51af",
+      "bytes": 6800,
+      "kind": "compiled-bytecode"
+    },
+    {
+      "file": "nexflow_python_evaluation/discovery.py",
+      "sha256": "42e101935704f55f43b57252e5c9b60f1fb21186f1adc687e76831a6dc45ca88",
+      "bytes": 6431,
+      "kind": "source-entry"
+    },
+    {
+      "file": "nexflow_python_evaluation/files.py",
+      "sha256": "4bbf3e9894d39e0309c00198783c983c312c119618e3612889e5eebb3ee74eaf",
+      "bytes": 2757,
+      "kind": "source-entry"
+    },
+    {
+      "file": "nexflow_python_evaluation/inspection.py",
+      "sha256": "5a49f74f3ed434e462f0b64403f91af33685681e0b5f2d801cb238fd25aee0c7",
+      "bytes": 6396,
+      "kind": "source-entry"
+    },
+    {
+      "file": "nexflow_python_evaluation/library.py",
+      "sha256": "f3f41fdcf853c65fa9324fb8169d52b96d2157ef373a56495712d20766d5b373",
+      "bytes": 5336,
+      "kind": "source-entry"
+    },
+    {
+      "file": "nexflow_python_evaluation/model.py",
+      "sha256": "2429b1e2ac8ca511f6074a43f28a1d2f8e287675fc8cffbcf1ee573a3334a440",
+      "bytes": 3787,
+      "kind": "source-entry"
+    },
+    {
+      "file": "nexflow_python_evaluation/schema.py",
+      "sha256": "19438a6510f72a00d2b8b8f5a680295cef071d88e327e3540ca92c6959c99bd9",
+      "bytes": 4297,
+      "kind": "source-entry"
+    },
+    {
+      "file": "nexflow_python_evaluation/yaml_input.py",
+      "sha256": "4c460e98505c283e46dee355b500afcab3a18aa807e75384d816e4cdab8daa63",
+      "bytes": 3827,
+      "kind": "source-entry"
+    },
+    {
+      "file": "self_test.py",
+      "sha256": "d8ef910edaf75233bd2aa59cbb5b777d658af599012f4a85bf7ce5241d1aca8b",
+      "bytes": 11574,
+      "kind": "source-entry"
+    }
+  ],
+  "commands": [
+    "python -I -m pip check",
+    "python -I -m compileall -q evaluation/prototypes/python"
+  ],
+  "outcome": "not-ready",
+  "supplyChainAcceptance": "partial",
+  "signedProvenance": "not-tested",
+  "reproducibleBuild": "not-tested",
+  "distributionLifecycle": "not-tested",
+  "limitations": [
+    "Dependency metadata and licenses are declarations, not independent legal approval.",
+    "Checksums bind observed bytes; no signed build attestation, signing or reproducibility claim.",
+    "This native macOS source-bound experiment is not a frozen target cohort or a Linux/Windows distribution.",
+    "OS/runtime/compiler bundled dependency closure and operating-system vulnerability coverage are incomplete.",
+    "No package manager offline flag or virtual environment establishes an OS security boundary.",
+    "Package/version advisory matches do not establish reachability; absence does not certify security.",
+    "Vendored tooling licenses with NOASSERTION require per-component mapping; upstream rpds SBOM is not proof of actual linked target closure.",
+    "PyYAML native wheel may bundle libyaml without a versioned SBOM; interpreter/wheel native closure is not independently complete."
+  ],
+  "wheels": [
+    {
+      "file": "attrs-26.1.0-py3-none-any.whl",
+      "sha256": "c647aa4a12dfbad9333ca4e71fe62ddc36f4e63b2d260a37a8b83d2f043ac309",
+      "bytes": 67548
+    },
+    {
+      "file": "build-1.3.0-py3-none-any.whl",
+      "sha256": "7145f0b5061ba90a1500d60bd1b13ca0a8a4cebdd0cc16ed8adf1c0e739f43b4",
+      "bytes": 23382
+    },
+    {
+      "file": "jsonschema-4.26.0-py3-none-any.whl",
+      "sha256": "d489f15263b8d200f8387e64b4c3a75f06629559fb73deb8fdfb525f2dab50ce",
+      "bytes": 90630
+    },
+    {
+      "file": "jsonschema_specifications-2025.9.1-py3-none-any.whl",
+      "sha256": "98802fee3a11ee76ecaca44429fda8a41bff98b00a0f2838151b113f210cc6fe",
+      "bytes": 18437
+    },
+    {
+      "file": "packaging-26.3-py3-none-any.whl",
+      "sha256": "d7193f7c8e4e93f444fde0262bf90af30e16fa0ad0ad44cb553c87339b23cd1c",
+      "bytes": 129956
+    },
+    {
+      "file": "pip-26.2.1-py3-none-any.whl",
+      "sha256": "71138adf1f4ca900cdb7d289c21b7494329f2332b6d85f0e1c42108c0384ed3e",
+      "bytes": 1816632
+    },
+    {
+      "file": "pyproject_hooks-1.3.3-py3-none-any.whl",
+      "sha256": "5fc53fdac9f7bd63fbcdc868fb5f90b4784d78a53a3d3388cd738b807441a20b",
+      "bytes": 10724
+    },
+    {
+      "file": "pyyaml-6.0.3-cp312-cp312-macosx_11_0_arm64.whl",
+      "sha256": "fc09d0aa354569bc501d4e787133afc08552722d3ab34836a80547331bb5d4a0",
+      "bytes": 173973
+    },
+    {
+      "file": "referencing-0.37.0-py3-none-any.whl",
+      "sha256": "381329a9f99628c9069361716891d34ad94af76e461dcb0335825aecc7692231",
+      "bytes": 26766
+    },
+    {
+      "file": "rfc3339_validator-0.1.4-py2.py3-none-any.whl",
+      "sha256": "24f6ec1eda14ef823da9e36ec7113124b39c04d50a4d3d3a3c2859577e7791fa",
+      "bytes": 3490
+    },
+    {
+      "file": "rpds_py-2026.6.3-cp312-cp312-macosx_11_0_arm64.whl",
+      "sha256": "538949e262e46caa31ac01bdb3c1e8f642622922cacbabbae6a8445d9dc33eaf",
+      "bytes": 338542
+    },
+    {
+      "file": "setuptools-80.9.0-py3-none-any.whl",
+      "sha256": "062d34222ad13e0cc312a4c02d73f059e86a4acbfbdea8f8f76b28c99f306922",
+      "bytes": 1201486
+    },
+    {
+      "file": "six-1.17.0-py2.py3-none-any.whl",
+      "sha256": "4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274",
+      "bytes": 11050
+    },
+    {
+      "file": "typing_extensions-4.16.0-py3-none-any.whl",
+      "sha256": "481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8",
+      "bytes": 45571
+    },
+    {
+      "file": "wheel-0.45.1-py3-none-any.whl",
+      "sha256": "708e7481cc80179af0e556bbf0cc00b8444c7321e2700b8d8580231d13017248",
+      "bytes": 72494
+    }
+  ],
+  "runtime": {
+    "name": "CPython",
+    "version": "3.12.14",
+    "executableSha256": "ac60cfe0268614638d0ffa35f3b0284fc7b3a11482723793455e17eeb278509e",
+    "requiredExternal": true,
+    "downloadProvenance": "unavailable-existing-exact-runtime"
+  },
+  "locks": [
+    {
+      "file": "evaluation/prototypes/python/requirements.lock",
+      "sha256": "1c0cf5c9c6e11afd14c878b66e9e70f550f4d56def426b81fd0f15dd20a32dc2",
+      "bytes": 17490
+    }
+  ],
+  "components": [
+    {
+      "ref": "pkg:cargo/archery@1.2.2",
+      "ecosystem": "crates.io",
+      "name": "archery",
+      "version": "1.2.2",
+      "scope": "wheel-upstream-sbom",
+      "license": "MIT",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "metadataSource": "rpds-py-wheel-embedded-SBOM",
+      "upstreamSbomSha256": "65420f27e5cb2e81bcbb5a8c7334149ec68e36e94b0301b2e4f6a7933468bb11",
+      "archiveSha256": "70e0a5f99dfebb87bb342d0f53bb92c81842e100bbb915223e38349580e5441d",
+      "linkageAssessment": "upstream-all-targets-declaration-not-independent-binary-verification"
+    },
+    {
+      "ref": "pkg:cargo/heck@0.5.0",
+      "ecosystem": "crates.io",
+      "name": "heck",
+      "version": "0.5.0",
+      "scope": "wheel-upstream-sbom",
+      "license": "MIT OR Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "metadataSource": "rpds-py-wheel-embedded-SBOM",
+      "upstreamSbomSha256": "65420f27e5cb2e81bcbb5a8c7334149ec68e36e94b0301b2e4f6a7933468bb11",
+      "archiveSha256": "2304e00983f87ffb38b55b444b5e3b60a884b5d30c0fca7d82fe33449bbe55ea",
+      "linkageAssessment": "upstream-all-targets-declaration-not-independent-binary-verification"
+    },
+    {
+      "ref": "pkg:cargo/libc@0.2.177",
+      "ecosystem": "crates.io",
+      "name": "libc",
+      "version": "0.2.177",
+      "scope": "wheel-upstream-sbom",
+      "license": "MIT OR Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "metadataSource": "rpds-py-wheel-embedded-SBOM",
+      "upstreamSbomSha256": "65420f27e5cb2e81bcbb5a8c7334149ec68e36e94b0301b2e4f6a7933468bb11",
+      "archiveSha256": "2874a2af47a2325c2001a6e6fad9b16a53b802102b528163885171cf92b15976",
+      "linkageAssessment": "upstream-all-targets-declaration-not-independent-binary-verification"
+    },
+    {
+      "ref": "pkg:cargo/once_cell@1.21.3",
+      "ecosystem": "crates.io",
+      "name": "once_cell",
+      "version": "1.21.3",
+      "scope": "wheel-upstream-sbom",
+      "license": "MIT OR Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "metadataSource": "rpds-py-wheel-embedded-SBOM",
+      "upstreamSbomSha256": "65420f27e5cb2e81bcbb5a8c7334149ec68e36e94b0301b2e4f6a7933468bb11",
+      "archiveSha256": "42f5e15c9953c5e4ccceeb2e7382a716482c34515315f7b03532b8b4e8393d2d",
+      "linkageAssessment": "upstream-all-targets-declaration-not-independent-binary-verification"
+    },
+    {
+      "ref": "pkg:cargo/proc-macro2@1.0.103",
+      "ecosystem": "crates.io",
+      "name": "proc-macro2",
+      "version": "1.0.103",
+      "scope": "wheel-upstream-sbom",
+      "license": "MIT OR Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "metadataSource": "rpds-py-wheel-embedded-SBOM",
+      "upstreamSbomSha256": "65420f27e5cb2e81bcbb5a8c7334149ec68e36e94b0301b2e4f6a7933468bb11",
+      "archiveSha256": "5ee95bc4ef87b8d5ba32e8b7714ccc834865276eab0aed5c9958d00ec45f49e8",
+      "linkageAssessment": "upstream-all-targets-declaration-not-independent-binary-verification"
+    },
+    {
+      "ref": "pkg:cargo/pyo3-build-config@0.29.0",
+      "ecosystem": "crates.io",
+      "name": "pyo3-build-config",
+      "version": "0.29.0",
+      "scope": "wheel-upstream-sbom",
+      "license": "MIT OR Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "metadataSource": "rpds-py-wheel-embedded-SBOM",
+      "upstreamSbomSha256": "65420f27e5cb2e81bcbb5a8c7334149ec68e36e94b0301b2e4f6a7933468bb11",
+      "archiveSha256": "c5e2a7d2f0d013342f295c048ad19237add5154a55b1c5a254c0ec93d4109078",
+      "linkageAssessment": "upstream-all-targets-declaration-not-independent-binary-verification"
+    },
+    {
+      "ref": "pkg:cargo/pyo3-ffi@0.29.0",
+      "ecosystem": "crates.io",
+      "name": "pyo3-ffi",
+      "version": "0.29.0",
+      "scope": "wheel-upstream-sbom",
+      "license": "MIT OR Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "metadataSource": "rpds-py-wheel-embedded-SBOM",
+      "upstreamSbomSha256": "65420f27e5cb2e81bcbb5a8c7334149ec68e36e94b0301b2e4f6a7933468bb11",
+      "archiveSha256": "ca85c467da1bbc8d866eea5deff9cf29ea5f7785054a17da36e65bda9c05845b",
+      "linkageAssessment": "upstream-all-targets-declaration-not-independent-binary-verification"
+    },
+    {
+      "ref": "pkg:cargo/pyo3-macros-backend@0.29.0",
+      "ecosystem": "crates.io",
+      "name": "pyo3-macros-backend",
+      "version": "0.29.0",
+      "scope": "wheel-upstream-sbom",
+      "license": "MIT OR Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "metadataSource": "rpds-py-wheel-embedded-SBOM",
+      "upstreamSbomSha256": "65420f27e5cb2e81bcbb5a8c7334149ec68e36e94b0301b2e4f6a7933468bb11",
+      "archiveSha256": "4ca3a1557399783172dc5bf39cfca835157732532cba56b71d2292161e53b362",
+      "linkageAssessment": "upstream-all-targets-declaration-not-independent-binary-verification"
+    },
+    {
+      "ref": "pkg:cargo/pyo3-macros@0.29.0",
+      "ecosystem": "crates.io",
+      "name": "pyo3-macros",
+      "version": "0.29.0",
+      "scope": "wheel-upstream-sbom",
+      "license": "MIT OR Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "metadataSource": "rpds-py-wheel-embedded-SBOM",
+      "upstreamSbomSha256": "65420f27e5cb2e81bcbb5a8c7334149ec68e36e94b0301b2e4f6a7933468bb11",
+      "archiveSha256": "9ac53762fd065daa3194dd09337a38bd793a188100fd1a9304c4ab312d901771",
+      "linkageAssessment": "upstream-all-targets-declaration-not-independent-binary-verification"
+    },
+    {
+      "ref": "pkg:cargo/pyo3@0.29.0",
+      "ecosystem": "crates.io",
+      "name": "pyo3",
+      "version": "0.29.0",
+      "scope": "wheel-upstream-sbom",
+      "license": "MIT OR Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "metadataSource": "rpds-py-wheel-embedded-SBOM",
+      "upstreamSbomSha256": "65420f27e5cb2e81bcbb5a8c7334149ec68e36e94b0301b2e4f6a7933468bb11",
+      "archiveSha256": "cd274650b21d4bfc26a0a47587962c1edb425f69287324355cd040c3ea66071c",
+      "linkageAssessment": "upstream-all-targets-declaration-not-independent-binary-verification"
+    },
+    {
+      "ref": "pkg:cargo/quote@1.0.42",
+      "ecosystem": "crates.io",
+      "name": "quote",
+      "version": "1.0.42",
+      "scope": "wheel-upstream-sbom",
+      "license": "MIT OR Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "metadataSource": "rpds-py-wheel-embedded-SBOM",
+      "upstreamSbomSha256": "65420f27e5cb2e81bcbb5a8c7334149ec68e36e94b0301b2e4f6a7933468bb11",
+      "archiveSha256": "a338cc41d27e6cc6dce6cefc13a0729dfbb81c262b1f519331575dd80ef3067f",
+      "linkageAssessment": "upstream-all-targets-declaration-not-independent-binary-verification"
+    },
+    {
+      "ref": "pkg:cargo/rpds@1.2.1",
+      "ecosystem": "crates.io",
+      "name": "rpds",
+      "version": "1.2.1",
+      "scope": "wheel-upstream-sbom",
+      "license": "MIT",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "metadataSource": "rpds-py-wheel-embedded-SBOM",
+      "upstreamSbomSha256": "65420f27e5cb2e81bcbb5a8c7334149ec68e36e94b0301b2e4f6a7933468bb11",
+      "archiveSha256": "e025feb26210bc196b908e72deb063b1b4000754304341cbc168a1e72c857ebc",
+      "linkageAssessment": "upstream-all-targets-declaration-not-independent-binary-verification"
+    },
+    {
+      "ref": "pkg:cargo/smallvec@1.15.1",
+      "ecosystem": "crates.io",
+      "name": "smallvec",
+      "version": "1.15.1",
+      "scope": "wheel-upstream-sbom",
+      "license": "MIT OR Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "metadataSource": "rpds-py-wheel-embedded-SBOM",
+      "upstreamSbomSha256": "65420f27e5cb2e81bcbb5a8c7334149ec68e36e94b0301b2e4f6a7933468bb11",
+      "archiveSha256": "67b1b7a3b5fe4f1376887184045fcf45c69e92af734b7aaddc05fb777b6fbd03",
+      "linkageAssessment": "upstream-all-targets-declaration-not-independent-binary-verification"
+    },
+    {
+      "ref": "pkg:cargo/syn@2.0.111",
+      "ecosystem": "crates.io",
+      "name": "syn",
+      "version": "2.0.111",
+      "scope": "wheel-upstream-sbom",
+      "license": "MIT OR Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "metadataSource": "rpds-py-wheel-embedded-SBOM",
+      "upstreamSbomSha256": "65420f27e5cb2e81bcbb5a8c7334149ec68e36e94b0301b2e4f6a7933468bb11",
+      "archiveSha256": "390cc9a294ab71bdb1aa2e99d13be9c753cd2d7bd6560c77118597410c4d2e87",
+      "linkageAssessment": "upstream-all-targets-declaration-not-independent-binary-verification"
+    },
+    {
+      "ref": "pkg:cargo/target-lexicon@0.13.3",
+      "ecosystem": "crates.io",
+      "name": "target-lexicon",
+      "version": "0.13.3",
+      "scope": "wheel-upstream-sbom",
+      "license": "Apache-2.0 WITH LLVM-exception",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "metadataSource": "rpds-py-wheel-embedded-SBOM",
+      "upstreamSbomSha256": "65420f27e5cb2e81bcbb5a8c7334149ec68e36e94b0301b2e4f6a7933468bb11",
+      "archiveSha256": "df7f62577c25e07834649fc3b39fafdc597c0a3527dc1c60129201ccfcbaa50c",
+      "linkageAssessment": "upstream-all-targets-declaration-not-independent-binary-verification"
+    },
+    {
+      "ref": "pkg:cargo/triomphe@0.1.15",
+      "ecosystem": "crates.io",
+      "name": "triomphe",
+      "version": "0.1.15",
+      "scope": "wheel-upstream-sbom",
+      "license": "MIT OR Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "metadataSource": "rpds-py-wheel-embedded-SBOM",
+      "upstreamSbomSha256": "65420f27e5cb2e81bcbb5a8c7334149ec68e36e94b0301b2e4f6a7933468bb11",
+      "archiveSha256": "dd69c5aa8f924c7519d6372789a74eac5b94fb0f8fcf0d4a97eb0bfc3e785f39",
+      "linkageAssessment": "upstream-all-targets-declaration-not-independent-binary-verification"
+    },
+    {
+      "ref": "pkg:cargo/unicode-ident@1.0.22",
+      "ecosystem": "crates.io",
+      "name": "unicode-ident",
+      "version": "1.0.22",
+      "scope": "wheel-upstream-sbom",
+      "license": "(MIT OR Apache-2.0) AND Unicode-3.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "metadataSource": "rpds-py-wheel-embedded-SBOM",
+      "upstreamSbomSha256": "65420f27e5cb2e81bcbb5a8c7334149ec68e36e94b0301b2e4f6a7933468bb11",
+      "archiveSha256": "9312f7c4f6ff9069b165498234ce8be658059c6728633667c526e27dc2cf1df5",
+      "linkageAssessment": "upstream-all-targets-declaration-not-independent-binary-verification"
+    },
+    {
+      "ref": "pkg:pypi/attrs@26.1.0",
+      "ecosystem": "PyPI",
+      "name": "attrs",
+      "version": "26.1.0",
+      "scope": "installed",
+      "license": "MIT",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "metadataSha256": "4cd40e690f23bf37cbcad34efd6758e062df1df07c86833f7e3ce95bf1fa38cc",
+      "licenseFiles": [
+        {
+          "file": "attrs-26.1.0.dist-info/licenses/LICENSE",
+          "sha256": "882115c95dfc2af1eeb6714f8ec6d5cbcabf667caff8729f42420da63f714e9f"
+        }
+      ],
+      "nativeFiles": [],
+      "licenseClassifiers": [],
+      "metadataSource": "installed-wheel-METADATA",
+      "requirements": []
+    },
+    {
+      "ref": "pkg:pypi/autocommand@2.2.2?owner=setuptools",
+      "ecosystem": "PyPI",
+      "name": "autocommand",
+      "version": "2.2.2",
+      "scope": "vendored-build",
+      "license": "LGPLv3",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "autocommand-2.2.2.dist-info/LICENSE",
+          "sha256": "ade78d04982d69972d444a8e14a94f87a2334dd3855cc80348ea8e240aa0df2d"
+        }
+      ],
+      "metadataSha256": "3800d9b91dceea2065a6ed6279383362e97ac38b8e56b9343f404ee531860099",
+      "owner": "setuptools",
+      "metadataSource": "vendored-wheel-METADATA"
+    },
+    {
+      "ref": "pkg:pypi/backports-tarfile@1.2.0?owner=setuptools",
+      "ecosystem": "PyPI",
+      "name": "backports-tarfile",
+      "version": "1.2.0",
+      "scope": "vendored-build",
+      "license": "NOASSERTION",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "backports.tarfile-1.2.0.dist-info/LICENSE",
+          "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741"
+        }
+      ],
+      "metadataSha256": "8215c54ead77d9dc5a108a25c6bdc72b5999aa6f62c9499a440359412afa5a51",
+      "owner": "setuptools",
+      "metadataSource": "vendored-wheel-METADATA"
+    },
+    {
+      "ref": "pkg:pypi/build@1.3.0",
+      "ecosystem": "PyPI",
+      "name": "build",
+      "version": "1.3.0",
+      "scope": "installed",
+      "license": "MIT",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "metadataSha256": "8bf61ef1c4aeb139423ab04e5a97248889f4864c5be948b4daf602f5aa531dfc",
+      "licenseFiles": [
+        {
+          "file": "build-1.3.0.dist-info/licenses/LICENSE",
+          "sha256": "aaf9a29ca5907971ccf07de025375db34539a8d5eeebce20b46099805722106f"
+        }
+      ],
+      "nativeFiles": [],
+      "licenseClassifiers": [],
+      "metadataSource": "installed-wheel-METADATA",
+      "requirements": [
+        {
+          "name": "packaging",
+          "specifier": ">=19.1",
+          "marker": null,
+          "active": true
+        },
+        {
+          "name": "pyproject_hooks",
+          "specifier": "",
+          "marker": null,
+          "active": true
+        },
+        {
+          "name": "colorama",
+          "specifier": "",
+          "marker": "os_name == \"nt\"",
+          "active": false
+        },
+        {
+          "name": "importlib-metadata",
+          "specifier": ">=4.6",
+          "marker": "python_full_version < \"3.10.2\"",
+          "active": false
+        },
+        {
+          "name": "tomli",
+          "specifier": ">=1.1.0",
+          "marker": "python_version < \"3.11\"",
+          "active": false
+        },
+        {
+          "name": "uv",
+          "specifier": ">=0.1.18",
+          "marker": "extra == \"uv\"",
+          "active": false
+        },
+        {
+          "name": "virtualenv",
+          "specifier": ">=20.11",
+          "marker": "extra == \"virtualenv\" and python_version < \"3.10\"",
+          "active": false
+        },
+        {
+          "name": "virtualenv",
+          "specifier": ">=20.17",
+          "marker": "extra == \"virtualenv\" and (python_version >= \"3.10\" and python_version < \"3.14\")",
+          "active": false
+        },
+        {
+          "name": "virtualenv",
+          "specifier": ">=20.31",
+          "marker": "extra == \"virtualenv\" and python_version >= \"3.14\"",
+          "active": false
+        }
+      ]
+    },
+    {
+      "ref": "pkg:pypi/cachecontrol@0.14.4?owner=pip",
+      "ecosystem": "PyPI",
+      "name": "cachecontrol",
+      "version": "0.14.4",
+      "scope": "vendored-build",
+      "license": "NOASSERTION",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "owner": "pip",
+      "metadataSource": "vendor.txt",
+      "vendorListSha256": "3df0c9601bfa2e0dca23cc574a4f900a4d7fdad060ab203fab8354350ed93320",
+      "licenseEvidence": "Owner licenseFiles inventory retained; per-component mapping needs review."
+    },
+    {
+      "ref": "pkg:pypi/certifi@2026.6.17?owner=pip",
+      "ecosystem": "PyPI",
+      "name": "certifi",
+      "version": "2026.6.17",
+      "scope": "vendored-build",
+      "license": "NOASSERTION",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "owner": "pip",
+      "metadataSource": "vendor.txt",
+      "vendorListSha256": "3df0c9601bfa2e0dca23cc574a4f900a4d7fdad060ab203fab8354350ed93320",
+      "licenseEvidence": "Owner licenseFiles inventory retained; per-component mapping needs review."
+    },
+    {
+      "ref": "pkg:pypi/distlib@0.4.2?owner=pip",
+      "ecosystem": "PyPI",
+      "name": "distlib",
+      "version": "0.4.2",
+      "scope": "vendored-build",
+      "license": "NOASSERTION",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "owner": "pip",
+      "metadataSource": "vendor.txt",
+      "vendorListSha256": "3df0c9601bfa2e0dca23cc574a4f900a4d7fdad060ab203fab8354350ed93320",
+      "licenseEvidence": "Owner licenseFiles inventory retained; per-component mapping needs review."
+    },
+    {
+      "ref": "pkg:pypi/distro@1.9.0?owner=pip",
+      "ecosystem": "PyPI",
+      "name": "distro",
+      "version": "1.9.0",
+      "scope": "vendored-build",
+      "license": "NOASSERTION",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "owner": "pip",
+      "metadataSource": "vendor.txt",
+      "vendorListSha256": "3df0c9601bfa2e0dca23cc574a4f900a4d7fdad060ab203fab8354350ed93320",
+      "licenseEvidence": "Owner licenseFiles inventory retained; per-component mapping needs review."
+    },
+    {
+      "ref": "pkg:pypi/idna@3.18?owner=pip",
+      "ecosystem": "PyPI",
+      "name": "idna",
+      "version": "3.18",
+      "scope": "vendored-build",
+      "license": "NOASSERTION",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "owner": "pip",
+      "metadataSource": "vendor.txt",
+      "vendorListSha256": "3df0c9601bfa2e0dca23cc574a4f900a4d7fdad060ab203fab8354350ed93320",
+      "licenseEvidence": "Owner licenseFiles inventory retained; per-component mapping needs review."
+    },
+    {
+      "ref": "pkg:pypi/importlib-metadata@8.0.0?owner=setuptools",
+      "ecosystem": "PyPI",
+      "name": "importlib-metadata",
+      "version": "8.0.0",
+      "scope": "vendored-build",
+      "license": "NOASSERTION",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "importlib_metadata-8.0.0.dist-info/LICENSE",
+          "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        }
+      ],
+      "metadataSha256": "6a7b90effee1e09d5b484cdf7232016a43e2d9cc9543bcbb8e494b1ec05e1f59",
+      "owner": "setuptools",
+      "metadataSource": "vendored-wheel-METADATA"
+    },
+    {
+      "ref": "pkg:pypi/inflect@7.3.1?owner=setuptools",
+      "ecosystem": "PyPI",
+      "name": "inflect",
+      "version": "7.3.1",
+      "scope": "vendored-build",
+      "license": "NOASSERTION",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "inflect-7.3.1.dist-info/LICENSE",
+          "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741"
+        }
+      ],
+      "metadataSha256": "66030d634580651b3e53cc19895d9231f8d22aa06b327817c8332cfc20303308",
+      "owner": "setuptools",
+      "metadataSource": "vendored-wheel-METADATA"
+    },
+    {
+      "ref": "pkg:pypi/jaraco-collections@5.1.0?owner=setuptools",
+      "ecosystem": "PyPI",
+      "name": "jaraco-collections",
+      "version": "5.1.0",
+      "scope": "vendored-build",
+      "license": "NOASSERTION",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "jaraco.collections-5.1.0.dist-info/LICENSE",
+          "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741"
+        }
+      ],
+      "metadataSha256": "20c51a96236c0395f53b1f4c5d458e6a0721e51e16c1bff733b7aba76f5d06d8",
+      "owner": "setuptools",
+      "metadataSource": "vendored-wheel-METADATA"
+    },
+    {
+      "ref": "pkg:pypi/jaraco-context@5.3.0?owner=setuptools",
+      "ecosystem": "PyPI",
+      "name": "jaraco-context",
+      "version": "5.3.0",
+      "scope": "vendored-build",
+      "license": "NOASSERTION",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "jaraco.context-5.3.0.dist-info/LICENSE",
+          "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741"
+        }
+      ],
+      "metadataSha256": "c43b60b897a3d2d37d8845c252fc44261d9aef171e21154111a9012d2afffed6",
+      "owner": "setuptools",
+      "metadataSource": "vendored-wheel-METADATA"
+    },
+    {
+      "ref": "pkg:pypi/jaraco-functools@4.0.1?owner=setuptools",
+      "ecosystem": "PyPI",
+      "name": "jaraco-functools",
+      "version": "4.0.1",
+      "scope": "vendored-build",
+      "license": "NOASSERTION",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "jaraco.functools-4.0.1.dist-info/LICENSE",
+          "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741"
+        }
+      ],
+      "metadataSha256": "8b86946900d7fa38dd1102b9c1ebe17a0cb1f09c8b7e29f61f2bda4a4dc51eca",
+      "owner": "setuptools",
+      "metadataSource": "vendored-wheel-METADATA"
+    },
+    {
+      "ref": "pkg:pypi/jaraco-text@3.12.1?owner=setuptools",
+      "ecosystem": "PyPI",
+      "name": "jaraco-text",
+      "version": "3.12.1",
+      "scope": "vendored-build",
+      "license": "NOASSERTION",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "jaraco.text-3.12.1.dist-info/LICENSE",
+          "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741"
+        }
+      ],
+      "metadataSha256": "03359d9ba56231f0ce3e840c7cb5a7db380141218949ccaa78ddbd4dcb965d52",
+      "owner": "setuptools",
+      "metadataSource": "vendored-wheel-METADATA"
+    },
+    {
+      "ref": "pkg:pypi/jsonschema-specifications@2025.9.1",
+      "ecosystem": "PyPI",
+      "name": "jsonschema-specifications",
+      "version": "2025.9.1",
+      "scope": "installed",
+      "license": "MIT",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "metadataSha256": "35abd41757f32b4ea24756920ded47b70173d77cbc052a5a6d3ab583b2e8d89d",
+      "licenseFiles": [
+        {
+          "file": "jsonschema_specifications-2025.9.1.dist-info/licenses/COPYING",
+          "sha256": "42dcd63495f87b4eb7c7757afa379bb55a53f94afd7a5f657d9adf57236e515c"
+        }
+      ],
+      "nativeFiles": [],
+      "licenseClassifiers": [],
+      "metadataSource": "installed-wheel-METADATA",
+      "requirements": [
+        {
+          "name": "referencing",
+          "specifier": ">=0.31.0",
+          "marker": null,
+          "active": true
+        }
+      ]
+    },
+    {
+      "ref": "pkg:pypi/jsonschema@4.26.0",
+      "ecosystem": "PyPI",
+      "name": "jsonschema",
+      "version": "4.26.0",
+      "scope": "installed",
+      "license": "MIT",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "metadataSha256": "05b189866ca98a96da3934bf6b83687ced3ff85325273b77e16b705f6d8b26d2",
+      "licenseFiles": [
+        {
+          "file": "jsonschema-4.26.0.dist-info/licenses/COPYING",
+          "sha256": "4f92a015a13c4d1a040bef018aa13430b4f1bc73b41b16bb846c346766de7439"
+        }
+      ],
+      "nativeFiles": [],
+      "licenseClassifiers": [],
+      "metadataSource": "installed-wheel-METADATA",
+      "requirements": [
+        {
+          "name": "attrs",
+          "specifier": ">=22.2.0",
+          "marker": null,
+          "active": true
+        },
+        {
+          "name": "jsonschema-specifications",
+          "specifier": ">=2023.03.6",
+          "marker": null,
+          "active": true
+        },
+        {
+          "name": "referencing",
+          "specifier": ">=0.28.4",
+          "marker": null,
+          "active": true
+        },
+        {
+          "name": "rpds-py",
+          "specifier": ">=0.25.0",
+          "marker": null,
+          "active": true
+        },
+        {
+          "name": "fqdn",
+          "specifier": "",
+          "marker": "extra == \"format\"",
+          "active": false
+        },
+        {
+          "name": "idna",
+          "specifier": "",
+          "marker": "extra == \"format\"",
+          "active": false
+        },
+        {
+          "name": "isoduration",
+          "specifier": "",
+          "marker": "extra == \"format\"",
+          "active": false
+        },
+        {
+          "name": "jsonpointer",
+          "specifier": ">1.13",
+          "marker": "extra == \"format\"",
+          "active": false
+        },
+        {
+          "name": "rfc3339-validator",
+          "specifier": "",
+          "marker": "extra == \"format\"",
+          "active": false
+        },
+        {
+          "name": "rfc3987",
+          "specifier": "",
+          "marker": "extra == \"format\"",
+          "active": false
+        },
+        {
+          "name": "uri-template",
+          "specifier": "",
+          "marker": "extra == \"format\"",
+          "active": false
+        },
+        {
+          "name": "webcolors",
+          "specifier": ">=1.11",
+          "marker": "extra == \"format\"",
+          "active": false
+        },
+        {
+          "name": "fqdn",
+          "specifier": "",
+          "marker": "extra == \"format-nongpl\"",
+          "active": false
+        },
+        {
+          "name": "idna",
+          "specifier": "",
+          "marker": "extra == \"format-nongpl\"",
+          "active": false
+        },
+        {
+          "name": "isoduration",
+          "specifier": "",
+          "marker": "extra == \"format-nongpl\"",
+          "active": false
+        },
+        {
+          "name": "jsonpointer",
+          "specifier": ">1.13",
+          "marker": "extra == \"format-nongpl\"",
+          "active": false
+        },
+        {
+          "name": "rfc3339-validator",
+          "specifier": "",
+          "marker": "extra == \"format-nongpl\"",
+          "active": false
+        },
+        {
+          "name": "rfc3986-validator",
+          "specifier": ">0.1.0",
+          "marker": "extra == \"format-nongpl\"",
+          "active": false
+        },
+        {
+          "name": "rfc3987-syntax",
+          "specifier": ">=1.1.0",
+          "marker": "extra == \"format-nongpl\"",
+          "active": false
+        },
+        {
+          "name": "uri-template",
+          "specifier": "",
+          "marker": "extra == \"format-nongpl\"",
+          "active": false
+        },
+        {
+          "name": "webcolors",
+          "specifier": ">=24.6.0",
+          "marker": "extra == \"format-nongpl\"",
+          "active": false
+        }
+      ]
+    },
+    {
+      "ref": "pkg:pypi/more-itertools@10.3.0?owner=setuptools",
+      "ecosystem": "PyPI",
+      "name": "more-itertools",
+      "version": "10.3.0",
+      "scope": "vendored-build",
+      "license": "NOASSERTION",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "more_itertools-10.3.0.dist-info/LICENSE",
+          "sha256": "09f1c8c9e941af3e584d59641ea9b87d83c0cb0fd007eb5ef391a7e2643c1a46"
+        }
+      ],
+      "metadataSha256": "0453bdd0ef9f2cd89540ca63ee8212e73b73809514419dd3037d8fe471f737e0",
+      "owner": "setuptools",
+      "metadataSource": "vendored-wheel-METADATA"
+    },
+    {
+      "ref": "pkg:pypi/msgpack@1.1.2?owner=pip",
+      "ecosystem": "PyPI",
+      "name": "msgpack",
+      "version": "1.1.2",
+      "scope": "vendored-build",
+      "license": "NOASSERTION",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "owner": "pip",
+      "metadataSource": "vendor.txt",
+      "vendorListSha256": "3df0c9601bfa2e0dca23cc574a4f900a4d7fdad060ab203fab8354350ed93320",
+      "licenseEvidence": "Owner licenseFiles inventory retained; per-component mapping needs review."
+    },
+    {
+      "ref": "pkg:pypi/packaging@24.0?owner=setuptools%2F_vendor%2Fwheel",
+      "ecosystem": "PyPI",
+      "name": "packaging",
+      "version": "24.0",
+      "scope": "vendored-build",
+      "license": "NOASSERTION",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "owner": "setuptools/_vendor/wheel",
+      "metadataSource": "vendor.txt",
+      "vendorListSha256": "67610d8c1d62e69adf7b3f0274cd5276bddce99c6fdab451a253292e60677001",
+      "licenseEvidence": "Owner licenseFiles inventory retained; per-component mapping needs review."
+    },
+    {
+      "ref": "pkg:pypi/packaging@24.0?owner=wheel",
+      "ecosystem": "PyPI",
+      "name": "packaging",
+      "version": "24.0",
+      "scope": "vendored-build",
+      "license": "NOASSERTION",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "owner": "wheel",
+      "metadataSource": "vendor.txt",
+      "vendorListSha256": "67610d8c1d62e69adf7b3f0274cd5276bddce99c6fdab451a253292e60677001",
+      "licenseEvidence": "Owner licenseFiles inventory retained; per-component mapping needs review."
+    },
+    {
+      "ref": "pkg:pypi/packaging@24.2?owner=setuptools",
+      "ecosystem": "PyPI",
+      "name": "packaging",
+      "version": "24.2",
+      "scope": "vendored-build",
+      "license": "NOASSERTION",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "packaging-24.2.dist-info/LICENSE",
+          "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48"
+        },
+        {
+          "file": "packaging-24.2.dist-info/LICENSE.APACHE",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        },
+        {
+          "file": "packaging-24.2.dist-info/LICENSE.BSD",
+          "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5"
+        },
+        {
+          "file": "packaging/licenses/__init__.py",
+          "sha256": "d71e4cd671188dc83011b2edd1d5f0cf6ba48ebd7c0e20b30b4b2b690a89f96c"
+        },
+        {
+          "file": "packaging/licenses/_spdx.py",
+          "sha256": "a009b5ced3c5c25b2608a7bb94002cbff38839f4b57160eef5b34191ebbeda7b"
+        }
+      ],
+      "metadataSha256": "a211fceacea4e6621f4316364d2d0b7127c00de3856b8062082f9bc5957ea4db",
+      "owner": "setuptools",
+      "metadataSource": "vendored-wheel-METADATA"
+    },
+    {
+      "ref": "pkg:pypi/packaging@26.2?owner=pip",
+      "ecosystem": "PyPI",
+      "name": "packaging",
+      "version": "26.2",
+      "scope": "vendored-build",
+      "license": "NOASSERTION",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "owner": "pip",
+      "metadataSource": "vendor.txt",
+      "vendorListSha256": "3df0c9601bfa2e0dca23cc574a4f900a4d7fdad060ab203fab8354350ed93320",
+      "licenseEvidence": "Owner licenseFiles inventory retained; per-component mapping needs review."
+    },
+    {
+      "ref": "pkg:pypi/packaging@26.3",
+      "ecosystem": "PyPI",
+      "name": "packaging",
+      "version": "26.3",
+      "scope": "installed",
+      "license": "Apache-2.0 OR BSD-2-Clause",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "metadataSha256": "70fdb89fc4d4a9a043bf7372b8972bcc883fddff34ab55e9cf80d73875384763",
+      "licenseFiles": [
+        {
+          "file": "packaging-26.3.dist-info/licenses/LICENSE",
+          "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48"
+        },
+        {
+          "file": "packaging-26.3.dist-info/licenses/LICENSE.APACHE",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        },
+        {
+          "file": "packaging-26.3.dist-info/licenses/LICENSE.BSD",
+          "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5"
+        },
+        {
+          "file": "packaging/licenses/__init__.py",
+          "sha256": "590d12eee73ddbec53b4e9ee5bfc64d9cb3aacb4940e8ebcba260757ce56740b"
+        },
+        {
+          "file": "packaging/licenses/__pycache__/__init__.cpython-312.pyc",
+          "sha256": "8e2fcd111b844b2defaa05de9ba3342912cb1a51e44b9157a0683decb6b22e41"
+        },
+        {
+          "file": "packaging/licenses/__pycache__/_spdx.cpython-312.pyc",
+          "sha256": "482e683914b65489f7953ab8702ac456c62d455444980d755cd1c3bc152ddb19"
+        },
+        {
+          "file": "packaging/licenses/_spdx.py",
+          "sha256": "596ec35e2ca0ebcba9fd8343ff0a51625af548786257815f24b41f7e08613314"
+        }
+      ],
+      "nativeFiles": [],
+      "licenseClassifiers": [],
+      "metadataSource": "installed-wheel-METADATA",
+      "requirements": []
+    },
+    {
+      "ref": "pkg:pypi/pip@26.2.1",
+      "ecosystem": "PyPI",
+      "name": "pip",
+      "version": "26.2.1",
+      "scope": "installed",
+      "license": "MIT",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "metadataSha256": "3a561005822841f2c45f442f6c7a7505172c8c376c9fe274d876c8ac912968cb",
+      "licenseFiles": [
+        {
+          "file": "pip-26.2.1.dist-info/licenses/AUTHORS.txt",
+          "sha256": "4eb1fb1705e2def898e81bcba19c3aac80620d27ba3569d6a6df7b4629d1b5c2"
+        },
+        {
+          "file": "pip-26.2.1.dist-info/licenses/LICENSE.txt",
+          "sha256": "634300a669d49aeae65b12c6c48c924c51a4cdf3d1ff086dc3456dc8bcaa2104"
+        },
+        {
+          "file": "pip-26.2.1.dist-info/licenses/src/pip/_vendor/cachecontrol/LICENSE.txt",
+          "sha256": "86eeee87be2a43f3ff1f56496f451f69243926f025fedbb033666c304c4c161b"
+        },
+        {
+          "file": "pip-26.2.1.dist-info/licenses/src/pip/_vendor/certifi/LICENSE",
+          "sha256": "e93716da6b9c0d5a4a1df60fe695b370f0695603d21f6f83f053e42cfc10caf7"
+        },
+        {
+          "file": "pip-26.2.1.dist-info/licenses/src/pip/_vendor/distlib/LICENSE.txt",
+          "sha256": "808e10c8a6ab8deb149ff9b3fb19f447a808094606d712a9ca57fead3552599d"
+        },
+        {
+          "file": "pip-26.2.1.dist-info/licenses/src/pip/_vendor/distro/LICENSE",
+          "sha256": "cb5e8e7e5f4a3988e1063c142c60dc2df75605f4c46515e776e3aca6df976e14"
+        },
+        {
+          "file": "pip-26.2.1.dist-info/licenses/src/pip/_vendor/idna/LICENSE.md",
+          "sha256": "1a9a4f0e3d479a27240ddd59a9137a66ab4a0f9dfdc8ca6188cc0bfd85187f04"
+        },
+        {
+          "file": "pip-26.2.1.dist-info/licenses/src/pip/_vendor/msgpack/COPYING",
+          "sha256": "492dedba85da5872f78e6091bcd1fea474d660d35acb4dee964b8aab3f007427"
+        },
+        {
+          "file": "pip-26.2.1.dist-info/licenses/src/pip/_vendor/packaging/LICENSE",
+          "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48"
+        },
+        {
+          "file": "pip-26.2.1.dist-info/licenses/src/pip/_vendor/packaging/LICENSE.APACHE",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        },
+        {
+          "file": "pip-26.2.1.dist-info/licenses/src/pip/_vendor/packaging/LICENSE.BSD",
+          "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5"
+        },
+        {
+          "file": "pip-26.2.1.dist-info/licenses/src/pip/_vendor/pkg_resources/LICENSE",
+          "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741"
+        },
+        {
+          "file": "pip-26.2.1.dist-info/licenses/src/pip/_vendor/platformdirs/LICENSE",
+          "sha256": "29e0fd62e929850e86eb28c3fdccf0cefdf4fa94879011cffb3d0d4bed6d4db6"
+        },
+        {
+          "file": "pip-26.2.1.dist-info/licenses/src/pip/_vendor/pygments/LICENSE",
+          "sha256": "a9d66f1d526df02e29dce73436d34e56e8632f46c275bbdffc70569e882f9f17"
+        },
+        {
+          "file": "pip-26.2.1.dist-info/licenses/src/pip/_vendor/pyproject_hooks/LICENSE",
+          "sha256": "1b22b049b5267d6dfc23a67bf4a84d8ec04b9fdfb1a51d360e42b4342c8b4154"
+        },
+        {
+          "file": "pip-26.2.1.dist-info/licenses/src/pip/_vendor/requests/LICENSE",
+          "sha256": "09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b"
+        },
+        {
+          "file": "pip-26.2.1.dist-info/licenses/src/pip/_vendor/resolvelib/LICENSE",
+          "sha256": "f388fd38cad13112c1dc0f669bbe80e7f84541edbafb72f3030d2ca7642c3c9d"
+        },
+        {
+          "file": "pip-26.2.1.dist-info/licenses/src/pip/_vendor/rich/LICENSE",
+          "sha256": "deed7c17a4318158190a3ea239cc879a5a50271cebb98ae7025f48fbe58dca15"
+        },
+        {
+          "file": "pip-26.2.1.dist-info/licenses/src/pip/_vendor/tomli/LICENSE",
+          "sha256": "b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe"
+        },
+        {
+          "file": "pip-26.2.1.dist-info/licenses/src/pip/_vendor/tomli_w/LICENSE",
+          "sha256": "b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe"
+        },
+        {
+          "file": "pip-26.2.1.dist-info/licenses/src/pip/_vendor/truststore/LICENSE",
+          "sha256": "33be7b7e8fa4fd19b1760e1a8ed8a668bdab852c91b692dd41424bcb725a9fca"
+        },
+        {
+          "file": "pip-26.2.1.dist-info/licenses/src/pip/_vendor/urllib3/LICENSE.txt",
+          "sha256": "130e3a64d5fdd5d096a752694634a7d9df284469de86e5732100268041e3d686"
+        },
+        {
+          "file": "pip/_vendor/cachecontrol/LICENSE.txt",
+          "sha256": "86eeee87be2a43f3ff1f56496f451f69243926f025fedbb033666c304c4c161b"
+        },
+        {
+          "file": "pip/_vendor/certifi/LICENSE",
+          "sha256": "e93716da6b9c0d5a4a1df60fe695b370f0695603d21f6f83f053e42cfc10caf7"
+        },
+        {
+          "file": "pip/_vendor/distlib/LICENSE.txt",
+          "sha256": "808e10c8a6ab8deb149ff9b3fb19f447a808094606d712a9ca57fead3552599d"
+        },
+        {
+          "file": "pip/_vendor/distro/LICENSE",
+          "sha256": "cb5e8e7e5f4a3988e1063c142c60dc2df75605f4c46515e776e3aca6df976e14"
+        },
+        {
+          "file": "pip/_vendor/idna/LICENSE.md",
+          "sha256": "1a9a4f0e3d479a27240ddd59a9137a66ab4a0f9dfdc8ca6188cc0bfd85187f04"
+        },
+        {
+          "file": "pip/_vendor/msgpack/COPYING",
+          "sha256": "492dedba85da5872f78e6091bcd1fea474d660d35acb4dee964b8aab3f007427"
+        },
+        {
+          "file": "pip/_vendor/packaging/LICENSE",
+          "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48"
+        },
+        {
+          "file": "pip/_vendor/packaging/LICENSE.APACHE",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        },
+        {
+          "file": "pip/_vendor/packaging/LICENSE.BSD",
+          "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5"
+        },
+        {
+          "file": "pip/_vendor/packaging/licenses/__init__.py",
+          "sha256": "fc9c745d1883ff9f296a5b169f22eb2ee879f59a4608f20f5cb29d668f4e26f4"
+        },
+        {
+          "file": "pip/_vendor/packaging/licenses/__pycache__/__init__.cpython-312.pyc",
+          "sha256": "c16a6f401bed8af6bd248e15df936bc3b893aa97cc3b01eeb092c7753f4860b8"
+        },
+        {
+          "file": "pip/_vendor/packaging/licenses/__pycache__/_spdx.cpython-312.pyc",
+          "sha256": "737b57638005aaf9552ecd0dba1b1acf05200c0edaabd4132fba4a7c218d627d"
+        },
+        {
+          "file": "pip/_vendor/packaging/licenses/_spdx.py",
+          "sha256": "596ec35e2ca0ebcba9fd8343ff0a51625af548786257815f24b41f7e08613314"
+        },
+        {
+          "file": "pip/_vendor/pkg_resources/LICENSE",
+          "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741"
+        },
+        {
+          "file": "pip/_vendor/platformdirs/LICENSE",
+          "sha256": "29e0fd62e929850e86eb28c3fdccf0cefdf4fa94879011cffb3d0d4bed6d4db6"
+        },
+        {
+          "file": "pip/_vendor/pygments/LICENSE",
+          "sha256": "a9d66f1d526df02e29dce73436d34e56e8632f46c275bbdffc70569e882f9f17"
+        },
+        {
+          "file": "pip/_vendor/pyproject_hooks/LICENSE",
+          "sha256": "1b22b049b5267d6dfc23a67bf4a84d8ec04b9fdfb1a51d360e42b4342c8b4154"
+        },
+        {
+          "file": "pip/_vendor/requests/LICENSE",
+          "sha256": "09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b"
+        },
+        {
+          "file": "pip/_vendor/resolvelib/LICENSE",
+          "sha256": "f388fd38cad13112c1dc0f669bbe80e7f84541edbafb72f3030d2ca7642c3c9d"
+        },
+        {
+          "file": "pip/_vendor/rich/LICENSE",
+          "sha256": "deed7c17a4318158190a3ea239cc879a5a50271cebb98ae7025f48fbe58dca15"
+        },
+        {
+          "file": "pip/_vendor/tomli/LICENSE",
+          "sha256": "b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe"
+        },
+        {
+          "file": "pip/_vendor/tomli_w/LICENSE",
+          "sha256": "b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe"
+        },
+        {
+          "file": "pip/_vendor/truststore/LICENSE",
+          "sha256": "33be7b7e8fa4fd19b1760e1a8ed8a668bdab852c91b692dd41424bcb725a9fca"
+        },
+        {
+          "file": "pip/_vendor/urllib3/LICENSE.txt",
+          "sha256": "130e3a64d5fdd5d096a752694634a7d9df284469de86e5732100268041e3d686"
+        }
+      ],
+      "nativeFiles": [],
+      "licenseClassifiers": [],
+      "metadataSource": "installed-wheel-METADATA",
+      "requirements": []
+    },
+    {
+      "ref": "pkg:pypi/platformdirs@4.10.0?owner=pip",
+      "ecosystem": "PyPI",
+      "name": "platformdirs",
+      "version": "4.10.0",
+      "scope": "vendored-build",
+      "license": "NOASSERTION",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "owner": "pip",
+      "metadataSource": "vendor.txt",
+      "vendorListSha256": "3df0c9601bfa2e0dca23cc574a4f900a4d7fdad060ab203fab8354350ed93320",
+      "licenseEvidence": "Owner licenseFiles inventory retained; per-component mapping needs review."
+    },
+    {
+      "ref": "pkg:pypi/platformdirs@4.2.2?owner=setuptools",
+      "ecosystem": "PyPI",
+      "name": "platformdirs",
+      "version": "4.2.2",
+      "scope": "vendored-build",
+      "license": "MIT",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "platformdirs-4.2.2.dist-info/licenses/LICENSE",
+          "sha256": "29e0fd62e929850e86eb28c3fdccf0cefdf4fa94879011cffb3d0d4bed6d4db6"
+        }
+      ],
+      "metadataSha256": "ce6b227b4d46d4cb57474c2022fe57a557933bb89daf4596bdf9b12ac296b869",
+      "owner": "setuptools",
+      "metadataSource": "vendored-wheel-METADATA"
+    },
+    {
+      "ref": "pkg:pypi/pygments@2.20.0?owner=pip",
+      "ecosystem": "PyPI",
+      "name": "pygments",
+      "version": "2.20.0",
+      "scope": "vendored-build",
+      "license": "NOASSERTION",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "owner": "pip",
+      "metadataSource": "vendor.txt",
+      "vendorListSha256": "3df0c9601bfa2e0dca23cc574a4f900a4d7fdad060ab203fab8354350ed93320",
+      "licenseEvidence": "Owner licenseFiles inventory retained; per-component mapping needs review."
+    },
+    {
+      "ref": "pkg:pypi/pyproject-hooks@1.2.0?owner=pip",
+      "ecosystem": "PyPI",
+      "name": "pyproject-hooks",
+      "version": "1.2.0",
+      "scope": "vendored-build",
+      "license": "NOASSERTION",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "owner": "pip",
+      "metadataSource": "vendor.txt",
+      "vendorListSha256": "3df0c9601bfa2e0dca23cc574a4f900a4d7fdad060ab203fab8354350ed93320",
+      "licenseEvidence": "Owner licenseFiles inventory retained; per-component mapping needs review."
+    },
+    {
+      "ref": "pkg:pypi/pyproject-hooks@1.3.3",
+      "ecosystem": "PyPI",
+      "name": "pyproject-hooks",
+      "version": "1.3.3",
+      "scope": "installed",
+      "license": "MIT",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "metadataSha256": "844e375bb28dcbe42a0502fbd9428d9ba4669db25028ee7a7afaa8dd7ada2e00",
+      "licenseFiles": [
+        {
+          "file": "pyproject_hooks-1.3.3.dist-info/licenses/LICENSE",
+          "sha256": "1b22b049b5267d6dfc23a67bf4a84d8ec04b9fdfb1a51d360e42b4342c8b4154"
+        }
+      ],
+      "nativeFiles": [],
+      "licenseClassifiers": [],
+      "metadataSource": "installed-wheel-METADATA",
+      "requirements": []
+    },
+    {
+      "ref": "pkg:pypi/pyyaml@6.0.3",
+      "ecosystem": "PyPI",
+      "name": "pyyaml",
+      "version": "6.0.3",
+      "scope": "installed",
+      "license": "MIT",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "metadataSha256": "03c3b415ed38d09faedc49360e930769b40c58f68585e6de00e2e4916a858d34",
+      "licenseFiles": [
+        {
+          "file": "pyyaml-6.0.3.dist-info/licenses/LICENSE",
+          "sha256": "8d3928f9dc4490fd635707cb88eb26bd764102a7282954307d3e5167a577e8a4"
+        }
+      ],
+      "nativeFiles": [
+        {
+          "file": "yaml/_yaml.cpython-312-darwin.so",
+          "sha256": "e22e20c9ba0922aea16158d839a651b58226eb0e86544879b7d5f5229135d928"
+        }
+      ],
+      "licenseClassifiers": [
+        "License :: OSI Approved :: MIT License"
+      ],
+      "metadataSource": "installed-wheel-METADATA",
+      "requirements": []
+    },
+    {
+      "ref": "pkg:pypi/referencing@0.37.0",
+      "ecosystem": "PyPI",
+      "name": "referencing",
+      "version": "0.37.0",
+      "scope": "installed",
+      "license": "MIT",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "metadataSha256": "c93b00e6ab1524fd60848376604c189a114374776475c25a31d57be47b29de6a",
+      "licenseFiles": [
+        {
+          "file": "referencing-0.37.0.dist-info/licenses/COPYING",
+          "sha256": "42dcd63495f87b4eb7c7757afa379bb55a53f94afd7a5f657d9adf57236e515c"
+        }
+      ],
+      "nativeFiles": [],
+      "licenseClassifiers": [],
+      "metadataSource": "installed-wheel-METADATA",
+      "requirements": [
+        {
+          "name": "attrs",
+          "specifier": ">=22.2.0",
+          "marker": null,
+          "active": true
+        },
+        {
+          "name": "rpds-py",
+          "specifier": ">=0.7.0",
+          "marker": null,
+          "active": true
+        },
+        {
+          "name": "typing-extensions",
+          "specifier": ">=4.4.0",
+          "marker": "python_version < \"3.13\"",
+          "active": true
+        }
+      ]
+    },
+    {
+      "ref": "pkg:pypi/requests@2.34.2?owner=pip",
+      "ecosystem": "PyPI",
+      "name": "requests",
+      "version": "2.34.2",
+      "scope": "vendored-build",
+      "license": "NOASSERTION",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "owner": "pip",
+      "metadataSource": "vendor.txt",
+      "vendorListSha256": "3df0c9601bfa2e0dca23cc574a4f900a4d7fdad060ab203fab8354350ed93320",
+      "licenseEvidence": "Owner licenseFiles inventory retained; per-component mapping needs review."
+    },
+    {
+      "ref": "pkg:pypi/resolvelib@1.2.1?owner=pip",
+      "ecosystem": "PyPI",
+      "name": "resolvelib",
+      "version": "1.2.1",
+      "scope": "vendored-build",
+      "license": "NOASSERTION",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "owner": "pip",
+      "metadataSource": "vendor.txt",
+      "vendorListSha256": "3df0c9601bfa2e0dca23cc574a4f900a4d7fdad060ab203fab8354350ed93320",
+      "licenseEvidence": "Owner licenseFiles inventory retained; per-component mapping needs review."
+    },
+    {
+      "ref": "pkg:pypi/rfc3339-validator@0.1.4",
+      "ecosystem": "PyPI",
+      "name": "rfc3339-validator",
+      "version": "0.1.4",
+      "scope": "installed",
+      "license": "MIT license",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "metadataSha256": "ac4dc2cdea6a8b61c16babbf35c0e9fa6e22e45f1c0338e66e089108dde872d2",
+      "licenseFiles": [
+        {
+          "file": "rfc3339_validator-0.1.4.dist-info/LICENSE",
+          "sha256": "5ba1a4f03626ccca6dcbf53a554545e4f776a335bfdaa233ec3bfe9bb7fac15d"
+        }
+      ],
+      "nativeFiles": [],
+      "licenseClassifiers": [
+        "License :: OSI Approved :: MIT License"
+      ],
+      "metadataSource": "installed-wheel-METADATA",
+      "requirements": [
+        {
+          "name": "six",
+          "specifier": "",
+          "marker": null,
+          "active": true
+        }
+      ]
+    },
+    {
+      "ref": "pkg:pypi/rich@14.2.0?owner=pip",
+      "ecosystem": "PyPI",
+      "name": "rich",
+      "version": "14.2.0",
+      "scope": "vendored-build",
+      "license": "NOASSERTION",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "owner": "pip",
+      "metadataSource": "vendor.txt",
+      "vendorListSha256": "3df0c9601bfa2e0dca23cc574a4f900a4d7fdad060ab203fab8354350ed93320",
+      "licenseEvidence": "Owner licenseFiles inventory retained; per-component mapping needs review."
+    },
+    {
+      "ref": "pkg:pypi/rpds-py@2026.6.3",
+      "ecosystem": "PyPI",
+      "name": "rpds-py",
+      "version": "2026.6.3",
+      "scope": "installed",
+      "license": "MIT",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "metadataSha256": "f8be7b17da3980b2c48596941411a43c70ac41b1e2d530aa531f2c15eab2eb1c",
+      "licenseFiles": [
+        {
+          "file": "rpds_py-2026.6.3.dist-info/licenses/LICENSE",
+          "sha256": "314e4e91be3baa93c0fb4bccc9e4e97cd643eb839b065af921782c2175fe9909"
+        }
+      ],
+      "nativeFiles": [
+        {
+          "file": "rpds/rpds.cpython-312-darwin.so",
+          "sha256": "c3bf158b853dd34cac6667bb8b57e7228a15c7006fe259a55ce0f575bd36fc03"
+        }
+      ],
+      "licenseClassifiers": [],
+      "metadataSource": "installed-wheel-METADATA",
+      "requirements": []
+    },
+    {
+      "ref": "pkg:pypi/setuptools@70.3.0?owner=pip",
+      "ecosystem": "PyPI",
+      "name": "setuptools",
+      "version": "70.3.0",
+      "scope": "vendored-build",
+      "license": "NOASSERTION",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "owner": "pip",
+      "metadataSource": "vendor.txt",
+      "vendorListSha256": "3df0c9601bfa2e0dca23cc574a4f900a4d7fdad060ab203fab8354350ed93320",
+      "licenseEvidence": "Owner licenseFiles inventory retained; per-component mapping needs review."
+    },
+    {
+      "ref": "pkg:pypi/setuptools@80.9.0",
+      "ecosystem": "PyPI",
+      "name": "setuptools",
+      "version": "80.9.0",
+      "scope": "installed",
+      "license": "MIT",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "metadataSha256": "7f890ca8dbc16b63b568c89312ed6a7f9f0a79d0b2b7f3c83bf796ac3d930615",
+      "licenseFiles": [
+        {
+          "file": "setuptools-80.9.0.dist-info/licenses/LICENSE",
+          "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741"
+        },
+        {
+          "file": "setuptools/_vendor/autocommand-2.2.2.dist-info/LICENSE",
+          "sha256": "ade78d04982d69972d444a8e14a94f87a2334dd3855cc80348ea8e240aa0df2d"
+        },
+        {
+          "file": "setuptools/_vendor/backports.tarfile-1.2.0.dist-info/LICENSE",
+          "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741"
+        },
+        {
+          "file": "setuptools/_vendor/importlib_metadata-8.0.0.dist-info/LICENSE",
+          "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        },
+        {
+          "file": "setuptools/_vendor/inflect-7.3.1.dist-info/LICENSE",
+          "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741"
+        },
+        {
+          "file": "setuptools/_vendor/jaraco.collections-5.1.0.dist-info/LICENSE",
+          "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741"
+        },
+        {
+          "file": "setuptools/_vendor/jaraco.context-5.3.0.dist-info/LICENSE",
+          "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741"
+        },
+        {
+          "file": "setuptools/_vendor/jaraco.functools-4.0.1.dist-info/LICENSE",
+          "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741"
+        },
+        {
+          "file": "setuptools/_vendor/jaraco.text-3.12.1.dist-info/LICENSE",
+          "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741"
+        },
+        {
+          "file": "setuptools/_vendor/more_itertools-10.3.0.dist-info/LICENSE",
+          "sha256": "09f1c8c9e941af3e584d59641ea9b87d83c0cb0fd007eb5ef391a7e2643c1a46"
+        },
+        {
+          "file": "setuptools/_vendor/packaging-24.2.dist-info/LICENSE",
+          "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48"
+        },
+        {
+          "file": "setuptools/_vendor/packaging-24.2.dist-info/LICENSE.APACHE",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        },
+        {
+          "file": "setuptools/_vendor/packaging-24.2.dist-info/LICENSE.BSD",
+          "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5"
+        },
+        {
+          "file": "setuptools/_vendor/packaging/licenses/__init__.py",
+          "sha256": "d71e4cd671188dc83011b2edd1d5f0cf6ba48ebd7c0e20b30b4b2b690a89f96c"
+        },
+        {
+          "file": "setuptools/_vendor/packaging/licenses/__pycache__/__init__.cpython-312.pyc",
+          "sha256": "17c226a89faef19ff2688a6f1e32efb29338c32c59bc2fc4a70ec92fbcc8d348"
+        },
+        {
+          "file": "setuptools/_vendor/packaging/licenses/__pycache__/_spdx.cpython-312.pyc",
+          "sha256": "46f5772b6fbb419335dc4cf685e6855c3d28915ccb964a82058b8a2a3e1f56be"
+        },
+        {
+          "file": "setuptools/_vendor/packaging/licenses/_spdx.py",
+          "sha256": "a009b5ced3c5c25b2608a7bb94002cbff38839f4b57160eef5b34191ebbeda7b"
+        },
+        {
+          "file": "setuptools/_vendor/platformdirs-4.2.2.dist-info/licenses/LICENSE",
+          "sha256": "29e0fd62e929850e86eb28c3fdccf0cefdf4fa94879011cffb3d0d4bed6d4db6"
+        },
+        {
+          "file": "setuptools/_vendor/tomli-2.0.1.dist-info/LICENSE",
+          "sha256": "b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe"
+        },
+        {
+          "file": "setuptools/_vendor/typeguard-4.3.0.dist-info/LICENSE",
+          "sha256": "6163f7987dfb38d6bc320ce2b70b2f02b862bc41126516d552ef1cd43247e758"
+        },
+        {
+          "file": "setuptools/_vendor/typing_extensions-4.12.2.dist-info/LICENSE",
+          "sha256": "3b2f81fe21d181c499c59a256c8e1968455d6689d269aa85373bfb6af41da3bf"
+        },
+        {
+          "file": "setuptools/_vendor/wheel-0.45.1.dist-info/LICENSE.txt",
+          "sha256": "30c23618679108f3e8ea1d2a658c7ca417bdfc891c98ef1a89fa4ff0c9828654"
+        },
+        {
+          "file": "setuptools/_vendor/wheel/vendored/packaging/LICENSE",
+          "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48"
+        },
+        {
+          "file": "setuptools/_vendor/wheel/vendored/packaging/LICENSE.APACHE",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        },
+        {
+          "file": "setuptools/_vendor/wheel/vendored/packaging/LICENSE.BSD",
+          "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5"
+        },
+        {
+          "file": "setuptools/_vendor/zipp-3.19.2.dist-info/LICENSE",
+          "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741"
+        }
+      ],
+      "nativeFiles": [],
+      "licenseClassifiers": [],
+      "metadataSource": "installed-wheel-METADATA",
+      "requirements": [
+        {
+          "name": "pytest",
+          "specifier": "!=8.1.*,>=6",
+          "marker": "extra == \"test\"",
+          "active": false
+        },
+        {
+          "name": "virtualenv",
+          "specifier": ">=13.0.0",
+          "marker": "extra == \"test\"",
+          "active": false
+        },
+        {
+          "name": "wheel",
+          "specifier": ">=0.44.0",
+          "marker": "extra == \"test\"",
+          "active": false
+        },
+        {
+          "name": "pip",
+          "specifier": ">=19.1",
+          "marker": "extra == \"test\"",
+          "active": false
+        },
+        {
+          "name": "packaging",
+          "specifier": ">=24.2",
+          "marker": "extra == \"test\"",
+          "active": false
+        },
+        {
+          "name": "jaraco.envs",
+          "specifier": ">=2.2",
+          "marker": "extra == \"test\"",
+          "active": false
+        },
+        {
+          "name": "pytest-xdist",
+          "specifier": ">=3",
+          "marker": "extra == \"test\"",
+          "active": false
+        },
+        {
+          "name": "jaraco.path",
+          "specifier": ">=3.7.2",
+          "marker": "extra == \"test\"",
+          "active": false
+        },
+        {
+          "name": "build",
+          "specifier": ">=1.0.3",
+          "marker": "extra == \"test\"",
+          "active": false
+        },
+        {
+          "name": "filelock",
+          "specifier": ">=3.4.0",
+          "marker": "extra == \"test\"",
+          "active": false
+        },
+        {
+          "name": "ini2toml",
+          "specifier": ">=0.14",
+          "marker": "extra == \"test\"",
+          "active": false
+        },
+        {
+          "name": "tomli-w",
+          "specifier": ">=1.0.0",
+          "marker": "extra == \"test\"",
+          "active": false
+        },
+        {
+          "name": "pytest-timeout",
+          "specifier": "",
+          "marker": "extra == \"test\"",
+          "active": false
+        },
+        {
+          "name": "pytest-perf",
+          "specifier": "",
+          "marker": "sys_platform != \"cygwin\" and extra == \"test\"",
+          "active": false
+        },
+        {
+          "name": "jaraco.develop",
+          "specifier": ">=7.21",
+          "marker": "(python_version >= \"3.9\" and sys_platform != \"cygwin\") and extra == \"test\"",
+          "active": false
+        },
+        {
+          "name": "pytest-home",
+          "specifier": ">=0.5",
+          "marker": "extra == \"test\"",
+          "active": false
+        },
+        {
+          "name": "pytest-subprocess",
+          "specifier": "",
+          "marker": "extra == \"test\"",
+          "active": false
+        },
+        {
+          "name": "pyproject-hooks",
+          "specifier": "!=1.1",
+          "marker": "extra == \"test\"",
+          "active": false
+        },
+        {
+          "name": "jaraco.test",
+          "specifier": ">=5.5",
+          "marker": "extra == \"test\"",
+          "active": false
+        },
+        {
+          "name": "sphinx",
+          "specifier": ">=3.5",
+          "marker": "extra == \"doc\"",
+          "active": false
+        },
+        {
+          "name": "jaraco.packaging",
+          "specifier": ">=9.3",
+          "marker": "extra == \"doc\"",
+          "active": false
+        },
+        {
+          "name": "rst.linker",
+          "specifier": ">=1.9",
+          "marker": "extra == \"doc\"",
+          "active": false
+        },
+        {
+          "name": "furo",
+          "specifier": "",
+          "marker": "extra == \"doc\"",
+          "active": false
+        },
+        {
+          "name": "sphinx-lint",
+          "specifier": "",
+          "marker": "extra == \"doc\"",
+          "active": false
+        },
+        {
+          "name": "jaraco.tidelift",
+          "specifier": ">=1.4",
+          "marker": "extra == \"doc\"",
+          "active": false
+        },
+        {
+          "name": "pygments-github-lexers",
+          "specifier": "==0.0.5",
+          "marker": "extra == \"doc\"",
+          "active": false
+        },
+        {
+          "name": "sphinx-favicon",
+          "specifier": "",
+          "marker": "extra == \"doc\"",
+          "active": false
+        },
+        {
+          "name": "sphinx-inline-tabs",
+          "specifier": "",
+          "marker": "extra == \"doc\"",
+          "active": false
+        },
+        {
+          "name": "sphinx-reredirects",
+          "specifier": "",
+          "marker": "extra == \"doc\"",
+          "active": false
+        },
+        {
+          "name": "sphinxcontrib-towncrier",
+          "specifier": "",
+          "marker": "extra == \"doc\"",
+          "active": false
+        },
+        {
+          "name": "sphinx-notfound-page",
+          "specifier": "<2,>=1",
+          "marker": "extra == \"doc\"",
+          "active": false
+        },
+        {
+          "name": "pyproject-hooks",
+          "specifier": "!=1.1",
+          "marker": "extra == \"doc\"",
+          "active": false
+        },
+        {
+          "name": "towncrier",
+          "specifier": "<24.7",
+          "marker": "extra == \"doc\"",
+          "active": false
+        },
+        {
+          "name": "packaging",
+          "specifier": ">=24.2",
+          "marker": "extra == \"core\"",
+          "active": false
+        },
+        {
+          "name": "more_itertools",
+          "specifier": ">=8.8",
+          "marker": "extra == \"core\"",
+          "active": false
+        },
+        {
+          "name": "jaraco.text",
+          "specifier": ">=3.7",
+          "marker": "extra == \"core\"",
+          "active": false
+        },
+        {
+          "name": "importlib_metadata",
+          "specifier": ">=6",
+          "marker": "python_version < \"3.10\" and extra == \"core\"",
+          "active": false
+        },
+        {
+          "name": "tomli",
+          "specifier": ">=2.0.1",
+          "marker": "python_version < \"3.11\" and extra == \"core\"",
+          "active": false
+        },
+        {
+          "name": "wheel",
+          "specifier": ">=0.43.0",
+          "marker": "extra == \"core\"",
+          "active": false
+        },
+        {
+          "name": "platformdirs",
+          "specifier": ">=4.2.2",
+          "marker": "extra == \"core\"",
+          "active": false
+        },
+        {
+          "name": "jaraco.functools",
+          "specifier": ">=4",
+          "marker": "extra == \"core\"",
+          "active": false
+        },
+        {
+          "name": "more_itertools",
+          "specifier": "",
+          "marker": "extra == \"core\"",
+          "active": false
+        },
+        {
+          "name": "pytest-checkdocs",
+          "specifier": ">=2.4",
+          "marker": "extra == \"check\"",
+          "active": false
+        },
+        {
+          "name": "pytest-ruff",
+          "specifier": ">=0.2.1",
+          "marker": "sys_platform != \"cygwin\" and extra == \"check\"",
+          "active": false
+        },
+        {
+          "name": "ruff",
+          "specifier": ">=0.8.0",
+          "marker": "sys_platform != \"cygwin\" and extra == \"check\"",
+          "active": false
+        },
+        {
+          "name": "pytest-cov",
+          "specifier": "",
+          "marker": "extra == \"cover\"",
+          "active": false
+        },
+        {
+          "name": "pytest-enabler",
+          "specifier": ">=2.2",
+          "marker": "extra == \"enabler\"",
+          "active": false
+        },
+        {
+          "name": "pytest-mypy",
+          "specifier": "",
+          "marker": "extra == \"type\"",
+          "active": false
+        },
+        {
+          "name": "mypy",
+          "specifier": "==1.14.*",
+          "marker": "extra == \"type\"",
+          "active": false
+        },
+        {
+          "name": "importlib_metadata",
+          "specifier": ">=7.0.2",
+          "marker": "python_version < \"3.10\" and extra == \"type\"",
+          "active": false
+        },
+        {
+          "name": "jaraco.develop",
+          "specifier": ">=7.21",
+          "marker": "sys_platform != \"cygwin\" and extra == \"type\"",
+          "active": false
+        }
+      ]
+    },
+    {
+      "ref": "pkg:pypi/six@1.17.0",
+      "ecosystem": "PyPI",
+      "name": "six",
+      "version": "1.17.0",
+      "scope": "installed",
+      "license": "MIT",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "metadataSha256": "562042078c2752549f6d8a7c86dbc5dd708088a7be6d80672ec7b07100b72468",
+      "licenseFiles": [
+        {
+          "file": "six-1.17.0.dist-info/LICENSE",
+          "sha256": "4375ba20e2b9c6c4e7cad2940a628fd90e95cc3d50ee92aae755715d8ba1fbd0"
+        }
+      ],
+      "nativeFiles": [],
+      "licenseClassifiers": [
+        "License :: OSI Approved :: MIT License"
+      ],
+      "metadataSource": "installed-wheel-METADATA",
+      "requirements": []
+    },
+    {
+      "ref": "pkg:pypi/tomli-w@1.2.0?owner=pip",
+      "ecosystem": "PyPI",
+      "name": "tomli-w",
+      "version": "1.2.0",
+      "scope": "vendored-build",
+      "license": "NOASSERTION",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "owner": "pip",
+      "metadataSource": "vendor.txt",
+      "vendorListSha256": "3df0c9601bfa2e0dca23cc574a4f900a4d7fdad060ab203fab8354350ed93320",
+      "licenseEvidence": "Owner licenseFiles inventory retained; per-component mapping needs review."
+    },
+    {
+      "ref": "pkg:pypi/tomli@2.0.1?owner=setuptools",
+      "ecosystem": "PyPI",
+      "name": "tomli",
+      "version": "2.0.1",
+      "scope": "vendored-build",
+      "license": "NOASSERTION",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "tomli-2.0.1.dist-info/LICENSE",
+          "sha256": "b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe"
+        }
+      ],
+      "metadataSha256": "ccf0dc78a98fc0918b5ad67292b1e2c4bed65575a6246cd9d63c914f9942a0f2",
+      "owner": "setuptools",
+      "metadataSource": "vendored-wheel-METADATA"
+    },
+    {
+      "ref": "pkg:pypi/tomli@2.4.1?owner=pip",
+      "ecosystem": "PyPI",
+      "name": "tomli",
+      "version": "2.4.1",
+      "scope": "vendored-build",
+      "license": "NOASSERTION",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "owner": "pip",
+      "metadataSource": "vendor.txt",
+      "vendorListSha256": "3df0c9601bfa2e0dca23cc574a4f900a4d7fdad060ab203fab8354350ed93320",
+      "licenseEvidence": "Owner licenseFiles inventory retained; per-component mapping needs review."
+    },
+    {
+      "ref": "pkg:pypi/truststore@0.10.4?owner=pip",
+      "ecosystem": "PyPI",
+      "name": "truststore",
+      "version": "0.10.4",
+      "scope": "vendored-build",
+      "license": "NOASSERTION",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "owner": "pip",
+      "metadataSource": "vendor.txt",
+      "vendorListSha256": "3df0c9601bfa2e0dca23cc574a4f900a4d7fdad060ab203fab8354350ed93320",
+      "licenseEvidence": "Owner licenseFiles inventory retained; per-component mapping needs review."
+    },
+    {
+      "ref": "pkg:pypi/typeguard@4.3.0?owner=setuptools",
+      "ecosystem": "PyPI",
+      "name": "typeguard",
+      "version": "4.3.0",
+      "scope": "vendored-build",
+      "license": "MIT",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "typeguard-4.3.0.dist-info/LICENSE",
+          "sha256": "6163f7987dfb38d6bc320ce2b70b2f02b862bc41126516d552ef1cd43247e758"
+        }
+      ],
+      "metadataSha256": "cf675c1c0a744f08580855390de87cc77d676b312582e8d4cfdb5bb8fd298d21",
+      "owner": "setuptools",
+      "metadataSource": "vendored-wheel-METADATA"
+    },
+    {
+      "ref": "pkg:pypi/typing-extensions@4.12.2?owner=setuptools",
+      "ecosystem": "PyPI",
+      "name": "typing-extensions",
+      "version": "4.12.2",
+      "scope": "vendored-build",
+      "license": "NOASSERTION",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "typing_extensions-4.12.2.dist-info/LICENSE",
+          "sha256": "3b2f81fe21d181c499c59a256c8e1968455d6689d269aa85373bfb6af41da3bf"
+        }
+      ],
+      "metadataSha256": "05e51021af1c9d86eb8d6c7e37c4cece733d5065b91a6d8389c5690ed440f16d",
+      "owner": "setuptools",
+      "metadataSource": "vendored-wheel-METADATA"
+    },
+    {
+      "ref": "pkg:pypi/typing-extensions@4.16.0",
+      "ecosystem": "PyPI",
+      "name": "typing-extensions",
+      "version": "4.16.0",
+      "scope": "installed",
+      "license": "PSF-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "metadataSha256": "b05084ca1d50879865178d9fff9fabeab61bdfb1f361bfbde95421ffc8f9be46",
+      "licenseFiles": [
+        {
+          "file": "typing_extensions-4.16.0.dist-info/licenses/LICENSE",
+          "sha256": "3b2f81fe21d181c499c59a256c8e1968455d6689d269aa85373bfb6af41da3bf"
+        }
+      ],
+      "nativeFiles": [],
+      "licenseClassifiers": [],
+      "metadataSource": "installed-wheel-METADATA",
+      "requirements": []
+    },
+    {
+      "ref": "pkg:pypi/urllib3@2.7.0?owner=pip",
+      "ecosystem": "PyPI",
+      "name": "urllib3",
+      "version": "2.7.0",
+      "scope": "vendored-build",
+      "license": "NOASSERTION",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "owner": "pip",
+      "metadataSource": "vendor.txt",
+      "vendorListSha256": "3df0c9601bfa2e0dca23cc574a4f900a4d7fdad060ab203fab8354350ed93320",
+      "licenseEvidence": "Owner licenseFiles inventory retained; per-component mapping needs review."
+    },
+    {
+      "ref": "pkg:pypi/wheel@0.45.1",
+      "ecosystem": "PyPI",
+      "name": "wheel",
+      "version": "0.45.1",
+      "scope": "installed",
+      "license": "NOASSERTION",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "metadataSha256": "98acfce07ee6ee3b31272cde21c4d53918936f434f315dfd2af3886211a09a30",
+      "licenseFiles": [
+        {
+          "file": "wheel-0.45.1.dist-info/LICENSE.txt",
+          "sha256": "30c23618679108f3e8ea1d2a658c7ca417bdfc891c98ef1a89fa4ff0c9828654"
+        },
+        {
+          "file": "wheel/vendored/packaging/LICENSE",
+          "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48"
+        },
+        {
+          "file": "wheel/vendored/packaging/LICENSE.APACHE",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        },
+        {
+          "file": "wheel/vendored/packaging/LICENSE.BSD",
+          "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5"
+        }
+      ],
+      "nativeFiles": [],
+      "licenseClassifiers": [
+        "License :: OSI Approved :: MIT License"
+      ],
+      "metadataSource": "installed-wheel-METADATA",
+      "requirements": [
+        {
+          "name": "pytest",
+          "specifier": ">=6.0.0",
+          "marker": "extra == \"test\"",
+          "active": false
+        },
+        {
+          "name": "setuptools",
+          "specifier": ">=65",
+          "marker": "extra == \"test\"",
+          "active": false
+        }
+      ]
+    },
+    {
+      "ref": "pkg:pypi/wheel@0.45.1?owner=setuptools",
+      "ecosystem": "PyPI",
+      "name": "wheel",
+      "version": "0.45.1",
+      "scope": "vendored-build",
+      "license": "NOASSERTION",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "wheel-0.45.1.dist-info/LICENSE.txt",
+          "sha256": "30c23618679108f3e8ea1d2a658c7ca417bdfc891c98ef1a89fa4ff0c9828654"
+        },
+        {
+          "file": "wheel/vendored/packaging/LICENSE",
+          "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48"
+        },
+        {
+          "file": "wheel/vendored/packaging/LICENSE.APACHE",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        },
+        {
+          "file": "wheel/vendored/packaging/LICENSE.BSD",
+          "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5"
+        }
+      ],
+      "metadataSha256": "98acfce07ee6ee3b31272cde21c4d53918936f434f315dfd2af3886211a09a30",
+      "owner": "setuptools",
+      "metadataSource": "vendored-wheel-METADATA"
+    },
+    {
+      "ref": "pkg:pypi/zipp@3.19.2?owner=setuptools",
+      "ecosystem": "PyPI",
+      "name": "zipp",
+      "version": "3.19.2",
+      "scope": "vendored-build",
+      "license": "NOASSERTION",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "zipp-3.19.2.dist-info/LICENSE",
+          "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741"
+        }
+      ],
+      "metadataSha256": "508ae4fe43081c64b0b0a2828588b3a8cc3430c6693d1676662569400b0dfdb1",
+      "owner": "setuptools",
+      "metadataSource": "vendored-wheel-METADATA"
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "candidate:python",
+      "dependsOn": [
+        "pkg:pypi/attrs@26.1.0",
+        "pkg:pypi/build@1.3.0",
+        "pkg:pypi/jsonschema-specifications@2025.9.1",
+        "pkg:pypi/jsonschema@4.26.0",
+        "pkg:pypi/packaging@26.3",
+        "pkg:pypi/pip@26.2.1",
+        "pkg:pypi/pyproject-hooks@1.3.3",
+        "pkg:pypi/pyyaml@6.0.3",
+        "pkg:pypi/referencing@0.37.0",
+        "pkg:pypi/rfc3339-validator@0.1.4",
+        "pkg:pypi/rpds-py@2026.6.3",
+        "pkg:pypi/setuptools@80.9.0",
+        "pkg:pypi/six@1.17.0",
+        "pkg:pypi/typing-extensions@4.16.0",
+        "pkg:pypi/wheel@0.45.1"
+      ]
+    },
+    {
+      "ref": "pkg:cargo/archery@1.2.2",
+      "dependsOn": [
+        "pkg:cargo/triomphe@0.1.15"
+      ]
+    },
+    {
+      "ref": "pkg:cargo/heck@0.5.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:cargo/libc@0.2.177",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:cargo/once_cell@1.21.3",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:cargo/proc-macro2@1.0.103",
+      "dependsOn": [
+        "pkg:cargo/unicode-ident@1.0.22"
+      ]
+    },
+    {
+      "ref": "pkg:cargo/pyo3-build-config@0.29.0",
+      "dependsOn": [
+        "pkg:cargo/target-lexicon@0.13.3"
+      ]
+    },
+    {
+      "ref": "pkg:cargo/pyo3-ffi@0.29.0",
+      "dependsOn": [
+        "pkg:cargo/libc@0.2.177",
+        "pkg:cargo/pyo3-build-config@0.29.0"
+      ]
+    },
+    {
+      "ref": "pkg:cargo/pyo3-macros-backend@0.29.0",
+      "dependsOn": [
+        "pkg:cargo/heck@0.5.0",
+        "pkg:cargo/proc-macro2@1.0.103",
+        "pkg:cargo/quote@1.0.42",
+        "pkg:cargo/syn@2.0.111"
+      ]
+    },
+    {
+      "ref": "pkg:cargo/pyo3-macros@0.29.0",
+      "dependsOn": [
+        "pkg:cargo/proc-macro2@1.0.103",
+        "pkg:cargo/pyo3-macros-backend@0.29.0",
+        "pkg:cargo/quote@1.0.42",
+        "pkg:cargo/syn@2.0.111"
+      ]
+    },
+    {
+      "ref": "pkg:cargo/pyo3@0.29.0",
+      "dependsOn": [
+        "pkg:cargo/libc@0.2.177",
+        "pkg:cargo/once_cell@1.21.3",
+        "pkg:cargo/pyo3-build-config@0.29.0",
+        "pkg:cargo/pyo3-ffi@0.29.0",
+        "pkg:cargo/pyo3-macros@0.29.0"
+      ]
+    },
+    {
+      "ref": "pkg:cargo/quote@1.0.42",
+      "dependsOn": [
+        "pkg:cargo/proc-macro2@1.0.103"
+      ]
+    },
+    {
+      "ref": "pkg:cargo/rpds@1.2.1",
+      "dependsOn": [
+        "pkg:cargo/archery@1.2.2",
+        "pkg:cargo/smallvec@1.15.1"
+      ]
+    },
+    {
+      "ref": "pkg:cargo/smallvec@1.15.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:cargo/syn@2.0.111",
+      "dependsOn": [
+        "pkg:cargo/proc-macro2@1.0.103",
+        "pkg:cargo/quote@1.0.42",
+        "pkg:cargo/unicode-ident@1.0.22"
+      ]
+    },
+    {
+      "ref": "pkg:cargo/target-lexicon@0.13.3",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:cargo/triomphe@0.1.15",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:cargo/unicode-ident@1.0.22",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/attrs@26.1.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/autocommand@2.2.2?owner=setuptools",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/backports-tarfile@1.2.0?owner=setuptools",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/build@1.3.0",
+      "dependsOn": [
+        "pkg:pypi/packaging@26.3",
+        "pkg:pypi/pyproject-hooks@1.3.3"
+      ]
+    },
+    {
+      "ref": "pkg:pypi/cachecontrol@0.14.4?owner=pip",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/certifi@2026.6.17?owner=pip",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/distlib@0.4.2?owner=pip",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/distro@1.9.0?owner=pip",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/idna@3.18?owner=pip",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/importlib-metadata@8.0.0?owner=setuptools",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/inflect@7.3.1?owner=setuptools",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/jaraco-collections@5.1.0?owner=setuptools",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/jaraco-context@5.3.0?owner=setuptools",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/jaraco-functools@4.0.1?owner=setuptools",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/jaraco-text@3.12.1?owner=setuptools",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/jsonschema-specifications@2025.9.1",
+      "dependsOn": [
+        "pkg:pypi/referencing@0.37.0"
+      ]
+    },
+    {
+      "ref": "pkg:pypi/jsonschema@4.26.0",
+      "dependsOn": [
+        "pkg:pypi/attrs@26.1.0",
+        "pkg:pypi/jsonschema-specifications@2025.9.1",
+        "pkg:pypi/referencing@0.37.0",
+        "pkg:pypi/rpds-py@2026.6.3"
+      ]
+    },
+    {
+      "ref": "pkg:pypi/more-itertools@10.3.0?owner=setuptools",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/msgpack@1.1.2?owner=pip",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/packaging@24.0?owner=setuptools%2F_vendor%2Fwheel",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/packaging@24.0?owner=wheel",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/packaging@24.2?owner=setuptools",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/packaging@26.2?owner=pip",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/packaging@26.3",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/pip@26.2.1",
+      "dependsOn": [
+        "pkg:pypi/cachecontrol@0.14.4?owner=pip",
+        "pkg:pypi/certifi@2026.6.17?owner=pip",
+        "pkg:pypi/distlib@0.4.2?owner=pip",
+        "pkg:pypi/distro@1.9.0?owner=pip",
+        "pkg:pypi/idna@3.18?owner=pip",
+        "pkg:pypi/msgpack@1.1.2?owner=pip",
+        "pkg:pypi/packaging@26.2?owner=pip",
+        "pkg:pypi/platformdirs@4.10.0?owner=pip",
+        "pkg:pypi/pygments@2.20.0?owner=pip",
+        "pkg:pypi/pyproject-hooks@1.2.0?owner=pip",
+        "pkg:pypi/requests@2.34.2?owner=pip",
+        "pkg:pypi/resolvelib@1.2.1?owner=pip",
+        "pkg:pypi/rich@14.2.0?owner=pip",
+        "pkg:pypi/setuptools@70.3.0?owner=pip",
+        "pkg:pypi/tomli-w@1.2.0?owner=pip",
+        "pkg:pypi/tomli@2.4.1?owner=pip",
+        "pkg:pypi/truststore@0.10.4?owner=pip",
+        "pkg:pypi/urllib3@2.7.0?owner=pip"
+      ]
+    },
+    {
+      "ref": "pkg:pypi/platformdirs@4.10.0?owner=pip",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/platformdirs@4.2.2?owner=setuptools",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/pygments@2.20.0?owner=pip",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/pyproject-hooks@1.2.0?owner=pip",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/pyproject-hooks@1.3.3",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/pyyaml@6.0.3",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/referencing@0.37.0",
+      "dependsOn": [
+        "pkg:pypi/attrs@26.1.0",
+        "pkg:pypi/rpds-py@2026.6.3",
+        "pkg:pypi/typing-extensions@4.16.0"
+      ]
+    },
+    {
+      "ref": "pkg:pypi/requests@2.34.2?owner=pip",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/resolvelib@1.2.1?owner=pip",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/rfc3339-validator@0.1.4",
+      "dependsOn": [
+        "pkg:pypi/six@1.17.0"
+      ]
+    },
+    {
+      "ref": "pkg:pypi/rich@14.2.0?owner=pip",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/rpds-py@2026.6.3",
+      "dependsOn": [
+        "pkg:cargo/archery@1.2.2",
+        "pkg:cargo/pyo3@0.29.0",
+        "pkg:cargo/rpds@1.2.1"
+      ]
+    },
+    {
+      "ref": "pkg:pypi/setuptools@70.3.0?owner=pip",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/setuptools@80.9.0",
+      "dependsOn": [
+        "pkg:pypi/autocommand@2.2.2?owner=setuptools",
+        "pkg:pypi/backports-tarfile@1.2.0?owner=setuptools",
+        "pkg:pypi/importlib-metadata@8.0.0?owner=setuptools",
+        "pkg:pypi/inflect@7.3.1?owner=setuptools",
+        "pkg:pypi/jaraco-collections@5.1.0?owner=setuptools",
+        "pkg:pypi/jaraco-context@5.3.0?owner=setuptools",
+        "pkg:pypi/jaraco-functools@4.0.1?owner=setuptools",
+        "pkg:pypi/jaraco-text@3.12.1?owner=setuptools",
+        "pkg:pypi/more-itertools@10.3.0?owner=setuptools",
+        "pkg:pypi/packaging@24.0?owner=setuptools%2F_vendor%2Fwheel",
+        "pkg:pypi/packaging@24.2?owner=setuptools",
+        "pkg:pypi/platformdirs@4.2.2?owner=setuptools",
+        "pkg:pypi/tomli@2.0.1?owner=setuptools",
+        "pkg:pypi/typeguard@4.3.0?owner=setuptools",
+        "pkg:pypi/typing-extensions@4.12.2?owner=setuptools",
+        "pkg:pypi/wheel@0.45.1?owner=setuptools",
+        "pkg:pypi/zipp@3.19.2?owner=setuptools"
+      ]
+    },
+    {
+      "ref": "pkg:pypi/six@1.17.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/tomli-w@1.2.0?owner=pip",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/tomli@2.0.1?owner=setuptools",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/tomli@2.4.1?owner=pip",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/truststore@0.10.4?owner=pip",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/typeguard@4.3.0?owner=setuptools",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/typing-extensions@4.12.2?owner=setuptools",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/typing-extensions@4.16.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/urllib3@2.7.0?owner=pip",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/wheel@0.45.1",
+      "dependsOn": [
+        "pkg:pypi/packaging@24.0?owner=wheel"
+      ]
+    },
+    {
+      "ref": "pkg:pypi/wheel@0.45.1?owner=setuptools",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/zipp@3.19.2?owner=setuptools",
+      "dependsOn": []
+    }
+  ],
+  "vendorLists": [
+    {
+      "owner": "pip",
+      "sha256": "3df0c9601bfa2e0dca23cc574a4f900a4d7fdad060ab203fab8354350ed93320",
+      "packages": [
+        {
+          "name": "CacheControl",
+          "version": "0.14.4"
+        },
+        {
+          "name": "distlib",
+          "version": "0.4.2"
+        },
+        {
+          "name": "distro",
+          "version": "1.9.0"
+        },
+        {
+          "name": "msgpack",
+          "version": "1.1.2"
+        },
+        {
+          "name": "packaging",
+          "version": "26.2"
+        },
+        {
+          "name": "platformdirs",
+          "version": "4.10.0"
+        },
+        {
+          "name": "pyproject-hooks",
+          "version": "1.2.0"
+        },
+        {
+          "name": "requests",
+          "version": "2.34.2"
+        },
+        {
+          "name": "certifi",
+          "version": "2026.6.17"
+        },
+        {
+          "name": "idna",
+          "version": "3.18"
+        },
+        {
+          "name": "urllib3",
+          "version": "2.7.0"
+        },
+        {
+          "name": "rich",
+          "version": "14.2.0"
+        },
+        {
+          "name": "pygments",
+          "version": "2.20.0"
+        },
+        {
+          "name": "resolvelib",
+          "version": "1.2.1"
+        },
+        {
+          "name": "setuptools",
+          "version": "70.3.0"
+        },
+        {
+          "name": "tomli",
+          "version": "2.4.1"
+        },
+        {
+          "name": "tomli-w",
+          "version": "1.2.0"
+        },
+        {
+          "name": "truststore",
+          "version": "0.10.4"
+        }
+      ],
+      "licenseFiles": [
+        {
+          "file": "pip/_vendor/packaging/LICENSE",
+          "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48"
+        },
+        {
+          "file": "pip/_vendor/packaging/LICENSE.APACHE",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        },
+        {
+          "file": "pip/_vendor/packaging/LICENSE.BSD",
+          "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5"
+        },
+        {
+          "file": "pip/_vendor/truststore/LICENSE",
+          "sha256": "33be7b7e8fa4fd19b1760e1a8ed8a668bdab852c91b692dd41424bcb725a9fca"
+        },
+        {
+          "file": "pip/_vendor/msgpack/COPYING",
+          "sha256": "492dedba85da5872f78e6091bcd1fea474d660d35acb4dee964b8aab3f007427"
+        },
+        {
+          "file": "pip/_vendor/pygments/LICENSE",
+          "sha256": "a9d66f1d526df02e29dce73436d34e56e8632f46c275bbdffc70569e882f9f17"
+        },
+        {
+          "file": "pip/_vendor/distlib/LICENSE.txt",
+          "sha256": "808e10c8a6ab8deb149ff9b3fb19f447a808094606d712a9ca57fead3552599d"
+        },
+        {
+          "file": "pip/_vendor/distro/LICENSE",
+          "sha256": "cb5e8e7e5f4a3988e1063c142c60dc2df75605f4c46515e776e3aca6df976e14"
+        },
+        {
+          "file": "pip/_vendor/cachecontrol/LICENSE.txt",
+          "sha256": "86eeee87be2a43f3ff1f56496f451f69243926f025fedbb033666c304c4c161b"
+        },
+        {
+          "file": "pip/_vendor/idna/LICENSE.md",
+          "sha256": "1a9a4f0e3d479a27240ddd59a9137a66ab4a0f9dfdc8ca6188cc0bfd85187f04"
+        },
+        {
+          "file": "pip/_vendor/requests/LICENSE",
+          "sha256": "09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b"
+        },
+        {
+          "file": "pip/_vendor/tomli/LICENSE",
+          "sha256": "b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe"
+        },
+        {
+          "file": "pip/_vendor/certifi/LICENSE",
+          "sha256": "e93716da6b9c0d5a4a1df60fe695b370f0695603d21f6f83f053e42cfc10caf7"
+        },
+        {
+          "file": "pip/_vendor/pyproject_hooks/LICENSE",
+          "sha256": "1b22b049b5267d6dfc23a67bf4a84d8ec04b9fdfb1a51d360e42b4342c8b4154"
+        },
+        {
+          "file": "pip/_vendor/rich/LICENSE",
+          "sha256": "deed7c17a4318158190a3ea239cc879a5a50271cebb98ae7025f48fbe58dca15"
+        },
+        {
+          "file": "pip/_vendor/tomli_w/LICENSE",
+          "sha256": "b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe"
+        },
+        {
+          "file": "pip/_vendor/urllib3/LICENSE.txt",
+          "sha256": "130e3a64d5fdd5d096a752694634a7d9df284469de86e5732100268041e3d686"
+        },
+        {
+          "file": "pip/_vendor/pkg_resources/LICENSE",
+          "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741"
+        },
+        {
+          "file": "pip/_vendor/resolvelib/LICENSE",
+          "sha256": "f388fd38cad13112c1dc0f669bbe80e7f84541edbafb72f3030d2ca7642c3c9d"
+        },
+        {
+          "file": "pip/_vendor/platformdirs/LICENSE",
+          "sha256": "29e0fd62e929850e86eb28c3fdccf0cefdf4fa94879011cffb3d0d4bed6d4db6"
+        }
+      ]
+    },
+    {
+      "owner": "wheel",
+      "sha256": "67610d8c1d62e69adf7b3f0274cd5276bddce99c6fdab451a253292e60677001",
+      "packages": [
+        {
+          "name": "packaging",
+          "version": "24.0"
+        }
+      ],
+      "licenseFiles": [
+        {
+          "file": "wheel/vendored/packaging/LICENSE",
+          "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48"
+        },
+        {
+          "file": "wheel/vendored/packaging/LICENSE.APACHE",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        },
+        {
+          "file": "wheel/vendored/packaging/LICENSE.BSD",
+          "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5"
+        }
+      ]
+    },
+    {
+      "owner": "setuptools/_vendor/wheel",
+      "sha256": "67610d8c1d62e69adf7b3f0274cd5276bddce99c6fdab451a253292e60677001",
+      "packages": [
+        {
+          "name": "packaging",
+          "version": "24.0"
+        }
+      ],
+      "licenseFiles": [
+        {
+          "file": "setuptools/_vendor/wheel/vendored/packaging/LICENSE",
+          "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48"
+        },
+        {
+          "file": "setuptools/_vendor/wheel/vendored/packaging/LICENSE.APACHE",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        },
+        {
+          "file": "setuptools/_vendor/wheel/vendored/packaging/LICENSE.BSD",
+          "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5"
+        }
+      ]
+    }
+  ],
+  "collectorSources": [
+    {
+      "file": "scripts/runtime-supply-chain-collect.mjs",
+      "sha256": "0d54d9bc209fb50b5046d61e3faa4d6e1d750f1f45397fce05f4bf65378bcbc7"
+    },
+    {
+      "file": "scripts/runtime-supply-chain-scan.mjs",
+      "sha256": "edcab509d9f7099f7530e0c24d54474abf5f9e7a2d31528db17c93260eeca7bc"
+    },
+    {
+      "file": "scripts/runtime-supply-chain-smoke.mjs",
+      "sha256": "d5d4401eb8201c70f55235f273ba43f5d776bc3bdbccb01a50408886f87a7b5e"
+    },
+    {
+      "file": "scripts/lib/supply-chain-python.py",
+      "sha256": "4166a3fb26d424e68ea93fb920668150f37e1ac43fc57e35bbc021dadc609f57"
+    },
+    {
+      "file": "scripts/lib/supply-chain-evidence.mjs",
+      "sha256": "910190f6d32488b6499483dbb8011d61feafa94f54fb2a134159445e13eab333"
+    }
+  ],
+  "buildResult": "passed",
+  "environment": {
+    "os": "macos",
+    "version": "27.0.1",
+    "build": "26A434",
+    "architecture": "arm64",
+    "cohort": "supplemental-local-not-frozen-target"
+  },
+  "prerequisiteEvidence": "../prerequisites.json",
+  "provisioning": {
+    "mode": "separately-cached-offline-build",
+    "dependencyLocksChanged": false,
+    "networkDuringBuild": false,
+    "isolationAssessment": "offline-flags-not-OS-enforcement",
+    "runtimeArchives": [],
+    "interpreterOrigin": "existing-exact-runtime-download-provenance-unavailable"
+  },
+  "nativeScanner": {
+    "name": "pip-audit",
+    "status": "not-run",
+    "reason": "Version matching uses the shared committed OSV API collector; native scanner/reachability coverage is not claimed."
+  },
+  "openRisks": [
+    "no-independent-license-approval",
+    "no-signed-artifact-provenance",
+    "no-reproducible-build-proof",
+    "incomplete-native-runtime-compiler-closure",
+    "no-distribution-lifecycle",
+    "known-advisory-version-matches-unremediated-reachability-not-tested"
+  ],
+  "licenseUnknownCount": 34,
+  "sbomSha256": "a4a4e9bc4654041e3f640b1f79955cd1788a690c3229f421bc83c21c1a2f8e28",
+  "advisoriesSha256": "cde4104443f375cc04049a27ff8cab30c406decc8ab846d8251d3badd10856b6",
+  "advisoryReview": {
+    "status": "open-risk",
+    "reachability": "not-tested",
+    "fixesApplied": false,
+    "queryCount": 66,
+    "matchedPackageCount": 6,
+    "advisoryRecords": 16,
+    "uniqueCveAliases": [
+      "CVE-2025-47273",
+      "CVE-2026-23949",
+      "CVE-2026-24049",
+      "CVE-2026-57585",
+      "CVE-2026-59890",
+      "CVE-2026-97687",
+      "CVE-2026-97688",
+      "CVE-2026-97689"
+    ],
+    "unprocessedAdvisoryIds": [
+      "GHSA-58pv-8j8x-9vj2",
+      "GHSA-5rjg-fvgr-3xxf",
+      "GHSA-6v7p-g79w-8964",
+      "GHSA-8988-9cw3-xx77",
+      "GHSA-8rrh-rw8j-w5fx",
+      "GHSA-gh4c-6fx4-qh6g",
+      "GHSA-h35f-9h28-mq5c",
+      "GHSA-vxq7-64xx-v4gw",
+      "PYSEC-2025-49",
+      "PYSEC-2026-1469",
+      "PYSEC-2026-2047",
+      "PYSEC-2026-3447",
+      "PYSEC-2026-3625",
+      "PYSEC-2026-4175",
+      "PYSEC-2026-4176",
+      "PYSEC-2026-4177"
+    ]
+  }
+}

@@ -97,5 +97,48 @@ closure rather than inventing a complete uncached test graph.
 
 ## Bundles
 
-Final collected bundle links and dated results are added after the committed
-collector is rerun. No incomplete preflight data is an accepted security gate.
+Collected 2026-10-04 using committed source
+f8f66a9122d73a195698966785d968cdd395de7b, following the initial source
+fa92158499510666894debcfaa7cf5f9e0b17955. The forward check binds normalized
+matches to the actual querybatch pages, including a hidden-advisory rejection.
+[Prerequisite PR/CI evidence](prerequisites.json) confirms merged #95/#96/#97/
+#99/#100 with exact published and merge revisions; NF-056-10 is not required.
+
+| Candidate bundle | Inventory components | Exact version queries | Matched package versions | Advisory records / CVE aliases |
+| --- | --- | --- | --- | --- |
+| [TypeScript inventory](typescript/inventory.json), [SBOM](typescript/sbom.cdx.json), [advisories](typescript/advisories.json) | 30: 11 installed, 19 other-platform | 30 | 0 | 0 / 0 |
+| [Python inventory](python/inventory.json), [SBOM](python/sbom.cdx.json), [advisories](python/advisories.json) | 68: 15 installed, 36 vendored, 17 upstream native | 66 | 6 | 16 / 8 |
+| [Rust inventory](rust/inventory.json), [SBOM](rust/sbom.cdx.json), [advisories](rust/advisories.json) | 74 target-resolved crates | 74 | 0 | 0 / 0 |
+| [Go inventory](go/inventory.json), [SBOM](go/sbom.cdx.json), [advisories](go/advisories.json) | 5: 3 compiled, 2 unused locked entries | 6 including stdlib | 1 | 1 / 1 |
+
+Python matches include installed setuptools 80.9.0 and wheel 0.45.1, plus
+vendored jaraco.context 5.3.0, msgpack 1.1.2, setuptools 70.3.0 and urllib3 2.7.0.
+GHSA and PYSEC aliases describe the same eight CVEs, not sixteen distinct
+vulnerabilities. Several are rated high by their upstream advisory database.
+All remain unremediated and reachability is not-tested; neither installing
+wheels nor avoiding a particular build command accepts these risks.
+
+Go matches [GO-2026-5970](https://pkg.go.dev/vuln/GO-2026-5970) /
+CVE-2026-56852 in x/text v0.14.0. The upstream report names Unicode normalization
+handling before v0.39.0; no actual candidate exploit/reachability verdict is
+claimed. Zero TypeScript/Rust matches is only the observed database response,
+not a passed security gate.
+
+The inventories retain 46 observed artifact receipts, all source/lock digests,
+15 Python wheel hashes, Rust archive checksums/build-script/macro inventories,
+Go package/link metadata, and separately verified cached tool archives.
+CPython download provenance remains unavailable. Python has 34 NOASSERTION
+license entries; Go retains five unclassified module license expressions,
+with available cached license-file hashes and two uncached test-only gaps.
+These are visible review work, not a complete accepted license/native closure.
+
+All four SBOM structures were validated with Ajv 8.20.0 against the official
+CycloneDX 1.6 schema and its two auxiliary schemas; annotation formats were
+not asserted. [Validation receipt](sbom-validation.json) records exact schema
+URLs/hashes and scope. CI verifies saved inventory/SBOM/advisory consistency,
+exact source/collector Git blobs and 28 synthetic control/rejection cases.
+It does not rerun the network-backed database or certify native artifacts.
+
+Supply-chain acceptance remains partial for all four candidates; outcome is
+not-ready. No candidate locks, sources, corpus, scorecards, versions or releases
+changed, and no vulnerability repair was performed.

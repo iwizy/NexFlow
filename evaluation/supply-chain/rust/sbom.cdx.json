@@ -1,0 +1,3022 @@
+{
+  "$schema": "http://cyclonedx.org/schema/bom-1.6.schema.json",
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-10-04T13:53:54.711Z",
+    "component": {
+      "type": "application",
+      "bom-ref": "candidate:rust",
+      "name": "nexflow-rust-evaluation",
+      "version": "4fdf0cc8e69e050600d0a5d8f7f1f42987f68203",
+      "properties": [
+        {
+          "name": "nexflow:scope",
+          "value": "disposable-validation-only-not-release"
+        },
+        {
+          "name": "nexflow:collectorRevision",
+          "value": "f8f66a9122d73a195698966785d968cdd395de7b"
+        }
+      ]
+    }
+  },
+  "components": [
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/ahash@0.8.12",
+      "name": "ahash",
+      "version": "0.8.12",
+      "purl": "pkg:cargo/ahash@0.8.12",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "5a15f179cd60c4584b8a8c596927aadc462e27f2ca70c04e0071964a73ba7a75"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-target"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "cargo-metadata-cached-Cargo.toml"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/aho-corasick@1.1.5",
+      "name": "aho-corasick",
+      "version": "1.1.5",
+      "purl": "pkg:cargo/aho-corasick@1.1.5",
+      "licenses": [
+        {
+          "license": {
+            "name": "Unlicense OR MIT"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "c982642fa9e8606056828ee9a8505737230110bb1099153c79efe865c59d12ba"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-target"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "cargo-metadata-cached-Cargo.toml"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/allocator-api2@0.2.21",
+      "name": "allocator-api2",
+      "version": "0.2.21",
+      "purl": "pkg:cargo/allocator-api2@0.2.21",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "683d7910e743518b0e34f1186f92494becacb047c7b6bf616c96772180fef923"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-target"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "cargo-metadata-cached-Cargo.toml"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/arraydeque@0.5.1",
+      "name": "arraydeque",
+      "version": "0.5.1",
+      "purl": "pkg:cargo/arraydeque@0.5.1",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT/Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "7d902e3d592a523def97af8f317b08ce16b7ab854c1985a0c671e6f15cebc236"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-target"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "cargo-metadata-cached-Cargo.toml"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/autocfg@1.5.1",
+      "name": "autocfg",
+      "version": "1.5.1",
+      "purl": "pkg:cargo/autocfg@1.5.1",
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0 OR MIT"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "f2032f911046de80f0a198e0901378627c33f59ea0ac00e363d481118bd70a53"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-target"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "cargo-metadata-cached-Cargo.toml"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/bit-set@0.8.0",
+      "name": "bit-set",
+      "version": "0.8.0",
+      "purl": "pkg:cargo/bit-set@0.8.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0 OR MIT"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "08807e080ed7f9d5433fa9b275196cfc35414f66a0c79d864dc51a0d825231a3"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-target"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "cargo-metadata-cached-Cargo.toml"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/bit-vec@0.8.0",
+      "name": "bit-vec",
+      "version": "0.8.0",
+      "purl": "pkg:cargo/bit-vec@0.8.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0 OR MIT"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "5e764a1d40d510daf35e07be9eb06e75770908c27d411ee6c92109c9840eaaf7"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-target"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "cargo-metadata-cached-Cargo.toml"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/borrow-or-share@0.2.4",
+      "name": "borrow-or-share",
+      "version": "0.2.4",
+      "purl": "pkg:cargo/borrow-or-share@0.2.4",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT-0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "dc0b364ead1874514c8c2855ab558056ebfeb775653e7ae45ff72f28f8f3166c"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-target"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "cargo-metadata-cached-Cargo.toml"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/bytecount@0.6.9",
+      "name": "bytecount",
+      "version": "0.6.9",
+      "purl": "pkg:cargo/bytecount@0.6.9",
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0/MIT"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "175812e0be2bccb6abe50bb8d566126198344f707e304f45c648fd8f2cc0365e"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-target"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "cargo-metadata-cached-Cargo.toml"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/cfg-if@1.0.5",
+      "name": "cfg-if",
+      "version": "1.0.5",
+      "purl": "pkg:cargo/cfg-if@1.0.5",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "4e7648175b45a9a48536d676f68d918270699102aa8dab5496df06904c914600"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-target"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "cargo-metadata-cached-Cargo.toml"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/data-encoding@2.11.1",
+      "name": "data-encoding",
+      "version": "2.11.1",
+      "purl": "pkg:cargo/data-encoding@2.11.1",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "4583a4551df46e2792f82ceeac45e850d2e2d5debba0b91f102385cda5b11f06"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-target"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "cargo-metadata-cached-Cargo.toml"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/email_address@0.2.9",
+      "name": "email_address",
+      "version": "0.2.9",
+      "purl": "pkg:cargo/email_address@0.2.9",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "e079f19b08ca6239f47f8ba8509c11cf3ea30095831f7fed61441475edd8c449"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-target"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "cargo-metadata-cached-Cargo.toml"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/encoding_rs@0.8.42",
+      "name": "encoding_rs",
+      "version": "0.8.42",
+      "purl": "pkg:cargo/encoding_rs@0.8.42",
+      "licenses": [
+        {
+          "license": {
+            "name": "(Apache-2.0 OR MIT) AND BSD-3-Clause"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "8e985e0451871ad22fb8d2b6b076e2028a502a0d3950998c2c5c0a4f9b5d9679"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-target"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "cargo-metadata-cached-Cargo.toml"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/equivalent@1.0.2",
+      "name": "equivalent",
+      "version": "1.0.2",
+      "purl": "pkg:cargo/equivalent@1.0.2",
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0 OR MIT"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "877a4ace8713b0bcf2a4e7eec82529c029f1d0619886d18145fea96c3ffe5c0f"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-target"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "cargo-metadata-cached-Cargo.toml"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/fancy-regex@0.19.2",
+      "name": "fancy-regex",
+      "version": "0.19.2",
+      "purl": "pkg:cargo/fancy-regex@0.19.2",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "d301f5bf187b3c295fce6468d3875037a0bccc5f6b151c63cac2f85babf21912"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-target"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "cargo-metadata-cached-Cargo.toml"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/fluent-uri@0.4.1",
+      "name": "fluent-uri",
+      "version": "0.4.1",
+      "purl": "pkg:cargo/fluent-uri@0.4.1",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "bc74ac4d8359ae70623506d512209619e5cf8f347124910440dbc221714b328e"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-target"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "cargo-metadata-cached-Cargo.toml"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/foldhash@0.2.0",
+      "name": "foldhash",
+      "version": "0.2.0",
+      "purl": "pkg:cargo/foldhash@0.2.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "Zlib"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "77ce24cb58228fbb8aa041425bb1050850ac19177686ea6e0f41a70416f56fdb"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-target"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "cargo-metadata-cached-Cargo.toml"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/fraction@0.17.0",
+      "name": "fraction",
+      "version": "0.17.0",
+      "purl": "pkg:cargo/fraction@0.17.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "e246562084dde8ebbcc943b261c406ce4f68e5032ec28029a251a47d6a295500"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-target"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "cargo-metadata-cached-Cargo.toml"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/getrandom@0.3.4",
+      "name": "getrandom",
+      "version": "0.3.4",
+      "purl": "pkg:cargo/getrandom@0.3.4",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "899def5c37c4fd7b2664648c28120ecec138e4d395b459e5ca34f9cce2dd77fd"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-target"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "cargo-metadata-cached-Cargo.toml"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/hashbrown@0.16.1",
+      "name": "hashbrown",
+      "version": "0.16.1",
+      "purl": "pkg:cargo/hashbrown@0.16.1",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "841d1cc9bed7f9236f321df977030373f4a4163ae1a7dbfe1a51a2c1a51d9100"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-target"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "cargo-metadata-cached-Cargo.toml"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/hashbrown@0.17.1",
+      "name": "hashbrown",
+      "version": "0.17.1",
+      "purl": "pkg:cargo/hashbrown@0.17.1",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "ed5909b6e89a2db4456e54cd5f673791d7eca6732202bbf2a9cc504fe2f9b84a"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-target"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "cargo-metadata-cached-Cargo.toml"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/hashlink@0.11.1",
+      "name": "hashlink",
+      "version": "0.11.1",
+      "purl": "pkg:cargo/hashlink@0.11.1",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "824e001ac4f3012dd16a264bec811403a67ca9deb6c102fc5049b32c4574b35f"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-target"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "cargo-metadata-cached-Cargo.toml"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/heck@0.5.0",
+      "name": "heck",
+      "version": "0.5.0",
+      "purl": "pkg:cargo/heck@0.5.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "2304e00983f87ffb38b55b444b5e3b60a884b5d30c0fca7d82fe33449bbe55ea"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-target"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "cargo-metadata-cached-Cargo.toml"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/itoa@1.0.18",
+      "name": "itoa",
+      "version": "1.0.18",
+      "purl": "pkg:cargo/itoa@1.0.18",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "8f42a60cbdf9a97f5d2305f08a87dc4e09308d1276d28c869c684d7777685682"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-target"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "cargo-metadata-cached-Cargo.toml"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/jsonschema-regex@0.58.4",
+      "name": "jsonschema-regex",
+      "version": "0.58.4",
+      "purl": "pkg:cargo/jsonschema-regex@0.58.4",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "f1ffba4378a3d6ee7f1ab65a8ed95c711ccfe4a3870932bdce89d8260abed38a"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-target"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "cargo-metadata-cached-Cargo.toml"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/jsonschema-value@0.58.4",
+      "name": "jsonschema-value",
+      "version": "0.58.4",
+      "purl": "pkg:cargo/jsonschema-value@0.58.4",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "386121f898b560ff6aaa7974952720e9d9276a201eca31296387c2ed8707855e"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-target"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "cargo-metadata-cached-Cargo.toml"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/jsonschema@0.58.4",
+      "name": "jsonschema",
+      "version": "0.58.4",
+      "purl": "pkg:cargo/jsonschema@0.58.4",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "5761b0ca0a31464030d7c2a98087fde3124ebb5e09b5a112cdb815f03b8ee150"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-target"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "cargo-metadata-cached-Cargo.toml"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/libc@0.2.189",
+      "name": "libc",
+      "version": "0.2.189",
+      "purl": "pkg:cargo/libc@0.2.189",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "3eaf3ede3fee6db1a4c2ee091bf8a8b4dccdc6d17f656fb07896ee72867612f2"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-target"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "cargo-metadata-cached-Cargo.toml"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/lock_api@0.4.14",
+      "name": "lock_api",
+      "version": "0.4.14",
+      "purl": "pkg:cargo/lock_api@0.4.14",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "224399e74b87b5f3557511d98dff8b14089b3dadafcab6bb93eab67d3aace965"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-target"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "cargo-metadata-cached-Cargo.toml"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/memchr@2.8.3",
+      "name": "memchr",
+      "version": "2.8.3",
+      "purl": "pkg:cargo/memchr@2.8.3",
+      "licenses": [
+        {
+          "license": {
+            "name": "Unlicense OR MIT"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "cf8baf1c55e62ffcace7a9f06f4bd9cd3f0c4beb022d3b367256b91b87513d98"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-target"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "cargo-metadata-cached-Cargo.toml"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/micromap@0.3.0",
+      "name": "micromap",
+      "version": "0.3.0",
+      "purl": "pkg:cargo/micromap@0.3.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "c2a86d3146ed3995b5913c414f6664344b9617457320782e64f0bb44afd49d74"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-target"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "cargo-metadata-cached-Cargo.toml"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/multiversion_no_op@1.0.0",
+      "name": "multiversion_no_op",
+      "version": "1.0.0",
+      "purl": "pkg:cargo/multiversion_no_op@1.0.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0 OR MIT"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "743fb55ba31b18fb1ecef6bdc9aa2743314978ac084044301a7eee33fb99a20d"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-target"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "cargo-metadata-cached-Cargo.toml"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/num-bigint@0.4.8",
+      "name": "num-bigint",
+      "version": "0.4.8",
+      "purl": "pkg:cargo/num-bigint@0.4.8",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "c89e69e7e0f03bea5ef08013795c25018e101932225a656383bd384495ecc367"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-target"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "cargo-metadata-cached-Cargo.toml"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/num-cmp@0.1.0",
+      "name": "num-cmp",
+      "version": "0.1.0",
+      "purl": "pkg:cargo/num-cmp@0.1.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT/Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "63335b2e2c34fae2fb0aa2cecfd9f0832a1e24b3b32ecec612c3426d46dc8aaa"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-target"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "cargo-metadata-cached-Cargo.toml"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/num-complex@0.4.6",
+      "name": "num-complex",
+      "version": "0.4.6",
+      "purl": "pkg:cargo/num-complex@0.4.6",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "73f88a1307638156682bada9d7604135552957b7818057dcef22705b4d509495"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-target"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "cargo-metadata-cached-Cargo.toml"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/num-integer@0.1.47",
+      "name": "num-integer",
+      "version": "0.1.47",
+      "purl": "pkg:cargo/num-integer@0.1.47",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "7ce2d95d4b3734dc35aa2f45e1aa22cd416814592a4f9d9205e11affd5b8e10b"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-target"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "cargo-metadata-cached-Cargo.toml"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/num-iter@0.1.46",
+      "name": "num-iter",
+      "version": "0.1.46",
+      "purl": "pkg:cargo/num-iter@0.1.46",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "c92800bd69a1eac91786bcfe9da64a897eb72911b8dc3095decbd07429e8048b"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-target"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "cargo-metadata-cached-Cargo.toml"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/num-rational@0.4.2",
+      "name": "num-rational",
+      "version": "0.4.2",
+      "purl": "pkg:cargo/num-rational@0.4.2",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "f83d14da390562dca69fc84082e73e548e1ad308d24accdedd2720017cb37824"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-target"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "cargo-metadata-cached-Cargo.toml"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/num-traits@0.2.19",
+      "name": "num-traits",
+      "version": "0.2.19",
+      "purl": "pkg:cargo/num-traits@0.2.19",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "071dfc062690e90b734c0b2273ce72ad0ffa95f0c74596bc250dcfd960262841"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-target"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "cargo-metadata-cached-Cargo.toml"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/num@0.4.3",
+      "name": "num",
+      "version": "0.4.3",
+      "purl": "pkg:cargo/num@0.4.3",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "35bd024e8b2ff75562e5f34e7f4905839deb4b22955ef5e73d2fea1b9813cb23"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-target"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "cargo-metadata-cached-Cargo.toml"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/once_cell@1.21.4",
+      "name": "once_cell",
+      "version": "1.21.4",
+      "purl": "pkg:cargo/once_cell@1.21.4",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "9f7c3e4beb33f85d45ae3e3a1792185706c8e16d043238c593331cc7cd313b50"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-target"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "cargo-metadata-cached-Cargo.toml"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/outref@0.5.2",
+      "name": "outref",
+      "version": "0.5.2",
+      "purl": "pkg:cargo/outref@0.5.2",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "1a80800c0488c3a21695ea981a54918fbb37abf04f4d0720c453632255e2ff0e"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-target"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "cargo-metadata-cached-Cargo.toml"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/parking_lot_core@0.9.12",
+      "name": "parking_lot_core",
+      "version": "0.9.12",
+      "purl": "pkg:cargo/parking_lot_core@0.9.12",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "2621685985a2ebf1c516881c026032ac7deafcda1a2c9b7850dc81e3dfcb64c1"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-target"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "cargo-metadata-cached-Cargo.toml"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/parking_lot@0.12.5",
+      "name": "parking_lot",
+      "version": "0.12.5",
+      "purl": "pkg:cargo/parking_lot@0.12.5",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "93857453250e3077bd71ff98b6a65ea6621a19bb0f559a85248955ac12c45a1a"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-target"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "cargo-metadata-cached-Cargo.toml"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/percent-encoding@2.3.2",
+      "name": "percent-encoding",
+      "version": "2.3.2",
+      "purl": "pkg:cargo/percent-encoding@2.3.2",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "9b4f627cb1b25917193a259e49bdad08f671f8d9708acfd5fe0a8c1455d87220"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-target"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "cargo-metadata-cached-Cargo.toml"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/proc-macro2@1.0.107",
+      "name": "proc-macro2",
+      "version": "1.0.107",
+      "purl": "pkg:cargo/proc-macro2@1.0.107",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "985e7ec9bb745e6ce6535b544d84d6cd6f7ad8bd711c398938ae983b91a766d9"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-target"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "cargo-metadata-cached-Cargo.toml"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/quote@1.0.47",
+      "name": "quote",
+      "version": "1.0.47",
+      "purl": "pkg:cargo/quote@1.0.47",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "1fbf4db142a473a8d80c26bbf18454ed458bf8d26c8219c331daecfdbd079001"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-target"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "cargo-metadata-cached-Cargo.toml"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/ref-cast-impl@1.0.27",
+      "name": "ref-cast-impl",
+      "version": "1.0.27",
+      "purl": "pkg:cargo/ref-cast-impl@1.0.27",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "92ecd8964f8453721699a1ed72037b0db49ce2f5a5138486ee89bed6f67cdf3a"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-target"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "cargo-metadata-cached-Cargo.toml"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/ref-cast@1.0.27",
+      "name": "ref-cast",
+      "version": "1.0.27",
+      "purl": "pkg:cargo/ref-cast@1.0.27",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "7e440fb4e4b4147295338efb76001ab9e4efc0e5839df2c47fc5ac2381d365c3"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-target"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "cargo-metadata-cached-Cargo.toml"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/referencing@0.58.4",
+      "name": "referencing",
+      "version": "0.58.4",
+      "purl": "pkg:cargo/referencing@0.58.4",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "5cfa1c91745dbca76a406b926918d7c63e15a4525ebab939fec3e015a1fb82b1"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-target"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "cargo-metadata-cached-Cargo.toml"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/regex-automata@0.4.18",
+      "name": "regex-automata",
+      "version": "0.4.18",
+      "purl": "pkg:cargo/regex-automata@0.4.18",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "ad8553b9b26413251cbf30e620595c7a41b3887f03da04579c0e6b0d6a06b4b2"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-target"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "cargo-metadata-cached-Cargo.toml"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/regex-syntax@0.8.11",
+      "name": "regex-syntax",
+      "version": "0.8.11",
+      "purl": "pkg:cargo/regex-syntax@0.8.11",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "d6f6ff9a378485b298a5286656da665ba74413d36db0979633275d2e708145d4"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-target"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "cargo-metadata-cached-Cargo.toml"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/regex@1.13.1",
+      "name": "regex",
+      "version": "1.13.1",
+      "purl": "pkg:cargo/regex@1.13.1",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "f020237b6c8eed93db2e2cb53c00c60a8e1bc73da7d073199a1180401450218d"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-target"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "cargo-metadata-cached-Cargo.toml"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/rustversion@1.0.23",
+      "name": "rustversion",
+      "version": "1.0.23",
+      "purl": "pkg:cargo/rustversion@1.0.23",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "cf54715a573b99ac80df0bc206da022bcd442c974952c7b9720069370852e21f"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-target"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "cargo-metadata-cached-Cargo.toml"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/ryu@1.0.23",
+      "name": "ryu",
+      "version": "1.0.23",
+      "purl": "pkg:cargo/ryu@1.0.23",
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0 OR BSL-1.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "9774ba4a74de5f7b1c1451ed6cd5285a32eddb5cccb8cc655a4e50009e06477f"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-target"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "cargo-metadata-cached-Cargo.toml"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/scopeguard@1.2.0",
+      "name": "scopeguard",
+      "version": "1.2.0",
+      "purl": "pkg:cargo/scopeguard@1.2.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "94143f37725109f92c262ed2cf5e59bce7498c01bcc1502d7b9afe439a4e9f49"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-target"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "cargo-metadata-cached-Cargo.toml"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/serde_core@1.0.229",
+      "name": "serde_core",
+      "version": "1.0.229",
+      "purl": "pkg:cargo/serde_core@1.0.229",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "67dca2c9c51e58a4791a4b1ed58308b39c64224d349a935ab5039aa360942a48"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-target"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "cargo-metadata-cached-Cargo.toml"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/serde_derive@1.0.229",
+      "name": "serde_derive",
+      "version": "1.0.229",
+      "purl": "pkg:cargo/serde_derive@1.0.229",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "e7a5d71263a5a7d47b41f6b3f06ba276f10cc18b0931f1799f710578e2309348"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-target"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "cargo-metadata-cached-Cargo.toml"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/serde_json@1.0.145",
+      "name": "serde_json",
+      "version": "1.0.145",
+      "purl": "pkg:cargo/serde_json@1.0.145",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "402a6f66d8c709116cf22f558eab210f5a50187f702eb4d7e5ef38d9a7f1c79c"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-target"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "cargo-metadata-cached-Cargo.toml"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/serde@1.0.229",
+      "name": "serde",
+      "version": "1.0.229",
+      "purl": "pkg:cargo/serde@1.0.229",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "4148590afebada386688f18773da617792bf2ef03ffc1e4cbd2b1d45b023e0ba"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-target"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "cargo-metadata-cached-Cargo.toml"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/simdutf8@0.1.5",
+      "name": "simdutf8",
+      "version": "0.1.5",
+      "purl": "pkg:cargo/simdutf8@0.1.5",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "e3a9fe34e3e7a50316060351f37187a3f546bce95496156754b601a5fa71b76e"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-target"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "cargo-metadata-cached-Cargo.toml"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/smallvec@1.16.2",
+      "name": "smallvec",
+      "version": "1.16.2",
+      "purl": "pkg:cargo/smallvec@1.16.2",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "f9395f0f0eee849a9b707b2f06bb92a6a422090e2123bb2ef8e87a0e61892a8e"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-target"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "cargo-metadata-cached-Cargo.toml"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/strum_macros@0.28.0",
+      "name": "strum_macros",
+      "version": "0.28.0",
+      "purl": "pkg:cargo/strum_macros@0.28.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "ab85eea0270ee17587ed4156089e10b9e6880ee688791d45a905f5b1ca36f664"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-target"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "cargo-metadata-cached-Cargo.toml"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/strum@0.28.0",
+      "name": "strum",
+      "version": "0.28.0",
+      "purl": "pkg:cargo/strum@0.28.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "9628de9b8791db39ceda2b119bbe13134770b56c138ec1d3af810d045c04f9bd"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-target"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "cargo-metadata-cached-Cargo.toml"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/syn@2.0.119",
+      "name": "syn",
+      "version": "2.0.119",
+      "purl": "pkg:cargo/syn@2.0.119",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "872831b642d1a07999a962a351ed35b955ea2cfc8f3862091e2a240a84f17297"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-target"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "cargo-metadata-cached-Cargo.toml"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/syn@3.0.6",
+      "name": "syn",
+      "version": "3.0.6",
+      "purl": "pkg:cargo/syn@3.0.6",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "8593e8e72159ed2257d083c7a454a85cbf854f37a0966d8d483aff8c8a3ebcee"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-target"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "cargo-metadata-cached-Cargo.toml"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/unicode-general-category@1.1.0",
+      "name": "unicode-general-category",
+      "version": "1.1.0",
+      "purl": "pkg:cargo/unicode-general-category@1.1.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "0b993bddc193ae5bd0d623b49ec06ac3e9312875fdae725a975c51db1cc1677f"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-target"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "cargo-metadata-cached-Cargo.toml"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/unicode-ident@1.0.26",
+      "name": "unicode-ident",
+      "version": "1.0.26",
+      "purl": "pkg:cargo/unicode-ident@1.0.26",
+      "licenses": [
+        {
+          "license": {
+            "name": "(MIT OR Apache-2.0) AND Unicode-3.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "d245f478577f809a851594d02313b640fb437e0bb33866753cff937863096954"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-target"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "cargo-metadata-cached-Cargo.toml"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/uuid-simd@0.8.0",
+      "name": "uuid-simd",
+      "version": "0.8.0",
+      "purl": "pkg:cargo/uuid-simd@0.8.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "23b082222b4f6619906941c17eb2297fff4c2fb96cb60164170522942a200bd8"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-target"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "cargo-metadata-cached-Cargo.toml"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/version_check@0.9.5",
+      "name": "version_check",
+      "version": "0.9.5",
+      "purl": "pkg:cargo/version_check@0.9.5",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT/Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "0b928f33d975fc6ad9f86c8f283853ad26bdd5b10b7f1542aa2fa15e2289105a"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-target"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "cargo-metadata-cached-Cargo.toml"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/vsimd@0.8.0",
+      "name": "vsimd",
+      "version": "0.8.0",
+      "purl": "pkg:cargo/vsimd@0.8.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "5c3082ca00d5a5ef149bb8b555a72ae84c9c59f7250f013ac822ac2e49b19c64"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-target"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "cargo-metadata-cached-Cargo.toml"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/yaml-rust2@0.11.0",
+      "name": "yaml-rust2",
+      "version": "0.11.0",
+      "purl": "pkg:cargo/yaml-rust2@0.11.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "631a50d867fafb7093e709d75aaee9e0e0d5deb934021fcea25ac2fe09edc51e"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-target"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "cargo-metadata-cached-Cargo.toml"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/zerocopy@0.8.59",
+      "name": "zerocopy",
+      "version": "0.8.59",
+      "purl": "pkg:cargo/zerocopy@0.8.59",
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-2-Clause OR Apache-2.0 OR MIT"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "6df92bf3d9227be3d53173901ddbffac2babc27ae50f397776ffd6dc33f800cb"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-target"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "cargo-metadata-cached-Cargo.toml"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/zmij@1.0.23",
+      "name": "zmij",
+      "version": "1.0.23",
+      "purl": "pkg:cargo/zmij@1.0.23",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "29666d0abbfad1e3dc4dcf6144730dd3a3ab225bbbdac83319345b1b44ccfc1b"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-target"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "cargo-metadata-cached-Cargo.toml"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "candidate:rust",
+      "dependsOn": [
+        "pkg:cargo/jsonschema@0.58.4",
+        "pkg:cargo/serde_json@1.0.145",
+        "pkg:cargo/yaml-rust2@0.11.0"
+      ]
+    },
+    {
+      "ref": "pkg:cargo/ahash@0.8.12",
+      "dependsOn": [
+        "pkg:cargo/cfg-if@1.0.5",
+        "pkg:cargo/getrandom@0.3.4",
+        "pkg:cargo/once_cell@1.21.4",
+        "pkg:cargo/serde@1.0.229",
+        "pkg:cargo/version_check@0.9.5",
+        "pkg:cargo/zerocopy@0.8.59"
+      ]
+    },
+    {
+      "ref": "pkg:cargo/aho-corasick@1.1.5",
+      "dependsOn": [
+        "pkg:cargo/memchr@2.8.3"
+      ]
+    },
+    {
+      "ref": "pkg:cargo/allocator-api2@0.2.21",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:cargo/arraydeque@0.5.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:cargo/autocfg@1.5.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:cargo/bit-set@0.8.0",
+      "dependsOn": [
+        "pkg:cargo/bit-vec@0.8.0"
+      ]
+    },
+    {
+      "ref": "pkg:cargo/bit-vec@0.8.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:cargo/borrow-or-share@0.2.4",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:cargo/bytecount@0.6.9",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:cargo/cfg-if@1.0.5",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:cargo/data-encoding@2.11.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:cargo/email_address@0.2.9",
+      "dependsOn": [
+        "pkg:cargo/serde@1.0.229"
+      ]
+    },
+    {
+      "ref": "pkg:cargo/encoding_rs@0.8.42",
+      "dependsOn": [
+        "pkg:cargo/cfg-if@1.0.5",
+        "pkg:cargo/multiversion_no_op@1.0.0",
+        "pkg:cargo/rustversion@1.0.23",
+        "pkg:cargo/scopeguard@1.2.0",
+        "pkg:cargo/simdutf8@0.1.5"
+      ]
+    },
+    {
+      "ref": "pkg:cargo/equivalent@1.0.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:cargo/fancy-regex@0.19.2",
+      "dependsOn": [
+        "pkg:cargo/bit-set@0.8.0",
+        "pkg:cargo/regex-automata@0.4.18",
+        "pkg:cargo/regex-syntax@0.8.11"
+      ]
+    },
+    {
+      "ref": "pkg:cargo/fluent-uri@0.4.1",
+      "dependsOn": [
+        "pkg:cargo/borrow-or-share@0.2.4",
+        "pkg:cargo/ref-cast@1.0.27",
+        "pkg:cargo/serde@1.0.229"
+      ]
+    },
+    {
+      "ref": "pkg:cargo/foldhash@0.2.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:cargo/fraction@0.17.0",
+      "dependsOn": [
+        "pkg:cargo/num-bigint@0.4.8",
+        "pkg:cargo/num@0.4.3"
+      ]
+    },
+    {
+      "ref": "pkg:cargo/getrandom@0.3.4",
+      "dependsOn": [
+        "pkg:cargo/cfg-if@1.0.5",
+        "pkg:cargo/libc@0.2.189"
+      ]
+    },
+    {
+      "ref": "pkg:cargo/hashbrown@0.16.1",
+      "dependsOn": [
+        "pkg:cargo/foldhash@0.2.0"
+      ]
+    },
+    {
+      "ref": "pkg:cargo/hashbrown@0.17.1",
+      "dependsOn": [
+        "pkg:cargo/allocator-api2@0.2.21",
+        "pkg:cargo/equivalent@1.0.2",
+        "pkg:cargo/foldhash@0.2.0"
+      ]
+    },
+    {
+      "ref": "pkg:cargo/hashlink@0.11.1",
+      "dependsOn": [
+        "pkg:cargo/hashbrown@0.16.1"
+      ]
+    },
+    {
+      "ref": "pkg:cargo/heck@0.5.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:cargo/itoa@1.0.18",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:cargo/jsonschema-regex@0.58.4",
+      "dependsOn": [
+        "pkg:cargo/regex-syntax@0.8.11"
+      ]
+    },
+    {
+      "ref": "pkg:cargo/jsonschema-value@0.58.4",
+      "dependsOn": [
+        "pkg:cargo/ahash@0.8.12",
+        "pkg:cargo/bytecount@0.6.9",
+        "pkg:cargo/fraction@0.17.0",
+        "pkg:cargo/num-cmp@0.1.0",
+        "pkg:cargo/num-traits@0.2.19",
+        "pkg:cargo/serde_json@1.0.145",
+        "pkg:cargo/zmij@1.0.23"
+      ]
+    },
+    {
+      "ref": "pkg:cargo/jsonschema@0.58.4",
+      "dependsOn": [
+        "pkg:cargo/ahash@0.8.12",
+        "pkg:cargo/bytecount@0.6.9",
+        "pkg:cargo/data-encoding@2.11.1",
+        "pkg:cargo/email_address@0.2.9",
+        "pkg:cargo/fancy-regex@0.19.2",
+        "pkg:cargo/fraction@0.17.0",
+        "pkg:cargo/itoa@1.0.18",
+        "pkg:cargo/jsonschema-regex@0.58.4",
+        "pkg:cargo/jsonschema-value@0.58.4",
+        "pkg:cargo/num-cmp@0.1.0",
+        "pkg:cargo/num-traits@0.2.19",
+        "pkg:cargo/percent-encoding@2.3.2",
+        "pkg:cargo/referencing@0.58.4",
+        "pkg:cargo/regex@1.13.1",
+        "pkg:cargo/serde@1.0.229",
+        "pkg:cargo/serde_json@1.0.145",
+        "pkg:cargo/strum@0.28.0",
+        "pkg:cargo/unicode-general-category@1.1.0",
+        "pkg:cargo/uuid-simd@0.8.0"
+      ]
+    },
+    {
+      "ref": "pkg:cargo/libc@0.2.189",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:cargo/lock_api@0.4.14",
+      "dependsOn": [
+        "pkg:cargo/scopeguard@1.2.0"
+      ]
+    },
+    {
+      "ref": "pkg:cargo/memchr@2.8.3",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:cargo/micromap@0.3.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:cargo/multiversion_no_op@1.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:cargo/num-bigint@0.4.8",
+      "dependsOn": [
+        "pkg:cargo/num-integer@0.1.47",
+        "pkg:cargo/num-traits@0.2.19"
+      ]
+    },
+    {
+      "ref": "pkg:cargo/num-cmp@0.1.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:cargo/num-complex@0.4.6",
+      "dependsOn": [
+        "pkg:cargo/num-traits@0.2.19"
+      ]
+    },
+    {
+      "ref": "pkg:cargo/num-integer@0.1.47",
+      "dependsOn": [
+        "pkg:cargo/num-traits@0.2.19"
+      ]
+    },
+    {
+      "ref": "pkg:cargo/num-iter@0.1.46",
+      "dependsOn": [
+        "pkg:cargo/num-integer@0.1.47",
+        "pkg:cargo/num-traits@0.2.19"
+      ]
+    },
+    {
+      "ref": "pkg:cargo/num-rational@0.4.2",
+      "dependsOn": [
+        "pkg:cargo/num-bigint@0.4.8",
+        "pkg:cargo/num-integer@0.1.47",
+        "pkg:cargo/num-traits@0.2.19"
+      ]
+    },
+    {
+      "ref": "pkg:cargo/num-traits@0.2.19",
+      "dependsOn": [
+        "pkg:cargo/autocfg@1.5.1"
+      ]
+    },
+    {
+      "ref": "pkg:cargo/num@0.4.3",
+      "dependsOn": [
+        "pkg:cargo/num-bigint@0.4.8",
+        "pkg:cargo/num-complex@0.4.6",
+        "pkg:cargo/num-integer@0.1.47",
+        "pkg:cargo/num-iter@0.1.46",
+        "pkg:cargo/num-rational@0.4.2",
+        "pkg:cargo/num-traits@0.2.19"
+      ]
+    },
+    {
+      "ref": "pkg:cargo/once_cell@1.21.4",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:cargo/outref@0.5.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:cargo/parking_lot_core@0.9.12",
+      "dependsOn": [
+        "pkg:cargo/cfg-if@1.0.5",
+        "pkg:cargo/libc@0.2.189",
+        "pkg:cargo/smallvec@1.16.2"
+      ]
+    },
+    {
+      "ref": "pkg:cargo/parking_lot@0.12.5",
+      "dependsOn": [
+        "pkg:cargo/lock_api@0.4.14",
+        "pkg:cargo/parking_lot_core@0.9.12"
+      ]
+    },
+    {
+      "ref": "pkg:cargo/percent-encoding@2.3.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:cargo/proc-macro2@1.0.107",
+      "dependsOn": [
+        "pkg:cargo/unicode-ident@1.0.26"
+      ]
+    },
+    {
+      "ref": "pkg:cargo/quote@1.0.47",
+      "dependsOn": [
+        "pkg:cargo/proc-macro2@1.0.107"
+      ]
+    },
+    {
+      "ref": "pkg:cargo/ref-cast-impl@1.0.27",
+      "dependsOn": [
+        "pkg:cargo/proc-macro2@1.0.107",
+        "pkg:cargo/quote@1.0.47",
+        "pkg:cargo/syn@3.0.6"
+      ]
+    },
+    {
+      "ref": "pkg:cargo/ref-cast@1.0.27",
+      "dependsOn": [
+        "pkg:cargo/ref-cast-impl@1.0.27"
+      ]
+    },
+    {
+      "ref": "pkg:cargo/referencing@0.58.4",
+      "dependsOn": [
+        "pkg:cargo/ahash@0.8.12",
+        "pkg:cargo/fluent-uri@0.4.1",
+        "pkg:cargo/hashbrown@0.17.1",
+        "pkg:cargo/itoa@1.0.18",
+        "pkg:cargo/micromap@0.3.0",
+        "pkg:cargo/parking_lot@0.12.5",
+        "pkg:cargo/percent-encoding@2.3.2",
+        "pkg:cargo/serde_json@1.0.145"
+      ]
+    },
+    {
+      "ref": "pkg:cargo/regex-automata@0.4.18",
+      "dependsOn": [
+        "pkg:cargo/aho-corasick@1.1.5",
+        "pkg:cargo/memchr@2.8.3",
+        "pkg:cargo/regex-syntax@0.8.11"
+      ]
+    },
+    {
+      "ref": "pkg:cargo/regex-syntax@0.8.11",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:cargo/regex@1.13.1",
+      "dependsOn": [
+        "pkg:cargo/aho-corasick@1.1.5",
+        "pkg:cargo/memchr@2.8.3",
+        "pkg:cargo/regex-automata@0.4.18",
+        "pkg:cargo/regex-syntax@0.8.11"
+      ]
+    },
+    {
+      "ref": "pkg:cargo/rustversion@1.0.23",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:cargo/ryu@1.0.23",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:cargo/scopeguard@1.2.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:cargo/serde_core@1.0.229",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:cargo/serde_derive@1.0.229",
+      "dependsOn": [
+        "pkg:cargo/proc-macro2@1.0.107",
+        "pkg:cargo/quote@1.0.47",
+        "pkg:cargo/syn@3.0.6"
+      ]
+    },
+    {
+      "ref": "pkg:cargo/serde_json@1.0.145",
+      "dependsOn": [
+        "pkg:cargo/itoa@1.0.18",
+        "pkg:cargo/memchr@2.8.3",
+        "pkg:cargo/ryu@1.0.23",
+        "pkg:cargo/serde_core@1.0.229"
+      ]
+    },
+    {
+      "ref": "pkg:cargo/serde@1.0.229",
+      "dependsOn": [
+        "pkg:cargo/serde_core@1.0.229",
+        "pkg:cargo/serde_derive@1.0.229"
+      ]
+    },
+    {
+      "ref": "pkg:cargo/simdutf8@0.1.5",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:cargo/smallvec@1.16.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:cargo/strum_macros@0.28.0",
+      "dependsOn": [
+        "pkg:cargo/heck@0.5.0",
+        "pkg:cargo/proc-macro2@1.0.107",
+        "pkg:cargo/quote@1.0.47",
+        "pkg:cargo/syn@2.0.119"
+      ]
+    },
+    {
+      "ref": "pkg:cargo/strum@0.28.0",
+      "dependsOn": [
+        "pkg:cargo/strum_macros@0.28.0"
+      ]
+    },
+    {
+      "ref": "pkg:cargo/syn@2.0.119",
+      "dependsOn": [
+        "pkg:cargo/proc-macro2@1.0.107",
+        "pkg:cargo/quote@1.0.47",
+        "pkg:cargo/unicode-ident@1.0.26"
+      ]
+    },
+    {
+      "ref": "pkg:cargo/syn@3.0.6",
+      "dependsOn": [
+        "pkg:cargo/proc-macro2@1.0.107",
+        "pkg:cargo/quote@1.0.47",
+        "pkg:cargo/unicode-ident@1.0.26"
+      ]
+    },
+    {
+      "ref": "pkg:cargo/unicode-general-category@1.1.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:cargo/unicode-ident@1.0.26",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:cargo/uuid-simd@0.8.0",
+      "dependsOn": [
+        "pkg:cargo/outref@0.5.2",
+        "pkg:cargo/vsimd@0.8.0"
+      ]
+    },
+    {
+      "ref": "pkg:cargo/version_check@0.9.5",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:cargo/vsimd@0.8.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:cargo/yaml-rust2@0.11.0",
+      "dependsOn": [
+        "pkg:cargo/arraydeque@0.5.1",
+        "pkg:cargo/encoding_rs@0.8.42",
+        "pkg:cargo/hashlink@0.11.1"
+      ]
+    },
+    {
+      "ref": "pkg:cargo/zerocopy@0.8.59",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:cargo/zmij@1.0.23",
+      "dependsOn": []
+    }
+  ],
+  "compositions": [
+    {
+      "aggregate": "incomplete",
+      "assemblies": [
+        "candidate:rust"
+      ]
+    }
+  ]
+}

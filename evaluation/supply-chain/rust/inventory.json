@@ -1,0 +1,4098 @@
+{
+  "formatVersion": 1,
+  "task": "NF-056-11",
+  "candidate": "rust",
+  "collectorVersion": "nf-056-11-v1",
+  "recordedAt": "2026-10-04T13:53:54.711Z",
+  "collectorRevision": "f8f66a9122d73a195698966785d968cdd395de7b",
+  "sourceRevision": "4fdf0cc8e69e050600d0a5d8f7f1f42987f68203",
+  "publishedHead": "8919281c40d878552401241a66fccbe9ddba3efd",
+  "pullRequest": 99,
+  "ciRun": 37119053714,
+  "toolchain": "rustc/Cargo 1.99.0; jsonschema 0.58.4; yaml-rust2 0.11.0",
+  "specificationRevision": "1d1fa238ab5729a79bee9389d5c66cfd20a61256",
+  "evaluationPackageRevision": "a8301a7478587c59502dfb2e6bd548489c14ee2b",
+  "corpusSha256": "01b116005f0650ac980194b22c02188289eaf1e8626b227aecf3684ece0d8f6b",
+  "catalogSha256": "f1bf8cb786442a212e14c79eb39279a2cdbf05ec20b09901374359d545d74e90",
+  "sourceManifest": [
+    {
+      "file": "evaluation/prototypes/rust/Cargo.lock",
+      "sha256": "e487d51d74d156867e6a80c7ccb646f5c008862065dff69d09a9d83b088885a3",
+      "bytes": 20633
+    },
+    {
+      "file": "evaluation/prototypes/rust/Cargo.toml",
+      "sha256": "a1880620ad46efde31f3d558bae1bedfb5f1f204c46fb59190473a017c250c9c",
+      "bytes": 347
+    },
+    {
+      "file": "evaluation/prototypes/rust/README.md",
+      "sha256": "4a755a54fda3f419e822cfd28b1db5eee5238b54b552b8e9e3f824a87dc8e0f3",
+      "bytes": 5924
+    },
+    {
+      "file": "evaluation/prototypes/rust/rust-toolchain.toml",
+      "sha256": "515c80a149c1e927d497dbebc399e241822aa0197e8f778c21bf5c136c90afd2",
+      "bytes": 51
+    },
+    {
+      "file": "evaluation/prototypes/rust/src/discovery.rs",
+      "sha256": "7189bfbcc82fb1e725a0773ee43a7658ab42453176565f00fccc69e28aac2ab1",
+      "bytes": 7229
+    },
+    {
+      "file": "evaluation/prototypes/rust/src/files.rs",
+      "sha256": "7b4032e69ff59c4cd61c2c5863a42d30fd856f8784ea78f390247f1b1c5ca55f",
+      "bytes": 2928
+    },
+    {
+      "file": "evaluation/prototypes/rust/src/inspection.rs",
+      "sha256": "2aff2ef94d4dcdb1e13c4d7d50321a38eb369e728eaf308f4eb8debd407296d1",
+      "bytes": 6872
+    },
+    {
+      "file": "evaluation/prototypes/rust/src/lib.rs",
+      "sha256": "696b35c08d715484b8fc3a9e0ae67dacf72663c1c5955b16b8126492718de520",
+      "bytes": 9201
+    },
+    {
+      "file": "evaluation/prototypes/rust/src/library_driver.rs",
+      "sha256": "a888a66ec4fdc326a67c0ff31ced33619a107a1bf0ae171a2a84a30a1e4fd934",
+      "bytes": 1404
+    },
+    {
+      "file": "evaluation/prototypes/rust/src/main.rs",
+      "sha256": "1bcf56ce01423475c735bf9e34a09dd5c90dec5628a05dad646607bfbf362ef1",
+      "bytes": 4390
+    },
+    {
+      "file": "evaluation/prototypes/rust/src/schema.rs",
+      "sha256": "7c67b706c72df2e11b181f822aa59674141c8822e680c0799926ed766e498d62",
+      "bytes": 6607
+    },
+    {
+      "file": "evaluation/prototypes/rust/src/yaml.rs",
+      "sha256": "99276e269fb5b90986e2abe285a3c88562214baf6c2272346c22c41c8ff6a51e",
+      "bytes": 2532
+    },
+    {
+      "file": "evaluation/prototypes/rust/tests/boundaries.rs",
+      "sha256": "07530f3dba8ba38e966ca5aabc07ac5c28ada3d2a28340a936354d3569abb83a",
+      "bytes": 5883
+    }
+  ],
+  "target": "macos/arm64",
+  "artifacts": [
+    {
+      "file": "nexflow-rust-evaluation",
+      "sha256": "0b8bcabfb7da7a89937898b8c222f56e1675f19621bd650cb86023870b86eda4",
+      "bytes": 17632600
+    },
+    {
+      "file": "library-driver",
+      "sha256": "58307ba2682d384dd0c2b305e91ab98c147d84080a1b7d3980737e6969ef4a15",
+      "bytes": 17574704
+    }
+  ],
+  "commands": [
+    "cargo build --frozen --offline --manifest-path evaluation/prototypes/rust/Cargo.toml (debug, aarch64-apple-darwin)"
+  ],
+  "outcome": "not-ready",
+  "supplyChainAcceptance": "partial",
+  "signedProvenance": "not-tested",
+  "reproducibleBuild": "not-tested",
+  "distributionLifecycle": "not-tested",
+  "limitations": [
+    "Dependency metadata and licenses are declarations, not independent legal approval.",
+    "Checksums bind observed bytes; no signed build attestation, signing or reproducibility claim.",
+    "This native macOS source-bound experiment is not a frozen target cohort or a Linux/Windows distribution.",
+    "OS/runtime/compiler bundled dependency closure and operating-system vulnerability coverage are incomplete.",
+    "No package manager offline flag or virtual environment establishes an OS security boundary.",
+    "Package/version advisory matches do not establish reachability; absence does not certify security."
+  ],
+  "runtime": {
+    "name": "Rust standard library",
+    "version": "rustc 1.99.0 (b940084d7 2026-09-28)",
+    "requiredExternal": false,
+    "compilerSha256": "dd6f58440b3418aa9157ae3f05d71eecff741ca41bc4eec120e7e8f2d933b9a0",
+    "cargoSha256": "fc7aa5077deca8abc0651f329e8ec1d968f520e996a93b428f9935014362b382",
+    "nativeLinkage": [
+      {
+        "file": "nexflow-rust-evaluation",
+        "libraries": [
+          "/usr/lib/libiconv.2.dylib (compatibility version 7.0.0, current version 7.0.0)",
+          "/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1359.0.0)"
+        ]
+      },
+      {
+        "file": "library-driver",
+        "libraries": [
+          "/usr/lib/libiconv.2.dylib (compatibility version 7.0.0, current version 7.0.0)",
+          "/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1359.0.0)"
+        ]
+      }
+    ]
+  },
+  "locks": [
+    {
+      "file": "evaluation/prototypes/rust/Cargo.lock",
+      "sha256": "e487d51d74d156867e6a80c7ccb646f5c008862065dff69d09a9d83b088885a3",
+      "bytes": 20633
+    }
+  ],
+  "components": [
+    {
+      "ref": "pkg:cargo/ahash@0.8.12",
+      "ecosystem": "crates.io",
+      "name": "ahash",
+      "version": "0.8.12",
+      "scope": "resolved-target",
+      "license": "MIT OR Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "5a15f179cd60c4584b8a8c596927aadc462e27f2ca70c04e0071964a73ba7a75",
+      "cachedArchiveVerified": true,
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+          "bytes": 10847
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "0444c6991eead6822f7b9102e654448d51624431119546492e8b231db42c48bb",
+          "bytes": 1057
+        }
+      ],
+      "metadataSource": "cargo-metadata-cached-Cargo.toml",
+      "features": [
+        "default",
+        "getrandom",
+        "runtime-rng",
+        "serde",
+        "std"
+      ],
+      "buildScript": true,
+      "proceduralMacro": false
+    },
+    {
+      "ref": "pkg:cargo/aho-corasick@1.1.5",
+      "ecosystem": "crates.io",
+      "name": "aho-corasick",
+      "version": "1.1.5",
+      "scope": "resolved-target",
+      "license": "Unlicense OR MIT",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "c982642fa9e8606056828ee9a8505737230110bb1099153c79efe865c59d12ba",
+      "cachedArchiveVerified": true,
+      "licenseFiles": [
+        {
+          "file": "COPYING",
+          "sha256": "01c266bced4a434da0051174d6bee16a4c82cf634e2679b6155d40d75012390f",
+          "bytes": 126
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "0f96a83840e146e43c0ec96a22ec1f392e0680e6c1226e6f3ba87e0740af850f",
+          "bytes": 1081
+        }
+      ],
+      "metadataSource": "cargo-metadata-cached-Cargo.toml",
+      "features": [
+        "perf-literal",
+        "std"
+      ],
+      "buildScript": false,
+      "proceduralMacro": false
+    },
+    {
+      "ref": "pkg:cargo/allocator-api2@0.2.21",
+      "ecosystem": "crates.io",
+      "name": "allocator-api2",
+      "version": "0.2.21",
+      "scope": "resolved-target",
+      "license": "MIT OR Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "683d7910e743518b0e34f1186f92494becacb047c7b6bf616c96772180fef923",
+      "cachedArchiveVerified": true,
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "20fe7b00e904ed690e3b9fd6073784d3fc428141dbd10b81c01fd143d0797f58",
+          "bytes": 9899
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "36516aefdc84c5d5a1e7485425913a22dbda69eb1930c5e84d6ae4972b5194b9",
+          "bytes": 1046
+        }
+      ],
+      "metadataSource": "cargo-metadata-cached-Cargo.toml",
+      "features": [
+        "alloc"
+      ],
+      "buildScript": false,
+      "proceduralMacro": false
+    },
+    {
+      "ref": "pkg:cargo/arraydeque@0.5.1",
+      "ecosystem": "crates.io",
+      "name": "arraydeque",
+      "version": "0.5.1",
+      "scope": "resolved-target",
+      "license": "MIT/Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "7d902e3d592a523def97af8f317b08ce16b7ab854c1985a0c671e6f15cebc236",
+      "cachedArchiveVerified": true,
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "0aab2eeeaa27c8e946c235e5e605c6d52cb0a56d254c660bdcf618d6f7faf4af",
+          "bytes": 1101
+        }
+      ],
+      "metadataSource": "cargo-metadata-cached-Cargo.toml",
+      "features": [
+        "default",
+        "std"
+      ],
+      "buildScript": false,
+      "proceduralMacro": false
+    },
+    {
+      "ref": "pkg:cargo/autocfg@1.5.1",
+      "ecosystem": "crates.io",
+      "name": "autocfg",
+      "version": "1.5.1",
+      "scope": "resolved-target",
+      "license": "Apache-2.0 OR MIT",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "f2032f911046de80f0a198e0901378627c33f59ea0ac00e363d481118bd70a53",
+      "cachedArchiveVerified": true,
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+          "bytes": 10847
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "27995d58ad5c1145c1a8cd86244ce844886958a35eb2b78c6b772748669999ac",
+          "bytes": 1054
+        }
+      ],
+      "metadataSource": "cargo-metadata-cached-Cargo.toml",
+      "features": [],
+      "buildScript": false,
+      "proceduralMacro": false
+    },
+    {
+      "ref": "pkg:cargo/bit-set@0.8.0",
+      "ecosystem": "crates.io",
+      "name": "bit-set",
+      "version": "0.8.0",
+      "scope": "resolved-target",
+      "license": "Apache-2.0 OR MIT",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "08807e080ed7f9d5433fa9b275196cfc35414f66a0c79d864dc51a0d825231a3",
+      "cachedArchiveVerified": true,
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "8173d5c29b4f956d532781d2b86e4e30f83e6b7878dce18c919451d6ba707c90",
+          "bytes": 10850
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "f51ac2c59a222f7476ce507ca879960e2b64ea64bb2786eefdbeb7b0b538d1b7",
+          "bytes": 1071
+        }
+      ],
+      "metadataSource": "cargo-metadata-cached-Cargo.toml",
+      "features": [
+        "std"
+      ],
+      "buildScript": false,
+      "proceduralMacro": false
+    },
+    {
+      "ref": "pkg:cargo/bit-vec@0.8.0",
+      "ecosystem": "crates.io",
+      "name": "bit-vec",
+      "version": "0.8.0",
+      "scope": "resolved-target",
+      "license": "Apache-2.0 OR MIT",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "5e764a1d40d510daf35e07be9eb06e75770908c27d411ee6c92109c9840eaaf7",
+      "cachedArchiveVerified": true,
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "8173d5c29b4f956d532781d2b86e4e30f83e6b7878dce18c919451d6ba707c90",
+          "bytes": 10850
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "f51ac2c59a222f7476ce507ca879960e2b64ea64bb2786eefdbeb7b0b538d1b7",
+          "bytes": 1071
+        }
+      ],
+      "metadataSource": "cargo-metadata-cached-Cargo.toml",
+      "features": [
+        "std"
+      ],
+      "buildScript": false,
+      "proceduralMacro": false
+    },
+    {
+      "ref": "pkg:cargo/borrow-or-share@0.2.4",
+      "ecosystem": "crates.io",
+      "name": "borrow-or-share",
+      "version": "0.2.4",
+      "scope": "resolved-target",
+      "license": "MIT-0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "dc0b364ead1874514c8c2855ab558056ebfeb775653e7ae45ff72f28f8f3166c",
+      "cachedArchiveVerified": true,
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "010492e490b92ec85db01daad2a290ea5959f29314a1c4ff25e7a172e223abf9",
+          "bytes": 904
+        }
+      ],
+      "metadataSource": "cargo-metadata-cached-Cargo.toml",
+      "features": [
+        "alloc"
+      ],
+      "buildScript": false,
+      "proceduralMacro": false
+    },
+    {
+      "ref": "pkg:cargo/bytecount@0.6.9",
+      "ecosystem": "crates.io",
+      "name": "bytecount",
+      "version": "0.6.9",
+      "scope": "resolved-target",
+      "license": "Apache-2.0/MIT",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "175812e0be2bccb6abe50bb8d566126198344f707e304f45c648fd8f2cc0365e",
+      "cachedArchiveVerified": true,
+      "licenseFiles": [
+        {
+          "file": "LICENSE.Apache2",
+          "sha256": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1",
+          "bytes": 11357
+        },
+        {
+          "file": "LICENSE.MIT",
+          "sha256": "a5dea80c1f383cb5f80a6bb0da5e55a2beb9f24adb123ce6300af2cbaaa3bf65",
+          "bytes": 1068
+        }
+      ],
+      "metadataSource": "cargo-metadata-cached-Cargo.toml",
+      "features": [
+        "runtime-dispatch-simd"
+      ],
+      "buildScript": false,
+      "proceduralMacro": false
+    },
+    {
+      "ref": "pkg:cargo/cfg-if@1.0.5",
+      "ecosystem": "crates.io",
+      "name": "cfg-if",
+      "version": "1.0.5",
+      "scope": "resolved-target",
+      "license": "MIT OR Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "4e7648175b45a9a48536d676f68d918270699102aa8dab5496df06904c914600",
+      "cachedArchiveVerified": true,
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+          "bytes": 10847
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "378f5840b258e2779c39418f3f2d7b2ba96f1c7917dd6be0713f88305dbda397",
+          "bytes": 1057
+        }
+      ],
+      "metadataSource": "cargo-metadata-cached-Cargo.toml",
+      "features": [],
+      "buildScript": false,
+      "proceduralMacro": false
+    },
+    {
+      "ref": "pkg:cargo/data-encoding@2.11.1",
+      "ecosystem": "crates.io",
+      "name": "data-encoding",
+      "version": "2.11.1",
+      "scope": "resolved-target",
+      "license": "MIT",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "4583a4551df46e2792f82ceeac45e850d2e2d5debba0b91f102385cda5b11f06",
+      "cachedArchiveVerified": true,
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "b68ad1a3367b825447089e1f8d6829b97f47a89eb78d2f4ebaef4672f5606186",
+          "bytes": 1121
+        }
+      ],
+      "metadataSource": "cargo-metadata-cached-Cargo.toml",
+      "features": [
+        "alloc",
+        "default",
+        "std"
+      ],
+      "buildScript": false,
+      "proceduralMacro": false
+    },
+    {
+      "ref": "pkg:cargo/email_address@0.2.9",
+      "ecosystem": "crates.io",
+      "name": "email_address",
+      "version": "0.2.9",
+      "scope": "resolved-target",
+      "license": "MIT",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "e079f19b08ca6239f47f8ba8509c11cf3ea30095831f7fed61441475edd8c449",
+      "cachedArchiveVerified": true,
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "39712155836e5c10ef1b07037b606e4ad2d633e72205d162fdd7e2290aa54f15",
+          "bytes": 1071
+        }
+      ],
+      "metadataSource": "cargo-metadata-cached-Cargo.toml",
+      "features": [
+        "default",
+        "serde",
+        "serde_support"
+      ],
+      "buildScript": false,
+      "proceduralMacro": false
+    },
+    {
+      "ref": "pkg:cargo/encoding_rs@0.8.42",
+      "ecosystem": "crates.io",
+      "name": "encoding_rs",
+      "version": "0.8.42",
+      "scope": "resolved-target",
+      "license": "(Apache-2.0 OR MIT) AND BSD-3-Clause",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "8e985e0451871ad22fb8d2b6b076e2028a502a0d3950998c2c5c0a4f9b5d9679",
+      "cachedArchiveVerified": true,
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+          "bytes": 11358
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "3fa4ca83dcc9237839b1bdeb2e6d16bdfb5ec0c5ce42b24694d8bbf0dcbef72c",
+          "bytes": 1053
+        },
+        {
+          "file": "LICENSE-WHATWG",
+          "sha256": "838118388fe5c2e7f1dbbaeed13e1c7f3ebf88be91319c7c1d77c18e987d1a50",
+          "bytes": 1501
+        }
+      ],
+      "metadataSource": "cargo-metadata-cached-Cargo.toml",
+      "features": [
+        "alloc",
+        "default"
+      ],
+      "buildScript": true,
+      "proceduralMacro": false
+    },
+    {
+      "ref": "pkg:cargo/equivalent@1.0.2",
+      "ecosystem": "crates.io",
+      "name": "equivalent",
+      "version": "1.0.2",
+      "scope": "resolved-target",
+      "license": "Apache-2.0 OR MIT",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "877a4ace8713b0bcf2a4e7eec82529c029f1d0619886d18145fea96c3ffe5c0f",
+      "cachedArchiveVerified": true,
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+          "bytes": 10847
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "7365cc8878a1d7ce155a58c4ca09c3d7a6be413efa5334a80ea842912b669349",
+          "bytes": 1049
+        }
+      ],
+      "metadataSource": "cargo-metadata-cached-Cargo.toml",
+      "features": [],
+      "buildScript": false,
+      "proceduralMacro": false
+    },
+    {
+      "ref": "pkg:cargo/fancy-regex@0.19.2",
+      "ecosystem": "crates.io",
+      "name": "fancy-regex",
+      "version": "0.19.2",
+      "scope": "resolved-target",
+      "license": "MIT",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "d301f5bf187b3c295fce6468d3875037a0bccc5f6b151c63cac2f85babf21912",
+      "cachedArchiveVerified": true,
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "3bc70e239e91272782006c638fc0452a714d384224f11f0923036b7be07cf9b5",
+          "bytes": 1081
+        }
+      ],
+      "metadataSource": "cargo-metadata-cached-Cargo.toml",
+      "features": [
+        "default",
+        "perf",
+        "std",
+        "unicode",
+        "variable-lookbehinds"
+      ],
+      "buildScript": false,
+      "proceduralMacro": false
+    },
+    {
+      "ref": "pkg:cargo/fluent-uri@0.4.1",
+      "ecosystem": "crates.io",
+      "name": "fluent-uri",
+      "version": "0.4.1",
+      "scope": "resolved-target",
+      "license": "MIT",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "bc74ac4d8359ae70623506d512209619e5cf8f347124910440dbc221714b328e",
+      "cachedArchiveVerified": true,
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "9fa38f610a00115dd1f612bdd3559e3b381ea579538b6ff25a5899da250a5fce",
+          "bytes": 1066
+        }
+      ],
+      "metadataSource": "cargo-metadata-cached-Cargo.toml",
+      "features": [
+        "alloc",
+        "default",
+        "impl-error",
+        "serde",
+        "std"
+      ],
+      "buildScript": false,
+      "proceduralMacro": false
+    },
+    {
+      "ref": "pkg:cargo/foldhash@0.2.0",
+      "ecosystem": "crates.io",
+      "name": "foldhash",
+      "version": "0.2.0",
+      "scope": "resolved-target",
+      "license": "Zlib",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "77ce24cb58228fbb8aa041425bb1050850ac19177686ea6e0f41a70416f56fdb",
+      "cachedArchiveVerified": true,
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "b1181a40b2a7b25cf66fd01481713bc1005df082c53ef73e851e55071b102744",
+          "bytes": 856
+        }
+      ],
+      "metadataSource": "cargo-metadata-cached-Cargo.toml",
+      "features": [],
+      "buildScript": false,
+      "proceduralMacro": false
+    },
+    {
+      "ref": "pkg:cargo/fraction@0.17.0",
+      "ecosystem": "crates.io",
+      "name": "fraction",
+      "version": "0.17.0",
+      "scope": "resolved-target",
+      "license": "MIT OR Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "e246562084dde8ebbcc943b261c406ce4f68e5032ec28029a251a47d6a295500",
+      "cachedArchiveVerified": true,
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+          "bytes": 10847
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "6485b8ed310d3f0340bf1ad1f47645069ce4069dcc6bb46c7d5c6faf41de1fdb",
+          "bytes": 1071
+        }
+      ],
+      "metadataSource": "cargo-metadata-cached-Cargo.toml",
+      "features": [
+        "num-bigint",
+        "with-bigint"
+      ],
+      "buildScript": false,
+      "proceduralMacro": false
+    },
+    {
+      "ref": "pkg:cargo/getrandom@0.3.4",
+      "ecosystem": "crates.io",
+      "name": "getrandom",
+      "version": "0.3.4",
+      "scope": "resolved-target",
+      "license": "MIT OR Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "899def5c37c4fd7b2664648c28120ecec138e4d395b459e5ca34f9cce2dd77fd",
+      "cachedArchiveVerified": true,
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "aaff376532ea30a0cd5330b9502ad4a4c8bf769c539c87ffe78819d188a18ebf",
+          "bytes": 10849
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "29e9fe5074bd27e0e5d5d110394fbbcd841baee2651a3c4b4560a632702cede4",
+          "bytes": 1130
+        }
+      ],
+      "metadataSource": "cargo-metadata-cached-Cargo.toml",
+      "features": [
+        "wasm_js"
+      ],
+      "buildScript": true,
+      "proceduralMacro": false
+    },
+    {
+      "ref": "pkg:cargo/hashbrown@0.16.1",
+      "ecosystem": "crates.io",
+      "name": "hashbrown",
+      "version": "0.16.1",
+      "scope": "resolved-target",
+      "license": "MIT OR Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "841d1cc9bed7f9236f321df977030373f4a4163ae1a7dbfe1a51a2c1a51d9100",
+      "cachedArchiveVerified": true,
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+          "bytes": 10847
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "ff8f68cb076caf8cefe7a6430d4ac086ce6af2ca8ce2c4e5a2004d4552ef52a2",
+          "bytes": 1060
+        }
+      ],
+      "metadataSource": "cargo-metadata-cached-Cargo.toml",
+      "features": [
+        "default-hasher"
+      ],
+      "buildScript": false,
+      "proceduralMacro": false
+    },
+    {
+      "ref": "pkg:cargo/hashbrown@0.17.1",
+      "ecosystem": "crates.io",
+      "name": "hashbrown",
+      "version": "0.17.1",
+      "scope": "resolved-target",
+      "license": "MIT OR Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "ed5909b6e89a2db4456e54cd5f673791d7eca6732202bbf2a9cc504fe2f9b84a",
+      "cachedArchiveVerified": true,
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+          "bytes": 10847
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "ff8f68cb076caf8cefe7a6430d4ac086ce6af2ca8ce2c4e5a2004d4552ef52a2",
+          "bytes": 1060
+        }
+      ],
+      "metadataSource": "cargo-metadata-cached-Cargo.toml",
+      "features": [
+        "allocator-api2",
+        "default",
+        "default-hasher",
+        "equivalent",
+        "inline-more",
+        "raw-entry"
+      ],
+      "buildScript": false,
+      "proceduralMacro": false
+    },
+    {
+      "ref": "pkg:cargo/hashlink@0.11.1",
+      "ecosystem": "crates.io",
+      "name": "hashlink",
+      "version": "0.11.1",
+      "scope": "resolved-target",
+      "license": "MIT OR Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "824e001ac4f3012dd16a264bec811403a67ca9deb6c102fc5049b32c4574b35f",
+      "cachedArchiveVerified": true,
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "c144680885b29e4719e2a51f0aab5439a1e02d980692b5aaf086cae12727f28b",
+          "bytes": 10849
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "e915669a595b11a200873df8286561881b0e04932f6412a585db6297ba0bc97c",
+          "bytes": 1133
+        }
+      ],
+      "metadataSource": "cargo-metadata-cached-Cargo.toml",
+      "features": [],
+      "buildScript": false,
+      "proceduralMacro": false
+    },
+    {
+      "ref": "pkg:cargo/heck@0.5.0",
+      "ecosystem": "crates.io",
+      "name": "heck",
+      "version": "0.5.0",
+      "scope": "resolved-target",
+      "license": "MIT OR Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "2304e00983f87ffb38b55b444b5e3b60a884b5d30c0fca7d82fe33449bbe55ea",
+      "cachedArchiveVerified": true,
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+          "bytes": 10847
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "7b63ecd5f1902af1b63729947373683c32745c16a10e8e6292e2e2dcd7e90ae0",
+          "bytes": 1071
+        }
+      ],
+      "metadataSource": "cargo-metadata-cached-Cargo.toml",
+      "features": [],
+      "buildScript": false,
+      "proceduralMacro": false
+    },
+    {
+      "ref": "pkg:cargo/itoa@1.0.18",
+      "ecosystem": "crates.io",
+      "name": "itoa",
+      "version": "1.0.18",
+      "scope": "resolved-target",
+      "license": "MIT OR Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "8f42a60cbdf9a97f5d2305f08a87dc4e09308d1276d28c869c684d7777685682",
+      "cachedArchiveVerified": true,
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
+          "bytes": 9723
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+          "bytes": 1023
+        }
+      ],
+      "metadataSource": "cargo-metadata-cached-Cargo.toml",
+      "features": [],
+      "buildScript": false,
+      "proceduralMacro": false
+    },
+    {
+      "ref": "pkg:cargo/jsonschema-regex@0.58.4",
+      "ecosystem": "crates.io",
+      "name": "jsonschema-regex",
+      "version": "0.58.4",
+      "scope": "resolved-target",
+      "license": "MIT",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "f1ffba4378a3d6ee7f1ab65a8ed95c711ccfe4a3870932bdce89d8260abed38a",
+      "cachedArchiveVerified": true,
+      "licenseFiles": [],
+      "metadataSource": "cargo-metadata-cached-Cargo.toml",
+      "features": [],
+      "buildScript": false,
+      "proceduralMacro": false
+    },
+    {
+      "ref": "pkg:cargo/jsonschema-value@0.58.4",
+      "ecosystem": "crates.io",
+      "name": "jsonschema-value",
+      "version": "0.58.4",
+      "scope": "resolved-target",
+      "license": "MIT",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "386121f898b560ff6aaa7974952720e9d9276a201eca31296387c2ed8707855e",
+      "cachedArchiveVerified": true,
+      "licenseFiles": [],
+      "metadataSource": "cargo-metadata-cached-Cargo.toml",
+      "features": [
+        "default",
+        "serde_json"
+      ],
+      "buildScript": true,
+      "proceduralMacro": false
+    },
+    {
+      "ref": "pkg:cargo/jsonschema@0.58.4",
+      "ecosystem": "crates.io",
+      "name": "jsonschema",
+      "version": "0.58.4",
+      "scope": "resolved-target",
+      "license": "MIT",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "5761b0ca0a31464030d7c2a98087fde3124ebb5e09b5a112cdb815f03b8ee150",
+      "cachedArchiveVerified": true,
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "117829c3ca21efb132d81a44b55363d395ab8eea18526873bc828da4c0e5f038",
+          "bytes": 1075
+        }
+      ],
+      "metadataSource": "cargo-metadata-cached-Cargo.toml",
+      "features": [],
+      "buildScript": false,
+      "proceduralMacro": false
+    },
+    {
+      "ref": "pkg:cargo/libc@0.2.189",
+      "ecosystem": "crates.io",
+      "name": "libc",
+      "version": "0.2.189",
+      "scope": "resolved-target",
+      "license": "MIT OR Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "3eaf3ede3fee6db1a4c2ee091bf8a8b4dccdc6d17f656fb07896ee72867612f2",
+      "cachedArchiveVerified": true,
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
+          "bytes": 9723
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "123a331b5dbf04c30097fa43b8f858bc85df671fe776de498d01f3d6b7c1f69e",
+          "bytes": 1066
+        }
+      ],
+      "metadataSource": "cargo-metadata-cached-Cargo.toml",
+      "features": [
+        "default",
+        "std"
+      ],
+      "buildScript": true,
+      "proceduralMacro": false
+    },
+    {
+      "ref": "pkg:cargo/lock_api@0.4.14",
+      "ecosystem": "crates.io",
+      "name": "lock_api",
+      "version": "0.4.14",
+      "scope": "resolved-target",
+      "license": "MIT OR Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "224399e74b87b5f3557511d98dff8b14089b3dadafcab6bb93eab67d3aace965",
+      "cachedArchiveVerified": true,
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+          "bytes": 10847
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "c9a75f18b9ab2927829a208fc6aa2cf4e63b8420887ba29cdb265d6619ae82d5",
+          "bytes": 1071
+        }
+      ],
+      "metadataSource": "cargo-metadata-cached-Cargo.toml",
+      "features": [
+        "atomic_usize",
+        "default"
+      ],
+      "buildScript": false,
+      "proceduralMacro": false
+    },
+    {
+      "ref": "pkg:cargo/memchr@2.8.3",
+      "ecosystem": "crates.io",
+      "name": "memchr",
+      "version": "2.8.3",
+      "scope": "resolved-target",
+      "license": "Unlicense OR MIT",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "cf8baf1c55e62ffcace7a9f06f4bd9cd3f0c4beb022d3b367256b91b87513d98",
+      "cachedArchiveVerified": true,
+      "licenseFiles": [
+        {
+          "file": "COPYING",
+          "sha256": "01c266bced4a434da0051174d6bee16a4c82cf634e2679b6155d40d75012390f",
+          "bytes": 126
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "0f96a83840e146e43c0ec96a22ec1f392e0680e6c1226e6f3ba87e0740af850f",
+          "bytes": 1081
+        }
+      ],
+      "metadataSource": "cargo-metadata-cached-Cargo.toml",
+      "features": [
+        "alloc",
+        "std"
+      ],
+      "buildScript": false,
+      "proceduralMacro": false
+    },
+    {
+      "ref": "pkg:cargo/micromap@0.3.0",
+      "ecosystem": "crates.io",
+      "name": "micromap",
+      "version": "0.3.0",
+      "scope": "resolved-target",
+      "license": "MIT",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "c2a86d3146ed3995b5913c414f6664344b9617457320782e64f0bb44afd49d74",
+      "cachedArchiveVerified": true,
+      "licenseFiles": [
+        {
+          "file": "LICENSE.txt",
+          "sha256": "9387c2d197e2370a740ca457dae1662c56de56b811ee4862024343961307f9bf",
+          "bytes": 1065
+        }
+      ],
+      "metadataSource": "cargo-metadata-cached-Cargo.toml",
+      "features": [
+        "default"
+      ],
+      "buildScript": false,
+      "proceduralMacro": false
+    },
+    {
+      "ref": "pkg:cargo/multiversion_no_op@1.0.0",
+      "ecosystem": "crates.io",
+      "name": "multiversion_no_op",
+      "version": "1.0.0",
+      "scope": "resolved-target",
+      "license": "Apache-2.0 OR MIT",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "743fb55ba31b18fb1ecef6bdc9aa2743314978ac084044301a7eee33fb99a20d",
+      "cachedArchiveVerified": true,
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+          "bytes": 11358
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "3fa4ca83dcc9237839b1bdeb2e6d16bdfb5ec0c5ce42b24694d8bbf0dcbef72c",
+          "bytes": 1053
+        }
+      ],
+      "metadataSource": "cargo-metadata-cached-Cargo.toml",
+      "features": [],
+      "buildScript": false,
+      "proceduralMacro": true
+    },
+    {
+      "ref": "pkg:cargo/num-bigint@0.4.8",
+      "ecosystem": "crates.io",
+      "name": "num-bigint",
+      "version": "0.4.8",
+      "scope": "resolved-target",
+      "license": "MIT OR Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "c89e69e7e0f03bea5ef08013795c25018e101932225a656383bd384495ecc367",
+      "cachedArchiveVerified": true,
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+          "bytes": 10847
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "6485b8ed310d3f0340bf1ad1f47645069ce4069dcc6bb46c7d5c6faf41de1fdb",
+          "bytes": 1071
+        }
+      ],
+      "metadataSource": "cargo-metadata-cached-Cargo.toml",
+      "features": [
+        "default",
+        "std"
+      ],
+      "buildScript": false,
+      "proceduralMacro": false
+    },
+    {
+      "ref": "pkg:cargo/num-cmp@0.1.0",
+      "ecosystem": "crates.io",
+      "name": "num-cmp",
+      "version": "0.1.0",
+      "scope": "resolved-target",
+      "license": "MIT/Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "63335b2e2c34fae2fb0aa2cecfd9f0832a1e24b3b32ecec612c3426d46dc8aaa",
+      "cachedArchiveVerified": true,
+      "licenseFiles": [
+        {
+          "file": "LICENSE.txt",
+          "sha256": "3bb1e548250b3acc43febde65a5cdba9f2e0a3288018aa41f009a3c59ffab51a",
+          "bytes": 20512
+        }
+      ],
+      "metadataSource": "cargo-metadata-cached-Cargo.toml",
+      "features": [],
+      "buildScript": false,
+      "proceduralMacro": false
+    },
+    {
+      "ref": "pkg:cargo/num-complex@0.4.6",
+      "ecosystem": "crates.io",
+      "name": "num-complex",
+      "version": "0.4.6",
+      "scope": "resolved-target",
+      "license": "MIT OR Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "73f88a1307638156682bada9d7604135552957b7818057dcef22705b4d509495",
+      "cachedArchiveVerified": true,
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+          "bytes": 10847
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "6485b8ed310d3f0340bf1ad1f47645069ce4069dcc6bb46c7d5c6faf41de1fdb",
+          "bytes": 1071
+        }
+      ],
+      "metadataSource": "cargo-metadata-cached-Cargo.toml",
+      "features": [
+        "std"
+      ],
+      "buildScript": false,
+      "proceduralMacro": false
+    },
+    {
+      "ref": "pkg:cargo/num-integer@0.1.47",
+      "ecosystem": "crates.io",
+      "name": "num-integer",
+      "version": "0.1.47",
+      "scope": "resolved-target",
+      "license": "MIT OR Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "7ce2d95d4b3734dc35aa2f45e1aa22cd416814592a4f9d9205e11affd5b8e10b",
+      "cachedArchiveVerified": true,
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+          "bytes": 10847
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "6485b8ed310d3f0340bf1ad1f47645069ce4069dcc6bb46c7d5c6faf41de1fdb",
+          "bytes": 1071
+        }
+      ],
+      "metadataSource": "cargo-metadata-cached-Cargo.toml",
+      "features": [
+        "i128",
+        "std"
+      ],
+      "buildScript": false,
+      "proceduralMacro": false
+    },
+    {
+      "ref": "pkg:cargo/num-iter@0.1.46",
+      "ecosystem": "crates.io",
+      "name": "num-iter",
+      "version": "0.1.46",
+      "scope": "resolved-target",
+      "license": "MIT OR Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "c92800bd69a1eac91786bcfe9da64a897eb72911b8dc3095decbd07429e8048b",
+      "cachedArchiveVerified": true,
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+          "bytes": 10847
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "6485b8ed310d3f0340bf1ad1f47645069ce4069dcc6bb46c7d5c6faf41de1fdb",
+          "bytes": 1071
+        }
+      ],
+      "metadataSource": "cargo-metadata-cached-Cargo.toml",
+      "features": [
+        "i128",
+        "std"
+      ],
+      "buildScript": false,
+      "proceduralMacro": false
+    },
+    {
+      "ref": "pkg:cargo/num-rational@0.4.2",
+      "ecosystem": "crates.io",
+      "name": "num-rational",
+      "version": "0.4.2",
+      "scope": "resolved-target",
+      "license": "MIT OR Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "f83d14da390562dca69fc84082e73e548e1ad308d24accdedd2720017cb37824",
+      "cachedArchiveVerified": true,
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+          "bytes": 10847
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "6485b8ed310d3f0340bf1ad1f47645069ce4069dcc6bb46c7d5c6faf41de1fdb",
+          "bytes": 1071
+        }
+      ],
+      "metadataSource": "cargo-metadata-cached-Cargo.toml",
+      "features": [
+        "num-bigint",
+        "num-bigint-std",
+        "std"
+      ],
+      "buildScript": false,
+      "proceduralMacro": false
+    },
+    {
+      "ref": "pkg:cargo/num-traits@0.2.19",
+      "ecosystem": "crates.io",
+      "name": "num-traits",
+      "version": "0.2.19",
+      "scope": "resolved-target",
+      "license": "MIT OR Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "071dfc062690e90b734c0b2273ce72ad0ffa95f0c74596bc250dcfd960262841",
+      "cachedArchiveVerified": true,
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+          "bytes": 10847
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "6485b8ed310d3f0340bf1ad1f47645069ce4069dcc6bb46c7d5c6faf41de1fdb",
+          "bytes": 1071
+        }
+      ],
+      "metadataSource": "cargo-metadata-cached-Cargo.toml",
+      "features": [
+        "default",
+        "i128",
+        "std"
+      ],
+      "buildScript": true,
+      "proceduralMacro": false
+    },
+    {
+      "ref": "pkg:cargo/num@0.4.3",
+      "ecosystem": "crates.io",
+      "name": "num",
+      "version": "0.4.3",
+      "scope": "resolved-target",
+      "license": "MIT OR Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "35bd024e8b2ff75562e5f34e7f4905839deb4b22955ef5e73d2fea1b9813cb23",
+      "cachedArchiveVerified": true,
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+          "bytes": 10847
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "6485b8ed310d3f0340bf1ad1f47645069ce4069dcc6bb46c7d5c6faf41de1fdb",
+          "bytes": 1071
+        }
+      ],
+      "metadataSource": "cargo-metadata-cached-Cargo.toml",
+      "features": [
+        "num-bigint",
+        "std"
+      ],
+      "buildScript": false,
+      "proceduralMacro": false
+    },
+    {
+      "ref": "pkg:cargo/once_cell@1.21.4",
+      "ecosystem": "crates.io",
+      "name": "once_cell",
+      "version": "1.21.4",
+      "scope": "resolved-target",
+      "license": "MIT OR Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "9f7c3e4beb33f85d45ae3e3a1792185706c8e16d043238c593331cc7cd313b50",
+      "cachedArchiveVerified": true,
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+          "bytes": 10847
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+          "bytes": 1023
+        }
+      ],
+      "metadataSource": "cargo-metadata-cached-Cargo.toml",
+      "features": [
+        "alloc",
+        "race"
+      ],
+      "buildScript": false,
+      "proceduralMacro": false
+    },
+    {
+      "ref": "pkg:cargo/outref@0.5.2",
+      "ecosystem": "crates.io",
+      "name": "outref",
+      "version": "0.5.2",
+      "scope": "resolved-target",
+      "license": "MIT",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "1a80800c0488c3a21695ea981a54918fbb37abf04f4d0720c453632255e2ff0e",
+      "cachedArchiveVerified": true,
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "a00511478c83ebb464ef19d840f061c7444adc4636bb561900e75c5808cfc6cc",
+          "bytes": 1062
+        }
+      ],
+      "metadataSource": "cargo-metadata-cached-Cargo.toml",
+      "features": [],
+      "buildScript": false,
+      "proceduralMacro": false
+    },
+    {
+      "ref": "pkg:cargo/parking_lot_core@0.9.12",
+      "ecosystem": "crates.io",
+      "name": "parking_lot_core",
+      "version": "0.9.12",
+      "scope": "resolved-target",
+      "license": "MIT OR Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "2621685985a2ebf1c516881c026032ac7deafcda1a2c9b7850dc81e3dfcb64c1",
+      "cachedArchiveVerified": true,
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+          "bytes": 10847
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "c9a75f18b9ab2927829a208fc6aa2cf4e63b8420887ba29cdb265d6619ae82d5",
+          "bytes": 1071
+        }
+      ],
+      "metadataSource": "cargo-metadata-cached-Cargo.toml",
+      "features": [],
+      "buildScript": true,
+      "proceduralMacro": false
+    },
+    {
+      "ref": "pkg:cargo/parking_lot@0.12.5",
+      "ecosystem": "crates.io",
+      "name": "parking_lot",
+      "version": "0.12.5",
+      "scope": "resolved-target",
+      "license": "MIT OR Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "93857453250e3077bd71ff98b6a65ea6621a19bb0f559a85248955ac12c45a1a",
+      "cachedArchiveVerified": true,
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+          "bytes": 10847
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "c9a75f18b9ab2927829a208fc6aa2cf4e63b8420887ba29cdb265d6619ae82d5",
+          "bytes": 1071
+        }
+      ],
+      "metadataSource": "cargo-metadata-cached-Cargo.toml",
+      "features": [
+        "default"
+      ],
+      "buildScript": false,
+      "proceduralMacro": false
+    },
+    {
+      "ref": "pkg:cargo/percent-encoding@2.3.2",
+      "ecosystem": "crates.io",
+      "name": "percent-encoding",
+      "version": "2.3.2",
+      "scope": "resolved-target",
+      "license": "MIT OR Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "9b4f627cb1b25917193a259e49bdad08f671f8d9708acfd5fe0a8c1455d87220",
+      "cachedArchiveVerified": true,
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+          "bytes": 10847
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "b38f11f6096706e6de553dabe2a7ed142d59b6fa8c97e290c67496154745cdd5",
+          "bytes": 1072
+        }
+      ],
+      "metadataSource": "cargo-metadata-cached-Cargo.toml",
+      "features": [
+        "alloc",
+        "default",
+        "std"
+      ],
+      "buildScript": false,
+      "proceduralMacro": false
+    },
+    {
+      "ref": "pkg:cargo/proc-macro2@1.0.107",
+      "ecosystem": "crates.io",
+      "name": "proc-macro2",
+      "version": "1.0.107",
+      "scope": "resolved-target",
+      "license": "MIT OR Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "985e7ec9bb745e6ce6535b544d84d6cd6f7ad8bd711c398938ae983b91a766d9",
+      "cachedArchiveVerified": true,
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
+          "bytes": 9723
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+          "bytes": 1023
+        }
+      ],
+      "metadataSource": "cargo-metadata-cached-Cargo.toml",
+      "features": [
+        "default",
+        "proc-macro"
+      ],
+      "buildScript": true,
+      "proceduralMacro": false
+    },
+    {
+      "ref": "pkg:cargo/quote@1.0.47",
+      "ecosystem": "crates.io",
+      "name": "quote",
+      "version": "1.0.47",
+      "scope": "resolved-target",
+      "license": "MIT OR Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "1fbf4db142a473a8d80c26bbf18454ed458bf8d26c8219c331daecfdbd079001",
+      "cachedArchiveVerified": true,
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
+          "bytes": 9723
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+          "bytes": 1023
+        }
+      ],
+      "metadataSource": "cargo-metadata-cached-Cargo.toml",
+      "features": [
+        "default",
+        "proc-macro"
+      ],
+      "buildScript": true,
+      "proceduralMacro": false
+    },
+    {
+      "ref": "pkg:cargo/ref-cast-impl@1.0.27",
+      "ecosystem": "crates.io",
+      "name": "ref-cast-impl",
+      "version": "1.0.27",
+      "scope": "resolved-target",
+      "license": "MIT OR Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "92ecd8964f8453721699a1ed72037b0db49ce2f5a5138486ee89bed6f67cdf3a",
+      "cachedArchiveVerified": true,
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
+          "bytes": 9723
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+          "bytes": 1023
+        }
+      ],
+      "metadataSource": "cargo-metadata-cached-Cargo.toml",
+      "features": [],
+      "buildScript": false,
+      "proceduralMacro": true
+    },
+    {
+      "ref": "pkg:cargo/ref-cast@1.0.27",
+      "ecosystem": "crates.io",
+      "name": "ref-cast",
+      "version": "1.0.27",
+      "scope": "resolved-target",
+      "license": "MIT OR Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "7e440fb4e4b4147295338efb76001ab9e4efc0e5839df2c47fc5ac2381d365c3",
+      "cachedArchiveVerified": true,
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
+          "bytes": 9723
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+          "bytes": 1023
+        }
+      ],
+      "metadataSource": "cargo-metadata-cached-Cargo.toml",
+      "features": [],
+      "buildScript": true,
+      "proceduralMacro": false
+    },
+    {
+      "ref": "pkg:cargo/referencing@0.58.4",
+      "ecosystem": "crates.io",
+      "name": "referencing",
+      "version": "0.58.4",
+      "scope": "resolved-target",
+      "license": "MIT",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "5cfa1c91745dbca76a406b926918d7c63e15a4525ebab939fec3e015a1fb82b1",
+      "cachedArchiveVerified": true,
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "117829c3ca21efb132d81a44b55363d395ab8eea18526873bc828da4c0e5f038",
+          "bytes": 1075
+        }
+      ],
+      "metadataSource": "cargo-metadata-cached-Cargo.toml",
+      "features": [
+        "default"
+      ],
+      "buildScript": false,
+      "proceduralMacro": false
+    },
+    {
+      "ref": "pkg:cargo/regex-automata@0.4.18",
+      "ecosystem": "crates.io",
+      "name": "regex-automata",
+      "version": "0.4.18",
+      "scope": "resolved-target",
+      "license": "MIT OR Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "ad8553b9b26413251cbf30e620595c7a41b3887f03da04579c0e6b0d6a06b4b2",
+      "cachedArchiveVerified": true,
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+          "bytes": 10847
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "6485b8ed310d3f0340bf1ad1f47645069ce4069dcc6bb46c7d5c6faf41de1fdb",
+          "bytes": 1071
+        }
+      ],
+      "metadataSource": "cargo-metadata-cached-Cargo.toml",
+      "features": [
+        "alloc",
+        "dfa-onepass",
+        "dfa-search",
+        "hybrid",
+        "meta",
+        "nfa",
+        "nfa-backtrack",
+        "nfa-pikevm",
+        "nfa-thompson",
+        "perf",
+        "perf-inline",
+        "perf-literal",
+        "perf-literal-multisubstring",
+        "perf-literal-substring",
+        "std",
+        "syntax",
+        "unicode",
+        "unicode-age",
+        "unicode-bool",
+        "unicode-case",
+        "unicode-gencat",
+        "unicode-perl",
+        "unicode-script",
+        "unicode-segment",
+        "unicode-word-boundary"
+      ],
+      "buildScript": false,
+      "proceduralMacro": false
+    },
+    {
+      "ref": "pkg:cargo/regex-syntax@0.8.11",
+      "ecosystem": "crates.io",
+      "name": "regex-syntax",
+      "version": "0.8.11",
+      "scope": "resolved-target",
+      "license": "MIT OR Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "d6f6ff9a378485b298a5286656da665ba74413d36db0979633275d2e708145d4",
+      "cachedArchiveVerified": true,
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+          "bytes": 10847
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "6485b8ed310d3f0340bf1ad1f47645069ce4069dcc6bb46c7d5c6faf41de1fdb",
+          "bytes": 1071
+        }
+      ],
+      "metadataSource": "cargo-metadata-cached-Cargo.toml",
+      "features": [
+        "default",
+        "std",
+        "unicode",
+        "unicode-age",
+        "unicode-bool",
+        "unicode-case",
+        "unicode-gencat",
+        "unicode-perl",
+        "unicode-script",
+        "unicode-segment"
+      ],
+      "buildScript": false,
+      "proceduralMacro": false
+    },
+    {
+      "ref": "pkg:cargo/regex@1.13.1",
+      "ecosystem": "crates.io",
+      "name": "regex",
+      "version": "1.13.1",
+      "scope": "resolved-target",
+      "license": "MIT OR Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "f020237b6c8eed93db2e2cb53c00c60a8e1bc73da7d073199a1180401450218d",
+      "cachedArchiveVerified": true,
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+          "bytes": 10847
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "6485b8ed310d3f0340bf1ad1f47645069ce4069dcc6bb46c7d5c6faf41de1fdb",
+          "bytes": 1071
+        }
+      ],
+      "metadataSource": "cargo-metadata-cached-Cargo.toml",
+      "features": [
+        "default",
+        "perf",
+        "perf-backtrack",
+        "perf-cache",
+        "perf-dfa",
+        "perf-inline",
+        "perf-literal",
+        "perf-onepass",
+        "std",
+        "unicode",
+        "unicode-age",
+        "unicode-bool",
+        "unicode-case",
+        "unicode-gencat",
+        "unicode-perl",
+        "unicode-script",
+        "unicode-segment"
+      ],
+      "buildScript": false,
+      "proceduralMacro": false
+    },
+    {
+      "ref": "pkg:cargo/rustversion@1.0.23",
+      "ecosystem": "crates.io",
+      "name": "rustversion",
+      "version": "1.0.23",
+      "scope": "resolved-target",
+      "license": "MIT OR Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "cf54715a573b99ac80df0bc206da022bcd442c974952c7b9720069370852e21f",
+      "cachedArchiveVerified": true,
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
+          "bytes": 9723
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+          "bytes": 1023
+        }
+      ],
+      "metadataSource": "cargo-metadata-cached-Cargo.toml",
+      "features": [],
+      "buildScript": true,
+      "proceduralMacro": true
+    },
+    {
+      "ref": "pkg:cargo/ryu@1.0.23",
+      "ecosystem": "crates.io",
+      "name": "ryu",
+      "version": "1.0.23",
+      "scope": "resolved-target",
+      "license": "Apache-2.0 OR BSL-1.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "9774ba4a74de5f7b1c1451ed6cd5285a32eddb5cccb8cc655a4e50009e06477f",
+      "cachedArchiveVerified": true,
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
+          "bytes": 9723
+        },
+        {
+          "file": "LICENSE-BOOST",
+          "sha256": "c9bff75738922193e67fa726fa225535870d2aa1059f91452c411736284ad566",
+          "bytes": 1338
+        }
+      ],
+      "metadataSource": "cargo-metadata-cached-Cargo.toml",
+      "features": [],
+      "buildScript": false,
+      "proceduralMacro": false
+    },
+    {
+      "ref": "pkg:cargo/scopeguard@1.2.0",
+      "ecosystem": "crates.io",
+      "name": "scopeguard",
+      "version": "1.2.0",
+      "scope": "resolved-target",
+      "license": "MIT OR Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "94143f37725109f92c262ed2cf5e59bce7498c01bcc1502d7b9afe439a4e9f49",
+      "cachedArchiveVerified": true,
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+          "bytes": 10847
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "fb77f0a9c53e473abe5103c8632ef9f0f2874d4fb3f17cb2d8c661aab9cee9d7",
+          "bytes": 1097
+        }
+      ],
+      "metadataSource": "cargo-metadata-cached-Cargo.toml",
+      "features": [],
+      "buildScript": false,
+      "proceduralMacro": false
+    },
+    {
+      "ref": "pkg:cargo/serde_core@1.0.229",
+      "ecosystem": "crates.io",
+      "name": "serde_core",
+      "version": "1.0.229",
+      "scope": "resolved-target",
+      "license": "MIT OR Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "67dca2c9c51e58a4791a4b1ed58308b39c64224d349a935ab5039aa360942a48",
+      "cachedArchiveVerified": true,
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
+          "bytes": 9723
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+          "bytes": 1023
+        }
+      ],
+      "metadataSource": "cargo-metadata-cached-Cargo.toml",
+      "features": [
+        "alloc",
+        "result",
+        "std"
+      ],
+      "buildScript": true,
+      "proceduralMacro": false
+    },
+    {
+      "ref": "pkg:cargo/serde_derive@1.0.229",
+      "ecosystem": "crates.io",
+      "name": "serde_derive",
+      "version": "1.0.229",
+      "scope": "resolved-target",
+      "license": "MIT OR Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "e7a5d71263a5a7d47b41f6b3f06ba276f10cc18b0931f1799f710578e2309348",
+      "cachedArchiveVerified": true,
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
+          "bytes": 9723
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+          "bytes": 1023
+        }
+      ],
+      "metadataSource": "cargo-metadata-cached-Cargo.toml",
+      "features": [
+        "default"
+      ],
+      "buildScript": false,
+      "proceduralMacro": true
+    },
+    {
+      "ref": "pkg:cargo/serde_json@1.0.145",
+      "ecosystem": "crates.io",
+      "name": "serde_json",
+      "version": "1.0.145",
+      "scope": "resolved-target",
+      "license": "MIT OR Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "402a6f66d8c709116cf22f558eab210f5a50187f702eb4d7e5ef38d9a7f1c79c",
+      "cachedArchiveVerified": true,
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
+          "bytes": 9723
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+          "bytes": 1023
+        }
+      ],
+      "metadataSource": "cargo-metadata-cached-Cargo.toml",
+      "features": [
+        "default",
+        "float_roundtrip",
+        "std"
+      ],
+      "buildScript": true,
+      "proceduralMacro": false
+    },
+    {
+      "ref": "pkg:cargo/serde@1.0.229",
+      "ecosystem": "crates.io",
+      "name": "serde",
+      "version": "1.0.229",
+      "scope": "resolved-target",
+      "license": "MIT OR Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "4148590afebada386688f18773da617792bf2ef03ffc1e4cbd2b1d45b023e0ba",
+      "cachedArchiveVerified": true,
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
+          "bytes": 9723
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+          "bytes": 1023
+        }
+      ],
+      "metadataSource": "cargo-metadata-cached-Cargo.toml",
+      "features": [
+        "alloc",
+        "default",
+        "derive",
+        "serde_derive",
+        "std"
+      ],
+      "buildScript": true,
+      "proceduralMacro": false
+    },
+    {
+      "ref": "pkg:cargo/simdutf8@0.1.5",
+      "ecosystem": "crates.io",
+      "name": "simdutf8",
+      "version": "0.1.5",
+      "scope": "resolved-target",
+      "license": "MIT OR Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "e3a9fe34e3e7a50316060351f37187a3f546bce95496156754b601a5fa71b76e",
+      "cachedArchiveVerified": true,
+      "licenseFiles": [
+        {
+          "file": "LICENSE-Apache",
+          "sha256": "0cec06e0e55fbc3dc5cee4fca9b607f66cb8f4e4dbcf3b3c013594dd156732e9",
+          "bytes": 10173
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "1847e0e0698142ed4347c1441a9fa81c8fbddd44b1d8bbcd5e3647f991759d7f",
+          "bytes": 1035
+        }
+      ],
+      "metadataSource": "cargo-metadata-cached-Cargo.toml",
+      "features": [
+        "aarch64_neon",
+        "public_imp"
+      ],
+      "buildScript": false,
+      "proceduralMacro": false
+    },
+    {
+      "ref": "pkg:cargo/smallvec@1.16.2",
+      "ecosystem": "crates.io",
+      "name": "smallvec",
+      "version": "1.16.2",
+      "scope": "resolved-target",
+      "license": "MIT OR Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "f9395f0f0eee849a9b707b2f06bb92a6a422090e2123bb2ef8e87a0e61892a8e",
+      "cachedArchiveVerified": true,
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+          "bytes": 10847
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "0b28172679e0009b655da42797c03fd163a3379d5cfa67ba1f1655e974a2a1a9",
+          "bytes": 1072
+        }
+      ],
+      "metadataSource": "cargo-metadata-cached-Cargo.toml",
+      "features": [],
+      "buildScript": false,
+      "proceduralMacro": false
+    },
+    {
+      "ref": "pkg:cargo/strum_macros@0.28.0",
+      "ecosystem": "crates.io",
+      "name": "strum_macros",
+      "version": "0.28.0",
+      "scope": "resolved-target",
+      "license": "MIT",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "ab85eea0270ee17587ed4156089e10b9e6880ee688791d45a905f5b1ca36f664",
+      "cachedArchiveVerified": true,
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "8bce3b45e49ecd1461f223b46de133d8f62cd39f745cfdaf81bee554b908bd42",
+          "bytes": 1072
+        }
+      ],
+      "metadataSource": "cargo-metadata-cached-Cargo.toml",
+      "features": [],
+      "buildScript": false,
+      "proceduralMacro": true
+    },
+    {
+      "ref": "pkg:cargo/strum@0.28.0",
+      "ecosystem": "crates.io",
+      "name": "strum",
+      "version": "0.28.0",
+      "scope": "resolved-target",
+      "license": "MIT",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "9628de9b8791db39ceda2b119bbe13134770b56c138ec1d3af810d045c04f9bd",
+      "cachedArchiveVerified": true,
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "8bce3b45e49ecd1461f223b46de133d8f62cd39f745cfdaf81bee554b908bd42",
+          "bytes": 1072
+        }
+      ],
+      "metadataSource": "cargo-metadata-cached-Cargo.toml",
+      "features": [
+        "default",
+        "derive",
+        "std",
+        "strum_macros"
+      ],
+      "buildScript": false,
+      "proceduralMacro": false
+    },
+    {
+      "ref": "pkg:cargo/syn@2.0.119",
+      "ecosystem": "crates.io",
+      "name": "syn",
+      "version": "2.0.119",
+      "scope": "resolved-target",
+      "license": "MIT OR Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "872831b642d1a07999a962a351ed35b955ea2cfc8f3862091e2a240a84f17297",
+      "cachedArchiveVerified": true,
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
+          "bytes": 9723
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+          "bytes": 1023
+        }
+      ],
+      "metadataSource": "cargo-metadata-cached-Cargo.toml",
+      "features": [
+        "clone-impls",
+        "default",
+        "derive",
+        "full",
+        "parsing",
+        "printing",
+        "proc-macro"
+      ],
+      "buildScript": false,
+      "proceduralMacro": false
+    },
+    {
+      "ref": "pkg:cargo/syn@3.0.6",
+      "ecosystem": "crates.io",
+      "name": "syn",
+      "version": "3.0.6",
+      "scope": "resolved-target",
+      "license": "MIT OR Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "8593e8e72159ed2257d083c7a454a85cbf854f37a0966d8d483aff8c8a3ebcee",
+      "cachedArchiveVerified": true,
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
+          "bytes": 9723
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+          "bytes": 1023
+        }
+      ],
+      "metadataSource": "cargo-metadata-cached-Cargo.toml",
+      "features": [
+        "clone-impls",
+        "default",
+        "derive",
+        "extra-traits",
+        "full",
+        "parsing",
+        "printing",
+        "proc-macro",
+        "visit",
+        "visit-mut"
+      ],
+      "buildScript": false,
+      "proceduralMacro": false
+    },
+    {
+      "ref": "pkg:cargo/unicode-general-category@1.1.0",
+      "ecosystem": "crates.io",
+      "name": "unicode-general-category",
+      "version": "1.1.0",
+      "scope": "resolved-target",
+      "license": "Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "0b993bddc193ae5bd0d623b49ec06ac3e9312875fdae725a975c51db1cc1677f",
+      "cachedArchiveVerified": true,
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1",
+          "bytes": 11357
+        }
+      ],
+      "metadataSource": "cargo-metadata-cached-Cargo.toml",
+      "features": [],
+      "buildScript": true,
+      "proceduralMacro": false
+    },
+    {
+      "ref": "pkg:cargo/unicode-ident@1.0.26",
+      "ecosystem": "crates.io",
+      "name": "unicode-ident",
+      "version": "1.0.26",
+      "scope": "resolved-target",
+      "license": "(MIT OR Apache-2.0) AND Unicode-3.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "d245f478577f809a851594d02313b640fb437e0bb33866753cff937863096954",
+      "cachedArchiveVerified": true,
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
+          "bytes": 9723
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+          "bytes": 1023
+        },
+        {
+          "file": "LICENSE-UNICODE",
+          "sha256": "f7db81051789b729fea528a63ec4c938fdcb93d9d61d97dc8cc2e9df6d47f2a1",
+          "bytes": 1995
+        }
+      ],
+      "metadataSource": "cargo-metadata-cached-Cargo.toml",
+      "features": [],
+      "buildScript": false,
+      "proceduralMacro": false
+    },
+    {
+      "ref": "pkg:cargo/uuid-simd@0.8.0",
+      "ecosystem": "crates.io",
+      "name": "uuid-simd",
+      "version": "0.8.0",
+      "scope": "resolved-target",
+      "license": "MIT",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "23b082222b4f6619906941c17eb2297fff4c2fb96cb60164170522942a200bd8",
+      "cachedArchiveVerified": true,
+      "licenseFiles": [],
+      "metadataSource": "cargo-metadata-cached-Cargo.toml",
+      "features": [
+        "alloc",
+        "detect",
+        "std"
+      ],
+      "buildScript": false,
+      "proceduralMacro": false
+    },
+    {
+      "ref": "pkg:cargo/version_check@0.9.5",
+      "ecosystem": "crates.io",
+      "name": "version_check",
+      "version": "0.9.5",
+      "scope": "resolved-target",
+      "license": "MIT/Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "0b928f33d975fc6ad9f86c8f283853ad26bdd5b10b7f1542aa2fa15e2289105a",
+      "cachedArchiveVerified": true,
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+          "bytes": 10847
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "b7e650f3fce5c53249d1cdc608b54df156a97edd636cf9d23498d0cfe7aec63e",
+          "bytes": 1085
+        }
+      ],
+      "metadataSource": "cargo-metadata-cached-Cargo.toml",
+      "features": [],
+      "buildScript": false,
+      "proceduralMacro": false
+    },
+    {
+      "ref": "pkg:cargo/vsimd@0.8.0",
+      "ecosystem": "crates.io",
+      "name": "vsimd",
+      "version": "0.8.0",
+      "scope": "resolved-target",
+      "license": "MIT",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "5c3082ca00d5a5ef149bb8b555a72ae84c9c59f7250f013ac822ac2e49b19c64",
+      "cachedArchiveVerified": true,
+      "licenseFiles": [],
+      "metadataSource": "cargo-metadata-cached-Cargo.toml",
+      "features": [
+        "alloc",
+        "detect",
+        "std"
+      ],
+      "buildScript": false,
+      "proceduralMacro": false
+    },
+    {
+      "ref": "pkg:cargo/yaml-rust2@0.11.0",
+      "ecosystem": "crates.io",
+      "name": "yaml-rust2",
+      "version": "0.11.0",
+      "scope": "resolved-target",
+      "license": "MIT OR Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "631a50d867fafb7093e709d75aaee9e0e0d5deb934021fcea25ac2fe09edc51e",
+      "cachedArchiveVerified": true,
+      "licenseFiles": [],
+      "metadataSource": "cargo-metadata-cached-Cargo.toml",
+      "features": [
+        "default",
+        "encoding"
+      ],
+      "buildScript": false,
+      "proceduralMacro": false
+    },
+    {
+      "ref": "pkg:cargo/zerocopy@0.8.59",
+      "ecosystem": "crates.io",
+      "name": "zerocopy",
+      "version": "0.8.59",
+      "scope": "resolved-target",
+      "license": "BSD-2-Clause OR Apache-2.0 OR MIT",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "6df92bf3d9227be3d53173901ddbffac2babc27ae50f397776ffd6dc33f800cb",
+      "cachedArchiveVerified": true,
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "9d185ac6703c4b0453974c0d85e9eee43e6941009296bb1f5eb0b54e2329e9f3",
+          "bytes": 11350
+        },
+        {
+          "file": "LICENSE-BSD",
+          "sha256": "83c1763356e822adde0a2cae748d938a73fdc263849ccff6b27776dff213bd32",
+          "bytes": 1275
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "1a2f5c12ddc934d58956aa5dbdd3255fe55fd957633ab7d0d39e4f0daa73f7df",
+          "bytes": 1060
+        }
+      ],
+      "metadataSource": "cargo-metadata-cached-Cargo.toml",
+      "features": [
+        "simd"
+      ],
+      "buildScript": true,
+      "proceduralMacro": false
+    },
+    {
+      "ref": "pkg:cargo/zmij@1.0.23",
+      "ecosystem": "crates.io",
+      "name": "zmij",
+      "version": "1.0.23",
+      "scope": "resolved-target",
+      "license": "MIT",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "29666d0abbfad1e3dc4dcf6144730dd3a3ab225bbbdac83319345b1b44ccfc1b",
+      "cachedArchiveVerified": true,
+      "licenseFiles": [
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+          "bytes": 1023
+        }
+      ],
+      "metadataSource": "cargo-metadata-cached-Cargo.toml",
+      "features": [],
+      "buildScript": true,
+      "proceduralMacro": false
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "candidate:rust",
+      "dependsOn": [
+        "pkg:cargo/jsonschema@0.58.4",
+        "pkg:cargo/serde_json@1.0.145",
+        "pkg:cargo/yaml-rust2@0.11.0"
+      ],
+      "kinds": [
+        {
+          "ref": "pkg:cargo/jsonschema@0.58.4",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/serde_json@1.0.145",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/yaml-rust2@0.11.0",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "pkg:cargo/ahash@0.8.12",
+      "dependsOn": [
+        "pkg:cargo/cfg-if@1.0.5",
+        "pkg:cargo/getrandom@0.3.4",
+        "pkg:cargo/once_cell@1.21.4",
+        "pkg:cargo/serde@1.0.229",
+        "pkg:cargo/version_check@0.9.5",
+        "pkg:cargo/zerocopy@0.8.59"
+      ],
+      "kinds": [
+        {
+          "ref": "pkg:cargo/cfg-if@1.0.5",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/getrandom@0.3.4",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/once_cell@1.21.4",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": "cfg(not(all(target_arch = \"arm\", target_os = \"none\")))"
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/serde@1.0.229",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/version_check@0.9.5",
+          "kinds": [
+            {
+              "kind": "build",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/zerocopy@0.8.59",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "pkg:cargo/aho-corasick@1.1.5",
+      "dependsOn": [
+        "pkg:cargo/memchr@2.8.3"
+      ],
+      "kinds": [
+        {
+          "ref": "pkg:cargo/memchr@2.8.3",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "pkg:cargo/allocator-api2@0.2.21",
+      "dependsOn": [],
+      "kinds": []
+    },
+    {
+      "ref": "pkg:cargo/arraydeque@0.5.1",
+      "dependsOn": [],
+      "kinds": []
+    },
+    {
+      "ref": "pkg:cargo/autocfg@1.5.1",
+      "dependsOn": [],
+      "kinds": []
+    },
+    {
+      "ref": "pkg:cargo/bit-set@0.8.0",
+      "dependsOn": [
+        "pkg:cargo/bit-vec@0.8.0"
+      ],
+      "kinds": [
+        {
+          "ref": "pkg:cargo/bit-vec@0.8.0",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "pkg:cargo/bit-vec@0.8.0",
+      "dependsOn": [],
+      "kinds": []
+    },
+    {
+      "ref": "pkg:cargo/borrow-or-share@0.2.4",
+      "dependsOn": [],
+      "kinds": []
+    },
+    {
+      "ref": "pkg:cargo/bytecount@0.6.9",
+      "dependsOn": [],
+      "kinds": []
+    },
+    {
+      "ref": "pkg:cargo/cfg-if@1.0.5",
+      "dependsOn": [],
+      "kinds": []
+    },
+    {
+      "ref": "pkg:cargo/data-encoding@2.11.1",
+      "dependsOn": [],
+      "kinds": []
+    },
+    {
+      "ref": "pkg:cargo/email_address@0.2.9",
+      "dependsOn": [
+        "pkg:cargo/serde@1.0.229"
+      ],
+      "kinds": [
+        {
+          "ref": "pkg:cargo/serde@1.0.229",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "pkg:cargo/encoding_rs@0.8.42",
+      "dependsOn": [
+        "pkg:cargo/cfg-if@1.0.5",
+        "pkg:cargo/multiversion_no_op@1.0.0",
+        "pkg:cargo/rustversion@1.0.23",
+        "pkg:cargo/scopeguard@1.2.0",
+        "pkg:cargo/simdutf8@0.1.5"
+      ],
+      "kinds": [
+        {
+          "ref": "pkg:cargo/cfg-if@1.0.5",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/multiversion_no_op@1.0.0",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/rustversion@1.0.23",
+          "kinds": [
+            {
+              "kind": "build",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/scopeguard@1.2.0",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/simdutf8@0.1.5",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": "cfg(any(target_arch = \"x86_64\", target_arch = \"x86\", target_arch = \"aarch64\", all(target_arch = \"wasm32\", target_feature = \"simd128\")))"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "pkg:cargo/equivalent@1.0.2",
+      "dependsOn": [],
+      "kinds": []
+    },
+    {
+      "ref": "pkg:cargo/fancy-regex@0.19.2",
+      "dependsOn": [
+        "pkg:cargo/bit-set@0.8.0",
+        "pkg:cargo/regex-automata@0.4.18",
+        "pkg:cargo/regex-syntax@0.8.11"
+      ],
+      "kinds": [
+        {
+          "ref": "pkg:cargo/bit-set@0.8.0",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/regex-automata@0.4.18",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/regex-syntax@0.8.11",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "pkg:cargo/fluent-uri@0.4.1",
+      "dependsOn": [
+        "pkg:cargo/borrow-or-share@0.2.4",
+        "pkg:cargo/ref-cast@1.0.27",
+        "pkg:cargo/serde@1.0.229"
+      ],
+      "kinds": [
+        {
+          "ref": "pkg:cargo/borrow-or-share@0.2.4",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/ref-cast@1.0.27",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/serde@1.0.229",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "pkg:cargo/foldhash@0.2.0",
+      "dependsOn": [],
+      "kinds": []
+    },
+    {
+      "ref": "pkg:cargo/fraction@0.17.0",
+      "dependsOn": [
+        "pkg:cargo/num-bigint@0.4.8",
+        "pkg:cargo/num@0.4.3"
+      ],
+      "kinds": [
+        {
+          "ref": "pkg:cargo/num@0.4.3",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/num-bigint@0.4.8",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "pkg:cargo/getrandom@0.3.4",
+      "dependsOn": [
+        "pkg:cargo/cfg-if@1.0.5",
+        "pkg:cargo/libc@0.2.189"
+      ],
+      "kinds": [
+        {
+          "ref": "pkg:cargo/cfg-if@1.0.5",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/libc@0.2.189",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": "cfg(all(any(target_os = \"linux\", target_os = \"android\"), not(any(all(target_os = \"linux\", target_env = \"\"), getrandom_backend = \"custom\", getrandom_backend = \"linux_raw\", getrandom_backend = \"rdrand\", getrandom_backend = \"rndr\"))))"
+            },
+            {
+              "kind": "normal",
+              "target": "cfg(any(target_os = \"dragonfly\", target_os = \"freebsd\", target_os = \"hurd\", target_os = \"illumos\", target_os = \"cygwin\", all(target_os = \"horizon\", target_arch = \"arm\")))"
+            },
+            {
+              "kind": "normal",
+              "target": "cfg(any(target_os = \"haiku\", target_os = \"redox\", target_os = \"nto\", target_os = \"aix\"))"
+            },
+            {
+              "kind": "normal",
+              "target": "cfg(any(target_os = \"ios\", target_os = \"visionos\", target_os = \"watchos\", target_os = \"tvos\"))"
+            },
+            {
+              "kind": "normal",
+              "target": "cfg(any(target_os = \"macos\", target_os = \"openbsd\", target_os = \"vita\", target_os = \"emscripten\"))"
+            },
+            {
+              "kind": "normal",
+              "target": "cfg(target_os = \"netbsd\")"
+            },
+            {
+              "kind": "normal",
+              "target": "cfg(target_os = \"solaris\")"
+            },
+            {
+              "kind": "normal",
+              "target": "cfg(target_os = \"vxworks\")"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "pkg:cargo/hashbrown@0.16.1",
+      "dependsOn": [
+        "pkg:cargo/foldhash@0.2.0"
+      ],
+      "kinds": [
+        {
+          "ref": "pkg:cargo/foldhash@0.2.0",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "pkg:cargo/hashbrown@0.17.1",
+      "dependsOn": [
+        "pkg:cargo/allocator-api2@0.2.21",
+        "pkg:cargo/equivalent@1.0.2",
+        "pkg:cargo/foldhash@0.2.0"
+      ],
+      "kinds": [
+        {
+          "ref": "pkg:cargo/allocator-api2@0.2.21",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/equivalent@1.0.2",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/foldhash@0.2.0",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "pkg:cargo/hashlink@0.11.1",
+      "dependsOn": [
+        "pkg:cargo/hashbrown@0.16.1"
+      ],
+      "kinds": [
+        {
+          "ref": "pkg:cargo/hashbrown@0.16.1",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "pkg:cargo/heck@0.5.0",
+      "dependsOn": [],
+      "kinds": []
+    },
+    {
+      "ref": "pkg:cargo/itoa@1.0.18",
+      "dependsOn": [],
+      "kinds": []
+    },
+    {
+      "ref": "pkg:cargo/jsonschema-regex@0.58.4",
+      "dependsOn": [
+        "pkg:cargo/regex-syntax@0.8.11"
+      ],
+      "kinds": [
+        {
+          "ref": "pkg:cargo/regex-syntax@0.8.11",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "pkg:cargo/jsonschema-value@0.58.4",
+      "dependsOn": [
+        "pkg:cargo/ahash@0.8.12",
+        "pkg:cargo/bytecount@0.6.9",
+        "pkg:cargo/fraction@0.17.0",
+        "pkg:cargo/num-cmp@0.1.0",
+        "pkg:cargo/num-traits@0.2.19",
+        "pkg:cargo/serde_json@1.0.145",
+        "pkg:cargo/zmij@1.0.23"
+      ],
+      "kinds": [
+        {
+          "ref": "pkg:cargo/ahash@0.8.12",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/bytecount@0.6.9",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/fraction@0.17.0",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/num-cmp@0.1.0",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/num-traits@0.2.19",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/serde_json@1.0.145",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/zmij@1.0.23",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "pkg:cargo/jsonschema@0.58.4",
+      "dependsOn": [
+        "pkg:cargo/ahash@0.8.12",
+        "pkg:cargo/bytecount@0.6.9",
+        "pkg:cargo/data-encoding@2.11.1",
+        "pkg:cargo/email_address@0.2.9",
+        "pkg:cargo/fancy-regex@0.19.2",
+        "pkg:cargo/fraction@0.17.0",
+        "pkg:cargo/itoa@1.0.18",
+        "pkg:cargo/jsonschema-regex@0.58.4",
+        "pkg:cargo/jsonschema-value@0.58.4",
+        "pkg:cargo/num-cmp@0.1.0",
+        "pkg:cargo/num-traits@0.2.19",
+        "pkg:cargo/percent-encoding@2.3.2",
+        "pkg:cargo/referencing@0.58.4",
+        "pkg:cargo/regex@1.13.1",
+        "pkg:cargo/serde@1.0.229",
+        "pkg:cargo/serde_json@1.0.145",
+        "pkg:cargo/strum@0.28.0",
+        "pkg:cargo/unicode-general-category@1.1.0",
+        "pkg:cargo/uuid-simd@0.8.0"
+      ],
+      "kinds": [
+        {
+          "ref": "pkg:cargo/ahash@0.8.12",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/bytecount@0.6.9",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/data-encoding@2.11.1",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/email_address@0.2.9",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/fancy-regex@0.19.2",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/fraction@0.17.0",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/itoa@1.0.18",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/jsonschema-regex@0.58.4",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/jsonschema-value@0.58.4",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/num-cmp@0.1.0",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/num-traits@0.2.19",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/percent-encoding@2.3.2",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/referencing@0.58.4",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/regex@1.13.1",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/serde@1.0.229",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/serde_json@1.0.145",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/strum@0.28.0",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/unicode-general-category@1.1.0",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/uuid-simd@0.8.0",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "pkg:cargo/libc@0.2.189",
+      "dependsOn": [],
+      "kinds": []
+    },
+    {
+      "ref": "pkg:cargo/lock_api@0.4.14",
+      "dependsOn": [
+        "pkg:cargo/scopeguard@1.2.0"
+      ],
+      "kinds": [
+        {
+          "ref": "pkg:cargo/scopeguard@1.2.0",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "pkg:cargo/memchr@2.8.3",
+      "dependsOn": [],
+      "kinds": []
+    },
+    {
+      "ref": "pkg:cargo/micromap@0.3.0",
+      "dependsOn": [],
+      "kinds": []
+    },
+    {
+      "ref": "pkg:cargo/multiversion_no_op@1.0.0",
+      "dependsOn": [],
+      "kinds": []
+    },
+    {
+      "ref": "pkg:cargo/num-bigint@0.4.8",
+      "dependsOn": [
+        "pkg:cargo/num-integer@0.1.47",
+        "pkg:cargo/num-traits@0.2.19"
+      ],
+      "kinds": [
+        {
+          "ref": "pkg:cargo/num-integer@0.1.47",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/num-traits@0.2.19",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "pkg:cargo/num-cmp@0.1.0",
+      "dependsOn": [],
+      "kinds": []
+    },
+    {
+      "ref": "pkg:cargo/num-complex@0.4.6",
+      "dependsOn": [
+        "pkg:cargo/num-traits@0.2.19"
+      ],
+      "kinds": [
+        {
+          "ref": "pkg:cargo/num-traits@0.2.19",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "pkg:cargo/num-integer@0.1.47",
+      "dependsOn": [
+        "pkg:cargo/num-traits@0.2.19"
+      ],
+      "kinds": [
+        {
+          "ref": "pkg:cargo/num-traits@0.2.19",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "pkg:cargo/num-iter@0.1.46",
+      "dependsOn": [
+        "pkg:cargo/num-integer@0.1.47",
+        "pkg:cargo/num-traits@0.2.19"
+      ],
+      "kinds": [
+        {
+          "ref": "pkg:cargo/num-integer@0.1.47",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/num-traits@0.2.19",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "pkg:cargo/num-rational@0.4.2",
+      "dependsOn": [
+        "pkg:cargo/num-bigint@0.4.8",
+        "pkg:cargo/num-integer@0.1.47",
+        "pkg:cargo/num-traits@0.2.19"
+      ],
+      "kinds": [
+        {
+          "ref": "pkg:cargo/num-bigint@0.4.8",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/num-integer@0.1.47",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/num-traits@0.2.19",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "pkg:cargo/num-traits@0.2.19",
+      "dependsOn": [
+        "pkg:cargo/autocfg@1.5.1"
+      ],
+      "kinds": [
+        {
+          "ref": "pkg:cargo/autocfg@1.5.1",
+          "kinds": [
+            {
+              "kind": "build",
+              "target": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "pkg:cargo/num@0.4.3",
+      "dependsOn": [
+        "pkg:cargo/num-bigint@0.4.8",
+        "pkg:cargo/num-complex@0.4.6",
+        "pkg:cargo/num-integer@0.1.47",
+        "pkg:cargo/num-iter@0.1.46",
+        "pkg:cargo/num-rational@0.4.2",
+        "pkg:cargo/num-traits@0.2.19"
+      ],
+      "kinds": [
+        {
+          "ref": "pkg:cargo/num-bigint@0.4.8",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/num-complex@0.4.6",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/num-integer@0.1.47",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/num-iter@0.1.46",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/num-rational@0.4.2",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/num-traits@0.2.19",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "pkg:cargo/once_cell@1.21.4",
+      "dependsOn": [],
+      "kinds": []
+    },
+    {
+      "ref": "pkg:cargo/outref@0.5.2",
+      "dependsOn": [],
+      "kinds": []
+    },
+    {
+      "ref": "pkg:cargo/parking_lot_core@0.9.12",
+      "dependsOn": [
+        "pkg:cargo/cfg-if@1.0.5",
+        "pkg:cargo/libc@0.2.189",
+        "pkg:cargo/smallvec@1.16.2"
+      ],
+      "kinds": [
+        {
+          "ref": "pkg:cargo/cfg-if@1.0.5",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/libc@0.2.189",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": "cfg(unix)"
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/smallvec@1.16.2",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "pkg:cargo/parking_lot@0.12.5",
+      "dependsOn": [
+        "pkg:cargo/lock_api@0.4.14",
+        "pkg:cargo/parking_lot_core@0.9.12"
+      ],
+      "kinds": [
+        {
+          "ref": "pkg:cargo/lock_api@0.4.14",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/parking_lot_core@0.9.12",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "pkg:cargo/percent-encoding@2.3.2",
+      "dependsOn": [],
+      "kinds": []
+    },
+    {
+      "ref": "pkg:cargo/proc-macro2@1.0.107",
+      "dependsOn": [
+        "pkg:cargo/unicode-ident@1.0.26"
+      ],
+      "kinds": [
+        {
+          "ref": "pkg:cargo/unicode-ident@1.0.26",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "pkg:cargo/quote@1.0.47",
+      "dependsOn": [
+        "pkg:cargo/proc-macro2@1.0.107"
+      ],
+      "kinds": [
+        {
+          "ref": "pkg:cargo/proc-macro2@1.0.107",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "pkg:cargo/ref-cast-impl@1.0.27",
+      "dependsOn": [
+        "pkg:cargo/proc-macro2@1.0.107",
+        "pkg:cargo/quote@1.0.47",
+        "pkg:cargo/syn@3.0.6"
+      ],
+      "kinds": [
+        {
+          "ref": "pkg:cargo/proc-macro2@1.0.107",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/quote@1.0.47",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/syn@3.0.6",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "pkg:cargo/ref-cast@1.0.27",
+      "dependsOn": [
+        "pkg:cargo/ref-cast-impl@1.0.27"
+      ],
+      "kinds": [
+        {
+          "ref": "pkg:cargo/ref-cast-impl@1.0.27",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "pkg:cargo/referencing@0.58.4",
+      "dependsOn": [
+        "pkg:cargo/ahash@0.8.12",
+        "pkg:cargo/fluent-uri@0.4.1",
+        "pkg:cargo/hashbrown@0.17.1",
+        "pkg:cargo/itoa@1.0.18",
+        "pkg:cargo/micromap@0.3.0",
+        "pkg:cargo/parking_lot@0.12.5",
+        "pkg:cargo/percent-encoding@2.3.2",
+        "pkg:cargo/serde_json@1.0.145"
+      ],
+      "kinds": [
+        {
+          "ref": "pkg:cargo/ahash@0.8.12",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/fluent-uri@0.4.1",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/hashbrown@0.17.1",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/itoa@1.0.18",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/micromap@0.3.0",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/parking_lot@0.12.5",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/percent-encoding@2.3.2",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/serde_json@1.0.145",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "pkg:cargo/regex-automata@0.4.18",
+      "dependsOn": [
+        "pkg:cargo/aho-corasick@1.1.5",
+        "pkg:cargo/memchr@2.8.3",
+        "pkg:cargo/regex-syntax@0.8.11"
+      ],
+      "kinds": [
+        {
+          "ref": "pkg:cargo/aho-corasick@1.1.5",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/memchr@2.8.3",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/regex-syntax@0.8.11",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "pkg:cargo/regex-syntax@0.8.11",
+      "dependsOn": [],
+      "kinds": []
+    },
+    {
+      "ref": "pkg:cargo/regex@1.13.1",
+      "dependsOn": [
+        "pkg:cargo/aho-corasick@1.1.5",
+        "pkg:cargo/memchr@2.8.3",
+        "pkg:cargo/regex-automata@0.4.18",
+        "pkg:cargo/regex-syntax@0.8.11"
+      ],
+      "kinds": [
+        {
+          "ref": "pkg:cargo/aho-corasick@1.1.5",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/memchr@2.8.3",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/regex-automata@0.4.18",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/regex-syntax@0.8.11",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "pkg:cargo/rustversion@1.0.23",
+      "dependsOn": [],
+      "kinds": []
+    },
+    {
+      "ref": "pkg:cargo/ryu@1.0.23",
+      "dependsOn": [],
+      "kinds": []
+    },
+    {
+      "ref": "pkg:cargo/scopeguard@1.2.0",
+      "dependsOn": [],
+      "kinds": []
+    },
+    {
+      "ref": "pkg:cargo/serde_core@1.0.229",
+      "dependsOn": [],
+      "kinds": []
+    },
+    {
+      "ref": "pkg:cargo/serde_derive@1.0.229",
+      "dependsOn": [
+        "pkg:cargo/proc-macro2@1.0.107",
+        "pkg:cargo/quote@1.0.47",
+        "pkg:cargo/syn@3.0.6"
+      ],
+      "kinds": [
+        {
+          "ref": "pkg:cargo/proc-macro2@1.0.107",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/quote@1.0.47",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/syn@3.0.6",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "pkg:cargo/serde_json@1.0.145",
+      "dependsOn": [
+        "pkg:cargo/itoa@1.0.18",
+        "pkg:cargo/memchr@2.8.3",
+        "pkg:cargo/ryu@1.0.23",
+        "pkg:cargo/serde_core@1.0.229"
+      ],
+      "kinds": [
+        {
+          "ref": "pkg:cargo/itoa@1.0.18",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/memchr@2.8.3",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/ryu@1.0.23",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/serde_core@1.0.229",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "pkg:cargo/serde@1.0.229",
+      "dependsOn": [
+        "pkg:cargo/serde_core@1.0.229",
+        "pkg:cargo/serde_derive@1.0.229"
+      ],
+      "kinds": [
+        {
+          "ref": "pkg:cargo/serde_core@1.0.229",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/serde_derive@1.0.229",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "pkg:cargo/simdutf8@0.1.5",
+      "dependsOn": [],
+      "kinds": []
+    },
+    {
+      "ref": "pkg:cargo/smallvec@1.16.2",
+      "dependsOn": [],
+      "kinds": []
+    },
+    {
+      "ref": "pkg:cargo/strum_macros@0.28.0",
+      "dependsOn": [
+        "pkg:cargo/heck@0.5.0",
+        "pkg:cargo/proc-macro2@1.0.107",
+        "pkg:cargo/quote@1.0.47",
+        "pkg:cargo/syn@2.0.119"
+      ],
+      "kinds": [
+        {
+          "ref": "pkg:cargo/heck@0.5.0",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/proc-macro2@1.0.107",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/quote@1.0.47",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/syn@2.0.119",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "pkg:cargo/strum@0.28.0",
+      "dependsOn": [
+        "pkg:cargo/strum_macros@0.28.0"
+      ],
+      "kinds": [
+        {
+          "ref": "pkg:cargo/strum_macros@0.28.0",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "pkg:cargo/syn@2.0.119",
+      "dependsOn": [
+        "pkg:cargo/proc-macro2@1.0.107",
+        "pkg:cargo/quote@1.0.47",
+        "pkg:cargo/unicode-ident@1.0.26"
+      ],
+      "kinds": [
+        {
+          "ref": "pkg:cargo/proc-macro2@1.0.107",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/quote@1.0.47",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/unicode-ident@1.0.26",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "pkg:cargo/syn@3.0.6",
+      "dependsOn": [
+        "pkg:cargo/proc-macro2@1.0.107",
+        "pkg:cargo/quote@1.0.47",
+        "pkg:cargo/unicode-ident@1.0.26"
+      ],
+      "kinds": [
+        {
+          "ref": "pkg:cargo/proc-macro2@1.0.107",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/quote@1.0.47",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/unicode-ident@1.0.26",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "pkg:cargo/unicode-general-category@1.1.0",
+      "dependsOn": [],
+      "kinds": []
+    },
+    {
+      "ref": "pkg:cargo/unicode-ident@1.0.26",
+      "dependsOn": [],
+      "kinds": []
+    },
+    {
+      "ref": "pkg:cargo/uuid-simd@0.8.0",
+      "dependsOn": [
+        "pkg:cargo/outref@0.5.2",
+        "pkg:cargo/vsimd@0.8.0"
+      ],
+      "kinds": [
+        {
+          "ref": "pkg:cargo/outref@0.5.2",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/vsimd@0.8.0",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "pkg:cargo/version_check@0.9.5",
+      "dependsOn": [],
+      "kinds": []
+    },
+    {
+      "ref": "pkg:cargo/vsimd@0.8.0",
+      "dependsOn": [],
+      "kinds": []
+    },
+    {
+      "ref": "pkg:cargo/yaml-rust2@0.11.0",
+      "dependsOn": [
+        "pkg:cargo/arraydeque@0.5.1",
+        "pkg:cargo/encoding_rs@0.8.42",
+        "pkg:cargo/hashlink@0.11.1"
+      ],
+      "kinds": [
+        {
+          "ref": "pkg:cargo/arraydeque@0.5.1",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/encoding_rs@0.8.42",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        },
+        {
+          "ref": "pkg:cargo/hashlink@0.11.1",
+          "kinds": [
+            {
+              "kind": "normal",
+              "target": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "pkg:cargo/zerocopy@0.8.59",
+      "dependsOn": [],
+      "kinds": []
+    },
+    {
+      "ref": "pkg:cargo/zmij@1.0.23",
+      "dependsOn": [],
+      "kinds": []
+    }
+  ],
+  "vendorLists": [],
+  "collectorSources": [
+    {
+      "file": "scripts/runtime-supply-chain-collect.mjs",
+      "sha256": "0d54d9bc209fb50b5046d61e3faa4d6e1d750f1f45397fce05f4bf65378bcbc7"
+    },
+    {
+      "file": "scripts/runtime-supply-chain-scan.mjs",
+      "sha256": "edcab509d9f7099f7530e0c24d54474abf5f9e7a2d31528db17c93260eeca7bc"
+    },
+    {
+      "file": "scripts/runtime-supply-chain-smoke.mjs",
+      "sha256": "d5d4401eb8201c70f55235f273ba43f5d776bc3bdbccb01a50408886f87a7b5e"
+    },
+    {
+      "file": "scripts/lib/supply-chain-python.py",
+      "sha256": "4166a3fb26d424e68ea93fb920668150f37e1ac43fc57e35bbc021dadc609f57"
+    },
+    {
+      "file": "scripts/lib/supply-chain-evidence.mjs",
+      "sha256": "910190f6d32488b6499483dbb8011d61feafa94f54fb2a134159445e13eab333"
+    }
+  ],
+  "buildResult": "passed",
+  "environment": {
+    "os": "macos",
+    "version": "27.0.1",
+    "build": "26A434",
+    "architecture": "arm64",
+    "cohort": "supplemental-local-not-frozen-target"
+  },
+  "prerequisiteEvidence": "../prerequisites.json",
+  "provisioning": {
+    "mode": "separately-cached-offline-build",
+    "dependencyLocksChanged": false,
+    "networkDuringBuild": false,
+    "isolationAssessment": "offline-flags-not-OS-enforcement",
+    "runtimeArchives": [
+      {
+        "tool": "rustc",
+        "version": "1.99.0",
+        "target": "aarch64-apple-darwin",
+        "url": "https://static.rust-lang.org/dist/2026-10-01/rustc-1.99.0-aarch64-apple-darwin.tar.xz",
+        "sha256": "334a66714ca316d71bbe5efe44f71762d0b276cea73be2987374693a837f7450",
+        "observedSha256": "334a66714ca316d71bbe5efe44f71762d0b276cea73be2987374693a837f7450",
+        "verification": "observed-bytes-match-prerequisite-recorded-download-receipt-not-signature"
+      },
+      {
+        "tool": "rust-std",
+        "version": "1.99.0",
+        "target": "aarch64-apple-darwin",
+        "url": "https://static.rust-lang.org/dist/2026-10-01/rust-std-1.99.0-aarch64-apple-darwin.tar.xz",
+        "sha256": "a7c6de8aa21e7c31163a7656295b321bb85f5dce55ed8ea95ac9ac561202bb5b",
+        "observedSha256": "a7c6de8aa21e7c31163a7656295b321bb85f5dce55ed8ea95ac9ac561202bb5b",
+        "verification": "observed-bytes-match-prerequisite-recorded-download-receipt-not-signature"
+      },
+      {
+        "tool": "cargo",
+        "version": "1.99.0",
+        "target": "aarch64-apple-darwin",
+        "url": "https://static.rust-lang.org/dist/2026-10-01/cargo-1.99.0-aarch64-apple-darwin.tar.xz",
+        "sha256": "76abff0ad79a10a3152dff640ea0d8b3c37637d9300bf55da41b95c3ddc069c1",
+        "observedSha256": "76abff0ad79a10a3152dff640ea0d8b3c37637d9300bf55da41b95c3ddc069c1",
+        "verification": "observed-bytes-match-prerequisite-recorded-download-receipt-not-signature"
+      }
+    ],
+    "interpreterOrigin": null
+  },
+  "nativeScanner": {
+    "name": "cargo-audit",
+    "status": "not-run",
+    "reason": "Version matching uses the shared committed OSV API collector; native scanner/reachability coverage is not claimed."
+  },
+  "openRisks": [
+    "no-independent-license-approval",
+    "no-signed-artifact-provenance",
+    "no-reproducible-build-proof",
+    "incomplete-native-runtime-compiler-closure",
+    "no-distribution-lifecycle"
+  ],
+  "licenseUnknownCount": 0,
+  "sbomSha256": "7a7501d1722725bb9350edd9a8a2df29e43bd764ec8d0abe3088e42c09d35524",
+  "advisoriesSha256": "f9bf6a701c6966b93d9ae71e5e328fff15913a2154fbb5c22c160cef62848e1a",
+  "advisoryReview": {
+    "status": "no-matches-not-security-pass",
+    "reachability": "not-tested",
+    "fixesApplied": false,
+    "queryCount": 74,
+    "matchedPackageCount": 0,
+    "advisoryRecords": 0,
+    "uniqueCveAliases": [],
+    "unprocessedAdvisoryIds": []
+  }
+}

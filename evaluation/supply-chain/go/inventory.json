@@ -1,0 +1,510 @@
+{
+  "formatVersion": 1,
+  "task": "NF-056-11",
+  "candidate": "go",
+  "collectorVersion": "nf-056-11-v1",
+  "recordedAt": "2026-10-04T13:53:54.711Z",
+  "collectorRevision": "f8f66a9122d73a195698966785d968cdd395de7b",
+  "sourceRevision": "737396b6488a9f10b179061366b9f1d02591fb9f",
+  "publishedHead": "7181d8cf04d0fe75cce7bbd86aff9a53d9a1e413",
+  "pullRequest": 100,
+  "ciRun": 37121275243,
+  "toolchain": "Go 1.27.1; jsonschema/v6 6.0.2; yaml/v3 3.0.4; CGO_ENABLED=0",
+  "specificationRevision": "1d1fa238ab5729a79bee9389d5c66cfd20a61256",
+  "evaluationPackageRevision": "a8301a7478587c59502dfb2e6bd548489c14ee2b",
+  "corpusSha256": "01b116005f0650ac980194b22c02188289eaf1e8626b227aecf3684ece0d8f6b",
+  "catalogSha256": "f1bf8cb786442a212e14c79eb39279a2cdbf05ec20b09901374359d545d74e90",
+  "sourceManifest": [
+    {
+      "file": "evaluation/prototypes/go/README.md",
+      "sha256": "0bf2cf44981a6d4285e3c7d0b0f0c8594fce746d881d30c8c9e90240d6811744",
+      "bytes": 5858
+    },
+    {
+      "file": "evaluation/prototypes/go/arguments.go",
+      "sha256": "54c4096c4c9015106f06f4ed2bd66c8d8a0ce6cf6c85109956033aaccbd512de",
+      "bytes": 2310
+    },
+    {
+      "file": "evaluation/prototypes/go/candidate_test.go",
+      "sha256": "235f544fc9467cf875c14801ec6de884559d8d8f0da5bc620390f7c53b7d42f6",
+      "bytes": 10743
+    },
+    {
+      "file": "evaluation/prototypes/go/cmd/cli/main.go",
+      "sha256": "abeca42c522372e1c584612973d94f7b2eada2f233a7625bbac3ff82ec7e7efe",
+      "bytes": 1685
+    },
+    {
+      "file": "evaluation/prototypes/go/cmd/library-driver/main.go",
+      "sha256": "19bec9f507da4237e46525f273c9f2fd523c8be9c38d63f01abe21d209a82c46",
+      "bytes": 1662
+    },
+    {
+      "file": "evaluation/prototypes/go/discovery.go",
+      "sha256": "52b59fd9c207b225ee33ed5d47da2899134017a7d083d90f82913496c7c63f4d",
+      "bytes": 6929
+    },
+    {
+      "file": "evaluation/prototypes/go/files.go",
+      "sha256": "08332b3a0f1fe16cd9a83bc34dcded7c2a25d121e08d9b3824d34ee674fc2394",
+      "bytes": 3281
+    },
+    {
+      "file": "evaluation/prototypes/go/go.mod",
+      "sha256": "cd95fab740c6a536eaafe7f6d65ff0e399ae8fd34a72007b681a79dfe0023867",
+      "bytes": 182
+    },
+    {
+      "file": "evaluation/prototypes/go/go.sum",
+      "sha256": "16cc6ffb149f521791f61a391ddaa5369ca91fe1d0d9c7230f7952ac35e76aca",
+      "bytes": 891
+    },
+    {
+      "file": "evaluation/prototypes/go/inspection.go",
+      "sha256": "8bb65be2d81613670784b99bc67a80d23ad9ab4087835ef19f649c006d12e35b",
+      "bytes": 6956
+    },
+    {
+      "file": "evaluation/prototypes/go/library.go",
+      "sha256": "467f1ab9df49c54f670d56a2bda0f6bb06e907509a1f6b1bbee5c1f1b3a3a1a4",
+      "bytes": 5673
+    },
+    {
+      "file": "evaluation/prototypes/go/model.go",
+      "sha256": "2bdc914de50900231b2ec70a5beb55ec56f8c3a81c3c07ac24ae18d63225219e",
+      "bytes": 4688
+    },
+    {
+      "file": "evaluation/prototypes/go/read_flags_other.go",
+      "sha256": "c3df9d8e61f5a0215c429760c4f68b97950ba60cd6ffa72b30b34c0c83c57c31",
+      "bytes": 173
+    },
+    {
+      "file": "evaluation/prototypes/go/read_flags_unix.go",
+      "sha256": "ab7304f957d37112f7ac252fc6b74ba2e6ad120743963e534999433c99fc06f2",
+      "bytes": 137
+    },
+    {
+      "file": "evaluation/prototypes/go/schema.go",
+      "sha256": "9993a5cb7a37d7dd651da20ac09653f94d6f9c56a614e4cf89cca95eb76ae81b",
+      "bytes": 7292
+    },
+    {
+      "file": "evaluation/prototypes/go/yaml.go",
+      "sha256": "c2773257bd628f0b3055e1628ea4c024ffaf37c2a3bb0f009c83654efa17ba48",
+      "bytes": 2663
+    }
+  ],
+  "target": "macos/arm64",
+  "artifacts": [
+    {
+      "file": "nexflow-go-evaluation",
+      "sha256": "9fd7a748f56e038ee9bc0c4a1a1b21615e78387bc07a528d781589b86cb16423",
+      "bytes": 6122882
+    },
+    {
+      "file": "library-driver",
+      "sha256": "fee8d0264370d530b5e9c1746f4fb102423f54acebb5b7fb0573eddf451a2bda",
+      "bytes": 6071170
+    }
+  ],
+  "commands": [
+    "GOTOOLCHAIN=local GOPROXY=off CGO_ENABLED=0 go mod verify",
+    "GOTOOLCHAIN=local GOPROXY=off CGO_ENABLED=0 go build -mod=readonly -trimpath -buildvcs=false -o bin/nexflow-go-evaluation ./cmd/cli",
+    "GOTOOLCHAIN=local GOPROXY=off CGO_ENABLED=0 go build -mod=readonly -trimpath -buildvcs=false -o bin/library-driver ./cmd/library-driver"
+  ],
+  "outcome": "not-ready",
+  "supplyChainAcceptance": "partial",
+  "signedProvenance": "not-tested",
+  "reproducibleBuild": "not-tested",
+  "distributionLifecycle": "not-tested",
+  "limitations": [
+    "Dependency metadata and licenses are declarations, not independent legal approval.",
+    "Checksums bind observed bytes; no signed build attestation, signing or reproducibility claim.",
+    "This native macOS source-bound experiment is not a frozen target cohort or a Linux/Windows distribution.",
+    "OS/runtime/compiler bundled dependency closure and operating-system vulnerability coverage are incomplete.",
+    "No package manager offline flag or virtual environment establishes an OS security boundary.",
+    "Package/version advisory matches do not establish reachability; absence does not certify security.",
+    "License files are hashed; expression attribution must be reviewed for each module. Stdlib package list is version-bound, not OS library certification.",
+    "Compiled package/module closure is enumerated; extra uncached test-only transitive module resolution and its license closure remain not-tested."
+  ],
+  "testModuleGraph": {
+    "status": "not-tested",
+    "reason": "Full test-only module metadata is not cached; offline go list -m all failed. No new sums or locks were added."
+  },
+  "standardLibraryPackages": [
+    "bytes",
+    "cmp",
+    "embed",
+    "encoding",
+    "encoding/base32",
+    "encoding/base64",
+    "encoding/binary",
+    "encoding/hex",
+    "encoding/json",
+    "encoding/json/internal",
+    "encoding/json/internal/jsonflags",
+    "encoding/json/internal/jsonopts",
+    "encoding/json/internal/jsonwire",
+    "encoding/json/jsontext",
+    "encoding/json/v2",
+    "errors",
+    "flag",
+    "fmt",
+    "hash",
+    "hash/maphash",
+    "internal/abi",
+    "internal/asan",
+    "internal/bisect",
+    "internal/bytealg",
+    "internal/byteorder",
+    "internal/chacha8rand",
+    "internal/coverage/rtcov",
+    "internal/cpu",
+    "internal/filepathlite",
+    "internal/fmtsort",
+    "internal/goarch",
+    "internal/godebug",
+    "internal/godebugs",
+    "internal/goexperiment",
+    "internal/goos",
+    "internal/msan",
+    "internal/oserror",
+    "internal/poll",
+    "internal/profilerecord",
+    "internal/race",
+    "internal/reflectlite",
+    "internal/runtime/atomic",
+    "internal/runtime/exithook",
+    "internal/runtime/gc",
+    "internal/runtime/gc/scan",
+    "internal/runtime/maps",
+    "internal/runtime/math",
+    "internal/runtime/pprof/label",
+    "internal/runtime/sys",
+    "internal/strconv",
+    "internal/stringslite",
+    "internal/sync",
+    "internal/synctest",
+    "internal/syscall/execenv",
+    "internal/syscall/unix",
+    "internal/testlog",
+    "internal/trace/tracev2",
+    "internal/unsafeheader",
+    "io",
+    "io/fs",
+    "iter",
+    "math",
+    "math/big",
+    "math/bits",
+    "math/rand",
+    "net/netip",
+    "net/url",
+    "os",
+    "path",
+    "path/filepath",
+    "reflect",
+    "regexp",
+    "regexp/syntax",
+    "runtime",
+    "slices",
+    "sort",
+    "strconv",
+    "strings",
+    "sync",
+    "sync/atomic",
+    "syscall",
+    "time",
+    "unicode",
+    "unicode/utf16",
+    "unicode/utf8",
+    "unique",
+    "unsafe",
+    "weak"
+  ],
+  "runtime": {
+    "name": "Go runtime and standard library",
+    "version": "go version go1.27.1 darwin/arm64",
+    "requiredExternal": false,
+    "compilerSha256": "132b69336a1f809932a8a20b0201dbbb980e86e3a323ae32e893639d83d71598",
+    "cgoEnabled": false,
+    "binaryMetadata": [
+      {
+        "file": "nexflow-go-evaluation",
+        "metadata": [
+          "path\tnexflow.local/go-evaluation/cmd/cli",
+          "mod\tnexflow.local/go-evaluation\t(devel)",
+          "dep\tgithub.com/santhosh-tekuri/jsonschema/v6\tv6.0.2\th1:KRzFb2m7YtdldCEkzs6KqmJw4nqEVZGK7IN2kJkjTuQ=",
+          "dep\tgo.yaml.in/yaml/v3\tv3.0.4\th1:tfq32ie2Jv2UxXFdLJdh3jXuOzWiL1fo0bu/FbuKpbc=",
+          "dep\tgolang.org/x/text\tv0.14.0\th1:ScX5w1eTa3QqT8oi6+ziP7dTV1S2+ALU0bI+0zXKWiQ=",
+          "build\t-buildmode=exe",
+          "build\t-compiler=gc",
+          "build\t-trimpath=true",
+          "build\tCGO_ENABLED=0",
+          "build\tGOARCH=arm64",
+          "build\tGOOS=darwin",
+          "build\tGOARM64=v8.0"
+        ]
+      },
+      {
+        "file": "library-driver",
+        "metadata": [
+          "path\tnexflow.local/go-evaluation/cmd/library-driver",
+          "mod\tnexflow.local/go-evaluation\t(devel)",
+          "dep\tgithub.com/santhosh-tekuri/jsonschema/v6\tv6.0.2\th1:KRzFb2m7YtdldCEkzs6KqmJw4nqEVZGK7IN2kJkjTuQ=",
+          "dep\tgo.yaml.in/yaml/v3\tv3.0.4\th1:tfq32ie2Jv2UxXFdLJdh3jXuOzWiL1fo0bu/FbuKpbc=",
+          "dep\tgolang.org/x/text\tv0.14.0\th1:ScX5w1eTa3QqT8oi6+ziP7dTV1S2+ALU0bI+0zXKWiQ=",
+          "build\t-buildmode=exe",
+          "build\t-compiler=gc",
+          "build\t-trimpath=true",
+          "build\tCGO_ENABLED=0",
+          "build\tGOARCH=arm64",
+          "build\tGOOS=darwin",
+          "build\tGOARM64=v8.0"
+        ]
+      }
+    ]
+  },
+  "locks": [
+    {
+      "file": "evaluation/prototypes/go/go.mod",
+      "sha256": "cd95fab740c6a536eaafe7f6d65ff0e399ae8fd34a72007b681a79dfe0023867",
+      "bytes": 182
+    },
+    {
+      "file": "evaluation/prototypes/go/go.sum",
+      "sha256": "16cc6ffb149f521791f61a391ddaa5369ca91fe1d0d9c7230f7952ac35e76aca",
+      "bytes": 891
+    }
+  ],
+  "components": [
+    {
+      "ref": "pkg:golang/github.com/dlclark/regexp2@v1.11.0",
+      "ecosystem": "Go",
+      "name": "github.com/dlclark/regexp2",
+      "version": "v1.11.0",
+      "scope": "resolved-test-module",
+      "license": "NOASSERTION",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "sum": "h1:G/nrcoOa7ZXlpoa/91N3X7mM3r8eIlMBBJZvsz/mxKI=",
+      "goModSum": "h1:DHkYz0B9wPfa6wondMfaivmHpzrQ3v9q8cnmRbL6yW8=",
+      "licenseFiles": [],
+      "licenseAvailability": "unavailable-uncached-test-module",
+      "metadataSource": "go.sum-unused-test-identity",
+      "packages": []
+    },
+    {
+      "ref": "pkg:golang/github.com/santhosh-tekuri/jsonschema/v6@v6.0.2",
+      "ecosystem": "Go",
+      "name": "github.com/santhosh-tekuri/jsonschema/v6",
+      "version": "v6.0.2",
+      "scope": "compiled-module",
+      "license": "NOASSERTION",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "sum": "h1:KRzFb2m7YtdldCEkzs6KqmJw4nqEVZGK7IN2kJkjTuQ=",
+      "goModSum": "h1:JXeL+ps8p7/KNMjDQk3TCwPpBy0wYklyWTfbkIzdIFU=",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "c8858a5a76440bbca484e134cf7df46385d090dd18b2c58e650f939258802e5b",
+          "bytes": 10141
+        }
+      ],
+      "licenseAvailability": "cached-source-files",
+      "metadataSource": "go-list-compiled-module-cache",
+      "packages": [
+        "github.com/santhosh-tekuri/jsonschema/v6",
+        "github.com/santhosh-tekuri/jsonschema/v6/kind"
+      ]
+    },
+    {
+      "ref": "pkg:golang/go.yaml.in/yaml/v3@v3.0.4",
+      "ecosystem": "Go",
+      "name": "go.yaml.in/yaml/v3",
+      "version": "v3.0.4",
+      "scope": "compiled-module",
+      "license": "NOASSERTION",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "sum": "h1:tfq32ie2Jv2UxXFdLJdh3jXuOzWiL1fo0bu/FbuKpbc=",
+      "goModSum": "h1:DhzuOOF2ATzADvBadXxruRBLzYTpT36CKvDb3+aBEFg=",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "d18f6323b71b0b768bb5e9616e36da390fbd39369a81807cca352de4e4e6aa0b",
+          "bytes": 2151
+        },
+        {
+          "file": "NOTICE",
+          "sha256": "f6c2dd3a67b576eafb89b80200b8b1627230bf3821a0c14cb99a22ac19107d00",
+          "bytes": 560
+        }
+      ],
+      "licenseAvailability": "cached-source-files",
+      "metadataSource": "go-list-compiled-module-cache",
+      "packages": [
+        "go.yaml.in/yaml/v3"
+      ]
+    },
+    {
+      "ref": "pkg:golang/golang.org/x/text@v0.14.0",
+      "ecosystem": "Go",
+      "name": "golang.org/x/text",
+      "version": "v0.14.0",
+      "scope": "compiled-module",
+      "license": "NOASSERTION",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "sum": "h1:ScX5w1eTa3QqT8oi6+ziP7dTV1S2+ALU0bI+0zXKWiQ=",
+      "goModSum": "h1:18ZOQIKpY8NJVqYksKHtTdi31H5itFRjB5/qKTNYzSU=",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "2d36597f7117c38b006835ae7f537487207d8ec407aa9d9980794b2030cbc067",
+          "bytes": 1479
+        }
+      ],
+      "licenseAvailability": "cached-source-files",
+      "metadataSource": "go-list-compiled-module-cache",
+      "packages": [
+        "golang.org/x/text/feature/plural",
+        "golang.org/x/text/internal",
+        "golang.org/x/text/internal/catmsg",
+        "golang.org/x/text/internal/format",
+        "golang.org/x/text/internal/language",
+        "golang.org/x/text/internal/language/compact",
+        "golang.org/x/text/internal/number",
+        "golang.org/x/text/internal/stringset",
+        "golang.org/x/text/internal/tag",
+        "golang.org/x/text/language",
+        "golang.org/x/text/message",
+        "golang.org/x/text/message/catalog"
+      ]
+    },
+    {
+      "ref": "pkg:golang/gopkg.in/check.v1@v0.0.0-20161208181325-20d25e280405",
+      "ecosystem": "Go",
+      "name": "gopkg.in/check.v1",
+      "version": "v0.0.0-20161208181325-20d25e280405",
+      "scope": "resolved-test-module",
+      "license": "NOASSERTION",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "sum": "h1:yhCVgyC4o1eVCa2tZl7eS0r+SDo693bJlVdllGtEeKM=",
+      "goModSum": "h1:Co6ibVJAznAaIkqp8huTwlJQCZ016jof/cbN4VW5Yz0=",
+      "licenseFiles": [],
+      "licenseAvailability": "unavailable-uncached-test-module",
+      "metadataSource": "go.sum-unused-test-identity",
+      "packages": []
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "candidate:go",
+      "dependsOn": [
+        "pkg:golang/github.com/santhosh-tekuri/jsonschema/v6@v6.0.2",
+        "pkg:golang/go.yaml.in/yaml/v3@v3.0.4"
+      ]
+    },
+    {
+      "ref": "pkg:golang/github.com/dlclark/regexp2@v1.11.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:golang/github.com/santhosh-tekuri/jsonschema/v6@v6.0.2",
+      "dependsOn": [
+        "pkg:golang/golang.org/x/text@v0.14.0"
+      ]
+    },
+    {
+      "ref": "pkg:golang/go.yaml.in/yaml/v3@v3.0.4",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:golang/golang.org/x/text@v0.14.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:golang/gopkg.in/check.v1@v0.0.0-20161208181325-20d25e280405",
+      "dependsOn": []
+    }
+  ],
+  "vendorLists": [],
+  "collectorSources": [
+    {
+      "file": "scripts/runtime-supply-chain-collect.mjs",
+      "sha256": "0d54d9bc209fb50b5046d61e3faa4d6e1d750f1f45397fce05f4bf65378bcbc7"
+    },
+    {
+      "file": "scripts/runtime-supply-chain-scan.mjs",
+      "sha256": "edcab509d9f7099f7530e0c24d54474abf5f9e7a2d31528db17c93260eeca7bc"
+    },
+    {
+      "file": "scripts/runtime-supply-chain-smoke.mjs",
+      "sha256": "d5d4401eb8201c70f55235f273ba43f5d776bc3bdbccb01a50408886f87a7b5e"
+    },
+    {
+      "file": "scripts/lib/supply-chain-python.py",
+      "sha256": "4166a3fb26d424e68ea93fb920668150f37e1ac43fc57e35bbc021dadc609f57"
+    },
+    {
+      "file": "scripts/lib/supply-chain-evidence.mjs",
+      "sha256": "910190f6d32488b6499483dbb8011d61feafa94f54fb2a134159445e13eab333"
+    }
+  ],
+  "buildResult": "passed",
+  "environment": {
+    "os": "macos",
+    "version": "27.0.1",
+    "build": "26A434",
+    "architecture": "arm64",
+    "cohort": "supplemental-local-not-frozen-target"
+  },
+  "prerequisiteEvidence": "../prerequisites.json",
+  "provisioning": {
+    "mode": "separately-cached-offline-build",
+    "dependencyLocksChanged": false,
+    "networkDuringBuild": false,
+    "isolationAssessment": "offline-flags-not-OS-enforcement",
+    "runtimeArchives": [
+      {
+        "tool": "go",
+        "version": "1.27.1",
+        "target": "darwin-arm64",
+        "url": "https://go.dev/dl/go1.27.1.darwin-arm64.tar.gz",
+        "sha256": "ee215d57e0ec269c60cc9ceca68e6bda321ba9ee5afe24f4b0988703c2d87d12",
+        "observedSha256": "ee215d57e0ec269c60cc9ceca68e6bda321ba9ee5afe24f4b0988703c2d87d12",
+        "verification": "observed-bytes-match-prerequisite-recorded-download-receipt-not-signature"
+      }
+    ],
+    "interpreterOrigin": null
+  },
+  "nativeScanner": {
+    "name": "govulncheck",
+    "status": "not-run",
+    "reason": "Version matching uses the shared committed OSV API collector; native scanner/reachability coverage is not claimed."
+  },
+  "openRisks": [
+    "no-independent-license-approval",
+    "no-signed-artifact-provenance",
+    "no-reproducible-build-proof",
+    "incomplete-native-runtime-compiler-closure",
+    "no-distribution-lifecycle",
+    "known-advisory-version-matches-unremediated-reachability-not-tested"
+  ],
+  "licenseUnknownCount": 5,
+  "sbomSha256": "434601f6775c8019f7a78e26a77ac1fc780e6217e6c03b2b38100f323f4a0330",
+  "advisoriesSha256": "9ced40293eb3485d91f4a097295e9cbd93eea8504ad2b89dcba7157f1d421ae0",
+  "advisoryReview": {
+    "status": "open-risk",
+    "reachability": "not-tested",
+    "fixesApplied": false,
+    "queryCount": 6,
+    "matchedPackageCount": 1,
+    "advisoryRecords": 1,
+    "uniqueCveAliases": [
+      "CVE-2026-56852"
+    ],
+    "unprocessedAdvisoryIds": [
+      "GO-2026-5970"
+    ]
+  }
+}

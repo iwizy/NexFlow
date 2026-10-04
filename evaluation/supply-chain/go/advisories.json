@@ -1,0 +1,263 @@
+{
+  "formatVersion": 1,
+  "scannerVersion": "nf-056-11-osv-v1",
+  "apiVersion": "v1",
+  "api": "https://api.osv.dev/v1",
+  "startedAt": "2026-10-04T13:55:16.005Z",
+  "completedAt": "2026-10-04T13:55:16.616Z",
+  "databaseVersion": "unavailable-live-service-no-snapshot-id",
+  "candidate": "go",
+  "sourceRevision": "737396b6488a9f10b179061366b9f1d02591fb9f",
+  "collectorRevision": "f8f66a9122d73a195698966785d968cdd395de7b",
+  "scope": "exact-version-matching-no-reachability-or-security-certification",
+  "status": "completed",
+  "queries": [
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Go",
+          "name": "github.com/dlclark/regexp2"
+        },
+        "version": "v1.11.0"
+      },
+      "refs": [
+        "pkg:golang/github.com/dlclark/regexp2@v1.11.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Go",
+          "name": "github.com/santhosh-tekuri/jsonschema/v6"
+        },
+        "version": "v6.0.2"
+      },
+      "refs": [
+        "pkg:golang/github.com/santhosh-tekuri/jsonschema/v6@v6.0.2"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Go",
+          "name": "go.yaml.in/yaml/v3"
+        },
+        "version": "v3.0.4"
+      },
+      "refs": [
+        "pkg:golang/go.yaml.in/yaml/v3@v3.0.4"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Go",
+          "name": "golang.org/x/text"
+        },
+        "version": "v0.14.0"
+      },
+      "refs": [
+        "pkg:golang/golang.org/x/text@v0.14.0"
+      ],
+      "matches": [
+        {
+          "id": "GO-2026-5970",
+          "modified": "2026-09-23T10:41:39.386264Z"
+        }
+      ]
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Go",
+          "name": "gopkg.in/check.v1"
+        },
+        "version": "v0.0.0-20161208181325-20d25e280405"
+      },
+      "refs": [
+        "pkg:golang/gopkg.in/check.v1@v0.0.0-20161208181325-20d25e280405"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Go",
+          "name": "stdlib"
+        },
+        "version": "1.27.1"
+      },
+      "refs": [
+        "runtime:go-stdlib"
+      ],
+      "matches": []
+    }
+  ],
+  "pages": [
+    {
+      "queries": [
+        {
+          "package": {
+            "ecosystem": "Go",
+            "name": "github.com/dlclark/regexp2"
+          },
+          "version": "v1.11.0"
+        },
+        {
+          "package": {
+            "ecosystem": "Go",
+            "name": "github.com/santhosh-tekuri/jsonschema/v6"
+          },
+          "version": "v6.0.2"
+        },
+        {
+          "package": {
+            "ecosystem": "Go",
+            "name": "go.yaml.in/yaml/v3"
+          },
+          "version": "v3.0.4"
+        },
+        {
+          "package": {
+            "ecosystem": "Go",
+            "name": "golang.org/x/text"
+          },
+          "version": "v0.14.0"
+        },
+        {
+          "package": {
+            "ecosystem": "Go",
+            "name": "gopkg.in/check.v1"
+          },
+          "version": "v0.0.0-20161208181325-20d25e280405"
+        },
+        {
+          "package": {
+            "ecosystem": "Go",
+            "name": "stdlib"
+          },
+          "version": "1.27.1"
+        }
+      ],
+      "response": {
+        "results": [
+          {},
+          {},
+          {},
+          {
+            "vulns": [
+              {
+                "id": "GO-2026-5970",
+                "modified": "2026-09-23T10:41:39.386264Z"
+              }
+            ]
+          },
+          {},
+          {}
+        ]
+      },
+      "responseSha256": "f44fb228f007b1cdf9a6c43b2705f926f24f89729bb9742d406be8fd323fe925"
+    }
+  ],
+  "advisories": [
+    {
+      "id": "GO-2026-5970",
+      "aliases": [
+        "CVE-2026-56852"
+      ],
+      "modified": "2026-09-23T10:41:39.386264978Z",
+      "published": "2026-07-14T17:29:56Z",
+      "withdrawn": null,
+      "sourceSha256": "4209117833e914fdf2bc37b656bdb7a20bc1164f1ad3e759edc18702287219da",
+      "severity": [],
+      "databaseSpecific": {
+        "review_status": "REVIEWED",
+        "url": "https://pkg.go.dev/vuln/GO-2026-5970"
+      },
+      "affected": [
+        {
+          "package": {
+            "name": "golang.org/x/text",
+            "ecosystem": "Go",
+            "purl": "pkg:golang/golang.org/x/text"
+          },
+          "ranges": [
+            {
+              "type": "SEMVER",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "0.39.0"
+                }
+              ]
+            }
+          ],
+          "ecosystem_specific": {
+            "imports": [
+              {
+                "path": "golang.org/x/text/unicode/norm",
+                "symbols": [
+                  "Form.Append",
+                  "Form.AppendString",
+                  "Form.Bytes",
+                  "Form.FirstBoundary",
+                  "Form.FirstBoundaryInString",
+                  "Form.IsNormal",
+                  "Form.IsNormalString",
+                  "Form.LastBoundary",
+                  "Form.NextBoundary",
+                  "Form.NextBoundaryInString",
+                  "Form.Properties",
+                  "Form.PropertiesString",
+                  "Form.QuickSpan",
+                  "Form.QuickSpanString",
+                  "Form.Span",
+                  "Form.SpanString",
+                  "Form.String",
+                  "Form.Transform",
+                  "Iter.Init",
+                  "Iter.InitString",
+                  "Iter.Next",
+                  "Iter.Seek",
+                  "nextComposed",
+                  "normReader.Read",
+                  "normWriter.Write"
+                ]
+              }
+            ]
+          },
+          "database_specific": {
+            "source": "https://vuln.go.dev/ID/GO-2026-5970.json"
+          }
+        }
+      ],
+      "references": [
+        {
+          "type": "REPORT",
+          "url": "https://go.dev/issue/80142"
+        },
+        {
+          "type": "FIX",
+          "url": "https://go.dev/cl/794100"
+        }
+      ],
+      "url": "https://osv.dev/vulnerability/GO-2026-5970"
+    }
+  ],
+  "queryCount": 6,
+  "matchedPackageCount": 1,
+  "advisoryCount": 1,
+  "fixesApplied": false,
+  "untested": [
+    "OS/distribution advisories",
+    "compiler and interpreter bundled native closure",
+    "unpublished vulnerabilities",
+    "independent dependency source audit",
+    "exploit reachability"
+  ]
+}

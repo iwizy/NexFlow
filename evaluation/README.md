@@ -16,6 +16,10 @@ The [four-candidate fidelity review](fidelity/README.md) compares immutable
 prototype revisions without changing the common catalog or accepting an
 architecture. Missing semantics remain visible eligibility blockers.
 
+The [offline/denied-effects experiment](isolation/README.md) adds independent
+positive/negative OS controls and bounded native macOS evidence. It keeps
+security residuals, other targets and architecture acceptance separate.
+
 The [four pinned candidate toolchain plans](toolchains/README.md) add native
 dependency capability probes and checked lockfiles. They do not promote candidate
 scorecards, replace the shared corpus or pass architecture hard gates.

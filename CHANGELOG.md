@@ -8,6 +8,11 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Added
 
+- Added a source-bound offline/denied-effects experiment for four validation-only
+  candidates, with independent synthetic OS controls, immutable harness bindings
+  and consistency/rejection checks. Local macOS evidence is bounded; security
+  remains partial, other targets not-tested and architecture not-ready.
+
 - Prepared a revision-pinned `0.5` beta checkpoint covering all eight readiness
   gates, source-check evidence, open blockers and the next closure actions,
   with an offline CI consistency and non-approval check. The result remains

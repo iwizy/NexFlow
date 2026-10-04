@@ -8,6 +8,12 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Added
 
+- Prepared four revision-bound candidate supply-chain inventories, SBOMs,
+  advisory matching and artifact/provenance records with offline consistency
+  and rejection checks. Unknown license/native/runtime closure and untested
+  signing or lifecycle remain open; no dependency repair, architecture approval,
+  release or version change is introduced.
+
 - Prepared a revision-pinned `0.5` beta checkpoint covering all eight readiness
   gates, source-check evidence, open blockers and the next closure actions,
   with an offline CI consistency and non-approval check. The result remains

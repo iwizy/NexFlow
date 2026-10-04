@@ -98,5 +98,8 @@ jobs:
       - name: Verify four-candidate fidelity evidence and rejection paths
         run: npm run runtime-fidelity-smoke
 
+      - name: Verify candidate supply-chain evidence and rejection paths
+        run: npm run runtime-supply-chain-smoke
+
       - name: Run semantic reference smoke checks
         run: npm run semantic-smoke

@@ -48,11 +48,26 @@ export function evidenceErrors(record, scan, sbom, pins) {
   require(scan?.status === "completed" && scan.scannerVersion === "nf-056-11-osv-v1" && scan.apiVersion === "v1" && scan.fixesApplied === false, "scan state");
   require(scan?.databaseVersion === "unavailable-live-service-no-snapshot-id" && scan.untested?.length >= 5, "scan coverage limits");
   const queries = scan?.queries ?? [], covered = new Set(queries.flatMap(q => q.refs ?? []));
+  const queryKey = query => JSON.stringify({ package: query.package, version: query.version });
+  const raw = new Map();
+  for (const page of scan?.pages ?? []) for (let i = 0; i < (page.queries?.length ?? 0); i++) {
+    const key = queryKey(page.queries[i]), result = page.response?.results?.[i];
+    if (!raw.has(key)) raw.set(key, []);
+    raw.get(key).push(...(result?.vulns ?? []));
+  }
+  const uniqueMatches = matches => [...new Map(matches.map(m => [m.id, { id: m.id, modified: m.modified }])).values()]
+    .sort((a,b) => a.id.localeCompare(b.id));
+  require(new Set(queries.map(row => queryKey(row.query))).size === queries.length
+    && raw.size === queries.length, "raw query coverage");
   require(components.every(c => covered.has(c.ref)), "unscanned component");
   for (const row of queries) {
     const matches = row.matches ?? [];
+    require(JSON.stringify(uniqueMatches(matches)) === JSON.stringify(uniqueMatches(raw.get(queryKey(row.query)) ?? [])), "raw matches divergence");
     require(Array.isArray(row.refs) && row.refs.length > 0 && matches.every(m => m.id && m.modified), "scan query result");
-    for (const ref of row.refs) if (ref !== "runtime:go-stdlib") {
+    for (const ref of row.refs) if (ref === "runtime:go-stdlib") {
+      require(record.candidate === "go" && row.query.package.ecosystem === "Go"
+        && row.query.package.name === "stdlib" && row.query.version === "1.27.1", "stdlib query");
+    } else {
       const c = components.find(item => item.ref === ref);
       require(c && row.query?.package?.name === c.name && row.query?.package?.ecosystem === c.ecosystem && row.query?.version === c.version, "scan version divergence");
     }

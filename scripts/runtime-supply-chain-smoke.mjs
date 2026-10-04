@@ -55,6 +55,7 @@ const mutations = [
   r => r.scan.queries[0].matches.push({ id: "synthetic-advisory", modified: "2026-10-04T00:00:00Z" }),
   r => r.scan.pages = [],
   r => r.scan.pages[0].response.results[0].next_page_token = "unread-page",
+  r => r.scan.pages[0].response.results[0].vulns = [{ id: "hidden-advisory", modified: "2026-10-04T00:00:00Z" }],
   r => r.scan.completedAt = "2026-01-01T00:00:00Z",
   r => r.record.limitations.push("/Users/example/private")
 ];
@@ -64,11 +65,12 @@ for (const mutate of mutations) {
 }
 const match = clone(initial);
 match.scan.queries[0].matches.push({ id: "synthetic-advisory", modified: "2026-10-04T00:00:00Z" });
+match.scan.pages[0].response.results[0].vulns = clone(match.scan.queries[0].matches);
 match.scan.advisories.push({ id: "synthetic-advisory", url: "https://osv.dev/vulnerability/synthetic-advisory", sourceSha256: "c".repeat(64) });
 match.scan.advisoryCount = 1; match.scan.matchedPackageCount = 1;
 assert.deepEqual(evidenceErrors(match.record, match.scan, match.sbom, pins), []);
 const files = ids.map(id => "evaluation/supply-chain/" + id + "/inventory.json");
-if (files.some(existsSync)) {
+if (files.some(existsSync) && !process.argv.includes("--controls-only")) {
   assert.ok(files.every(existsSync), "all four bundles are required");
   const revisions = new Set();
   for (const id of ids) {
@@ -94,4 +96,5 @@ if (files.some(existsSync)) {
   }
   assert.equal(revisions.size, 1, "one committed collection source");
 }
-console.log("Supply-chain evidence consistency and " + (mutations.length + 2) + " control/rejection cases passed; no security approval.");
+console.log((process.argv.includes("--controls-only") ? "Synthetic controls only; real bundles not checked. " : "Supply-chain evidence consistency. ")
+  + (mutations.length + 2) + " control/rejection cases passed; no security approval.");

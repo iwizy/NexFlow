@@ -29,6 +29,9 @@ jobs:
       - name: Verify stored Linux lifecycle evidence without promoting gates
         run: npm run runtime-linux-lifecycle-smoke
 
+      - name: Verify stored macOS lifecycle evidence without promoting gates
+        run: npm run runtime-macos-lifecycle-smoke
+
       - name: Verify Windows lifecycle records and honest open gates
         run: npm run runtime-windows-lifecycle-smoke
 
@@ -100,6 +103,9 @@ jobs:
 
       - name: Verify beta checkpoint preparation and non-approval
         run: npm run beta-checkpoint-smoke
+
+      - name: Verify validation checkpoint evidence and non-approval
+        run: npm run validation-checkpoint-smoke
 
       - name: Verify candidate toolchain locks and capability records
         run: npm run runtime-toolchain-smoke

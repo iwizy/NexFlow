@@ -47,6 +47,10 @@ or executable behavior from `0.2`; selected semantic checks remain partial.
 Historical `v0.1.0` evidence
 continues to describe only its original snapshot.
 
+The dated [0.2 validation/conformance checkpoint](0.2-validation-checkpoint.md)
+binds later checks to a separate source revision. It changes no compatibility
+row, manifest dialect, published release or older validator claim subject.
+
 | Surface | Current contract | Status | Evidence | Explicit limitation |
 | --- | --- | --- | --- | --- |
 | `0.1` release scope | Frozen 17-kind baseline with explicit RFC treatment, optional surfaces, migration-only forms, and deferred work | Specified | `docs/0.1-scope.md`, `v0.1.0` release evidence | The release decision covers one exact repository snapshot; it does not imply runtime behavior, accepted draft RFCs, or `1.0` stability. |
@@ -400,9 +404,9 @@ npm run conformance-claim-smoke
 ```
 
 Compatible with standalone conformance claim `claimVersion: "0.1"`. It checks
-15 accepted and rejected schema cases, including profile-qualified scope, plus
-the required human-readable template sections and six current conformance
-levels.
+37 cataloged accepted and rejected fixture cases, including profile-qualified
+scope and exact rejection boundaries, plus the paired draft validator statement,
+required human-readable sections and six current conformance levels.
 
 It does not verify external evidence, evaluate implementations, operate a
 registry, issue certification, or establish any conformance level.

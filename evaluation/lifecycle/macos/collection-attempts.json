@@ -1,0 +1,14 @@
+{
+  "task": "NF-056-13",
+  "attempts": [
+    {
+      "candidate": "typescript",
+      "collectorRevision": "cdabd1eabf8f185a3de33042d2bc8f32109048df",
+      "exitCode": 1,
+      "result": "collector-failed-before-candidate-invocation",
+      "error": "nonregular-artifact-file",
+      "cause": "npm-generated node_modules/.bin symlink wrapper in the temporary runtime dependency installation",
+      "forwardChange": "Remove only unused npm-generated wrappers from the temporary capsule; candidate sources, locks and dist bytes unchanged."
+    }
+  ]
+}

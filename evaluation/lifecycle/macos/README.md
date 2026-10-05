@@ -79,3 +79,53 @@ runtime. The smoke check validates stored evidence and rejection controls
 offline; it does not rerun lifecycle operations or approve candidate gates.
 CI fixture consistency and source-checkout invocations do not substitute for
 the recorded native installed executions.
+
+## Actual Observations — 2026-10-05
+
+Collector revision `7dcfcdb8beed08d0f0329dc83f1bd9add54d6625` ran on
+native macOS 27.0.1 (26A434), Apple M4 Pro ARM64, without translation.
+This differs from frozen macOS 15.7.9 (24G830), the macos-15 image, virtual M1,
+CPU count and memory. Every record marks supplemental drift; no benchmark
+comparison or frozen cohort update is made.
+
+| Candidate record | Capsule bytes | Package / clean install | Shared cases passed / failed | Installed offline use | Scoped uninstall |
+| --- | ---: | --- | ---: | --- | --- |
+| [TypeScript](typescript.json) | 586042 | passed / passed | 11 / 0 | passed | passed |
+| [Python](python.json) | 3927933 | passed / passed | 11 / 0 | passed | passed |
+| [Rust](rust.json) | 4391879 | passed / passed | 1 / 10 | failed | passed |
+| [Go](go.json) | 3507675 | passed / passed | 11 / 0 | passed | passed |
+
+Each case ran twice: 88 installed process invocations, 68 satisfying unchanged
+expectations and 20 failing. Rust's ten failures return exit 4 and
+`NEXFLOW-PROTOTYPE-INTERNAL` when its compiled-in source schemas are inaccessible.
+Only the rejection of `run` passes. Packaging the unchanged executable and
+schemas does not repair its source-bound schema lookup. No candidate code,
+locks or common expectations were changed.
+
+Every exact profile passed seven paired controls before candidate invocation:
+unrestricted synthetic operations succeeded; sandboxed read/write/connect/bind/
+fork/spawn/self-spawn returned EPERM. An additional paired read of the original
+source schema succeeded unrestricted and failed with EPERM under that profile.
+Input/candidate source/locks and installed payload, including Python venv
+content and link-target digests, remained unchanged. The external runtimes and
+outside canary remained present after the isolated install-prefix removal.
+
+[Independent archive verification](archive-verification.json) re-extracted
+all four capsules and checked SHA-256, byte sizes and all 957 manifest files.
+This was not an extra candidate invocation or a reproducible-build test.
+[Collection attempts](collection-attempts.json) preserve the initial TypeScript
+collector failure on an unused npm-generated symlink wrapper. A forward
+packaging-only change removes those wrappers from the temporary capsule;
+candidate source, locks and compiled TypeScript bytes are unchanged.
+
+Read-only native inspection found ARM64 slices in every inspected executable
+and both installed Python native modules. CPython, the two Python modules,
+Rust and Go have existing ad-hoc signatures. External Node has an existing
+identity-bearing signature, which is not authorization to sign these capsules.
+No identity/keychain inventory, signature rewrite, credential reuse, Apple
+upload, notarization or trust-policy change was performed.
+
+Upgrade, rollback, authorized signing and notarization remain not-tested for
+all four records. Native/system dependency closure, disclosed supply-chain
+advisories, frozen target eligibility, complete security/fidelity and independent
+review remain open. Four bounded evidence deliverables do not close those gates.

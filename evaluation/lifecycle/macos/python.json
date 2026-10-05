@@ -1,0 +1,1935 @@
+{
+  "task": "NF-056-13",
+  "recordedAt": "2026-10-05T10:28:52.036Z",
+  "candidate": "python",
+  "target": "macos/arm64",
+  "sourceRevision": "76141dfbeae265cb636d99a6164b097ce5d3019a",
+  "specificationRevision": "1d1fa238ab5729a79bee9389d5c66cfd20a61256",
+  "evaluationPackageRevision": "a8301a7478587c59502dfb2e6bd548489c14ee2b",
+  "corpusSha256": "01b116005f0650ac980194b22c02188289eaf1e8626b227aecf3684ece0d8f6b",
+  "catalogSha256": "f1bf8cb786442a212e14c79eb39279a2cdbf05ec20b09901374359d545d74e90",
+  "collectorRevision": "7dcfcdb8beed08d0f0329dc83f1bd9add54d6625",
+  "collectorSources": [
+    {
+      "path": "scripts/runtime-macos-lifecycle.mjs",
+      "sha256": "3f8b84438f9ad04f95341f43ca62b7b5328563c5e2fb05cf4d9112a388b1098d"
+    },
+    {
+      "path": "scripts/lib/macos-lifecycle-evidence.mjs",
+      "sha256": "641adeb18067ab0cd6be127a9c9f245425d0d762ec25546ae15b6e3f19f28c9a"
+    },
+    {
+      "path": "scripts/lib/isolation-evidence.mjs",
+      "sha256": "44e9bd539b75abdd387e5e2f15f05b164b10ce8a0aeffea51053fa8896e70688"
+    },
+    {
+      "path": "scripts/lib/evaluation-environment.mjs",
+      "sha256": "025d9ec0bb3bbc03f3d10ff59d7de692f36b51d71763733f97c81594ca44db0d"
+    },
+    {
+      "path": "scripts/lib/runtime-evaluation.mjs",
+      "sha256": "5d63d6834cbb19987b449fa2759a229c7ade7f786343550d7b12e918104868bf"
+    },
+    {
+      "path": "evaluation/isolation/deny-canary.c",
+      "sha256": "da8229510b0112e27d05992701c5ea83c4e06debcd358a5f9aaeb33bbd473e6a"
+    }
+  ],
+  "sourceManifest": [
+    {
+      "path": "evaluation/prototypes/python/.python-version",
+      "bytes": 8,
+      "sha256": "f50159fad3f4319868eb38717b91d55843c41e9803014c8de05e116a6d0bcfdc"
+    },
+    {
+      "path": "evaluation/prototypes/python/README.md",
+      "bytes": 5302,
+      "sha256": "cc2cf2b7af5b23b8e85f318a5e51f20754fbde1a88ac084262b1edb0a557383c"
+    },
+    {
+      "path": "evaluation/prototypes/python/cli.py",
+      "bytes": 3112,
+      "sha256": "ac602e08999c07b14215c577b38b411e3c298b902f5700db681a61839c5d1fe5"
+    },
+    {
+      "path": "evaluation/prototypes/python/library_driver.py",
+      "bytes": 1321,
+      "sha256": "8ac9022f2ca7189949eb2a82f5931a84d2f345667dfbb950999e9f3753a42989"
+    },
+    {
+      "path": "evaluation/prototypes/python/nexflow_python_evaluation/__init__.py",
+      "bytes": 470,
+      "sha256": "f015f1cd4e1fa45461731c05c28dff01b5667304df86ae7fea12b012afeef220"
+    },
+    {
+      "path": "evaluation/prototypes/python/nexflow_python_evaluation/discovery.py",
+      "bytes": 6431,
+      "sha256": "42e101935704f55f43b57252e5c9b60f1fb21186f1adc687e76831a6dc45ca88"
+    },
+    {
+      "path": "evaluation/prototypes/python/nexflow_python_evaluation/files.py",
+      "bytes": 2757,
+      "sha256": "4bbf3e9894d39e0309c00198783c983c312c119618e3612889e5eebb3ee74eaf"
+    },
+    {
+      "path": "evaluation/prototypes/python/nexflow_python_evaluation/inspection.py",
+      "bytes": 6396,
+      "sha256": "5a49f74f3ed434e462f0b64403f91af33685681e0b5f2d801cb238fd25aee0c7"
+    },
+    {
+      "path": "evaluation/prototypes/python/nexflow_python_evaluation/library.py",
+      "bytes": 5336,
+      "sha256": "f3f41fdcf853c65fa9324fb8169d52b96d2157ef373a56495712d20766d5b373"
+    },
+    {
+      "path": "evaluation/prototypes/python/nexflow_python_evaluation/model.py",
+      "bytes": 3787,
+      "sha256": "2429b1e2ac8ca511f6074a43f28a1d2f8e287675fc8cffbcf1ee573a3334a440"
+    },
+    {
+      "path": "evaluation/prototypes/python/nexflow_python_evaluation/schema.py",
+      "bytes": 4297,
+      "sha256": "19438a6510f72a00d2b8b8f5a680295cef071d88e327e3540ca92c6959c99bd9"
+    },
+    {
+      "path": "evaluation/prototypes/python/nexflow_python_evaluation/yaml_input.py",
+      "bytes": 3827,
+      "sha256": "4c460e98505c283e46dee355b500afcab3a18aa807e75384d816e4cdab8daa63"
+    },
+    {
+      "path": "evaluation/prototypes/python/requirements.in",
+      "bytes": 116,
+      "sha256": "ea3c75d351cd8d5139af5031b2c39f890b45dfe545f80b5d521d8947c3c62640"
+    },
+    {
+      "path": "evaluation/prototypes/python/requirements.lock",
+      "bytes": 17490,
+      "sha256": "1c0cf5c9c6e11afd14c878b66e9e70f550f4d56def426b81fd0f15dd20a32dc2"
+    },
+    {
+      "path": "evaluation/prototypes/python/self_test.py",
+      "bytes": 11574,
+      "sha256": "d8ef910edaf75233bd2aa59cbb5b777d658af599012f4a85bf7ce5241d1aca8b"
+    }
+  ],
+  "sourceManifestSha256": "6f9fbd7b0607a5239cdfe36fd7fff7784274a707ce7652ac08817f3946e7211f",
+  "lockfiles": [
+    {
+      "path": "evaluation/prototypes/python/requirements.lock",
+      "bytes": 17490,
+      "sha256": "1c0cf5c9c6e11afd14c878b66e9e70f550f4d56def426b81fd0f15dd20a32dc2"
+    }
+  ],
+  "prerequisitesSha256": "aa77678ae3e8544fc00aae96b750716e2008c7a88f8ba1ae58c49dac10926aff",
+  "supplyChain": {
+    "revision": "fed105367da915347a92896eb67c0446d9e9b2d7",
+    "inventorySha256": "211c124ec6dabc1b4fa8ac858adec46cce4fd170eeb29f57c638d4cb2525c9ee",
+    "status": "partial",
+    "remediation": "none"
+  },
+  "toolchain": "CPython 3.12.14; PyYAML 6.0.3; jsonschema 4.26.0",
+  "runtime": {
+    "version": "3.12.14",
+    "executableSha256": "ac60cfe0268614638d0ffa35f3b0284fc7b3a11482723793455e17eeb278509e",
+    "externalRequired": true
+  },
+  "build": {
+    "mode": "reuse-hash-verified-NF-056-11-native-build",
+    "commands": [
+      "python -I -m pip check",
+      "python -I -m compileall -q evaluation/prototypes/python"
+    ],
+    "freshBuild": "not-tested",
+    "supplyCollectorRevision": "f8f66a9122d73a195698966785d968cdd395de7b"
+  },
+  "artifact": {
+    "version": "76141dfbeae265cb636d99a6164b097ce5d3019a.macos.arm64.7dcfcdb8beed08d0f0329dc83f1bd9add54d6625",
+    "filename": "python-76141dfbeae265cb636d99a6164b097ce5d3019a.macos.arm64.7dcfcdb8beed08d0f0329dc83f1bd9add54d6625.tar.gz",
+    "bytes": 3927933,
+    "sha256": "4bb21d503776162572b7e8ba1109c8ff5263962e9aced49b6da3b0d0478e09ce",
+    "files": [
+      {
+        "path": "evaluation/prototypes/python/.python-version",
+        "bytes": 8,
+        "sha256": "f50159fad3f4319868eb38717b91d55843c41e9803014c8de05e116a6d0bcfdc"
+      },
+      {
+        "path": "evaluation/prototypes/python/README.md",
+        "bytes": 5302,
+        "sha256": "cc2cf2b7af5b23b8e85f318a5e51f20754fbde1a88ac084262b1edb0a557383c"
+      },
+      {
+        "path": "evaluation/prototypes/python/cli.py",
+        "bytes": 3112,
+        "sha256": "ac602e08999c07b14215c577b38b411e3c298b902f5700db681a61839c5d1fe5"
+      },
+      {
+        "path": "evaluation/prototypes/python/library_driver.py",
+        "bytes": 1321,
+        "sha256": "8ac9022f2ca7189949eb2a82f5931a84d2f345667dfbb950999e9f3753a42989"
+      },
+      {
+        "path": "evaluation/prototypes/python/nexflow_python_evaluation/__init__.py",
+        "bytes": 470,
+        "sha256": "f015f1cd4e1fa45461731c05c28dff01b5667304df86ae7fea12b012afeef220"
+      },
+      {
+        "path": "evaluation/prototypes/python/nexflow_python_evaluation/discovery.py",
+        "bytes": 6431,
+        "sha256": "42e101935704f55f43b57252e5c9b60f1fb21186f1adc687e76831a6dc45ca88"
+      },
+      {
+        "path": "evaluation/prototypes/python/nexflow_python_evaluation/files.py",
+        "bytes": 2757,
+        "sha256": "4bbf3e9894d39e0309c00198783c983c312c119618e3612889e5eebb3ee74eaf"
+      },
+      {
+        "path": "evaluation/prototypes/python/nexflow_python_evaluation/inspection.py",
+        "bytes": 6396,
+        "sha256": "5a49f74f3ed434e462f0b64403f91af33685681e0b5f2d801cb238fd25aee0c7"
+      },
+      {
+        "path": "evaluation/prototypes/python/nexflow_python_evaluation/library.py",
+        "bytes": 5336,
+        "sha256": "f3f41fdcf853c65fa9324fb8169d52b96d2157ef373a56495712d20766d5b373"
+      },
+      {
+        "path": "evaluation/prototypes/python/nexflow_python_evaluation/model.py",
+        "bytes": 3787,
+        "sha256": "2429b1e2ac8ca511f6074a43f28a1d2f8e287675fc8cffbcf1ee573a3334a440"
+      },
+      {
+        "path": "evaluation/prototypes/python/nexflow_python_evaluation/schema.py",
+        "bytes": 4297,
+        "sha256": "19438a6510f72a00d2b8b8f5a680295cef071d88e327e3540ca92c6959c99bd9"
+      },
+      {
+        "path": "evaluation/prototypes/python/nexflow_python_evaluation/yaml_input.py",
+        "bytes": 3827,
+        "sha256": "4c460e98505c283e46dee355b500afcab3a18aa807e75384d816e4cdab8daa63"
+      },
+      {
+        "path": "evaluation/prototypes/python/requirements.in",
+        "bytes": 116,
+        "sha256": "ea3c75d351cd8d5139af5031b2c39f890b45dfe545f80b5d521d8947c3c62640"
+      },
+      {
+        "path": "evaluation/prototypes/python/requirements.lock",
+        "bytes": 17490,
+        "sha256": "1c0cf5c9c6e11afd14c878b66e9e70f550f4d56def426b81fd0f15dd20a32dc2"
+      },
+      {
+        "path": "evaluation/prototypes/python/self_test.py",
+        "bytes": 11574,
+        "sha256": "d8ef910edaf75233bd2aa59cbb5b777d658af599012f4a85bf7ce5241d1aca8b"
+      },
+      {
+        "path": "schemas/README.md",
+        "bytes": 16217,
+        "sha256": "28d1715b391c414c1a4c46410046277e783f5df60768761ea127630c8773a890"
+      },
+      {
+        "path": "schemas/actors.schema.json",
+        "bytes": 4648,
+        "sha256": "fb376254763eaa670696618678629f049cb6f782b7816aa20e0216e9625c21a3"
+      },
+      {
+        "path": "schemas/agent-definitions.schema.json",
+        "bytes": 8515,
+        "sha256": "0faad7750d9fd95914e09ee7ffbfb23236da303fbcfd211ce77c45589bfa68d7"
+      },
+      {
+        "path": "schemas/agents.schema.json",
+        "bytes": 4731,
+        "sha256": "7505ce0ad4ce18eb74a477982b31b77ca06d8069022300171c28e1ada419b24e"
+      },
+      {
+        "path": "schemas/capabilities.schema.json",
+        "bytes": 1216,
+        "sha256": "4fc446a356b2f7709bf259ad6fbf4632a64bc77800a43e77b81354710e5e3026"
+      },
+      {
+        "path": "schemas/common.schema.json",
+        "bytes": 31287,
+        "sha256": "a02f583325e2b20ffbb659efa451206579779a557a5fc89fbb412c10414630cc"
+      },
+      {
+        "path": "schemas/context.schema.json",
+        "bytes": 6012,
+        "sha256": "ad0fc663f5e4bf92eb033d250e38c2ef914947834aa03fc257d601a6226ad7a8"
+      },
+      {
+        "path": "schemas/events.schema.json",
+        "bytes": 1686,
+        "sha256": "d08c9cce4106394c5bf53a034ff8a574bfe11ccf085ac53f508459d7a0e98a65"
+      },
+      {
+        "path": "schemas/extensions.schema.json",
+        "bytes": 1960,
+        "sha256": "1c87855f8ec5eeba871981ab8d0feac4f026c508b943644bfbc350685270a31d"
+      },
+      {
+        "path": "schemas/handoffs.schema.json",
+        "bytes": 1729,
+        "sha256": "40af0a3c48b63f8709e8297badf4a9100fdcc3b22f66cc3c748b88628e5b1ab5"
+      },
+      {
+        "path": "schemas/memory.schema.json",
+        "bytes": 2317,
+        "sha256": "75a655d9b1aa57be73c6ec738e10faea327837838ecf2a4b7a1031e28486fb59"
+      },
+      {
+        "path": "schemas/model-profiles.schema.json",
+        "bytes": 5624,
+        "sha256": "0503322e7f73d62d3bbcad226799d6615ffc36339c2e9d9afe951c542a57ed00"
+      },
+      {
+        "path": "schemas/permissions.schema.json",
+        "bytes": 1547,
+        "sha256": "64084ad81e53b3629dfc4ecab3faf4ebd765105a3072c5f627c5d31daee2fbb0"
+      },
+      {
+        "path": "schemas/project.schema.json",
+        "bytes": 4030,
+        "sha256": "586bc846277b846f723371a734952fc30cf29e8c916d6b52db1897ac32fc0778"
+      },
+      {
+        "path": "schemas/prompt-sets.schema.json",
+        "bytes": 5339,
+        "sha256": "feaff935c6337638e4bd2cffdcd54d7bad516958cad0d0407185261dc2439d02"
+      },
+      {
+        "path": "schemas/providers.schema.json",
+        "bytes": 6897,
+        "sha256": "e3b55c4fbc2a86c05a82be8a7b3ef8126e04a13d425d5654a0e2ee0bca31e4fb"
+      },
+      {
+        "path": "schemas/retrieval-profiles.schema.json",
+        "bytes": 8548,
+        "sha256": "685bce372bc68e454b015afd39f412adc88c386f45c56144842fc11e4ff75ade"
+      },
+      {
+        "path": "schemas/tasks.schema.json",
+        "bytes": 1938,
+        "sha256": "4cf1f1f35396240abf7da7e018e03a0e99b99c71cb9881c4f729c0175a07a250"
+      },
+      {
+        "path": "schemas/workflow.schema.json",
+        "bytes": 3728,
+        "sha256": "1821ec6e26cc1e6060cd2388c22fc51c77a3678cf4ac8c1140934fe612a1b446"
+      },
+      {
+        "path": "wheelhouse/attrs-26.1.0-py3-none-any.whl",
+        "bytes": 67548,
+        "sha256": "c647aa4a12dfbad9333ca4e71fe62ddc36f4e63b2d260a37a8b83d2f043ac309"
+      },
+      {
+        "path": "wheelhouse/build-1.3.0-py3-none-any.whl",
+        "bytes": 23382,
+        "sha256": "7145f0b5061ba90a1500d60bd1b13ca0a8a4cebdd0cc16ed8adf1c0e739f43b4"
+      },
+      {
+        "path": "wheelhouse/jsonschema-4.26.0-py3-none-any.whl",
+        "bytes": 90630,
+        "sha256": "d489f15263b8d200f8387e64b4c3a75f06629559fb73deb8fdfb525f2dab50ce"
+      },
+      {
+        "path": "wheelhouse/jsonschema_specifications-2025.9.1-py3-none-any.whl",
+        "bytes": 18437,
+        "sha256": "98802fee3a11ee76ecaca44429fda8a41bff98b00a0f2838151b113f210cc6fe"
+      },
+      {
+        "path": "wheelhouse/packaging-26.3-py3-none-any.whl",
+        "bytes": 129956,
+        "sha256": "d7193f7c8e4e93f444fde0262bf90af30e16fa0ad0ad44cb553c87339b23cd1c"
+      },
+      {
+        "path": "wheelhouse/pip-26.2.1-py3-none-any.whl",
+        "bytes": 1816632,
+        "sha256": "71138adf1f4ca900cdb7d289c21b7494329f2332b6d85f0e1c42108c0384ed3e"
+      },
+      {
+        "path": "wheelhouse/pyproject_hooks-1.3.3-py3-none-any.whl",
+        "bytes": 10724,
+        "sha256": "5fc53fdac9f7bd63fbcdc868fb5f90b4784d78a53a3d3388cd738b807441a20b"
+      },
+      {
+        "path": "wheelhouse/pyyaml-6.0.3-cp312-cp312-macosx_11_0_arm64.whl",
+        "bytes": 173973,
+        "sha256": "fc09d0aa354569bc501d4e787133afc08552722d3ab34836a80547331bb5d4a0"
+      },
+      {
+        "path": "wheelhouse/referencing-0.37.0-py3-none-any.whl",
+        "bytes": 26766,
+        "sha256": "381329a9f99628c9069361716891d34ad94af76e461dcb0335825aecc7692231"
+      },
+      {
+        "path": "wheelhouse/rfc3339_validator-0.1.4-py2.py3-none-any.whl",
+        "bytes": 3490,
+        "sha256": "24f6ec1eda14ef823da9e36ec7113124b39c04d50a4d3d3a3c2859577e7791fa"
+      },
+      {
+        "path": "wheelhouse/rpds_py-2026.6.3-cp312-cp312-macosx_11_0_arm64.whl",
+        "bytes": 338542,
+        "sha256": "538949e262e46caa31ac01bdb3c1e8f642622922cacbabbae6a8445d9dc33eaf"
+      },
+      {
+        "path": "wheelhouse/setuptools-80.9.0-py3-none-any.whl",
+        "bytes": 1201486,
+        "sha256": "062d34222ad13e0cc312a4c02d73f059e86a4acbfbdea8f8f76b28c99f306922"
+      },
+      {
+        "path": "wheelhouse/six-1.17.0-py2.py3-none-any.whl",
+        "bytes": 11050,
+        "sha256": "4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274"
+      },
+      {
+        "path": "wheelhouse/typing_extensions-4.16.0-py3-none-any.whl",
+        "bytes": 45571,
+        "sha256": "481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8"
+      },
+      {
+        "path": "wheelhouse/wheel-0.45.1-py3-none-any.whl",
+        "bytes": 72494,
+        "sha256": "708e7481cc80179af0e556bbf0cc00b8444c7321e2700b8d8580231d13017248"
+      }
+    ],
+    "manifestSha256": "ab1eb23d9a3872920a8318ced2c35513f8142680045b622f78b90536a4dbda53",
+    "format": "private source-layout evaluation capsule",
+    "publicPublication": "none",
+    "retained": "task-local temporary archive; no durable package hosting or retention guarantee"
+  },
+  "nativeInspections": [
+    {
+      "file": "external-exact-runtime",
+      "sha256": "ac60cfe0268614638d0ffa35f3b0284fc7b3a11482723793455e17eeb278509e",
+      "architectures": [
+        "arm64"
+      ],
+      "linkage": [
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation (compatibility version 150.0.0, current version 3038.1.255)",
+        "/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1351.0.0)",
+        "/usr/lib/libz.1.dylib (compatibility version 1.0.0, current version 1.2.12)",
+        "/usr/lib/libedit.3.dylib (compatibility version 2.0.0, current version 3.0.0)",
+        "/usr/lib/libncurses.5.4.dylib (compatibility version 5.4.0, current version 5.4.0)",
+        "/usr/lib/libpanel.5.4.dylib (compatibility version 5.4.0, current version 5.4.0)",
+        "/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration (compatibility version 1.0.0, current version 1345.0.0)"
+      ],
+      "codeSignature": {
+        "exitCode": 0,
+        "kind": "ad-hoc",
+        "detail": "Executable=<evaluation-path>\nIdentifier=-\nFormat=Mach-O thin (arm64)\nCodeDirectory v=20400 size=139976 flags=0x20002(adhoc,linker-signed) hashes=4371+0 location=embedded\nHash type=sha256 size=32\nCandidateCDHash sha256=4a8299cb0beb9b906b426f79df283c5a1cafd1cb\nCandidateCDHashFull sha256=4a8299cb0beb9b906b426f79df283c5a1cafd1cbd2ec5994bdb9ae0ff5c7d3f8\nHash choices=sha256\nCMSDigest=4a8299cb0beb9b906b426f79df283c5a1cafd1cbd2ec5994bdb9ae0ff5c7d3f8\nCMSDigestType=2\nCDHash=4a8299cb0beb9b906b426f79df283c5a1cafd1cb\nSignature=adhoc\nInfo.plist=not bound\nTeamIdentifier=not set\nSealed Resources=none\nInternal requirements=none\nwarning: Specifying ':' in the path is deprecated and will not work in a future release\n",
+        "developerIDAssessment": "not-tested",
+        "notarization": "not-tested"
+      }
+    },
+    {
+      "file": "venv/lib/python3.12/site-packages/rpds/rpds.cpython-312-darwin.so",
+      "sha256": "c3bf158b853dd34cac6667bb8b57e7228a15c7006fe259a55ce0f575bd36fc03",
+      "architectures": [
+        "arm64"
+      ],
+      "linkage": [
+        "@rpath/rpds.cpython-312-darwin.so (compatibility version 0.0.0, current version 0.0.0)",
+        "/usr/lib/libiconv.2.dylib (compatibility version 7.0.0, current version 7.0.0)",
+        "/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1356.0.0)"
+      ],
+      "codeSignature": {
+        "exitCode": 0,
+        "kind": "ad-hoc",
+        "detail": "Executable=<evaluation-path>/installed/venv/lib/python3.12/site-packages/rpds/rpds.cpython-312-darwin.so\nIdentifier=librpds.dylib\nFormat=Mach-O thin (arm64)\nCodeDirectory v=20400 size=7080 flags=0x20002(adhoc,linker-signed) hashes=218+0 location=embedded\nHash type=sha256 size=32\nCandidateCDHash sha256=e80b54373ae291eb6f2547326433ff8908f12586\nCandidateCDHashFull sha256=e80b54373ae291eb6f2547326433ff8908f125865aba056966a1f7c076d81249\nHash choices=sha256\nCMSDigest=e80b54373ae291eb6f2547326433ff8908f125865aba056966a1f7c076d81249\nCMSDigestType=2\nCDHash=e80b54373ae291eb6f2547326433ff8908f12586\nSignature=adhoc\nInfo.plist=not bound\nTeamIdentifier=not set\nSealed Resources=none\nInternal requirements=none\nwarning: Specifying ':' in the path is deprecated and will not work in a future release\n",
+        "developerIDAssessment": "not-tested",
+        "notarization": "not-tested"
+      }
+    },
+    {
+      "file": "venv/lib/python3.12/site-packages/yaml/_yaml.cpython-312-darwin.so",
+      "sha256": "e22e20c9ba0922aea16158d839a651b58226eb0e86544879b7d5f5229135d928",
+      "architectures": [
+        "arm64"
+      ],
+      "linkage": [
+        "/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1351.0.0)"
+      ],
+      "codeSignature": {
+        "exitCode": 0,
+        "kind": "ad-hoc",
+        "detail": "Executable=<evaluation-path>/installed/venv/lib/python3.12/site-packages/yaml/_yaml.cpython-312-darwin.so\nIdentifier=_yaml.cpython-312-darwin.so\nFormat=Mach-O thin (arm64)\nCodeDirectory v=20400 size=3092 flags=0x20002(adhoc,linker-signed) hashes=93+0 location=embedded\nHash type=sha256 size=32\nCandidateCDHash sha256=027cbf7b47632b06056a9fcb45d90bdfbe470d79\nCandidateCDHashFull sha256=027cbf7b47632b06056a9fcb45d90bdfbe470d795cec02d990948e3e8f8881fd\nHash choices=sha256\nCMSDigest=027cbf7b47632b06056a9fcb45d90bdfbe470d795cec02d990948e3e8f8881fd\nCMSDigestType=2\nCDHash=027cbf7b47632b06056a9fcb45d90bdfbe470d79\nSignature=adhoc\nInfo.plist=not bound\nTeamIdentifier=not set\nSealed Resources=none\nInternal requirements=none\nwarning: Specifying ':' in the path is deprecated and will not work in a future release\n",
+        "developerIDAssessment": "not-tested",
+        "notarization": "not-tested"
+      }
+    }
+  ],
+  "environment": {
+    "target": "macos/arm64",
+    "platform": "darwin",
+    "architecture": "arm64",
+    "runnerLabel": "local-native",
+    "imageOS": null,
+    "imageVersion": null,
+    "osVersion": "27.0.1",
+    "osBuild": "26A434",
+    "kernel": "27.0.0",
+    "cpuModel": "Apple M4 Pro",
+    "cpuCount": 14,
+    "memoryBytes": 51539607552,
+    "libc": null,
+    "translated": false,
+    "nativeArm64": true
+  },
+  "environmentSha256": "83da03d9d32f2a0ec705f7afe08fcbe99853f09ed85d6a273b560574441747eb",
+  "cohort": {
+    "matched": false,
+    "status": "supplemental-drift",
+    "blockers": [
+      "wrong-runner-label",
+      "incomplete-environment",
+      "wrong-os-family-or-translation",
+      "environment-drift:runnerLabel",
+      "environment-drift:imageOS",
+      "environment-drift:imageVersion",
+      "environment-drift:osVersion",
+      "environment-drift:osBuild",
+      "environment-drift:kernel",
+      "environment-drift:cpuModel",
+      "environment-drift:cpuCount",
+      "environment-drift:memoryBytes"
+    ]
+  },
+  "previousArtifact": null,
+  "installation": {
+    "status": "passed",
+    "archiveVerified": true,
+    "manifestVerified": true,
+    "commands": [
+      {
+        "command": "tar -xzf <verified-capsule> -C <clean-prefix>",
+        "exitCode": 0
+      },
+      {
+        "command": "CPython 3.12.14 -I -m venv --without-pip <clean-prefix>/venv",
+        "exitCode": 0
+      },
+      {
+        "command": "pip 26.2.1 --python <installed-python> install --no-index --require-hashes --only-binary=:all: <locked-wheels>",
+        "exitCode": 0,
+        "stderr": ""
+      },
+      {
+        "command": "<installed-python> -I -m pip check",
+        "exitCode": 0
+      }
+    ],
+    "networkBoundary": "extraction/venv/hash-locked no-index provisioning is separate trusted setup, not OS-sandboxed installation"
+  },
+  "isolation": {
+    "positive": {
+      "read": 0,
+      "write": 0,
+      "connect": 0,
+      "bind": 0,
+      "fork": 0,
+      "spawn": 0,
+      "spawnSelf": 0
+    },
+    "denied": {
+      "read": 1,
+      "write": 1,
+      "connect": 1,
+      "bind": 1,
+      "fork": 1,
+      "spawn": 1,
+      "spawnSelf": 1
+    },
+    "beforeCandidate": true,
+    "sourceSchemaRead": {
+      "positive": 0,
+      "denied": 1
+    },
+    "profileSha256": "3cdacd231a668921e1e7550f8bcd886726a10c4a58933ceb02dbcd6ae329a372",
+    "canarySha256": "51a76864e1429bbdf7e14d0885899ba45446162ccc7b2e941fd884b53c8d94fc",
+    "scope": "installed invocations only; OS network/file-write/process denial and source-schema read denial"
+  },
+  "execution": {
+    "invocation": [
+      "<evaluation-path>/installed/venv/bin/python",
+      "-I",
+      "-B",
+      "<evaluation-path>/installed/evaluation/prototypes/python/cli.py"
+    ],
+    "cases": [
+      {
+        "id": "validate-project-hints",
+        "status": "passed",
+        "errors": [],
+        "attempts": [
+          {
+            "exitCode": 0,
+            "signal": null,
+            "error": null,
+            "stderr": "",
+            "stdoutSha256": "f9897e21c8f7bc61e5c370f5bff7d35302b41fe4316011fcbbe0ef983a332546",
+            "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "output": {
+              "formatVersion": "0.4-draft",
+              "tool": {
+                "name": "nexflow-python-evaluation",
+                "version": "unreleased"
+              },
+              "supportedSpecVersions": [
+                "0.1"
+              ],
+              "command": "validate",
+              "success": true,
+              "exitCode": 0,
+              "inputMode": "project-source-hints",
+              "checks": {
+                "discovery": "passed",
+                "schema": "passed",
+                "semantic": "not-run",
+                "coreProfile": "not-run",
+                "extensionProfiles": "not-run"
+              },
+              "executionAuthorized": false,
+              "diagnostics": [],
+              "truncated": false,
+              "result": {
+                "documentCount": 3,
+                "documents": [
+                  {
+                    "file": "actors.yaml",
+                    "kind": "ActorSet"
+                  },
+                  {
+                    "file": "agents.yaml",
+                    "kind": "AgentSet"
+                  },
+                  {
+                    "file": "project.yaml",
+                    "kind": "Project"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "exitCode": 0,
+            "signal": null,
+            "error": null,
+            "stderr": "",
+            "stdoutSha256": "f9897e21c8f7bc61e5c370f5bff7d35302b41fe4316011fcbbe0ef983a332546",
+            "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "output": {
+              "formatVersion": "0.4-draft",
+              "tool": {
+                "name": "nexflow-python-evaluation",
+                "version": "unreleased"
+              },
+              "supportedSpecVersions": [
+                "0.1"
+              ],
+              "command": "validate",
+              "success": true,
+              "exitCode": 0,
+              "inputMode": "project-source-hints",
+              "checks": {
+                "discovery": "passed",
+                "schema": "passed",
+                "semantic": "not-run",
+                "coreProfile": "not-run",
+                "extensionProfiles": "not-run"
+              },
+              "executionAuthorized": false,
+              "diagnostics": [],
+              "truncated": false,
+              "result": {
+                "documentCount": 3,
+                "documents": [
+                  {
+                    "file": "actors.yaml",
+                    "kind": "ActorSet"
+                  },
+                  {
+                    "file": "agents.yaml",
+                    "kind": "AgentSet"
+                  },
+                  {
+                    "file": "project.yaml",
+                    "kind": "Project"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "inspect-valid-project",
+        "status": "passed",
+        "errors": [],
+        "attempts": [
+          {
+            "exitCode": 0,
+            "signal": null,
+            "error": null,
+            "stderr": "",
+            "stdoutSha256": "5f8703a6245d364fd9361ea8a55134131d288765fef339c2faa4f37a3621fad7",
+            "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "output": {
+              "formatVersion": "0.4-draft",
+              "tool": {
+                "name": "nexflow-python-evaluation",
+                "version": "unreleased"
+              },
+              "supportedSpecVersions": [
+                "0.1"
+              ],
+              "command": "inspect",
+              "success": true,
+              "exitCode": 0,
+              "inputMode": "directory-project",
+              "checks": {
+                "discovery": "passed",
+                "schema": "passed",
+                "semantic": "not-run",
+                "coreProfile": "not-run",
+                "extensionProfiles": "not-run"
+              },
+              "executionAuthorized": false,
+              "diagnostics": [],
+              "truncated": false,
+              "result": {
+                "documentCount": 3,
+                "documents": [
+                  {
+                    "file": "actors.yaml",
+                    "kind": "ActorSet"
+                  },
+                  {
+                    "file": "agents.yaml",
+                    "kind": "AgentSet"
+                  },
+                  {
+                    "file": "project.yaml",
+                    "kind": "Project"
+                  }
+                ],
+                "inspection": {
+                  "mode": "declared-only",
+                  "referencesResolved": false,
+                  "referenceCoverage": "selected-fields",
+                  "project": {
+                    "file": "project.yaml",
+                    "path": "/project",
+                    "id": "cli-fixture"
+                  },
+                  "summary": [
+                    {
+                      "kind": "ActorSet",
+                      "documentCount": 1,
+                      "resourceCount": 2
+                    },
+                    {
+                      "kind": "AgentSet",
+                      "documentCount": 1,
+                      "resourceCount": 1
+                    },
+                    {
+                      "kind": "Project",
+                      "documentCount": 1,
+                      "resourceCount": 1
+                    }
+                  ],
+                  "resources": [
+                    {
+                      "file": "actors.yaml",
+                      "path": "/actors/0",
+                      "kind": "actor",
+                      "id": "human-maintainer",
+                      "scope": null
+                    },
+                    {
+                      "file": "actors.yaml",
+                      "path": "/actors/1",
+                      "kind": "actor",
+                      "id": "fixture-agent",
+                      "scope": null
+                    },
+                    {
+                      "file": "agents.yaml",
+                      "path": "/agents/0",
+                      "kind": "agent",
+                      "id": "fixture-agent",
+                      "scope": null
+                    },
+                    {
+                      "file": "project.yaml",
+                      "path": "/project",
+                      "kind": "project",
+                      "id": "cli-fixture",
+                      "scope": null
+                    }
+                  ],
+                  "references": [
+                    {
+                      "file": "actors.yaml",
+                      "path": "/actors/1/agentRef/id",
+                      "kind": "agent",
+                      "id": "fixture-agent",
+                      "scope": null
+                    },
+                    {
+                      "file": "project.yaml",
+                      "path": "/project/maintainers/0/id",
+                      "kind": "participant",
+                      "id": "human-maintainer",
+                      "scope": null
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "exitCode": 0,
+            "signal": null,
+            "error": null,
+            "stderr": "",
+            "stdoutSha256": "5f8703a6245d364fd9361ea8a55134131d288765fef339c2faa4f37a3621fad7",
+            "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "output": {
+              "formatVersion": "0.4-draft",
+              "tool": {
+                "name": "nexflow-python-evaluation",
+                "version": "unreleased"
+              },
+              "supportedSpecVersions": [
+                "0.1"
+              ],
+              "command": "inspect",
+              "success": true,
+              "exitCode": 0,
+              "inputMode": "directory-project",
+              "checks": {
+                "discovery": "passed",
+                "schema": "passed",
+                "semantic": "not-run",
+                "coreProfile": "not-run",
+                "extensionProfiles": "not-run"
+              },
+              "executionAuthorized": false,
+              "diagnostics": [],
+              "truncated": false,
+              "result": {
+                "documentCount": 3,
+                "documents": [
+                  {
+                    "file": "actors.yaml",
+                    "kind": "ActorSet"
+                  },
+                  {
+                    "file": "agents.yaml",
+                    "kind": "AgentSet"
+                  },
+                  {
+                    "file": "project.yaml",
+                    "kind": "Project"
+                  }
+                ],
+                "inspection": {
+                  "mode": "declared-only",
+                  "referencesResolved": false,
+                  "referenceCoverage": "selected-fields",
+                  "project": {
+                    "file": "project.yaml",
+                    "path": "/project",
+                    "id": "cli-fixture"
+                  },
+                  "summary": [
+                    {
+                      "kind": "ActorSet",
+                      "documentCount": 1,
+                      "resourceCount": 2
+                    },
+                    {
+                      "kind": "AgentSet",
+                      "documentCount": 1,
+                      "resourceCount": 1
+                    },
+                    {
+                      "kind": "Project",
+                      "documentCount": 1,
+                      "resourceCount": 1
+                    }
+                  ],
+                  "resources": [
+                    {
+                      "file": "actors.yaml",
+                      "path": "/actors/0",
+                      "kind": "actor",
+                      "id": "human-maintainer",
+                      "scope": null
+                    },
+                    {
+                      "file": "actors.yaml",
+                      "path": "/actors/1",
+                      "kind": "actor",
+                      "id": "fixture-agent",
+                      "scope": null
+                    },
+                    {
+                      "file": "agents.yaml",
+                      "path": "/agents/0",
+                      "kind": "agent",
+                      "id": "fixture-agent",
+                      "scope": null
+                    },
+                    {
+                      "file": "project.yaml",
+                      "path": "/project",
+                      "kind": "project",
+                      "id": "cli-fixture",
+                      "scope": null
+                    }
+                  ],
+                  "references": [
+                    {
+                      "file": "actors.yaml",
+                      "path": "/actors/1/agentRef/id",
+                      "kind": "agent",
+                      "id": "fixture-agent",
+                      "scope": null
+                    },
+                    {
+                      "file": "project.yaml",
+                      "path": "/project/maintainers/0/id",
+                      "kind": "participant",
+                      "id": "human-maintainer",
+                      "scope": null
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "reject-yaml-syntax",
+        "status": "passed",
+        "errors": [],
+        "attempts": [
+          {
+            "exitCode": 1,
+            "signal": null,
+            "error": null,
+            "stderr": "",
+            "stdoutSha256": "a0d4ca2d56d601f1c5151e217b0e8474eaf2feb812fc1cbe8002901147dd8645",
+            "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "output": {
+              "formatVersion": "0.4-draft",
+              "tool": {
+                "name": "nexflow-python-evaluation",
+                "version": "unreleased"
+              },
+              "supportedSpecVersions": [
+                "0.1"
+              ],
+              "command": "validate",
+              "success": false,
+              "exitCode": 1,
+              "inputMode": "directory-project",
+              "checks": {
+                "discovery": "failed",
+                "schema": "not-run",
+                "semantic": "not-run",
+                "coreProfile": "not-run",
+                "extensionProfiles": "not-run"
+              },
+              "executionAuthorized": false,
+              "diagnostics": [
+                {
+                  "severity": "error",
+                  "code": "NF-DISCOVERY-NO-PROJECT",
+                  "message": "Selected manifest input does not satisfy discovery policy.",
+                  "file": "<input>",
+                  "kind": null,
+                  "path": null,
+                  "keyword": null,
+                  "related": []
+                },
+                {
+                  "severity": "error",
+                  "code": "NF-DISCOVERY-UNSAFE-SOURCE",
+                  "message": "Selected manifest input does not satisfy discovery policy.",
+                  "file": "project.yaml",
+                  "kind": null,
+                  "path": null,
+                  "keyword": null,
+                  "related": []
+                }
+              ],
+              "truncated": false,
+              "result": null
+            }
+          },
+          {
+            "exitCode": 1,
+            "signal": null,
+            "error": null,
+            "stderr": "",
+            "stdoutSha256": "a0d4ca2d56d601f1c5151e217b0e8474eaf2feb812fc1cbe8002901147dd8645",
+            "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "output": {
+              "formatVersion": "0.4-draft",
+              "tool": {
+                "name": "nexflow-python-evaluation",
+                "version": "unreleased"
+              },
+              "supportedSpecVersions": [
+                "0.1"
+              ],
+              "command": "validate",
+              "success": false,
+              "exitCode": 1,
+              "inputMode": "directory-project",
+              "checks": {
+                "discovery": "failed",
+                "schema": "not-run",
+                "semantic": "not-run",
+                "coreProfile": "not-run",
+                "extensionProfiles": "not-run"
+              },
+              "executionAuthorized": false,
+              "diagnostics": [
+                {
+                  "severity": "error",
+                  "code": "NF-DISCOVERY-NO-PROJECT",
+                  "message": "Selected manifest input does not satisfy discovery policy.",
+                  "file": "<input>",
+                  "kind": null,
+                  "path": null,
+                  "keyword": null,
+                  "related": []
+                },
+                {
+                  "severity": "error",
+                  "code": "NF-DISCOVERY-UNSAFE-SOURCE",
+                  "message": "Selected manifest input does not satisfy discovery policy.",
+                  "file": "project.yaml",
+                  "kind": null,
+                  "path": null,
+                  "keyword": null,
+                  "related": []
+                }
+              ],
+              "truncated": false,
+              "result": null
+            }
+          }
+        ]
+      },
+      {
+        "id": "reject-schema-invalid-project",
+        "status": "passed",
+        "errors": [],
+        "attempts": [
+          {
+            "exitCode": 1,
+            "signal": null,
+            "error": null,
+            "stderr": "",
+            "stdoutSha256": "1abdd770c8bc9effc5d0cb826d2f5587907195cf0cf35c411aaafd066c2f88c6",
+            "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "output": {
+              "formatVersion": "0.4-draft",
+              "tool": {
+                "name": "nexflow-python-evaluation",
+                "version": "unreleased"
+              },
+              "supportedSpecVersions": [
+                "0.1"
+              ],
+              "command": "validate",
+              "success": false,
+              "exitCode": 1,
+              "inputMode": "directory-project",
+              "checks": {
+                "discovery": "passed",
+                "schema": "failed",
+                "semantic": "not-run",
+                "coreProfile": "not-run",
+                "extensionProfiles": "not-run"
+              },
+              "executionAuthorized": false,
+              "diagnostics": [
+                {
+                  "severity": "error",
+                  "code": "NF-SCHEMA",
+                  "message": "Local schema constraint is not satisfied.",
+                  "file": "project.yaml",
+                  "kind": "Project",
+                  "path": "/project/description",
+                  "keyword": "required",
+                  "related": []
+                }
+              ],
+              "truncated": false,
+              "result": null
+            }
+          },
+          {
+            "exitCode": 1,
+            "signal": null,
+            "error": null,
+            "stderr": "",
+            "stdoutSha256": "1abdd770c8bc9effc5d0cb826d2f5587907195cf0cf35c411aaafd066c2f88c6",
+            "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "output": {
+              "formatVersion": "0.4-draft",
+              "tool": {
+                "name": "nexflow-python-evaluation",
+                "version": "unreleased"
+              },
+              "supportedSpecVersions": [
+                "0.1"
+              ],
+              "command": "validate",
+              "success": false,
+              "exitCode": 1,
+              "inputMode": "directory-project",
+              "checks": {
+                "discovery": "passed",
+                "schema": "failed",
+                "semantic": "not-run",
+                "coreProfile": "not-run",
+                "extensionProfiles": "not-run"
+              },
+              "executionAuthorized": false,
+              "diagnostics": [
+                {
+                  "severity": "error",
+                  "code": "NF-SCHEMA",
+                  "message": "Local schema constraint is not satisfied.",
+                  "file": "project.yaml",
+                  "kind": "Project",
+                  "path": "/project/description",
+                  "keyword": "required",
+                  "related": []
+                }
+              ],
+              "truncated": false,
+              "result": null
+            }
+          }
+        ]
+      },
+      {
+        "id": "reject-unsupported-version",
+        "status": "passed",
+        "errors": [],
+        "attempts": [
+          {
+            "exitCode": 3,
+            "signal": null,
+            "error": null,
+            "stderr": "",
+            "stdoutSha256": "ff739974be699970a5db365d997d3da43466a6944bbf0f8b46d868006d2176e5",
+            "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "output": {
+              "formatVersion": "0.4-draft",
+              "tool": {
+                "name": "nexflow-python-evaluation",
+                "version": "unreleased"
+              },
+              "supportedSpecVersions": [
+                "0.1"
+              ],
+              "command": "validate",
+              "success": false,
+              "exitCode": 3,
+              "inputMode": "directory-project",
+              "checks": {
+                "discovery": "failed",
+                "schema": "not-run",
+                "semantic": "not-run",
+                "coreProfile": "not-run",
+                "extensionProfiles": "not-run"
+              },
+              "executionAuthorized": false,
+              "diagnostics": [
+                {
+                  "severity": "error",
+                  "code": "NF-DISCOVERY-NO-PROJECT",
+                  "message": "Selected manifest input does not satisfy discovery policy.",
+                  "file": "<input>",
+                  "kind": null,
+                  "path": null,
+                  "keyword": null,
+                  "related": []
+                },
+                {
+                  "severity": "error",
+                  "code": "NF-DISCOVERY-UNSUPPORTED-VERSION",
+                  "message": "Selected manifest input does not satisfy discovery policy.",
+                  "file": "project.yaml",
+                  "kind": null,
+                  "path": null,
+                  "keyword": null,
+                  "related": []
+                }
+              ],
+              "truncated": false,
+              "result": null
+            }
+          },
+          {
+            "exitCode": 3,
+            "signal": null,
+            "error": null,
+            "stderr": "",
+            "stdoutSha256": "ff739974be699970a5db365d997d3da43466a6944bbf0f8b46d868006d2176e5",
+            "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "output": {
+              "formatVersion": "0.4-draft",
+              "tool": {
+                "name": "nexflow-python-evaluation",
+                "version": "unreleased"
+              },
+              "supportedSpecVersions": [
+                "0.1"
+              ],
+              "command": "validate",
+              "success": false,
+              "exitCode": 3,
+              "inputMode": "directory-project",
+              "checks": {
+                "discovery": "failed",
+                "schema": "not-run",
+                "semantic": "not-run",
+                "coreProfile": "not-run",
+                "extensionProfiles": "not-run"
+              },
+              "executionAuthorized": false,
+              "diagnostics": [
+                {
+                  "severity": "error",
+                  "code": "NF-DISCOVERY-NO-PROJECT",
+                  "message": "Selected manifest input does not satisfy discovery policy.",
+                  "file": "<input>",
+                  "kind": null,
+                  "path": null,
+                  "keyword": null,
+                  "related": []
+                },
+                {
+                  "severity": "error",
+                  "code": "NF-DISCOVERY-UNSUPPORTED-VERSION",
+                  "message": "Selected manifest input does not satisfy discovery policy.",
+                  "file": "project.yaml",
+                  "kind": null,
+                  "path": null,
+                  "keyword": null,
+                  "related": []
+                }
+              ],
+              "truncated": false,
+              "result": null
+            }
+          }
+        ]
+      },
+      {
+        "id": "reject-unsupported-kind",
+        "status": "passed",
+        "errors": [],
+        "attempts": [
+          {
+            "exitCode": 3,
+            "signal": null,
+            "error": null,
+            "stderr": "",
+            "stdoutSha256": "046efe1747a29d0b0eacda280660739a0d569c964fc59803bb4ca5b21fd47c53",
+            "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "output": {
+              "formatVersion": "0.4-draft",
+              "tool": {
+                "name": "nexflow-python-evaluation",
+                "version": "unreleased"
+              },
+              "supportedSpecVersions": [
+                "0.1"
+              ],
+              "command": "validate",
+              "success": false,
+              "exitCode": 3,
+              "inputMode": "directory-project",
+              "checks": {
+                "discovery": "failed",
+                "schema": "not-run",
+                "semantic": "not-run",
+                "coreProfile": "not-run",
+                "extensionProfiles": "not-run"
+              },
+              "executionAuthorized": false,
+              "diagnostics": [
+                {
+                  "severity": "error",
+                  "code": "NF-DISCOVERY-NO-PROJECT",
+                  "message": "Selected manifest input does not satisfy discovery policy.",
+                  "file": "<input>",
+                  "kind": null,
+                  "path": null,
+                  "keyword": null,
+                  "related": []
+                },
+                {
+                  "severity": "error",
+                  "code": "NF-DISCOVERY-UNSUPPORTED-KIND",
+                  "message": "Selected manifest input does not satisfy discovery policy.",
+                  "file": "project.yaml",
+                  "kind": null,
+                  "path": null,
+                  "keyword": null,
+                  "related": []
+                }
+              ],
+              "truncated": false,
+              "result": null
+            }
+          },
+          {
+            "exitCode": 3,
+            "signal": null,
+            "error": null,
+            "stderr": "",
+            "stdoutSha256": "046efe1747a29d0b0eacda280660739a0d569c964fc59803bb4ca5b21fd47c53",
+            "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "output": {
+              "formatVersion": "0.4-draft",
+              "tool": {
+                "name": "nexflow-python-evaluation",
+                "version": "unreleased"
+              },
+              "supportedSpecVersions": [
+                "0.1"
+              ],
+              "command": "validate",
+              "success": false,
+              "exitCode": 3,
+              "inputMode": "directory-project",
+              "checks": {
+                "discovery": "failed",
+                "schema": "not-run",
+                "semantic": "not-run",
+                "coreProfile": "not-run",
+                "extensionProfiles": "not-run"
+              },
+              "executionAuthorized": false,
+              "diagnostics": [
+                {
+                  "severity": "error",
+                  "code": "NF-DISCOVERY-NO-PROJECT",
+                  "message": "Selected manifest input does not satisfy discovery policy.",
+                  "file": "<input>",
+                  "kind": null,
+                  "path": null,
+                  "keyword": null,
+                  "related": []
+                },
+                {
+                  "severity": "error",
+                  "code": "NF-DISCOVERY-UNSUPPORTED-KIND",
+                  "message": "Selected manifest input does not satisfy discovery policy.",
+                  "file": "project.yaml",
+                  "kind": null,
+                  "path": null,
+                  "keyword": null,
+                  "related": []
+                }
+              ],
+              "truncated": false,
+              "result": null
+            }
+          }
+        ]
+      },
+      {
+        "id": "reject-source-outside-root",
+        "status": "passed",
+        "errors": [],
+        "attempts": [
+          {
+            "exitCode": 1,
+            "signal": null,
+            "error": null,
+            "stderr": "",
+            "stdoutSha256": "63010d716259393ab0c5d75d8f85dcdfe368b2583510a8ee67ec38a910047150",
+            "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "output": {
+              "formatVersion": "0.4-draft",
+              "tool": {
+                "name": "nexflow-python-evaluation",
+                "version": "unreleased"
+              },
+              "supportedSpecVersions": [
+                "0.1"
+              ],
+              "command": "validate",
+              "success": false,
+              "exitCode": 1,
+              "inputMode": "directory-project",
+              "checks": {
+                "discovery": "failed",
+                "schema": "not-run",
+                "semantic": "not-run",
+                "coreProfile": "not-run",
+                "extensionProfiles": "not-run"
+              },
+              "executionAuthorized": false,
+              "diagnostics": [
+                {
+                  "severity": "error",
+                  "code": "NF-DISCOVERY-OUTSIDE-ROOT",
+                  "message": "Selected manifest input does not satisfy discovery policy.",
+                  "file": "<redacted-source>",
+                  "kind": null,
+                  "path": null,
+                  "keyword": null,
+                  "related": []
+                }
+              ],
+              "truncated": false,
+              "result": null
+            }
+          },
+          {
+            "exitCode": 1,
+            "signal": null,
+            "error": null,
+            "stderr": "",
+            "stdoutSha256": "63010d716259393ab0c5d75d8f85dcdfe368b2583510a8ee67ec38a910047150",
+            "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "output": {
+              "formatVersion": "0.4-draft",
+              "tool": {
+                "name": "nexflow-python-evaluation",
+                "version": "unreleased"
+              },
+              "supportedSpecVersions": [
+                "0.1"
+              ],
+              "command": "validate",
+              "success": false,
+              "exitCode": 1,
+              "inputMode": "directory-project",
+              "checks": {
+                "discovery": "failed",
+                "schema": "not-run",
+                "semantic": "not-run",
+                "coreProfile": "not-run",
+                "extensionProfiles": "not-run"
+              },
+              "executionAuthorized": false,
+              "diagnostics": [
+                {
+                  "severity": "error",
+                  "code": "NF-DISCOVERY-OUTSIDE-ROOT",
+                  "message": "Selected manifest input does not satisfy discovery policy.",
+                  "file": "<redacted-source>",
+                  "kind": null,
+                  "path": null,
+                  "keyword": null,
+                  "related": []
+                }
+              ],
+              "truncated": false,
+              "result": null
+            }
+          }
+        ]
+      },
+      {
+        "id": "reject-source-kind-mismatch",
+        "status": "passed",
+        "errors": [],
+        "attempts": [
+          {
+            "exitCode": 1,
+            "signal": null,
+            "error": null,
+            "stderr": "",
+            "stdoutSha256": "1eba0fc1f9040063d9776186a185cf1771c69974ef2d5221fbcf77404aab6eb0",
+            "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "output": {
+              "formatVersion": "0.4-draft",
+              "tool": {
+                "name": "nexflow-python-evaluation",
+                "version": "unreleased"
+              },
+              "supportedSpecVersions": [
+                "0.1"
+              ],
+              "command": "validate",
+              "success": false,
+              "exitCode": 1,
+              "inputMode": "directory-project",
+              "checks": {
+                "discovery": "failed",
+                "schema": "not-run",
+                "semantic": "not-run",
+                "coreProfile": "not-run",
+                "extensionProfiles": "not-run"
+              },
+              "executionAuthorized": false,
+              "diagnostics": [
+                {
+                  "severity": "error",
+                  "code": "NF-DISCOVERY-KIND-MISMATCH",
+                  "message": "Selected manifest input does not satisfy discovery policy.",
+                  "file": "agents.yaml",
+                  "kind": null,
+                  "path": null,
+                  "keyword": null,
+                  "related": []
+                }
+              ],
+              "truncated": false,
+              "result": null
+            }
+          },
+          {
+            "exitCode": 1,
+            "signal": null,
+            "error": null,
+            "stderr": "",
+            "stdoutSha256": "1eba0fc1f9040063d9776186a185cf1771c69974ef2d5221fbcf77404aab6eb0",
+            "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "output": {
+              "formatVersion": "0.4-draft",
+              "tool": {
+                "name": "nexflow-python-evaluation",
+                "version": "unreleased"
+              },
+              "supportedSpecVersions": [
+                "0.1"
+              ],
+              "command": "validate",
+              "success": false,
+              "exitCode": 1,
+              "inputMode": "directory-project",
+              "checks": {
+                "discovery": "failed",
+                "schema": "not-run",
+                "semantic": "not-run",
+                "coreProfile": "not-run",
+                "extensionProfiles": "not-run"
+              },
+              "executionAuthorized": false,
+              "diagnostics": [
+                {
+                  "severity": "error",
+                  "code": "NF-DISCOVERY-KIND-MISMATCH",
+                  "message": "Selected manifest input does not satisfy discovery policy.",
+                  "file": "agents.yaml",
+                  "kind": null,
+                  "path": null,
+                  "keyword": null,
+                  "related": []
+                }
+              ],
+              "truncated": false,
+              "result": null
+            }
+          }
+        ]
+      },
+      {
+        "id": "reject-runtime-command",
+        "status": "passed",
+        "errors": [],
+        "attempts": [
+          {
+            "exitCode": 2,
+            "signal": null,
+            "error": null,
+            "stderr": "",
+            "stdoutSha256": "3392f48bf22ad78a34c385fceff9c4ed7a12838a0c5e267ebec5668477cfd642",
+            "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "output": {
+              "formatVersion": "0.4-draft",
+              "tool": {
+                "name": "nexflow-python-evaluation",
+                "version": "unreleased"
+              },
+              "supportedSpecVersions": [
+                "0.1"
+              ],
+              "command": null,
+              "success": false,
+              "exitCode": 2,
+              "inputMode": null,
+              "checks": {
+                "discovery": "not-run",
+                "schema": "not-run",
+                "semantic": "not-run",
+                "coreProfile": "not-run",
+                "extensionProfiles": "not-run"
+              },
+              "executionAuthorized": false,
+              "diagnostics": [
+                {
+                  "severity": "error",
+                  "code": "NEXFLOW-PROTOTYPE-USAGE",
+                  "message": "Only validate or inspect with an explicit root and supported options are accepted.",
+                  "file": null,
+                  "kind": null,
+                  "path": null,
+                  "keyword": null,
+                  "related": []
+                }
+              ],
+              "truncated": false,
+              "result": null
+            }
+          },
+          {
+            "exitCode": 2,
+            "signal": null,
+            "error": null,
+            "stderr": "",
+            "stdoutSha256": "3392f48bf22ad78a34c385fceff9c4ed7a12838a0c5e267ebec5668477cfd642",
+            "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "output": {
+              "formatVersion": "0.4-draft",
+              "tool": {
+                "name": "nexflow-python-evaluation",
+                "version": "unreleased"
+              },
+              "supportedSpecVersions": [
+                "0.1"
+              ],
+              "command": null,
+              "success": false,
+              "exitCode": 2,
+              "inputMode": null,
+              "checks": {
+                "discovery": "not-run",
+                "schema": "not-run",
+                "semantic": "not-run",
+                "coreProfile": "not-run",
+                "extensionProfiles": "not-run"
+              },
+              "executionAuthorized": false,
+              "diagnostics": [
+                {
+                  "severity": "error",
+                  "code": "NEXFLOW-PROTOTYPE-USAGE",
+                  "message": "Only validate or inspect with an explicit root and supported options are accepted.",
+                  "file": null,
+                  "kind": null,
+                  "path": null,
+                  "keyword": null,
+                  "related": []
+                }
+              ],
+              "truncated": false,
+              "result": null
+            }
+          }
+        ]
+      },
+      {
+        "id": "reject-ambiguous-project-entry",
+        "status": "passed",
+        "errors": [],
+        "attempts": [
+          {
+            "exitCode": 1,
+            "signal": null,
+            "error": null,
+            "stderr": "",
+            "stdoutSha256": "03b60d0893fa54d8b7a9b6d96bf7350a29a3a20c7a19f286cb706e2b76830f68",
+            "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "output": {
+              "formatVersion": "0.4-draft",
+              "tool": {
+                "name": "nexflow-python-evaluation",
+                "version": "unreleased"
+              },
+              "supportedSpecVersions": [
+                "0.1"
+              ],
+              "command": "validate",
+              "success": false,
+              "exitCode": 1,
+              "inputMode": "directory-project",
+              "checks": {
+                "discovery": "failed",
+                "schema": "not-run",
+                "semantic": "not-run",
+                "coreProfile": "not-run",
+                "extensionProfiles": "not-run"
+              },
+              "executionAuthorized": false,
+              "diagnostics": [
+                {
+                  "severity": "error",
+                  "code": "NF-DISCOVERY-MULTIPLE-PROJECTS",
+                  "message": "Selected manifest input does not satisfy discovery policy.",
+                  "file": "<input>",
+                  "kind": null,
+                  "path": null,
+                  "keyword": null,
+                  "related": []
+                }
+              ],
+              "truncated": false,
+              "result": null
+            }
+          },
+          {
+            "exitCode": 1,
+            "signal": null,
+            "error": null,
+            "stderr": "",
+            "stdoutSha256": "03b60d0893fa54d8b7a9b6d96bf7350a29a3a20c7a19f286cb706e2b76830f68",
+            "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "output": {
+              "formatVersion": "0.4-draft",
+              "tool": {
+                "name": "nexflow-python-evaluation",
+                "version": "unreleased"
+              },
+              "supportedSpecVersions": [
+                "0.1"
+              ],
+              "command": "validate",
+              "success": false,
+              "exitCode": 1,
+              "inputMode": "directory-project",
+              "checks": {
+                "discovery": "failed",
+                "schema": "not-run",
+                "semantic": "not-run",
+                "coreProfile": "not-run",
+                "extensionProfiles": "not-run"
+              },
+              "executionAuthorized": false,
+              "diagnostics": [
+                {
+                  "severity": "error",
+                  "code": "NF-DISCOVERY-MULTIPLE-PROJECTS",
+                  "message": "Selected manifest input does not satisfy discovery policy.",
+                  "file": "<input>",
+                  "kind": null,
+                  "path": null,
+                  "keyword": null,
+                  "related": []
+                }
+              ],
+              "truncated": false,
+              "result": null
+            }
+          }
+        ]
+      },
+      {
+        "id": "reject-duplicate-root-key",
+        "status": "passed",
+        "errors": [],
+        "attempts": [
+          {
+            "exitCode": 1,
+            "signal": null,
+            "error": null,
+            "stderr": "",
+            "stdoutSha256": "a0d4ca2d56d601f1c5151e217b0e8474eaf2feb812fc1cbe8002901147dd8645",
+            "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "output": {
+              "formatVersion": "0.4-draft",
+              "tool": {
+                "name": "nexflow-python-evaluation",
+                "version": "unreleased"
+              },
+              "supportedSpecVersions": [
+                "0.1"
+              ],
+              "command": "validate",
+              "success": false,
+              "exitCode": 1,
+              "inputMode": "directory-project",
+              "checks": {
+                "discovery": "failed",
+                "schema": "not-run",
+                "semantic": "not-run",
+                "coreProfile": "not-run",
+                "extensionProfiles": "not-run"
+              },
+              "executionAuthorized": false,
+              "diagnostics": [
+                {
+                  "severity": "error",
+                  "code": "NF-DISCOVERY-NO-PROJECT",
+                  "message": "Selected manifest input does not satisfy discovery policy.",
+                  "file": "<input>",
+                  "kind": null,
+                  "path": null,
+                  "keyword": null,
+                  "related": []
+                },
+                {
+                  "severity": "error",
+                  "code": "NF-DISCOVERY-UNSAFE-SOURCE",
+                  "message": "Selected manifest input does not satisfy discovery policy.",
+                  "file": "project.yaml",
+                  "kind": null,
+                  "path": null,
+                  "keyword": null,
+                  "related": []
+                }
+              ],
+              "truncated": false,
+              "result": null
+            }
+          },
+          {
+            "exitCode": 1,
+            "signal": null,
+            "error": null,
+            "stderr": "",
+            "stdoutSha256": "a0d4ca2d56d601f1c5151e217b0e8474eaf2feb812fc1cbe8002901147dd8645",
+            "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "output": {
+              "formatVersion": "0.4-draft",
+              "tool": {
+                "name": "nexflow-python-evaluation",
+                "version": "unreleased"
+              },
+              "supportedSpecVersions": [
+                "0.1"
+              ],
+              "command": "validate",
+              "success": false,
+              "exitCode": 1,
+              "inputMode": "directory-project",
+              "checks": {
+                "discovery": "failed",
+                "schema": "not-run",
+                "semantic": "not-run",
+                "coreProfile": "not-run",
+                "extensionProfiles": "not-run"
+              },
+              "executionAuthorized": false,
+              "diagnostics": [
+                {
+                  "severity": "error",
+                  "code": "NF-DISCOVERY-NO-PROJECT",
+                  "message": "Selected manifest input does not satisfy discovery policy.",
+                  "file": "<input>",
+                  "kind": null,
+                  "path": null,
+                  "keyword": null,
+                  "related": []
+                },
+                {
+                  "severity": "error",
+                  "code": "NF-DISCOVERY-UNSAFE-SOURCE",
+                  "message": "Selected manifest input does not satisfy discovery policy.",
+                  "file": "project.yaml",
+                  "kind": null,
+                  "path": null,
+                  "keyword": null,
+                  "related": []
+                }
+              ],
+              "truncated": false,
+              "result": null
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "uninstall": {
+    "status": "passed",
+    "prefixAbsent": true,
+    "archivePreserved": true,
+    "outsidePreserved": true,
+    "externalRuntimePreserved": true
+  },
+  "stages": {
+    "package": {
+      "status": "passed",
+      "evidence": [
+        "unchanged native NF-056-11 payloads verified by hash, packaged with pinned source/locks/schemas; no fresh rebuild claim"
+      ]
+    },
+    "install": {
+      "status": "passed",
+      "evidence": [
+        "clean extraction and complete capsule manifest verification; Python offline hash-locked venv"
+      ]
+    },
+    "validateInspect": {
+      "status": "passed",
+      "evidence": [
+        "11 unchanged shared CLI cases twice from installed prefix with source schemas denied"
+      ]
+    },
+    "offlineUse": {
+      "status": "passed",
+      "evidence": [
+        "same installed invocations after paired OS network controls"
+      ]
+    },
+    "upgrade": {
+      "status": "not-tested",
+      "evidence": [
+        "no actual previous macOS candidate capsule in queried CI catalog or reviewed task-local evidence"
+      ]
+    },
+    "rollback": {
+      "status": "not-tested",
+      "evidence": [
+        "no genuine previous macOS evaluation artifact; Linux capsules/source binaries are not a predecessor"
+      ]
+    },
+    "uninstall": {
+      "status": "passed",
+      "evidence": [
+        "only task-owned install prefix removed; archive/outside canary/external executable unchanged"
+      ]
+    },
+    "signing": {
+      "status": "not-tested",
+      "evidence": [
+        "read-only existing Mach-O signature/entitlement inspection; no authorized Developer ID identity or signing operation"
+      ]
+    },
+    "notarization": {
+      "status": "not-tested",
+      "evidence": [
+        "no permitted Apple submission credentials/authority or ticket; no upload, keychain mutation or borrowed keys"
+      ]
+    }
+  },
+  "immutability": {
+    "sources": true,
+    "locks": true,
+    "corpus": true,
+    "installedPayload": true
+  },
+  "distributionGate": "partial",
+  "outcome": "not-ready",
+  "limitations": [
+    "Native local macOS differs from frozen macos-15 image/CPU/memory; supplemental lifecycle only, not common benchmark cohort.",
+    "Private source-layout evaluation capsule only; no stable installed entry point, public package, supported distribution or product release.",
+    "Native payloads reuse verified supply-chain builds; new clean/cached build performance and reproducibility remain not-tested.",
+    "External exact Node/CPython and system libraries remain prerequisites; native dependency closure, license and advisory risks stay open.",
+    "Allow-default Seatbelt template tests bounded effects; metadata/system reads, Mach IPC, keychain brokers, inherited facilities and races are not completely isolated.",
+    "Archive extraction and venv provisioning are trusted task-local setup, not OS-sandboxed installation or a complete offline installer.",
+    "codesign inspection describes existing bytes only; ad-hoc signatures are not Developer ID approval/notarization. No signature policy or ticket lifecycle tested.",
+    "No predecessor artifact, upgrade/rollback, authorized signing/notarization, architecture acceptance or full fidelity gate is claimed."
+  ]
+}

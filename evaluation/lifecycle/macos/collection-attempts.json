@@ -3,7 +3,7 @@
   "attempts": [
     {
       "candidate": "typescript",
-      "collectorRevision": "cdabd1e",
+      "collectorRevision": "cdabd1eabf8f185a3de33042d2bc8f32109048df",
       "exitCode": 1,
       "result": "collector-failed-before-candidate-invocation",
       "error": "nonregular-artifact-file",

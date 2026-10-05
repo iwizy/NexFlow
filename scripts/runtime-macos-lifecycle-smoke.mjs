@@ -67,4 +67,16 @@ assert.deepEqual(prerequisites.prerequisites.map(p=>p.pullRequest),[90,95,96,97,
 assert.ok(prerequisites.prerequisites.every(p=>p.state === "MERGED" && p.checks.length && p.checks.every(c=>c.conclusion==="SUCCESS")));
 assert.equal(prerequisites.previousArtifactQuery.eligibleMacOSCandidates,0);
 assert.equal(prerequisites.previousArtifactQuery.artifacts.length,prerequisites.previousArtifactQuery.total);
+assert.ok(prerequisites.previousArtifactQuery.artifacts.every(a=>a.name.startsWith("environment-") || a.name.startsWith("linux-evaluation-")));
+const verificationFile = path.join(directory,"archive-verification.json");
+if (real) {
+  const verification = JSON.parse(readFileSync(verificationFile));
+  assert.equal(verification.task,"NF-056-13");
+  assert.deepEqual(verification.records.map(r=>r.candidate),Object.keys(pins.candidates));
+  for (const v of verification.records) {
+    const report = JSON.parse(readFileSync(path.join(directory,v.candidate+".json")));
+    assert.equal(v.result,"passed"); assert.equal(v.archiveSha256,report.artifact.sha256);
+    assert.equal(v.bytes,report.artifact.bytes); assert.equal(v.verifiedFiles,report.artifact.files.length);
+  }
+}
 console.log("macOS lifecycle consistency: "+(mutations.length+1)+" synthetic controls passed; "+real+" stored native records checked. Not distribution approval.");

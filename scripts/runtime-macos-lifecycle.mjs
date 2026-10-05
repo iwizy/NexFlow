@@ -89,6 +89,10 @@ async function collect(id, config, output, archiveDir) {
       const lock = json(path.join(proto, "package-lock.json"));
       for (const [key, pkg] of Object.entries(lock.packages).filter(([key,pkg]) => key && !pkg.dev))
         assert.equal(json(path.join(dest, key, "package.json")).version, pkg.version);
+      // npm-generated command wrappers are unused by the fixed candidate entry.
+      // Keep archives regular-file-only; do not follow wrapper symlinks.
+      const wrappers = path.join(dest, "node_modules/.bin");
+      if (existsSync(wrappers)) rmSync(wrappers, { recursive: true });
       payload = config.node; assert.equal(hash(payload), supply.runtime.executableSha256);
     } else if (id === "python") {
       const wheels = supply.wheels;

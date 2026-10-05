@@ -14,7 +14,7 @@ const scrub = value => String(value).split(root).join("<source-checkout>").split
   .replace(/[A-Z]:[\\/][^\r\n"<>]+/giu, "<evaluation-path>");
 function run(command, args, cwd = root, timeout = 600000, extraEnv = {}) {
   const permitted = ["PATH", "Path", "SystemRoot", "SYSTEMROOT", "WINDIR", "COMSPEC", "PATHEXT", "TEMP", "TMP", "USERPROFILE", "LOCALAPPDATA", "APPDATA",
-    "CARGO_HOME", "RUSTUP_HOME", "GOPATH", "GOCACHE", "INCLUDE", "LIB", "LIBPATH", "ImageOS", "ImageVersion", "GITHUB_ACTIONS"];
+    "PSModulePath", "ProgramFiles", "ProgramFiles(x86)", "ProgramW6432", "CARGO_HOME", "RUSTUP_HOME", "GOPATH", "GOCACHE", "INCLUDE", "LIB", "LIBPATH"];
   const clean = Object.fromEntries(permitted.filter(k => process.env[k] !== undefined).map(k => [k, process.env[k]]));
   const r = spawnSync(command, args, { cwd, env: { ...clean, PYTHONUTF8: "1", PYTHONDONTWRITEBYTECODE: "1", PYTHONIOENCODING: "utf-8", GOTOOLCHAIN: "local", GOPROXY: "off", CGO_ENABLED: "0", ...extraEnv },
     encoding: "utf8", timeout, maxBuffer: 32 * 1024 * 1024, shell: false });
@@ -42,7 +42,8 @@ async function main(candidate, output, artifactDir) {
       return { path: file, sha256: digest(bytes) }; });
   const inventoryBytes = readFileSync(path.join(root, "evaluation/supply-chain", candidate, "inventory.json"));
   assert.equal(JSON.parse(inventoryBytes).sourceRevision, sourceRevision);
-  const environment = JSON.parse(checked(process.execPath, ["scripts/runtime-evaluation-environment.mjs", "windows/amd64"]));
+  // The fixed, read-only OS probe uses the hosted context; candidates never inherit its credential-bearing environment.
+  const environment = JSON.parse(execFileSync(process.execPath, ["scripts/runtime-evaluation-environment.mjs", "windows/amd64"], { cwd: root, encoding: "utf8", timeout: 60000 }));
   const proto = path.join(root, "evaluation/prototypes", candidate), bundle = path.join(temp, "bundle"), installed = path.join(temp, "installed space юникод");
   mkdirSync(bundle); const commands = [], nativeBinaries = [], toolchain = { node: process.version };
   const stage = (status, evidence) => ({ status, evidence: [evidence] });

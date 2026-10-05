@@ -126,7 +126,9 @@ async function main(candidate, output, artifactDir) {
         ? "Checksum-verified capsule extracted into Unicode-space prefix; exact external runtime retained."
         : "Unicode extraction failed; the same checksum-verified capsule was installed into a clean ASCII-space prefix for supplemental native CLI runs.");
       // Hide only this disposable checkout's schema directory, restoring it in finally.
-      const originalSchemas = path.join(root, "schemas"), hiddenSchemas = path.join(temp, "hidden-build-schemas");
+      // Keep the rename on the checkout volume; the OS temporary directory can be on a different Windows drive.
+      const originalSchemas = path.join(root, "schemas"), hiddenSchemas = path.join(root, ".nf-056-hidden-build-schemas");
+      assert.ok(!existsSync(hiddenSchemas), "unexpected-schema-backup");
       renameSync(originalSchemas, hiddenSchemas); buildSchemasHidden = true;
       try {
         for (const item of baseline.cases) {
@@ -171,7 +173,8 @@ async function main(candidate, output, artifactDir) {
     isolation: { network: "not-tested", filesystem: "not-tested", credential: "not-tested", buildSchemasHidden, scope: "Fresh hosted VM and clean temporary prefix are not an OS sandbox." },
     execution: { cases }, signatures, stages, blockers, immutability: { sources: true, locks: true, corpus: true }, distributionGate: "partial", outcome: "not-ready",
     limitations: ["No product lifecycle or stable system-wide installed command; no support or architecture acceptance.", "Frozen fingerprint drift is supplemental, not a target-contract change.", "Existing advisory/license risks remain open; interpreter/MSVC/native prerequisites are not bundled closure.", "Native execution is not performance evidence or full 352-case library parity."] };
-  assert.deepEqual(windowsErrors(record, pins), []); mkdirSync(path.dirname(output), { recursive: true }); writeFileSync(output, JSON.stringify(record, null, 2) + "\n");
+  assert.deepEqual(windowsErrors(record, pins), [], JSON.stringify({ blockers, buildSchemasHidden, observedCases: cases.length }));
+  mkdirSync(path.dirname(output), { recursive: true }); writeFileSync(output, JSON.stringify(record, null, 2) + "\n");
   rmSync(temp, { recursive: true }); console.log(JSON.stringify({ candidate, build: stages.build.status, installedExecution: stages.validateInspect.status, outcome: record.outcome }));
 }
 try { assert.equal(process.argv.length, 5); await main(process.argv[2], process.argv[3], process.argv[4]); }

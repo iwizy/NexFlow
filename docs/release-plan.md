@@ -89,6 +89,11 @@ Release readiness:
 
 The `0.2` line should make validation behavior more predictable.
 
+The dated [validation/conformance checkpoint](0.2-validation-checkpoint.md)
+maps all eight criteria below to later exact-source evidence and remaining
+limitations. It supplements the published `v0.2.0` review, without replacing
+its historical candidate checks or approving another release.
+
 Release readiness:
 
 - validation commands are documented and reproducible

@@ -1,0 +1,1599 @@
+{
+  "task": "NF-056-13",
+  "recordedAt": "2026-10-05T10:29:17.220Z",
+  "candidate": "rust",
+  "target": "macos/arm64",
+  "sourceRevision": "4fdf0cc8e69e050600d0a5d8f7f1f42987f68203",
+  "specificationRevision": "1d1fa238ab5729a79bee9389d5c66cfd20a61256",
+  "evaluationPackageRevision": "a8301a7478587c59502dfb2e6bd548489c14ee2b",
+  "corpusSha256": "01b116005f0650ac980194b22c02188289eaf1e8626b227aecf3684ece0d8f6b",
+  "catalogSha256": "f1bf8cb786442a212e14c79eb39279a2cdbf05ec20b09901374359d545d74e90",
+  "collectorRevision": "7dcfcdb8beed08d0f0329dc83f1bd9add54d6625",
+  "collectorSources": [
+    {
+      "path": "scripts/runtime-macos-lifecycle.mjs",
+      "sha256": "3f8b84438f9ad04f95341f43ca62b7b5328563c5e2fb05cf4d9112a388b1098d"
+    },
+    {
+      "path": "scripts/lib/macos-lifecycle-evidence.mjs",
+      "sha256": "641adeb18067ab0cd6be127a9c9f245425d0d762ec25546ae15b6e3f19f28c9a"
+    },
+    {
+      "path": "scripts/lib/isolation-evidence.mjs",
+      "sha256": "44e9bd539b75abdd387e5e2f15f05b164b10ce8a0aeffea51053fa8896e70688"
+    },
+    {
+      "path": "scripts/lib/evaluation-environment.mjs",
+      "sha256": "025d9ec0bb3bbc03f3d10ff59d7de692f36b51d71763733f97c81594ca44db0d"
+    },
+    {
+      "path": "scripts/lib/runtime-evaluation.mjs",
+      "sha256": "5d63d6834cbb19987b449fa2759a229c7ade7f786343550d7b12e918104868bf"
+    },
+    {
+      "path": "evaluation/isolation/deny-canary.c",
+      "sha256": "da8229510b0112e27d05992701c5ea83c4e06debcd358a5f9aaeb33bbd473e6a"
+    }
+  ],
+  "sourceManifest": [
+    {
+      "path": "evaluation/prototypes/rust/Cargo.lock",
+      "bytes": 20633,
+      "sha256": "e487d51d74d156867e6a80c7ccb646f5c008862065dff69d09a9d83b088885a3"
+    },
+    {
+      "path": "evaluation/prototypes/rust/Cargo.toml",
+      "bytes": 347,
+      "sha256": "a1880620ad46efde31f3d558bae1bedfb5f1f204c46fb59190473a017c250c9c"
+    },
+    {
+      "path": "evaluation/prototypes/rust/README.md",
+      "bytes": 5924,
+      "sha256": "4a755a54fda3f419e822cfd28b1db5eee5238b54b552b8e9e3f824a87dc8e0f3"
+    },
+    {
+      "path": "evaluation/prototypes/rust/rust-toolchain.toml",
+      "bytes": 51,
+      "sha256": "515c80a149c1e927d497dbebc399e241822aa0197e8f778c21bf5c136c90afd2"
+    },
+    {
+      "path": "evaluation/prototypes/rust/src/discovery.rs",
+      "bytes": 7229,
+      "sha256": "7189bfbcc82fb1e725a0773ee43a7658ab42453176565f00fccc69e28aac2ab1"
+    },
+    {
+      "path": "evaluation/prototypes/rust/src/files.rs",
+      "bytes": 2928,
+      "sha256": "7b4032e69ff59c4cd61c2c5863a42d30fd856f8784ea78f390247f1b1c5ca55f"
+    },
+    {
+      "path": "evaluation/prototypes/rust/src/inspection.rs",
+      "bytes": 6872,
+      "sha256": "2aff2ef94d4dcdb1e13c4d7d50321a38eb369e728eaf308f4eb8debd407296d1"
+    },
+    {
+      "path": "evaluation/prototypes/rust/src/lib.rs",
+      "bytes": 9201,
+      "sha256": "696b35c08d715484b8fc3a9e0ae67dacf72663c1c5955b16b8126492718de520"
+    },
+    {
+      "path": "evaluation/prototypes/rust/src/library_driver.rs",
+      "bytes": 1404,
+      "sha256": "a888a66ec4fdc326a67c0ff31ced33619a107a1bf0ae171a2a84a30a1e4fd934"
+    },
+    {
+      "path": "evaluation/prototypes/rust/src/main.rs",
+      "bytes": 4390,
+      "sha256": "1bcf56ce01423475c735bf9e34a09dd5c90dec5628a05dad646607bfbf362ef1"
+    },
+    {
+      "path": "evaluation/prototypes/rust/src/schema.rs",
+      "bytes": 6607,
+      "sha256": "7c67b706c72df2e11b181f822aa59674141c8822e680c0799926ed766e498d62"
+    },
+    {
+      "path": "evaluation/prototypes/rust/src/yaml.rs",
+      "bytes": 2532,
+      "sha256": "99276e269fb5b90986e2abe285a3c88562214baf6c2272346c22c41c8ff6a51e"
+    },
+    {
+      "path": "evaluation/prototypes/rust/tests/boundaries.rs",
+      "bytes": 5883,
+      "sha256": "07530f3dba8ba38e966ca5aabc07ac5c28ada3d2a28340a936354d3569abb83a"
+    }
+  ],
+  "sourceManifestSha256": "b776f48fc0e7350961485486f0f07e075eb9b06f2422def92105db5ad332b67d",
+  "lockfiles": [
+    {
+      "path": "evaluation/prototypes/rust/Cargo.lock",
+      "bytes": 20633,
+      "sha256": "e487d51d74d156867e6a80c7ccb646f5c008862065dff69d09a9d83b088885a3"
+    },
+    {
+      "path": "evaluation/prototypes/rust/Cargo.toml",
+      "bytes": 347,
+      "sha256": "a1880620ad46efde31f3d558bae1bedfb5f1f204c46fb59190473a017c250c9c"
+    }
+  ],
+  "prerequisitesSha256": "aa77678ae3e8544fc00aae96b750716e2008c7a88f8ba1ae58c49dac10926aff",
+  "supplyChain": {
+    "revision": "fed105367da915347a92896eb67c0446d9e9b2d7",
+    "inventorySha256": "19eeaa651d54dabd2726e76c253e40979ce5d1964a2d4d9e605754f8ea0f58c3",
+    "status": "partial",
+    "remediation": "none"
+  },
+  "toolchain": "rustc/Cargo 1.99.0; jsonschema 0.58.4; yaml-rust2 0.11.0",
+  "runtime": {
+    "version": "rustc 1.99.0 (b940084d7 2026-09-28)",
+    "executableSha256": "0b8bcabfb7da7a89937898b8c222f56e1675f19621bd650cb86023870b86eda4",
+    "externalRequired": false
+  },
+  "build": {
+    "mode": "reuse-hash-verified-NF-056-11-native-build",
+    "commands": [
+      "cargo build --frozen --offline --manifest-path evaluation/prototypes/rust/Cargo.toml (debug, aarch64-apple-darwin)"
+    ],
+    "freshBuild": "not-tested",
+    "supplyCollectorRevision": "f8f66a9122d73a195698966785d968cdd395de7b"
+  },
+  "artifact": {
+    "version": "4fdf0cc8e69e050600d0a5d8f7f1f42987f68203.macos.arm64.7dcfcdb8beed08d0f0329dc83f1bd9add54d6625",
+    "filename": "rust-4fdf0cc8e69e050600d0a5d8f7f1f42987f68203.macos.arm64.7dcfcdb8beed08d0f0329dc83f1bd9add54d6625.tar.gz",
+    "bytes": 4391879,
+    "sha256": "a9d5b45b707d1540605adcd813a78196852d4ced10eb1b8d5c049790ed782749",
+    "files": [
+      {
+        "path": "evaluation/prototypes/rust/Cargo.lock",
+        "bytes": 20633,
+        "sha256": "e487d51d74d156867e6a80c7ccb646f5c008862065dff69d09a9d83b088885a3"
+      },
+      {
+        "path": "evaluation/prototypes/rust/Cargo.toml",
+        "bytes": 347,
+        "sha256": "a1880620ad46efde31f3d558bae1bedfb5f1f204c46fb59190473a017c250c9c"
+      },
+      {
+        "path": "evaluation/prototypes/rust/README.md",
+        "bytes": 5924,
+        "sha256": "4a755a54fda3f419e822cfd28b1db5eee5238b54b552b8e9e3f824a87dc8e0f3"
+      },
+      {
+        "path": "evaluation/prototypes/rust/bin/nexflow-rust-evaluation",
+        "bytes": 17632600,
+        "sha256": "0b8bcabfb7da7a89937898b8c222f56e1675f19621bd650cb86023870b86eda4"
+      },
+      {
+        "path": "evaluation/prototypes/rust/rust-toolchain.toml",
+        "bytes": 51,
+        "sha256": "515c80a149c1e927d497dbebc399e241822aa0197e8f778c21bf5c136c90afd2"
+      },
+      {
+        "path": "evaluation/prototypes/rust/src/discovery.rs",
+        "bytes": 7229,
+        "sha256": "7189bfbcc82fb1e725a0773ee43a7658ab42453176565f00fccc69e28aac2ab1"
+      },
+      {
+        "path": "evaluation/prototypes/rust/src/files.rs",
+        "bytes": 2928,
+        "sha256": "7b4032e69ff59c4cd61c2c5863a42d30fd856f8784ea78f390247f1b1c5ca55f"
+      },
+      {
+        "path": "evaluation/prototypes/rust/src/inspection.rs",
+        "bytes": 6872,
+        "sha256": "2aff2ef94d4dcdb1e13c4d7d50321a38eb369e728eaf308f4eb8debd407296d1"
+      },
+      {
+        "path": "evaluation/prototypes/rust/src/lib.rs",
+        "bytes": 9201,
+        "sha256": "696b35c08d715484b8fc3a9e0ae67dacf72663c1c5955b16b8126492718de520"
+      },
+      {
+        "path": "evaluation/prototypes/rust/src/library_driver.rs",
+        "bytes": 1404,
+        "sha256": "a888a66ec4fdc326a67c0ff31ced33619a107a1bf0ae171a2a84a30a1e4fd934"
+      },
+      {
+        "path": "evaluation/prototypes/rust/src/main.rs",
+        "bytes": 4390,
+        "sha256": "1bcf56ce01423475c735bf9e34a09dd5c90dec5628a05dad646607bfbf362ef1"
+      },
+      {
+        "path": "evaluation/prototypes/rust/src/schema.rs",
+        "bytes": 6607,
+        "sha256": "7c67b706c72df2e11b181f822aa59674141c8822e680c0799926ed766e498d62"
+      },
+      {
+        "path": "evaluation/prototypes/rust/src/yaml.rs",
+        "bytes": 2532,
+        "sha256": "99276e269fb5b90986e2abe285a3c88562214baf6c2272346c22c41c8ff6a51e"
+      },
+      {
+        "path": "evaluation/prototypes/rust/tests/boundaries.rs",
+        "bytes": 5883,
+        "sha256": "07530f3dba8ba38e966ca5aabc07ac5c28ada3d2a28340a936354d3569abb83a"
+      },
+      {
+        "path": "schemas/README.md",
+        "bytes": 16217,
+        "sha256": "28d1715b391c414c1a4c46410046277e783f5df60768761ea127630c8773a890"
+      },
+      {
+        "path": "schemas/actors.schema.json",
+        "bytes": 4648,
+        "sha256": "fb376254763eaa670696618678629f049cb6f782b7816aa20e0216e9625c21a3"
+      },
+      {
+        "path": "schemas/agent-definitions.schema.json",
+        "bytes": 8515,
+        "sha256": "0faad7750d9fd95914e09ee7ffbfb23236da303fbcfd211ce77c45589bfa68d7"
+      },
+      {
+        "path": "schemas/agents.schema.json",
+        "bytes": 4731,
+        "sha256": "7505ce0ad4ce18eb74a477982b31b77ca06d8069022300171c28e1ada419b24e"
+      },
+      {
+        "path": "schemas/capabilities.schema.json",
+        "bytes": 1216,
+        "sha256": "4fc446a356b2f7709bf259ad6fbf4632a64bc77800a43e77b81354710e5e3026"
+      },
+      {
+        "path": "schemas/common.schema.json",
+        "bytes": 31287,
+        "sha256": "a02f583325e2b20ffbb659efa451206579779a557a5fc89fbb412c10414630cc"
+      },
+      {
+        "path": "schemas/context.schema.json",
+        "bytes": 6012,
+        "sha256": "ad0fc663f5e4bf92eb033d250e38c2ef914947834aa03fc257d601a6226ad7a8"
+      },
+      {
+        "path": "schemas/events.schema.json",
+        "bytes": 1686,
+        "sha256": "d08c9cce4106394c5bf53a034ff8a574bfe11ccf085ac53f508459d7a0e98a65"
+      },
+      {
+        "path": "schemas/extensions.schema.json",
+        "bytes": 1960,
+        "sha256": "1c87855f8ec5eeba871981ab8d0feac4f026c508b943644bfbc350685270a31d"
+      },
+      {
+        "path": "schemas/handoffs.schema.json",
+        "bytes": 1729,
+        "sha256": "40af0a3c48b63f8709e8297badf4a9100fdcc3b22f66cc3c748b88628e5b1ab5"
+      },
+      {
+        "path": "schemas/memory.schema.json",
+        "bytes": 2317,
+        "sha256": "75a655d9b1aa57be73c6ec738e10faea327837838ecf2a4b7a1031e28486fb59"
+      },
+      {
+        "path": "schemas/model-profiles.schema.json",
+        "bytes": 5624,
+        "sha256": "0503322e7f73d62d3bbcad226799d6615ffc36339c2e9d9afe951c542a57ed00"
+      },
+      {
+        "path": "schemas/permissions.schema.json",
+        "bytes": 1547,
+        "sha256": "64084ad81e53b3629dfc4ecab3faf4ebd765105a3072c5f627c5d31daee2fbb0"
+      },
+      {
+        "path": "schemas/project.schema.json",
+        "bytes": 4030,
+        "sha256": "586bc846277b846f723371a734952fc30cf29e8c916d6b52db1897ac32fc0778"
+      },
+      {
+        "path": "schemas/prompt-sets.schema.json",
+        "bytes": 5339,
+        "sha256": "feaff935c6337638e4bd2cffdcd54d7bad516958cad0d0407185261dc2439d02"
+      },
+      {
+        "path": "schemas/providers.schema.json",
+        "bytes": 6897,
+        "sha256": "e3b55c4fbc2a86c05a82be8a7b3ef8126e04a13d425d5654a0e2ee0bca31e4fb"
+      },
+      {
+        "path": "schemas/retrieval-profiles.schema.json",
+        "bytes": 8548,
+        "sha256": "685bce372bc68e454b015afd39f412adc88c386f45c56144842fc11e4ff75ade"
+      },
+      {
+        "path": "schemas/tasks.schema.json",
+        "bytes": 1938,
+        "sha256": "4cf1f1f35396240abf7da7e018e03a0e99b99c71cb9881c4f729c0175a07a250"
+      },
+      {
+        "path": "schemas/workflow.schema.json",
+        "bytes": 3728,
+        "sha256": "1821ec6e26cc1e6060cd2388c22fc51c77a3678cf4ac8c1140934fe612a1b446"
+      }
+    ],
+    "manifestSha256": "71a1ed4a15c4becf23853e0b52b4d0a123a0e6bc2c9c7ccc8e91c500695628d1",
+    "format": "private source-layout evaluation capsule",
+    "publicPublication": "none",
+    "retained": "task-local temporary archive; no durable package hosting or retention guarantee"
+  },
+  "nativeInspections": [
+    {
+      "file": "installed-native-payload",
+      "sha256": "0b8bcabfb7da7a89937898b8c222f56e1675f19621bd650cb86023870b86eda4",
+      "architectures": [
+        "arm64"
+      ],
+      "linkage": [
+        "/usr/lib/libiconv.2.dylib (compatibility version 7.0.0, current version 7.0.0)",
+        "/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1359.0.0)"
+      ],
+      "codeSignature": {
+        "exitCode": 0,
+        "kind": "ad-hoc",
+        "detail": "Executable=<evaluation-path>/installed/evaluation/prototypes/rust/bin/nexflow-rust-evaluation\nIdentifier=nexflow_rust_evaluation-c7841b7d164631c7\nFormat=Mach-O thin (arm64)\nCodeDirectory v=20400 size=136833 flags=0x20002(adhoc,linker-signed) hashes=4272+0 location=embedded\nHash type=sha256 size=32\nCandidateCDHash sha256=54943958d583599f9b52dfeae1a498f81b058500\nCandidateCDHashFull sha256=54943958d583599f9b52dfeae1a498f81b058500be91110d2dc8aced8794f7e1\nHash choices=sha256\nCMSDigest=54943958d583599f9b52dfeae1a498f81b058500be91110d2dc8aced8794f7e1\nCMSDigestType=2\nCDHash=54943958d583599f9b52dfeae1a498f81b058500\nSignature=adhoc\nInfo.plist=not bound\nTeamIdentifier=not set\nSealed Resources=none\nInternal requirements=none\nwarning: Specifying ':' in the path is deprecated and will not work in a future release\n",
+        "developerIDAssessment": "not-tested",
+        "notarization": "not-tested"
+      }
+    }
+  ],
+  "environment": {
+    "target": "macos/arm64",
+    "platform": "darwin",
+    "architecture": "arm64",
+    "runnerLabel": "local-native",
+    "imageOS": null,
+    "imageVersion": null,
+    "osVersion": "27.0.1",
+    "osBuild": "26A434",
+    "kernel": "27.0.0",
+    "cpuModel": "Apple M4 Pro",
+    "cpuCount": 14,
+    "memoryBytes": 51539607552,
+    "libc": null,
+    "translated": false,
+    "nativeArm64": true
+  },
+  "environmentSha256": "83da03d9d32f2a0ec705f7afe08fcbe99853f09ed85d6a273b560574441747eb",
+  "cohort": {
+    "matched": false,
+    "status": "supplemental-drift",
+    "blockers": [
+      "wrong-runner-label",
+      "incomplete-environment",
+      "wrong-os-family-or-translation",
+      "environment-drift:runnerLabel",
+      "environment-drift:imageOS",
+      "environment-drift:imageVersion",
+      "environment-drift:osVersion",
+      "environment-drift:osBuild",
+      "environment-drift:kernel",
+      "environment-drift:cpuModel",
+      "environment-drift:cpuCount",
+      "environment-drift:memoryBytes"
+    ]
+  },
+  "previousArtifact": null,
+  "installation": {
+    "status": "passed",
+    "archiveVerified": true,
+    "manifestVerified": true,
+    "commands": [
+      {
+        "command": "tar -xzf <verified-capsule> -C <clean-prefix>",
+        "exitCode": 0
+      }
+    ],
+    "networkBoundary": "extraction/venv/hash-locked no-index provisioning is separate trusted setup, not OS-sandboxed installation"
+  },
+  "isolation": {
+    "positive": {
+      "read": 0,
+      "write": 0,
+      "connect": 0,
+      "bind": 0,
+      "fork": 0,
+      "spawn": 0,
+      "spawnSelf": 0
+    },
+    "denied": {
+      "read": 1,
+      "write": 1,
+      "connect": 1,
+      "bind": 1,
+      "fork": 1,
+      "spawn": 1,
+      "spawnSelf": 1
+    },
+    "beforeCandidate": true,
+    "sourceSchemaRead": {
+      "positive": 0,
+      "denied": 1
+    },
+    "profileSha256": "dc5422acb5543ab750d997a23ac9962b27546faa808f8652fea963dc3722afc4",
+    "canarySha256": "51a76864e1429bbdf7e14d0885899ba45446162ccc7b2e941fd884b53c8d94fc",
+    "scope": "installed invocations only; OS network/file-write/process denial and source-schema read denial"
+  },
+  "execution": {
+    "invocation": [
+      "<evaluation-path>/installed/evaluation/prototypes/rust/bin/nexflow-rust-evaluation"
+    ],
+    "cases": [
+      {
+        "id": "validate-project-hints",
+        "status": "failed",
+        "errors": [
+          "wrong-exit-status",
+          "wrong-input-mode",
+          "wrong-check-state",
+          "wrong-diagnostics",
+          "wrong-document-count"
+        ],
+        "attempts": [
+          {
+            "exitCode": 4,
+            "signal": null,
+            "error": null,
+            "stderr": "",
+            "stdoutSha256": "4e5be68c4a31199a957f4f4ec13125ed7ab549ff6597662c6654bcf3ed8b8537",
+            "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "output": {
+              "checks": {
+                "coreProfile": "not-run",
+                "discovery": "not-run",
+                "extensionProfiles": "not-run",
+                "schema": "not-run",
+                "semantic": "not-run"
+              },
+              "command": "validate",
+              "diagnostics": [
+                {
+                  "code": "NEXFLOW-PROTOTYPE-INTERNAL",
+                  "file": null,
+                  "keyword": null,
+                  "kind": null,
+                  "message": "The reviewed local validation setup could not produce a result.",
+                  "path": null,
+                  "related": [],
+                  "severity": "error"
+                }
+              ],
+              "executionAuthorized": false,
+              "exitCode": 4,
+              "formatVersion": "0.4-draft",
+              "inputMode": null,
+              "result": null,
+              "success": false,
+              "supportedSpecVersions": [
+                "0.1"
+              ],
+              "tool": {
+                "name": "nexflow-rust-evaluation",
+                "version": "unreleased"
+              },
+              "truncated": false
+            }
+          },
+          {
+            "exitCode": 4,
+            "signal": null,
+            "error": null,
+            "stderr": "",
+            "stdoutSha256": "4e5be68c4a31199a957f4f4ec13125ed7ab549ff6597662c6654bcf3ed8b8537",
+            "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "output": {
+              "checks": {
+                "coreProfile": "not-run",
+                "discovery": "not-run",
+                "extensionProfiles": "not-run",
+                "schema": "not-run",
+                "semantic": "not-run"
+              },
+              "command": "validate",
+              "diagnostics": [
+                {
+                  "code": "NEXFLOW-PROTOTYPE-INTERNAL",
+                  "file": null,
+                  "keyword": null,
+                  "kind": null,
+                  "message": "The reviewed local validation setup could not produce a result.",
+                  "path": null,
+                  "related": [],
+                  "severity": "error"
+                }
+              ],
+              "executionAuthorized": false,
+              "exitCode": 4,
+              "formatVersion": "0.4-draft",
+              "inputMode": null,
+              "result": null,
+              "success": false,
+              "supportedSpecVersions": [
+                "0.1"
+              ],
+              "tool": {
+                "name": "nexflow-rust-evaluation",
+                "version": "unreleased"
+              },
+              "truncated": false
+            }
+          }
+        ]
+      },
+      {
+        "id": "inspect-valid-project",
+        "status": "failed",
+        "errors": [
+          "wrong-exit-status",
+          "wrong-input-mode",
+          "wrong-check-state",
+          "wrong-diagnostics",
+          "wrong-document-count",
+          "wrong-inspection"
+        ],
+        "attempts": [
+          {
+            "exitCode": 4,
+            "signal": null,
+            "error": null,
+            "stderr": "",
+            "stdoutSha256": "f1401fb5ff763f46a289b5e0106cfd318f25747ddcfc3e36d456b41ec9b507d2",
+            "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "output": {
+              "checks": {
+                "coreProfile": "not-run",
+                "discovery": "not-run",
+                "extensionProfiles": "not-run",
+                "schema": "not-run",
+                "semantic": "not-run"
+              },
+              "command": "inspect",
+              "diagnostics": [
+                {
+                  "code": "NEXFLOW-PROTOTYPE-INTERNAL",
+                  "file": null,
+                  "keyword": null,
+                  "kind": null,
+                  "message": "The reviewed local validation setup could not produce a result.",
+                  "path": null,
+                  "related": [],
+                  "severity": "error"
+                }
+              ],
+              "executionAuthorized": false,
+              "exitCode": 4,
+              "formatVersion": "0.4-draft",
+              "inputMode": null,
+              "result": null,
+              "success": false,
+              "supportedSpecVersions": [
+                "0.1"
+              ],
+              "tool": {
+                "name": "nexflow-rust-evaluation",
+                "version": "unreleased"
+              },
+              "truncated": false
+            }
+          },
+          {
+            "exitCode": 4,
+            "signal": null,
+            "error": null,
+            "stderr": "",
+            "stdoutSha256": "f1401fb5ff763f46a289b5e0106cfd318f25747ddcfc3e36d456b41ec9b507d2",
+            "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "output": {
+              "checks": {
+                "coreProfile": "not-run",
+                "discovery": "not-run",
+                "extensionProfiles": "not-run",
+                "schema": "not-run",
+                "semantic": "not-run"
+              },
+              "command": "inspect",
+              "diagnostics": [
+                {
+                  "code": "NEXFLOW-PROTOTYPE-INTERNAL",
+                  "file": null,
+                  "keyword": null,
+                  "kind": null,
+                  "message": "The reviewed local validation setup could not produce a result.",
+                  "path": null,
+                  "related": [],
+                  "severity": "error"
+                }
+              ],
+              "executionAuthorized": false,
+              "exitCode": 4,
+              "formatVersion": "0.4-draft",
+              "inputMode": null,
+              "result": null,
+              "success": false,
+              "supportedSpecVersions": [
+                "0.1"
+              ],
+              "tool": {
+                "name": "nexflow-rust-evaluation",
+                "version": "unreleased"
+              },
+              "truncated": false
+            }
+          }
+        ]
+      },
+      {
+        "id": "reject-yaml-syntax",
+        "status": "failed",
+        "errors": [
+          "wrong-exit-status",
+          "wrong-input-mode",
+          "wrong-check-state",
+          "wrong-diagnostics"
+        ],
+        "attempts": [
+          {
+            "exitCode": 4,
+            "signal": null,
+            "error": null,
+            "stderr": "",
+            "stdoutSha256": "4e5be68c4a31199a957f4f4ec13125ed7ab549ff6597662c6654bcf3ed8b8537",
+            "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "output": {
+              "checks": {
+                "coreProfile": "not-run",
+                "discovery": "not-run",
+                "extensionProfiles": "not-run",
+                "schema": "not-run",
+                "semantic": "not-run"
+              },
+              "command": "validate",
+              "diagnostics": [
+                {
+                  "code": "NEXFLOW-PROTOTYPE-INTERNAL",
+                  "file": null,
+                  "keyword": null,
+                  "kind": null,
+                  "message": "The reviewed local validation setup could not produce a result.",
+                  "path": null,
+                  "related": [],
+                  "severity": "error"
+                }
+              ],
+              "executionAuthorized": false,
+              "exitCode": 4,
+              "formatVersion": "0.4-draft",
+              "inputMode": null,
+              "result": null,
+              "success": false,
+              "supportedSpecVersions": [
+                "0.1"
+              ],
+              "tool": {
+                "name": "nexflow-rust-evaluation",
+                "version": "unreleased"
+              },
+              "truncated": false
+            }
+          },
+          {
+            "exitCode": 4,
+            "signal": null,
+            "error": null,
+            "stderr": "",
+            "stdoutSha256": "4e5be68c4a31199a957f4f4ec13125ed7ab549ff6597662c6654bcf3ed8b8537",
+            "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "output": {
+              "checks": {
+                "coreProfile": "not-run",
+                "discovery": "not-run",
+                "extensionProfiles": "not-run",
+                "schema": "not-run",
+                "semantic": "not-run"
+              },
+              "command": "validate",
+              "diagnostics": [
+                {
+                  "code": "NEXFLOW-PROTOTYPE-INTERNAL",
+                  "file": null,
+                  "keyword": null,
+                  "kind": null,
+                  "message": "The reviewed local validation setup could not produce a result.",
+                  "path": null,
+                  "related": [],
+                  "severity": "error"
+                }
+              ],
+              "executionAuthorized": false,
+              "exitCode": 4,
+              "formatVersion": "0.4-draft",
+              "inputMode": null,
+              "result": null,
+              "success": false,
+              "supportedSpecVersions": [
+                "0.1"
+              ],
+              "tool": {
+                "name": "nexflow-rust-evaluation",
+                "version": "unreleased"
+              },
+              "truncated": false
+            }
+          }
+        ]
+      },
+      {
+        "id": "reject-schema-invalid-project",
+        "status": "failed",
+        "errors": [
+          "wrong-exit-status",
+          "wrong-input-mode",
+          "wrong-check-state",
+          "wrong-diagnostics"
+        ],
+        "attempts": [
+          {
+            "exitCode": 4,
+            "signal": null,
+            "error": null,
+            "stderr": "",
+            "stdoutSha256": "4e5be68c4a31199a957f4f4ec13125ed7ab549ff6597662c6654bcf3ed8b8537",
+            "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "output": {
+              "checks": {
+                "coreProfile": "not-run",
+                "discovery": "not-run",
+                "extensionProfiles": "not-run",
+                "schema": "not-run",
+                "semantic": "not-run"
+              },
+              "command": "validate",
+              "diagnostics": [
+                {
+                  "code": "NEXFLOW-PROTOTYPE-INTERNAL",
+                  "file": null,
+                  "keyword": null,
+                  "kind": null,
+                  "message": "The reviewed local validation setup could not produce a result.",
+                  "path": null,
+                  "related": [],
+                  "severity": "error"
+                }
+              ],
+              "executionAuthorized": false,
+              "exitCode": 4,
+              "formatVersion": "0.4-draft",
+              "inputMode": null,
+              "result": null,
+              "success": false,
+              "supportedSpecVersions": [
+                "0.1"
+              ],
+              "tool": {
+                "name": "nexflow-rust-evaluation",
+                "version": "unreleased"
+              },
+              "truncated": false
+            }
+          },
+          {
+            "exitCode": 4,
+            "signal": null,
+            "error": null,
+            "stderr": "",
+            "stdoutSha256": "4e5be68c4a31199a957f4f4ec13125ed7ab549ff6597662c6654bcf3ed8b8537",
+            "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "output": {
+              "checks": {
+                "coreProfile": "not-run",
+                "discovery": "not-run",
+                "extensionProfiles": "not-run",
+                "schema": "not-run",
+                "semantic": "not-run"
+              },
+              "command": "validate",
+              "diagnostics": [
+                {
+                  "code": "NEXFLOW-PROTOTYPE-INTERNAL",
+                  "file": null,
+                  "keyword": null,
+                  "kind": null,
+                  "message": "The reviewed local validation setup could not produce a result.",
+                  "path": null,
+                  "related": [],
+                  "severity": "error"
+                }
+              ],
+              "executionAuthorized": false,
+              "exitCode": 4,
+              "formatVersion": "0.4-draft",
+              "inputMode": null,
+              "result": null,
+              "success": false,
+              "supportedSpecVersions": [
+                "0.1"
+              ],
+              "tool": {
+                "name": "nexflow-rust-evaluation",
+                "version": "unreleased"
+              },
+              "truncated": false
+            }
+          }
+        ]
+      },
+      {
+        "id": "reject-unsupported-version",
+        "status": "failed",
+        "errors": [
+          "wrong-exit-status",
+          "wrong-input-mode",
+          "wrong-check-state",
+          "wrong-diagnostics"
+        ],
+        "attempts": [
+          {
+            "exitCode": 4,
+            "signal": null,
+            "error": null,
+            "stderr": "",
+            "stdoutSha256": "4e5be68c4a31199a957f4f4ec13125ed7ab549ff6597662c6654bcf3ed8b8537",
+            "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "output": {
+              "checks": {
+                "coreProfile": "not-run",
+                "discovery": "not-run",
+                "extensionProfiles": "not-run",
+                "schema": "not-run",
+                "semantic": "not-run"
+              },
+              "command": "validate",
+              "diagnostics": [
+                {
+                  "code": "NEXFLOW-PROTOTYPE-INTERNAL",
+                  "file": null,
+                  "keyword": null,
+                  "kind": null,
+                  "message": "The reviewed local validation setup could not produce a result.",
+                  "path": null,
+                  "related": [],
+                  "severity": "error"
+                }
+              ],
+              "executionAuthorized": false,
+              "exitCode": 4,
+              "formatVersion": "0.4-draft",
+              "inputMode": null,
+              "result": null,
+              "success": false,
+              "supportedSpecVersions": [
+                "0.1"
+              ],
+              "tool": {
+                "name": "nexflow-rust-evaluation",
+                "version": "unreleased"
+              },
+              "truncated": false
+            }
+          },
+          {
+            "exitCode": 4,
+            "signal": null,
+            "error": null,
+            "stderr": "",
+            "stdoutSha256": "4e5be68c4a31199a957f4f4ec13125ed7ab549ff6597662c6654bcf3ed8b8537",
+            "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "output": {
+              "checks": {
+                "coreProfile": "not-run",
+                "discovery": "not-run",
+                "extensionProfiles": "not-run",
+                "schema": "not-run",
+                "semantic": "not-run"
+              },
+              "command": "validate",
+              "diagnostics": [
+                {
+                  "code": "NEXFLOW-PROTOTYPE-INTERNAL",
+                  "file": null,
+                  "keyword": null,
+                  "kind": null,
+                  "message": "The reviewed local validation setup could not produce a result.",
+                  "path": null,
+                  "related": [],
+                  "severity": "error"
+                }
+              ],
+              "executionAuthorized": false,
+              "exitCode": 4,
+              "formatVersion": "0.4-draft",
+              "inputMode": null,
+              "result": null,
+              "success": false,
+              "supportedSpecVersions": [
+                "0.1"
+              ],
+              "tool": {
+                "name": "nexflow-rust-evaluation",
+                "version": "unreleased"
+              },
+              "truncated": false
+            }
+          }
+        ]
+      },
+      {
+        "id": "reject-unsupported-kind",
+        "status": "failed",
+        "errors": [
+          "wrong-exit-status",
+          "wrong-input-mode",
+          "wrong-check-state",
+          "wrong-diagnostics"
+        ],
+        "attempts": [
+          {
+            "exitCode": 4,
+            "signal": null,
+            "error": null,
+            "stderr": "",
+            "stdoutSha256": "4e5be68c4a31199a957f4f4ec13125ed7ab549ff6597662c6654bcf3ed8b8537",
+            "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "output": {
+              "checks": {
+                "coreProfile": "not-run",
+                "discovery": "not-run",
+                "extensionProfiles": "not-run",
+                "schema": "not-run",
+                "semantic": "not-run"
+              },
+              "command": "validate",
+              "diagnostics": [
+                {
+                  "code": "NEXFLOW-PROTOTYPE-INTERNAL",
+                  "file": null,
+                  "keyword": null,
+                  "kind": null,
+                  "message": "The reviewed local validation setup could not produce a result.",
+                  "path": null,
+                  "related": [],
+                  "severity": "error"
+                }
+              ],
+              "executionAuthorized": false,
+              "exitCode": 4,
+              "formatVersion": "0.4-draft",
+              "inputMode": null,
+              "result": null,
+              "success": false,
+              "supportedSpecVersions": [
+                "0.1"
+              ],
+              "tool": {
+                "name": "nexflow-rust-evaluation",
+                "version": "unreleased"
+              },
+              "truncated": false
+            }
+          },
+          {
+            "exitCode": 4,
+            "signal": null,
+            "error": null,
+            "stderr": "",
+            "stdoutSha256": "4e5be68c4a31199a957f4f4ec13125ed7ab549ff6597662c6654bcf3ed8b8537",
+            "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "output": {
+              "checks": {
+                "coreProfile": "not-run",
+                "discovery": "not-run",
+                "extensionProfiles": "not-run",
+                "schema": "not-run",
+                "semantic": "not-run"
+              },
+              "command": "validate",
+              "diagnostics": [
+                {
+                  "code": "NEXFLOW-PROTOTYPE-INTERNAL",
+                  "file": null,
+                  "keyword": null,
+                  "kind": null,
+                  "message": "The reviewed local validation setup could not produce a result.",
+                  "path": null,
+                  "related": [],
+                  "severity": "error"
+                }
+              ],
+              "executionAuthorized": false,
+              "exitCode": 4,
+              "formatVersion": "0.4-draft",
+              "inputMode": null,
+              "result": null,
+              "success": false,
+              "supportedSpecVersions": [
+                "0.1"
+              ],
+              "tool": {
+                "name": "nexflow-rust-evaluation",
+                "version": "unreleased"
+              },
+              "truncated": false
+            }
+          }
+        ]
+      },
+      {
+        "id": "reject-source-outside-root",
+        "status": "failed",
+        "errors": [
+          "wrong-exit-status",
+          "wrong-input-mode",
+          "wrong-check-state",
+          "wrong-diagnostics"
+        ],
+        "attempts": [
+          {
+            "exitCode": 4,
+            "signal": null,
+            "error": null,
+            "stderr": "",
+            "stdoutSha256": "4e5be68c4a31199a957f4f4ec13125ed7ab549ff6597662c6654bcf3ed8b8537",
+            "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "output": {
+              "checks": {
+                "coreProfile": "not-run",
+                "discovery": "not-run",
+                "extensionProfiles": "not-run",
+                "schema": "not-run",
+                "semantic": "not-run"
+              },
+              "command": "validate",
+              "diagnostics": [
+                {
+                  "code": "NEXFLOW-PROTOTYPE-INTERNAL",
+                  "file": null,
+                  "keyword": null,
+                  "kind": null,
+                  "message": "The reviewed local validation setup could not produce a result.",
+                  "path": null,
+                  "related": [],
+                  "severity": "error"
+                }
+              ],
+              "executionAuthorized": false,
+              "exitCode": 4,
+              "formatVersion": "0.4-draft",
+              "inputMode": null,
+              "result": null,
+              "success": false,
+              "supportedSpecVersions": [
+                "0.1"
+              ],
+              "tool": {
+                "name": "nexflow-rust-evaluation",
+                "version": "unreleased"
+              },
+              "truncated": false
+            }
+          },
+          {
+            "exitCode": 4,
+            "signal": null,
+            "error": null,
+            "stderr": "",
+            "stdoutSha256": "4e5be68c4a31199a957f4f4ec13125ed7ab549ff6597662c6654bcf3ed8b8537",
+            "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "output": {
+              "checks": {
+                "coreProfile": "not-run",
+                "discovery": "not-run",
+                "extensionProfiles": "not-run",
+                "schema": "not-run",
+                "semantic": "not-run"
+              },
+              "command": "validate",
+              "diagnostics": [
+                {
+                  "code": "NEXFLOW-PROTOTYPE-INTERNAL",
+                  "file": null,
+                  "keyword": null,
+                  "kind": null,
+                  "message": "The reviewed local validation setup could not produce a result.",
+                  "path": null,
+                  "related": [],
+                  "severity": "error"
+                }
+              ],
+              "executionAuthorized": false,
+              "exitCode": 4,
+              "formatVersion": "0.4-draft",
+              "inputMode": null,
+              "result": null,
+              "success": false,
+              "supportedSpecVersions": [
+                "0.1"
+              ],
+              "tool": {
+                "name": "nexflow-rust-evaluation",
+                "version": "unreleased"
+              },
+              "truncated": false
+            }
+          }
+        ]
+      },
+      {
+        "id": "reject-source-kind-mismatch",
+        "status": "failed",
+        "errors": [
+          "wrong-exit-status",
+          "wrong-input-mode",
+          "wrong-check-state",
+          "wrong-diagnostics"
+        ],
+        "attempts": [
+          {
+            "exitCode": 4,
+            "signal": null,
+            "error": null,
+            "stderr": "",
+            "stdoutSha256": "4e5be68c4a31199a957f4f4ec13125ed7ab549ff6597662c6654bcf3ed8b8537",
+            "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "output": {
+              "checks": {
+                "coreProfile": "not-run",
+                "discovery": "not-run",
+                "extensionProfiles": "not-run",
+                "schema": "not-run",
+                "semantic": "not-run"
+              },
+              "command": "validate",
+              "diagnostics": [
+                {
+                  "code": "NEXFLOW-PROTOTYPE-INTERNAL",
+                  "file": null,
+                  "keyword": null,
+                  "kind": null,
+                  "message": "The reviewed local validation setup could not produce a result.",
+                  "path": null,
+                  "related": [],
+                  "severity": "error"
+                }
+              ],
+              "executionAuthorized": false,
+              "exitCode": 4,
+              "formatVersion": "0.4-draft",
+              "inputMode": null,
+              "result": null,
+              "success": false,
+              "supportedSpecVersions": [
+                "0.1"
+              ],
+              "tool": {
+                "name": "nexflow-rust-evaluation",
+                "version": "unreleased"
+              },
+              "truncated": false
+            }
+          },
+          {
+            "exitCode": 4,
+            "signal": null,
+            "error": null,
+            "stderr": "",
+            "stdoutSha256": "4e5be68c4a31199a957f4f4ec13125ed7ab549ff6597662c6654bcf3ed8b8537",
+            "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "output": {
+              "checks": {
+                "coreProfile": "not-run",
+                "discovery": "not-run",
+                "extensionProfiles": "not-run",
+                "schema": "not-run",
+                "semantic": "not-run"
+              },
+              "command": "validate",
+              "diagnostics": [
+                {
+                  "code": "NEXFLOW-PROTOTYPE-INTERNAL",
+                  "file": null,
+                  "keyword": null,
+                  "kind": null,
+                  "message": "The reviewed local validation setup could not produce a result.",
+                  "path": null,
+                  "related": [],
+                  "severity": "error"
+                }
+              ],
+              "executionAuthorized": false,
+              "exitCode": 4,
+              "formatVersion": "0.4-draft",
+              "inputMode": null,
+              "result": null,
+              "success": false,
+              "supportedSpecVersions": [
+                "0.1"
+              ],
+              "tool": {
+                "name": "nexflow-rust-evaluation",
+                "version": "unreleased"
+              },
+              "truncated": false
+            }
+          }
+        ]
+      },
+      {
+        "id": "reject-runtime-command",
+        "status": "passed",
+        "errors": [],
+        "attempts": [
+          {
+            "exitCode": 2,
+            "signal": null,
+            "error": null,
+            "stderr": "",
+            "stdoutSha256": "7c5435a91e9d6ff3943945f2c8d1e9a5eb2c9403ca5ea077dfabfe8773c5ae12",
+            "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "output": {
+              "checks": {
+                "coreProfile": "not-run",
+                "discovery": "not-run",
+                "extensionProfiles": "not-run",
+                "schema": "not-run",
+                "semantic": "not-run"
+              },
+              "command": null,
+              "diagnostics": [
+                {
+                  "code": "NEXFLOW-PROTOTYPE-USAGE",
+                  "file": null,
+                  "keyword": null,
+                  "kind": null,
+                  "message": "Only validate or inspect with an explicit root and supported options are accepted.",
+                  "path": null,
+                  "related": [],
+                  "severity": "error"
+                }
+              ],
+              "executionAuthorized": false,
+              "exitCode": 2,
+              "formatVersion": "0.4-draft",
+              "inputMode": null,
+              "result": null,
+              "success": false,
+              "supportedSpecVersions": [
+                "0.1"
+              ],
+              "tool": {
+                "name": "nexflow-rust-evaluation",
+                "version": "unreleased"
+              },
+              "truncated": false
+            }
+          },
+          {
+            "exitCode": 2,
+            "signal": null,
+            "error": null,
+            "stderr": "",
+            "stdoutSha256": "7c5435a91e9d6ff3943945f2c8d1e9a5eb2c9403ca5ea077dfabfe8773c5ae12",
+            "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "output": {
+              "checks": {
+                "coreProfile": "not-run",
+                "discovery": "not-run",
+                "extensionProfiles": "not-run",
+                "schema": "not-run",
+                "semantic": "not-run"
+              },
+              "command": null,
+              "diagnostics": [
+                {
+                  "code": "NEXFLOW-PROTOTYPE-USAGE",
+                  "file": null,
+                  "keyword": null,
+                  "kind": null,
+                  "message": "Only validate or inspect with an explicit root and supported options are accepted.",
+                  "path": null,
+                  "related": [],
+                  "severity": "error"
+                }
+              ],
+              "executionAuthorized": false,
+              "exitCode": 2,
+              "formatVersion": "0.4-draft",
+              "inputMode": null,
+              "result": null,
+              "success": false,
+              "supportedSpecVersions": [
+                "0.1"
+              ],
+              "tool": {
+                "name": "nexflow-rust-evaluation",
+                "version": "unreleased"
+              },
+              "truncated": false
+            }
+          }
+        ]
+      },
+      {
+        "id": "reject-ambiguous-project-entry",
+        "status": "failed",
+        "errors": [
+          "wrong-exit-status",
+          "wrong-input-mode",
+          "wrong-check-state",
+          "wrong-diagnostics"
+        ],
+        "attempts": [
+          {
+            "exitCode": 4,
+            "signal": null,
+            "error": null,
+            "stderr": "",
+            "stdoutSha256": "4e5be68c4a31199a957f4f4ec13125ed7ab549ff6597662c6654bcf3ed8b8537",
+            "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "output": {
+              "checks": {
+                "coreProfile": "not-run",
+                "discovery": "not-run",
+                "extensionProfiles": "not-run",
+                "schema": "not-run",
+                "semantic": "not-run"
+              },
+              "command": "validate",
+              "diagnostics": [
+                {
+                  "code": "NEXFLOW-PROTOTYPE-INTERNAL",
+                  "file": null,
+                  "keyword": null,
+                  "kind": null,
+                  "message": "The reviewed local validation setup could not produce a result.",
+                  "path": null,
+                  "related": [],
+                  "severity": "error"
+                }
+              ],
+              "executionAuthorized": false,
+              "exitCode": 4,
+              "formatVersion": "0.4-draft",
+              "inputMode": null,
+              "result": null,
+              "success": false,
+              "supportedSpecVersions": [
+                "0.1"
+              ],
+              "tool": {
+                "name": "nexflow-rust-evaluation",
+                "version": "unreleased"
+              },
+              "truncated": false
+            }
+          },
+          {
+            "exitCode": 4,
+            "signal": null,
+            "error": null,
+            "stderr": "",
+            "stdoutSha256": "4e5be68c4a31199a957f4f4ec13125ed7ab549ff6597662c6654bcf3ed8b8537",
+            "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "output": {
+              "checks": {
+                "coreProfile": "not-run",
+                "discovery": "not-run",
+                "extensionProfiles": "not-run",
+                "schema": "not-run",
+                "semantic": "not-run"
+              },
+              "command": "validate",
+              "diagnostics": [
+                {
+                  "code": "NEXFLOW-PROTOTYPE-INTERNAL",
+                  "file": null,
+                  "keyword": null,
+                  "kind": null,
+                  "message": "The reviewed local validation setup could not produce a result.",
+                  "path": null,
+                  "related": [],
+                  "severity": "error"
+                }
+              ],
+              "executionAuthorized": false,
+              "exitCode": 4,
+              "formatVersion": "0.4-draft",
+              "inputMode": null,
+              "result": null,
+              "success": false,
+              "supportedSpecVersions": [
+                "0.1"
+              ],
+              "tool": {
+                "name": "nexflow-rust-evaluation",
+                "version": "unreleased"
+              },
+              "truncated": false
+            }
+          }
+        ]
+      },
+      {
+        "id": "reject-duplicate-root-key",
+        "status": "failed",
+        "errors": [
+          "wrong-exit-status",
+          "wrong-input-mode",
+          "wrong-check-state",
+          "wrong-diagnostics"
+        ],
+        "attempts": [
+          {
+            "exitCode": 4,
+            "signal": null,
+            "error": null,
+            "stderr": "",
+            "stdoutSha256": "4e5be68c4a31199a957f4f4ec13125ed7ab549ff6597662c6654bcf3ed8b8537",
+            "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "output": {
+              "checks": {
+                "coreProfile": "not-run",
+                "discovery": "not-run",
+                "extensionProfiles": "not-run",
+                "schema": "not-run",
+                "semantic": "not-run"
+              },
+              "command": "validate",
+              "diagnostics": [
+                {
+                  "code": "NEXFLOW-PROTOTYPE-INTERNAL",
+                  "file": null,
+                  "keyword": null,
+                  "kind": null,
+                  "message": "The reviewed local validation setup could not produce a result.",
+                  "path": null,
+                  "related": [],
+                  "severity": "error"
+                }
+              ],
+              "executionAuthorized": false,
+              "exitCode": 4,
+              "formatVersion": "0.4-draft",
+              "inputMode": null,
+              "result": null,
+              "success": false,
+              "supportedSpecVersions": [
+                "0.1"
+              ],
+              "tool": {
+                "name": "nexflow-rust-evaluation",
+                "version": "unreleased"
+              },
+              "truncated": false
+            }
+          },
+          {
+            "exitCode": 4,
+            "signal": null,
+            "error": null,
+            "stderr": "",
+            "stdoutSha256": "4e5be68c4a31199a957f4f4ec13125ed7ab549ff6597662c6654bcf3ed8b8537",
+            "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "output": {
+              "checks": {
+                "coreProfile": "not-run",
+                "discovery": "not-run",
+                "extensionProfiles": "not-run",
+                "schema": "not-run",
+                "semantic": "not-run"
+              },
+              "command": "validate",
+              "diagnostics": [
+                {
+                  "code": "NEXFLOW-PROTOTYPE-INTERNAL",
+                  "file": null,
+                  "keyword": null,
+                  "kind": null,
+                  "message": "The reviewed local validation setup could not produce a result.",
+                  "path": null,
+                  "related": [],
+                  "severity": "error"
+                }
+              ],
+              "executionAuthorized": false,
+              "exitCode": 4,
+              "formatVersion": "0.4-draft",
+              "inputMode": null,
+              "result": null,
+              "success": false,
+              "supportedSpecVersions": [
+                "0.1"
+              ],
+              "tool": {
+                "name": "nexflow-rust-evaluation",
+                "version": "unreleased"
+              },
+              "truncated": false
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "uninstall": {
+    "status": "passed",
+    "prefixAbsent": true,
+    "archivePreserved": true,
+    "outsidePreserved": true,
+    "externalRuntimePreserved": true
+  },
+  "stages": {
+    "package": {
+      "status": "passed",
+      "evidence": [
+        "unchanged native NF-056-11 payloads verified by hash, packaged with pinned source/locks/schemas; no fresh rebuild claim"
+      ]
+    },
+    "install": {
+      "status": "passed",
+      "evidence": [
+        "clean extraction and complete capsule manifest verification; Python offline hash-locked venv"
+      ]
+    },
+    "validateInspect": {
+      "status": "failed",
+      "evidence": [
+        "11 unchanged shared CLI cases twice from installed prefix with source schemas denied"
+      ]
+    },
+    "offlineUse": {
+      "status": "failed",
+      "evidence": [
+        "same installed invocations after paired OS network controls"
+      ]
+    },
+    "upgrade": {
+      "status": "not-tested",
+      "evidence": [
+        "no actual previous macOS candidate capsule in queried CI catalog or reviewed task-local evidence"
+      ]
+    },
+    "rollback": {
+      "status": "not-tested",
+      "evidence": [
+        "no genuine previous macOS evaluation artifact; Linux capsules/source binaries are not a predecessor"
+      ]
+    },
+    "uninstall": {
+      "status": "passed",
+      "evidence": [
+        "only task-owned install prefix removed; archive/outside canary/external executable unchanged"
+      ]
+    },
+    "signing": {
+      "status": "not-tested",
+      "evidence": [
+        "read-only existing Mach-O signature/entitlement inspection; no authorized Developer ID identity or signing operation"
+      ]
+    },
+    "notarization": {
+      "status": "not-tested",
+      "evidence": [
+        "no permitted Apple submission credentials/authority or ticket; no upload, keychain mutation or borrowed keys"
+      ]
+    }
+  },
+  "immutability": {
+    "sources": true,
+    "locks": true,
+    "corpus": true,
+    "installedPayload": true
+  },
+  "distributionGate": "partial",
+  "outcome": "not-ready",
+  "limitations": [
+    "Native local macOS differs from frozen macos-15 image/CPU/memory; supplemental lifecycle only, not common benchmark cohort.",
+    "Private source-layout evaluation capsule only; no stable installed entry point, public package, supported distribution or product release.",
+    "Native payloads reuse verified supply-chain builds; new clean/cached build performance and reproducibility remain not-tested.",
+    "External exact Node/CPython and system libraries remain prerequisites; native dependency closure, license and advisory risks stay open.",
+    "Allow-default Seatbelt template tests bounded effects; metadata/system reads, Mach IPC, keychain brokers, inherited facilities and races are not completely isolated.",
+    "Archive extraction and venv provisioning are trusted task-local setup, not OS-sandboxed installation or a complete offline installer.",
+    "codesign inspection describes existing bytes only; ad-hoc signatures are not Developer ID approval/notarization. No signature policy or ticket lifecycle tested.",
+    "No predecessor artifact, upgrade/rollback, authorized signing/notarization, architecture acceptance or full fidelity gate is claimed."
+  ]
+}

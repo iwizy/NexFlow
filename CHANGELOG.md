@@ -13,6 +13,22 @@ This project follows a specification-first process. Breaking changes must includ
   Missing comparable cohorts, workloads and samples remain not-tested;
   no performance ranking, candidate repair or architecture approval.
 
+- Added native Windows AMD64 evaluation-capsule collection, relocated clean
+  install/CLI/uninstall evidence and immutable consistency checks. Offline OS
+  denial, previous-artifact upgrade/rollback and signing remain not-tested;
+  candidate sources, locks, versions and architecture gates are unchanged.
+
+- Added native macOS ARM64 evaluation-capsule packaging, isolated installed
+  validate/inspect/offline observations and scoped uninstall evidence. Cohort
+  drift, failed relocation, missing predecessor artifacts and untested
+  Developer ID/notarization remain explicit; no product publication or version change.
+
+- Recorded a dated `0.2` validation/conformance checkpoint with all eight
+  criteria, exact-source maintenance results, compatibility and diagnostic/
+  conformance limits, plus offline consistency and rejection checks in CI.
+  Existing `v0.2.0` / `v0.3.0` evidence is preserved; no release, refreshed
+  conformance claim, runtime behavior or version change is introduced.
+
 - Added native Linux AMD64 evaluation-capsule collection and isolated clean
   install/offline invocation/uninstall evidence tooling. Relocation failures,
   unavailable prior artifacts and untested upgrade/rollback/signing remain

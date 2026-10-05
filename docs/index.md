@@ -97,6 +97,7 @@ uncataloged documentation pages, and missing top-level guide links.
 | [Conformance](conformance.md) | Draft support levels for manifests, validators, CLIs, runtimes, and extensions. |
 | [Conformance Claims](conformance-claims.md) | Versioned machine-readable and human-readable support statements, evidence requirements, and trust boundaries. |
 | [Validation](validation.md) | Structural validation workflow and semantic validation boundary. |
+| [0.2 Validation And Conformance Checkpoint](0.2-validation-checkpoint.md) | Dated eight-criterion assessment, exact-source checks and retained diagnostic/conformance gaps; preserves existing releases without approving a new one. |
 | [Examples Validation Walkthrough](examples-validation-walkthrough.md) | Runs the maintained validation tools against compact and complete examples and explains a cataloged structural failure. |
 | [CLI And Runtime Responsibility Boundary](cli-runtime-boundary.md) | Separates offline static validation and bounded authoring commands from runtime preflight, executable extensions, credentials, remote access, orchestration, and enforcement. |
 | [Reference CLI](reference-cli.md) | Maps the proposed public commands to runnable repository evidence, compatibility boundaries, safety limits, and promotion gates without claiming a released CLI. |

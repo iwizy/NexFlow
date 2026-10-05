@@ -1,0 +1,829 @@
+{
+  "task": "NF-056-13",
+  "checkedAt": "2026-10-05T10:15:06.620Z",
+  "baseRevision": "3ffe720c5844212e5eea7f84f11d0f5bd150b7c7",
+  "prerequisites": [
+    {
+      "pullRequest": 90,
+      "url": "https://github.com/iwizy/NexFlow/pull/90",
+      "state": "MERGED",
+      "publishedHead": "dec5f1a2037ca72dd5a93799a7376e35c5938569",
+      "mergeRevision": "e3a8fbee5ac5b509fe8a10b10a56f022f36e527b",
+      "checks": [
+        {
+          "name": "CLI prototype checks",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/36847082481/job/110319680358",
+          "completedAt": "2026-10-01T10:08:01Z"
+        },
+        {
+          "name": "Environment (linux/amd64)",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/36847082647/job/110319680661",
+          "completedAt": "2026-10-01T10:07:14Z"
+        },
+        {
+          "name": "schema-validation",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/36847082451/job/110319679338",
+          "completedAt": "2026-10-01T10:07:24Z"
+        },
+        {
+          "name": "Environment (macos/arm64)",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/36847082647/job/110319680143",
+          "completedAt": "2026-10-01T10:07:21Z"
+        },
+        {
+          "name": "Environment (windows/amd64)",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/36847082647/job/110319680578",
+          "completedAt": "2026-10-01T10:07:28Z"
+        }
+      ]
+    },
+    {
+      "pullRequest": 95,
+      "url": "https://github.com/iwizy/NexFlow/pull/95",
+      "state": "MERGED",
+      "publishedHead": "a8301a7478587c59502dfb2e6bd548489c14ee2b",
+      "mergeRevision": "d9d2f76fc2bb9469ce52670a1fc0f22af16432a2",
+      "checks": [
+        {
+          "name": "CLI prototype checks",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/36981147138/job/110755720014",
+          "completedAt": "2026-10-02T07:56:38Z"
+        },
+        {
+          "name": "Environment (linux/amd64)",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/36981147113/job/110755719896",
+          "completedAt": "2026-10-02T07:55:39Z"
+        },
+        {
+          "name": "schema-validation",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/36981147143/job/110755719943",
+          "completedAt": "2026-10-02T07:55:47Z"
+        },
+        {
+          "name": "Environment (macos/arm64)",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/36981147113/job/110755719898",
+          "completedAt": "2026-10-02T07:55:44Z"
+        },
+        {
+          "name": "Environment (windows/amd64)",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/36981147113/job/110755719614",
+          "completedAt": "2026-10-02T07:56:08Z"
+        }
+      ]
+    },
+    {
+      "pullRequest": 96,
+      "url": "https://github.com/iwizy/NexFlow/pull/96",
+      "state": "MERGED",
+      "publishedHead": "024485bf4d6acf601886b7387c2ed2295bceb908",
+      "mergeRevision": "a3c26c1453ec3a0f15a17baf80c79dec70cebdfd",
+      "checks": [
+        {
+          "name": "CLI prototype checks",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37002512370/job/110823207508",
+          "completedAt": "2026-10-02T11:43:55Z"
+        },
+        {
+          "name": "Environment (linux/amd64)",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37002512333/job/110823207204",
+          "completedAt": "2026-10-02T11:43:01Z"
+        },
+        {
+          "name": "schema-validation",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37002512365/job/110823207134",
+          "completedAt": "2026-10-02T11:43:14Z"
+        },
+        {
+          "name": "initial-validation",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37002512553/job/110823208235",
+          "completedAt": "2026-10-02T11:43:12Z"
+        },
+        {
+          "name": "Environment (macos/arm64)",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37002512333/job/110823206978",
+          "completedAt": "2026-10-02T11:43:03Z"
+        },
+        {
+          "name": "Environment (windows/amd64)",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37002512333/job/110823207153",
+          "completedAt": "2026-10-02T11:43:24Z"
+        }
+      ]
+    },
+    {
+      "pullRequest": 97,
+      "url": "https://github.com/iwizy/NexFlow/pull/97",
+      "state": "MERGED",
+      "publishedHead": "f33bbb95e84a768936f9b948de2b1200ed8909bb",
+      "mergeRevision": "02be255907f868a2e7d6dfb357b6021e58b4e5d4",
+      "checks": [
+        {
+          "name": "CLI prototype checks",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37028903641/job/110910480202",
+          "completedAt": "2026-10-02T15:44:02Z"
+        },
+        {
+          "name": "Environment (linux/amd64)",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37028903130/job/110910477444",
+          "completedAt": "2026-10-02T15:43:02Z"
+        },
+        {
+          "name": "initial-validation",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37028903235/job/110910477766",
+          "completedAt": "2026-10-02T15:43:26Z"
+        },
+        {
+          "name": "schema-validation",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37028902910/job/110910476662",
+          "completedAt": "2026-10-02T15:43:14Z"
+        },
+        {
+          "name": "initial-validation",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37028904001/job/110910480164",
+          "completedAt": "2026-10-02T15:43:10Z"
+        },
+        {
+          "name": "Environment (macos/arm64)",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37028903130/job/110910477380",
+          "completedAt": "2026-10-02T15:43:03Z"
+        },
+        {
+          "name": "Environment (windows/amd64)",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37028903130/job/110910477136",
+          "completedAt": "2026-10-02T15:43:18Z"
+        }
+      ]
+    },
+    {
+      "pullRequest": 99,
+      "url": "https://github.com/iwizy/NexFlow/pull/99",
+      "state": "MERGED",
+      "publishedHead": "8919281c40d878552401241a66fccbe9ddba3efd",
+      "mergeRevision": "18e8b16fbe30a5db8b48fa809cbacf187785d561",
+      "checks": [
+        {
+          "name": "CLI prototype checks",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37119053662/job/111191442967",
+          "completedAt": "2026-10-03T11:16:20Z"
+        },
+        {
+          "name": "Environment (linux/amd64)",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37119053725/job/111191443097",
+          "completedAt": "2026-10-03T11:15:24Z"
+        },
+        {
+          "name": "initial-validation",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37119053667/job/111191442826",
+          "completedAt": "2026-10-03T11:15:49Z"
+        },
+        {
+          "name": "initial-validation",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37119053714/job/111191443397",
+          "completedAt": "2026-10-03T11:16:02Z"
+        },
+        {
+          "name": "schema-validation",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37119053740/job/111191442957",
+          "completedAt": "2026-10-03T11:15:30Z"
+        },
+        {
+          "name": "initial-validation",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37119053696/job/111191442952",
+          "completedAt": "2026-10-03T11:15:36Z"
+        },
+        {
+          "name": "Environment (macos/arm64)",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37119053725/job/111191443042",
+          "completedAt": "2026-10-03T11:15:29Z"
+        },
+        {
+          "name": "Environment (windows/amd64)",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37119053725/job/111191442937",
+          "completedAt": "2026-10-03T11:15:42Z"
+        }
+      ]
+    },
+    {
+      "pullRequest": 100,
+      "url": "https://github.com/iwizy/NexFlow/pull/100",
+      "state": "MERGED",
+      "publishedHead": "7181d8cf04d0fe75cce7bbd86aff9a53d9a1e413",
+      "mergeRevision": "20c7b20509a785e747ff0cce1cc6712313f2a600",
+      "checks": [
+        {
+          "name": "CLI prototype checks",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37121274962/job/111197715053",
+          "completedAt": "2026-10-03T11:58:11Z"
+        },
+        {
+          "name": "Environment (linux/amd64)",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37121275056/job/111197715126",
+          "completedAt": "2026-10-03T11:57:15Z"
+        },
+        {
+          "name": "initial-validation",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37121275243/job/111197715779",
+          "completedAt": "2026-10-03T11:57:51Z"
+        },
+        {
+          "name": "initial-validation",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37121275050/job/111197715043",
+          "completedAt": "2026-10-03T11:57:40Z"
+        },
+        {
+          "name": "schema-validation",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37121274957/job/111197714738",
+          "completedAt": "2026-10-03T11:57:28Z"
+        },
+        {
+          "name": "initial-validation",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37121275047/job/111197715031",
+          "completedAt": "2026-10-03T11:58:01Z"
+        },
+        {
+          "name": "Environment (macos/arm64)",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37121275056/job/111197714983",
+          "completedAt": "2026-10-03T11:57:17Z"
+        },
+        {
+          "name": "Environment (windows/amd64)",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37121275056/job/111197715113",
+          "completedAt": "2026-10-03T11:57:41Z"
+        }
+      ]
+    },
+    {
+      "pullRequest": 104,
+      "url": "https://github.com/iwizy/NexFlow/pull/104",
+      "state": "MERGED",
+      "publishedHead": "5290b74aa8af3f0d8051ae18c419c49c47df7c08",
+      "mergeRevision": "e91b5e13fb829aeae4c23a4fcc9a762f1eec5f6b",
+      "checks": [
+        {
+          "name": "CLI prototype checks",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37216252688/job/111477252823",
+          "completedAt": "2026-10-04T16:19:05Z"
+        },
+        {
+          "name": "Environment (linux/amd64)",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37216252729/job/111477253007",
+          "completedAt": "2026-10-04T16:18:19Z"
+        },
+        {
+          "name": "initial-validation",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37216252698/job/111477252760",
+          "completedAt": "2026-10-04T16:18:44Z"
+        },
+        {
+          "name": "initial-validation",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37216252695/job/111477252507",
+          "completedAt": "2026-10-04T16:18:41Z"
+        },
+        {
+          "name": "initial-validation",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37216252704/job/111477252634",
+          "completedAt": "2026-10-04T16:18:41Z"
+        },
+        {
+          "name": "schema-validation",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37216252696/job/111477252715",
+          "completedAt": "2026-10-04T16:18:30Z"
+        },
+        {
+          "name": "initial-validation",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37216252705/job/111477252781",
+          "completedAt": "2026-10-04T16:18:26Z"
+        },
+        {
+          "name": "Environment (macos/arm64)",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37216252729/job/111477252949",
+          "completedAt": "2026-10-04T16:18:15Z"
+        },
+        {
+          "name": "Environment (windows/amd64)",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37216252729/job/111477252813",
+          "completedAt": "2026-10-04T16:18:35Z"
+        }
+      ]
+    }
+  ],
+  "previousArtifactQuery": {
+    "checkedAt": "2026-10-05T10:16:13.926Z",
+    "endpoint": "repos/iwizy/NexFlow/actions/artifacts?per_page=100",
+    "pages": 1,
+    "total": 59,
+    "artifacts": [
+      {
+        "id": 11309085481,
+        "name": "environment-windows-amd64",
+        "createdAt": "2026-10-04T16:18:30Z",
+        "expired": false,
+        "sourceRevision": "5290b74aa8af3f0d8051ae18c419c49c47df7c08"
+      },
+      {
+        "id": 11308966475,
+        "name": "environment-windows-amd64",
+        "createdAt": "2026-10-04T16:23:54Z",
+        "expired": false,
+        "sourceRevision": "96a36bfdfc5b18380f0faf95d42f5c1cb52803a8"
+      },
+      {
+        "id": 11308656866,
+        "name": "environment-linux-amd64",
+        "createdAt": "2026-10-04T16:18:15Z",
+        "expired": false,
+        "sourceRevision": "5290b74aa8af3f0d8051ae18c419c49c47df7c08"
+      },
+      {
+        "id": 11308502833,
+        "name": "environment-macos-arm64",
+        "createdAt": "2026-10-04T16:23:42Z",
+        "expired": false,
+        "sourceRevision": "96a36bfdfc5b18380f0faf95d42f5c1cb52803a8"
+      },
+      {
+        "id": 11308381488,
+        "name": "environment-linux-amd64",
+        "createdAt": "2026-10-04T16:13:16Z",
+        "expired": false,
+        "sourceRevision": "72db0be4b32ac0069979abeeedc8870b4d987e3d"
+      },
+      {
+        "id": 11308326686,
+        "name": "environment-windows-amd64",
+        "createdAt": "2026-10-04T16:13:32Z",
+        "expired": false,
+        "sourceRevision": "72db0be4b32ac0069979abeeedc8870b4d987e3d"
+      },
+      {
+        "id": 11308297666,
+        "name": "environment-macos-arm64",
+        "createdAt": "2026-10-04T16:13:20Z",
+        "expired": false,
+        "sourceRevision": "72db0be4b32ac0069979abeeedc8870b4d987e3d"
+      },
+      {
+        "id": 11308144241,
+        "name": "environment-linux-amd64",
+        "createdAt": "2026-10-04T16:23:34Z",
+        "expired": false,
+        "sourceRevision": "96a36bfdfc5b18380f0faf95d42f5c1cb52803a8"
+      },
+      {
+        "id": 11307993026,
+        "name": "environment-macos-arm64",
+        "createdAt": "2026-10-04T16:18:12Z",
+        "expired": false,
+        "sourceRevision": "5290b74aa8af3f0d8051ae18c419c49c47df7c08"
+      },
+      {
+        "id": 11306590187,
+        "name": "linux-evaluation-rust-de6b25428e040a2968493c442e8f2e68d12e48b0",
+        "createdAt": "2026-10-04T14:34:11Z",
+        "expired": false,
+        "sourceRevision": "de6b25428e040a2968493c442e8f2e68d12e48b0"
+      },
+      {
+        "id": 11306422235,
+        "name": "environment-macos-arm64",
+        "createdAt": "2026-10-04T14:50:19Z",
+        "expired": false,
+        "sourceRevision": "2336ecccaabbbd85fd3c472cb5200387e46fde2c"
+      },
+      {
+        "id": 11306365509,
+        "name": "environment-windows-amd64",
+        "createdAt": "2026-10-04T14:33:18Z",
+        "expired": false,
+        "sourceRevision": "de6b25428e040a2968493c442e8f2e68d12e48b0"
+      },
+      {
+        "id": 11306320653,
+        "name": "environment-macos-arm64",
+        "createdAt": "2026-10-04T14:33:08Z",
+        "expired": false,
+        "sourceRevision": "de6b25428e040a2968493c442e8f2e68d12e48b0"
+      },
+      {
+        "id": 11306232871,
+        "name": "environment-windows-amd64",
+        "createdAt": "2026-10-04T14:52:15Z",
+        "expired": false,
+        "sourceRevision": "2336ecccaabbbd85fd3c472cb5200387e46fde2c"
+      },
+      {
+        "id": 11306095649,
+        "name": "linux-evaluation-typescript-de6b25428e040a2968493c442e8f2e68d12e48b0",
+        "createdAt": "2026-10-04T14:33:12Z",
+        "expired": false,
+        "sourceRevision": "de6b25428e040a2968493c442e8f2e68d12e48b0"
+      },
+      {
+        "id": 11306041661,
+        "name": "linux-evaluation-python-de6b25428e040a2968493c442e8f2e68d12e48b0",
+        "createdAt": "2026-10-04T14:33:24Z",
+        "expired": false,
+        "sourceRevision": "de6b25428e040a2968493c442e8f2e68d12e48b0"
+      },
+      {
+        "id": 11306011994,
+        "name": "linux-evaluation-go-de6b25428e040a2968493c442e8f2e68d12e48b0",
+        "createdAt": "2026-10-04T14:33:29Z",
+        "expired": false,
+        "sourceRevision": "de6b25428e040a2968493c442e8f2e68d12e48b0"
+      },
+      {
+        "id": 11305637367,
+        "name": "environment-linux-amd64",
+        "createdAt": "2026-10-04T14:05:48Z",
+        "expired": false,
+        "sourceRevision": "fed105367da915347a92896eb67c0446d9e9b2d7"
+      },
+      {
+        "id": 11305579725,
+        "name": "environment-linux-amd64",
+        "createdAt": "2026-10-04T14:50:18Z",
+        "expired": false,
+        "sourceRevision": "2336ecccaabbbd85fd3c472cb5200387e46fde2c"
+      },
+      {
+        "id": 11305432756,
+        "name": "environment-windows-amd64",
+        "createdAt": "2026-10-04T14:05:56Z",
+        "expired": false,
+        "sourceRevision": "fed105367da915347a92896eb67c0446d9e9b2d7"
+      },
+      {
+        "id": 11305298905,
+        "name": "environment-linux-amd64",
+        "createdAt": "2026-10-04T14:33:04Z",
+        "expired": false,
+        "sourceRevision": "de6b25428e040a2968493c442e8f2e68d12e48b0"
+      },
+      {
+        "id": 11304887713,
+        "name": "environment-macos-arm64",
+        "createdAt": "2026-10-04T14:05:49Z",
+        "expired": false,
+        "sourceRevision": "fed105367da915347a92896eb67c0446d9e9b2d7"
+      },
+      {
+        "id": 11304565366,
+        "name": "environment-macos-arm64",
+        "createdAt": "2026-10-04T13:01:46Z",
+        "expired": false,
+        "sourceRevision": "eb99bff40629a55e7ca229a1ae6e829bb5c204f4"
+      },
+      {
+        "id": 11304111713,
+        "name": "environment-linux-amd64",
+        "createdAt": "2026-10-04T13:01:44Z",
+        "expired": false,
+        "sourceRevision": "eb99bff40629a55e7ca229a1ae6e829bb5c204f4"
+      },
+      {
+        "id": 11303563111,
+        "name": "environment-windows-amd64",
+        "createdAt": "2026-10-04T13:01:57Z",
+        "expired": false,
+        "sourceRevision": "eb99bff40629a55e7ca229a1ae6e829bb5c204f4"
+      },
+      {
+        "id": 11276290628,
+        "name": "environment-macos-arm64",
+        "createdAt": "2026-10-03T14:06:53Z",
+        "expired": false,
+        "sourceRevision": "1c9aa13c46175255d989edda5f6e677d1a723952"
+      },
+      {
+        "id": 11276280577,
+        "name": "environment-windows-amd64",
+        "createdAt": "2026-10-03T14:07:04Z",
+        "expired": false,
+        "sourceRevision": "1c9aa13c46175255d989edda5f6e677d1a723952"
+      },
+      {
+        "id": 11274769311,
+        "name": "environment-linux-amd64",
+        "createdAt": "2026-10-03T14:06:47Z",
+        "expired": false,
+        "sourceRevision": "1c9aa13c46175255d989edda5f6e677d1a723952"
+      },
+      {
+        "id": 11273635653,
+        "name": "environment-macos-arm64",
+        "createdAt": "2026-10-03T11:57:13Z",
+        "expired": false,
+        "sourceRevision": "7181d8cf04d0fe75cce7bbd86aff9a53d9a1e413"
+      },
+      {
+        "id": 11273155045,
+        "name": "environment-linux-amd64",
+        "createdAt": "2026-10-03T11:12:10Z",
+        "expired": false,
+        "sourceRevision": "991783ad47a4d6813e680785cafb1e9080df9c0a"
+      },
+      {
+        "id": 11273074063,
+        "name": "environment-windows-amd64",
+        "createdAt": "2026-10-03T11:57:37Z",
+        "expired": false,
+        "sourceRevision": "7181d8cf04d0fe75cce7bbd86aff9a53d9a1e413"
+      },
+      {
+        "id": 11272979202,
+        "name": "environment-linux-amd64",
+        "createdAt": "2026-10-03T11:57:13Z",
+        "expired": false,
+        "sourceRevision": "7181d8cf04d0fe75cce7bbd86aff9a53d9a1e413"
+      },
+      {
+        "id": 11272960404,
+        "name": "environment-windows-amd64",
+        "createdAt": "2026-10-03T11:12:26Z",
+        "expired": false,
+        "sourceRevision": "991783ad47a4d6813e680785cafb1e9080df9c0a"
+      },
+      {
+        "id": 11272830866,
+        "name": "environment-windows-amd64",
+        "createdAt": "2026-10-03T11:15:39Z",
+        "expired": false,
+        "sourceRevision": "8919281c40d878552401241a66fccbe9ddba3efd"
+      },
+      {
+        "id": 11272741046,
+        "name": "environment-linux-amd64",
+        "createdAt": "2026-10-03T11:15:22Z",
+        "expired": false,
+        "sourceRevision": "8919281c40d878552401241a66fccbe9ddba3efd"
+      },
+      {
+        "id": 11272735829,
+        "name": "environment-macos-arm64",
+        "createdAt": "2026-10-03T11:12:16Z",
+        "expired": false,
+        "sourceRevision": "991783ad47a4d6813e680785cafb1e9080df9c0a"
+      },
+      {
+        "id": 11272299839,
+        "name": "environment-macos-arm64",
+        "createdAt": "2026-10-03T11:15:25Z",
+        "expired": false,
+        "sourceRevision": "8919281c40d878552401241a66fccbe9ddba3efd"
+      },
+      {
+        "id": 11235969077,
+        "name": "environment-linux-amd64",
+        "createdAt": "2026-10-02T15:43:00Z",
+        "expired": false,
+        "sourceRevision": "f33bbb95e84a768936f9b948de2b1200ed8909bb"
+      },
+      {
+        "id": 11235799253,
+        "name": "environment-windows-amd64",
+        "createdAt": "2026-10-02T15:43:14Z",
+        "expired": false,
+        "sourceRevision": "f33bbb95e84a768936f9b948de2b1200ed8909bb"
+      },
+      {
+        "id": 11235589402,
+        "name": "environment-macos-arm64",
+        "createdAt": "2026-10-02T15:43:00Z",
+        "expired": false,
+        "sourceRevision": "f33bbb95e84a768936f9b948de2b1200ed8909bb"
+      },
+      {
+        "id": 11228463012,
+        "name": "environment-macos-arm64",
+        "createdAt": "2026-10-02T13:22:04Z",
+        "expired": false,
+        "sourceRevision": "aab48973fa4ae0c8207b64db29c1b7faccd4ee99"
+      },
+      {
+        "id": 11228418256,
+        "name": "environment-windows-amd64",
+        "createdAt": "2026-10-02T13:22:12Z",
+        "expired": false,
+        "sourceRevision": "aab48973fa4ae0c8207b64db29c1b7faccd4ee99"
+      },
+      {
+        "id": 11227928091,
+        "name": "environment-linux-amd64",
+        "createdAt": "2026-10-02T13:21:58Z",
+        "expired": false,
+        "sourceRevision": "aab48973fa4ae0c8207b64db29c1b7faccd4ee99"
+      },
+      {
+        "id": 11223964915,
+        "name": "environment-linux-amd64",
+        "createdAt": "2026-10-02T11:42:59Z",
+        "expired": false,
+        "sourceRevision": "024485bf4d6acf601886b7387c2ed2295bceb908"
+      },
+      {
+        "id": 11223954873,
+        "name": "environment-windows-amd64",
+        "createdAt": "2026-10-02T11:43:20Z",
+        "expired": false,
+        "sourceRevision": "024485bf4d6acf601886b7387c2ed2295bceb908"
+      },
+      {
+        "id": 11223424368,
+        "name": "environment-macos-arm64",
+        "createdAt": "2026-10-02T11:43:01Z",
+        "expired": false,
+        "sourceRevision": "024485bf4d6acf601886b7387c2ed2295bceb908"
+      },
+      {
+        "id": 11215685667,
+        "name": "environment-linux-amd64",
+        "createdAt": "2026-10-02T07:55:37Z",
+        "expired": false,
+        "sourceRevision": "a8301a7478587c59502dfb2e6bd548489c14ee2b"
+      },
+      {
+        "id": 11215467411,
+        "name": "environment-macos-arm64",
+        "createdAt": "2026-10-02T07:55:41Z",
+        "expired": false,
+        "sourceRevision": "a8301a7478587c59502dfb2e6bd548489c14ee2b"
+      },
+      {
+        "id": 11214689716,
+        "name": "environment-windows-amd64",
+        "createdAt": "2026-10-02T07:56:04Z",
+        "expired": false,
+        "sourceRevision": "a8301a7478587c59502dfb2e6bd548489c14ee2b"
+      },
+      {
+        "id": 11153816698,
+        "name": "environment-windows-amd64",
+        "createdAt": "2026-10-01T10:07:24Z",
+        "expired": false,
+        "sourceRevision": "dec5f1a2037ca72dd5a93799a7376e35c5938569"
+      },
+      {
+        "id": 11153742068,
+        "name": "environment-linux-amd64",
+        "createdAt": "2026-10-01T10:08:25Z",
+        "expired": false,
+        "sourceRevision": "41ce5d2676257bdaae43bbdaa3ffe55c3d25ed6a"
+      },
+      {
+        "id": 11153707381,
+        "name": "environment-windows-amd64",
+        "createdAt": "2026-10-01T10:08:32Z",
+        "expired": false,
+        "sourceRevision": "41ce5d2676257bdaae43bbdaa3ffe55c3d25ed6a"
+      },
+      {
+        "id": 11153707176,
+        "name": "environment-linux-amd64",
+        "createdAt": "2026-10-01T10:07:10Z",
+        "expired": false,
+        "sourceRevision": "dec5f1a2037ca72dd5a93799a7376e35c5938569"
+      },
+      {
+        "id": 11153525523,
+        "name": "environment-macos-arm64",
+        "createdAt": "2026-10-01T09:50:42Z",
+        "expired": false,
+        "sourceRevision": "a70d7046a8153c507fb253c33b3ddf7093b586d3"
+      },
+      {
+        "id": 11153299903,
+        "name": "environment-macos-arm64",
+        "createdAt": "2026-10-01T10:07:19Z",
+        "expired": false,
+        "sourceRevision": "dec5f1a2037ca72dd5a93799a7376e35c5938569"
+      },
+      {
+        "id": 11153224514,
+        "name": "environment-macos-arm64",
+        "createdAt": "2026-10-01T10:08:28Z",
+        "expired": false,
+        "sourceRevision": "41ce5d2676257bdaae43bbdaa3ffe55c3d25ed6a"
+      },
+      {
+        "id": 11152892065,
+        "name": "environment-macos-arm64",
+        "createdAt": "2026-10-01T09:44:31Z",
+        "expired": false,
+        "sourceRevision": "021079f2d086873d1c8d93244a6f0c8040b769cc"
+      },
+      {
+        "id": 11152499079,
+        "name": "environment-windows-amd64",
+        "createdAt": "2026-10-01T09:44:50Z",
+        "expired": false,
+        "sourceRevision": "021079f2d086873d1c8d93244a6f0c8040b769cc"
+      },
+      {
+        "id": 11152438144,
+        "name": "environment-linux-amd64",
+        "createdAt": "2026-10-01T09:44:25Z",
+        "expired": false,
+        "sourceRevision": "021079f2d086873d1c8d93244a6f0c8040b769cc"
+      }
+    ],
+    "eligibleMacOSCandidates": 0,
+    "localScope": "Existing NF-056-10/11 source-build directories and receipts inspected; no previous versioned macOS candidate capsule. Linux capsules and environment receipts are not prior macOS packages."
+  }
+}

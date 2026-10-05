@@ -1,0 +1,89 @@
+{
+  "task": "NF-056-14",
+  "scope": "Native capture receipts, not lifecycle approval; job success can include intentionally continued failed provisioning.",
+  "nativeRun": {
+    "conclusion": "success",
+    "createdAt": "2026-10-05T11:54:31Z",
+    "databaseId": 37305959172,
+    "event": "pull_request",
+    "headSha": "fd80b4b0aad9369ead64f1b94aefb3ce9097fc15",
+    "jobs": [
+      {
+        "id": 111749580442,
+        "name": "Windows lifecycle (go)",
+        "status": "completed",
+        "reportedConclusion": "success",
+        "url": "https://github.com/iwizy/NexFlow/actions/runs/37305959172/job/111749580442",
+        "startedAt": "2026-10-05T11:54:37Z",
+        "completedAt": "2026-10-05T11:56:03Z"
+      },
+      {
+        "id": 111749580706,
+        "name": "Windows lifecycle (typescript)",
+        "status": "completed",
+        "reportedConclusion": "success",
+        "url": "https://github.com/iwizy/NexFlow/actions/runs/37305959172/job/111749580706",
+        "startedAt": "2026-10-05T11:54:35Z",
+        "completedAt": "2026-10-05T11:55:26Z"
+      },
+      {
+        "id": 111749580735,
+        "name": "Windows lifecycle (rust)",
+        "status": "completed",
+        "reportedConclusion": "success",
+        "url": "https://github.com/iwizy/NexFlow/actions/runs/37305959172/job/111749580735",
+        "startedAt": "2026-10-05T11:54:37Z",
+        "completedAt": "2026-10-05T11:57:19Z"
+      },
+      {
+        "id": 111749580893,
+        "name": "Windows lifecycle (python)",
+        "status": "completed",
+        "reportedConclusion": "success",
+        "url": "https://github.com/iwizy/NexFlow/actions/runs/37305959172/job/111749580893",
+        "startedAt": "2026-10-05T11:54:35Z",
+        "completedAt": "2026-10-05T11:55:26Z"
+      }
+    ],
+    "status": "completed",
+    "updatedAt": "2026-10-05T11:57:20Z",
+    "url": "https://github.com/iwizy/NexFlow/actions/runs/37305959172"
+  },
+  "observedProvisioningFailures": [
+    {
+      "candidate": "python",
+      "jobId": 111749580893,
+      "url": "https://github.com/iwizy/NexFlow/actions/runs/37305959172/job/111749580893",
+      "lines": [
+        "2026-10-05T11:55:06.4085871Z ##[error]The version '3.12.14' with architecture 'x64' was not found for Windows 2025.",
+        "2026-10-05T11:55:17.7248896Z ERROR: In --require-hashes mode, all requirements must have their versions pinned with ==. These do not:",
+        "2026-10-05T11:55:17.7251164Z     colorama from https://files.pythonhosted.org/packages/d1/d6/3965ed04c63042e047cb6a3e6ed1a63a35087b6a609aa3a15ed8ac56c221/colorama-0.4.6-py2.py3-none-any.whl (from build==1.3.0->-r evaluation/prototypes/python/requirements.lock (line 6))"
+      ],
+      "meaning": "Pinned CPython 3.12.14 unavailable from existing setup; fallback 3.12.10 refused by collector. Windows conditional colorama dependency absent from frozen hash lock. No lock or candidate repair."
+    }
+  ],
+  "signatureObservationLimit": "Rust/Go read-only Authenticode commands returned empty status/signatureType; this is unavailable signature evidence, not a verified signature.",
+  "priorAttempts": [
+    {
+      "revision": "59da2bf8b9e346697adcb819c70f57e3dec7f45d",
+      "run": 37304070803,
+      "result": "collector failed before records: environment probe; exact low-level cause not retained; forward separation of read-only probe from candidate environment."
+    },
+    {
+      "revision": "10253c7f1010b6fc089c8196eb0eaa253b7460b7",
+      "run": 37304317306,
+      "result": "Four records retained under attempts/10253c7; three real capsules, Unicode extraction failed, no CLI runs; Python blocked. Capsule manifests independently verified."
+    },
+    {
+      "revision": "8db71e03808c6816518d626636f5a3cc2059443b",
+      "run": 37305086975,
+      "result": "Supplemental ASCII extraction succeeded but collector rejected incomplete relocated cases; no valid final records substituted."
+    },
+    {
+      "revision": "e1f89943ac2c9ca5b31ef0dc5b71449fb953af7d",
+      "run": 37305621741,
+      "result": "Same-volume schema masking reached; Unicode input staging ENOENT prevented case collection, rejected incomplete records. Forward supplemental ASCII input path added; Unicode failure retained."
+    }
+  ],
+  "immutability": "Sources, locks, frozen specification/package/corpus/catalog/oracle unchanged; no source repair, release/version/tag/merge or architecture acceptance."
+}

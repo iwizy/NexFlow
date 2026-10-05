@@ -16,6 +16,7 @@ const synthetic = { task: "NF-056-14", candidate: "typescript", sourceRevision: 
   supplyChain: { revision: "fed105367da915347a92896eb67c0446d9e9b2d7", inventorySha256: "4".repeat(64), remediation: "none" },
   artifact: { version: pins.candidates.typescript.sourceRevision + ".windows.amd64." + "2".repeat(40), sha256: "5".repeat(64), bytes: 1, files: rows, manifestSha256: digest(JSON.stringify(rows)) },
   nativeBinaries: [{ machine: 0x8664, sha256: "6".repeat(64) }], previousArtifact: null, outcome: "not-ready", distributionGate: "partial", blockers: ["Synthetic incomplete gates"],
+  installation: { installedPrefixVerified: true, commands: [{ exitCode: 0 }] },
   stages: Object.fromEntries(windowsStages.map(k => [k, stage(["offlineUse", "upgrade", "rollback", "signing"].includes(k) ? "not-tested" : k === "validateInspect" ? "failed" : "passed")])),
   isolation: { network: "not-tested", filesystem: "not-tested", credential: "not-tested", buildSchemasHidden: true },
   execution: { cases: baseline.cases.map(c => ({ id: c.id, status: "failed", errors: ["Synthetic failure"], attempts: [0, 1].map(() => ({ exitCode: 1, output: null, stdoutSha256: "7".repeat(64), stderrSha256: "8".repeat(64) })) })) },
@@ -33,7 +34,7 @@ const mutations = [r => r.sourceRevision = "0".repeat(40), r => r.specificationR
   r => r.stages.validateInspect.status = "passed", r => r.outcome = "ready", r => r.distributionGate = "passed", r => r.immutability.locks = false,
   r => r.blockers = [], r => r.limitations = ["C:\\Users\\example\\private"], r => delete r.stages.install];
 for (const [index, mutate] of mutations.entries()) { const changed = structuredClone(synthetic); mutate(changed); assert.ok(windowsErrors(changed, pins).length, "mutation " + index); }
-const blocked = structuredClone(synthetic); blocked.artifact = null; blocked.stages.build = stage("failed");
+const blocked = structuredClone(synthetic); blocked.artifact = null; blocked.stages.build = stage("failed"); blocked.installation.installedPrefixVerified = false;
 for (const k of ["install", "validateInspect", "uninstall"]) blocked.stages[k] = stage("not-tested"); blocked.execution.cases = [];
 assert.deepEqual(windowsErrors(blocked, pins), []);
 const pe = Buffer.alloc(80); pe.write("MZ"); pe.writeUInt32LE(64, 60); pe.write("PE\0\0", 64); pe.writeUInt16LE(0x8664, 68);

@@ -32,6 +32,10 @@ installed capsule with UTF-8 output. Diagnostics, exit status, repeatability,
 path disclosure and input checksums retain actual failures. The known Rust
 schema relocation defect is not fixed. Uninstall removes only the temporary
 installed prefix, preserving the capsule, external runtimes and build caches.
+If Unicode-prefix archive extraction fails, that failure stays visible and the
+same capsule is extracted into an ASCII-space prefix for supplemental CLI runs
+against Unicode-space input paths. Such a fallback does not approve Unicode
+installation or silently alter the target contract.
 
 A fresh VM, venv, package-manager offline flags or clean prefix is **not** a
 verified OS denial boundary. This experiment does not introduce firewall,

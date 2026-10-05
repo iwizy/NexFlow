@@ -36,7 +36,9 @@ export function windowsErrors(r, pins) {
       || digest(JSON.stringify(a.files)) !== a.manifestSha256 || a.version !== r.sourceRevision + ".windows.amd64." + r.collectorRevision) errors.push("artifact-binding");
     if (!r.nativeBinaries?.length || r.nativeBinaries.some(b => b.machine !== 0x8664 || !sha(b.sha256))) errors.push("not-amd64-pe");
     const cases = r.execution?.cases;
-    if (r.stages?.install?.status === "passed") {
+    if (r.installation?.installedPrefixVerified === true) {
+      if (!["passed", "failed"].includes(r.stages?.install?.status)) errors.push("unrecorded-install");
+      if (r.stages?.install?.status === "passed" && r.installation.commands?.some(c => c.exitCode !== 0)) errors.push("concealed-install-failure");
       if (r.isolation.buildSchemasHidden !== true || !Array.isArray(cases) || cases.length !== baseline.cases.length) errors.push("missing-relocated-cases");
       else for (let i = 0; i < cases.length; i++) {
         const c = cases[i];
@@ -48,7 +50,7 @@ export function windowsErrors(r, pins) {
         else if (c.status === "failed" && !c.errors?.length) errors.push("unexplained-failure");
       }
       if (cases?.length === baseline.cases.length && r.stages.validateInspect.status !== (cases.some(c => c.status === "failed") ? "failed" : "passed")) errors.push("concealed-failure");
-    } else if (r.stages?.validateInspect?.status !== "not-tested") errors.push("run-without-install");
+    } else if (r.stages?.validateInspect?.status !== "not-tested" || r.stages?.install?.status === "passed") errors.push("run-without-install");
   } else if (r.artifact !== null || ["install", "validateInspect", "uninstall"].some(k => r.stages?.[k]?.status !== "not-tested")) errors.push("fabricated-build");
   if (!r.immutability?.sources || !r.immutability?.locks || !r.immutability?.corpus) errors.push("mutation");
   if (/\/Users\/[^/]|\/home\/runner|\/private\/tmp\/|[A-Z]:(?:\\{1,2}|\/)(?:Users|a|hostedtoolcache|actions)(?:\\{1,2}|\/)|access_token|Authorization:/iu.test(JSON.stringify(r))) errors.push("private-path");

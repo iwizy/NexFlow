@@ -44,14 +44,15 @@ async function main(candidate, output, artifactDir) {
   assert.equal(JSON.parse(inventoryBytes).sourceRevision, sourceRevision);
   // The fixed, read-only OS probe uses the hosted context; candidates never inherit its credential-bearing environment.
   const environment = JSON.parse(execFileSync(process.execPath, ["scripts/runtime-evaluation-environment.mjs", "windows/amd64"], { cwd: root, encoding: "utf8", timeout: 60000 }));
-  const proto = path.join(root, "evaluation/prototypes", candidate), bundle = path.join(temp, "bundle"), installed = path.join(temp, "installed space юникод");
+  const proto = path.join(root, "evaluation/prototypes", candidate), bundle = path.join(temp, "bundle");
+  let installed = path.join(temp, "installed space юникод");
   mkdirSync(bundle); const commands = [], nativeBinaries = [], toolchain = { node: process.version };
   const stage = (status, evidence) => ({ status, evidence: [evidence] });
   const stages = Object.fromEntries(["build", "install", "validateInspect", "offlineUse", "upgrade", "rollback", "uninstall", "signing"].map(k => [k, stage("not-tested", "Not reached or unavailable; not evidence of a pass.")]));
   const blockers = ["No verified Windows OS network/filesystem/credential denial harness in this authorized experiment; offline use and security isolation are not-tested.",
     "No genuine previous Windows evaluation capsule in the retained artifact inventory; upgrade and rollback require one.",
     "No specifically authorized signing certificate or publisher identity; Authenticode observation is not approved package signing."];
-  let artifact = null, cases = [], buildSchemasHidden = false, installCommands = [], signatures = [];
+  let artifact = null, cases = [], buildSchemasHidden = false, installedPrefixVerified = false, installCommands = [], signatures = [];
   function command(cmd, args, cwd = root) {
     const r = run(cmd, args, cwd); commands.push({ command: scrub([cmd, ...args].join(" ")), exitCode: r.exitCode, error: r.error,
       stdoutSha256: digest(r.stdout), stderrSha256: digest(r.stderr), stderrTail: scrub(r.stderr.slice(-1600)) });
@@ -97,7 +98,16 @@ async function main(candidate, output, artifactDir) {
       manifestSha256: digest(JSON.stringify(files)), format: "private source-layout evaluation capsule; not product package", signing: "not-tested" };
     stages.build = stage("passed", "Native Windows build and PE AMD64 inspection; package-manager offline flags do not prove OS network denial.");
     try {
-      mkdirSync(installed); const extraction = run("tar.exe", ["-xzf", archive, "-C", installed]); installCommands.push({ command: "tar -xzf <verified-capsule> -C <unicode-space-prefix>", exitCode: extraction.exitCode }); assert.equal(extraction.exitCode, 0);
+      mkdirSync(installed); const extraction = run("tar.exe", ["-xzf", archive, "-C", installed]);
+      installCommands.push({ command: "tar -xzf <verified-capsule> -C <unicode-space-prefix>", exitCode: extraction.exitCode, error: extraction.error, stderr: scrub(extraction.stderr) });
+      if (extraction.exitCode !== 0) {
+        // Preserve the real Unicode extraction failure, then test the same capsule in an ASCII-space prefix as supplemental evidence.
+        rmSync(installed, { recursive: true }); installed = path.join(temp, "installed space ascii"); mkdirSync(installed);
+        const fallback = run("tar.exe", ["-xzf", archive, "-C", installed]);
+        installCommands.push({ command: "tar -xzf <same-verified-capsule> -C <ascii-space-prefix> (supplemental)", exitCode: fallback.exitCode, error: fallback.error, stderr: scrub(fallback.stderr) });
+        assert.equal(fallback.exitCode, 0, scrub(fallback.stderr));
+        blockers.push("Unicode-prefix archive extraction failed; successful ASCII-space extraction does not turn that path/encoding failure into a pass.");
+      }
       assert.deepEqual(manifest(installed), files);
       const entry = path.join(installed, "evaluation/prototypes", candidate);
       let cli;
@@ -111,7 +121,10 @@ async function main(candidate, output, artifactDir) {
         for (const f of manifest(venv).filter(f => /\.pyd$/iu.test(f.path))) binary(path.join(venv, f.path), "installed-native-wheel:" + f.path);
         cli = [python, "-I", "-B", path.join(entry, "cli.py")];
       } else cli = candidate === "typescript" ? [process.execPath, path.join(entry, "dist/cli.js")] : [path.join(entry, "bin/nexflow-" + candidate + "-evaluation.exe")];
-      stages.install = stage("passed", "Checksum-verified archive extracted into clean prefix containing spaces and Unicode; exact external runtime retained.");
+      installedPrefixVerified = true;
+      stages.install = stage(extraction.exitCode === 0 ? "passed" : "failed", extraction.exitCode === 0
+        ? "Checksum-verified capsule extracted into Unicode-space prefix; exact external runtime retained."
+        : "Unicode extraction failed; the same checksum-verified capsule was installed into a clean ASCII-space prefix for supplemental native CLI runs.");
       // Hide only this disposable checkout's schema directory, restoring it in finally.
       const originalSchemas = path.join(root, "schemas"), hiddenSchemas = path.join(temp, "hidden-build-schemas");
       renameSync(originalSchemas, hiddenSchemas); buildSchemasHidden = true;
@@ -136,12 +149,13 @@ async function main(candidate, output, artifactDir) {
       } finally { renameSync(hiddenSchemas, originalSchemas); }
       stages.validateInspect = stage(cases.every(c => c.status === "passed") ? "passed" : "failed", "All 11 unchanged CLI cases twice from installed capsule with source-checkout schemas hidden; UTF-8, spaces and Unicode paths exercised.");
       if (cases.some(c => c.status === "failed")) blockers.push("Installed CLI fidelity/relocation failures retained; candidate sources and locks were not repaired.");
+      if (candidate !== "python") assert.deepEqual(manifest(installed), files, "installed-payload-mutation");
       if (["rust", "go"].includes(candidate)) {
         const signature = run("powershell.exe", ["-NoProfile", "-NonInteractive", "-Command", "$s=Get-AuthenticodeSignature -LiteralPath $env:TASK_SIGNATURE_FILE; @{status=[string]$s.Status; signatureType=[string]$s.SignatureType} | ConvertTo-Json -Compress"], installed, 10000, { TASK_SIGNATURE_FILE: cli[0] });
         let observation; try { observation = JSON.parse(signature.stdout); } catch { observation = null; }
         signatures.push({ scope: "read-only candidate PE Authenticode observation; not publisher approval", exitCode: signature.exitCode, observation });
       } else signatures.push({ scope: "source-layout interpreter capsule", status: "not-tested", reason: "No signed package identity or authorized signing path." });
-    } catch (error) { if (stages.install.status !== "passed") stages.install = stage("failed", scrub(error.message));
+    } catch (error) { if (!installedPrefixVerified) stages.install = stage("failed", scrub(error.message));
       else stages.validateInspect = stage("failed", scrub(error.message)); blockers.push("Installation/execution blocker: " + scrub(error.message)); }
     finally { const before = digest(readFileSync(archive)); if (existsSync(installed)) rmSync(installed, { recursive: true });
       stages.uninstall = stage(!existsSync(installed) && digest(readFileSync(archive)) === before ? "passed" : "failed", "Removed only task-owned installed prefix; capsule, external runtimes and build caches retained."); }
@@ -153,7 +167,7 @@ async function main(candidate, output, artifactDir) {
     collectorRevision, collectorSources: windowsCollectorFiles.map(f => ({ path: f, sha256: digest(readFileSync(path.join(root, f))) })), environment, toolchain,
     sourceManifest, sourceManifestSha256: digest(JSON.stringify(sourceManifest)), lockfiles: sourceManifest.filter(f => /(?:package(?:-lock)?\.json|requirements\.lock|Cargo\.(?:toml|lock)|go\.(?:mod|sum))$/u.test(f.path)),
     supplyChain: { revision: "fed105367da915347a92896eb67c0446d9e9b2d7", inventorySha256: digest(inventoryBytes), status: "partial", remediation: "none" },
-    buildCommands: commands, nativeBinaries, artifact, previousArtifact: null, installation: { commands: installCommands, scope: "private evaluation prefix only" },
+    buildCommands: commands, nativeBinaries, artifact, previousArtifact: null, installation: { commands: installCommands, installedPrefixVerified, scope: "private evaluation prefix only; ASCII fallback is supplemental, not a Unicode path pass" },
     isolation: { network: "not-tested", filesystem: "not-tested", credential: "not-tested", buildSchemasHidden, scope: "Fresh hosted VM and clean temporary prefix are not an OS sandbox." },
     execution: { cases }, signatures, stages, blockers, immutability: { sources: true, locks: true, corpus: true }, distributionGate: "partial", outcome: "not-ready",
     limitations: ["No product lifecycle or stable system-wide installed command; no support or architecture acceptance.", "Frozen fingerprint drift is supplemental, not a target-contract change.", "Existing advisory/license risks remain open; interpreter/MSVC/native prerequisites are not bundled closure.", "Native execution is not performance evidence or full 352-case library parity."] };

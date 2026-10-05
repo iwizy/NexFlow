@@ -8,6 +8,11 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Added
 
+- Added native macOS ARM64 evaluation-capsule packaging, isolated installed
+  validate/inspect/offline observations and scoped uninstall evidence. Cohort
+  drift, failed relocation, missing predecessor artifacts and untested
+  Developer ID/notarization remain explicit; no product publication or version change.
+
 - Added native Linux AMD64 evaluation-capsule collection and isolated clean
   install/offline invocation/uninstall evidence tooling. Relocation failures,
   unavailable prior artifacts and untested upgrade/rollback/signing remain

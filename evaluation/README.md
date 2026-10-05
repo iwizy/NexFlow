@@ -24,6 +24,10 @@ The [Linux AMD64 lifecycle review](lifecycle/linux/README.md) tests private
 source-layout evaluation capsules without treating missing upgrade, rollback,
 signing or failed installed execution as distribution approval.
 
+The [macOS ARM64 lifecycle review](lifecycle/macos/README.md) tests installed
+private evaluation capsules on a supplemental native environment, preserving
+cohort drift, relocation failures and missing signing/notarization authority.
+
 The [offline/denied-effects experiment](isolation/README.md) adds independent
 positive/negative OS controls and bounded native macOS evidence. It keeps
 security residuals, other targets and architecture acceptance separate.

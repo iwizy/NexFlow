@@ -1,0 +1,365 @@
+{
+  "task": "NF-056-14",
+  "recordedAt": "2026-10-05T11:40:31.432Z",
+  "candidate": "go",
+  "target": "windows/amd64",
+  "sourceRevision": "737396b6488a9f10b179061366b9f1d02591fb9f",
+  "specificationRevision": "1d1fa238ab5729a79bee9389d5c66cfd20a61256",
+  "evaluationPackageRevision": "a8301a7478587c59502dfb2e6bd548489c14ee2b",
+  "corpusSha256": "01b116005f0650ac980194b22c02188289eaf1e8626b227aecf3684ece0d8f6b",
+  "catalogSha256": "f1bf8cb786442a212e14c79eb39279a2cdbf05ec20b09901374359d545d74e90",
+  "collectorRevision": "10253c7f1010b6fc089c8196eb0eaa253b7460b7",
+  "collectorSources": [
+    {
+      "path": "scripts/runtime-windows-lifecycle.mjs",
+      "sha256": "9a65d2a168f6520604ea51eee490a68524acb2d83318f4882e88c69419435231"
+    },
+    {
+      "path": "scripts/lib/windows-lifecycle-evidence.mjs",
+      "sha256": "36399afbbf31bb5198549bcb4220e9ecd686b2d66a772f014e7b61f3fd70b50a"
+    },
+    {
+      "path": ".github/workflows/windows-lifecycle.yml",
+      "sha256": "90a2c42ed64f71225126dfd0509a8bed2cf6eeca76f1502bda7df8f61d91eff5"
+    }
+  ],
+  "environment": {
+    "target": "windows/amd64",
+    "platform": "win32",
+    "architecture": "x64",
+    "runnerLabel": "windows-2025",
+    "imageOS": "win25-vs2026",
+    "imageVersion": "20260925.250.1",
+    "osVersion": "10.0.26100",
+    "osBuild": "26100",
+    "osCaption": "Microsoft Windows Server 2025 Datacenter",
+    "kernel": "10.0.26100",
+    "libc": null,
+    "cpuModel": "AMD EPYC 9V74 80-Core Processor                ",
+    "cpuCount": 4,
+    "memoryBytes": 17174360064,
+    "translated": false,
+    "cohortCheck": {
+      "fingerprint": "not-matched",
+      "blockers": [
+        "environment-drift:cpuModel"
+      ],
+      "candidateEvaluation": "not-tested"
+    }
+  },
+  "toolchain": {
+    "node": "v22.23.2",
+    "npm": "10.9.8",
+    "go": "go version go1.27.1 windows/amd64"
+  },
+  "sourceManifest": [
+    {
+      "path": "evaluation/prototypes/go/arguments.go",
+      "sha256": "54c4096c4c9015106f06f4ed2bd66c8d8a0ce6cf6c85109956033aaccbd512de"
+    },
+    {
+      "path": "evaluation/prototypes/go/candidate_test.go",
+      "sha256": "235f544fc9467cf875c14801ec6de884559d8d8f0da5bc620390f7c53b7d42f6"
+    },
+    {
+      "path": "evaluation/prototypes/go/cmd/cli/main.go",
+      "sha256": "abeca42c522372e1c584612973d94f7b2eada2f233a7625bbac3ff82ec7e7efe"
+    },
+    {
+      "path": "evaluation/prototypes/go/cmd/library-driver/main.go",
+      "sha256": "19bec9f507da4237e46525f273c9f2fd523c8be9c38d63f01abe21d209a82c46"
+    },
+    {
+      "path": "evaluation/prototypes/go/discovery.go",
+      "sha256": "52b59fd9c207b225ee33ed5d47da2899134017a7d083d90f82913496c7c63f4d"
+    },
+    {
+      "path": "evaluation/prototypes/go/files.go",
+      "sha256": "08332b3a0f1fe16cd9a83bc34dcded7c2a25d121e08d9b3824d34ee674fc2394"
+    },
+    {
+      "path": "evaluation/prototypes/go/go.mod",
+      "sha256": "cd95fab740c6a536eaafe7f6d65ff0e399ae8fd34a72007b681a79dfe0023867"
+    },
+    {
+      "path": "evaluation/prototypes/go/go.sum",
+      "sha256": "16cc6ffb149f521791f61a391ddaa5369ca91fe1d0d9c7230f7952ac35e76aca"
+    },
+    {
+      "path": "evaluation/prototypes/go/inspection.go",
+      "sha256": "8bb65be2d81613670784b99bc67a80d23ad9ab4087835ef19f649c006d12e35b"
+    },
+    {
+      "path": "evaluation/prototypes/go/library.go",
+      "sha256": "467f1ab9df49c54f670d56a2bda0f6bb06e907509a1f6b1bbee5c1f1b3a3a1a4"
+    },
+    {
+      "path": "evaluation/prototypes/go/model.go",
+      "sha256": "2bdc914de50900231b2ec70a5beb55ec56f8c3a81c3c07ac24ae18d63225219e"
+    },
+    {
+      "path": "evaluation/prototypes/go/read_flags_other.go",
+      "sha256": "c3df9d8e61f5a0215c429760c4f68b97950ba60cd6ffa72b30b34c0c83c57c31"
+    },
+    {
+      "path": "evaluation/prototypes/go/read_flags_unix.go",
+      "sha256": "ab7304f957d37112f7ac252fc6b74ba2e6ad120743963e534999433c99fc06f2"
+    },
+    {
+      "path": "evaluation/prototypes/go/schema.go",
+      "sha256": "9993a5cb7a37d7dd651da20ac09653f94d6f9c56a614e4cf89cca95eb76ae81b"
+    },
+    {
+      "path": "evaluation/prototypes/go/yaml.go",
+      "sha256": "c2773257bd628f0b3055e1628ea4c024ffaf37c2a3bb0f009c83654efa17ba48"
+    }
+  ],
+  "sourceManifestSha256": "d479578db66be9f877ea57655d2d7832fe968f5b774831d266ab029608ce87a4",
+  "lockfiles": [
+    {
+      "path": "evaluation/prototypes/go/go.mod",
+      "sha256": "cd95fab740c6a536eaafe7f6d65ff0e399ae8fd34a72007b681a79dfe0023867"
+    },
+    {
+      "path": "evaluation/prototypes/go/go.sum",
+      "sha256": "16cc6ffb149f521791f61a391ddaa5369ca91fe1d0d9c7230f7952ac35e76aca"
+    }
+  ],
+  "supplyChain": {
+    "revision": "fed105367da915347a92896eb67c0446d9e9b2d7",
+    "inventorySha256": "c730936de95b409da828f9e84af6cc4907f325c01a3c4d2e1290d33f8b787bb9",
+    "status": "partial",
+    "remediation": "none"
+  },
+  "buildCommands": [
+    {
+      "command": "go build -mod=readonly -trimpath -buildvcs=false -o bin/nexflow-go-evaluation.exe ./cmd/cli",
+      "exitCode": 0,
+      "error": null,
+      "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderrTail": ""
+    },
+    {
+      "command": "tar.exe -czf <evaluation-path><evaluation>\\bundle .",
+      "exitCode": 0,
+      "error": null,
+      "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderrTail": ""
+    }
+  ],
+  "nativeBinaries": [
+    {
+      "role": "external-node-runtime",
+      "machine": 34404,
+      "sha256": "0d0f5e39f9f3d9587bc19f73eab3c2c9c4903fd02d6dbf9c853dd81b3d95fad4"
+    },
+    {
+      "role": "candidate-executable",
+      "machine": 34404,
+      "sha256": "41fde3f083e71bd8163cfe968ce21eea1078688a53061cc79b5d78ee6328ef05"
+    }
+  ],
+  "artifact": {
+    "version": "737396b6488a9f10b179061366b9f1d02591fb9f.windows.amd64.10253c7f1010b6fc089c8196eb0eaa253b7460b7",
+    "filename": "go-737396b6488a9f10b179061366b9f1d02591fb9f.windows.amd64.10253c7f1010b6fc089c8196eb0eaa253b7460b7.tar.gz",
+    "bytes": 3733417,
+    "sha256": "1eaeb275ff21d6b117696896ef69c7175ded88d1ee071382529e917bc36445b4",
+    "files": [
+      {
+        "path": "evaluation/prototypes/go/bin/nexflow-go-evaluation.exe",
+        "bytes": 6539776,
+        "sha256": "41fde3f083e71bd8163cfe968ce21eea1078688a53061cc79b5d78ee6328ef05"
+      },
+      {
+        "path": "schemas/README.md",
+        "bytes": 16217,
+        "sha256": "28d1715b391c414c1a4c46410046277e783f5df60768761ea127630c8773a890"
+      },
+      {
+        "path": "schemas/actors.schema.json",
+        "bytes": 4648,
+        "sha256": "fb376254763eaa670696618678629f049cb6f782b7816aa20e0216e9625c21a3"
+      },
+      {
+        "path": "schemas/agent-definitions.schema.json",
+        "bytes": 8515,
+        "sha256": "0faad7750d9fd95914e09ee7ffbfb23236da303fbcfd211ce77c45589bfa68d7"
+      },
+      {
+        "path": "schemas/agents.schema.json",
+        "bytes": 4731,
+        "sha256": "7505ce0ad4ce18eb74a477982b31b77ca06d8069022300171c28e1ada419b24e"
+      },
+      {
+        "path": "schemas/capabilities.schema.json",
+        "bytes": 1216,
+        "sha256": "4fc446a356b2f7709bf259ad6fbf4632a64bc77800a43e77b81354710e5e3026"
+      },
+      {
+        "path": "schemas/common.schema.json",
+        "bytes": 31287,
+        "sha256": "a02f583325e2b20ffbb659efa451206579779a557a5fc89fbb412c10414630cc"
+      },
+      {
+        "path": "schemas/context.schema.json",
+        "bytes": 6012,
+        "sha256": "ad0fc663f5e4bf92eb033d250e38c2ef914947834aa03fc257d601a6226ad7a8"
+      },
+      {
+        "path": "schemas/events.schema.json",
+        "bytes": 1686,
+        "sha256": "d08c9cce4106394c5bf53a034ff8a574bfe11ccf085ac53f508459d7a0e98a65"
+      },
+      {
+        "path": "schemas/extensions.schema.json",
+        "bytes": 1960,
+        "sha256": "1c87855f8ec5eeba871981ab8d0feac4f026c508b943644bfbc350685270a31d"
+      },
+      {
+        "path": "schemas/handoffs.schema.json",
+        "bytes": 1729,
+        "sha256": "40af0a3c48b63f8709e8297badf4a9100fdcc3b22f66cc3c748b88628e5b1ab5"
+      },
+      {
+        "path": "schemas/memory.schema.json",
+        "bytes": 2317,
+        "sha256": "75a655d9b1aa57be73c6ec738e10faea327837838ecf2a4b7a1031e28486fb59"
+      },
+      {
+        "path": "schemas/model-profiles.schema.json",
+        "bytes": 5624,
+        "sha256": "0503322e7f73d62d3bbcad226799d6615ffc36339c2e9d9afe951c542a57ed00"
+      },
+      {
+        "path": "schemas/permissions.schema.json",
+        "bytes": 1547,
+        "sha256": "64084ad81e53b3629dfc4ecab3faf4ebd765105a3072c5f627c5d31daee2fbb0"
+      },
+      {
+        "path": "schemas/project.schema.json",
+        "bytes": 4030,
+        "sha256": "586bc846277b846f723371a734952fc30cf29e8c916d6b52db1897ac32fc0778"
+      },
+      {
+        "path": "schemas/prompt-sets.schema.json",
+        "bytes": 5339,
+        "sha256": "feaff935c6337638e4bd2cffdcd54d7bad516958cad0d0407185261dc2439d02"
+      },
+      {
+        "path": "schemas/providers.schema.json",
+        "bytes": 6897,
+        "sha256": "e3b55c4fbc2a86c05a82be8a7b3ef8126e04a13d425d5654a0e2ee0bca31e4fb"
+      },
+      {
+        "path": "schemas/retrieval-profiles.schema.json",
+        "bytes": 8548,
+        "sha256": "685bce372bc68e454b015afd39f412adc88c386f45c56144842fc11e4ff75ade"
+      },
+      {
+        "path": "schemas/tasks.schema.json",
+        "bytes": 1938,
+        "sha256": "4cf1f1f35396240abf7da7e018e03a0e99b99c71cb9881c4f729c0175a07a250"
+      },
+      {
+        "path": "schemas/workflow.schema.json",
+        "bytes": 3728,
+        "sha256": "1821ec6e26cc1e6060cd2388c22fc51c77a3678cf4ac8c1140934fe612a1b446"
+      }
+    ],
+    "manifestSha256": "e5674e4e858d72c7a948a3405cf697ff06f13fc0f3ef48ebf5366bc2e3ee86bc",
+    "format": "private source-layout evaluation capsule; not product package",
+    "signing": "not-tested"
+  },
+  "previousArtifact": null,
+  "installation": {
+    "commands": [
+      {
+        "command": "tar -xzf <verified-capsule> -C <unicode-space-prefix>",
+        "exitCode": 1
+      }
+    ],
+    "scope": "private evaluation prefix only"
+  },
+  "isolation": {
+    "network": "not-tested",
+    "filesystem": "not-tested",
+    "credential": "not-tested",
+    "buildSchemasHidden": false,
+    "scope": "Fresh hosted VM and clean temporary prefix are not an OS sandbox."
+  },
+  "execution": {
+    "cases": []
+  },
+  "signatures": [],
+  "stages": {
+    "build": {
+      "status": "passed",
+      "evidence": [
+        "Native Windows build and PE AMD64 inspection; package-manager offline flags do not prove OS network denial."
+      ]
+    },
+    "install": {
+      "status": "failed",
+      "evidence": [
+        "Expected values to be strictly equal:\n\n1 !== 0\n"
+      ]
+    },
+    "validateInspect": {
+      "status": "not-tested",
+      "evidence": [
+        "Not reached or unavailable; not evidence of a pass."
+      ]
+    },
+    "offlineUse": {
+      "status": "not-tested",
+      "evidence": [
+        "No verified Windows OS network/filesystem/credential denial harness in this authorized experiment; offline use and security isolation are not-tested."
+      ]
+    },
+    "upgrade": {
+      "status": "not-tested",
+      "evidence": [
+        "No genuine previous Windows evaluation capsule in the retained artifact inventory; upgrade and rollback require one."
+      ]
+    },
+    "rollback": {
+      "status": "not-tested",
+      "evidence": [
+        "No genuine previous Windows evaluation capsule in the retained artifact inventory; upgrade and rollback require one."
+      ]
+    },
+    "uninstall": {
+      "status": "passed",
+      "evidence": [
+        "Removed only task-owned installed prefix; capsule, external runtimes and build caches retained."
+      ]
+    },
+    "signing": {
+      "status": "not-tested",
+      "evidence": [
+        "No specifically authorized signing certificate or publisher identity; Authenticode observation is not approved package signing."
+      ]
+    }
+  },
+  "blockers": [
+    "No verified Windows OS network/filesystem/credential denial harness in this authorized experiment; offline use and security isolation are not-tested.",
+    "No genuine previous Windows evaluation capsule in the retained artifact inventory; upgrade and rollback require one.",
+    "No specifically authorized signing certificate or publisher identity; Authenticode observation is not approved package signing.",
+    "Installation/execution blocker: Expected values to be strictly equal:\n\n1 !== 0\n"
+  ],
+  "immutability": {
+    "sources": true,
+    "locks": true,
+    "corpus": true
+  },
+  "distributionGate": "partial",
+  "outcome": "not-ready",
+  "limitations": [
+    "No product lifecycle or stable system-wide installed command; no support or architecture acceptance.",
+    "Frozen fingerprint drift is supplemental, not a target-contract change.",
+    "Existing advisory/license risks remain open; interpreter/MSVC/native prerequisites are not bundled closure.",
+    "Native execution is not performance evidence or full 352-case library parity."
+  ]
+}

@@ -8,6 +8,11 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Added
 
+- Added native Windows AMD64 evaluation-capsule collection, relocated clean
+  install/CLI/uninstall evidence and immutable consistency checks. Offline OS
+  denial, previous-artifact upgrade/rollback and signing remain not-tested;
+  candidate sources, locks, versions and architecture gates are unchanged.
+
 - Added native macOS ARM64 evaluation-capsule packaging, isolated installed
   validate/inspect/offline observations and scoped uninstall evidence. Cohort
   drift, failed relocation, missing predecessor artifacts and untested

@@ -1,0 +1,62 @@
+{
+  "task": "NF-056-14",
+  "checkedAt": "2026-10-05T11:58:21.020Z",
+  "scope": "Independent archive byte/checksum/file-manifest and PE-header verification; not native execution or signing.",
+  "verifierSha256": "d4f6492dbda7cd7b8b116a4dc64d9b471c88d307a56d7020566da15cc81e6419",
+  "platform": "darwin",
+  "architecture": "arm64",
+  "observations": [
+    {
+      "candidate": "go",
+      "collectorRevision": "fd80b4b0aad9369ead64f1b94aefb3ce9097fc15",
+      "recordSha256": "bf9a427adac59117df9b1d8962c496ca1576eb90a5841dcab498584679905d1b",
+      "archive": "verified",
+      "sha256": "2403b2969bc57d6b4c8a8fcb996b8e2292f8810f8ed09fdc6ac25e9f42bae8d7",
+      "bytes": 3733418,
+      "fileCount": 20,
+      "manifestSha256": "e5674e4e858d72c7a948a3405cf697ff06f13fc0f3ef48ebf5366bc2e3ee86bc",
+      "binaries": [
+        {
+          "path": "evaluation/prototypes/go/bin/nexflow-go-evaluation.exe",
+          "machine": "AMD64",
+          "sha256": "41fde3f083e71bd8163cfe968ce21eea1078688a53061cc79b5d78ee6328ef05"
+        }
+      ]
+    },
+    {
+      "candidate": "python",
+      "collectorRevision": "fd80b4b0aad9369ead64f1b94aefb3ce9097fc15",
+      "recordSha256": "3bd049de96a30b015a3bc52da1899bb3bd2b99c5b2f21af52652dd19e1850308",
+      "archive": "not-built",
+      "reason": "Native record reports exact pinned toolchain/provisioning blocker; no artifact fabricated."
+    },
+    {
+      "candidate": "rust",
+      "collectorRevision": "fd80b4b0aad9369ead64f1b94aefb3ce9097fc15",
+      "recordSha256": "076aa081b74854bb9fd1e4bec8000d870a894011d114556e4002a0f3e442f87e",
+      "archive": "verified",
+      "sha256": "2ac546ebe7a1b2bf13ba5e5932848e30dbec9910f185235c0d1619ba210da616",
+      "bytes": 2420375,
+      "fileCount": 20,
+      "manifestSha256": "7a730b3dc81b0b952b5c983821406bb77227910d91ba8e5ce9ac8192433d33ad",
+      "binaries": [
+        {
+          "path": "evaluation/prototypes/rust/bin/nexflow-rust-evaluation.exe",
+          "machine": "AMD64",
+          "sha256": "4cb28cbc25161cb845bb5983135b7612b91bd196f800ef190c0d113853da8b47"
+        }
+      ]
+    },
+    {
+      "candidate": "typescript",
+      "collectorRevision": "fd80b4b0aad9369ead64f1b94aefb3ce9097fc15",
+      "recordSha256": "7dfcd33132dda53204b8694e0b71106a5d7d4ab88f1beecdae19c90ecbbd3439",
+      "archive": "verified",
+      "sha256": "96dd61554313e68b3a49c32f2d1f455460ab091f35e130b237e5e46f5b0845f9",
+      "bytes": 482655,
+      "fileCount": 827,
+      "manifestSha256": "524d1c7163bab610c2b28ba4317c88cdec0a94076e26d26b3a1cc4ba13032a66",
+      "binaries": []
+    }
+  ]
+}

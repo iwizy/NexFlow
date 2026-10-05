@@ -1,0 +1,1408 @@
+{
+  "formatVersion": "0.1-draft",
+  "task": "NF-056-15",
+  "candidate": "typescript",
+  "recordedAt": "2026-10-05T13:40:32Z",
+  "scope": "gap-bearing measurement evidence; no new candidate execution or timing",
+  "specificationRevision": "1d1fa238ab5729a79bee9389d5c66cfd20a61256",
+  "evaluationPackageRevision": "a8301a7478587c59502dfb2e6bd548489c14ee2b",
+  "prototypeRevision": "19ff4889542fe486d95eb2ae868560f5aa966df2",
+  "corpusSha256": "01b116005f0650ac980194b22c02188289eaf1e8626b227aecf3684ece0d8f6b",
+  "catalogSha256": "f1bf8cb786442a212e14c79eb39279a2cdbf05ec20b09901374359d545d74e90",
+  "environmentContractSha256": "e222227ad6f117ee2516cb185032ebbdadcd59e9f6e87d9394d56852a0914818",
+  "prerequisiteReceiptSha256": "c92e954378503a9ed79c328e4d6a3dc5b5a71f3d00da7ea478d7887785c1758f",
+  "fidelitySource": {
+    "path": "evaluation/fidelity/typescript.json",
+    "revision": "1c9aa13c46175255d989edda5f6e677d1a723952",
+    "sha256": "e345be4b2784caddbc27eef48d00c84ac66cef05ded25a05b813694249ad65ad"
+  },
+  "catalogCoverage": {
+    "total": 352,
+    "operationCounts": {
+      "semantic-fragment": 211,
+      "workflow-namespace": 8,
+      "artifact-namespace": 5,
+      "manifest-schema": 113,
+      "local-schema": 5,
+      "yaml-parse": 3,
+      "discovery": 7
+    },
+    "retainedResults": {
+      "passed": 128,
+      "failed": 0,
+      "not-tested": 224
+    },
+    "unsupportedByOperation": {
+      "semantic-fragment": 211,
+      "workflow-namespace": 8,
+      "artifact-namespace": 5
+    }
+  },
+  "retainedGates": {
+    "deterministicDiagnostics": {
+      "reason": "Repeated supported diagnostics tested; full semantic/namespace diagnostics unavailable.",
+      "status": "not-tested"
+    },
+    "specificationFidelity": {
+      "reason": "224 mandatory semantic/namespace cases remain unsupported; partial schema success cannot close fidelity.",
+      "status": "failed"
+    }
+  },
+  "targets": [
+    {
+      "target": "linux/amd64",
+      "nativeArchitecture": "x64",
+      "retainedLifecycleSource": {
+        "target": "linux",
+        "candidate": "typescript",
+        "path": "evaluation/lifecycle/linux/typescript.json",
+        "revision": "96a36bfdfc5b18380f0faf95d42f5c1cb52803a8",
+        "sha256": "f79771af6de200ff996e715f2f5e4df3eef15c00ddb99e50e78ab6ed4393a237"
+      },
+      "retainedEnvironment": {
+        "target": "linux/amd64",
+        "platform": "linux",
+        "architecture": "x64",
+        "runnerLabel": "ubuntu-24.04",
+        "imageOS": "ubuntu24",
+        "imageVersion": "20260927.320.1",
+        "osVersion": "24.04",
+        "osBuild": "6.17.0-1022-azure",
+        "osCaption": "Ubuntu 24.04.5 LTS",
+        "kernel": "6.17.0-1022-azure",
+        "libc": "glibc 2.39",
+        "cpuModel": "AMD EPYC 9V45 96-Core Processor",
+        "cpuCount": 4,
+        "memoryBytes": 16766414848,
+        "translated": false
+      },
+      "retainedEnvironmentSnapshotSha256": "f0274a199bf117b1a74348d871eb1a573566bd704be7f50b1d77735dadb9d125",
+      "retainedFrozenCheck": {
+        "matched": false,
+        "blockers": [
+          "environment-drift:imageVersion"
+        ]
+      },
+      "retainedToolchainObservation": {
+        "node": "v22.23.2",
+        "npm": "10.9.8",
+        "compiler": "Version 7.0.2"
+      },
+      "requiredToolchain": "Node 22.23.2; npm 10.9.8; TypeScript 7.0.2",
+      "lockfiles": [
+        {
+          "path": "evaluation/prototypes/typescript/package-lock.json",
+          "sha256": "99d0a681f265f52b327979754b1f253948df4855671efc4956a4cda1dc008317"
+        },
+        {
+          "path": "evaluation/prototypes/typescript/package.json",
+          "sha256": "151bf1e1d991485762937a338825e798ae83f525f61c5370d75297f92d8bc529"
+        }
+      ],
+      "retainedLifecycleStages": {
+        "build": "passed",
+        "install": "passed",
+        "validateInspect": "passed",
+        "offlineUse": "passed",
+        "upgrade": "not-tested",
+        "rollback": "not-tested",
+        "uninstall": "passed",
+        "signing": "not-tested"
+      },
+      "distributionGate": "partial",
+      "freshCommonCandidateCohort": {
+        "status": "not-tested",
+        "snapshot": null,
+        "snapshotSha256": null,
+        "runIdentities": [],
+        "candidateOrder": []
+      },
+      "historicalArtifactObservation": {
+        "classification": "historical-observation-not-comparable",
+        "measuredAt": "2026-10-04T14:33:11.709Z",
+        "collectorRevision": "de6b25428e040a2968493c442e8f2e68d12e48b0",
+        "version": "19ff4889542fe486d95eb2ae868560f5aa966df2.linux.amd64.de6b25428e040a2968493c442e8f2e68d12e48b0",
+        "sha256": "8e4bd06593461a46838b0191585604e6e436c0642c08c20143070eb253ec0456",
+        "archiveBytes": 488720,
+        "payloadFileCount": 827,
+        "payloadFileBytes": 2224526,
+        "footprintScope": "Sum of manifest file bytes only; excludes filesystem overhead, installer virtualenv expansion, external interpreters/runtimes and native closure.",
+        "externalRuntime": "Node 22.23.2 is not bundled",
+        "source": {
+          "target": "linux",
+          "candidate": "typescript",
+          "path": "evaluation/lifecycle/linux/typescript.json",
+          "revision": "96a36bfdfc5b18380f0faf95d42f5c1cb52803a8",
+          "sha256": "f79771af6de200ff996e715f2f5e4df3eef15c00ddb99e50e78ab6ed4393a237"
+        }
+      },
+      "errorAndRejectionBenchmarks": {
+        "status": "not-tested",
+        "samples": [],
+        "reason": "Lifecycle outcomes have no agreed timing or memory samples. Expected rejection and unexpected failure cannot be substituted for successful full-workload throughput."
+      },
+      "blockers": [
+        "fresh-common-candidate-cohort-not-tested",
+        "full-library-workload-unsupported",
+        "instrument-version-and-native-accounting-not-tested",
+        "raw-measurement-runs-not-tested",
+        "retained-environment-not-frozen"
+      ],
+      "metrics": [
+        {
+          "metric": "coldStartMs",
+          "unit": "ms",
+          "status": "not-tested",
+          "measuredAt": null,
+          "artifactSha256": null,
+          "environmentSnapshotSha256": null,
+          "dataset": {
+            "cliCases": 11,
+            "maintainedManifests": 109,
+            "schemaNegativeCases": 4,
+            "libraryCases": 352,
+            "throughputCorpusPasses": [
+              1,
+              10,
+              100
+            ]
+          },
+          "order": [],
+          "cacheState": null,
+          "requiredCacheRule": "fresh process; provisioned dependencies; OS file cache uncontrolled and disclosed",
+          "warmups": null,
+          "requiredWarmups": 0,
+          "requiredRuns": 10,
+          "samples": [],
+          "summary": {
+            "count": 0,
+            "median": null,
+            "min": null,
+            "max": null,
+            "p95": null
+          },
+          "method": {
+            "planned": "External monotonic clock; fresh process for each unchanged CLI workload. Separate valid success, expected rejection and unexpected failure.",
+            "observedInstrument": null,
+            "observedInstrumentVersion": null,
+            "actual": null
+          },
+          "timeout": null,
+          "exitStatus": null,
+          "comparisonEligible": false,
+          "blockers": [
+            "fresh-common-candidate-cohort-not-tested",
+            "full-library-workload-unsupported",
+            "instrument-version-and-native-accounting-not-tested",
+            "raw-measurement-runs-not-tested",
+            "retained-environment-not-frozen"
+          ]
+        },
+        {
+          "metric": "validationMs",
+          "unit": "ms",
+          "status": "not-tested",
+          "measuredAt": null,
+          "artifactSha256": null,
+          "environmentSnapshotSha256": null,
+          "dataset": {
+            "cliCases": 11,
+            "maintainedManifests": 109,
+            "schemaNegativeCases": 4,
+            "libraryCases": 352,
+            "throughputCorpusPasses": [
+              1,
+              10,
+              100
+            ]
+          },
+          "order": [],
+          "cacheState": null,
+          "requiredCacheRule": "warm library process per corpus batch; exclude provisioning and startup",
+          "warmups": null,
+          "requiredWarmups": 1,
+          "requiredRuns": 30,
+          "samples": [],
+          "summary": {
+            "count": 0,
+            "median": null,
+            "min": null,
+            "max": null,
+            "p95": null
+          },
+          "method": {
+            "planned": "Warm native library process, excluding startup and provisioning; full ordered catalog and identical corpus passes. Unsupported operations are not completed validation.",
+            "observedInstrument": null,
+            "observedInstrumentVersion": null,
+            "actual": null
+          },
+          "timeout": null,
+          "exitStatus": null,
+          "comparisonEligible": false,
+          "blockers": [
+            "fresh-common-candidate-cohort-not-tested",
+            "full-library-workload-unsupported",
+            "instrument-version-and-native-accounting-not-tested",
+            "raw-measurement-runs-not-tested",
+            "retained-environment-not-frozen"
+          ]
+        },
+        {
+          "metric": "peakMemoryBytes",
+          "unit": "bytes",
+          "status": "not-tested",
+          "measuredAt": null,
+          "artifactSha256": null,
+          "environmentSnapshotSha256": null,
+          "dataset": {
+            "cliCases": 11,
+            "maintainedManifests": 109,
+            "schemaNegativeCases": 4,
+            "libraryCases": 352,
+            "throughputCorpusPasses": [
+              1,
+              10,
+              100
+            ]
+          },
+          "order": [],
+          "cacheState": null,
+          "requiredCacheRule": "fresh process; external OS peak resident memory including interpreter; disclose child accounting",
+          "warmups": null,
+          "requiredWarmups": 0,
+          "requiredRuns": 10,
+          "samples": [],
+          "summary": {
+            "count": 0,
+            "median": null,
+            "min": null,
+            "max": null,
+            "p95": null
+          },
+          "method": {
+            "planned": "External native OS peak resident memory, including interpreter; disclose child-process accounting and exact instrument/version.",
+            "observedInstrument": null,
+            "observedInstrumentVersion": null,
+            "actual": null
+          },
+          "timeout": null,
+          "exitStatus": null,
+          "comparisonEligible": false,
+          "blockers": [
+            "fresh-common-candidate-cohort-not-tested",
+            "full-library-workload-unsupported",
+            "instrument-version-and-native-accounting-not-tested",
+            "raw-measurement-runs-not-tested",
+            "retained-environment-not-frozen"
+          ]
+        },
+        {
+          "metric": "artifactBytes",
+          "unit": "bytes",
+          "status": "not-tested",
+          "measuredAt": null,
+          "artifactSha256": null,
+          "environmentSnapshotSha256": null,
+          "dataset": {
+            "cliCases": 11,
+            "maintainedManifests": 109,
+            "schemaNegativeCases": 4,
+            "libraryCases": 352,
+            "throughputCorpusPasses": [
+              1,
+              10,
+              100
+            ]
+          },
+          "order": [],
+          "cacheState": null,
+          "requiredCacheRule": "exact hashed distributable plus separately recorded installed/runtime footprint",
+          "warmups": null,
+          "requiredWarmups": 0,
+          "requiredRuns": 1,
+          "samples": [],
+          "summary": {
+            "count": 0,
+            "median": null,
+            "min": null,
+            "max": null,
+            "p95": null
+          },
+          "method": {
+            "planned": "Byte count and SHA-256 of exact evaluation capsule; separately disclose installed payload and external runtime/native prerequisites.",
+            "observedInstrument": null,
+            "observedInstrumentVersion": null,
+            "actual": null
+          },
+          "timeout": null,
+          "exitStatus": null,
+          "comparisonEligible": false,
+          "blockers": [
+            "fresh-common-candidate-cohort-not-tested",
+            "full-library-workload-unsupported",
+            "instrument-version-and-native-accounting-not-tested",
+            "raw-measurement-runs-not-tested",
+            "retained-environment-not-frozen"
+          ]
+        },
+        {
+          "metric": "cleanBuildMs",
+          "unit": "ms",
+          "status": "not-tested",
+          "measuredAt": null,
+          "artifactSha256": null,
+          "environmentSnapshotSha256": null,
+          "dataset": {
+            "cliCases": 11,
+            "maintainedManifests": 109,
+            "schemaNegativeCases": 4,
+            "libraryCases": 352,
+            "throughputCorpusPasses": [
+              1,
+              10,
+              100
+            ]
+          },
+          "order": [],
+          "cacheState": null,
+          "requiredCacheRule": "empty project build cache; pinned provisioned dependency cache; network disabled",
+          "warmups": null,
+          "requiredWarmups": 0,
+          "requiredRuns": 5,
+          "samples": [],
+          "summary": {
+            "count": 0,
+            "median": null,
+            "min": null,
+            "max": null,
+            "p95": null
+          },
+          "method": {
+            "planned": "External monotonic clock; empty project build cache, provisioned pinned dependency cache, verified OS network denial.",
+            "observedInstrument": null,
+            "observedInstrumentVersion": null,
+            "actual": null
+          },
+          "timeout": null,
+          "exitStatus": null,
+          "comparisonEligible": false,
+          "blockers": [
+            "fresh-common-candidate-cohort-not-tested",
+            "full-library-workload-unsupported",
+            "instrument-version-and-native-accounting-not-tested",
+            "raw-measurement-runs-not-tested",
+            "retained-environment-not-frozen"
+          ]
+        },
+        {
+          "metric": "cachedBuildMs",
+          "unit": "ms",
+          "status": "not-tested",
+          "measuredAt": null,
+          "artifactSha256": null,
+          "environmentSnapshotSha256": null,
+          "dataset": {
+            "cliCases": 11,
+            "maintainedManifests": 109,
+            "schemaNegativeCases": 4,
+            "libraryCases": 352,
+            "throughputCorpusPasses": [
+              1,
+              10,
+              100
+            ]
+          },
+          "order": [],
+          "cacheState": null,
+          "requiredCacheRule": "unchanged sources and populated project build cache; network disabled",
+          "warmups": null,
+          "requiredWarmups": 1,
+          "requiredRuns": 5,
+          "samples": [],
+          "summary": {
+            "count": 0,
+            "median": null,
+            "min": null,
+            "max": null,
+            "p95": null
+          },
+          "method": {
+            "planned": "External monotonic clock; unchanged source and populated project build cache, verified OS network denial.",
+            "observedInstrument": null,
+            "observedInstrumentVersion": null,
+            "actual": null
+          },
+          "timeout": null,
+          "exitStatus": null,
+          "comparisonEligible": false,
+          "blockers": [
+            "fresh-common-candidate-cohort-not-tested",
+            "full-library-workload-unsupported",
+            "instrument-version-and-native-accounting-not-tested",
+            "raw-measurement-runs-not-tested",
+            "retained-environment-not-frozen"
+          ]
+        },
+        {
+          "metric": "ciMs",
+          "unit": "ms",
+          "status": "not-tested",
+          "measuredAt": null,
+          "artifactSha256": null,
+          "environmentSnapshotSha256": null,
+          "dataset": {
+            "cliCases": 11,
+            "maintainedManifests": 109,
+            "schemaNegativeCases": 4,
+            "libraryCases": 352,
+            "throughputCorpusPasses": [
+              1,
+              10,
+              100
+            ]
+          },
+          "order": [],
+          "cacheState": null,
+          "requiredCacheRule": "job execution excluding queue time; report provisioning/build/test/upload phases and cache hits separately",
+          "warmups": null,
+          "requiredWarmups": 0,
+          "requiredRuns": 3,
+          "samples": [],
+          "summary": {
+            "count": 0,
+            "median": null,
+            "min": null,
+            "max": null,
+            "p95": null
+          },
+          "method": {
+            "planned": "Execution excluding queue wait; separate provisioning/build/test/upload timings and cache hits for each repeated job.",
+            "observedInstrument": null,
+            "observedInstrumentVersion": null,
+            "actual": null
+          },
+          "timeout": null,
+          "exitStatus": null,
+          "comparisonEligible": false,
+          "blockers": [
+            "fresh-common-candidate-cohort-not-tested",
+            "full-library-workload-unsupported",
+            "instrument-version-and-native-accounting-not-tested",
+            "raw-measurement-runs-not-tested",
+            "retained-environment-not-frozen"
+          ]
+        }
+      ]
+    },
+    {
+      "target": "macos/arm64",
+      "nativeArchitecture": "arm64",
+      "retainedLifecycleSource": {
+        "target": "macos",
+        "candidate": "typescript",
+        "path": "evaluation/lifecycle/macos/typescript.json",
+        "revision": "eb3088e53765be0562d3ba9770f451c83e50b83b",
+        "sha256": "308728f0be7de84ddc0d207f9be8a5f5fba3e50e560d99c4d16dbcbe1b7a913a"
+      },
+      "retainedEnvironment": {
+        "target": "macos/arm64",
+        "platform": "darwin",
+        "architecture": "arm64",
+        "runnerLabel": "local-native",
+        "imageOS": null,
+        "imageVersion": null,
+        "osVersion": "27.0.1",
+        "osBuild": "26A434",
+        "kernel": "27.0.0",
+        "cpuModel": "Apple M4 Pro",
+        "cpuCount": 14,
+        "memoryBytes": 51539607552,
+        "libc": null,
+        "translated": false,
+        "nativeArm64": true
+      },
+      "retainedEnvironmentSnapshotSha256": "83da03d9d32f2a0ec705f7afe08fcbe99853f09ed85d6a273b560574441747eb",
+      "retainedFrozenCheck": {
+        "matched": false,
+        "blockers": [
+          "wrong-runner-label",
+          "incomplete-environment",
+          "wrong-os-family-or-translation",
+          "environment-drift:runnerLabel",
+          "environment-drift:imageOS",
+          "environment-drift:imageVersion",
+          "environment-drift:osVersion",
+          "environment-drift:osBuild",
+          "environment-drift:kernel",
+          "environment-drift:cpuModel",
+          "environment-drift:cpuCount",
+          "environment-drift:memoryBytes"
+        ]
+      },
+      "retainedToolchainObservation": "Node 22.23.2; npm 10.9.8; TypeScript 7.0.2",
+      "requiredToolchain": "Node 22.23.2; npm 10.9.8; TypeScript 7.0.2",
+      "lockfiles": [
+        {
+          "path": "evaluation/prototypes/typescript/package-lock.json",
+          "bytes": 16521,
+          "sha256": "99d0a681f265f52b327979754b1f253948df4855671efc4956a4cda1dc008317"
+        },
+        {
+          "path": "evaluation/prototypes/typescript/package.json",
+          "bytes": 523,
+          "sha256": "151bf1e1d991485762937a338825e798ae83f525f61c5370d75297f92d8bc529"
+        }
+      ],
+      "retainedLifecycleStages": {
+        "package": "passed",
+        "install": "passed",
+        "validateInspect": "passed",
+        "offlineUse": "passed",
+        "upgrade": "not-tested",
+        "rollback": "not-tested",
+        "uninstall": "passed",
+        "signing": "not-tested",
+        "notarization": "not-tested"
+      },
+      "distributionGate": "partial",
+      "freshCommonCandidateCohort": {
+        "status": "not-tested",
+        "snapshot": null,
+        "snapshotSha256": null,
+        "runIdentities": [],
+        "candidateOrder": []
+      },
+      "historicalArtifactObservation": {
+        "classification": "historical-observation-not-comparable",
+        "measuredAt": "2026-10-05T10:28:34.835Z",
+        "collectorRevision": "7dcfcdb8beed08d0f0329dc83f1bd9add54d6625",
+        "version": "19ff4889542fe486d95eb2ae868560f5aa966df2.macos.arm64.7dcfcdb8beed08d0f0329dc83f1bd9add54d6625",
+        "sha256": "60b7184b59b7d951479fa8e14a2f5f4a7938a051fa651828c376ab730709c669",
+        "archiveBytes": 586042,
+        "payloadFileCount": 839,
+        "payloadFileBytes": 2273040,
+        "footprintScope": "Sum of manifest file bytes only; excludes filesystem overhead, installer virtualenv expansion, external interpreters/runtimes and native closure.",
+        "externalRuntime": "Node 22.23.2 is not bundled",
+        "source": {
+          "target": "macos",
+          "candidate": "typescript",
+          "path": "evaluation/lifecycle/macos/typescript.json",
+          "revision": "eb3088e53765be0562d3ba9770f451c83e50b83b",
+          "sha256": "308728f0be7de84ddc0d207f9be8a5f5fba3e50e560d99c4d16dbcbe1b7a913a"
+        }
+      },
+      "errorAndRejectionBenchmarks": {
+        "status": "not-tested",
+        "samples": [],
+        "reason": "Lifecycle outcomes have no agreed timing or memory samples. Expected rejection and unexpected failure cannot be substituted for successful full-workload throughput."
+      },
+      "blockers": [
+        "fresh-common-candidate-cohort-not-tested",
+        "full-library-workload-unsupported",
+        "instrument-version-and-native-accounting-not-tested",
+        "raw-measurement-runs-not-tested",
+        "retained-environment-not-frozen"
+      ],
+      "metrics": [
+        {
+          "metric": "coldStartMs",
+          "unit": "ms",
+          "status": "not-tested",
+          "measuredAt": null,
+          "artifactSha256": null,
+          "environmentSnapshotSha256": null,
+          "dataset": {
+            "cliCases": 11,
+            "maintainedManifests": 109,
+            "schemaNegativeCases": 4,
+            "libraryCases": 352,
+            "throughputCorpusPasses": [
+              1,
+              10,
+              100
+            ]
+          },
+          "order": [],
+          "cacheState": null,
+          "requiredCacheRule": "fresh process; provisioned dependencies; OS file cache uncontrolled and disclosed",
+          "warmups": null,
+          "requiredWarmups": 0,
+          "requiredRuns": 10,
+          "samples": [],
+          "summary": {
+            "count": 0,
+            "median": null,
+            "min": null,
+            "max": null,
+            "p95": null
+          },
+          "method": {
+            "planned": "External monotonic clock; fresh process for each unchanged CLI workload. Separate valid success, expected rejection and unexpected failure.",
+            "observedInstrument": null,
+            "observedInstrumentVersion": null,
+            "actual": null
+          },
+          "timeout": null,
+          "exitStatus": null,
+          "comparisonEligible": false,
+          "blockers": [
+            "fresh-common-candidate-cohort-not-tested",
+            "full-library-workload-unsupported",
+            "instrument-version-and-native-accounting-not-tested",
+            "raw-measurement-runs-not-tested",
+            "retained-environment-not-frozen"
+          ]
+        },
+        {
+          "metric": "validationMs",
+          "unit": "ms",
+          "status": "not-tested",
+          "measuredAt": null,
+          "artifactSha256": null,
+          "environmentSnapshotSha256": null,
+          "dataset": {
+            "cliCases": 11,
+            "maintainedManifests": 109,
+            "schemaNegativeCases": 4,
+            "libraryCases": 352,
+            "throughputCorpusPasses": [
+              1,
+              10,
+              100
+            ]
+          },
+          "order": [],
+          "cacheState": null,
+          "requiredCacheRule": "warm library process per corpus batch; exclude provisioning and startup",
+          "warmups": null,
+          "requiredWarmups": 1,
+          "requiredRuns": 30,
+          "samples": [],
+          "summary": {
+            "count": 0,
+            "median": null,
+            "min": null,
+            "max": null,
+            "p95": null
+          },
+          "method": {
+            "planned": "Warm native library process, excluding startup and provisioning; full ordered catalog and identical corpus passes. Unsupported operations are not completed validation.",
+            "observedInstrument": null,
+            "observedInstrumentVersion": null,
+            "actual": null
+          },
+          "timeout": null,
+          "exitStatus": null,
+          "comparisonEligible": false,
+          "blockers": [
+            "fresh-common-candidate-cohort-not-tested",
+            "full-library-workload-unsupported",
+            "instrument-version-and-native-accounting-not-tested",
+            "raw-measurement-runs-not-tested",
+            "retained-environment-not-frozen"
+          ]
+        },
+        {
+          "metric": "peakMemoryBytes",
+          "unit": "bytes",
+          "status": "not-tested",
+          "measuredAt": null,
+          "artifactSha256": null,
+          "environmentSnapshotSha256": null,
+          "dataset": {
+            "cliCases": 11,
+            "maintainedManifests": 109,
+            "schemaNegativeCases": 4,
+            "libraryCases": 352,
+            "throughputCorpusPasses": [
+              1,
+              10,
+              100
+            ]
+          },
+          "order": [],
+          "cacheState": null,
+          "requiredCacheRule": "fresh process; external OS peak resident memory including interpreter; disclose child accounting",
+          "warmups": null,
+          "requiredWarmups": 0,
+          "requiredRuns": 10,
+          "samples": [],
+          "summary": {
+            "count": 0,
+            "median": null,
+            "min": null,
+            "max": null,
+            "p95": null
+          },
+          "method": {
+            "planned": "External native OS peak resident memory, including interpreter; disclose child-process accounting and exact instrument/version.",
+            "observedInstrument": null,
+            "observedInstrumentVersion": null,
+            "actual": null
+          },
+          "timeout": null,
+          "exitStatus": null,
+          "comparisonEligible": false,
+          "blockers": [
+            "fresh-common-candidate-cohort-not-tested",
+            "full-library-workload-unsupported",
+            "instrument-version-and-native-accounting-not-tested",
+            "raw-measurement-runs-not-tested",
+            "retained-environment-not-frozen"
+          ]
+        },
+        {
+          "metric": "artifactBytes",
+          "unit": "bytes",
+          "status": "not-tested",
+          "measuredAt": null,
+          "artifactSha256": null,
+          "environmentSnapshotSha256": null,
+          "dataset": {
+            "cliCases": 11,
+            "maintainedManifests": 109,
+            "schemaNegativeCases": 4,
+            "libraryCases": 352,
+            "throughputCorpusPasses": [
+              1,
+              10,
+              100
+            ]
+          },
+          "order": [],
+          "cacheState": null,
+          "requiredCacheRule": "exact hashed distributable plus separately recorded installed/runtime footprint",
+          "warmups": null,
+          "requiredWarmups": 0,
+          "requiredRuns": 1,
+          "samples": [],
+          "summary": {
+            "count": 0,
+            "median": null,
+            "min": null,
+            "max": null,
+            "p95": null
+          },
+          "method": {
+            "planned": "Byte count and SHA-256 of exact evaluation capsule; separately disclose installed payload and external runtime/native prerequisites.",
+            "observedInstrument": null,
+            "observedInstrumentVersion": null,
+            "actual": null
+          },
+          "timeout": null,
+          "exitStatus": null,
+          "comparisonEligible": false,
+          "blockers": [
+            "fresh-common-candidate-cohort-not-tested",
+            "full-library-workload-unsupported",
+            "instrument-version-and-native-accounting-not-tested",
+            "raw-measurement-runs-not-tested",
+            "retained-environment-not-frozen"
+          ]
+        },
+        {
+          "metric": "cleanBuildMs",
+          "unit": "ms",
+          "status": "not-tested",
+          "measuredAt": null,
+          "artifactSha256": null,
+          "environmentSnapshotSha256": null,
+          "dataset": {
+            "cliCases": 11,
+            "maintainedManifests": 109,
+            "schemaNegativeCases": 4,
+            "libraryCases": 352,
+            "throughputCorpusPasses": [
+              1,
+              10,
+              100
+            ]
+          },
+          "order": [],
+          "cacheState": null,
+          "requiredCacheRule": "empty project build cache; pinned provisioned dependency cache; network disabled",
+          "warmups": null,
+          "requiredWarmups": 0,
+          "requiredRuns": 5,
+          "samples": [],
+          "summary": {
+            "count": 0,
+            "median": null,
+            "min": null,
+            "max": null,
+            "p95": null
+          },
+          "method": {
+            "planned": "External monotonic clock; empty project build cache, provisioned pinned dependency cache, verified OS network denial.",
+            "observedInstrument": null,
+            "observedInstrumentVersion": null,
+            "actual": null
+          },
+          "timeout": null,
+          "exitStatus": null,
+          "comparisonEligible": false,
+          "blockers": [
+            "fresh-common-candidate-cohort-not-tested",
+            "full-library-workload-unsupported",
+            "instrument-version-and-native-accounting-not-tested",
+            "raw-measurement-runs-not-tested",
+            "retained-environment-not-frozen"
+          ]
+        },
+        {
+          "metric": "cachedBuildMs",
+          "unit": "ms",
+          "status": "not-tested",
+          "measuredAt": null,
+          "artifactSha256": null,
+          "environmentSnapshotSha256": null,
+          "dataset": {
+            "cliCases": 11,
+            "maintainedManifests": 109,
+            "schemaNegativeCases": 4,
+            "libraryCases": 352,
+            "throughputCorpusPasses": [
+              1,
+              10,
+              100
+            ]
+          },
+          "order": [],
+          "cacheState": null,
+          "requiredCacheRule": "unchanged sources and populated project build cache; network disabled",
+          "warmups": null,
+          "requiredWarmups": 1,
+          "requiredRuns": 5,
+          "samples": [],
+          "summary": {
+            "count": 0,
+            "median": null,
+            "min": null,
+            "max": null,
+            "p95": null
+          },
+          "method": {
+            "planned": "External monotonic clock; unchanged source and populated project build cache, verified OS network denial.",
+            "observedInstrument": null,
+            "observedInstrumentVersion": null,
+            "actual": null
+          },
+          "timeout": null,
+          "exitStatus": null,
+          "comparisonEligible": false,
+          "blockers": [
+            "fresh-common-candidate-cohort-not-tested",
+            "full-library-workload-unsupported",
+            "instrument-version-and-native-accounting-not-tested",
+            "raw-measurement-runs-not-tested",
+            "retained-environment-not-frozen"
+          ]
+        },
+        {
+          "metric": "ciMs",
+          "unit": "ms",
+          "status": "not-tested",
+          "measuredAt": null,
+          "artifactSha256": null,
+          "environmentSnapshotSha256": null,
+          "dataset": {
+            "cliCases": 11,
+            "maintainedManifests": 109,
+            "schemaNegativeCases": 4,
+            "libraryCases": 352,
+            "throughputCorpusPasses": [
+              1,
+              10,
+              100
+            ]
+          },
+          "order": [],
+          "cacheState": null,
+          "requiredCacheRule": "job execution excluding queue time; report provisioning/build/test/upload phases and cache hits separately",
+          "warmups": null,
+          "requiredWarmups": 0,
+          "requiredRuns": 3,
+          "samples": [],
+          "summary": {
+            "count": 0,
+            "median": null,
+            "min": null,
+            "max": null,
+            "p95": null
+          },
+          "method": {
+            "planned": "Execution excluding queue wait; separate provisioning/build/test/upload timings and cache hits for each repeated job.",
+            "observedInstrument": null,
+            "observedInstrumentVersion": null,
+            "actual": null
+          },
+          "timeout": null,
+          "exitStatus": null,
+          "comparisonEligible": false,
+          "blockers": [
+            "fresh-common-candidate-cohort-not-tested",
+            "full-library-workload-unsupported",
+            "instrument-version-and-native-accounting-not-tested",
+            "raw-measurement-runs-not-tested",
+            "retained-environment-not-frozen"
+          ]
+        }
+      ]
+    },
+    {
+      "target": "windows/amd64",
+      "nativeArchitecture": "x64",
+      "retainedLifecycleSource": {
+        "target": "windows",
+        "candidate": "typescript",
+        "path": "evaluation/lifecycle/windows/typescript.json",
+        "revision": "166ea9e79959c9620e7a6777f95c923b79fb3ec2",
+        "sha256": "7dfcd33132dda53204b8694e0b71106a5d7d4ab88f1beecdae19c90ecbbd3439"
+      },
+      "retainedEnvironment": {
+        "target": "windows/amd64",
+        "platform": "win32",
+        "architecture": "x64",
+        "runnerLabel": "windows-2025",
+        "imageOS": "win25-vs2026",
+        "imageVersion": "20260925.250.1",
+        "osVersion": "10.0.26100",
+        "osBuild": "26100",
+        "osCaption": "Microsoft Windows Server 2025 Datacenter",
+        "kernel": "10.0.26100",
+        "libc": null,
+        "cpuModel": "AMD EPYC 7763 64-Core Processor                ",
+        "cpuCount": 4,
+        "memoryBytes": 17174360064,
+        "translated": false
+      },
+      "retainedEnvironmentSnapshotSha256": "9392751df8074b7c25957167abb931ef791814cebe850dbdaba15076f7614b42",
+      "retainedFrozenCheck": {
+        "matched": true,
+        "blockers": []
+      },
+      "retainedToolchainObservation": {
+        "node": "v22.23.2",
+        "npm": "10.9.8",
+        "compiler": "Version 7.0.2"
+      },
+      "requiredToolchain": "Node 22.23.2; npm 10.9.8; TypeScript 7.0.2",
+      "lockfiles": [
+        {
+          "path": "evaluation/prototypes/typescript/package-lock.json",
+          "sha256": "99d0a681f265f52b327979754b1f253948df4855671efc4956a4cda1dc008317"
+        },
+        {
+          "path": "evaluation/prototypes/typescript/package.json",
+          "sha256": "151bf1e1d991485762937a338825e798ae83f525f61c5370d75297f92d8bc529"
+        }
+      ],
+      "retainedLifecycleStages": {
+        "build": "passed",
+        "install": "failed",
+        "validateInspect": "passed",
+        "offlineUse": "not-tested",
+        "upgrade": "not-tested",
+        "rollback": "not-tested",
+        "uninstall": "passed",
+        "signing": "not-tested"
+      },
+      "distributionGate": "partial",
+      "freshCommonCandidateCohort": {
+        "status": "not-tested",
+        "snapshot": null,
+        "snapshotSha256": null,
+        "runIdentities": [],
+        "candidateOrder": []
+      },
+      "historicalArtifactObservation": {
+        "classification": "historical-observation-not-comparable",
+        "measuredAt": "2026-10-05T11:55:21.952Z",
+        "collectorRevision": "fd80b4b0aad9369ead64f1b94aefb3ce9097fc15",
+        "version": "19ff4889542fe486d95eb2ae868560f5aa966df2.windows.amd64.fd80b4b0aad9369ead64f1b94aefb3ce9097fc15",
+        "sha256": "96dd61554313e68b3a49c32f2d1f455460ab091f35e130b237e5e46f5b0845f9",
+        "archiveBytes": 482655,
+        "payloadFileCount": 827,
+        "payloadFileBytes": 2224526,
+        "footprintScope": "Sum of manifest file bytes only; excludes filesystem overhead, installer virtualenv expansion, external interpreters/runtimes and native closure.",
+        "externalRuntime": "Node 22.23.2 is not bundled",
+        "source": {
+          "target": "windows",
+          "candidate": "typescript",
+          "path": "evaluation/lifecycle/windows/typescript.json",
+          "revision": "166ea9e79959c9620e7a6777f95c923b79fb3ec2",
+          "sha256": "7dfcd33132dda53204b8694e0b71106a5d7d4ab88f1beecdae19c90ecbbd3439"
+        }
+      },
+      "errorAndRejectionBenchmarks": {
+        "status": "not-tested",
+        "samples": [],
+        "reason": "Lifecycle outcomes have no agreed timing or memory samples. Expected rejection and unexpected failure cannot be substituted for successful full-workload throughput."
+      },
+      "blockers": [
+        "fresh-common-candidate-cohort-not-tested",
+        "full-library-workload-unsupported",
+        "instrument-version-and-native-accounting-not-tested",
+        "raw-measurement-runs-not-tested",
+        "unicode-install-failed",
+        "offline-lifecycle-not-passed"
+      ],
+      "metrics": [
+        {
+          "metric": "coldStartMs",
+          "unit": "ms",
+          "status": "not-tested",
+          "measuredAt": null,
+          "artifactSha256": null,
+          "environmentSnapshotSha256": null,
+          "dataset": {
+            "cliCases": 11,
+            "maintainedManifests": 109,
+            "schemaNegativeCases": 4,
+            "libraryCases": 352,
+            "throughputCorpusPasses": [
+              1,
+              10,
+              100
+            ]
+          },
+          "order": [],
+          "cacheState": null,
+          "requiredCacheRule": "fresh process; provisioned dependencies; OS file cache uncontrolled and disclosed",
+          "warmups": null,
+          "requiredWarmups": 0,
+          "requiredRuns": 10,
+          "samples": [],
+          "summary": {
+            "count": 0,
+            "median": null,
+            "min": null,
+            "max": null,
+            "p95": null
+          },
+          "method": {
+            "planned": "External monotonic clock; fresh process for each unchanged CLI workload. Separate valid success, expected rejection and unexpected failure.",
+            "observedInstrument": null,
+            "observedInstrumentVersion": null,
+            "actual": null
+          },
+          "timeout": null,
+          "exitStatus": null,
+          "comparisonEligible": false,
+          "blockers": [
+            "fresh-common-candidate-cohort-not-tested",
+            "full-library-workload-unsupported",
+            "instrument-version-and-native-accounting-not-tested",
+            "raw-measurement-runs-not-tested",
+            "unicode-install-failed",
+            "offline-lifecycle-not-passed"
+          ]
+        },
+        {
+          "metric": "validationMs",
+          "unit": "ms",
+          "status": "not-tested",
+          "measuredAt": null,
+          "artifactSha256": null,
+          "environmentSnapshotSha256": null,
+          "dataset": {
+            "cliCases": 11,
+            "maintainedManifests": 109,
+            "schemaNegativeCases": 4,
+            "libraryCases": 352,
+            "throughputCorpusPasses": [
+              1,
+              10,
+              100
+            ]
+          },
+          "order": [],
+          "cacheState": null,
+          "requiredCacheRule": "warm library process per corpus batch; exclude provisioning and startup",
+          "warmups": null,
+          "requiredWarmups": 1,
+          "requiredRuns": 30,
+          "samples": [],
+          "summary": {
+            "count": 0,
+            "median": null,
+            "min": null,
+            "max": null,
+            "p95": null
+          },
+          "method": {
+            "planned": "Warm native library process, excluding startup and provisioning; full ordered catalog and identical corpus passes. Unsupported operations are not completed validation.",
+            "observedInstrument": null,
+            "observedInstrumentVersion": null,
+            "actual": null
+          },
+          "timeout": null,
+          "exitStatus": null,
+          "comparisonEligible": false,
+          "blockers": [
+            "fresh-common-candidate-cohort-not-tested",
+            "full-library-workload-unsupported",
+            "instrument-version-and-native-accounting-not-tested",
+            "raw-measurement-runs-not-tested",
+            "unicode-install-failed",
+            "offline-lifecycle-not-passed"
+          ]
+        },
+        {
+          "metric": "peakMemoryBytes",
+          "unit": "bytes",
+          "status": "not-tested",
+          "measuredAt": null,
+          "artifactSha256": null,
+          "environmentSnapshotSha256": null,
+          "dataset": {
+            "cliCases": 11,
+            "maintainedManifests": 109,
+            "schemaNegativeCases": 4,
+            "libraryCases": 352,
+            "throughputCorpusPasses": [
+              1,
+              10,
+              100
+            ]
+          },
+          "order": [],
+          "cacheState": null,
+          "requiredCacheRule": "fresh process; external OS peak resident memory including interpreter; disclose child accounting",
+          "warmups": null,
+          "requiredWarmups": 0,
+          "requiredRuns": 10,
+          "samples": [],
+          "summary": {
+            "count": 0,
+            "median": null,
+            "min": null,
+            "max": null,
+            "p95": null
+          },
+          "method": {
+            "planned": "External native OS peak resident memory, including interpreter; disclose child-process accounting and exact instrument/version.",
+            "observedInstrument": null,
+            "observedInstrumentVersion": null,
+            "actual": null
+          },
+          "timeout": null,
+          "exitStatus": null,
+          "comparisonEligible": false,
+          "blockers": [
+            "fresh-common-candidate-cohort-not-tested",
+            "full-library-workload-unsupported",
+            "instrument-version-and-native-accounting-not-tested",
+            "raw-measurement-runs-not-tested",
+            "unicode-install-failed",
+            "offline-lifecycle-not-passed"
+          ]
+        },
+        {
+          "metric": "artifactBytes",
+          "unit": "bytes",
+          "status": "not-tested",
+          "measuredAt": null,
+          "artifactSha256": null,
+          "environmentSnapshotSha256": null,
+          "dataset": {
+            "cliCases": 11,
+            "maintainedManifests": 109,
+            "schemaNegativeCases": 4,
+            "libraryCases": 352,
+            "throughputCorpusPasses": [
+              1,
+              10,
+              100
+            ]
+          },
+          "order": [],
+          "cacheState": null,
+          "requiredCacheRule": "exact hashed distributable plus separately recorded installed/runtime footprint",
+          "warmups": null,
+          "requiredWarmups": 0,
+          "requiredRuns": 1,
+          "samples": [],
+          "summary": {
+            "count": 0,
+            "median": null,
+            "min": null,
+            "max": null,
+            "p95": null
+          },
+          "method": {
+            "planned": "Byte count and SHA-256 of exact evaluation capsule; separately disclose installed payload and external runtime/native prerequisites.",
+            "observedInstrument": null,
+            "observedInstrumentVersion": null,
+            "actual": null
+          },
+          "timeout": null,
+          "exitStatus": null,
+          "comparisonEligible": false,
+          "blockers": [
+            "fresh-common-candidate-cohort-not-tested",
+            "full-library-workload-unsupported",
+            "instrument-version-and-native-accounting-not-tested",
+            "raw-measurement-runs-not-tested",
+            "unicode-install-failed",
+            "offline-lifecycle-not-passed"
+          ]
+        },
+        {
+          "metric": "cleanBuildMs",
+          "unit": "ms",
+          "status": "not-tested",
+          "measuredAt": null,
+          "artifactSha256": null,
+          "environmentSnapshotSha256": null,
+          "dataset": {
+            "cliCases": 11,
+            "maintainedManifests": 109,
+            "schemaNegativeCases": 4,
+            "libraryCases": 352,
+            "throughputCorpusPasses": [
+              1,
+              10,
+              100
+            ]
+          },
+          "order": [],
+          "cacheState": null,
+          "requiredCacheRule": "empty project build cache; pinned provisioned dependency cache; network disabled",
+          "warmups": null,
+          "requiredWarmups": 0,
+          "requiredRuns": 5,
+          "samples": [],
+          "summary": {
+            "count": 0,
+            "median": null,
+            "min": null,
+            "max": null,
+            "p95": null
+          },
+          "method": {
+            "planned": "External monotonic clock; empty project build cache, provisioned pinned dependency cache, verified OS network denial.",
+            "observedInstrument": null,
+            "observedInstrumentVersion": null,
+            "actual": null
+          },
+          "timeout": null,
+          "exitStatus": null,
+          "comparisonEligible": false,
+          "blockers": [
+            "fresh-common-candidate-cohort-not-tested",
+            "full-library-workload-unsupported",
+            "instrument-version-and-native-accounting-not-tested",
+            "raw-measurement-runs-not-tested",
+            "unicode-install-failed",
+            "offline-lifecycle-not-passed"
+          ]
+        },
+        {
+          "metric": "cachedBuildMs",
+          "unit": "ms",
+          "status": "not-tested",
+          "measuredAt": null,
+          "artifactSha256": null,
+          "environmentSnapshotSha256": null,
+          "dataset": {
+            "cliCases": 11,
+            "maintainedManifests": 109,
+            "schemaNegativeCases": 4,
+            "libraryCases": 352,
+            "throughputCorpusPasses": [
+              1,
+              10,
+              100
+            ]
+          },
+          "order": [],
+          "cacheState": null,
+          "requiredCacheRule": "unchanged sources and populated project build cache; network disabled",
+          "warmups": null,
+          "requiredWarmups": 1,
+          "requiredRuns": 5,
+          "samples": [],
+          "summary": {
+            "count": 0,
+            "median": null,
+            "min": null,
+            "max": null,
+            "p95": null
+          },
+          "method": {
+            "planned": "External monotonic clock; unchanged source and populated project build cache, verified OS network denial.",
+            "observedInstrument": null,
+            "observedInstrumentVersion": null,
+            "actual": null
+          },
+          "timeout": null,
+          "exitStatus": null,
+          "comparisonEligible": false,
+          "blockers": [
+            "fresh-common-candidate-cohort-not-tested",
+            "full-library-workload-unsupported",
+            "instrument-version-and-native-accounting-not-tested",
+            "raw-measurement-runs-not-tested",
+            "unicode-install-failed",
+            "offline-lifecycle-not-passed"
+          ]
+        },
+        {
+          "metric": "ciMs",
+          "unit": "ms",
+          "status": "not-tested",
+          "measuredAt": null,
+          "artifactSha256": null,
+          "environmentSnapshotSha256": null,
+          "dataset": {
+            "cliCases": 11,
+            "maintainedManifests": 109,
+            "schemaNegativeCases": 4,
+            "libraryCases": 352,
+            "throughputCorpusPasses": [
+              1,
+              10,
+              100
+            ]
+          },
+          "order": [],
+          "cacheState": null,
+          "requiredCacheRule": "job execution excluding queue time; report provisioning/build/test/upload phases and cache hits separately",
+          "warmups": null,
+          "requiredWarmups": 0,
+          "requiredRuns": 3,
+          "samples": [],
+          "summary": {
+            "count": 0,
+            "median": null,
+            "min": null,
+            "max": null,
+            "p95": null
+          },
+          "method": {
+            "planned": "Execution excluding queue wait; separate provisioning/build/test/upload timings and cache hits for each repeated job.",
+            "observedInstrument": null,
+            "observedInstrumentVersion": null,
+            "actual": null
+          },
+          "timeout": null,
+          "exitStatus": null,
+          "comparisonEligible": false,
+          "blockers": [
+            "fresh-common-candidate-cohort-not-tested",
+            "full-library-workload-unsupported",
+            "instrument-version-and-native-accounting-not-tested",
+            "raw-measurement-runs-not-tested",
+            "unicode-install-failed",
+            "offline-lifecycle-not-passed"
+          ]
+        }
+      ]
+    }
+  ],
+  "outcome": "not-ready",
+  "fullCrossTargetComparability": false,
+  "selection": null,
+  "scores": null
+}

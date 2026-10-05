@@ -24,6 +24,11 @@ The [Linux AMD64 lifecycle review](lifecycle/linux/README.md) tests private
 source-layout evaluation capsules without treating missing upgrade, rollback,
 signing or failed installed execution as distribution approval.
 
+The [cross-target measurement gap record](measurements/README.md) binds all seven
+metrics for four candidates and three targets to exact published lifecycle and
+fidelity evidence. Historical capsule sizes are observations, not comparable
+benchmarks; missing samples and failed gates remain explicit.
+
 The [offline/denied-effects experiment](isolation/README.md) adds independent
 positive/negative OS controls and bounded native macOS evidence. It keeps
 security residuals, other targets and architecture acceptance separate.

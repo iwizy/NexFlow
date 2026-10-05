@@ -8,6 +8,11 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Added
 
+- Added four source-bound cross-target measurement gap records covering all
+  seven metrics, retained artifact observations and exact prerequisite CI.
+  Missing comparable cohorts, workloads and samples remain not-tested;
+  no performance ranking, candidate repair or architecture approval.
+
 - Added native Linux AMD64 evaluation-capsule collection and isolated clean
   install/offline invocation/uninstall evidence tooling. Relocation failures,
   unavailable prior artifacts and untested upgrade/rollback/signing remain

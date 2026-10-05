@@ -46,6 +46,7 @@
     "runtime-fidelity-smoke": "node scripts/runtime-fidelity-smoke.mjs",
     "runtime-supply-chain-smoke": "node scripts/runtime-supply-chain-smoke.mjs",
     "runtime-linux-lifecycle-smoke": "node scripts/runtime-linux-lifecycle-smoke.mjs",
+    "runtime-comparable-measurements-smoke": "node scripts/runtime-comparable-measurements-smoke.mjs",
     "runtime-isolation-smoke": "node scripts/runtime-isolation-smoke.mjs",
     "semantic-smoke": "node scripts/semantic-reference-smoke.mjs",
     "typed-reference-schema-smoke": "node scripts/typed-reference-schema-smoke.mjs",

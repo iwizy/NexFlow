@@ -36,6 +36,9 @@ If Unicode-prefix archive extraction fails, that failure stays visible and the
 same capsule is extracted into an ASCII-space prefix for supplemental CLI runs
 against Unicode-space input paths. Such a fallback does not approve Unicode
 installation or silently alter the target contract.
+Unicode input staging failures likewise remain separate failed path probes;
+the unchanged CLI cases can use verified ASCII-space fixtures as supplemental
+native evidence without asserting Unicode compatibility.
 
 A fresh VM, venv, package-manager offline flags or clean prefix is **not** a
 verified OS denial boundary. This experiment does not introduce firewall,

@@ -52,7 +52,7 @@ async function main(candidate, output, artifactDir) {
   const blockers = ["No verified Windows OS network/filesystem/credential denial harness in this authorized experiment; offline use and security isolation are not-tested.",
     "No genuine previous Windows evaluation capsule in the retained artifact inventory; upgrade and rollback require one.",
     "No specifically authorized signing certificate or publisher identity; Authenticode observation is not approved package signing."];
-  let artifact = null, cases = [], buildSchemasHidden = false, installedPrefixVerified = false, installCommands = [], signatures = [];
+  let artifact = null, cases = [], buildSchemasHidden = false, installedPrefixVerified = false, installCommands = [], signatures = [], pathProbes = [];
   function command(cmd, args, cwd = root) {
     const r = run(cmd, args, cwd); commands.push({ command: scrub([cmd, ...args].join(" ")), exitCode: r.exitCode, error: r.error,
       stdoutSha256: digest(r.stdout), stderrSha256: digest(r.stderr), stderrTail: scrub(r.stderr.slice(-1600)) });
@@ -132,7 +132,13 @@ async function main(candidate, output, artifactDir) {
       renameSync(originalSchemas, hiddenSchemas); buildSchemasHidden = true;
       try {
         for (const item of baseline.cases) {
-          const input = path.join(temp, "inputs space юникод", item.id); copy(path.join(root, item.root), input);
+          let input = path.join(temp, "inputs space юникод", item.id);
+          try { copy(path.join(root, item.root), input); assert.ok(existsSync(input), "unicode-input-copy-missing"); manifest(input);
+            pathProbes.push({ id: item.id, unicodeInput: "passed", fallback: false });
+          } catch (error) {
+            pathProbes.push({ id: item.id, unicodeInput: "failed", reason: scrub(error.message), fallback: true });
+            input = path.join(temp, "inputs space ascii", item.id); copy(path.join(root, item.root), input); assert.ok(existsSync(input), "ascii-input-copy-missing");
+          }
           if (item.append) { const f = path.join(input, item.append.file); writeFileSync(f, readFileSync(f, "utf8") + item.append.text); }
           const before = digest(JSON.stringify(manifest(input))), attempts = [], errors = []; let previous;
           for (let n = 0; n < 2; n++) {
@@ -149,7 +155,8 @@ async function main(candidate, output, artifactDir) {
           cases.push({ id: item.id, status: errors.length ? "failed" : "passed", errors: [...new Set(errors)], attempts });
         }
       } finally { renameSync(hiddenSchemas, originalSchemas); }
-      stages.validateInspect = stage(cases.every(c => c.status === "passed") ? "passed" : "failed", "All 11 unchanged CLI cases twice from installed capsule with source-checkout schemas hidden; UTF-8, spaces and Unicode paths exercised.");
+      stages.validateInspect = stage(cases.every(c => c.status === "passed") ? "passed" : "failed", "All 11 unchanged CLI cases twice from installed capsule with source-checkout schemas hidden; UTF-8 output and space paths tested. ASCII fallbacks are supplemental; separate failed Unicode pathProbes are not passes.");
+      if (pathProbes.some(p => p.unicodeInput === "failed")) blockers.push("Unicode input staging failed in the native harness; ASCII-space CLI runs are supplemental, not Unicode path support.");
       if (cases.some(c => c.status === "failed")) blockers.push("Installed CLI fidelity/relocation failures retained; candidate sources and locks were not repaired.");
       if (candidate !== "python") assert.deepEqual(manifest(installed), files, "installed-payload-mutation");
       if (["rust", "go"].includes(candidate)) {
@@ -171,7 +178,7 @@ async function main(candidate, output, artifactDir) {
     supplyChain: { revision: "fed105367da915347a92896eb67c0446d9e9b2d7", inventorySha256: digest(inventoryBytes), status: "partial", remediation: "none" },
     buildCommands: commands, nativeBinaries, artifact, previousArtifact: null, installation: { commands: installCommands, installedPrefixVerified, scope: "private evaluation prefix only; ASCII fallback is supplemental, not a Unicode path pass" },
     isolation: { network: "not-tested", filesystem: "not-tested", credential: "not-tested", buildSchemasHidden, scope: "Fresh hosted VM and clean temporary prefix are not an OS sandbox." },
-    execution: { cases }, signatures, stages, blockers, immutability: { sources: true, locks: true, corpus: true }, distributionGate: "partial", outcome: "not-ready",
+    execution: { cases }, pathProbes, signatures, stages, blockers, immutability: { sources: true, locks: true, corpus: true }, distributionGate: "partial", outcome: "not-ready",
     limitations: ["No product lifecycle or stable system-wide installed command; no support or architecture acceptance.", "Frozen fingerprint drift is supplemental, not a target-contract change.", "Existing advisory/license risks remain open; interpreter/MSVC/native prerequisites are not bundled closure.", "Native execution is not performance evidence or full 352-case library parity."] };
   assert.deepEqual(windowsErrors(record, pins), [], JSON.stringify({ blockers, buildSchemasHidden, observedCases: cases.length }));
   mkdirSync(path.dirname(output), { recursive: true }); writeFileSync(output, JSON.stringify(record, null, 2) + "\n");

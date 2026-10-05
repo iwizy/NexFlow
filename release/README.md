@@ -70,6 +70,19 @@ Preserve real publication dates and history. Each future eight-gate record
 must also cite its milestone-specific criteria; passing the generic record
 schema alone does not complete them.
 
+## 0.2 Validation Checkpoint
+
+The dated [validation/conformance checkpoint](../docs/0.2-validation-checkpoint.md)
+assesses all eight `0.2` criteria using a later immutable source baseline.
+Its [source check record](0.2-validation-checkpoint-checks.md) distinguishes
+45 actual local checks, exact-main CI and historical publication metadata.
+Diagnostic and implementation-conformance gaps remain partial.
+
+`npm run validation-checkpoint-smoke` checks bindings, completeness and
+non-approval; it does not certify a validator, re-evaluate release assets,
+refresh the older conformance statement or authorize publication. The existing
+`v0.2.0` / `v0.3.0` decisions, tags, dates and assets are not rewritten.
+
 ## 0.5 Beta Preparation
 
 The [beta preparation checkpoint](../docs/0.5-beta-checkpoint.md) assesses

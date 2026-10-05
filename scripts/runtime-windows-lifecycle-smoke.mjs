@@ -32,7 +32,9 @@ const mutations = [r => r.sourceRevision = "0".repeat(40), r => r.specificationR
   r => r.isolation.filesystem = "passed", r => r.isolation.credential = "passed", r => r.isolation.buildSchemasHidden = false,
   r => r.execution.cases.pop(), r => r.execution.cases[0].attempts.pop(), r => { r.execution.cases[0].status = "passed"; r.execution.cases[0].errors = []; },
   r => r.stages.validateInspect.status = "passed", r => r.outcome = "ready", r => r.distributionGate = "passed", r => r.immutability.locks = false,
-  r => r.blockers = [], r => r.limitations = ["C:\\Users\\example\\private"], r => delete r.stages.install];
+  r => r.blockers = [], r => r.limitations = ["C:\\Users\\example\\private"], r => delete r.stages.install,
+  r => r.installation.installedPrefixVerified = false,
+  r => r.installation.commands[0].exitCode = 1];
 for (const [index, mutate] of mutations.entries()) { const changed = structuredClone(synthetic); mutate(changed); assert.ok(windowsErrors(changed, pins).length, "mutation " + index); }
 const blocked = structuredClone(synthetic); blocked.artifact = null; blocked.stages.build = stage("failed"); blocked.installation.installedPrefixVerified = false;
 for (const k of ["install", "validateInspect", "uninstall"]) blocked.stages[k] = stage("not-tested"); blocked.execution.cases = [];
@@ -47,4 +49,26 @@ if (ids.some(id => existsSync(path.join(directory, id + ".json")))) for (const i
   for (const s of r.sourceManifest) assert.equal(digest(execFileSync("git", ["show", r.sourceRevision + ":" + s.path], { cwd: root })), s.sha256);
   assert.equal(digest(readFileSync(path.join(root, "evaluation/supply-chain", id, "inventory.json"))), r.supplyChain.inventorySha256); real++;
 }
-console.log("Windows lifecycle consistency: " + (mutations.length + 5) + " synthetic controls; " + real + " native records checked. Not lifecycle approval.");
+let archived = 0;
+for (const id of ids) {
+  const f = path.join(directory, "attempts/10253c7", id + ".json"); if (!existsSync(f)) continue;
+  const r = JSON.parse(readFileSync(f)); assert.equal(r.candidate, id); assert.deepEqual(windowsErrors(r, pins), []);
+  for (const s of r.collectorSources) assert.equal(digest(execFileSync("git", ["show", r.collectorRevision + ":" + s.path], { cwd: root })), s.sha256);
+  archived++;
+}
+assert.ok(archived === 0 || archived === 4, "incomplete-prior-attempts");
+for (const [filename, subdirectory] of [["archive-verification.json", ""], ["initial-archive-verification.json", "attempts/10253c7"]]) {
+  const f = path.join(directory, filename); if (!existsSync(f)) continue;
+  const report = JSON.parse(readFileSync(f)); assert.equal(report.task, "NF-056-14");
+  assert.equal(report.verifierSha256, digest(readFileSync(path.join(root, "scripts/runtime-windows-archive-verify.mjs"))));
+  assert.deepEqual(report.observations.map(r => r.candidate).sort(), ids.slice().sort());
+  for (const observation of report.observations) {
+    const source = path.join(directory, subdirectory, observation.candidate + ".json"), bytes = readFileSync(source), r = JSON.parse(bytes);
+    assert.equal(observation.recordSha256, digest(bytes)); assert.equal(observation.collectorRevision, r.collectorRevision);
+    if (r.artifact) {
+      assert.equal(observation.archive, "verified"); assert.equal(observation.sha256, r.artifact.sha256); assert.equal(observation.bytes, r.artifact.bytes);
+      assert.equal(observation.fileCount, r.artifact.files.length); assert.equal(observation.manifestSha256, r.artifact.manifestSha256);
+    } else assert.equal(observation.archive, "not-built");
+  }
+}
+console.log("Windows lifecycle consistency: " + (mutations.length + 5) + " synthetic controls; " + real + " final and " + archived + " prior native records checked. Not lifecycle approval.");

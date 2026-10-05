@@ -69,3 +69,50 @@ npm run runtime-windows-lifecycle-smoke
 
 The smoke check validates stored receipts and rejection controls. Fixture checks,
 cross-compilation, Wine, macOS and Linux are not native Windows evidence.
+
+## Actual native results — 2026-10-05
+
+Collector `fd80b4b0aad9369ead64f1b94aefb3ce9097fc15` ran in
+[native run 37305959172](https://github.com/iwizy/NexFlow/actions/runs/37305959172).
+[Runner receipts](runner-receipts.json) retain exact jobs and provisioning
+failures; green collector CI means evidence capture, not successful lifecycle.
+[Independent archive verification](archive-verification.json) checked three
+capsules and all 867 unpacked files; Python has no fabricated capsule.
+
+| Record | Build | Unicode install / ASCII-space fallback | Shared CLI passed / failed (twice each) | Scoped uninstall |
+| --- | --- | --- | --- | --- |
+| [TypeScript](typescript.json) | passed | failed / passed | 11 / 0 | passed |
+| [Python](python.json) | failed | not-tested / not-tested | not-tested | not-tested |
+| [Rust](rust.json) | passed | failed / passed | 1 / 10 | passed |
+| [Go](go.json) | passed | failed / passed | 11 / 0 | passed |
+
+Three native candidates produced 66 invocations: 46 satisfied unchanged CLI
+expectations, 20 Rust invocations failed (exit 4, internal diagnostics after
+build-schema masking). Only Rust's refusal to execute `run` passed. None of
+these results repair the pre-existing full-library semantic/fidelity failures.
+
+All three native `tar.exe` extractions failed on the Unicode prefix with
+`could not chdir` and replacement characters. Same-archive ASCII-space installs
+succeeded and content remained unchanged. All 33 Unicode input staging probes
+failed in this native harness; unchanged cases used verified ASCII-space inputs
+as supplemental evidence. This is not a Unicode compatibility pass. Original
+[four early records](attempts/10253c7/typescript.json) and
+[early archive checks](initial-archive-verification.json) retain the previous
+no-CLI extraction failures; later collector rejections remain linked in receipts.
+
+Existing setup could not provision CPython 3.12.14 for Windows AMD64. The
+collector observed and refused 3.12.10; no alternate version was accepted.
+Hash-locked wheel provisioning also refused the Windows conditional `colorama`
+dependency of `build==1.3.0`, absent from the frozen lock. A specifically approved
+native CPython provisioning path and scoped shared-lock repair are required
+before a valid Python Windows artifact/run, not a silent version fallback.
+
+All jobs used Windows Server 2025 build 26100, image `20260925.250.1`.
+TypeScript/Rust matched the frozen fingerprint; Python/Go recorded CPU drift.
+Those records are supplemental, not one matched four-candidate benchmark cohort.
+Rust/Go Authenticode queries returned empty fields, so signatures remain
+unavailable/not-tested, not verified. Offline OS denial, previous-artifact
+upgrade/rollback, signing, native closure, advisory/license remediation and
+architecture gates remain open. Capsules made during this task are not invented
+as historical upgrade predecessors. Temporary CI capsules have seven-day
+retention; tracked receipts are durable, not a package publication.

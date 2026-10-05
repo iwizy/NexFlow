@@ -1,0 +1,222 @@
+{
+  "task": "NF-056-14",
+  "recordedAt": "2026-10-05T11:55:21.767Z",
+  "candidate": "python",
+  "target": "windows/amd64",
+  "sourceRevision": "76141dfbeae265cb636d99a6164b097ce5d3019a",
+  "specificationRevision": "1d1fa238ab5729a79bee9389d5c66cfd20a61256",
+  "evaluationPackageRevision": "a8301a7478587c59502dfb2e6bd548489c14ee2b",
+  "corpusSha256": "01b116005f0650ac980194b22c02188289eaf1e8626b227aecf3684ece0d8f6b",
+  "catalogSha256": "f1bf8cb786442a212e14c79eb39279a2cdbf05ec20b09901374359d545d74e90",
+  "collectorRevision": "fd80b4b0aad9369ead64f1b94aefb3ce9097fc15",
+  "collectorSources": [
+    {
+      "path": "scripts/runtime-windows-lifecycle.mjs",
+      "sha256": "73c3efdaf554783dc130037c58959bc83a0a5fe9ea8ed2cc7244c29896c2394b"
+    },
+    {
+      "path": "scripts/lib/windows-lifecycle-evidence.mjs",
+      "sha256": "b1227e2742376d439fe4e070f2b8491d390d9869dd5214d26967916bef1fba96"
+    },
+    {
+      "path": ".github/workflows/windows-lifecycle.yml",
+      "sha256": "90a2c42ed64f71225126dfd0509a8bed2cf6eeca76f1502bda7df8f61d91eff5"
+    }
+  ],
+  "environment": {
+    "target": "windows/amd64",
+    "platform": "win32",
+    "architecture": "x64",
+    "runnerLabel": "windows-2025",
+    "imageOS": "win25-vs2026",
+    "imageVersion": "20260925.250.1",
+    "osVersion": "10.0.26100",
+    "osBuild": "26100",
+    "osCaption": "Microsoft Windows Server 2025 Datacenter",
+    "kernel": "10.0.26100",
+    "libc": null,
+    "cpuModel": "AMD EPYC 9V74 80-Core Processor                ",
+    "cpuCount": 4,
+    "memoryBytes": 17174360064,
+    "translated": false,
+    "cohortCheck": {
+      "fingerprint": "not-matched",
+      "blockers": [
+        "environment-drift:cpuModel"
+      ],
+      "candidateEvaluation": "not-tested"
+    }
+  },
+  "toolchain": {
+    "node": "v22.23.2",
+    "npm": "10.9.8",
+    "python": "Python 3.12.10"
+  },
+  "sourceManifest": [
+    {
+      "path": "evaluation/prototypes/python/.python-version",
+      "sha256": "f50159fad3f4319868eb38717b91d55843c41e9803014c8de05e116a6d0bcfdc"
+    },
+    {
+      "path": "evaluation/prototypes/python/cli.py",
+      "sha256": "ac602e08999c07b14215c577b38b411e3c298b902f5700db681a61839c5d1fe5"
+    },
+    {
+      "path": "evaluation/prototypes/python/library_driver.py",
+      "sha256": "8ac9022f2ca7189949eb2a82f5931a84d2f345667dfbb950999e9f3753a42989"
+    },
+    {
+      "path": "evaluation/prototypes/python/nexflow_python_evaluation/__init__.py",
+      "sha256": "f015f1cd4e1fa45461731c05c28dff01b5667304df86ae7fea12b012afeef220"
+    },
+    {
+      "path": "evaluation/prototypes/python/nexflow_python_evaluation/discovery.py",
+      "sha256": "42e101935704f55f43b57252e5c9b60f1fb21186f1adc687e76831a6dc45ca88"
+    },
+    {
+      "path": "evaluation/prototypes/python/nexflow_python_evaluation/files.py",
+      "sha256": "4bbf3e9894d39e0309c00198783c983c312c119618e3612889e5eebb3ee74eaf"
+    },
+    {
+      "path": "evaluation/prototypes/python/nexflow_python_evaluation/inspection.py",
+      "sha256": "5a49f74f3ed434e462f0b64403f91af33685681e0b5f2d801cb238fd25aee0c7"
+    },
+    {
+      "path": "evaluation/prototypes/python/nexflow_python_evaluation/library.py",
+      "sha256": "f3f41fdcf853c65fa9324fb8169d52b96d2157ef373a56495712d20766d5b373"
+    },
+    {
+      "path": "evaluation/prototypes/python/nexflow_python_evaluation/model.py",
+      "sha256": "2429b1e2ac8ca511f6074a43f28a1d2f8e287675fc8cffbcf1ee573a3334a440"
+    },
+    {
+      "path": "evaluation/prototypes/python/nexflow_python_evaluation/schema.py",
+      "sha256": "19438a6510f72a00d2b8b8f5a680295cef071d88e327e3540ca92c6959c99bd9"
+    },
+    {
+      "path": "evaluation/prototypes/python/nexflow_python_evaluation/yaml_input.py",
+      "sha256": "4c460e98505c283e46dee355b500afcab3a18aa807e75384d816e4cdab8daa63"
+    },
+    {
+      "path": "evaluation/prototypes/python/requirements.in",
+      "sha256": "ea3c75d351cd8d5139af5031b2c39f890b45dfe545f80b5d521d8947c3c62640"
+    },
+    {
+      "path": "evaluation/prototypes/python/requirements.lock",
+      "sha256": "1c0cf5c9c6e11afd14c878b66e9e70f550f4d56def426b81fd0f15dd20a32dc2"
+    },
+    {
+      "path": "evaluation/prototypes/python/self_test.py",
+      "sha256": "d8ef910edaf75233bd2aa59cbb5b777d658af599012f4a85bf7ce5241d1aca8b"
+    }
+  ],
+  "sourceManifestSha256": "d248b12078004a37aedbde7e35314151aa8521f53540b27cc0675053f4c2cf1d",
+  "lockfiles": [
+    {
+      "path": "evaluation/prototypes/python/requirements.lock",
+      "sha256": "1c0cf5c9c6e11afd14c878b66e9e70f550f4d56def426b81fd0f15dd20a32dc2"
+    }
+  ],
+  "supplyChain": {
+    "revision": "fed105367da915347a92896eb67c0446d9e9b2d7",
+    "inventorySha256": "211c124ec6dabc1b4fa8ac858adec46cce4fd170eeb29f57c638d4cb2525c9ee",
+    "status": "partial",
+    "remediation": "none"
+  },
+  "buildCommands": [],
+  "nativeBinaries": [
+    {
+      "role": "external-node-runtime",
+      "machine": 34404,
+      "sha256": "0d0f5e39f9f3d9587bc19f73eab3c2c9c4903fd02d6dbf9c853dd81b3d95fad4"
+    }
+  ],
+  "artifact": null,
+  "previousArtifact": null,
+  "installation": {
+    "commands": [],
+    "installedPrefixVerified": false,
+    "scope": "private evaluation prefix only; ASCII fallback is supplemental, not a Unicode path pass"
+  },
+  "isolation": {
+    "network": "not-tested",
+    "filesystem": "not-tested",
+    "credential": "not-tested",
+    "buildSchemasHidden": false,
+    "scope": "Fresh hosted VM and clean temporary prefix are not an OS sandbox."
+  },
+  "execution": {
+    "cases": []
+  },
+  "pathProbes": [],
+  "signatures": [],
+  "stages": {
+    "build": {
+      "status": "failed",
+      "evidence": [
+        "Expected values to be strictly equal:\n+ actual - expected\n\n+ 'Python 3.12.10'\n- 'Python 3.12.14'\n                ^\n"
+      ]
+    },
+    "install": {
+      "status": "not-tested",
+      "evidence": [
+        "Not reached or unavailable; not evidence of a pass."
+      ]
+    },
+    "validateInspect": {
+      "status": "not-tested",
+      "evidence": [
+        "Not reached or unavailable; not evidence of a pass."
+      ]
+    },
+    "offlineUse": {
+      "status": "not-tested",
+      "evidence": [
+        "No verified Windows OS network/filesystem/credential denial harness in this authorized experiment; offline use and security isolation are not-tested."
+      ]
+    },
+    "upgrade": {
+      "status": "not-tested",
+      "evidence": [
+        "No genuine previous Windows evaluation capsule in the retained artifact inventory; upgrade and rollback require one."
+      ]
+    },
+    "rollback": {
+      "status": "not-tested",
+      "evidence": [
+        "No genuine previous Windows evaluation capsule in the retained artifact inventory; upgrade and rollback require one."
+      ]
+    },
+    "uninstall": {
+      "status": "not-tested",
+      "evidence": [
+        "Not reached or unavailable; not evidence of a pass."
+      ]
+    },
+    "signing": {
+      "status": "not-tested",
+      "evidence": [
+        "No specifically authorized signing certificate or publisher identity; Authenticode observation is not approved package signing."
+      ]
+    }
+  },
+  "blockers": [
+    "No verified Windows OS network/filesystem/credential denial harness in this authorized experiment; offline use and security isolation are not-tested.",
+    "No genuine previous Windows evaluation capsule in the retained artifact inventory; upgrade and rollback require one.",
+    "No specifically authorized signing certificate or publisher identity; Authenticode observation is not approved package signing.",
+    "Native toolchain/provisioning/build blocker: Expected values to be strictly equal:\n+ actual - expected\n\n+ 'Python 3.12.10'\n- 'Python 3.12.14'\n                ^\n"
+  ],
+  "immutability": {
+    "sources": true,
+    "locks": true,
+    "corpus": true
+  },
+  "distributionGate": "partial",
+  "outcome": "not-ready",
+  "limitations": [
+    "No product lifecycle or stable system-wide installed command; no support or architecture acceptance.",
+    "Frozen fingerprint drift is supplemental, not a target-contract change.",
+    "Existing advisory/license risks remain open; interpreter/MSVC/native prerequisites are not bundled closure.",
+    "Native execution is not performance evidence or full 352-case library parity."
+  ]
+}

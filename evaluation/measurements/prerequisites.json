@@ -1,0 +1,430 @@
+{
+  "task": "NF-056-15",
+  "checkedAt": "2026-10-05T13:40:32Z",
+  "scope": "Published bounded evidence deliverables and exact-head CI only; not successful architecture gates.",
+  "pullRequests": [
+    {
+      "task": "NF-056-02",
+      "number": 90,
+      "url": "https://github.com/iwizy/NexFlow/pull/90",
+      "state": "MERGED",
+      "base": "main",
+      "head": "dec5f1a2037ca72dd5a93799a7376e35c5938569",
+      "merge": "e3a8fbee5ac5b509fe8a10b10a56f022f36e527b",
+      "checks": [
+        {
+          "name": "CLI prototype checks",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/36847082481/job/110319680358",
+          "completedAt": "2026-10-01T10:08:01Z"
+        },
+        {
+          "name": "Environment (linux/amd64)",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/36847082647/job/110319680661",
+          "completedAt": "2026-10-01T10:07:14Z"
+        },
+        {
+          "name": "schema-validation",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/36847082451/job/110319679338",
+          "completedAt": "2026-10-01T10:07:24Z"
+        },
+        {
+          "name": "Environment (macos/arm64)",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/36847082647/job/110319680143",
+          "completedAt": "2026-10-01T10:07:21Z"
+        },
+        {
+          "name": "Environment (windows/amd64)",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/36847082647/job/110319680578",
+          "completedAt": "2026-10-01T10:07:28Z"
+        }
+      ]
+    },
+    {
+      "task": "NF-056-09",
+      "number": 101,
+      "url": "https://github.com/iwizy/NexFlow/pull/101",
+      "state": "MERGED",
+      "base": "main",
+      "head": "1c9aa13c46175255d989edda5f6e677d1a723952",
+      "merge": "a357309c7737d94b13330513da3deb20eef2b8f8",
+      "checks": [
+        {
+          "name": "CLI prototype checks",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37128487895/job/111218609455",
+          "completedAt": "2026-10-03T14:07:24Z"
+        },
+        {
+          "name": "Environment (linux/amd64)",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37128487947/job/111218609454",
+          "completedAt": "2026-10-03T14:06:49Z"
+        },
+        {
+          "name": "initial-validation",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37128487936/job/111218609364",
+          "completedAt": "2026-10-03T14:07:12Z"
+        },
+        {
+          "name": "schema-validation",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37128487924/job/111218609205",
+          "completedAt": "2026-10-03T14:06:58Z"
+        },
+        {
+          "name": "initial-validation",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37128487868/job/111218608914",
+          "completedAt": "2026-10-03T14:07:02Z"
+        },
+        {
+          "name": "Environment (macos/arm64)",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37128487947/job/111218609366",
+          "completedAt": "2026-10-03T14:06:57Z"
+        },
+        {
+          "name": "Environment (windows/amd64)",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37128487947/job/111218609507",
+          "completedAt": "2026-10-03T14:07:09Z"
+        }
+      ]
+    },
+    {
+      "task": "NF-056-12",
+      "number": 105,
+      "url": "https://github.com/iwizy/NexFlow/pull/105",
+      "state": "MERGED",
+      "base": "main",
+      "head": "96a36bfdfc5b18380f0faf95d42f5c1cb52803a8",
+      "merge": "3ffe720c5844212e5eea7f84f11d0f5bd150b7c7",
+      "checks": [
+        {
+          "name": "CLI prototype checks",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37216583272/job/111478209280",
+          "completedAt": "2026-10-04T16:24:07Z"
+        },
+        {
+          "name": "Environment (linux/amd64)",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37216583349/job/111478209600",
+          "completedAt": "2026-10-04T16:23:36Z"
+        },
+        {
+          "name": "initial-validation",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37216583269/job/111478209133",
+          "completedAt": "2026-10-04T16:24:13Z"
+        },
+        {
+          "name": "Linux lifecycle (typescript)",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37216583274/job/111478209367",
+          "completedAt": "2026-10-04T16:23:41Z"
+        },
+        {
+          "name": "initial-validation",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37216583289/job/111478209362",
+          "completedAt": "2026-10-04T16:24:02Z"
+        },
+        {
+          "name": "initial-validation",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37216583263/job/111478209163",
+          "completedAt": "2026-10-04T16:24:14Z"
+        },
+        {
+          "name": "schema-validation",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37216583386/job/111478209564",
+          "completedAt": "2026-10-04T16:23:46Z"
+        },
+        {
+          "name": "initial-validation",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37216583264/job/111478209203",
+          "completedAt": "2026-10-04T16:23:44Z"
+        },
+        {
+          "name": "Environment (macos/arm64)",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37216583349/job/111478209621",
+          "completedAt": "2026-10-04T16:23:44Z"
+        },
+        {
+          "name": "Linux lifecycle (python)",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37216583274/job/111478209392",
+          "completedAt": "2026-10-04T16:23:39Z"
+        },
+        {
+          "name": "Environment (windows/amd64)",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37216583349/job/111478209486",
+          "completedAt": "2026-10-04T16:23:58Z"
+        },
+        {
+          "name": "Linux lifecycle (rust)",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37216583274/job/111478209177",
+          "completedAt": "2026-10-04T16:23:37Z"
+        },
+        {
+          "name": "Linux lifecycle (go)",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37216583274/job/111478209321",
+          "completedAt": "2026-10-04T16:23:36Z"
+        }
+      ]
+    },
+    {
+      "task": "NF-056-13",
+      "number": 107,
+      "url": "https://github.com/iwizy/NexFlow/pull/107",
+      "state": "OPEN",
+      "base": "main",
+      "head": "eb3088e53765be0562d3ba9770f451c83e50b83b",
+      "merge": null,
+      "checks": [
+        {
+          "name": "CLI prototype checks",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37297580838/job/111722349306",
+          "completedAt": "2026-10-05T10:36:46Z"
+        },
+        {
+          "name": "Environment (linux/amd64)",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37297580804/job/111722348374",
+          "completedAt": "2026-10-05T10:35:58Z"
+        },
+        {
+          "name": "initial-validation",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37297580802/job/111722347692",
+          "completedAt": "2026-10-05T10:36:36Z"
+        },
+        {
+          "name": "initial-validation",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37297580840/job/111722348107",
+          "completedAt": "2026-10-05T10:36:23Z"
+        },
+        {
+          "name": "initial-validation",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37297580862/job/111722348008",
+          "completedAt": "2026-10-05T10:36:33Z"
+        },
+        {
+          "name": "schema-validation",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37297580908/job/111722348156",
+          "completedAt": "2026-10-05T10:36:09Z"
+        },
+        {
+          "name": "initial-validation",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37297580929/job/111722348760",
+          "completedAt": "2026-10-05T10:36:09Z"
+        },
+        {
+          "name": "Environment (macos/arm64)",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37297580804/job/111722348498",
+          "completedAt": "2026-10-05T10:36:01Z"
+        },
+        {
+          "name": "Environment (windows/amd64)",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37297580804/job/111722348169",
+          "completedAt": "2026-10-05T10:36:17Z"
+        }
+      ]
+    },
+    {
+      "task": "NF-056-14",
+      "number": 108,
+      "url": "https://github.com/iwizy/NexFlow/pull/108",
+      "state": "OPEN",
+      "base": "main",
+      "head": "166ea9e79959c9620e7a6777f95c923b79fb3ec2",
+      "merge": null,
+      "checks": [
+        {
+          "name": "CLI prototype checks",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37306766940/job/111752213498",
+          "completedAt": "2026-10-05T12:02:47Z"
+        },
+        {
+          "name": "Environment (linux/amd64)",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37306766844/job/111752212937",
+          "completedAt": "2026-10-05T12:02:13Z"
+        },
+        {
+          "name": "initial-validation",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37306766758/job/111752211983",
+          "completedAt": "2026-10-05T12:02:44Z"
+        },
+        {
+          "name": "initial-validation",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37306766757/job/111752211943",
+          "completedAt": "2026-10-05T12:02:39Z"
+        },
+        {
+          "name": "initial-validation",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37306766832/job/111752212164",
+          "completedAt": "2026-10-05T12:02:50Z"
+        },
+        {
+          "name": "schema-validation",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37306766804/job/111752212707",
+          "completedAt": "2026-10-05T12:02:29Z"
+        },
+        {
+          "name": "initial-validation",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37306766899/job/111752212283",
+          "completedAt": "2026-10-05T12:02:23Z"
+        },
+        {
+          "name": "Windows lifecycle (typescript)",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37306766854/job/111752213663",
+          "completedAt": "2026-10-05T12:02:44Z"
+        },
+        {
+          "name": "Environment (macos/arm64)",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37306766844/job/111752212021",
+          "completedAt": "2026-10-05T12:02:18Z"
+        },
+        {
+          "name": "Windows lifecycle (python)",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37306766854/job/111752212656",
+          "completedAt": "2026-10-05T12:02:36Z"
+        },
+        {
+          "name": "Environment (windows/amd64)",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37306766844/job/111752212336",
+          "completedAt": "2026-10-05T12:02:37Z"
+        },
+        {
+          "name": "Windows lifecycle (rust)",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37306766854/job/111752213012",
+          "completedAt": "2026-10-05T12:02:52Z"
+        },
+        {
+          "name": "Windows lifecycle (go)",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37306766854/job/111752212904",
+          "completedAt": "2026-10-05T12:02:36Z"
+        }
+      ]
+    }
+  ],
+  "lifecycleSources": [
+    {
+      "target": "linux",
+      "candidate": "typescript",
+      "path": "evaluation/lifecycle/linux/typescript.json",
+      "revision": "96a36bfdfc5b18380f0faf95d42f5c1cb52803a8",
+      "sha256": "f79771af6de200ff996e715f2f5e4df3eef15c00ddb99e50e78ab6ed4393a237"
+    },
+    {
+      "target": "linux",
+      "candidate": "python",
+      "path": "evaluation/lifecycle/linux/python.json",
+      "revision": "96a36bfdfc5b18380f0faf95d42f5c1cb52803a8",
+      "sha256": "29ad78f76592639898b8168f003f7e1108a8794fbc5f93cc3d79e4cfdfb643a6"
+    },
+    {
+      "target": "linux",
+      "candidate": "rust",
+      "path": "evaluation/lifecycle/linux/rust.json",
+      "revision": "96a36bfdfc5b18380f0faf95d42f5c1cb52803a8",
+      "sha256": "4517acec7f9f3c5a0675c183dec8f2622b10b80fc2bf4b6b089cb163f67b3a3b"
+    },
+    {
+      "target": "linux",
+      "candidate": "go",
+      "path": "evaluation/lifecycle/linux/go.json",
+      "revision": "96a36bfdfc5b18380f0faf95d42f5c1cb52803a8",
+      "sha256": "037f591e2bc28882875d649317715cbfc304e333df9b77cb71ff1de73983f18d"
+    },
+    {
+      "target": "macos",
+      "candidate": "typescript",
+      "path": "evaluation/lifecycle/macos/typescript.json",
+      "revision": "eb3088e53765be0562d3ba9770f451c83e50b83b",
+      "sha256": "308728f0be7de84ddc0d207f9be8a5f5fba3e50e560d99c4d16dbcbe1b7a913a"
+    },
+    {
+      "target": "macos",
+      "candidate": "python",
+      "path": "evaluation/lifecycle/macos/python.json",
+      "revision": "eb3088e53765be0562d3ba9770f451c83e50b83b",
+      "sha256": "0f1f47bde9d2821d15bc4160b28b57270ea0fd8e83e10e76efd89b5763196d45"
+    },
+    {
+      "target": "macos",
+      "candidate": "rust",
+      "path": "evaluation/lifecycle/macos/rust.json",
+      "revision": "eb3088e53765be0562d3ba9770f451c83e50b83b",
+      "sha256": "5efc0fdcd5cb5703e779f74a1adcf07fa9e208b7c89ca1271b06d523471642d3"
+    },
+    {
+      "target": "macos",
+      "candidate": "go",
+      "path": "evaluation/lifecycle/macos/go.json",
+      "revision": "eb3088e53765be0562d3ba9770f451c83e50b83b",
+      "sha256": "dde00ff6d69416a7dd37b6cf9042551abbffba509469c1a78a36d82aad572101"
+    },
+    {
+      "target": "windows",
+      "candidate": "typescript",
+      "path": "evaluation/lifecycle/windows/typescript.json",
+      "revision": "166ea9e79959c9620e7a6777f95c923b79fb3ec2",
+      "sha256": "7dfcd33132dda53204b8694e0b71106a5d7d4ab88f1beecdae19c90ecbbd3439"
+    },
+    {
+      "target": "windows",
+      "candidate": "python",
+      "path": "evaluation/lifecycle/windows/python.json",
+      "revision": "166ea9e79959c9620e7a6777f95c923b79fb3ec2",
+      "sha256": "3bd049de96a30b015a3bc52da1899bb3bd2b99c5b2f21af52652dd19e1850308"
+    },
+    {
+      "target": "windows",
+      "candidate": "rust",
+      "path": "evaluation/lifecycle/windows/rust.json",
+      "revision": "166ea9e79959c9620e7a6777f95c923b79fb3ec2",
+      "sha256": "076aa081b74854bb9fd1e4bec8000d870a894011d114556e4002a0f3e442f87e"
+    },
+    {
+      "target": "windows",
+      "candidate": "go",
+      "path": "evaluation/lifecycle/windows/go.json",
+      "revision": "166ea9e79959c9620e7a6777f95c923b79fb3ec2",
+      "sha256": "bf9a427adac59117df9b1d8962c496ca1576eb90a5841dcab498584679905d1b"
+    }
+  ]
+}

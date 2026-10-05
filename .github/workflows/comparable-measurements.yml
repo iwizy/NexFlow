@@ -1,0 +1,30 @@
+name: Comparable Measurement Evidence
+
+on:
+  pull_request:
+  push:
+    branches: [main, develop]
+
+permissions:
+  contents: read
+
+jobs:
+  measurement-evidence:
+    name: Measurement gap evidence
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: "22.23.2"
+      - name: Fetch immutable published prerequisite evidence
+        run: |
+          git fetch --no-tags https://github.com/iwizy/NexFlow.git eb3088e53765be0562d3ba9770f451c83e50b83b 166ea9e79959c9620e7a6777f95c923b79fb3ec2
+      - name: Install pinned maintenance tooling
+        run: npm ci --ignore-scripts
+      - name: Verify source-bound records and rejection controls
+        run: npm run runtime-comparable-measurements-smoke

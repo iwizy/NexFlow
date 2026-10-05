@@ -32,6 +32,11 @@ The [Windows AMD64 lifecycle review](lifecycle/windows/README.md) records native
 capsule build/install/execution results separately from untested offline OS
 denial, previous-artifact upgrade/rollback and signing gates.
 
+The [cross-target measurement gap record](measurements/README.md) binds all seven
+metrics for four candidates and three targets to exact published lifecycle and
+fidelity evidence. Historical capsule sizes are observations, not comparable
+benchmarks; missing samples and failed gates remain explicit.
+
 The [offline/denied-effects experiment](isolation/README.md) adds independent
 positive/negative OS controls and bounded native macOS evidence. It keeps
 security residuals, other targets and architecture acceptance separate.

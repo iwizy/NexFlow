@@ -8,6 +8,11 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Added
 
+- Added native macOS ARM64 evaluation-capsule packaging, isolated installed
+  validate/inspect/offline observations and scoped uninstall evidence. Cohort
+  drift, failed relocation, missing predecessor artifacts and untested
+  Developer ID/notarization remain explicit; no product publication or version change.
+
 - Recorded a dated `0.2` validation/conformance checkpoint with all eight
   criteria, exact-source maintenance results, compatibility and diagnostic/
   conformance limits, plus offline consistency and rejection checks in CI.

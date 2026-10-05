@@ -1,0 +1,35 @@
+{
+  "task": "NF-056-13",
+  "checkedAt": "2026-10-05T10:31:04.014Z",
+  "method": "independent fresh extraction; SHA-256, byte size and every manifest file checked; no additional candidate execution",
+  "records": [
+    {
+      "candidate": "typescript",
+      "archiveSha256": "60b7184b59b7d951479fa8e14a2f5f4a7938a051fa651828c376ab730709c669",
+      "bytes": 586042,
+      "verifiedFiles": 839,
+      "result": "passed"
+    },
+    {
+      "candidate": "python",
+      "archiveSha256": "4bb21d503776162572b7e8ba1109c8ff5263962e9aced49b6da3b0d0478e09ce",
+      "bytes": 3927933,
+      "verifiedFiles": 49,
+      "result": "passed"
+    },
+    {
+      "candidate": "rust",
+      "archiveSha256": "a9d5b45b707d1540605adcd813a78196852d4ced10eb1b8d5c049790ed782749",
+      "bytes": 4391879,
+      "verifiedFiles": 33,
+      "result": "passed"
+    },
+    {
+      "candidate": "go",
+      "archiveSha256": "03bdf5f0bc9f45645a2faf270b772884398bd82106e0605db7a9ca5d8a2778aa",
+      "bytes": 3507675,
+      "verifiedFiles": 36,
+      "result": "passed"
+    }
+  ]
+}

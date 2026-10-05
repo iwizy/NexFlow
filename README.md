@@ -35,6 +35,11 @@ exact-candidate evaluation passed and its own evidence is attached to
 [v0.3.0](https://github.com/iwizy/NexFlow/releases/tag/v0.3.0).
 See the [changelog](CHANGELOG.md).
 
+The dated [0.2 validation/conformance checkpoint](docs/0.2-validation-checkpoint.md)
+adds a later exact-source assessment and reproducible checks. It preserves the
+published release history, partial semantics and draft conformance boundaries;
+it is not another release or a new support claim.
+
 The published release sequence is **`0.1` → `0.2` → `0.3`**, with separate
 [validation/conformance](release/0.2-release-review.md) and
 [semantic-consistency](release/0.3-release-review.md) reviews and commit-bound
@@ -332,8 +337,9 @@ the complete documentation catalog.
 
 The current priorities are:
 
-1. Review `v0.1.0` feedback and continue the `0.2` validation and conformance
-   work without widening runtime claims.
+1. Review feedback from the published `0.1` / `0.2` / `0.3` milestones and
+   continue scoped validation/conformance hardening without widening runtime
+   claims; use the [dated checkpoint](docs/0.2-validation-checkpoint.md).
 2. Review the ActorSet, compact AgentSet, active-definition authority, human
    override, Agent Assembly inspection, and typed-reference primitive slices
    before broader field or example migration.

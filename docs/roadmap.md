@@ -23,6 +23,10 @@ The [release reviews](../release/README.md) preserve partial semantics, Draft
 RFCs, and blocked architecture/tooling claims. The next milestone is to close
 the `0.4` architecture decision gates; no runtime implementation is implied.
 
+The dated [0.2 validation/conformance checkpoint](0.2-validation-checkpoint.md)
+consolidates later source evidence and remaining gaps. It does not rewrite the
+published `0.2` decision, refresh a conformance claim or unblock `0.4` / `0.5`.
+
 The repository currently provides the following specification evidence:
 
 - a documented draft specification and manifest reference

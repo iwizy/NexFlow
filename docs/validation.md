@@ -33,6 +33,7 @@ Related design notes:
 | [Examples Validation Walkthrough](examples-validation-walkthrough.md) | Reproducible path through repository validation, one selected assembly, declared inspection, static graphing, and an intentional failure. |
 | [Diagnostic Code Catalog](diagnostic-code-catalog.md) | Draft code families, severities, messages, remediation, and implementation status. |
 | [Conformance](conformance.md) | Requirements for claiming schema, semantic, CLI, runtime, or extension support. |
+| [0.2 Validation And Conformance Checkpoint](0.2-validation-checkpoint.md) | Dated criterion assessment and reproducible source checks, separate from published release and support decisions. |
 | [Compatibility Matrix](compatibility-matrix.md) | Evidence-backed status and explicit implementation gaps. |
 
 Examples and fixtures serve different purposes. Examples demonstrate coherent
@@ -148,6 +149,17 @@ The check verifies local Markdown link targets, requires every first-level
 `docs/*.md` page to be linked from the documentation index, and requires the
 root README to link the repository's main guides. It does not fetch external
 URLs, evaluate prose correctness, or establish specification conformance.
+
+The dated validation/conformance checkpoint has a separate consistency check:
+
+```sh
+npm run validation-checkpoint-smoke
+```
+
+It checks eight-criterion coverage, immutable source and historical release
+identity, check inventory, version boundaries and non-approval with negative
+controls. It does not rerun or approve a release, certify implementation
+behavior, refresh the older validator claim or fetch external evidence.
 
 For a worked path from the broad repository check through Minimal Team,
 Software Team, static inspection and graphing, and one intentional failure, use

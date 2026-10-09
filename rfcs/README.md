@@ -50,6 +50,10 @@ or imply that an implemented slice accepts the entire RFC.
   rule for [Draft RFC-0023](RFC-0023-runtime-architecture-decision.md). Its
   [source-bound bundle](reviews/runtime-architecture-decision-draft.json) maps
   all eleven gates to evidence and blockers. No runtime decision is accepted.
+- [Runtime Reviewer And Ownership Record — 2026-10-09](reviews/2026-10-09-runtime-reviewer-ownership.md)
+  records NF-101's two unconfirmed reviewer slots and seven pending maintenance
+  roles against exact Draft/report revisions. It does not appoint people, supply
+  consent or complete NF-101, independent technical review or architecture acceptance.
 
 ## When to Write an RFC
 

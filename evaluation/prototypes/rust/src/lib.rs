@@ -4,6 +4,7 @@ pub mod files;
 pub mod inspection;
 pub mod schema;
 pub mod yaml;
+pub mod semantics;
 
 use serde_json::{Value, json};
 use std::{collections::BTreeSet, path::Path};
@@ -156,9 +157,7 @@ pub fn evaluate_library_case(entry: &Value, root: &Path, schemas: &SchemaEngine)
             }
             assembly.diagnostics.iter().map(|issue| json!({"code":issue["code"]})).collect()
         },
-        "semantic-fragment" | "workflow-namespace" | "artifact-namespace" => {
-            result["valid"] = Value::Null; result["status"] = json!("not-implemented"); return Ok(result);
-        },
+        "semantic-fragment" | "workflow-namespace" | "artifact-namespace" => semantics::semantic_operation(op, input),
         _ => return Err("unsupported library operation"),
     };
     result["valid"] = json!(issues.is_empty());

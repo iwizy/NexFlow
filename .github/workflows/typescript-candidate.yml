@@ -36,3 +36,4 @@ jobs:
           npm run runtime-typescript-prototype-smoke
           node scripts/runtime-evaluation-run.mjs --command '["node","evaluation/prototypes/typescript/dist/cli.js"]'
           node scripts/runtime-typescript-library-run.mjs
+          node scripts/runtime-evaluation-repair-run.mjs typescript --summary

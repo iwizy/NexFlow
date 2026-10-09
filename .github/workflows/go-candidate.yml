@@ -49,3 +49,4 @@ jobs:
           npm run runtime-go-prototype-smoke
           node scripts/runtime-evaluation-run.mjs --command '["evaluation/prototypes/go/bin/nexflow-go-evaluation"]'
           node scripts/runtime-go-library-run.mjs evaluation/prototypes/go/bin/library-driver
+          node scripts/runtime-evaluation-repair-run.mjs go '["evaluation/prototypes/go/bin/library-driver"]' --summary

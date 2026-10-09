@@ -119,6 +119,8 @@ jobs:
       - name: Verify validation checkpoint evidence and non-approval
         run: npm run validation-checkpoint-smoke
 
+      - name: Verify native validation repair evidence
+        run: node scripts/runtime-evaluation-repair-evidence-smoke.mjs
       - name: Verify candidate toolchain locks and capability records
         run: npm run runtime-toolchain-smoke
 

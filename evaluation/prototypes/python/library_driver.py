@@ -14,7 +14,7 @@ def main():
     if len(encoded) > 4 * 1024 * 1024:
         raise ValueError("library packet exceeds budget")
     packet = json.loads(encoded)
-    if not isinstance(packet, list) or len(packet) != 352:
+    if not isinstance(packet, list) or not 1 <= len(packet) <= 4096:
         raise ValueError("invalid library packet")
     schemas, results = repository_schemas(), []
     for entry in packet:

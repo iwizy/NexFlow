@@ -236,11 +236,11 @@ func TestUnsupportedCommandBeforeInputs(t *testing.T) {
 		t.Fatal("unsupported command accessed input")
 	}
 }
-func TestLibraryUnsupportedHonestResult(t *testing.T) {
+func TestLibraryNativeSemanticsDoNotExecute(t *testing.T) {
 	for _, operation := range []string{"semantic-fragment", "workflow-namespace", "artifact-namespace"} {
 		result, err := EvaluateLibraryCase(map[string]any{"id": "test", "operation": operation}, "not-present", nil)
-		if err != nil || result["status"] != "not-implemented" || result["valid"] != nil {
-			t.Fatal("unsupported case reported as pass")
+		if err != nil || result["status"] != nil || result["valid"] != true {
+			t.Fatal("native empty fragment result missing")
 		}
 	}
 }

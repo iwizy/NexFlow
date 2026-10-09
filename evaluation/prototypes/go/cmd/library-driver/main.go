@@ -30,7 +30,7 @@ func run() error {
 		return err
 	}
 	var extra any
-	if decoder.Decode(&extra) != io.EOF || len(entries) != 352 {
+	if decoder.Decode(&extra) != io.EOF || len(entries) == 0 || len(entries) > 4096 {
 		return errors.New("invalid packet")
 	}
 	results := []any{}

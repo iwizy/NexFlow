@@ -5,11 +5,11 @@ use std::{io::{self, Read}, path::PathBuf};
 fn run() -> Result<(), &'static str> {
     let args: Vec<_> = std::env::args().skip(1).collect(); if args.len() != 1 { return Err("invalid arguments"); }
     let root = PathBuf::from(&args[0]);
-    let schemas = SchemaEngine::repository(&PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("../../../schemas"))?;
+    let schemas = SchemaEngine::bundled()?;
     let mut bytes = Vec::new(); io::stdin().take(4 * 1024 * 1024 + 1).read_to_end(&mut bytes).map_err(|_| "invalid input")?;
     if bytes.len() > 4 * 1024 * 1024 { return Err("input budget"); }
     let packet: Vec<Value> = serde_json::from_slice(&bytes).map_err(|_| "invalid JSON")?;
-    if packet.len() != 352 { return Err("invalid catalog"); }
+    if packet.is_empty() || packet.len() > 4096 { return Err("invalid catalog"); }
     let mut results = Vec::new();
     for entry in packet {
         let before = entry.clone();

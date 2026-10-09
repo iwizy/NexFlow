@@ -41,3 +41,4 @@ jobs:
           npm run runtime-python-prototype-smoke
           node scripts/runtime-evaluation-run.mjs --command '[".venv/bin/python","-I","-B","evaluation/prototypes/python/cli.py"]'
           node scripts/runtime-python-library-run.mjs .venv/bin/python
+          node scripts/runtime-evaluation-repair-run.mjs python '[".venv/bin/python","-I","-B","evaluation/prototypes/python/library_driver.py"]' --summary

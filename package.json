@@ -49,6 +49,7 @@
     "runtime-macos-lifecycle-smoke": "node scripts/runtime-macos-lifecycle-smoke.mjs",
     "runtime-windows-lifecycle-smoke": "node scripts/runtime-windows-lifecycle-smoke.mjs",
     "runtime-comparable-measurements-smoke": "node scripts/runtime-comparable-measurements-smoke.mjs",
+    "runtime-architecture-alternatives-smoke": "node scripts/runtime-architecture-alternatives-smoke.mjs",
     "runtime-isolation-smoke": "node scripts/runtime-isolation-smoke.mjs",
     "semantic-smoke": "node scripts/semantic-reference-smoke.mjs",
     "typed-reference-schema-smoke": "node scripts/typed-reference-schema-smoke.mjs",

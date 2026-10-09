@@ -35,6 +35,9 @@ jobs:
       - name: Verify Windows lifecycle records and honest open gates
         run: npm run runtime-windows-lifecycle-smoke
 
+      - name: Verify unselected architecture alternatives and pending ownership
+        run: npm run runtime-architecture-alternatives-smoke
+
       - name: Verify feature lifecycle inventory and claim boundaries
         run: npm run feature-status-registry-smoke
 

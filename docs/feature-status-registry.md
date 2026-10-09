@@ -94,6 +94,7 @@ specific experimental/deprecated/planned rows below do not overwrite that stage.
 | `rfc:RFC-0020` | GitHub Extension Profile proposal | Draft | [Owning RFC](../rfcs/RFC-0020-github-extension-profile.md), [scope](../extensions/github/README.md). Experimental offline policy profile exists; no client, webhook receiver or repository mutation. |
 | `rfc:RFC-0021` | Issue Tracker Extension Profile proposal | Draft | [Owning RFC](../rfcs/RFC-0021-issue-tracker-extension-profile.md), [scope](../extensions/issue-tracker/README.md). Experimental policy profile and checks exist; no issue adapter or live synchronization. |
 | `rfc:RFC-0022` | Security Policy Composition proposal | Draft | [Owning RFC](../rfcs/RFC-0022-security-policy-composition.md), [scope](security-model.md). Composition proposal and manual scenarios only; no complete policy evaluator or OS isolation. |
+| `rfc:RFC-0023` | Runtime Architecture Decision discussion packet | Draft | [Owning RFC](../rfcs/RFC-0023-runtime-architecture-decision.md), [review bundle](../rfcs/reviews/runtime-architecture-decision-draft.json). Eleven blocked mandatory gates, four ineligible candidates and pending human decisions; no language/layout, owner consent or architecture acceptance. |
 
 ## Experimental Implementation Slices
 

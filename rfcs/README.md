@@ -33,6 +33,7 @@ schema or prototype implementation does not change a Draft RFC to Accepted.
 | [RFC-0020](RFC-0020-github-extension-profile.md) | GitHub Extension Profile | Draft; machine-readable profile implemented |
 | [RFC-0021](RFC-0021-issue-tracker-extension-profile.md) | Issue Tracker Extension Profile | Draft; machine-readable policy profile and offline checks implemented |
 | [RFC-0022](RFC-0022-security-policy-composition.md) | Security Policy Composition | Draft |
+| [RFC-0023](RFC-0023-runtime-architecture-decision.md) | Runtime Architecture Decision | Draft; not-ready, no language/layout selected |
 
 The [0.1 Candidate Scope](../docs/0.1-scope.md) records how each RFC is treated
 by the frozen candidate boundary. That treatment does not change an RFC's stage
@@ -46,8 +47,9 @@ or imply that an implemented slice accepts the entire RFC.
   Draft.
 - [Runtime Architecture Decision Review](reviews/runtime-architecture-decision-review.md)
   defines the mandatory evidence, review gates, blocker classes, and acceptance
-  rule for the future Runtime Architecture Decision RFC. No runtime decision
-  has been accepted.
+  rule for [Draft RFC-0023](RFC-0023-runtime-architecture-decision.md). Its
+  [source-bound bundle](reviews/runtime-architecture-decision-draft.json) maps
+  all eleven gates to evidence and blockers. No runtime decision is accepted.
 
 ## When to Write an RFC
 

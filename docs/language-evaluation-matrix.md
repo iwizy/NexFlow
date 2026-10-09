@@ -263,6 +263,10 @@ No completed independent scorecards or accepted architecture decision exist.
 The [assembled report packet](../evaluation/reports/README.md) retains four
 schema-valid/ineligible candidate assessments and separate blank review forms;
 templates do not constitute independent scores or reconciliation.
+The [Draft Runtime Architecture Decision RFC](../rfcs/RFC-0023-runtime-architecture-decision.md)
+and [source-bound review bundle](../rfcs/reviews/runtime-architecture-decision-draft.json)
+map all eleven mandatory acceptance gates to retained evidence and blockers;
+the Draft remains not-ready with no language/layout selection or sign-off.
 TypeScript, Python, Rust, and Go remain candidates. Runtime implementation must
 not begin until the evidence is reviewed and the Runtime Architecture Decision
 is accepted under the published review gates.

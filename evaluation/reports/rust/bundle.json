@@ -1,0 +1,697 @@
+{
+  "formatVersion": "0.1-draft",
+  "task": "NF-056-17",
+  "candidate": "rust",
+  "recordedAt": "2026-10-09",
+  "sourceSnapshot": "dfa11b50dcde79154a066c41983b708190b05643",
+  "specificationRevision": "1d1fa238ab5729a79bee9389d5c66cfd20a61256",
+  "evaluationPackageRevision": "a8301a7478587c59502dfb2e6bd548489c14ee2b",
+  "prototypeRevision": "4fdf0cc8e69e050600d0a5d8f7f1f42987f68203",
+  "corpusSha256": "01b116005f0650ac980194b22c02188289eaf1e8626b227aecf3684ece0d8f6b",
+  "catalogSha256": "f1bf8cb786442a212e14c79eb39279a2cdbf05ec20b09901374359d545d74e90",
+  "candidateReport": {
+    "path": "evaluation/reports/rust/candidate.json",
+    "sha256": "b129a39e1bccbd72d9590f3406a86d7d682d243f7469e56cef795811c5f9c472",
+    "schemaValid": true,
+    "assessment": {
+      "outcome": "ineligible",
+      "blockers": [
+        "report-not-complete",
+        "untested-hard-gate",
+        "missing-independent-review",
+        "missing-measurements"
+      ]
+    }
+  },
+  "sources": [
+    {
+      "path": "evaluation/baseline.json",
+      "revision": "dfa11b50dcde79154a066c41983b708190b05643",
+      "sha256": "7cd10254220dd565f4473be0c0e44d99f2ec9ab42e906717536c38ab01492834",
+      "url": "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/baseline.json"
+    },
+    {
+      "path": "evaluation/fidelity/source-pins.json",
+      "revision": "dfa11b50dcde79154a066c41983b708190b05643",
+      "sha256": "2920a349c0bf6c3afae190e1eba97ec464541ca35a90a2119287a724aad23f8d",
+      "url": "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/fidelity/source-pins.json"
+    },
+    {
+      "path": "evaluation/library-cases.json",
+      "revision": "dfa11b50dcde79154a066c41983b708190b05643",
+      "sha256": "f1bf8cb786442a212e14c79eb39279a2cdbf05ec20b09901374359d545d74e90",
+      "url": "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/library-cases.json"
+    },
+    {
+      "path": "evaluation/library-inventory.json",
+      "revision": "dfa11b50dcde79154a066c41983b708190b05643",
+      "sha256": "6759ad8f4faa3960f2704d1d74ea5ac733286815180dd72b9b6fe7762e680324",
+      "url": "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/library-inventory.json"
+    },
+    {
+      "path": "evaluation/architecture/alternatives.json",
+      "revision": "dfa11b50dcde79154a066c41983b708190b05643",
+      "sha256": "eaedfcc96127945b8b1f5a45781e66759ea8ff33de2e369673d734a28418cefc",
+      "url": "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/architecture/alternatives.json"
+    },
+    {
+      "path": "evaluation/candidate-report.schema.json",
+      "revision": "dfa11b50dcde79154a066c41983b708190b05643",
+      "sha256": "fbfad3cafbd179c17ed754852c9098a6f41a44bb665bf6730259c1c94fb051d7",
+      "url": "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/candidate-report.schema.json"
+    },
+    {
+      "path": "evaluation/candidates/rust.json",
+      "revision": "dfa11b50dcde79154a066c41983b708190b05643",
+      "sha256": "684b2775e9521f46bc34e706593c5a0a9170312efa4a59c032825b9b36e9ebfd",
+      "url": "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/candidates/rust.json"
+    },
+    {
+      "path": "evaluation/fidelity/rust.json",
+      "revision": "dfa11b50dcde79154a066c41983b708190b05643",
+      "sha256": "1f118c4e45dd803e9bbd87877d48f1489ecf4d6eb9e9ec6aaff0d14f502c4bf3",
+      "url": "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/fidelity/rust.json"
+    },
+    {
+      "path": "evaluation/isolation/rust.json",
+      "revision": "dfa11b50dcde79154a066c41983b708190b05643",
+      "sha256": "c8dda6758d960524500a47072f39702dab6801a76240eab80193f6327bebe344",
+      "url": "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/isolation/rust.json"
+    },
+    {
+      "path": "evaluation/supply-chain/rust/inventory.json",
+      "revision": "dfa11b50dcde79154a066c41983b708190b05643",
+      "sha256": "19eeaa651d54dabd2726e76c253e40979ce5d1964a2d4d9e605754f8ea0f58c3",
+      "url": "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/supply-chain/rust/inventory.json"
+    },
+    {
+      "path": "evaluation/supply-chain/rust/sbom.cdx.json",
+      "revision": "dfa11b50dcde79154a066c41983b708190b05643",
+      "sha256": "7a7501d1722725bb9350edd9a8a2df29e43bd764ec8d0abe3088e42c09d35524",
+      "url": "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/supply-chain/rust/sbom.cdx.json"
+    },
+    {
+      "path": "evaluation/supply-chain/rust/advisories.json",
+      "revision": "dfa11b50dcde79154a066c41983b708190b05643",
+      "sha256": "f9bf6a701c6966b93d9ae71e5e328fff15913a2154fbb5c22c160cef62848e1a",
+      "url": "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/supply-chain/rust/advisories.json"
+    },
+    {
+      "path": "evaluation/lifecycle/linux/rust.json",
+      "revision": "dfa11b50dcde79154a066c41983b708190b05643",
+      "sha256": "4517acec7f9f3c5a0675c183dec8f2622b10b80fc2bf4b6b089cb163f67b3a3b",
+      "url": "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/lifecycle/linux/rust.json"
+    },
+    {
+      "path": "evaluation/lifecycle/macos/rust.json",
+      "revision": "dfa11b50dcde79154a066c41983b708190b05643",
+      "sha256": "5efc0fdcd5cb5703e779f74a1adcf07fa9e208b7c89ca1271b06d523471642d3",
+      "url": "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/lifecycle/macos/rust.json"
+    },
+    {
+      "path": "evaluation/lifecycle/windows/rust.json",
+      "revision": "dfa11b50dcde79154a066c41983b708190b05643",
+      "sha256": "076aa081b74854bb9fd1e4bec8000d870a894011d114556e4002a0f3e442f87e",
+      "url": "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/lifecycle/windows/rust.json"
+    },
+    {
+      "path": "evaluation/measurements/rust.json",
+      "revision": "dfa11b50dcde79154a066c41983b708190b05643",
+      "sha256": "00559091ece5b8d165e19393d245a2460992d7ee97aa8a30f226285fd98a7fa4",
+      "url": "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/measurements/rust.json"
+    }
+  ],
+  "fidelity": {
+    "counts": {
+      "failed": 0,
+      "not-tested": 224,
+      "passed": 128
+    },
+    "fullCatalogCases": 352,
+    "unsupportedByOperation": {
+      "semantic-fragment": 211,
+      "workflow-namespace": 8,
+      "artifact-namespace": 5
+    },
+    "gates": {
+      "deterministicDiagnostics": {
+        "reason": "Repeated supported diagnostics tested; full semantic/namespace diagnostics unavailable.",
+        "status": "not-tested"
+      },
+      "specificationFidelity": {
+        "reason": "224 mandatory semantic/namespace cases remain unsupported; partial schema success cannot close fidelity.",
+        "status": "failed"
+      }
+    },
+    "limitations": [
+      "Library code/path/category are compared only where the frozen operation supplies them; library severity absent is not invented or treated as checked.",
+      "Native driver checks cover JSON input objects, while corpus/CLI snapshots cover reviewed source files and copied fixture contents; no OS deny or global-write proof.",
+      "One synthetic schema-field/value canary and absolute-root guards are not complete secret detection or OS isolation.",
+      "No candidate code, common catalog, oracle, architecture scores, distribution or performance measurements changed."
+    ]
+  },
+  "isolation": {
+    "recordedAt": "2026-10-04T12:55:57.402Z",
+    "environment": {
+      "platform": "darwin",
+      "architecture": "arm64",
+      "osVersion": "27.0.1",
+      "osBuild": "26A434",
+      "node": "v22.23.2",
+      "mode": "native-source-bound-os-deny",
+      "inheritedEnvironment": "allowlisted",
+      "inheritedDescriptors": "stdio-only-by-spawn-contract"
+    },
+    "targetContractMatch": false,
+    "offlineOperation": {
+      "status": "passed",
+      "scope": "21 CLI scenarios twice after separate cached provisioning with active OS network denial"
+    },
+    "securityBoundary": {
+      "status": "partial",
+      "scope": "tested deny controls and bounded CLI scenarios, not complete architecture security approval"
+    },
+    "limitations": [
+      "Local macOS 27 ARM64 is supplemental, not the frozen macos-15 CI image/cohort; no target lifecycle or performance evidence.",
+      "Seatbelt profile starts allow-default then denies network/process/file effects; system reads, parent-directory enumeration and global file metadata remain allowed.",
+      "Mach IPC, keychain brokers, inherited OS facilities, replacement races, devices, resource exhaustion and every possible secret channel are not fully tested.",
+      "Synthetic canaries are not real credentials; redaction checks cover only declared scenarios and do not establish a general secret detector.",
+      "Compiled source artifacts and separate pinned caches are not signed provenance, release artifacts or supply-chain acceptance.",
+      "Original candidate scorecards and all failed fidelity/unsupported semantic gates remain unchanged."
+    ]
+  },
+  "supplyChain": {
+    "recordedAt": "2026-10-04T13:53:54.711Z",
+    "collectorRevision": "f8f66a9122d73a195698966785d968cdd395de7b",
+    "status": "partial",
+    "components": 74,
+    "unknownLicenseCount": 0,
+    "advisoryReview": {
+      "status": "no-matches-not-security-pass",
+      "reachability": "not-tested",
+      "fixesApplied": false,
+      "queryCount": 74,
+      "matchedPackageCount": 0,
+      "advisoryRecords": 0,
+      "uniqueCveAliases": [],
+      "unprocessedAdvisoryIds": []
+    },
+    "advisoryCompletedAt": "2026-10-04T13:55:16.004Z",
+    "refreshed": false,
+    "openRisks": [
+      "no-independent-license-approval",
+      "no-signed-artifact-provenance",
+      "no-reproducible-build-proof",
+      "incomplete-native-runtime-compiler-closure",
+      "no-distribution-lifecycle"
+    ],
+    "limitations": [
+      "Dependency metadata and licenses are declarations, not independent legal approval.",
+      "Checksums bind observed bytes; no signed build attestation, signing or reproducibility claim.",
+      "This native macOS source-bound experiment is not a frozen target cohort or a Linux/Windows distribution.",
+      "OS/runtime/compiler bundled dependency closure and operating-system vulnerability coverage are incomplete.",
+      "No package manager offline flag or virtual environment establishes an OS security boundary.",
+      "Package/version advisory matches do not establish reachability; absence does not certify security."
+    ]
+  },
+  "targets": [
+    {
+      "target": "linux/amd64",
+      "environment": {
+        "target": "linux/amd64",
+        "platform": "linux",
+        "architecture": "x64",
+        "runnerLabel": "ubuntu-24.04",
+        "imageOS": "ubuntu24",
+        "imageVersion": "20260927.320.1",
+        "osVersion": "24.04",
+        "osBuild": "6.17.0-1022-azure",
+        "osCaption": "Ubuntu 24.04.5 LTS",
+        "kernel": "6.17.0-1022-azure",
+        "libc": "glibc 2.39",
+        "cpuModel": "AMD EPYC 7763 64-Core Processor",
+        "cpuCount": 4,
+        "memoryBytes": 16766414848,
+        "translated": false
+      },
+      "frozenCheck": {
+        "matched": false,
+        "blockers": [
+          "environment-drift:imageVersion",
+          "environment-drift:cpuModel"
+        ]
+      },
+      "observedToolchain": {
+        "node": "v22.23.2",
+        "npm": "10.9.8",
+        "rust": "rustc 1.99.0 (b940084d7 2026-09-28)",
+        "cargo": "cargo 1.99.0 (5f94df478 2026-08-27)"
+      },
+      "stages": {
+        "build": "passed",
+        "install": "passed",
+        "validateInspect": "failed",
+        "offlineUse": "failed",
+        "upgrade": "not-tested",
+        "rollback": "not-tested",
+        "uninstall": "passed",
+        "signing": "not-tested"
+      },
+      "distributionGate": "partial",
+      "artifact": {
+        "classification": "historical-observation-not-comparable",
+        "measuredAt": "2026-10-04T14:34:10.278Z",
+        "collectorRevision": "de6b25428e040a2968493c442e8f2e68d12e48b0",
+        "version": "4fdf0cc8e69e050600d0a5d8f7f1f42987f68203.linux.amd64.de6b25428e040a2968493c442e8f2e68d12e48b0",
+        "sha256": "c30e08c9bca9159a67eb9c382fb004772de6de6a928a8f8c9a12ba43a2e0bdca",
+        "archiveBytes": 2881007,
+        "payloadFileCount": 20,
+        "payloadFileBytes": 8822353,
+        "footprintScope": "Sum of manifest file bytes only; excludes filesystem overhead, installer virtualenv expansion, external interpreters/runtimes and native closure.",
+        "externalRuntime": "Target native/system dependencies remain separately reviewed",
+        "source": {
+          "target": "linux",
+          "candidate": "rust",
+          "path": "evaluation/lifecycle/linux/rust.json",
+          "revision": "96a36bfdfc5b18380f0faf95d42f5c1cb52803a8",
+          "sha256": "4517acec7f9f3c5a0675c183dec8f2622b10b80fc2bf4b6b089cb163f67b3a3b"
+        }
+      },
+      "blockers": [
+        "fresh-common-candidate-cohort-not-tested",
+        "full-library-workload-unsupported",
+        "instrument-version-and-native-accounting-not-tested",
+        "raw-measurement-runs-not-tested",
+        "retained-environment-not-frozen",
+        "installed-validation-failed",
+        "offline-lifecycle-not-passed"
+      ],
+      "lifecycleLimitations": [
+        "Source-layout capsule only; no stable installed entry point or support claim.",
+        "External exact interpreter/runtime and native system libraries are prerequisites.",
+        "Build schema masking tests relocatability; it does not certify complete filesystem/credential isolation.",
+        "Frozen measurement cohort may drift; no performance comparison or target contract update.",
+        "Supply-chain advisories and unknown licenses remain unremediated; target-specific license/provenance closure is not approved.",
+        "Previous artifact, upgrade, rollback and signing remain not-tested."
+      ],
+      "metrics": [
+        {
+          "metric": "coldStartMs",
+          "unit": "ms",
+          "status": "not-tested",
+          "sampleCount": 0,
+          "median": null,
+          "comparisonEligible": false
+        },
+        {
+          "metric": "validationMs",
+          "unit": "ms",
+          "status": "not-tested",
+          "sampleCount": 0,
+          "median": null,
+          "comparisonEligible": false
+        },
+        {
+          "metric": "peakMemoryBytes",
+          "unit": "bytes",
+          "status": "not-tested",
+          "sampleCount": 0,
+          "median": null,
+          "comparisonEligible": false
+        },
+        {
+          "metric": "artifactBytes",
+          "unit": "bytes",
+          "status": "not-tested",
+          "sampleCount": 0,
+          "median": null,
+          "comparisonEligible": false
+        },
+        {
+          "metric": "cleanBuildMs",
+          "unit": "ms",
+          "status": "not-tested",
+          "sampleCount": 0,
+          "median": null,
+          "comparisonEligible": false
+        },
+        {
+          "metric": "cachedBuildMs",
+          "unit": "ms",
+          "status": "not-tested",
+          "sampleCount": 0,
+          "median": null,
+          "comparisonEligible": false
+        },
+        {
+          "metric": "ciMs",
+          "unit": "ms",
+          "status": "not-tested",
+          "sampleCount": 0,
+          "median": null,
+          "comparisonEligible": false
+        }
+      ]
+    },
+    {
+      "target": "macos/arm64",
+      "environment": {
+        "target": "macos/arm64",
+        "platform": "darwin",
+        "architecture": "arm64",
+        "runnerLabel": "local-native",
+        "imageOS": null,
+        "imageVersion": null,
+        "osVersion": "27.0.1",
+        "osBuild": "26A434",
+        "kernel": "27.0.0",
+        "cpuModel": "Apple M4 Pro",
+        "cpuCount": 14,
+        "memoryBytes": 51539607552,
+        "libc": null,
+        "translated": false,
+        "nativeArm64": true
+      },
+      "frozenCheck": {
+        "matched": false,
+        "blockers": [
+          "wrong-runner-label",
+          "incomplete-environment",
+          "wrong-os-family-or-translation",
+          "environment-drift:runnerLabel",
+          "environment-drift:imageOS",
+          "environment-drift:imageVersion",
+          "environment-drift:osVersion",
+          "environment-drift:osBuild",
+          "environment-drift:kernel",
+          "environment-drift:cpuModel",
+          "environment-drift:cpuCount",
+          "environment-drift:memoryBytes"
+        ]
+      },
+      "observedToolchain": "rustc/Cargo 1.99.0; jsonschema 0.58.4; yaml-rust2 0.11.0",
+      "stages": {
+        "package": "passed",
+        "install": "passed",
+        "validateInspect": "failed",
+        "offlineUse": "failed",
+        "upgrade": "not-tested",
+        "rollback": "not-tested",
+        "uninstall": "passed",
+        "signing": "not-tested",
+        "notarization": "not-tested"
+      },
+      "distributionGate": "partial",
+      "artifact": {
+        "classification": "historical-observation-not-comparable",
+        "measuredAt": "2026-10-05T10:29:17.220Z",
+        "collectorRevision": "7dcfcdb8beed08d0f0329dc83f1bd9add54d6625",
+        "version": "4fdf0cc8e69e050600d0a5d8f7f1f42987f68203.macos.arm64.7dcfcdb8beed08d0f0329dc83f1bd9add54d6625",
+        "sha256": "a9d5b45b707d1540605adcd813a78196852d4ced10eb1b8d5c049790ed782749",
+        "archiveBytes": 4391879,
+        "payloadFileCount": 33,
+        "payloadFileBytes": 17824570,
+        "footprintScope": "Sum of manifest file bytes only; excludes filesystem overhead, installer virtualenv expansion, external interpreters/runtimes and native closure.",
+        "externalRuntime": "Target native/system dependencies remain separately reviewed",
+        "source": {
+          "target": "macos",
+          "candidate": "rust",
+          "path": "evaluation/lifecycle/macos/rust.json",
+          "revision": "eb3088e53765be0562d3ba9770f451c83e50b83b",
+          "sha256": "5efc0fdcd5cb5703e779f74a1adcf07fa9e208b7c89ca1271b06d523471642d3"
+        }
+      },
+      "blockers": [
+        "fresh-common-candidate-cohort-not-tested",
+        "full-library-workload-unsupported",
+        "instrument-version-and-native-accounting-not-tested",
+        "raw-measurement-runs-not-tested",
+        "retained-environment-not-frozen",
+        "installed-validation-failed",
+        "offline-lifecycle-not-passed"
+      ],
+      "lifecycleLimitations": [
+        "Native local macOS differs from frozen macos-15 image/CPU/memory; supplemental lifecycle only, not common benchmark cohort.",
+        "Private source-layout evaluation capsule only; no stable installed entry point, public package, supported distribution or product release.",
+        "Native payloads reuse verified supply-chain builds; new clean/cached build performance and reproducibility remain not-tested.",
+        "External exact Node/CPython and system libraries remain prerequisites; native dependency closure, license and advisory risks stay open.",
+        "Allow-default Seatbelt template tests bounded effects; metadata/system reads, Mach IPC, keychain brokers, inherited facilities and races are not completely isolated.",
+        "Archive extraction and venv provisioning are trusted task-local setup, not OS-sandboxed installation or a complete offline installer.",
+        "codesign inspection describes existing bytes only; ad-hoc signatures are not Developer ID approval/notarization. No signature policy or ticket lifecycle tested.",
+        "No predecessor artifact, upgrade/rollback, authorized signing/notarization, architecture acceptance or full fidelity gate is claimed."
+      ],
+      "metrics": [
+        {
+          "metric": "coldStartMs",
+          "unit": "ms",
+          "status": "not-tested",
+          "sampleCount": 0,
+          "median": null,
+          "comparisonEligible": false
+        },
+        {
+          "metric": "validationMs",
+          "unit": "ms",
+          "status": "not-tested",
+          "sampleCount": 0,
+          "median": null,
+          "comparisonEligible": false
+        },
+        {
+          "metric": "peakMemoryBytes",
+          "unit": "bytes",
+          "status": "not-tested",
+          "sampleCount": 0,
+          "median": null,
+          "comparisonEligible": false
+        },
+        {
+          "metric": "artifactBytes",
+          "unit": "bytes",
+          "status": "not-tested",
+          "sampleCount": 0,
+          "median": null,
+          "comparisonEligible": false
+        },
+        {
+          "metric": "cleanBuildMs",
+          "unit": "ms",
+          "status": "not-tested",
+          "sampleCount": 0,
+          "median": null,
+          "comparisonEligible": false
+        },
+        {
+          "metric": "cachedBuildMs",
+          "unit": "ms",
+          "status": "not-tested",
+          "sampleCount": 0,
+          "median": null,
+          "comparisonEligible": false
+        },
+        {
+          "metric": "ciMs",
+          "unit": "ms",
+          "status": "not-tested",
+          "sampleCount": 0,
+          "median": null,
+          "comparisonEligible": false
+        }
+      ]
+    },
+    {
+      "target": "windows/amd64",
+      "environment": {
+        "target": "windows/amd64",
+        "platform": "win32",
+        "architecture": "x64",
+        "runnerLabel": "windows-2025",
+        "imageOS": "win25-vs2026",
+        "imageVersion": "20260925.250.1",
+        "osVersion": "10.0.26100",
+        "osBuild": "26100",
+        "osCaption": "Microsoft Windows Server 2025 Datacenter",
+        "kernel": "10.0.26100",
+        "libc": null,
+        "cpuModel": "AMD EPYC 7763 64-Core Processor                ",
+        "cpuCount": 4,
+        "memoryBytes": 17174360064,
+        "translated": false
+      },
+      "frozenCheck": {
+        "matched": true,
+        "blockers": []
+      },
+      "observedToolchain": {
+        "node": "v22.23.2",
+        "npm": "10.9.8",
+        "rust": "rustc 1.99.0 (b940084d7 2026-09-28)",
+        "cargo": "cargo 1.99.0 (5f94df478 2026-08-27)",
+        "target": "host: x86_64-pc-windows-msvc"
+      },
+      "stages": {
+        "build": "passed",
+        "install": "failed",
+        "validateInspect": "failed",
+        "offlineUse": "not-tested",
+        "upgrade": "not-tested",
+        "rollback": "not-tested",
+        "uninstall": "passed",
+        "signing": "not-tested"
+      },
+      "distributionGate": "partial",
+      "artifact": {
+        "classification": "historical-observation-not-comparable",
+        "measuredAt": "2026-10-05T11:57:13.545Z",
+        "collectorRevision": "fd80b4b0aad9369ead64f1b94aefb3ce9097fc15",
+        "version": "4fdf0cc8e69e050600d0a5d8f7f1f42987f68203.windows.amd64.fd80b4b0aad9369ead64f1b94aefb3ce9097fc15",
+        "sha256": "2ac546ebe7a1b2bf13ba5e5932848e30dbec9910f185235c0d1619ba210da616",
+        "archiveBytes": 2420375,
+        "payloadFileCount": 20,
+        "payloadFileBytes": 6809809,
+        "footprintScope": "Sum of manifest file bytes only; excludes filesystem overhead, installer virtualenv expansion, external interpreters/runtimes and native closure.",
+        "externalRuntime": "Target native/system dependencies remain separately reviewed",
+        "source": {
+          "target": "windows",
+          "candidate": "rust",
+          "path": "evaluation/lifecycle/windows/rust.json",
+          "revision": "166ea9e79959c9620e7a6777f95c923b79fb3ec2",
+          "sha256": "076aa081b74854bb9fd1e4bec8000d870a894011d114556e4002a0f3e442f87e"
+        }
+      },
+      "blockers": [
+        "fresh-common-candidate-cohort-not-tested",
+        "full-library-workload-unsupported",
+        "instrument-version-and-native-accounting-not-tested",
+        "raw-measurement-runs-not-tested",
+        "installed-validation-failed",
+        "unicode-install-failed",
+        "offline-lifecycle-not-passed"
+      ],
+      "lifecycleLimitations": [
+        "No product lifecycle or stable system-wide installed command; no support or architecture acceptance.",
+        "Frozen fingerprint drift is supplemental, not a target-contract change.",
+        "Existing advisory/license risks remain open; interpreter/MSVC/native prerequisites are not bundled closure.",
+        "Native execution is not performance evidence or full 352-case library parity."
+      ],
+      "metrics": [
+        {
+          "metric": "coldStartMs",
+          "unit": "ms",
+          "status": "not-tested",
+          "sampleCount": 0,
+          "median": null,
+          "comparisonEligible": false
+        },
+        {
+          "metric": "validationMs",
+          "unit": "ms",
+          "status": "not-tested",
+          "sampleCount": 0,
+          "median": null,
+          "comparisonEligible": false
+        },
+        {
+          "metric": "peakMemoryBytes",
+          "unit": "bytes",
+          "status": "not-tested",
+          "sampleCount": 0,
+          "median": null,
+          "comparisonEligible": false
+        },
+        {
+          "metric": "artifactBytes",
+          "unit": "bytes",
+          "status": "not-tested",
+          "sampleCount": 0,
+          "median": null,
+          "comparisonEligible": false
+        },
+        {
+          "metric": "cleanBuildMs",
+          "unit": "ms",
+          "status": "not-tested",
+          "sampleCount": 0,
+          "median": null,
+          "comparisonEligible": false
+        },
+        {
+          "metric": "cachedBuildMs",
+          "unit": "ms",
+          "status": "not-tested",
+          "sampleCount": 0,
+          "median": null,
+          "comparisonEligible": false
+        },
+        {
+          "metric": "ciMs",
+          "unit": "ms",
+          "status": "not-tested",
+          "sampleCount": 0,
+          "median": null,
+          "comparisonEligible": false
+        }
+      ]
+    }
+  ],
+  "gateMapping": {
+    "specificationFidelity": {
+      "reportStatus": "failed",
+      "reason": "224 mandatory semantic/namespace cases remain unsupported."
+    },
+    "deterministicDiagnostics": {
+      "reportStatus": "not-tested",
+      "reason": "Supported subset repeats; full semantic/namespace diagnostics unavailable."
+    },
+    "offlineOperation": {
+      "reportStatus": "failed",
+      "reason": "Supplemental macOS and installed Linux/macOS results are bounded; Windows denial is not-tested; installed Rust offline validation fails."
+    },
+    "reproducibleDependencies": {
+      "reportStatus": "not-tested",
+      "reason": "Pinned locks exist; complete native/runtime closure and reproducible build proof are unresolved."
+    },
+    "distributionTargets": {
+      "reportStatus": "failed",
+      "reason": "Actual stage failures remain failed; partial lifecycle is not a target pass. Predecessor upgrade/rollback and signing are not-tested."
+    },
+    "securityBoundary": {
+      "reportStatus": "not-tested",
+      "reason": "Partial scoped controls do not establish the complete architecture security gate."
+    },
+    "supplyChainEvidence": {
+      "reportStatus": "not-tested",
+      "reason": "Archived acceptance is partial; dated advisories, unknown licenses and closure/provenance gaps remain."
+    },
+    "providerNeutrality": {
+      "reportStatus": "not-tested",
+      "reason": "Validation-only evidence and absence of provider execution do not establish a complete reviewed architecture gate."
+    },
+    "scopeIntegrity": {
+      "reportStatus": "not-tested",
+      "reason": "Prototype is validation-only; no full architecture hard-gate review or runtime claim is inferred."
+    }
+  },
+  "prerequisiteReceiptSha256": "a2e291e0f235670d8c87a210119682dc8508e94695c01053a3e3f83c8b604546",
+  "independentReview": {
+    "status": "pending",
+    "appointedReviewers": [],
+    "scores": null,
+    "reconciliation": null
+  },
+  "ownership": "pending; NF-101 requires actual appointments and consent",
+  "outcome": "not-ready",
+  "selection": null,
+  "scores": null,
+  "limitations": [
+    "NF-056-17 assembles archived evidence only; candidate evaluation remains in-progress and the decision packet not-ready.",
+    "352 full-catalog cases: 128 passed, zero tested failures, 224 not-tested; specification fidelity failed. Unsupported agreement is not a pass.",
+    "This report schema has no partial state: retained partial gates/targets map to not-tested with their actual scope preserved in the companion bundle; known stage failures map to failed.",
+    "All 21 comparable metric cells remain not-tested in the pinned measurement record; measurements is empty because no numeric samples exist. Historical capsule bytes are not comparable metrics.",
+    "Two independent reviewers, scores, reconciliation, ownership/support/signing consent remain pending; no scores, winner, architecture acceptance or release is claimed.",
+    "Advisory evidence is archived from 2026-10-04, not refreshed; no candidate source/lock, vulnerability, relocation or provisioning repairs occurred.",
+    "linux/amd64: fresh-common-candidate-cohort-not-tested, full-library-workload-unsupported, instrument-version-and-native-accounting-not-tested, raw-measurement-runs-not-tested, retained-environment-not-frozen, installed-validation-failed, offline-lifecycle-not-passed",
+    "macos/arm64: fresh-common-candidate-cohort-not-tested, full-library-workload-unsupported, instrument-version-and-native-accounting-not-tested, raw-measurement-runs-not-tested, retained-environment-not-frozen, installed-validation-failed, offline-lifecycle-not-passed",
+    "windows/amd64: fresh-common-candidate-cohort-not-tested, full-library-workload-unsupported, instrument-version-and-native-accounting-not-tested, raw-measurement-runs-not-tested, installed-validation-failed, unicode-install-failed, offline-lifecycle-not-passed"
+  ]
+}

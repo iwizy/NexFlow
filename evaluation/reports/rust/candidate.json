@@ -1,0 +1,142 @@
+{
+  "formatVersion": "0.1-draft",
+  "candidate": "rust",
+  "status": "in-progress",
+  "specificationRevision": "1d1fa238ab5729a79bee9389d5c66cfd20a61256",
+  "corpusSha256": "01b116005f0650ac980194b22c02188289eaf1e8626b227aecf3684ece0d8f6b",
+  "evaluationPackageRevision": "a8301a7478587c59502dfb2e6bd548489c14ee2b",
+  "prototype": {
+    "revision": "4fdf0cc8e69e050600d0a5d8f7f1f42987f68203",
+    "source": "https://github.com/iwizy/NexFlow/tree/4fdf0cc8e69e050600d0a5d8f7f1f42987f68203/evaluation/prototypes/rust",
+    "scope": "validation-only"
+  },
+  "toolchain": {
+    "version": "rustc 1.99.0; Cargo 1.99.0; yaml-rust2 0.11.0; jsonschema 0.58.4; serde_json 1.0.145",
+    "dependencyLock": "https://github.com/iwizy/NexFlow/blob/4fdf0cc8e69e050600d0a5d8f7f1f42987f68203/evaluation/prototypes/rust/Cargo.lock",
+    "buildCommand": "cargo +1.99.0 build --frozen --manifest-path evaluation/prototypes/rust/Cargo.toml"
+  },
+  "targets": [
+    {
+      "os": "linux",
+      "architecture": "amd64",
+      "result": "failed",
+      "evidence": [
+        "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/lifecycle/linux/rust.json"
+      ]
+    },
+    {
+      "os": "macos",
+      "architecture": "arm64",
+      "result": "failed",
+      "evidence": [
+        "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/lifecycle/macos/rust.json"
+      ]
+    },
+    {
+      "os": "windows",
+      "architecture": "amd64",
+      "result": "failed",
+      "evidence": [
+        "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/lifecycle/windows/rust.json"
+      ]
+    }
+  ],
+  "hardGates": {
+    "specificationFidelity": {
+      "status": "failed",
+      "evidence": [
+        "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/fidelity/rust.json"
+      ]
+    },
+    "deterministicDiagnostics": {
+      "status": "not-tested",
+      "evidence": [
+        "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/fidelity/rust.json"
+      ]
+    },
+    "offlineOperation": {
+      "status": "failed",
+      "evidence": [
+        "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/isolation/rust.json",
+        "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/lifecycle/linux/rust.json",
+        "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/lifecycle/macos/rust.json",
+        "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/lifecycle/windows/rust.json"
+      ]
+    },
+    "reproducibleDependencies": {
+      "status": "not-tested",
+      "evidence": [
+        "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/supply-chain/rust/inventory.json"
+      ]
+    },
+    "distributionTargets": {
+      "status": "failed",
+      "evidence": [
+        "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/lifecycle/linux/rust.json",
+        "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/lifecycle/macos/rust.json",
+        "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/lifecycle/windows/rust.json"
+      ]
+    },
+    "securityBoundary": {
+      "status": "not-tested",
+      "evidence": [
+        "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/isolation/rust.json",
+        "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/supply-chain/rust/inventory.json"
+      ]
+    },
+    "supplyChainEvidence": {
+      "status": "not-tested",
+      "evidence": [
+        "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/supply-chain/rust/inventory.json"
+      ]
+    },
+    "providerNeutrality": {
+      "status": "not-tested",
+      "evidence": [
+        "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/fidelity/rust.json",
+        "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/architecture/alternatives.json"
+      ]
+    },
+    "scopeIntegrity": {
+      "status": "not-tested",
+      "evidence": [
+        "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/fidelity/rust.json",
+        "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/architecture/alternatives.json"
+      ]
+    }
+  },
+  "reviewerScorecards": [],
+  "reconciliation": null,
+  "measurements": [],
+  "limitations": [
+    "NF-056-17 assembles archived evidence only; candidate evaluation remains in-progress and the decision packet not-ready.",
+    "352 full-catalog cases: 128 passed, zero tested failures, 224 not-tested; specification fidelity failed. Unsupported agreement is not a pass.",
+    "This report schema has no partial state: retained partial gates/targets map to not-tested with their actual scope preserved in the companion bundle; known stage failures map to failed.",
+    "All 21 comparable metric cells remain not-tested in the pinned measurement record; measurements is empty because no numeric samples exist. Historical capsule bytes are not comparable metrics.",
+    "Two independent reviewers, scores, reconciliation, ownership/support/signing consent remain pending; no scores, winner, architecture acceptance or release is claimed.",
+    "Advisory evidence is archived from 2026-10-04, not refreshed; no candidate source/lock, vulnerability, relocation or provisioning repairs occurred.",
+    "linux/amd64: fresh-common-candidate-cohort-not-tested, full-library-workload-unsupported, instrument-version-and-native-accounting-not-tested, raw-measurement-runs-not-tested, retained-environment-not-frozen, installed-validation-failed, offline-lifecycle-not-passed",
+    "macos/arm64: fresh-common-candidate-cohort-not-tested, full-library-workload-unsupported, instrument-version-and-native-accounting-not-tested, raw-measurement-runs-not-tested, retained-environment-not-frozen, installed-validation-failed, offline-lifecycle-not-passed",
+    "windows/amd64: fresh-common-candidate-cohort-not-tested, full-library-workload-unsupported, instrument-version-and-native-accounting-not-tested, raw-measurement-runs-not-tested, installed-validation-failed, unicode-install-failed, offline-lifecycle-not-passed"
+  ],
+  "evidence": [
+    "https://github.com/iwizy/NexFlow/tree/4fdf0cc8e69e050600d0a5d8f7f1f42987f68203/evaluation/prototypes/rust",
+    "https://github.com/iwizy/NexFlow/blob/4fdf0cc8e69e050600d0a5d8f7f1f42987f68203/evaluation/prototypes/rust/Cargo.lock",
+    "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/baseline.json",
+    "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/fidelity/source-pins.json",
+    "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/library-cases.json",
+    "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/library-inventory.json",
+    "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/architecture/alternatives.json",
+    "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/candidate-report.schema.json",
+    "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/candidates/rust.json",
+    "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/fidelity/rust.json",
+    "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/isolation/rust.json",
+    "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/supply-chain/rust/inventory.json",
+    "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/supply-chain/rust/sbom.cdx.json",
+    "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/supply-chain/rust/advisories.json",
+    "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/lifecycle/linux/rust.json",
+    "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/lifecycle/macos/rust.json",
+    "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/lifecycle/windows/rust.json",
+    "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/measurements/rust.json"
+  ]
+}

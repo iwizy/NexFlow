@@ -1,0 +1,142 @@
+{
+  "formatVersion": "0.1-draft",
+  "candidate": "go",
+  "status": "in-progress",
+  "specificationRevision": "1d1fa238ab5729a79bee9389d5c66cfd20a61256",
+  "corpusSha256": "01b116005f0650ac980194b22c02188289eaf1e8626b227aecf3684ece0d8f6b",
+  "evaluationPackageRevision": "a8301a7478587c59502dfb2e6bd548489c14ee2b",
+  "prototype": {
+    "revision": "737396b6488a9f10b179061366b9f1d02591fb9f",
+    "source": "https://github.com/iwizy/NexFlow/tree/737396b6488a9f10b179061366b9f1d02591fb9f/evaluation/prototypes/go",
+    "scope": "validation-only"
+  },
+  "toolchain": {
+    "version": "Go 1.27.1; jsonschema/v6 6.0.2; go.yaml.in/yaml/v3 3.0.4; CGO_ENABLED=0",
+    "dependencyLock": "https://github.com/iwizy/NexFlow/blob/737396b6488a9f10b179061366b9f1d02591fb9f/evaluation/prototypes/go/go.sum",
+    "buildCommand": "GOTOOLCHAIN=local GOPROXY=off CGO_ENABLED=0 go build -mod=readonly -trimpath -buildvcs=false -o bin/nexflow-go-evaluation ./cmd/cli"
+  },
+  "targets": [
+    {
+      "os": "linux",
+      "architecture": "amd64",
+      "result": "not-tested",
+      "evidence": [
+        "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/lifecycle/linux/go.json"
+      ]
+    },
+    {
+      "os": "macos",
+      "architecture": "arm64",
+      "result": "not-tested",
+      "evidence": [
+        "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/lifecycle/macos/go.json"
+      ]
+    },
+    {
+      "os": "windows",
+      "architecture": "amd64",
+      "result": "failed",
+      "evidence": [
+        "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/lifecycle/windows/go.json"
+      ]
+    }
+  ],
+  "hardGates": {
+    "specificationFidelity": {
+      "status": "failed",
+      "evidence": [
+        "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/fidelity/go.json"
+      ]
+    },
+    "deterministicDiagnostics": {
+      "status": "not-tested",
+      "evidence": [
+        "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/fidelity/go.json"
+      ]
+    },
+    "offlineOperation": {
+      "status": "not-tested",
+      "evidence": [
+        "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/isolation/go.json",
+        "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/lifecycle/linux/go.json",
+        "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/lifecycle/macos/go.json",
+        "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/lifecycle/windows/go.json"
+      ]
+    },
+    "reproducibleDependencies": {
+      "status": "not-tested",
+      "evidence": [
+        "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/supply-chain/go/inventory.json"
+      ]
+    },
+    "distributionTargets": {
+      "status": "failed",
+      "evidence": [
+        "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/lifecycle/linux/go.json",
+        "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/lifecycle/macos/go.json",
+        "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/lifecycle/windows/go.json"
+      ]
+    },
+    "securityBoundary": {
+      "status": "not-tested",
+      "evidence": [
+        "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/isolation/go.json",
+        "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/supply-chain/go/inventory.json"
+      ]
+    },
+    "supplyChainEvidence": {
+      "status": "not-tested",
+      "evidence": [
+        "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/supply-chain/go/inventory.json"
+      ]
+    },
+    "providerNeutrality": {
+      "status": "not-tested",
+      "evidence": [
+        "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/fidelity/go.json",
+        "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/architecture/alternatives.json"
+      ]
+    },
+    "scopeIntegrity": {
+      "status": "not-tested",
+      "evidence": [
+        "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/fidelity/go.json",
+        "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/architecture/alternatives.json"
+      ]
+    }
+  },
+  "reviewerScorecards": [],
+  "reconciliation": null,
+  "measurements": [],
+  "limitations": [
+    "NF-056-17 assembles archived evidence only; candidate evaluation remains in-progress and the decision packet not-ready.",
+    "352 full-catalog cases: 128 passed, zero tested failures, 224 not-tested; specification fidelity failed. Unsupported agreement is not a pass.",
+    "This report schema has no partial state: retained partial gates/targets map to not-tested with their actual scope preserved in the companion bundle; known stage failures map to failed.",
+    "All 21 comparable metric cells remain not-tested in the pinned measurement record; measurements is empty because no numeric samples exist. Historical capsule bytes are not comparable metrics.",
+    "Two independent reviewers, scores, reconciliation, ownership/support/signing consent remain pending; no scores, winner, architecture acceptance or release is claimed.",
+    "Advisory evidence is archived from 2026-10-04, not refreshed; no candidate source/lock, vulnerability, relocation or provisioning repairs occurred.",
+    "linux/amd64: fresh-common-candidate-cohort-not-tested, full-library-workload-unsupported, instrument-version-and-native-accounting-not-tested, raw-measurement-runs-not-tested, retained-environment-not-frozen",
+    "macos/arm64: fresh-common-candidate-cohort-not-tested, full-library-workload-unsupported, instrument-version-and-native-accounting-not-tested, raw-measurement-runs-not-tested, retained-environment-not-frozen",
+    "windows/amd64: fresh-common-candidate-cohort-not-tested, full-library-workload-unsupported, instrument-version-and-native-accounting-not-tested, raw-measurement-runs-not-tested, retained-environment-not-frozen, unicode-install-failed, offline-lifecycle-not-passed"
+  ],
+  "evidence": [
+    "https://github.com/iwizy/NexFlow/tree/737396b6488a9f10b179061366b9f1d02591fb9f/evaluation/prototypes/go",
+    "https://github.com/iwizy/NexFlow/blob/737396b6488a9f10b179061366b9f1d02591fb9f/evaluation/prototypes/go/go.sum",
+    "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/baseline.json",
+    "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/fidelity/source-pins.json",
+    "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/library-cases.json",
+    "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/library-inventory.json",
+    "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/architecture/alternatives.json",
+    "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/candidate-report.schema.json",
+    "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/candidates/go.json",
+    "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/fidelity/go.json",
+    "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/isolation/go.json",
+    "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/supply-chain/go/inventory.json",
+    "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/supply-chain/go/sbom.cdx.json",
+    "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/supply-chain/go/advisories.json",
+    "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/lifecycle/linux/go.json",
+    "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/lifecycle/macos/go.json",
+    "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/lifecycle/windows/go.json",
+    "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/measurements/go.json"
+  ]
+}

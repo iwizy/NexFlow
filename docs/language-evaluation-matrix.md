@@ -260,6 +260,9 @@ fidelity; full diagnostics and comparable performance remain not-tested.
 The [architecture alternatives proposal](../evaluation/architecture/alternatives.md)
 compares all three required layouts without selecting one or confirming owners.
 No completed independent scorecards or accepted architecture decision exist.
+The [assembled report packet](../evaluation/reports/README.md) retains four
+schema-valid/ineligible candidate assessments and separate blank review forms;
+templates do not constitute independent scores or reconciliation.
 TypeScript, Python, Rust, and Go remain candidates. Runtime implementation must
 not begin until the evidence is reviewed and the Runtime Architecture Decision
 is accepted under the published review gates.

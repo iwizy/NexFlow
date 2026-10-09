@@ -6,8 +6,9 @@ A runtime architecture decision must happen before implementation begins.
 
 The decision must be evaluated against the
 [Runtime Architecture Decision Review](../rfcs/reviews/runtime-architecture-decision-review.md).
-The current review outcome is `not-ready`: no decision RFC, common prototype
-evidence, completed scorecards, or accepted implementation choice exists.
+The current review outcome is `not-ready`: initial common prototype evidence
+is published but retains failed/incomplete gates; no completed independent
+scorecards or accepted implementation choice exists.
 
 Language-specific repository maintenance tooling, including schema validation dependencies, does not constitute a runtime implementation or a Runtime Architecture Decision.
 
@@ -28,21 +29,25 @@ Available inputs:
 - explicit CLI command effect budgets and runtime-preflight separation
 - extension loading, provider adapter, and event and audit storage boundaries
 - a mandatory review checklist and acceptance rule
+- four independent validation-only prototypes with published partial fidelity,
+  isolation, supply-chain, lifecycle and measurement-gap records
+- three [architecture alternatives and ownership proposals](../evaluation/architecture/alternatives.md),
+  with no selected layout or confirmed support roles
 
 Open decision blockers:
 
 - no decision RFC proposes one language, architecture layout, package model,
   and exact target matrix
-- no candidate has a completed comparable prototype, hard-gate record,
-  scorecard, or distribution evidence
+- all candidates retain failed specification fidelity and untested full
+  diagnostics; comparable performance and independent scorecards are absent
 - package ownership and cross-package compatibility remain undecided
 - runtime threat, credential, and conformance evidence is incomplete
-- signing, provenance, install, upgrade, rollback, and maintenance ownership
-  are not demonstrated for any candidate
+- installed lifecycle evidence is partial/failed; signing, complete provenance,
+  true predecessor upgrade/rollback and maintenance consent remain unresolved
 
 The next step is evidence closure, not implementation. The project must draft
-the decision proposal, complete the missing boundary inputs, freeze one common
-specification revision, evaluate every candidate, and then record an explicit
+the decision proposal, complete the missing boundary inputs, preserve the frozen
+common specification revision, close candidate evidence gaps, and record an explicit
 review outcome. Existing JavaScript validation tooling gives no candidate a
 presumptive advantage.
 

@@ -252,10 +252,14 @@ arbitrary selection.
 The [Runtime Evaluation Packet](../evaluation/README.md) pins the shared
 specification corpus and initial command cases, fixes confirmed experiment
 targets, and provides non-claiming candidate report templates and rehearsal
-checks. It is a preparation milestone, not candidate evidence or an architecture
-decision.
+checks. Four independent initial prototypes now have published fidelity,
+isolation, supply-chain, lifecycle and measurement-gap records. Their evidence
+is partial: each retains 224 not-tested library cases and failed specification
+fidelity; full diagnostics and comparable performance remain not-tested.
 
-No common prototypes, completed scorecards, or architecture decision exist.
+The [architecture alternatives proposal](../evaluation/architecture/alternatives.md)
+compares all three required layouts without selecting one or confirming owners.
+No completed independent scorecards or accepted architecture decision exist.
 TypeScript, Python, Rust, and Go remain candidates. Runtime implementation must
 not begin until the evidence is reviewed and the Runtime Architecture Decision
 is accepted under the published review gates.

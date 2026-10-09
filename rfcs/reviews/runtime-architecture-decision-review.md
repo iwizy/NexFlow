@@ -4,10 +4,11 @@
 
 Review framework published. No Runtime Architecture Decision has been accepted.
 
-The current repository does not contain a complete decision RFC, common
-candidate prototypes, completed scorecards, or the evidence required to select
-an implementation language. The current review outcome is therefore **not
-ready for decision**.
+Four independent validation-only prototypes and partial evidence records are
+published, together with an unselected architecture alternatives proposal.
+Failed/incomplete hard gates, missing independent scorecards and unconfirmed
+ownership still prevent language/layout selection. No complete accepted decision
+exists. The current review outcome remains **not ready for decision**.
 
 ## Purpose
 
@@ -359,20 +360,26 @@ The repository has useful inputs for a future review:
 - runtime-neutral extension loading and provider adapter boundaries
 - runtime-neutral event and audit storage boundaries
 - provider-neutral manifests and a specification-first roadmap
+- four independent prototypes with source-pinned partial fidelity, isolation,
+  supply-chain, target lifecycle and measurement-gap records
+- three [architecture alternatives](../../evaluation/architecture/alternatives.md)
+  with pure interface, dependency, startup, versioning and pending role proposals
 
 The decision is not ready for acceptance because:
 
 - no Runtime Architecture Decision RFC currently proposes a language,
   architecture layout, package ownership, or exact targets
-- no common candidate prototypes, completed hard-gate reports, scorecards, or
-  reviewer reconciliation records are published
+- all candidates retain failed specification fidelity, not-tested full
+  diagnostics and incomplete security/supply-chain/lifecycle gates; comparable
+  measurement samples, independent scorecards and reconciliation are absent
 - package layout and cross-package version ownership are not selected
 - the complete runtime credential and threat boundaries are not yet available
   as decision evidence
 - the conformance test strategy for CLI, runtime, and extension claims is not
   complete
-- no target artifacts, installation evidence, signing path, provenance, or
-  maintenance ownership record exists
+- target evaluation artifacts and installation records are partial/failed,
+  not approved product distribution; true predecessor upgrade/rollback,
+  permitted signing, complete provenance and owner consent remain unresolved
 
 Until those blockers are resolved, no runtime language is selected, no runtime
 implementation is authorized, and existing JavaScript maintenance tooling has

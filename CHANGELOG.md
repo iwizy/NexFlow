@@ -8,6 +8,12 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Added
 
+- Prepared three unselected architecture alternatives with inward dependency
+  graphs, pure validation/startup interfaces, proposed credential/extension/
+  provider/audit mechanisms, version domains and pending ownership. Exact
+  prerequisite CI and retained failures are checked offline; no language,
+  support promise, runtime implementation or architecture decision is accepted.
+
 - Added four source-bound cross-target measurement gap records covering all
   seven metrics, retained artifact observations and exact prerequisite CI.
   Missing comparable cohorts, workloads and samples remain not-tested;

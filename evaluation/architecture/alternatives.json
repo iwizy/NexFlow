@@ -1,0 +1,390 @@
+{
+  "formatVersion": "0.1-draft",
+  "task": "NF-056-16",
+  "recordedAt": "2026-10-09",
+  "status": "proposal",
+  "outcome": "not-ready",
+  "selection": null,
+  "runtimeImplementationAuthorized": false,
+  "sourceSnapshot": "58eabb804be45f3ef4cc3dde677a3a4bb4fd90a1",
+  "specificationRevision": "1d1fa238ab5729a79bee9389d5c66cfd20a61256",
+  "evaluationPackageRevision": "a8301a7478587c59502dfb2e6bd548489c14ee2b",
+  "corpusSha256": "01b116005f0650ac980194b22c02188289eaf1e8626b227aecf3684ece0d8f6b",
+  "catalogSha256": "f1bf8cb786442a212e14c79eb39279a2cdbf05ec20b09901374359d545d74e90",
+  "prerequisites": [
+    {
+      "task": "NF-056-09",
+      "pullRequest": 101,
+      "state": "MERGED",
+      "head": "1c9aa13c46175255d989edda5f6e677d1a723952",
+      "merge": "a357309c7737d94b13330513da3deb20eef2b8f8",
+      "checks": [
+        {
+          "workflow": "CLI Prototype",
+          "name": "CLI prototype checks",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37128487895/job/111218609455"
+        },
+        {
+          "workflow": "Evaluation Environments",
+          "name": "Environment (linux/amd64)",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37128487947/job/111218609454"
+        },
+        {
+          "workflow": "Python Candidate",
+          "name": "initial-validation",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37128487936/job/111218609364"
+        },
+        {
+          "workflow": "Schema Validation",
+          "name": "schema-validation",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37128487924/job/111218609205"
+        },
+        {
+          "workflow": "TypeScript Candidate",
+          "name": "initial-validation",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37128487868/job/111218608914"
+        },
+        {
+          "workflow": "Evaluation Environments",
+          "name": "Environment (macos/arm64)",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37128487947/job/111218609366"
+        },
+        {
+          "workflow": "Evaluation Environments",
+          "name": "Environment (windows/amd64)",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37128487947/job/111218609507"
+        }
+      ]
+    },
+    {
+      "task": "NF-056-10",
+      "pullRequest": 103,
+      "state": "MERGED",
+      "head": "72db0be4b32ac0069979abeeedc8870b4d987e3d",
+      "merge": "d344bb6db7008f5d332a8be453b0dd849259e3de",
+      "checks": [
+        {
+          "workflow": "CLI Prototype",
+          "name": "CLI prototype checks",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37215946958/job/111476362498"
+        },
+        {
+          "workflow": "Evaluation Environments",
+          "name": "Environment (linux/amd64)",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37215947061/job/111476362879"
+        },
+        {
+          "workflow": "Go Candidate",
+          "name": "initial-validation",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37215947086/job/111476362839"
+        },
+        {
+          "workflow": "Python Candidate",
+          "name": "initial-validation",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37215947011/job/111476362666"
+        },
+        {
+          "workflow": "Rust Candidate",
+          "name": "initial-validation",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37215947023/job/111476362518"
+        },
+        {
+          "workflow": "Schema Validation",
+          "name": "schema-validation",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37215947020/job/111476362557"
+        },
+        {
+          "workflow": "TypeScript Candidate",
+          "name": "initial-validation",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37215947021/job/111476362711"
+        },
+        {
+          "workflow": "Evaluation Environments",
+          "name": "Environment (macos/arm64)",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37215947061/job/111476362732"
+        },
+        {
+          "workflow": "Evaluation Environments",
+          "name": "Environment (windows/amd64)",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37215947061/job/111476362916"
+        }
+      ]
+    },
+    {
+      "task": "NF-056-11",
+      "pullRequest": 104,
+      "state": "MERGED",
+      "head": "5290b74aa8af3f0d8051ae18c419c49c47df7c08",
+      "merge": "e91b5e13fb829aeae4c23a4fcc9a762f1eec5f6b",
+      "checks": [
+        {
+          "workflow": "CLI Prototype",
+          "name": "CLI prototype checks",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37216252688/job/111477252823"
+        },
+        {
+          "workflow": "Evaluation Environments",
+          "name": "Environment (linux/amd64)",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37216252729/job/111477253007"
+        },
+        {
+          "workflow": "Go Candidate",
+          "name": "initial-validation",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37216252698/job/111477252760"
+        },
+        {
+          "workflow": "Python Candidate",
+          "name": "initial-validation",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37216252695/job/111477252507"
+        },
+        {
+          "workflow": "Rust Candidate",
+          "name": "initial-validation",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37216252704/job/111477252634"
+        },
+        {
+          "workflow": "Schema Validation",
+          "name": "schema-validation",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37216252696/job/111477252715"
+        },
+        {
+          "workflow": "TypeScript Candidate",
+          "name": "initial-validation",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37216252705/job/111477252781"
+        },
+        {
+          "workflow": "Evaluation Environments",
+          "name": "Environment (macos/arm64)",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37216252729/job/111477252949"
+        },
+        {
+          "workflow": "Evaluation Environments",
+          "name": "Environment (windows/amd64)",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37216252729/job/111477252813"
+        }
+      ]
+    }
+  ],
+  "options": [
+    {
+      "id": "shared-packages",
+      "layout": "same-language/shared-packages",
+      "status": "unselected",
+      "imports": [
+        [
+          "cli",
+          "input-boundary"
+        ],
+        [
+          "cli",
+          "pure-validation"
+        ],
+        [
+          "input-boundary",
+          "pure-validation"
+        ],
+        [
+          "runtime-host",
+          "pure-validation"
+        ],
+        [
+          "runtime-host",
+          "authority-boundary"
+        ],
+        [
+          "authority-boundary",
+          "effect-ports"
+        ]
+      ]
+    },
+    {
+      "id": "separate-packages",
+      "layout": "same-language/separate-cli-runtime-packages",
+      "status": "unselected",
+      "imports": [
+        [
+          "cli",
+          "input-boundary"
+        ],
+        [
+          "cli",
+          "pure-validation"
+        ],
+        [
+          "input-boundary",
+          "pure-validation"
+        ],
+        [
+          "runtime-host",
+          "pure-validation"
+        ],
+        [
+          "runtime-host",
+          "authority-boundary"
+        ],
+        [
+          "authority-boundary",
+          "effect-ports"
+        ]
+      ]
+    },
+    {
+      "id": "split-languages",
+      "layout": "different-cli-runtime-languages",
+      "status": "unselected",
+      "imports": [
+        [
+          "cli",
+          "input-boundary"
+        ],
+        [
+          "cli",
+          "pure-validation"
+        ],
+        [
+          "input-boundary",
+          "pure-validation"
+        ],
+        [
+          "runtime-host",
+          "runtime-validation"
+        ],
+        [
+          "runtime-host",
+          "authority-boundary"
+        ],
+        [
+          "authority-boundary",
+          "effect-ports"
+        ]
+      ]
+    }
+  ],
+  "candidatePins": {
+    "typescript": "19ff4889542fe486d95eb2ae868560f5aa966df2",
+    "python": "76141dfbeae265cb636d99a6164b097ce5d3019a",
+    "rust": "4fdf0cc8e69e050600d0a5d8f7f1f42987f68203",
+    "go": "737396b6488a9f10b179061366b9f1d02591fb9f"
+  },
+  "retainedFacts": {
+    "libraryCases": 352,
+    "passed": 128,
+    "testedFailures": 0,
+    "notTested": 224,
+    "specificationFidelity": "failed",
+    "deterministicDiagnostics": "not-tested",
+    "offlineScope": "supplemental-macos-only",
+    "securityBoundary": "partial",
+    "supplyChainAcceptance": "partial",
+    "advisoryEvidenceDate": "2026-10-04",
+    "comparablePerformance": "not-tested"
+  },
+  "boundaryContracts": {
+    "credentials": "docs/credential-handling.md",
+    "extensions": "docs/extension-loading-boundary.md",
+    "providers": "docs/provider-adapter-boundary.md",
+    "audit": "docs/event-audit-storage-boundary.md",
+    "staticCommands": "docs/cli-runtime-boundary.md"
+  },
+  "versionDomains": [
+    "manifest-dialect",
+    "schema-snapshot",
+    "validation-library-api",
+    "cli-artifact",
+    "diagnostic-output",
+    "runtime-host",
+    "adapter-extension",
+    "boundary-protocol",
+    "stored-state"
+  ],
+  "ownershipProposals": [
+    {
+      "role": "cli",
+      "status": "pending",
+      "confirmedOwner": null,
+      "confirmedSupportWindow": null
+    },
+    {
+      "role": "validation-libraries",
+      "status": "pending",
+      "confirmedOwner": null,
+      "confirmedSupportWindow": null
+    },
+    {
+      "role": "runtime",
+      "status": "pending",
+      "confirmedOwner": null,
+      "confirmedSupportWindow": null
+    },
+    {
+      "role": "security-dependencies",
+      "status": "pending",
+      "confirmedOwner": null,
+      "confirmedSupportWindow": null
+    },
+    {
+      "role": "release-ci",
+      "status": "pending",
+      "confirmedOwner": null,
+      "confirmedSupportWindow": null
+    },
+    {
+      "role": "signing-distribution",
+      "status": "pending",
+      "confirmedOwner": null,
+      "confirmedSupportWindow": null
+    }
+  ],
+  "reviewerProposals": [
+    {
+      "role": "architecture-validation",
+      "status": "pending",
+      "confirmedPerson": null,
+      "independentOfAuthorsRequired": true
+    },
+    {
+      "role": "security-distribution",
+      "status": "pending",
+      "confirmedPerson": null,
+      "independentOfAuthorsRequired": true
+    }
+  ],
+  "decisionBlockers": [
+    "fidelity-coverage",
+    "full-diagnostics",
+    "security-isolation",
+    "supply-chain-closure",
+    "installed-lifecycle",
+    "comparable-measurements",
+    "boundary-enforcement",
+    "version-compatibility",
+    "independent-review",
+    "owner-consent"
+  ],
+  "checksScope": "Offline source and proposal consistency only; not runtime enforcement, target lifecycle, human review or architecture acceptance."
+}

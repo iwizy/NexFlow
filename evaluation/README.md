@@ -41,6 +41,11 @@ The [offline/denied-effects experiment](isolation/README.md) adds independent
 positive/negative OS controls and bounded native macOS evidence. It keeps
 security residuals, other targets and architecture acceptance separate.
 
+The [architecture alternatives and ownership proposal](architecture/alternatives.md)
+compares three mandatory layouts, pure interfaces, startup and effect boundaries,
+independent version domains, and proposed maintenance roles. All alternatives
+remain unselected; real reviewer appointments and owner consent remain pending.
+
 The [four pinned candidate toolchain plans](toolchains/README.md) add native
 dependency capability probes and checked lockfiles. They do not promote candidate
 scorecards, replace the shared corpus or pass architecture hard gates.

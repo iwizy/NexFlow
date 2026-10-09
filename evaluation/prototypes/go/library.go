@@ -169,9 +169,7 @@ func EvaluateLibraryCase(entry map[string]any, root string, schemas *SchemaEngin
 			result["workflowIds"] = ids
 		}
 	case "semantic-fragment", "workflow-namespace", "artifact-namespace":
-		result["valid"] = nil
-		result["status"] = "not-implemented"
-		return result, nil
+		issues = SemanticOperation(operation, input)
 	default:
 		return nil, errors.New("unsupported operation")
 	}

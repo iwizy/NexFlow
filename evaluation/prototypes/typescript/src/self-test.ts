@@ -119,12 +119,12 @@ test("inspection has a finite declaration budget", () => {
   } };
   assert.throws(() => inspect([document]), InspectionLimit);
 });
-test("library entry reports unimplemented semantic and namespace cases honestly", () => {
+test("native semantic and namespace entries return validation without execution", () => {
   const schemas = repositorySchemas();
   for (const operation of ["semantic-fragment", "workflow-namespace", "artifact-namespace"]) {
     const result = evaluateLibraryCase({ id: "pending", operation, input: {} }, repository, schemas);
-    assert.equal(result.valid, null);
-    assert.equal(result.status, "not-implemented");
+    assert.equal(result.valid, true);
+    assert.equal(result.status, undefined);
     assert.deepEqual(result.checks, { runtime: "not-run", extensions: "not-run" });
   }
 });

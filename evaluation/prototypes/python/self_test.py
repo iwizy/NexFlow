@@ -178,12 +178,12 @@ class CandidateTests(unittest.TestCase):
         with patch("socket.socket", side_effect=AssertionError("network forbidden")), patch("subprocess.Popen", side_effect=AssertionError("process forbidden")), patch("os.system", side_effect=AssertionError("process forbidden")):
             self.assertTrue(evaluate("validate", Selection(str(FIXTURE)))["success"])
 
-    def test_semantic_and_namespace_absence_is_explicit(self):
+    def test_native_semantic_and_namespace_entries_do_not_execute(self):
         schemas = repository_schemas()
         for operation in ("semantic-fragment", "workflow-namespace", "artifact-namespace"):
             result = evaluate_library_case({"id": "pending", "operation": operation, "input": {}}, str(ROOT), schemas)
-            self.assertIsNone(result["valid"])
-            self.assertEqual(result["status"], "not-implemented")
+            self.assertTrue(result["valid"])
+            self.assertNotIn("status", result)
             self.assertEqual(result["checks"], {"runtime": "not-run", "extensions": "not-run"})
 
 if __name__ == "__main__":

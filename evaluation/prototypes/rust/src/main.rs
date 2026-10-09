@@ -32,9 +32,8 @@ fn main() {
         None => usage(),
         Some((command, selection, format)) => {
             use_json = format;
-            // Fixed reviewed checkout schemas; manifest inputs cannot choose a schema root.
-            let directory = PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("../../../schemas");
-            match SchemaEngine::repository(&directory) {
+            // Immutable reviewed schemas remain available after artifact relocation.
+            match SchemaEngine::bundled() {
                 Ok(schemas) => evaluate(&command, &selection, &schemas),
                 Err(_) => { let mut value = envelope(Some(&command)); value["exitCode"] = json!(4); value["diagnostics"] = json!([diagnostic("NEXFLOW-PROTOTYPE-INTERNAL", None, None, None, None)]); value },
             }

@@ -36,3 +36,4 @@ jobs:
           npm run runtime-rust-prototype-smoke
           node scripts/runtime-evaluation-run.mjs --command '["evaluation/prototypes/rust/target/debug/nexflow-rust-evaluation"]'
           node scripts/runtime-rust-library-run.mjs evaluation/prototypes/rust/target/debug/library-driver
+          node scripts/runtime-evaluation-repair-run.mjs rust '["evaluation/prototypes/rust/target/debug/library-driver"]' --summary

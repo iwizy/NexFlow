@@ -59,6 +59,31 @@ fn issues(validator: &Validator, value: &Value, fields: &BTreeSet<String>) -> Ve
 }
 
 impl SchemaEngine {
+    /// Reviewed resources travel with the binary; inputs cannot redirect them.
+    pub fn bundled() -> Result<Self, &'static str> {
+        let sources = [
+            include_str!("../../../../schemas/actors.schema.json"),
+            include_str!("../../../../schemas/agent-definitions.schema.json"),
+            include_str!("../../../../schemas/agents.schema.json"),
+            include_str!("../../../../schemas/capabilities.schema.json"),
+            include_str!("../../../../schemas/common.schema.json"),
+            include_str!("../../../../schemas/context.schema.json"),
+            include_str!("../../../../schemas/events.schema.json"),
+            include_str!("../../../../schemas/extensions.schema.json"),
+            include_str!("../../../../schemas/handoffs.schema.json"),
+            include_str!("../../../../schemas/memory.schema.json"),
+            include_str!("../../../../schemas/model-profiles.schema.json"),
+            include_str!("../../../../schemas/permissions.schema.json"),
+            include_str!("../../../../schemas/project.schema.json"),
+            include_str!("../../../../schemas/prompt-sets.schema.json"),
+            include_str!("../../../../schemas/providers.schema.json"),
+            include_str!("../../../../schemas/retrieval-profiles.schema.json"),
+            include_str!("../../../../schemas/tasks.schema.json"),
+            include_str!("../../../../schemas/workflow.schema.json"),
+        ];
+        let schemas = sources.iter().map(|text| serde_json::from_str::<Value>(text).map_err(|_| "invalid bundled schema")).collect::<Result<Vec<_>, _>>()?;
+        Self::new(&schemas)
+    }
     pub fn repository(directory: &Path) -> Result<Self, &'static str> {
         let mut schemas = Vec::new();
         let mut paths = fs::read_dir(directory).map_err(|_| "local schema unavailable")?.map(|entry| entry.map(|e| e.path())).collect::<Result<Vec<_>, _>>().map_err(|_| "local schema unavailable")?;

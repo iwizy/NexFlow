@@ -6,6 +6,7 @@ from .inspection import InspectionLimit, inspect
 from .model import KINDS, Selection, diagnostic, envelope, obj, ordered, safe_locator
 from .schema import SchemaEngine, repository_schemas
 from .yaml_input import parse_yaml
+from .semantics import semantic_operation
 
 def evaluate(command: str, selection: Selection) -> dict:
     output = envelope(command if command in ("validate", "inspect") else None)
@@ -43,7 +44,6 @@ def evaluate(command: str, selection: Selection) -> dict:
     return output
 
 def evaluate_library_case(entry: dict, repository_root: str, schemas: SchemaEngine | None = None) -> dict:
-    schemas = schemas or repository_schemas()
     operation, inputs = entry["operation"], entry["input"]
     result = {"caseId": entry["id"], "operation": operation, "valid": False, "diagnostics": [], "checks": {"runtime": "not-run", "extensions": "not-run"}}
     if operation == "yaml-parse":
@@ -62,7 +62,7 @@ def evaluate_library_case(entry: dict, repository_root: str, schemas: SchemaEngi
             result["diagnostics"] = [{"code": "NF-SCHEMA", "category": "unknown-kind", "instancePath": "",
                 "kind": kind if isinstance(kind, str) and re.fullmatch(r"[A-Z][A-Za-z]{0,31}", kind) else "<redacted-kind>"}]
         else:
-            result["diagnostics"] = [{**issue, "kind": kind} for issue in schemas.validate_value(kind, parsed["value"])]
+            result["diagnostics"] = [{**issue, "kind": kind} for issue in (schemas or repository_schemas()).validate_value(kind, parsed["value"])]
         result["valid"] = not result["diagnostics"]
     elif operation == "discovery":
         if safe_locator(inputs["root"]) == "<redacted-source>":
@@ -84,7 +84,8 @@ def evaluate_library_case(entry: dict, repository_root: str, schemas: SchemaEngi
             result["documentCount"] = len(assembly["documents"])
             result["workflowIds"] = sorted(obj(document.value.get("workflow"))["id"] for document in assembly["documents"] if document.kind == "Workflow")
     elif operation in ("semantic-fragment", "workflow-namespace", "artifact-namespace"):
-        result.update(valid=None, status="not-implemented")
+        result["diagnostics"] = semantic_operation(operation, inputs)
+        result["valid"] = not result["diagnostics"]
     else:
         raise ValueError("unsupported library operation")
     return result

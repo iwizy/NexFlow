@@ -5,6 +5,7 @@ import { inspect, InspectionLimit } from "./inspection.js";
 import { knownKind, object, type Envelope, type Json, type ObjectValue, type Selection } from "./model.js";
 import { repositorySchemas, SchemaEngine } from "./schema.js";
 import { parseYaml } from "./yaml.js";
+import { semanticOperation } from "./semantics.js";
 export { discover, inspect, parseYaml, repositorySchemas, SchemaEngine };
 export type { Selection, Manifest, Diagnostic, Json } from "./model.js";
 
@@ -64,7 +65,7 @@ export interface LibraryResult {
   status?: "not-implemented"; documentCount?: number; workflowIds?: string[];
 }
 export function evaluateLibraryCase(entry: LibraryCase, repositoryRoot: string,
-  schemas: SchemaEngine = repositorySchemas()): LibraryResult {
+  schemas?: SchemaEngine): LibraryResult {
   const result: LibraryResult = { caseId: entry.id, operation: entry.operation, valid: false,
     diagnostics: [], checks: { runtime: "not-run", extensions: "not-run" } };
   if (entry.operation === "yaml-parse") {
@@ -83,7 +84,7 @@ export function evaluateLibraryCase(entry: LibraryCase, repositoryRoot: string,
     if (!parsed.valid) result.diagnostics = [{ category: parsed.category }];
     else if (!knownKind(kind)) result.diagnostics = [{ code: "NF-SCHEMA", category: "unknown-kind",
       kind: typeof kind === "string" && /^[A-Z][A-Za-z]{0,31}$/u.test(kind) ? kind : "<redacted-kind>", instancePath: "" }];
-    else result.diagnostics = schemas.validateValue(kind, parsed.value as Json).map(issue => ({ ...issue, kind }));
+    else result.diagnostics = (schemas ?? repositorySchemas()).validateValue(kind, parsed.value as Json).map(issue => ({ ...issue, kind }));
     result.valid = result.diagnostics.length === 0;
   } else if (entry.operation === "discovery") {
     // Resolve the catalog root only through the library caller's reviewed base;
@@ -108,11 +109,11 @@ export function evaluateLibraryCase(entry: LibraryCase, repositoryRoot: string,
       result.workflowIds = discovery.documents.filter(document => document.kind === "Workflow")
         .map(document => String(object(document.value.workflow).id)).sort();
     }
+  } else if (["semantic-fragment", "workflow-namespace", "artifact-namespace"].includes(entry.operation)) {
+    result.diagnostics = semanticOperation(entry.operation, entry.input);
+    result.valid = result.diagnostics.length === 0;
   } else {
-    // NF-056-09 owns full semantic/namespace parity. Absence is explicit, not
-    // a successful verdict or a fallback to historical maintenance code.
-    result.valid = null;
-    result.status = "not-implemented";
+    throw new Error("Unsupported library operation.");
   }
   return result;
 }

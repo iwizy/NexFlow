@@ -10,9 +10,14 @@ Failed/incomplete hard gates, missing independent scorecards and unconfirmed
 ownership still prevent language/layout selection. No complete accepted decision
 exists. The current review outcome remains **not ready for decision**.
 
+[Draft RFC-0023](../RFC-0023-runtime-architecture-decision.md) now assembles the
+discussion proposal and [source-bound review bundle](runtime-architecture-decision-draft.json).
+All eleven gates remain blocked, with no selected language/layout or completed
+human review. The existing gate checklist and acceptance rule are unchanged.
+
 ## Purpose
 
-This document defines the review gates and acceptance criteria for the future
+This document defines the review gates and acceptance criteria for the Draft
 Runtime Architecture Decision RFC. It makes the decision process inspectable
 without selecting TypeScript, Python, Rust, Go, a package layout, or a runtime
 implementation prematurely.
@@ -367,8 +372,9 @@ The repository has useful inputs for a future review:
 
 The decision is not ready for acceptance because:
 
-- no Runtime Architecture Decision RFC currently proposes a language,
-  architecture layout, package ownership, or exact targets
+- Draft RFC-0023 assembles the alternatives, exact evaluation targets and
+  component/package/version/startup/authority proposals, but no language,
+  architecture layout, product support matrix or package ownership is selected
 - all candidates retain failed specification fidelity, not-tested full
   diagnostics and incomplete security/supply-chain/lifecycle gates; comparable
   measurement samples, independent scorecards and reconciliation are absent

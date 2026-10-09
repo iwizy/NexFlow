@@ -1,0 +1,1806 @@
+{
+  "formatVersion": "0.1-draft",
+  "task": "NF-056-18",
+  "recordedOn": "2026-10-09",
+  "sourceSnapshot": "cef48f83006eb7dd245268a717b27835b4512cd9",
+  "rfc": {
+    "id": "RFC-0023",
+    "path": "rfcs/RFC-0023-runtime-architecture-decision.md",
+    "sha256": "25247101749c0b3c17a385504978824d5fbcd2bfd95b103dd814cbce9e3ba32c",
+    "revision": null,
+    "status": "Draft"
+  },
+  "outcome": "not-ready",
+  "selectedCandidate": null,
+  "selectedLayout": null,
+  "productSupportTargets": [],
+  "runtimeImplementationAuthorized": false,
+  "specificationRevision": "1d1fa238ab5729a79bee9389d5c66cfd20a61256",
+  "evaluationPackageRevision": "a8301a7478587c59502dfb2e6bd548489c14ee2b",
+  "corpusSha256": "01b116005f0650ac980194b22c02188289eaf1e8626b227aecf3684ece0d8f6b",
+  "catalogSha256": "f1bf8cb786442a212e14c79eb39279a2cdbf05ec20b09901374359d545d74e90",
+  "prerequisites": {
+    "path": "rfcs/reviews/runtime-architecture-prerequisites.json",
+    "sha256": "f20a8f1c9102aeb57a493ae99d434da0da5160c6324a1b32d79c9d247d7ca720",
+    "successfulChecks": 20,
+    "publishedHeads": [
+      {
+        "number": 110,
+        "revision": "dfa11b50dcde79154a066c41983b708190b05643"
+      },
+      {
+        "number": 111,
+        "revision": "cef48f83006eb7dd245268a717b27835b4512cd9"
+      }
+    ]
+  },
+  "evidenceIndex": [
+    {
+      "path": "evaluation/baseline.json",
+      "revision": "cef48f83006eb7dd245268a717b27835b4512cd9",
+      "sha256": "7cd10254220dd565f4473be0c0e44d99f2ec9ab42e906717536c38ab01492834",
+      "url": "https://github.com/iwizy/NexFlow/blob/cef48f83006eb7dd245268a717b27835b4512cd9/evaluation/baseline.json"
+    },
+    {
+      "path": "evaluation/fidelity/source-pins.json",
+      "revision": "cef48f83006eb7dd245268a717b27835b4512cd9",
+      "sha256": "2920a349c0bf6c3afae190e1eba97ec464541ca35a90a2119287a724aad23f8d",
+      "url": "https://github.com/iwizy/NexFlow/blob/cef48f83006eb7dd245268a717b27835b4512cd9/evaluation/fidelity/source-pins.json"
+    },
+    {
+      "path": "evaluation/library-cases.json",
+      "revision": "cef48f83006eb7dd245268a717b27835b4512cd9",
+      "sha256": "f1bf8cb786442a212e14c79eb39279a2cdbf05ec20b09901374359d545d74e90",
+      "url": "https://github.com/iwizy/NexFlow/blob/cef48f83006eb7dd245268a717b27835b4512cd9/evaluation/library-cases.json"
+    },
+    {
+      "path": "evaluation/library-inventory.json",
+      "revision": "cef48f83006eb7dd245268a717b27835b4512cd9",
+      "sha256": "6759ad8f4faa3960f2704d1d74ea5ac733286815180dd72b9b6fe7762e680324",
+      "url": "https://github.com/iwizy/NexFlow/blob/cef48f83006eb7dd245268a717b27835b4512cd9/evaluation/library-inventory.json"
+    },
+    {
+      "path": "evaluation/candidate-report.schema.json",
+      "revision": "cef48f83006eb7dd245268a717b27835b4512cd9",
+      "sha256": "fbfad3cafbd179c17ed754852c9098a6f41a44bb665bf6730259c1c94fb051d7",
+      "url": "https://github.com/iwizy/NexFlow/blob/cef48f83006eb7dd245268a717b27835b4512cd9/evaluation/candidate-report.schema.json"
+    },
+    {
+      "path": "evaluation/environment-contract.json",
+      "revision": "cef48f83006eb7dd245268a717b27835b4512cd9",
+      "sha256": "e222227ad6f117ee2516cb185032ebbdadcd59e9f6e87d9394d56852a0914818",
+      "url": "https://github.com/iwizy/NexFlow/blob/cef48f83006eb7dd245268a717b27835b4512cd9/evaluation/environment-contract.json"
+    },
+    {
+      "path": "evaluation/architecture/alternatives.json",
+      "revision": "cef48f83006eb7dd245268a717b27835b4512cd9",
+      "sha256": "eaedfcc96127945b8b1f5a45781e66759ea8ff33de2e369673d734a28418cefc",
+      "url": "https://github.com/iwizy/NexFlow/blob/cef48f83006eb7dd245268a717b27835b4512cd9/evaluation/architecture/alternatives.json"
+    },
+    {
+      "path": "evaluation/architecture/alternatives.md",
+      "revision": "cef48f83006eb7dd245268a717b27835b4512cd9",
+      "sha256": "322b8b3ec0eb07bd995a15b42f945a6cf53f6f287d1e8a2aac7ea9fad229aea4",
+      "url": "https://github.com/iwizy/NexFlow/blob/cef48f83006eb7dd245268a717b27835b4512cd9/evaluation/architecture/alternatives.md"
+    },
+    {
+      "path": "evaluation/reports/typescript/candidate.json",
+      "revision": "cef48f83006eb7dd245268a717b27835b4512cd9",
+      "sha256": "54afd46895e302f1ec4bf2c2cd672dc4dd4b0bc48edf8c533d42ec0b7b754c93",
+      "url": "https://github.com/iwizy/NexFlow/blob/cef48f83006eb7dd245268a717b27835b4512cd9/evaluation/reports/typescript/candidate.json"
+    },
+    {
+      "path": "evaluation/reports/python/candidate.json",
+      "revision": "cef48f83006eb7dd245268a717b27835b4512cd9",
+      "sha256": "1104fd22807d90869f651eb5614fb843647ff9d435139dbb1397448cffb6be93",
+      "url": "https://github.com/iwizy/NexFlow/blob/cef48f83006eb7dd245268a717b27835b4512cd9/evaluation/reports/python/candidate.json"
+    },
+    {
+      "path": "evaluation/reports/rust/candidate.json",
+      "revision": "cef48f83006eb7dd245268a717b27835b4512cd9",
+      "sha256": "b129a39e1bccbd72d9590f3406a86d7d682d243f7469e56cef795811c5f9c472",
+      "url": "https://github.com/iwizy/NexFlow/blob/cef48f83006eb7dd245268a717b27835b4512cd9/evaluation/reports/rust/candidate.json"
+    },
+    {
+      "path": "evaluation/reports/go/candidate.json",
+      "revision": "cef48f83006eb7dd245268a717b27835b4512cd9",
+      "sha256": "685f68c3167cb3619c3812d811182e81e9c782524b4f4f2317e92abbb71580bb",
+      "url": "https://github.com/iwizy/NexFlow/blob/cef48f83006eb7dd245268a717b27835b4512cd9/evaluation/reports/go/candidate.json"
+    },
+    {
+      "path": "evaluation/reports/typescript/bundle.json",
+      "revision": "cef48f83006eb7dd245268a717b27835b4512cd9",
+      "sha256": "cc0748fac004f7f3f88450301a745196497251476bc58ff975b8be8a2e8102ea",
+      "url": "https://github.com/iwizy/NexFlow/blob/cef48f83006eb7dd245268a717b27835b4512cd9/evaluation/reports/typescript/bundle.json"
+    },
+    {
+      "path": "evaluation/reports/python/bundle.json",
+      "revision": "cef48f83006eb7dd245268a717b27835b4512cd9",
+      "sha256": "6ef844f36eaba3dc6a2a381a4d6a4585c6ec706016c1b0781ae1cc4202cf7177",
+      "url": "https://github.com/iwizy/NexFlow/blob/cef48f83006eb7dd245268a717b27835b4512cd9/evaluation/reports/python/bundle.json"
+    },
+    {
+      "path": "evaluation/reports/rust/bundle.json",
+      "revision": "cef48f83006eb7dd245268a717b27835b4512cd9",
+      "sha256": "affd4d6ded0293600baa88378b51829174a44884d1f55f83c9f7ad0ee49e7729",
+      "url": "https://github.com/iwizy/NexFlow/blob/cef48f83006eb7dd245268a717b27835b4512cd9/evaluation/reports/rust/bundle.json"
+    },
+    {
+      "path": "evaluation/reports/go/bundle.json",
+      "revision": "cef48f83006eb7dd245268a717b27835b4512cd9",
+      "sha256": "092e2e4b2d123a8d6bddaa3a4031e20f7fc2f062fac237df602083cc55f388e3",
+      "url": "https://github.com/iwizy/NexFlow/blob/cef48f83006eb7dd245268a717b27835b4512cd9/evaluation/reports/go/bundle.json"
+    },
+    {
+      "path": "evaluation/reports/review/reviewer-a.json",
+      "revision": "cef48f83006eb7dd245268a717b27835b4512cd9",
+      "sha256": "518335c2a5b4633d589a4e8c59b236b8108534085af8b63199add8f4d4345b16",
+      "url": "https://github.com/iwizy/NexFlow/blob/cef48f83006eb7dd245268a717b27835b4512cd9/evaluation/reports/review/reviewer-a.json"
+    },
+    {
+      "path": "evaluation/reports/review/reviewer-b.json",
+      "revision": "cef48f83006eb7dd245268a717b27835b4512cd9",
+      "sha256": "8a3760e227839be3799fc6496a99f0892a7e1a4e8a47340846bb21608d11743c",
+      "url": "https://github.com/iwizy/NexFlow/blob/cef48f83006eb7dd245268a717b27835b4512cd9/evaluation/reports/review/reviewer-b.json"
+    },
+    {
+      "path": "evaluation/reports/review/reconciliation.json",
+      "revision": "cef48f83006eb7dd245268a717b27835b4512cd9",
+      "sha256": "3f9bb640644ab48f343a3627bb4b4e7f960fd52f72ad9e4460f711ba0ab2121e",
+      "url": "https://github.com/iwizy/NexFlow/blob/cef48f83006eb7dd245268a717b27835b4512cd9/evaluation/reports/review/reconciliation.json"
+    },
+    {
+      "path": "evaluation/reports/prerequisites.json",
+      "revision": "cef48f83006eb7dd245268a717b27835b4512cd9",
+      "sha256": "a2e291e0f235670d8c87a210119682dc8508e94695c01053a3e3f83c8b604546",
+      "url": "https://github.com/iwizy/NexFlow/blob/cef48f83006eb7dd245268a717b27835b4512cd9/evaluation/reports/prerequisites.json"
+    },
+    {
+      "path": "evaluation/reports/README.md",
+      "revision": "cef48f83006eb7dd245268a717b27835b4512cd9",
+      "sha256": "f2975a81a7235e900dabedff14fc4e0c22dfeb0c1891c7fb6e033d18d9e29114",
+      "url": "https://github.com/iwizy/NexFlow/blob/cef48f83006eb7dd245268a717b27835b4512cd9/evaluation/reports/README.md"
+    },
+    {
+      "path": "docs/cli-runtime-boundary.md",
+      "revision": "cef48f83006eb7dd245268a717b27835b4512cd9",
+      "sha256": "16bd2d7c04309ec3dfde2b58046ebf2b6476e79849daf4220064e72490f0f41f",
+      "url": "https://github.com/iwizy/NexFlow/blob/cef48f83006eb7dd245268a717b27835b4512cd9/docs/cli-runtime-boundary.md"
+    },
+    {
+      "path": "docs/security-model.md",
+      "revision": "cef48f83006eb7dd245268a717b27835b4512cd9",
+      "sha256": "19f86a6a554e3df3348f5a24b469f31fc4bf0fa13d0b4c2fdd0fcba277eb24ad",
+      "url": "https://github.com/iwizy/NexFlow/blob/cef48f83006eb7dd245268a717b27835b4512cd9/docs/security-model.md"
+    },
+    {
+      "path": "docs/credential-handling.md",
+      "revision": "cef48f83006eb7dd245268a717b27835b4512cd9",
+      "sha256": "a717cffa53b237e39c865bd65576a55798473a4be8beca70b26b3764655e27b3",
+      "url": "https://github.com/iwizy/NexFlow/blob/cef48f83006eb7dd245268a717b27835b4512cd9/docs/credential-handling.md"
+    },
+    {
+      "path": "docs/extension-loading-boundary.md",
+      "revision": "cef48f83006eb7dd245268a717b27835b4512cd9",
+      "sha256": "03169b3bad3aa12e932ddb6002577b1afc3e13a5de4140ccfa79253dc10288be",
+      "url": "https://github.com/iwizy/NexFlow/blob/cef48f83006eb7dd245268a717b27835b4512cd9/docs/extension-loading-boundary.md"
+    },
+    {
+      "path": "docs/provider-adapter-boundary.md",
+      "revision": "cef48f83006eb7dd245268a717b27835b4512cd9",
+      "sha256": "2e74da133c9d7af3d584b0f89ac5069e0f0f14c6ac6999a92c6d9c05d62fb5db",
+      "url": "https://github.com/iwizy/NexFlow/blob/cef48f83006eb7dd245268a717b27835b4512cd9/docs/provider-adapter-boundary.md"
+    },
+    {
+      "path": "docs/mcp-a2a-boundaries.md",
+      "revision": "cef48f83006eb7dd245268a717b27835b4512cd9",
+      "sha256": "5a0423d21a44645af5462bd3d34f47d4131c53ec142ea9b4b15113d125f82853",
+      "url": "https://github.com/iwizy/NexFlow/blob/cef48f83006eb7dd245268a717b27835b4512cd9/docs/mcp-a2a-boundaries.md"
+    },
+    {
+      "path": "docs/event-audit-storage-boundary.md",
+      "revision": "cef48f83006eb7dd245268a717b27835b4512cd9",
+      "sha256": "0d4239ef153d8f7361de67cff7a80f9f576ecbd2cff3b95c07accf23fdfd626f",
+      "url": "https://github.com/iwizy/NexFlow/blob/cef48f83006eb7dd245268a717b27835b4512cd9/docs/event-audit-storage-boundary.md"
+    },
+    {
+      "path": "docs/conformance.md",
+      "revision": "cef48f83006eb7dd245268a717b27835b4512cd9",
+      "sha256": "7a359c7ae96fc01a923f02d9b72245f0ab5cf805e2f5660310e45f60220152f5",
+      "url": "https://github.com/iwizy/NexFlow/blob/cef48f83006eb7dd245268a717b27835b4512cd9/docs/conformance.md"
+    },
+    {
+      "path": "docs/compatibility.md",
+      "revision": "cef48f83006eb7dd245268a717b27835b4512cd9",
+      "sha256": "911d8cae4d25a5e5b7d098ef7a64e929e3e44e1bbdaded8f6cb22e8f39f8ace8",
+      "url": "https://github.com/iwizy/NexFlow/blob/cef48f83006eb7dd245268a717b27835b4512cd9/docs/compatibility.md"
+    },
+    {
+      "path": "docs/versioning.md",
+      "revision": "cef48f83006eb7dd245268a717b27835b4512cd9",
+      "sha256": "c7a025010f1f3fb29f6153b716a5867a6fedb0bacb680f4fefae9912f50b7b55",
+      "url": "https://github.com/iwizy/NexFlow/blob/cef48f83006eb7dd245268a717b27835b4512cd9/docs/versioning.md"
+    },
+    {
+      "path": "docs/governance.md",
+      "revision": "cef48f83006eb7dd245268a717b27835b4512cd9",
+      "sha256": "c4fc598533a948208d30065b14f5cea0fadb7bc44ba249727e2abf4db03fcd6a",
+      "url": "https://github.com/iwizy/NexFlow/blob/cef48f83006eb7dd245268a717b27835b4512cd9/docs/governance.md"
+    },
+    {
+      "path": "rfcs/reviews/runtime-architecture-decision-review.md",
+      "revision": "cef48f83006eb7dd245268a717b27835b4512cd9",
+      "sha256": "6b9d45e3aec13007d400abf4ea901dc625e50fe85d6b21bc94f7a981c3fc3d0c",
+      "url": "https://github.com/iwizy/NexFlow/blob/cef48f83006eb7dd245268a717b27835b4512cd9/rfcs/reviews/runtime-architecture-decision-review.md"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate": "typescript",
+      "report": "evaluation/reports/typescript/candidate.json",
+      "companion": "evaluation/reports/typescript/bundle.json",
+      "prototypeRevision": "19ff4889542fe486d95eb2ae868560f5aa966df2",
+      "schemaValid": true,
+      "assessment": {
+        "outcome": "ineligible",
+        "blockers": [
+          "report-not-complete",
+          "missing-target-evidence",
+          "untested-hard-gate",
+          "missing-independent-review",
+          "missing-measurements"
+        ]
+      },
+      "hardGates": {
+        "specificationFidelity": {
+          "status": "failed",
+          "evidence": [
+            "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/fidelity/typescript.json"
+          ]
+        },
+        "deterministicDiagnostics": {
+          "status": "not-tested",
+          "evidence": [
+            "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/fidelity/typescript.json"
+          ]
+        },
+        "offlineOperation": {
+          "status": "not-tested",
+          "evidence": [
+            "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/isolation/typescript.json",
+            "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/lifecycle/linux/typescript.json",
+            "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/lifecycle/macos/typescript.json",
+            "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/lifecycle/windows/typescript.json"
+          ]
+        },
+        "reproducibleDependencies": {
+          "status": "not-tested",
+          "evidence": [
+            "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/supply-chain/typescript/inventory.json"
+          ]
+        },
+        "distributionTargets": {
+          "status": "failed",
+          "evidence": [
+            "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/lifecycle/linux/typescript.json",
+            "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/lifecycle/macos/typescript.json",
+            "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/lifecycle/windows/typescript.json"
+          ]
+        },
+        "securityBoundary": {
+          "status": "not-tested",
+          "evidence": [
+            "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/isolation/typescript.json",
+            "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/supply-chain/typescript/inventory.json"
+          ]
+        },
+        "supplyChainEvidence": {
+          "status": "not-tested",
+          "evidence": [
+            "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/supply-chain/typescript/inventory.json"
+          ]
+        },
+        "providerNeutrality": {
+          "status": "not-tested",
+          "evidence": [
+            "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/fidelity/typescript.json",
+            "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/architecture/alternatives.json"
+          ]
+        },
+        "scopeIntegrity": {
+          "status": "not-tested",
+          "evidence": [
+            "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/fidelity/typescript.json",
+            "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/architecture/alternatives.json"
+          ]
+        }
+      },
+      "fidelity": {
+        "failed": 0,
+        "not-tested": 224,
+        "passed": 128
+      },
+      "missingComparableMetricCells": 21,
+      "advisoryEvidenceDate": "2026-10-04T13:53:54.711Z",
+      "advisoryRefreshed": false
+    },
+    {
+      "candidate": "python",
+      "report": "evaluation/reports/python/candidate.json",
+      "companion": "evaluation/reports/python/bundle.json",
+      "prototypeRevision": "76141dfbeae265cb636d99a6164b097ce5d3019a",
+      "schemaValid": true,
+      "assessment": {
+        "outcome": "ineligible",
+        "blockers": [
+          "report-not-complete",
+          "missing-target-evidence",
+          "untested-hard-gate",
+          "missing-independent-review",
+          "missing-measurements"
+        ]
+      },
+      "hardGates": {
+        "specificationFidelity": {
+          "status": "failed",
+          "evidence": [
+            "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/fidelity/python.json"
+          ]
+        },
+        "deterministicDiagnostics": {
+          "status": "not-tested",
+          "evidence": [
+            "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/fidelity/python.json"
+          ]
+        },
+        "offlineOperation": {
+          "status": "not-tested",
+          "evidence": [
+            "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/isolation/python.json",
+            "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/lifecycle/linux/python.json",
+            "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/lifecycle/macos/python.json",
+            "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/lifecycle/windows/python.json"
+          ]
+        },
+        "reproducibleDependencies": {
+          "status": "not-tested",
+          "evidence": [
+            "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/supply-chain/python/inventory.json"
+          ]
+        },
+        "distributionTargets": {
+          "status": "failed",
+          "evidence": [
+            "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/lifecycle/linux/python.json",
+            "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/lifecycle/macos/python.json",
+            "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/lifecycle/windows/python.json"
+          ]
+        },
+        "securityBoundary": {
+          "status": "not-tested",
+          "evidence": [
+            "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/isolation/python.json",
+            "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/supply-chain/python/inventory.json"
+          ]
+        },
+        "supplyChainEvidence": {
+          "status": "not-tested",
+          "evidence": [
+            "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/supply-chain/python/inventory.json"
+          ]
+        },
+        "providerNeutrality": {
+          "status": "not-tested",
+          "evidence": [
+            "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/fidelity/python.json",
+            "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/architecture/alternatives.json"
+          ]
+        },
+        "scopeIntegrity": {
+          "status": "not-tested",
+          "evidence": [
+            "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/fidelity/python.json",
+            "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/architecture/alternatives.json"
+          ]
+        }
+      },
+      "fidelity": {
+        "failed": 0,
+        "not-tested": 224,
+        "passed": 128
+      },
+      "missingComparableMetricCells": 21,
+      "advisoryEvidenceDate": "2026-10-04T13:53:54.711Z",
+      "advisoryRefreshed": false
+    },
+    {
+      "candidate": "rust",
+      "report": "evaluation/reports/rust/candidate.json",
+      "companion": "evaluation/reports/rust/bundle.json",
+      "prototypeRevision": "4fdf0cc8e69e050600d0a5d8f7f1f42987f68203",
+      "schemaValid": true,
+      "assessment": {
+        "outcome": "ineligible",
+        "blockers": [
+          "report-not-complete",
+          "untested-hard-gate",
+          "missing-independent-review",
+          "missing-measurements"
+        ]
+      },
+      "hardGates": {
+        "specificationFidelity": {
+          "status": "failed",
+          "evidence": [
+            "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/fidelity/rust.json"
+          ]
+        },
+        "deterministicDiagnostics": {
+          "status": "not-tested",
+          "evidence": [
+            "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/fidelity/rust.json"
+          ]
+        },
+        "offlineOperation": {
+          "status": "failed",
+          "evidence": [
+            "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/isolation/rust.json",
+            "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/lifecycle/linux/rust.json",
+            "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/lifecycle/macos/rust.json",
+            "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/lifecycle/windows/rust.json"
+          ]
+        },
+        "reproducibleDependencies": {
+          "status": "not-tested",
+          "evidence": [
+            "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/supply-chain/rust/inventory.json"
+          ]
+        },
+        "distributionTargets": {
+          "status": "failed",
+          "evidence": [
+            "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/lifecycle/linux/rust.json",
+            "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/lifecycle/macos/rust.json",
+            "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/lifecycle/windows/rust.json"
+          ]
+        },
+        "securityBoundary": {
+          "status": "not-tested",
+          "evidence": [
+            "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/isolation/rust.json",
+            "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/supply-chain/rust/inventory.json"
+          ]
+        },
+        "supplyChainEvidence": {
+          "status": "not-tested",
+          "evidence": [
+            "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/supply-chain/rust/inventory.json"
+          ]
+        },
+        "providerNeutrality": {
+          "status": "not-tested",
+          "evidence": [
+            "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/fidelity/rust.json",
+            "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/architecture/alternatives.json"
+          ]
+        },
+        "scopeIntegrity": {
+          "status": "not-tested",
+          "evidence": [
+            "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/fidelity/rust.json",
+            "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/architecture/alternatives.json"
+          ]
+        }
+      },
+      "fidelity": {
+        "failed": 0,
+        "not-tested": 224,
+        "passed": 128
+      },
+      "missingComparableMetricCells": 21,
+      "advisoryEvidenceDate": "2026-10-04T13:53:54.711Z",
+      "advisoryRefreshed": false
+    },
+    {
+      "candidate": "go",
+      "report": "evaluation/reports/go/candidate.json",
+      "companion": "evaluation/reports/go/bundle.json",
+      "prototypeRevision": "737396b6488a9f10b179061366b9f1d02591fb9f",
+      "schemaValid": true,
+      "assessment": {
+        "outcome": "ineligible",
+        "blockers": [
+          "report-not-complete",
+          "missing-target-evidence",
+          "untested-hard-gate",
+          "missing-independent-review",
+          "missing-measurements"
+        ]
+      },
+      "hardGates": {
+        "specificationFidelity": {
+          "status": "failed",
+          "evidence": [
+            "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/fidelity/go.json"
+          ]
+        },
+        "deterministicDiagnostics": {
+          "status": "not-tested",
+          "evidence": [
+            "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/fidelity/go.json"
+          ]
+        },
+        "offlineOperation": {
+          "status": "not-tested",
+          "evidence": [
+            "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/isolation/go.json",
+            "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/lifecycle/linux/go.json",
+            "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/lifecycle/macos/go.json",
+            "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/lifecycle/windows/go.json"
+          ]
+        },
+        "reproducibleDependencies": {
+          "status": "not-tested",
+          "evidence": [
+            "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/supply-chain/go/inventory.json"
+          ]
+        },
+        "distributionTargets": {
+          "status": "failed",
+          "evidence": [
+            "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/lifecycle/linux/go.json",
+            "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/lifecycle/macos/go.json",
+            "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/lifecycle/windows/go.json"
+          ]
+        },
+        "securityBoundary": {
+          "status": "not-tested",
+          "evidence": [
+            "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/isolation/go.json",
+            "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/supply-chain/go/inventory.json"
+          ]
+        },
+        "supplyChainEvidence": {
+          "status": "not-tested",
+          "evidence": [
+            "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/supply-chain/go/inventory.json"
+          ]
+        },
+        "providerNeutrality": {
+          "status": "not-tested",
+          "evidence": [
+            "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/fidelity/go.json",
+            "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/architecture/alternatives.json"
+          ]
+        },
+        "scopeIntegrity": {
+          "status": "not-tested",
+          "evidence": [
+            "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/fidelity/go.json",
+            "https://github.com/iwizy/NexFlow/blob/dfa11b50dcde79154a066c41983b708190b05643/evaluation/architecture/alternatives.json"
+          ]
+        }
+      },
+      "fidelity": {
+        "failed": 0,
+        "not-tested": 224,
+        "passed": 128
+      },
+      "missingComparableMetricCells": 21,
+      "advisoryEvidenceDate": "2026-10-04T13:53:54.711Z",
+      "advisoryRefreshed": false
+    }
+  ],
+  "targetMatrix": [
+    {
+      "target": "linux/amd64",
+      "contract": {
+        "id": "linux/amd64",
+        "platform": "linux",
+        "architecture": "x64",
+        "runnerLabel": "ubuntu-24.04",
+        "osFamily": "Ubuntu 24.04",
+        "buildMode": "native",
+        "snapshot": {
+          "target": "linux/amd64",
+          "platform": "linux",
+          "architecture": "x64",
+          "runnerLabel": "ubuntu-24.04",
+          "imageOS": "ubuntu24",
+          "imageVersion": "20260920.314.1",
+          "osVersion": "24.04",
+          "osBuild": "6.17.0-1022-azure",
+          "osCaption": "Ubuntu 24.04.5 LTS",
+          "kernel": "6.17.0-1022-azure",
+          "libc": "glibc 2.39",
+          "cpuModel": "AMD EPYC 9V45 96-Core Processor",
+          "cpuCount": 4,
+          "memoryBytes": 16766414848,
+          "translated": false
+        },
+        "infrastructureResult": "passed",
+        "evidence": {
+          "evaluatedHead": "021079f2d086873d1c8d93244a6f0c8040b769cc",
+          "job": "https://github.com/iwizy/NexFlow/actions/runs/36844655825/job/110311781590",
+          "softwareManifest": "https://github.com/actions/runner-images/blob/ubuntu24/20260920.314/images/ubuntu/Ubuntu2404-Readme.md"
+        }
+      },
+      "productSupport": "not-declared",
+      "candidateObservations": [
+        {
+          "candidate": "typescript",
+          "source": "evaluation/reports/typescript/bundle.json",
+          "environment": {
+            "target": "linux/amd64",
+            "platform": "linux",
+            "architecture": "x64",
+            "runnerLabel": "ubuntu-24.04",
+            "imageOS": "ubuntu24",
+            "imageVersion": "20260927.320.1",
+            "osVersion": "24.04",
+            "osBuild": "6.17.0-1022-azure",
+            "osCaption": "Ubuntu 24.04.5 LTS",
+            "kernel": "6.17.0-1022-azure",
+            "libc": "glibc 2.39",
+            "cpuModel": "AMD EPYC 9V45 96-Core Processor",
+            "cpuCount": 4,
+            "memoryBytes": 16766414848,
+            "translated": false
+          },
+          "frozenCheck": {
+            "matched": false,
+            "blockers": [
+              "environment-drift:imageVersion"
+            ]
+          },
+          "observedToolchain": {
+            "node": "v22.23.2",
+            "npm": "10.9.8",
+            "compiler": "Version 7.0.2"
+          },
+          "stages": {
+            "build": "passed",
+            "install": "passed",
+            "validateInspect": "passed",
+            "offlineUse": "passed",
+            "upgrade": "not-tested",
+            "rollback": "not-tested",
+            "uninstall": "passed",
+            "signing": "not-tested"
+          },
+          "distributionGate": "partial",
+          "artifactSha256": "8e4bd06593461a46838b0191585604e6e436c0642c08c20143070eb253ec0456",
+          "blockers": [
+            "fresh-common-candidate-cohort-not-tested",
+            "full-library-workload-unsupported",
+            "instrument-version-and-native-accounting-not-tested",
+            "raw-measurement-runs-not-tested",
+            "retained-environment-not-frozen"
+          ],
+          "comparableMetricSamples": 0
+        },
+        {
+          "candidate": "python",
+          "source": "evaluation/reports/python/bundle.json",
+          "environment": {
+            "target": "linux/amd64",
+            "platform": "linux",
+            "architecture": "x64",
+            "runnerLabel": "ubuntu-24.04",
+            "imageOS": "ubuntu24",
+            "imageVersion": "20260927.320.1",
+            "osVersion": "24.04",
+            "osBuild": "6.17.0-1022-azure",
+            "osCaption": "Ubuntu 24.04.5 LTS",
+            "kernel": "6.17.0-1022-azure",
+            "libc": "glibc 2.39",
+            "cpuModel": "INTEL(R) XEON(R) PLATINUM 8573C",
+            "cpuCount": 4,
+            "memoryBytes": 16765374464,
+            "translated": false
+          },
+          "frozenCheck": {
+            "matched": false,
+            "blockers": [
+              "environment-drift:imageVersion",
+              "environment-drift:cpuModel",
+              "environment-drift:memoryBytes"
+            ]
+          },
+          "observedToolchain": {
+            "node": "v22.23.2",
+            "npm": "10.9.8",
+            "python": "Python 3.12.14"
+          },
+          "stages": {
+            "build": "passed",
+            "install": "passed",
+            "validateInspect": "passed",
+            "offlineUse": "passed",
+            "upgrade": "not-tested",
+            "rollback": "not-tested",
+            "uninstall": "passed",
+            "signing": "not-tested"
+          },
+          "distributionGate": "partial",
+          "artifactSha256": "51a69a5af1689270e856de1aca64d94331cba005e67859a01e2515a5101d7cea",
+          "blockers": [
+            "fresh-common-candidate-cohort-not-tested",
+            "full-library-workload-unsupported",
+            "instrument-version-and-native-accounting-not-tested",
+            "raw-measurement-runs-not-tested",
+            "retained-environment-not-frozen"
+          ],
+          "comparableMetricSamples": 0
+        },
+        {
+          "candidate": "rust",
+          "source": "evaluation/reports/rust/bundle.json",
+          "environment": {
+            "target": "linux/amd64",
+            "platform": "linux",
+            "architecture": "x64",
+            "runnerLabel": "ubuntu-24.04",
+            "imageOS": "ubuntu24",
+            "imageVersion": "20260927.320.1",
+            "osVersion": "24.04",
+            "osBuild": "6.17.0-1022-azure",
+            "osCaption": "Ubuntu 24.04.5 LTS",
+            "kernel": "6.17.0-1022-azure",
+            "libc": "glibc 2.39",
+            "cpuModel": "AMD EPYC 7763 64-Core Processor",
+            "cpuCount": 4,
+            "memoryBytes": 16766414848,
+            "translated": false
+          },
+          "frozenCheck": {
+            "matched": false,
+            "blockers": [
+              "environment-drift:imageVersion",
+              "environment-drift:cpuModel"
+            ]
+          },
+          "observedToolchain": {
+            "node": "v22.23.2",
+            "npm": "10.9.8",
+            "rust": "rustc 1.99.0 (b940084d7 2026-09-28)",
+            "cargo": "cargo 1.99.0 (5f94df478 2026-08-27)"
+          },
+          "stages": {
+            "build": "passed",
+            "install": "passed",
+            "validateInspect": "failed",
+            "offlineUse": "failed",
+            "upgrade": "not-tested",
+            "rollback": "not-tested",
+            "uninstall": "passed",
+            "signing": "not-tested"
+          },
+          "distributionGate": "partial",
+          "artifactSha256": "c30e08c9bca9159a67eb9c382fb004772de6de6a928a8f8c9a12ba43a2e0bdca",
+          "blockers": [
+            "fresh-common-candidate-cohort-not-tested",
+            "full-library-workload-unsupported",
+            "instrument-version-and-native-accounting-not-tested",
+            "raw-measurement-runs-not-tested",
+            "retained-environment-not-frozen",
+            "installed-validation-failed",
+            "offline-lifecycle-not-passed"
+          ],
+          "comparableMetricSamples": 0
+        },
+        {
+          "candidate": "go",
+          "source": "evaluation/reports/go/bundle.json",
+          "environment": {
+            "target": "linux/amd64",
+            "platform": "linux",
+            "architecture": "x64",
+            "runnerLabel": "ubuntu-24.04",
+            "imageOS": "ubuntu24",
+            "imageVersion": "20260927.320.1",
+            "osVersion": "24.04",
+            "osBuild": "6.17.0-1022-azure",
+            "osCaption": "Ubuntu 24.04.5 LTS",
+            "kernel": "6.17.0-1022-azure",
+            "libc": "glibc 2.39",
+            "cpuModel": "AMD EPYC 7763 64-Core Processor",
+            "cpuCount": 4,
+            "memoryBytes": 16766414848,
+            "translated": false
+          },
+          "frozenCheck": {
+            "matched": false,
+            "blockers": [
+              "environment-drift:imageVersion",
+              "environment-drift:cpuModel"
+            ]
+          },
+          "observedToolchain": {
+            "node": "v22.23.2",
+            "npm": "10.9.8",
+            "go": "go version go1.27.1 linux/amd64"
+          },
+          "stages": {
+            "build": "passed",
+            "install": "passed",
+            "validateInspect": "passed",
+            "offlineUse": "passed",
+            "upgrade": "not-tested",
+            "rollback": "not-tested",
+            "uninstall": "passed",
+            "signing": "not-tested"
+          },
+          "distributionGate": "partial",
+          "artifactSha256": "c7b49a4257f39ede6c4f900aeb809d3a31afbd916e943ca86d7e6a8ef1620dde",
+          "blockers": [
+            "fresh-common-candidate-cohort-not-tested",
+            "full-library-workload-unsupported",
+            "instrument-version-and-native-accounting-not-tested",
+            "raw-measurement-runs-not-tested",
+            "retained-environment-not-frozen"
+          ],
+          "comparableMetricSamples": 0
+        }
+      ]
+    },
+    {
+      "target": "macos/arm64",
+      "contract": {
+        "id": "macos/arm64",
+        "platform": "darwin",
+        "architecture": "arm64",
+        "runnerLabel": "macos-15",
+        "osFamily": "macOS 15",
+        "buildMode": "native",
+        "snapshot": {
+          "target": "macos/arm64",
+          "platform": "darwin",
+          "architecture": "arm64",
+          "runnerLabel": "macos-15",
+          "imageOS": "macos15",
+          "imageVersion": "20260907.0337.1",
+          "osVersion": "15.7.9",
+          "osBuild": "24G830",
+          "osCaption": "macOS 15.7.9",
+          "kernel": "24.6.0",
+          "libc": null,
+          "cpuModel": "Apple M1 (Virtual)",
+          "cpuCount": 3,
+          "memoryBytes": 7516192768,
+          "translated": false
+        },
+        "infrastructureResult": "passed",
+        "evidence": {
+          "evaluatedHead": "021079f2d086873d1c8d93244a6f0c8040b769cc",
+          "job": "https://github.com/iwizy/NexFlow/actions/runs/36844655825/job/110311782035",
+          "softwareManifest": "https://github.com/actions/runner-images/blob/macos-15-arm64/20260907.0337/images/macos/macos-15-arm64-Readme.md"
+        }
+      },
+      "productSupport": "not-declared",
+      "candidateObservations": [
+        {
+          "candidate": "typescript",
+          "source": "evaluation/reports/typescript/bundle.json",
+          "environment": {
+            "target": "macos/arm64",
+            "platform": "darwin",
+            "architecture": "arm64",
+            "runnerLabel": "local-native",
+            "imageOS": null,
+            "imageVersion": null,
+            "osVersion": "27.0.1",
+            "osBuild": "26A434",
+            "kernel": "27.0.0",
+            "cpuModel": "Apple M4 Pro",
+            "cpuCount": 14,
+            "memoryBytes": 51539607552,
+            "libc": null,
+            "translated": false,
+            "nativeArm64": true
+          },
+          "frozenCheck": {
+            "matched": false,
+            "blockers": [
+              "wrong-runner-label",
+              "incomplete-environment",
+              "wrong-os-family-or-translation",
+              "environment-drift:runnerLabel",
+              "environment-drift:imageOS",
+              "environment-drift:imageVersion",
+              "environment-drift:osVersion",
+              "environment-drift:osBuild",
+              "environment-drift:kernel",
+              "environment-drift:cpuModel",
+              "environment-drift:cpuCount",
+              "environment-drift:memoryBytes"
+            ]
+          },
+          "observedToolchain": "Node 22.23.2; npm 10.9.8; TypeScript 7.0.2",
+          "stages": {
+            "package": "passed",
+            "install": "passed",
+            "validateInspect": "passed",
+            "offlineUse": "passed",
+            "upgrade": "not-tested",
+            "rollback": "not-tested",
+            "uninstall": "passed",
+            "signing": "not-tested",
+            "notarization": "not-tested"
+          },
+          "distributionGate": "partial",
+          "artifactSha256": "60b7184b59b7d951479fa8e14a2f5f4a7938a051fa651828c376ab730709c669",
+          "blockers": [
+            "fresh-common-candidate-cohort-not-tested",
+            "full-library-workload-unsupported",
+            "instrument-version-and-native-accounting-not-tested",
+            "raw-measurement-runs-not-tested",
+            "retained-environment-not-frozen"
+          ],
+          "comparableMetricSamples": 0
+        },
+        {
+          "candidate": "python",
+          "source": "evaluation/reports/python/bundle.json",
+          "environment": {
+            "target": "macos/arm64",
+            "platform": "darwin",
+            "architecture": "arm64",
+            "runnerLabel": "local-native",
+            "imageOS": null,
+            "imageVersion": null,
+            "osVersion": "27.0.1",
+            "osBuild": "26A434",
+            "kernel": "27.0.0",
+            "cpuModel": "Apple M4 Pro",
+            "cpuCount": 14,
+            "memoryBytes": 51539607552,
+            "libc": null,
+            "translated": false,
+            "nativeArm64": true
+          },
+          "frozenCheck": {
+            "matched": false,
+            "blockers": [
+              "wrong-runner-label",
+              "incomplete-environment",
+              "wrong-os-family-or-translation",
+              "environment-drift:runnerLabel",
+              "environment-drift:imageOS",
+              "environment-drift:imageVersion",
+              "environment-drift:osVersion",
+              "environment-drift:osBuild",
+              "environment-drift:kernel",
+              "environment-drift:cpuModel",
+              "environment-drift:cpuCount",
+              "environment-drift:memoryBytes"
+            ]
+          },
+          "observedToolchain": "CPython 3.12.14; PyYAML 6.0.3; jsonschema 4.26.0",
+          "stages": {
+            "package": "passed",
+            "install": "passed",
+            "validateInspect": "passed",
+            "offlineUse": "passed",
+            "upgrade": "not-tested",
+            "rollback": "not-tested",
+            "uninstall": "passed",
+            "signing": "not-tested",
+            "notarization": "not-tested"
+          },
+          "distributionGate": "partial",
+          "artifactSha256": "4bb21d503776162572b7e8ba1109c8ff5263962e9aced49b6da3b0d0478e09ce",
+          "blockers": [
+            "fresh-common-candidate-cohort-not-tested",
+            "full-library-workload-unsupported",
+            "instrument-version-and-native-accounting-not-tested",
+            "raw-measurement-runs-not-tested",
+            "retained-environment-not-frozen"
+          ],
+          "comparableMetricSamples": 0
+        },
+        {
+          "candidate": "rust",
+          "source": "evaluation/reports/rust/bundle.json",
+          "environment": {
+            "target": "macos/arm64",
+            "platform": "darwin",
+            "architecture": "arm64",
+            "runnerLabel": "local-native",
+            "imageOS": null,
+            "imageVersion": null,
+            "osVersion": "27.0.1",
+            "osBuild": "26A434",
+            "kernel": "27.0.0",
+            "cpuModel": "Apple M4 Pro",
+            "cpuCount": 14,
+            "memoryBytes": 51539607552,
+            "libc": null,
+            "translated": false,
+            "nativeArm64": true
+          },
+          "frozenCheck": {
+            "matched": false,
+            "blockers": [
+              "wrong-runner-label",
+              "incomplete-environment",
+              "wrong-os-family-or-translation",
+              "environment-drift:runnerLabel",
+              "environment-drift:imageOS",
+              "environment-drift:imageVersion",
+              "environment-drift:osVersion",
+              "environment-drift:osBuild",
+              "environment-drift:kernel",
+              "environment-drift:cpuModel",
+              "environment-drift:cpuCount",
+              "environment-drift:memoryBytes"
+            ]
+          },
+          "observedToolchain": "rustc/Cargo 1.99.0; jsonschema 0.58.4; yaml-rust2 0.11.0",
+          "stages": {
+            "package": "passed",
+            "install": "passed",
+            "validateInspect": "failed",
+            "offlineUse": "failed",
+            "upgrade": "not-tested",
+            "rollback": "not-tested",
+            "uninstall": "passed",
+            "signing": "not-tested",
+            "notarization": "not-tested"
+          },
+          "distributionGate": "partial",
+          "artifactSha256": "a9d5b45b707d1540605adcd813a78196852d4ced10eb1b8d5c049790ed782749",
+          "blockers": [
+            "fresh-common-candidate-cohort-not-tested",
+            "full-library-workload-unsupported",
+            "instrument-version-and-native-accounting-not-tested",
+            "raw-measurement-runs-not-tested",
+            "retained-environment-not-frozen",
+            "installed-validation-failed",
+            "offline-lifecycle-not-passed"
+          ],
+          "comparableMetricSamples": 0
+        },
+        {
+          "candidate": "go",
+          "source": "evaluation/reports/go/bundle.json",
+          "environment": {
+            "target": "macos/arm64",
+            "platform": "darwin",
+            "architecture": "arm64",
+            "runnerLabel": "local-native",
+            "imageOS": null,
+            "imageVersion": null,
+            "osVersion": "27.0.1",
+            "osBuild": "26A434",
+            "kernel": "27.0.0",
+            "cpuModel": "Apple M4 Pro",
+            "cpuCount": 14,
+            "memoryBytes": 51539607552,
+            "libc": null,
+            "translated": false,
+            "nativeArm64": true
+          },
+          "frozenCheck": {
+            "matched": false,
+            "blockers": [
+              "wrong-runner-label",
+              "incomplete-environment",
+              "wrong-os-family-or-translation",
+              "environment-drift:runnerLabel",
+              "environment-drift:imageOS",
+              "environment-drift:imageVersion",
+              "environment-drift:osVersion",
+              "environment-drift:osBuild",
+              "environment-drift:kernel",
+              "environment-drift:cpuModel",
+              "environment-drift:cpuCount",
+              "environment-drift:memoryBytes"
+            ]
+          },
+          "observedToolchain": "Go 1.27.1; jsonschema/v6 6.0.2; yaml/v3 3.0.4; CGO_ENABLED=0",
+          "stages": {
+            "package": "passed",
+            "install": "passed",
+            "validateInspect": "passed",
+            "offlineUse": "passed",
+            "upgrade": "not-tested",
+            "rollback": "not-tested",
+            "uninstall": "passed",
+            "signing": "not-tested",
+            "notarization": "not-tested"
+          },
+          "distributionGate": "partial",
+          "artifactSha256": "03bdf5f0bc9f45645a2faf270b772884398bd82106e0605db7a9ca5d8a2778aa",
+          "blockers": [
+            "fresh-common-candidate-cohort-not-tested",
+            "full-library-workload-unsupported",
+            "instrument-version-and-native-accounting-not-tested",
+            "raw-measurement-runs-not-tested",
+            "retained-environment-not-frozen"
+          ],
+          "comparableMetricSamples": 0
+        }
+      ]
+    },
+    {
+      "target": "windows/amd64",
+      "contract": {
+        "id": "windows/amd64",
+        "platform": "win32",
+        "architecture": "x64",
+        "runnerLabel": "windows-2025",
+        "osFamily": "Windows Server 2025",
+        "buildMode": "native",
+        "snapshot": {
+          "target": "windows/amd64",
+          "platform": "win32",
+          "architecture": "x64",
+          "runnerLabel": "windows-2025",
+          "imageOS": "win25-vs2026",
+          "imageVersion": "20260925.250.1",
+          "osVersion": "10.0.26100",
+          "osBuild": "26100",
+          "osCaption": "Microsoft Windows Server 2025 Datacenter",
+          "kernel": "10.0.26100",
+          "libc": null,
+          "cpuModel": "AMD EPYC 7763 64-Core Processor                ",
+          "cpuCount": 4,
+          "memoryBytes": 17174360064,
+          "translated": false
+        },
+        "infrastructureResult": "passed",
+        "evidence": {
+          "evaluatedHead": "021079f2d086873d1c8d93244a6f0c8040b769cc",
+          "job": "https://github.com/iwizy/NexFlow/actions/runs/36844655825/job/110311781781",
+          "softwareManifest": "https://github.com/actions/runner-images/blob/win25-vs2026/20260925.250/images/windows/Windows2025-VS2026-Readme.md"
+        }
+      },
+      "productSupport": "not-declared",
+      "candidateObservations": [
+        {
+          "candidate": "typescript",
+          "source": "evaluation/reports/typescript/bundle.json",
+          "environment": {
+            "target": "windows/amd64",
+            "platform": "win32",
+            "architecture": "x64",
+            "runnerLabel": "windows-2025",
+            "imageOS": "win25-vs2026",
+            "imageVersion": "20260925.250.1",
+            "osVersion": "10.0.26100",
+            "osBuild": "26100",
+            "osCaption": "Microsoft Windows Server 2025 Datacenter",
+            "kernel": "10.0.26100",
+            "libc": null,
+            "cpuModel": "AMD EPYC 7763 64-Core Processor                ",
+            "cpuCount": 4,
+            "memoryBytes": 17174360064,
+            "translated": false
+          },
+          "frozenCheck": {
+            "matched": true,
+            "blockers": []
+          },
+          "observedToolchain": {
+            "node": "v22.23.2",
+            "npm": "10.9.8",
+            "compiler": "Version 7.0.2"
+          },
+          "stages": {
+            "build": "passed",
+            "install": "failed",
+            "validateInspect": "passed",
+            "offlineUse": "not-tested",
+            "upgrade": "not-tested",
+            "rollback": "not-tested",
+            "uninstall": "passed",
+            "signing": "not-tested"
+          },
+          "distributionGate": "partial",
+          "artifactSha256": "96dd61554313e68b3a49c32f2d1f455460ab091f35e130b237e5e46f5b0845f9",
+          "blockers": [
+            "fresh-common-candidate-cohort-not-tested",
+            "full-library-workload-unsupported",
+            "instrument-version-and-native-accounting-not-tested",
+            "raw-measurement-runs-not-tested",
+            "unicode-install-failed",
+            "offline-lifecycle-not-passed"
+          ],
+          "comparableMetricSamples": 0
+        },
+        {
+          "candidate": "python",
+          "source": "evaluation/reports/python/bundle.json",
+          "environment": {
+            "target": "windows/amd64",
+            "platform": "win32",
+            "architecture": "x64",
+            "runnerLabel": "windows-2025",
+            "imageOS": "win25-vs2026",
+            "imageVersion": "20260925.250.1",
+            "osVersion": "10.0.26100",
+            "osBuild": "26100",
+            "osCaption": "Microsoft Windows Server 2025 Datacenter",
+            "kernel": "10.0.26100",
+            "libc": null,
+            "cpuModel": "AMD EPYC 9V74 80-Core Processor                ",
+            "cpuCount": 4,
+            "memoryBytes": 17174360064,
+            "translated": false
+          },
+          "frozenCheck": {
+            "matched": false,
+            "blockers": [
+              "environment-drift:cpuModel"
+            ]
+          },
+          "observedToolchain": {
+            "node": "v22.23.2",
+            "npm": "10.9.8",
+            "python": "Python 3.12.10"
+          },
+          "stages": {
+            "build": "failed",
+            "install": "not-tested",
+            "validateInspect": "not-tested",
+            "offlineUse": "not-tested",
+            "upgrade": "not-tested",
+            "rollback": "not-tested",
+            "uninstall": "not-tested",
+            "signing": "not-tested"
+          },
+          "distributionGate": "partial",
+          "artifactSha256": null,
+          "blockers": [
+            "fresh-common-candidate-cohort-not-tested",
+            "full-library-workload-unsupported",
+            "instrument-version-and-native-accounting-not-tested",
+            "raw-measurement-runs-not-tested",
+            "retained-environment-not-frozen",
+            "native-artifact-unavailable",
+            "native-build-failed",
+            "offline-lifecycle-not-passed"
+          ],
+          "comparableMetricSamples": 0
+        },
+        {
+          "candidate": "rust",
+          "source": "evaluation/reports/rust/bundle.json",
+          "environment": {
+            "target": "windows/amd64",
+            "platform": "win32",
+            "architecture": "x64",
+            "runnerLabel": "windows-2025",
+            "imageOS": "win25-vs2026",
+            "imageVersion": "20260925.250.1",
+            "osVersion": "10.0.26100",
+            "osBuild": "26100",
+            "osCaption": "Microsoft Windows Server 2025 Datacenter",
+            "kernel": "10.0.26100",
+            "libc": null,
+            "cpuModel": "AMD EPYC 7763 64-Core Processor                ",
+            "cpuCount": 4,
+            "memoryBytes": 17174360064,
+            "translated": false
+          },
+          "frozenCheck": {
+            "matched": true,
+            "blockers": []
+          },
+          "observedToolchain": {
+            "node": "v22.23.2",
+            "npm": "10.9.8",
+            "rust": "rustc 1.99.0 (b940084d7 2026-09-28)",
+            "cargo": "cargo 1.99.0 (5f94df478 2026-08-27)",
+            "target": "host: x86_64-pc-windows-msvc"
+          },
+          "stages": {
+            "build": "passed",
+            "install": "failed",
+            "validateInspect": "failed",
+            "offlineUse": "not-tested",
+            "upgrade": "not-tested",
+            "rollback": "not-tested",
+            "uninstall": "passed",
+            "signing": "not-tested"
+          },
+          "distributionGate": "partial",
+          "artifactSha256": "2ac546ebe7a1b2bf13ba5e5932848e30dbec9910f185235c0d1619ba210da616",
+          "blockers": [
+            "fresh-common-candidate-cohort-not-tested",
+            "full-library-workload-unsupported",
+            "instrument-version-and-native-accounting-not-tested",
+            "raw-measurement-runs-not-tested",
+            "installed-validation-failed",
+            "unicode-install-failed",
+            "offline-lifecycle-not-passed"
+          ],
+          "comparableMetricSamples": 0
+        },
+        {
+          "candidate": "go",
+          "source": "evaluation/reports/go/bundle.json",
+          "environment": {
+            "target": "windows/amd64",
+            "platform": "win32",
+            "architecture": "x64",
+            "runnerLabel": "windows-2025",
+            "imageOS": "win25-vs2026",
+            "imageVersion": "20260925.250.1",
+            "osVersion": "10.0.26100",
+            "osBuild": "26100",
+            "osCaption": "Microsoft Windows Server 2025 Datacenter",
+            "kernel": "10.0.26100",
+            "libc": null,
+            "cpuModel": "Intel(R) Xeon(R) Platinum 8370C CPU @ 2.80GHz",
+            "cpuCount": 4,
+            "memoryBytes": 17174360064,
+            "translated": false
+          },
+          "frozenCheck": {
+            "matched": false,
+            "blockers": [
+              "environment-drift:cpuModel"
+            ]
+          },
+          "observedToolchain": {
+            "node": "v22.23.2",
+            "npm": "10.9.8",
+            "go": "go version go1.27.1 windows/amd64"
+          },
+          "stages": {
+            "build": "passed",
+            "install": "failed",
+            "validateInspect": "passed",
+            "offlineUse": "not-tested",
+            "upgrade": "not-tested",
+            "rollback": "not-tested",
+            "uninstall": "passed",
+            "signing": "not-tested"
+          },
+          "distributionGate": "partial",
+          "artifactSha256": "2403b2969bc57d6b4c8a8fcb996b8e2292f8810f8ed09fdc6ac25e9f42bae8d7",
+          "blockers": [
+            "fresh-common-candidate-cohort-not-tested",
+            "full-library-workload-unsupported",
+            "instrument-version-and-native-accounting-not-tested",
+            "raw-measurement-runs-not-tested",
+            "retained-environment-not-frozen",
+            "unicode-install-failed",
+            "offline-lifecycle-not-passed"
+          ],
+          "comparableMetricSamples": 0
+        }
+      ]
+    }
+  ],
+  "alternatives": [
+    {
+      "id": "shared-packages",
+      "layout": "same-language/shared-packages",
+      "status": "unselected",
+      "imports": [
+        [
+          "cli",
+          "input-boundary"
+        ],
+        [
+          "cli",
+          "pure-validation"
+        ],
+        [
+          "input-boundary",
+          "pure-validation"
+        ],
+        [
+          "runtime-host",
+          "pure-validation"
+        ],
+        [
+          "runtime-host",
+          "authority-boundary"
+        ],
+        [
+          "authority-boundary",
+          "effect-ports"
+        ]
+      ]
+    },
+    {
+      "id": "separate-packages",
+      "layout": "same-language/separate-cli-runtime-packages",
+      "status": "unselected",
+      "imports": [
+        [
+          "cli",
+          "input-boundary"
+        ],
+        [
+          "cli",
+          "pure-validation"
+        ],
+        [
+          "input-boundary",
+          "pure-validation"
+        ],
+        [
+          "runtime-host",
+          "pure-validation"
+        ],
+        [
+          "runtime-host",
+          "authority-boundary"
+        ],
+        [
+          "authority-boundary",
+          "effect-ports"
+        ]
+      ]
+    },
+    {
+      "id": "split-languages",
+      "layout": "different-cli-runtime-languages",
+      "status": "unselected",
+      "imports": [
+        [
+          "cli",
+          "input-boundary"
+        ],
+        [
+          "cli",
+          "pure-validation"
+        ],
+        [
+          "input-boundary",
+          "pure-validation"
+        ],
+        [
+          "runtime-host",
+          "runtime-validation"
+        ],
+        [
+          "runtime-host",
+          "authority-boundary"
+        ],
+        [
+          "authority-boundary",
+          "effect-ports"
+        ]
+      ]
+    }
+  ],
+  "versionDomains": [
+    "manifest-dialect",
+    "schema-snapshot",
+    "validation-library-api",
+    "cli-artifact",
+    "diagnostic-output",
+    "runtime-host",
+    "adapter-extension",
+    "boundary-protocol",
+    "stored-state"
+  ],
+  "ownershipProposals": [
+    {
+      "role": "cli",
+      "status": "pending",
+      "confirmedOwner": null,
+      "confirmedSupportWindow": null
+    },
+    {
+      "role": "validation-libraries",
+      "status": "pending",
+      "confirmedOwner": null,
+      "confirmedSupportWindow": null
+    },
+    {
+      "role": "runtime",
+      "status": "pending",
+      "confirmedOwner": null,
+      "confirmedSupportWindow": null
+    },
+    {
+      "role": "security-dependencies",
+      "status": "pending",
+      "confirmedOwner": null,
+      "confirmedSupportWindow": null
+    },
+    {
+      "role": "release-ci",
+      "status": "pending",
+      "confirmedOwner": null,
+      "confirmedSupportWindow": null
+    },
+    {
+      "role": "signing-distribution",
+      "status": "pending",
+      "confirmedOwner": null,
+      "confirmedSupportWindow": null
+    }
+  ],
+  "reviewerProposals": [
+    {
+      "role": "architecture-validation",
+      "status": "pending",
+      "confirmedPerson": null,
+      "independentOfAuthorsRequired": true
+    },
+    {
+      "role": "security-distribution",
+      "status": "pending",
+      "confirmedPerson": null,
+      "independentOfAuthorsRequired": true
+    }
+  ],
+  "gates": [
+    {
+      "number": 1,
+      "id": "proposalCompleteness",
+      "title": "Proposal Completeness",
+      "status": "blocked",
+      "evidence": [
+        "rfcs/RFC-0023-runtime-architecture-decision.md",
+        "evaluation/architecture/alternatives.json"
+      ],
+      "blockers": [
+        "Language/layout, product support targets and named package ownership remain unselected."
+      ],
+      "closed": false
+    },
+    {
+      "number": 2,
+      "id": "evidenceIntegrity",
+      "title": "Evidence Integrity And Comparability",
+      "status": "blocked",
+      "evidence": [
+        "rfcs/RFC-0023-runtime-architecture-decision.md",
+        "evaluation/reports/typescript/candidate.json",
+        "evaluation/reports/python/candidate.json",
+        "evaluation/reports/rust/candidate.json",
+        "evaluation/reports/go/candidate.json",
+        "evaluation/reports/review/reviewer-a.json",
+        "evaluation/reports/review/reviewer-b.json",
+        "evaluation/reports/review/reconciliation.json"
+      ],
+      "blockers": [
+        "Full equivalent semantics/diagnostics, all 84 comparable metrics and two independent scores/reconciliation are missing."
+      ],
+      "closed": false
+    },
+    {
+      "number": 3,
+      "id": "candidateEligibility",
+      "title": "Candidate Eligibility",
+      "status": "blocked",
+      "evidence": [
+        "rfcs/RFC-0023-runtime-architecture-decision.md",
+        "evaluation/reports/typescript/candidate.json",
+        "evaluation/reports/python/candidate.json",
+        "evaluation/reports/rust/candidate.json",
+        "evaluation/reports/go/candidate.json"
+      ],
+      "blockers": [
+        "All four unchanged assessor outcomes are ineligible; failed fidelity and target stages cannot be waived."
+      ],
+      "closed": false
+    },
+    {
+      "number": 4,
+      "id": "architectureDependencies",
+      "title": "Architecture And Dependency Direction",
+      "status": "blocked",
+      "evidence": [
+        "rfcs/RFC-0023-runtime-architecture-decision.md",
+        "evaluation/architecture/alternatives.json",
+        "docs/cli-runtime-boundary.md"
+      ],
+      "blockers": [
+        "Concrete selected import/startup/API/version boundary implementations and tests are absent."
+      ],
+      "closed": false
+    },
+    {
+      "number": 5,
+      "id": "cliRuntimeSeparation",
+      "title": "CLI And Runtime Separation",
+      "status": "blocked",
+      "evidence": [
+        "rfcs/RFC-0023-runtime-architecture-decision.md",
+        "docs/cli-runtime-boundary.md",
+        "evaluation/reports/typescript/bundle.json",
+        "evaluation/reports/python/bundle.json",
+        "evaluation/reports/rust/bundle.json",
+        "evaluation/reports/go/bundle.json"
+      ],
+      "blockers": [
+        "Full installed static-command effect budgets and target-native credential/process/extension denial are not established."
+      ],
+      "closed": false
+    },
+    {
+      "number": 6,
+      "id": "securityAuthority",
+      "title": "Security And Authority Boundaries",
+      "status": "blocked",
+      "evidence": [
+        "rfcs/RFC-0023-runtime-architecture-decision.md",
+        "docs/security-model.md",
+        "docs/credential-handling.md",
+        "evaluation/reports/typescript/bundle.json",
+        "evaluation/reports/python/bundle.json",
+        "evaluation/reports/rust/bundle.json",
+        "evaluation/reports/go/bundle.json"
+      ],
+      "blockers": [
+        "Partial isolation, dated advisories, native/runtime/license closure, resource/redaction/revocation/race evidence remain blockers."
+      ],
+      "closed": false
+    },
+    {
+      "number": 7,
+      "id": "extensionProvider",
+      "title": "Extension And Provider Boundaries",
+      "status": "blocked",
+      "evidence": [
+        "rfcs/RFC-0023-runtime-architecture-decision.md",
+        "docs/extension-loading-boundary.md",
+        "docs/provider-adapter-boundary.md",
+        "docs/mcp-a2a-boundaries.md",
+        "evaluation/architecture/alternatives.json"
+      ],
+      "blockers": [
+        "Catalog/isolation/mediation/fallback mechanism choices and negative invocation tests are absent."
+      ],
+      "closed": false
+    },
+    {
+      "number": 8,
+      "id": "eventAuditState",
+      "title": "Event, Audit, And State Boundaries",
+      "status": "blocked",
+      "evidence": [
+        "rfcs/RFC-0023-runtime-architecture-decision.md",
+        "docs/event-audit-storage-boundary.md",
+        "evaluation/architecture/alternatives.json"
+      ],
+      "blockers": [
+        "Concrete stores, ownership, retention/access/integrity/recovery/durability and crash/export tests are missing."
+      ],
+      "closed": false
+    },
+    {
+      "number": 9,
+      "id": "packagingOperations",
+      "title": "Packaging, Distribution, And Operations",
+      "status": "blocked",
+      "evidence": [
+        "rfcs/RFC-0023-runtime-architecture-decision.md",
+        "evaluation/environment-contract.json",
+        "evaluation/reports/typescript/bundle.json",
+        "evaluation/reports/python/bundle.json",
+        "evaluation/reports/rust/bundle.json",
+        "evaluation/reports/go/bundle.json"
+      ],
+      "blockers": [
+        "Native lifecycle failures/drift, previous artifacts/upgrade/rollback/signing, dependency closure and accepted support obligations remain unresolved."
+      ],
+      "closed": false
+    },
+    {
+      "number": 10,
+      "id": "conformanceCompatibility",
+      "title": "Conformance, Compatibility, And Migration",
+      "status": "blocked",
+      "evidence": [
+        "rfcs/RFC-0023-runtime-architecture-decision.md",
+        "docs/conformance.md",
+        "docs/compatibility.md",
+        "docs/versioning.md",
+        "evaluation/architecture/alternatives.json"
+      ],
+      "blockers": [
+        "Supported pair matrix, fixture owners and complete migration/rollback/conformance evidence are not accepted."
+      ],
+      "closed": false
+    },
+    {
+      "number": 11,
+      "id": "rationaleGovernanceOwnership",
+      "title": "Rationale, Governance, And Ownership",
+      "status": "blocked",
+      "evidence": [
+        "rfcs/RFC-0023-runtime-architecture-decision.md",
+        "docs/governance.md",
+        "evaluation/architecture/alternatives.json",
+        "evaluation/reports/review/reviewer-a.json",
+        "evaluation/reports/review/reviewer-b.json",
+        "evaluation/reports/review/reconciliation.json"
+      ],
+      "blockers": [
+        "No defensible selection, actual independent review/reconciliation, dissent record or named maintainer consent exists."
+      ],
+      "closed": false
+    }
+  ],
+  "humanDecisions": [
+    {
+      "id": "reviewers",
+      "status": "pending",
+      "confirmedPerson": null,
+      "consent": null,
+      "decision": null
+    },
+    {
+      "id": "owners",
+      "status": "pending",
+      "confirmedPerson": null,
+      "consent": null,
+      "decision": null
+    },
+    {
+      "id": "signing",
+      "status": "pending",
+      "confirmedPerson": null,
+      "consent": null,
+      "decision": null
+    },
+    {
+      "id": "targets",
+      "status": "pending",
+      "confirmedPerson": null,
+      "consent": null,
+      "decision": null
+    },
+    {
+      "id": "remediation",
+      "status": "pending",
+      "confirmedPerson": null,
+      "consent": null,
+      "decision": null
+    },
+    {
+      "id": "architecture",
+      "status": "pending",
+      "confirmedPerson": null,
+      "consent": null,
+      "decision": null
+    },
+    {
+      "id": "acceptance",
+      "status": "pending",
+      "confirmedPerson": null,
+      "consent": null,
+      "decision": null
+    }
+  ],
+  "review": {
+    "reviewedRfcRevision": null,
+    "reviewers": [],
+    "scorecards": [
+      "evaluation/reports/review/reviewer-a.json",
+      "evaluation/reports/review/reviewer-b.json"
+    ],
+    "scorecardStatus": "blank-template",
+    "completedScores": null,
+    "reconciliationTemplate": "evaluation/reports/review/reconciliation.json",
+    "reconciliation": null,
+    "signatures": [],
+    "dissent": null
+  },
+  "acceptance": {
+    "authorized": false,
+    "acceptedRevision": null,
+    "signedOffBy": [],
+    "conditions": [],
+    "followUps": [],
+    "rule": "Every mandatory gate passed, all blockers closed at one exact reviewed RFC/evidence revision, two independent reviews and maintainer consent through governance. Merge or CI cannot waive this."
+  },
+  "limitations": [
+    "Preparation only; no new candidate execution, vulnerability refresh, benchmark, repair, runtime or product support claim.",
+    "All failed/partial/unsupported/not-tested inputs remain visible; missing metrics are not zero-valued observations.",
+    "Historical NF-066/NF-067 are framework preparation, not current architecture acceptance.",
+    "A later human record must pin the published RFC/report assembly commits and hashes; null revisions/signatures are unfilled, not approvals.",
+    "NF-101 appointments/owner/signing consent, NF-102 independent decision review and NF-103 readiness remain separate."
+  ]
+}

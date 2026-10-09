@@ -8,6 +8,12 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Added
 
+- Added Draft RFC-0023 and a source-bound Runtime Architecture Decision review
+  bundle with exact target observations, three unselected alternatives, eleven
+  blocked mandatory gates and pending reviewer/owner/signing/target decisions.
+  Four candidate assessments remain ineligible; no architecture acceptance,
+  candidate repair, product support claim, runtime or version change.
+
 - Assembled four immutable-source candidate report bundles, preserving failed
   hard gates, target failures, partial evidence and all 84 measurement gaps.
   Added two blank independent scorecards, reconciliation and offline rejection

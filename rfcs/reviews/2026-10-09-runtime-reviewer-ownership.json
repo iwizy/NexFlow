@@ -1,0 +1,305 @@
+{
+  "formatVersion": "0.1-draft",
+  "task": "NF-101",
+  "recordedOn": "2026-10-09",
+  "status": "pending-human-confirmation",
+  "taskCompleted": false,
+  "outcome": "not-ready",
+  "sourceSnapshot": "3d318fb8257be748cceebc6d3251455364acf738",
+  "confirmationBasis": {
+    "directHumanResponse": "request-for-proposal-only",
+    "reviewerAppointments": [],
+    "ownerAcknowledgements": [],
+    "publicationConsents": [],
+    "missingConfirmationIsNotConsent": true
+  },
+  "reviewInputs": {
+    "rfc": {
+      "path": "rfcs/RFC-0023-runtime-architecture-decision.md",
+      "revision": "3d318fb8257be748cceebc6d3251455364acf738",
+      "sha256": "25247101749c0b3c17a385504978824d5fbcd2bfd95b103dd814cbce9e3ba32c",
+      "url": "https://github.com/iwizy/NexFlow/blob/3d318fb8257be748cceebc6d3251455364acf738/rfcs/RFC-0023-runtime-architecture-decision.md"
+    },
+    "bundle": {
+      "path": "rfcs/reviews/runtime-architecture-decision-draft.json",
+      "revision": "3d318fb8257be748cceebc6d3251455364acf738",
+      "sha256": "315378300e0611aef2479685d578b22a10a8335dc3d1e6bfe200cccb8d9377a5",
+      "url": "https://github.com/iwizy/NexFlow/blob/3d318fb8257be748cceebc6d3251455364acf738/rfcs/reviews/runtime-architecture-decision-draft.json"
+    },
+    "framework": {
+      "path": "rfcs/reviews/runtime-architecture-decision-review.md",
+      "revision": "3d318fb8257be748cceebc6d3251455364acf738",
+      "sha256": "e6081c4ec50d52528f68a8949821435d576e33e9fdefcc227e98e256544afac2",
+      "url": "https://github.com/iwizy/NexFlow/blob/3d318fb8257be748cceebc6d3251455364acf738/rfcs/reviews/runtime-architecture-decision-review.md"
+    },
+    "reports": [
+      {
+        "candidate": "typescript",
+        "report": {
+          "path": "evaluation/reports/typescript/candidate.json",
+          "revision": "3d318fb8257be748cceebc6d3251455364acf738",
+          "sha256": "54afd46895e302f1ec4bf2c2cd672dc4dd4b0bc48edf8c533d42ec0b7b754c93",
+          "url": "https://github.com/iwizy/NexFlow/blob/3d318fb8257be748cceebc6d3251455364acf738/evaluation/reports/typescript/candidate.json"
+        },
+        "companion": {
+          "path": "evaluation/reports/typescript/bundle.json",
+          "revision": "3d318fb8257be748cceebc6d3251455364acf738",
+          "sha256": "cc0748fac004f7f3f88450301a745196497251476bc58ff975b8be8a2e8102ea",
+          "url": "https://github.com/iwizy/NexFlow/blob/3d318fb8257be748cceebc6d3251455364acf738/evaluation/reports/typescript/bundle.json"
+        }
+      },
+      {
+        "candidate": "python",
+        "report": {
+          "path": "evaluation/reports/python/candidate.json",
+          "revision": "3d318fb8257be748cceebc6d3251455364acf738",
+          "sha256": "1104fd22807d90869f651eb5614fb843647ff9d435139dbb1397448cffb6be93",
+          "url": "https://github.com/iwizy/NexFlow/blob/3d318fb8257be748cceebc6d3251455364acf738/evaluation/reports/python/candidate.json"
+        },
+        "companion": {
+          "path": "evaluation/reports/python/bundle.json",
+          "revision": "3d318fb8257be748cceebc6d3251455364acf738",
+          "sha256": "6ef844f36eaba3dc6a2a381a4d6a4585c6ec706016c1b0781ae1cc4202cf7177",
+          "url": "https://github.com/iwizy/NexFlow/blob/3d318fb8257be748cceebc6d3251455364acf738/evaluation/reports/python/bundle.json"
+        }
+      },
+      {
+        "candidate": "rust",
+        "report": {
+          "path": "evaluation/reports/rust/candidate.json",
+          "revision": "3d318fb8257be748cceebc6d3251455364acf738",
+          "sha256": "b129a39e1bccbd72d9590f3406a86d7d682d243f7469e56cef795811c5f9c472",
+          "url": "https://github.com/iwizy/NexFlow/blob/3d318fb8257be748cceebc6d3251455364acf738/evaluation/reports/rust/candidate.json"
+        },
+        "companion": {
+          "path": "evaluation/reports/rust/bundle.json",
+          "revision": "3d318fb8257be748cceebc6d3251455364acf738",
+          "sha256": "affd4d6ded0293600baa88378b51829174a44884d1f55f83c9f7ad0ee49e7729",
+          "url": "https://github.com/iwizy/NexFlow/blob/3d318fb8257be748cceebc6d3251455364acf738/evaluation/reports/rust/bundle.json"
+        }
+      },
+      {
+        "candidate": "go",
+        "report": {
+          "path": "evaluation/reports/go/candidate.json",
+          "revision": "3d318fb8257be748cceebc6d3251455364acf738",
+          "sha256": "685f68c3167cb3619c3812d811182e81e9c782524b4f4f2317e92abbb71580bb",
+          "url": "https://github.com/iwizy/NexFlow/blob/3d318fb8257be748cceebc6d3251455364acf738/evaluation/reports/go/candidate.json"
+        },
+        "companion": {
+          "path": "evaluation/reports/go/bundle.json",
+          "revision": "3d318fb8257be748cceebc6d3251455364acf738",
+          "sha256": "092e2e4b2d123a8d6bddaa3a4031e20f7fc2f062fac237df602083cc55f388e3",
+          "url": "https://github.com/iwizy/NexFlow/blob/3d318fb8257be748cceebc6d3251455364acf738/evaluation/reports/go/bundle.json"
+        }
+      }
+    ],
+    "blankForms": [
+      {
+        "path": "evaluation/reports/review/reviewer-a.json",
+        "revision": "3d318fb8257be748cceebc6d3251455364acf738",
+        "sha256": "518335c2a5b4633d589a4e8c59b236b8108534085af8b63199add8f4d4345b16",
+        "url": "https://github.com/iwizy/NexFlow/blob/3d318fb8257be748cceebc6d3251455364acf738/evaluation/reports/review/reviewer-a.json"
+      },
+      {
+        "path": "evaluation/reports/review/reviewer-b.json",
+        "revision": "3d318fb8257be748cceebc6d3251455364acf738",
+        "sha256": "8a3760e227839be3799fc6496a99f0892a7e1a4e8a47340846bb21608d11743c",
+        "url": "https://github.com/iwizy/NexFlow/blob/3d318fb8257be748cceebc6d3251455364acf738/evaluation/reports/review/reviewer-b.json"
+      },
+      {
+        "path": "evaluation/reports/review/reconciliation.json",
+        "revision": "3d318fb8257be748cceebc6d3251455364acf738",
+        "sha256": "3f9bb640644ab48f343a3627bb4b4e7f960fd52f72ad9e4460f711ba0ab2121e",
+        "url": "https://github.com/iwizy/NexFlow/blob/3d318fb8257be748cceebc6d3251455364acf738/evaluation/reports/review/reconciliation.json"
+      }
+    ]
+  },
+  "reviewers": [
+    {
+      "slot": "reviewer-a",
+      "scope": [
+        "architecture",
+        "CLI",
+        "validation",
+        "compatibility"
+      ],
+      "status": "pending",
+      "confirmedPerson": null,
+      "consent": null,
+      "publicationConsent": null,
+      "independenceConfirmed": false,
+      "authorshipConflictCheck": null,
+      "conflictsOfInterest": null,
+      "completedReview": null,
+      "signature": null
+    },
+    {
+      "slot": "reviewer-b",
+      "scope": [
+        "security",
+        "supply-chain",
+        "isolation",
+        "distribution"
+      ],
+      "status": "pending",
+      "confirmedPerson": null,
+      "consent": null,
+      "publicationConsent": null,
+      "independenceConfirmed": false,
+      "authorshipConflictCheck": null,
+      "conflictsOfInterest": null,
+      "completedReview": null,
+      "signature": null
+    }
+  ],
+  "owners": [
+    {
+      "id": "cli",
+      "responsibility": "Validation-only CLI maintenance and compatibility",
+      "proposedPerson": "Alexander Agafonov",
+      "status": "pending",
+      "confirmedPerson": null,
+      "acknowledgement": null,
+      "backup": null,
+      "supportWindow": null,
+      "incidentAuthority": null,
+      "dependencyUpdatePolicy": null,
+      "acceptedObligations": null
+    },
+    {
+      "id": "validation",
+      "responsibility": "Pure validation libraries, fixtures and diagnostics",
+      "proposedPerson": "Alexander Agafonov",
+      "status": "pending",
+      "confirmedPerson": null,
+      "acknowledgement": null,
+      "backup": null,
+      "supportWindow": null,
+      "incidentAuthority": null,
+      "dependencyUpdatePolicy": null,
+      "acceptedObligations": null
+    },
+    {
+      "id": "runtime",
+      "responsibility": "Future runtime host and effect boundaries; no runtime support promise",
+      "proposedPerson": null,
+      "status": "pending",
+      "confirmedPerson": null,
+      "acknowledgement": null,
+      "backup": null,
+      "supportWindow": null,
+      "incidentAuthority": null,
+      "dependencyUpdatePolicy": null,
+      "acceptedObligations": null
+    },
+    {
+      "id": "security",
+      "responsibility": "Security boundaries, triage and incident coordination",
+      "proposedPerson": null,
+      "status": "pending",
+      "confirmedPerson": null,
+      "acknowledgement": null,
+      "backup": null,
+      "supportWindow": null,
+      "incidentAuthority": null,
+      "dependencyUpdatePolicy": null,
+      "acceptedObligations": null
+    },
+    {
+      "id": "dependencies",
+      "responsibility": "Dependency review and update policy, separate from security acceptance",
+      "proposedPerson": "Alexander Agafonov",
+      "status": "pending",
+      "confirmedPerson": null,
+      "acknowledgement": null,
+      "backup": null,
+      "supportWindow": null,
+      "incidentAuthority": null,
+      "dependencyUpdatePolicy": null,
+      "acceptedObligations": null
+    },
+    {
+      "id": "release-ci",
+      "responsibility": "CI, artifact provenance and release coordination",
+      "proposedPerson": "Alexander Agafonov",
+      "status": "pending",
+      "confirmedPerson": null,
+      "acknowledgement": null,
+      "backup": null,
+      "supportWindow": null,
+      "incidentAuthority": null,
+      "dependencyUpdatePolicy": null,
+      "acceptedObligations": null
+    },
+    {
+      "id": "signing-distribution",
+      "responsibility": "Permitted signing identities, target delivery and support",
+      "proposedPerson": null,
+      "status": "pending",
+      "confirmedPerson": null,
+      "acknowledgement": null,
+      "backup": null,
+      "supportWindow": null,
+      "incidentAuthority": null,
+      "dependencyUpdatePolicy": null,
+      "acceptedObligations": null
+    }
+  ],
+  "reviewProtocol": {
+    "independentFromEvaluatedAuthors": true,
+    "distinctPeopleRequired": true,
+    "separateEvidenceLinkedScoresBeforeReconciliation": true,
+    "samePinnedReportSet": true,
+    "scores": null,
+    "reconciliation": null,
+    "completedReviews": [],
+    "ineligibleCandidatesMustNotBeScored": true
+  },
+  "organizationalGates": [
+    {
+      "number": 2,
+      "status": "blocked",
+      "blocker": "Two real independent reviewers, consent and separate completed reviews are absent."
+    },
+    {
+      "number": 9,
+      "status": "blocked",
+      "blocker": "Operational, release/CI, distribution/signing and support obligations are not acknowledged."
+    },
+    {
+      "number": 11,
+      "status": "blocked",
+      "blocker": "Named maintainers have not accepted applicable ownership and maintenance obligations."
+    }
+  ],
+  "requiredHumanResponse": [
+    "Two distinct reviewer identities, role acceptance, independence/conflict declarations and consent to publish agreed identifiers.",
+    "Owner acknowledgement for each applicable CLI/validation/runtime/security/dependency/release-CI/signing-distribution responsibility.",
+    "Backups, support windows, incident authority and dependency update policy accepted by the responsible people.",
+    "Permitted signing identity/authority and exact supported target/provisioning obligations; no borrowed credentials.",
+    "Explicitly resolve any proposed not-applicable/deferred scope through governance; do not silently waive a mandatory owner or gate."
+  ],
+  "authorization": {
+    "conditionalMergePrerequisiteSatisfied": false,
+    "mergePerformed": false,
+    "architectureAccepted": false,
+    "runtimeImplementationAuthorized": false,
+    "releaseAuthorized": false,
+    "signingAuthorized": false
+  },
+  "retainedEvidence": {
+    "decisionStatus": "Draft",
+    "blockedMandatoryGates": 11,
+    "candidateEligibility": "all-four-ineligible",
+    "missingComparableMetricCells": 84,
+    "candidateCodeAndLocksChanged": false,
+    "newCandidateRuns": 0
+  },
+  "limitations": [
+    "NF-101 remains incomplete. Publishing this pending record does not appoint anyone or accept support obligations.",
+    "Prepared profiles, two checks by one author, empty forms, commits, green CI and merge are not independent human review.",
+    "NF-102 actual technical review and NF-103 readiness remain separate; all technical failures and not-tested evidence remain blockers.",
+    "No external contact, signing/keychain action, credential provisioning, paid infrastructure, candidate repair, release or version change."
+  ]
+}

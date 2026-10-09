@@ -52,6 +52,7 @@
     "runtime-architecture-alternatives-smoke": "node scripts/runtime-architecture-alternatives-smoke.mjs",
     "runtime-candidate-report-bundles-smoke": "node scripts/runtime-candidate-report-bundles-smoke.mjs",
     "runtime-decision-bundle-smoke": "node scripts/runtime-decision-bundle-smoke.mjs",
+    "runtime-reviewer-ownership-smoke": "node scripts/runtime-reviewer-ownership-smoke.mjs",
     "runtime-isolation-smoke": "node scripts/runtime-isolation-smoke.mjs",
     "semantic-smoke": "node scripts/semantic-reference-smoke.mjs",
     "typed-reference-schema-smoke": "node scripts/typed-reference-schema-smoke.mjs",

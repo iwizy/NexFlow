@@ -146,6 +146,13 @@ as performance evidence, or as a successful runtime evaluation.
 
 ## Candidate Records
 
+The [assembled four-candidate report packet](reports/README.md) supplies current
+source-bound schema-shaped reports, scope-bearing companions, all retained
+failed/partial/not-tested evidence, two blank independent scorecards and a blank
+reconciliation form. All four assessor results are ineligible; the packet and
+architecture remain not-ready. The initial records below are historical
+prototype-stage snapshots, not the later assembled evaluation.
+
 Separate [TypeScript](candidates/typescript.json),
 [Python](candidates/python.json), [Rust](candidates/rust.json), and
 [Go](candidates/go.json) records are prepared from

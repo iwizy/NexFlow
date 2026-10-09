@@ -1,0 +1,44 @@
+{
+  "formatVersion": "0.1-draft",
+  "task": "NF-056-17",
+  "status": "blank-template",
+  "reportSetRevision": null,
+  "reportSet": [
+    {
+      "candidate": "typescript",
+      "path": "evaluation/reports/typescript/candidate.json",
+      "sha256": "54afd46895e302f1ec4bf2c2cd672dc4dd4b0bc48edf8c533d42ec0b7b754c93",
+      "bundleSha256": "cc0748fac004f7f3f88450301a745196497251476bc58ff975b8be8a2e8102ea"
+    },
+    {
+      "candidate": "python",
+      "path": "evaluation/reports/python/candidate.json",
+      "sha256": "1104fd22807d90869f651eb5614fb843647ff9d435139dbb1397448cffb6be93",
+      "bundleSha256": "6ef844f36eaba3dc6a2a381a4d6a4585c6ec706016c1b0781ae1cc4202cf7177"
+    },
+    {
+      "candidate": "rust",
+      "path": "evaluation/reports/rust/candidate.json",
+      "sha256": "b129a39e1bccbd72d9590f3406a86d7d682d243f7469e56cef795811c5f9c472",
+      "bundleSha256": "affd4d6ded0293600baa88378b51829174a44884d1f55f83c9f7ad0ee49e7729"
+    },
+    {
+      "candidate": "go",
+      "path": "evaluation/reports/go/candidate.json",
+      "sha256": "685f68c3167cb3619c3812d811182e81e9c782524b4f4f2317e92abbb71580bb",
+      "bundleSha256": "092e2e4b2d123a8d6bddaa3a4031e20f7fc2f062fac237df602083cc55f388e3"
+    }
+  ],
+  "reviewers": [],
+  "independentReviewRevisions": [],
+  "reconciledAt": null,
+  "signatures": [],
+  "differences": [],
+  "resolutions": [],
+  "agreedScores": null,
+  "rationale": null,
+  "dissent": null,
+  "required": "Two actual independent reviews of this same pinned report set before reconciliation; preserve initial scores, disagreement and all failed/missing gates.",
+  "outcome": "not-ready",
+  "selection": null
+}

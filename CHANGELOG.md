@@ -8,6 +8,12 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Added
 
+- Assembled four immutable-source candidate report bundles, preserving failed
+  hard gates, target failures, partial evidence and all 84 measurement gaps.
+  Added two blank independent scorecards, reconciliation and offline rejection
+  checks; schema-valid reports remain ineligible and the decision not-ready.
+  No candidate repair, human sign-off, architecture acceptance or version change.
+
 - Prepared three unselected architecture alternatives with inward dependency
   graphs, pure validation/startup interfaces, proposed credential/extension/
   provider/audit mechanisms, version domains and pending ownership. Exact

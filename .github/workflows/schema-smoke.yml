@@ -38,6 +38,9 @@ jobs:
       - name: Verify unselected architecture alternatives and pending ownership
         run: npm run runtime-architecture-alternatives-smoke
 
+      - name: Verify candidate report bundles and blank independent review forms
+        run: npm run runtime-candidate-report-bundles-smoke
+
       - name: Verify feature lifecycle inventory and claim boundaries
         run: npm run feature-status-registry-smoke
 

@@ -1,0 +1,36 @@
+{
+  "formatVersion": "1",
+  "task": "NF-102",
+  "recordedOn": "2026-10-11",
+  "reviewMode": "single-maintainer",
+  "maintainer": "Alexander Agafonov",
+  "closureAuthority": {
+    "type": "explicit-maintainer-scope-amendment",
+    "instruction": "Закрыть review; архитектура остаётся Draft",
+    "scope": "review-task-closure-only"
+  },
+  "taskStatus": "closed",
+  "resolution": "review-completed-not-ready",
+  "reviewPassCompleted": true,
+  "outcome": "not-ready",
+  "decisionStatus": "Draft",
+  "architectureAccepted": false,
+  "originalAcceptanceObjectiveSatisfied": false,
+  "technicalAcceptanceRequirementsWaived": false,
+  "reviewDeliveryRevision": "82d2f00780264b34e7241b306556808f6e0927bc",
+  "reviewedRevision": "1c5a4c6806e029a20245fa8d3110c3a1a23b43d1",
+  "reviewRecord": "rfcs/reviews/2026-10-11-runtime-architecture-review.json",
+  "reviewRecordSha256": "bd65fdb33907fda664204ebd44a1d3676d5b91d6595ae641cac9f5850d691037",
+  "openAcceptanceBlockers": [
+    "NF-102-01",
+    "NF-102-02",
+    "NF-102-03",
+    "NF-102-04",
+    "NF-102-05",
+    "NF-102-06"
+  ],
+  "mandatoryGateCount": 11,
+  "runtimeImplementationAuthorized": false,
+  "releaseAuthorized": false,
+  "acceptanceMaintainerSignOff": null
+}

@@ -283,6 +283,11 @@ ownership. Both evidence-analysis lenses are complete; six owned remediation
 cards precede a revised proposal and repeat acceptance review. Historical
 checkpoints below/above retain their own dated scope, not a current lack of prototypes.
 
+[NF-102 is closed as a completed review](../rfcs/reviews/2026-10-11-runtime-review-closure.md)
+under an explicit maintainer scope amendment. Its outcome remains `not-ready`;
+all six acceptance blockers remain open. This does not complete Milestone 4,
+accept RFC-0023 or authorize Milestone 5.
+
 The [0.4 Alpha Preparation Checkpoint](0.4-alpha-checkpoint.md) assesses the
 current CLI-related evidence against this gate. It is prepared with blockers
 and records a `not-ready` release decision; the checkpoint label does not alter

@@ -10,13 +10,18 @@ retroactive signature or edited historical scorecard.
 
 The [2026-10-11 NF-101 record](../rfcs/reviews/2026-10-11-single-maintainer-ownership.md)
 assigns Alexander Agafonov both review lenses and seven bounded maintenance roles.
-Organization is complete; actual NF-102 review, technical gates, permitted signing
-and NF-103 release readiness remain outstanding. No independent review is claimed.
+Organization and the NF-102 evidence-analysis review are complete; technical
+gates, permitted signing and NF-103 release readiness remain outstanding.
+No independent review is claimed.
 
 The [NF-102 single-maintainer review](../rfcs/reviews/2026-10-11-runtime-architecture-review.md)
 recognizes the subsequent 352-case library repairs without rewriting the original
 reports. Both evidence-analysis lenses are complete; the Accepted-decision goal
 remains not-ready with six owned blocker cards, not a language selection.
+
+The maintainer explicitly [closed NF-102 as a completed review](../rfcs/reviews/2026-10-11-runtime-review-closure.md),
+not an Accepted architecture decision. All six remediation cards remain open
+acceptance blockers, with the original technical criteria and authority limits.
 
 The independent [TypeScript](prototypes/typescript/README.md),
 [Python](prototypes/python/README.md), [Rust](prototypes/rust/README.md) and

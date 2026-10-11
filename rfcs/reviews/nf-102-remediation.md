@@ -1,6 +1,6 @@
 # NF-102: Owned Architecture Acceptance Blockers
 
-Status: planned blockers from the [2026-10-11 review](2026-10-11-runtime-architecture-review.md), not approved implementation or execution. NF-102 remains open. Every card is owned by Alexander Agafonov under the bounded NF-101 roles; no new SLA, signing authority or paid resource is promised.
+Status: planned blockers from the [2026-10-11 review](2026-10-11-runtime-architecture-review.md), not approved implementation or execution. [NF-102 is closed as a completed review](2026-10-11-runtime-review-closure.md) with outcome not-ready by explicit maintainer scope amendment. All six cards remain open architecture-acceptance blockers; RFC-0023 remains Draft. Every card is owned by Alexander Agafonov under the bounded NF-101 roles; no new SLA, signing authority or paid resource is promised.
 
 These cards address gaps after completed preparation and scoped repairs. Do not repeat the old 224-case implementation or infer that a historical failure still occurs at the repaired revision. Each future change needs checks, neutral metadata, its own commit/push/PR and actual CI. Keep mandatory blockers before acceptance; do not relabel them optional.
 

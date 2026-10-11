@@ -3,6 +3,7 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { execFileSync } from "node:child_process";
 import path from "node:path";
+import { createHash } from "node:crypto";
 import { buildReviewRecord, followUps, prerequisitesPath, reviewRecordPath, reviewRevision } from "./lib/runtime-architecture-review.mjs";
 import { repositoryRoot } from "./lib/runtime-evaluation.mjs";
 const read = file => readFileSync(path.join(repositoryRoot, file), "utf8");
@@ -77,4 +78,47 @@ const mutations = [
 for (const mutate of mutations) {
   const changed = structuredClone(actual); mutate(changed); assert.throws(() => assertReview(changed));
 }
+
+// Task closure is forward-only and does not promote the historical review.
+const closure = JSON.parse(read("rfcs/reviews/2026-10-11-runtime-review-closure.json"));
+const assertClosure = record => {
+  assert.equal(record.formatVersion, "1"); assert.equal(record.task, "NF-102");
+  assert.equal(record.recordedOn, "2026-10-11"); assert.equal(record.reviewMode, actual.reviewMode);
+  assert.equal(record.maintainer, actual.maintainer);
+  assert.deepEqual(record.closureAuthority, {
+    type: "explicit-maintainer-scope-amendment",
+    instruction: "Закрыть review; архитектура остаётся Draft",
+    scope: "review-task-closure-only"
+  });
+  assert.equal(record.taskStatus, "closed"); assert.equal(record.resolution, "review-completed-not-ready");
+  assert.equal(record.reviewPassCompleted, true); assert.equal(record.outcome, actual.outcome);
+  assert.equal(record.decisionStatus, "Draft"); assert.equal(record.architectureAccepted, false);
+  assert.equal(record.originalAcceptanceObjectiveSatisfied, false);
+  assert.equal(record.technicalAcceptanceRequirementsWaived, false);
+  assert.equal(record.reviewDeliveryRevision, "82d2f00780264b34e7241b306556808f6e0927bc");
+  assert.equal(record.reviewedRevision, reviewRevision); assert.equal(record.reviewRecord, reviewRecordPath);
+  const delivered = execFileSync("git", ["show", `${record.reviewDeliveryRevision}:${record.reviewRecord}`], { cwd: repositoryRoot });
+  assert.equal(record.reviewRecordSha256, createHash("sha256").update(delivered).digest("hex"));
+  assert.equal(record.reviewRecordSha256, createHash("sha256").update(read(reviewRecordPath)).digest("hex"));
+  assert.deepEqual(record.openAcceptanceBlockers, followUps.map(f => f.id));
+  assert.equal(record.mandatoryGateCount, actual.gates.length);
+  assert.equal(record.runtimeImplementationAuthorized, false); assert.equal(record.releaseAuthorized, false);
+  assert.equal(record.acceptanceMaintainerSignOff, null);
+};
+assertClosure(closure);
+const closureMutations = [
+  r => { r.architectureAccepted = true; }, r => { r.outcome = "accepted"; },
+  r => { r.decisionStatus = "Accepted"; }, r => { r.originalAcceptanceObjectiveSatisfied = true; },
+  r => { r.technicalAcceptanceRequirementsWaived = true; }, r => { r.openAcceptanceBlockers.pop(); },
+  r => { r.acceptanceMaintainerSignOff = "invented"; }, r => { r.runtimeImplementationAuthorized = true; },
+  r => { r.releaseAuthorized = true; }, r => { r.mandatoryGateCount = 0; },
+  r => { r.closureAuthority.scope = "architecture-acceptance"; }, r => { r.reviewRecordSha256 = "0".repeat(64); }
+];
+for (const mutate of closureMutations) {
+  const changed = structuredClone(closure); mutate(changed); assert.throws(() => assertClosure(changed));
+}
+const closureNote = read("rfcs/reviews/2026-10-11-runtime-review-closure.md");
+for (const token of ["closed as a completed review", "RFC-0023 remains Draft", "not satisfied", "All", "eleven mandatory"]) assert.ok(closureNote.includes(token), token);
+assert.ok(cards.includes("All six cards remain open architecture-acceptance blockers"));
+console.log(`NF-102 task closure: explicit review-only amendment, Draft/not-ready, six open acceptance blockers and ${closureMutations.length} rejection controls.`);
 console.log(`NF-102 review: 74 exact inputs, recognized four-candidate repair, 11 blocked gates, 6 owned cards and ${mutations.length} rejection controls; no acceptance inferred.`);

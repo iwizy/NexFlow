@@ -8,6 +8,11 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Added
 
+- Closed NF-102 as a completed review by explicit maintainer scope amendment.
+  Outcome remains not-ready, RFC-0023 remains Draft and all six technical
+  acceptance blockers stay open. No technical gate or architecture acceptance
+  is inferred; the original review and evidence remain unchanged.
+
 - Recorded NF-102's revision-bound single-maintainer architecture/security review
   of the Draft, subsequent library repair and adopted ownership. Recognized scoped
   352-case passes while retaining current target, diagnostic-contract, supply-chain,

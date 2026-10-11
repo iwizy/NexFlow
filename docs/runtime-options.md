@@ -11,6 +11,11 @@ outcome is `not-ready`: scoped library repairs and NF-101 ownership are recogniz
 but current full-gate qualification remains incomplete. No candidate is eligible
 for scoring and no implementation choice is accepted.
 
+[NF-102's review task is closed](../rfcs/reviews/2026-10-11-runtime-review-closure.md)
+by explicit maintainer scope amendment, with outcome `not-ready`. The architecture
+remains Draft and all six technical acceptance blockers remain open; task closure
+is not acceptance or a waiver of any gate.
+
 Language-specific repository maintenance tooling, including schema validation dependencies, does not constitute a runtime implementation or a Runtime Architecture Decision.
 
 Reference CLI scope is a separate planning step. See

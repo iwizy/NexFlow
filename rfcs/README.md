@@ -47,7 +47,10 @@ or imply that an implemented slice accepts the entire RFC.
   both lenses. Fragment coverage and bounded ownership are recognized; current
   cross-target qualification remains incomplete. Outcome not-ready, no scoring
   or acceptance; [six owned blocker cards](reviews/nf-102-remediation.md) precede
-  a revised proposal and repeat decision review. NF-102 remains open.
+  a revised proposal and repeat decision review. [NF-102 is closed as a completed
+  review](reviews/2026-10-11-runtime-review-closure.md) by explicit maintainer
+  scope amendment; its original Accepted-decision objective is not satisfied.
+  RFC-0023 stays Draft and all six acceptance blockers remain open.
 
 - [Single-Maintainer Governance](../docs/single-maintainer-governance.md) defines
   the adopted forward-only review-mode amendment in RFC-0024. It replaces only

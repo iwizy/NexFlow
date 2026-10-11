@@ -108,6 +108,11 @@ project conformance, public diagnostics, current target lifecycle or comparable
 performance. The [current review](../rfcs/reviews/2026-10-11-runtime-architecture-review.md)
 keeps those domains separate under adopted single-maintainer governance.
 
+[NF-102 review-task closure](../rfcs/reviews/2026-10-11-runtime-review-closure.md)
+records the maintainer's explicit scope amendment: review completed, outcome
+not-ready, architecture Draft, all six technical acceptance blockers still open.
+It does not change any feature or RFC implementation/acceptance status.
+
 | ID | Surface and scope | Lifecycle | Evidence and boundary |
 | --- | --- | --- | --- |
 | `experiment:repository-cli` | Local repository CLI and JSON/inspection/graph/init contracts | Experimental | [Prototype scope](cli-prototype.md), [output contract](cli-diagnostics.md); bounded maintenance tooling, not stable public CLI or OS sandbox. |

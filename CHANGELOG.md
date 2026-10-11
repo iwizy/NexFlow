@@ -8,6 +8,12 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Added
 
+- Recorded explicit RFC-0024 policy adoption and completed NF-101's organization
+  with one human reviewer assignment and seven bounded maintenance roles.
+  Best-effort/no-SLA support, no backup, design-only runtime and coordination-only
+  signing are explicit. Actual review, technical gates, architecture acceptance
+  and release readiness remain separate; historical snapshots are unchanged.
+
 - Proposed RFC-0024 and an explicit single-maintainer review mode, with disclosed
   self-review, separate architecture/security lenses and unchanged technical
   gates. Added an opt-in review context and rejection checks; historical reports,

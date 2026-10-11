@@ -1,0 +1,175 @@
+{
+  "formatVersion": "1",
+  "task": "NF-101",
+  "recordedOn": "2026-10-11",
+  "status": "completed-single-maintainer",
+  "taskCompleted": true,
+  "outcome": "organizationally-complete",
+  "maintainer": "Alexander Agafonov",
+  "reviewMode": "single-maintainer",
+  "policyAdoption": {
+    "status": "accepted",
+    "acceptedBy": "Alexander Agafonov",
+    "acceptedOn": "2026-10-11",
+    "pullRequest": "https://github.com/iwizy/NexFlow/pull/115",
+    "revision": "2cd3b442d4549f0e5c1cd4c4363f9449796010df",
+    "mergeRevision": "f6a1f5cb26ea2c048d950039641a951b04e19db4",
+    "path": "docs/single-maintainer-governance.md",
+    "sha256": "8ed123b49f45dacb54acbafda6cacadd18432a860154258a89fd5fb9260a4eee"
+  },
+  "decisionBasis": {
+    "kind": "direct-maintainer-authorization-and-delegated-organization",
+    "summary": "The maintainer explicitly accepted the new rules, authorized merging PR #115 and directed completion of NF-101 in single-maintainer mode after delegating organizational choices.",
+    "scope": "One human review assignment and seven bounded maintenance roles recorded here; not technical review or architecture acceptance.",
+    "publicIdentifier": "Alexander Agafonov",
+    "privateConversationCopied": false,
+    "otherPersonConsentInferred": false,
+    "cryptographicSignature": null
+  },
+  "reviewAssignment": {
+    "person": "Alexander Agafonov",
+    "status": "assigned",
+    "lenses": [
+      "architecture",
+      "security"
+    ],
+    "authorshipDeclaration": "author",
+    "conflictsDeclaration": "Sole project maintainer reviewing own project materials; no independent assurance claimed.",
+    "independenceClaimed": false,
+    "reviewInputRevision": "f6a1f5cb26ea2c048d950039641a951b04e19db4",
+    "completedReviews": [],
+    "scores": null,
+    "reviewSummary": null,
+    "nextTask": "NF-102"
+  },
+  "supportPolicy": {
+    "id": "pre-release-best-effort",
+    "window": "At available maintenance sessions; no fixed hours, response deadline, availability guarantee or SLA.",
+    "dependencyUpdates": "Review advisories for changed dependencies and before a release, and triage reported risks at the next available maintenance session; no unattended updates or automatic lock changes.",
+    "incidentAuthority": "Alexander Agafonov coordinates private triage under SECURITY.md, may stop publication and propose repairs; existing per-operation approval boundaries still apply.",
+    "escalation": "Escalate scope, infrastructure, credentials, release and unresolved safety decisions to the same maintainer; no external responder or on-call service is appointed.",
+    "backup": "none",
+    "continuityRisk": "Maintenance and response can stop when the sole maintainer is unavailable.",
+    "productSupportOffered": false,
+    "runtimeOnCallOffered": false,
+    "targetSupportClaim": "No new accepted product target or lifecycle/signing support claim; evaluation targets are not supported installations."
+  },
+  "owners": [
+    {
+      "id": "cli",
+      "person": "Alexander Agafonov",
+      "status": "acknowledged",
+      "acknowledgementBasis": "decisionBasis",
+      "supportPolicy": "pre-release-best-effort",
+      "acceptedObligations": [
+        "Maintain validation-only repository commands and diagnostics.",
+        "Review CLI compatibility and regression evidence; keep runtime execution outside the CLI validation scope."
+      ],
+      "signingAuthority": "not-applicable"
+    },
+    {
+      "id": "validation",
+      "person": "Alexander Agafonov",
+      "status": "acknowledged",
+      "acknowledgementBasis": "decisionBasis",
+      "supportPolicy": "pre-release-best-effort",
+      "acceptedObligations": [
+        "Maintain pure validation APIs, schema/semantic coverage, fixtures and diagnostic contracts.",
+        "Preserve frozen inputs and version mapping; disclose unsupported coverage."
+      ],
+      "signingAuthority": "not-applicable"
+    },
+    {
+      "id": "runtime",
+      "person": "Alexander Agafonov",
+      "status": "acknowledged",
+      "acknowledgementBasis": "decisionBasis",
+      "supportPolicy": "pre-release-best-effort",
+      "acceptedObligations": [
+        "Own future runtime design, effect/authority boundaries and review routing only.",
+        "Revisit implementation ownership, production operations and on-call obligations before any runtime implementation or support commitment."
+      ],
+      "scopeLimit": "design-only; implementation and on-call support not offered",
+      "signingAuthority": "not-applicable"
+    },
+    {
+      "id": "security",
+      "person": "Alexander Agafonov",
+      "status": "acknowledged",
+      "acknowledgementBasis": "decisionBasis",
+      "supportPolicy": "pre-release-best-effort",
+      "acceptedObligations": [
+        "Coordinate private reporting, security-boundary review, triage and incident follow-up under SECURITY.md.",
+        "Retain unresolved risks and stop unsupported acceptance or publication claims; no response SLA or independent certification."
+      ],
+      "signingAuthority": "not-applicable"
+    },
+    {
+      "id": "dependencies",
+      "person": "Alexander Agafonov",
+      "status": "acknowledged",
+      "acknowledgementBasis": "decisionBasis",
+      "supportPolicy": "pre-release-best-effort",
+      "acceptedObligations": [
+        "Own dependency/license inventories, advisory triage and reviewed update proposals.",
+        "Keep exact locks and provenance; obtain repair scope before changing frozen candidate dependencies."
+      ],
+      "signingAuthority": "not-applicable"
+    },
+    {
+      "id": "release-ci",
+      "person": "Alexander Agafonov",
+      "status": "acknowledged",
+      "acknowledgementBasis": "decisionBasis",
+      "supportPolicy": "pre-release-best-effort",
+      "acceptedObligations": [
+        "Maintain CI, immutable verification receipts, artifact checksum/provenance requirements and release checklists.",
+        "Require separate release authorization, compatible version decisions and actual target evidence; a green PR is not release readiness."
+      ],
+      "signingAuthority": "not-applicable"
+    },
+    {
+      "id": "signing-distribution",
+      "person": "Alexander Agafonov",
+      "status": "acknowledged",
+      "acknowledgementBasis": "decisionBasis",
+      "supportPolicy": "pre-release-best-effort",
+      "acceptedObligations": [
+        "Coordinate target provisioning, distribution evidence and requests for permitted signing authority.",
+        "Keep unavailable keys, certificates, native targets and lifecycle steps blocked/not-tested until separately authorized and verified."
+      ],
+      "scopeLimit": "coordination-only; no certificate, key, notarization or target-provisioning authority supplied",
+      "signingAuthority": "unavailable-not-granted"
+    }
+  ],
+  "technicalDecision": {
+    "rfc": "rfcs/RFC-0023-runtime-architecture-decision.md",
+    "status": "Draft",
+    "outcome": "not-ready",
+    "architectureAccepted": false,
+    "technicalGatesWaived": false,
+    "reviewCompleted": false,
+    "candidateSelected": null,
+    "releaseReady": false,
+    "remainingTasks": [
+      "NF-102",
+      "NF-103"
+    ]
+  },
+  "capabilityBlockers": [
+    "Actual permitted signing identity and authority remain unavailable; ownership is coordination, not signing permission.",
+    "Native target, lifecycle, isolation, fidelity, supply-chain and comparable-measurement gaps require their own evidence and review.",
+    "A future runtime implementation, production support and on-call service require a new scoped decision."
+  ],
+  "historicalRecord": "rfcs/reviews/2026-10-09-runtime-reviewer-ownership.json",
+  "returnToIndependentReview": "Record a new governance transition when another maintainer joins; do not count two review lenses as two people.",
+  "authorization": {
+    "policyPullRequestMerge": "PR #115 only, explicitly authorized and completed",
+    "otherPullRequestsAutoMerge": false,
+    "runtimeImplementation": false,
+    "productionAccess": false,
+    "credentialProvisioning": false,
+    "signing": false,
+    "release": false
+  }
+}

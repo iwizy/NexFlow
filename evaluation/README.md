@@ -8,6 +8,11 @@ Historical reports, blank independent forms and their original assessments stay
 unchanged. New single-maintainer reviews need a new revision-bound record, not a
 retroactive signature or edited historical scorecard.
 
+The [2026-10-11 NF-101 record](../rfcs/reviews/2026-10-11-single-maintainer-ownership.md)
+assigns Alexander Agafonov both review lenses and seven bounded maintenance roles.
+Organization is complete; actual NF-102 review, technical gates, permitted signing
+and NF-103 release readiness remain outstanding. No independent review is claimed.
+
 The independent [TypeScript](prototypes/typescript/README.md),
 [Python](prototypes/python/README.md), [Rust](prototypes/rust/README.md) and
 [Go](prototypes/go/README.md)
@@ -50,7 +55,9 @@ security residuals, other targets and architecture acceptance separate.
 The [architecture alternatives and ownership proposal](architecture/alternatives.md)
 compares three mandatory layouts, pure interfaces, startup and effect boundaries,
 independent version domains, and proposed maintenance roles. All alternatives
-remain unselected; real reviewer appointments and owner consent remain pending.
+remain unselected. Its historical pending ownership proposal is preserved; the
+current bounded assignment is the dated NF-101 record above, not an architecture
+acceptance or technical review.
 
 The [four pinned candidate toolchain plans](toolchains/README.md) add native
 dependency capability probes and checked lockfiles. They do not promote candidate

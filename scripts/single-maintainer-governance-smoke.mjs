@@ -173,5 +173,5 @@ for (const text of ["all eleven gates must pass", "separate explicit", "historic
   "NF-101", "NF-102", "NF-103", "Self-review", "no-SLA", "not proof of adoption"]) {
   assert.ok(policy.toLowerCase().includes(text.toLowerCase()), text);
 }
-assert.match(read("rfcs/RFC-0024-single-maintainer-governance.md"), /^## Status\s+Draft\b/mu);
+assert.match(read("rfcs/RFC-0024-single-maintainer-governance.md"), /^## Status\s+Accepted\b/mu);
 console.log(`Single-maintainer governance: explicit opt-in, both review lenses, ${controls} rejection/technical controls, legacy snapshots and default assessments preserved; no adoption, consent or architecture acceptance inferred.`);

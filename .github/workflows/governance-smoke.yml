@@ -30,3 +30,6 @@ jobs:
 
       - name: Verify explicit review mode and preserved technical gates
         run: npm run single-maintainer-governance-smoke
+
+      - name: Verify adopted policy and bounded maintenance roles
+        run: npm run single-maintainer-ownership-smoke

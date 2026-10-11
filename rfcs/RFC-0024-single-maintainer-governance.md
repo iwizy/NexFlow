@@ -2,11 +2,15 @@
 
 ## Status
 
-Draft
+Accepted
 
-NF-101 governance amendment proposed on 2026-10-11. The maintainer authorized
-preparing this rule change and a separate PR; that is not acceptance of this
-finished policy, a completed technical review or architecture approval.
+Alexander Agafonov explicitly accepted this governance amendment on 2026-10-11
+and authorized merging [PR #115](https://github.com/iwizy/NexFlow/pull/115).
+Adopted policy revision: `2cd3b442d4549f0e5c1cd4c4363f9449796010df`; merge revision:
+`f6a1f5cb26ea2c048d950039641a951b04e19db4`. The
+[dated adoption and ownership record](reviews/2026-10-11-single-maintainer-ownership.md)
+records the rationale, authority and bounded roles. Acceptance applies to this
+governance rule only, not RFC-0023, a completed technical review or a release.
 
 ## Summary
 
@@ -16,7 +20,7 @@ with disclosed self-review through separate architecture and security lenses,
 one scorecard per eligible candidate and a written review summary. Preserve
 every technical gate and require a separate explicit human acceptance decision.
 
-The normative proposal is [Single-Maintainer Governance](../docs/single-maintainer-governance.md).
+The normative policy is [Single-Maintainer Governance](../docs/single-maintainer-governance.md).
 It amends organizational parts of the existing architecture review framework,
 not the specification, runtime authority model or candidate evidence.
 
@@ -71,16 +75,16 @@ provider, credential, production, signing or publication authority.
 - Treat two passes as independent people: rejected as a false assurance claim.
 - Waive technical gates along with headcount: rejected; organizational scale
   does not supply missing safety, compatibility or distribution evidence.
-- Adopt this bounded one-person mode: proposed, with reduced independence
+- Adopt this bounded one-person mode: accepted, with reduced independence
   disclosed and all technical requirements preserved.
 
 ## Open Questions
 
-- Actual ownership acknowledgements, support/backup limits and permitted signing
-  capabilities must be supplied in the later NF-101 record, not inferred here.
+- Actual ownership acknowledgements and support/backup limits are recorded in
+  the new NF-101 record. Signing/distribution ownership is coordination-only;
+  permitted signing and native-target capabilities remain unavailable/blocking.
 - Actual completed review and technical blocker closure remain future work.
-- Maintainer approval of this final policy PR and the adopted revision must be
-  recorded; this Draft does not claim that approval has already occurred.
+- A return to independent review needs a new record when another maintainer joins.
 
 ## Verification And Adoption
 
@@ -88,5 +92,6 @@ Run `npm run single-maintainer-governance-smoke`, the existing historical review
 checks, documentation/feature inventory checks and the full relevant suite.
 The focused check exercises default and explicit single-maintainer assessments,
 rejects incomplete/unknown/stale contexts and retains failed technical gates.
-No test result accepts this RFC or RFC-0023. The separate policy PR is not merged
-automatically, and no release or version bump is part of adoption.
+No test result accepts this RFC or RFC-0023: this policy's adoption is based on
+the explicit maintainer decision, not CI. PR #115 was merged under that direct
+authorization. No release or version bump is part of adoption; RFC-0023 stays Draft.

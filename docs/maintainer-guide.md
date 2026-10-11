@@ -198,6 +198,12 @@ separate human decision. CI and merging do not provide that decision.
 Security-sensitive, breaking, licensing, release, or architecture changes may
 need additional domain review under their owning process.
 
+The [2026-10-11 ownership record](../rfcs/reviews/2026-10-11-single-maintainer-ownership.md)
+identifies the current sole maintainer and seven acknowledged scopes. Support is
+pre-release best-effort/no-SLA with no backup; runtime ownership is design-only
+and signing/distribution ownership is coordination, not possession of keys or
+permission to sign. Do not expand those limits into product or target support.
+
 Merge only when required review is complete, local and required remote checks
 pass, conflicts are resolved, and blockers are closed or explicitly moved to a
 non-blocking follow-up with rationale. Do not treat mergeability alone as

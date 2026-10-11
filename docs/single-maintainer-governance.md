@@ -2,11 +2,14 @@
 
 ## Status And Scope
 
-Policy proposed in [Draft RFC-0024](../rfcs/RFC-0024-single-maintainer-governance.md)
-for NF-101. It becomes effective only after the maintainer explicitly approves
-this policy PR and its adopted commit is recorded. Preparing or merging the
-policy does not accept RFC-0023, complete its review, acknowledge owner
-obligations, authorize runtime implementation, or authorize a release.
+Policy adopted on 2026-10-11 in [Accepted RFC-0024](../rfcs/RFC-0024-single-maintainer-governance.md).
+Alexander Agafonov explicitly accepted [PR #115](https://github.com/iwizy/NexFlow/pull/115),
+policy commit `2cd3b442d4549f0e5c1cd4c4363f9449796010df`, merged as
+`f6a1f5cb26ea2c048d950039641a951b04e19db4`. The
+[dated NF-101 record](../rfcs/reviews/2026-10-11-single-maintainer-ownership.md)
+records that decision and seven bounded ownership acknowledgements separately.
+Policy adoption or merging alone does not accept RFC-0023, complete its review,
+acknowledge owner obligations, authorize runtime implementation or a release.
 
 Single-maintainer mode applies while exactly one human maintains NexFlow. It
 allows that person to author, review and own multiple components. It replaces
@@ -78,11 +81,12 @@ claims that require them. Deferred scope needs explicit rationale and cannot
 hide an applicable acceptance blocker. No new credentials or production access
 are granted by assigning ownership.
 
-NF-101 can later be completed under this adopted mode by a new dated record of
-the named sole maintainer, policy adoption and all applicable role
-acknowledgements. It no longer needs two reviewer appointments in that mode.
-This policy PR itself supplies neither those acknowledgements nor NF-102's
-actual evidence review. NF-103 release readiness stays separate.
+NF-101 is completed organizationally by the new
+[2026-10-11 record](../rfcs/reviews/2026-10-11-single-maintainer-ownership.md)
+of the named sole maintainer, policy adoption and seven bounded role
+acknowledgements. It no longer needs two reviewer appointments in this mode.
+The original policy PR itself supplied neither those acknowledgements nor
+NF-102's actual evidence review. NF-103 release readiness stays separate.
 
 ## Separate Human Acceptance
 

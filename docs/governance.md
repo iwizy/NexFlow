@@ -22,10 +22,12 @@ Maintainers are responsible for:
 ### Review Modes
 
 The project may operate with one maintainer under the explicit
-[Single-Maintainer Governance](single-maintainer-governance.md) policy proposed
-in [RFC-0024](../rfcs/RFC-0024-single-maintainer-governance.md). Adoption requires
-maintainer approval of that policy PR; opening it or passing CI is not adoption.
-The adopted policy revision must be pinned in each later review record.
+[Single-Maintainer Governance](single-maintainer-governance.md) policy adopted
+in [RFC-0024](../rfcs/RFC-0024-single-maintainer-governance.md) on 2026-10-11.
+The [dated assignment and ownership record](../rfcs/reviews/2026-10-11-single-maintainer-ownership.md)
+pins the approved policy and records Alexander Agafonov's seven bounded roles.
+Opening a PR, passing CI or merging alone is not adoption. The adopted policy
+revision must be pinned in each later review record.
 
 In that mode one named human may author, review and maintain the work, with
 authorship disclosed and separate architecture and security review sections.

@@ -54,6 +54,7 @@
     "runtime-decision-bundle-smoke": "node scripts/runtime-decision-bundle-smoke.mjs",
     "runtime-reviewer-ownership-smoke": "node scripts/runtime-reviewer-ownership-smoke.mjs",
     "single-maintainer-governance-smoke": "node scripts/single-maintainer-governance-smoke.mjs",
+    "single-maintainer-ownership-smoke": "node scripts/single-maintainer-ownership-smoke.mjs",
     "runtime-isolation-smoke": "node scripts/runtime-isolation-smoke.mjs",
     "semantic-smoke": "node scripts/semantic-reference-smoke.mjs",
     "typed-reference-schema-smoke": "node scripts/typed-reference-schema-smoke.mjs",

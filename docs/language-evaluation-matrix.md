@@ -229,7 +229,13 @@ repository schema commitment.
 1. Freeze the specification and fixture revision used by all four prototypes.
 2. Pin candidate toolchains and dependencies.
 3. Run the same target matrix, security experiments, and measurements.
-4. Have at least two reviewers score each criterion independently.
+4. In default mode, have at least two reviewers score each criterion
+   independently. Under an explicitly adopted
+   [single-maintainer policy](single-maintainer-governance.md), one named
+   maintainer supplies an evidence-linked scorecard and separate architecture
+   and security reviews, disclosing self-authorship and the lack of independent
+   assurance. Keep the same criteria, weights and hard gates; never duplicate a
+   person to satisfy a reviewer count.
 5. Reconcile score differences using evidence, not preference.
 6. Record failed gates, confidence, maintenance ownership, and unresolved risk.
 7. Compare single-language and split-language architecture costs.

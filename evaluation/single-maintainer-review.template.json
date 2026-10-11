@@ -1,0 +1,22 @@
+{
+  "reviewMode": "single-maintainer",
+  "policyRevision": null,
+  "policyAdoptionEvidence": null,
+  "reviewedRfcRevision": null,
+  "reviewedReportRevision": null,
+  "reportSha256": null,
+  "maintainer": null,
+  "authorshipDeclaration": null,
+  "conflictsDeclaration": null,
+  "independenceClaimed": false,
+  "completedAt": null,
+  "architectureReview": {
+    "status": "not-reviewed",
+    "evidence": []
+  },
+  "securityReview": {
+    "status": "not-reviewed",
+    "evidence": []
+  },
+  "reviewSummary": null
+}

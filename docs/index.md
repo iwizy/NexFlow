@@ -86,6 +86,7 @@ uncataloged documentation pages, and missing top-level guide links.
 | --- | --- |
 | [Adopter Guide](adopter-guide.md) | Practical pilot setup, pinned tooling, starter customization, incremental adoption, project validation, troubleshooting, and evidence review. |
 | [Governance](governance.md) | Contribution, review, and decision rules. |
+| [Single-Maintainer Governance](single-maintainer-governance.md) | Explicit one-person review mode, preserved technical gates, ownership acknowledgements and separate acceptance. |
 | [Provider Neutrality Checklist](provider-neutrality-checklist.md) | Evidence-based review of portable core adoption, provider constraints, independent authority, adapter boundaries, offline tooling, and support claims. |
 | [Maintainer Guide](maintainer-guide.md) | Change routing, synchronization, validation, review, merge, RFC, release, security, and handoff workflow for maintainers. |
 | [Feature Status Registry](feature-status-registry.md) | Complete kind/RFC lifecycle inventory with separate experimental, deprecated and planned slices; does not promote implementation evidence into acceptance or runtime support. |

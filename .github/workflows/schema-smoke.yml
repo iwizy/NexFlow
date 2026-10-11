@@ -47,6 +47,9 @@ jobs:
       - name: Verify pending reviewer and maintenance confirmations
         run: npm run runtime-reviewer-ownership-smoke
 
+      - name: Verify explicit review mode and preserved technical gates
+        run: npm run single-maintainer-governance-smoke
+
       - name: Verify feature lifecycle inventory and claim boundaries
         run: npm run feature-status-registry-smoke
 

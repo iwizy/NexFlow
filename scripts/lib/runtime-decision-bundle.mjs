@@ -47,7 +47,9 @@ export function buildDecisionBundle() {
   const index = new Map();
   const archived = (file, unchanged = true) => {
     const bytes = execFileSync("git", ["show", `${snapshot}:${file}`], { cwd: repositoryRoot, maxBuffer: 16 * 1024 * 1024 });
-    if (unchanged) assert.deepEqual(read(file), bytes, `frozen input changed: ${file}`);
+    // Governance may evolve; this historical bundle still binds its exact
+    // archived policy bytes, never today's policy or a regenerated assessment.
+    if (unchanged && file !== "docs/governance.md") assert.deepEqual(read(file), bytes, `frozen input changed: ${file}`);
     index.set(file, { path: file, revision: snapshot, sha256: digest(bytes), url: `https://github.com/iwizy/NexFlow/blob/${snapshot}/${file}` });
     return bytes;
   };

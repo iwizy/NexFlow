@@ -80,7 +80,38 @@ export function compareOutput(item, output, status, stderr) {
   return errors;
 }
 
-export function assessReport(report, record = baseline) {
+// Completeness only: assertions in a context are not identity verification,
+// policy adoption, maintainer consent or an architecture acceptance decision.
+export function singleMaintainerReviewComplete(report, context) {
+  if (!context || typeof context !== "object" || Array.isArray(context)) return false;
+  const fields = ["reviewMode", "policyRevision", "policyAdoptionEvidence",
+    "reviewedRfcRevision", "reviewedReportRevision", "reportSha256", "maintainer",
+    "authorshipDeclaration", "conflictsDeclaration", "independenceClaimed",
+    "completedAt", "architectureReview", "securityReview", "reviewSummary"];
+  if (JSON.stringify(Object.keys(context).sort()) !== JSON.stringify(fields.sort())) return false;
+  const nonblank = value => typeof value === "string" && value.trim().length > 0;
+  const cataloged = value => safeRelative(value) && report.evidence.includes(value);
+  if (context.reviewMode !== "single-maintainer" || context.independenceClaimed !== false
+    || ![context.policyRevision, context.reviewedRfcRevision, context.reviewedReportRevision]
+      .every(value => typeof value === "string" && /^[0-9a-f]{40}$/u.test(value))
+    || context.reportSha256 !== digest(JSON.stringify(report))
+    || !nonblank(context.maintainer) || !nonblank(context.conflictsDeclaration)
+    || !["author", "not-author"].includes(context.authorshipDeclaration)
+    || typeof context.completedAt !== "string"
+    || !/^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(?:\.\d{3})?Z$/u.test(context.completedAt)
+    || !Number.isFinite(Date.parse(context.completedAt))
+    || !cataloged(context.policyAdoptionEvidence) || !cataloged(context.reviewSummary)
+    || context.reviewSummary !== report.reconciliation
+    || report.reviewerScorecards.length !== 1
+    || report.reviewerScorecards[0].reviewer !== context.maintainer) return false;
+  return [context.architectureReview, context.securityReview].every(lens =>
+    lens && !Array.isArray(lens) && typeof lens === "object"
+    && JSON.stringify(Object.keys(lens).sort()) === JSON.stringify(["evidence", "status"])
+    && lens.status === "completed" && Array.isArray(lens.evidence)
+    && lens.evidence.length > 0 && lens.evidence.every(cataloged));
+}
+
+export function assessReport(report, record = baseline, reviewContext = null) {
   if (!validateReport(report)) return { outcome: "not-ready", blockers: ["invalid-report"] };
   const blockers = [];
   if (!Array.isArray(record.targets) || !record.targets.length
@@ -97,7 +128,9 @@ export function assessReport(report, record = baseline) {
   if (JSON.stringify(required) !== JSON.stringify(actual)) blockers.push("target-matrix-mismatch");
   if (report.targets.some(target => target.result === "not-tested" || target.evidence.length === 0)) blockers.push("missing-target-evidence");
   if (Object.values(report.hardGates).some(gate => gate.status === "not-tested")) blockers.push("untested-hard-gate");
-  if (report.reviewerScorecards.length < 2
+  if (reviewContext !== null) {
+    if (!singleMaintainerReviewComplete(report, reviewContext)) blockers.push("missing-single-maintainer-review");
+  } else if (report.reviewerScorecards.length < 2
     || new Set(report.reviewerScorecards.map(card => card.reviewer.trim())).size !== report.reviewerScorecards.length
     || report.reviewerScorecards.some(card => !card.reviewer.trim())
     || !report.reconciliation) blockers.push("missing-independent-review");

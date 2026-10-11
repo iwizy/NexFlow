@@ -148,6 +148,7 @@ try {
 
 const before = "dc34aa786b4df9e7c20c04e35e58db612d057954";
 for (const file of ["rfcs/RFC-0023-runtime-architecture-decision.md",
+  ".github/workflows/schema-smoke.yml",
   "rfcs/reviews/runtime-architecture-decision-review.md",
   "rfcs/reviews/runtime-architecture-decision-draft.json",
   "rfcs/reviews/2026-10-09-runtime-reviewer-ownership.md",

@@ -33,3 +33,8 @@ jobs:
 
       - name: Verify adopted policy and bounded maintenance roles
         run: npm run single-maintainer-ownership-smoke
+
+      - name: Verify revision-bound decision review and repair evidence
+        run: |
+          npm run runtime-architecture-review-smoke
+          node scripts/runtime-evaluation-repair-evidence-smoke.mjs

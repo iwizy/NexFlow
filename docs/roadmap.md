@@ -273,9 +273,15 @@ CLI work must not begin until a revision-pinned decision RFC reaches
 
 ## Milestone 4: Runtime Architecture Decision
 
-Status: evidence preparation. The published review outcome is `not-ready`; no
+Status: reviewed with blockers. The published review outcome is `not-ready`; no
 runtime language, package layout, supported target matrix, or implementation
 authorization has been accepted.
+
+The [2026-10-11 single-maintainer review](../rfcs/reviews/2026-10-11-runtime-architecture-review.md)
+pins the Draft, subsequent four-candidate library repair and adopted NF-101
+ownership. Both evidence-analysis lenses are complete; six owned remediation
+cards precede a revised proposal and repeat acceptance review. Historical
+checkpoints below/above retain their own dated scope, not a current lack of prototypes.
 
 The [0.4 Alpha Preparation Checkpoint](0.4-alpha-checkpoint.md) assesses the
 current CLI-related evidence against this gate. It is prepared with blockers
@@ -291,6 +297,10 @@ the public version plan or authorize Milestone 5.
   storage boundaries
 - mandatory architecture review gates, evidence rules, blocker classes, and
   acceptance criteria
+- four native validation candidates, original source-bound partial reports and
+  later 352-case library repair evidence, with no full target acceptance
+- Draft RFC-0023, three architecture alternatives, adopted single-maintainer
+  policy and seven bounded NF-101 maintenance roles
 
 These inputs constrain a future decision. They are not a substitute for the
 decision RFC or candidate evidence.
@@ -299,15 +309,17 @@ decision RFC or candidate evidence.
 
 - no Runtime Architecture Decision RFC proposes a language, architecture
   layout, package ownership, and exact release targets
-- no comparable candidate prototypes, hard-gate reports, weighted scorecards,
-  target measurements, or reviewer reconciliation records are published
+- prototypes and reports exist, but repaired full-gate qualification, comparable
+  target measurements and eligible-candidate scores are incomplete
 - package boundaries, cross-package version ownership, and distribution
   mechanisms remain undecided
 - complete runtime threat and credential boundaries are not available as
   decision evidence
-- CLI, runtime, and extension conformance test ownership is not complete
+- exact supported compatibility/conformance combinations and their evidence
+  remain incomplete despite bounded validation/CLI ownership
 - artifact signing, provenance, installation, upgrade, rollback, and
-  maintenance ownership have not been demonstrated
+  current native lifecycle have not been fully demonstrated; signing coordination
+  is not signing authority
 
 ### Decision Closure Sequence
 
@@ -318,8 +330,9 @@ decision RFC or candidate evidence.
 3. Freeze one specification and fixture revision for all candidate prototypes.
 4. Run the common prototype, target, security, supply-chain, distribution, and
    maintenance evaluations for every candidate.
-5. Reconcile independent reviewer scorecards and record ties, dissent,
-   confidence, failed gates, and residual risks.
+5. Review through the adopted governance mode, score only eligible candidates
+   and record rationale, ties, dissent, confidence, failed gates and residual risks.
+   Single-maintainer mode uses both lenses and one written summary, not two people.
 6. Review the pinned RFC and evidence against every mandatory gate.
 7. Record exactly one decision outcome before changing implementation status.
 

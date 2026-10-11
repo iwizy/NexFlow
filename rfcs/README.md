@@ -42,6 +42,13 @@ or imply that an implemented slice accepts the entire RFC.
 
 ## Cross-RFC Reviews
 
+- [Single-Maintainer Runtime Architecture Review — 2026-10-11](reviews/2026-10-11-runtime-architecture-review.md)
+  reviews the exact Draft plus subsequent repairs and adopted governance through
+  both lenses. Fragment coverage and bounded ownership are recognized; current
+  cross-target qualification remains incomplete. Outcome not-ready, no scoring
+  or acceptance; [six owned blocker cards](reviews/nf-102-remediation.md) precede
+  a revised proposal and repeat decision review. NF-102 remains open.
+
 - [Single-Maintainer Governance](../docs/single-maintainer-governance.md) defines
   the adopted forward-only review-mode amendment in RFC-0024. It replaces only
   the two-person/reconciliation requirement for that

@@ -1,0 +1,218 @@
+{
+  "checkedOn": "2026-10-11",
+  "prerequisites": [
+    {
+      "pullRequest": "https://github.com/iwizy/NexFlow/pull/114",
+      "headRevision": "4787d2c33bedc8f57ae598f3424c6809df24b085",
+      "mergeRevision": "dc34aa786b4df9e7c20c04e35e58db612d057954",
+      "checks": [
+        {
+          "name": "CLI Prototype: CLI prototype checks",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37989156015/job/114018588063",
+          "completedAt": "2026-10-09T20:47:02Z"
+        },
+        {
+          "name": "Comparable Measurement Evidence: Measurement gap evidence",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37989156007/job/114018587634",
+          "completedAt": "2026-10-09T20:46:10Z"
+        },
+        {
+          "name": "Evaluation Environments: Environment (linux/amd64)",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37989156019/job/114018588103",
+          "completedAt": "2026-10-09T20:46:08Z"
+        },
+        {
+          "name": "Go Candidate: initial-validation",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37989156006/job/114018587749",
+          "completedAt": "2026-10-09T20:46:31Z"
+        },
+        {
+          "name": "Python Candidate: initial-validation",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37989156045/job/114018587829",
+          "completedAt": "2026-10-09T20:46:48Z"
+        },
+        {
+          "name": "Rust Candidate: initial-validation",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37989156097/job/114018588194",
+          "completedAt": "2026-10-09T20:46:46Z"
+        },
+        {
+          "name": "Schema Validation: schema-validation",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37989156077/job/114018588000",
+          "completedAt": "2026-10-09T20:46:25Z"
+        },
+        {
+          "name": "TypeScript Candidate: initial-validation",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37989156017/job/114018587792",
+          "completedAt": "2026-10-09T20:46:24Z"
+        },
+        {
+          "name": "Evaluation Environments: Environment (macos/arm64)",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37989156019/job/114018588082",
+          "completedAt": "2026-10-09T20:46:15Z"
+        },
+        {
+          "name": "Evaluation Environments: Environment (windows/amd64)",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/37989156019/job/114018587880",
+          "completedAt": "2026-10-09T20:46:28Z"
+        }
+      ]
+    },
+    {
+      "pullRequest": "https://github.com/iwizy/NexFlow/pull/115",
+      "headRevision": "2cd3b442d4549f0e5c1cd4c4363f9449796010df",
+      "mergeRevision": "f6a1f5cb26ea2c048d950039641a951b04e19db4",
+      "checks": [
+        {
+          "name": "CLI Prototype: CLI prototype checks",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/38129076062/job/114439452396",
+          "completedAt": "2026-10-11T09:38:56Z"
+        },
+        {
+          "name": "Comparable Measurement Evidence: Measurement gap evidence",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/38129076039/job/114439452355",
+          "completedAt": "2026-10-11T09:38:29Z"
+        },
+        {
+          "name": "Evaluation Environments: Environment (linux/amd64)",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/38129076073/job/114439452342",
+          "completedAt": "2026-10-11T09:38:29Z"
+        },
+        {
+          "name": "Go Candidate: initial-validation",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/38129076088/job/114439452339",
+          "completedAt": "2026-10-11T09:39:02Z"
+        },
+        {
+          "name": "Python Candidate: initial-validation",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/38129076047/job/114439452209",
+          "completedAt": "2026-10-11T09:38:59Z"
+        },
+        {
+          "name": "Review Governance: Review mode and preserved gates",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/38129076103/job/114439452475",
+          "completedAt": "2026-10-11T09:38:31Z"
+        },
+        {
+          "name": "Rust Candidate: initial-validation",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/38129076040/job/114439452138",
+          "completedAt": "2026-10-11T09:39:08Z"
+        },
+        {
+          "name": "Schema Validation: schema-validation",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/38129076084/job/114439452613",
+          "completedAt": "2026-10-11T09:38:46Z"
+        },
+        {
+          "name": "TypeScript Candidate: initial-validation",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/38129076051/job/114439452312",
+          "completedAt": "2026-10-11T09:38:39Z"
+        },
+        {
+          "name": "Evaluation Environments: Environment (macos/arm64)",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/38129076073/job/114439452269",
+          "completedAt": "2026-10-11T09:38:32Z"
+        },
+        {
+          "name": "Evaluation Environments: Environment (windows/amd64)",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/38129076073/job/114439452379",
+          "completedAt": "2026-10-11T09:38:41Z"
+        }
+      ]
+    },
+    {
+      "pullRequest": "https://github.com/iwizy/NexFlow/pull/116",
+      "headRevision": "c8e21f06316174c2e02b906855141d9950fef058",
+      "mergeRevision": "1c5a4c6806e029a20245fa8d3110c3a1a23b43d1",
+      "checks": [
+        {
+          "name": "CLI Prototype: CLI prototype checks",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/38129907139/job/114441896664",
+          "completedAt": "2026-10-11T09:53:25Z"
+        },
+        {
+          "name": "Comparable Measurement Evidence: Measurement gap evidence",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/38129907104/job/114441896872",
+          "completedAt": "2026-10-11T09:52:31Z"
+        },
+        {
+          "name": "Evaluation Environments: Environment (linux/amd64)",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/38129907148/job/114441896455",
+          "completedAt": "2026-10-11T09:52:31Z"
+        },
+        {
+          "name": "Go Candidate: initial-validation",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/38129907073/job/114441896385",
+          "completedAt": "2026-10-11T09:53:05Z"
+        },
+        {
+          "name": "Python Candidate: initial-validation",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/38129907051/job/114441896127",
+          "completedAt": "2026-10-11T09:53:02Z"
+        },
+        {
+          "name": "Review Governance: Review mode and preserved gates",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/38129907064/job/114441896238",
+          "completedAt": "2026-10-11T09:52:36Z"
+        },
+        {
+          "name": "Rust Candidate: initial-validation",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/38129907058/job/114441896336",
+          "completedAt": "2026-10-11T09:53:09Z"
+        },
+        {
+          "name": "Schema Validation: schema-validation",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/38129907071/job/114441896380",
+          "completedAt": "2026-10-11T09:52:46Z"
+        },
+        {
+          "name": "TypeScript Candidate: initial-validation",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/38129907075/job/114441896392",
+          "completedAt": "2026-10-11T09:52:47Z"
+        },
+        {
+          "name": "Evaluation Environments: Environment (macos/arm64)",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/38129907148/job/114441896572",
+          "completedAt": "2026-10-11T09:52:31Z"
+        },
+        {
+          "name": "Evaluation Environments: Environment (windows/amd64)",
+          "result": "SUCCESS",
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/38129907148/job/114441896605",
+          "completedAt": "2026-10-11T09:52:47Z"
+        }
+      ]
+    }
+  ]
+}

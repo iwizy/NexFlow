@@ -8,6 +8,12 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Added
 
+- Recorded NF-102's revision-bound single-maintainer architecture/security review
+  of the Draft, subsequent library repair and adopted ownership. Recognized scoped
+  352-case passes while retaining current target, diagnostic-contract, supply-chain,
+  lifecycle, measurement and mechanism gaps. Added six owned blocker cards and
+  rejection checks; outcome not-ready, no language selection or acceptance.
+
 - Recorded explicit RFC-0024 policy adoption and completed NF-101's organization
   with one human reviewer assignment and seven bounded maintenance roles.
   Best-effort/no-SLA support, no backup, design-only runtime and coordination-only

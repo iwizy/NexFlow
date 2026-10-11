@@ -6,9 +6,15 @@ A runtime architecture decision must happen before implementation begins.
 
 The decision must be evaluated against the
 [Runtime Architecture Decision Review](../rfcs/reviews/runtime-architecture-decision-review.md).
-The current review outcome is `not-ready`: initial common prototype evidence
-is published but retains failed/incomplete gates; no completed independent
-scorecards or accepted implementation choice exists.
+The [current single-maintainer review](../rfcs/reviews/2026-10-11-runtime-architecture-review.md)
+outcome is `not-ready`: scoped library repairs and NF-101 ownership are recognized,
+but current full-gate qualification remains incomplete. No candidate is eligible
+for scoring and no implementation choice is accepted.
+
+[NF-102's review task is closed](../rfcs/reviews/2026-10-11-runtime-review-closure.md)
+by explicit maintainer scope amendment, with outcome `not-ready`. The architecture
+remains Draft and all six technical acceptance blockers remain open; task closure
+is not acceptance or a waiver of any gate.
 
 Language-specific repository maintenance tooling, including schema validation dependencies, does not constitute a runtime implementation or a Runtime Architecture Decision.
 
@@ -32,18 +38,22 @@ Available inputs:
 - four independent validation-only prototypes with published partial fidelity,
   isolation, supply-chain, lifecycle and measurement-gap records
 - three [architecture alternatives and ownership proposals](../evaluation/architecture/alternatives.md),
-  with no selected layout or confirmed support roles
+  with no selected layout; their historical proposals are supplemented by the
+  [adopted NF-101 role record](../rfcs/reviews/2026-10-11-single-maintainer-ownership.md)
+- four source-bound [library repair records](../evaluation/repairs/README.md),
+  each passing the frozen 352-case catalog in supplemental native macOS scope
 
 Open decision blockers:
 
 - no decision RFC proposes one language, architecture layout, package model,
   and exact target matrix
-- all candidates retain failed specification fidelity and untested full
-  diagnostics; comparable performance and independent scorecards are absent
+- repaired fragment coverage does not qualify full project/public diagnostic,
+  current target, security or supply-chain gates; comparable performance is absent
 - package ownership and cross-package compatibility remain undecided
 - runtime threat, credential, and conformance evidence is incomplete
 - installed lifecycle evidence is partial/failed; signing, complete provenance,
-  true predecessor upgrade/rollback and maintenance consent remain unresolved
+  verified predecessor upgrade/rollback and current repaired-target qualification
+  remain unresolved; maintenance consent is bounded, not missing or signing authority
 
 The next step is evidence closure, not implementation. The project must draft
 the decision proposal, complete the missing boundary inputs, preserve the frozen

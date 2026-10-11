@@ -1,0 +1,1274 @@
+{
+  "formatVersion": "1",
+  "task": "NF-102",
+  "recordedOn": "2026-10-11",
+  "reviewMode": "single-maintainer",
+  "reviewedRevision": "1c5a4c6806e029a20245fa8d3110c3a1a23b43d1",
+  "evidenceBaseUrl": "https://github.com/iwizy/NexFlow/blob/1c5a4c6806e029a20245fa8d3110c3a1a23b43d1/",
+  "reviewPassCompleted": true,
+  "taskCompleted": false,
+  "outcome": "not-ready",
+  "decisionStatus": "Draft",
+  "maintainer": "Alexander Agafonov",
+  "executionBasis": "Maintainer-directed delegated review under the accepted single-maintainer policy; not an independent person's review or a final human acceptance signature.",
+  "authorshipDeclaration": "author",
+  "conflictsDeclaration": "Sole maintainer reviewing own project materials; no independent assurance.",
+  "independenceClaimed": false,
+  "policyRevision": "2cd3b442d4549f0e5c1cd4c4363f9449796010df",
+  "policyAdoptionEvidence": "rfcs/reviews/2026-10-11-single-maintainer-ownership.json",
+  "specificationRevision": "1d1fa238ab5729a79bee9389d5c66cfd20a61256",
+  "evaluationPackageRevision": "a8301a7478587c59502dfb2e6bd548489c14ee2b",
+  "corpusSha256": "01b116005f0650ac980194b22c02188289eaf1e8626b227aecf3684ece0d8f6b",
+  "catalogSha256": "f1bf8cb786442a212e14c79eb39279a2cdbf05ec20b09901374359d545d74e90",
+  "evidenceIndex": [
+    {
+      "path": "rfcs/RFC-0023-runtime-architecture-decision.md",
+      "sha256": "25247101749c0b3c17a385504978824d5fbcd2bfd95b103dd814cbce9e3ba32c"
+    },
+    {
+      "path": "rfcs/reviews/runtime-architecture-decision-review.md",
+      "sha256": "e6081c4ec50d52528f68a8949821435d576e33e9fdefcc227e98e256544afac2"
+    },
+    {
+      "path": "rfcs/reviews/runtime-architecture-decision-draft.json",
+      "sha256": "315378300e0611aef2479685d578b22a10a8335dc3d1e6bfe200cccb8d9377a5"
+    },
+    {
+      "path": "rfcs/RFC-0024-single-maintainer-governance.md",
+      "sha256": "70b7c18cc61631226c2c565b120063d6003ba7aae72ff06082b443559cb8e4ac"
+    },
+    {
+      "path": "docs/single-maintainer-governance.md",
+      "sha256": "230be6cfa166b6e66616be932bedd3d9e171601b047a82412c96d2801f886cbb"
+    },
+    {
+      "path": "docs/governance.md",
+      "sha256": "b1243ca816a0ff7b5f81f939446f3fbac40424f07fac1ce3d1091d31d97611d3"
+    },
+    {
+      "path": "rfcs/reviews/2026-10-11-single-maintainer-ownership.json",
+      "sha256": "06066e7863078bdfd368dd61d88d2c8524bd84662f0d62e1ae04a23a8038e4f7"
+    },
+    {
+      "path": "evaluation/baseline.json",
+      "sha256": "7cd10254220dd565f4473be0c0e44d99f2ec9ab42e906717536c38ab01492834"
+    },
+    {
+      "path": "evaluation/library-cases.json",
+      "sha256": "f1bf8cb786442a212e14c79eb39279a2cdbf05ec20b09901374359d545d74e90"
+    },
+    {
+      "path": "evaluation/library-inventory.json",
+      "sha256": "6759ad8f4faa3960f2704d1d74ea5ac733286815180dd72b9b6fe7762e680324"
+    },
+    {
+      "path": "evaluation/fidelity/source-pins.json",
+      "sha256": "2920a349c0bf6c3afae190e1eba97ec464541ca35a90a2119287a724aad23f8d"
+    },
+    {
+      "path": "evaluation/environment-contract.json",
+      "sha256": "e222227ad6f117ee2516cb185032ebbdadcd59e9f6e87d9394d56852a0914818"
+    },
+    {
+      "path": "evaluation/architecture/alternatives.json",
+      "sha256": "eaedfcc96127945b8b1f5a45781e66759ea8ff33de2e369673d734a28418cefc"
+    },
+    {
+      "path": "evaluation/architecture/alternatives.md",
+      "sha256": "322b8b3ec0eb07bd995a15b42f945a6cf53f6f287d1e8a2aac7ea9fad229aea4"
+    },
+    {
+      "path": "evaluation/reports/review/reviewer-a.json",
+      "sha256": "518335c2a5b4633d589a4e8c59b236b8108534085af8b63199add8f4d4345b16"
+    },
+    {
+      "path": "evaluation/reports/review/reviewer-b.json",
+      "sha256": "8a3760e227839be3799fc6496a99f0892a7e1a4e8a47340846bb21608d11743c"
+    },
+    {
+      "path": "evaluation/reports/review/reconciliation.json",
+      "sha256": "3f9bb640644ab48f343a3627bb4b4e7f960fd52f72ad9e4460f711ba0ab2121e"
+    },
+    {
+      "path": "docs/language-evaluation-matrix.md",
+      "sha256": "5dbbbe4b5b88cfab64f4d4995a02dfacc7be7d70f5fe0d62a3950e481e0bd15c"
+    },
+    {
+      "path": "docs/cli-runtime-boundary.md",
+      "sha256": "16bd2d7c04309ec3dfde2b58046ebf2b6476e79849daf4220064e72490f0f41f"
+    },
+    {
+      "path": "docs/security-model.md",
+      "sha256": "19f86a6a554e3df3348f5a24b469f31fc4bf0fa13d0b4c2fdd0fcba277eb24ad"
+    },
+    {
+      "path": "docs/credential-handling.md",
+      "sha256": "a717cffa53b237e39c865bd65576a55798473a4be8beca70b26b3764655e27b3"
+    },
+    {
+      "path": "docs/extension-loading-boundary.md",
+      "sha256": "03169b3bad3aa12e932ddb6002577b1afc3e13a5de4140ccfa79253dc10288be"
+    },
+    {
+      "path": "docs/provider-adapter-boundary.md",
+      "sha256": "2e74da133c9d7af3d584b0f89ac5069e0f0f14c6ac6999a92c6d9c05d62fb5db"
+    },
+    {
+      "path": "docs/event-audit-storage-boundary.md",
+      "sha256": "0d4239ef153d8f7361de67cff7a80f9f576ecbd2cff3b95c07accf23fdfd626f"
+    },
+    {
+      "path": "docs/mcp-a2a-boundaries.md",
+      "sha256": "5a0423d21a44645af5462bd3d34f47d4131c53ec142ea9b4b15113d125f82853"
+    },
+    {
+      "path": "docs/conformance.md",
+      "sha256": "7a359c7ae96fc01a923f02d9b72245f0ab5cf805e2f5660310e45f60220152f5"
+    },
+    {
+      "path": "docs/compatibility.md",
+      "sha256": "911d8cae4d25a5e5b7d098ef7a64e929e3e44e1bbdaded8f6cb22e8f39f8ace8"
+    },
+    {
+      "path": "docs/versioning.md",
+      "sha256": "c7a025010f1f3fb29f6153b716a5867a6fedb0bacb680f4fefae9912f50b7b55"
+    },
+    {
+      "path": "scripts/runtime-evaluation-repair-run.mjs",
+      "sha256": "2ed2bb0b3cd39e3d5baec04d569b5ced0a7af1de13027583b79dfd268d491c66"
+    },
+    {
+      "path": "scripts/lib/evaluation-library.mjs",
+      "sha256": "55243cf546a957e34c51fbcf4f0c956ef369c26172c6210e213e08b075431422"
+    },
+    {
+      "path": "evaluation/reports/typescript/candidate.json",
+      "sha256": "54afd46895e302f1ec4bf2c2cd672dc4dd4b0bc48edf8c533d42ec0b7b754c93"
+    },
+    {
+      "path": "evaluation/reports/typescript/bundle.json",
+      "sha256": "cc0748fac004f7f3f88450301a745196497251476bc58ff975b8be8a2e8102ea"
+    },
+    {
+      "path": "evaluation/repairs/typescript.json",
+      "sha256": "9b6d98091ee830c515787cf240be2c692ef0634e433a10d26afbc71fd80d5c17"
+    },
+    {
+      "path": "evaluation/isolation/typescript.json",
+      "sha256": "eb04b549f8d7e2ce44dc9c4ae334e48317df4e4ebc9fdc839626d7d35d2d2a4f"
+    },
+    {
+      "path": "evaluation/supply-chain/typescript/inventory.json",
+      "sha256": "f912481d7575fe48af58b10fd76430a4111cd16f84cb99de7c43dd93976ffa9c"
+    },
+    {
+      "path": "evaluation/supply-chain/typescript/sbom.cdx.json",
+      "sha256": "aac325ea7c7ffd6e66f3f49e21ea67936b4945bf285d64c6b1d832f0adba526b"
+    },
+    {
+      "path": "evaluation/supply-chain/typescript/advisories.json",
+      "sha256": "cfe2041bed1525330a1c52936dc09fc0f64f90f58ab0423e64293325a7cd5abe"
+    },
+    {
+      "path": "evaluation/lifecycle/linux/typescript.json",
+      "sha256": "f79771af6de200ff996e715f2f5e4df3eef15c00ddb99e50e78ab6ed4393a237"
+    },
+    {
+      "path": "evaluation/lifecycle/macos/typescript.json",
+      "sha256": "308728f0be7de84ddc0d207f9be8a5f5fba3e50e560d99c4d16dbcbe1b7a913a"
+    },
+    {
+      "path": "evaluation/lifecycle/windows/typescript.json",
+      "sha256": "7dfcd33132dda53204b8694e0b71106a5d7d4ab88f1beecdae19c90ecbbd3439"
+    },
+    {
+      "path": "evaluation/measurements/typescript.json",
+      "sha256": "fddc22db60d24c51100506c501fc24616e88eaf8141e187e5f5e125bd35d1e4f"
+    },
+    {
+      "path": "evaluation/reports/python/candidate.json",
+      "sha256": "1104fd22807d90869f651eb5614fb843647ff9d435139dbb1397448cffb6be93"
+    },
+    {
+      "path": "evaluation/reports/python/bundle.json",
+      "sha256": "6ef844f36eaba3dc6a2a381a4d6a4585c6ec706016c1b0781ae1cc4202cf7177"
+    },
+    {
+      "path": "evaluation/repairs/python.json",
+      "sha256": "c2f332f4bd3cf3ebb71bdcf41a3547daa6d23ef91439d1ee571eef8f60acdc0b"
+    },
+    {
+      "path": "evaluation/isolation/python.json",
+      "sha256": "0cdde3ac84a8f0a625a95b8918331c7eb006a587d31fdd64407178013047a817"
+    },
+    {
+      "path": "evaluation/supply-chain/python/inventory.json",
+      "sha256": "211c124ec6dabc1b4fa8ac858adec46cce4fd170eeb29f57c638d4cb2525c9ee"
+    },
+    {
+      "path": "evaluation/supply-chain/python/sbom.cdx.json",
+      "sha256": "a4a4e9bc4654041e3f640b1f79955cd1788a690c3229f421bc83c21c1a2f8e28"
+    },
+    {
+      "path": "evaluation/supply-chain/python/advisories.json",
+      "sha256": "cde4104443f375cc04049a27ff8cab30c406decc8ab846d8251d3badd10856b6"
+    },
+    {
+      "path": "evaluation/lifecycle/linux/python.json",
+      "sha256": "29ad78f76592639898b8168f003f7e1108a8794fbc5f93cc3d79e4cfdfb643a6"
+    },
+    {
+      "path": "evaluation/lifecycle/macos/python.json",
+      "sha256": "0f1f47bde9d2821d15bc4160b28b57270ea0fd8e83e10e76efd89b5763196d45"
+    },
+    {
+      "path": "evaluation/lifecycle/windows/python.json",
+      "sha256": "3bd049de96a30b015a3bc52da1899bb3bd2b99c5b2f21af52652dd19e1850308"
+    },
+    {
+      "path": "evaluation/measurements/python.json",
+      "sha256": "f7e25b61855b3b99e4e325679958066a91a1687c02481deea090e023b1a24f56"
+    },
+    {
+      "path": "evaluation/reports/rust/candidate.json",
+      "sha256": "b129a39e1bccbd72d9590f3406a86d7d682d243f7469e56cef795811c5f9c472"
+    },
+    {
+      "path": "evaluation/reports/rust/bundle.json",
+      "sha256": "affd4d6ded0293600baa88378b51829174a44884d1f55f83c9f7ad0ee49e7729"
+    },
+    {
+      "path": "evaluation/repairs/rust.json",
+      "sha256": "02f333eafb9ce8b994340dd587ee55ddfec4e8b1c272193c2b210a0bb031440b"
+    },
+    {
+      "path": "evaluation/isolation/rust.json",
+      "sha256": "c8dda6758d960524500a47072f39702dab6801a76240eab80193f6327bebe344"
+    },
+    {
+      "path": "evaluation/supply-chain/rust/inventory.json",
+      "sha256": "19eeaa651d54dabd2726e76c253e40979ce5d1964a2d4d9e605754f8ea0f58c3"
+    },
+    {
+      "path": "evaluation/supply-chain/rust/sbom.cdx.json",
+      "sha256": "7a7501d1722725bb9350edd9a8a2df29e43bd764ec8d0abe3088e42c09d35524"
+    },
+    {
+      "path": "evaluation/supply-chain/rust/advisories.json",
+      "sha256": "f9bf6a701c6966b93d9ae71e5e328fff15913a2154fbb5c22c160cef62848e1a"
+    },
+    {
+      "path": "evaluation/lifecycle/linux/rust.json",
+      "sha256": "4517acec7f9f3c5a0675c183dec8f2622b10b80fc2bf4b6b089cb163f67b3a3b"
+    },
+    {
+      "path": "evaluation/lifecycle/macos/rust.json",
+      "sha256": "5efc0fdcd5cb5703e779f74a1adcf07fa9e208b7c89ca1271b06d523471642d3"
+    },
+    {
+      "path": "evaluation/lifecycle/windows/rust.json",
+      "sha256": "076aa081b74854bb9fd1e4bec8000d870a894011d114556e4002a0f3e442f87e"
+    },
+    {
+      "path": "evaluation/measurements/rust.json",
+      "sha256": "00559091ece5b8d165e19393d245a2460992d7ee97aa8a30f226285fd98a7fa4"
+    },
+    {
+      "path": "evaluation/reports/go/candidate.json",
+      "sha256": "685f68c3167cb3619c3812d811182e81e9c782524b4f4f2317e92abbb71580bb"
+    },
+    {
+      "path": "evaluation/reports/go/bundle.json",
+      "sha256": "092e2e4b2d123a8d6bddaa3a4031e20f7fc2f062fac237df602083cc55f388e3"
+    },
+    {
+      "path": "evaluation/repairs/go.json",
+      "sha256": "524d618742316149fe5246ef25cf3cb4f9f09d08fe6a7f63f942b38749ececc8"
+    },
+    {
+      "path": "evaluation/isolation/go.json",
+      "sha256": "83d8b606d5639a033fac916432a8de4bf69762356a9cfe71eebf9387c68850ba"
+    },
+    {
+      "path": "evaluation/supply-chain/go/inventory.json",
+      "sha256": "c730936de95b409da828f9e84af6cc4907f325c01a3c4d2e1290d33f8b787bb9"
+    },
+    {
+      "path": "evaluation/supply-chain/go/sbom.cdx.json",
+      "sha256": "434601f6775c8019f7a78e26a77ac1fc780e6217e6c03b2b38100f323f4a0330"
+    },
+    {
+      "path": "evaluation/supply-chain/go/advisories.json",
+      "sha256": "9ced40293eb3485d91f4a097295e9cbd93eea8504ad2b89dcba7157f1d421ae0"
+    },
+    {
+      "path": "evaluation/lifecycle/linux/go.json",
+      "sha256": "037f591e2bc28882875d649317715cbfc304e333df9b77cb71ff1de73983f18d"
+    },
+    {
+      "path": "evaluation/lifecycle/macos/go.json",
+      "sha256": "dde00ff6d69416a7dd37b6cf9042551abbffba509469c1a78a36d82aad572101"
+    },
+    {
+      "path": "evaluation/lifecycle/windows/go.json",
+      "sha256": "bf9a427adac59117df9b1d8962c496ca1576eb90a5841dcab498584679905d1b"
+    },
+    {
+      "path": "evaluation/measurements/go.json",
+      "sha256": "eaebdb7908c866ea4073d4fca8ef30ab56f188d13abaeb47b29e3daca52a3d2c"
+    }
+  ],
+  "prerequisiteReceipt": {
+    "path": "rfcs/reviews/2026-10-11-runtime-review-prerequisites.json",
+    "sha256": "48e4df4d6478b39b8b7150bd31afef591f041dff5b275253837cdbb18da6154a",
+    "successfulChecks": 32
+  },
+  "lenses": {
+    "architecture": {
+      "status": "completed-evidence-analysis",
+      "findings": [
+        "New fragment coverage is recognized without promoting it to full project conformance.",
+        "All three layouts remain viable hypotheses, not measured alternatives or a defensible winner.",
+        "Package/version/startup/API/compatibility and concrete mechanism selection require a revised proposal."
+      ],
+      "gates": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        8,
+        10,
+        11
+      ]
+    },
+    "security": {
+      "status": "completed-evidence-analysis",
+      "findings": [
+        "Old denial/lifecycle/SBOM/advisory evidence cannot automatically qualify repaired artifacts.",
+        "Signing coordination and seven accepted roles are not keys, target authority or production support.",
+        "Native denial, complete dependency/license closure, provenance, signing and lifecycle gaps remain blocking."
+      ],
+      "gates": [
+        2,
+        3,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ]
+    }
+  },
+  "candidates": [
+    {
+      "candidate": "typescript",
+      "historicalPrototypeRevision": "19ff4889542fe486d95eb2ae868560f5aa966df2",
+      "historicalAssessment": {
+        "outcome": "ineligible",
+        "blockers": [
+          "report-not-complete",
+          "missing-target-evidence",
+          "untested-hard-gate",
+          "missing-independent-review",
+          "missing-measurements"
+        ]
+      },
+      "currentSourceRevision": "9e13a54311735a36398eb89c4a39ff2949998998",
+      "repairEvidence": "evaluation/repairs/typescript.json",
+      "frozen": {
+        "passed": 352,
+        "failed": 0,
+        "not-tested": 0
+      },
+      "renamed": {
+        "passed": 224,
+        "failed": 0,
+        "not-tested": 0
+      },
+      "supplemental": {
+        "passed": 14,
+        "failed": 0,
+        "not-tested": 0
+      },
+      "runsPerCase": 2,
+      "cohort": "supplemental-native-macos-arm64-not-frozen-target-acceptance",
+      "toolchain": {
+        "node": "22.23.2",
+        "npm": "10.9.8",
+        "typescript": "7.0.2"
+      },
+      "structuralCliPassed": 11,
+      "relocation": null,
+      "exclusions": [
+        "full-semantic-conformance",
+        "runtime",
+        "core-and-extension-profiles",
+        "cross-target-lifecycle",
+        "signing",
+        "security-advisory-closure",
+        "comparable-performance",
+        "human-review",
+        "architecture-acceptance"
+      ],
+      "currentQualification": "not-established",
+      "eligibleForScoring": false,
+      "weightedScores": null,
+      "weightedTotal": null
+    },
+    {
+      "candidate": "python",
+      "historicalPrototypeRevision": "76141dfbeae265cb636d99a6164b097ce5d3019a",
+      "historicalAssessment": {
+        "outcome": "ineligible",
+        "blockers": [
+          "report-not-complete",
+          "missing-target-evidence",
+          "untested-hard-gate",
+          "missing-independent-review",
+          "missing-measurements"
+        ]
+      },
+      "currentSourceRevision": "9e13a54311735a36398eb89c4a39ff2949998998",
+      "repairEvidence": "evaluation/repairs/python.json",
+      "frozen": {
+        "passed": 352,
+        "failed": 0,
+        "not-tested": 0
+      },
+      "renamed": {
+        "passed": 224,
+        "failed": 0,
+        "not-tested": 0
+      },
+      "supplemental": {
+        "passed": 14,
+        "failed": 0,
+        "not-tested": 0
+      },
+      "runsPerCase": 2,
+      "cohort": "supplemental-native-macos-arm64-not-frozen-target-acceptance",
+      "toolchain": {
+        "python": "3.12.14"
+      },
+      "structuralCliPassed": 11,
+      "relocation": null,
+      "exclusions": [
+        "full-semantic-conformance",
+        "runtime",
+        "core-and-extension-profiles",
+        "cross-target-lifecycle",
+        "signing",
+        "security-advisory-closure",
+        "comparable-performance",
+        "human-review",
+        "architecture-acceptance"
+      ],
+      "currentQualification": "not-established",
+      "eligibleForScoring": false,
+      "weightedScores": null,
+      "weightedTotal": null
+    },
+    {
+      "candidate": "rust",
+      "historicalPrototypeRevision": "4fdf0cc8e69e050600d0a5d8f7f1f42987f68203",
+      "historicalAssessment": {
+        "outcome": "ineligible",
+        "blockers": [
+          "report-not-complete",
+          "untested-hard-gate",
+          "missing-independent-review",
+          "missing-measurements"
+        ]
+      },
+      "currentSourceRevision": "9e13a54311735a36398eb89c4a39ff2949998998",
+      "repairEvidence": "evaluation/repairs/rust.json",
+      "frozen": {
+        "passed": 352,
+        "failed": 0,
+        "not-tested": 0
+      },
+      "renamed": {
+        "passed": 224,
+        "failed": 0,
+        "not-tested": 0
+      },
+      "supplemental": {
+        "passed": 14,
+        "failed": 0,
+        "not-tested": 0
+      },
+      "runsPerCase": 2,
+      "cohort": "supplemental-native-macos-arm64-not-frozen-target-acceptance",
+      "toolchain": {
+        "rustc": "1.99.0",
+        "cargo": "1.99.0"
+      },
+      "structuralCliPassed": 11,
+      "relocation": {
+        "result": "passed",
+        "commands": [
+          "validate",
+          "inspect"
+        ],
+        "denied": [
+          "network",
+          "source-schema-reads"
+        ],
+        "scope": "supplemental-native-macos-arm64-only"
+      },
+      "exclusions": [
+        "full-semantic-conformance",
+        "runtime",
+        "core-and-extension-profiles",
+        "cross-target-lifecycle",
+        "signing",
+        "security-advisory-closure",
+        "comparable-performance",
+        "human-review",
+        "architecture-acceptance"
+      ],
+      "currentQualification": "not-established",
+      "eligibleForScoring": false,
+      "weightedScores": null,
+      "weightedTotal": null
+    },
+    {
+      "candidate": "go",
+      "historicalPrototypeRevision": "737396b6488a9f10b179061366b9f1d02591fb9f",
+      "historicalAssessment": {
+        "outcome": "ineligible",
+        "blockers": [
+          "report-not-complete",
+          "missing-target-evidence",
+          "untested-hard-gate",
+          "missing-independent-review",
+          "missing-measurements"
+        ]
+      },
+      "currentSourceRevision": "9e13a54311735a36398eb89c4a39ff2949998998",
+      "repairEvidence": "evaluation/repairs/go.json",
+      "frozen": {
+        "passed": 352,
+        "failed": 0,
+        "not-tested": 0
+      },
+      "renamed": {
+        "passed": 224,
+        "failed": 0,
+        "not-tested": 0
+      },
+      "supplemental": {
+        "passed": 14,
+        "failed": 0,
+        "not-tested": 0
+      },
+      "runsPerCase": 2,
+      "cohort": "supplemental-native-macos-arm64-not-frozen-target-acceptance",
+      "toolchain": {
+        "go": "1.27.1"
+      },
+      "structuralCliPassed": 11,
+      "relocation": null,
+      "exclusions": [
+        "full-semantic-conformance",
+        "runtime",
+        "core-and-extension-profiles",
+        "cross-target-lifecycle",
+        "signing",
+        "security-advisory-closure",
+        "comparable-performance",
+        "human-review",
+        "architecture-acceptance"
+      ],
+      "currentQualification": "not-established",
+      "eligibleForScoring": false,
+      "weightedScores": null,
+      "weightedTotal": null
+    }
+  ],
+  "diagnosticReview": {
+    "method": "Compare saved per-case results after sorting object keys only; retain array/diagnostic order and native details. This is record analysis, not new candidate execution.",
+    "rawResultComparisons": [
+      {
+        "candidate": "typescript",
+        "rawDifferentCaseIds": []
+      },
+      {
+        "candidate": "python",
+        "rawDifferentCaseIds": []
+      },
+      {
+        "candidate": "rust",
+        "rawDifferentCaseIds": [
+          "draft-2020-prefixitems-rejected"
+        ]
+      },
+      {
+        "candidate": "go",
+        "rawDifferentCaseIds": [
+          "draft-2020-prefixitems-rejected"
+        ]
+      }
+    ],
+    "oracleUsesExpectedSubset": true,
+    "conclusion": "All repair cases satisfy the frozen subset oracle. Raw library records differ for one schema case in Rust/Go through nativeDiagnostic details; strict public normalized diagnostic compatibility is not established by these passes. Do not call this a proven validation failure or remove native fields/oracle cases to hide it.",
+    "followUp": "NF-102-01"
+  },
+  "scoring": {
+    "criteria": [
+      {
+        "id": "specificationAndValidationFidelity",
+        "weight": 20
+      },
+      {
+        "id": "securityAndIsolationFit",
+        "weight": 15
+      },
+      {
+        "id": "crossPlatformDistribution",
+        "weight": 15
+      },
+      {
+        "id": "ecosystemAndIntegrationFit",
+        "weight": 10
+      },
+      {
+        "id": "contributorAccessibility",
+        "weight": 10
+      },
+      {
+        "id": "maintainability",
+        "weight": 10
+      },
+      {
+        "id": "performanceAndResourceUse",
+        "weight": 8
+      },
+      {
+        "id": "observabilityAndDiagnostics",
+        "weight": 5
+      },
+      {
+        "id": "embeddingAndInteroperability",
+        "weight": 4
+      },
+      {
+        "id": "operationalFootprint",
+        "weight": 3
+      }
+    ],
+    "rule": "Score only candidates that pass every hard gate; preserve original 0..5 scale and weight * score / 5.",
+    "eligibleCandidates": [],
+    "scorecards": [],
+    "abstention": "Current cross-target hard-gate qualification is incomplete for all four. No compensating scores or language ranking.",
+    "reconciliation": "Single written review summary replaces cross-person reconciliation; both lenses retain blockers, with no recorded external dissent or independent review."
+  },
+  "targetRecords": [
+    {
+      "candidate": "typescript",
+      "target": "linux/amd64",
+      "sourceRevision": "19ff4889542fe486d95eb2ae868560f5aa966df2",
+      "cohortMatched": false,
+      "stages": {
+        "build": "passed",
+        "install": "passed",
+        "validateInspect": "passed",
+        "offlineUse": "passed",
+        "upgrade": "not-tested",
+        "rollback": "not-tested",
+        "uninstall": "passed",
+        "signing": "not-tested"
+      },
+      "evidence": "evaluation/lifecycle/linux/typescript.json",
+      "currentRepairLifecycle": "not-retested"
+    },
+    {
+      "candidate": "typescript",
+      "target": "macos/arm64",
+      "sourceRevision": "19ff4889542fe486d95eb2ae868560f5aa966df2",
+      "cohortMatched": false,
+      "stages": {
+        "package": "passed",
+        "install": "passed",
+        "validateInspect": "passed",
+        "offlineUse": "passed",
+        "upgrade": "not-tested",
+        "rollback": "not-tested",
+        "uninstall": "passed",
+        "signing": "not-tested",
+        "notarization": "not-tested"
+      },
+      "evidence": "evaluation/lifecycle/macos/typescript.json",
+      "currentRepairLifecycle": "not-retested"
+    },
+    {
+      "candidate": "typescript",
+      "target": "windows/amd64",
+      "sourceRevision": "19ff4889542fe486d95eb2ae868560f5aa966df2",
+      "cohortMatched": true,
+      "stages": {
+        "build": "passed",
+        "install": "failed",
+        "validateInspect": "passed",
+        "offlineUse": "not-tested",
+        "upgrade": "not-tested",
+        "rollback": "not-tested",
+        "uninstall": "passed",
+        "signing": "not-tested"
+      },
+      "evidence": "evaluation/lifecycle/windows/typescript.json",
+      "currentRepairLifecycle": "not-retested"
+    },
+    {
+      "candidate": "python",
+      "target": "linux/amd64",
+      "sourceRevision": "76141dfbeae265cb636d99a6164b097ce5d3019a",
+      "cohortMatched": false,
+      "stages": {
+        "build": "passed",
+        "install": "passed",
+        "validateInspect": "passed",
+        "offlineUse": "passed",
+        "upgrade": "not-tested",
+        "rollback": "not-tested",
+        "uninstall": "passed",
+        "signing": "not-tested"
+      },
+      "evidence": "evaluation/lifecycle/linux/python.json",
+      "currentRepairLifecycle": "not-retested"
+    },
+    {
+      "candidate": "python",
+      "target": "macos/arm64",
+      "sourceRevision": "76141dfbeae265cb636d99a6164b097ce5d3019a",
+      "cohortMatched": false,
+      "stages": {
+        "package": "passed",
+        "install": "passed",
+        "validateInspect": "passed",
+        "offlineUse": "passed",
+        "upgrade": "not-tested",
+        "rollback": "not-tested",
+        "uninstall": "passed",
+        "signing": "not-tested",
+        "notarization": "not-tested"
+      },
+      "evidence": "evaluation/lifecycle/macos/python.json",
+      "currentRepairLifecycle": "not-retested"
+    },
+    {
+      "candidate": "python",
+      "target": "windows/amd64",
+      "sourceRevision": "76141dfbeae265cb636d99a6164b097ce5d3019a",
+      "cohortMatched": false,
+      "stages": {
+        "build": "failed",
+        "install": "not-tested",
+        "validateInspect": "not-tested",
+        "offlineUse": "not-tested",
+        "upgrade": "not-tested",
+        "rollback": "not-tested",
+        "uninstall": "not-tested",
+        "signing": "not-tested"
+      },
+      "evidence": "evaluation/lifecycle/windows/python.json",
+      "currentRepairLifecycle": "not-retested"
+    },
+    {
+      "candidate": "rust",
+      "target": "linux/amd64",
+      "sourceRevision": "4fdf0cc8e69e050600d0a5d8f7f1f42987f68203",
+      "cohortMatched": false,
+      "stages": {
+        "build": "passed",
+        "install": "passed",
+        "validateInspect": "failed",
+        "offlineUse": "failed",
+        "upgrade": "not-tested",
+        "rollback": "not-tested",
+        "uninstall": "passed",
+        "signing": "not-tested"
+      },
+      "evidence": "evaluation/lifecycle/linux/rust.json",
+      "currentRepairLifecycle": "not-retested"
+    },
+    {
+      "candidate": "rust",
+      "target": "macos/arm64",
+      "sourceRevision": "4fdf0cc8e69e050600d0a5d8f7f1f42987f68203",
+      "cohortMatched": false,
+      "stages": {
+        "package": "passed",
+        "install": "passed",
+        "validateInspect": "failed",
+        "offlineUse": "failed",
+        "upgrade": "not-tested",
+        "rollback": "not-tested",
+        "uninstall": "passed",
+        "signing": "not-tested",
+        "notarization": "not-tested"
+      },
+      "evidence": "evaluation/lifecycle/macos/rust.json",
+      "currentRepairLifecycle": "not-retested"
+    },
+    {
+      "candidate": "rust",
+      "target": "windows/amd64",
+      "sourceRevision": "4fdf0cc8e69e050600d0a5d8f7f1f42987f68203",
+      "cohortMatched": true,
+      "stages": {
+        "build": "passed",
+        "install": "failed",
+        "validateInspect": "failed",
+        "offlineUse": "not-tested",
+        "upgrade": "not-tested",
+        "rollback": "not-tested",
+        "uninstall": "passed",
+        "signing": "not-tested"
+      },
+      "evidence": "evaluation/lifecycle/windows/rust.json",
+      "currentRepairLifecycle": "not-retested"
+    },
+    {
+      "candidate": "go",
+      "target": "linux/amd64",
+      "sourceRevision": "737396b6488a9f10b179061366b9f1d02591fb9f",
+      "cohortMatched": false,
+      "stages": {
+        "build": "passed",
+        "install": "passed",
+        "validateInspect": "passed",
+        "offlineUse": "passed",
+        "upgrade": "not-tested",
+        "rollback": "not-tested",
+        "uninstall": "passed",
+        "signing": "not-tested"
+      },
+      "evidence": "evaluation/lifecycle/linux/go.json",
+      "currentRepairLifecycle": "not-retested"
+    },
+    {
+      "candidate": "go",
+      "target": "macos/arm64",
+      "sourceRevision": "737396b6488a9f10b179061366b9f1d02591fb9f",
+      "cohortMatched": false,
+      "stages": {
+        "package": "passed",
+        "install": "passed",
+        "validateInspect": "passed",
+        "offlineUse": "passed",
+        "upgrade": "not-tested",
+        "rollback": "not-tested",
+        "uninstall": "passed",
+        "signing": "not-tested",
+        "notarization": "not-tested"
+      },
+      "evidence": "evaluation/lifecycle/macos/go.json",
+      "currentRepairLifecycle": "not-retested"
+    },
+    {
+      "candidate": "go",
+      "target": "windows/amd64",
+      "sourceRevision": "737396b6488a9f10b179061366b9f1d02591fb9f",
+      "cohortMatched": false,
+      "stages": {
+        "build": "passed",
+        "install": "failed",
+        "validateInspect": "passed",
+        "offlineUse": "not-tested",
+        "upgrade": "not-tested",
+        "rollback": "not-tested",
+        "uninstall": "passed",
+        "signing": "not-tested"
+      },
+      "evidence": "evaluation/lifecycle/windows/go.json",
+      "currentRepairLifecycle": "not-retested"
+    }
+  ],
+  "missingComparableMetricCells": 84,
+  "gates": [
+    {
+      "number": 1,
+      "id": "proposalCompleteness",
+      "status": "blocked",
+      "finding": "The Draft describes alternatives and non-goals, but has no proposed language/layout or exact product support matrix. NF-101 supplies bounded role ownership, not a selected package design.",
+      "evidence": [
+        "rfcs/RFC-0023-runtime-architecture-decision.md",
+        "evaluation/architecture/alternatives.json",
+        "rfcs/reviews/2026-10-11-single-maintainer-ownership.json",
+        "docs/single-maintainer-governance.md"
+      ],
+      "followUps": [
+        "NF-102-06"
+      ]
+    },
+    {
+      "number": 2,
+      "id": "evidenceIntegrity",
+      "status": "blocked",
+      "finding": "Hashes and the frozen corpus resolve. Repair evidence closes catalog function coverage, but original reports/target/measurement/advisory records describe earlier sources. Comparable current evidence is absent. Two independent people are no longer required; no eligible candidate can yet be scored.",
+      "evidence": [
+        "rfcs/RFC-0023-runtime-architecture-decision.md",
+        "evaluation/reports/typescript/candidate.json",
+        "evaluation/reports/python/candidate.json",
+        "evaluation/reports/rust/candidate.json",
+        "evaluation/reports/go/candidate.json",
+        "evaluation/reports/review/reviewer-a.json",
+        "evaluation/reports/review/reviewer-b.json",
+        "evaluation/reports/review/reconciliation.json",
+        "evaluation/repairs/typescript.json",
+        "evaluation/repairs/python.json",
+        "evaluation/repairs/rust.json",
+        "evaluation/repairs/go.json",
+        "rfcs/reviews/2026-10-11-single-maintainer-ownership.json",
+        "docs/single-maintainer-governance.md"
+      ],
+      "followUps": [
+        "NF-102-01",
+        "NF-102-03",
+        "NF-102-05"
+      ]
+    },
+    {
+      "number": 3,
+      "id": "candidateEligibility",
+      "status": "blocked",
+      "finding": "All four repaired libraries pass the frozen catalog in the supplemental macOS scope. Complete current public diagnostics, native target, security and supply-chain qualification remain unestablished; do not reuse historical ineligible verdicts as new-source failures.",
+      "evidence": [
+        "rfcs/RFC-0023-runtime-architecture-decision.md",
+        "evaluation/reports/typescript/candidate.json",
+        "evaluation/reports/python/candidate.json",
+        "evaluation/reports/rust/candidate.json",
+        "evaluation/reports/go/candidate.json",
+        "evaluation/repairs/typescript.json",
+        "evaluation/repairs/python.json",
+        "evaluation/repairs/rust.json",
+        "evaluation/repairs/go.json"
+      ],
+      "followUps": [
+        "NF-102-01",
+        "NF-102-02",
+        "NF-102-03",
+        "NF-102-04"
+      ]
+    },
+    {
+      "number": 4,
+      "id": "architectureDependencies",
+      "status": "blocked",
+      "finding": "All three layouts point inward toward pure validation. No selected package/import closure, startup sequence or supported API/version combinations are proven. Separate packages or languages alone do not isolate effects.",
+      "evidence": [
+        "rfcs/RFC-0023-runtime-architecture-decision.md",
+        "evaluation/architecture/alternatives.json",
+        "docs/cli-runtime-boundary.md"
+      ],
+      "followUps": [
+        "NF-102-06"
+      ]
+    },
+    {
+      "number": 5,
+      "id": "cliRuntimeSeparation",
+      "status": "blocked",
+      "finding": "Eleven structural validate/inspect cases pass in each repair record; runtime/extension checks stay not-run. This does not test all installed command budgets, graph/init or denied facilities on every repaired target.",
+      "evidence": [
+        "rfcs/RFC-0023-runtime-architecture-decision.md",
+        "docs/cli-runtime-boundary.md",
+        "evaluation/reports/typescript/bundle.json",
+        "evaluation/reports/python/bundle.json",
+        "evaluation/reports/rust/bundle.json",
+        "evaluation/reports/go/bundle.json",
+        "evaluation/repairs/typescript.json",
+        "evaluation/repairs/python.json",
+        "evaluation/repairs/rust.json",
+        "evaluation/repairs/go.json"
+      ],
+      "followUps": [
+        "NF-102-01",
+        "NF-102-04",
+        "NF-102-06"
+      ]
+    },
+    {
+      "number": 6,
+      "id": "securityAuthority",
+      "status": "blocked",
+      "finding": "Archived macOS OS controls and repair redaction/resource fixtures are scoped positives. They do not establish current cross-target native denial, complete inherited/IPC/race/revocation controls, dependency closure or runtime authority enforcement.",
+      "evidence": [
+        "rfcs/RFC-0023-runtime-architecture-decision.md",
+        "docs/security-model.md",
+        "docs/credential-handling.md",
+        "evaluation/reports/typescript/bundle.json",
+        "evaluation/reports/python/bundle.json",
+        "evaluation/reports/rust/bundle.json",
+        "evaluation/reports/go/bundle.json",
+        "evaluation/repairs/typescript.json",
+        "evaluation/repairs/python.json",
+        "evaluation/repairs/rust.json",
+        "evaluation/repairs/go.json"
+      ],
+      "followUps": [
+        "NF-102-02",
+        "NF-102-04",
+        "NF-102-06"
+      ]
+    },
+    {
+      "number": 7,
+      "id": "extensionProvider",
+      "status": "blocked",
+      "finding": "Host-owned catalog, staged activation, operation-scoped mediation and no hidden fallback are appropriate requirements, but selected mechanisms and negative contract tests are absent. Declarative profile checks are not executable enforcement.",
+      "evidence": [
+        "rfcs/RFC-0023-runtime-architecture-decision.md",
+        "docs/extension-loading-boundary.md",
+        "docs/provider-adapter-boundary.md",
+        "docs/mcp-a2a-boundaries.md",
+        "evaluation/architecture/alternatives.json"
+      ],
+      "followUps": [
+        "NF-102-06"
+      ]
+    },
+    {
+      "number": 8,
+      "id": "eventAuditState",
+      "status": "blocked",
+      "finding": "The proposed pre-effect durable receipt and post-effect gap distinction is sound at design level. Concrete store/API, retention/access/recovery/durability behavior and failure tests remain unselected.",
+      "evidence": [
+        "rfcs/RFC-0023-runtime-architecture-decision.md",
+        "docs/event-audit-storage-boundary.md",
+        "evaluation/architecture/alternatives.json"
+      ],
+      "followUps": [
+        "NF-102-06"
+      ]
+    },
+    {
+      "number": 9,
+      "id": "packagingOperations",
+      "status": "blocked",
+      "finding": "Seven roles and support limits are acknowledged. That removes the old owner-consent blocker only. Archived artifacts use original source pins; repaired native lifecycle, verified predecessor paths, signing and complete provenance remain unqualified.",
+      "evidence": [
+        "rfcs/RFC-0023-runtime-architecture-decision.md",
+        "evaluation/environment-contract.json",
+        "evaluation/reports/typescript/bundle.json",
+        "evaluation/reports/python/bundle.json",
+        "evaluation/reports/rust/bundle.json",
+        "evaluation/reports/go/bundle.json",
+        "evaluation/repairs/typescript.json",
+        "evaluation/repairs/python.json",
+        "evaluation/repairs/rust.json",
+        "evaluation/repairs/go.json",
+        "rfcs/reviews/2026-10-11-single-maintainer-ownership.json",
+        "docs/single-maintainer-governance.md"
+      ],
+      "followUps": [
+        "NF-102-02",
+        "NF-102-03"
+      ]
+    },
+    {
+      "number": 10,
+      "id": "conformanceCompatibility",
+      "status": "blocked",
+      "finding": "The Draft separates claim/version domains and NF-101 assigns validation/CLI ownership. No selected supported pair matrix, complete project semantic/diagnostic scope or migration/rollback/conformance proof is supplied.",
+      "evidence": [
+        "rfcs/RFC-0023-runtime-architecture-decision.md",
+        "docs/conformance.md",
+        "docs/compatibility.md",
+        "docs/versioning.md",
+        "evaluation/architecture/alternatives.json",
+        "rfcs/reviews/2026-10-11-single-maintainer-ownership.json",
+        "docs/single-maintainer-governance.md"
+      ],
+      "followUps": [
+        "NF-102-01",
+        "NF-102-06"
+      ]
+    },
+    {
+      "number": 11,
+      "id": "rationaleGovernanceOwnership",
+      "status": "blocked",
+      "finding": "Policy adoption and sole-maintainer assignment are established, and both review lenses are recorded here. No eligible ranking, defensible selected design, closed technical gates or separate exact-revision acceptance exists.",
+      "evidence": [
+        "rfcs/RFC-0023-runtime-architecture-decision.md",
+        "docs/governance.md",
+        "evaluation/architecture/alternatives.json",
+        "evaluation/reports/review/reviewer-a.json",
+        "evaluation/reports/review/reviewer-b.json",
+        "evaluation/reports/review/reconciliation.json",
+        "rfcs/reviews/2026-10-11-single-maintainer-ownership.json",
+        "docs/single-maintainer-governance.md"
+      ],
+      "followUps": [
+        "NF-102-06"
+      ]
+    }
+  ],
+  "resolvedOrNarrowedFindings": [
+    "Two-person headcount requirement replaced by explicitly adopted policy, not fabricated reviewers.",
+    "Seven bounded ownership roles are acknowledged; no new signing or on-call capability.",
+    "Original 224 unsupported library cases are covered in the repaired supplemental catalog run.",
+    "Rust relocation passes in the repaired supplemental native macOS test, not a complete cross-target lifecycle."
+  ],
+  "followUps": [
+    {
+      "id": "NF-102-01",
+      "title": "Requalify repaired validation and public diagnostics",
+      "dependsOn": [],
+      "gates": [
+        2,
+        3,
+        5,
+        10
+      ],
+      "acceptance": [
+        "Bind new four-candidate reports to exact repaired sources, locks, specification, full catalog and actual results; keep historical reports unchanged.",
+        "Define and verify the library-to-public diagnostic mapping, category/code/path/severity/meaning, ordering, repeatability, redaction and native-detail exposure; do not weaken the oracle.",
+        "Cover the complete declared CLI/project scope, including explicit unsupported profiles/commands; the 352 fragment passes are not full project semantic conformance."
+      ],
+      "authority": "Evidence/report preparation only; candidate code or oracle changes require separately approved repair scope.",
+      "owner": "Alexander Agafonov",
+      "status": "planned-blocker",
+      "classification": "blocker"
+    },
+    {
+      "id": "NF-102-02",
+      "title": "Close current supply-chain and provenance evidence",
+      "dependsOn": [],
+      "gates": [
+        3,
+        6,
+        9
+      ],
+      "acceptance": [
+        "Inventory current built artifacts and complete compiler/interpreter/native/license closure, SBOM and provenance with exact hashes.",
+        "Refresh dated vulnerability evidence for all four actual graphs and review reachability, unresolved matches and license uncertainties; root npm audit is not a substitute.",
+        "Document reproducibility and offline provisioning; any necessary dependency repair remains separately authorized with new locks/evidence."
+      ],
+      "authority": "Public metadata scans and evidence collection only; no automatic fixes, credentials or new infrastructure.",
+      "owner": "Alexander Agafonov",
+      "status": "planned-blocker",
+      "classification": "blocker"
+    },
+    {
+      "id": "NF-102-03",
+      "title": "Requalify native target cohorts and artifact lifecycle",
+      "dependsOn": [
+        "NF-102-01",
+        "NF-102-02"
+      ],
+      "gates": [
+        2,
+        3,
+        9
+      ],
+      "acceptance": [
+        "Approve one exact common native cohort per Linux AMD64, macOS ARM64 and Windows AMD64, or reacquire the frozen contract; no silent drift.",
+        "Build revision-versioned repaired artifacts for all four, verify Windows interpreter/Unicode paths and Rust relocation on each target; old failures are retained, not presumed present or fixed at new revisions.",
+        "Verify install, validate/inspect, OS-denied offline use, upgrade, rollback and scoped uninstall using a verified real predecessor artifact where available.",
+        "Obtain specific permitted signing/notarization and verification authority; missing keys/target access remain blockers, not ownership passes."
+      ],
+      "authority": "Existing approved native environments only; contract changes, repair, signing, credentials and paid resources need their own authority.",
+      "owner": "Alexander Agafonov",
+      "status": "planned-blocker",
+      "classification": "blocker"
+    },
+    {
+      "id": "NF-102-04",
+      "title": "Requalify denied effects and security boundaries",
+      "dependsOn": [
+        "NF-102-01"
+      ],
+      "gates": [
+        3,
+        5,
+        6
+      ],
+      "acceptance": [
+        "Run paired positive/negative OS controls on current exact artifacts for every target, not only archived macOS sources.",
+        "Verify filesystem/network/process/credential/extension denial, redaction before queues/output, resource budgets and relevant inheritance/IPC/race/revocation assumptions.",
+        "Preserve residual risks and unsupported controls; a virtual environment, static source audit or CI fixture is not a sandbox."
+      ],
+      "authority": "Synthetic data in scoped isolated environments; no real secrets, production actions or borrowed credentials.",
+      "owner": "Alexander Agafonov",
+      "status": "planned-blocker",
+      "classification": "blocker"
+    },
+    {
+      "id": "NF-102-05",
+      "title": "Collect equivalent cross-target measurements",
+      "dependsOn": [
+        "NF-102-01",
+        "NF-102-02",
+        "NF-102-03",
+        "NF-102-04"
+      ],
+      "gates": [
+        2,
+        3
+      ],
+      "acceptance": [
+        "Collect all 84 target/candidate/metric cells on reviewed common cohorts and equivalent successful workloads, preserving the frozen run/cache/warmup method.",
+        "Keep raw run IDs, tool/instrument versions, all samples/errors and dispersion; rejection/error runs are separate from successful validation.",
+        "Do not mix OS/hardware classes, historical artifact sizes or unequal semantic coverage into a language ranking."
+      ],
+      "authority": "Existing permitted environments; no unapproved cohort change, paid infrastructure or product release.",
+      "owner": "Alexander Agafonov",
+      "status": "planned-blocker",
+      "classification": "blocker"
+    },
+    {
+      "id": "NF-102-06",
+      "title": "Revise concrete architecture proposal and repeat decision review",
+      "dependsOn": [
+        "NF-102-01",
+        "NF-102-02",
+        "NF-102-03",
+        "NF-102-04",
+        "NF-102-05"
+      ],
+      "gates": [
+        1,
+        4,
+        5,
+        6,
+        7,
+        8,
+        10,
+        11
+      ],
+      "acceptance": [
+        "Propose a defensible language/layout only after candidate qualification; compare all three layouts and record one evidence-linked scorecard per eligible candidate with original weights.",
+        "Specify package/import/startup/pure API/version ownership, exact target support, compatibility/migration/conformance and concrete credential/provider/extension/audit/state failure mechanisms.",
+        "Verify proposed boundaries with inert fakes/contract models and failure/redaction/recovery tests without implementing a production runtime.",
+        "Review one immutable revised RFC/evidence set through both single-maintainer lenses, close all eleven gates and obtain a separate explicit maintainer decision; no automatic acceptance."
+      ],
+      "authority": "Proposal and validation-only contract evidence; runtime implementation, publication and final architecture acceptance are separate.",
+      "owner": "Alexander Agafonov",
+      "status": "planned-blocker",
+      "classification": "blocker"
+    }
+  ],
+  "acceptedConditions": [],
+  "nonBlockingDeferrals": [],
+  "acceptance": {
+    "accepted": false,
+    "maintainerSignOff": null,
+    "selectedCandidate": null,
+    "selectedLayout": null,
+    "productSupportTargets": [],
+    "runtimeImplementationAuthorized": false,
+    "releaseAuthorized": false
+  },
+  "limitations": [
+    "This is a completed delegated evidence-analysis pass, not an invented human signature or final acceptance decision.",
+    "Historical reports and raw repair results are unchanged; no candidate runs, repair, live vulnerability refresh, benchmark, signing or version change is performed by this review.",
+    "NF-102 remains open for its Accepted-decision objective; NF-103 release readiness remains separate."
+  ]
+}

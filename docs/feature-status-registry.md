@@ -94,24 +94,32 @@ specific experimental/deprecated/planned rows below do not overwrite that stage.
 | `rfc:RFC-0020` | GitHub Extension Profile proposal | Draft | [Owning RFC](../rfcs/RFC-0020-github-extension-profile.md), [scope](../extensions/github/README.md). Experimental offline policy profile exists; no client, webhook receiver or repository mutation. |
 | `rfc:RFC-0021` | Issue Tracker Extension Profile proposal | Draft | [Owning RFC](../rfcs/RFC-0021-issue-tracker-extension-profile.md), [scope](../extensions/issue-tracker/README.md). Experimental policy profile and checks exist; no issue adapter or live synchronization. |
 | `rfc:RFC-0022` | Security Policy Composition proposal | Draft | [Owning RFC](../rfcs/RFC-0022-security-policy-composition.md), [scope](security-model.md). Composition proposal and manual scenarios only; no complete policy evaluator or OS isolation. |
-| `rfc:RFC-0023` | Runtime Architecture Decision discussion packet | Draft | [Owning RFC](../rfcs/RFC-0023-runtime-architecture-decision.md), [review bundle](../rfcs/reviews/runtime-architecture-decision-draft.json). Eleven blocked mandatory gates, four ineligible candidates and pending human decisions; no language/layout, owner consent or architecture acceptance. |
+| `rfc:RFC-0023` | Runtime Architecture Decision discussion packet | Draft | [Owning RFC](../rfcs/RFC-0023-runtime-architecture-decision.md), [historical bundle](../rfcs/reviews/runtime-architecture-decision-draft.json), [current review](../rfcs/reviews/2026-10-11-runtime-architecture-review.md). Eleven acceptance gates blocked; repaired fragment coverage and NF-101 ownership recognized, but current full-gate qualification, language/layout and architecture acceptance remain absent. |
 | `rfc:RFC-0024` | Single-Maintainer Governance | Accepted | [Owning RFC](../rfcs/RFC-0024-single-maintainer-governance.md), [review-mode policy](single-maintainer-governance.md), [2026-10-11 decision](../rfcs/reviews/2026-10-11-single-maintainer-ownership.md). Explicitly adopted policy and bounded ownership; actual review, technical gates, signing capability and architecture acceptance remain separate. |
 
 ## Experimental Implementation Slices
 
 These rows apply only to the named offline/source-bound implementation, not its
-whole RFC or a future runtime. Four candidate reports agree on supported cases
-but each fails specification fidelity because 224 semantic/namespace cases
-remain unsupported. Full deterministic diagnostics, independent review,
-target lifecycle and comparable performance are not accepted.
+whole RFC or a future runtime. Original candidate reports retain 128/352 passes
+and 224 unsupported cases at their old source pins. The later
+[repair evidence](../evaluation/repairs/README.md) covers all 352 library cases
+for each repaired candidate on supplemental macOS; it does not qualify full
+project conformance, public diagnostics, current target lifecycle or comparable
+performance. The [current review](../rfcs/reviews/2026-10-11-runtime-architecture-review.md)
+keeps those domains separate under adopted single-maintainer governance.
+
+[NF-102 review-task closure](../rfcs/reviews/2026-10-11-runtime-review-closure.md)
+records the maintainer's explicit scope amendment: review completed, outcome
+not-ready, architecture Draft, all six technical acceptance blockers still open.
+It does not change any feature or RFC implementation/acceptance status.
 
 | ID | Surface and scope | Lifecycle | Evidence and boundary |
 | --- | --- | --- | --- |
 | `experiment:repository-cli` | Local repository CLI and JSON/inspection/graph/init contracts | Experimental | [Prototype scope](cli-prototype.md), [output contract](cli-diagnostics.md); bounded maintenance tooling, not stable public CLI or OS sandbox. |
-| `experiment:candidate-go` | go validation-only source candidate | Experimental | [Native source](../evaluation/prototypes/go/README.md), [fidelity report](../evaluation/fidelity/go.json); 128/352 supported cases, 224 not-tested, fidelity failed, no language selection or distribution acceptance. |
-| `experiment:candidate-python` | python validation-only source candidate | Experimental | [Native source](../evaluation/prototypes/python/README.md), [fidelity report](../evaluation/fidelity/python.json); 128/352 supported cases, 224 not-tested, fidelity failed, no language selection or distribution acceptance. |
-| `experiment:candidate-rust` | rust validation-only source candidate | Experimental | [Native source](../evaluation/prototypes/rust/README.md), [fidelity report](../evaluation/fidelity/rust.json); 128/352 supported cases, 224 not-tested, fidelity failed, no language selection or distribution acceptance. |
-| `experiment:candidate-typescript` | typescript validation-only source candidate | Experimental | [Native source](../evaluation/prototypes/typescript/README.md), [fidelity report](../evaluation/fidelity/typescript.json); 128/352 supported cases, 224 not-tested, fidelity failed, no language selection or distribution acceptance. |
+| `experiment:candidate-go` | go validation-only source candidate | Experimental | [Native source](../evaluation/prototypes/go/README.md), [historical fidelity](../evaluation/fidelity/go.json), [repair](../evaluation/repairs/go.json); repaired 352/352 library cases on supplemental macOS, no full project/target qualification, language selection or distribution acceptance. |
+| `experiment:candidate-python` | python validation-only source candidate | Experimental | [Native source](../evaluation/prototypes/python/README.md), [historical fidelity](../evaluation/fidelity/python.json), [repair](../evaluation/repairs/python.json); repaired 352/352 library cases on supplemental macOS, no full project/target qualification, language selection or distribution acceptance. |
+| `experiment:candidate-rust` | rust validation-only source candidate | Experimental | [Native source](../evaluation/prototypes/rust/README.md), [historical fidelity](../evaluation/fidelity/rust.json), [repair](../evaluation/repairs/rust.json); repaired 352/352 library cases and supplemental macOS relocation, no full project/target qualification, language selection or distribution acceptance. |
+| `experiment:candidate-typescript` | typescript validation-only source candidate | Experimental | [Native source](../evaluation/prototypes/typescript/README.md), [historical fidelity](../evaluation/fidelity/typescript.json), [repair](../evaluation/repairs/typescript.json); repaired 352/352 library cases on supplemental macOS, no full project/target qualification, language selection or distribution acceptance. |
 | `experiment:extension-a2a` | Offline a2a policy profile | Experimental | [Profile](../extensions/a2a/README.md); declaration/schema assets only, no live integration, executable extension or delegated authority. |
 | `experiment:extension-github` | Offline github policy profile | Experimental | [Profile](../extensions/github/README.md); declaration/schema assets only, no live integration, executable extension or delegated authority. |
 | `experiment:extension-issue-tracker` | Offline issue-tracker policy profile | Experimental | [Profile](../extensions/issue-tracker/README.md); declaration/schema assets only, no live integration, executable extension or delegated authority. |

@@ -1,0 +1,32 @@
+name: Review Governance
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - develop
+
+permissions:
+  contents: read
+
+jobs:
+  review-governance:
+    name: Review mode and preserved gates
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: Install pinned validation tooling
+        run: npm ci --ignore-scripts
+
+      - name: Verify explicit review mode and preserved technical gates
+        run: npm run single-maintainer-governance-smoke

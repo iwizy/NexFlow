@@ -2,6 +2,12 @@
 
 Status: evaluation preparation and initial prototypes; no candidate selected.
 
+Current review routing is defined by [Governance](../docs/governance.md) and the
+explicitly adopted [review-mode policy](../docs/single-maintainer-governance.md).
+Historical reports, blank independent forms and their original assessments stay
+unchanged. New single-maintainer reviews need a new revision-bound record, not a
+retroactive signature or edited historical scorecard.
+
 The independent [TypeScript](prototypes/typescript/README.md),
 [Python](prototypes/python/README.md), [Rust](prototypes/rust/README.md) and
 [Go](prototypes/go/README.md)
@@ -213,8 +219,8 @@ visible blocker.
 ## Ordered Work To Reach NF-056 Review
 
 1. Use the committed packet and confirmed target matrix; name the prototype
-   owners and two independent evidence reviewers. The target confirmation
-   does not identify or appoint reviewers.
+   owners and the reviewers required by the adopted review mode. The target
+   confirmation does not identify or appoint reviewers.
 2. Prepare four disposable candidate prototypes against the same baseline.
    Pin exact toolchains, YAML and draft 2020-12 schema libraries, transitive
    dependencies, and build commands. No provider calls, credentials, executable
@@ -227,9 +233,10 @@ visible blocker.
    supply-chain evidence and residual limitations.
 5. Produce and test target artifacts, installation lifecycle and measurements.
    Keep each command, log and artifact linked to the evaluated revisions.
-6. Have two reviewers score independently using the existing weights, then
-   reconcile scores and retain failed gates. A failed hard gate makes the
-   candidate ineligible regardless of its weighted score.
+6. Apply the adopted review mode using the existing weights: two independent
+   reviewers by default, or one disclosed maintainer with both review lenses and
+   a written review summary in single-maintainer mode. Retain failed gates. A
+   failed hard gate makes the candidate ineligible regardless of its weighted score.
 7. Draft the decision RFC with the proposed language and package layout,
    comparing shared-language/shared-package, shared-language/separate-package,
    and split-language alternatives. Close ownership, compatibility, credential,

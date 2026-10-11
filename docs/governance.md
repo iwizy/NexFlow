@@ -19,6 +19,26 @@ Maintainers are responsible for:
 
 ## Decision Process
 
+### Review Modes
+
+The project may operate with one maintainer under the explicit
+[Single-Maintainer Governance](single-maintainer-governance.md) policy proposed
+in [RFC-0024](../rfcs/RFC-0024-single-maintainer-governance.md). Adoption requires
+maintainer approval of that policy PR; opening it or passing CI is not adoption.
+The adopted policy revision must be pinned in each later review record.
+
+In that mode one named human may author, review and maintain the work, with
+authorship disclosed and separate architecture and security review sections.
+Those sections are not two independent people. A written, revision-bound
+maintainer decision is still required; no architecture is accepted by a commit,
+CI result or merge alone. All technical and safety gates remain mandatory.
+
+Without explicit single-maintainer adoption, the existing two-independent-
+reviewer rule for runtime architecture remains the default. External legal,
+licensing, certification and separately required release/security reviews are
+outside this exception. A later multi-maintainer project returns to independent
+review; a governance change cannot manufacture missing consent or past reviews.
+
 Small documentation and schema clarifications may be accepted through pull request review.
 
 Material changes require an RFC:
@@ -53,10 +73,12 @@ for notices, package metadata, documentation, and releases.
 
 Runtime architecture decisions also use the
 [Runtime Architecture Decision Review](../rfcs/reviews/runtime-architecture-decision-review.md).
-That review requires pinned comparative evidence, mandatory security and
-boundary gates, explicit ownership, and closure of every blocker before an RFC
-may become Accepted. The specialized checklist supplements rather than
-replaces maintainer approval.
+Read that historical framework together with the adopted review-mode policy.
+Only reviewer cardinality, self-review disclosure and reconciliation differ in
+single-maintainer mode; all eleven gates, pinned comparative evidence, security
+and boundary gates, explicit ownership, and closure of every blocker before an
+RFC may become Accepted are retained. The specialized checklist supplements
+rather than replaces maintainer approval.
 
 ## Breaking Changes Policy
 

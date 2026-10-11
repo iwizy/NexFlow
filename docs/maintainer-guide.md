@@ -190,6 +190,11 @@ applicable item IDs, evidence, unsupported cases, and gaps in the review;
 a broad neutrality checkbox alone does not substantiate a support claim.
 
 Require at least one appropriate maintainer review for ordinary changes.
+In explicitly adopted [single-maintainer mode](single-maintainer-governance.md),
+that may be the author's separate written self-review, with authorship and the
+absence of independent assurance disclosed. Runtime architecture uses both
+architecture and security lenses on one pinned evidence set, followed by a
+separate human decision. CI and merging do not provide that decision.
 Security-sensitive, breaking, licensing, release, or architecture changes may
 need additional domain review under their owning process.
 

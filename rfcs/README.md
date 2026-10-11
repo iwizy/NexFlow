@@ -34,12 +34,20 @@ schema or prototype implementation does not change a Draft RFC to Accepted.
 | [RFC-0021](RFC-0021-issue-tracker-extension-profile.md) | Issue Tracker Extension Profile | Draft; machine-readable policy profile and offline checks implemented |
 | [RFC-0022](RFC-0022-security-policy-composition.md) | Security Policy Composition | Draft |
 | [RFC-0023](RFC-0023-runtime-architecture-decision.md) | Runtime Architecture Decision | Draft; not-ready, no language/layout selected |
+| [RFC-0024](RFC-0024-single-maintainer-governance.md) | Single-Maintainer Governance | Draft; policy change proposed for explicit maintainer adoption |
 
 The [0.1 Candidate Scope](../docs/0.1-scope.md) records how each RFC is treated
 by the frozen candidate boundary. That treatment does not change an RFC's stage
 or imply that an implemented slice accepts the entire RFC.
 
 ## Cross-RFC Reviews
+
+- [Single-Maintainer Governance](../docs/single-maintainer-governance.md) defines
+  the proposed forward-only review-mode amendment in RFC-0024. After explicit
+  adoption it replaces only the two-person/reconciliation requirement for that
+  mode; all technical architecture gates and separate human acceptance remain.
+  The following pinned reviews preserve the rules and absence of consent at
+  their original dates, rather than describing a completed current review.
 
 - [Foundational Model Cross-RFC Review](reviews/2026-07-foundational-model-review.md)
   records compatibility, safety, migration dependencies, blockers, and the

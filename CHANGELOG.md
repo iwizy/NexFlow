@@ -8,6 +8,11 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Added
 
+- Proposed RFC-0024 and an explicit single-maintainer review mode, with disclosed
+  self-review, separate architecture/security lenses and unchanged technical
+  gates. Added an opt-in review context and rejection checks; historical reports,
+  ownership consent, architecture acceptance and release authority are not inferred.
+
 - Added Draft RFC-0023 and a source-bound Runtime Architecture Decision review
   bundle with exact target observations, three unselected alternatives, eleven
   blocked mandatory gates and pending reviewer/owner/signing/target decisions.

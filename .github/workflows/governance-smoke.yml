@@ -37,5 +37,6 @@ jobs:
       - name: Verify revision-bound decision review and repair evidence
         run: |
           npm run runtime-architecture-review-smoke
-          node scripts/runtime-evaluation-repair-evidence-smoke.mjs
+          node scripts/runtime-evaluation-repair-evidence-smoke.mjs --historical
           npm run runtime-diagnostics-requalification-smoke
+          npm run runtime-diagnostic-projection-repair-smoke

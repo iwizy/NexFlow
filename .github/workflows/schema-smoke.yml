@@ -120,7 +120,7 @@ jobs:
         run: npm run validation-checkpoint-smoke
 
       - name: Verify native validation repair evidence
-        run: node scripts/runtime-evaluation-repair-evidence-smoke.mjs
+        run: node scripts/runtime-evaluation-repair-evidence-smoke.mjs --historical
       - name: Verify candidate toolchain locks and capability records
         run: npm run runtime-toolchain-smoke
 

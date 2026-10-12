@@ -15,8 +15,10 @@ assert.ok(candidates.includes(candidate));
 const command = value => { const result = JSON.parse(value); assert.ok(Array.isArray(result) && result.length && result.every(v => typeof v === "string")); return result; };
 const driver = command(driverJson), cli = command(cliJson);
 const git = (...args) => { const p = spawnSync("git", args, {cwd: repositoryRoot, encoding: "utf8", maxBuffer: 32 * 1024 * 1024}); assert.equal(p.status, 0, "source binding unavailable"); return p.stdout.trim(); };
-const sourceRevision = "e1b7d65d86194b0848c219be76010f7f7460fa2b";
-const repairRevision = "9e13a54311735a36398eb89c4a39ff2949998998";
+const revisionOption = process.argv.indexOf("--source-revision");
+const sourceRevision = revisionOption < 0 ? "e1b7d65d86194b0848c219be76010f7f7460fa2b" : process.argv[revisionOption + 1];
+assert.match(sourceRevision, /^[0-9a-f]{40}$/u);
+const repairRevision = revisionOption < 0 ? "9e13a54311735a36398eb89c4a39ff2949998998" : sourceRevision;
 const harnessRevision = git("rev-parse", "HEAD");
 const harnessFiles = ["scripts/runtime-diagnostics-requalify-run.mjs", "scripts/lib/diagnostic-requalification.mjs", "scripts/lib/evaluation-library.mjs", "scripts/lib/runtime-evaluation.mjs", "evaluation/command-result.schema.json", "evaluation/baseline.json", "evaluation/library-cases.json"];
 for (const file of harnessFiles) assert.equal(digest(readFileSync(path.join(repositoryRoot,file))), digest(spawnSync("git", ["show", harnessRevision + ":" + file], {cwd: repositoryRoot, maxBuffer: 32 * 1024 * 1024}).stdout), "commit collector before recording evidence");
@@ -188,6 +190,6 @@ const report={formatVersion:1,task:"NF-102-01",candidate,mappingId,recordedAt:ne
     nativeLibraryDetails:"retained, not portable; CLI forbids native detail fields",semanticLibraryToPublicCli:"not-implemented",targetLifecycle:"not-tested",isolationAndOffline:"not-tested",supplyChainClosure:"not-tested",performance:"not-tested"},
   architectureOutcome:"not-ready"};
 const errors=reportErrors(report,catalog,pins);
-assert.ok(outputFile,"output path required"); writeFileSync(outputFile,JSON.stringify(report,null,2)+"\n");
+assert.ok(outputFile,"output path required"); writeFileSync(outputFile,JSON.stringify(report,null,process.argv.includes("--compact")?undefined:2)+"\n");
 console.log(JSON.stringify({candidate,library:report.library.passed,cli:report.cli.passed,cliTotal:cliResults.length,errors,failed:cliResults.filter(r=>r.errors.length).map(r=>({id:r.id,errors:r.errors,actual:r.actual}))},null,2));
 process.exitCode=errors.length?1:0;

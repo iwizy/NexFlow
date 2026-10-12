@@ -5,6 +5,9 @@ import { execFileSync } from "node:child_process";
 import { createHash } from "node:crypto";
 import { verifyCorpus } from "./lib/runtime-evaluation.mjs";
 const hash=bytes=>createHash("sha256").update(bytes).digest("hex");
+// Archived observations stay bound to their original immutable source. A newer
+// repair must provide its own current-source evidence, never overwrite history.
+const historical=process.argv.includes("--historical");
 assert.deepEqual(verifyCorpus(),[]);
 for(const candidate of ["typescript","python","rust","go"]) {
   const report=JSON.parse(readFileSync("evaluation/repairs/"+candidate+".json"));
@@ -23,7 +26,7 @@ for(const candidate of ["typescript","python","rust","go"]) {
     assert.match(source.sha256,/^[a-f0-9]{64}$/u);
     const committed=execFileSync("git",["show",report.sourceRevision+":"+source.path],{maxBuffer:4*1024*1024});
     assert.equal(hash(committed),source.sha256);
-    assert.equal(hash(readFileSync(source.path)),source.sha256,"Repair evidence must describe the current candidate sources.");
+    if(!historical) assert.equal(hash(readFileSync(source.path)),source.sha256,"Repair evidence must describe the current candidate sources.");
   }
   assert.ok(report.sources.some(s=>s.path.includes("semantics.")));
   assert.equal(report.catalogSha256,hash(readFileSync("evaluation/library-cases.json")));

@@ -8,6 +8,7 @@ import (
 	"io"
 	"os"
 	"path/filepath"
+	"sort"
 	"strconv"
 	"strings"
 )
@@ -207,10 +208,11 @@ func (engine *SchemaEngine) ValidateValue(name string, value any) ([]map[string]
 	return schemaIssues(schema, value, engine.fields), nil
 }
 func (engine *SchemaEngine) Validate(document Manifest) []map[string]any {
-	issues, err := engine.ValidateValue(document.Kind, document.Value)
-	if err != nil {
+	schema := engine.validators[document.Kind]
+	if schema == nil {
 		return []map[string]any{Diagnostic("NEXFLOW-PROTOTYPE-INTERNAL", nil, nil, nil, nil)}
 	}
+	issues := publicSchemaIssues(schema, document.Value, engine.fields)
 	out := []map[string]any{}
 	for _, issue := range issues {
 		path := text(issue["instancePath"])
@@ -220,6 +222,85 @@ func (engine *SchemaEngine) Validate(document Manifest) []map[string]any {
 		out = append(out, Diagnostic("NF-SCHEMA", document.File, document.Kind, path, issue["category"]))
 	}
 	return out
+}
+
+// Public projection keeps enclosing oneOf/anyOf failures and all failed-branch
+// reasons. Structural allOf/reference/group nodes are not extra constraints.
+// Selection is by final public path/keyword, never native traversal order.
+func publicSchemaIssues(schema *jsonschema.Schema, value any, fields map[string]bool) []map[string]any {
+	err := schema.Validate(value)
+	if err == nil {
+		return []map[string]any{}
+	}
+	var validation *jsonschema.ValidationError
+	if !errors.As(err, &validation) {
+		return []map[string]any{{"code": "NF-SCHEMA", "category": "unresolved-local-schema"}}
+	}
+	issues := []map[string]any{}
+	key := func(issue map[string]any) string {
+		path := text(issue["instancePath"])
+		if missing, ok := issue["missingProperty"].(string); ok {
+			path += ptr(missing)
+		}
+		return path + "\x00" + text(issue["category"])
+	}
+	add := func(issue map[string]any) {
+		k := key(issue)
+		i := sort.Search(len(issues), func(i int) bool { return key(issues[i]) >= k })
+		issues = append(issues, nil)
+		copy(issues[i+1:], issues[i:])
+		issues[i] = issue
+		if len(issues) > 201 {
+			issues = issues[:201]
+		}
+	}
+	var visit func(*jsonschema.ValidationError)
+	visit = func(error *jsonschema.ValidationError) {
+		keyword := error.ErrorKind.KeywordPath()
+		category := ""
+		if len(keyword) > 0 {
+			category = keyword[len(keyword)-1]
+		}
+		// This native kind intentionally has no KeywordPath.
+		if _, forbidden := error.ErrorKind.(*kind.Not); forbidden {
+			category = "not"
+		}
+		branch := category == "oneOf" || category == "anyOf"
+		if len(error.Causes) > 0 && !branch && category != "not" {
+			for _, child := range error.Causes {
+				visit(child)
+			}
+			return
+		}
+		path := normalizedPath(error.InstanceLocation, fields)
+		if required, ok := error.ErrorKind.(*kind.Required); ok {
+			for _, missing := range required.Missing {
+				if !fields[missing] {
+					missing = "<redacted>"
+				}
+				add(map[string]any{"code": "NF-SCHEMA", "category": "required", "instancePath": path, "missingProperty": missing})
+			}
+			return
+		}
+		if _, isFalse := error.ErrorKind.(*kind.FalseSchema); isFalse && strings.HasSuffix(error.SchemaURL, "/items") {
+			category = "items"
+			if i := strings.LastIndex(path, "/"); i >= 0 {
+				path = path[:i]
+			}
+		}
+		add(map[string]any{"code": "NF-SCHEMA", "category": category, "instancePath": path})
+		if category == "not" {
+			return
+		} // Children explain a successful forbidden schema, not failed constraints.
+		if multiple, ok := error.ErrorKind.(*kind.OneOf); ok && len(multiple.Subschemas) > 1 {
+			return
+		}
+		for _, child := range error.Causes {
+			visit(child)
+		}
+	}
+	visit(validation)
+	return issues
 }
 func ValidateLocal(schemas []any, id string, value any) []map[string]any {
 	compiler, err := schemaCompiler(schemas)

@@ -5,6 +5,7 @@ on:
       - 'evaluation/**'
       - 'schemas/**'
       - 'scripts/runtime-diagnostics*'
+      - 'scripts/runtime-diagnostic-projection*'
       - 'scripts/lib/diagnostic-requalification.mjs'
       - 'scripts/lib/evaluation-library.mjs'
       - 'scripts/lib/runtime-evaluation.mjs'
@@ -66,20 +67,49 @@ jobs:
           case '${{ matrix.candidate }}' in
             typescript)
               npm --prefix evaluation/prototypes/typescript run build
-              node scripts/runtime-diagnostics-requalify-run.mjs typescript '["node"]' '["node","evaluation/prototypes/typescript/dist/cli.js"]' "$RUNNER_TEMP/typescript-diagnostics.json" ;;
+              node scripts/runtime-diagnostics-requalify-run.mjs typescript '["node"]' '["node","evaluation/prototypes/typescript/dist/cli.js"]' "$RUNNER_TEMP/typescript-diagnostics.json" --source-revision "$GITHUB_SHA" --compact
+              node scripts/runtime-diagnostic-projection-regression.mjs typescript '["node","evaluation/prototypes/typescript/dist/cli.js"]' "$RUNNER_TEMP/typescript-regressions.json" ;;
             python)
-              node scripts/runtime-diagnostics-requalify-run.mjs python '[".venv/bin/python","-I","-B","evaluation/prototypes/python/library_driver.py"]' '[".venv/bin/python","-I","-B","evaluation/prototypes/python/cli.py"]' "$RUNNER_TEMP/python-diagnostics.json" ;;
+              node scripts/runtime-diagnostics-requalify-run.mjs python '[".venv/bin/python","-I","-B","evaluation/prototypes/python/library_driver.py"]' '[".venv/bin/python","-I","-B","evaluation/prototypes/python/cli.py"]' "$RUNNER_TEMP/python-diagnostics.json" --source-revision "$GITHUB_SHA" --compact
+              node scripts/runtime-diagnostic-projection-regression.mjs python '[".venv/bin/python","-I","-B","evaluation/prototypes/python/cli.py"]' "$RUNNER_TEMP/python-regressions.json" ;;
             rust)
               cargo +1.99.0 build --frozen --manifest-path evaluation/prototypes/rust/Cargo.toml
-              node scripts/runtime-diagnostics-requalify-run.mjs rust '["evaluation/prototypes/rust/target/debug/library-driver"]' '["evaluation/prototypes/rust/target/debug/nexflow-rust-evaluation"]' "$RUNNER_TEMP/rust-diagnostics.json" ;;
+              node scripts/runtime-diagnostics-requalify-run.mjs rust '["evaluation/prototypes/rust/target/debug/library-driver"]' '["evaluation/prototypes/rust/target/debug/nexflow-rust-evaluation"]' "$RUNNER_TEMP/rust-diagnostics.json" --source-revision "$GITHUB_SHA" --compact
+              node scripts/runtime-diagnostic-projection-regression.mjs rust '["evaluation/prototypes/rust/target/debug/nexflow-rust-evaluation"]' "$RUNNER_TEMP/rust-regressions.json" ;;
             go)
               (cd evaluation/prototypes/go && go build -mod=readonly -trimpath -buildvcs=false -o bin/nexflow-go-evaluation ./cmd/cli && go build -mod=readonly -trimpath -buildvcs=false -o bin/library-driver ./cmd/library-driver)
-              node scripts/runtime-diagnostics-requalify-run.mjs go '["evaluation/prototypes/go/bin/library-driver"]' '["evaluation/prototypes/go/bin/nexflow-go-evaluation"]' "$RUNNER_TEMP/go-diagnostics.json" ;;
+              node scripts/runtime-diagnostics-requalify-run.mjs go '["evaluation/prototypes/go/bin/library-driver"]' '["evaluation/prototypes/go/bin/nexflow-go-evaluation"]' "$RUNNER_TEMP/go-diagnostics.json" --source-revision "$GITHUB_SHA" --compact
+              node scripts/runtime-diagnostic-projection-regression.mjs go '["evaluation/prototypes/go/bin/nexflow-go-evaluation"]' "$RUNNER_TEMP/go-regressions.json" ;;
           esac
       - name: Verify retained failures and exact evidence bindings
-        run: npm run runtime-diagnostics-requalification-smoke
+        run: |
+          npm run runtime-diagnostics-requalification-smoke
+          npm run runtime-diagnostic-projection-repair-smoke
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: validation-diagnostics-${{ matrix.candidate }}
-          path: ${{ runner.temp }}/${{ matrix.candidate }}-diagnostics.json
+          path: |
+            ${{ runner.temp }}/${{ matrix.candidate }}-diagnostics.json
+            ${{ runner.temp }}/${{ matrix.candidate }}-regressions.json
           if-no-files-found: error
+  public-parity:
+    name: Fresh four-candidate public parity
+    needs: native-observations
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22.23.2'
+      - run: npm ci --ignore-scripts
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          pattern: validation-diagnostics-*
+          merge-multiple: true
+          path: ${{ runner.temp }}/observations
+      - name: Compare all fresh native results with current-source evidence
+        run: node scripts/runtime-diagnostic-projection-repair-smoke.mjs --observations "$RUNNER_TEMP/observations"

@@ -28,9 +28,7 @@ fn build(schemas: &[Value], schema: &Value) -> Result<Validator, &'static str> {
     jsonschema::draft202012::options().with_registry(&registry).should_validate_formats(true).offline().build(schema).map_err(|_| "unresolved-local-schema")
 }
 
-fn issues(validator: &Validator, value: &Value, fields: &BTreeSet<String>) -> Vec<Value> {
-    let mut result = Vec::new();
-    for error in validator.iter_errors(value).take(201) {
+fn issue(error: &jsonschema::ValidationError<'_>, fields: &BTreeSet<String>) -> Value {
         let raw = error.instance_path().to_string();
         let mut path = String::new();
         for encoded in raw.split('/').skip(1) {
@@ -53,9 +51,33 @@ fn issues(validator: &Validator, value: &Value, fields: &BTreeSet<String>) -> Ve
             let missing = property.as_str().unwrap_or("");
             issue["missingProperty"] = json!(if fields.contains(missing) { missing } else { "<redacted>" });
         }
-        result.push(issue);
-    }
+        issue
+}
+fn issues(validator: &Validator, value: &Value, fields: &BTreeSet<String>) -> Vec<Value> {
+    let mut result: Vec<Value> = validator.iter_errors(value).take(201).map(|error| issue(&error, fields)).collect();
     ordered(&mut result, &["instancePath", "category", "missingProperty"]); result
+}
+
+fn public_key(issue: &Value) -> (String, String) {
+    let mut path = issue["instancePath"].as_str().unwrap_or("").to_owned();
+    if let Some(missing) = issue["missingProperty"].as_str() { path.push_str(&pointer(missing)); }
+    (path, issue["category"].as_str().unwrap_or("").to_owned())
+}
+fn public_issues(validator: &Validator, value: &Value, fields: &BTreeSet<String>) -> Vec<Value> {
+    fn visit(error: &jsonschema::ValidationError<'_>, fields: &BTreeSet<String>, result: &mut Vec<Value>) {
+        let projected = issue(error, fields);
+        let key = public_key(&projected);
+        let index = result.binary_search_by(|existing| public_key(existing).cmp(&key)).unwrap_or_else(|index| index);
+        result.insert(index, projected); result.truncate(201);
+        // Preserve failed-branch reasons as well as the enclosing constraint.
+        // Multiple successful oneOf branches only fail the enclosing constraint.
+        if let ValidationErrorKind::AnyOf { context } | ValidationErrorKind::OneOfNotValid { context } = error.kind() {
+            for branch in context { for child in branch { visit(child, fields, result); } }
+        }
+    }
+    let mut result = Vec::new();
+    for error in validator.iter_errors(value) { visit(&error, fields, &mut result); }
+    result
 }
 
 impl SchemaEngine {
@@ -113,7 +135,7 @@ impl SchemaEngine {
         Ok(issues(self.validators.get(kind).ok_or("unknown kind")?, value, &self.fields))
     }
     pub fn validate(&self, document: &Manifest) -> Vec<Value> {
-        match self.validate_value(&document.kind, &document.value) {
+        match self.validators.get(&document.kind).map(|validator| public_issues(validator, &document.value, &self.fields)).ok_or("unknown kind") {
             Ok(issues) => issues.iter().map(|issue| {
                 let mut path = issue["instancePath"].as_str().unwrap_or("").to_owned();
                 if let Some(missing) = issue["missingProperty"].as_str() { path.push_str(&pointer(missing)); }

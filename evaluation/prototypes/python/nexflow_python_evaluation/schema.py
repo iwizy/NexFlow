@@ -2,6 +2,7 @@
 import json
 import re
 import stat
+from bisect import insort_right
 from pathlib import Path
 from jsonschema import Draft202012Validator, FormatChecker
 from referencing import Registry, Resource
@@ -39,17 +40,35 @@ class SchemaEngine:
         path = pointer(part if isinstance(part, int) or part in self.fields else "<redacted>" for part in parts)
         return path if len(path) <= 512 else "<redacted-field>"
 
-    def _issues(self, validator, value):
+    def _issues(self, validator, value, public=False):
         issues = []
+        def expanded(errors):
+            for error in errors:
+                yield error
+                # The native context is structured; never copy native error prose.
+                yield from expanded(error.context)
+        def public_key(issue):
+            path = issue.get("instancePath", "")
+            if "missingProperty" in issue:
+                path += pointer([issue["missingProperty"]])
+            return (path, issue["category"])
         try:
-            for error in validator.iter_errors(value):
+            errors = validator.iter_errors(value)
+            for error in expanded(errors) if public else errors:
                 issue = {"code": "NF-SCHEMA", "category": error.validator, "instancePath": self._path(error.absolute_path)}
                 if error.validator == "required":
                     # Match only trusted schema field names, never copy raw exception text.
                     missing = next((field for field in error.validator_value if f"{field!r} is a required property" == error.message), None)
                     issue["missingProperty"] = missing if missing in self.fields else "<redacted>"
-                issues.append(issue)
-                if len(issues) >= 201:
+                if public:
+                    # Keep the globally earliest 201 projected diagnostics, not the
+                    # first 201 native errors. One extra record preserves truncation.
+                    insort_right(issues, issue, key=public_key)
+                    if len(issues) > 201:
+                        issues.pop()
+                else:
+                    issues.append(issue)
+                if not public and len(issues) >= 201:
                     break
         except Unresolvable:
             return [{"code": "NF-SCHEMA", "category": "unresolved-local-schema"}]
@@ -63,7 +82,7 @@ class SchemaEngine:
     def validate(self, document: Manifest):
         return [diagnostic("NF-SCHEMA", document.file, document.kind,
                 issue.get("instancePath", "") + pointer([issue["missingProperty"]]) if "missingProperty" in issue else issue.get("instancePath"), issue["category"])
-                for issue in self.validate_value(document.kind, document.value)]
+                for issue in self._issues(self.validators[document.kind], document.value, public=True)]
 
     def validate_local(self, entry_id: str, value):
         if entry_id not in self.schemas:

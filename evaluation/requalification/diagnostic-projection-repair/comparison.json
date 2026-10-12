@@ -1,0 +1,69 @@
+{
+  "formatVersion": 1,
+  "task": "NF-102-01",
+  "pins": {
+    "sourceRevision": "49d78ff5fe84a3b4c0650ccbbff96e97cac7624c",
+    "repairRevision": "49d78ff5fe84a3b4c0650ccbbff96e97cac7624c",
+    "specificationRevision": "1d1fa238ab5729a79bee9389d5c66cfd20a61256",
+    "corpusSha256": "01b116005f0650ac980194b22c02188289eaf1e8626b227aecf3684ece0d8f6b",
+    "catalogSha256": "f1bf8cb786442a212e14c79eb39279a2cdbf05ec20b09901374359d545d74e90"
+  },
+  "reports": [
+    {
+      "candidate": "typescript",
+      "path": "evaluation/requalification/diagnostic-projection-repair/typescript.json",
+      "libraryPassed": 352,
+      "libraryFailed": 0,
+      "cliScopePassed": 59,
+      "cliScopeFailed": 0
+    },
+    {
+      "candidate": "python",
+      "path": "evaluation/requalification/diagnostic-projection-repair/python.json",
+      "libraryPassed": 352,
+      "libraryFailed": 0,
+      "cliScopePassed": 59,
+      "cliScopeFailed": 0
+    },
+    {
+      "candidate": "rust",
+      "path": "evaluation/requalification/diagnostic-projection-repair/rust.json",
+      "libraryPassed": 352,
+      "libraryFailed": 0,
+      "cliScopePassed": 59,
+      "cliScopeFailed": 0
+    },
+    {
+      "candidate": "go",
+      "path": "evaluation/requalification/diagnostic-projection-repair/go.json",
+      "libraryPassed": 352,
+      "libraryFailed": 0,
+      "cliScopePassed": 59,
+      "cliScopeFailed": 0
+    }
+  ],
+  "library": {
+    "cases": 352,
+    "portablePassed": 352,
+    "portableFailures": [],
+    "rawDifferences": [
+      "draft-2020-prefixitems-rejected"
+    ]
+  },
+  "cli": {
+    "jsonCases": 57,
+    "publicPassed": 57,
+    "publicFailures": []
+  },
+  "acceptance": {
+    "status": "not-ready",
+    "blockers": [
+      "full-project-semantic-conformance-not-tested",
+      "stable-public-library-contract-not-established"
+    ],
+    "candidateRepairAuthorized": true,
+    "architecture": "Draft",
+    "historicalReports": "unchanged",
+    "oracle": "unchanged"
+  }
+}

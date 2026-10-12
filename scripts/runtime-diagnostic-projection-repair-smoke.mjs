@@ -33,6 +33,7 @@ const reports=candidates.map(candidate=>{
   }
   const previous=JSON.parse(read("evaluation/requalification/validation-diagnostics/"+candidate+".json"));
   assert.ok(same(report.library.results,previous.library.results),"public repair must not alter any library observation");
+  assert.deepEqual(report.cli.results.map(r=>({id:r.id,args:r.args,inputSha256:r.inputSha256,expected:r.expected})),previous.cli.results.map(r=>({id:r.id,args:r.args,inputSha256:r.inputSha256,expected:r.expected})),"original CLI workloads/expectations must remain unchanged");
   for(const result of report.cli.results) {
     assert.equal(new Set(result.stdoutSha256).size,1);assert.equal(new Set(result.stderrSha256).size,1);
     if(!result.id.endsWith("-text")) assert.deepEqual(publicErrors(result.actual,result.actual.exitCode,"",JSON.stringify(result.actual)+"\n"),[]);

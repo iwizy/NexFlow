@@ -4,8 +4,11 @@ import { readFileSync, existsSync } from "node:fs";
 import { spawnSync } from "node:child_process";
 import { baseline, repositoryRoot, digest, compareOutput } from "./lib/runtime-evaluation.mjs";
 import { same, canonical, libraryObservation, portableDiagnostic, schemaProjection, publicErrors, reportErrors, candidates } from "./lib/diagnostic-requalification.mjs";
+import { compareReports } from "./runtime-diagnostics-comparison.mjs";
+import Ajv2020 from "ajv/dist/2020.js";
 const read = file => readFileSync(new URL("../"+file,import.meta.url));
 const catalog = JSON.parse(read("evaluation/library-cases.json"));
+const validateReport=new Ajv2020({allErrors:true,strict:false}).compile(JSON.parse(read("evaluation/requalification/validation-diagnostics/report.schema.json")));
 const pins = {sourceRevision:"e1b7d65d86194b0848c219be76010f7f7460fa2b",repairRevision:"9e13a54311735a36398eb89c4a39ff2949998998",specificationRevision:baseline.specificationRevision,corpusSha256:baseline.corpus.sha256,catalogSha256:digest(read("evaluation/library-cases.json"))};
 assert.ok(same({b:1,a:[2,1]},{a:[2,1],b:1}));
 assert.ok(!same([2,1],[1,2]));
@@ -34,7 +37,14 @@ for(const candidate of candidates) {
   const file="evaluation/requalification/validation-diagnostics/"+candidate+".json";
   if(!existsSync(new URL("../"+file,import.meta.url))) continue; // First collector-only commit has no observations yet.
   const report=JSON.parse(read(file)); reports.push(report);
+  assert.ok(validateReport(report),JSON.stringify(validateReport.errors));
   assert.deepEqual(reportErrors(report,catalog,pins),[],candidate+" report");
+  const inventory=spawnSync("git",["ls-files","evaluation/prototypes/"+candidate,"schemas"],{cwd:repositoryRoot,encoding:"utf8"});
+  assert.equal(inventory.status,0); assert.deepEqual(report.sourceInventory.map(e=>e.path),inventory.stdout.trim().split("\n"),"complete candidate/lock/schema inventory required");
+  for(const file of ["scripts/runtime-diagnostics-requalify-run.mjs","scripts/lib/diagnostic-requalification.mjs","scripts/lib/evaluation-library.mjs","scripts/lib/runtime-evaluation.mjs","evaluation/command-result.schema.json","evaluation/baseline.json","evaluation/library-cases.json"]) {
+    const p=spawnSync("git",["show",report.harnessRevision+":"+file],{cwd:repositoryRoot,maxBuffer:16*1024*1024});
+    assert.equal(p.status,0); assert.equal(digest(p.stdout),digest(read(file)),"collector binding changed");
+  }
   for(const entry of report.sourceInventory) {
     assert.equal(digest(read(entry.path)),entry.sha256,"candidate source changed after observation");
     for(const revision of [pins.sourceRevision,pins.repairRevision]) {
@@ -57,9 +67,13 @@ if(reports.length) {
   assert.equal(reports.length,4,"all four reports are mandatory together");
   const views=reports.map(r=>r.library.results.map(x=>({id:x.id,valid:x.actual.valid,diagnostics:x.observations.map(portableDiagnostic)})));
   for(const view of views) assert.ok(same(view,views[0]),"portable library diagnostic mismatch");
-  const cliViews=reports.map(r=>r.cli.results.filter(x=>!x.id.endsWith("-text")).map(x=>({id:x.id,exit:x.actual.exitCode,checks:x.actual.checks,diagnostics:x.actual.diagnostics,truncated:x.actual.truncated})));
-  for(const view of cliViews) assert.ok(same(view,cliViews[0]),"public diagnostic mismatch");
   const nativeDifferences=reports[0].library.results.filter((x,i)=>reports.some(r=>!same(x.actual,r.library.results[i].actual))).map(x=>x.id);
   assert.deepEqual(nativeDifferences,["draft-2020-prefixitems-rejected"],"raw differences must be acknowledged, not silently normalized away");
+  const comparison=JSON.parse(read("evaluation/requalification/validation-diagnostics/comparison.json"));
+  const {reportHashes,...stored}=comparison;
+  assert.deepEqual(stored,compareReports(reports),"comparison must be derived from complete observations");
+  assert.deepEqual(reportHashes,reports.map(r=>({candidate:r.candidate,sha256:digest(read("evaluation/requalification/validation-diagnostics/"+r.candidate+".json"))})));
+  assert.deepEqual(comparison.cli.publicFailures.map(f=>f.id),["diagnostic-limit"],"retain the actual public parity failure");
+  assert.equal(comparison.acceptance.status,"not-ready");
 }
-console.log("Validation/diagnostics observation checks passed; architecture and undeclared layers remain not-ready.");
+console.log("Evidence integrity passed; retained public diagnostic parity failure: diagnostic-limit. Qualification remains not-ready.");

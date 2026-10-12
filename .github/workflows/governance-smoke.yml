@@ -38,3 +38,4 @@ jobs:
         run: |
           npm run runtime-architecture-review-smoke
           node scripts/runtime-evaluation-repair-evidence-smoke.mjs
+          npm run runtime-diagnostics-requalification-smoke

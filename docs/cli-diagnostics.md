@@ -5,6 +5,13 @@ This is not a stable public CLI contract, catalog release, or `NF-CLI` claim.
 The [repository CLI prototype](cli-prototype.md) remains unreleased maintenance
 tooling and does not resolve the pending architecture decision.
 
+The four independent validation-only candidates have a narrower command scope
+and different library surfaces. Their revision-bound
+[NF-102-01 mapping and requalification](../evaluation/requalification/validation-diagnostics/README.md)
+retains a failed cross-validator branch-diagnostic parity check. Its 352 frozen
+library passes are not full project semantic conformance or stable public API
+acceptance; candidate code and historical evidence are unchanged.
+
 ## Usage And Streams
 
 Select `--format json` or `--format=json`. The default is `text`; explicit

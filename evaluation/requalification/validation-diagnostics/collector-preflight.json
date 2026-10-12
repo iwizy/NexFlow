@@ -1,0 +1,20 @@
+{
+  "task": "NF-102-01",
+  "collectorRevision": "d02a933",
+  "scope": "collector assertion correction, not candidate repair or oracle change",
+  "observation": "All four candidates passed 352 frozen library cases and 57 of 58 preliminary CLI assertions. The symlink-root assertion incorrectly demanded rejection of an explicitly canonicalized root.",
+  "retainedPreflightFailure": {
+    "case": "symlink-root",
+    "assertion": "exit 1, discovery failed",
+    "actualForAllCandidates": "exit 0, discovery/schema passed, three selected documents",
+    "error": "wrong-supplemental-result"
+  },
+  "resolution": "Correct only the supplemental collector expectation to the existing root-canonicalization contract and add a separate selected-source-symlink rejection probe. No candidate, frozen catalog, expected diagnostic or source input was changed.",
+  "policyEvidence": [
+    "docs/manifest-discovery.md#implemented-local-prototype",
+    "evaluation/prototypes/typescript/src/files.ts",
+    "evaluation/prototypes/python/nexflow_python_evaluation/files.py",
+    "evaluation/prototypes/rust/src/files.rs",
+    "evaluation/prototypes/go/files.go"
+  ]
+}

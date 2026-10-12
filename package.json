@@ -56,6 +56,7 @@
     "single-maintainer-governance-smoke": "node scripts/single-maintainer-governance-smoke.mjs",
     "single-maintainer-ownership-smoke": "node scripts/single-maintainer-ownership-smoke.mjs",
     "runtime-architecture-review-smoke": "node scripts/runtime-architecture-review-smoke.mjs",
+    "runtime-diagnostics-requalification-smoke": "node scripts/runtime-diagnostics-requalification-smoke.mjs",
     "runtime-isolation-smoke": "node scripts/runtime-isolation-smoke.mjs",
     "semantic-smoke": "node scripts/semantic-reference-smoke.mjs",
     "typed-reference-schema-smoke": "node scripts/typed-reference-schema-smoke.mjs",

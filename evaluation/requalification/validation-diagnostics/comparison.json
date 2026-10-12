@@ -1,0 +1,180 @@
+{
+  "formatVersion": 1,
+  "task": "NF-102-01",
+  "pins": {
+    "sourceRevision": "e1b7d65d86194b0848c219be76010f7f7460fa2b",
+    "repairRevision": "9e13a54311735a36398eb89c4a39ff2949998998",
+    "specificationRevision": "1d1fa238ab5729a79bee9389d5c66cfd20a61256",
+    "corpusSha256": "01b116005f0650ac980194b22c02188289eaf1e8626b227aecf3684ece0d8f6b",
+    "catalogSha256": "f1bf8cb786442a212e14c79eb39279a2cdbf05ec20b09901374359d545d74e90"
+  },
+  "reports": [
+    {
+      "candidate": "typescript",
+      "path": "evaluation/requalification/validation-diagnostics/typescript.json",
+      "libraryPassed": 352,
+      "libraryFailed": 0,
+      "cliScopePassed": 59,
+      "cliScopeFailed": 0
+    },
+    {
+      "candidate": "python",
+      "path": "evaluation/requalification/validation-diagnostics/python.json",
+      "libraryPassed": 352,
+      "libraryFailed": 0,
+      "cliScopePassed": 59,
+      "cliScopeFailed": 0
+    },
+    {
+      "candidate": "rust",
+      "path": "evaluation/requalification/validation-diagnostics/rust.json",
+      "libraryPassed": 352,
+      "libraryFailed": 0,
+      "cliScopePassed": 59,
+      "cliScopeFailed": 0
+    },
+    {
+      "candidate": "go",
+      "path": "evaluation/requalification/validation-diagnostics/go.json",
+      "libraryPassed": 352,
+      "libraryFailed": 0,
+      "cliScopePassed": 59,
+      "cliScopeFailed": 0
+    }
+  ],
+  "library": {
+    "cases": 352,
+    "portablePassed": 352,
+    "portableFailures": [],
+    "rawDifferences": [
+      "draft-2020-prefixitems-rejected"
+    ]
+  },
+  "cli": {
+    "jsonCases": 57,
+    "publicPassed": 56,
+    "publicFailures": [
+      {
+        "id": "diagnostic-limit",
+        "publicParity": false,
+        "observations": [
+          {
+            "candidate": "typescript",
+            "diagnosticsSha256": "1d0a8fe2e192580b2bafc6a2cf811374e98126189956c5c7ff58d4dd49f4016f",
+            "count": 200,
+            "keywordCounts": {
+              "oneOf": 14,
+              "required": 107,
+              "const": 66,
+              "enum": 13
+            },
+            "firstMismatchIndex": -1,
+            "firstDiagnostic": {
+              "severity": "error",
+              "code": "NF-SCHEMA",
+              "message": "Local schema constraint is not satisfied.",
+              "file": "actors.yaml",
+              "kind": "ActorSet",
+              "path": "/actors/0",
+              "keyword": "oneOf",
+              "related": []
+            }
+          },
+          {
+            "candidate": "python",
+            "diagnosticsSha256": "fc8888ec4598494308e2aaa7694ceb7b8724e937cefc291750f8a52123e25b8d",
+            "count": 200,
+            "keywordCounts": {
+              "oneOf": 33,
+              "required": 134,
+              "enum": 33
+            },
+            "firstMismatchIndex": 1,
+            "firstDiagnostic": {
+              "severity": "error",
+              "code": "NF-SCHEMA",
+              "message": "Local schema constraint is not satisfied.",
+              "file": "actors.yaml",
+              "kind": "ActorSet",
+              "path": "/actors/0",
+              "keyword": "oneOf",
+              "related": []
+            }
+          },
+          {
+            "candidate": "rust",
+            "diagnosticsSha256": "e1cd0931de58e7050f21d3470807a8f0d374383fde852c160de412f8df6860c6",
+            "count": 200,
+            "keywordCounts": {
+              "oneOf": 33,
+              "required": 134,
+              "enum": 33
+            },
+            "firstMismatchIndex": 1,
+            "firstDiagnostic": {
+              "code": "NF-SCHEMA",
+              "file": "actors.yaml",
+              "keyword": "oneOf",
+              "kind": "ActorSet",
+              "message": "Local schema constraint is not satisfied.",
+              "path": "/actors/0",
+              "related": [],
+              "severity": "error"
+            }
+          },
+          {
+            "candidate": "go",
+            "diagnosticsSha256": "68e94ab094dc7282a18c1b8e3e4d6136d4940a61bfd3c9c72d96227e969f514c",
+            "count": 200,
+            "keywordCounts": {
+              "required": 115,
+              "const": 70,
+              "enum": 15
+            },
+            "firstMismatchIndex": 0,
+            "firstDiagnostic": {
+              "code": "NF-SCHEMA",
+              "file": "actors.yaml",
+              "keyword": "required",
+              "kind": "ActorSet",
+              "message": "Local schema constraint is not satisfied.",
+              "path": "/actors/0/agentRef",
+              "related": [],
+              "severity": "error"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "acceptance": {
+    "status": "not-ready",
+    "blockers": [
+      "public-branch-diagnostic-parity",
+      "full-project-semantic-conformance-not-tested",
+      "stable-public-library-contract-not-established"
+    ],
+    "candidateRepairAuthorized": false,
+    "architecture": "Draft",
+    "historicalReports": "unchanged",
+    "oracle": "unchanged"
+  },
+  "reportHashes": [
+    {
+      "candidate": "typescript",
+      "sha256": "269c026a455c42ddee19120bef5cf4b5f58c6768988366db2911852bbfac575d"
+    },
+    {
+      "candidate": "python",
+      "sha256": "2f8932fc6a10f93f7c3db149aa14b98de7fa381d0ca13826038fd9b226a79b07"
+    },
+    {
+      "candidate": "rust",
+      "sha256": "355408ecd76c5415ef95c2e8dbe9c85e8fd02770b170724dc09ad20ed7f26a78"
+    },
+    {
+      "candidate": "go",
+      "sha256": "fe6304c8856ce952466d07a16a62584de976918644b28b5fb37b503cf776270d"
+    }
+  ]
+}

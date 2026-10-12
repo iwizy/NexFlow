@@ -1,0 +1,28 @@
+{
+  "task": "NF-102-01",
+  "scope": "public-schema-branch-projection-repair",
+  "sourceRevision": "49d78ff5fe84a3b4c0650ccbbff96e97cac7624c",
+  "candidateRepairAuthorized": true,
+  "reports": [
+    {
+      "candidate": "typescript",
+      "sha256": "e9c1e6d678c2faf3d97fa2944bc7dcac96c97e910356c37d3f2c5211e320ec35",
+      "regressionsSha256": "4e92974b74bf874c7299ac6c9a4a3427ef656b42465714bd4638145c609800f7"
+    },
+    {
+      "candidate": "python",
+      "sha256": "d0c2f0c393ba116f34c2fbd933dd1658c0f82ae04a7d90d55f40ef92d35b38d3",
+      "regressionsSha256": "889c5b9c51edf187ad0d87c56250262fdeb0da95437c9f197243f7e813a3a031"
+    },
+    {
+      "candidate": "rust",
+      "sha256": "f105c75e0398f25c3f648d5320715f621d8b5bc2b240b246266e679cc84dcbe3",
+      "regressionsSha256": "a1d9757a7b42732e02c9e9a1825d6f07b4580402fc8c68d9d595bfd5f353c04a"
+    },
+    {
+      "candidate": "go",
+      "sha256": "9bd7b69948886fd4dc31e6c0f2fede9746a00574265287b291c0696bdaed89bf",
+      "regressionsSha256": "f2aee7eab5236f818529b13d11142fbdc01c9534e36a2e568bfd8f871b6be552"
+    }
+  ]
+}

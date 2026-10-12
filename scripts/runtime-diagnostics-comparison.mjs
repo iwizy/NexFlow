@@ -4,7 +4,7 @@ import { fileURLToPath } from "node:url";
 import { candidates, same, portableDiagnostic } from "./lib/diagnostic-requalification.mjs";
 import { digest } from "./lib/runtime-evaluation.mjs";
 
-export function compareReports(reports) {
+export function compareReports(reports, {directory="evaluation/requalification/validation-diagnostics",candidateRepairAuthorized=false}={}) {
   const library = reports[0].library.results.map((entry,i) => ({id:entry.id,
     portableParity:reports.every(r=>same(entry.observations.map(portableDiagnostic),r.library.results[i].observations.map(portableDiagnostic))),
     rawParity:reports.every(r=>same(entry.actual,r.library.results[i].actual))}));
@@ -19,11 +19,11 @@ export function compareReports(reports) {
       firstDiagnostic:r.actual.diagnostics[0]}))}:{})};
   });
   return {formatVersion:1,task:"NF-102-01",pins:reports[0].pins,
-    reports:reports.map(r=>({candidate:r.candidate,path:"evaluation/requalification/validation-diagnostics/"+r.candidate+".json",libraryPassed:r.library.passed,libraryFailed:r.library.failed,cliScopePassed:r.cli.passed,cliScopeFailed:r.cli.failed})),
+    reports:reports.map(r=>({candidate:r.candidate,path:directory+"/"+r.candidate+".json",libraryPassed:r.library.passed,libraryFailed:r.library.failed,cliScopePassed:r.cli.passed,cliScopeFailed:r.cli.failed})),
     library:{cases:library.length,portablePassed:library.filter(r=>r.portableParity).length,portableFailures:library.filter(r=>!r.portableParity).map(r=>r.id),rawDifferences:library.filter(r=>!r.rawParity).map(r=>r.id)},
     cli:{jsonCases:cli.length,publicPassed:cli.filter(r=>r.publicParity).length,publicFailures:cli.filter(r=>!r.publicParity)},
     acceptance:{status:"not-ready",blockers:[...(cli.some(r=>!r.publicParity)?["public-branch-diagnostic-parity"]:[]),"full-project-semantic-conformance-not-tested","stable-public-library-contract-not-established"],
-      candidateRepairAuthorized:false,architecture:"Draft",historicalReports:"unchanged",oracle:"unchanged"}};
+      candidateRepairAuthorized,architecture:"Draft",historicalReports:"unchanged",oracle:"unchanged"}};
 }
 if(process.argv[1] === fileURLToPath(import.meta.url)) {
   const reports=candidates.map(c=>JSON.parse(readFileSync(new URL("../evaluation/requalification/validation-diagnostics/"+c+".json",import.meta.url))));

@@ -155,8 +155,16 @@ for (const file of ["rfcs/RFC-0023-runtime-architecture-decision.md",
   "rfcs/reviews/2026-10-09-runtime-reviewer-ownership.json",
   "evaluation/reports/review/reviewer-a.json", "evaluation/reports/review/reviewer-b.json",
   "evaluation/reports/review/reconciliation.json"]) {
-  assert.equal(read(file), execFileSync("git", ["show", `${before}:${file}`],
-    { cwd: repositoryRoot, encoding: "utf8", maxBuffer: 8 * 1024 * 1024 }));
+  let expected=execFileSync("git", ["show", `${before}:${file}`],
+    { cwd: repositoryRoot, encoding: "utf8", maxBuffer: 8 * 1024 * 1024 });
+  if(file===".github/workflows/schema-smoke.yml") {
+    // Only this exact forward repair wiring is allowed. Every other workflow
+    // byte and every historical decision/report remains frozen as before.
+    const original="        run: node scripts/runtime-evaluation-repair-evidence-smoke.mjs\n";
+    assert.equal(expected.split(original).length,2);
+    expected=expected.replace(original,"        run: |\n          node scripts/runtime-evaluation-repair-evidence-smoke.mjs --historical\n          npm run runtime-diagnostic-projection-repair-smoke\n");
+  }
+  assert.equal(read(file),expected);
 }
 for (const candidate of ["typescript", "python", "rust", "go"]) {
   const historical = JSON.parse(read(`evaluation/reports/${candidate}/candidate.json`));

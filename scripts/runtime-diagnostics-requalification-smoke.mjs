@@ -32,6 +32,7 @@ assert.ok(publicErrors(output,1,"debug",JSON.stringify(output)+"\n").includes("i
 assert.ok(publicErrors(output,1,"",JSON.stringify(output)+"\n",["fixed"]).includes("sensitive-output"));
 
 const reports=[];
+const historical=process.argv.includes("--historical");
 if(process.argv.includes("--contract-only")) { console.log("Observation contract negative tests passed."); process.exit(0); }
 for(const candidate of candidates) {
   const file="evaluation/requalification/validation-diagnostics/"+candidate+".json";
@@ -43,10 +44,12 @@ for(const candidate of candidates) {
   assert.equal(inventory.status,0); assert.deepEqual(report.sourceInventory.map(e=>e.path),inventory.stdout.trim().split("\n"),"complete candidate/lock/schema inventory required");
   for(const file of ["scripts/runtime-diagnostics-requalify-run.mjs","scripts/lib/diagnostic-requalification.mjs","scripts/lib/evaluation-library.mjs","scripts/lib/runtime-evaluation.mjs","evaluation/command-result.schema.json","evaluation/baseline.json","evaluation/library-cases.json"]) {
     const p=spawnSync("git",["show",report.harnessRevision+":"+file],{cwd:repositoryRoot,maxBuffer:16*1024*1024});
-    assert.equal(p.status,0); assert.equal(digest(p.stdout),digest(read(file)),"collector binding changed");
+    assert.equal(p.status,0);
+    assert.equal(report.harnessRevision,"224b968ce633c8e964d97819180fb468ab0c7762","archived collector revision changed");
+    if(!historical) assert.equal(digest(p.stdout),digest(read(file)),"collector binding changed");
   }
   for(const entry of report.sourceInventory) {
-    assert.equal(digest(read(entry.path)),entry.sha256,"candidate source changed after observation");
+    if(!historical) assert.equal(digest(read(entry.path)),entry.sha256,"candidate source changed after observation");
     for(const revision of [pins.sourceRevision,pins.repairRevision]) {
       const p=spawnSync("git",["show",revision+":"+entry.path],{cwd:repositoryRoot,maxBuffer:8*1024*1024});
       assert.equal(p.status,0); assert.equal(digest(p.stdout),entry.sha256);

@@ -98,7 +98,9 @@ for (const entry of catalog.cases.filter(c => c.operation === "manifest-schema" 
   for (const cmd of ["validate","inspect"]) add(cmd+"-"+entry.id,[cmd,"--root","{root}","--project","project.yaml","--format=json"],expectedSuccess(cmd,"project-source-hints"),{root:path.dirname(entry.input.file),origin:"maintained-project"});
 }
 add("redacted-outside-file",["validate","--root","{root}","--file","../"+canary,"--format=json"],null,{check: output => output.exitCode === 1 && output.diagnostics.some(d => d.code === "NF-DISCOVERY-OUTSIDE-ROOT")});
-add("symlink-root",["validate","--root","{symlink}","--format=json"],null,{check:output => output.exitCode === 1 && output.checks.discovery === "failed"});
+// The explicit root is canonicalized by the frozen policy. Source symlinks below it are denied.
+add("symlink-root",["validate","--root","{symlink}","--format=json"],expectedSuccess("validate","directory-project"));
+add("symlink-source",["validate","--root","{root}","--format=json"],null,{edit:"symlink-source",check:output => output.exitCode === 1 && output.checks.discovery === "failed" && output.diagnostics.some(d=>d.code==="NF-DISCOVERY-UNSAFE-SOURCE")});
 add("absent-root",["validate","--root","{absent}","--format=json"],null,{check:output => output.exitCode === 1 && output.checks.discovery === "failed"});
 add("schema-value-redaction",["validate","--root","{root}","--format=json"],null,{edit:"schema-redaction",check:output => output.exitCode === 1 && output.diagnostics.length > 1 && output.diagnostics.every(d => d.code === "NF-SCHEMA")});
 add("diagnostic-limit",["validate","--root","{root}","--format=json"],null,{edit:"diagnostic-limit",check:output => output.exitCode === 1 && output.truncated && output.diagnostics.length === 200 && output.result === null});
@@ -121,6 +123,9 @@ try {
     }
     if(item.edit === "semantic-gap") {
       const file=path.join(home,"actors.yaml"), doc=parse(readFileSync(file,"utf8")); doc.actors[1].agentRef.id="missing-agent"; writeFileSync(file,JSON.stringify(doc));
+    }
+    if(item.edit === "symlink-source") {
+      const file=path.join(home,"actors.yaml"); rmSync(file); symlinkSync(path.join(home,"agents.yaml"),file);
     }
     const link=home+"-link"; if(item.id === "symlink-root") symlinkSync(home,link,"dir");
     const args=item.args.map(v=>v.replaceAll("{root}",home).replaceAll("{symlink}",link).replaceAll("{absent}",home+"-absent"));

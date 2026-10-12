@@ -68,7 +68,7 @@ export function reportErrors(report, catalog, pins) {
     !same(r.observations, r.actual.diagnostics.map(d => libraryObservation(r.operation, d))))) errors.push("library-failure");
   if (report.library?.outerRuns !== 2 || report.library?.passed !== catalog.cases.length || report.library?.failed !== 0) errors.push("invalid-library-counts");
   const cli = report.cli?.results ?? [];
-  if (cli.length !== 58 || new Set(cli.map(r => r.id)).size !== cli.length || cli.some(r => r.errors.length || !r.repeatable || !r.inputUnchanged)) errors.push("cli-failure-or-incomplete");
+  if (cli.length !== 59 || new Set(cli.map(r => r.id)).size !== cli.length || cli.some(r => r.errors.length || !r.repeatable || !r.inputUnchanged)) errors.push("cli-failure-or-incomplete");
   if (!same(report.limitations?.cliCommands, ["validate", "inspect"]) || report.limitations?.fullProjectSemanticConformance !== "not-tested" || report.limitations?.stablePublicApi !== "not-established" || report.architectureOutcome !== "not-ready") errors.push("inflated-qualification");
   return [...new Set(errors)];
 }

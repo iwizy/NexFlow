@@ -29,6 +29,7 @@ assert.ok(publicErrors(output,1,"debug",JSON.stringify(output)+"\n").includes("i
 assert.ok(publicErrors(output,1,"",JSON.stringify(output)+"\n",["fixed"]).includes("sensitive-output"));
 
 const reports=[];
+if(process.argv.includes("--contract-only")) { console.log("Observation contract negative tests passed."); process.exit(0); }
 for(const candidate of candidates) {
   const file="evaluation/requalification/validation-diagnostics/"+candidate+".json";
   if(!existsSync(new URL("../"+file,import.meta.url))) continue; // First collector-only commit has no observations yet.

@@ -3,7 +3,7 @@ use nexflow_rust_evaluation::{SchemaEngine, evaluate_library_case};
 use serde_json::Value;
 use std::{io::{self, Read}, path::PathBuf};
 fn run() -> Result<(), &'static str> {
-    let args: Vec<_> = std::env::args().skip(1).collect(); if args.len() != 1 { return Err("invalid arguments"); }
+    let args: Vec<_> = std::env::args().skip(1).collect(); if args.len()!=1 && args.len()!=2 || args.len()==2 && args[1]!="--public" { return Err("invalid arguments"); }
     let root = PathBuf::from(&args[0]);
     let schemas = SchemaEngine::bundled()?;
     let mut bytes = Vec::new(); io::stdin().take(4 * 1024 * 1024 + 1).read_to_end(&mut bytes).map_err(|_| "invalid input")?;
@@ -15,7 +15,12 @@ fn run() -> Result<(), &'static str> {
         let before = entry.clone();
         let first = evaluate_library_case(&entry, &root, &schemas)?;
         let second = evaluate_library_case(&entry, &root, &schemas)?;
-        if first != second || before != entry { return Err("unstable or mutated input"); } results.push(first);
+        if first != second || before != entry { return Err("unstable or mutated input"); }
+        if args.len()==2 {
+            let public=nexflow_rust_evaluation::public::evaluate_public_library_case(&entry,&root,&schemas)?;
+            if public!=nexflow_rust_evaluation::public::evaluate_public_library_case(&entry,&root,&schemas)? || before!=entry { return Err("unstable or mutated public input"); }
+            results.push(serde_json::json!({"native":first,"public":public}));
+        } else { results.push(first); }
     }
     println!("{}", Value::Array(results)); Ok(())
 }

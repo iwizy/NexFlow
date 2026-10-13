@@ -12,7 +12,7 @@ import (
 )
 
 func run() error {
-	if len(os.Args) != 2 {
+	if len(os.Args) != 2 && len(os.Args) != 3 || len(os.Args) == 3 && os.Args[2] != "--public" {
 		return errors.New("invalid arguments")
 	}
 	schemas, err := candidate.ExecutableSchemas()
@@ -53,7 +53,25 @@ func run() error {
 		if !bytes.Equal(before, after) || !bytes.Equal(a, b) {
 			return errors.New("unstable or mutated input")
 		}
-		results = append(results, first)
+		if len(os.Args) == 3 {
+			public, err := candidate.EvaluatePublicLibraryCase(entry, os.Args[1], schemas)
+			if err != nil {
+				return err
+			}
+			repeated, err := candidate.EvaluatePublicLibraryCase(entry, os.Args[1], schemas)
+			if err != nil {
+				return err
+			}
+			a, _ := json.Marshal(public)
+			b, _ := json.Marshal(repeated)
+			after, _ := json.Marshal(entry)
+			if !bytes.Equal(a, b) || !bytes.Equal(before, after) {
+				return errors.New("unstable or mutated public input")
+			}
+			results = append(results, map[string]any{"native": first, "public": public})
+		} else {
+			results = append(results, first)
+		}
 	}
 	output, err := candidate.JSONLine(results)
 	if err != nil {

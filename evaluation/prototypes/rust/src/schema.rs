@@ -151,4 +151,11 @@ impl SchemaEngine {
             None => vec![json!({"code":"NF-SCHEMA","category":"unresolved-local-schema"})],
         }
     }
+    pub fn validate_local_public(schemas: &[Value], entry_id: &str, value: &Value) -> Vec<Value> {
+        let schema=schemas.iter().find(|schema| schema["$id"]==entry_id);
+        match schema.and_then(|schema|build(schemas,schema).ok()) {
+            Some(validator)=>public_issues(&validator,value,&fields(schemas)),
+            None=>vec![json!({"code":"NF-SCHEMA","category":"unresolved-local-schema"})],
+        }
+    }
 }

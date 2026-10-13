@@ -9,6 +9,7 @@ import {candidates,canonical,same,publicErrors,reportErrors} from "./lib/diagnos
 import {compareReports} from "./runtime-diagnostics-comparison.mjs";
 import {regressionCases,expectedDiagnostics} from "./runtime-diagnostic-projection-regression.mjs";
 const directory="evaluation/requalification/diagnostic-projection-repair";
+const historical=process.argv.includes("--historical");
 const read=file=>readFileSync(new URL("../"+file,import.meta.url));
 const committed=(revision,file)=>{const p=spawnSync("git",["show",revision+":"+file],{cwd:repositoryRoot,maxBuffer:16*1024*1024});assert.equal(p.status,0);return p.stdout;};
 assert.deepEqual(verifyCorpus(),[]);
@@ -24,11 +25,11 @@ const reports=candidates.map(candidate=>{
   assert.ok(validate(report),JSON.stringify(validate.errors));
   assert.deepEqual(reportErrors(report,catalog,pins),[],candidate);
   assert.equal(report.harnessRevision,manifest.sourceRevision);
-  for(const file of harnessFiles) assert.equal(digest(committed(report.harnessRevision,file)),digest(read(file)),"current collector/oracle binding changed: "+file);
-  const inventory=spawnSync("git",["ls-files","evaluation/prototypes/"+candidate,"schemas"],{cwd:repositoryRoot,encoding:"utf8"});
+  for(const file of harnessFiles) {const original=committed(report.harnessRevision,file);if(!historical) assert.equal(digest(original),digest(read(file)),"current collector/oracle binding changed: "+file);}
+  const inventory=spawnSync("git",historical?["ls-tree","-r","--name-only",pins.sourceRevision,"--","evaluation/prototypes/"+candidate,"schemas"]:["ls-files","evaluation/prototypes/"+candidate,"schemas"],{cwd:repositoryRoot,encoding:"utf8"});
   assert.equal(inventory.status,0);assert.deepEqual(report.sourceInventory.map(e=>e.path),inventory.stdout.trim().split("\n"));
   for(const entry of report.sourceInventory) {
-    assert.equal(digest(read(entry.path)),entry.sha256,"current candidate/lock/schema changed: "+entry.path);
+    if(!historical) assert.equal(digest(read(entry.path)),entry.sha256,"current candidate/lock/schema changed: "+entry.path);
     assert.equal(digest(committed(pins.sourceRevision,entry.path)),entry.sha256);
   }
   const previous=JSON.parse(read("evaluation/requalification/validation-diagnostics/"+candidate+".json"));
@@ -74,7 +75,10 @@ if(liveOption>=0) {
     assert.ok(validate(report),JSON.stringify(validate.errors));
     assert.deepEqual(reportErrors(report,catalog,livePins),[],candidate+" fresh observations");
     assert.equal(report.harnessRevision,livePins.sourceRevision);
-    assert.deepEqual(report.sourceInventory,reports[index].sourceInventory);
+    const current=spawnSync("git",["ls-files","evaluation/prototypes/"+candidate,"schemas"],{cwd:repositoryRoot,encoding:"utf8"});assert.equal(current.status,0);
+    assert.deepEqual(report.sourceInventory.map(e=>e.path),current.stdout.trim().split("\n"));
+    for(const entry of report.sourceInventory) {assert.equal(entry.sha256,digest(read(entry.path)));assert.equal(entry.sha256,digest(committed(livePins.sourceRevision,entry.path)));}
+    if(!historical) assert.deepEqual(report.sourceInventory,reports[index].sourceInventory);
     assert.ok(same(report.library.results,reports[index].library.results),"fresh library replay differs");
     assert.ok(same(report.cli.results.map(r=>({id:r.id,actual:r.actual,bridgeObservation:r.bridgeObservation})),reports[index].cli.results.map(r=>({id:r.id,actual:r.actual,bridgeObservation:r.bridgeObservation}))),"fresh CLI replay differs");
     const regression=JSON.parse(readFileSync(path.join(folder,candidate+"-regressions.json")));
@@ -87,4 +91,4 @@ if(liveOption>=0) {
   assert.deepEqual(compareReports(live).cli,{jsonCases:57,publicPassed:57,publicFailures:[]});
   console.log("Fresh native four-candidate replays match every recorded library, CLI and supplemental regression result.");
 }
-console.log("Current-source repair verified: 352 library cases unchanged; 57/57 public parity; 10 strict regressions per candidate. Architecture remains Draft/not-ready.");
+console.log((historical?"Archived repair verified at its immutable source":"Current-source repair verified")+": 352 library cases unchanged; 57/57 public parity; 10 strict regressions per candidate. Architecture remains Draft/not-ready.");

@@ -5,6 +5,7 @@ pub mod inspection;
 pub mod schema;
 pub mod yaml;
 pub mod semantics;
+pub mod public;
 
 use serde_json::{Value, json};
 use std::{collections::BTreeSet, path::Path};

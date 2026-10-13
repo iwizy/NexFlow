@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nexflow.dev/evaluation/contracts/validation-diagnostics-v1.schema.json",
+  "title": "Versioned validation-only library data; not a product ABI or conformance claim",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["contractVersion", "caseId", "operation", "valid", "diagnostics", "truncated", "executionAuthorized", "checks", "result"],
+  "properties": {
+    "contractVersion": {"const": "nf-validation-diagnostics-v1"},
+    "caseId": {"type": "string", "pattern": "^(?:[a-z][a-z0-9]*(?:[-_.][a-z0-9]+)*|<redacted-id>)$", "maxLength": 128},
+    "operation": {"enum": ["semantic-fragment", "workflow-namespace", "artifact-namespace", "manifest-schema", "local-schema", "yaml-parse", "discovery"]},
+    "valid": {"type": "boolean"},
+    "diagnostics": {"type": "array", "maxItems": 200, "items": {
+      "type": "object", "additionalProperties": false,
+      "required": ["severity", "code", "category", "path", "meaning", "context"],
+      "properties": {
+        "severity": {"const": "error"},
+        "code": {"type": "string", "pattern": "^NF-[A-Z-]+$", "maxLength": 128},
+        "category": {"type": ["string", "null"], "pattern": "^[A-Za-z][A-Za-z0-9-]*$", "maxLength": 128},
+        "path": {"type": ["string", "null"], "pattern": "^(?:|/[^\\u0000-\\u001f]*|<redacted-field>)$", "maxLength": 1024},
+        "meaning": {"type": "string", "maxLength": 512},
+        "context": {"type": "object", "additionalProperties": false, "properties": {
+          "kind": {"$ref": "#/$defs/context"}, "sourceKind": {"$ref": "#/$defs/context"},
+          "targetNamespace": {"$ref": "#/$defs/context"}, "targetId": {"$ref": "#/$defs/context"}
+        }}
+      }
+    }},
+    "truncated": {"type": "boolean"},
+    "executionAuthorized": {"const": false},
+    "checks": {"type": "object", "additionalProperties": false, "required": ["runtime", "extensions"], "properties": {"runtime": {"const": "not-run"}, "extensions": {"const": "not-run"}}},
+    "result": {"oneOf": [{"type": "null"}, {"type": "object", "additionalProperties": false, "required": ["documentCount", "workflowIds"], "properties": {"documentCount": {"type": "integer", "minimum": 1}, "workflowIds": {"type": "array", "items": {"$ref": "#/$defs/id"}}}}]}
+  },
+  "allOf": [
+    {"if": {"properties": {"valid": {"const": true}}}, "then": {"properties": {"diagnostics": {"maxItems": 0}, "truncated": {"const": false}}}, "else": {"properties": {"diagnostics": {"minItems": 1}, "result": {"type": "null"}}}},
+    {"if": {"properties": {"truncated": {"const": true}}}, "then": {"properties": {"diagnostics": {"minItems": 200}, "valid": {"const": false}}}},
+    {"if": {"properties": {"result": {"type": "object"}}}, "then": {"properties": {"operation": {"const": "discovery"}, "valid": {"const": true}}}}
+  ],
+  "$defs": {
+    "id": {"type": "string", "pattern": "^(?:[a-z][a-z0-9]*(?:[-_.][a-z0-9]+)*|<redacted-id>)$", "maxLength": 128},
+    "context": {"type": "string", "pattern": "^(?:[A-Za-z][A-Za-z0-9._-]*|<redacted-(?:id|kind)>)$", "maxLength": 512}
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "task": "NF-102-01",
+  "taskStatus": "completed",
+  "sourceRevision": "63c86bc4a010bdca79af8190a9a521838f421b75",
+  "contractVersion": "nf-validation-diagnostics-v1",
+  "contract": "docs/validation-diagnostic-contract.md",
+  "schema": "evaluation/contracts/validation-diagnostics-v1.schema.json",
+  "evidence": "evaluation/qualification/validation-diagnostics-v1/manifest.json",
+  "originalCriteria": [
+    {"criterion": "Bind all four candidate reports to exact sources, locks, specification, complete frozen catalog and actual results; preserve history", "status": "passed", "evidence": "evaluation/qualification/validation-diagnostics-v1/manifest.json"},
+    {"criterion": "Define and verify public mapping, code/category/path/severity/meaning, order, repeatability, redaction and native-detail exposure without weakening oracle", "status": "passed", "evidence": "docs/validation-diagnostic-contract.md"},
+    {"criterion": "Cover complete declared CLI/project scope and explicit unsupported commands/profiles; do not equate fragment passes with full project semantics", "status": "passed", "evidence": "evaluation/qualification/validation-diagnostics-v1/comparison.json"}
+  ],
+  "fullProjectSemanticsImplemented": false,
+  "productPublicAbiEstablished": false,
+  "allArchitectureGatesClosed": false,
+  "technicalAcceptanceRequirementsWaived": false,
+  "originalTaskScopeChanged": false,
+  "architectureStatus": "Draft",
+  "architectureAccepted": false,
+  "remainingCards": ["NF-102-02", "NF-102-03", "NF-102-04", "NF-102-05", "NF-102-06"],
+  "reviewMode": "single-maintainer",
+  "independenceClaimed": false,
+  "humanArchitectureAcceptanceClaimed": false,
+  "releaseOrVersionChange": false,
+  "mergeAuthorized": false
+}

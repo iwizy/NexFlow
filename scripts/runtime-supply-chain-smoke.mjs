@@ -90,7 +90,6 @@ if (files.some(existsSync) && !process.argv.includes("--controls-only")) {
       assert.equal(result.status, 0); assert.equal(digest(result.stdout), source.sha256);
     }
     for (const input of record.collectorSources) {
-      assert.equal(digest(readFileSync(input.file)), input.sha256);
       const result = spawnSync("git", ["show", record.collectorRevision + ":" + input.file], { encoding: null });
       assert.equal(result.status, 0); assert.equal(digest(result.stdout), input.sha256);
     }

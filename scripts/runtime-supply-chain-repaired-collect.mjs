@@ -257,7 +257,7 @@ export function collect(config) {
   assert.ok(!/\/Users\/|\/private\/|file:\/\/|\/var\/folders\//iu.test(JSON.stringify(collected)), "private metadata in evidence");
   return collected;
 }
-if (process.argv[1]?.endsWith("runtime-supply-chain-current-collect.mjs")) {
+if (process.argv[1]?.endsWith("runtime-supply-chain-repaired-collect.mjs")) {
   const records = collect(JSON.parse(process.argv[2]));
   if (process.argv[3] === "--interactive") {
     const { createInterface } = await import("node:readline");

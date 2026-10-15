@@ -66,7 +66,7 @@ export function evidenceErrors(record, scan, sbom, pins) {
     require(Array.isArray(row.refs) && row.refs.length > 0 && matches.every(m => m.id && m.modified), "scan query result");
     for (const ref of row.refs) if (ref === "runtime:go-stdlib") {
       require(record.candidate === "go" && row.query.package.ecosystem === "Go"
-        && row.query.package.name === "stdlib" && row.query.version === "1.27.1", "stdlib query");
+        && row.query.package.name === "stdlib" && row.query.version === (pins.stdlibVersion ?? "1.27.1"), "stdlib query");
     } else {
       const c = components.find(item => item.ref === ref);
       require(c && row.query?.package?.name === c.name && row.query?.package?.ecosystem === c.ecosystem && row.query?.version === c.version, "scan version divergence");

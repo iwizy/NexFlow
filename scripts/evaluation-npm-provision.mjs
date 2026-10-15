@@ -5,14 +5,18 @@ import { createHash } from "node:crypto";
 import { cpSync, existsSync, mkdirSync, mkdtempSync, readFileSync, writeFileSync, chmodSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { tmpdir } from "node:os";
+import { fileURLToPath } from "node:url";
 import { spawnSync } from "node:child_process";
-const root=resolve(new URL("..",import.meta.url).pathname), target=resolve(process.argv[2]??"");
+const root=fileURLToPath(new URL("..",import.meta.url)), target=resolve(process.argv[2]??"");
+assert.equal(process.versions.node,"26.12.0","use the qualified evaluation Node runtime");
 assert.ok(process.argv[2]&&!existsSync(target),"use a new scoped tool directory");
 const source=join(root,"evaluation/repairs/supply-chain/npm");
 const manifest=JSON.parse(readFileSync(join(source,"package.json")));
 const lock=JSON.parse(readFileSync(join(source,"package-lock.json")));
 for(const [key,p] of Object.entries(lock.packages)) if(key) {
+  assert.ok(key.startsWith("node_modules/")&&!key.split("/").some(part=>["..","."].includes(part)));
   assert.equal(new URL(p.resolved).origin,"https://registry.npmjs.org");
+  assert.equal(new URL(p.resolved).username,"");assert.equal(new URL(p.resolved).password,"");
   assert.match(p.integrity,/^sha512-[A-Za-z0-9+/]+=*$/u);
   assert.equal(p.inBundle,undefined,"bundled dependencies bypass overrides");
 }
@@ -32,8 +36,20 @@ for(const name of ["bin","lib","docs","man","LICENSE","README.md"]) if(existsSyn
 for(const name of ["package.json","package-lock.json"]) cpSync(join(source,name),join(target,name));
 for(const name of ["user.npmrc","global.npmrc"]) writeFileSync(join(temporary,name),"");
 const env={PATH:dirname(process.execPath)+":/usr/bin:/bin",LANG:"C",LC_ALL:"C",npm_config_userconfig:join(temporary,"user.npmrc"),npm_config_globalconfig:join(temporary,"global.npmrc"),npm_config_cache:join(temporary,"cache")};
-const result=spawnSync(process.execPath,[join(upstream,"bin/npm-cli.js"),"ci","--ignore-scripts","--no-audit","--fund=false","--allow-remote=all","--registry=https://registry.npmjs.org"],{cwd:target,env,encoding:"utf8",timeout:180000});
-assert.equal(result.status,0,result.stderr);
+// Do not execute the upstream bundled dependency graph, even for bootstrap.
+// Every archive is trusted only after matching its committed integrity hash.
+let index=0;
+for(const [key,p]of Object.entries(lock.packages))if(key){
+ const response=await fetch(p.resolved,{redirect:"error",signal:AbortSignal.timeout(120000)});assert.equal(response.status,200);
+ const payload=Buffer.from(await response.arrayBuffer());assert.equal("sha512-"+createHash("sha512").update(payload).digest("base64"),p.integrity);
+ const archive=join(temporary,"dependency-"+(index++)+".tgz");writeFileSync(archive,payload);
+ const listing=spawnSync("tar",["-tf",archive],{env,encoding:"utf8"});assert.equal(listing.status,0);
+ for(const name of listing.stdout.trim().split("\n"))assert.ok(name.startsWith("package/")&&!name.split("/").includes(".."),"unsafe archive member");
+ const kinds=spawnSync("tar",["-tvf",archive],{env,encoding:"utf8"});assert.equal(kinds.status,0);assert.ok(kinds.stdout.trim().split("\n").every(line=>/^[d-]/u.test(line)),"archive links/devices are not accepted");
+ const destination=join(target,key);mkdirSync(destination,{recursive:true});
+ assert.equal(spawnSync("tar",["-xf",archive,"--strip-components=1","--no-same-owner","--no-same-permissions","-C",destination],{env}).status,0);
+ const installed=JSON.parse(readFileSync(join(destination,"package.json")));assert.equal(installed.version,p.version);
+}
 writeFileSync(join(target,"bin/npm"),'#!/usr/bin/env node\nrequire("./npm-cli.js");\n');chmodSync(join(target,"bin/npm"),0o755);
 const version=spawnSync(process.execPath,[join(target,"bin/npm-cli.js"),"--version"],{env,encoding:"utf8"});
 assert.equal(version.status,0);assert.equal(version.stdout.trim(),"12.2.0");

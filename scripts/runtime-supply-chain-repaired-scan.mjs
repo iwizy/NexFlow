@@ -73,7 +73,7 @@ export async function scan(record) {
       "unpublished vulnerabilities", "independent dependency source audit", "exploit reachability",
       ...(record.candidate === "go" ? [] : ["runtime/compiler vulnerability matching"])] };
 }
-if (process.argv[1]?.endsWith("runtime-supply-chain-scan.mjs")) {
+if (process.argv[1]?.endsWith("runtime-supply-chain-repaired-scan.mjs")) {
   const record = JSON.parse(readFileSync(process.argv[2]));
   console.log(JSON.stringify(await scan(record), null, 2));
 }

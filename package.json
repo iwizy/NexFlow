@@ -45,6 +45,7 @@
     "runtime-evaluation-report": "node scripts/runtime-evaluation-report.mjs",
     "runtime-fidelity-smoke": "node scripts/runtime-fidelity-smoke.mjs",
     "runtime-supply-chain-smoke": "node scripts/runtime-supply-chain-smoke.mjs",
+    "runtime-supply-chain-current-smoke": "node scripts/runtime-supply-chain-current-smoke.mjs",
     "runtime-linux-lifecycle-smoke": "node scripts/runtime-linux-lifecycle-smoke.mjs",
     "runtime-macos-lifecycle-smoke": "node scripts/runtime-macos-lifecycle-smoke.mjs",
     "runtime-windows-lifecycle-smoke": "node scripts/runtime-windows-lifecycle-smoke.mjs",

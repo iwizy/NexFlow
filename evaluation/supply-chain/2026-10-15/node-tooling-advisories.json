@@ -1,0 +1,6835 @@
+{
+  "formatVersion": 1,
+  "scannerVersion": "nf-056-11-osv-v1",
+  "apiVersion": "v1",
+  "api": "https://api.osv.dev/v1",
+  "startedAt": "2026-10-15T10:15:50.345Z",
+  "completedAt": "2026-10-15T10:16:03.101Z",
+  "databaseVersion": "unavailable-live-service-no-snapshot-id",
+  "candidate": "node-tooling",
+  "sourceRevision": "a3dea0a3de7018e14057a9bc15307325439b500d",
+  "collectorRevision": "2dda6a5e3eb3cc4f71cd4f491eea7fffb2ba4a4a",
+  "scope": "exact-version-matching-no-reachability-or-security-certification",
+  "status": "completed",
+  "queries": [
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "corepack"
+        },
+        "version": "0.34.6"
+      },
+      "refs": [
+        "pkg:npm/corepack@0.34.6"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "npm"
+        },
+        "version": "10.9.8"
+      },
+      "refs": [
+        "pkg:npm/npm@10.9.8"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@isaacs/cliui"
+        },
+        "version": "8.0.2"
+      },
+      "refs": [
+        "pkg:npm/%40isaacs/cliui@8.0.2"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "ansi-regex"
+        },
+        "version": "6.2.2"
+      },
+      "refs": [
+        "pkg:npm/ansi-regex@6.2.2"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "emoji-regex"
+        },
+        "version": "9.2.2"
+      },
+      "refs": [
+        "pkg:npm/emoji-regex@9.2.2"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "string-width"
+        },
+        "version": "5.1.2"
+      },
+      "refs": [
+        "pkg:npm/string-width@5.1.2"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "strip-ansi"
+        },
+        "version": "7.2.0"
+      },
+      "refs": [
+        "pkg:npm/strip-ansi@7.2.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@isaacs/fs-minipass"
+        },
+        "version": "4.0.1"
+      },
+      "refs": [
+        "pkg:npm/%40isaacs/fs-minipass@4.0.1"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@isaacs/string-locale-compare"
+        },
+        "version": "1.1.0"
+      },
+      "refs": [
+        "pkg:npm/%40isaacs/string-locale-compare@1.1.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@npmcli/agent"
+        },
+        "version": "3.0.0"
+      },
+      "refs": [
+        "pkg:npm/%40npmcli/agent@3.0.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@npmcli/arborist"
+        },
+        "version": "8.0.5"
+      },
+      "refs": [
+        "pkg:npm/%40npmcli/arborist@8.0.5"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@npmcli/config"
+        },
+        "version": "9.0.0"
+      },
+      "refs": [
+        "pkg:npm/%40npmcli/config@9.0.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@npmcli/fs"
+        },
+        "version": "4.0.0"
+      },
+      "refs": [
+        "pkg:npm/%40npmcli/fs@4.0.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@npmcli/git"
+        },
+        "version": "6.0.3"
+      },
+      "refs": [
+        "pkg:npm/%40npmcli/git@6.0.3"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@npmcli/installed-package-contents"
+        },
+        "version": "3.0.0"
+      },
+      "refs": [
+        "pkg:npm/%40npmcli/installed-package-contents@3.0.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@npmcli/map-workspaces"
+        },
+        "version": "4.0.2"
+      },
+      "refs": [
+        "pkg:npm/%40npmcli/map-workspaces@4.0.2"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@npmcli/metavuln-calculator"
+        },
+        "version": "8.0.1"
+      },
+      "refs": [
+        "pkg:npm/%40npmcli/metavuln-calculator@8.0.1"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "pacote"
+        },
+        "version": "20.0.1"
+      },
+      "refs": [
+        "pkg:npm/pacote@20.0.1"
+      ],
+      "matches": [
+        {
+          "id": "GHSA-w4pp-8pjf-rmxw",
+          "modified": "2026-09-10T03:51:07.162466Z"
+        }
+      ]
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@npmcli/name-from-folder"
+        },
+        "version": "3.0.0"
+      },
+      "refs": [
+        "pkg:npm/%40npmcli/name-from-folder@3.0.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@npmcli/node-gyp"
+        },
+        "version": "4.0.0"
+      },
+      "refs": [
+        "pkg:npm/%40npmcli/node-gyp@4.0.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@npmcli/package-json"
+        },
+        "version": "6.2.0"
+      },
+      "refs": [
+        "pkg:npm/%40npmcli/package-json@6.2.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@npmcli/promise-spawn"
+        },
+        "version": "8.0.3"
+      },
+      "refs": [
+        "pkg:npm/%40npmcli/promise-spawn@8.0.3"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@npmcli/query"
+        },
+        "version": "4.0.1"
+      },
+      "refs": [
+        "pkg:npm/%40npmcli/query@4.0.1"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@npmcli/redact"
+        },
+        "version": "3.2.2"
+      },
+      "refs": [
+        "pkg:npm/%40npmcli/redact@3.2.2"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@npmcli/run-script"
+        },
+        "version": "9.1.0"
+      },
+      "refs": [
+        "pkg:npm/%40npmcli/run-script@9.1.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@pkgjs/parseargs"
+        },
+        "version": "0.11.0"
+      },
+      "refs": [
+        "pkg:npm/%40pkgjs/parseargs@0.11.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@sigstore/bundle"
+        },
+        "version": "3.1.0"
+      },
+      "refs": [
+        "pkg:npm/%40sigstore/bundle@3.1.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@sigstore/core"
+        },
+        "version": "2.0.0"
+      },
+      "refs": [
+        "pkg:npm/%40sigstore/core@2.0.0"
+      ],
+      "matches": [
+        {
+          "id": "GHSA-jfc7-64v2-mr8c",
+          "modified": "2026-09-10T03:51:08.786207Z"
+        }
+      ]
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@sigstore/protobuf-specs"
+        },
+        "version": "0.4.3"
+      },
+      "refs": [
+        "pkg:npm/%40sigstore/protobuf-specs@0.4.3"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@sigstore/sign"
+        },
+        "version": "3.1.0"
+      },
+      "refs": [
+        "pkg:npm/%40sigstore/sign@3.1.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@sigstore/tuf"
+        },
+        "version": "3.1.1"
+      },
+      "refs": [
+        "pkg:npm/%40sigstore/tuf@3.1.1"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@sigstore/verify"
+        },
+        "version": "2.1.1"
+      },
+      "refs": [
+        "pkg:npm/%40sigstore/verify@2.1.1"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@tufjs/canonical-json"
+        },
+        "version": "2.0.0"
+      },
+      "refs": [
+        "pkg:npm/%40tufjs/canonical-json@2.0.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "abbrev"
+        },
+        "version": "3.0.1"
+      },
+      "refs": [
+        "pkg:npm/abbrev@3.0.1"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "agent-base"
+        },
+        "version": "7.1.4"
+      },
+      "refs": [
+        "pkg:npm/agent-base@7.1.4"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "ansi-regex"
+        },
+        "version": "5.0.1"
+      },
+      "refs": [
+        "pkg:npm/ansi-regex@5.0.1"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "ansi-styles"
+        },
+        "version": "6.2.3"
+      },
+      "refs": [
+        "pkg:npm/ansi-styles@6.2.3"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "aproba"
+        },
+        "version": "2.1.0"
+      },
+      "refs": [
+        "pkg:npm/aproba@2.1.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "archy"
+        },
+        "version": "1.0.0"
+      },
+      "refs": [
+        "pkg:npm/archy@1.0.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "balanced-match"
+        },
+        "version": "1.0.2"
+      },
+      "refs": [
+        "pkg:npm/balanced-match@1.0.2"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "bin-links"
+        },
+        "version": "5.0.0"
+      },
+      "refs": [
+        "pkg:npm/bin-links@5.0.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "binary-extensions"
+        },
+        "version": "2.3.0"
+      },
+      "refs": [
+        "pkg:npm/binary-extensions@2.3.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "brace-expansion"
+        },
+        "version": "2.0.2"
+      },
+      "refs": [
+        "pkg:npm/brace-expansion@2.0.2"
+      ],
+      "matches": [
+        {
+          "id": "GHSA-3jxr-9vmj-r5cp",
+          "modified": "2026-09-10T03:51:10.092354Z"
+        },
+        {
+          "id": "GHSA-6j4f-fj2g-mc7p",
+          "modified": "2026-09-30T00:00:03.836613Z"
+        },
+        {
+          "id": "GHSA-f886-m6hf-6m8v",
+          "modified": "2026-09-10T03:51:00.342356Z"
+        },
+        {
+          "id": "GHSA-mh99-v99m-4gvg",
+          "modified": "2026-09-10T03:50:12.282849Z"
+        },
+        {
+          "id": "GHSA-q2hr-2g5m-vwhr",
+          "modified": "2026-09-30T00:00:03.849541Z"
+        },
+        {
+          "id": "GHSA-qhr7-859c-m2p7",
+          "modified": "2026-09-30T00:00:04.402763Z"
+        },
+        {
+          "id": "GHSA-rgw5-rvv9-x895",
+          "modified": "2026-09-10T03:51:14.535270Z"
+        }
+      ]
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "cacache"
+        },
+        "version": "19.0.1"
+      },
+      "refs": [
+        "pkg:npm/cacache@19.0.1"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "chalk"
+        },
+        "version": "5.6.2"
+      },
+      "refs": [
+        "pkg:npm/chalk@5.6.2"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "chownr"
+        },
+        "version": "3.0.0"
+      },
+      "refs": [
+        "pkg:npm/chownr@3.0.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "ci-info"
+        },
+        "version": "4.4.0"
+      },
+      "refs": [
+        "pkg:npm/ci-info@4.4.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "cidr-regex"
+        },
+        "version": "4.1.3"
+      },
+      "refs": [
+        "pkg:npm/cidr-regex@4.1.3"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "cli-columns"
+        },
+        "version": "4.0.0"
+      },
+      "refs": [
+        "pkg:npm/cli-columns@4.0.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "cmd-shim"
+        },
+        "version": "7.0.0"
+      },
+      "refs": [
+        "pkg:npm/cmd-shim@7.0.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "color-convert"
+        },
+        "version": "2.0.1"
+      },
+      "refs": [
+        "pkg:npm/color-convert@2.0.1"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "color-name"
+        },
+        "version": "1.1.4"
+      },
+      "refs": [
+        "pkg:npm/color-name@1.1.4"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "common-ancestor-path"
+        },
+        "version": "1.0.1"
+      },
+      "refs": [
+        "pkg:npm/common-ancestor-path@1.0.1"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "cross-spawn"
+        },
+        "version": "7.0.6"
+      },
+      "refs": [
+        "pkg:npm/cross-spawn@7.0.6"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "which"
+        },
+        "version": "2.0.2"
+      },
+      "refs": [
+        "pkg:npm/which@2.0.2"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "cssesc"
+        },
+        "version": "3.0.0"
+      },
+      "refs": [
+        "pkg:npm/cssesc@3.0.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "debug"
+        },
+        "version": "4.4.3"
+      },
+      "refs": [
+        "pkg:npm/debug@4.4.3"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "diff"
+        },
+        "version": "5.2.2"
+      },
+      "refs": [
+        "pkg:npm/diff@5.2.2"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "eastasianwidth"
+        },
+        "version": "0.2.0"
+      },
+      "refs": [
+        "pkg:npm/eastasianwidth@0.2.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "emoji-regex"
+        },
+        "version": "8.0.0"
+      },
+      "refs": [
+        "pkg:npm/emoji-regex@8.0.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "encoding"
+        },
+        "version": "0.1.13"
+      },
+      "refs": [
+        "pkg:npm/encoding@0.1.13"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "env-paths"
+        },
+        "version": "2.2.1"
+      },
+      "refs": [
+        "pkg:npm/env-paths@2.2.1"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "err-code"
+        },
+        "version": "2.0.3"
+      },
+      "refs": [
+        "pkg:npm/err-code@2.0.3"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "exponential-backoff"
+        },
+        "version": "3.1.3"
+      },
+      "refs": [
+        "pkg:npm/exponential-backoff@3.1.3"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "fastest-levenshtein"
+        },
+        "version": "1.0.16"
+      },
+      "refs": [
+        "pkg:npm/fastest-levenshtein@1.0.16"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "fdir"
+        },
+        "version": "6.5.0"
+      },
+      "refs": [
+        "pkg:npm/fdir@6.5.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "foreground-child"
+        },
+        "version": "3.3.1"
+      },
+      "refs": [
+        "pkg:npm/foreground-child@3.3.1"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "fs-minipass"
+        },
+        "version": "3.0.3"
+      },
+      "refs": [
+        "pkg:npm/fs-minipass@3.0.3"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "glob"
+        },
+        "version": "10.5.0"
+      },
+      "refs": [
+        "pkg:npm/glob@10.5.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "graceful-fs"
+        },
+        "version": "4.2.11"
+      },
+      "refs": [
+        "pkg:npm/graceful-fs@4.2.11"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "hosted-git-info"
+        },
+        "version": "8.1.0"
+      },
+      "refs": [
+        "pkg:npm/hosted-git-info@8.1.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "http-cache-semantics"
+        },
+        "version": "4.2.0"
+      },
+      "refs": [
+        "pkg:npm/http-cache-semantics@4.2.0"
+      ],
+      "matches": [
+        {
+          "id": "GHSA-ch52-4w7c-c8xp",
+          "modified": "2026-10-02T22:45:04.334960Z"
+        }
+      ]
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "http-proxy-agent"
+        },
+        "version": "7.0.2"
+      },
+      "refs": [
+        "pkg:npm/http-proxy-agent@7.0.2"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "https-proxy-agent"
+        },
+        "version": "7.0.6"
+      },
+      "refs": [
+        "pkg:npm/https-proxy-agent@7.0.6"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "iconv-lite"
+        },
+        "version": "0.6.3"
+      },
+      "refs": [
+        "pkg:npm/iconv-lite@0.6.3"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "ignore-walk"
+        },
+        "version": "7.0.0"
+      },
+      "refs": [
+        "pkg:npm/ignore-walk@7.0.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "imurmurhash"
+        },
+        "version": "0.1.4"
+      },
+      "refs": [
+        "pkg:npm/imurmurhash@0.1.4"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "ini"
+        },
+        "version": "5.0.0"
+      },
+      "refs": [
+        "pkg:npm/ini@5.0.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "init-package-json"
+        },
+        "version": "7.0.2"
+      },
+      "refs": [
+        "pkg:npm/init-package-json@7.0.2"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "ip-address"
+        },
+        "version": "10.1.0"
+      },
+      "refs": [
+        "pkg:npm/ip-address@10.1.0"
+      ],
+      "matches": [
+        {
+          "id": "GHSA-h3mg-xc3c-68pw",
+          "modified": "2026-09-30T00:00:04.407982Z"
+        },
+        {
+          "id": "GHSA-j6r3-76f7-8jcv",
+          "modified": "2026-09-30T00:00:03.843448Z"
+        },
+        {
+          "id": "GHSA-mwp4-54f8-5fhr",
+          "modified": "2026-09-10T03:51:14.478555Z"
+        },
+        {
+          "id": "GHSA-rpw4-54j3-4h4q",
+          "modified": "2026-09-28T21:00:05.359993Z"
+        },
+        {
+          "id": "GHSA-v2v4-37r5-5v8g",
+          "modified": "2026-09-10T03:50:47.603301Z"
+        }
+      ]
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "ip-regex"
+        },
+        "version": "5.0.0"
+      },
+      "refs": [
+        "pkg:npm/ip-regex@5.0.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "is-cidr"
+        },
+        "version": "5.1.1"
+      },
+      "refs": [
+        "pkg:npm/is-cidr@5.1.1"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "is-fullwidth-code-point"
+        },
+        "version": "3.0.0"
+      },
+      "refs": [
+        "pkg:npm/is-fullwidth-code-point@3.0.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "isexe"
+        },
+        "version": "2.0.0"
+      },
+      "refs": [
+        "pkg:npm/isexe@2.0.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "jackspeak"
+        },
+        "version": "3.4.3"
+      },
+      "refs": [
+        "pkg:npm/jackspeak@3.4.3"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "json-parse-even-better-errors"
+        },
+        "version": "4.0.0"
+      },
+      "refs": [
+        "pkg:npm/json-parse-even-better-errors@4.0.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "json-stringify-nice"
+        },
+        "version": "1.1.4"
+      },
+      "refs": [
+        "pkg:npm/json-stringify-nice@1.1.4"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "jsonparse"
+        },
+        "version": "1.3.1"
+      },
+      "refs": [
+        "pkg:npm/jsonparse@1.3.1"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "just-diff"
+        },
+        "version": "6.0.2"
+      },
+      "refs": [
+        "pkg:npm/just-diff@6.0.2"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "just-diff-apply"
+        },
+        "version": "5.5.0"
+      },
+      "refs": [
+        "pkg:npm/just-diff-apply@5.5.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "libnpmaccess"
+        },
+        "version": "9.0.0"
+      },
+      "refs": [
+        "pkg:npm/libnpmaccess@9.0.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "libnpmdiff"
+        },
+        "version": "7.0.5"
+      },
+      "refs": [
+        "pkg:npm/libnpmdiff@7.0.5"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "libnpmexec"
+        },
+        "version": "9.0.5"
+      },
+      "refs": [
+        "pkg:npm/libnpmexec@9.0.5"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "libnpmfund"
+        },
+        "version": "6.0.5"
+      },
+      "refs": [
+        "pkg:npm/libnpmfund@6.0.5"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "libnpmhook"
+        },
+        "version": "11.0.0"
+      },
+      "refs": [
+        "pkg:npm/libnpmhook@11.0.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "libnpmorg"
+        },
+        "version": "7.0.0"
+      },
+      "refs": [
+        "pkg:npm/libnpmorg@7.0.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "libnpmpack"
+        },
+        "version": "8.0.5"
+      },
+      "refs": [
+        "pkg:npm/libnpmpack@8.0.5"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "libnpmpublish"
+        },
+        "version": "10.0.2"
+      },
+      "refs": [
+        "pkg:npm/libnpmpublish@10.0.2"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "libnpmsearch"
+        },
+        "version": "8.0.0"
+      },
+      "refs": [
+        "pkg:npm/libnpmsearch@8.0.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "libnpmteam"
+        },
+        "version": "7.0.0"
+      },
+      "refs": [
+        "pkg:npm/libnpmteam@7.0.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "libnpmversion"
+        },
+        "version": "7.0.0"
+      },
+      "refs": [
+        "pkg:npm/libnpmversion@7.0.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "lru-cache"
+        },
+        "version": "10.4.3"
+      },
+      "refs": [
+        "pkg:npm/lru-cache@10.4.3"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "make-fetch-happen"
+        },
+        "version": "14.0.3"
+      },
+      "refs": [
+        "pkg:npm/make-fetch-happen@14.0.3"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "minimatch"
+        },
+        "version": "9.0.9"
+      },
+      "refs": [
+        "pkg:npm/minimatch@9.0.9"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "minipass"
+        },
+        "version": "7.1.3"
+      },
+      "refs": [
+        "pkg:npm/minipass@7.1.3"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "minipass-collect"
+        },
+        "version": "2.0.1"
+      },
+      "refs": [
+        "pkg:npm/minipass-collect@2.0.1"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "minipass-fetch"
+        },
+        "version": "4.0.1"
+      },
+      "refs": [
+        "pkg:npm/minipass-fetch@4.0.1"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "minipass-flush"
+        },
+        "version": "1.0.5"
+      },
+      "refs": [
+        "pkg:npm/minipass-flush@1.0.5"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "minipass"
+        },
+        "version": "3.3.6"
+      },
+      "refs": [
+        "pkg:npm/minipass@3.3.6"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "yallist"
+        },
+        "version": "4.0.0"
+      },
+      "refs": [
+        "pkg:npm/yallist@4.0.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "minipass-pipeline"
+        },
+        "version": "1.2.4"
+      },
+      "refs": [
+        "pkg:npm/minipass-pipeline@1.2.4"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "minipass-sized"
+        },
+        "version": "1.0.3"
+      },
+      "refs": [
+        "pkg:npm/minipass-sized@1.0.3"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "minizlib"
+        },
+        "version": "3.1.0"
+      },
+      "refs": [
+        "pkg:npm/minizlib@3.1.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "ms"
+        },
+        "version": "2.1.3"
+      },
+      "refs": [
+        "pkg:npm/ms@2.1.3"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "mute-stream"
+        },
+        "version": "2.0.0"
+      },
+      "refs": [
+        "pkg:npm/mute-stream@2.0.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "negotiator"
+        },
+        "version": "1.0.0"
+      },
+      "refs": [
+        "pkg:npm/negotiator@1.0.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "node-gyp"
+        },
+        "version": "11.5.0"
+      },
+      "refs": [
+        "pkg:npm/node-gyp@11.5.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "nopt"
+        },
+        "version": "8.1.0"
+      },
+      "refs": [
+        "pkg:npm/nopt@8.1.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "normalize-package-data"
+        },
+        "version": "7.0.1"
+      },
+      "refs": [
+        "pkg:npm/normalize-package-data@7.0.1"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "npm-audit-report"
+        },
+        "version": "6.0.0"
+      },
+      "refs": [
+        "pkg:npm/npm-audit-report@6.0.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "npm-bundled"
+        },
+        "version": "4.0.0"
+      },
+      "refs": [
+        "pkg:npm/npm-bundled@4.0.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "npm-install-checks"
+        },
+        "version": "7.1.2"
+      },
+      "refs": [
+        "pkg:npm/npm-install-checks@7.1.2"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "npm-normalize-package-bin"
+        },
+        "version": "4.0.0"
+      },
+      "refs": [
+        "pkg:npm/npm-normalize-package-bin@4.0.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "npm-package-arg"
+        },
+        "version": "12.0.2"
+      },
+      "refs": [
+        "pkg:npm/npm-package-arg@12.0.2"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "npm-packlist"
+        },
+        "version": "9.0.0"
+      },
+      "refs": [
+        "pkg:npm/npm-packlist@9.0.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "npm-pick-manifest"
+        },
+        "version": "10.0.0"
+      },
+      "refs": [
+        "pkg:npm/npm-pick-manifest@10.0.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "npm-profile"
+        },
+        "version": "11.0.1"
+      },
+      "refs": [
+        "pkg:npm/npm-profile@11.0.1"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "npm-registry-fetch"
+        },
+        "version": "18.0.2"
+      },
+      "refs": [
+        "pkg:npm/npm-registry-fetch@18.0.2"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "npm-user-validate"
+        },
+        "version": "3.0.0"
+      },
+      "refs": [
+        "pkg:npm/npm-user-validate@3.0.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "p-map"
+        },
+        "version": "7.0.4"
+      },
+      "refs": [
+        "pkg:npm/p-map@7.0.4"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "package-json-from-dist"
+        },
+        "version": "1.0.1"
+      },
+      "refs": [
+        "pkg:npm/package-json-from-dist@1.0.1"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "pacote"
+        },
+        "version": "19.0.2"
+      },
+      "refs": [
+        "pkg:npm/pacote@19.0.2"
+      ],
+      "matches": [
+        {
+          "id": "GHSA-w4pp-8pjf-rmxw",
+          "modified": "2026-09-10T03:51:07.162466Z"
+        }
+      ]
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "parse-conflict-json"
+        },
+        "version": "4.0.0"
+      },
+      "refs": [
+        "pkg:npm/parse-conflict-json@4.0.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "path-key"
+        },
+        "version": "3.1.1"
+      },
+      "refs": [
+        "pkg:npm/path-key@3.1.1"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "path-scurry"
+        },
+        "version": "1.11.1"
+      },
+      "refs": [
+        "pkg:npm/path-scurry@1.11.1"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "picomatch"
+        },
+        "version": "4.0.3"
+      },
+      "refs": [
+        "pkg:npm/picomatch@4.0.3"
+      ],
+      "matches": [
+        {
+          "id": "GHSA-3v7f-55p6-f55p",
+          "modified": "2026-09-10T03:50:36.949634Z"
+        },
+        {
+          "id": "GHSA-c2c7-rcm5-vvqj",
+          "modified": "2026-09-10T03:51:00.292614Z"
+        }
+      ]
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "postcss-selector-parser"
+        },
+        "version": "7.1.1"
+      },
+      "refs": [
+        "pkg:npm/postcss-selector-parser@7.1.1"
+      ],
+      "matches": [
+        {
+          "id": "GHSA-rj75-hqrm-r3gf",
+          "modified": "2026-10-05T23:00:05.308008Z"
+        },
+        {
+          "id": "GHSA-w9m9-85wc-3x92",
+          "modified": "2026-09-10T03:50:47.767644Z"
+        }
+      ]
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "proc-log"
+        },
+        "version": "5.0.0"
+      },
+      "refs": [
+        "pkg:npm/proc-log@5.0.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "proggy"
+        },
+        "version": "3.0.0"
+      },
+      "refs": [
+        "pkg:npm/proggy@3.0.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "promise-all-reject-late"
+        },
+        "version": "1.0.1"
+      },
+      "refs": [
+        "pkg:npm/promise-all-reject-late@1.0.1"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "promise-call-limit"
+        },
+        "version": "3.0.2"
+      },
+      "refs": [
+        "pkg:npm/promise-call-limit@3.0.2"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "promise-retry"
+        },
+        "version": "2.0.1"
+      },
+      "refs": [
+        "pkg:npm/promise-retry@2.0.1"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "promzard"
+        },
+        "version": "2.0.0"
+      },
+      "refs": [
+        "pkg:npm/promzard@2.0.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "qrcode-terminal"
+        },
+        "version": "0.12.0"
+      },
+      "refs": [
+        "pkg:npm/qrcode-terminal@0.12.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "read"
+        },
+        "version": "4.1.0"
+      },
+      "refs": [
+        "pkg:npm/read@4.1.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "read-cmd-shim"
+        },
+        "version": "5.0.0"
+      },
+      "refs": [
+        "pkg:npm/read-cmd-shim@5.0.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "read-package-json-fast"
+        },
+        "version": "4.0.0"
+      },
+      "refs": [
+        "pkg:npm/read-package-json-fast@4.0.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "retry"
+        },
+        "version": "0.12.0"
+      },
+      "refs": [
+        "pkg:npm/retry@0.12.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "safer-buffer"
+        },
+        "version": "2.1.2"
+      },
+      "refs": [
+        "pkg:npm/safer-buffer@2.1.2"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "semver"
+        },
+        "version": "7.7.4"
+      },
+      "refs": [
+        "pkg:npm/semver@7.7.4"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "shebang-command"
+        },
+        "version": "2.0.0"
+      },
+      "refs": [
+        "pkg:npm/shebang-command@2.0.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "shebang-regex"
+        },
+        "version": "3.0.0"
+      },
+      "refs": [
+        "pkg:npm/shebang-regex@3.0.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "signal-exit"
+        },
+        "version": "4.1.0"
+      },
+      "refs": [
+        "pkg:npm/signal-exit@4.1.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "sigstore"
+        },
+        "version": "3.1.0"
+      },
+      "refs": [
+        "pkg:npm/sigstore@3.1.0"
+      ],
+      "matches": [
+        {
+          "id": "GHSA-52v5-jr5w-gjxr",
+          "modified": "2026-09-10T03:50:12.262541Z"
+        }
+      ]
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "smart-buffer"
+        },
+        "version": "4.2.0"
+      },
+      "refs": [
+        "pkg:npm/smart-buffer@4.2.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "socks"
+        },
+        "version": "2.8.7"
+      },
+      "refs": [
+        "pkg:npm/socks@2.8.7"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "socks-proxy-agent"
+        },
+        "version": "8.0.5"
+      },
+      "refs": [
+        "pkg:npm/socks-proxy-agent@8.0.5"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "spdx-correct"
+        },
+        "version": "3.2.0"
+      },
+      "refs": [
+        "pkg:npm/spdx-correct@3.2.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "spdx-expression-parse"
+        },
+        "version": "3.0.1"
+      },
+      "refs": [
+        "pkg:npm/spdx-expression-parse@3.0.1"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "spdx-exceptions"
+        },
+        "version": "2.5.0"
+      },
+      "refs": [
+        "pkg:npm/spdx-exceptions@2.5.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "spdx-expression-parse"
+        },
+        "version": "4.0.0"
+      },
+      "refs": [
+        "pkg:npm/spdx-expression-parse@4.0.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "spdx-license-ids"
+        },
+        "version": "3.0.23"
+      },
+      "refs": [
+        "pkg:npm/spdx-license-ids@3.0.23"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "ssri"
+        },
+        "version": "12.0.0"
+      },
+      "refs": [
+        "pkg:npm/ssri@12.0.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "string-width"
+        },
+        "version": "4.2.3"
+      },
+      "refs": [
+        "pkg:npm/string-width@4.2.3"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "strip-ansi"
+        },
+        "version": "6.0.1"
+      },
+      "refs": [
+        "pkg:npm/strip-ansi@6.0.1"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "supports-color"
+        },
+        "version": "9.4.0"
+      },
+      "refs": [
+        "pkg:npm/supports-color@9.4.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "tar"
+        },
+        "version": "7.5.11"
+      },
+      "refs": [
+        "pkg:npm/tar@7.5.11"
+      ],
+      "matches": [
+        {
+          "id": "GHSA-23hp-3jrh-7fpw",
+          "modified": "2026-09-10T03:51:09.781853Z"
+        },
+        {
+          "id": "GHSA-8x88-c5mf-7j5w",
+          "modified": "2026-09-10T03:51:11.200904Z"
+        },
+        {
+          "id": "GHSA-gvwx-54wh-qm9j",
+          "modified": "2026-09-10T03:50:52.205344Z"
+        },
+        {
+          "id": "GHSA-r292-9mhp-454m",
+          "modified": "2026-09-10T03:51:11.855710Z"
+        },
+        {
+          "id": "GHSA-vmf3-w455-68vh",
+          "modified": "2026-09-10T03:51:09.639522Z"
+        },
+        {
+          "id": "GHSA-w8wr-v893-vjvp",
+          "modified": "2026-09-10T03:51:12.362978Z"
+        }
+      ]
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "text-table"
+        },
+        "version": "0.2.0"
+      },
+      "refs": [
+        "pkg:npm/text-table@0.2.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "tiny-relative-date"
+        },
+        "version": "1.3.0"
+      },
+      "refs": [
+        "pkg:npm/tiny-relative-date@1.3.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "tinyglobby"
+        },
+        "version": "0.2.15"
+      },
+      "refs": [
+        "pkg:npm/tinyglobby@0.2.15"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "treeverse"
+        },
+        "version": "3.0.0"
+      },
+      "refs": [
+        "pkg:npm/treeverse@3.0.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "tuf-js"
+        },
+        "version": "3.1.0"
+      },
+      "refs": [
+        "pkg:npm/tuf-js@3.1.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@tufjs/models"
+        },
+        "version": "3.0.1"
+      },
+      "refs": [
+        "pkg:npm/%40tufjs/models@3.0.1"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "unique-filename"
+        },
+        "version": "4.0.0"
+      },
+      "refs": [
+        "pkg:npm/unique-filename@4.0.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "unique-slug"
+        },
+        "version": "5.0.0"
+      },
+      "refs": [
+        "pkg:npm/unique-slug@5.0.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "util-deprecate"
+        },
+        "version": "1.0.2"
+      },
+      "refs": [
+        "pkg:npm/util-deprecate@1.0.2"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "validate-npm-package-license"
+        },
+        "version": "3.0.4"
+      },
+      "refs": [
+        "pkg:npm/validate-npm-package-license@3.0.4"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "validate-npm-package-name"
+        },
+        "version": "6.0.2"
+      },
+      "refs": [
+        "pkg:npm/validate-npm-package-name@6.0.2"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "walk-up-path"
+        },
+        "version": "3.0.1"
+      },
+      "refs": [
+        "pkg:npm/walk-up-path@3.0.1"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "which"
+        },
+        "version": "5.0.0"
+      },
+      "refs": [
+        "pkg:npm/which@5.0.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "isexe"
+        },
+        "version": "3.1.5"
+      },
+      "refs": [
+        "pkg:npm/isexe@3.1.5"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "wrap-ansi"
+        },
+        "version": "8.1.0"
+      },
+      "refs": [
+        "pkg:npm/wrap-ansi@8.1.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "wrap-ansi"
+        },
+        "version": "7.0.0"
+      },
+      "refs": [
+        "pkg:npm/wrap-ansi@7.0.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "ansi-styles"
+        },
+        "version": "4.3.0"
+      },
+      "refs": [
+        "pkg:npm/ansi-styles@4.3.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "write-file-atomic"
+        },
+        "version": "6.0.0"
+      },
+      "refs": [
+        "pkg:npm/write-file-atomic@6.0.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "yallist"
+        },
+        "version": "5.0.0"
+      },
+      "refs": [
+        "pkg:npm/yallist@5.0.0"
+      ],
+      "matches": []
+    }
+  ],
+  "pages": [
+    {
+      "queries": [
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "corepack"
+          },
+          "version": "0.34.6"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "npm"
+          },
+          "version": "10.9.8"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "@isaacs/cliui"
+          },
+          "version": "8.0.2"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "ansi-regex"
+          },
+          "version": "6.2.2"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "emoji-regex"
+          },
+          "version": "9.2.2"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "string-width"
+          },
+          "version": "5.1.2"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "strip-ansi"
+          },
+          "version": "7.2.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "@isaacs/fs-minipass"
+          },
+          "version": "4.0.1"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "@isaacs/string-locale-compare"
+          },
+          "version": "1.1.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "@npmcli/agent"
+          },
+          "version": "3.0.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "@npmcli/arborist"
+          },
+          "version": "8.0.5"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "@npmcli/config"
+          },
+          "version": "9.0.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "@npmcli/fs"
+          },
+          "version": "4.0.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "@npmcli/git"
+          },
+          "version": "6.0.3"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "@npmcli/installed-package-contents"
+          },
+          "version": "3.0.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "@npmcli/map-workspaces"
+          },
+          "version": "4.0.2"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "@npmcli/metavuln-calculator"
+          },
+          "version": "8.0.1"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "pacote"
+          },
+          "version": "20.0.1"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "@npmcli/name-from-folder"
+          },
+          "version": "3.0.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "@npmcli/node-gyp"
+          },
+          "version": "4.0.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "@npmcli/package-json"
+          },
+          "version": "6.2.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "@npmcli/promise-spawn"
+          },
+          "version": "8.0.3"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "@npmcli/query"
+          },
+          "version": "4.0.1"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "@npmcli/redact"
+          },
+          "version": "3.2.2"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "@npmcli/run-script"
+          },
+          "version": "9.1.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "@pkgjs/parseargs"
+          },
+          "version": "0.11.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "@sigstore/bundle"
+          },
+          "version": "3.1.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "@sigstore/core"
+          },
+          "version": "2.0.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "@sigstore/protobuf-specs"
+          },
+          "version": "0.4.3"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "@sigstore/sign"
+          },
+          "version": "3.1.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "@sigstore/tuf"
+          },
+          "version": "3.1.1"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "@sigstore/verify"
+          },
+          "version": "2.1.1"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "@tufjs/canonical-json"
+          },
+          "version": "2.0.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "abbrev"
+          },
+          "version": "3.0.1"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "agent-base"
+          },
+          "version": "7.1.4"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "ansi-regex"
+          },
+          "version": "5.0.1"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "ansi-styles"
+          },
+          "version": "6.2.3"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "aproba"
+          },
+          "version": "2.1.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "archy"
+          },
+          "version": "1.0.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "balanced-match"
+          },
+          "version": "1.0.2"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "bin-links"
+          },
+          "version": "5.0.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "binary-extensions"
+          },
+          "version": "2.3.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "brace-expansion"
+          },
+          "version": "2.0.2"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "cacache"
+          },
+          "version": "19.0.1"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "chalk"
+          },
+          "version": "5.6.2"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "chownr"
+          },
+          "version": "3.0.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "ci-info"
+          },
+          "version": "4.4.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "cidr-regex"
+          },
+          "version": "4.1.3"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "cli-columns"
+          },
+          "version": "4.0.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "cmd-shim"
+          },
+          "version": "7.0.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "color-convert"
+          },
+          "version": "2.0.1"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "color-name"
+          },
+          "version": "1.1.4"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "common-ancestor-path"
+          },
+          "version": "1.0.1"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "cross-spawn"
+          },
+          "version": "7.0.6"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "which"
+          },
+          "version": "2.0.2"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "cssesc"
+          },
+          "version": "3.0.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "debug"
+          },
+          "version": "4.4.3"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "diff"
+          },
+          "version": "5.2.2"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "eastasianwidth"
+          },
+          "version": "0.2.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "emoji-regex"
+          },
+          "version": "8.0.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "encoding"
+          },
+          "version": "0.1.13"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "env-paths"
+          },
+          "version": "2.2.1"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "err-code"
+          },
+          "version": "2.0.3"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "exponential-backoff"
+          },
+          "version": "3.1.3"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "fastest-levenshtein"
+          },
+          "version": "1.0.16"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "fdir"
+          },
+          "version": "6.5.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "foreground-child"
+          },
+          "version": "3.3.1"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "fs-minipass"
+          },
+          "version": "3.0.3"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "glob"
+          },
+          "version": "10.5.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "graceful-fs"
+          },
+          "version": "4.2.11"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "hosted-git-info"
+          },
+          "version": "8.1.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "http-cache-semantics"
+          },
+          "version": "4.2.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "http-proxy-agent"
+          },
+          "version": "7.0.2"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "https-proxy-agent"
+          },
+          "version": "7.0.6"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "iconv-lite"
+          },
+          "version": "0.6.3"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "ignore-walk"
+          },
+          "version": "7.0.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "imurmurhash"
+          },
+          "version": "0.1.4"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "ini"
+          },
+          "version": "5.0.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "init-package-json"
+          },
+          "version": "7.0.2"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "ip-address"
+          },
+          "version": "10.1.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "ip-regex"
+          },
+          "version": "5.0.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "is-cidr"
+          },
+          "version": "5.1.1"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "is-fullwidth-code-point"
+          },
+          "version": "3.0.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "isexe"
+          },
+          "version": "2.0.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "jackspeak"
+          },
+          "version": "3.4.3"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "json-parse-even-better-errors"
+          },
+          "version": "4.0.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "json-stringify-nice"
+          },
+          "version": "1.1.4"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "jsonparse"
+          },
+          "version": "1.3.1"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "just-diff"
+          },
+          "version": "6.0.2"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "just-diff-apply"
+          },
+          "version": "5.5.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "libnpmaccess"
+          },
+          "version": "9.0.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "libnpmdiff"
+          },
+          "version": "7.0.5"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "libnpmexec"
+          },
+          "version": "9.0.5"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "libnpmfund"
+          },
+          "version": "6.0.5"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "libnpmhook"
+          },
+          "version": "11.0.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "libnpmorg"
+          },
+          "version": "7.0.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "libnpmpack"
+          },
+          "version": "8.0.5"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "libnpmpublish"
+          },
+          "version": "10.0.2"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "libnpmsearch"
+          },
+          "version": "8.0.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "libnpmteam"
+          },
+          "version": "7.0.0"
+        }
+      ],
+      "response": {
+        "results": [
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {
+            "vulns": [
+              {
+                "id": "GHSA-w4pp-8pjf-rmxw",
+                "modified": "2026-09-10T03:51:07.162466Z"
+              }
+            ]
+          },
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {
+            "vulns": [
+              {
+                "id": "GHSA-jfc7-64v2-mr8c",
+                "modified": "2026-09-10T03:51:08.786207Z"
+              }
+            ]
+          },
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {
+            "vulns": [
+              {
+                "id": "GHSA-3jxr-9vmj-r5cp",
+                "modified": "2026-09-10T03:51:10.092354Z"
+              },
+              {
+                "id": "GHSA-6j4f-fj2g-mc7p",
+                "modified": "2026-09-30T00:00:03.836613Z"
+              },
+              {
+                "id": "GHSA-f886-m6hf-6m8v",
+                "modified": "2026-09-10T03:51:00.342356Z"
+              },
+              {
+                "id": "GHSA-mh99-v99m-4gvg",
+                "modified": "2026-09-10T03:50:12.282849Z"
+              },
+              {
+                "id": "GHSA-q2hr-2g5m-vwhr",
+                "modified": "2026-09-30T00:00:03.849541Z"
+              },
+              {
+                "id": "GHSA-qhr7-859c-m2p7",
+                "modified": "2026-09-30T00:00:04.402763Z"
+              },
+              {
+                "id": "GHSA-rgw5-rvv9-x895",
+                "modified": "2026-09-10T03:51:14.535270Z"
+              }
+            ]
+          },
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {
+            "vulns": [
+              {
+                "id": "GHSA-ch52-4w7c-c8xp",
+                "modified": "2026-10-02T22:45:04.334960Z"
+              }
+            ]
+          },
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {
+            "vulns": [
+              {
+                "id": "GHSA-h3mg-xc3c-68pw",
+                "modified": "2026-09-30T00:00:04.407982Z"
+              },
+              {
+                "id": "GHSA-j6r3-76f7-8jcv",
+                "modified": "2026-09-30T00:00:03.843448Z"
+              },
+              {
+                "id": "GHSA-mwp4-54f8-5fhr",
+                "modified": "2026-09-10T03:51:14.478555Z"
+              },
+              {
+                "id": "GHSA-rpw4-54j3-4h4q",
+                "modified": "2026-09-28T21:00:05.359993Z"
+              },
+              {
+                "id": "GHSA-v2v4-37r5-5v8g",
+                "modified": "2026-09-10T03:50:47.603301Z"
+              }
+            ]
+          },
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {}
+        ]
+      },
+      "responseSha256": "105d3f03a3ed3cb48059fe8ce69a763ce1bdf23cfdcbf7b3dd2fe8c9ddb5989b"
+    },
+    {
+      "queries": [
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "libnpmversion"
+          },
+          "version": "7.0.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "lru-cache"
+          },
+          "version": "10.4.3"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "make-fetch-happen"
+          },
+          "version": "14.0.3"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "minimatch"
+          },
+          "version": "9.0.9"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "minipass"
+          },
+          "version": "7.1.3"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "minipass-collect"
+          },
+          "version": "2.0.1"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "minipass-fetch"
+          },
+          "version": "4.0.1"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "minipass-flush"
+          },
+          "version": "1.0.5"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "minipass"
+          },
+          "version": "3.3.6"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "yallist"
+          },
+          "version": "4.0.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "minipass-pipeline"
+          },
+          "version": "1.2.4"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "minipass-sized"
+          },
+          "version": "1.0.3"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "minizlib"
+          },
+          "version": "3.1.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "ms"
+          },
+          "version": "2.1.3"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "mute-stream"
+          },
+          "version": "2.0.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "negotiator"
+          },
+          "version": "1.0.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "node-gyp"
+          },
+          "version": "11.5.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "nopt"
+          },
+          "version": "8.1.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "normalize-package-data"
+          },
+          "version": "7.0.1"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "npm-audit-report"
+          },
+          "version": "6.0.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "npm-bundled"
+          },
+          "version": "4.0.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "npm-install-checks"
+          },
+          "version": "7.1.2"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "npm-normalize-package-bin"
+          },
+          "version": "4.0.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "npm-package-arg"
+          },
+          "version": "12.0.2"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "npm-packlist"
+          },
+          "version": "9.0.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "npm-pick-manifest"
+          },
+          "version": "10.0.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "npm-profile"
+          },
+          "version": "11.0.1"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "npm-registry-fetch"
+          },
+          "version": "18.0.2"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "npm-user-validate"
+          },
+          "version": "3.0.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "p-map"
+          },
+          "version": "7.0.4"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "package-json-from-dist"
+          },
+          "version": "1.0.1"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "pacote"
+          },
+          "version": "19.0.2"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "parse-conflict-json"
+          },
+          "version": "4.0.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "path-key"
+          },
+          "version": "3.1.1"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "path-scurry"
+          },
+          "version": "1.11.1"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "picomatch"
+          },
+          "version": "4.0.3"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "postcss-selector-parser"
+          },
+          "version": "7.1.1"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "proc-log"
+          },
+          "version": "5.0.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "proggy"
+          },
+          "version": "3.0.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "promise-all-reject-late"
+          },
+          "version": "1.0.1"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "promise-call-limit"
+          },
+          "version": "3.0.2"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "promise-retry"
+          },
+          "version": "2.0.1"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "promzard"
+          },
+          "version": "2.0.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "qrcode-terminal"
+          },
+          "version": "0.12.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "read"
+          },
+          "version": "4.1.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "read-cmd-shim"
+          },
+          "version": "5.0.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "read-package-json-fast"
+          },
+          "version": "4.0.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "retry"
+          },
+          "version": "0.12.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "safer-buffer"
+          },
+          "version": "2.1.2"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "semver"
+          },
+          "version": "7.7.4"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "shebang-command"
+          },
+          "version": "2.0.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "shebang-regex"
+          },
+          "version": "3.0.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "signal-exit"
+          },
+          "version": "4.1.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "sigstore"
+          },
+          "version": "3.1.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "smart-buffer"
+          },
+          "version": "4.2.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "socks"
+          },
+          "version": "2.8.7"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "socks-proxy-agent"
+          },
+          "version": "8.0.5"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "spdx-correct"
+          },
+          "version": "3.2.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "spdx-expression-parse"
+          },
+          "version": "3.0.1"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "spdx-exceptions"
+          },
+          "version": "2.5.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "spdx-expression-parse"
+          },
+          "version": "4.0.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "spdx-license-ids"
+          },
+          "version": "3.0.23"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "ssri"
+          },
+          "version": "12.0.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "string-width"
+          },
+          "version": "4.2.3"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "strip-ansi"
+          },
+          "version": "6.0.1"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "supports-color"
+          },
+          "version": "9.4.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "tar"
+          },
+          "version": "7.5.11"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "text-table"
+          },
+          "version": "0.2.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "tiny-relative-date"
+          },
+          "version": "1.3.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "tinyglobby"
+          },
+          "version": "0.2.15"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "treeverse"
+          },
+          "version": "3.0.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "tuf-js"
+          },
+          "version": "3.1.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "@tufjs/models"
+          },
+          "version": "3.0.1"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "unique-filename"
+          },
+          "version": "4.0.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "unique-slug"
+          },
+          "version": "5.0.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "util-deprecate"
+          },
+          "version": "1.0.2"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "validate-npm-package-license"
+          },
+          "version": "3.0.4"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "validate-npm-package-name"
+          },
+          "version": "6.0.2"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "walk-up-path"
+          },
+          "version": "3.0.1"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "which"
+          },
+          "version": "5.0.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "isexe"
+          },
+          "version": "3.1.5"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "wrap-ansi"
+          },
+          "version": "8.1.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "wrap-ansi"
+          },
+          "version": "7.0.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "ansi-styles"
+          },
+          "version": "4.3.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "write-file-atomic"
+          },
+          "version": "6.0.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "yallist"
+          },
+          "version": "5.0.0"
+        }
+      ],
+      "response": {
+        "results": [
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {
+            "vulns": [
+              {
+                "id": "GHSA-w4pp-8pjf-rmxw",
+                "modified": "2026-09-10T03:51:07.162466Z"
+              }
+            ]
+          },
+          {},
+          {},
+          {},
+          {
+            "vulns": [
+              {
+                "id": "GHSA-3v7f-55p6-f55p",
+                "modified": "2026-09-10T03:50:36.949634Z"
+              },
+              {
+                "id": "GHSA-c2c7-rcm5-vvqj",
+                "modified": "2026-09-10T03:51:00.292614Z"
+              }
+            ]
+          },
+          {
+            "vulns": [
+              {
+                "id": "GHSA-rj75-hqrm-r3gf",
+                "modified": "2026-10-05T23:00:05.308008Z"
+              },
+              {
+                "id": "GHSA-w9m9-85wc-3x92",
+                "modified": "2026-09-10T03:50:47.767644Z"
+              }
+            ]
+          },
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {
+            "vulns": [
+              {
+                "id": "GHSA-52v5-jr5w-gjxr",
+                "modified": "2026-09-10T03:50:12.262541Z"
+              }
+            ]
+          },
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {
+            "vulns": [
+              {
+                "id": "GHSA-23hp-3jrh-7fpw",
+                "modified": "2026-09-10T03:51:09.781853Z"
+              },
+              {
+                "id": "GHSA-8x88-c5mf-7j5w",
+                "modified": "2026-09-10T03:51:11.200904Z"
+              },
+              {
+                "id": "GHSA-gvwx-54wh-qm9j",
+                "modified": "2026-09-10T03:50:52.205344Z"
+              },
+              {
+                "id": "GHSA-r292-9mhp-454m",
+                "modified": "2026-09-10T03:51:11.855710Z"
+              },
+              {
+                "id": "GHSA-vmf3-w455-68vh",
+                "modified": "2026-09-10T03:51:09.639522Z"
+              },
+              {
+                "id": "GHSA-w8wr-v893-vjvp",
+                "modified": "2026-09-10T03:51:12.362978Z"
+              }
+            ]
+          },
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {}
+        ]
+      },
+      "responseSha256": "a77524685dc5b32114dec9a1429d417b308955c83101e63e6941cea9746f2d26"
+    }
+  ],
+  "advisories": [
+    {
+      "id": "GHSA-23hp-3jrh-7fpw",
+      "aliases": [
+        "CVE-2026-59873"
+      ],
+      "modified": "2026-09-10T03:51:09.781853040Z",
+      "published": "2026-07-20T21:52:03Z",
+      "withdrawn": null,
+      "sourceSha256": "842fd880818c18281fdcea58bb077dbc7f35cc567e2c51445e66bceab4f8c82a",
+      "severity": [
+        {
+          "type": "CVSS_V3",
+          "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        {
+          "type": "CVSS_V4",
+          "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:H"
+        }
+      ],
+      "databaseSpecific": {
+        "github_reviewed_at": "2026-07-20T21:52:03Z",
+        "nvd_published_at": "2026-07-08T16:16:33Z",
+        "cwe_ids": [
+          "CWE-770"
+        ],
+        "severity": "CRITICAL",
+        "github_reviewed": true
+      },
+      "affected": [
+        {
+          "package": {
+            "name": "tar",
+            "ecosystem": "npm",
+            "purl": "pkg:npm/tar"
+          },
+          "ranges": [
+            {
+              "type": "SEMVER",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "7.5.19"
+                }
+              ]
+            }
+          ],
+          "database_specific": {
+            "last_known_affected_version_range": "<= 7.5.18",
+            "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/07/GHSA-23hp-3jrh-7fpw/GHSA-23hp-3jrh-7fpw.json"
+          }
+        }
+      ],
+      "references": [
+        {
+          "type": "WEB",
+          "url": "https://github.com/isaacs/node-tar/security/advisories/GHSA-23hp-3jrh-7fpw"
+        },
+        {
+          "type": "ADVISORY",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-59873"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/isaacs/node-tar/commit/2812e9338665659b183aa7226518c307044957d3"
+        },
+        {
+          "type": "PACKAGE",
+          "url": "https://github.com/isaacs/node-tar"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/isaacs/node-tar/releases/tag/v7.5.19"
+        }
+      ],
+      "url": "https://osv.dev/vulnerability/GHSA-23hp-3jrh-7fpw"
+    },
+    {
+      "id": "GHSA-3jxr-9vmj-r5cp",
+      "aliases": [
+        "CVE-2026-13149"
+      ],
+      "modified": "2026-09-10T03:51:10.092354944Z",
+      "published": "2026-07-20T20:51:09Z",
+      "withdrawn": null,
+      "sourceSha256": "633902c2b2341b2c83a53915875c400aab509639fbcdae137d81ce6e20a42f47",
+      "severity": [
+        {
+          "type": "CVSS_V3",
+          "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
+        },
+        {
+          "type": "CVSS_V4",
+          "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N/E:P/S:N/AU:Y/R:U/V:D/RE:M/U:Amber"
+        }
+      ],
+      "databaseSpecific": {
+        "cwe_ids": [
+          "CWE-400",
+          "CWE-407"
+        ],
+        "severity": "HIGH",
+        "github_reviewed": true,
+        "github_reviewed_at": "2026-07-20T20:51:09Z",
+        "nvd_published_at": "2026-06-30T10:16:34Z"
+      },
+      "affected": [
+        {
+          "package": {
+            "name": "brace-expansion",
+            "ecosystem": "npm",
+            "purl": "pkg:npm/brace-expansion"
+          },
+          "ranges": [
+            {
+              "type": "SEMVER",
+              "events": [
+                {
+                  "introduced": "3.0.0"
+                },
+                {
+                  "fixed": "5.0.7"
+                }
+              ]
+            }
+          ],
+          "database_specific": {
+            "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/07/GHSA-3jxr-9vmj-r5cp/GHSA-3jxr-9vmj-r5cp.json"
+          }
+        },
+        {
+          "package": {
+            "name": "brace-expansion",
+            "ecosystem": "npm",
+            "purl": "pkg:npm/brace-expansion"
+          },
+          "ranges": [
+            {
+              "type": "SEMVER",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "1.1.16"
+                }
+              ]
+            }
+          ],
+          "database_specific": {
+            "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/07/GHSA-3jxr-9vmj-r5cp/GHSA-3jxr-9vmj-r5cp.json"
+          }
+        },
+        {
+          "package": {
+            "name": "brace-expansion",
+            "ecosystem": "npm",
+            "purl": "pkg:npm/brace-expansion"
+          },
+          "ranges": [
+            {
+              "type": "SEMVER",
+              "events": [
+                {
+                  "introduced": "2.0.0"
+                },
+                {
+                  "fixed": "2.1.2"
+                }
+              ]
+            }
+          ],
+          "database_specific": {
+            "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/07/GHSA-3jxr-9vmj-r5cp/GHSA-3jxr-9vmj-r5cp.json"
+          }
+        }
+      ],
+      "references": [
+        {
+          "type": "WEB",
+          "url": "https://github.com/juliangruber/brace-expansion/security/advisories/GHSA-3jxr-9vmj-r5cp"
+        },
+        {
+          "type": "ADVISORY",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-13149"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/juliangruber/brace-expansion/pull/122"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/juliangruber/brace-expansion/pull/123"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/juliangruber/brace-expansion/commit/835d6be91201122d9adffb0c0c8c094189ace265"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/juliangruber/brace-expansion/commit/c7e33ec13ac1a684c116720843ce24e208611754"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/juliangruber/brace-expansion/commit/d74e63030c012e3b7ae81657b8d665619cd51b95"
+        },
+        {
+          "type": "PACKAGE",
+          "url": "https://github.com/juliangruber/brace-expansion"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/juliangruber/brace-expansion/releases/tag/v1.1.16"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/juliangruber/brace-expansion/releases/tag/v2.1.2"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/juliangruber/brace-expansion/releases/tag/v5.0.7"
+        },
+        {
+          "type": "WEB",
+          "url": "https://www.npmjs.com/package/brace-expansion"
+        }
+      ],
+      "url": "https://osv.dev/vulnerability/GHSA-3jxr-9vmj-r5cp"
+    },
+    {
+      "id": "GHSA-3v7f-55p6-f55p",
+      "aliases": [
+        "CVE-2026-33672"
+      ],
+      "modified": "2026-09-10T03:50:36.949634538Z",
+      "published": "2026-03-25T21:13:39Z",
+      "withdrawn": null,
+      "sourceSha256": "a0d6b866b1a84b97fbea6ed2a7b1a0b7e8b26890070d877a3079100ea95a862d",
+      "severity": [
+        {
+          "type": "CVSS_V3",
+          "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N"
+        }
+      ],
+      "databaseSpecific": {
+        "nvd_published_at": "2026-03-26T22:16:30Z",
+        "cwe_ids": [
+          "CWE-1321"
+        ],
+        "severity": "MODERATE",
+        "github_reviewed": true,
+        "github_reviewed_at": "2026-03-25T21:13:39Z"
+      },
+      "affected": [
+        {
+          "package": {
+            "name": "picomatch",
+            "ecosystem": "npm",
+            "purl": "pkg:npm/picomatch"
+          },
+          "ranges": [
+            {
+              "type": "SEMVER",
+              "events": [
+                {
+                  "introduced": "4.0.0"
+                },
+                {
+                  "fixed": "4.0.4"
+                }
+              ]
+            }
+          ],
+          "database_specific": {
+            "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/03/GHSA-3v7f-55p6-f55p/GHSA-3v7f-55p6-f55p.json"
+          }
+        },
+        {
+          "package": {
+            "name": "picomatch",
+            "ecosystem": "npm",
+            "purl": "pkg:npm/picomatch"
+          },
+          "ranges": [
+            {
+              "type": "SEMVER",
+              "events": [
+                {
+                  "introduced": "3.0.0"
+                },
+                {
+                  "fixed": "3.0.2"
+                }
+              ]
+            }
+          ],
+          "database_specific": {
+            "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/03/GHSA-3v7f-55p6-f55p/GHSA-3v7f-55p6-f55p.json"
+          }
+        },
+        {
+          "package": {
+            "name": "picomatch",
+            "ecosystem": "npm",
+            "purl": "pkg:npm/picomatch"
+          },
+          "ranges": [
+            {
+              "type": "SEMVER",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "2.3.2"
+                }
+              ]
+            }
+          ],
+          "database_specific": {
+            "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/03/GHSA-3v7f-55p6-f55p/GHSA-3v7f-55p6-f55p.json"
+          }
+        }
+      ],
+      "references": [
+        {
+          "type": "WEB",
+          "url": "https://github.com/micromatch/picomatch/security/advisories/GHSA-3v7f-55p6-f55p"
+        },
+        {
+          "type": "ADVISORY",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-33672"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/micromatch/picomatch/commit/4516eb521f13a46b2fe1a1d2c9ef6b20ddc0e903"
+        },
+        {
+          "type": "PACKAGE",
+          "url": "https://github.com/micromatch/picomatch"
+        }
+      ],
+      "url": "https://osv.dev/vulnerability/GHSA-3v7f-55p6-f55p"
+    },
+    {
+      "id": "GHSA-52v5-jr5w-gjxr",
+      "aliases": [
+        "CVE-2026-48815"
+      ],
+      "modified": "2026-09-10T03:50:12.262541909Z",
+      "published": "2026-07-01T19:58:28Z",
+      "withdrawn": null,
+      "sourceSha256": "17148bcaeeae5a756404f3142562913c1edac78ad6e8586184927f13115bdc60",
+      "severity": [
+        {
+          "type": "CVSS_V3",
+          "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N"
+        }
+      ],
+      "databaseSpecific": {
+        "cwe_ids": [
+          "CWE-347"
+        ],
+        "severity": "HIGH",
+        "github_reviewed": true,
+        "github_reviewed_at": "2026-07-01T19:58:28Z",
+        "nvd_published_at": null
+      },
+      "affected": [
+        {
+          "package": {
+            "name": "sigstore",
+            "ecosystem": "npm",
+            "purl": "pkg:npm/sigstore"
+          },
+          "ranges": [
+            {
+              "type": "SEMVER",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "4.1.1"
+                }
+              ]
+            }
+          ],
+          "database_specific": {
+            "last_known_affected_version_range": "<= 4.1.0",
+            "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/07/GHSA-52v5-jr5w-gjxr/GHSA-52v5-jr5w-gjxr.json"
+          }
+        }
+      ],
+      "references": [
+        {
+          "type": "WEB",
+          "url": "https://github.com/sigstore/sigstore-js/security/advisories/GHSA-52v5-jr5w-gjxr"
+        },
+        {
+          "type": "PACKAGE",
+          "url": "https://github.com/sigstore/sigstore-js"
+        }
+      ],
+      "url": "https://osv.dev/vulnerability/GHSA-52v5-jr5w-gjxr"
+    },
+    {
+      "id": "GHSA-6j4f-fj2g-mc7p",
+      "aliases": [
+        "CVE-2026-102276"
+      ],
+      "modified": "2026-09-30T00:00:03.836613572Z",
+      "published": "2026-09-29T23:44:58Z",
+      "withdrawn": null,
+      "sourceSha256": "22bea226ac9daf68b3502b4137fc9aecc9138c17b9833bed175ad22d17f2bd30",
+      "severity": [
+        {
+          "type": "CVSS_V3",
+          "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "databaseSpecific": {
+        "cwe_ids": [
+          "CWE-400",
+          "CWE-674"
+        ],
+        "severity": "HIGH",
+        "github_reviewed": true,
+        "github_reviewed_at": "2026-09-29T23:44:58Z",
+        "nvd_published_at": "2026-09-28T21:17:16Z"
+      },
+      "affected": [
+        {
+          "package": {
+            "name": "brace-expansion",
+            "ecosystem": "npm",
+            "purl": "pkg:npm/brace-expansion"
+          },
+          "ranges": [
+            {
+              "type": "SEMVER",
+              "events": [
+                {
+                  "introduced": "4.0.0"
+                },
+                {
+                  "fixed": "5.0.10"
+                }
+              ]
+            }
+          ],
+          "database_specific": {
+            "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/09/GHSA-6j4f-fj2g-mc7p/GHSA-6j4f-fj2g-mc7p.json"
+          }
+        },
+        {
+          "package": {
+            "name": "brace-expansion",
+            "ecosystem": "npm",
+            "purl": "pkg:npm/brace-expansion"
+          },
+          "ranges": [
+            {
+              "type": "SEMVER",
+              "events": [
+                {
+                  "introduced": "3.0.0"
+                },
+                {
+                  "fixed": "3.0.7"
+                }
+              ]
+            }
+          ],
+          "database_specific": {
+            "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/09/GHSA-6j4f-fj2g-mc7p/GHSA-6j4f-fj2g-mc7p.json"
+          }
+        },
+        {
+          "package": {
+            "name": "brace-expansion",
+            "ecosystem": "npm",
+            "purl": "pkg:npm/brace-expansion"
+          },
+          "ranges": [
+            {
+              "type": "SEMVER",
+              "events": [
+                {
+                  "introduced": "2.0.0"
+                },
+                {
+                  "fixed": "2.1.5"
+                }
+              ]
+            }
+          ],
+          "database_specific": {
+            "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/09/GHSA-6j4f-fj2g-mc7p/GHSA-6j4f-fj2g-mc7p.json"
+          }
+        },
+        {
+          "package": {
+            "name": "brace-expansion",
+            "ecosystem": "npm",
+            "purl": "pkg:npm/brace-expansion"
+          },
+          "ranges": [
+            {
+              "type": "SEMVER",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "1.1.19"
+                }
+              ]
+            }
+          ],
+          "database_specific": {
+            "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/09/GHSA-6j4f-fj2g-mc7p/GHSA-6j4f-fj2g-mc7p.json"
+          }
+        }
+      ],
+      "references": [
+        {
+          "type": "WEB",
+          "url": "https://github.com/juliangruber/brace-expansion/security/advisories/GHSA-6j4f-fj2g-mc7p"
+        },
+        {
+          "type": "ADVISORY",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-102276"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/juliangruber/brace-expansion/commit/0bcbfc0a5928c3073d48f42999d1ce4fc1c42fbc"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/juliangruber/brace-expansion/commit/316359e6019c39b3254c8ba8e25dc586a480652c"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/juliangruber/brace-expansion/commit/5171e681c0922b7ae8bfaf9a331e309107be6edc"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/juliangruber/brace-expansion/commit/6735c94873ca570bcdd6a0690033bdd3126379d3"
+        },
+        {
+          "type": "PACKAGE",
+          "url": "https://github.com/juliangruber/brace-expansion"
+        }
+      ],
+      "url": "https://osv.dev/vulnerability/GHSA-6j4f-fj2g-mc7p"
+    },
+    {
+      "id": "GHSA-8x88-c5mf-7j5w",
+      "aliases": [
+        "CVE-2026-59874"
+      ],
+      "modified": "2026-09-10T03:51:11.200904859Z",
+      "published": "2026-07-20T21:51:39Z",
+      "withdrawn": null,
+      "sourceSha256": "5576e43d811ef17db27ab73f3616229820ce671076733ea9b3d0bf6fcd085fb5",
+      "severity": [
+        {
+          "type": "CVSS_V3",
+          "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        {
+          "type": "CVSS_V4",
+          "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N"
+        }
+      ],
+      "databaseSpecific": {
+        "cwe_ids": [
+          "CWE-835"
+        ],
+        "severity": "HIGH",
+        "github_reviewed": true,
+        "github_reviewed_at": "2026-07-20T21:51:39Z",
+        "nvd_published_at": "2026-07-08T16:16:33Z"
+      },
+      "affected": [
+        {
+          "package": {
+            "name": "tar",
+            "ecosystem": "npm",
+            "purl": "pkg:npm/tar"
+          },
+          "ranges": [
+            {
+              "type": "SEMVER",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "7.5.18"
+                }
+              ]
+            }
+          ],
+          "database_specific": {
+            "last_known_affected_version_range": "<= 7.5.17",
+            "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/07/GHSA-8x88-c5mf-7j5w/GHSA-8x88-c5mf-7j5w.json"
+          }
+        }
+      ],
+      "references": [
+        {
+          "type": "WEB",
+          "url": "https://github.com/isaacs/node-tar/security/advisories/GHSA-8x88-c5mf-7j5w"
+        },
+        {
+          "type": "ADVISORY",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-59874"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/isaacs/node-tar/commit/9e78bf058b2c22dd4d52e00d8922d5c06fc2f7b5"
+        },
+        {
+          "type": "PACKAGE",
+          "url": "https://github.com/isaacs/node-tar"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/isaacs/node-tar/releases/tag/v7.5.18"
+        }
+      ],
+      "url": "https://osv.dev/vulnerability/GHSA-8x88-c5mf-7j5w"
+    },
+    {
+      "id": "GHSA-c2c7-rcm5-vvqj",
+      "aliases": [
+        "CVE-2026-33671"
+      ],
+      "modified": "2026-09-10T03:51:00.292614896Z",
+      "published": "2026-03-25T21:12:07Z",
+      "withdrawn": null,
+      "sourceSha256": "7aa3a59b9fbc4e8cc381e2c27567d0232f6c7f398824720fa5a4aa266e4dcfdd",
+      "severity": [
+        {
+          "type": "CVSS_V3",
+          "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "databaseSpecific": {
+        "cwe_ids": [
+          "CWE-1333"
+        ],
+        "severity": "HIGH",
+        "github_reviewed": true,
+        "github_reviewed_at": "2026-03-25T21:12:07Z",
+        "nvd_published_at": "2026-03-26T22:16:30Z"
+      },
+      "affected": [
+        {
+          "package": {
+            "name": "picomatch",
+            "ecosystem": "npm",
+            "purl": "pkg:npm/picomatch"
+          },
+          "ranges": [
+            {
+              "type": "SEMVER",
+              "events": [
+                {
+                  "introduced": "4.0.0"
+                },
+                {
+                  "fixed": "4.0.4"
+                }
+              ]
+            }
+          ],
+          "database_specific": {
+            "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/03/GHSA-c2c7-rcm5-vvqj/GHSA-c2c7-rcm5-vvqj.json"
+          }
+        },
+        {
+          "package": {
+            "name": "picomatch",
+            "ecosystem": "npm",
+            "purl": "pkg:npm/picomatch"
+          },
+          "ranges": [
+            {
+              "type": "SEMVER",
+              "events": [
+                {
+                  "introduced": "3.0.0"
+                },
+                {
+                  "fixed": "3.0.2"
+                }
+              ]
+            }
+          ],
+          "database_specific": {
+            "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/03/GHSA-c2c7-rcm5-vvqj/GHSA-c2c7-rcm5-vvqj.json"
+          }
+        },
+        {
+          "package": {
+            "name": "picomatch",
+            "ecosystem": "npm",
+            "purl": "pkg:npm/picomatch"
+          },
+          "ranges": [
+            {
+              "type": "SEMVER",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "2.3.2"
+                }
+              ]
+            }
+          ],
+          "database_specific": {
+            "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/03/GHSA-c2c7-rcm5-vvqj/GHSA-c2c7-rcm5-vvqj.json"
+          }
+        }
+      ],
+      "references": [
+        {
+          "type": "WEB",
+          "url": "https://github.com/micromatch/picomatch/security/advisories/GHSA-c2c7-rcm5-vvqj"
+        },
+        {
+          "type": "ADVISORY",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-33671"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/micromatch/picomatch/commit/5eceecd27543b8e056b9307d69e105ea03618a7d"
+        },
+        {
+          "type": "PACKAGE",
+          "url": "https://github.com/micromatch/picomatch"
+        }
+      ],
+      "url": "https://osv.dev/vulnerability/GHSA-c2c7-rcm5-vvqj"
+    },
+    {
+      "id": "GHSA-ch52-4w7c-c8xp",
+      "aliases": [
+        "CVE-2026-93748"
+      ],
+      "modified": "2026-10-02T22:45:04.334960361Z",
+      "published": "2026-09-18T18:31:44Z",
+      "withdrawn": null,
+      "sourceSha256": "73d991eaa55ffe058030169bd4c0bc6877d719658f835045dd01601cc29ef316",
+      "severity": [
+        {
+          "type": "CVSS_V3",
+          "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        {
+          "type": "CVSS_V4",
+          "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N"
+        }
+      ],
+      "databaseSpecific": {
+        "cwe_ids": [
+          "CWE-524"
+        ],
+        "severity": "HIGH",
+        "github_reviewed": true,
+        "github_reviewed_at": "2026-10-02T22:36:42Z",
+        "nvd_published_at": "2026-09-18T18:18:33Z"
+      },
+      "affected": [
+        {
+          "package": {
+            "name": "http-cache-semantics",
+            "ecosystem": "npm",
+            "purl": "pkg:npm/http-cache-semantics"
+          },
+          "ranges": [
+            {
+              "type": "SEMVER",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "last_affected": "4.2.0"
+                }
+              ]
+            }
+          ],
+          "database_specific": {
+            "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/09/GHSA-ch52-4w7c-c8xp/GHSA-ch52-4w7c-c8xp.json"
+          }
+        }
+      ],
+      "references": [
+        {
+          "type": "ADVISORY",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-93748"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/kornelski/http-cache-semantics/issues/56"
+        },
+        {
+          "type": "PACKAGE",
+          "url": "https://github.com/kornelski/http-cache-semantics"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/kornelski/http-cache-semantics/blob/f01112e954b83cfa8765b633ba880e5e980aa54c/index.js#L425-L441"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/kornelski/http-cache-semantics/blob/f01112e954b83cfa8765b633ba880e5e980aa54c/index.js#L603-L623"
+        },
+        {
+          "type": "WEB",
+          "url": "https://www.vulncheck.com/advisories/http-cache-semantics-through-4.2.0-cross-user-cache-disclosure-via-max-stale"
+        }
+      ],
+      "url": "https://osv.dev/vulnerability/GHSA-ch52-4w7c-c8xp"
+    },
+    {
+      "id": "GHSA-f886-m6hf-6m8v",
+      "aliases": [
+        "CVE-2026-33750"
+      ],
+      "modified": "2026-09-10T03:51:00.342356761Z",
+      "published": "2026-03-26T18:29:42Z",
+      "withdrawn": null,
+      "sourceSha256": "578a47f854534b92e4d95032dc9cef79ea43d6467c7000100c736ca19348c112",
+      "severity": [
+        {
+          "type": "CVSS_V3",
+          "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "databaseSpecific": {
+        "nvd_published_at": "2026-03-27T15:16:57Z",
+        "cwe_ids": [
+          "CWE-400"
+        ],
+        "severity": "MODERATE",
+        "github_reviewed": true,
+        "github_reviewed_at": "2026-03-26T18:29:42Z"
+      },
+      "affected": [
+        {
+          "package": {
+            "name": "brace-expansion",
+            "ecosystem": "npm",
+            "purl": "pkg:npm/brace-expansion"
+          },
+          "ranges": [
+            {
+              "type": "SEMVER",
+              "events": [
+                {
+                  "introduced": "4.0.0"
+                },
+                {
+                  "fixed": "5.0.5"
+                }
+              ]
+            }
+          ],
+          "database_specific": {
+            "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/03/GHSA-f886-m6hf-6m8v/GHSA-f886-m6hf-6m8v.json"
+          }
+        },
+        {
+          "package": {
+            "name": "brace-expansion",
+            "ecosystem": "npm",
+            "purl": "pkg:npm/brace-expansion"
+          },
+          "ranges": [
+            {
+              "type": "SEMVER",
+              "events": [
+                {
+                  "introduced": "3.0.0"
+                },
+                {
+                  "fixed": "3.0.2"
+                }
+              ]
+            }
+          ],
+          "database_specific": {
+            "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/03/GHSA-f886-m6hf-6m8v/GHSA-f886-m6hf-6m8v.json"
+          }
+        },
+        {
+          "package": {
+            "name": "brace-expansion",
+            "ecosystem": "npm",
+            "purl": "pkg:npm/brace-expansion"
+          },
+          "ranges": [
+            {
+              "type": "SEMVER",
+              "events": [
+                {
+                  "introduced": "2.0.0"
+                },
+                {
+                  "fixed": "2.0.3"
+                }
+              ]
+            }
+          ],
+          "database_specific": {
+            "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/03/GHSA-f886-m6hf-6m8v/GHSA-f886-m6hf-6m8v.json"
+          }
+        },
+        {
+          "package": {
+            "name": "brace-expansion",
+            "ecosystem": "npm",
+            "purl": "pkg:npm/brace-expansion"
+          },
+          "ranges": [
+            {
+              "type": "SEMVER",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "1.1.13"
+                }
+              ]
+            }
+          ],
+          "database_specific": {
+            "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/03/GHSA-f886-m6hf-6m8v/GHSA-f886-m6hf-6m8v.json"
+          }
+        }
+      ],
+      "references": [
+        {
+          "type": "WEB",
+          "url": "https://github.com/juliangruber/brace-expansion/security/advisories/GHSA-f886-m6hf-6m8v"
+        },
+        {
+          "type": "ADVISORY",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-33750"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/juliangruber/brace-expansion/issues/98"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/juliangruber/brace-expansion/pull/95"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/juliangruber/brace-expansion/pull/96"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/juliangruber/brace-expansion/pull/97"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/juliangruber/brace-expansion/commit/311ac0d54994158c0a384e286a7d6cbb17ee8ed5"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/juliangruber/brace-expansion/commit/7fd684f89fdde3549563d0a6522226a9189472a2"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/juliangruber/brace-expansion/commit/b9cacd9e55e7a1fa588fe4b7bb1159d52f1d902a"
+        },
+        {
+          "type": "PACKAGE",
+          "url": "https://github.com/juliangruber/brace-expansion"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/juliangruber/brace-expansion/blob/daa71bcb4a30a2df9bcb7f7b8daaf2ab30e5794a/src/index.ts#L107-L113"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/juliangruber/brace-expansion/blob/daa71bcb4a30a2df9bcb7f7b8daaf2ab30e5794a/src/index.ts#L184"
+        }
+      ],
+      "url": "https://osv.dev/vulnerability/GHSA-f886-m6hf-6m8v"
+    },
+    {
+      "id": "GHSA-gvwx-54wh-qm9j",
+      "aliases": [
+        "CVE-2026-59875"
+      ],
+      "modified": "2026-09-10T03:50:52.205344551Z",
+      "published": "2026-07-20T21:51:12Z",
+      "withdrawn": null,
+      "sourceSha256": "c856fe93ea0ad7a1f69139a04b99bb2a674554d420d29dadb8868368b7ddd820",
+      "severity": [
+        {
+          "type": "CVSS_V3",
+          "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
+        }
+      ],
+      "databaseSpecific": {
+        "github_reviewed": true,
+        "github_reviewed_at": "2026-07-20T21:51:12Z",
+        "nvd_published_at": "2026-07-08T16:16:34Z",
+        "cwe_ids": [
+          "CWE-248"
+        ],
+        "severity": "MODERATE"
+      },
+      "affected": [
+        {
+          "package": {
+            "name": "tar",
+            "ecosystem": "npm",
+            "purl": "pkg:npm/tar"
+          },
+          "ranges": [
+            {
+              "type": "SEMVER",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "7.5.17"
+                }
+              ]
+            }
+          ],
+          "database_specific": {
+            "last_known_affected_version_range": "<= 7.5.16",
+            "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/07/GHSA-gvwx-54wh-qm9j/GHSA-gvwx-54wh-qm9j.json"
+          }
+        }
+      ],
+      "references": [
+        {
+          "type": "WEB",
+          "url": "https://github.com/isaacs/node-tar/security/advisories/GHSA-gvwx-54wh-qm9j"
+        },
+        {
+          "type": "ADVISORY",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-59875"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/isaacs/node-tar/commit/7a635c29f5edbf083557374d43984273ecfed5b3"
+        },
+        {
+          "type": "PACKAGE",
+          "url": "https://github.com/isaacs/node-tar"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/isaacs/node-tar/releases/tag/v7.5.17"
+        }
+      ],
+      "url": "https://osv.dev/vulnerability/GHSA-gvwx-54wh-qm9j"
+    },
+    {
+      "id": "GHSA-h3mg-xc3c-68pw",
+      "aliases": [
+        "CVE-2026-101911"
+      ],
+      "modified": "2026-09-30T00:00:04.407982988Z",
+      "published": "2026-09-29T23:46:39Z",
+      "withdrawn": null,
+      "sourceSha256": "add0f5957351ab7498566ab0ecff1e975ee8c30e5088a114da66bf4b5df0301b",
+      "severity": [
+        {
+          "type": "CVSS_V4",
+          "score": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N"
+        }
+      ],
+      "databaseSpecific": {
+        "github_reviewed": true,
+        "github_reviewed_at": "2026-09-29T23:46:39Z",
+        "nvd_published_at": "2026-09-28T18:17:20Z",
+        "cwe_ids": [
+          "CWE-400",
+          "CWE-770"
+        ],
+        "severity": "MODERATE"
+      },
+      "affected": [
+        {
+          "package": {
+            "name": "ip-address",
+            "ecosystem": "npm",
+            "purl": "pkg:npm/ip-address"
+          },
+          "ranges": [
+            {
+              "type": "SEMVER",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "10.7.1"
+                }
+              ]
+            }
+          ],
+          "database_specific": {
+            "last_known_affected_version_range": "<= 10.7.0",
+            "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/09/GHSA-h3mg-xc3c-68pw/GHSA-h3mg-xc3c-68pw.json"
+          }
+        }
+      ],
+      "references": [
+        {
+          "type": "WEB",
+          "url": "https://github.com/beaugunderson/ip-address/security/advisories/GHSA-h3mg-xc3c-68pw"
+        },
+        {
+          "type": "ADVISORY",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101911"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/beaugunderson/ip-address/commit/469ead1231b4cc059f2150c626e1e0c2895c0134"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/beaugunderson/ip-address/commit/8b34a21e0839b37c094066816fb2c2c48a2adcf5"
+        },
+        {
+          "type": "PACKAGE",
+          "url": "https://github.com/beaugunderson/ip-address"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/beaugunderson/ip-address/releases/tag/v10.7.1"
+        }
+      ],
+      "url": "https://osv.dev/vulnerability/GHSA-h3mg-xc3c-68pw"
+    },
+    {
+      "id": "GHSA-j6r3-76f7-8jcv",
+      "aliases": [
+        "CVE-2026-101912"
+      ],
+      "modified": "2026-09-30T00:00:03.843448355Z",
+      "published": "2026-09-29T23:46:52Z",
+      "withdrawn": null,
+      "sourceSha256": "0ef167dce926dc101a0eecf8d32b009dc1abad70a3c8f96553acb2f32866ed3e",
+      "severity": [
+        {
+          "type": "CVSS_V4",
+          "score": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N"
+        }
+      ],
+      "databaseSpecific": {
+        "severity": "MODERATE",
+        "github_reviewed": true,
+        "github_reviewed_at": "2026-09-29T23:46:52Z",
+        "nvd_published_at": "2026-09-28T18:17:21Z",
+        "cwe_ids": [
+          "CWE-697",
+          "CWE-843"
+        ]
+      },
+      "affected": [
+        {
+          "package": {
+            "name": "ip-address",
+            "ecosystem": "npm",
+            "purl": "pkg:npm/ip-address"
+          },
+          "ranges": [
+            {
+              "type": "SEMVER",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "10.7.1"
+                }
+              ]
+            }
+          ],
+          "database_specific": {
+            "last_known_affected_version_range": "<= 10.7.0",
+            "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/09/GHSA-j6r3-76f7-8jcv/GHSA-j6r3-76f7-8jcv.json"
+          }
+        }
+      ],
+      "references": [
+        {
+          "type": "WEB",
+          "url": "https://github.com/beaugunderson/ip-address/security/advisories/GHSA-j6r3-76f7-8jcv"
+        },
+        {
+          "type": "ADVISORY",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101912"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/beaugunderson/ip-address/commit/1343629d57fea413644a5c9d41ff1e59619f3f28"
+        },
+        {
+          "type": "PACKAGE",
+          "url": "https://github.com/beaugunderson/ip-address"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/beaugunderson/ip-address/releases/tag/v10.7.1"
+        }
+      ],
+      "url": "https://osv.dev/vulnerability/GHSA-j6r3-76f7-8jcv"
+    },
+    {
+      "id": "GHSA-jfc7-64v2-mr8c",
+      "aliases": [
+        "CVE-2026-48758"
+      ],
+      "modified": "2026-09-10T03:51:08.786207433Z",
+      "published": "2026-06-26T19:11:19Z",
+      "withdrawn": null,
+      "sourceSha256": "73378f166e7ed5e64954ff2275d35e65a77387e50a2f7e5a058bb4ae4d1d9c0f",
+      "severity": [
+        {
+          "type": "CVSS_V3",
+          "score": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:L"
+        }
+      ],
+      "databaseSpecific": {
+        "github_reviewed": true,
+        "github_reviewed_at": "2026-06-26T19:11:19Z",
+        "nvd_published_at": null,
+        "cwe_ids": [
+          "CWE-347"
+        ],
+        "severity": "MODERATE"
+      },
+      "affected": [
+        {
+          "package": {
+            "name": "@sigstore/core",
+            "ecosystem": "npm",
+            "purl": "pkg:npm/%40sigstore/core"
+          },
+          "ranges": [
+            {
+              "type": "SEMVER",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "3.2.1"
+                }
+              ]
+            }
+          ],
+          "database_specific": {
+            "last_known_affected_version_range": "<= 3.2.0",
+            "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/06/GHSA-jfc7-64v2-mr8c/GHSA-jfc7-64v2-mr8c.json"
+          }
+        }
+      ],
+      "references": [
+        {
+          "type": "WEB",
+          "url": "https://github.com/sigstore/sigstore-js/security/advisories/GHSA-jfc7-64v2-mr8c"
+        },
+        {
+          "type": "PACKAGE",
+          "url": "https://github.com/sigstore/sigstore-js"
+        }
+      ],
+      "url": "https://osv.dev/vulnerability/GHSA-jfc7-64v2-mr8c"
+    },
+    {
+      "id": "GHSA-mh99-v99m-4gvg",
+      "aliases": [
+        "CVE-2026-14257"
+      ],
+      "modified": "2026-09-10T03:50:12.282849322Z",
+      "published": "2026-07-24T21:53:14Z",
+      "withdrawn": null,
+      "sourceSha256": "1b4ef849c9630d551521b5cd863e00f212ebcb0f634e6e40124e94d1af781807",
+      "severity": [
+        {
+          "type": "CVSS_V3",
+          "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "databaseSpecific": {
+        "nvd_published_at": "2026-07-23T14:17:00Z",
+        "cwe_ids": [
+          "CWE-400",
+          "CWE-770"
+        ],
+        "severity": "HIGH",
+        "github_reviewed": true,
+        "github_reviewed_at": "2026-07-24T21:53:14Z"
+      },
+      "affected": [
+        {
+          "package": {
+            "name": "brace-expansion",
+            "ecosystem": "npm",
+            "purl": "pkg:npm/brace-expansion"
+          },
+          "ranges": [
+            {
+              "type": "SEMVER",
+              "events": [
+                {
+                  "introduced": "4.0.0"
+                },
+                {
+                  "fixed": "5.0.8"
+                }
+              ]
+            }
+          ],
+          "database_specific": {
+            "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/07/GHSA-mh99-v99m-4gvg/GHSA-mh99-v99m-4gvg.json"
+          }
+        },
+        {
+          "package": {
+            "name": "brace-expansion",
+            "ecosystem": "npm",
+            "purl": "pkg:npm/brace-expansion"
+          },
+          "ranges": [
+            {
+              "type": "SEMVER",
+              "events": [
+                {
+                  "introduced": "3.0.0"
+                },
+                {
+                  "fixed": "3.0.3"
+                }
+              ]
+            }
+          ],
+          "database_specific": {
+            "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/07/GHSA-mh99-v99m-4gvg/GHSA-mh99-v99m-4gvg.json"
+          }
+        },
+        {
+          "package": {
+            "name": "brace-expansion",
+            "ecosystem": "npm",
+            "purl": "pkg:npm/brace-expansion"
+          },
+          "ranges": [
+            {
+              "type": "SEMVER",
+              "events": [
+                {
+                  "introduced": "2.0.0"
+                },
+                {
+                  "fixed": "2.1.3"
+                }
+              ]
+            }
+          ],
+          "database_specific": {
+            "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/07/GHSA-mh99-v99m-4gvg/GHSA-mh99-v99m-4gvg.json"
+          }
+        },
+        {
+          "package": {
+            "name": "brace-expansion",
+            "ecosystem": "npm",
+            "purl": "pkg:npm/brace-expansion"
+          },
+          "ranges": [
+            {
+              "type": "SEMVER",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "1.1.17"
+                }
+              ]
+            }
+          ],
+          "database_specific": {
+            "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/07/GHSA-mh99-v99m-4gvg/GHSA-mh99-v99m-4gvg.json"
+          }
+        }
+      ],
+      "references": [
+        {
+          "type": "WEB",
+          "url": "https://github.com/juliangruber/brace-expansion/security/advisories/GHSA-mh99-v99m-4gvg"
+        },
+        {
+          "type": "ADVISORY",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-14257"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/juliangruber/brace-expansion/pull/129"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/juliangruber/brace-expansion/pull/130"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/juliangruber/brace-expansion/pull/136"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/juliangruber/brace-expansion/commit/139d015104e71433ad52a41d19467c48ecbb2c7d"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/juliangruber/brace-expansion/commit/a1bd33999ea75262c4749fff3bbb0d1372bd07b5"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/juliangruber/brace-expansion/commit/cb4b9e47cc2ec777c14b2b4492fb431a56f6a031"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/juliangruber/brace-expansion/commit/d13ff455a58b0d56704f0111e3c2a0b16ceb06eb"
+        },
+        {
+          "type": "PACKAGE",
+          "url": "https://github.com/juliangruber/brace-expansion"
+        },
+        {
+          "type": "WEB",
+          "url": "https://www.npmjs.com/package/brace-expansion"
+        }
+      ],
+      "url": "https://osv.dev/vulnerability/GHSA-mh99-v99m-4gvg"
+    },
+    {
+      "id": "GHSA-mwp4-54f8-5fhr",
+      "aliases": [
+        "CVE-2026-69192"
+      ],
+      "modified": "2026-09-10T03:51:14.478555296Z",
+      "published": "2026-08-03T19:59:44Z",
+      "withdrawn": null,
+      "sourceSha256": "60229698d3dcc387c69c2aaed6f11cce4c8385e994619caabf7757c94cc74b82",
+      "severity": [
+        {
+          "type": "CVSS_V4",
+          "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:N/VA:N/SC:H/SI:N/SA:N"
+        }
+      ],
+      "databaseSpecific": {
+        "github_reviewed": true,
+        "github_reviewed_at": "2026-08-03T19:59:44Z",
+        "nvd_published_at": null,
+        "cwe_ids": [
+          "CWE-20",
+          "CWE-918"
+        ],
+        "severity": "HIGH"
+      },
+      "affected": [
+        {
+          "package": {
+            "name": "ip-address",
+            "ecosystem": "npm",
+            "purl": "pkg:npm/ip-address"
+          },
+          "ranges": [
+            {
+              "type": "SEMVER",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "10.3.1"
+                }
+              ]
+            }
+          ],
+          "database_specific": {
+            "last_known_affected_version_range": "<= 10.3.0",
+            "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/08/GHSA-mwp4-54f8-5fhr/GHSA-mwp4-54f8-5fhr.json"
+          }
+        }
+      ],
+      "references": [
+        {
+          "type": "WEB",
+          "url": "https://github.com/beaugunderson/ip-address/security/advisories/GHSA-mwp4-54f8-5fhr"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/beaugunderson/ip-address/commit/56368cb3d66c73ba0ee9b6b834fd31b22c2fd71e"
+        },
+        {
+          "type": "PACKAGE",
+          "url": "https://github.com/beaugunderson/ip-address"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/beaugunderson/ip-address/releases/tag/v10.3.1"
+        }
+      ],
+      "url": "https://osv.dev/vulnerability/GHSA-mwp4-54f8-5fhr"
+    },
+    {
+      "id": "GHSA-q2hr-2g5m-vwhr",
+      "aliases": [
+        "CVE-2026-102277"
+      ],
+      "modified": "2026-09-30T00:00:03.849541183Z",
+      "published": "2026-09-29T23:45:39Z",
+      "withdrawn": null,
+      "sourceSha256": "96e124b4f23fb35671c106f50f0e26d3952a71cb194194290ecf93e7c7995ef3",
+      "severity": [
+        {
+          "type": "CVSS_V3",
+          "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
+        }
+      ],
+      "databaseSpecific": {
+        "github_reviewed": true,
+        "github_reviewed_at": "2026-09-29T23:45:39Z",
+        "nvd_published_at": "2026-09-28T21:17:16Z",
+        "cwe_ids": [
+          "CWE-400",
+          "CWE-407"
+        ],
+        "severity": "MODERATE"
+      },
+      "affected": [
+        {
+          "package": {
+            "name": "brace-expansion",
+            "ecosystem": "npm",
+            "purl": "pkg:npm/brace-expansion"
+          },
+          "ranges": [
+            {
+              "type": "SEMVER",
+              "events": [
+                {
+                  "introduced": "4.0.0"
+                },
+                {
+                  "fixed": "5.0.12"
+                }
+              ]
+            }
+          ],
+          "database_specific": {
+            "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/09/GHSA-q2hr-2g5m-vwhr/GHSA-q2hr-2g5m-vwhr.json"
+          }
+        },
+        {
+          "package": {
+            "name": "brace-expansion",
+            "ecosystem": "npm",
+            "purl": "pkg:npm/brace-expansion"
+          },
+          "ranges": [
+            {
+              "type": "SEMVER",
+              "events": [
+                {
+                  "introduced": "3.0.0"
+                },
+                {
+                  "fixed": "3.0.9"
+                }
+              ]
+            }
+          ],
+          "database_specific": {
+            "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/09/GHSA-q2hr-2g5m-vwhr/GHSA-q2hr-2g5m-vwhr.json"
+          }
+        },
+        {
+          "package": {
+            "name": "brace-expansion",
+            "ecosystem": "npm",
+            "purl": "pkg:npm/brace-expansion"
+          },
+          "ranges": [
+            {
+              "type": "SEMVER",
+              "events": [
+                {
+                  "introduced": "2.0.0"
+                },
+                {
+                  "fixed": "2.1.7"
+                }
+              ]
+            }
+          ],
+          "database_specific": {
+            "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/09/GHSA-q2hr-2g5m-vwhr/GHSA-q2hr-2g5m-vwhr.json"
+          }
+        },
+        {
+          "package": {
+            "name": "brace-expansion",
+            "ecosystem": "npm",
+            "purl": "pkg:npm/brace-expansion"
+          },
+          "ranges": [
+            {
+              "type": "SEMVER",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "1.1.21"
+                }
+              ]
+            }
+          ],
+          "database_specific": {
+            "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/09/GHSA-q2hr-2g5m-vwhr/GHSA-q2hr-2g5m-vwhr.json"
+          }
+        }
+      ],
+      "references": [
+        {
+          "type": "WEB",
+          "url": "https://github.com/juliangruber/brace-expansion/security/advisories/GHSA-q2hr-2g5m-vwhr"
+        },
+        {
+          "type": "ADVISORY",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-102277"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/juliangruber/brace-expansion/commit/33a5ef17b8d800bbfa8c52b14c39043b6aac1a96"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/juliangruber/brace-expansion/commit/bdff773f98e5988616b7039cc9b508df5d640b22"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/juliangruber/brace-expansion/commit/c55e67d8d8b1c56a2474afff15c2891166b2d364"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/juliangruber/brace-expansion/commit/ffdfa3e3806bed17c0874b8f1439b084de354a7e"
+        },
+        {
+          "type": "PACKAGE",
+          "url": "https://github.com/juliangruber/brace-expansion"
+        }
+      ],
+      "url": "https://osv.dev/vulnerability/GHSA-q2hr-2g5m-vwhr"
+    },
+    {
+      "id": "GHSA-qhr7-859c-m2p7",
+      "aliases": [
+        "CVE-2026-102278"
+      ],
+      "modified": "2026-09-30T00:00:04.402763332Z",
+      "published": "2026-09-29T23:45:17Z",
+      "withdrawn": null,
+      "sourceSha256": "17b3582d6d63cc09623699a653829138c1088b9920e555133172007afc5ef43e",
+      "severity": [
+        {
+          "type": "CVSS_V3",
+          "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "databaseSpecific": {
+        "severity": "HIGH",
+        "github_reviewed": true,
+        "github_reviewed_at": "2026-09-29T23:45:17Z",
+        "nvd_published_at": "2026-09-28T21:17:16Z",
+        "cwe_ids": [
+          "CWE-400",
+          "CWE-674"
+        ]
+      },
+      "affected": [
+        {
+          "package": {
+            "name": "brace-expansion",
+            "ecosystem": "npm",
+            "purl": "pkg:npm/brace-expansion"
+          },
+          "ranges": [
+            {
+              "type": "SEMVER",
+              "events": [
+                {
+                  "introduced": "4.0.0"
+                },
+                {
+                  "fixed": "5.0.11"
+                }
+              ]
+            }
+          ],
+          "database_specific": {
+            "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/09/GHSA-qhr7-859c-m2p7/GHSA-qhr7-859c-m2p7.json"
+          }
+        },
+        {
+          "package": {
+            "name": "brace-expansion",
+            "ecosystem": "npm",
+            "purl": "pkg:npm/brace-expansion"
+          },
+          "ranges": [
+            {
+              "type": "SEMVER",
+              "events": [
+                {
+                  "introduced": "3.0.0"
+                },
+                {
+                  "fixed": "3.0.8"
+                }
+              ]
+            }
+          ],
+          "database_specific": {
+            "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/09/GHSA-qhr7-859c-m2p7/GHSA-qhr7-859c-m2p7.json"
+          }
+        },
+        {
+          "package": {
+            "name": "brace-expansion",
+            "ecosystem": "npm",
+            "purl": "pkg:npm/brace-expansion"
+          },
+          "ranges": [
+            {
+              "type": "SEMVER",
+              "events": [
+                {
+                  "introduced": "2.0.0"
+                },
+                {
+                  "fixed": "2.1.6"
+                }
+              ]
+            }
+          ],
+          "database_specific": {
+            "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/09/GHSA-qhr7-859c-m2p7/GHSA-qhr7-859c-m2p7.json"
+          }
+        },
+        {
+          "package": {
+            "name": "brace-expansion",
+            "ecosystem": "npm",
+            "purl": "pkg:npm/brace-expansion"
+          },
+          "ranges": [
+            {
+              "type": "SEMVER",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "1.1.20"
+                }
+              ]
+            }
+          ],
+          "database_specific": {
+            "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/09/GHSA-qhr7-859c-m2p7/GHSA-qhr7-859c-m2p7.json"
+          }
+        }
+      ],
+      "references": [
+        {
+          "type": "WEB",
+          "url": "https://github.com/juliangruber/brace-expansion/security/advisories/GHSA-qhr7-859c-m2p7"
+        },
+        {
+          "type": "ADVISORY",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-102278"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/juliangruber/brace-expansion/commit/1efee7c397c191da6287a78ec19512476a966a7b"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/juliangruber/brace-expansion/commit/935d78f32f335b2ff76578e5c5e877d31ae9888c"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/juliangruber/brace-expansion/commit/de84f144e9816f30e25fc8179e2e1249ab6df0db"
+        },
+        {
+          "type": "PACKAGE",
+          "url": "https://github.com/juliangruber/brace-expansion"
+        }
+      ],
+      "url": "https://osv.dev/vulnerability/GHSA-qhr7-859c-m2p7"
+    },
+    {
+      "id": "GHSA-r292-9mhp-454m",
+      "aliases": [
+        "CVE-2026-73566"
+      ],
+      "modified": "2026-09-10T03:51:11.855710545Z",
+      "published": "2026-07-24T16:26:16Z",
+      "withdrawn": null,
+      "sourceSha256": "b07d5d6b1236c060bbb932c1860c378a106aba5e3d1424499a20c570f3fa21c5",
+      "severity": [
+        {
+          "type": "CVSS_V3",
+          "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "databaseSpecific": {
+        "nvd_published_at": "2026-08-13T18:18:19Z",
+        "cwe_ids": [
+          "CWE-400",
+          "CWE-674"
+        ],
+        "severity": "HIGH",
+        "github_reviewed": true,
+        "github_reviewed_at": "2026-07-24T16:26:16Z"
+      },
+      "affected": [
+        {
+          "package": {
+            "name": "tar",
+            "ecosystem": "npm",
+            "purl": "pkg:npm/tar"
+          },
+          "ranges": [
+            {
+              "type": "SEMVER",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "7.5.21"
+                }
+              ]
+            }
+          ],
+          "database_specific": {
+            "last_known_affected_version_range": "<= 7.5.20",
+            "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/07/GHSA-r292-9mhp-454m/GHSA-r292-9mhp-454m.json"
+          }
+        }
+      ],
+      "references": [
+        {
+          "type": "WEB",
+          "url": "https://github.com/isaacs/node-tar/security/advisories/GHSA-r292-9mhp-454m"
+        },
+        {
+          "type": "ADVISORY",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-73566"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/isaacs/node-tar/commit/631ae59121bf8fc8a22bbae35f074cb9b789cd4a"
+        },
+        {
+          "type": "PACKAGE",
+          "url": "https://github.com/isaacs/node-tar"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/isaacs/node-tar/releases/tag/v7.5.21"
+        }
+      ],
+      "url": "https://osv.dev/vulnerability/GHSA-r292-9mhp-454m"
+    },
+    {
+      "id": "GHSA-rgw5-rvv9-x895",
+      "aliases": [
+        "CVE-2026-69152"
+      ],
+      "modified": "2026-09-10T03:51:14.535270857Z",
+      "published": "2026-08-03T16:35:32Z",
+      "withdrawn": null,
+      "sourceSha256": "6c40d9b948afd1404a3488274314cc1dc5d60d54de66d3963c48d4d92b4f4e31",
+      "severity": [
+        {
+          "type": "CVSS_V3",
+          "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "databaseSpecific": {
+        "cwe_ids": [
+          "CWE-400",
+          "CWE-770"
+        ],
+        "severity": "HIGH",
+        "github_reviewed": true,
+        "github_reviewed_at": "2026-08-03T16:35:32Z",
+        "nvd_published_at": "2026-08-03T17:16:45Z"
+      },
+      "affected": [
+        {
+          "package": {
+            "name": "brace-expansion",
+            "ecosystem": "npm",
+            "purl": "pkg:npm/brace-expansion"
+          },
+          "ranges": [
+            {
+              "type": "SEMVER",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "1.1.18"
+                }
+              ]
+            }
+          ],
+          "database_specific": {
+            "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/08/GHSA-rgw5-rvv9-x895/GHSA-rgw5-rvv9-x895.json"
+          }
+        },
+        {
+          "package": {
+            "name": "brace-expansion",
+            "ecosystem": "npm",
+            "purl": "pkg:npm/brace-expansion"
+          },
+          "ranges": [
+            {
+              "type": "SEMVER",
+              "events": [
+                {
+                  "introduced": "2.0.0"
+                },
+                {
+                  "fixed": "2.1.4"
+                }
+              ]
+            }
+          ],
+          "database_specific": {
+            "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/08/GHSA-rgw5-rvv9-x895/GHSA-rgw5-rvv9-x895.json"
+          }
+        },
+        {
+          "package": {
+            "name": "brace-expansion",
+            "ecosystem": "npm",
+            "purl": "pkg:npm/brace-expansion"
+          },
+          "ranges": [
+            {
+              "type": "SEMVER",
+              "events": [
+                {
+                  "introduced": "3.0.0"
+                },
+                {
+                  "fixed": "3.0.6"
+                }
+              ]
+            }
+          ],
+          "database_specific": {
+            "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/08/GHSA-rgw5-rvv9-x895/GHSA-rgw5-rvv9-x895.json"
+          }
+        },
+        {
+          "package": {
+            "name": "brace-expansion",
+            "ecosystem": "npm",
+            "purl": "pkg:npm/brace-expansion"
+          },
+          "ranges": [
+            {
+              "type": "SEMVER",
+              "events": [
+                {
+                  "introduced": "4.0.0"
+                },
+                {
+                  "fixed": "5.0.9"
+                }
+              ]
+            }
+          ],
+          "database_specific": {
+            "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/08/GHSA-rgw5-rvv9-x895/GHSA-rgw5-rvv9-x895.json"
+          }
+        }
+      ],
+      "references": [
+        {
+          "type": "WEB",
+          "url": "https://github.com/juliangruber/brace-expansion/security/advisories/GHSA-rgw5-rvv9-x895"
+        },
+        {
+          "type": "ADVISORY",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69152"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/juliangruber/brace-expansion/commit/139d015104e71433ad52a41d19467c48ecbb2c7d"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/juliangruber/brace-expansion/commit/1e30c930238d7162802d88a94189182def178dac"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/juliangruber/brace-expansion/commit/688a99eeaab02627c2b89ba8ba4821fecfa659cf"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/juliangruber/brace-expansion/commit/cb4b9e47cc2ec777c14b2b4492fb431a56f6a031"
+        },
+        {
+          "type": "PACKAGE",
+          "url": "https://github.com/juliangruber/brace-expansion"
+        }
+      ],
+      "url": "https://osv.dev/vulnerability/GHSA-rgw5-rvv9-x895"
+    },
+    {
+      "id": "GHSA-rj75-hqrm-r3gf",
+      "aliases": [
+        "CVE-2026-104844"
+      ],
+      "modified": "2026-10-05T23:00:05.308008424Z",
+      "published": "2026-10-05T22:53:54Z",
+      "withdrawn": null,
+      "sourceSha256": "f82918125a317f945e929775de505e596dcfe84a1428c1f52dbe439129a62b35",
+      "severity": [
+        {
+          "type": "CVSS_V3",
+          "score": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "databaseSpecific": {
+        "cwe_ids": [
+          "CWE-400",
+          "CWE-407"
+        ],
+        "severity": "MODERATE",
+        "github_reviewed": true,
+        "github_reviewed_at": "2026-10-05T22:53:54Z",
+        "nvd_published_at": "2026-10-02T16:16:46Z"
+      },
+      "affected": [
+        {
+          "package": {
+            "name": "postcss-selector-parser",
+            "ecosystem": "npm",
+            "purl": "pkg:npm/postcss-selector-parser"
+          },
+          "ranges": [
+            {
+              "type": "SEMVER",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "7.1.6"
+                }
+              ]
+            }
+          ],
+          "database_specific": {
+            "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/10/GHSA-rj75-hqrm-r3gf/GHSA-rj75-hqrm-r3gf.json"
+          }
+        }
+      ],
+      "references": [
+        {
+          "type": "WEB",
+          "url": "https://github.com/postcss/postcss-selector-parser/security/advisories/GHSA-rj75-hqrm-r3gf"
+        },
+        {
+          "type": "ADVISORY",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104844"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/postcss/postcss-selector-parser/commit/62b191792df0a0bc56062e5a875bc74aae2a51cd"
+        },
+        {
+          "type": "PACKAGE",
+          "url": "https://github.com/postcss/postcss-selector-parser"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/postcss/postcss-selector-parser/releases/tag/7.1.6"
+        }
+      ],
+      "url": "https://osv.dev/vulnerability/GHSA-rj75-hqrm-r3gf"
+    },
+    {
+      "id": "GHSA-rpw4-54j3-4h4q",
+      "aliases": [
+        "CVE-2026-101913"
+      ],
+      "modified": "2026-09-28T21:00:05.359993143Z",
+      "published": "2026-09-28T20:43:55Z",
+      "withdrawn": null,
+      "sourceSha256": "8597798291e2d61a5679591d422a0829822da69c48cc7c63e2f4ab792ea68fff",
+      "severity": [
+        {
+          "type": "CVSS_V4",
+          "score": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:L/VI:N/VA:N/SC:L/SI:N/SA:N"
+        }
+      ],
+      "databaseSpecific": {
+        "cwe_ids": [
+          "CWE-697",
+          "CWE-918"
+        ],
+        "severity": "MODERATE",
+        "github_reviewed": true,
+        "github_reviewed_at": "2026-09-28T20:43:55Z",
+        "nvd_published_at": "2026-09-28T18:17:21Z"
+      },
+      "affected": [
+        {
+          "package": {
+            "name": "ip-address",
+            "ecosystem": "npm",
+            "purl": "pkg:npm/ip-address"
+          },
+          "ranges": [
+            {
+              "type": "SEMVER",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "10.5.1"
+                }
+              ]
+            }
+          ],
+          "database_specific": {
+            "last_known_affected_version_range": "<= 10.5.0",
+            "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/09/GHSA-rpw4-54j3-4h4q/GHSA-rpw4-54j3-4h4q.json"
+          }
+        }
+      ],
+      "references": [
+        {
+          "type": "WEB",
+          "url": "https://github.com/beaugunderson/ip-address/security/advisories/GHSA-rpw4-54j3-4h4q"
+        },
+        {
+          "type": "ADVISORY",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101913"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/beaugunderson/ip-address/commit/d03e960c7cc3179ef25c8a44b4f94dd499625546"
+        },
+        {
+          "type": "PACKAGE",
+          "url": "https://github.com/beaugunderson/ip-address"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/beaugunderson/ip-address/releases/tag/v10.5.1"
+        }
+      ],
+      "url": "https://osv.dev/vulnerability/GHSA-rpw4-54j3-4h4q"
+    },
+    {
+      "id": "GHSA-v2v4-37r5-5v8g",
+      "aliases": [
+        "CVE-2026-42338"
+      ],
+      "modified": "2026-09-10T03:50:47.603301077Z",
+      "published": "2026-05-05T21:50:58Z",
+      "withdrawn": null,
+      "sourceSha256": "8c29609c4a0d6bb9ade202fec565b2b09bd23cc2876e9594c6494c793df1a033",
+      "severity": [
+        {
+          "type": "CVSS_V4",
+          "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:L/VI:L/VA:N/SC:N/SI:N/SA:N"
+        }
+      ],
+      "databaseSpecific": {
+        "cwe_ids": [
+          "CWE-79"
+        ],
+        "severity": "MODERATE",
+        "github_reviewed": true,
+        "github_reviewed_at": "2026-05-05T21:50:58Z",
+        "nvd_published_at": "2026-05-12T20:16:41Z"
+      },
+      "affected": [
+        {
+          "package": {
+            "name": "ip-address",
+            "ecosystem": "npm",
+            "purl": "pkg:npm/ip-address"
+          },
+          "ranges": [
+            {
+              "type": "SEMVER",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "10.1.1"
+                }
+              ]
+            }
+          ],
+          "database_specific": {
+            "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/05/GHSA-v2v4-37r5-5v8g/GHSA-v2v4-37r5-5v8g.json",
+            "last_known_affected_version_range": "<= 10.1.0"
+          }
+        }
+      ],
+      "references": [
+        {
+          "type": "WEB",
+          "url": "https://github.com/beaugunderson/ip-address/security/advisories/GHSA-v2v4-37r5-5v8g"
+        },
+        {
+          "type": "ADVISORY",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-42338"
+        },
+        {
+          "type": "PACKAGE",
+          "url": "https://github.com/beaugunderson/ip-address"
+        }
+      ],
+      "url": "https://osv.dev/vulnerability/GHSA-v2v4-37r5-5v8g"
+    },
+    {
+      "id": "GHSA-vmf3-w455-68vh",
+      "aliases": [
+        "CVE-2026-53655"
+      ],
+      "modified": "2026-09-10T03:51:09.639522869Z",
+      "published": "2026-06-15T17:19:42Z",
+      "withdrawn": null,
+      "sourceSha256": "8934e976153d62b91a300438481be398922f09122631c6bc2847b9968334bf63",
+      "severity": [
+        {
+          "type": "CVSS_V4",
+          "score": "CVSS:4.0/AV:L/AC:L/AT:N/PR:N/UI:N/VC:N/VI:H/VA:N/SC:N/SI:N/SA:N"
+        }
+      ],
+      "databaseSpecific": {
+        "github_reviewed": true,
+        "github_reviewed_at": "2026-06-15T17:19:42Z",
+        "nvd_published_at": null,
+        "cwe_ids": [
+          "CWE-436"
+        ],
+        "severity": "MODERATE"
+      },
+      "affected": [
+        {
+          "package": {
+            "name": "tar",
+            "ecosystem": "npm",
+            "purl": "pkg:npm/tar"
+          },
+          "ranges": [
+            {
+              "type": "SEMVER",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "7.5.16"
+                }
+              ]
+            }
+          ],
+          "database_specific": {
+            "last_known_affected_version_range": "<= 7.5.15",
+            "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/06/GHSA-vmf3-w455-68vh/GHSA-vmf3-w455-68vh.json"
+          }
+        }
+      ],
+      "references": [
+        {
+          "type": "WEB",
+          "url": "https://github.com/isaacs/node-tar/security/advisories/GHSA-vmf3-w455-68vh"
+        },
+        {
+          "type": "PACKAGE",
+          "url": "https://github.com/isaacs/node-tar"
+        }
+      ],
+      "url": "https://osv.dev/vulnerability/GHSA-vmf3-w455-68vh"
+    },
+    {
+      "id": "GHSA-w4pp-8pjf-rmxw",
+      "aliases": [
+        "CVE-2026-9496"
+      ],
+      "modified": "2026-09-10T03:51:07.162466994Z",
+      "published": "2026-05-26T13:30:54Z",
+      "withdrawn": null,
+      "sourceSha256": "1b39b20db4f20cc0a23a602336d0a4dc391e27eb771a18e637127a312ef1c833",
+      "severity": [
+        {
+          "type": "CVSS_V3",
+          "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        {
+          "type": "CVSS_V4",
+          "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N/E:P"
+        }
+      ],
+      "databaseSpecific": {
+        "github_reviewed_at": "2026-08-27T16:39:41Z",
+        "nvd_published_at": "2026-05-26T07:16:19Z",
+        "cwe_ids": [
+          "CWE-1333",
+          "CWE-400"
+        ],
+        "severity": "HIGH",
+        "github_reviewed": true
+      },
+      "affected": [
+        {
+          "package": {
+            "name": "pacote",
+            "ecosystem": "npm",
+            "purl": "pkg:npm/pacote"
+          },
+          "ranges": [
+            {
+              "type": "SEMVER",
+              "events": [
+                {
+                  "introduced": "11.2.7"
+                },
+                {
+                  "fixed": "21.5.1"
+                }
+              ]
+            }
+          ],
+          "database_specific": {
+            "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/05/GHSA-w4pp-8pjf-rmxw/GHSA-w4pp-8pjf-rmxw.json"
+          }
+        }
+      ],
+      "references": [
+        {
+          "type": "ADVISORY",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-9496"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/npm/pacote/commit/627a7dc1a214d857472a13b48e42559c75288c9e"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/npm/pacote/commit/ce804fb1647fe1699b2f87efd01ea9f4efed8508"
+        },
+        {
+          "type": "PACKAGE",
+          "url": "https://github.com/npm/pacote"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/npm/pacote/blob/9d7459440826ab4cf962ef98d8f3fd0c4d464b5c/lib/util/add-git-sha.js%23L2C1-L13C2"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/npm/pacote/releases/tag/v21.5.1"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/npm/pacote/releases/tag/v22.0.0"
+        },
+        {
+          "type": "WEB",
+          "url": "https://security.snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-16874025"
+        },
+        {
+          "type": "WEB",
+          "url": "https://security.snyk.io/vuln/SNYK-JS-PACOTE-8225084"
+        }
+      ],
+      "url": "https://osv.dev/vulnerability/GHSA-w4pp-8pjf-rmxw"
+    },
+    {
+      "id": "GHSA-w8wr-v893-vjvp",
+      "aliases": [
+        "CVE-2026-59871"
+      ],
+      "modified": "2026-09-10T03:51:12.362978491Z",
+      "published": "2026-07-20T21:53:14Z",
+      "withdrawn": null,
+      "sourceSha256": "310593e7beafe7bf18afa5f7e22894bc2f144d71d14bdbcb10a68da7b35c26a9",
+      "severity": [
+        {
+          "type": "CVSS_V3",
+          "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
+        }
+      ],
+      "databaseSpecific": {
+        "nvd_published_at": "2026-07-08T16:16:33Z",
+        "cwe_ids": [
+          "CWE-704"
+        ],
+        "severity": "MODERATE",
+        "github_reviewed": true,
+        "github_reviewed_at": "2026-07-20T21:53:14Z"
+      },
+      "affected": [
+        {
+          "package": {
+            "name": "tar",
+            "ecosystem": "npm",
+            "purl": "pkg:npm/tar"
+          },
+          "ranges": [
+            {
+              "type": "SEMVER",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "7.5.18"
+                }
+              ]
+            }
+          ],
+          "database_specific": {
+            "last_known_affected_version_range": "<= 7.5.17",
+            "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/07/GHSA-w8wr-v893-vjvp/GHSA-w8wr-v893-vjvp.json"
+          }
+        }
+      ],
+      "references": [
+        {
+          "type": "WEB",
+          "url": "https://github.com/isaacs/node-tar/security/advisories/GHSA-w8wr-v893-vjvp"
+        },
+        {
+          "type": "ADVISORY",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-59871"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/isaacs/node-tar/commit/e02a4e9e013c4be95302e2eb2047a942b883c27b"
+        },
+        {
+          "type": "PACKAGE",
+          "url": "https://github.com/isaacs/node-tar"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/isaacs/node-tar/releases/tag/v7.5.18"
+        }
+      ],
+      "url": "https://osv.dev/vulnerability/GHSA-w8wr-v893-vjvp"
+    },
+    {
+      "id": "GHSA-w9m9-85wc-3x92",
+      "aliases": [
+        "CVE-2026-9358"
+      ],
+      "modified": "2026-09-10T03:50:47.767644603Z",
+      "published": "2026-05-26T13:30:30Z",
+      "withdrawn": null,
+      "sourceSha256": "ef770700f31bdf9730549fd1a16450b823376ced81546a8b7929bf92970aa566",
+      "severity": [
+        {
+          "type": "CVSS_V3",
+          "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L"
+        },
+        {
+          "type": "CVSS_V4",
+          "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N/E:P"
+        }
+      ],
+      "databaseSpecific": {
+        "github_reviewed": true,
+        "github_reviewed_at": "2026-09-01T15:45:53Z",
+        "nvd_published_at": "2026-05-24T06:16:37Z",
+        "cwe_ids": [
+          "CWE-404"
+        ],
+        "severity": "LOW"
+      },
+      "affected": [
+        {
+          "package": {
+            "name": "postcss-selector-parser",
+            "ecosystem": "npm",
+            "purl": "pkg:npm/postcss-selector-parser"
+          },
+          "ranges": [
+            {
+              "type": "SEMVER",
+              "events": [
+                {
+                  "introduced": "6.1.0"
+                },
+                {
+                  "fixed": "6.1.3"
+                }
+              ]
+            }
+          ],
+          "database_specific": {
+            "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/05/GHSA-w9m9-85wc-3x92/GHSA-w9m9-85wc-3x92.json"
+          }
+        },
+        {
+          "package": {
+            "name": "postcss-selector-parser",
+            "ecosystem": "npm",
+            "purl": "pkg:npm/postcss-selector-parser"
+          },
+          "ranges": [
+            {
+              "type": "SEMVER",
+              "events": [
+                {
+                  "introduced": "7.1.0"
+                },
+                {
+                  "fixed": "7.1.3"
+                }
+              ]
+            }
+          ],
+          "database_specific": {
+            "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/05/GHSA-w9m9-85wc-3x92/GHSA-w9m9-85wc-3x92.json"
+          }
+        }
+      ],
+      "references": [
+        {
+          "type": "ADVISORY",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-9358"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/postcss/postcss-selector-parser/commit/5bc698cef66f8abd12610dc623e5d67cbc0f869d"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/postcss/postcss-selector-parser/commit/e37c5b0b785b165e27508d2489fdec8e0f18b10a"
+        },
+        {
+          "type": "WEB",
+          "url": "https://gist.github.com/bx33661/581e3a38134601c04e19b4dfc9b459b9"
+        },
+        {
+          "type": "PACKAGE",
+          "url": "https://github.com/postcss/postcss-selector-parser"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/postcss/postcss-selector-parser/releases/tag/6.1.3"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/postcss/postcss-selector-parser/releases/tag/7.1.3"
+        },
+        {
+          "type": "WEB",
+          "url": "https://vuldb.com/cve/CVE-2026-9358"
+        },
+        {
+          "type": "WEB",
+          "url": "https://vuldb.com/submit/813080"
+        },
+        {
+          "type": "WEB",
+          "url": "https://vuldb.com/vuln/365321"
+        },
+        {
+          "type": "WEB",
+          "url": "https://vuldb.com/vuln/365321/cti"
+        }
+      ],
+      "url": "https://osv.dev/vulnerability/GHSA-w9m9-85wc-3x92"
+    }
+  ],
+  "queryCount": 186,
+  "matchedPackageCount": 10,
+  "advisoryCount": 26,
+  "fixesApplied": false,
+  "untested": [
+    "OS/distribution advisories",
+    "compiler and interpreter bundled native closure",
+    "unpublished vulnerabilities",
+    "independent dependency source audit",
+    "exploit reachability",
+    "runtime/compiler vulnerability matching"
+  ]
+}

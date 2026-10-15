@@ -1,0 +1,3977 @@
+{
+  "task": "NF-102-02",
+  "sourceRevision": "a3dea0a3de7018e14057a9bc15307325439b500d",
+  "recordedAt": "2026-10-15T10:19:26.452Z",
+  "collectorRevision": "37ca03721d256e78035ac2000cb3e2889b3bc3e3",
+  "collectorSources": [
+    {
+      "file": "scripts/runtime-supply-chain-license-collect.mjs",
+      "sha256": "5a1be6c8f17b3e4e3b2304fe1c2a3ff174a4878347745d8eb1817483c7f474fb"
+    }
+  ],
+  "rows": [
+    {
+      "candidate": "typescript",
+      "ref": "pkg:npm/%40types/node@22.20.5",
+      "declaredLicense": "MIT",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383",
+          "bytes": 1141
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "typescript",
+      "ref": "pkg:npm/%40typescript/typescript-aix-ppc64@7.0.2",
+      "declaredLicense": "Apache-2.0",
+      "licenseFiles": [],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "typescript",
+      "ref": "pkg:npm/%40typescript/typescript-darwin-arm64@7.0.2",
+      "declaredLicense": "Apache-2.0",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "a7d00bfd54525bc694b6e32f64c7ebcf5e6b7ae3657be5cc12767bce74654a47",
+          "bytes": 9197
+        },
+        {
+          "file": "NOTICE.txt",
+          "sha256": "f5c708b59114507b8b27b48181b6883d106bbca0c1634bbee45b5e344237b66b",
+          "bytes": 48860
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "typescript",
+      "ref": "pkg:npm/%40typescript/typescript-darwin-x64@7.0.2",
+      "declaredLicense": "Apache-2.0",
+      "licenseFiles": [],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "typescript",
+      "ref": "pkg:npm/%40typescript/typescript-freebsd-arm64@7.0.2",
+      "declaredLicense": "Apache-2.0",
+      "licenseFiles": [],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "typescript",
+      "ref": "pkg:npm/%40typescript/typescript-freebsd-x64@7.0.2",
+      "declaredLicense": "Apache-2.0",
+      "licenseFiles": [],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "typescript",
+      "ref": "pkg:npm/%40typescript/typescript-linux-arm@7.0.2",
+      "declaredLicense": "Apache-2.0",
+      "licenseFiles": [],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "typescript",
+      "ref": "pkg:npm/%40typescript/typescript-linux-arm64@7.0.2",
+      "declaredLicense": "Apache-2.0",
+      "licenseFiles": [],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "typescript",
+      "ref": "pkg:npm/%40typescript/typescript-linux-loong64@7.0.2",
+      "declaredLicense": "Apache-2.0",
+      "licenseFiles": [],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "typescript",
+      "ref": "pkg:npm/%40typescript/typescript-linux-mips64el@7.0.2",
+      "declaredLicense": "Apache-2.0",
+      "licenseFiles": [],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "typescript",
+      "ref": "pkg:npm/%40typescript/typescript-linux-ppc64@7.0.2",
+      "declaredLicense": "Apache-2.0",
+      "licenseFiles": [],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "typescript",
+      "ref": "pkg:npm/%40typescript/typescript-linux-riscv64@7.0.2",
+      "declaredLicense": "Apache-2.0",
+      "licenseFiles": [],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "typescript",
+      "ref": "pkg:npm/%40typescript/typescript-linux-s390x@7.0.2",
+      "declaredLicense": "Apache-2.0",
+      "licenseFiles": [],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "typescript",
+      "ref": "pkg:npm/%40typescript/typescript-linux-x64@7.0.2",
+      "declaredLicense": "Apache-2.0",
+      "licenseFiles": [],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "typescript",
+      "ref": "pkg:npm/%40typescript/typescript-netbsd-arm64@7.0.2",
+      "declaredLicense": "Apache-2.0",
+      "licenseFiles": [],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "typescript",
+      "ref": "pkg:npm/%40typescript/typescript-netbsd-x64@7.0.2",
+      "declaredLicense": "Apache-2.0",
+      "licenseFiles": [],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "typescript",
+      "ref": "pkg:npm/%40typescript/typescript-openbsd-arm64@7.0.2",
+      "declaredLicense": "Apache-2.0",
+      "licenseFiles": [],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "typescript",
+      "ref": "pkg:npm/%40typescript/typescript-openbsd-x64@7.0.2",
+      "declaredLicense": "Apache-2.0",
+      "licenseFiles": [],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "typescript",
+      "ref": "pkg:npm/%40typescript/typescript-sunos-x64@7.0.2",
+      "declaredLicense": "Apache-2.0",
+      "licenseFiles": [],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "typescript",
+      "ref": "pkg:npm/%40typescript/typescript-win32-arm64@7.0.2",
+      "declaredLicense": "Apache-2.0",
+      "licenseFiles": [],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "typescript",
+      "ref": "pkg:npm/%40typescript/typescript-win32-x64@7.0.2",
+      "declaredLicense": "Apache-2.0",
+      "licenseFiles": [],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "typescript",
+      "ref": "pkg:npm/ajv-formats@3.0.1",
+      "declaredLicense": "MIT",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "9df3bb69929a3b650ed73b3bfa1756725aaff0ac296461605753547004eafeaf",
+          "bytes": 1074
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "typescript",
+      "ref": "pkg:npm/ajv@8.20.0",
+      "declaredLicense": "MIT",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "a05350a88e318e4f5f2c2a1ff1e2e88daa4dd38e6e78b71cccae422bdc762cc3",
+          "bytes": 1090
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "typescript",
+      "ref": "pkg:npm/fast-deep-equal@3.1.3",
+      "declaredLicense": "MIT",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "7bf9b2de73a6b356761c948d0e9eeb4be6c1270bd04c79cd489c1e400ffdfc1a",
+          "bytes": 1074
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "typescript",
+      "ref": "pkg:npm/fast-uri@3.1.8",
+      "declaredLicense": "BSD-3-Clause",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "b010b0dfdfdb23d7396e03b82cd4621fc9bb8f95d6b0aea70b9c24e12074c786",
+          "bytes": 1813
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "typescript",
+      "ref": "pkg:npm/json-schema-traverse@1.0.0",
+      "declaredLicense": "MIT",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "7bf9b2de73a6b356761c948d0e9eeb4be6c1270bd04c79cd489c1e400ffdfc1a",
+          "bytes": 1074
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "typescript",
+      "ref": "pkg:npm/require-from-string@2.0.2",
+      "declaredLicense": "MIT",
+      "licenseFiles": [
+        {
+          "file": "license",
+          "sha256": "6ee0feb1f6ef996ff5a68600f8cf98909cf412d39ef3cdceaefd87d636fa1b7f",
+          "bytes": 1128
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "typescript",
+      "ref": "pkg:npm/typescript@7.0.2",
+      "declaredLicense": "Apache-2.0",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "a7d00bfd54525bc694b6e32f64c7ebcf5e6b7ae3657be5cc12767bce74654a47",
+          "bytes": 9197
+        },
+        {
+          "file": "NOTICE.txt",
+          "sha256": "f5c708b59114507b8b27b48181b6883d106bbca0c1634bbee45b5e344237b66b",
+          "bytes": 48860
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "typescript",
+      "ref": "pkg:npm/undici-types@6.21.0",
+      "declaredLicense": "MIT",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "a6db8096b2707bc0102d256917d4d33f298ba36d8c3f25de067a2b5bb379db27",
+          "bytes": 1090
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "typescript",
+      "ref": "pkg:npm/yaml@2.9.0",
+      "declaredLicense": "ISC",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "5bba27375d93e9119f76c1015f7672cf9ad5f70952296e0842fb2243d6376869",
+          "bytes": 738
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "python",
+      "ref": "pkg:cargo/archery@1.2.2",
+      "declaredLicense": "MIT",
+      "licenseFiles": [],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "python",
+      "ref": "pkg:cargo/heck@0.5.0",
+      "declaredLicense": "MIT OR Apache-2.0",
+      "licenseFiles": [],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "python",
+      "ref": "pkg:cargo/libc@0.2.177",
+      "declaredLicense": "MIT OR Apache-2.0",
+      "licenseFiles": [],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "python",
+      "ref": "pkg:cargo/once_cell@1.21.3",
+      "declaredLicense": "MIT OR Apache-2.0",
+      "licenseFiles": [],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "python",
+      "ref": "pkg:cargo/proc-macro2@1.0.103",
+      "declaredLicense": "MIT OR Apache-2.0",
+      "licenseFiles": [],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "python",
+      "ref": "pkg:cargo/pyo3-build-config@0.29.0",
+      "declaredLicense": "MIT OR Apache-2.0",
+      "licenseFiles": [],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "python",
+      "ref": "pkg:cargo/pyo3-ffi@0.29.0",
+      "declaredLicense": "MIT OR Apache-2.0",
+      "licenseFiles": [],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "python",
+      "ref": "pkg:cargo/pyo3-macros-backend@0.29.0",
+      "declaredLicense": "MIT OR Apache-2.0",
+      "licenseFiles": [],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "python",
+      "ref": "pkg:cargo/pyo3-macros@0.29.0",
+      "declaredLicense": "MIT OR Apache-2.0",
+      "licenseFiles": [],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "python",
+      "ref": "pkg:cargo/pyo3@0.29.0",
+      "declaredLicense": "MIT OR Apache-2.0",
+      "licenseFiles": [],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "python",
+      "ref": "pkg:cargo/quote@1.0.42",
+      "declaredLicense": "MIT OR Apache-2.0",
+      "licenseFiles": [],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "python",
+      "ref": "pkg:cargo/rpds@1.2.1",
+      "declaredLicense": "MIT",
+      "licenseFiles": [],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "python",
+      "ref": "pkg:cargo/smallvec@1.15.1",
+      "declaredLicense": "MIT OR Apache-2.0",
+      "licenseFiles": [],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "python",
+      "ref": "pkg:cargo/syn@2.0.111",
+      "declaredLicense": "MIT OR Apache-2.0",
+      "licenseFiles": [],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "python",
+      "ref": "pkg:cargo/target-lexicon@0.13.3",
+      "declaredLicense": "Apache-2.0 WITH LLVM-exception",
+      "licenseFiles": [],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "python",
+      "ref": "pkg:cargo/triomphe@0.1.15",
+      "declaredLicense": "MIT OR Apache-2.0",
+      "licenseFiles": [],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "python",
+      "ref": "pkg:cargo/unicode-ident@1.0.22",
+      "declaredLicense": "(MIT OR Apache-2.0) AND Unicode-3.0",
+      "licenseFiles": [],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "python",
+      "ref": "pkg:pypi/attrs@26.1.0",
+      "declaredLicense": "MIT",
+      "licenseFiles": [
+        {
+          "file": "attrs-26.1.0.dist-info/licenses/LICENSE",
+          "sha256": "882115c95dfc2af1eeb6714f8ec6d5cbcabf667caff8729f42420da63f714e9f"
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "python",
+      "ref": "pkg:pypi/autocommand@2.2.2?owner=setuptools",
+      "declaredLicense": "LGPLv3",
+      "licenseFiles": [
+        {
+          "file": "autocommand-2.2.2.dist-info/LICENSE",
+          "sha256": "ade78d04982d69972d444a8e14a94f87a2334dd3855cc80348ea8e240aa0df2d"
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "python",
+      "ref": "pkg:pypi/backports-tarfile@1.2.0?owner=setuptools",
+      "declaredLicense": "NOASSERTION",
+      "licenseFiles": [
+        {
+          "file": "backports.tarfile-1.2.0.dist-info/LICENSE",
+          "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741"
+        }
+      ],
+      "status": "upstream-metadata-collected-vendored-text-mapping-not-accepted",
+      "publicDeclaration": {
+        "url": "https://pypi.org/pypi/backports-tarfile/1.2.0/json",
+        "sha256": "7cd517dda79f81cf7c49832a083faf7b5f51ad280d6d4936609e850882f07f70",
+        "name": "backports.tarfile",
+        "version": "1.2.0",
+        "licenseExpression": null,
+        "license": null,
+        "licenseClassifiers": [
+          "License :: OSI Approved :: MIT License"
+        ]
+      },
+      "mappingNote": "Owner-relative receipts; no automatic package-to-license legal attribution."
+    },
+    {
+      "candidate": "python",
+      "ref": "pkg:pypi/build@1.3.0",
+      "declaredLicense": "MIT",
+      "licenseFiles": [
+        {
+          "file": "build-1.3.0.dist-info/licenses/LICENSE",
+          "sha256": "aaf9a29ca5907971ccf07de025375db34539a8d5eeebce20b46099805722106f"
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "python",
+      "ref": "pkg:pypi/cachecontrol@0.14.4?owner=pip",
+      "declaredLicense": "NOASSERTION",
+      "licenseFiles": [],
+      "status": "upstream-metadata-collected-vendored-text-mapping-not-accepted",
+      "publicDeclaration": {
+        "url": "https://pypi.org/pypi/cachecontrol/0.14.4/json",
+        "sha256": "03b391e940e2492a8b3e3736975ad77fea36e4df02e22786e8756d572d398a35",
+        "name": "CacheControl",
+        "version": "0.14.4",
+        "licenseExpression": "Apache-2.0",
+        "license": null,
+        "licenseClassifiers": []
+      },
+      "mappingNote": "Owner-relative receipts; no automatic package-to-license legal attribution."
+    },
+    {
+      "candidate": "python",
+      "ref": "pkg:pypi/certifi@2026.6.17?owner=pip",
+      "declaredLicense": "NOASSERTION",
+      "licenseFiles": [],
+      "status": "upstream-metadata-collected-vendored-text-mapping-not-accepted",
+      "publicDeclaration": {
+        "url": "https://pypi.org/pypi/certifi/2026.6.17/json",
+        "sha256": "e342f67597312a318fcda12b980332b8e52d5554a4c1526635574f0cbdb7369f",
+        "name": "certifi",
+        "version": "2026.6.17",
+        "licenseExpression": null,
+        "license": "MPL-2.0",
+        "licenseClassifiers": [
+          "License :: OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)"
+        ]
+      },
+      "mappingNote": "Owner-relative receipts; no automatic package-to-license legal attribution."
+    },
+    {
+      "candidate": "python",
+      "ref": "pkg:pypi/distlib@0.4.2?owner=pip",
+      "declaredLicense": "NOASSERTION",
+      "licenseFiles": [],
+      "status": "upstream-metadata-collected-vendored-text-mapping-not-accepted",
+      "publicDeclaration": {
+        "url": "https://pypi.org/pypi/distlib/0.4.2/json",
+        "sha256": "49aaaa35bda2ccb2d6f9077ee4a5c12928f8741c3968189384f32b71ccad4397",
+        "name": "distlib",
+        "version": "0.4.2",
+        "licenseExpression": null,
+        "license": "PSF-2.0",
+        "licenseClassifiers": [
+          "License :: OSI Approved :: Python Software Foundation License"
+        ]
+      },
+      "mappingNote": "Owner-relative receipts; no automatic package-to-license legal attribution."
+    },
+    {
+      "candidate": "python",
+      "ref": "pkg:pypi/distro@1.9.0?owner=pip",
+      "declaredLicense": "NOASSERTION",
+      "licenseFiles": [],
+      "status": "upstream-metadata-collected-vendored-text-mapping-not-accepted",
+      "publicDeclaration": {
+        "url": "https://pypi.org/pypi/distro/1.9.0/json",
+        "sha256": "d83d91adebd208c0ce5b969017d4ce5c4ec59ea7d46793c20d36b261325fc236",
+        "name": "distro",
+        "version": "1.9.0",
+        "licenseExpression": null,
+        "license": "Apache License, Version 2.0",
+        "licenseClassifiers": [
+          "License :: OSI Approved :: Apache Software License"
+        ]
+      },
+      "mappingNote": "Owner-relative receipts; no automatic package-to-license legal attribution."
+    },
+    {
+      "candidate": "python",
+      "ref": "pkg:pypi/idna@3.18?owner=pip",
+      "declaredLicense": "NOASSERTION",
+      "licenseFiles": [],
+      "status": "upstream-metadata-collected-vendored-text-mapping-not-accepted",
+      "publicDeclaration": {
+        "url": "https://pypi.org/pypi/idna/3.18/json",
+        "sha256": "419b11e68bbc25e19d37eba0d65acdf93f6278f8768c542fa4e261f063e9e1b0",
+        "name": "idna",
+        "version": "3.18",
+        "licenseExpression": "BSD-3-Clause",
+        "license": null,
+        "licenseClassifiers": []
+      },
+      "mappingNote": "Owner-relative receipts; no automatic package-to-license legal attribution."
+    },
+    {
+      "candidate": "python",
+      "ref": "pkg:pypi/importlib-metadata@8.0.0?owner=setuptools",
+      "declaredLicense": "NOASSERTION",
+      "licenseFiles": [
+        {
+          "file": "importlib_metadata-8.0.0.dist-info/LICENSE",
+          "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        }
+      ],
+      "status": "upstream-metadata-collected-vendored-text-mapping-not-accepted",
+      "publicDeclaration": {
+        "url": "https://pypi.org/pypi/importlib-metadata/8.0.0/json",
+        "sha256": "01ca993c7f76ea0e21f24c7e51d903dbb671195959a560ba3a38db6aca2ccdce",
+        "name": "importlib-metadata",
+        "version": "8.0.0",
+        "licenseExpression": null,
+        "license": null,
+        "licenseClassifiers": [
+          "License :: OSI Approved :: Apache Software License"
+        ]
+      },
+      "mappingNote": "Owner-relative receipts; no automatic package-to-license legal attribution."
+    },
+    {
+      "candidate": "python",
+      "ref": "pkg:pypi/inflect@7.3.1?owner=setuptools",
+      "declaredLicense": "NOASSERTION",
+      "licenseFiles": [
+        {
+          "file": "inflect-7.3.1.dist-info/LICENSE",
+          "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741"
+        }
+      ],
+      "status": "upstream-metadata-collected-vendored-text-mapping-not-accepted",
+      "publicDeclaration": {
+        "url": "https://pypi.org/pypi/inflect/7.3.1/json",
+        "sha256": "0373209a87c837be30d6a379baa995c7ec4d181a406a95fc01357082b5af06ac",
+        "name": "inflect",
+        "version": "7.3.1",
+        "licenseExpression": null,
+        "license": null,
+        "licenseClassifiers": [
+          "License :: OSI Approved :: MIT License"
+        ]
+      },
+      "mappingNote": "Owner-relative receipts; no automatic package-to-license legal attribution."
+    },
+    {
+      "candidate": "python",
+      "ref": "pkg:pypi/jaraco-collections@5.1.0?owner=setuptools",
+      "declaredLicense": "NOASSERTION",
+      "licenseFiles": [
+        {
+          "file": "jaraco.collections-5.1.0.dist-info/LICENSE",
+          "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741"
+        }
+      ],
+      "status": "upstream-metadata-collected-vendored-text-mapping-not-accepted",
+      "publicDeclaration": {
+        "url": "https://pypi.org/pypi/jaraco-collections/5.1.0/json",
+        "sha256": "32017e78109d2c4a14fa733ce755f309e19b818be1b3a794d65ef7cdb1c61c4a",
+        "name": "jaraco.collections",
+        "version": "5.1.0",
+        "licenseExpression": null,
+        "license": null,
+        "licenseClassifiers": [
+          "License :: OSI Approved :: MIT License"
+        ]
+      },
+      "mappingNote": "Owner-relative receipts; no automatic package-to-license legal attribution."
+    },
+    {
+      "candidate": "python",
+      "ref": "pkg:pypi/jaraco-context@5.3.0?owner=setuptools",
+      "declaredLicense": "NOASSERTION",
+      "licenseFiles": [
+        {
+          "file": "jaraco.context-5.3.0.dist-info/LICENSE",
+          "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741"
+        }
+      ],
+      "status": "upstream-metadata-collected-vendored-text-mapping-not-accepted",
+      "publicDeclaration": {
+        "url": "https://pypi.org/pypi/jaraco-context/5.3.0/json",
+        "sha256": "243d5c9a0de51a2ef962a2440ab5b05225c822bbdfd2a0ae5f43aa9aa1f0ef4f",
+        "name": "jaraco.context",
+        "version": "5.3.0",
+        "licenseExpression": null,
+        "license": null,
+        "licenseClassifiers": [
+          "License :: OSI Approved :: MIT License"
+        ]
+      },
+      "mappingNote": "Owner-relative receipts; no automatic package-to-license legal attribution."
+    },
+    {
+      "candidate": "python",
+      "ref": "pkg:pypi/jaraco-functools@4.0.1?owner=setuptools",
+      "declaredLicense": "NOASSERTION",
+      "licenseFiles": [
+        {
+          "file": "jaraco.functools-4.0.1.dist-info/LICENSE",
+          "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741"
+        }
+      ],
+      "status": "upstream-metadata-collected-vendored-text-mapping-not-accepted",
+      "publicDeclaration": {
+        "url": "https://pypi.org/pypi/jaraco-functools/4.0.1/json",
+        "sha256": "73f6f0281cd0941990a0a3fb0cda2a3bdc45b24a349258f29386a87ab1de7630",
+        "name": "jaraco.functools",
+        "version": "4.0.1",
+        "licenseExpression": null,
+        "license": null,
+        "licenseClassifiers": [
+          "License :: OSI Approved :: MIT License"
+        ]
+      },
+      "mappingNote": "Owner-relative receipts; no automatic package-to-license legal attribution."
+    },
+    {
+      "candidate": "python",
+      "ref": "pkg:pypi/jaraco-text@3.12.1?owner=setuptools",
+      "declaredLicense": "NOASSERTION",
+      "licenseFiles": [
+        {
+          "file": "jaraco.text-3.12.1.dist-info/LICENSE",
+          "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741"
+        }
+      ],
+      "status": "upstream-metadata-collected-vendored-text-mapping-not-accepted",
+      "publicDeclaration": {
+        "url": "https://pypi.org/pypi/jaraco-text/3.12.1/json",
+        "sha256": "4574d226269a0d26017f4bb1b886b9c35a0d2caa24574f7fa0a28f384c47af34",
+        "name": "jaraco.text",
+        "version": "3.12.1",
+        "licenseExpression": null,
+        "license": null,
+        "licenseClassifiers": [
+          "License :: OSI Approved :: MIT License"
+        ]
+      },
+      "mappingNote": "Owner-relative receipts; no automatic package-to-license legal attribution."
+    },
+    {
+      "candidate": "python",
+      "ref": "pkg:pypi/jsonschema-specifications@2025.9.1",
+      "declaredLicense": "MIT",
+      "licenseFiles": [
+        {
+          "file": "jsonschema_specifications-2025.9.1.dist-info/licenses/COPYING",
+          "sha256": "42dcd63495f87b4eb7c7757afa379bb55a53f94afd7a5f657d9adf57236e515c"
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "python",
+      "ref": "pkg:pypi/jsonschema@4.26.0",
+      "declaredLicense": "MIT",
+      "licenseFiles": [
+        {
+          "file": "jsonschema-4.26.0.dist-info/licenses/COPYING",
+          "sha256": "4f92a015a13c4d1a040bef018aa13430b4f1bc73b41b16bb846c346766de7439"
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "python",
+      "ref": "pkg:pypi/more-itertools@10.3.0?owner=setuptools",
+      "declaredLicense": "NOASSERTION",
+      "licenseFiles": [
+        {
+          "file": "more_itertools-10.3.0.dist-info/LICENSE",
+          "sha256": "09f1c8c9e941af3e584d59641ea9b87d83c0cb0fd007eb5ef391a7e2643c1a46"
+        }
+      ],
+      "status": "upstream-metadata-collected-vendored-text-mapping-not-accepted",
+      "publicDeclaration": {
+        "url": "https://pypi.org/pypi/more-itertools/10.3.0/json",
+        "sha256": "b06081f5932aee65cbccec887b432e6f9c9b4fc58be1c6ab8329d03875ab254e",
+        "name": "more-itertools",
+        "version": "10.3.0",
+        "licenseExpression": null,
+        "license": null,
+        "licenseClassifiers": [
+          "License :: OSI Approved :: MIT License"
+        ]
+      },
+      "mappingNote": "Owner-relative receipts; no automatic package-to-license legal attribution."
+    },
+    {
+      "candidate": "python",
+      "ref": "pkg:pypi/msgpack@1.1.2?owner=pip",
+      "declaredLicense": "NOASSERTION",
+      "licenseFiles": [],
+      "status": "upstream-metadata-collected-vendored-text-mapping-not-accepted",
+      "publicDeclaration": {
+        "url": "https://pypi.org/pypi/msgpack/1.1.2/json",
+        "sha256": "d3a70f24ff91a0a03c81b4b685b743571a549bf4b08e3f6ea413d1ed59a3af20",
+        "name": "msgpack",
+        "version": "1.1.2",
+        "licenseExpression": "Apache-2.0",
+        "license": null,
+        "licenseClassifiers": []
+      },
+      "mappingNote": "Owner-relative receipts; no automatic package-to-license legal attribution."
+    },
+    {
+      "candidate": "python",
+      "ref": "pkg:pypi/packaging@24.0?owner=setuptools%2F_vendor%2Fwheel",
+      "declaredLicense": "NOASSERTION",
+      "licenseFiles": [],
+      "status": "upstream-metadata-collected-vendored-text-mapping-not-accepted",
+      "publicDeclaration": {
+        "url": "https://pypi.org/pypi/packaging/24.0/json",
+        "sha256": "69366654f88384d630f9ca4e90e5fd03708c12705d994f7ba893c81b65ab1459",
+        "name": "packaging",
+        "version": "24.0",
+        "licenseExpression": null,
+        "license": null,
+        "licenseClassifiers": [
+          "License :: OSI Approved :: Apache Software License",
+          "License :: OSI Approved :: BSD License"
+        ]
+      },
+      "mappingNote": "Owner-relative receipts; no automatic package-to-license legal attribution."
+    },
+    {
+      "candidate": "python",
+      "ref": "pkg:pypi/packaging@24.0?owner=wheel",
+      "declaredLicense": "NOASSERTION",
+      "licenseFiles": [],
+      "status": "upstream-metadata-collected-vendored-text-mapping-not-accepted",
+      "publicDeclaration": {
+        "url": "https://pypi.org/pypi/packaging/24.0/json",
+        "sha256": "69366654f88384d630f9ca4e90e5fd03708c12705d994f7ba893c81b65ab1459",
+        "name": "packaging",
+        "version": "24.0",
+        "licenseExpression": null,
+        "license": null,
+        "licenseClassifiers": [
+          "License :: OSI Approved :: Apache Software License",
+          "License :: OSI Approved :: BSD License"
+        ]
+      },
+      "mappingNote": "Owner-relative receipts; no automatic package-to-license legal attribution."
+    },
+    {
+      "candidate": "python",
+      "ref": "pkg:pypi/packaging@24.2?owner=setuptools",
+      "declaredLicense": "NOASSERTION",
+      "licenseFiles": [
+        {
+          "file": "packaging-24.2.dist-info/LICENSE",
+          "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48"
+        },
+        {
+          "file": "packaging-24.2.dist-info/LICENSE.APACHE",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        },
+        {
+          "file": "packaging-24.2.dist-info/LICENSE.BSD",
+          "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5"
+        },
+        {
+          "file": "packaging/licenses/__init__.py",
+          "sha256": "d71e4cd671188dc83011b2edd1d5f0cf6ba48ebd7c0e20b30b4b2b690a89f96c"
+        },
+        {
+          "file": "packaging/licenses/_spdx.py",
+          "sha256": "a009b5ced3c5c25b2608a7bb94002cbff38839f4b57160eef5b34191ebbeda7b"
+        }
+      ],
+      "status": "upstream-metadata-collected-vendored-text-mapping-not-accepted",
+      "publicDeclaration": {
+        "url": "https://pypi.org/pypi/packaging/24.2/json",
+        "sha256": "abe767200651dd31d5239c3bfa6cb61d44aaf01647cdf513ac39e51566b1d3c7",
+        "name": "packaging",
+        "version": "24.2",
+        "licenseExpression": null,
+        "license": null,
+        "licenseClassifiers": [
+          "License :: OSI Approved :: Apache Software License",
+          "License :: OSI Approved :: BSD License"
+        ]
+      },
+      "mappingNote": "Owner-relative receipts; no automatic package-to-license legal attribution."
+    },
+    {
+      "candidate": "python",
+      "ref": "pkg:pypi/packaging@26.2?owner=pip",
+      "declaredLicense": "NOASSERTION",
+      "licenseFiles": [],
+      "status": "upstream-metadata-collected-vendored-text-mapping-not-accepted",
+      "publicDeclaration": {
+        "url": "https://pypi.org/pypi/packaging/26.2/json",
+        "sha256": "7eea47157cf6e38386b2a0026bd646cbff4b344f9399b22a89e15f5a79f54593",
+        "name": "packaging",
+        "version": "26.2",
+        "licenseExpression": "Apache-2.0 OR BSD-2-Clause",
+        "license": null,
+        "licenseClassifiers": []
+      },
+      "mappingNote": "Owner-relative receipts; no automatic package-to-license legal attribution."
+    },
+    {
+      "candidate": "python",
+      "ref": "pkg:pypi/packaging@26.3",
+      "declaredLicense": "Apache-2.0 OR BSD-2-Clause",
+      "licenseFiles": [
+        {
+          "file": "packaging-26.3.dist-info/licenses/LICENSE",
+          "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48"
+        },
+        {
+          "file": "packaging-26.3.dist-info/licenses/LICENSE.APACHE",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        },
+        {
+          "file": "packaging-26.3.dist-info/licenses/LICENSE.BSD",
+          "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5"
+        },
+        {
+          "file": "packaging/licenses/__init__.py",
+          "sha256": "590d12eee73ddbec53b4e9ee5bfc64d9cb3aacb4940e8ebcba260757ce56740b"
+        },
+        {
+          "file": "packaging/licenses/__pycache__/__init__.cpython-312.pyc",
+          "sha256": "6e1fc26fbcef5bf2d8ecb34f9d6f3e26926123a5972f7c21b8c1fd2ecb4b890c"
+        },
+        {
+          "file": "packaging/licenses/__pycache__/_spdx.cpython-312.pyc",
+          "sha256": "852c5cec2c0fd817cfeed66e51c29ead31f517180e43de49c3b1794fc8482235"
+        },
+        {
+          "file": "packaging/licenses/_spdx.py",
+          "sha256": "596ec35e2ca0ebcba9fd8343ff0a51625af548786257815f24b41f7e08613314"
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "python",
+      "ref": "pkg:pypi/pip@26.2.1",
+      "declaredLicense": "MIT",
+      "licenseFiles": [
+        {
+          "file": "pip-26.2.1.dist-info/licenses/AUTHORS.txt",
+          "sha256": "4eb1fb1705e2def898e81bcba19c3aac80620d27ba3569d6a6df7b4629d1b5c2"
+        },
+        {
+          "file": "pip-26.2.1.dist-info/licenses/LICENSE.txt",
+          "sha256": "634300a669d49aeae65b12c6c48c924c51a4cdf3d1ff086dc3456dc8bcaa2104"
+        },
+        {
+          "file": "pip-26.2.1.dist-info/licenses/src/pip/_vendor/cachecontrol/LICENSE.txt",
+          "sha256": "86eeee87be2a43f3ff1f56496f451f69243926f025fedbb033666c304c4c161b"
+        },
+        {
+          "file": "pip-26.2.1.dist-info/licenses/src/pip/_vendor/certifi/LICENSE",
+          "sha256": "e93716da6b9c0d5a4a1df60fe695b370f0695603d21f6f83f053e42cfc10caf7"
+        },
+        {
+          "file": "pip-26.2.1.dist-info/licenses/src/pip/_vendor/distlib/LICENSE.txt",
+          "sha256": "808e10c8a6ab8deb149ff9b3fb19f447a808094606d712a9ca57fead3552599d"
+        },
+        {
+          "file": "pip-26.2.1.dist-info/licenses/src/pip/_vendor/distro/LICENSE",
+          "sha256": "cb5e8e7e5f4a3988e1063c142c60dc2df75605f4c46515e776e3aca6df976e14"
+        },
+        {
+          "file": "pip-26.2.1.dist-info/licenses/src/pip/_vendor/idna/LICENSE.md",
+          "sha256": "1a9a4f0e3d479a27240ddd59a9137a66ab4a0f9dfdc8ca6188cc0bfd85187f04"
+        },
+        {
+          "file": "pip-26.2.1.dist-info/licenses/src/pip/_vendor/msgpack/COPYING",
+          "sha256": "492dedba85da5872f78e6091bcd1fea474d660d35acb4dee964b8aab3f007427"
+        },
+        {
+          "file": "pip-26.2.1.dist-info/licenses/src/pip/_vendor/packaging/LICENSE",
+          "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48"
+        },
+        {
+          "file": "pip-26.2.1.dist-info/licenses/src/pip/_vendor/packaging/LICENSE.APACHE",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        },
+        {
+          "file": "pip-26.2.1.dist-info/licenses/src/pip/_vendor/packaging/LICENSE.BSD",
+          "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5"
+        },
+        {
+          "file": "pip-26.2.1.dist-info/licenses/src/pip/_vendor/pkg_resources/LICENSE",
+          "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741"
+        },
+        {
+          "file": "pip-26.2.1.dist-info/licenses/src/pip/_vendor/platformdirs/LICENSE",
+          "sha256": "29e0fd62e929850e86eb28c3fdccf0cefdf4fa94879011cffb3d0d4bed6d4db6"
+        },
+        {
+          "file": "pip-26.2.1.dist-info/licenses/src/pip/_vendor/pygments/LICENSE",
+          "sha256": "a9d66f1d526df02e29dce73436d34e56e8632f46c275bbdffc70569e882f9f17"
+        },
+        {
+          "file": "pip-26.2.1.dist-info/licenses/src/pip/_vendor/pyproject_hooks/LICENSE",
+          "sha256": "1b22b049b5267d6dfc23a67bf4a84d8ec04b9fdfb1a51d360e42b4342c8b4154"
+        },
+        {
+          "file": "pip-26.2.1.dist-info/licenses/src/pip/_vendor/requests/LICENSE",
+          "sha256": "09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b"
+        },
+        {
+          "file": "pip-26.2.1.dist-info/licenses/src/pip/_vendor/resolvelib/LICENSE",
+          "sha256": "f388fd38cad13112c1dc0f669bbe80e7f84541edbafb72f3030d2ca7642c3c9d"
+        },
+        {
+          "file": "pip-26.2.1.dist-info/licenses/src/pip/_vendor/rich/LICENSE",
+          "sha256": "deed7c17a4318158190a3ea239cc879a5a50271cebb98ae7025f48fbe58dca15"
+        },
+        {
+          "file": "pip-26.2.1.dist-info/licenses/src/pip/_vendor/tomli/LICENSE",
+          "sha256": "b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe"
+        },
+        {
+          "file": "pip-26.2.1.dist-info/licenses/src/pip/_vendor/tomli_w/LICENSE",
+          "sha256": "b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe"
+        },
+        {
+          "file": "pip-26.2.1.dist-info/licenses/src/pip/_vendor/truststore/LICENSE",
+          "sha256": "33be7b7e8fa4fd19b1760e1a8ed8a668bdab852c91b692dd41424bcb725a9fca"
+        },
+        {
+          "file": "pip-26.2.1.dist-info/licenses/src/pip/_vendor/urllib3/LICENSE.txt",
+          "sha256": "130e3a64d5fdd5d096a752694634a7d9df284469de86e5732100268041e3d686"
+        },
+        {
+          "file": "pip/_vendor/cachecontrol/LICENSE.txt",
+          "sha256": "86eeee87be2a43f3ff1f56496f451f69243926f025fedbb033666c304c4c161b"
+        },
+        {
+          "file": "pip/_vendor/certifi/LICENSE",
+          "sha256": "e93716da6b9c0d5a4a1df60fe695b370f0695603d21f6f83f053e42cfc10caf7"
+        },
+        {
+          "file": "pip/_vendor/distlib/LICENSE.txt",
+          "sha256": "808e10c8a6ab8deb149ff9b3fb19f447a808094606d712a9ca57fead3552599d"
+        },
+        {
+          "file": "pip/_vendor/distro/LICENSE",
+          "sha256": "cb5e8e7e5f4a3988e1063c142c60dc2df75605f4c46515e776e3aca6df976e14"
+        },
+        {
+          "file": "pip/_vendor/idna/LICENSE.md",
+          "sha256": "1a9a4f0e3d479a27240ddd59a9137a66ab4a0f9dfdc8ca6188cc0bfd85187f04"
+        },
+        {
+          "file": "pip/_vendor/msgpack/COPYING",
+          "sha256": "492dedba85da5872f78e6091bcd1fea474d660d35acb4dee964b8aab3f007427"
+        },
+        {
+          "file": "pip/_vendor/packaging/LICENSE",
+          "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48"
+        },
+        {
+          "file": "pip/_vendor/packaging/LICENSE.APACHE",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        },
+        {
+          "file": "pip/_vendor/packaging/LICENSE.BSD",
+          "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5"
+        },
+        {
+          "file": "pip/_vendor/packaging/licenses/__init__.py",
+          "sha256": "fc9c745d1883ff9f296a5b169f22eb2ee879f59a4608f20f5cb29d668f4e26f4"
+        },
+        {
+          "file": "pip/_vendor/packaging/licenses/__pycache__/__init__.cpython-312.pyc",
+          "sha256": "0c1556fe166288a8e3da298518dfee2ccb4fa9dd8caf1c0e81327a6c8db3c151"
+        },
+        {
+          "file": "pip/_vendor/packaging/licenses/__pycache__/_spdx.cpython-312.pyc",
+          "sha256": "c3b05952b36f63b59645d05b9dc33a007afc6867eca4e4eff120860b06e4e690"
+        },
+        {
+          "file": "pip/_vendor/packaging/licenses/_spdx.py",
+          "sha256": "596ec35e2ca0ebcba9fd8343ff0a51625af548786257815f24b41f7e08613314"
+        },
+        {
+          "file": "pip/_vendor/pkg_resources/LICENSE",
+          "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741"
+        },
+        {
+          "file": "pip/_vendor/platformdirs/LICENSE",
+          "sha256": "29e0fd62e929850e86eb28c3fdccf0cefdf4fa94879011cffb3d0d4bed6d4db6"
+        },
+        {
+          "file": "pip/_vendor/pygments/LICENSE",
+          "sha256": "a9d66f1d526df02e29dce73436d34e56e8632f46c275bbdffc70569e882f9f17"
+        },
+        {
+          "file": "pip/_vendor/pyproject_hooks/LICENSE",
+          "sha256": "1b22b049b5267d6dfc23a67bf4a84d8ec04b9fdfb1a51d360e42b4342c8b4154"
+        },
+        {
+          "file": "pip/_vendor/requests/LICENSE",
+          "sha256": "09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b"
+        },
+        {
+          "file": "pip/_vendor/resolvelib/LICENSE",
+          "sha256": "f388fd38cad13112c1dc0f669bbe80e7f84541edbafb72f3030d2ca7642c3c9d"
+        },
+        {
+          "file": "pip/_vendor/rich/LICENSE",
+          "sha256": "deed7c17a4318158190a3ea239cc879a5a50271cebb98ae7025f48fbe58dca15"
+        },
+        {
+          "file": "pip/_vendor/tomli/LICENSE",
+          "sha256": "b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe"
+        },
+        {
+          "file": "pip/_vendor/tomli_w/LICENSE",
+          "sha256": "b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe"
+        },
+        {
+          "file": "pip/_vendor/truststore/LICENSE",
+          "sha256": "33be7b7e8fa4fd19b1760e1a8ed8a668bdab852c91b692dd41424bcb725a9fca"
+        },
+        {
+          "file": "pip/_vendor/urllib3/LICENSE.txt",
+          "sha256": "130e3a64d5fdd5d096a752694634a7d9df284469de86e5732100268041e3d686"
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "python",
+      "ref": "pkg:pypi/platformdirs@4.10.0?owner=pip",
+      "declaredLicense": "NOASSERTION",
+      "licenseFiles": [],
+      "status": "upstream-metadata-collected-vendored-text-mapping-not-accepted",
+      "publicDeclaration": {
+        "url": "https://pypi.org/pypi/platformdirs/4.10.0/json",
+        "sha256": "ee067793309b0f45ff8801eb388a1ecfc84121d6818f21d0916385cc30d78294",
+        "name": "platformdirs",
+        "version": "4.10.0",
+        "licenseExpression": "MIT",
+        "license": null,
+        "licenseClassifiers": [
+          "License :: OSI Approved :: MIT License"
+        ]
+      },
+      "mappingNote": "Owner-relative receipts; no automatic package-to-license legal attribution."
+    },
+    {
+      "candidate": "python",
+      "ref": "pkg:pypi/platformdirs@4.2.2?owner=setuptools",
+      "declaredLicense": "MIT",
+      "licenseFiles": [
+        {
+          "file": "platformdirs-4.2.2.dist-info/licenses/LICENSE",
+          "sha256": "29e0fd62e929850e86eb28c3fdccf0cefdf4fa94879011cffb3d0d4bed6d4db6"
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "python",
+      "ref": "pkg:pypi/pygments@2.20.0?owner=pip",
+      "declaredLicense": "NOASSERTION",
+      "licenseFiles": [],
+      "status": "upstream-metadata-collected-vendored-text-mapping-not-accepted",
+      "publicDeclaration": {
+        "url": "https://pypi.org/pypi/pygments/2.20.0/json",
+        "sha256": "3af5974de77ad03c694dcae44382c922da63a2b3ae83153f12f5024465c813a1",
+        "name": "Pygments",
+        "version": "2.20.0",
+        "licenseExpression": "BSD-2-Clause",
+        "license": null,
+        "licenseClassifiers": []
+      },
+      "mappingNote": "Owner-relative receipts; no automatic package-to-license legal attribution."
+    },
+    {
+      "candidate": "python",
+      "ref": "pkg:pypi/pyproject-hooks@1.2.0?owner=pip",
+      "declaredLicense": "NOASSERTION",
+      "licenseFiles": [],
+      "status": "upstream-metadata-collected-vendored-text-mapping-not-accepted",
+      "publicDeclaration": {
+        "url": "https://pypi.org/pypi/pyproject-hooks/1.2.0/json",
+        "sha256": "d4ae02523e9b0d3dd852270dacf69160e8c6a5e4e52e370ceecf3cfc9e9f7cdd",
+        "name": "pyproject-hooks",
+        "version": "1.2.0",
+        "licenseExpression": null,
+        "license": null,
+        "licenseClassifiers": [
+          "License :: OSI Approved :: MIT License"
+        ]
+      },
+      "mappingNote": "Owner-relative receipts; no automatic package-to-license legal attribution."
+    },
+    {
+      "candidate": "python",
+      "ref": "pkg:pypi/pyproject-hooks@1.3.3",
+      "declaredLicense": "MIT",
+      "licenseFiles": [
+        {
+          "file": "pyproject_hooks-1.3.3.dist-info/licenses/LICENSE",
+          "sha256": "1b22b049b5267d6dfc23a67bf4a84d8ec04b9fdfb1a51d360e42b4342c8b4154"
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "python",
+      "ref": "pkg:pypi/pyyaml@6.0.3",
+      "declaredLicense": "MIT",
+      "licenseFiles": [
+        {
+          "file": "pyyaml-6.0.3.dist-info/licenses/LICENSE",
+          "sha256": "8d3928f9dc4490fd635707cb88eb26bd764102a7282954307d3e5167a577e8a4"
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "python",
+      "ref": "pkg:pypi/referencing@0.37.0",
+      "declaredLicense": "MIT",
+      "licenseFiles": [
+        {
+          "file": "referencing-0.37.0.dist-info/licenses/COPYING",
+          "sha256": "42dcd63495f87b4eb7c7757afa379bb55a53f94afd7a5f657d9adf57236e515c"
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "python",
+      "ref": "pkg:pypi/requests@2.34.2?owner=pip",
+      "declaredLicense": "NOASSERTION",
+      "licenseFiles": [],
+      "status": "upstream-metadata-collected-vendored-text-mapping-not-accepted",
+      "publicDeclaration": {
+        "url": "https://pypi.org/pypi/requests/2.34.2/json",
+        "sha256": "8622e50ffd295ed759ec793f2a009172a4ed0204bbc5e948de23111bc3d2aeae",
+        "name": "requests",
+        "version": "2.34.2",
+        "licenseExpression": null,
+        "license": "Apache-2.0",
+        "licenseClassifiers": [
+          "License :: OSI Approved :: Apache Software License"
+        ]
+      },
+      "mappingNote": "Owner-relative receipts; no automatic package-to-license legal attribution."
+    },
+    {
+      "candidate": "python",
+      "ref": "pkg:pypi/resolvelib@1.2.1?owner=pip",
+      "declaredLicense": "NOASSERTION",
+      "licenseFiles": [],
+      "status": "upstream-metadata-collected-vendored-text-mapping-not-accepted",
+      "publicDeclaration": {
+        "url": "https://pypi.org/pypi/resolvelib/1.2.1/json",
+        "sha256": "b4489cc681f34f897ad72d14cd954e751eab00165c2e629a3aa0ae7d16a855cd",
+        "name": "resolvelib",
+        "version": "1.2.1",
+        "licenseExpression": null,
+        "license": "ISC License",
+        "licenseClassifiers": [
+          "License :: OSI Approved :: ISC License (ISCL)"
+        ]
+      },
+      "mappingNote": "Owner-relative receipts; no automatic package-to-license legal attribution."
+    },
+    {
+      "candidate": "python",
+      "ref": "pkg:pypi/rfc3339-validator@0.1.4",
+      "declaredLicense": "MIT license",
+      "licenseFiles": [
+        {
+          "file": "rfc3339_validator-0.1.4.dist-info/LICENSE",
+          "sha256": "5ba1a4f03626ccca6dcbf53a554545e4f776a335bfdaa233ec3bfe9bb7fac15d"
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "python",
+      "ref": "pkg:pypi/rich@14.2.0?owner=pip",
+      "declaredLicense": "NOASSERTION",
+      "licenseFiles": [],
+      "status": "upstream-metadata-collected-vendored-text-mapping-not-accepted",
+      "publicDeclaration": {
+        "url": "https://pypi.org/pypi/rich/14.2.0/json",
+        "sha256": "74527f1342cd2c3ddb2c7a85d42d4a7249df3d60e12db2062c288addecb654ee",
+        "name": "rich",
+        "version": "14.2.0",
+        "licenseExpression": null,
+        "license": "MIT",
+        "licenseClassifiers": [
+          "License :: OSI Approved :: MIT License"
+        ]
+      },
+      "mappingNote": "Owner-relative receipts; no automatic package-to-license legal attribution."
+    },
+    {
+      "candidate": "python",
+      "ref": "pkg:pypi/rpds-py@2026.6.3",
+      "declaredLicense": "MIT",
+      "licenseFiles": [
+        {
+          "file": "rpds_py-2026.6.3.dist-info/licenses/LICENSE",
+          "sha256": "314e4e91be3baa93c0fb4bccc9e4e97cd643eb839b065af921782c2175fe9909"
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "python",
+      "ref": "pkg:pypi/setuptools@70.3.0?owner=pip",
+      "declaredLicense": "NOASSERTION",
+      "licenseFiles": [],
+      "status": "upstream-metadata-collected-vendored-text-mapping-not-accepted",
+      "publicDeclaration": {
+        "url": "https://pypi.org/pypi/setuptools/70.3.0/json",
+        "sha256": "b131602389854771c0c308e4eac543e09548a82000888a18bde9b788b9f8b28f",
+        "name": "setuptools",
+        "version": "70.3.0",
+        "licenseExpression": null,
+        "license": null,
+        "licenseClassifiers": [
+          "License :: OSI Approved :: MIT License"
+        ]
+      },
+      "mappingNote": "Owner-relative receipts; no automatic package-to-license legal attribution."
+    },
+    {
+      "candidate": "python",
+      "ref": "pkg:pypi/setuptools@80.9.0",
+      "declaredLicense": "MIT",
+      "licenseFiles": [
+        {
+          "file": "setuptools-80.9.0.dist-info/licenses/LICENSE",
+          "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741"
+        },
+        {
+          "file": "setuptools/_vendor/autocommand-2.2.2.dist-info/LICENSE",
+          "sha256": "ade78d04982d69972d444a8e14a94f87a2334dd3855cc80348ea8e240aa0df2d"
+        },
+        {
+          "file": "setuptools/_vendor/backports.tarfile-1.2.0.dist-info/LICENSE",
+          "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741"
+        },
+        {
+          "file": "setuptools/_vendor/importlib_metadata-8.0.0.dist-info/LICENSE",
+          "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        },
+        {
+          "file": "setuptools/_vendor/inflect-7.3.1.dist-info/LICENSE",
+          "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741"
+        },
+        {
+          "file": "setuptools/_vendor/jaraco.collections-5.1.0.dist-info/LICENSE",
+          "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741"
+        },
+        {
+          "file": "setuptools/_vendor/jaraco.context-5.3.0.dist-info/LICENSE",
+          "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741"
+        },
+        {
+          "file": "setuptools/_vendor/jaraco.functools-4.0.1.dist-info/LICENSE",
+          "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741"
+        },
+        {
+          "file": "setuptools/_vendor/jaraco.text-3.12.1.dist-info/LICENSE",
+          "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741"
+        },
+        {
+          "file": "setuptools/_vendor/more_itertools-10.3.0.dist-info/LICENSE",
+          "sha256": "09f1c8c9e941af3e584d59641ea9b87d83c0cb0fd007eb5ef391a7e2643c1a46"
+        },
+        {
+          "file": "setuptools/_vendor/packaging-24.2.dist-info/LICENSE",
+          "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48"
+        },
+        {
+          "file": "setuptools/_vendor/packaging-24.2.dist-info/LICENSE.APACHE",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        },
+        {
+          "file": "setuptools/_vendor/packaging-24.2.dist-info/LICENSE.BSD",
+          "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5"
+        },
+        {
+          "file": "setuptools/_vendor/packaging/licenses/__init__.py",
+          "sha256": "d71e4cd671188dc83011b2edd1d5f0cf6ba48ebd7c0e20b30b4b2b690a89f96c"
+        },
+        {
+          "file": "setuptools/_vendor/packaging/licenses/__pycache__/__init__.cpython-312.pyc",
+          "sha256": "28dde6d9ae872c81b6ce8b5229f1ae219784175a65ce33cd3289b21a849c1c31"
+        },
+        {
+          "file": "setuptools/_vendor/packaging/licenses/__pycache__/_spdx.cpython-312.pyc",
+          "sha256": "bc09f0d07c34cecc002d41ca645fe7485de91ba9f00529bc3a37fb91bdea37de"
+        },
+        {
+          "file": "setuptools/_vendor/packaging/licenses/_spdx.py",
+          "sha256": "a009b5ced3c5c25b2608a7bb94002cbff38839f4b57160eef5b34191ebbeda7b"
+        },
+        {
+          "file": "setuptools/_vendor/platformdirs-4.2.2.dist-info/licenses/LICENSE",
+          "sha256": "29e0fd62e929850e86eb28c3fdccf0cefdf4fa94879011cffb3d0d4bed6d4db6"
+        },
+        {
+          "file": "setuptools/_vendor/tomli-2.0.1.dist-info/LICENSE",
+          "sha256": "b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe"
+        },
+        {
+          "file": "setuptools/_vendor/typeguard-4.3.0.dist-info/LICENSE",
+          "sha256": "6163f7987dfb38d6bc320ce2b70b2f02b862bc41126516d552ef1cd43247e758"
+        },
+        {
+          "file": "setuptools/_vendor/typing_extensions-4.12.2.dist-info/LICENSE",
+          "sha256": "3b2f81fe21d181c499c59a256c8e1968455d6689d269aa85373bfb6af41da3bf"
+        },
+        {
+          "file": "setuptools/_vendor/wheel-0.45.1.dist-info/LICENSE.txt",
+          "sha256": "30c23618679108f3e8ea1d2a658c7ca417bdfc891c98ef1a89fa4ff0c9828654"
+        },
+        {
+          "file": "setuptools/_vendor/wheel/vendored/packaging/LICENSE",
+          "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48"
+        },
+        {
+          "file": "setuptools/_vendor/wheel/vendored/packaging/LICENSE.APACHE",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        },
+        {
+          "file": "setuptools/_vendor/wheel/vendored/packaging/LICENSE.BSD",
+          "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5"
+        },
+        {
+          "file": "setuptools/_vendor/zipp-3.19.2.dist-info/LICENSE",
+          "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741"
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "python",
+      "ref": "pkg:pypi/six@1.17.0",
+      "declaredLicense": "MIT",
+      "licenseFiles": [
+        {
+          "file": "six-1.17.0.dist-info/LICENSE",
+          "sha256": "4375ba20e2b9c6c4e7cad2940a628fd90e95cc3d50ee92aae755715d8ba1fbd0"
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "python",
+      "ref": "pkg:pypi/tomli-w@1.2.0?owner=pip",
+      "declaredLicense": "NOASSERTION",
+      "licenseFiles": [],
+      "status": "upstream-metadata-collected-vendored-text-mapping-not-accepted",
+      "publicDeclaration": {
+        "url": "https://pypi.org/pypi/tomli-w/1.2.0/json",
+        "sha256": "073cbf95dd8b295cdfb5bd724540b50c04234db7ec20830c7011c7172905e411",
+        "name": "tomli-w",
+        "version": "1.2.0",
+        "licenseExpression": null,
+        "license": null,
+        "licenseClassifiers": [
+          "License :: OSI Approved :: MIT License"
+        ]
+      },
+      "mappingNote": "Owner-relative receipts; no automatic package-to-license legal attribution."
+    },
+    {
+      "candidate": "python",
+      "ref": "pkg:pypi/tomli@2.0.1?owner=setuptools",
+      "declaredLicense": "NOASSERTION",
+      "licenseFiles": [
+        {
+          "file": "tomli-2.0.1.dist-info/LICENSE",
+          "sha256": "b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe"
+        }
+      ],
+      "status": "upstream-metadata-collected-vendored-text-mapping-not-accepted",
+      "publicDeclaration": {
+        "url": "https://pypi.org/pypi/tomli/2.0.1/json",
+        "sha256": "d7a48ed825dedf76832bd0527076f5bdef8eb51e1fe3e034c0d0e5405aa3825a",
+        "name": "tomli",
+        "version": "2.0.1",
+        "licenseExpression": null,
+        "license": null,
+        "licenseClassifiers": [
+          "License :: OSI Approved :: MIT License"
+        ]
+      },
+      "mappingNote": "Owner-relative receipts; no automatic package-to-license legal attribution."
+    },
+    {
+      "candidate": "python",
+      "ref": "pkg:pypi/tomli@2.4.1?owner=pip",
+      "declaredLicense": "NOASSERTION",
+      "licenseFiles": [],
+      "status": "upstream-metadata-collected-vendored-text-mapping-not-accepted",
+      "publicDeclaration": {
+        "url": "https://pypi.org/pypi/tomli/2.4.1/json",
+        "sha256": "bd88ef161fbda665bed19e902975ebde201a20c723964d9c8b17f5515f1854c0",
+        "name": "tomli",
+        "version": "2.4.1",
+        "licenseExpression": "MIT",
+        "license": null,
+        "licenseClassifiers": []
+      },
+      "mappingNote": "Owner-relative receipts; no automatic package-to-license legal attribution."
+    },
+    {
+      "candidate": "python",
+      "ref": "pkg:pypi/truststore@0.10.4?owner=pip",
+      "declaredLicense": "NOASSERTION",
+      "licenseFiles": [],
+      "status": "upstream-metadata-collected-vendored-text-mapping-not-accepted",
+      "publicDeclaration": {
+        "url": "https://pypi.org/pypi/truststore/0.10.4/json",
+        "sha256": "3e16e870d07a788b28b43497bbaed860d1297c6045d4815d5b00e10fddd9ab0d",
+        "name": "truststore",
+        "version": "0.10.4",
+        "licenseExpression": "MIT",
+        "license": null,
+        "licenseClassifiers": []
+      },
+      "mappingNote": "Owner-relative receipts; no automatic package-to-license legal attribution."
+    },
+    {
+      "candidate": "python",
+      "ref": "pkg:pypi/typeguard@4.3.0?owner=setuptools",
+      "declaredLicense": "MIT",
+      "licenseFiles": [
+        {
+          "file": "typeguard-4.3.0.dist-info/LICENSE",
+          "sha256": "6163f7987dfb38d6bc320ce2b70b2f02b862bc41126516d552ef1cd43247e758"
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "python",
+      "ref": "pkg:pypi/typing-extensions@4.12.2?owner=setuptools",
+      "declaredLicense": "NOASSERTION",
+      "licenseFiles": [
+        {
+          "file": "typing_extensions-4.12.2.dist-info/LICENSE",
+          "sha256": "3b2f81fe21d181c499c59a256c8e1968455d6689d269aa85373bfb6af41da3bf"
+        }
+      ],
+      "status": "upstream-metadata-collected-vendored-text-mapping-not-accepted",
+      "publicDeclaration": {
+        "url": "https://pypi.org/pypi/typing-extensions/4.12.2/json",
+        "sha256": "c5900b4532b93c4c4df1f92ebda717dfa953dbbe3cc900d8fb303ce66c8a82ee",
+        "name": "typing-extensions",
+        "version": "4.12.2",
+        "licenseExpression": null,
+        "license": null,
+        "licenseClassifiers": [
+          "License :: OSI Approved :: Python Software Foundation License"
+        ]
+      },
+      "mappingNote": "Owner-relative receipts; no automatic package-to-license legal attribution."
+    },
+    {
+      "candidate": "python",
+      "ref": "pkg:pypi/typing-extensions@4.16.0",
+      "declaredLicense": "PSF-2.0",
+      "licenseFiles": [
+        {
+          "file": "typing_extensions-4.16.0.dist-info/licenses/LICENSE",
+          "sha256": "3b2f81fe21d181c499c59a256c8e1968455d6689d269aa85373bfb6af41da3bf"
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "python",
+      "ref": "pkg:pypi/urllib3@2.7.0?owner=pip",
+      "declaredLicense": "NOASSERTION",
+      "licenseFiles": [],
+      "status": "upstream-metadata-collected-vendored-text-mapping-not-accepted",
+      "publicDeclaration": {
+        "url": "https://pypi.org/pypi/urllib3/2.7.0/json",
+        "sha256": "54db1e362e04e390c23c2182dd425a6b3f0c1a73c5bd3f3e40611c3590c7a43a",
+        "name": "urllib3",
+        "version": "2.7.0",
+        "licenseExpression": "MIT",
+        "license": null,
+        "licenseClassifiers": []
+      },
+      "mappingNote": "Owner-relative receipts; no automatic package-to-license legal attribution."
+    },
+    {
+      "candidate": "python",
+      "ref": "pkg:pypi/wheel@0.45.1",
+      "declaredLicense": "NOASSERTION",
+      "licenseFiles": [
+        {
+          "file": "wheel-0.45.1.dist-info/LICENSE.txt",
+          "sha256": "30c23618679108f3e8ea1d2a658c7ca417bdfc891c98ef1a89fa4ff0c9828654"
+        },
+        {
+          "file": "wheel/vendored/packaging/LICENSE",
+          "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48"
+        },
+        {
+          "file": "wheel/vendored/packaging/LICENSE.APACHE",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        },
+        {
+          "file": "wheel/vendored/packaging/LICENSE.BSD",
+          "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5"
+        }
+      ],
+      "status": "upstream-metadata-collected-vendored-text-mapping-not-accepted",
+      "publicDeclaration": {
+        "url": "https://pypi.org/pypi/wheel/0.45.1/json",
+        "sha256": "617c2b62cc17caeef3fc1e10144bd3d5b8dc2fb93bb67a87f2802c2d0a856c32",
+        "name": "wheel",
+        "version": "0.45.1",
+        "licenseExpression": null,
+        "license": null,
+        "licenseClassifiers": [
+          "License :: OSI Approved :: MIT License"
+        ]
+      },
+      "mappingNote": "Installed wheel license receipts; declarations are not a distribution approval."
+    },
+    {
+      "candidate": "python",
+      "ref": "pkg:pypi/wheel@0.45.1?owner=setuptools",
+      "declaredLicense": "NOASSERTION",
+      "licenseFiles": [
+        {
+          "file": "wheel-0.45.1.dist-info/LICENSE.txt",
+          "sha256": "30c23618679108f3e8ea1d2a658c7ca417bdfc891c98ef1a89fa4ff0c9828654"
+        },
+        {
+          "file": "wheel/vendored/packaging/LICENSE",
+          "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48"
+        },
+        {
+          "file": "wheel/vendored/packaging/LICENSE.APACHE",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        },
+        {
+          "file": "wheel/vendored/packaging/LICENSE.BSD",
+          "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5"
+        }
+      ],
+      "status": "upstream-metadata-collected-vendored-text-mapping-not-accepted",
+      "publicDeclaration": {
+        "url": "https://pypi.org/pypi/wheel/0.45.1/json",
+        "sha256": "617c2b62cc17caeef3fc1e10144bd3d5b8dc2fb93bb67a87f2802c2d0a856c32",
+        "name": "wheel",
+        "version": "0.45.1",
+        "licenseExpression": null,
+        "license": null,
+        "licenseClassifiers": [
+          "License :: OSI Approved :: MIT License"
+        ]
+      },
+      "mappingNote": "Owner-relative receipts; no automatic package-to-license legal attribution."
+    },
+    {
+      "candidate": "python",
+      "ref": "pkg:pypi/zipp@3.19.2?owner=setuptools",
+      "declaredLicense": "NOASSERTION",
+      "licenseFiles": [
+        {
+          "file": "zipp-3.19.2.dist-info/LICENSE",
+          "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741"
+        }
+      ],
+      "status": "upstream-metadata-collected-vendored-text-mapping-not-accepted",
+      "publicDeclaration": {
+        "url": "https://pypi.org/pypi/zipp/3.19.2/json",
+        "sha256": "34f5cc427713addf7d9c3d25f94f8375a8e844fa25e53991f5f0bcb53c63a39a",
+        "name": "zipp",
+        "version": "3.19.2",
+        "licenseExpression": null,
+        "license": null,
+        "licenseClassifiers": [
+          "License :: OSI Approved :: MIT License"
+        ]
+      },
+      "mappingNote": "Owner-relative receipts; no automatic package-to-license legal attribution."
+    },
+    {
+      "candidate": "rust",
+      "ref": "pkg:cargo/ahash@0.8.12",
+      "declaredLicense": "MIT OR Apache-2.0",
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+          "bytes": 10847
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "0444c6991eead6822f7b9102e654448d51624431119546492e8b231db42c48bb",
+          "bytes": 1057
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "rust",
+      "ref": "pkg:cargo/aho-corasick@1.1.5",
+      "declaredLicense": "Unlicense OR MIT",
+      "licenseFiles": [
+        {
+          "file": "COPYING",
+          "sha256": "01c266bced4a434da0051174d6bee16a4c82cf634e2679b6155d40d75012390f",
+          "bytes": 126
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "0f96a83840e146e43c0ec96a22ec1f392e0680e6c1226e6f3ba87e0740af850f",
+          "bytes": 1081
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "rust",
+      "ref": "pkg:cargo/allocator-api2@0.2.21",
+      "declaredLicense": "MIT OR Apache-2.0",
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "20fe7b00e904ed690e3b9fd6073784d3fc428141dbd10b81c01fd143d0797f58",
+          "bytes": 9899
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "36516aefdc84c5d5a1e7485425913a22dbda69eb1930c5e84d6ae4972b5194b9",
+          "bytes": 1046
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "rust",
+      "ref": "pkg:cargo/arraydeque@0.5.1",
+      "declaredLicense": "MIT/Apache-2.0",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "0aab2eeeaa27c8e946c235e5e605c6d52cb0a56d254c660bdcf618d6f7faf4af",
+          "bytes": 1101
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "rust",
+      "ref": "pkg:cargo/autocfg@1.5.1",
+      "declaredLicense": "Apache-2.0 OR MIT",
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+          "bytes": 10847
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "27995d58ad5c1145c1a8cd86244ce844886958a35eb2b78c6b772748669999ac",
+          "bytes": 1054
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "rust",
+      "ref": "pkg:cargo/bit-set@0.8.0",
+      "declaredLicense": "Apache-2.0 OR MIT",
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "8173d5c29b4f956d532781d2b86e4e30f83e6b7878dce18c919451d6ba707c90",
+          "bytes": 10850
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "f51ac2c59a222f7476ce507ca879960e2b64ea64bb2786eefdbeb7b0b538d1b7",
+          "bytes": 1071
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "rust",
+      "ref": "pkg:cargo/bit-vec@0.8.0",
+      "declaredLicense": "Apache-2.0 OR MIT",
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "8173d5c29b4f956d532781d2b86e4e30f83e6b7878dce18c919451d6ba707c90",
+          "bytes": 10850
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "f51ac2c59a222f7476ce507ca879960e2b64ea64bb2786eefdbeb7b0b538d1b7",
+          "bytes": 1071
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "rust",
+      "ref": "pkg:cargo/borrow-or-share@0.2.4",
+      "declaredLicense": "MIT-0",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "010492e490b92ec85db01daad2a290ea5959f29314a1c4ff25e7a172e223abf9",
+          "bytes": 904
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "rust",
+      "ref": "pkg:cargo/bytecount@0.6.9",
+      "declaredLicense": "Apache-2.0/MIT",
+      "licenseFiles": [
+        {
+          "file": "LICENSE.Apache2",
+          "sha256": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1",
+          "bytes": 11357
+        },
+        {
+          "file": "LICENSE.MIT",
+          "sha256": "a5dea80c1f383cb5f80a6bb0da5e55a2beb9f24adb123ce6300af2cbaaa3bf65",
+          "bytes": 1068
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "rust",
+      "ref": "pkg:cargo/cfg-if@1.0.5",
+      "declaredLicense": "MIT OR Apache-2.0",
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+          "bytes": 10847
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "378f5840b258e2779c39418f3f2d7b2ba96f1c7917dd6be0713f88305dbda397",
+          "bytes": 1057
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "rust",
+      "ref": "pkg:cargo/data-encoding@2.11.1",
+      "declaredLicense": "MIT",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "b68ad1a3367b825447089e1f8d6829b97f47a89eb78d2f4ebaef4672f5606186",
+          "bytes": 1121
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "rust",
+      "ref": "pkg:cargo/email_address@0.2.9",
+      "declaredLicense": "MIT",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "39712155836e5c10ef1b07037b606e4ad2d633e72205d162fdd7e2290aa54f15",
+          "bytes": 1071
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "rust",
+      "ref": "pkg:cargo/encoding_rs@0.8.42",
+      "declaredLicense": "(Apache-2.0 OR MIT) AND BSD-3-Clause",
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+          "bytes": 11358
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "3fa4ca83dcc9237839b1bdeb2e6d16bdfb5ec0c5ce42b24694d8bbf0dcbef72c",
+          "bytes": 1053
+        },
+        {
+          "file": "LICENSE-WHATWG",
+          "sha256": "838118388fe5c2e7f1dbbaeed13e1c7f3ebf88be91319c7c1d77c18e987d1a50",
+          "bytes": 1501
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "rust",
+      "ref": "pkg:cargo/equivalent@1.0.2",
+      "declaredLicense": "Apache-2.0 OR MIT",
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+          "bytes": 10847
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "7365cc8878a1d7ce155a58c4ca09c3d7a6be413efa5334a80ea842912b669349",
+          "bytes": 1049
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "rust",
+      "ref": "pkg:cargo/fancy-regex@0.19.2",
+      "declaredLicense": "MIT",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "3bc70e239e91272782006c638fc0452a714d384224f11f0923036b7be07cf9b5",
+          "bytes": 1081
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "rust",
+      "ref": "pkg:cargo/fluent-uri@0.4.1",
+      "declaredLicense": "MIT",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "9fa38f610a00115dd1f612bdd3559e3b381ea579538b6ff25a5899da250a5fce",
+          "bytes": 1066
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "rust",
+      "ref": "pkg:cargo/foldhash@0.2.0",
+      "declaredLicense": "Zlib",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "b1181a40b2a7b25cf66fd01481713bc1005df082c53ef73e851e55071b102744",
+          "bytes": 856
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "rust",
+      "ref": "pkg:cargo/fraction@0.17.0",
+      "declaredLicense": "MIT OR Apache-2.0",
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+          "bytes": 10847
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "6485b8ed310d3f0340bf1ad1f47645069ce4069dcc6bb46c7d5c6faf41de1fdb",
+          "bytes": 1071
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "rust",
+      "ref": "pkg:cargo/getrandom@0.3.4",
+      "declaredLicense": "MIT OR Apache-2.0",
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "aaff376532ea30a0cd5330b9502ad4a4c8bf769c539c87ffe78819d188a18ebf",
+          "bytes": 10849
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "29e9fe5074bd27e0e5d5d110394fbbcd841baee2651a3c4b4560a632702cede4",
+          "bytes": 1130
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "rust",
+      "ref": "pkg:cargo/hashbrown@0.16.1",
+      "declaredLicense": "MIT OR Apache-2.0",
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+          "bytes": 10847
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "ff8f68cb076caf8cefe7a6430d4ac086ce6af2ca8ce2c4e5a2004d4552ef52a2",
+          "bytes": 1060
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "rust",
+      "ref": "pkg:cargo/hashbrown@0.17.1",
+      "declaredLicense": "MIT OR Apache-2.0",
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+          "bytes": 10847
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "ff8f68cb076caf8cefe7a6430d4ac086ce6af2ca8ce2c4e5a2004d4552ef52a2",
+          "bytes": 1060
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "rust",
+      "ref": "pkg:cargo/hashlink@0.11.1",
+      "declaredLicense": "MIT OR Apache-2.0",
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "c144680885b29e4719e2a51f0aab5439a1e02d980692b5aaf086cae12727f28b",
+          "bytes": 10849
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "e915669a595b11a200873df8286561881b0e04932f6412a585db6297ba0bc97c",
+          "bytes": 1133
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "rust",
+      "ref": "pkg:cargo/heck@0.5.0",
+      "declaredLicense": "MIT OR Apache-2.0",
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+          "bytes": 10847
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "7b63ecd5f1902af1b63729947373683c32745c16a10e8e6292e2e2dcd7e90ae0",
+          "bytes": 1071
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "rust",
+      "ref": "pkg:cargo/itoa@1.0.18",
+      "declaredLicense": "MIT OR Apache-2.0",
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
+          "bytes": 9723
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+          "bytes": 1023
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "rust",
+      "ref": "pkg:cargo/jsonschema-regex@0.58.4",
+      "declaredLicense": "MIT",
+      "licenseFiles": [],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "rust",
+      "ref": "pkg:cargo/jsonschema-value@0.58.4",
+      "declaredLicense": "MIT",
+      "licenseFiles": [],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "rust",
+      "ref": "pkg:cargo/jsonschema@0.58.4",
+      "declaredLicense": "MIT",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "117829c3ca21efb132d81a44b55363d395ab8eea18526873bc828da4c0e5f038",
+          "bytes": 1075
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "rust",
+      "ref": "pkg:cargo/libc@0.2.189",
+      "declaredLicense": "MIT OR Apache-2.0",
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
+          "bytes": 9723
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "123a331b5dbf04c30097fa43b8f858bc85df671fe776de498d01f3d6b7c1f69e",
+          "bytes": 1066
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "rust",
+      "ref": "pkg:cargo/lock_api@0.4.14",
+      "declaredLicense": "MIT OR Apache-2.0",
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+          "bytes": 10847
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "c9a75f18b9ab2927829a208fc6aa2cf4e63b8420887ba29cdb265d6619ae82d5",
+          "bytes": 1071
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "rust",
+      "ref": "pkg:cargo/memchr@2.8.3",
+      "declaredLicense": "Unlicense OR MIT",
+      "licenseFiles": [
+        {
+          "file": "COPYING",
+          "sha256": "01c266bced4a434da0051174d6bee16a4c82cf634e2679b6155d40d75012390f",
+          "bytes": 126
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "0f96a83840e146e43c0ec96a22ec1f392e0680e6c1226e6f3ba87e0740af850f",
+          "bytes": 1081
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "rust",
+      "ref": "pkg:cargo/micromap@0.3.0",
+      "declaredLicense": "MIT",
+      "licenseFiles": [
+        {
+          "file": "LICENSE.txt",
+          "sha256": "9387c2d197e2370a740ca457dae1662c56de56b811ee4862024343961307f9bf",
+          "bytes": 1065
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "rust",
+      "ref": "pkg:cargo/multiversion_no_op@1.0.0",
+      "declaredLicense": "Apache-2.0 OR MIT",
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+          "bytes": 11358
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "3fa4ca83dcc9237839b1bdeb2e6d16bdfb5ec0c5ce42b24694d8bbf0dcbef72c",
+          "bytes": 1053
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "rust",
+      "ref": "pkg:cargo/num-bigint@0.4.8",
+      "declaredLicense": "MIT OR Apache-2.0",
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+          "bytes": 10847
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "6485b8ed310d3f0340bf1ad1f47645069ce4069dcc6bb46c7d5c6faf41de1fdb",
+          "bytes": 1071
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "rust",
+      "ref": "pkg:cargo/num-cmp@0.1.0",
+      "declaredLicense": "MIT/Apache-2.0",
+      "licenseFiles": [
+        {
+          "file": "LICENSE.txt",
+          "sha256": "3bb1e548250b3acc43febde65a5cdba9f2e0a3288018aa41f009a3c59ffab51a",
+          "bytes": 20512
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "rust",
+      "ref": "pkg:cargo/num-complex@0.4.6",
+      "declaredLicense": "MIT OR Apache-2.0",
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+          "bytes": 10847
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "6485b8ed310d3f0340bf1ad1f47645069ce4069dcc6bb46c7d5c6faf41de1fdb",
+          "bytes": 1071
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "rust",
+      "ref": "pkg:cargo/num-integer@0.1.47",
+      "declaredLicense": "MIT OR Apache-2.0",
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+          "bytes": 10847
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "6485b8ed310d3f0340bf1ad1f47645069ce4069dcc6bb46c7d5c6faf41de1fdb",
+          "bytes": 1071
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "rust",
+      "ref": "pkg:cargo/num-iter@0.1.46",
+      "declaredLicense": "MIT OR Apache-2.0",
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+          "bytes": 10847
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "6485b8ed310d3f0340bf1ad1f47645069ce4069dcc6bb46c7d5c6faf41de1fdb",
+          "bytes": 1071
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "rust",
+      "ref": "pkg:cargo/num-rational@0.4.2",
+      "declaredLicense": "MIT OR Apache-2.0",
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+          "bytes": 10847
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "6485b8ed310d3f0340bf1ad1f47645069ce4069dcc6bb46c7d5c6faf41de1fdb",
+          "bytes": 1071
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "rust",
+      "ref": "pkg:cargo/num-traits@0.2.19",
+      "declaredLicense": "MIT OR Apache-2.0",
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+          "bytes": 10847
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "6485b8ed310d3f0340bf1ad1f47645069ce4069dcc6bb46c7d5c6faf41de1fdb",
+          "bytes": 1071
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "rust",
+      "ref": "pkg:cargo/num@0.4.3",
+      "declaredLicense": "MIT OR Apache-2.0",
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+          "bytes": 10847
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "6485b8ed310d3f0340bf1ad1f47645069ce4069dcc6bb46c7d5c6faf41de1fdb",
+          "bytes": 1071
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "rust",
+      "ref": "pkg:cargo/once_cell@1.21.4",
+      "declaredLicense": "MIT OR Apache-2.0",
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+          "bytes": 10847
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+          "bytes": 1023
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "rust",
+      "ref": "pkg:cargo/outref@0.5.2",
+      "declaredLicense": "MIT",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "a00511478c83ebb464ef19d840f061c7444adc4636bb561900e75c5808cfc6cc",
+          "bytes": 1062
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "rust",
+      "ref": "pkg:cargo/parking_lot_core@0.9.12",
+      "declaredLicense": "MIT OR Apache-2.0",
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+          "bytes": 10847
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "c9a75f18b9ab2927829a208fc6aa2cf4e63b8420887ba29cdb265d6619ae82d5",
+          "bytes": 1071
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "rust",
+      "ref": "pkg:cargo/parking_lot@0.12.5",
+      "declaredLicense": "MIT OR Apache-2.0",
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+          "bytes": 10847
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "c9a75f18b9ab2927829a208fc6aa2cf4e63b8420887ba29cdb265d6619ae82d5",
+          "bytes": 1071
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "rust",
+      "ref": "pkg:cargo/percent-encoding@2.3.2",
+      "declaredLicense": "MIT OR Apache-2.0",
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+          "bytes": 10847
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "b38f11f6096706e6de553dabe2a7ed142d59b6fa8c97e290c67496154745cdd5",
+          "bytes": 1072
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "rust",
+      "ref": "pkg:cargo/proc-macro2@1.0.107",
+      "declaredLicense": "MIT OR Apache-2.0",
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
+          "bytes": 9723
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+          "bytes": 1023
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "rust",
+      "ref": "pkg:cargo/quote@1.0.47",
+      "declaredLicense": "MIT OR Apache-2.0",
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
+          "bytes": 9723
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+          "bytes": 1023
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "rust",
+      "ref": "pkg:cargo/ref-cast-impl@1.0.27",
+      "declaredLicense": "MIT OR Apache-2.0",
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
+          "bytes": 9723
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+          "bytes": 1023
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "rust",
+      "ref": "pkg:cargo/ref-cast@1.0.27",
+      "declaredLicense": "MIT OR Apache-2.0",
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
+          "bytes": 9723
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+          "bytes": 1023
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "rust",
+      "ref": "pkg:cargo/referencing@0.58.4",
+      "declaredLicense": "MIT",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "117829c3ca21efb132d81a44b55363d395ab8eea18526873bc828da4c0e5f038",
+          "bytes": 1075
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "rust",
+      "ref": "pkg:cargo/regex-automata@0.4.18",
+      "declaredLicense": "MIT OR Apache-2.0",
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+          "bytes": 10847
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "6485b8ed310d3f0340bf1ad1f47645069ce4069dcc6bb46c7d5c6faf41de1fdb",
+          "bytes": 1071
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "rust",
+      "ref": "pkg:cargo/regex-syntax@0.8.11",
+      "declaredLicense": "MIT OR Apache-2.0",
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+          "bytes": 10847
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "6485b8ed310d3f0340bf1ad1f47645069ce4069dcc6bb46c7d5c6faf41de1fdb",
+          "bytes": 1071
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "rust",
+      "ref": "pkg:cargo/regex@1.13.1",
+      "declaredLicense": "MIT OR Apache-2.0",
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+          "bytes": 10847
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "6485b8ed310d3f0340bf1ad1f47645069ce4069dcc6bb46c7d5c6faf41de1fdb",
+          "bytes": 1071
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "rust",
+      "ref": "pkg:cargo/rustversion@1.0.23",
+      "declaredLicense": "MIT OR Apache-2.0",
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
+          "bytes": 9723
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+          "bytes": 1023
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "rust",
+      "ref": "pkg:cargo/ryu@1.0.23",
+      "declaredLicense": "Apache-2.0 OR BSL-1.0",
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
+          "bytes": 9723
+        },
+        {
+          "file": "LICENSE-BOOST",
+          "sha256": "c9bff75738922193e67fa726fa225535870d2aa1059f91452c411736284ad566",
+          "bytes": 1338
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "rust",
+      "ref": "pkg:cargo/scopeguard@1.2.0",
+      "declaredLicense": "MIT OR Apache-2.0",
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+          "bytes": 10847
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "fb77f0a9c53e473abe5103c8632ef9f0f2874d4fb3f17cb2d8c661aab9cee9d7",
+          "bytes": 1097
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "rust",
+      "ref": "pkg:cargo/serde_core@1.0.229",
+      "declaredLicense": "MIT OR Apache-2.0",
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
+          "bytes": 9723
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+          "bytes": 1023
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "rust",
+      "ref": "pkg:cargo/serde_derive@1.0.229",
+      "declaredLicense": "MIT OR Apache-2.0",
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
+          "bytes": 9723
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+          "bytes": 1023
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "rust",
+      "ref": "pkg:cargo/serde_json@1.0.145",
+      "declaredLicense": "MIT OR Apache-2.0",
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
+          "bytes": 9723
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+          "bytes": 1023
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "rust",
+      "ref": "pkg:cargo/serde@1.0.229",
+      "declaredLicense": "MIT OR Apache-2.0",
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
+          "bytes": 9723
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+          "bytes": 1023
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "rust",
+      "ref": "pkg:cargo/simdutf8@0.1.5",
+      "declaredLicense": "MIT OR Apache-2.0",
+      "licenseFiles": [
+        {
+          "file": "LICENSE-Apache",
+          "sha256": "0cec06e0e55fbc3dc5cee4fca9b607f66cb8f4e4dbcf3b3c013594dd156732e9",
+          "bytes": 10173
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "1847e0e0698142ed4347c1441a9fa81c8fbddd44b1d8bbcd5e3647f991759d7f",
+          "bytes": 1035
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "rust",
+      "ref": "pkg:cargo/smallvec@1.16.2",
+      "declaredLicense": "MIT OR Apache-2.0",
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+          "bytes": 10847
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "0b28172679e0009b655da42797c03fd163a3379d5cfa67ba1f1655e974a2a1a9",
+          "bytes": 1072
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "rust",
+      "ref": "pkg:cargo/strum_macros@0.28.0",
+      "declaredLicense": "MIT",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "8bce3b45e49ecd1461f223b46de133d8f62cd39f745cfdaf81bee554b908bd42",
+          "bytes": 1072
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "rust",
+      "ref": "pkg:cargo/strum@0.28.0",
+      "declaredLicense": "MIT",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "8bce3b45e49ecd1461f223b46de133d8f62cd39f745cfdaf81bee554b908bd42",
+          "bytes": 1072
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "rust",
+      "ref": "pkg:cargo/syn@2.0.119",
+      "declaredLicense": "MIT OR Apache-2.0",
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
+          "bytes": 9723
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+          "bytes": 1023
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "rust",
+      "ref": "pkg:cargo/syn@3.0.6",
+      "declaredLicense": "MIT OR Apache-2.0",
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
+          "bytes": 9723
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+          "bytes": 1023
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "rust",
+      "ref": "pkg:cargo/unicode-general-category@1.1.0",
+      "declaredLicense": "Apache-2.0",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1",
+          "bytes": 11357
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "rust",
+      "ref": "pkg:cargo/unicode-ident@1.0.26",
+      "declaredLicense": "(MIT OR Apache-2.0) AND Unicode-3.0",
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
+          "bytes": 9723
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+          "bytes": 1023
+        },
+        {
+          "file": "LICENSE-UNICODE",
+          "sha256": "f7db81051789b729fea528a63ec4c938fdcb93d9d61d97dc8cc2e9df6d47f2a1",
+          "bytes": 1995
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "rust",
+      "ref": "pkg:cargo/uuid-simd@0.8.0",
+      "declaredLicense": "MIT",
+      "licenseFiles": [],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "rust",
+      "ref": "pkg:cargo/version_check@0.9.5",
+      "declaredLicense": "MIT/Apache-2.0",
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+          "bytes": 10847
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "b7e650f3fce5c53249d1cdc608b54df156a97edd636cf9d23498d0cfe7aec63e",
+          "bytes": 1085
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "rust",
+      "ref": "pkg:cargo/vsimd@0.8.0",
+      "declaredLicense": "MIT",
+      "licenseFiles": [],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "rust",
+      "ref": "pkg:cargo/yaml-rust2@0.11.0",
+      "declaredLicense": "MIT OR Apache-2.0",
+      "licenseFiles": [],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "rust",
+      "ref": "pkg:cargo/zerocopy@0.8.59",
+      "declaredLicense": "BSD-2-Clause OR Apache-2.0 OR MIT",
+      "licenseFiles": [
+        {
+          "file": "LICENSE-APACHE",
+          "sha256": "9d185ac6703c4b0453974c0d85e9eee43e6941009296bb1f5eb0b54e2329e9f3",
+          "bytes": 11350
+        },
+        {
+          "file": "LICENSE-BSD",
+          "sha256": "83c1763356e822adde0a2cae748d938a73fdc263849ccff6b27776dff213bd32",
+          "bytes": 1275
+        },
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "1a2f5c12ddc934d58956aa5dbdd3255fe55fd957633ab7d0d39e4f0daa73f7df",
+          "bytes": 1060
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "rust",
+      "ref": "pkg:cargo/zmij@1.0.23",
+      "declaredLicense": "MIT",
+      "licenseFiles": [
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+          "bytes": 1023
+        }
+      ],
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "candidate": "go",
+      "ref": "pkg:golang/github.com/dlclark/regexp2@v1.11.0",
+      "declaredLicense": "NOASSERTION",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "9be5d04bb4d706914d5bf943710da4afeb42048f7c529902fb57c82762a991a9"
+        }
+      ],
+      "status": "text-mapped-not-legal-approval",
+      "reviewedExpression": "MIT"
+    },
+    {
+      "candidate": "go",
+      "ref": "pkg:golang/github.com/santhosh-tekuri/jsonschema/v6@v6.0.2",
+      "declaredLicense": "NOASSERTION",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "c8858a5a76440bbca484e134cf7df46385d090dd18b2c58e650f939258802e5b"
+        }
+      ],
+      "status": "text-mapped-not-legal-approval",
+      "reviewedExpression": "Apache-2.0"
+    },
+    {
+      "candidate": "go",
+      "ref": "pkg:golang/go.yaml.in/yaml/v3@v3.0.4",
+      "declaredLicense": "NOASSERTION",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "d18f6323b71b0b768bb5e9616e36da390fbd39369a81807cca352de4e4e6aa0b"
+        },
+        {
+          "file": "NOTICE",
+          "sha256": "f6c2dd3a67b576eafb89b80200b8b1627230bf3821a0c14cb99a22ac19107d00"
+        }
+      ],
+      "status": "text-mapped-not-legal-approval",
+      "reviewedExpression": "MIT AND Apache-2.0"
+    },
+    {
+      "candidate": "go",
+      "ref": "pkg:golang/golang.org/x/mod@v0.8.0",
+      "declaredLicense": "NOASSERTION",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "2d36597f7117c38b006835ae7f537487207d8ec407aa9d9980794b2030cbc067"
+        }
+      ],
+      "status": "text-mapped-not-legal-approval",
+      "reviewedExpression": "BSD-3-Clause"
+    },
+    {
+      "candidate": "go",
+      "ref": "pkg:golang/golang.org/x/sys@v0.5.0",
+      "declaredLicense": "NOASSERTION",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "2d36597f7117c38b006835ae7f537487207d8ec407aa9d9980794b2030cbc067"
+        }
+      ],
+      "status": "text-mapped-not-legal-approval",
+      "reviewedExpression": "BSD-3-Clause"
+    },
+    {
+      "candidate": "go",
+      "ref": "pkg:golang/golang.org/x/text@v0.14.0",
+      "declaredLicense": "NOASSERTION",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "2d36597f7117c38b006835ae7f537487207d8ec407aa9d9980794b2030cbc067"
+        }
+      ],
+      "status": "text-mapped-not-legal-approval",
+      "reviewedExpression": "BSD-3-Clause"
+    },
+    {
+      "candidate": "go",
+      "ref": "pkg:golang/golang.org/x/tools@v0.6.0",
+      "declaredLicense": "NOASSERTION",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "2d36597f7117c38b006835ae7f537487207d8ec407aa9d9980794b2030cbc067"
+        }
+      ],
+      "status": "text-mapped-not-legal-approval",
+      "reviewedExpression": "BSD-3-Clause"
+    },
+    {
+      "candidate": "go",
+      "ref": "pkg:golang/gopkg.in/check.v1@v0.0.0-20161208181325-20d25e280405",
+      "declaredLicense": "NOASSERTION",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "69ce77f2b1c9c608d27f2d749b0e7d0c13960ed3b0dc07b973ac940e362e5d9c"
+        }
+      ],
+      "status": "text-mapped-not-legal-approval",
+      "reviewedExpression": "BSD-2-Clause"
+    }
+  ],
+  "goSelectedModuleGraph": [
+    [
+      "nexflow.local/go-evaluation",
+      "github.com/santhosh-tekuri/jsonschema/v6@v6.0.2"
+    ],
+    [
+      "nexflow.local/go-evaluation",
+      "go@1.27.1"
+    ],
+    [
+      "nexflow.local/go-evaluation",
+      "go.yaml.in/yaml/v3@v3.0.4"
+    ],
+    [
+      "nexflow.local/go-evaluation",
+      "golang.org/x/text@v0.14.0"
+    ],
+    [
+      "github.com/santhosh-tekuri/jsonschema/v6@v6.0.2",
+      "github.com/dlclark/regexp2@v1.11.0"
+    ],
+    [
+      "github.com/santhosh-tekuri/jsonschema/v6@v6.0.2",
+      "golang.org/x/text@v0.14.0"
+    ],
+    [
+      "github.com/santhosh-tekuri/jsonschema/v6@v6.0.2",
+      "go@1.21"
+    ],
+    [
+      "go@1.27.1",
+      "toolchain@go1.27.1"
+    ],
+    [
+      "go.yaml.in/yaml/v3@v3.0.4",
+      "gopkg.in/check.v1@v0.0.0-20161208181325-20d25e280405"
+    ],
+    [
+      "golang.org/x/text@v0.14.0",
+      "golang.org/x/tools@v0.6.0"
+    ],
+    [
+      "golang.org/x/text@v0.14.0",
+      "golang.org/x/mod@v0.8.0"
+    ],
+    [
+      "golang.org/x/text@v0.14.0",
+      "golang.org/x/sys@v0.5.0"
+    ]
+  ],
+  "nodeTooling": [
+    {
+      "ref": "pkg:npm/corepack@0.34.6",
+      "declaredLicense": "MIT",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/npm@10.9.8",
+      "declaredLicense": "Artistic-2.0",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/%40isaacs/cliui@8.0.2",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/ansi-regex@6.2.2",
+      "declaredLicense": "MIT",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/emoji-regex@9.2.2",
+      "declaredLicense": "MIT",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/string-width@5.1.2",
+      "declaredLicense": "MIT",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/strip-ansi@7.2.0",
+      "declaredLicense": "MIT",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/%40isaacs/fs-minipass@4.0.1",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/%40isaacs/string-locale-compare@1.1.0",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/%40npmcli/agent@3.0.0",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/%40npmcli/arborist@8.0.5",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/%40npmcli/config@9.0.0",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/%40npmcli/fs@4.0.0",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/%40npmcli/git@6.0.3",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/%40npmcli/installed-package-contents@3.0.0",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/%40npmcli/map-workspaces@4.0.2",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/%40npmcli/metavuln-calculator@8.0.1",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/pacote@20.0.1",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/%40npmcli/name-from-folder@3.0.0",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/%40npmcli/node-gyp@4.0.0",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/%40npmcli/package-json@6.2.0",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/%40npmcli/promise-spawn@8.0.3",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/%40npmcli/query@4.0.1",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/%40npmcli/redact@3.2.2",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/%40npmcli/run-script@9.1.0",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/%40pkgjs/parseargs@0.11.0",
+      "declaredLicense": "MIT",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/%40sigstore/bundle@3.1.0",
+      "declaredLicense": "Apache-2.0",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/%40sigstore/core@2.0.0",
+      "declaredLicense": "Apache-2.0",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/%40sigstore/protobuf-specs@0.4.3",
+      "declaredLicense": "Apache-2.0",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/%40sigstore/sign@3.1.0",
+      "declaredLicense": "Apache-2.0",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/%40sigstore/tuf@3.1.1",
+      "declaredLicense": "Apache-2.0",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/%40sigstore/verify@2.1.1",
+      "declaredLicense": "Apache-2.0",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/%40tufjs/canonical-json@2.0.0",
+      "declaredLicense": "MIT",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/abbrev@3.0.1",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/agent-base@7.1.4",
+      "declaredLicense": "MIT",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/ansi-regex@5.0.1",
+      "declaredLicense": "MIT",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/ansi-styles@6.2.3",
+      "declaredLicense": "MIT",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/aproba@2.1.0",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/archy@1.0.0",
+      "declaredLicense": "MIT",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/balanced-match@1.0.2",
+      "declaredLicense": "MIT",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/bin-links@5.0.0",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/binary-extensions@2.3.0",
+      "declaredLicense": "MIT",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/brace-expansion@2.0.2",
+      "declaredLicense": "MIT",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/cacache@19.0.1",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/chalk@5.6.2",
+      "declaredLicense": "MIT",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/chownr@3.0.0",
+      "declaredLicense": "BlueOak-1.0.0",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/ci-info@4.4.0",
+      "declaredLicense": "MIT",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/cidr-regex@4.1.3",
+      "declaredLicense": "BSD-2-Clause",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/cli-columns@4.0.0",
+      "declaredLicense": "MIT",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/cmd-shim@7.0.0",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/color-convert@2.0.1",
+      "declaredLicense": "MIT",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/color-name@1.1.4",
+      "declaredLicense": "MIT",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/common-ancestor-path@1.0.1",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/cross-spawn@7.0.6",
+      "declaredLicense": "MIT",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/which@2.0.2",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/cssesc@3.0.0",
+      "declaredLicense": "MIT",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/debug@4.4.3",
+      "declaredLicense": "MIT",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/diff@5.2.2",
+      "declaredLicense": "BSD-3-Clause",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/eastasianwidth@0.2.0",
+      "declaredLicense": "MIT",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/emoji-regex@8.0.0",
+      "declaredLicense": "MIT",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/encoding@0.1.13",
+      "declaredLicense": "MIT",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/env-paths@2.2.1",
+      "declaredLicense": "MIT",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/err-code@2.0.3",
+      "declaredLicense": "MIT",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/exponential-backoff@3.1.3",
+      "declaredLicense": "Apache-2.0",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/fastest-levenshtein@1.0.16",
+      "declaredLicense": "MIT",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/fdir@6.5.0",
+      "declaredLicense": "MIT",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/foreground-child@3.3.1",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/fs-minipass@3.0.3",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/glob@10.5.0",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/graceful-fs@4.2.11",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/hosted-git-info@8.1.0",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/http-cache-semantics@4.2.0",
+      "declaredLicense": "BSD-2-Clause",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/http-proxy-agent@7.0.2",
+      "declaredLicense": "MIT",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/https-proxy-agent@7.0.6",
+      "declaredLicense": "MIT",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/iconv-lite@0.6.3",
+      "declaredLicense": "MIT",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/ignore-walk@7.0.0",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/imurmurhash@0.1.4",
+      "declaredLicense": "MIT",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/ini@5.0.0",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/init-package-json@7.0.2",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/ip-address@10.1.0",
+      "declaredLicense": "MIT",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/ip-regex@5.0.0",
+      "declaredLicense": "MIT",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/is-cidr@5.1.1",
+      "declaredLicense": "BSD-2-Clause",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/is-fullwidth-code-point@3.0.0",
+      "declaredLicense": "MIT",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/isexe@2.0.0",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/jackspeak@3.4.3",
+      "declaredLicense": "BlueOak-1.0.0",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/json-parse-even-better-errors@4.0.0",
+      "declaredLicense": "MIT",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/json-stringify-nice@1.1.4",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/jsonparse@1.3.1",
+      "declaredLicense": "MIT",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/just-diff@6.0.2",
+      "declaredLicense": "MIT",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/just-diff-apply@5.5.0",
+      "declaredLicense": "MIT",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/libnpmaccess@9.0.0",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/libnpmdiff@7.0.5",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/libnpmexec@9.0.5",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/libnpmfund@6.0.5",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/libnpmhook@11.0.0",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/libnpmorg@7.0.0",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/libnpmpack@8.0.5",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/libnpmpublish@10.0.2",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/libnpmsearch@8.0.0",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/libnpmteam@7.0.0",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/libnpmversion@7.0.0",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/lru-cache@10.4.3",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/make-fetch-happen@14.0.3",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/minimatch@9.0.9",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/minipass@7.1.3",
+      "declaredLicense": "BlueOak-1.0.0",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/minipass-collect@2.0.1",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/minipass-fetch@4.0.1",
+      "declaredLicense": "MIT",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/minipass-flush@1.0.5",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/minipass@3.3.6",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/yallist@4.0.0",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/minipass-pipeline@1.2.4",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/minipass-sized@1.0.3",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/minizlib@3.1.0",
+      "declaredLicense": "MIT",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/ms@2.1.3",
+      "declaredLicense": "MIT",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/mute-stream@2.0.0",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/negotiator@1.0.0",
+      "declaredLicense": "MIT",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/node-gyp@11.5.0",
+      "declaredLicense": "MIT",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/nopt@8.1.0",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/normalize-package-data@7.0.1",
+      "declaredLicense": "BSD-2-Clause",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/npm-audit-report@6.0.0",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/npm-bundled@4.0.0",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/npm-install-checks@7.1.2",
+      "declaredLicense": "BSD-2-Clause",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/npm-normalize-package-bin@4.0.0",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/npm-package-arg@12.0.2",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/npm-packlist@9.0.0",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/npm-pick-manifest@10.0.0",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/npm-profile@11.0.1",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/npm-registry-fetch@18.0.2",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/npm-user-validate@3.0.0",
+      "declaredLicense": "BSD-2-Clause",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/p-map@7.0.4",
+      "declaredLicense": "MIT",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/package-json-from-dist@1.0.1",
+      "declaredLicense": "BlueOak-1.0.0",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/pacote@19.0.2",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/parse-conflict-json@4.0.0",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/path-key@3.1.1",
+      "declaredLicense": "MIT",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/path-scurry@1.11.1",
+      "declaredLicense": "BlueOak-1.0.0",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/picomatch@4.0.3",
+      "declaredLicense": "MIT",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/postcss-selector-parser@7.1.1",
+      "declaredLicense": "MIT",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/proc-log@5.0.0",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/proggy@3.0.0",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/promise-all-reject-late@1.0.1",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/promise-call-limit@3.0.2",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/promise-retry@2.0.1",
+      "declaredLicense": "MIT",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/promzard@2.0.0",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/qrcode-terminal@0.12.0",
+      "declaredLicense": "NOASSERTION",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/read@4.1.0",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/read-cmd-shim@5.0.0",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/read-package-json-fast@4.0.0",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/retry@0.12.0",
+      "declaredLicense": "MIT",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/safer-buffer@2.1.2",
+      "declaredLicense": "MIT",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/semver@7.7.4",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/shebang-command@2.0.0",
+      "declaredLicense": "MIT",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/shebang-regex@3.0.0",
+      "declaredLicense": "MIT",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/signal-exit@4.1.0",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/sigstore@3.1.0",
+      "declaredLicense": "Apache-2.0",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/smart-buffer@4.2.0",
+      "declaredLicense": "MIT",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/socks@2.8.7",
+      "declaredLicense": "MIT",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/socks-proxy-agent@8.0.5",
+      "declaredLicense": "MIT",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/spdx-correct@3.2.0",
+      "declaredLicense": "Apache-2.0",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/spdx-expression-parse@3.0.1",
+      "declaredLicense": "MIT",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/spdx-exceptions@2.5.0",
+      "declaredLicense": "CC-BY-3.0",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/spdx-expression-parse@4.0.0",
+      "declaredLicense": "MIT",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/spdx-license-ids@3.0.23",
+      "declaredLicense": "CC0-1.0",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/ssri@12.0.0",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/string-width@4.2.3",
+      "declaredLicense": "MIT",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/strip-ansi@6.0.1",
+      "declaredLicense": "MIT",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/supports-color@9.4.0",
+      "declaredLicense": "MIT",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/tar@7.5.11",
+      "declaredLicense": "BlueOak-1.0.0",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/text-table@0.2.0",
+      "declaredLicense": "MIT",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/tiny-relative-date@1.3.0",
+      "declaredLicense": "MIT",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/tinyglobby@0.2.15",
+      "declaredLicense": "MIT",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/treeverse@3.0.0",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/tuf-js@3.1.0",
+      "declaredLicense": "MIT",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/%40tufjs/models@3.0.1",
+      "declaredLicense": "MIT",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/unique-filename@4.0.0",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/unique-slug@5.0.0",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/util-deprecate@1.0.2",
+      "declaredLicense": "MIT",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/validate-npm-package-license@3.0.4",
+      "declaredLicense": "Apache-2.0",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/validate-npm-package-name@6.0.2",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/walk-up-path@3.0.1",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/which@5.0.0",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/isexe@3.1.5",
+      "declaredLicense": "BlueOak-1.0.0",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/wrap-ansi@8.1.0",
+      "declaredLicense": "MIT",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/wrap-ansi@7.0.0",
+      "declaredLicense": "MIT",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/ansi-styles@4.3.0",
+      "declaredLicense": "MIT",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/write-file-atomic@6.0.0",
+      "declaredLicense": "ISC",
+      "status": "upstream-declared-not-legal-approval"
+    },
+    {
+      "ref": "pkg:npm/yallist@5.0.0",
+      "declaredLicense": "BlueOak-1.0.0",
+      "status": "upstream-declared-not-legal-approval"
+    }
+  ],
+  "outcome": "partial-not-approved",
+  "remaining": [
+    "Python vendored component text mapping and distribution obligations require explicit disposition.",
+    "Compiler-internal, interpreter-bundled and native/OS licensing closure is not established by file hashes or upstream declarations."
+  ]
+}

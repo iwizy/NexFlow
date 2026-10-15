@@ -1,0 +1,46 @@
+{
+  "task": "NF-102-02",
+  "recordedAt": "2026-10-15",
+  "candidatePackageRevision": "a3dea0a3de7018e14057a9bc15307325439b500d",
+  "validationQualification": {
+    "pullRequest": 120,
+    "head": "f5526e6a88774ac7149c36c06a39b7235cf29ee6",
+    "merge": "a3dea0a3de7018e14057a9bc15307325439b500d",
+    "state": "MERGED",
+    "mergedAt": "2026-10-15T09:49:52Z"
+  },
+  "mainCi": {
+    "checks": [
+      {
+        "conclusion": "success",
+        "head_sha": "a3dea0a3de7018e14057a9bc15307325439b500d",
+        "html_url": "https://github.com/iwizy/NexFlow/actions/runs/38715830504/job/116358162481",
+        "name": "CLI prototype checks",
+        "status": "completed"
+      },
+      {
+        "conclusion": "success",
+        "head_sha": "a3dea0a3de7018e14057a9bc15307325439b500d",
+        "html_url": "https://github.com/iwizy/NexFlow/actions/runs/38715830264/job/116358162301",
+        "name": "Measurement gap evidence",
+        "status": "completed"
+      },
+      {
+        "conclusion": "success",
+        "head_sha": "a3dea0a3de7018e14057a9bc15307325439b500d",
+        "html_url": "https://github.com/iwizy/NexFlow/actions/runs/38715830275/job/116358161800",
+        "name": "Review mode and preserved gates",
+        "status": "completed"
+      },
+      {
+        "conclusion": "success",
+        "head_sha": "a3dea0a3de7018e14057a9bc15307325439b500d",
+        "html_url": "https://github.com/iwizy/NexFlow/actions/runs/38715830474/job/116358161649",
+        "name": "schema-validation",
+        "status": "completed"
+      }
+    ],
+    "total": 4
+  },
+  "boundary": "CI confirms the recorded checks only, not complete native/supply-chain or architecture acceptance"
+}

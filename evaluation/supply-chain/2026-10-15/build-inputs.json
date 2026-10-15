@@ -1,0 +1,29 @@
+{
+  "task": "NF-102-02",
+  "recordedAt": "2026-10-15T10:35:23.370Z",
+  "sourceRevision": "a3dea0a3de7018e14057a9bc15307325439b500d",
+  "scope": "observed-host-linker-and-SDK-fingerprint-not-per-process-build-trace",
+  "clang": {
+    "version": [
+      "Apple clang version 21.0.0 (clang-2100.3.34.2)",
+      "Target: arm64-apple-darwin27.0.0",
+      "Thread model: posix"
+    ],
+    "sha256": "1590ac950a3d627817d09ade5cb60b2115f17a72182a3141e010b4bcc482a0c9"
+  },
+  "linker": {
+    "version": [
+      "@(#)PROGRAM:ld PROJECT:ld-27037.1",
+      "BUILD 21:17:51 Aug 25 2026",
+      "configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em armv8m.main armv8.1m.main",
+      "LTO support using: LLVM version 21.0.0 (static support for 30, runtime is 30)",
+      "TAPI support using: Apple TAPI version 21.0.0 (tapi-2100.3.8.1)"
+    ],
+    "sha256": "374d9f0713bce2c8a9e1e82bde51615d5433516a10d99b63107eb6ee70542e4c"
+  },
+  "sdk": {
+    "version": "27.0",
+    "build": "26A425"
+  },
+  "licenseClosure": "not-complete; external platform/compiler prerequisites, no license or OS acceptance inferred"
+}

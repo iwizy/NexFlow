@@ -1,0 +1,19 @@
+{
+  "task": "NF-102-02",
+  "scope": "authorized-dependency-and-tooling-repair-not-product-release",
+  "node": "22.23.3",
+  "npm": "12.2.0",
+  "typescript": "6.0.3",
+  "python": "3.12.15",
+  "go": "1.27.2",
+  "rust": "1.99.0",
+  "historicalToolchains": "evaluation/toolchains remain immutable NF-056-04 inputs",
+  "locks": {
+    "evaluation/prototypes/typescript/package-lock.json": "9c8a34ceaab17c9085815a3f939b870c7e4b88f92b35f66cb07034ebba4c1a60",
+    "evaluation/prototypes/python/requirements.in": "5eb0969fa05027e2549cd254b67c7c31160c08c6ed14c02e9188fecd73ef953e",
+    "evaluation/prototypes/python/requirements.lock": "6d95fc741f0f204c6f16c218360bd502188ba86bc95234c5b04d47e535ad25d7",
+    "evaluation/prototypes/go/go.mod": "19411fe995f877a1e545cf1291daf6b493420551c153fb497067c38a66df8739",
+    "evaluation/prototypes/go/go.sum": "010d618acb0e93d362cb739e65c57f98f6d7c99cdf124b95076f176e0f9bef34",
+    "evaluation/repairs/supply-chain/npm/package-lock.json": "f19796b3651ae429a085e6844d14d1db83b8ad7951f6c7c1541a42c55f4ea905"
+  }
+}

@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 import assert from "node:assert/strict";
+import { createHash } from "node:crypto";
 import { readFileSync, readdirSync } from "node:fs";
 const base = "evaluation/prototypes/python/";
-assert.equal(readFileSync(base + ".python-version", "utf8").trim(), "3.12.14");
-for (const file of ["requirements.in", "requirements.lock"]) {
-  assert.equal(readFileSync(base + file, "utf8"), readFileSync("evaluation/toolchains/python/" + file, "utf8"));
-}
+assert.equal(readFileSync(base + ".python-version", "utf8").trim(), "3.12.15");
+const approved = JSON.parse(readFileSync("evaluation/repairs/supply-chain/toolchains.json"));
+for (const file of ["requirements.in","requirements.lock"]) assert.equal(createHash("sha256").update(readFileSync(base+file)).digest("hex"),approved.locks[base+file]);
 for (const name of readdirSync(base + "nexflow_python_evaluation").filter(name => name.endsWith(".py"))) {
   const source = readFileSync(base + "nexflow_python_evaluation/" + name, "utf8");
   // A limited maintenance guard; never an isolation or supply-chain verdict.

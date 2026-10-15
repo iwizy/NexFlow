@@ -35,27 +35,26 @@ jobs:
           persist-credentials: false
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
-          node-version: '22.23.2'
+          node-version: '22.23.3'
       - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1
         if: matrix.candidate == 'python'
         with:
-          python-version: '3.12.14'
+          python-version: '3.12.15'
       - uses: actions/setup-go@924ae3a1cded613372ab5595356fb5720e22ba16
         if: matrix.candidate == 'go'
         with:
-          go-version: '1.27.1'
+          go-version: '1.27.2'
           cache: false
       - name: Provision reviewed locks separately from evaluation
         run: |
-          test "$(npm --version)" = '10.9.8'
+          node scripts/evaluation-npm-provision.mjs "$RUNNER_TEMP/evaluation-npm"
+          export PATH="$RUNNER_TEMP/evaluation-npm/bin:$PATH"
+          echo "$RUNNER_TEMP/evaluation-npm/bin" >> "$GITHUB_PATH"
           npm ci --ignore-scripts
           case '${{ matrix.candidate }}' in
             typescript) npm --prefix evaluation/prototypes/typescript ci --ignore-scripts ;;
             python)
-              python -I -m venv .venv
-              .venv/bin/python -I -m pip --isolated download --require-hashes --only-binary=:all: -r evaluation/prototypes/python/requirements.lock --dest "$RUNNER_TEMP/wheelhouse"
-              .venv/bin/python -I -m pip --isolated install --no-index --find-links "$RUNNER_TEMP/wheelhouse" --require-hashes --only-binary=:all: -r evaluation/prototypes/python/requirements.lock
-              .venv/bin/python -I -m pip check ;;
+              python -I scripts/evaluation-python-provision.py --venv .venv --wheelhouse "$RUNNER_TEMP/wheelhouse" --provisioner "$RUNNER_TEMP/pip-provisioner" ;;
             rust)
               rustup toolchain install 1.99.0 --profile minimal --no-self-update
               cargo +1.99.0 fetch --locked --manifest-path evaluation/prototypes/rust/Cargo.toml ;;
@@ -117,8 +116,12 @@ jobs:
           persist-credentials: false
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
-          node-version: '22.23.2'
-      - run: npm ci --ignore-scripts
+          node-version: '22.23.3'
+      - run: |
+          node scripts/evaluation-npm-provision.mjs "$RUNNER_TEMP/evaluation-npm"
+          export PATH="$RUNNER_TEMP/evaluation-npm/bin:$PATH"
+          echo "$RUNNER_TEMP/evaluation-npm/bin" >> "$GITHUB_PATH"
+          npm ci --ignore-scripts
       - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
         with:
           pattern: validation-diagnostics-*
@@ -127,4 +130,4 @@ jobs:
       - name: Compare all fresh native results with current-source evidence
         run: |
           node scripts/runtime-diagnostic-projection-repair-smoke.mjs --historical --observations "$RUNNER_TEMP/observations"
-          node scripts/runtime-validation-contract-smoke.mjs --observations "$RUNNER_TEMP/observations"
+          node scripts/runtime-validation-contract-smoke.mjs --directory evaluation/qualification/supply-chain-repair --observations "$RUNNER_TEMP/observations"

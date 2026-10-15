@@ -1,16 +1,15 @@
 #!/usr/bin/env node
 import assert from "node:assert/strict";
+import { createHash } from "node:crypto";
 import { readFileSync, readdirSync } from "node:fs";
 
 const base = "evaluation/prototypes/typescript/";
 const manifest = JSON.parse(readFileSync(base + "package.json", "utf8"));
 assert.equal(manifest.private, true);
-assert.deepEqual(manifest.engines, { node: "22.23.2", npm: "10.9.8" });
-assert.equal(manifest.devDependencies.typescript, "7.0.2");
-const approved = JSON.parse(readFileSync("evaluation/toolchains/typescript/package-lock.json", "utf8"));
-const candidate = JSON.parse(readFileSync(base + "package-lock.json", "utf8"));
-assert.deepEqual(Object.keys(candidate.packages), Object.keys(approved.packages));
-for (const [name, entry] of Object.entries(candidate.packages)) if (name) assert.deepEqual(entry, approved.packages[name]);
+assert.deepEqual(manifest.engines, { node: "22.23.3", npm: "12.2.0" });
+assert.equal(manifest.devDependencies.typescript, "6.0.3");
+const approved = JSON.parse(readFileSync("evaluation/repairs/supply-chain/toolchains.json"));
+for (const file of ["package-lock.json"]) assert.equal(createHash("sha256").update(readFileSync(base+file)).digest("hex"),approved.locks[base+file]);
 
 for (const name of readdirSync(base + "src").filter(name => name.endsWith(".ts") && name !== "self-test.ts")) {
   const source = readFileSync(base + "src/" + name, "utf8");

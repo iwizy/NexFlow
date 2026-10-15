@@ -32,7 +32,7 @@ for(const id of ids){
   assert.deepEqual(recordErrors(r,s,b),[]);
   assert.equal(r.sbomSha256,digest(readFileSync(at+"/sbom.cdx.json")));
   assert.equal(r.advisoriesSha256,digest(readFileSync(at+"/advisories.json")));
-  bind(source,r.sourceManifest);bind(r.collectorRevision,r.collectorSources);
+  bind(source,r.sourceManifest,false);bind(r.collectorRevision,r.collectorSources);
   for(const input of r.sourceManifest.filter(f=>!f.file.endsWith("/README.md")))
     assert.equal(digest(gitBytes(r.baselineCandidateSource,input.file)),input.sha256,"qualified candidate drift");
   records[id]=r;

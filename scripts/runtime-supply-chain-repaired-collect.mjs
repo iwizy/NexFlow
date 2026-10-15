@@ -22,7 +22,7 @@ const licenses = root => readdirSync(root).filter(name => /^(license|copying|not
   .filter(name => statSync(join(root, name)).isFile()).map(name => receipt(join(root, name), name));
 const run = (command, args, cwd, extra = {}) => {
   const result = spawnSync(command, args, { cwd, encoding: "utf8", maxBuffer: 64 * 1024 * 1024,
-    timeout: 180000, env: { PATH: "/usr/bin:/bin:/usr/sbin:/sbin", LANG: "C", LC_ALL: "C", ...extra } });
+    timeout: 180000, env: { PATH: "/usr/bin:/bin:/usr/sbin:/sbin", LANG: "C", LC_ALL: "C", npm_config_userconfig:"/dev/null", npm_config_globalconfig:"/nonexistent-evaluation-global.npmrc", npm_config_ignore_scripts:"true", GOENV:"off", GOAUTH:"off", ...extra } });
   assert.equal(result.status, 0, "reviewed inventory/build command failed: " + basename(command) + " " + args[0]
     + "; " + (result.stderr ?? "").replace(/\/(?:Users|private)\/[^\s]*/gu, "<private-path>").slice(0, 500));
   return result.stdout;
@@ -168,7 +168,7 @@ export function collect(config) {
   const rs = collected.rust, rsRoot = join(config.sources.rust, "evaluation/prototypes/rust");
   const rsEnv = { CARGO_HOME: config.cargoHome, RUSTC: config.rustc, RUSTDOC: config.rustdoc,
     DYLD_FALLBACK_LIBRARY_PATH: join(dirname(dirname(config.rustc)),"lib"),
-    CARGO_TARGET_DIR: config.rustTarget, CARGO_INCREMENTAL:"0", RUSTFLAGS:"--remap-path-prefix="+config.sources.rust+"=/evaluation --remap-path-prefix="+config.rustTarget+"=/target --remap-path-prefix="+config.cargoHome+"=/cargo", PATH: dirname(config.rustc) + ":/usr/bin:/bin" };
+    CARGO_TARGET_DIR: config.rustTarget, CARGO_INCREMENTAL:"0", RUSTFLAGS:"--remap-path-prefix="+config.sources.rust+"=/evaluation --remap-path-prefix="+config.rustTarget+"=/evaluation/target --remap-path-prefix="+config.cargoHome+"=/cargo", PATH: dirname(config.rustc) + ":/usr/bin:/bin" };
   const meta = JSON.parse(run(config.cargo, ["metadata", "--offline", "--locked", "--format-version", "1", "--filter-platform", "aarch64-apple-darwin"], rsRoot, rsEnv));
   const registryLocks = new Map(readFileSync(join(rsRoot, "Cargo.lock"), "utf8").split("[[package]]").slice(1).map(block => {
     const name = block.match(/^name = "([^"]+)"/mu)?.[1], version = block.match(/^version = "([^"]+)"/mu)?.[1];
@@ -194,15 +194,15 @@ export function collect(config) {
   for (const c of rs.components) if (!rs.dependencies.some(d => d.ref === c.ref)) rs.dependencies.push({ ref: c.ref, dependsOn: [] });
   rs.commands = ["cargo build --release --frozen --offline with clean-root/target/registry path remapping (aarch64-apple-darwin)"];
   run(config.cargo, ["build", "--release", "--frozen", "--offline"], rsRoot, rsEnv);
-  rs.artifacts = ["nexflow-rust-evaluation", "library-driver"].map(name => receipt(join(config.rustTarget, "release", name), name));
+  rs.artifacts = ["nexflow-rust-evaluation", "library-driver", "libnexflow_rust_evaluation.rlib"].map(name => receipt(join(config.rustTarget, "release", name), name));
   rs.runtime = { name: "Rust standard library", version: run(config.rustc, ["--version"], rsRoot).trim(), requiredExternal: false,
-    compilerSha256: hash(config.rustc), cargoSha256: hash(config.cargo), nativeLinkage: rs.artifacts.map(a => ({
+    compilerSha256: hash(config.rustc), cargoSha256: hash(config.cargo), nativeLinkage: rs.artifacts.filter(a=>!a.file.endsWith(".rlib")).map(a => ({
       file: a.file, libraries: run("/usr/bin/otool", ["-L", join(config.rustTarget, "release", a.file)], rsRoot).split("\n").slice(1).map(s => s.trim()).filter(Boolean)
     })) };
   assert.ok(rs.runtime.version.startsWith("rustc 1.99.0 "));
 
   const go = collected.go; go.stdlibVersion="1.27.2"; const goRoot = join(config.sources.go, "evaluation/prototypes/go");
-  const goEnv = { GOPATH: config.goPath, GOCACHE: config.goCache, GOPROXY: "off", GOTOOLCHAIN: "local", CGO_ENABLED: "0" };
+  const goEnv = { GOPATH: config.goPath, GOCACHE: config.goCache, GOPROXY: "off", GOSUMDB:"off", GOTOOLCHAIN: "local", CGO_ENABLED: "0" };
   const deps = stream(run(config.go, ["list", "-mod=readonly", "-deps", "-json", "./cmd/cli", "./cmd/library-driver"], goRoot, goEnv));
   const modules = stream(run(config.go, ["list", "-mod=readonly", "-m", "-json", "all"], goRoot, goEnv));
   const sums = readFileSync(join(goRoot, "go.sum"), "utf8").trim().split("\n").map(line => line.split(/\s+/u));

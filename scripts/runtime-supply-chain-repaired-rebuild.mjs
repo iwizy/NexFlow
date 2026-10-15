@@ -9,7 +9,7 @@ import {sha} from "./runtime-supply-chain-repaired-collect.mjs";
 const config=JSON.parse(readFileSync(process.argv[2]));
 const root="evaluation/supply-chain/2026-10-15-repaired";
 const run=(command,args,cwd,extra={})=>{
- const p=spawnSync(command,args,{cwd,encoding:"utf8",timeout:600000,maxBuffer:64*1024*1024,env:{PATH:dirname(config.node)+":/usr/bin:/bin:/usr/sbin:/sbin",LANG:"C",LC_ALL:"C",...extra}});
+ const p=spawnSync(command,args,{cwd,encoding:"utf8",timeout:600000,maxBuffer:64*1024*1024,env:{PATH:dirname(config.node)+":/usr/bin:/bin:/usr/sbin:/sbin",LANG:"C",LC_ALL:"C",npm_config_userconfig:"/dev/null",npm_config_globalconfig:"/nonexistent-evaluation-global.npmrc",npm_config_ignore_scripts:"true",GOENV:"off",GOAUTH:"off",...extra}});
  assert.equal(p.status,0,basename(command)+": "+(p.stderr??"").replace(/\/(?:private|Users)\/[^\s]*/gu,"<private-path>").slice(0,500));return p.stdout;
 };
 const walk=at=>readdirSync(at,{withFileTypes:true}).flatMap(e=>e.isDirectory()?walk(join(at,e.name)):e.isFile()?[join(at,e.name)]:[]).sort();

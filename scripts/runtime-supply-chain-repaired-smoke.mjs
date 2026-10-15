@@ -12,7 +12,7 @@ for(const [file,hash]of Object.entries(tools.locks))assert.equal(digest(readFile
 for(const id of ids){
  const r=json(id+"/inventory.json"),s=json(id+"/advisories.json"),b=json(id+"/sbom.cdx.json");
  assert.equal(r.sourceRevision,source);assert.equal(r.collectorVersion,"nf-102-02-repair-v1");
- const pins={...frozen,stdlibVersion:tools.go,evaluationPackageRevision:source,candidates:{[id]:{sourceRevision:source,publishedHead:source,pullRequest:null}}};
+ const pins={...frozen,stdlibVersion:tools.go,reproducibleBuild:"two-clean-roots-byte-identical",evaluationPackageRevision:source,candidates:{[id]:{sourceRevision:source,publishedHead:source,pullRequest:null}}};
  assert.deepEqual(evidenceErrors({...r,task:"NF-056-11",collectorVersion:"nf-056-11-v1"},s,b,pins),[]);
  bind(source,r.sourceManifest,true);bind(r.collectorRevision,r.collectorSources);bind(source,r.locks,true);
  assert.equal(r.sbomSha256,digest(readFileSync(root+"/"+id+"/sbom.cdx.json")));assert.equal(r.advisoriesSha256,digest(readFileSync(root+"/"+id+"/advisories.json")));
@@ -25,11 +25,13 @@ assert.equal(closure.node.versions.node,tools.node);assert.equal(closure.node.ve
 assert.ok(closure.provisioning.receipts.some(r=>r.tool==="python"&&r.sha256.length===64));assert.ok(closure.python.buildMetadata.sha256.length===64);
 assert.ok(closure.nativeLinking.length>100&&closure.python.native.every(n=>n.version&&n.selection));
 assert.equal(closure.externalOperatingSystem.redistributed,false);assert.equal(closure.signing,"not-tested-no-signing-authority-used");
-for(const id of ids){const a=rebuild.runs[0].artifacts[id],b=rebuild.runs[1].artifacts[id];assert.ok(a.length);assert.deepEqual(a,b,id+" clean-root byte drift");assert.equal(rebuild.repeatability[id].status,"byte-identical");}
+for(const id of ids){const a=rebuild.runs[0].artifacts[id],b=rebuild.runs[1].artifacts[id];assert.ok(a.length);assert.deepEqual(a,b,id+" clean-root byte drift");assert.equal(rebuild.repeatability[id].status,"byte-identical");const r=json(id+"/inventory.json");assert.equal(r.rebuildSha256,digest(readFileSync(root+"/rebuild.json")));for(const artifact of r.artifacts)assert.equal(a.find(item=>item.file===artifact.file)?.sha256,artifact.sha256);}
+const installation=json("installation.json");assert.equal(installation.baseToolClosureSha256,digest(readFileSync(root+"/tool-closure.json")));assert.equal(installation.binaryPayloadModified,false);assert.equal(installation.globalInstallationModified,false);assert.equal(installation.verification.exitCode,0);bind(installation.collectorRevision,installation.collectorSources);
 assert.equal(rebuild.cohort.classification,"supplemental-not-frozen-target");assert.equal(rebuild.architectureAccepted,false);
 const allComponents=[];
 for(const id of ["npm","pip","rustCompiler","goCompiler","cargo"]){
  const r=json(id+"-inventory.json"),b=json(id+"-sbom.cdx.json"),s=json(id+"-advisories.json");assert.equal(r.sourceRevision,source);assert.deepEqual(b,sbomFor(r));
+ if(r.scanReuse){assert.equal(r.scanReuse.file,id+"-advisories.json");assert.equal(r.scanReuse.sha256,digest(readFileSync(root+"/"+r.scanReuse.file)));assert.equal(s.sourceRevision,source);assert.equal(s.queryCount,new Set(r.components.map(c=>JSON.stringify([c.ecosystem,c.name,c.version]))).size);}
  assert.equal(new Set(r.components.map(c=>c.ref)).size,r.components.length,"duplicate tool SBOM refs");
  for(const c of r.components){assert.ok(licenses.rows.find(row=>row.owner===id&&row.ref===c.ref)?.licenseFiles.length);assert.ok(s.queries.some(q=>q.query.package.name===c.name&&q.query.version===c.version&&q.refs.includes(c.ref)));}
  assert.deepEqual(s.advisories.map(a=>a.id).sort(),[...new Set(s.queries.flatMap(q=>q.matches.map(m=>m.id)))].sort());

@@ -9,9 +9,15 @@ import { sbomFor } from "./lib/supply-chain-evidence.mjs";
 const config = JSON.parse(readFileSync(process.argv[2]));
 const root = "evaluation/supply-chain/2026-10-15-repaired";
 const records = collect(config);
+const rebuildBytes=readFileSync(root+"/rebuild.json"),rebuild=JSON.parse(rebuildBytes);
+assert.equal(rebuild.sourceRevision,config.sourceRevision);assert.equal(rebuild.runs.length,2);
 const collectorFiles = ["scripts/runtime-supply-chain-repaired-collect.mjs", "scripts/runtime-supply-chain-repaired-run.mjs",
   "scripts/runtime-supply-chain-repaired-scan.mjs", "scripts/lib/supply-chain-python-repaired.py", "scripts/lib/supply-chain-evidence.mjs"];
 for (const [id, record] of Object.entries(records)) {
+  assert.equal(rebuild.repeatability[id].status,"byte-identical");assert.deepEqual(rebuild.runs[0].artifacts[id],rebuild.runs[1].artifacts[id]);
+  for(const artifact of record.artifacts)assert.equal(artifact.sha256,rebuild.runs[0].artifacts[id].find(a=>a.file===artifact.file)?.sha256,"primary build differs from both clean rebuilds: "+id+"/"+artifact.file);
+  record.reproducibleBuild="two-clean-roots-byte-identical";record.rebuildSha256=sha(rebuildBytes);
+  record.reproducibilityScope="same supplemental native cohort, preprovisioned verified dependency caches; not cross-target or independently signed build attestation";
   record.collectorSources = collectorFiles.map(file => ({ file, sha256: sha(readFileSync(file)) }));
   record.baselineCandidateSource = "63c86bc4a010bdca79af8190a9a521838f421b75";
   const advisory = await scan(record);

@@ -30,7 +30,7 @@ export function evidenceErrors(record, scan, sbom, pins) {
     && record.catalogSha256 === pins.catalogSha256 && record.evaluationPackageRevision === pins.evaluationPackageRevision, "frozen baseline");
   require(/^[a-f0-9]{40}$/u.test(record.collectorRevision ?? "") && record.collectorVersion === "nf-056-11-v1", "collector binding");
   require(record.outcome === "not-ready" && record.supplyChainAcceptance === "partial"
-    && record.signedProvenance === "not-tested" && record.reproducibleBuild === "not-tested" && record.distributionLifecycle === "not-tested", "non-approval boundary");
+    && record.signedProvenance === "not-tested" && record.reproducibleBuild === (pins.reproducibleBuild ?? "not-tested") && record.distributionLifecycle === "not-tested", "non-approval boundary");
   require(record.target === "macos/arm64", "target identity");
   require(record.limitations?.length >= 6 && record.commands?.length && record.artifacts?.length && record.locks?.length, "missing provenance/limits");
   for (const receipt of [...(record.sourceManifest ?? []), ...(record.locks ?? []), ...(record.artifacts ?? [])])

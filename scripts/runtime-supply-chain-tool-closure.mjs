@@ -20,7 +20,7 @@ const component=(type,name,version,license,scope,evidence={})=>({ref:"pkg:"+type
 const graphs={};
 const npmRoot=dirname(dirname(config.npm)),npmLock=json("evaluation/repairs/supply-chain/npm/package-lock.json");
 graphs.npm=[component("npm","npm","12.2.0","Artistic-2.0","build-provisioner",{licenseFiles:licenseFiles(npmRoot).filter(f=>!f.file.startsWith("node_modules/"))})];
-for(const [key,p]of Object.entries(npmLock.packages))if(key){assert.equal(json(join(npmRoot,key,"package.json")).version,p.version);graphs.npm.push(component("npm",key.split("node_modules/").at(-1),p.version,p.license,"build-provisioner",{integrity:p.integrity,downloadUrl:p.resolved,licenseFiles:licenseFiles(join(npmRoot,key)).filter(f=>!f.file.startsWith("node_modules/"))}));}
+for(const [key,p]of Object.entries(npmLock.packages))if(key){const installed=json(join(npmRoot,key,"package.json"));assert.equal(installed.version,p.version);const expression=p.license??installed.license??installed.licenses?.map(l=>l.type==="Apache 2.0"?"Apache-2.0":l.type).join(" OR ");assert.ok(expression);graphs.npm.push(component("npm",key.split("node_modules/").at(-1),p.version,expression,"build-provisioner",{integrity:p.integrity,downloadUrl:p.resolved,metadataSha256:sha(readFileSync(join(npmRoot,key,"package.json"))),licenseFiles:licenseFiles(join(npmRoot,key)).filter(f=>!f.file.startsWith("node_modules/"))}));}
 graphs.npm=[...new Map(graphs.npm.map(c=>[c.ref,c])).values()];
 const vendor=join(config.pipRoot,"pip/_vendor"),pipMap={CacheControl:["cachecontrol","Apache-2.0"],distlib:["distlib","Python-2.0"],idna:["idna","BSD-3-Clause"],requests:["requests","Apache-2.0"],resolvelib:["resolvelib","ISC"],setuptools:["pkg_resources","MIT"],msgpack:["msgpack","Apache-2.0"],packaging:["packaging","Apache-2.0 OR BSD-2-Clause"],certifi:["certifi","MPL-2.0"],distro:["distro","Apache-2.0"],"pyproject-hooks":["pyproject_hooks","MIT"],"tomli-w":["tomli_w","MIT"],pygments:["pygments","BSD-2-Clause"]};
 graphs.pip=[component("pypi","pip","26.2.1","MIT","local-only-build-provisioner",{licenseFiles:licenseFiles(join(config.pipRoot,"pip-26.2.1.dist-info"))})];
@@ -32,7 +32,13 @@ const goRoot=dirname(dirname(config.go));
 for(const prefix of ["src/vendor","src/cmd/vendor"]){const file=join(goRoot,prefix,"modules.txt");for(const m of readFileSync(file,"utf8").matchAll(/^# (\S+) (v\S+)$/gmu)){const files=licenseFiles(join(goRoot,prefix,m[1]));assert.ok(files.length,m[1]);const c=component("golang",m[1],m[2],m[1]==="github.com/google/pprof"?"Apache-2.0":"BSD-3-Clause","compiler-upstream-vendored-source",{licenseFiles:files,manifest:receipt(file,prefix+"/modules.txt"),selection:"full shipped toolchain vendor source; not all entries compiled into the selected candidate"});if(!graphs.goCompiler.some(r=>r.ref===c.ref))graphs.goCompiler.push(c);}}
 for(const [id,components]of Object.entries(graphs)){
  const record={candidate:"tool-"+id,sourceRevision:config.sourceRevision,collectorRevision,recordedAt,components,dependencies:[{ref:"candidate:tool-"+id,dependsOn:components.map(c=>c.ref)},...components.map(c=>({ref:c.ref,dependsOn:[]}))]};
- save(id+"-inventory.json",record);save(id+"-advisories.json",await scan(record));save(id+"-sbom.cdx.json",sbomFor(record));console.log(id+" closure: "+components.length+" components");
+ if(process.argv.includes("--reuse-scans")){
+  const previous=json(root+"/"+id+"-advisories.json");assert.equal(previous.sourceRevision,record.sourceRevision);
+  for(const c of components)assert.ok(previous.queries.some(q=>q.query.package.name===c.name&&q.query.package.ecosystem===c.ecosystem&&q.query.version===c.version&&q.refs.includes(c.ref)));
+  assert.equal(previous.queryCount,new Set(components.map(c=>JSON.stringify([c.ecosystem,c.name,c.version]))).size);
+  record.scanReuse={file:id+"-advisories.json",sha256:sha(readFileSync(root+"/"+id+"-advisories.json")),reason:"identical exact package/version/ref query graph; original response dates and collector revision retained"};
+ }else save(id+"-advisories.json",await scan(record));
+ save(id+"-inventory.json",record);save(id+"-sbom.cdx.json",sbomFor(record));console.log(id+" closure: "+components.length+" components");
 }
 const pythonMeta=json(join(config.pythonDistribution,"PYTHON.json"));
 const upstream=await get("https://raw.githubusercontent.com/astral-sh/python-build-standalone/9e40cba825ca0997a01cab9f60a0b15ffb976af2/pythonbuild/downloads.json");

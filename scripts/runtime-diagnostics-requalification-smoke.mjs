@@ -40,7 +40,7 @@ for(const candidate of candidates) {
   const report=JSON.parse(read(file)); reports.push(report);
   assert.ok(validateReport(report),JSON.stringify(validateReport.errors));
   assert.deepEqual(reportErrors(report,catalog,pins),[],candidate+" report");
-  const inventory=spawnSync("git",["ls-files","evaluation/prototypes/"+candidate,"schemas"],{cwd:repositoryRoot,encoding:"utf8"});
+  const inventory=spawnSync("git",historical?["ls-tree","-r","--name-only",pins.sourceRevision,"--","evaluation/prototypes/"+candidate,"schemas"]:["ls-files","evaluation/prototypes/"+candidate,"schemas"],{cwd:repositoryRoot,encoding:"utf8"});
   assert.equal(inventory.status,0); assert.deepEqual(report.sourceInventory.map(e=>e.path),inventory.stdout.trim().split("\n"),"complete candidate/lock/schema inventory required");
   for(const file of ["scripts/runtime-diagnostics-requalify-run.mjs","scripts/lib/diagnostic-requalification.mjs","scripts/lib/evaluation-library.mjs","scripts/lib/runtime-evaluation.mjs","evaluation/command-result.schema.json","evaluation/baseline.json","evaluation/library-cases.json"]) {
     const p=spawnSync("git",["show",report.harnessRevision+":"+file],{cwd:repositoryRoot,maxBuffer:16*1024*1024});

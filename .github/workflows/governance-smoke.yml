@@ -40,3 +40,4 @@ jobs:
           node scripts/runtime-evaluation-repair-evidence-smoke.mjs --historical
           npm run runtime-diagnostics-requalification-smoke
           npm run runtime-diagnostic-projection-repair-smoke
+          npm run runtime-validation-contract-smoke

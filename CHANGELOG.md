@@ -8,6 +8,13 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Added
 
+- Completed NF-102-01's declared validation/diagnostic qualification with four
+  native versioned public data entries, explicit separation of raw native
+  details, 362 complete public-library cases, preserved legacy CLI behavior and
+  unsupported-profile rejection evidence. Historical failures and the frozen
+  oracle remain unchanged; the other five remediation cards and architecture
+  gates remain open. No product ABI, full-project semantics or release claim.
+
 - Requalified the four repaired validation candidates against the unchanged
   352-case catalog and 59 repeated CLI scope cases, with complete source-bound
   observations and an explicit library/public diagnostic mapping. Retained

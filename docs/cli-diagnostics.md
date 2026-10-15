@@ -5,12 +5,15 @@ This is not a stable public CLI contract, catalog release, or `NF-CLI` claim.
 The [repository CLI prototype](cli-prototype.md) remains unreleased maintenance
 tooling and does not resolve the pending architecture decision.
 
-The four independent validation-only candidates have a narrower command scope
-and different library surfaces. Their revision-bound
-[NF-102-01 mapping and requalification](../evaluation/requalification/validation-diagnostics/README.md)
-retains a failed cross-validator branch-diagnostic parity check. Its 352 frozen
-library passes are not full project semantic conformance or stable public API
-acceptance; candidate code and historical evidence are unchanged.
+The four independent validation-only candidates have a narrower command scope.
+The [original requalification](../evaluation/requalification/validation-diagnostics/README.md)
+retains its historical failed branch-diagnostic comparison; the separate repair
+closed that defect. Their additive
+[versioned library diagnostic data contract](validation-diagnostic-contract.md)
+now defines the native/public boundary and qualifies the complete declared
+scope, including unsupported profiles. The experimental CLI below is not that
+library data contract. Fragment passes and bounded diagnostic qualification do
+not establish full project semantics, a product ABI or architecture acceptance.
 
 ## Usage And Streams
 

@@ -317,3 +317,19 @@ func ValidateLocal(schemas []any, id string, value any) []map[string]any {
 	}
 	return schemaIssues(schema, value, fields)
 }
+
+func ValidateLocalPublic(schemas []any, id string, value any) []map[string]any {
+	compiler, err := schemaCompiler(schemas)
+	if err != nil {
+		return []map[string]any{{"code": "NF-SCHEMA", "category": "unresolved-local-schema"}}
+	}
+	schema, err := compiler.Compile(id)
+	if err != nil {
+		return []map[string]any{{"code": "NF-SCHEMA", "category": "unresolved-local-schema"}}
+	}
+	fields := map[string]bool{}
+	for _, resource := range schemas {
+		collectFields(resource, fields)
+	}
+	return publicSchemaIssues(schema, value, fields)
+}

@@ -1,0 +1,23 @@
+{
+  "task": "NF-102-01",
+  "contractVersion": "nf-validation-diagnostics-v1",
+  "sourceRevision": "63c86bc4a010bdca79af8190a9a521838f421b75",
+  "reportHashes": [
+    {
+      "candidate": "typescript",
+      "sha256": "a6972a6bd3b60071303db4c13f632266c00a3d0fde61307585aad5d68ab333b4"
+    },
+    {
+      "candidate": "python",
+      "sha256": "ef160eba83922a2a661f8c597dc8e1a489524a46342d99283e6f25f6fe8694cf"
+    },
+    {
+      "candidate": "rust",
+      "sha256": "2fe86b2224cefed24141cf286194d0724382333198f10133a85287e025d2c048"
+    },
+    {
+      "candidate": "go",
+      "sha256": "36c3fd4dfca92aa8e0a5fee9c7f7bd5bfdaceab7ceacfad0018ae9742bf883b2"
+    }
+  ]
+}

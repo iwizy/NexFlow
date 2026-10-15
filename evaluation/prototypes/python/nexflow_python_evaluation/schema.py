@@ -89,6 +89,11 @@ class SchemaEngine:
             return [{"code": "NF-SCHEMA", "category": "unresolved-local-schema"}]
         return self._issues(Draft202012Validator(self.schemas[entry_id], registry=self.registry, format_checker=FormatChecker()), value)
 
+    def validate_local_public(self, entry_id: str, value):
+        if entry_id not in self.schemas:
+            return [{"code": "NF-SCHEMA", "category": "unresolved-local-schema"}]
+        return self._issues(Draft202012Validator(self.schemas[entry_id], registry=self.registry, format_checker=FormatChecker()), value, public=True)
+
 def repository_schemas() -> SchemaEngine:
     directory = Path(__file__).resolve().parents[4] / "schemas"
     schemas = []

@@ -6,6 +6,8 @@ on:
       - 'schemas/**'
       - 'scripts/runtime-diagnostics*'
       - 'scripts/runtime-diagnostic-projection*'
+      - 'scripts/runtime-validation-contract*'
+      - 'scripts/lib/validation-diagnostic-contract.mjs'
       - 'scripts/lib/diagnostic-requalification.mjs'
       - 'scripts/lib/evaluation-library.mjs'
       - 'scripts/lib/runtime-evaluation.mjs'
@@ -81,16 +83,27 @@ jobs:
               node scripts/runtime-diagnostics-requalify-run.mjs go '["evaluation/prototypes/go/bin/library-driver"]' '["evaluation/prototypes/go/bin/nexflow-go-evaluation"]' "$RUNNER_TEMP/go-diagnostics.json" --source-revision "$GITHUB_SHA" --compact
               node scripts/runtime-diagnostic-projection-regression.mjs go '["evaluation/prototypes/go/bin/nexflow-go-evaluation"]' "$RUNNER_TEMP/go-regressions.json" ;;
           esac
+      - name: Qualify versioned public library contract and explicit unsupported profiles
+        run: |
+          case '${{ matrix.candidate }}' in
+            typescript) driver='["node"]'; cli='["node","evaluation/prototypes/typescript/dist/cli.js"]' ;;
+            python) driver='[".venv/bin/python","-I","-B","evaluation/prototypes/python/library_driver.py"]'; cli='[".venv/bin/python","-I","-B","evaluation/prototypes/python/cli.py"]' ;;
+            rust) driver='["evaluation/prototypes/rust/target/debug/library-driver"]'; cli='["evaluation/prototypes/rust/target/debug/nexflow-rust-evaluation"]' ;;
+            go) driver='["evaluation/prototypes/go/bin/library-driver"]'; cli='["evaluation/prototypes/go/bin/nexflow-go-evaluation"]' ;;
+          esac
+          node scripts/runtime-validation-contract-run.mjs '${{ matrix.candidate }}' "$driver" "$cli" "$RUNNER_TEMP/${{ matrix.candidate }}-contract.json" --legacy "$RUNNER_TEMP/${{ matrix.candidate }}-diagnostics.json" --branches "$RUNNER_TEMP/${{ matrix.candidate }}-regressions.json"
       - name: Verify retained failures and exact evidence bindings
         run: |
           npm run runtime-diagnostics-requalification-smoke
           npm run runtime-diagnostic-projection-repair-smoke
+          npm run runtime-validation-contract-smoke
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: validation-diagnostics-${{ matrix.candidate }}
           path: |
             ${{ runner.temp }}/${{ matrix.candidate }}-diagnostics.json
             ${{ runner.temp }}/${{ matrix.candidate }}-regressions.json
+            ${{ runner.temp }}/${{ matrix.candidate }}-contract.json
           if-no-files-found: error
   public-parity:
     name: Fresh four-candidate public parity
@@ -112,4 +125,6 @@ jobs:
           merge-multiple: true
           path: ${{ runner.temp }}/observations
       - name: Compare all fresh native results with current-source evidence
-        run: node scripts/runtime-diagnostic-projection-repair-smoke.mjs --observations "$RUNNER_TEMP/observations"
+        run: |
+          node scripts/runtime-diagnostic-projection-repair-smoke.mjs --historical --observations "$RUNNER_TEMP/observations"
+          node scripts/runtime-validation-contract-smoke.mjs --observations "$RUNNER_TEMP/observations"

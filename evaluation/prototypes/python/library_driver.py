@@ -4,11 +4,11 @@ import json
 import sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from nexflow_python_evaluation import evaluate_library_case, repository_schemas
+from nexflow_python_evaluation import evaluate_library_case, evaluate_public_library_case, repository_schemas
 from nexflow_python_evaluation.model import json_line
 
 def main():
-    if len(sys.argv) != 2:
+    if len(sys.argv) not in (2, 3) or len(sys.argv) == 3 and sys.argv[2] != "--public":
         raise ValueError("invalid driver arguments")
     encoded = sys.stdin.buffer.read(4 * 1024 * 1024 + 1)
     if len(encoded) > 4 * 1024 * 1024:
@@ -23,7 +23,13 @@ def main():
         second = evaluate_library_case(entry, sys.argv[1], schemas)
         if first != second or before != entry:
             raise ValueError("unstable or mutated library input")
-        results.append(first)
+        if len(sys.argv) == 3:
+            public = evaluate_public_library_case(entry, sys.argv[1], schemas)
+            if public != evaluate_public_library_case(entry, sys.argv[1], schemas) or before != entry:
+                raise ValueError("unstable or mutated public input")
+            results.append({"native": first, "public": public})
+        else:
+            results.append(first)
     sys.stdout.write(json_line(results))
 
 if __name__ == "__main__":

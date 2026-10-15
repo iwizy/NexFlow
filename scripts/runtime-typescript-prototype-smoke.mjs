@@ -6,7 +6,7 @@ import { readFileSync, readdirSync } from "node:fs";
 const base = "evaluation/prototypes/typescript/";
 const manifest = JSON.parse(readFileSync(base + "package.json", "utf8"));
 assert.equal(manifest.private, true);
-assert.deepEqual(manifest.engines, { node: "22.23.3", npm: "12.2.0" });
+assert.deepEqual(manifest.engines, { node: "26.12.0", npm: "12.2.0" });
 assert.equal(manifest.devDependencies.typescript, "6.0.3");
 const approved = JSON.parse(readFileSync("evaluation/repairs/supply-chain/toolchains.json"));
 for (const file of ["package-lock.json"]) assert.equal(createHash("sha256").update(readFileSync(base+file)).digest("hex"),approved.locks[base+file]);

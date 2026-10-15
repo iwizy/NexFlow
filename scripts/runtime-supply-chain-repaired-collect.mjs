@@ -110,7 +110,7 @@ export function collect(config) {
   ts.runtime = { name: "Node", version: run(config.node, ["--version"], tsRoot).trim(), executableSha256: hash(config.node),
     requiredExternal: true, licenseFiles: licenses(dirname(nodeDir)) };
   ts.tools = { npm: run(config.npm, ["--version"], tsRoot, tsEnv).trim(), typescript: run(config.node, [join(tsRoot,"node_modules/typescript/bin/tsc"),"--version"],tsRoot).trim() };
-  assert.equal(ts.runtime.version, "v22.23.3"); assert.equal(ts.tools.npm, "12.2.0");
+  assert.equal(ts.runtime.version, "v26.12.0"); assert.equal(ts.tools.npm, "12.2.0");
   for (const [key,c] of tsNames) if (!c.scope.startsWith("locked-"))
     assert.equal(json(join(tsRoot, key, "package.json")).version, c.version);
   ts.nativeBuildInputs = ts.components.filter(c => c.scope === "installed-build" && c.name.startsWith("@typescript/")).map(c => c.ref);
@@ -167,6 +167,7 @@ export function collect(config) {
 
   const rs = collected.rust, rsRoot = join(config.sources.rust, "evaluation/prototypes/rust");
   const rsEnv = { CARGO_HOME: config.cargoHome, RUSTC: config.rustc, RUSTDOC: config.rustdoc,
+    DYLD_FALLBACK_LIBRARY_PATH: join(dirname(dirname(config.rustc)),"lib"),
     CARGO_TARGET_DIR: config.rustTarget, CARGO_INCREMENTAL:"0", RUSTFLAGS:"--remap-path-prefix="+config.sources.rust+"=/evaluation --remap-path-prefix="+config.rustTarget+"=/target --remap-path-prefix="+config.cargoHome+"=/cargo", PATH: dirname(config.rustc) + ":/usr/bin:/bin" };
   const meta = JSON.parse(run(config.cargo, ["metadata", "--offline", "--locked", "--format-version", "1", "--filter-platform", "aarch64-apple-darwin"], rsRoot, rsEnv));
   const registryLocks = new Map(readFileSync(join(rsRoot, "Cargo.lock"), "utf8").split("[[package]]").slice(1).map(block => {

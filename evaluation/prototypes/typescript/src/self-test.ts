@@ -133,5 +133,5 @@ test("candidate graph matches the current approved repair lock", () => {
   const approved = JSON.parse(readFileSync(join(repository, "evaluation/repairs/supply-chain/toolchains.json"), "utf8"));
   const bytes = readFileSync(new URL("../package-lock.json", import.meta.url));
   assert.equal(createHash("sha256").update(bytes).digest("hex"), approved.locks["evaluation/prototypes/typescript/package-lock.json"]);
-  assert.equal(process.versions.node, "22.23.3");
+  assert.equal(process.versions.node, "26.12.0");
 });

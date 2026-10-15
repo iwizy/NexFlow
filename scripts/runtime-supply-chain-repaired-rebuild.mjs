@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Rebuild selected evaluation artifacts twice; no candidate-selected commands.
 import assert from "node:assert/strict";
-import {mkdirSync,mkdtempSync,readFileSync,readdirSync,statSync,writeFileSync} from "node:fs";
+import {mkdirSync,mkdtempSync,readFileSync,readdirSync,realpathSync,statSync,writeFileSync} from "node:fs";
 import {join,dirname,relative,basename} from "node:path";
 import {tmpdir} from "node:os";
 import {spawnSync} from "node:child_process";
@@ -16,7 +16,7 @@ const walk=at=>readdirSync(at,{withFileTypes:true}).flatMap(e=>e.isDirectory()?w
 const receipt=(file,label)=>({file:label,sha256:sha(readFileSync(file)),bytes:statSync(file).size});
 const runs=[];
 for(let index=0;index<2;index++){
- const staging=mkdtempSync(join(tmpdir(),"nf-102-02-repaired-build-"));
+ const staging=realpathSync(mkdtempSync(join(tmpdir(),"nf-102-02-repaired-build-")));
  const archive=spawnSync("git",["archive",config.sourceRevision,"evaluation/prototypes","schemas","evaluation/repairs/supply-chain/toolchains.json"],{maxBuffer:64*1024*1024});assert.equal(archive.status,0);
  assert.equal(spawnSync("tar",["-xf","-","-C",staging],{input:archive.stdout}).status,0);
  const artifacts={};
@@ -31,7 +31,7 @@ for(let index=0;index<2;index++){
  artifacts.python.push(...readdirSync(config.wheelhouse).filter(n=>n.endsWith(".whl")).sort().map(n=>receipt(join(config.wheelhouse,n),"wheels/"+n)));
  const rs=join(staging,"evaluation/prototypes/rust"),target=join(staging,"target");
  const flags="--remap-path-prefix="+staging+"=/evaluation --remap-path-prefix="+config.cargoHome+"=/cargo";
- run(config.cargo,["build","--release","--frozen","--offline"],rs,{CARGO_HOME:config.cargoHome,RUSTC:config.rustc,RUSTDOC:config.rustdoc,CARGO_TARGET_DIR:target,CARGO_INCREMENTAL:"0",RUSTFLAGS:flags,PATH:dirname(config.rustc)+":/usr/bin:/bin"});
+ run(config.cargo,["build","--release","--frozen","--offline"],rs,{CARGO_HOME:config.cargoHome,RUSTC:config.rustc,RUSTDOC:config.rustdoc,CARGO_TARGET_DIR:target,CARGO_INCREMENTAL:"0",RUSTFLAGS:flags,DYLD_FALLBACK_LIBRARY_PATH:join(dirname(dirname(config.rustc)),"lib"),PATH:dirname(config.rustc)+":/usr/bin:/bin"});
  artifacts.rust=["nexflow-rust-evaluation","library-driver","libnexflow_rust_evaluation.rlib"].map(n=>receipt(join(target,"release",n),n));
  const go=join(staging,"evaluation/prototypes/go"),env={GOTOOLCHAIN:"local",GOPROXY:"off",GOSUMDB:"off",CGO_ENABLED:"0",GOPATH:config.goPath,GOCACHE:join(staging,"go-cache")};
  run(config.go,["mod","verify"],go,env);mkdirSync(join(go,"bin"));

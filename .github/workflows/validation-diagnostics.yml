@@ -35,7 +35,7 @@ jobs:
           persist-credentials: false
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
-          node-version: '22.23.3'
+          node-version: '26.12.0'
       - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1
         if: matrix.candidate == 'python'
         with:
@@ -116,7 +116,7 @@ jobs:
           persist-credentials: false
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
-          node-version: '22.23.3'
+          node-version: '26.12.0'
       - run: |
           node scripts/evaluation-npm-provision.mjs "$RUNNER_TEMP/evaluation-npm"
           export PATH="$RUNNER_TEMP/evaluation-npm/bin:$PATH"

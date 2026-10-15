@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Trusted metadata/advisory collector, not candidate runtime code.
 import assert from "node:assert/strict";
-import {existsSync,readFileSync,readdirSync,statSync,writeFileSync} from "node:fs";
+import {existsSync,readFileSync,readdirSync,readlinkSync,statSync,lstatSync,writeFileSync} from "node:fs";
 import {join,dirname,basename,relative} from "node:path";
 import {spawnSync} from "node:child_process";
 import {sha} from "./runtime-supply-chain-repaired-collect.mjs";
@@ -10,8 +10,8 @@ import {sbomFor} from "./lib/supply-chain-evidence.mjs";
 const config=JSON.parse(readFileSync(process.argv[2])),root="evaluation/supply-chain/2026-10-15-repaired";
 const json=f=>JSON.parse(readFileSync(f));
 const run=(cmd,args)=>{const p=spawnSync(cmd,args,{encoding:"utf8",maxBuffer:64*1024*1024,env:{PATH:"/usr/bin:/bin:/usr/sbin:/sbin",LANG:"C",LC_ALL:"C",DYLD_FALLBACK_LIBRARY_PATH:join(dirname(dirname(config.rustc)),"lib")}});assert.equal(p.status,0);return p.stdout.trim();};
-const walk=at=>readdirSync(at,{withFileTypes:true}).flatMap(e=>e.isDirectory()?(e.name==="__pycache__"?[]:walk(join(at,e.name))):e.isFile()?[join(at,e.name)]:[]).sort();
-const receipt=(f,label)=>({file:label,sha256:sha(readFileSync(f)),bytes:statSync(f).size});
+const walk=at=>readdirSync(at,{withFileTypes:true}).flatMap(e=>e.isDirectory()?(e.name==="__pycache__"?[]:walk(join(at,e.name))):e.isFile()||e.isSymbolicLink()&&statSync(join(at,e.name)).isFile()?[join(at,e.name)]:[]).sort();
+const receipt=(f,label)=>({file:label,sha256:sha(readFileSync(f)),bytes:statSync(f).size,...(lstatSync(f).isSymbolicLink()?{type:"symlink",target:readlinkSync(f)}:{})});
 const licenseFiles=(at,prefix="")=>walk(at).filter(f=>/^(license|copying|copyright|notice)/iu.test(basename(f))).map(f=>receipt(f,prefix+relative(at,f)));
 const save=(f,v)=>{let s=JSON.stringify(v,null,2)+"\n";for(const [key,value]of Object.entries(config).filter(([,v])=>typeof v==="string"&&v.startsWith("/")).sort((a,b)=>b[1].length-a[1].length))s=s.replaceAll(value,"<"+key+">");assert.ok(!/\/Users\/|\/private\/|\/var\/folders\//u.test(s));writeFileSync(root+"/"+f,s);};
 const recordedAt=new Date().toISOString(),collectorRevision=run("git",["rev-parse","HEAD"]);
@@ -54,7 +54,7 @@ const nodeLicense=readFileSync(join(nodeRoot,"LICENSE"),"utf8"),nodeLicenseSecti
 assert.ok(nodeLicenseSections.length>10);
 const tools={};
 for(const [id,folder]of Object.entries({node:nodeRoot,python:config.pythonDistribution,rust:rustRoot,go:goRoot,npm:npmRoot,pip:config.pipRoot})){const files=walk(folder);tools[id]={files:files.map(f=>receipt(f,relative(folder,f))),licenseFiles:licenseFiles(folder)};}
-const nativeFiles=[{file:config.node,label:"node/bin/node"},{file:config.pythonBase,label:"python/install/bin/python3.12"},...walk(join(config.pythonDistribution,"install/lib")).filter(f=>/\.(so|dylib)$/u.test(f)).map(f=>({file:f,label:"python/"+relative(config.pythonDistribution,f)})),...walk(rustRoot).filter(f=>f.endsWith(".dylib")||["cargo","rustc","rustdoc","rust-objcopy"].includes(basename(f))).map(f=>({file:f,label:"rust/"+relative(rustRoot,f)}))];
+const nativeFiles=[{file:config.node,label:"node/bin/node"},{file:config.pythonBase,label:"python/install/bin/python3.12"},...walk(join(config.pythonDistribution,"install/lib")).filter(f=>/\.(so|dylib)$/u.test(f)).map(f=>({file:f,label:"python/"+relative(config.pythonDistribution,f)})),...walk(rustRoot).filter(f=>f.endsWith(".dylib")||["bin/cargo","bin/rustc","bin/rustdoc","lib/rustlib/aarch64-apple-darwin/bin/rust-objcopy"].includes(relative(rustRoot,f))).map(f=>({file:f,label:"rust/"+relative(rustRoot,f)}))];
 const pySite=run(config.python,["-I","-c","import sysconfig;print(sysconfig.get_path('purelib'))"]);
 for(const c of json(root+"/python/inventory.json").components)for(const f of c.nativeFiles??[])nativeFiles.push({file:join(pySite,f.file),label:"python-wheel/"+f.file});
 const nativeLinking=nativeFiles.map(({file,label})=>({...receipt(file,label),libraries:run("otool",["-L",file]).split("\n").slice(1).map(l=>l.trim().replaceAll(config.pythonDistribution,"<python-distribution>").replaceAll(rustRoot,"<rust-toolchain>"))}));

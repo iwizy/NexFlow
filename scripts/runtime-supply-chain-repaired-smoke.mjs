@@ -23,7 +23,9 @@ const closure=json("tool-closure.json"),rebuild=json("rebuild.json"),licenses=js
 for(const r of [closure,rebuild,licenses,review])assert.equal(r.sourceRevision,source);
 assert.equal(closure.node.versions.node,tools.node);assert.equal(closure.node.versions.openssl,"3.5.9");assert.equal(closure.python.observed.cpython,tools.python);assert.equal(closure.python.observed.libyaml,"0.2.5");
 assert.ok(closure.provisioning.receipts.some(r=>r.tool==="python"&&r.sha256.length===64));assert.ok(closure.python.buildMetadata.sha256.length===64);
-assert.ok(closure.nativeLinking.length>100&&closure.python.native.every(n=>n.version&&n.selection));
+assert.ok(closure.python.native.every(n=>n.version&&n.selection));
+for(const file of closure.tools.python.files.filter(f=>/\.(so|dylib)$/u.test(f.file)&&f.file.startsWith("install/lib/")))assert.equal(closure.nativeLinking.find(n=>n.file==="python/"+file.file)?.sha256,file.sha256,"missing native regular-file/symlink receipt");
+assert.ok(closure.nativeLinking.some(n=>n.file==="rust/lib/rustlib/aarch64-apple-darwin/bin/rust-objcopy"));
 assert.equal(closure.externalOperatingSystem.redistributed,false);assert.equal(closure.signing,"not-tested-no-signing-authority-used");
 for(const id of ids){const a=rebuild.runs[0].artifacts[id],b=rebuild.runs[1].artifacts[id];assert.ok(a.length);assert.deepEqual(a,b,id+" clean-root byte drift");assert.equal(rebuild.repeatability[id].status,"byte-identical");const r=json(id+"/inventory.json");assert.equal(r.rebuildSha256,digest(readFileSync(root+"/rebuild.json")));for(const artifact of r.artifacts)assert.equal(a.find(item=>item.file===artifact.file)?.sha256,artifact.sha256);}
 const installation=json("installation.json");assert.equal(installation.baseToolClosureSha256,digest(readFileSync(root+"/tool-closure.json")));assert.equal(installation.binaryPayloadModified,false);assert.equal(installation.globalInstallationModified,false);assert.equal(installation.verification.exitCode,0);bind(installation.collectorRevision,installation.collectorSources);
@@ -41,6 +43,7 @@ for(const id of ["npm","pip","rustCompiler","goCompiler","cargo"]){
 assert.equal(licenses.unresolvedExpressionRows,0);assert.equal(licenses.legalApproval,false);assert.ok(licenses.rows.every(r=>r.expression&&r.expression!=="NOASSERTION"&&r.licenseFiles.length));
 const expected=[...allComponents,...ids.flatMap(id=>json(id+"/inventory.json").components.map(c=>id+":"+c.ref))].sort();assert.deepEqual(licenses.rows.map(r=>r.owner+":"+r.ref).sort(),expected);
 const native=json("native-inventory.json");assert.equal(native.sourceRevision,source);assert.deepEqual(json("native-sbom.cdx.json"),sbomFor(native));
+const sbomValidation=json("sbom-validation.json");assert.equal(sbomValidation.results.length,10);bind(sbomValidation.collectorRevision,sbomValidation.collectorSources);for(const r of sbomValidation.results)assert.ok(r.passed&&r.sbomSha256===digest(readFileSync(root+"/"+r.file)));
 const scans=["npm","pip","rustCompiler","goCompiler","cargo"].map(id=>[id,json(id+"-advisories.json")]);
 const expectedReviews=scans.flatMap(([id,s])=>s.advisories.map(a=>id+":"+a.id)).sort();
 assert.deepEqual(review.current.map(r=>r.inputId).sort(),expectedReviews);assert.ok(review.current.every(r=>r.verdict&&r.evidence.length&&r.limits.length));

@@ -153,7 +153,8 @@ export function collect(config) {
   py.wheels = readdirSync(config.wheelhouse).filter(name => name.endsWith(".whl")).map(name => receipt(join(config.wheelhouse, name), name));
   assert.equal(py.wheels.length, installed.size);
   for (const wheel of py.wheels) assert.ok(pyLock.includes("sha256:" + wheel.sha256), "wheel absent from approved hash lock");
-  py.commands = ["python -I -m pip check", "python -I -m compileall -q -f --invalidation-mode checked-hash -s <source> -p evaluation/prototypes/python <source>"];
+  py.commands = ["separate local-only pip provisioner --python <candidate> check", "python -I -m compileall -q -f --invalidation-mode checked-hash -s <source> -p evaluation/prototypes/python <source>"];
+  run(config.pythonBase,["-I","-c","import sys;sys.path.insert(0,sys.argv.pop(1));from pip._internal.cli.main import main;raise SystemExit(main())",config.pipRoot,"--isolated","--python",config.python,"check","--disable-pip-version-check"],pyRoot,{PIP_CONFIG_FILE:"/dev/null"});
 
   run(config.python, ["-I", "-m", "compileall", "-q", "-f", "--invalidation-mode", "checked-hash", "-s", pyRoot, "-p", "evaluation/prototypes/python", pyRoot], pyRoot);
   py.artifacts = walk(pyRoot).filter(file => file.endsWith(".py") || file.endsWith(".pyc"))
@@ -190,7 +191,7 @@ export function collect(config) {
     dependsOn: [...new Set(node.deps.map(d => rsRefs.get(d.pkg)))].sort(),
     kinds: node.deps.map(d => ({ ref: rsRefs.get(d.pkg), kinds: d.dep_kinds.map(k => ({ kind: k.kind ?? "normal", target: k.target })) })) }));
   for (const c of rs.components) if (!rs.dependencies.some(d => d.ref === c.ref)) rs.dependencies.push({ ref: c.ref, dependsOn: [] });
-  rs.commands = ["cargo build --frozen --offline --manifest-path evaluation/prototypes/rust/Cargo.toml (debug, aarch64-apple-darwin)"];
+  rs.commands = ["cargo build --release --frozen --offline with clean-root/target/registry path remapping (aarch64-apple-darwin)"];
   run(config.cargo, ["build", "--release", "--frozen", "--offline"], rsRoot, rsEnv);
   rs.artifacts = ["nexflow-rust-evaluation", "library-driver"].map(name => receipt(join(config.rustTarget, "release", name), name));
   rs.runtime = { name: "Rust standard library", version: run(config.rustc, ["--version"], rsRoot).trim(), requiredExternal: false,
@@ -218,7 +219,7 @@ export function collect(config) {
         metadataSource: "go-list-full-module-graph-cache",
         packages: deps.filter(d => d.Module?.Path === mod.Path).map(d => d.ImportPath).sort() }));
   }
-  go.testModuleGraph = { status: "enumerated", reason: "Full graph metadata now cached; three additional transitive non-compiled modules are recorded without adding candidate sums." };
+  go.testModuleGraph = { status: "enumerated-and-locked", reason: "Full selected graph is cached and every archive is bound by the current candidate go.sum." };
   const edges = new Map(go.components.map(c => [c.ref, []])); edges.set("candidate:go", []);
   const imports = new Map(deps.map(d => [d.ImportPath, d.Module?.Path]));
   for (const pkg of deps) for (const name of pkg.Imports ?? []) {
@@ -239,7 +240,7 @@ export function collect(config) {
       file: a.file, metadata: run(config.go, ["version", "-m", join(goRoot, "bin", a.file)], goRoot, goEnv).split("\n").slice(1).map(s => s.trim()).filter(Boolean) })) };
   assert.equal(go.runtime.version, "go version go1.27.2 darwin/arm64");
   go.limitations.push("License files are hashed; expression attribution must be reviewed for each module. Stdlib package list is version-bound, not OS library certification.");
-  go.limitations.push("Full selected module graph is enumerated; three non-compiled transitive versions have no candidate go.sum entries. Cache archive hashes are observations, not new approved locks.");
+  go.limitations.push("Selected test-only modules are inventoried separately from compiled modules; they are not evidence of runtime imports.");
   for (const [id, record] of Object.entries(collected)) {
     const locks = { typescript: ["package-lock.json"], python: ["requirements.lock"], rust: ["Cargo.lock"], go: ["go.mod", "go.sum"] }[id];
     record.locks = locks.map(file => receipt(join(config.sources[id], "evaluation/prototypes", id, file), "evaluation/prototypes/" + id + "/" + file));

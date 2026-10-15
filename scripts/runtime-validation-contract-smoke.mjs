@@ -9,7 +9,10 @@ import {compareLibraryResult} from "./lib/evaluation-library.mjs";
 import {compareReports} from "./runtime-diagnostics-comparison.mjs";
 import {expectedDiagnostics} from "./runtime-diagnostic-projection-regression.mjs";
 import {contractVersion,contractFiles,projectNative,publicContractErrors,supplementalExpected,verifyPublicReport} from "./lib/validation-diagnostic-contract.mjs";
-const directory="evaluation/qualification/validation-diagnostics-v1";
+const directoryOption=process.argv.indexOf("--directory");
+const directory=directoryOption<0?"evaluation/qualification/validation-diagnostics-v1":process.argv[directoryOption+1];
+assert.ok(["evaluation/qualification/validation-diagnostics-v1","evaluation/qualification/supply-chain-repair"].includes(directory));
+const historical=process.argv.includes("--historical");
 const read=file=>readFileSync(path.join(repositoryRoot,file));
 const catalog=JSON.parse(read("evaluation/library-cases.json"));
 const blob=(revision,file)=>{const p=spawnSync("git",["show",revision+":"+file],{cwd:repositoryRoot,maxBuffer:16*1024*1024});assert.equal(p.status,0);return p.stdout;};
@@ -29,15 +32,15 @@ const manifest=JSON.parse(read(directory+"/manifest.json"));
 assert.equal(manifest.contractVersion,contractVersion);assert.match(manifest.sourceRevision,/^[a-f0-9]{40}$/u);
 const pins={sourceRevision:manifest.sourceRevision,repairRevision:manifest.sourceRevision,specificationRevision:baseline.specificationRevision,corpusSha256:baseline.corpus.sha256,catalogSha256:digest(read("evaluation/library-cases.json"))};
 const reports=candidates.map(candidate=>{const report=JSON.parse(read(directory+"/"+candidate+".json"));assert.equal(report.candidate,candidate);return report;});
-function verify(report,revision) {
+function verify(report,revision,archived=false) {
   assert.deepEqual(verifyPublicReport(report,catalog),[],report.candidate);
   assert.equal(report.sourceRevision,revision);assert.equal(report.harnessRevision,revision);
   assert.equal(report.specificationRevision,pins.specificationRevision);assert.equal(report.corpusSha256,pins.corpusSha256);assert.equal(report.catalogSha256,pins.catalogSha256);
   assert.equal(report.contractSha256,digest(read("evaluation/contracts/validation-diagnostics-v1.schema.json")));
   for(const file of contractFiles) assert.equal(digest(blob(revision,file)),digest(read(file)),"collector/contract source drift");
-  const inventory=spawnSync("git",["ls-files","evaluation/prototypes/"+report.candidate,"schemas"],{cwd:repositoryRoot,encoding:"utf8"});assert.equal(inventory.status,0);
+  const inventory=spawnSync("git",archived?["ls-tree","-r","--name-only",revision,"--","evaluation/prototypes/"+report.candidate,"schemas"]:["ls-files","evaluation/prototypes/"+report.candidate,"schemas"],{cwd:repositoryRoot,encoding:"utf8"});assert.equal(inventory.status,0);
   assert.deepEqual(report.sourceInventory.map(e=>e.path),inventory.stdout.trim().split("\n"));
-  for(const e of report.sourceInventory) {assert.equal(e.sha256,digest(read(e.path)),e.path);assert.equal(e.sha256,digest(blob(revision,e.path)));}
+  for(const e of report.sourceInventory) {if(!archived)assert.equal(e.sha256,digest(read(e.path)),e.path);assert.equal(e.sha256,digest(blob(revision,e.path)));}
   assert.deepEqual(report.sourceInventory,report.legacy.sourceInventory);
   assert.deepEqual(reportErrors(report.legacy,catalog,{...pins,sourceRevision:revision,repairRevision:revision}),[]);
   const previous=JSON.parse(read("evaluation/requalification/diagnostic-projection-repair/"+report.candidate+".json"));
@@ -57,7 +60,7 @@ function verify(report,revision) {
   for(const r of report.unsupportedCli) {assert.deepEqual(publicErrors(r.actual,2,"",JSON.stringify(r.actual)+"\n"),[]);assert.equal(r.actual.command,null);assert.ok(Object.values(r.actual.checks).every(value=>value==="not-run"));assert.equal(r.stdoutSha256.length,2);assert.equal(new Set(r.stdoutSha256).size,1);}
 }
 for(const report of reports) {
-  verify(report,manifest.sourceRevision);
+  verify(report,manifest.sourceRevision,historical);
   assert.equal(manifest.reportHashes.find(r=>r.candidate===report.candidate).sha256,digest(read(directory+"/"+report.candidate+".json")));
 }
 const outputs=r=>r.publicLibrary.results.map(x=>x.public);
@@ -71,9 +74,11 @@ if(liveOption>=0) {
     assert.ok(same(live.publicLibrary.results,reports[i].publicLibrary.results));assert.ok(same(live.unsupportedCli,reports[i].unsupportedCli));
   }
 }
+if(directory==="evaluation/qualification/validation-diagnostics-v1") {
 const closure=JSON.parse(read("rfcs/reviews/2026-10-13-nf-102-01-closure.json"));
 assert.equal(closure.taskStatus,"completed");assert.equal(closure.sourceRevision,manifest.sourceRevision);assert.equal(closure.architectureStatus,"Draft");assert.equal(closure.architectureAccepted,false);
 assert.deepEqual(closure.originalCriteria.map(c=>c.status),["passed","passed","passed"]);assert.deepEqual(closure.remainingCards,["NF-102-02","NF-102-03","NF-102-04","NF-102-05","NF-102-06"]);
 assert.equal(closure.allArchitectureGatesClosed,false);assert.equal(closure.fullProjectSemanticsImplemented,false);
 assert.equal(closure.technicalAcceptanceRequirementsWaived,false);assert.equal(closure.originalTaskScopeChanged,false);
+}
 console.log(JSON.stringify({task:"NF-102-01",taskOutcome:"completed",publicLibraryCases:362,publicCliParity:"57/57",unsupportedProfileProbes:16,negativeControls,architecture:"Draft/not-ready"}));

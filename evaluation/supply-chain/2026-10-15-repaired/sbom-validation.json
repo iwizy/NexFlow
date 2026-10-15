@@ -1,0 +1,93 @@
+{
+  "task": "NF-102-02",
+  "recordedAt": "2026-10-15T13:11:57.694Z",
+  "collectorRevision": "3beb349157d80692b6312cc94ce889cb8a5faab9",
+  "collectorSources": [
+    {
+      "file": "scripts/runtime-supply-chain-sbom-validate.mjs",
+      "sha256": "1cd62ddb61a8d9ef6b34690c04d96e2be632b74d6c4e41020d41e4aad5777f66"
+    }
+  ],
+  "validator": "Ajv",
+  "version": "8.20.0",
+  "scope": "official-CycloneDX-1.6-JSON-schema-structure; annotation formats not asserted",
+  "schemas": [
+    {
+      "name": "bom-1.6.schema.json",
+      "url": "https://raw.githubusercontent.com/CycloneDX/specification/1.6/schema/bom-1.6.schema.json",
+      "sha256": "3e92dddbc30cf7f6a02b80f0942b1a4cfd4fb1c26f1dfc4310afa9d613cafb93"
+    },
+    {
+      "name": "spdx.schema.json",
+      "url": "https://raw.githubusercontent.com/CycloneDX/specification/1.6/schema/spdx.schema.json",
+      "sha256": "baa9d3bd1ed57b6751b0887edead6b5063ff53ff7429cf85d476c6c94af0166e"
+    },
+    {
+      "name": "jsf-0.82.schema.json",
+      "url": "https://raw.githubusercontent.com/CycloneDX/specification/1.6/schema/jsf-0.82.schema.json",
+      "sha256": "8bae002c25e723db7ee1f26afde680ae1a2b1a8f6b4b4b0fd65dc3becb090aae"
+    }
+  ],
+  "results": [
+    {
+      "file": "typescript/sbom.cdx.json",
+      "sbomSha256": "70c26695da45f7eb0b9920605b274eac60e605f27484575cb5a72d24a16e58d6",
+      "passed": true,
+      "errors": null
+    },
+    {
+      "file": "python/sbom.cdx.json",
+      "sbomSha256": "9e8491f63f219006e42276463e0c797747275e72c275249f746ed94b872a7d14",
+      "passed": true,
+      "errors": null
+    },
+    {
+      "file": "rust/sbom.cdx.json",
+      "sbomSha256": "d88e4d8e3de4986655f23c0bb9649cf72c42b54435274a25246c3acd430c9ca6",
+      "passed": true,
+      "errors": null
+    },
+    {
+      "file": "go/sbom.cdx.json",
+      "sbomSha256": "65b8cd8a79445db95b0ff366e8f768615a3accc6ca337af594456f69b71175e6",
+      "passed": true,
+      "errors": null
+    },
+    {
+      "file": "npm-sbom.cdx.json",
+      "sbomSha256": "160373d169a46725b34778040e154ad6c455647fa7f78f7e9a0975f4d943fe0d",
+      "passed": true,
+      "errors": null
+    },
+    {
+      "file": "pip-sbom.cdx.json",
+      "sbomSha256": "a9c34a8158bb2985b558203f037a4a5232a8438e54918658d0cb7232b4305bfd",
+      "passed": true,
+      "errors": null
+    },
+    {
+      "file": "rustCompiler-sbom.cdx.json",
+      "sbomSha256": "c4724a26ed7ba4bc4ea266688440e779e3ee8c0858e5b432f9de64c5f4395aec",
+      "passed": true,
+      "errors": null
+    },
+    {
+      "file": "goCompiler-sbom.cdx.json",
+      "sbomSha256": "8a35455030cf11189ce401ff535efe907f6cb7af7707b2963586daa1e5be3b74",
+      "passed": true,
+      "errors": null
+    },
+    {
+      "file": "cargo-sbom.cdx.json",
+      "sbomSha256": "f451fe801ff575a6c24e1ab4d85e2c35f20cb676741b98f80c96d4a1373680a3",
+      "passed": true,
+      "errors": null
+    },
+    {
+      "file": "native-sbom.cdx.json",
+      "sbomSha256": "d612847ce394136b06f72074137b557303a2976ffebc324b82391a0c94b8a767",
+      "passed": true,
+      "errors": null
+    }
+  ]
+}

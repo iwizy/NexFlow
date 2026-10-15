@@ -1,0 +1,21 @@
+{
+  "task": "NF-102-02",
+  "scope": "Observed implementation/provisioning attempts, not product failures or timing measurements",
+  "attempts": [
+    {"step":"Python provisioner lock grammar","result":"failed","finding":"Initial raw-string regular expression had invalid quoting.","resolution":"Corrected syntax; two focused lock/provisioning controls pass."},
+    {"step":"npm configuration isolation","result":"failed","finding":"Using the same config file for user/global config is rejected by npm.","resolution":"Distinct empty config paths; no ambient user/global config."},
+    {"step":"TypeScript compiler replacement","result":"failed","finding":"Self-test had a now-unused type import.","resolution":"Removed only the unused self-test import; candidate implementation and public oracle unchanged."},
+    {"step":"Offline cache provisioning","result":"failed","finding":"Two initial clean builds found missing cache entries (ENOTCACHED).","resolution":"Explicit separate verified provisioning completed; final two roots deny dependency fetching."},
+    {"step":"Initial Rust installation","result":"failed","finding":"Incomplete tool installation omitted rust-objcopy.","resolution":"Use complete verified compiler/standard-library/Cargo payloads."},
+    {"step":"Rust release byte reproducibility","result":"failed","finding":"Canonical temporary-path and target remapping differed between initial roots.","resolution":"Canonical roots, no incremental compilation and identical source/target/cache remapping; final two roots and primary artifacts match."},
+    {"step":"Rust LLVM relocation in evaluation tool prefix","result":"partial","finding":"Earlier builds exited successfully but emitted dyld/strip-debug warnings and left unstripped outputs.","resolution":"Recorded relative symlink to the unchanged verified LLVM library; two new release roots and 18 tests complete without those warnings. Not a product relocation/lifecycle pass."},
+    {"step":"Rust qualification harness environment","result":"failed","finding":"Compiler version observation could not locate rustc in PATH.","resolution":"Supply exact provisioned rustc PATH; final full contract passes."},
+    {"step":"Native advisory service","result":"partial","finding":"NVD rate limiting interrupted an earlier partial collection.","resolution":"Rate-limited checkpoint/resume retains primary responses and 429 attempts; all 30 queries completed."},
+    {"step":"Cargo source-license closure","result":"failed","finding":"crates.io metadata API returned 403.","resolution":"Use direct source archives verified against exact Cargo.lock checksums; all 523 components mapped."},
+    {"step":"Package notice/license collection","result":"partial","finding":"Some archives omitted root LICENSE files, used README notices/reversed filenames, or legacy licenses metadata.","resolution":"Exact upstream-revision texts, verified source notices and normalized Apache expression; two absent publisher notices remain explicit limitations."},
+    {"step":"Native payload enumeration","result":"failed","finding":"A file-only walk omitted native symlink payloads; an arbitrary smoke count failed.","resolution":"Hash native regular files and file symlink payloads/targets; verify enumeration coverage instead of a magic count."}
+  ],
+  "finalEvidence": ["rebuild.json","installation.json","tool-closure.json","sbom-validation.json","license-index.json","checks.json"],
+  "historicalEvidenceUnchanged": true,
+  "architectureAccepted": false
+}

@@ -20,8 +20,11 @@ reports. Both evidence-analysis lenses are complete; the Accepted-decision goal
 remains not-ready with six owned blocker cards, not a language selection.
 
 The maintainer explicitly [closed NF-102 as a completed review](../rfcs/reviews/2026-10-11-runtime-review-closure.md),
-not an Accepted architecture decision. All six remediation cards remain open
-acceptance blockers, with the original technical criteria and authority limits.
+not an Accepted architecture decision. The current [remediation tracker](../rfcs/reviews/nf-102-remediation.md)
+records NF-102-01 and [NF-102-02](supply-chain/2026-10-15-repaired/README.md)
+as declared-scope complete. NF-102-03 through NF-102-06 remain open acceptance
+blockers, with their original technical criteria and authority limits. Historical
+six-blocker assessments above remain dated review evidence, not current status.
 
 The independent [TypeScript](prototypes/typescript/README.md),
 [Python](prototypes/python/README.md), [Rust](prototypes/rust/README.md) and

@@ -1,3 +1,4 @@
+import { createHash } from "node:crypto";
 import assert from "node:assert/strict";
 import { spawnSync } from "node:child_process";
 import { cpSync, mkdtempSync, mkdirSync, readFileSync, rmSync, symlinkSync, writeFileSync } from "node:fs";
@@ -9,7 +10,7 @@ import { jsonLine } from "./diagnostics.js";
 import { LocalInputs } from "./files.js";
 import { evaluate, evaluateLibraryCase, parseYaml, repositorySchemas } from "./library.js";
 import { inspect, InspectionLimit } from "./inspection.js";
-import { type Json, type Manifest } from "./model.js";
+import { type Manifest } from "./model.js";
 
 const repository = fileURLToPath(new URL("../../../../", import.meta.url));
 const cli = fileURLToPath(new URL("cli.js", import.meta.url));
@@ -128,11 +129,9 @@ test("native semantic and namespace entries return validation without execution"
     assert.deepEqual(result.checks, { runtime: "not-run", extensions: "not-run" });
   }
 });
-test("candidate dependency graph matches the approved NF-056-04 graph", () => {
-  const approved = JSON.parse(readFileSync(join(repository, "evaluation/toolchains/typescript/package-lock.json"), "utf8"));
-  const candidate = JSON.parse(readFileSync(new URL("../package-lock.json", import.meta.url), "utf8"));
-  for (const [name, entry] of Object.entries(candidate.packages) as [string, Json][]) {
-    if (name) assert.deepEqual(entry, approved.packages[name]);
-  }
-  assert.equal(process.versions.node, "22.23.2");
+test("candidate graph matches the current approved repair lock", () => {
+  const approved = JSON.parse(readFileSync(join(repository, "evaluation/repairs/supply-chain/toolchains.json"), "utf8"));
+  const bytes = readFileSync(new URL("../package-lock.json", import.meta.url));
+  assert.equal(createHash("sha256").update(bytes).digest("hex"), approved.locks["evaluation/prototypes/typescript/package-lock.json"]);
+  assert.equal(process.versions.node, "26.12.0");
 });

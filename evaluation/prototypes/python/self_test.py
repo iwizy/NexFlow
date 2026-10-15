@@ -25,8 +25,8 @@ def invoke(*arguments):
 
 class CandidateTests(unittest.TestCase):
     def test_pinned_interpreter_and_all_dependency_versions(self):
-        self.assertEqual(sys.version_info[:3], (3, 12, 14))
-        lock = (ROOT / "evaluation/toolchains/python/requirements.lock").read_text()
+        self.assertEqual(sys.version_info[:3], (3, 12, 15))
+        lock = (ROOT / "evaluation/prototypes/python/requirements.lock").read_text()
         for line in lock.splitlines():
             if "==" in line and not line.startswith("#"):
                 name, pinned = line.split()[0].split("==")

@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 import assert from "node:assert/strict";
+import { createHash } from "node:crypto";
 import { readFileSync, readdirSync } from "node:fs";
 import path from "node:path";
 const base = "evaluation/prototypes/go/";
-const approved = readFileSync("evaluation/toolchains/go/go.mod", "utf8");
-assert.equal(readFileSync(base + "go.mod", "utf8"), approved.replace("module nexflow.local/toolchain-probe", "module nexflow.local/go-evaluation"));
-assert.equal(readFileSync(base + "go.sum", "utf8"), readFileSync("evaluation/toolchains/go/go.sum", "utf8"));
+const approved = JSON.parse(readFileSync("evaluation/repairs/supply-chain/toolchains.json"));
+for (const file of ["go.mod","go.sum"]) assert.equal(createHash("sha256").update(readFileSync(base+file)).digest("hex"),approved.locks[base+file]);
 function sources(directory) {
   return readdirSync(directory, { withFileTypes: true }).flatMap(entry => {
     const name = path.join(directory, entry.name);

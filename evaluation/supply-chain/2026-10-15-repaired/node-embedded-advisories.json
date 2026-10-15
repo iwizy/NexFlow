@@ -1,0 +1,103 @@
+{
+  "formatVersion": 1,
+  "scannerVersion": "nf-056-11-osv-v1",
+  "apiVersion": "v1",
+  "api": "https://api.osv.dev/v1",
+  "startedAt": "2026-10-15T13:06:00.639Z",
+  "completedAt": "2026-10-15T13:06:01.196Z",
+  "databaseVersion": "unavailable-live-service-no-snapshot-id",
+  "candidate": "node-embedded",
+  "sourceRevision": "23e576efd0dda0f00f5462eda9295c1ae4ec8fee",
+  "collectorRevision": "9be540223d7ca177b8320c66f28e541f7cdf6e8e",
+  "scope": "exact-version-matching-no-reachability-or-security-certification",
+  "status": "completed",
+  "queries": [
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "acorn"
+        },
+        "version": "8.19.0"
+      },
+      "refs": [
+        "pkg:npm/acorn@8.19.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "amaro"
+        },
+        "version": "1.1.11"
+      },
+      "refs": [
+        "pkg:npm/amaro@1.1.11"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "undici"
+        },
+        "version": "8.11.2"
+      },
+      "refs": [
+        "pkg:npm/undici@8.11.2"
+      ],
+      "matches": []
+    }
+  ],
+  "pages": [
+    {
+      "queries": [
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "acorn"
+          },
+          "version": "8.19.0"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "amaro"
+          },
+          "version": "1.1.11"
+        },
+        {
+          "package": {
+            "ecosystem": "npm",
+            "name": "undici"
+          },
+          "version": "8.11.2"
+        }
+      ],
+      "response": {
+        "results": [
+          {},
+          {},
+          {}
+        ]
+      },
+      "responseSha256": "f92d31fff5868cbfbca45e418de325ce33d18753d1abbe65c26b0dbcafd2206a"
+    }
+  ],
+  "advisories": [],
+  "queryCount": 3,
+  "matchedPackageCount": 0,
+  "advisoryCount": 0,
+  "fixesApplied": false,
+  "untested": [
+    "OS/distribution advisories",
+    "compiler and interpreter bundled native closure",
+    "unpublished vulnerabilities",
+    "independent dependency source audit",
+    "exploit reachability",
+    "runtime/compiler vulnerability matching"
+  ]
+}

@@ -30,7 +30,7 @@ export function evidenceErrors(record, scan, sbom, pins) {
     && record.catalogSha256 === pins.catalogSha256 && record.evaluationPackageRevision === pins.evaluationPackageRevision, "frozen baseline");
   require(/^[a-f0-9]{40}$/u.test(record.collectorRevision ?? "") && record.collectorVersion === "nf-056-11-v1", "collector binding");
   require(record.outcome === "not-ready" && record.supplyChainAcceptance === "partial"
-    && record.signedProvenance === "not-tested" && record.reproducibleBuild === "not-tested" && record.distributionLifecycle === "not-tested", "non-approval boundary");
+    && record.signedProvenance === "not-tested" && record.reproducibleBuild === (pins.reproducibleBuild ?? "not-tested") && record.distributionLifecycle === "not-tested", "non-approval boundary");
   require(record.target === "macos/arm64", "target identity");
   require(record.limitations?.length >= 6 && record.commands?.length && record.artifacts?.length && record.locks?.length, "missing provenance/limits");
   for (const receipt of [...(record.sourceManifest ?? []), ...(record.locks ?? []), ...(record.artifacts ?? [])])
@@ -66,7 +66,7 @@ export function evidenceErrors(record, scan, sbom, pins) {
     require(Array.isArray(row.refs) && row.refs.length > 0 && matches.every(m => m.id && m.modified), "scan query result");
     for (const ref of row.refs) if (ref === "runtime:go-stdlib") {
       require(record.candidate === "go" && row.query.package.ecosystem === "Go"
-        && row.query.package.name === "stdlib" && row.query.version === "1.27.1", "stdlib query");
+        && row.query.package.name === "stdlib" && row.query.version === (pins.stdlibVersion ?? "1.27.1"), "stdlib query");
     } else {
       const c = components.find(item => item.ref === ref);
       require(c && row.query?.package?.name === c.name && row.query?.package?.ecosystem === c.ecosystem && row.query?.version === c.version, "scan version divergence");

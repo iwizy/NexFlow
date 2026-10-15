@@ -1,0 +1,3677 @@
+{
+  "candidate": "tool-npm",
+  "sourceRevision": "23e576efd0dda0f00f5462eda9295c1ae4ec8fee",
+  "collectorRevision": "3beb349157d80692b6312cc94ce889cb8a5faab9",
+  "recordedAt": "2026-10-15T13:09:10.283Z",
+  "components": [
+    {
+      "ref": "pkg:npm/npm@12.2.0",
+      "name": "npm",
+      "version": "12.2.0",
+      "license": "Artistic-2.0",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "7610d223851f421d315df5e77974f1c68a04b97e02060e5bbbcf13d95e3ca257",
+          "bytes": 9742
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/%40gar/promise-retry@1.0.3",
+      "name": "@gar/promise-retry",
+      "version": "1.0.3",
+      "license": "MIT",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-GmzA9ckNokPypTg10pgpeHNQe7ph+iIKKmhKu3Ob9ANkswreCx7R3cKmY781K8QK3AqVL3xVh9A42JvIAbkkSA==",
+      "downloadUrl": "https://registry.npmjs.org/@gar/promise-retry/-/promise-retry-1.0.3.tgz",
+      "metadataSha256": "eb1b40048ddbbd28e4bb0f663b10054ce27733ff0d65cfa4e6698ad2633d2ade",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "1c66b5311fc6328ab70616d2cf8e20a8e0a787f534831cf8a311b20098b617a5",
+          "bytes": 1156
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/%40isaacs/fs-minipass@4.0.1",
+      "name": "@isaacs/fs-minipass",
+      "version": "4.0.1",
+      "license": "ISC",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-wgm9Ehl2jpeqP3zw/7mo3kRHFp5MEDhqAdwy1fTGkHAwnkGOVsgpvQhL8B5n1qlb01jV3n/bI0ZfZp5lWA1k4w==",
+      "downloadUrl": "https://registry.npmjs.org/@isaacs/fs-minipass/-/fs-minipass-4.0.1.tgz",
+      "metadataSha256": "ab8c1c2bce664e4c76b1937fa1a28f00ca5231a70cf0c1f78dd473101a9d2a88",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "4ec3d4c66cd87f5c8d8ad911b10f99bf27cb00cdfcff82621956e379186b016b",
+          "bytes": 765
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/%40isaacs/string-locale-compare@1.1.0",
+      "name": "@isaacs/string-locale-compare",
+      "version": "1.1.0",
+      "license": "ISC",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-SQ7Kzhh9+D+ZW9MA0zkYv3VXhIDNx+LzM6EJ+/65I3QY+enU6Itte7E5XX7EWrqLW2FN4n06GWzBnPoC3th2aQ==",
+      "downloadUrl": "https://registry.npmjs.org/@isaacs/string-locale-compare/-/string-locale-compare-1.1.0.tgz",
+      "metadataSha256": "45b3f486e72a9d0e0279cda0003713dde115b7d0d75c4acfa7129cffb97e4ab3",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "05dc4d785ac3a488676d3ed10e901b75ad89dafcc63f8e66610fd4a39cc5c7e8",
+          "bytes": 748
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/%40npmcli/agent@5.0.2",
+      "name": "@npmcli/agent",
+      "version": "5.0.2",
+      "license": "ISC",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-EkzGmEsgbQ1rqWkRJe2P0oQHx/ylZozDUNPMXCklLuSFL3GY+QyEfBUjhjCsgGXzh4OGpnHvkboSQgczjP/jJg==",
+      "downloadUrl": "https://registry.npmjs.org/@npmcli/agent/-/agent-5.0.2.tgz",
+      "metadataSha256": "598f837be03377b5b833183e3cead342746cf06f64739f30a68ecf891601f66e",
+      "licenseFiles": []
+    },
+    {
+      "ref": "pkg:npm/%40npmcli/arborist@10.0.3",
+      "name": "@npmcli/arborist",
+      "version": "10.0.3",
+      "license": "ISC",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-QuGpR01YV/4RuJ+5S0W5qh4uljQygmk7b50Jkx+zLErOMMUpKhpbLu/TqQlKfsvuR3SOwXIn3ht+G4bcxrv1WA==",
+      "downloadUrl": "https://registry.npmjs.org/@npmcli/arborist/-/arborist-10.0.3.tgz",
+      "metadataSha256": "b1b3e006e70eb4420f0ef6185c61ea0d1fd3c327c6ea03b150376578b9b65cc5",
+      "licenseFiles": [
+        {
+          "file": "LICENSE.md",
+          "sha256": "27d998b503b18cdb16c49e93da04069a99ba8a1d7e18d67146de8e242f9a6d21",
+          "bytes": 798
+        },
+        {
+          "file": "bin/license.js",
+          "sha256": "3c7c2b07a2591835cb6c60687a23e425540565d9ccb65fef17478c6073bf6841",
+          "bytes": 1485
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/%40npmcli/config@11.2.0",
+      "name": "@npmcli/config",
+      "version": "11.2.0",
+      "license": "ISC",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-PZtUL2rXqThZUT5KGsbVEGdrJswgBoY56X8hXIozwoayHC/rRsaJCIz4nsBzHJvNpCjGEbufJqStaqB7Qdd4ww==",
+      "downloadUrl": "https://registry.npmjs.org/@npmcli/config/-/config-11.2.0.tgz",
+      "metadataSha256": "0054d7e79a28bb6b377a4fb729f5af2d8480c80302cc6f79d8ef9bbfc22b2a5f",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "898c2bcff663681498ad1ca8235d45b6e70b10cdf1f869a5b5e69f6e46efedd3",
+          "bytes": 739
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/%40npmcli/fs@6.0.0",
+      "name": "@npmcli/fs",
+      "version": "6.0.0",
+      "license": "ISC",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-AheOs4swKka/XLtht6xxJDPezlQ7K2IYQ9Y8lST4JLDjnralnWuMM9AE2CdVcgQJ5omrXhsRzM7F7aYmeZBvKQ==",
+      "downloadUrl": "https://registry.npmjs.org/@npmcli/fs/-/fs-6.0.0.tgz",
+      "metadataSha256": "c787a9ac214de77c77d34d548f285b6382137ba7984c368c086411c398115173",
+      "licenseFiles": [
+        {
+          "file": "LICENSE.md",
+          "sha256": "27d998b503b18cdb16c49e93da04069a99ba8a1d7e18d67146de8e242f9a6d21",
+          "bytes": 798
+        },
+        {
+          "file": "lib/cp/LICENSE",
+          "sha256": "1e76029602ae9b21cc4e612db2496d92febed882ba13ba745f8b3309e85f9d39",
+          "bytes": 1084
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/%40npmcli/git@8.0.0",
+      "name": "@npmcli/git",
+      "version": "8.0.0",
+      "license": "ISC",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-5P1oo+TbxZNAiiMBtpzHA8QyEGh5D69LYLexNWJEDXLdxnAZvT/SLitGJBXxjtCE4ftAcFOS/Tu2185MeIjooQ==",
+      "downloadUrl": "https://registry.npmjs.org/@npmcli/git/-/git-8.0.0.tgz",
+      "metadataSha256": "b0e0740849424292739df11d1330e58337f21ca2f7dcdced6fd23f6edb1a5dd6",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "565acf764f4583abe4cf4b02128f01b5d4d1b4c62c253e92df7ed6a8a8ad406b",
+          "bytes": 733
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/%40npmcli/installed-package-contents@5.0.0",
+      "name": "@npmcli/installed-package-contents",
+      "version": "5.0.0",
+      "license": "ISC",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-6Ay12sf2Lh7U1ifvnS1mq7TZFeh/rXHMXye+kV7jQrANIubaoVcleeh4HdFumxhsRYwm9OaHycB5lYmSwGrcIQ==",
+      "downloadUrl": "https://registry.npmjs.org/@npmcli/installed-package-contents/-/installed-package-contents-5.0.0.tgz",
+      "metadataSha256": "ba9ea32ea0a810ab5c08014a998f407e04f9a0c38c26c6610827bf40db6040e1",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "898c2bcff663681498ad1ca8235d45b6e70b10cdf1f869a5b5e69f6e46efedd3",
+          "bytes": 739
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/%40npmcli/map-workspaces@6.0.0",
+      "name": "@npmcli/map-workspaces",
+      "version": "6.0.0",
+      "license": "ISC",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-Dsex7XBea0BoFRbfALMbNuaNqeI3kbZJxiBMQhFvPUNluv0yEeKMd5FLIXy0NCsOuGMYQkLa+i219CadnoqLbg==",
+      "downloadUrl": "https://registry.npmjs.org/@npmcli/map-workspaces/-/map-workspaces-6.0.0.tgz",
+      "metadataSha256": "050cde9bfd9195a16cd4ae4e7ad593ebc844f8c4b686f2ca783d69746407020d",
+      "licenseFiles": [
+        {
+          "file": "LICENSE.md",
+          "sha256": "27d998b503b18cdb16c49e93da04069a99ba8a1d7e18d67146de8e242f9a6d21",
+          "bytes": 798
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/%40npmcli/metavuln-calculator@10.0.0",
+      "name": "@npmcli/metavuln-calculator",
+      "version": "10.0.0",
+      "license": "ISC",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-fC56lpGOae+unrFx6hoiWeWa0/4q+bLhOQTSrB65qcy+Zm34i1OdBcevAQFJJdUB/3i9uXw7PjdrrRjt0KSKXw==",
+      "downloadUrl": "https://registry.npmjs.org/@npmcli/metavuln-calculator/-/metavuln-calculator-10.0.0.tgz",
+      "metadataSha256": "e771a90b1e14b042bf87c653fc86fccaab1cb9ecf469cb3c1f0bd4abaff9c6db",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "898c2bcff663681498ad1ca8235d45b6e70b10cdf1f869a5b5e69f6e46efedd3",
+          "bytes": 739
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/%40npmcli/name-from-folder@5.0.0",
+      "name": "@npmcli/name-from-folder",
+      "version": "5.0.0",
+      "license": "ISC",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-Mua2i5asmOn4sGGAsANS9Guamo7sgUd4BihhQWzlNGz6l/Ki23CzC2oGe4I94r2k/39ImCjDLbyu/rSJr/SXoA==",
+      "downloadUrl": "https://registry.npmjs.org/@npmcli/name-from-folder/-/name-from-folder-5.0.0.tgz",
+      "metadataSha256": "e24d1c255ffcf24c660a7352c3c2ed5990a7f4d41c409597d32979816d40eddc",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "802fae69bfe8fcb201f15b6a12505580028158679c3ed3254df5ea8f0912aed4",
+          "bytes": 721
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/%40npmcli/node-gyp@6.0.0",
+      "name": "@npmcli/node-gyp",
+      "version": "6.0.0",
+      "license": "ISC",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-MFakpea4pcZNlHSTbMi15HK8RY8zl2UpgDtxhZCWOer+KRN3x7HFIMk/fKpOMgR55L4LIcA2qn8IHeyABhIFtw==",
+      "downloadUrl": "https://registry.npmjs.org/@npmcli/node-gyp/-/node-gyp-6.0.0.tgz",
+      "metadataSha256": "b0017afac8507e491663adf5c12c155c63b5cd1aa4cd852f6c8e4ff51caea966",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "8da13c785af46eb3d0bf2ce4c34bdf191b8c57bf43e410e9359d5b5eab5f4b0f",
+          "bytes": 746
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/%40npmcli/package-json@8.0.0",
+      "name": "@npmcli/package-json",
+      "version": "8.0.0",
+      "license": "ISC",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-agNZzYQ18MR0wKp3Emg1q5QbcC8CXigYp3Z3CvB0Sax9Ge9aF4cVyyuSG+5SbACSrZUKTvMjVULWiE1RJA38wg==",
+      "downloadUrl": "https://registry.npmjs.org/@npmcli/package-json/-/package-json-8.0.0.tgz",
+      "metadataSha256": "f5f79d1542c3a7e002a6112dce89fca253377daaedb49b63fabc4deea7c8c384",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "65675229fc81818c9490a1942f361f7ef31cd525bef9111e62a6c84e9bd4769d",
+          "bytes": 719
+        },
+        {
+          "file": "lib/license.js",
+          "sha256": "bc4c06b48b593b8b63f3e1557f52bdd37ebf40295033cfdb03d420d181809c11",
+          "bytes": 860
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/%40npmcli/promise-spawn@10.0.0",
+      "name": "@npmcli/promise-spawn",
+      "version": "10.0.0",
+      "license": "ISC",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-llZkSzeTsimFx64U+ThT2xQM2uEce8GIQUYvxgbB6ZFvBhV2LP9LeJJb3HT+syG0uCFLsTCHjV9SfC0WNU1vtA==",
+      "downloadUrl": "https://registry.npmjs.org/@npmcli/promise-spawn/-/promise-spawn-10.0.0.tgz",
+      "metadataSha256": "e6ee346eacafc0d772a4a67e53ccc6ee307a0adfbeace70d309c77e6c0e0f360",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "565acf764f4583abe4cf4b02128f01b5d4d1b4c62c253e92df7ed6a8a8ad406b",
+          "bytes": 733
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/%40npmcli/query@5.0.0",
+      "name": "@npmcli/query",
+      "version": "5.0.0",
+      "license": "ISC",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-8TZWfTQOsODpLqo9SVhVjHovmKXNpevHU0gO9e+y4V4fRIOneiXy0u0sMP9LmS71XivrEWfZWg50ReH4WRT4aQ==",
+      "downloadUrl": "https://registry.npmjs.org/@npmcli/query/-/query-5.0.0.tgz",
+      "metadataSha256": "3a40e24de5508329d3c41c098704defe72c94790ed01aeccbf4bef544c069888",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "27d998b503b18cdb16c49e93da04069a99ba8a1d7e18d67146de8e242f9a6d21",
+          "bytes": 798
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/%40npmcli/redact@5.0.0",
+      "name": "@npmcli/redact",
+      "version": "5.0.0",
+      "license": "ISC",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-3zcN5Q3yEmeyxXBzqB6fXPQFzYa2ROsGFSr69W0ArXIAGJqxl/aFECOVPD2kbkYPm0U/EHxFKgclK3UA9WQg5A==",
+      "downloadUrl": "https://registry.npmjs.org/@npmcli/redact/-/redact-5.0.0.tgz",
+      "metadataSha256": "9954e4f5b0e7aa04fa807982012f0e558119121c56e0666c541d47256dfaba47",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "d0b7cddf14a2005e05b397a950b9f69e1de412b8c6749e5b5d70610fb119e9ee",
+          "bytes": 1060
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/%40npmcli/run-script@11.0.0",
+      "name": "@npmcli/run-script",
+      "version": "11.0.0",
+      "license": "ISC",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-leBRl6F5F0TvWut8m1/aZcMTUHi2vXjKeMJ/Ik1lW7Q7Yy16Dhtkklu+cEqQww1p1NeLnUNzV3+uwpzqRcy9vw==",
+      "downloadUrl": "https://registry.npmjs.org/@npmcli/run-script/-/run-script-11.0.0.tgz",
+      "metadataSha256": "dcc9ad8e7cd50a1689d42b203990b5bed0ea4425b3fdf4c87d584b3a3fc94bce",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "898c2bcff663681498ad1ca8235d45b6e70b10cdf1f869a5b5e69f6e46efedd3",
+          "bytes": 739
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/%40sigstore/bundle@5.0.0",
+      "name": "@sigstore/bundle",
+      "version": "5.0.0",
+      "license": "Apache-2.0",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-wefjygudENbzbQMks1t5u34EP0fFoD0XvaEP7DOUP/sXKvogzEJYFw5E6pegGyp3onGWzVEYKVa3bNZWyTYX+A==",
+      "downloadUrl": "https://registry.npmjs.org/@sigstore/bundle/-/bundle-5.0.0.tgz",
+      "metadataSha256": "410d257b34acb53ca90eec9663e626a040de96e1f2e6e069913a32d4287e1e98",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "364a130d2ca340bd56eb1e6d045fc6929bb0f9d0aa018f2c1949b29517e1cdd0",
+          "bytes": 11351
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/%40sigstore/core@4.0.1",
+      "name": "@sigstore/core",
+      "version": "4.0.1",
+      "license": "Apache-2.0",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-9v5hRjujn5NXq8o7XFEUgLyAtdr5Iisb4pzM05u3K61IS5q3hP3luWAndk0RkPPLTUFoTbg7Vb84UQ1ZQeajWQ==",
+      "downloadUrl": "https://registry.npmjs.org/@sigstore/core/-/core-4.0.1.tgz",
+      "metadataSha256": "55d00d9cfae15f310382659245d3829fc9a5a615953bf8691127bbb80d1bd44a",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "364a130d2ca340bd56eb1e6d045fc6929bb0f9d0aa018f2c1949b29517e1cdd0",
+          "bytes": 11351
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/%40sigstore/protobuf-specs@0.5.2",
+      "name": "@sigstore/protobuf-specs",
+      "version": "0.5.2",
+      "license": "Apache-2.0",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-SQqvFMt4V78fdjcDdYX6HbiVSOR4QK3ZgwCa2KOsopAgPIHy1rU5UDUmzLl02r5oyyaYcYHR1hpwDRk/yUe+Mw==",
+      "downloadUrl": "https://registry.npmjs.org/@sigstore/protobuf-specs/-/protobuf-specs-0.5.2.tgz",
+      "metadataSha256": "3d6249a0adc03584f0eddf78622917022098a920f5d4d87d1e5d73a37a22f96d",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "364a130d2ca340bd56eb1e6d045fc6929bb0f9d0aa018f2c1949b29517e1cdd0",
+          "bytes": 11351
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/%40sigstore/sign@5.0.0",
+      "name": "@sigstore/sign",
+      "version": "5.0.0",
+      "license": "Apache-2.0",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-DSFivqz9/i5AkwZ5fq0YdjaJlc4o1WeS2Zffon0kqtChx0vy4W9NOjkEet9bF2vkzOufX72eVH8kZBIGtcBp1w==",
+      "downloadUrl": "https://registry.npmjs.org/@sigstore/sign/-/sign-5.0.0.tgz",
+      "metadataSha256": "2fa6f7d1310b9186d5b690ffe471f0b2c3148748bea2ba69cf71a79b33bebab0",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "364a130d2ca340bd56eb1e6d045fc6929bb0f9d0aa018f2c1949b29517e1cdd0",
+          "bytes": 11351
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/%40sigstore/tuf@5.0.0",
+      "name": "@sigstore/tuf",
+      "version": "5.0.0",
+      "license": "Apache-2.0",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-Zyqg9tcHps3uRAlKHLNmsW4ohsUZAjb9G+31r7lg0ICh/JOcadzmJsIRdjKljlRHpaR0K4aJ2kXXIdywdcdMlA==",
+      "downloadUrl": "https://registry.npmjs.org/@sigstore/tuf/-/tuf-5.0.0.tgz",
+      "metadataSha256": "d9744179103dd60c3c8d63caf6ecc3acfb1f8b040a0ae4e3adc790833a12ba59",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "364a130d2ca340bd56eb1e6d045fc6929bb0f9d0aa018f2c1949b29517e1cdd0",
+          "bytes": 11351
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/%40sigstore/verify@4.1.2",
+      "name": "@sigstore/verify",
+      "version": "4.1.2",
+      "license": "Apache-2.0",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-BfD9eLrz3A/DG58aSgfgZYmIR6V9Yw96QVN/frtu2bEH7ctSTk2TDvHU12un3JsDPBTqTNkqkIkucjxljpOFqQ==",
+      "downloadUrl": "https://registry.npmjs.org/@sigstore/verify/-/verify-4.1.2.tgz",
+      "metadataSha256": "69fbaca3493e35b5fb399a4cd0788af0956e20efbb223d2cdbba3d8e2c5c3743",
+      "licenseFiles": []
+    },
+    {
+      "ref": "pkg:npm/%40tufjs/canonical-json@2.0.0",
+      "name": "@tufjs/canonical-json",
+      "version": "2.0.0",
+      "license": "MIT",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-yVtV8zsdo8qFHe+/3kw81dSLyF7D576A5cCFCi4X7B39tWT7SekaEFUnvnWJHz+9qO7qJTah1JbrDjWKqFtdWA==",
+      "downloadUrl": "https://registry.npmjs.org/@tufjs/canonical-json/-/canonical-json-2.0.0.tgz",
+      "metadataSha256": "8c09f4774a7dddb18c24d85cc833c8a847b829f87ce45f1c2a74a61a23a4f4fd",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "564bcb001d6e131452a8e9fba0f0ccc59e8b881f84ce3e46e319a5a33e191e10",
+          "bytes": 1088
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/%40tufjs/models@5.0.0",
+      "name": "@tufjs/models",
+      "version": "5.0.0",
+      "license": "MIT",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-U4mVcdFGOi6pt8n38LdWZp67Svn7ppnU1Pj8SGOVaBi1X4gm+G4ztQlLfkoJbKSHfjA6WeaiJp2A4V83AJF6nQ==",
+      "downloadUrl": "https://registry.npmjs.org/@tufjs/models/-/models-5.0.0.tgz",
+      "metadataSha256": "ebc1c01ce6b4ff90d5d2dd20789163ec5c64dd05afb485cde04365866e586e59",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "564bcb001d6e131452a8e9fba0f0ccc59e8b881f84ce3e46e319a5a33e191e10",
+          "bytes": 1088
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/abbrev@5.0.0",
+      "name": "abbrev",
+      "version": "5.0.0",
+      "license": "ISC",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-/XrFJgzQQQHpti1raDJC6m4ws6aNktmjBlhk8Fdlk7LwCEuDoieEJJY9OFHjfiFJFFRM2tK+Ky/IsfbbmlMu1w==",
+      "downloadUrl": "https://registry.npmjs.org/abbrev/-/abbrev-5.0.0.tgz",
+      "metadataSha256": "cde9446d72d605fdfe65bbadea7a3946feb2ef49a4e653535e46bbef80fb2b06",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "9e0d5c7989f7e9f07d7c4b158aceff270f235eb7464ace41c5e7b200834a43e0",
+          "bytes": 2011
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/agent-base@9.0.0",
+      "name": "agent-base",
+      "version": "9.0.0",
+      "license": "MIT",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-TQf59BsZnytt8GdJKLPfUZ54g/iaUL2OWDSFCCvMOhsHduDQxO8xC4PNeyIkVcA5KwL2phPSv0douC0fgWzmnA==",
+      "downloadUrl": "https://registry.npmjs.org/agent-base/-/agent-base-9.0.0.tgz",
+      "metadataSha256": "13df46dd018fcf2e4231a0f47a1a007dd7d5441d9f8efb108f50f9fb64a17138",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "8d8c55319c7729d57be811c747452636688d54f19701ee0752b6b15ad3771d9a",
+          "bytes": 1101
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/aproba@2.1.0",
+      "name": "aproba",
+      "version": "2.1.0",
+      "license": "ISC",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-tLIEcj5GuR2RSTnxNKdkK0dJ/GrC7P38sUkiDmDuHfsHmbagTFAxDVIBltoklXEVIQ/f14IL8IMJ5pn9Hez1Ew==",
+      "downloadUrl": "https://registry.npmjs.org/aproba/-/aproba-2.1.0.tgz",
+      "metadataSha256": "101af34140df8cc001408d7efff7f6a87967228755caa846276ab6e72dfe0e7a",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "0cef05dfff8b6aa7f35596984f5709f0d17c2582924a751efa471a76de7cdc11",
+          "bytes": 752
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/archy@1.0.0",
+      "name": "archy",
+      "version": "1.0.0",
+      "license": "MIT",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-Xg+9RwCg/0p32teKdGMPTPnVXKD0w3DfHnFTficozsAgsvq2XenPJq/MYpzzQ/v8zrOyJn6Ds39VA4JIDwFfqw==",
+      "downloadUrl": "https://registry.npmjs.org/archy/-/archy-1.0.0.tgz",
+      "metadataSha256": "110f0d7b53d31af7e873b09aaeed3f951bed467697ce3b672fb7e8a9b8a4925a",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "435a6722c786b0a56fbe7387028f1d9d3f3a2d0fb615bb8fee118727c3f59b7b",
+          "bytes": 1073
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/balanced-match@4.0.4",
+      "name": "balanced-match",
+      "version": "4.0.4",
+      "license": "MIT",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-BLrgEcRTwX2o6gGxGOCNyMvGSp35YofuYzw9h1IMTRmKqttAZZVU67bdb9Pr2vUHA8+j3i2tJfjO6C6+4myGTA==",
+      "downloadUrl": "https://registry.npmjs.org/balanced-match/-/balanced-match-4.0.4.tgz",
+      "metadataSha256": "c984e6ae5c41fac085a07a732b665b22e0a26f28b61c692ba18ff458a8ecc95a",
+      "licenseFiles": [
+        {
+          "file": "LICENSE.md",
+          "sha256": "d408f38ffa3355c5faec517153295338892eb0f1ea43f57874bb23c6075979b5",
+          "bytes": 1155
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/bin-links@7.0.0",
+      "name": "bin-links",
+      "version": "7.0.0",
+      "license": "ISC",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-kEk4UROE3064ebMhwmW1qx5BFSBWzmqMe0UwUzn5gsbDyXHmqMUSO8MW6sieYNiRJsindpdnjg4U0D9iXUkIxQ==",
+      "downloadUrl": "https://registry.npmjs.org/bin-links/-/bin-links-7.0.0.tgz",
+      "metadataSha256": "a9fccd3c45f1564e9b5fe06f515c7fca4f6f128e7c3ba1af6c10e260805ac2c1",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "898c2bcff663681498ad1ca8235d45b6e70b10cdf1f869a5b5e69f6e46efedd3",
+          "bytes": 739
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/binary-extensions@3.2.0",
+      "name": "binary-extensions",
+      "version": "3.2.0",
+      "license": "MIT",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-DjR9rgAOMQn9TrUHzijJUtvoKviDRvFxuIyqZrubxHqRpQN9OzfXrrLivm7xb3q8oJSKsiuBor4bAS2wafLnVQ==",
+      "downloadUrl": "https://registry.npmjs.org/binary-extensions/-/binary-extensions-3.2.0.tgz",
+      "metadataSha256": "848c67a067a2c4eae786ef7d615d33072e5d987ce8af5ed1ab92e68d16e36faf",
+      "licenseFiles": [
+        {
+          "file": "license",
+          "sha256": "96f0820026bd6dadc4af99c6dba7111d2e0190c092c376a746c13863e151d072",
+          "bytes": 1167
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/brace-expansion@5.0.12",
+      "name": "brace-expansion",
+      "version": "5.0.12",
+      "license": "MIT",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-YovQ3rzhaLMIrDjNDMkNS01tea93qhEhG5xy8f6+R0l+dw3Ki+5sCoIoI942iuLZTHWogWktgwVDhU09iNEimQ==",
+      "downloadUrl": "https://registry.npmjs.org/brace-expansion/-/brace-expansion-5.0.12.tgz",
+      "metadataSha256": "8af7dc0916002266f3b01459ef691d9f834d8ecdb0e021263280a50b913d85fa",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "9c63a23124d68cd30cd316a94a1a0bca34f032786df6df69fc4b5f136bac8d2e",
+          "bytes": 1144
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/cacache@21.0.1",
+      "name": "cacache",
+      "version": "21.0.1",
+      "license": "ISC",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-pTwz/uj3Jyp6WXdJ6fWhR+7LVxVs6RyroQSn7KJwHsSxXuyGSp0pcMVcwSwTpCFq1X2YG8QBe0W+vN+cr0SwzA==",
+      "downloadUrl": "https://registry.npmjs.org/cacache/-/cacache-21.0.1.tgz",
+      "metadataSha256": "c428f91c3bc010eddd534a256504c74c6c9c1263178880b192bc2c462ae6f938",
+      "licenseFiles": [
+        {
+          "file": "LICENSE.md",
+          "sha256": "720836c9bdad386485a492ab41fe08007ecf85ca278ddd8f9333494dcac4949d",
+          "bytes": 755
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/chalk@5.6.2",
+      "name": "chalk",
+      "version": "5.6.2",
+      "license": "MIT",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-7NzBL0rN6fMUW+f7A6Io4h40qQlG+xGmtMxfbnH/K7TAtt8JQWVQK+6g0UXKMeVJoyV5EkkNsErQ8pVD3bLHbA==",
+      "downloadUrl": "https://registry.npmjs.org/chalk/-/chalk-5.6.2.tgz",
+      "metadataSha256": "ef029c254479723c952a24c0d8d758378bd8ddf031f5bd6f027f65e1a3d030f3",
+      "licenseFiles": [
+        {
+          "file": "license",
+          "sha256": "5c932d88256b4ab958f64a856fa48e8bd1f55bc1d96b8149c65689e0c61789d3",
+          "bytes": 1117
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/chownr@3.0.0",
+      "name": "chownr",
+      "version": "3.0.0",
+      "license": "BlueOak-1.0.0",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-+IxzY9BZOQd/XuYPRmrvEVjF/nqj5kgT4kEq7VofrDoM1MxoRjEWkrCC3EtLi59TVawxTAn+orJwFQcrqEN1+g==",
+      "downloadUrl": "https://registry.npmjs.org/chownr/-/chownr-3.0.0.tgz",
+      "metadataSha256": "4300e90fdd91ec7035047473c60f880251a9801bd786302729d4277751d3b948",
+      "licenseFiles": [
+        {
+          "file": "LICENSE.md",
+          "sha256": "a49c9ba464796f65b59fca3f1e6ca40912df1e859f575383223f7ec6c5baae09",
+          "bytes": 1764
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/ci-info@4.4.0",
+      "name": "ci-info",
+      "version": "4.4.0",
+      "license": "MIT",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-77PSwercCZU2Fc4sX94eF8k8Pxte6JAwL4/ICZLFjJLqegs7kCuAsqqj/70NQF6TvDpgFjkubQB2FW2ZZddvQg==",
+      "downloadUrl": "https://registry.npmjs.org/ci-info/-/ci-info-4.4.0.tgz",
+      "metadataSha256": "1d38ded11841182cf7d0d5b664c48c8e56c3a85cd8990a7711cb73c2bc0d8f7e",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "f58943cb354fb2707fea2f7b26b04e6014ddb56835cdfd414c9d2c6c59165b64",
+          "bytes": 1086
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/cidr-regex@7.1.2",
+      "name": "cidr-regex",
+      "version": "7.1.2",
+      "license": "BSD-2-Clause",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-D8F5oI0M5PagJvTjyycBf7LG+LufTNLrg0WY9J0cPUuG1dIWC2hFvl5SNQr8btm4Qtl7bS7IPvhw/+30IyhBmA==",
+      "downloadUrl": "https://registry.npmjs.org/cidr-regex/-/cidr-regex-7.1.2.tgz",
+      "metadataSha256": "4522a86eaedd7285e82cbd162f2c49598e51a15e98ad2482a7c3159359274b6d",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "23e60503dc06abf04b9e535e17797b4e0f9224e6c5abf9207317d5a67c88c743",
+          "bytes": 1290
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/cmd-shim@9.0.2",
+      "name": "cmd-shim",
+      "version": "9.0.2",
+      "license": "ISC",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-xVHoI+wNrM4tDB9iC1idf/8D0tYnVimlBp/5zHW+x1sGjjRD69NvR9th3Z1JAYGN/BTW4he6aZFYV6kzy+k+jw==",
+      "downloadUrl": "https://registry.npmjs.org/cmd-shim/-/cmd-shim-9.0.2.tgz",
+      "metadataSha256": "a4754b0e8bc55c89760a2d25b9265719d6b5f43385809b1653d3cd921d3b9737",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "ec361617c0473d39347b020eaa6dceedaebab43879fa1cd8b8f0f97a8e80a475",
+          "bytes": 756
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/common-ancestor-path@2.0.0",
+      "name": "common-ancestor-path",
+      "version": "2.0.0",
+      "license": "BlueOak-1.0.0",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-dnN3ibLeoRf2HNC+OlCiNc5d2zxbLJXOtiZUudNFSXZrNSydxcCsSpRzXwfu7BBWCIfHPw+xTayeBvJCP/D8Ng==",
+      "downloadUrl": "https://registry.npmjs.org/common-ancestor-path/-/common-ancestor-path-2.0.0.tgz",
+      "metadataSha256": "dab80c41d237fbbf76fda3cf19245c36325d8e6ec565d8088b8c79432aa7ebd8",
+      "licenseFiles": [
+        {
+          "file": "LICENSE.md",
+          "sha256": "8a1af140fdfbf5afd3df27f7e662f989c5b963a300020dfafce42033cae9e004",
+          "bytes": 1552
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/content-type@2.1.0",
+      "name": "content-type",
+      "version": "2.1.0",
+      "license": "MIT",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-mj7UPXE0jaqaOsukNZRUEfEi2AcL7C/vwmwcHV0O97eO1E1pxBZuyjlZrx5seTaNBg1U6+o35wpa35Qfcc+7ag==",
+      "downloadUrl": "https://registry.npmjs.org/content-type/-/content-type-2.1.0.tgz",
+      "metadataSha256": "33102772db7c8375395bdcc11e7004c597b4cdbe457d8dd0ae2e56f5a2d28637",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "257aed98914108e91a337912727b6a802eef218248507f74b76faffaff517a38",
+          "bytes": 1089
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/cssesc@3.0.0",
+      "name": "cssesc",
+      "version": "3.0.0",
+      "license": "MIT",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-/Tb/JcjK111nNScGob5MNtsntNM1aCNUDipB/TkwZFhyDrrE47SOx/18wF2bbjgc3ZzCSKW1T5nt5EbFoAz/Vg==",
+      "downloadUrl": "https://registry.npmjs.org/cssesc/-/cssesc-3.0.0.tgz",
+      "metadataSha256": "23f134be44f2877c298ca56c5464ebbe190ddb49c3ce9b82be3c73a64512d014",
+      "licenseFiles": [
+        {
+          "file": "LICENSE-MIT.txt",
+          "sha256": "483acb265f182907d1caf6cff9c16c96f31325ed23792832cc5d8b12d5f88c8a",
+          "bytes": 1077
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/debug@4.4.3",
+      "name": "debug",
+      "version": "4.4.3",
+      "license": "MIT",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-RGwwWnwQvkVfavKVt22FGLw+xYSdzARwm0ru6DhTVA3umU5hZc28V3kO4stgYryrTlLpuvgI9GiijltAjNbcqA==",
+      "downloadUrl": "https://registry.npmjs.org/debug/-/debug-4.4.3.tgz",
+      "metadataSha256": "ea8e33d63fe5f3a4c36609b6c3df8e2ef1f8b8ba2fc3a2e1e53cb27291f384af",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "3a61c6c96caf5c1d9b623fb9b04c822b783dfcb78aa7e49c76a3f643e6ed7f95",
+          "bytes": 1139
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/diff@8.0.4",
+      "name": "diff",
+      "version": "8.0.4",
+      "license": "BSD-3-Clause",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-DPi0FmjiSU5EvQV0++GFDOJ9ASQUVFh5kD+OzOnYdi7n3Wpm9hWWGfB/O2blfHcMVTL5WkQXSnRiK9makhrcnw==",
+      "downloadUrl": "https://registry.npmjs.org/diff/-/diff-8.0.4.tgz",
+      "metadataSha256": "372a1ad33bcaded0234d5d327d1164c18968ee3f2e9f362ddd22e4489e91e369",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "eda81a415869e67809f6a9f3fd6056062cb83a462118e07eec5e92b2e0c40ce9",
+          "bytes": 1546
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/env-paths@2.2.1",
+      "name": "env-paths",
+      "version": "2.2.1",
+      "license": "MIT",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-+h1lkLKhZMTYjog1VEpJNG7NZJWcuc2DDk/qsqSTRRCOXiLjeQ1d1/udrUGhqMxUgAlwKNZ0cf2uqan5GLuS2A==",
+      "downloadUrl": "https://registry.npmjs.org/env-paths/-/env-paths-2.2.1.tgz",
+      "metadataSha256": "b92833e5851ec53bd4cd8093f6099d0c6e6818c4374ec1d09aa25d4f9ba91ec4",
+      "licenseFiles": [
+        {
+          "file": "license",
+          "sha256": "48da2f39e100d4085767e94966b43f4fa95ff6a0698fba57ed460914e35f94a0",
+          "bytes": 1109
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/exponential-backoff@3.1.3",
+      "name": "exponential-backoff",
+      "version": "3.1.3",
+      "license": "Apache-2.0",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-ZgEeZXj30q+I0EN+CbSSpIyPaJ5HVQD18Z1m+u1FXbAeT94mr1zw50q4q6jiiC447Nl/YTcIYSAftiGqetwXCA==",
+      "downloadUrl": "https://registry.npmjs.org/exponential-backoff/-/exponential-backoff-3.1.3.tgz",
+      "metadataSha256": "c3076cc23aa8d9f5123900305b9c174af612bfef91211c658ab914611dd86fa8",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "f5afc95c69e116ea6b1755f91a8763f53eadb78b4f1582a08d2d18586a03a117",
+          "bytes": 11351
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/fastest-levenshtein@1.0.16",
+      "name": "fastest-levenshtein",
+      "version": "1.0.16",
+      "license": "MIT",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-eRnCtTTtGZFpQCwhJiUOuxPQWRXVKYDn0b2PeHfXL6/Zi53SLAzAHfVhVWK2AryC/WH05kGfxhFIPvTF0SXQzg==",
+      "downloadUrl": "https://registry.npmjs.org/fastest-levenshtein/-/fastest-levenshtein-1.0.16.tgz",
+      "metadataSha256": "1678454ed179a645bc098b43276d816966f88d134195664538d4de1af13a61b4",
+      "licenseFiles": [
+        {
+          "file": "LICENSE.md",
+          "sha256": "b8baf91be313643f3e87a01da77704b68e12795184a62e51e537a5a43c2932f3",
+          "bytes": 1072
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/fdir@6.5.0",
+      "name": "fdir",
+      "version": "6.5.0",
+      "license": "MIT",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-tIbYtZbucOs0BRGqPJkshJUYdL+SDH7dVM8gjy+ERp3WAUjLEFJE+02kanyHtwjWOnwrKYBiwAmM0p4kLJAnXg==",
+      "downloadUrl": "https://registry.npmjs.org/fdir/-/fdir-6.5.0.tgz",
+      "metadataSha256": "aca49395d61ef383a09f74555c66ed45817ca2b5724e710a4dc9e0471b83d8f5",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "9a39f2aadab11a3697edd668ff2d8ad885b649737b7ab4d3bf12b34e5ada0c86",
+          "bytes": 1053
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/fs-minipass@3.0.3",
+      "name": "fs-minipass",
+      "version": "3.0.3",
+      "license": "ISC",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-XUBA9XClHbnJWSfBzjkm6RvPsyg3sryZt06BEQoXcF7EK/xpGaQYJgQKDJSUH5SGZ76Y7pFx1QBnXz09rU5Fbw==",
+      "downloadUrl": "https://registry.npmjs.org/fs-minipass/-/fs-minipass-3.0.3.tgz",
+      "metadataSha256": "e90117e65341117ce56ab6aaa8b59291210601f69c63996fbe446a9a30237fc6",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "4ec3d4c66cd87f5c8d8ad911b10f99bf27cb00cdfcff82621956e379186b016b",
+          "bytes": 765
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/glob@13.0.6",
+      "name": "glob",
+      "version": "13.0.6",
+      "license": "BlueOak-1.0.0",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-Wjlyrolmm8uDpm/ogGyXZXb1Z+Ca2B8NbJwqBVg0axK9GbBeoS7yGV6vjXnYdGm6X53iehEuxxbyiKp8QmN4Vw==",
+      "downloadUrl": "https://registry.npmjs.org/glob/-/glob-13.0.6.tgz",
+      "metadataSha256": "5a28ef9a1f5252feb47ffe288a6350fe99b18311462e6a9cdacbdd0bb4be6be9",
+      "licenseFiles": [
+        {
+          "file": "LICENSE.md",
+          "sha256": "a49c9ba464796f65b59fca3f1e6ca40912df1e859f575383223f7ec6c5baae09",
+          "bytes": 1764
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/graceful-fs@4.2.11",
+      "name": "graceful-fs",
+      "version": "4.2.11",
+      "license": "ISC",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==",
+      "downloadUrl": "https://registry.npmjs.org/graceful-fs/-/graceful-fs-4.2.11.tgz",
+      "metadataSha256": "5747d4ba6b17165c6ecac30ab3a331715f41c7ad546e1f1574dab1bdcb116181",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "f65c5d9f22a317b2a10803bd1868461ce6499c2ed7217bc80c0cc772a748789c",
+          "bytes": 791
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/hosted-git-info@10.1.1",
+      "name": "hosted-git-info",
+      "version": "10.1.1",
+      "license": "ISC",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-DeOnSPAvOndYKfw075gt8yZzQ7S2hNztw34zBTfhIzLhmBTswIBg5/y+pqu/VD5cYWm5goAFTusDmUEmKZ0PEQ==",
+      "downloadUrl": "https://registry.npmjs.org/hosted-git-info/-/hosted-git-info-10.1.1.tgz",
+      "metadataSha256": "4ee05f78a84ae12a87a88a8374ae594e6d3f564070f516a764e9b1ebd529bc22",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "c1476ec53119cd4c8370f91f5152ac76312a29b4fae2d49b5e0e0970fe0fa5ee",
+          "bytes": 733
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/http-cache-semantics@4.3.0",
+      "name": "http-cache-semantics",
+      "version": "4.3.0",
+      "license": "BSD-2-Clause",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-M5t5LlJpS1UHMjvwRQVdFHvPISGeLAxNcrWuJkeGh0KxsqCHZ1O3NXZU/8x7cD0BDcGW8kapxMKTvwlqrNkHkA==",
+      "downloadUrl": "https://registry.npmjs.org/http-cache-semantics/-/http-cache-semantics-4.3.0.tgz",
+      "metadataSha256": "dbe99941ed2092d43257294405cfb389a476ef54a029488b51125e6f3a777fde",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "ab868ad5a2ef5068560d9cd3b2180ec63c140bb4c5cae1ba779d300a0ac74fa3",
+          "bytes": 1274
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/http-proxy-agent@9.1.0",
+      "name": "http-proxy-agent",
+      "version": "9.1.0",
+      "license": "MIT",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-2NxoveTT58mjYT4n3RPTEfCZGLMbidoO8XEieXfpSYxu+PQJ1qpx4ypwH6N+uF9twBPIvRRgvkvW5HUTYWENig==",
+      "downloadUrl": "https://registry.npmjs.org/http-proxy-agent/-/http-proxy-agent-9.1.0.tgz",
+      "metadataSha256": "03703c6c566b00d8fd85ba57cd6460b14d0b762f694e26f0efbfe4e5384e3081",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "71368fd0f5b4129191e9afcd1e1ef2dc89a9090d3e4d80bbab92dafd032b3bef",
+          "bytes": 1102
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/https-proxy-agent@9.1.0",
+      "name": "https-proxy-agent",
+      "version": "9.1.0",
+      "license": "MIT",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-ag87y7cJJ9/3+GxFr8Oy4O5faDsGRGnBGsJj/YjOSsSx/5eadKLYTMPlzuR6obgoCDDm0abAAZitXXQkMOPSpA==",
+      "downloadUrl": "https://registry.npmjs.org/https-proxy-agent/-/https-proxy-agent-9.1.0.tgz",
+      "metadataSha256": "50d17385a8c63c0ed0e138069617d4d9236ce92bddbe6f52cfec0e3a834c97a0",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "8d8c55319c7729d57be811c747452636688d54f19701ee0752b6b15ad3771d9a",
+          "bytes": 1101
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/iconv-lite@0.7.3",
+      "name": "iconv-lite",
+      "version": "0.7.3",
+      "license": "MIT",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-IKXpvIzjnC9XTAUbVBcMfGS0EPaIXtW6v+zr+RRp+hqULEpo0owZax6wyRwPOJbWbzjYspQwusTsfVr0ifh4uQ==",
+      "downloadUrl": "https://registry.npmjs.org/iconv-lite/-/iconv-lite-0.7.3.tgz",
+      "metadataSha256": "f24ad03476d51470a5b069e65b03ef6383d615897ffe2239edf22584ea0e3d03",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "ac779f7314c74f232ef847ea86e714abe25cf6eeb5cc97b69451b74e2af6492d",
+          "bytes": 1064
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/ignore-walk@9.0.0",
+      "name": "ignore-walk",
+      "version": "9.0.0",
+      "license": "ISC",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-tCBEZV2z2FNpIDl2vrhiWzIHzs4qOAuIDEO85eS02vZ3L1U3P56qpPL8GuGGAijDktAEaq2swMkO/Fmbo7YmfQ==",
+      "downloadUrl": "https://registry.npmjs.org/ignore-walk/-/ignore-walk-9.0.0.tgz",
+      "metadataSha256": "d7119f0f3ea970d6bf75ad0f391dca2a35ac3e14f28afa162ffe7a303d001f5d",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "4ec3d4c66cd87f5c8d8ad911b10f99bf27cb00cdfcff82621956e379186b016b",
+          "bytes": 765
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/ini@7.0.0",
+      "name": "ini",
+      "version": "7.0.0",
+      "license": "ISC",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-ifK0CgjALofS5bkrcTy4RaQ9Vx2Knf/eLeIO+NaswQEpH1UblrtTSCIvN71qQDMq0PeQ/SSPojvEJp9vvvfr+w==",
+      "downloadUrl": "https://registry.npmjs.org/ini/-/ini-7.0.0.tgz",
+      "metadataSha256": "8fa8b0d70252d57858bae47eae4d4b8d19c83f316dddd0d4565f5626cc51e194",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "4ec3d4c66cd87f5c8d8ad911b10f99bf27cb00cdfcff82621956e379186b016b",
+          "bytes": 765
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/init-package-json@9.0.0",
+      "name": "init-package-json",
+      "version": "9.0.0",
+      "license": "ISC",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-aYDqz4jgX1plB2GDCFYStlOh67QXVpAIeNgDq8rRGVDYMvLE39yYlf8+CjYY2chVOVfqLsSIycFYznHWozZ9CA==",
+      "downloadUrl": "https://registry.npmjs.org/init-package-json/-/init-package-json-9.0.0.tgz",
+      "metadataSha256": "816d2f8927475a11f6f4bf3408b2ff0c28970f6cb63e3c1892c36da69e7d7013",
+      "licenseFiles": [
+        {
+          "file": "LICENSE.md",
+          "sha256": "7f75bb21103e77b7acfcf88a6ad0286741a18b5d13c4326160346e8cf7e356ad",
+          "bytes": 717
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/ip-address@10.7.4",
+      "name": "ip-address",
+      "version": "10.7.4",
+      "license": "MIT",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-DWBMKyeM25D70nrIiTkgQth59/G+naKOTep6huF9j+GmeK3DMD60Zvxg5d5qQnz+38AHgou6ean2LECX+lrKDg==",
+      "downloadUrl": "https://registry.npmjs.org/ip-address/-/ip-address-10.7.4.tgz",
+      "metadataSha256": "da8deffa558848bddae7ebcc7875cddb7edfc6a996de046560cf10ff0a4b0094",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "f8d791359a50cbcac82c29cb7b0b1b889b28be76fdd35b8ee33f0f7c8704702a",
+          "bytes": 1061
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/is-cidr@7.0.3",
+      "name": "is-cidr",
+      "version": "7.0.3",
+      "license": "BSD-2-Clause",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-lNg3nOT+LHKO4vughx1zLUpWUWkt87qu1dBzVrzzOpliIx6gnSIUCXvQfV0FzSHCm6p4ym7BhbakusmZQEC6pw==",
+      "downloadUrl": "https://registry.npmjs.org/is-cidr/-/is-cidr-7.0.3.tgz",
+      "metadataSha256": "ade672c249cf0c86e65ae95cd4cc26ffbab9454a1fb4fea19dcb417ffdbf9ce2",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "23e60503dc06abf04b9e535e17797b4e0f9224e6c5abf9207317d5a67c88c743",
+          "bytes": 1290
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/isexe@4.0.0",
+      "name": "isexe",
+      "version": "4.0.0",
+      "license": "BlueOak-1.0.0",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-FFUtZMpoZ8RqHS3XeXEmHWLA4thH+ZxCv2lOiPIn1Xc7CxrqhWzNSDzD+/chS/zbYezmiwWLdQC09JdQKmthOw==",
+      "downloadUrl": "https://registry.npmjs.org/isexe/-/isexe-4.0.0.tgz",
+      "metadataSha256": "1889746f84d1e2a524353a2e31464995b808f24457f0dd55d6fd9da638f978ed",
+      "licenseFiles": [
+        {
+          "file": "LICENSE.md",
+          "sha256": "8a1af140fdfbf5afd3df27f7e662f989c5b963a300020dfafce42033cae9e004",
+          "bytes": 1552
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/json-parse-even-better-errors@6.0.0",
+      "name": "json-parse-even-better-errors",
+      "version": "6.0.0",
+      "license": "MIT",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-2/8adwnK1/+Fdjyts4r6wSpfANWw8zdNhU9U/Llk59c6O+DjSisPWPykwoL8gZmocP9Dy64S7oie2g+Mia123A==",
+      "downloadUrl": "https://registry.npmjs.org/json-parse-even-better-errors/-/json-parse-even-better-errors-6.0.0.tgz",
+      "metadataSha256": "2bbd08ac4290a63c55fe5ed28bade9aff1d7630ba86568adffd0a10712fde320",
+      "licenseFiles": [
+        {
+          "file": "LICENSE.md",
+          "sha256": "50627796eb4236cd05674e71d090e594447995225b7d94cd59e57c25fa3a0217",
+          "bytes": 1209
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/json-stringify-nice@1.1.4",
+      "name": "json-stringify-nice",
+      "version": "1.1.4",
+      "license": "ISC",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-5Z5RFW63yxReJ7vANgW6eZFGWaQvnPE3WNmZoOJrSkGju2etKA2L5rrOa1sm877TVTFt57A80BH1bArcmlLfPw==",
+      "downloadUrl": "https://registry.npmjs.org/json-stringify-nice/-/json-stringify-nice-1.1.4.tgz",
+      "metadataSha256": "b1517d9a73d96ecf3b9c8b868f48e2bea71b8e13631bfceb2d7e9ce5830e69fa",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "4ec3d4c66cd87f5c8d8ad911b10f99bf27cb00cdfcff82621956e379186b016b",
+          "bytes": 765
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/jsonparse@1.3.1",
+      "name": "jsonparse",
+      "version": "1.3.1",
+      "license": "MIT",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-POQXvpdL69+CluYsillJ7SUhKvytYjW9vG/GKpnf+xP8UWgYEM/RaMzHHofbALDiKbbP1W8UEYmgGl39WkPZsg==",
+      "downloadUrl": "https://registry.npmjs.org/jsonparse/-/jsonparse-1.3.1.tgz",
+      "metadataSha256": "fd84a394475582d3aca1da89b9d2dbb193ba7952da9f8c01a5a5474505185a29",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "ed251dc3a48522399fffe95fe04d94fbcadcd9edd0e7689f3b71cf73403a6138",
+          "bytes": 1087
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/just-diff@6.0.2",
+      "name": "just-diff",
+      "version": "6.0.2",
+      "license": "MIT",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-S59eriX5u3/QhMNq3v/gm8Kd0w8OS6Tz2FS1NG4blv+z0MuQcBRJyFWjdovM0Rad4/P4aUPFtnkNjMjyMlMSYA==",
+      "downloadUrl": "https://registry.npmjs.org/just-diff/-/just-diff-6.0.2.tgz",
+      "metadataSha256": "1df75d52a92778b327ec79137008038e49fcbb35f1b6518f6ffbeba86d797a3b",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "ebb30d70f7ebd918f223ce6ed7621fa4cef3ec2d59d6707c23868b01def28ce2",
+          "bytes": 1078
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/just-diff-apply@5.5.0",
+      "name": "just-diff-apply",
+      "version": "5.5.0",
+      "license": "MIT",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-OYTthRfSh55WOItVqwpefPtNt2VdKsq5AnAK6apdtR6yCH8pr0CmSr710J0Mf+WdQy7K/OzMy7K2MgAfdQURDw==",
+      "downloadUrl": "https://registry.npmjs.org/just-diff-apply/-/just-diff-apply-5.5.0.tgz",
+      "metadataSha256": "1b721a43b3cff361a573c58e9769ccdc4350351d07d91ce69b72a2363406e61a",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "ebb30d70f7ebd918f223ce6ed7621fa4cef3ec2d59d6707c23868b01def28ce2",
+          "bytes": 1078
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/libnpmaccess@11.0.0",
+      "name": "libnpmaccess",
+      "version": "11.0.0",
+      "license": "ISC",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-qku5OaTtCv7f4xq5lmZMh4H6pd9WRalww3WF4PEk/aFo1Bpi7/IRCzy28EQBvyrprhzZGifbpM378U4waB9/0Q==",
+      "downloadUrl": "https://registry.npmjs.org/libnpmaccess/-/libnpmaccess-11.0.0.tgz",
+      "metadataSha256": "0cd4fe29ee0b77290231dd55d7cbd0e3e5cb8fd0952087065491376b3c4aa262",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "77d72758faff2d3a086b1c77f66f4dcfa63a1ee1a9bab5df4ab3c2e8f3eb646d",
+          "bytes": 717
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/libnpmdiff@9.0.3",
+      "name": "libnpmdiff",
+      "version": "9.0.3",
+      "license": "ISC",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-oPI3XPxD0W+EJXFCyWfE/gt7O8+uBqCHu2WW1efDSNICM5B3k2SkoKbtDWUNETa1Q0JkLLUucGM9AMBHJTd+ew==",
+      "downloadUrl": "https://registry.npmjs.org/libnpmdiff/-/libnpmdiff-9.0.3.tgz",
+      "metadataSha256": "c6cecdd02eaff48841fe5cc78d30e12b11bbe7f1ef36127e934fc95378f47631",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "7967f87257c7d5f0ef29012d472a8b99a0fb1c5202b6d861a2c81671329a2ee4",
+          "bytes": 741
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/libnpmexec@11.0.3",
+      "name": "libnpmexec",
+      "version": "11.0.3",
+      "license": "ISC",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-32jWuLpPATCQA9T0wVxZo0kJjCD+pemf4F1wtnoLk+KaizNn8mzD6PqwX0IG8tzZ6RrYu45d3DB6cITRa6AUsw==",
+      "downloadUrl": "https://registry.npmjs.org/libnpmexec/-/libnpmexec-11.0.3.tgz",
+      "metadataSha256": "fef4d1ab87c747be51aa1b078ff96654802988988efb1b9674563b244a542022",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "7967f87257c7d5f0ef29012d472a8b99a0fb1c5202b6d861a2c81671329a2ee4",
+          "bytes": 741
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/libnpmfund@8.0.3",
+      "name": "libnpmfund",
+      "version": "8.0.3",
+      "license": "ISC",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-f3p/IsAM3nVsZMPf9ECEdSQwZg9DgVUR2zSidNFOifrDb5AYlRSA99DGreibpRzqDdeymkVSDAPco1oZsd0R1A==",
+      "downloadUrl": "https://registry.npmjs.org/libnpmfund/-/libnpmfund-8.0.3.tgz",
+      "metadataSha256": "f30970899260f01317a4aab7acd2dab46049d9c501b90a2f86cca8dd574b8371",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "9dd1bc5666fd1e32f086518046532e993f5307749327aff37cecf98355f2b9a0",
+          "bytes": 738
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/libnpmorg@9.0.0",
+      "name": "libnpmorg",
+      "version": "9.0.0",
+      "license": "ISC",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-cPiStT2aFEGu5/so+VZlQDb5AuhiYFsEAHBOCjuXWbBQP2EcGmr6doOUNRV17L2HNTw1Wvqnq2+nSrINdBphAg==",
+      "downloadUrl": "https://registry.npmjs.org/libnpmorg/-/libnpmorg-9.0.0.tgz",
+      "metadataSha256": "b8df36a3346a0484bf6d3e1b162d19b75a6d8d210c35f7191bf0078fad972c04",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "77d72758faff2d3a086b1c77f66f4dcfa63a1ee1a9bab5df4ab3c2e8f3eb646d",
+          "bytes": 717
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/libnpmpack@10.0.3",
+      "name": "libnpmpack",
+      "version": "10.0.3",
+      "license": "ISC",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-oiseAmf5ynjS6km3L5NnhiQrTmMMwsElzzHcdAvOQEP1NckR1vf141JLn4vfD0R4dblTz/DeNr/7AKmJunC0Xg==",
+      "downloadUrl": "https://registry.npmjs.org/libnpmpack/-/libnpmpack-10.0.3.tgz",
+      "metadataSha256": "e8fe2a37306bc63dc3f823433657ec84d223a2f187895eb9de45d2cb45a3c1bb",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "77d72758faff2d3a086b1c77f66f4dcfa63a1ee1a9bab5df4ab3c2e8f3eb646d",
+          "bytes": 717
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/libnpmpublish@12.0.1",
+      "name": "libnpmpublish",
+      "version": "12.0.1",
+      "license": "ISC",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-gG32Hgikbb8mx+c+b2MKseuQcwKbiIl7wM4a5+scxuRtu/Q7L/fbywMyLD4naUfL0yexdKWzfi6kglMz6BGOWQ==",
+      "downloadUrl": "https://registry.npmjs.org/libnpmpublish/-/libnpmpublish-12.0.1.tgz",
+      "metadataSha256": "b3c11b3f08adb1a2ebb0dc443a1ed17d8838398405598bd9fcd8f1451e9902cb",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "77d72758faff2d3a086b1c77f66f4dcfa63a1ee1a9bab5df4ab3c2e8f3eb646d",
+          "bytes": 717
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/libnpmsearch@10.0.0",
+      "name": "libnpmsearch",
+      "version": "10.0.0",
+      "license": "ISC",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-dNDPxoeIY8IC3ftpOaMGbaHMcxngu4PEyTdR5XZnWgh62QaCucUVK+7z7i2igIEUiOe4HJbZw/sU/5VOCCjkmA==",
+      "downloadUrl": "https://registry.npmjs.org/libnpmsearch/-/libnpmsearch-10.0.0.tgz",
+      "metadataSha256": "c5626cffd6ca6aaab862173741840b7900532d47d7543bec046ebcd8fd1149f4",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "77d72758faff2d3a086b1c77f66f4dcfa63a1ee1a9bab5df4ab3c2e8f3eb646d",
+          "bytes": 717
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/libnpmteam@9.0.0",
+      "name": "libnpmteam",
+      "version": "9.0.0",
+      "license": "ISC",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-zZhmjQlRZDUyoHC1/Knc5lG7NVLZfu3wEGaotvILo6xKxE/njDDeZVJa2CS/cmZZ5ki7rSXg+0GNlqusiHqPTQ==",
+      "downloadUrl": "https://registry.npmjs.org/libnpmteam/-/libnpmteam-9.0.0.tgz",
+      "metadataSha256": "640626cd8e76738123e9d236c3da7426a86b44c53f209375655b932a46db895c",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "77d72758faff2d3a086b1c77f66f4dcfa63a1ee1a9bab5df4ab3c2e8f3eb646d",
+          "bytes": 717
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/libnpmversion@9.0.0",
+      "name": "libnpmversion",
+      "version": "9.0.0",
+      "license": "ISC",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-v7vTEPiODFT6ciWXoVWEpsD5fPFNoyQ35OvrZgK7F0ZjJxR23l+UBvGzkhPGYc8Fft39k90Ej+l3/zCGu5tzcg==",
+      "downloadUrl": "https://registry.npmjs.org/libnpmversion/-/libnpmversion-9.0.0.tgz",
+      "metadataSha256": "c1d2e2273555734170020ceba06915cead4aa5da3f27bdf066380520b147a38e",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "05dc4d785ac3a488676d3ed10e901b75ad89dafcc63f8e66610fd4a39cc5c7e8",
+          "bytes": 748
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/lru-cache@11.5.3",
+      "name": "lru-cache",
+      "version": "11.5.3",
+      "license": "BlueOak-1.0.0",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-U4N8FgzmWxc8k1VH8Kr6lQg18U7Fjvby6wXHVRX/ZZ7IwWbRMgrRbP0Wrb5q5NVinryp4SQampHKdvtecItxUg==",
+      "downloadUrl": "https://registry.npmjs.org/lru-cache/-/lru-cache-11.5.3.tgz",
+      "metadataSha256": "c085d38560434a8915fd1817cd17cee316118078b07f40302b32ef4d8bc760f4",
+      "licenseFiles": [
+        {
+          "file": "LICENSE.md",
+          "sha256": "8a1af140fdfbf5afd3df27f7e662f989c5b963a300020dfafce42033cae9e004",
+          "bytes": 1552
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/make-fetch-happen@16.0.1",
+      "name": "make-fetch-happen",
+      "version": "16.0.1",
+      "license": "ISC",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-uUv1yxHzaKVVEPfcFeGSNov/Cehjv08ovlY8ImTljgL7Q+SiA0dAYLQ6SYVa2kkKqNj4Y3aZEI7xv2teadie0A==",
+      "downloadUrl": "https://registry.npmjs.org/make-fetch-happen/-/make-fetch-happen-16.0.1.tgz",
+      "metadataSha256": "81aef6b930cb2462c5f5e9215c3d0ed4e682ae6277709870bf4bbf20ff13fda1",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "a806e21000ee60cfd64a6f1416f29c7552b4834701974e86c0156f99c0cdd806",
+          "bytes": 765
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/minimatch@10.2.6",
+      "name": "minimatch",
+      "version": "10.2.6",
+      "license": "BlueOak-1.0.0",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-vpLQEs+VLCr1nU0BXS07maYoFwlDAH0gngQuuttxIwutDFEMHq2blX+8vpgxDdK3J1PwjCJiep77OitTZ4Ll1A==",
+      "downloadUrl": "https://registry.npmjs.org/minimatch/-/minimatch-10.2.6.tgz",
+      "metadataSha256": "bb847ba240909c9a36d4eaeb4e0efdc3e31182aeef208c1611259a48f282ea75",
+      "licenseFiles": [
+        {
+          "file": "LICENSE.md",
+          "sha256": "2c7c5d22ed5a8ee968c64757710979afcd77438c48b4a265b94e615babd8a901",
+          "bytes": 1550
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/minipass@7.1.3",
+      "name": "minipass",
+      "version": "7.1.3",
+      "license": "BlueOak-1.0.0",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-tEBHqDnIoM/1rXME1zgka9g6Q2lcoCkxHLuc7ODJ5BxbP5d4c2Z5cGgtXAku59200Cx7diuHTOYfSBD8n6mm8A==",
+      "downloadUrl": "https://registry.npmjs.org/minipass/-/minipass-7.1.3.tgz",
+      "metadataSha256": "b8ab116187d5e9375d494f17437eb862cbee4b329c21f15412c6a5170ec2f55c",
+      "licenseFiles": [
+        {
+          "file": "LICENSE.md",
+          "sha256": "8a1af140fdfbf5afd3df27f7e662f989c5b963a300020dfafce42033cae9e004",
+          "bytes": 1552
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/minipass-collect@2.0.1",
+      "name": "minipass-collect",
+      "version": "2.0.1",
+      "license": "ISC",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-D7V8PO9oaz7PWGLbCACuI1qEOsq7UKfLotx/C0Aet43fCUB/wfQ7DYeq2oR/svFJGYDHPr38SHATeaj/ZoKHKw==",
+      "downloadUrl": "https://registry.npmjs.org/minipass-collect/-/minipass-collect-2.0.1.tgz",
+      "metadataSha256": "042ab826c5440a7d01a1cafae44c54840618319e2e64ed40df006c542b0768f8",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "b630651f34d0e0284ea940601bbe0a58f306ad7e9819e351d9dfab812f8d0f38",
+          "bytes": 775
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/minipass-fetch@6.0.0",
+      "name": "minipass-fetch",
+      "version": "6.0.0",
+      "license": "MIT",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-AWI8bKapGmgx/J0E6IGYSKj8TiHebZkmKWSs8raPSw8KXwgEAJ+Bw3+LSdXHR6T/RHKAWCOYk2MiLrYluaUU6w==",
+      "downloadUrl": "https://registry.npmjs.org/minipass-fetch/-/minipass-fetch-6.0.0.tgz",
+      "metadataSha256": "85d571df43959eef6c201e9c9023764126dfd3a5ac861efd17bb97e2d671ddba",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "1dedee6f84f5875ce4dc398d4d767274eb952a43cfd510a6ada856b2ed347472",
+          "bytes": 1308
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/minipass-flush@1.0.7",
+      "name": "minipass-flush",
+      "version": "1.0.7",
+      "license": "BlueOak-1.0.0",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-TbqTz9cUwWyHS2Dy89P3ocAGUGxKjjLuR9z8w4WUTGAVgEj17/4nhgo2Du56i0Fm3Pm30g4iA8Lcqctc76jCzA==",
+      "downloadUrl": "https://registry.npmjs.org/minipass-flush/-/minipass-flush-1.0.7.tgz",
+      "metadataSha256": "00eb6d6a76a29658c56bfc079f9e5ec008ae6ba136b83467777948280077185c",
+      "licenseFiles": [
+        {
+          "file": "LICENSE.md",
+          "sha256": "8a1af140fdfbf5afd3df27f7e662f989c5b963a300020dfafce42033cae9e004",
+          "bytes": 1552
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/minipass@3.3.6",
+      "name": "minipass",
+      "version": "3.3.6",
+      "license": "ISC",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-DxiNidxSEK+tHG6zOIklvNOwm3hvCrbUrdtzY74U6HKTJxvIDfOUL5W5P2Ghd3DTkhhKPYGqeNUIh5qcM4YBfw==",
+      "downloadUrl": "https://registry.npmjs.org/minipass/-/minipass-3.3.6.tgz",
+      "metadataSha256": "e99f6b67ba6e5cda438efb7a23dd399ee5c2070af69ce77720d95de5fb42921e",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "a5a110eb524bf3217958e405b5e3411277e915a2f5902c330348877000337e53",
+          "bytes": 787
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/yallist@4.0.0",
+      "name": "yallist",
+      "version": "4.0.0",
+      "license": "ISC",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==",
+      "downloadUrl": "https://registry.npmjs.org/yallist/-/yallist-4.0.0.tgz",
+      "metadataSha256": "c56b604bce814520105739e9559142ea9d4417454ebb933fd5687ca1d8d89bd5",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "4ec3d4c66cd87f5c8d8ad911b10f99bf27cb00cdfcff82621956e379186b016b",
+          "bytes": 765
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/minipass-pipeline@1.2.4",
+      "name": "minipass-pipeline",
+      "version": "1.2.4",
+      "license": "ISC",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-xuIq7cIOt09RPRJ19gdi4b+RiNvDFYe5JH+ggNvBqGqpQXcru3PcRmOZuHBKWK1Txf9+cQ+HMVN4d6z46LZP7A==",
+      "downloadUrl": "https://registry.npmjs.org/minipass-pipeline/-/minipass-pipeline-1.2.4.tgz",
+      "metadataSha256": "c20f059ca6012af5a3d255948c7ab1fccc06ad1d0019c669b08ba251cd4b281d",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "4ec3d4c66cd87f5c8d8ad911b10f99bf27cb00cdfcff82621956e379186b016b",
+          "bytes": 765
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/minipass-sized@2.0.0",
+      "name": "minipass-sized",
+      "version": "2.0.0",
+      "license": "ISC",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-zSsHhto5BcUVM2m1LurnXY6M//cGhVaegT71OfOXoprxT6o780GZd792ea6FfrQkuU4usHZIUczAQMRUE2plzA==",
+      "downloadUrl": "https://registry.npmjs.org/minipass-sized/-/minipass-sized-2.0.0.tgz",
+      "metadataSha256": "7d80091eb5694c3e3509c46b3297bb5e9567cc2e6bed79c18d5e4881015ea360",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "4ec3d4c66cd87f5c8d8ad911b10f99bf27cb00cdfcff82621956e379186b016b",
+          "bytes": 765
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/minizlib@3.1.0",
+      "name": "minizlib",
+      "version": "3.1.0",
+      "license": "MIT",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-KZxYo1BUkWD2TVFLr0MQoM8vUUigWD3LlD83a/75BqC+4qE0Hb1Vo5v1FgcfaNXvfXzr+5EhQ6ing/CaBijTlw==",
+      "downloadUrl": "https://registry.npmjs.org/minizlib/-/minizlib-3.1.0.tgz",
+      "metadataSha256": "3e3b206f94f3bd444f18fed847d8caeacb84925c628ae3d87805bc1dd6c4c470",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "df05697a04b8997c79d423930534e59cc18828f6e22d0c8c2d62fcbea1c4f50b",
+          "bytes": 1339
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/ms@2.1.3",
+      "name": "ms",
+      "version": "2.1.3",
+      "license": "MIT",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==",
+      "downloadUrl": "https://registry.npmjs.org/ms/-/ms-2.1.3.tgz",
+      "metadataSha256": "1a6b4d9739790c0b94ab96c8cc0507e281c164c311ff4fbf5e57fb8d26290b40",
+      "licenseFiles": [
+        {
+          "file": "license.md",
+          "sha256": "1662fae9b5314d11cf51284e2dcd1f006a354f7343f08712a730fcff9a359801",
+          "bytes": 1079
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/mute-stream@4.0.0",
+      "name": "mute-stream",
+      "version": "4.0.0",
+      "license": "ISC",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-gSrprq0fJ3EiOErzjdIZrjysVVmJ4uu1QWfCDss5LypA5OXvrMje5Ym5z6V6RLyJ2eF87lasX7t6a0AnFvZblg==",
+      "downloadUrl": "https://registry.npmjs.org/mute-stream/-/mute-stream-4.0.0.tgz",
+      "metadataSha256": "401a1c29257d624c1a28f6e869a7154a260f544bb41ad586694e59796def2fe8",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "4ec3d4c66cd87f5c8d8ad911b10f99bf27cb00cdfcff82621956e379186b016b",
+          "bytes": 765
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/negotiator@1.1.0",
+      "name": "negotiator",
+      "version": "1.1.0",
+      "license": "MIT",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-NMPBRMJgiQHjbd8phG3Vebdx4kZ1H121rbl5IkMqeOsahptB9BKo/d7oJ3zTXqTgagn2bWlNSXkh0QUGM31RYg==",
+      "downloadUrl": "https://registry.npmjs.org/negotiator/-/negotiator-1.1.0.tgz",
+      "metadataSha256": "2bc164db19aca1e7af967b7211f7d728940f48ff22d56aa75be587f3bb13ee56",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "553d4d20029a24e315b428a1a54a9e109eaa340f2e958a4f50a92362c2c4070b",
+          "bytes": 1177
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/node-gyp@13.1.0",
+      "name": "node-gyp",
+      "version": "13.1.0",
+      "license": "MIT",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-FpNzOLFACKG0oRBYbZ5WOeWD1EqRTIWX90MaRIWTO18lVYPx8fqIjrdS3pihjnCkSmgop6zVGkSqg1vXZLksuw==",
+      "downloadUrl": "https://registry.npmjs.org/node-gyp/-/node-gyp-13.1.0.tgz",
+      "metadataSha256": "ec97545c723a1b046b627b426e16977e473a64971a542a653a854fbbace6aca4",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "662a1b0115251cfb29c6aed0f221f8847bc49c6365d1c53a62c9f4bccc2489c3",
+          "bytes": 1102
+        },
+        {
+          "file": "gyp/LICENSE",
+          "sha256": "ca90abb6ed71de0774461ef9f928de33e748b617aeb79f9e52415cf08d69230e",
+          "bytes": 1537
+        },
+        {
+          "file": "gyp/pylib/packaging/LICENSE",
+          "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48",
+          "bytes": 197
+        },
+        {
+          "file": "gyp/pylib/packaging/LICENSE.APACHE",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+          "bytes": 10174
+        },
+        {
+          "file": "gyp/pylib/packaging/LICENSE.BSD",
+          "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5",
+          "bytes": 1344
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/nopt@10.0.1",
+      "name": "nopt",
+      "version": "10.0.1",
+      "license": "ISC",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-df3sBr/6ax9hSGuC3CspvLlbnX8cP5L5nZwXF8cGN8l0zSWR6BvzmQ6jPUKjvo6+/xdpkNvEcucBNUdBeeV13g==",
+      "downloadUrl": "https://registry.npmjs.org/nopt/-/nopt-10.0.1.tgz",
+      "metadataSha256": "a5c1fbef2c901cc729793a855eb7a1c9f8f8f1bc7e6a38e98375b625c235f8b6",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "4ec3d4c66cd87f5c8d8ad911b10f99bf27cb00cdfcff82621956e379186b016b",
+          "bytes": 765
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/npm-audit-report@8.0.0",
+      "name": "npm-audit-report",
+      "version": "8.0.0",
+      "license": "ISC",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-LrRtLB4NKdXin5dw4yxcES8GDXncfoVVcYzkn8bdwc0etpHmxtKKwwI1YTWpQ9+lEmzEnZo10Lzb11QLxuuBnA==",
+      "downloadUrl": "https://registry.npmjs.org/npm-audit-report/-/npm-audit-report-8.0.0.tgz",
+      "metadataSha256": "952067366295b176543510003d054373b3b3f7395c546987775b2eb18914a817",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "720836c9bdad386485a492ab41fe08007ecf85ca278ddd8f9333494dcac4949d",
+          "bytes": 755
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/npm-bundled@6.0.0",
+      "name": "npm-bundled",
+      "version": "6.0.0",
+      "license": "ISC",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-EqdodKEW6pYM+dPxA66TZQfMEqVDiuzjDM9edSjuPI1mXUbUJwVxkgqMZSJvs8RTXz2CGq8HUol/AffTZX5g8w==",
+      "downloadUrl": "https://registry.npmjs.org/npm-bundled/-/npm-bundled-6.0.0.tgz",
+      "metadataSha256": "a9e0a0aa2df9d83a94f44301cbb279afc44cc6a2dd6660fd92f856ba78bf1a25",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "ec361617c0473d39347b020eaa6dceedaebab43879fa1cd8b8f0f97a8e80a475",
+          "bytes": 756
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/npm-install-checks@9.0.0",
+      "name": "npm-install-checks",
+      "version": "9.0.0",
+      "license": "BSD-2-Clause",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-t05Izcgi7p15cpldqoiXYpjzlkTTvBw33sgjmL/JjcvtV0ydbm2O4iEXO8A6smqComu5FAQhUas86HTMQ6Z1Uw==",
+      "downloadUrl": "https://registry.npmjs.org/npm-install-checks/-/npm-install-checks-9.0.0.tgz",
+      "metadataSha256": "70867910a30197020e69c5a18423ae5cf8e90386c88b5fa07b0be6f7670cc9da",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "f674630c4d3e668dabac6d955fb5f74c75b4a63a707ac93a8833b74bdc57221e",
+          "bytes": 1333
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/npm-normalize-package-bin@6.0.0",
+      "name": "npm-normalize-package-bin",
+      "version": "6.0.0",
+      "license": "ISC",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-tdt4aFn9QamlhdN3HV2D2ccpBwO5/fyjjbXUxYA6uBjyekMZcZvDq0aSj9t5Jo+tih6AYFnt/cuIRn9013e0Uw==",
+      "downloadUrl": "https://registry.npmjs.org/npm-normalize-package-bin/-/npm-normalize-package-bin-6.0.0.tgz",
+      "metadataSha256": "9ebac37059e17adaf6d0b062d6614ec77c4f03ab6959688f3e8b8db0a57978eb",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "898c2bcff663681498ad1ca8235d45b6e70b10cdf1f869a5b5e69f6e46efedd3",
+          "bytes": 739
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/npm-package-arg@14.0.0",
+      "name": "npm-package-arg",
+      "version": "14.0.0",
+      "license": "ISC",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-69XQh3k+dtGa1p+7RaR57IuG3rCko96xr/nUfN4yDYBXbTYICiWcOpsFKLN2GtGE9cyIljE+f1exnaYt9MvM+Q==",
+      "downloadUrl": "https://registry.npmjs.org/npm-package-arg/-/npm-package-arg-14.0.0.tgz",
+      "metadataSha256": "5f4e94a829ee5893b15168657c3a6268258961c86ab5230ff08ee4a2f6fe0f2b",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "898c2bcff663681498ad1ca8235d45b6e70b10cdf1f869a5b5e69f6e46efedd3",
+          "bytes": 739
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/npm-packlist@11.3.0",
+      "name": "npm-packlist",
+      "version": "11.3.0",
+      "license": "ISC",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-cS1yVkyriZgQAbiK8PtwhZHEtsFOsKHsCg5Ww2ONckAvXIspgqd6o4WirOzvkupU24iMRZ4xtO4kb2iK2rbnag==",
+      "downloadUrl": "https://registry.npmjs.org/npm-packlist/-/npm-packlist-11.3.0.tgz",
+      "metadataSha256": "d11f2880b951f0b3856f20269ef581aa81ca3986d18a51d737c74b609d13e9fb",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "4ec3d4c66cd87f5c8d8ad911b10f99bf27cb00cdfcff82621956e379186b016b",
+          "bytes": 765
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/npm-pick-manifest@12.0.0",
+      "name": "npm-pick-manifest",
+      "version": "12.0.0",
+      "license": "ISC",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-8Fs3YLrnNOhrCdPNZy18MzNgVC58LTDAFzq1FdZO/p3BHeCC/coz+t4F5Pxabys8HJpyTUorMea26GkXsb4J/Q==",
+      "downloadUrl": "https://registry.npmjs.org/npm-pick-manifest/-/npm-pick-manifest-12.0.0.tgz",
+      "metadataSha256": "a900dadba69e0677aab7d4c9da8308e3e5558e574c7c945bed0e498f967c36c7",
+      "licenseFiles": [
+        {
+          "file": "LICENSE.md",
+          "sha256": "720836c9bdad386485a492ab41fe08007ecf85ca278ddd8f9333494dcac4949d",
+          "bytes": 755
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/npm-profile@13.0.1",
+      "name": "npm-profile",
+      "version": "13.0.1",
+      "license": "ISC",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-buFDWLwggBSiT5wsjhoSHNvGy+KHaBI5n8ilvSOBkrQUbEsyKYdCV6PloJGFsQ53ZqXCqhwds/8dbvyHQuH3IA==",
+      "downloadUrl": "https://registry.npmjs.org/npm-profile/-/npm-profile-13.0.1.tgz",
+      "metadataSha256": "a71ffcbb222a2af2736766fb53639260553762bf8876020dd22b0bbba4a1b405",
+      "licenseFiles": [
+        {
+          "file": "LICENSE.md",
+          "sha256": "27d998b503b18cdb16c49e93da04069a99ba8a1d7e18d67146de8e242f9a6d21",
+          "bytes": 798
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/npm-registry-fetch@20.0.1",
+      "name": "npm-registry-fetch",
+      "version": "20.0.1",
+      "license": "ISC",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-vzc1svxw/kw1IRjFsLi6gaxe1Olqm88V0tIfu2u5raL0b1gChe6ZEXNkyUlKxUC7s/egt5NxZHkbY18tMKKLfQ==",
+      "downloadUrl": "https://registry.npmjs.org/npm-registry-fetch/-/npm-registry-fetch-20.0.1.tgz",
+      "metadataSha256": "5bbf80cc6d910b5b260493202d67176e4bd7abf28ece92f424fdcc2a657c6686",
+      "licenseFiles": [
+        {
+          "file": "LICENSE.md",
+          "sha256": "27d998b503b18cdb16c49e93da04069a99ba8a1d7e18d67146de8e242f9a6d21",
+          "bytes": 798
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/npm-user-validate@5.0.0",
+      "name": "npm-user-validate",
+      "version": "5.0.0",
+      "license": "BSD-2-Clause",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-yZKlDPJOukQIRzXL+qYyuczXtnQTSF732zT6umGfy/8DxXEAdnv22eA/UpBsC0Fv9s4yfDYkK1pLnCPB0GxsqQ==",
+      "downloadUrl": "https://registry.npmjs.org/npm-user-validate/-/npm-user-validate-5.0.0.tgz",
+      "metadataSha256": "869a4eb2d0545c9d3978909f264fc020dac551b1424209d769c69f5eb1aae0c8",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "8b8404b77ea2a20e045fbad73de1661091a852bfe1f4997e0b646c688f3d18e4",
+          "bytes": 1295
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/p-map@7.1.1",
+      "name": "p-map",
+      "version": "7.1.1",
+      "license": "MIT",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-6Lh3jQPLthYujSrlw6ccWXBGZTkoTCz27Hd92g79LH/kjAbgoEu0t442cCCNbegPSJsA0lwDX8z0bcKtkpA32g==",
+      "downloadUrl": "https://registry.npmjs.org/p-map/-/p-map-7.1.1.tgz",
+      "metadataSha256": "1233b22d8e8051edb310b4cf9b179f06ed74d892a00ca06a4db24f1a68c7cd1c",
+      "licenseFiles": [
+        {
+          "file": "license",
+          "sha256": "5c932d88256b4ab958f64a856fa48e8bd1f55bc1d96b8149c65689e0c61789d3",
+          "bytes": 1117
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/pacote@22.0.0",
+      "name": "pacote",
+      "version": "22.0.0",
+      "license": "ISC",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-++VqeOZeL03uGM2MFLk96jGCSt1owBGkyFKoPr+trwNlZhCpjN2RrvwYxt8nTbs1wNMqSFYurq0TafVWkAIHig==",
+      "downloadUrl": "https://registry.npmjs.org/pacote/-/pacote-22.0.0.tgz",
+      "metadataSha256": "91b6e0507b0f85ace44164030c1561265159ab9edece4bcf74c483d26ce1f451",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "36ec394cd0f976603cfec687c19175a703c1c0d9db717a76915391e756522c8e",
+          "bytes": 791
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/parse-conflict-json@6.0.0",
+      "name": "parse-conflict-json",
+      "version": "6.0.0",
+      "license": "ISC",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-JIdsITvN0yVRpYxiip9DpCduYi75AryIDSCf6ez/Yul6PV46L0B/8SxSvLiMmWiUZKopLrD1BZgexxCfufoT9w==",
+      "downloadUrl": "https://registry.npmjs.org/parse-conflict-json/-/parse-conflict-json-6.0.0.tgz",
+      "metadataSha256": "41c4463d7f0a6f96274bd54fba566b62b1017a52fb15f961fac0f7cf679e57f1",
+      "licenseFiles": [
+        {
+          "file": "LICENSE.md",
+          "sha256": "27d998b503b18cdb16c49e93da04069a99ba8a1d7e18d67146de8e242f9a6d21",
+          "bytes": 798
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/path-scurry@2.0.2",
+      "name": "path-scurry",
+      "version": "2.0.2",
+      "license": "BlueOak-1.0.0",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-3O/iVVsJAPsOnpwWIeD+d6z/7PmqApyQePUtCndjatj/9I5LylHvt5qluFaBT3I5h3r1ejfR056c+FCv+NnNXg==",
+      "downloadUrl": "https://registry.npmjs.org/path-scurry/-/path-scurry-2.0.2.tgz",
+      "metadataSha256": "fb54fe908dbe5f288bd1c5d7429f033c4f527f435c3d3a583ee0ce9e78992087",
+      "licenseFiles": [
+        {
+          "file": "LICENSE.md",
+          "sha256": "8a1af140fdfbf5afd3df27f7e662f989c5b963a300020dfafce42033cae9e004",
+          "bytes": 1552
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/picomatch@4.0.7",
+      "name": "picomatch",
+      "version": "4.0.7",
+      "license": "MIT",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-qcJu88Q2IWqJsDD529JKMdwGm/dvInW4HvQnRwiH9JtihJvzGOscDtHE3x1pBKeUOTysQ8kVmLnJ2kJu7yhcGA==",
+      "downloadUrl": "https://registry.npmjs.org/picomatch/-/picomatch-4.0.7.tgz",
+      "metadataSha256": "479b70b87aa7b44344d62c8a459ae7e53dd2bca6c61f1396bd55e63e9de73fc6",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "d0cd141b0c322fded5dfad1d4645bb2fedfc05b7321fe1009469638190d59ef9",
+          "bytes": 1091
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/postcss-selector-parser@7.1.6",
+      "name": "postcss-selector-parser",
+      "version": "7.1.6",
+      "license": "MIT",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-7qASPzhKF2l2KLboRZux8CCTRMdGiV08vWmyKzPz22qZ7ZjQBOeY7rNzNoCLSUiftJ7HUq0GERHmxw/t0dCdMw==",
+      "downloadUrl": "https://registry.npmjs.org/postcss-selector-parser/-/postcss-selector-parser-7.1.6.tgz",
+      "metadataSha256": "79862171d30cf8588a494297919e0e5c3220c99c5fc5cc90df2189a681732758",
+      "licenseFiles": [
+        {
+          "file": "LICENSE-MIT",
+          "sha256": "2998094b38f7ace25f141fb36f334d8338f65a1812978d618b1161f4d77ae10e",
+          "bytes": 1092
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/proc-log@7.0.0",
+      "name": "proc-log",
+      "version": "7.0.0",
+      "license": "ISC",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-FYgfaA69XZ93zaXLoMNQ+ViDXGGBgR8aLh03txzcFhV+9xOXx7+8DLCULrKKpR9+GsH9ZfHm82aSUPpozX0Ztg==",
+      "downloadUrl": "https://registry.npmjs.org/proc-log/-/proc-log-7.0.0.tgz",
+      "metadataSha256": "7238052df3a59ae915652dd280efb74d5020ec4e414ec4f4d8356ae3325ab96a",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "dc32a0dee275e0a9aeffbc974dbf4899a30dcdc2e5ffa8934aecb69261065864",
+          "bytes": 742
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/proggy@4.0.0",
+      "name": "proggy",
+      "version": "4.0.0",
+      "license": "ISC",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-MbA4R+WQT76ZBm/5JUpV9yqcJt92175+Y0Bodg3HgiXzrmKu7Ggq+bpn6y6wHH+gN9NcyKn3yg1+d47VaKwNAQ==",
+      "downloadUrl": "https://registry.npmjs.org/proggy/-/proggy-4.0.0.tgz",
+      "metadataSha256": "fc365eeaab0c30878536a397103e405837e5751b1ba57a31678b4ad63e88f339",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "dc32a0dee275e0a9aeffbc974dbf4899a30dcdc2e5ffa8934aecb69261065864",
+          "bytes": 742
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/promise-all-reject-late@1.0.1",
+      "name": "promise-all-reject-late",
+      "version": "1.0.1",
+      "license": "ISC",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-vuf0Lf0lOxyQREH7GDIOUMLS7kz+gs8i6B+Yi8dC68a2sychGrHTJYghMBD6k7eUcH0H5P73EckCA48xijWqXw==",
+      "downloadUrl": "https://registry.npmjs.org/promise-all-reject-late/-/promise-all-reject-late-1.0.1.tgz",
+      "metadataSha256": "ef9ce306616fe550aaefdb5d3770bf9d0dddce3b512bca8f1e621f0401850fae",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "05dc4d785ac3a488676d3ed10e901b75ad89dafcc63f8e66610fd4a39cc5c7e8",
+          "bytes": 748
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/promise-call-limit@3.0.2",
+      "name": "promise-call-limit",
+      "version": "3.0.2",
+      "license": "ISC",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-mRPQO2T1QQVw11E7+UdCJu7S61eJVWknzml9sC1heAdj1jxl0fWMBypIt9ZOcLFf8FkG995ZD7RnVk7HH72fZw==",
+      "downloadUrl": "https://registry.npmjs.org/promise-call-limit/-/promise-call-limit-3.0.2.tgz",
+      "metadataSha256": "ff202bc02a6d7369f69c8abaf4b12b9af44f2f0c03bc07802cd629f7cb369be2",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "05dc4d785ac3a488676d3ed10e901b75ad89dafcc63f8e66610fd4a39cc5c7e8",
+          "bytes": 748
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/promzard@4.0.0",
+      "name": "promzard",
+      "version": "4.0.0",
+      "license": "ISC",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-zqf38XGznB+ECFHQPGt0RNQCh0YF+r5iac0EZloSQlEWDxt0vCS39PEtUShBJOZU0tcJ+USPvmnyGo+3CEFwcQ==",
+      "downloadUrl": "https://registry.npmjs.org/promzard/-/promzard-4.0.0.tgz",
+      "metadataSha256": "992e703c854191d48f46cf124fd8d42c830a6c1533b97949db0d65ff8f698871",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "05dc4d785ac3a488676d3ed10e901b75ad89dafcc63f8e66610fd4a39cc5c7e8",
+          "bytes": 748
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/proxy-agent-negotiate@1.1.0",
+      "name": "proxy-agent-negotiate",
+      "version": "1.1.0",
+      "license": "MIT",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-N8IBcM3UgCVzz2L2Lqv8DVntDnnC8/hiV4nEDUPkqq72TPUgYWjQc+bdZlBPZK9LzPAvOY//gAt0S0DApoOXWQ==",
+      "downloadUrl": "https://registry.npmjs.org/proxy-agent-negotiate/-/proxy-agent-negotiate-1.1.0.tgz",
+      "metadataSha256": "7b7c2579ea138d20d4f7699ca78ef16c526f35168dbf694f1d47cc861b0954d4",
+      "licenseFiles": []
+    },
+    {
+      "ref": "pkg:npm/qrcode-terminal@0.12.0",
+      "name": "qrcode-terminal",
+      "version": "0.12.0",
+      "license": "Apache-2.0",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-EXtzRZmC+YGmGlDFbXKxQiMZNwCLEO6BANKXG4iCtSIM0yqc/pappSx3RIKr4r0uh5JsBckOXeKrB3Iz7mdQpQ==",
+      "downloadUrl": "https://registry.npmjs.org/qrcode-terminal/-/qrcode-terminal-0.12.0.tgz",
+      "metadataSha256": "25c89a03126b144a0080c0200a25037d0f2fb0a49177506776cfb492210955cd",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "b3c7a2fadb2515b8106eae58439a4b9c0581a4eaa88d6a265701f8d4dd7dadb8",
+          "bytes": 11962
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/read@6.0.0",
+      "name": "read",
+      "version": "6.0.0",
+      "license": "ISC",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-Tg/LaEke7h9SDbp0xJJj53oa4s1VPPySVnxQF9nUS9DgA25M/ZCLk7RVF1kHjytC87XbkgQKmQ/79+DQgEIqLA==",
+      "downloadUrl": "https://registry.npmjs.org/read/-/read-6.0.0.tgz",
+      "metadataSha256": "223b413622d1252e11a4544ddac6897c4be15e7e683d3d15cae7c99a8d9b9a79",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "4ec3d4c66cd87f5c8d8ad911b10f99bf27cb00cdfcff82621956e379186b016b",
+          "bytes": 765
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/read-cmd-shim@7.0.1",
+      "name": "read-cmd-shim",
+      "version": "7.0.1",
+      "license": "ISC",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-GhAsW4iJS0xNqv8P6HocT3gb5HCKHtEBKLIN7fE2oWr27jGIEihu48lXyGGeexkbiLv1XAbwyXvgjYMfT81kZA==",
+      "downloadUrl": "https://registry.npmjs.org/read-cmd-shim/-/read-cmd-shim-7.0.1.tgz",
+      "metadataSha256": "0fb552bd9d59e48a374fde324fbc6eaeec4462cb35896a21e372f2fc700906be",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "0cef05dfff8b6aa7f35596984f5709f0d17c2582924a751efa471a76de7cdc11",
+          "bytes": 752
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/safer-buffer@2.1.2",
+      "name": "safer-buffer",
+      "version": "2.1.2",
+      "license": "MIT",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==",
+      "downloadUrl": "https://registry.npmjs.org/safer-buffer/-/safer-buffer-2.1.2.tgz",
+      "metadataSha256": "4247a3a63c45a6a7ced1557fe4dd9d2a163af4915d594b95e5867b69a53edb52",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "4bc935e71be198c67ddf3c2b5fddb195f6edc182bfc155a96a6db61b44b494b9",
+          "bytes": 1094
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/semver@7.8.5",
+      "name": "semver",
+      "version": "7.8.5",
+      "license": "ISC",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-Y7/KDsb8LjooZpwaqGyulO6DQlksgCncchHGk+sZIY4SBvUocMBEFH5Ur1fI4dV+Jvl0w6cjvucaIi40puRioA==",
+      "downloadUrl": "https://registry.npmjs.org/semver/-/semver-7.8.5.tgz",
+      "metadataSha256": "7c94cb7f2a53c27b20d76386ec144c062894dbcc909cfabd0f728c37874b1776",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "4ec3d4c66cd87f5c8d8ad911b10f99bf27cb00cdfcff82621956e379186b016b",
+          "bytes": 765
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/signal-exit@4.1.0",
+      "name": "signal-exit",
+      "version": "4.1.0",
+      "license": "ISC",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-bzyZ1e88w9O1iNJbKnOlvYTrWPDl46O1bG0D3XInv+9tkPrxrN8jUUTiFlDkkmKWgn1M6CfIA13SuGqOa9Korw==",
+      "downloadUrl": "https://registry.npmjs.org/signal-exit/-/signal-exit-4.1.0.tgz",
+      "metadataSha256": "cd1c6cfa95782e432dd2affaa88c3a6dda7f46c8088d91f3acc0fba79dce5075",
+      "licenseFiles": [
+        {
+          "file": "LICENSE.txt",
+          "sha256": "b173e19b9a78df305577ace0e52ef45a4bcc915ea28b47b256dc3b68dcb1f7e7",
+          "bytes": 790
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/sigstore@5.0.0",
+      "name": "sigstore",
+      "version": "5.0.0",
+      "license": "Apache-2.0",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-hJqJfoG/e4qFQaauQL00c6J6FrHLBGKtkFvW3JbTSIEFOhLrSjdSM/gWd/yUOfYo/gsERehTXGC1VZWX+9X4Dg==",
+      "downloadUrl": "https://registry.npmjs.org/sigstore/-/sigstore-5.0.0.tgz",
+      "metadataSha256": "efdd5c6b58f7f179aa562c2a467e387dbe1f08b54a51f553932963043ad0695d",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "364a130d2ca340bd56eb1e6d045fc6929bb0f9d0aa018f2c1949b29517e1cdd0",
+          "bytes": 11351
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/smart-buffer@4.2.0",
+      "name": "smart-buffer",
+      "version": "4.2.0",
+      "license": "MIT",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-94hK0Hh8rPqQl2xXc3HsaBoOXKV20MToPkcXvwbISWLEs+64sBq5kFgn2kJDHb1Pry9yrP0dxrCI9RRci7RXKg==",
+      "downloadUrl": "https://registry.npmjs.org/smart-buffer/-/smart-buffer-4.2.0.tgz",
+      "metadataSha256": "188644cdf467d6a768ad25ed3ee8eb845dc5cb29aadc4c88ca7c5cb5f631d66a",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "c46e2c333e1c9e6fcfd130cf91b8e54bf67b60fabbc04996f7e199b990353ff3",
+          "bytes": 1087
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/socks@2.8.10",
+      "name": "socks",
+      "version": "2.8.10",
+      "license": "MIT",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-e0VyvkVTwVYViNovRkZ9aodhxVlyoMn7eJhVUPxZ+eK9P/7CBkxvvsBOHqFPEH416726W8tLXXXjKwqgTErrCQ==",
+      "downloadUrl": "https://registry.npmjs.org/socks/-/socks-2.8.10.tgz",
+      "metadataSha256": "1fe8018dc97df9031e1247b1449595e15f1606f19a63bbda902abdf12668a6cd",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "4f4f28866154c8d758241a64296e8790d45d7d912ff7b029930778c06d8f2a72",
+          "bytes": 1082
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/socks-proxy-agent@10.1.0",
+      "name": "socks-proxy-agent",
+      "version": "10.1.0",
+      "license": "MIT",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-WlMj/67cEJ6MDI1OcsnjuYKDNDoyPCCYZ249kuuXPiMDw9F8PXkVaQ7YWu3siTydfQ/4BEZcvGzu+aYvz7dDCQ==",
+      "downloadUrl": "https://registry.npmjs.org/socks-proxy-agent/-/socks-proxy-agent-10.1.0.tgz",
+      "metadataSha256": "727412a5f08e72b6097b6d16b64b151dbb45baca9742e251492fab862b11a688",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "8d8c55319c7729d57be811c747452636688d54f19701ee0752b6b15ad3771d9a",
+          "bytes": 1101
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/spdx-exceptions@2.5.0",
+      "name": "spdx-exceptions",
+      "version": "2.5.0",
+      "license": "CC-BY-3.0",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-PiU42r+xO4UbUS1buo3LPJkjlO7430Xn5SVAhdpzzsPHsjbYVflnnFdATgabnLude+Cqu25p6N+g2lw/PFsa4w==",
+      "downloadUrl": "https://registry.npmjs.org/spdx-exceptions/-/spdx-exceptions-2.5.0.tgz",
+      "metadataSha256": "0af9bd4b68c9e3d1bc7a9208881cbde84da140d564a3bb42cf53184c6e83f2e3",
+      "licenseFiles": []
+    },
+    {
+      "ref": "pkg:npm/spdx-expression-parse@4.0.0",
+      "name": "spdx-expression-parse",
+      "version": "4.0.0",
+      "license": "MIT",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-Clya5JIij/7C6bRR22+tnGXbc4VKlibKSVj2iHvVeX5iMW7s1SIQlqu699JkODJJIhh/pUu8L0/VLh8xflD+LQ==",
+      "downloadUrl": "https://registry.npmjs.org/spdx-expression-parse/-/spdx-expression-parse-4.0.0.tgz",
+      "metadataSha256": "3e8b59ed9c34d30597c8e5e3da963fe23ae97f5f20611ae523f842a7b243c044",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "7edb57f7065309027de249642341292a5b21410d5773cc55bba73ff9cf01060e",
+          "bytes": 1111
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/spdx-license-ids@3.0.24",
+      "name": "spdx-license-ids",
+      "version": "3.0.24",
+      "license": "CC0-1.0",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-cLS9TtWkIQFyLkJ3/5aFQAOHOSKTlOs/7WDut/XPSdjom1fJhUdkepeJAKXa9Y05+FabHd0sti+Et559vDtkpQ==",
+      "downloadUrl": "https://registry.npmjs.org/spdx-license-ids/-/spdx-license-ids-3.0.24.tgz",
+      "metadataSha256": "6897dee2944aee17aff9226a9fc84ed07ab5f79d8606a20b76fdec93be73ff63",
+      "licenseFiles": []
+    },
+    {
+      "ref": "pkg:npm/ssri@14.0.0",
+      "name": "ssri",
+      "version": "14.0.0",
+      "license": "ISC",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-jQxKI0yx0ZnTKrqjKkLDV2DXkBQn3k49JVmVqDGcDwKDtGDbImD/GXsq04KD0VVzCQQ9wZJYal3RwR1GzWTSow==",
+      "downloadUrl": "https://registry.npmjs.org/ssri/-/ssri-14.0.0.tgz",
+      "metadataSha256": "915c1addb2ba51bebb0ddf25c3bf8b75717f7063d8705258478f2b84d34a970d",
+      "licenseFiles": [
+        {
+          "file": "LICENSE.md",
+          "sha256": "3749709146345fa15546aaba4e3ab1b3b92a4d930077b5bc32d90815cb63afaf",
+          "bytes": 760
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/supports-color@10.2.2",
+      "name": "supports-color",
+      "version": "10.2.2",
+      "license": "MIT",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-SS+jx45GF1QjgEXQx4NJZV9ImqmO2NPz5FNsIHrsDjh2YsHnawpan7SNQ1o8NuhrbHZy9AZhIoCUiCeaW/C80g==",
+      "downloadUrl": "https://registry.npmjs.org/supports-color/-/supports-color-10.2.2.tgz",
+      "metadataSha256": "f208d0897ad657613dbd6199357f1b2c082d975fffa316933cad58851eff00ed",
+      "licenseFiles": [
+        {
+          "file": "license",
+          "sha256": "5c932d88256b4ab958f64a856fa48e8bd1f55bc1d96b8149c65689e0c61789d3",
+          "bytes": 1117
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/tar@7.5.22",
+      "name": "tar",
+      "version": "7.5.22",
+      "license": "BlueOak-1.0.0",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-MFO/QzvtAOmJbkhOaCTvbGcFN9L9b+JunIsDwaKljSOdcLMea3NJ1k9Usz/rjdfSXTq4dfzfeS7W4p4YOAAHeA==",
+      "downloadUrl": "https://registry.npmjs.org/tar/-/tar-7.5.22.tgz",
+      "metadataSha256": "31b18f4fb83ba7183f54fa9e2cdca610897108c37ba80570c2c6fa7ccf112d97",
+      "licenseFiles": [
+        {
+          "file": "LICENSE.md",
+          "sha256": "8a1af140fdfbf5afd3df27f7e662f989c5b963a300020dfafce42033cae9e004",
+          "bytes": 1552
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/text-table@0.2.0",
+      "name": "text-table",
+      "version": "0.2.0",
+      "license": "MIT",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-N+8UisAXDGk8PFXP4HAzVR9nbfmVJ3zYLAWiTIoqC5v5isinhr+r5uaO8+7r3BMfuNIufIsA7RdpVgacC2cSpw==",
+      "downloadUrl": "https://registry.npmjs.org/text-table/-/text-table-0.2.0.tgz",
+      "metadataSha256": "2b410792046c1bf8bca05d26236cc1e301011ea67546b9c6a0416c417fa6d8b6",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "435a6722c786b0a56fbe7387028f1d9d3f3a2d0fb615bb8fee118727c3f59b7b",
+          "bytes": 1073
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/tiny-relative-date@2.0.2",
+      "name": "tiny-relative-date",
+      "version": "2.0.2",
+      "license": "MIT",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-rGxAbeL9z3J4pI2GtBEoFaavHdO4RKAU54hEuOef5kfx5aPqiQtbhYktMOTL5OA33db8BjsDcLXuNp+/v19PHw==",
+      "downloadUrl": "https://registry.npmjs.org/tiny-relative-date/-/tiny-relative-date-2.0.2.tgz",
+      "metadataSha256": "c8361a4c2576f99ba715996bb4f8ab45a5e1bb16d70a0e860858a1c85369b503",
+      "licenseFiles": [
+        {
+          "file": "LICENSE.md",
+          "sha256": "b219efd4921cb32913a471269807d931b4973190d48269bedcfda6205c526100",
+          "bytes": 1068
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/tinyglobby@0.2.17",
+      "name": "tinyglobby",
+      "version": "0.2.17",
+      "license": "MIT",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-wXR/dYpcqKmfWpEdZjiKJOwCNFndD0DMnrW/cYjVGttEkBfVgcLFHoNrlj47mjOVic9yyNu65alsgF4NQyTa2g==",
+      "downloadUrl": "https://registry.npmjs.org/tinyglobby/-/tinyglobby-0.2.17.tgz",
+      "metadataSha256": "bd2b2af3c9ba0580f1acfb22c55d0b6d29abf683af5cac8a2efe82fa7c943f23",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "22c68811e174cbbfb3813d4135918df4f540959c14d872e601d9abe83d3cde8f",
+          "bytes": 1076
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/treeverse@3.0.0",
+      "name": "treeverse",
+      "version": "3.0.0",
+      "license": "ISC",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-gcANaAnd2QDZFmHFEOF4k7uc1J/6a6z3DJMd/QwEyxLoKGiptJRwid582r7QIsFlFMIZ3SnxfS52S4hm2DHkuQ==",
+      "downloadUrl": "https://registry.npmjs.org/treeverse/-/treeverse-3.0.0.tgz",
+      "metadataSha256": "f3f8ef63cba6010d27629a7e08eb87d62ad1f12056d1e6a4e32de79a159a95d4",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "ec361617c0473d39347b020eaa6dceedaebab43879fa1cd8b8f0f97a8e80a475",
+          "bytes": 756
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/tuf-js@6.0.0",
+      "name": "tuf-js",
+      "version": "6.0.0",
+      "license": "MIT",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-zlJVOIO68hmgo1//X4ENEcTGfuOTAtDPi8PsTsG+FyxD85E/ww1ZnwBbWo/yCEExGpI+Kilg7Z3qCdHX2BoJTQ==",
+      "downloadUrl": "https://registry.npmjs.org/tuf-js/-/tuf-js-6.0.0.tgz",
+      "metadataSha256": "1bd2ac16aa3b56fd96294c4e84a1bed6054d27f3616345256d507ebb75a52aca",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "564bcb001d6e131452a8e9fba0f0ccc59e8b881f84ce3e46e319a5a33e191e10",
+          "bytes": 1088
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/undici@6.29.0",
+      "name": "undici",
+      "version": "6.29.0",
+      "license": "MIT",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-R+RODBqp6i2pPflGdq+xIOUkl+RNfGgHwoinecKu/JCuf2uO06cOKoDbI2P7Dn6KcswdKwrczbU6IYJ6K8X+wg==",
+      "downloadUrl": "https://registry.npmjs.org/undici/-/undici-6.29.0.tgz",
+      "metadataSha256": "0fedea32b64c5efbadeec2c6cacd1b6cbb2fab9535456ef5cde3e6192e078748",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "a6db8096b2707bc0102d256917d4d33f298ba36d8c3f25de067a2b5bb379db27",
+          "bytes": 1090
+        },
+        {
+          "file": "lib/web/fetch/LICENSE",
+          "sha256": "a21d6c8d3fc631198b97e57584697f7f9c37805c71c6cf9a12e4442b40394b88",
+          "bytes": 1071
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/util-deprecate@1.0.2",
+      "name": "util-deprecate",
+      "version": "1.0.2",
+      "license": "MIT",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==",
+      "downloadUrl": "https://registry.npmjs.org/util-deprecate/-/util-deprecate-1.0.2.tgz",
+      "metadataSha256": "7bba467f049074957e693fc06672848b040c38fa071b6eed8690f5fbe090a8b2",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "0154425673db15cdfa80ecba2c9b1f1a867f7197a006764712849bfc3a93cbb7",
+          "bytes": 1102
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/validate-npm-package-name@8.0.0",
+      "name": "validate-npm-package-name",
+      "version": "8.0.0",
+      "license": "ISC",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-SCv6OOV6Xj2/3cXy3dGmADluJTNcL3o7hZAglNPTe+WYuEuvxgJzxPrSDLZhF+CwyQOubqgecjMmTJGMVLWjYQ==",
+      "downloadUrl": "https://registry.npmjs.org/validate-npm-package-name/-/validate-npm-package-name-8.0.0.tgz",
+      "metadataSha256": "44cacea7161bec3b3a0ac8912db0fe93345a0925e6cfad3bcf9e7d92fab7b70d",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "f3e1645267f7dd77ee6545283cc1766e5883e8fb3b5088fe2cfb995defbb3dde",
+          "bytes": 728
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/walk-up-path@4.0.0",
+      "name": "walk-up-path",
+      "version": "4.0.0",
+      "license": "ISC",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-3hu+tD8YzSLGuFYtPRb48vdhKMi0KQV5sn+uWr8+7dMEq/2G/dtLrdDinkLjqq5TIbIBjYJ4Ax/n3YiaW7QM8A==",
+      "downloadUrl": "https://registry.npmjs.org/walk-up-path/-/walk-up-path-4.0.0.tgz",
+      "metadataSha256": "6a64187fa9c6078376375304a297f003a694164087f0b4bdf534c547fca41837",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "825dacf686e3d026be4a5b3e4efb8ddd67a8676f9e96085a53cfa045a5bd0509",
+          "bytes": 758
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/which@7.0.0",
+      "name": "which",
+      "version": "7.0.0",
+      "license": "ISC",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-RancgH2dmbLdHl6LRhEqvklWMgl/Hdnun0Y90KhBOLkMefg8Qa7/Zel8Sm+8HEcP6DEjzsWzpkuBQEZok58isA==",
+      "downloadUrl": "https://registry.npmjs.org/which/-/which-7.0.0.tgz",
+      "metadataSha256": "e1d612f9c8449c223ac61ee9afee5c4d568d601af878204a40583ccbe966e621",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "4ec3d4c66cd87f5c8d8ad911b10f99bf27cb00cdfcff82621956e379186b016b",
+          "bytes": 765
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/write-file-atomic@8.0.0",
+      "name": "write-file-atomic",
+      "version": "8.0.0",
+      "license": "ISC",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-dYwyZredl67GyLLIHJnRM3h2PcOmN5SkcgC7eM5DPDEOEl6dLFqVrMg3F1Ea32usj4VSVZtd2H4MtKTNOf6nPg==",
+      "downloadUrl": "https://registry.npmjs.org/write-file-atomic/-/write-file-atomic-8.0.0.tgz",
+      "metadataSha256": "6e5ed60378a3bcc4c12a7ecbb10bdf46dace69ae542ae9f71f9b9cc3ad04a0c7",
+      "licenseFiles": [
+        {
+          "file": "LICENSE.md",
+          "sha256": "ea7f376fe7a1fc28572b83ac8f806d92effb31852b9981bc9ba9d5266caa6b28",
+          "bytes": 734
+        }
+      ]
+    },
+    {
+      "ref": "pkg:npm/yallist@5.0.0",
+      "name": "yallist",
+      "version": "5.0.0",
+      "license": "BlueOak-1.0.0",
+      "scope": "build-provisioner",
+      "ecosystem": "npm",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "integrity": "sha512-YgvUTfwqyc7UXVMrB+SImsVYSmTS8X/tSrtdNZMImM+n7+QTriRXyXim0mBrTXNeqzVF0KWGgHPeiyViFFrNDw==",
+      "downloadUrl": "https://registry.npmjs.org/yallist/-/yallist-5.0.0.tgz",
+      "metadataSha256": "1b9d47057ce39814531ff93f668823b4fa03e7d23945449c274a1ff6d4cc297f",
+      "licenseFiles": [
+        {
+          "file": "LICENSE.md",
+          "sha256": "a49c9ba464796f65b59fca3f1e6ca40912df1e859f575383223f7ec6c5baae09",
+          "bytes": 1764
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "candidate:tool-npm",
+      "dependsOn": [
+        "pkg:npm/npm@12.2.0",
+        "pkg:npm/%40gar/promise-retry@1.0.3",
+        "pkg:npm/%40isaacs/fs-minipass@4.0.1",
+        "pkg:npm/%40isaacs/string-locale-compare@1.1.0",
+        "pkg:npm/%40npmcli/agent@5.0.2",
+        "pkg:npm/%40npmcli/arborist@10.0.3",
+        "pkg:npm/%40npmcli/config@11.2.0",
+        "pkg:npm/%40npmcli/fs@6.0.0",
+        "pkg:npm/%40npmcli/git@8.0.0",
+        "pkg:npm/%40npmcli/installed-package-contents@5.0.0",
+        "pkg:npm/%40npmcli/map-workspaces@6.0.0",
+        "pkg:npm/%40npmcli/metavuln-calculator@10.0.0",
+        "pkg:npm/%40npmcli/name-from-folder@5.0.0",
+        "pkg:npm/%40npmcli/node-gyp@6.0.0",
+        "pkg:npm/%40npmcli/package-json@8.0.0",
+        "pkg:npm/%40npmcli/promise-spawn@10.0.0",
+        "pkg:npm/%40npmcli/query@5.0.0",
+        "pkg:npm/%40npmcli/redact@5.0.0",
+        "pkg:npm/%40npmcli/run-script@11.0.0",
+        "pkg:npm/%40sigstore/bundle@5.0.0",
+        "pkg:npm/%40sigstore/core@4.0.1",
+        "pkg:npm/%40sigstore/protobuf-specs@0.5.2",
+        "pkg:npm/%40sigstore/sign@5.0.0",
+        "pkg:npm/%40sigstore/tuf@5.0.0",
+        "pkg:npm/%40sigstore/verify@4.1.2",
+        "pkg:npm/%40tufjs/canonical-json@2.0.0",
+        "pkg:npm/%40tufjs/models@5.0.0",
+        "pkg:npm/abbrev@5.0.0",
+        "pkg:npm/agent-base@9.0.0",
+        "pkg:npm/aproba@2.1.0",
+        "pkg:npm/archy@1.0.0",
+        "pkg:npm/balanced-match@4.0.4",
+        "pkg:npm/bin-links@7.0.0",
+        "pkg:npm/binary-extensions@3.2.0",
+        "pkg:npm/brace-expansion@5.0.12",
+        "pkg:npm/cacache@21.0.1",
+        "pkg:npm/chalk@5.6.2",
+        "pkg:npm/chownr@3.0.0",
+        "pkg:npm/ci-info@4.4.0",
+        "pkg:npm/cidr-regex@7.1.2",
+        "pkg:npm/cmd-shim@9.0.2",
+        "pkg:npm/common-ancestor-path@2.0.0",
+        "pkg:npm/content-type@2.1.0",
+        "pkg:npm/cssesc@3.0.0",
+        "pkg:npm/debug@4.4.3",
+        "pkg:npm/diff@8.0.4",
+        "pkg:npm/env-paths@2.2.1",
+        "pkg:npm/exponential-backoff@3.1.3",
+        "pkg:npm/fastest-levenshtein@1.0.16",
+        "pkg:npm/fdir@6.5.0",
+        "pkg:npm/fs-minipass@3.0.3",
+        "pkg:npm/glob@13.0.6",
+        "pkg:npm/graceful-fs@4.2.11",
+        "pkg:npm/hosted-git-info@10.1.1",
+        "pkg:npm/http-cache-semantics@4.3.0",
+        "pkg:npm/http-proxy-agent@9.1.0",
+        "pkg:npm/https-proxy-agent@9.1.0",
+        "pkg:npm/iconv-lite@0.7.3",
+        "pkg:npm/ignore-walk@9.0.0",
+        "pkg:npm/ini@7.0.0",
+        "pkg:npm/init-package-json@9.0.0",
+        "pkg:npm/ip-address@10.7.4",
+        "pkg:npm/is-cidr@7.0.3",
+        "pkg:npm/isexe@4.0.0",
+        "pkg:npm/json-parse-even-better-errors@6.0.0",
+        "pkg:npm/json-stringify-nice@1.1.4",
+        "pkg:npm/jsonparse@1.3.1",
+        "pkg:npm/just-diff@6.0.2",
+        "pkg:npm/just-diff-apply@5.5.0",
+        "pkg:npm/libnpmaccess@11.0.0",
+        "pkg:npm/libnpmdiff@9.0.3",
+        "pkg:npm/libnpmexec@11.0.3",
+        "pkg:npm/libnpmfund@8.0.3",
+        "pkg:npm/libnpmorg@9.0.0",
+        "pkg:npm/libnpmpack@10.0.3",
+        "pkg:npm/libnpmpublish@12.0.1",
+        "pkg:npm/libnpmsearch@10.0.0",
+        "pkg:npm/libnpmteam@9.0.0",
+        "pkg:npm/libnpmversion@9.0.0",
+        "pkg:npm/lru-cache@11.5.3",
+        "pkg:npm/make-fetch-happen@16.0.1",
+        "pkg:npm/minimatch@10.2.6",
+        "pkg:npm/minipass@7.1.3",
+        "pkg:npm/minipass-collect@2.0.1",
+        "pkg:npm/minipass-fetch@6.0.0",
+        "pkg:npm/minipass-flush@1.0.7",
+        "pkg:npm/minipass@3.3.6",
+        "pkg:npm/yallist@4.0.0",
+        "pkg:npm/minipass-pipeline@1.2.4",
+        "pkg:npm/minipass-sized@2.0.0",
+        "pkg:npm/minizlib@3.1.0",
+        "pkg:npm/ms@2.1.3",
+        "pkg:npm/mute-stream@4.0.0",
+        "pkg:npm/negotiator@1.1.0",
+        "pkg:npm/node-gyp@13.1.0",
+        "pkg:npm/nopt@10.0.1",
+        "pkg:npm/npm-audit-report@8.0.0",
+        "pkg:npm/npm-bundled@6.0.0",
+        "pkg:npm/npm-install-checks@9.0.0",
+        "pkg:npm/npm-normalize-package-bin@6.0.0",
+        "pkg:npm/npm-package-arg@14.0.0",
+        "pkg:npm/npm-packlist@11.3.0",
+        "pkg:npm/npm-pick-manifest@12.0.0",
+        "pkg:npm/npm-profile@13.0.1",
+        "pkg:npm/npm-registry-fetch@20.0.1",
+        "pkg:npm/npm-user-validate@5.0.0",
+        "pkg:npm/p-map@7.1.1",
+        "pkg:npm/pacote@22.0.0",
+        "pkg:npm/parse-conflict-json@6.0.0",
+        "pkg:npm/path-scurry@2.0.2",
+        "pkg:npm/picomatch@4.0.7",
+        "pkg:npm/postcss-selector-parser@7.1.6",
+        "pkg:npm/proc-log@7.0.0",
+        "pkg:npm/proggy@4.0.0",
+        "pkg:npm/promise-all-reject-late@1.0.1",
+        "pkg:npm/promise-call-limit@3.0.2",
+        "pkg:npm/promzard@4.0.0",
+        "pkg:npm/proxy-agent-negotiate@1.1.0",
+        "pkg:npm/qrcode-terminal@0.12.0",
+        "pkg:npm/read@6.0.0",
+        "pkg:npm/read-cmd-shim@7.0.1",
+        "pkg:npm/safer-buffer@2.1.2",
+        "pkg:npm/semver@7.8.5",
+        "pkg:npm/signal-exit@4.1.0",
+        "pkg:npm/sigstore@5.0.0",
+        "pkg:npm/smart-buffer@4.2.0",
+        "pkg:npm/socks@2.8.10",
+        "pkg:npm/socks-proxy-agent@10.1.0",
+        "pkg:npm/spdx-exceptions@2.5.0",
+        "pkg:npm/spdx-expression-parse@4.0.0",
+        "pkg:npm/spdx-license-ids@3.0.24",
+        "pkg:npm/ssri@14.0.0",
+        "pkg:npm/supports-color@10.2.2",
+        "pkg:npm/tar@7.5.22",
+        "pkg:npm/text-table@0.2.0",
+        "pkg:npm/tiny-relative-date@2.0.2",
+        "pkg:npm/tinyglobby@0.2.17",
+        "pkg:npm/treeverse@3.0.0",
+        "pkg:npm/tuf-js@6.0.0",
+        "pkg:npm/undici@6.29.0",
+        "pkg:npm/util-deprecate@1.0.2",
+        "pkg:npm/validate-npm-package-name@8.0.0",
+        "pkg:npm/walk-up-path@4.0.0",
+        "pkg:npm/which@7.0.0",
+        "pkg:npm/write-file-atomic@8.0.0",
+        "pkg:npm/yallist@5.0.0"
+      ]
+    },
+    {
+      "ref": "pkg:npm/npm@12.2.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/%40gar/promise-retry@1.0.3",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/%40isaacs/fs-minipass@4.0.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/%40isaacs/string-locale-compare@1.1.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/%40npmcli/agent@5.0.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/%40npmcli/arborist@10.0.3",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/%40npmcli/config@11.2.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/%40npmcli/fs@6.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/%40npmcli/git@8.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/%40npmcli/installed-package-contents@5.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/%40npmcli/map-workspaces@6.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/%40npmcli/metavuln-calculator@10.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/%40npmcli/name-from-folder@5.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/%40npmcli/node-gyp@6.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/%40npmcli/package-json@8.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/%40npmcli/promise-spawn@10.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/%40npmcli/query@5.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/%40npmcli/redact@5.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/%40npmcli/run-script@11.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/%40sigstore/bundle@5.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/%40sigstore/core@4.0.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/%40sigstore/protobuf-specs@0.5.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/%40sigstore/sign@5.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/%40sigstore/tuf@5.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/%40sigstore/verify@4.1.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/%40tufjs/canonical-json@2.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/%40tufjs/models@5.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/abbrev@5.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/agent-base@9.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/aproba@2.1.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/archy@1.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/balanced-match@4.0.4",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/bin-links@7.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/binary-extensions@3.2.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/brace-expansion@5.0.12",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/cacache@21.0.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/chalk@5.6.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/chownr@3.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/ci-info@4.4.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/cidr-regex@7.1.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/cmd-shim@9.0.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/common-ancestor-path@2.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/content-type@2.1.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/cssesc@3.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/debug@4.4.3",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/diff@8.0.4",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/env-paths@2.2.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/exponential-backoff@3.1.3",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/fastest-levenshtein@1.0.16",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/fdir@6.5.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/fs-minipass@3.0.3",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/glob@13.0.6",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/graceful-fs@4.2.11",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/hosted-git-info@10.1.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/http-cache-semantics@4.3.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/http-proxy-agent@9.1.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/https-proxy-agent@9.1.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/iconv-lite@0.7.3",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/ignore-walk@9.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/ini@7.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/init-package-json@9.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/ip-address@10.7.4",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/is-cidr@7.0.3",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/isexe@4.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/json-parse-even-better-errors@6.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/json-stringify-nice@1.1.4",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/jsonparse@1.3.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/just-diff@6.0.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/just-diff-apply@5.5.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/libnpmaccess@11.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/libnpmdiff@9.0.3",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/libnpmexec@11.0.3",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/libnpmfund@8.0.3",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/libnpmorg@9.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/libnpmpack@10.0.3",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/libnpmpublish@12.0.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/libnpmsearch@10.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/libnpmteam@9.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/libnpmversion@9.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/lru-cache@11.5.3",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/make-fetch-happen@16.0.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/minimatch@10.2.6",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/minipass@7.1.3",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/minipass-collect@2.0.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/minipass-fetch@6.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/minipass-flush@1.0.7",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/minipass@3.3.6",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/yallist@4.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/minipass-pipeline@1.2.4",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/minipass-sized@2.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/minizlib@3.1.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/ms@2.1.3",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/mute-stream@4.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/negotiator@1.1.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/node-gyp@13.1.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/nopt@10.0.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/npm-audit-report@8.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/npm-bundled@6.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/npm-install-checks@9.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/npm-normalize-package-bin@6.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/npm-package-arg@14.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/npm-packlist@11.3.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/npm-pick-manifest@12.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/npm-profile@13.0.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/npm-registry-fetch@20.0.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/npm-user-validate@5.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/p-map@7.1.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/pacote@22.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/parse-conflict-json@6.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/path-scurry@2.0.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/picomatch@4.0.7",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/postcss-selector-parser@7.1.6",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/proc-log@7.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/proggy@4.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/promise-all-reject-late@1.0.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/promise-call-limit@3.0.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/promzard@4.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/proxy-agent-negotiate@1.1.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/qrcode-terminal@0.12.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/read@6.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/read-cmd-shim@7.0.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/safer-buffer@2.1.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/semver@7.8.5",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/signal-exit@4.1.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/sigstore@5.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/smart-buffer@4.2.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/socks@2.8.10",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/socks-proxy-agent@10.1.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/spdx-exceptions@2.5.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/spdx-expression-parse@4.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/spdx-license-ids@3.0.24",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/ssri@14.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/supports-color@10.2.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/tar@7.5.22",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/text-table@0.2.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/tiny-relative-date@2.0.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/tinyglobby@0.2.17",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/treeverse@3.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/tuf-js@6.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/undici@6.29.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/util-deprecate@1.0.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/validate-npm-package-name@8.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/walk-up-path@4.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/which@7.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/write-file-atomic@8.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/yallist@5.0.0",
+      "dependsOn": []
+    }
+  ],
+  "scanReuse": {
+    "file": "npm-advisories.json",
+    "sha256": "d8780881af92a5311dbbc566b8ee77de819cb32e087becd618c92c2d577fe3df",
+    "reason": "identical exact package/version/ref query graph; original response dates and collector revision retained"
+  }
+}

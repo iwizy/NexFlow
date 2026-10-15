@@ -1,0 +1,54 @@
+{
+  "task": "NF-102-01",
+  "contractVersion": "nf-validation-diagnostics-v1",
+  "sourceRevision": "23e576efd0dda0f00f5462eda9295c1ae4ec8fee",
+  "publicLibrary": {
+    "cases": 362,
+    "passed": 362,
+    "failed": 0
+  },
+  "rawNativeDifferences": [
+    "draft-2020-prefixitems-rejected",
+    "public-oneof",
+    "public-anyof",
+    "public-not",
+    "public-local-limit",
+    "public-manifest-limit"
+  ],
+  "legacyCli": {
+    "jsonCases": 57,
+    "publicPassed": 57,
+    "publicFailures": []
+  },
+  "unsupportedProfileProbesPerCandidate": 16,
+  "scope": {
+    "libraryOperations": [
+      "semantic-fragment",
+      "workflow-namespace",
+      "artifact-namespace",
+      "manifest-schema",
+      "local-schema",
+      "yaml-parse",
+      "discovery"
+    ],
+    "cliCommands": [
+      "validate",
+      "inspect"
+    ],
+    "cliProjectChecks": [
+      "discovery",
+      "schema",
+      "declared-only-inspection"
+    ],
+    "fullProjectSemantics": "unsupported",
+    "coreAndExtensionProfiles": "unsupported",
+    "runtime": "unsupported",
+    "productPublicAbi": "not-established",
+    "nativeDetails": "separate-experimental-api-only",
+    "targetAcceptance": "not-tested"
+  },
+  "taskStatus": "completed",
+  "allArchitectureGatesClosed": false,
+  "architectureStatus": "Draft",
+  "architectureAccepted": false
+}

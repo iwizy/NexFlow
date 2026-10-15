@@ -1,0 +1,586 @@
+{
+  "formatVersion": 1,
+  "scannerVersion": "nf-056-11-osv-v1",
+  "apiVersion": "v1",
+  "api": "https://api.osv.dev/v1",
+  "startedAt": "2026-10-15T13:06:40.235Z",
+  "completedAt": "2026-10-15T13:06:40.565Z",
+  "databaseVersion": "unavailable-live-service-no-snapshot-id",
+  "candidate": "python",
+  "sourceRevision": "23e576efd0dda0f00f5462eda9295c1ae4ec8fee",
+  "collectorRevision": "9be540223d7ca177b8320c66f28e541f7cdf6e8e",
+  "scope": "exact-version-matching-no-reachability-or-security-certification",
+  "status": "completed",
+  "queries": [
+    {
+      "query": {
+        "package": {
+          "ecosystem": "crates.io",
+          "name": "archery"
+        },
+        "version": "1.2.2"
+      },
+      "refs": [
+        "pkg:cargo/archery@1.2.2"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "crates.io",
+          "name": "heck"
+        },
+        "version": "0.5.0"
+      },
+      "refs": [
+        "pkg:cargo/heck@0.5.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "crates.io",
+          "name": "libc"
+        },
+        "version": "0.2.177"
+      },
+      "refs": [
+        "pkg:cargo/libc@0.2.177"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "crates.io",
+          "name": "once_cell"
+        },
+        "version": "1.21.3"
+      },
+      "refs": [
+        "pkg:cargo/once_cell@1.21.3"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "crates.io",
+          "name": "proc-macro2"
+        },
+        "version": "1.0.103"
+      },
+      "refs": [
+        "pkg:cargo/proc-macro2@1.0.103"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "crates.io",
+          "name": "pyo3-build-config"
+        },
+        "version": "0.29.0"
+      },
+      "refs": [
+        "pkg:cargo/pyo3-build-config@0.29.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "crates.io",
+          "name": "pyo3-ffi"
+        },
+        "version": "0.29.0"
+      },
+      "refs": [
+        "pkg:cargo/pyo3-ffi@0.29.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "crates.io",
+          "name": "pyo3-macros-backend"
+        },
+        "version": "0.29.0"
+      },
+      "refs": [
+        "pkg:cargo/pyo3-macros-backend@0.29.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "crates.io",
+          "name": "pyo3-macros"
+        },
+        "version": "0.29.0"
+      },
+      "refs": [
+        "pkg:cargo/pyo3-macros@0.29.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "crates.io",
+          "name": "pyo3"
+        },
+        "version": "0.29.0"
+      },
+      "refs": [
+        "pkg:cargo/pyo3@0.29.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "crates.io",
+          "name": "quote"
+        },
+        "version": "1.0.42"
+      },
+      "refs": [
+        "pkg:cargo/quote@1.0.42"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "crates.io",
+          "name": "rpds"
+        },
+        "version": "1.2.1"
+      },
+      "refs": [
+        "pkg:cargo/rpds@1.2.1"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "crates.io",
+          "name": "smallvec"
+        },
+        "version": "1.15.1"
+      },
+      "refs": [
+        "pkg:cargo/smallvec@1.15.1"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "crates.io",
+          "name": "syn"
+        },
+        "version": "2.0.111"
+      },
+      "refs": [
+        "pkg:cargo/syn@2.0.111"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "crates.io",
+          "name": "target-lexicon"
+        },
+        "version": "0.13.3"
+      },
+      "refs": [
+        "pkg:cargo/target-lexicon@0.13.3"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "crates.io",
+          "name": "triomphe"
+        },
+        "version": "0.1.15"
+      },
+      "refs": [
+        "pkg:cargo/triomphe@0.1.15"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "crates.io",
+          "name": "unicode-ident"
+        },
+        "version": "1.0.22"
+      },
+      "refs": [
+        "pkg:cargo/unicode-ident@1.0.22"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "attrs"
+        },
+        "version": "26.1.0"
+      },
+      "refs": [
+        "pkg:pypi/attrs@26.1.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "jsonschema-specifications"
+        },
+        "version": "2025.9.1"
+      },
+      "refs": [
+        "pkg:pypi/jsonschema-specifications@2025.9.1"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "jsonschema"
+        },
+        "version": "4.26.0"
+      },
+      "refs": [
+        "pkg:pypi/jsonschema@4.26.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "pyyaml"
+        },
+        "version": "6.0.3"
+      },
+      "refs": [
+        "pkg:pypi/pyyaml@6.0.3"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "referencing"
+        },
+        "version": "0.37.0"
+      },
+      "refs": [
+        "pkg:pypi/referencing@0.37.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "rfc3339-validator"
+        },
+        "version": "0.1.4"
+      },
+      "refs": [
+        "pkg:pypi/rfc3339-validator@0.1.4"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "rpds-py"
+        },
+        "version": "2026.6.3"
+      },
+      "refs": [
+        "pkg:pypi/rpds-py@2026.6.3"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "six"
+        },
+        "version": "1.17.0"
+      },
+      "refs": [
+        "pkg:pypi/six@1.17.0"
+      ],
+      "matches": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "typing-extensions"
+        },
+        "version": "4.16.0"
+      },
+      "refs": [
+        "pkg:pypi/typing-extensions@4.16.0"
+      ],
+      "matches": []
+    }
+  ],
+  "pages": [
+    {
+      "queries": [
+        {
+          "package": {
+            "ecosystem": "crates.io",
+            "name": "archery"
+          },
+          "version": "1.2.2"
+        },
+        {
+          "package": {
+            "ecosystem": "crates.io",
+            "name": "heck"
+          },
+          "version": "0.5.0"
+        },
+        {
+          "package": {
+            "ecosystem": "crates.io",
+            "name": "libc"
+          },
+          "version": "0.2.177"
+        },
+        {
+          "package": {
+            "ecosystem": "crates.io",
+            "name": "once_cell"
+          },
+          "version": "1.21.3"
+        },
+        {
+          "package": {
+            "ecosystem": "crates.io",
+            "name": "proc-macro2"
+          },
+          "version": "1.0.103"
+        },
+        {
+          "package": {
+            "ecosystem": "crates.io",
+            "name": "pyo3-build-config"
+          },
+          "version": "0.29.0"
+        },
+        {
+          "package": {
+            "ecosystem": "crates.io",
+            "name": "pyo3-ffi"
+          },
+          "version": "0.29.0"
+        },
+        {
+          "package": {
+            "ecosystem": "crates.io",
+            "name": "pyo3-macros-backend"
+          },
+          "version": "0.29.0"
+        },
+        {
+          "package": {
+            "ecosystem": "crates.io",
+            "name": "pyo3-macros"
+          },
+          "version": "0.29.0"
+        },
+        {
+          "package": {
+            "ecosystem": "crates.io",
+            "name": "pyo3"
+          },
+          "version": "0.29.0"
+        },
+        {
+          "package": {
+            "ecosystem": "crates.io",
+            "name": "quote"
+          },
+          "version": "1.0.42"
+        },
+        {
+          "package": {
+            "ecosystem": "crates.io",
+            "name": "rpds"
+          },
+          "version": "1.2.1"
+        },
+        {
+          "package": {
+            "ecosystem": "crates.io",
+            "name": "smallvec"
+          },
+          "version": "1.15.1"
+        },
+        {
+          "package": {
+            "ecosystem": "crates.io",
+            "name": "syn"
+          },
+          "version": "2.0.111"
+        },
+        {
+          "package": {
+            "ecosystem": "crates.io",
+            "name": "target-lexicon"
+          },
+          "version": "0.13.3"
+        },
+        {
+          "package": {
+            "ecosystem": "crates.io",
+            "name": "triomphe"
+          },
+          "version": "0.1.15"
+        },
+        {
+          "package": {
+            "ecosystem": "crates.io",
+            "name": "unicode-ident"
+          },
+          "version": "1.0.22"
+        },
+        {
+          "package": {
+            "ecosystem": "PyPI",
+            "name": "attrs"
+          },
+          "version": "26.1.0"
+        },
+        {
+          "package": {
+            "ecosystem": "PyPI",
+            "name": "jsonschema-specifications"
+          },
+          "version": "2025.9.1"
+        },
+        {
+          "package": {
+            "ecosystem": "PyPI",
+            "name": "jsonschema"
+          },
+          "version": "4.26.0"
+        },
+        {
+          "package": {
+            "ecosystem": "PyPI",
+            "name": "pyyaml"
+          },
+          "version": "6.0.3"
+        },
+        {
+          "package": {
+            "ecosystem": "PyPI",
+            "name": "referencing"
+          },
+          "version": "0.37.0"
+        },
+        {
+          "package": {
+            "ecosystem": "PyPI",
+            "name": "rfc3339-validator"
+          },
+          "version": "0.1.4"
+        },
+        {
+          "package": {
+            "ecosystem": "PyPI",
+            "name": "rpds-py"
+          },
+          "version": "2026.6.3"
+        },
+        {
+          "package": {
+            "ecosystem": "PyPI",
+            "name": "six"
+          },
+          "version": "1.17.0"
+        },
+        {
+          "package": {
+            "ecosystem": "PyPI",
+            "name": "typing-extensions"
+          },
+          "version": "4.16.0"
+        }
+      ],
+      "response": {
+        "results": [
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {}
+        ]
+      },
+      "responseSha256": "4b847fbeb7391035442b61ca4c24a7810b40653188081cfc124c55c69fec8b40"
+    }
+  ],
+  "advisories": [],
+  "queryCount": 26,
+  "matchedPackageCount": 0,
+  "advisoryCount": 0,
+  "fixesApplied": false,
+  "untested": [
+    "OS/distribution advisories",
+    "compiler and interpreter bundled native closure",
+    "unpublished vulnerabilities",
+    "independent dependency source audit",
+    "exploit reachability",
+    "runtime/compiler vulnerability matching"
+  ]
+}

@@ -42,3 +42,4 @@ jobs:
           npm run runtime-diagnostic-projection-repair-smoke
           npm run runtime-validation-contract-smoke
           npm run runtime-supply-chain-current-smoke
+          npm run runtime-supply-chain-repaired-smoke

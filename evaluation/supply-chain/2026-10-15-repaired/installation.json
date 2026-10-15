@@ -1,0 +1,30 @@
+{
+  "task": "NF-102-02",
+  "sourceRevision": "23e576efd0dda0f00f5462eda9295c1ae4ec8fee",
+  "recordedAt": "2026-10-15T13:11:55.919Z",
+  "collectorRevision": "3beb349157d80692b6312cc94ce889cb8a5faab9",
+  "collectorSources": [
+    {
+      "file": "scripts/runtime-supply-chain-installation-receipt.mjs",
+      "sha256": "b2104e13e18ad2f1614afd786ec282d75292815c2b4925b32eae2b3e20f16c7f"
+    }
+  ],
+  "baseToolClosureSha256": "8e314ce932c7bb33b0b92ac66d0ab058b3974860366f0d5edaf381b9203689d2",
+  "installationDelta": [
+    {
+      "file": "lib/rustlib/aarch64-apple-darwin/lib/libLLVM.dylib",
+      "type": "relative-symlink",
+      "target": "../../../libLLVM.dylib",
+      "targetSha256": "0a09edaac7d0047e8db420bb9594359c73e602a2138def76f51197f1afd39252",
+      "reason": "Rust LLVM tool rpath requires the verified shared library in the target lib directory"
+    }
+  ],
+  "verification": {
+    "command": "rust-objcopy --version without custom loader environment",
+    "exitCode": 0,
+    "stdout": "llvm-objcopy, compatible with GNU objcopy\nLLVM (http://llvm.org/):\n  LLVM version 23.1.1-rust-1.99.0-stable\n  Optimized build."
+  },
+  "binaryPayloadModified": false,
+  "globalInstallationModified": false,
+  "signingPerformed": false
+}

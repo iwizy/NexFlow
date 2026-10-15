@@ -1,0 +1,439 @@
+{
+  "candidate": "tool-goCompiler",
+  "sourceRevision": "23e576efd0dda0f00f5462eda9295c1ae4ec8fee",
+  "collectorRevision": "3beb349157d80692b6312cc94ce889cb8a5faab9",
+  "recordedAt": "2026-10-15T13:09:10.283Z",
+  "components": [
+    {
+      "ref": "pkg:golang/toolchain@1.27.2",
+      "name": "toolchain",
+      "version": "1.27.2",
+      "license": "BSD-3-Clause",
+      "scope": "compiler-and-standard-library",
+      "ecosystem": "Go",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad",
+          "bytes": 1453
+        }
+      ]
+    },
+    {
+      "ref": "pkg:golang/golang.org/x/crypto@v0.52.1-0.20260526024921-9beb694f9766",
+      "name": "golang.org/x/crypto",
+      "version": "v0.52.1-0.20260526024921-9beb694f9766",
+      "license": "BSD-3-Clause",
+      "scope": "compiler-upstream-vendored-source",
+      "ecosystem": "Go",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad",
+          "bytes": 1453
+        }
+      ],
+      "manifest": {
+        "file": "src/vendor/modules.txt",
+        "sha256": "b382247257983ed466aa7c5002c756f2b27f65b7947a9b8c02831858f379beee",
+        "bytes": 986
+      },
+      "selection": "full shipped toolchain vendor source; not all entries compiled into the selected candidate"
+    },
+    {
+      "ref": "pkg:golang/golang.org/x/net@v0.55.1-0.20260731170536-c1d18010be90",
+      "name": "golang.org/x/net",
+      "version": "v0.55.1-0.20260731170536-c1d18010be90",
+      "license": "BSD-3-Clause",
+      "scope": "compiler-upstream-vendored-source",
+      "ecosystem": "Go",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad",
+          "bytes": 1453
+        }
+      ],
+      "manifest": {
+        "file": "src/vendor/modules.txt",
+        "sha256": "b382247257983ed466aa7c5002c756f2b27f65b7947a9b8c02831858f379beee",
+        "bytes": 986
+      },
+      "selection": "full shipped toolchain vendor source; not all entries compiled into the selected candidate"
+    },
+    {
+      "ref": "pkg:golang/golang.org/x/sys@v0.45.0",
+      "name": "golang.org/x/sys",
+      "version": "v0.45.0",
+      "license": "BSD-3-Clause",
+      "scope": "compiler-upstream-vendored-source",
+      "ecosystem": "Go",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad",
+          "bytes": 1453
+        }
+      ],
+      "manifest": {
+        "file": "src/vendor/modules.txt",
+        "sha256": "b382247257983ed466aa7c5002c756f2b27f65b7947a9b8c02831858f379beee",
+        "bytes": 986
+      },
+      "selection": "full shipped toolchain vendor source; not all entries compiled into the selected candidate"
+    },
+    {
+      "ref": "pkg:golang/golang.org/x/text@v0.37.0",
+      "name": "golang.org/x/text",
+      "version": "v0.37.0",
+      "license": "BSD-3-Clause",
+      "scope": "compiler-upstream-vendored-source",
+      "ecosystem": "Go",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad",
+          "bytes": 1453
+        }
+      ],
+      "manifest": {
+        "file": "src/vendor/modules.txt",
+        "sha256": "b382247257983ed466aa7c5002c756f2b27f65b7947a9b8c02831858f379beee",
+        "bytes": 986
+      },
+      "selection": "full shipped toolchain vendor source; not all entries compiled into the selected candidate"
+    },
+    {
+      "ref": "pkg:golang/github.com/google/pprof@v0.0.0-20260507013755-92041b743c96",
+      "name": "github.com/google/pprof",
+      "version": "v0.0.0-20260507013755-92041b743c96",
+      "license": "Apache-2.0",
+      "scope": "compiler-upstream-vendored-source",
+      "ecosystem": "Go",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+          "bytes": 11358
+        },
+        {
+          "file": "third_party/svgpan/LICENSE",
+          "sha256": "154c946c17de61ca71d28e13673d76a5798e6e25995a7397fbae157afc8f62b4",
+          "bytes": 1754
+        }
+      ],
+      "manifest": {
+        "file": "src/cmd/vendor/modules.txt",
+        "sha256": "e524419818d0f56bfa900d9b8a659efcf42f4c0cde4b281b902a85e5fbc8a9a9",
+        "bytes": 5927
+      },
+      "selection": "full shipped toolchain vendor source; not all entries compiled into the selected candidate"
+    },
+    {
+      "ref": "pkg:golang/github.com/ianlancetaylor/demangle@v0.0.0-20250417193237-f615e6bd150b",
+      "name": "github.com/ianlancetaylor/demangle",
+      "version": "v0.0.0-20250417193237-f615e6bd150b",
+      "license": "BSD-3-Clause",
+      "scope": "compiler-upstream-vendored-source",
+      "ecosystem": "Go",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "b73277f7730993ef8e7f80aed83e5309762fed4d77eced982abb2c00657c074d",
+          "bytes": 1479
+        }
+      ],
+      "manifest": {
+        "file": "src/cmd/vendor/modules.txt",
+        "sha256": "e524419818d0f56bfa900d9b8a659efcf42f4c0cde4b281b902a85e5fbc8a9a9",
+        "bytes": 5927
+      },
+      "selection": "full shipped toolchain vendor source; not all entries compiled into the selected candidate"
+    },
+    {
+      "ref": "pkg:golang/golang.org/x/arch@v0.27.1-0.20260521044007-9c1a596a2c97",
+      "name": "golang.org/x/arch",
+      "version": "v0.27.1-0.20260521044007-9c1a596a2c97",
+      "license": "BSD-3-Clause",
+      "scope": "compiler-upstream-vendored-source",
+      "ecosystem": "Go",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "8cda009bd927676a95ee7ce2dae921442ac4d9584d041b56ecfcba6839032f0b",
+          "bytes": 1453
+        }
+      ],
+      "manifest": {
+        "file": "src/cmd/vendor/modules.txt",
+        "sha256": "e524419818d0f56bfa900d9b8a659efcf42f4c0cde4b281b902a85e5fbc8a9a9",
+        "bytes": 5927
+      },
+      "selection": "full shipped toolchain vendor source; not all entries compiled into the selected candidate"
+    },
+    {
+      "ref": "pkg:golang/golang.org/x/build@v0.0.0-20260522210304-d55d0041b921",
+      "name": "golang.org/x/build",
+      "version": "v0.0.0-20260522210304-d55d0041b921",
+      "license": "BSD-3-Clause",
+      "scope": "compiler-upstream-vendored-source",
+      "ecosystem": "Go",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad",
+          "bytes": 1453
+        }
+      ],
+      "manifest": {
+        "file": "src/cmd/vendor/modules.txt",
+        "sha256": "e524419818d0f56bfa900d9b8a659efcf42f4c0cde4b281b902a85e5fbc8a9a9",
+        "bytes": 5927
+      },
+      "selection": "full shipped toolchain vendor source; not all entries compiled into the selected candidate"
+    },
+    {
+      "ref": "pkg:golang/golang.org/x/mod@v0.36.1-0.20260813213634-8569e2639ca1",
+      "name": "golang.org/x/mod",
+      "version": "v0.36.1-0.20260813213634-8569e2639ca1",
+      "license": "BSD-3-Clause",
+      "scope": "compiler-upstream-vendored-source",
+      "ecosystem": "Go",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad",
+          "bytes": 1453
+        }
+      ],
+      "manifest": {
+        "file": "src/cmd/vendor/modules.txt",
+        "sha256": "e524419818d0f56bfa900d9b8a659efcf42f4c0cde4b281b902a85e5fbc8a9a9",
+        "bytes": 5927
+      },
+      "selection": "full shipped toolchain vendor source; not all entries compiled into the selected candidate"
+    },
+    {
+      "ref": "pkg:golang/golang.org/x/sync@v0.20.0",
+      "name": "golang.org/x/sync",
+      "version": "v0.20.0",
+      "license": "BSD-3-Clause",
+      "scope": "compiler-upstream-vendored-source",
+      "ecosystem": "Go",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad",
+          "bytes": 1453
+        }
+      ],
+      "manifest": {
+        "file": "src/cmd/vendor/modules.txt",
+        "sha256": "e524419818d0f56bfa900d9b8a659efcf42f4c0cde4b281b902a85e5fbc8a9a9",
+        "bytes": 5927
+      },
+      "selection": "full shipped toolchain vendor source; not all entries compiled into the selected candidate"
+    },
+    {
+      "ref": "pkg:golang/golang.org/x/telemetry@v0.0.0-20260519152614-eab6ae52b5e2",
+      "name": "golang.org/x/telemetry",
+      "version": "v0.0.0-20260519152614-eab6ae52b5e2",
+      "license": "BSD-3-Clause",
+      "scope": "compiler-upstream-vendored-source",
+      "ecosystem": "Go",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad",
+          "bytes": 1453
+        }
+      ],
+      "manifest": {
+        "file": "src/cmd/vendor/modules.txt",
+        "sha256": "e524419818d0f56bfa900d9b8a659efcf42f4c0cde4b281b902a85e5fbc8a9a9",
+        "bytes": 5927
+      },
+      "selection": "full shipped toolchain vendor source; not all entries compiled into the selected candidate"
+    },
+    {
+      "ref": "pkg:golang/golang.org/x/term@v0.43.0",
+      "name": "golang.org/x/term",
+      "version": "v0.43.0",
+      "license": "BSD-3-Clause",
+      "scope": "compiler-upstream-vendored-source",
+      "ecosystem": "Go",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad",
+          "bytes": 1453
+        }
+      ],
+      "manifest": {
+        "file": "src/cmd/vendor/modules.txt",
+        "sha256": "e524419818d0f56bfa900d9b8a659efcf42f4c0cde4b281b902a85e5fbc8a9a9",
+        "bytes": 5927
+      },
+      "selection": "full shipped toolchain vendor source; not all entries compiled into the selected candidate"
+    },
+    {
+      "ref": "pkg:golang/golang.org/x/tools@v0.45.1-0.20260917185718-3dd9077b8066",
+      "name": "golang.org/x/tools",
+      "version": "v0.45.1-0.20260917185718-3dd9077b8066",
+      "license": "BSD-3-Clause",
+      "scope": "compiler-upstream-vendored-source",
+      "ecosystem": "Go",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad",
+          "bytes": 1453
+        }
+      ],
+      "manifest": {
+        "file": "src/cmd/vendor/modules.txt",
+        "sha256": "e524419818d0f56bfa900d9b8a659efcf42f4c0cde4b281b902a85e5fbc8a9a9",
+        "bytes": 5927
+      },
+      "selection": "full shipped toolchain vendor source; not all entries compiled into the selected candidate"
+    },
+    {
+      "ref": "pkg:golang/rsc.io/markdown@v0.0.0-20240306144322-0bf8f97ee8ef",
+      "name": "rsc.io/markdown",
+      "version": "v0.0.0-20240306144322-0bf8f97ee8ef",
+      "license": "BSD-3-Clause",
+      "scope": "compiler-upstream-vendored-source",
+      "ecosystem": "Go",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "2d36597f7117c38b006835ae7f537487207d8ec407aa9d9980794b2030cbc067",
+          "bytes": 1479
+        }
+      ],
+      "manifest": {
+        "file": "src/cmd/vendor/modules.txt",
+        "sha256": "e524419818d0f56bfa900d9b8a659efcf42f4c0cde4b281b902a85e5fbc8a9a9",
+        "bytes": 5927
+      },
+      "selection": "full shipped toolchain vendor source; not all entries compiled into the selected candidate"
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "candidate:tool-goCompiler",
+      "dependsOn": [
+        "pkg:golang/toolchain@1.27.2",
+        "pkg:golang/golang.org/x/crypto@v0.52.1-0.20260526024921-9beb694f9766",
+        "pkg:golang/golang.org/x/net@v0.55.1-0.20260731170536-c1d18010be90",
+        "pkg:golang/golang.org/x/sys@v0.45.0",
+        "pkg:golang/golang.org/x/text@v0.37.0",
+        "pkg:golang/github.com/google/pprof@v0.0.0-20260507013755-92041b743c96",
+        "pkg:golang/github.com/ianlancetaylor/demangle@v0.0.0-20250417193237-f615e6bd150b",
+        "pkg:golang/golang.org/x/arch@v0.27.1-0.20260521044007-9c1a596a2c97",
+        "pkg:golang/golang.org/x/build@v0.0.0-20260522210304-d55d0041b921",
+        "pkg:golang/golang.org/x/mod@v0.36.1-0.20260813213634-8569e2639ca1",
+        "pkg:golang/golang.org/x/sync@v0.20.0",
+        "pkg:golang/golang.org/x/telemetry@v0.0.0-20260519152614-eab6ae52b5e2",
+        "pkg:golang/golang.org/x/term@v0.43.0",
+        "pkg:golang/golang.org/x/tools@v0.45.1-0.20260917185718-3dd9077b8066",
+        "pkg:golang/rsc.io/markdown@v0.0.0-20240306144322-0bf8f97ee8ef"
+      ]
+    },
+    {
+      "ref": "pkg:golang/toolchain@1.27.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:golang/golang.org/x/crypto@v0.52.1-0.20260526024921-9beb694f9766",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:golang/golang.org/x/net@v0.55.1-0.20260731170536-c1d18010be90",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:golang/golang.org/x/sys@v0.45.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:golang/golang.org/x/text@v0.37.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:golang/github.com/google/pprof@v0.0.0-20260507013755-92041b743c96",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:golang/github.com/ianlancetaylor/demangle@v0.0.0-20250417193237-f615e6bd150b",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:golang/golang.org/x/arch@v0.27.1-0.20260521044007-9c1a596a2c97",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:golang/golang.org/x/build@v0.0.0-20260522210304-d55d0041b921",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:golang/golang.org/x/mod@v0.36.1-0.20260813213634-8569e2639ca1",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:golang/golang.org/x/sync@v0.20.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:golang/golang.org/x/telemetry@v0.0.0-20260519152614-eab6ae52b5e2",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:golang/golang.org/x/term@v0.43.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:golang/golang.org/x/tools@v0.45.1-0.20260917185718-3dd9077b8066",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:golang/rsc.io/markdown@v0.0.0-20240306144322-0bf8f97ee8ef",
+      "dependsOn": []
+    }
+  ],
+  "scanReuse": {
+    "file": "goCompiler-advisories.json",
+    "sha256": "e371a04a84d8ec31ba8a0b555df6764a06edbf9833f156582467ab59b6bf8384",
+    "reason": "identical exact package/version/ref query graph; original response dates and collector revision retained"
+  }
+}

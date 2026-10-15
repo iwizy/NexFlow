@@ -32,7 +32,7 @@ for(const id of ids){
   assert.deepEqual(recordErrors(r,s,b),[]);
   assert.equal(r.sbomSha256,digest(readFileSync(at+"/sbom.cdx.json")));
   assert.equal(r.advisoriesSha256,digest(readFileSync(at+"/advisories.json")));
-  bind(source,r.sourceManifest);bind(r.collectorRevision,r.collectorSources);
+  bind(source,r.sourceManifest,false);bind(r.collectorRevision,r.collectorSources,false);
   for(const input of r.sourceManifest.filter(f=>!f.file.endsWith("/README.md")))
     assert.equal(digest(gitBytes(r.baselineCandidateSource,input.file)),input.sha256,"qualified candidate drift");
   records[id]=r;
@@ -55,12 +55,12 @@ function closureErrors(r){
   return errors;
 }
 assert.deepEqual(closureErrors(closure),[]);
-bind(closure.collectorRevision,closure.collectorSources);bind(source,closure.schemaInputs);
+bind(closure.collectorRevision,closure.collectorSources,false);bind(source,closure.schemaInputs);
 assert.ok(closure.native.length>0&&Object.values(closure.tools).every(t=>t.files.length>0));
 assert.equal(closure.tools.rust.archivePayloadComparison.length,54);
 assert.ok(closure.tools.rust.archivePayloadComparison.every(x=>x.matched));
 assert.equal(license.sourceRevision,source);assert.equal(license.outcome,"partial-not-approved");
-bind(license.collectorRevision,license.collectorSources);
+bind(license.collectorRevision,license.collectorSources,false);
 const refs=ids.flatMap(id=>records[id].components.map(c=>id+":"+c.ref)).sort();
 assert.deepEqual(license.rows.map(r=>r.candidate+":"+r.ref).sort(),refs);
 assert.equal(records.go.components.length,8);assert.equal(records.go.components.filter(c=>c.lockCoverage!=="go.sum").length,3);

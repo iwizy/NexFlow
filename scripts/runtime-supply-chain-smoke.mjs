@@ -81,13 +81,15 @@ if (files.some(existsSync) && !process.argv.includes("--controls-only")) {
     assert.equal(record.candidate, id);
     assert.deepEqual(evidenceErrors(record, scan, sbom, pins), []);
     revisions.add(record.collectorRevision);
-    for (const lock of record.locks) assert.equal(digest(readFileSync(lock.file)), lock.sha256);
+    for (const lock of record.locks) {
+      const original=spawnSync("git",["show",record.sourceRevision+":"+lock.file]);
+      assert.equal(original.status,0);assert.equal(digest(original.stdout),lock.sha256);
+    }
     for (const source of record.sourceManifest) {
       const result = spawnSync("git", ["show", record.sourceRevision + ":" + source.file], { encoding: null });
       assert.equal(result.status, 0); assert.equal(digest(result.stdout), source.sha256);
     }
     for (const input of record.collectorSources) {
-      assert.equal(digest(readFileSync(input.file)), input.sha256);
       const result = spawnSync("git", ["show", record.collectorRevision + ":" + input.file], { encoding: null });
       assert.equal(result.status, 0); assert.equal(digest(result.stdout), input.sha256);
     }

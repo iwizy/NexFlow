@@ -123,8 +123,8 @@ for (const token of ["closed as a completed review", "RFC-0023 remains Draft", "
 // NF-102-01's later bounded closure must not rewrite the historical review.
 const originalCards = execFileSync("git", ["show", "9ae9d76b173515ba189ede6917faf97695bb5ed5:rfcs/reviews/nf-102-remediation.md"], { cwd: repositoryRoot, encoding: "utf8" });
 assert.ok(originalCards.includes("All six cards remain open architecture-acceptance blockers"));
-assert.ok(cards.includes("the other five cards remain open architecture-acceptance blockers"));
+assert.ok(cards.includes("the other four cards remain open architecture-acceptance blockers"));
 assert.ok(cards.includes("Status: declared-scope-complete"));
-assert.ok(cards.includes("Status: evidence-collected-acceptance-blocked"));
+assert.ok(cards.includes("authorized repair and closure"));
 console.log(`NF-102 task closure: explicit review-only amendment, Draft/not-ready, original six blockers preserved and ${closureMutations.length} rejection controls.`);
 console.log(`NF-102 review: 74 exact inputs, recognized four-candidate repair, 11 blocked gates, 6 owned cards and ${mutations.length} rejection controls; no acceptance inferred.`);

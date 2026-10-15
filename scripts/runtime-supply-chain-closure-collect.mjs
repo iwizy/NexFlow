@@ -83,11 +83,14 @@ const npmToolRecord={candidate:"node-tooling",sourceRevision:config.sourceRevisi
   collectorRevision:exec("git",["rev-parse","HEAD"]).trim(),components:[...new Map(installedNpm.map(c=>[c.ref,c])).values()]};
 save("node-tooling-inventory.json",npmToolRecord);
 save("node-tooling-advisories.json",await scan(npmToolRecord));
+const goToolRecord={candidate:"go-toolchain",sourceRevision:config.sourceRevision,
+  collectorRevision:exec("git",["rev-parse","HEAD"]).trim(),components:[{ref:"pkg:golang/toolchain@1.27.1",ecosystem:"Go",name:"toolchain",version:"1.27.1"}]};
+save("go-toolchain-advisories.json",await scan(goToolRecord));
 
 const runs=[];
 for(let index=0;index<2;index++){
   const staging=mkdtempSync("/private/tmp/nf-102-02-rebuild-");
-  const archive=spawnSync("git",["archive",config.sourceRevision,"evaluation/prototypes"],{maxBuffer:64*1024*1024});
+  const archive=spawnSync("git",["archive",config.sourceRevision,"evaluation/prototypes","schemas"],{maxBuffer:64*1024*1024});
   assert.equal(archive.status,0);
   assert.equal(spawnSync("/usr/bin/tar",["-x","-C",staging],{input:archive.stdout}).status,0);
   const artifacts={};
@@ -130,6 +133,7 @@ const closure={task:"NF-102-02",sourceRevision:config.sourceRevision,collectorRe
     kernel:exec("/usr/bin/uname",["-r"]).trim(),architecture:exec("/usr/bin/uname",["-m"]).trim(),
     cpu:exec("/usr/sbin/sysctl",["-n","machdep.cpu.brand_string"]).trim(),classification:"supplemental-not-frozen-target"},
   tools,native,runs,repeatability,archiveProvenance:config.archiveReceipts,
+  schemaInputs:exec("git",["ls-files","schemas"]).trim().split("\n").map(file=>receipt(file,file)),
   interpreterProvenance:"unavailable-existing-exact-runtime-no-origin-receipt",
   offlineScope:"package-manager-offline-no-index-frozen-readonly-only; not OS-denied networking",
   compilerInternalClosure:"partial: exact distribution file hashes and license receipts, not complete compiler-internal versioned SBOM",

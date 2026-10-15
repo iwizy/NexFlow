@@ -1,0 +1,416 @@
+{
+  "$schema": "http://cyclonedx.org/schema/bom-1.6.schema.json",
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-10-15T13:06:21.874Z",
+    "component": {
+      "type": "application",
+      "bom-ref": "candidate:typescript",
+      "name": "nexflow-typescript-evaluation",
+      "version": "23e576efd0dda0f00f5462eda9295c1ae4ec8fee",
+      "properties": [
+        {
+          "name": "nexflow:scope",
+          "value": "disposable-validation-only-not-release"
+        },
+        {
+          "name": "nexflow:collectorRevision",
+          "value": "9be540223d7ca177b8320c66f28e541f7cdf6e8e"
+        }
+      ]
+    }
+  },
+  "components": [
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/%40types/node@22.20.5",
+      "name": "@types/node",
+      "version": "22.20.5",
+      "purl": "pkg:npm/%40types/node@22.20.5",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "installed-build"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "package-lock.json"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        },
+        {
+          "name": "nexflow:npmArchiveIntegrity",
+          "value": "sha512-U2+DNr+wSjpsTS/wZGYHq7GcwfuSmKiKvoPvK22zwTlRhU91yOniN4qRR5KhIjvif7ysw/dz/hKmfDH0Ris4aA=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/ajv-formats@3.0.1",
+      "name": "ajv-formats",
+      "version": "3.0.1",
+      "purl": "pkg:npm/ajv-formats@3.0.1",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "installed-runtime"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "package-lock.json"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        },
+        {
+          "name": "nexflow:npmArchiveIntegrity",
+          "value": "sha512-8iUql50EUR+uUcdRQ3HDqa6EVyo3docL8g5WJ3FNcWmu62IbkGUue/pEyLBW8VGKKucTPgqeks4fIU1DA4yowQ=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/ajv@8.20.0",
+      "name": "ajv",
+      "version": "8.20.0",
+      "purl": "pkg:npm/ajv@8.20.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "installed-runtime"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "package-lock.json"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        },
+        {
+          "name": "nexflow:npmArchiveIntegrity",
+          "value": "sha512-Thbli+OlOj+iMPYFBVBfJ3OmCAnaSyNn4M1vz9T6Gka5Jt9ba/HIR56joy65tY6kx/FCF5VXNB819Y7/GUrBGA=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/fast-deep-equal@3.1.3",
+      "name": "fast-deep-equal",
+      "version": "3.1.3",
+      "purl": "pkg:npm/fast-deep-equal@3.1.3",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "installed-runtime"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "package-lock.json"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        },
+        {
+          "name": "nexflow:npmArchiveIntegrity",
+          "value": "sha512-f3qQ9oQy9j2AhBe/H9VC91wLmKBCCU/gDOnKNAYG5hswO7BLKj09Hc5HYNz9cGI++xlpDCIgDaitVs03ATR84Q=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/fast-uri@3.1.8",
+      "name": "fast-uri",
+      "version": "3.1.8",
+      "purl": "pkg:npm/fast-uri@3.1.8",
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-3-Clause"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "installed-runtime"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "package-lock.json"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        },
+        {
+          "name": "nexflow:npmArchiveIntegrity",
+          "value": "sha512-GZMtZUTNRpOVIECoXwLNZS5xUGE+mVNbTB8h/7Rwh2TFWcBQiPzTgyZi05BF9UMZKkLJv8XBRJTlU7zg8+ZfMg=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/json-schema-traverse@1.0.0",
+      "name": "json-schema-traverse",
+      "version": "1.0.0",
+      "purl": "pkg:npm/json-schema-traverse@1.0.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "installed-runtime"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "package-lock.json"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        },
+        {
+          "name": "nexflow:npmArchiveIntegrity",
+          "value": "sha512-NM8/P9n3XjXhIZn1lLhkFaACTOURQXjWhV4BA/RnOv8xvgqtqpAX9IO4mRQxSx1Rlo4tqzeqb0sOlruaOy3dug=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/require-from-string@2.0.2",
+      "name": "require-from-string",
+      "version": "2.0.2",
+      "purl": "pkg:npm/require-from-string@2.0.2",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "installed-runtime"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "package-lock.json"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        },
+        {
+          "name": "nexflow:npmArchiveIntegrity",
+          "value": "sha512-Xf0nWe6RseziFMu+Ap9biiUbmplq6S9/p+7w7YXP/JBHhrUDDUhwa+vANyubuqfZWTveU//DYVGsDG7RKL/vEw=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/typescript@6.0.3",
+      "name": "typescript",
+      "version": "6.0.3",
+      "purl": "pkg:npm/typescript@6.0.3",
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "installed-build"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "package-lock.json"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        },
+        {
+          "name": "nexflow:npmArchiveIntegrity",
+          "value": "sha512-y2TvuxSZPDyQakkFRPZHKFm+KKVqIisdg9/CZwm9ftvKXLP8NRWj38/ODjNbr43SsoXqNuAisEf1GdCxqWcdBw=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/undici-types@6.21.0",
+      "name": "undici-types",
+      "version": "6.21.0",
+      "purl": "pkg:npm/undici-types@6.21.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "installed-build"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "package-lock.json"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        },
+        {
+          "name": "nexflow:npmArchiveIntegrity",
+          "value": "sha512-iwDZqg0QAGrg9Rav5H4n0M64c3mkR59cJ6wQp+7C4nI0gsmExaedaYLNO44eT4AtBBwjbTiGPMlt2Md0T9H9JQ=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/yaml@2.9.0",
+      "name": "yaml",
+      "version": "2.9.0",
+      "purl": "pkg:npm/yaml@2.9.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "ISC"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "installed-runtime"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "package-lock.json"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        },
+        {
+          "name": "nexflow:npmArchiveIntegrity",
+          "value": "sha512-2AvhNX3mb8zd6Zy7INTtSpl1F15HW6Wnqj0srWlkKLcpYl/gMIMJiyuGq2KeI2YFxUPjdlB+3Lc10seMLtL4cA=="
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "candidate:typescript",
+      "dependsOn": [
+        "pkg:npm/%40types/node@22.20.5",
+        "pkg:npm/ajv-formats@3.0.1",
+        "pkg:npm/ajv@8.20.0",
+        "pkg:npm/typescript@6.0.3",
+        "pkg:npm/yaml@2.9.0"
+      ]
+    },
+    {
+      "ref": "pkg:npm/%40types/node@22.20.5",
+      "dependsOn": [
+        "pkg:npm/undici-types@6.21.0"
+      ]
+    },
+    {
+      "ref": "pkg:npm/ajv-formats@3.0.1",
+      "dependsOn": [
+        "pkg:npm/ajv@8.20.0"
+      ]
+    },
+    {
+      "ref": "pkg:npm/ajv@8.20.0",
+      "dependsOn": [
+        "pkg:npm/fast-deep-equal@3.1.3",
+        "pkg:npm/fast-uri@3.1.8",
+        "pkg:npm/json-schema-traverse@1.0.0",
+        "pkg:npm/require-from-string@2.0.2"
+      ]
+    },
+    {
+      "ref": "pkg:npm/fast-deep-equal@3.1.3",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/fast-uri@3.1.8",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/json-schema-traverse@1.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/require-from-string@2.0.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/typescript@6.0.3",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/undici-types@6.21.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/yaml@2.9.0",
+      "dependsOn": []
+    }
+  ],
+  "compositions": [
+    {
+      "aggregate": "incomplete",
+      "assemblies": [
+        "candidate:typescript"
+      ]
+    }
+  ]
+}

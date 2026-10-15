@@ -1,0 +1,66 @@
+{
+  "task": "NF-102-02",
+  "sourceRevision": "23e576efd0dda0f00f5462eda9295c1ae4ec8fee",
+  "collectorRevision": "9be540223d7ca177b8320c66f28e541f7cdf6e8e",
+  "recordedAt": "2026-10-15T13:07:25.728Z",
+  "taskStatus": "completed",
+  "originalCriteria": [
+    {
+      "criterion": "Current built artifact/compiler/interpreter/native/license inventory, SBOM and exact-hash provenance",
+      "status": "passed",
+      "evidence": [
+        "tool-closure.json",
+        "installation.json",
+        "native-inventory.json",
+        "license-index.json",
+        "cargo-inventory.json"
+      ]
+    },
+    {
+      "criterion": "Dated four-graph scans and review of reachability, unresolved matches and licensing uncertainties",
+      "status": "passed",
+      "evidence": [
+        "disposition.json",
+        "native-advisories.json",
+        "typescript/advisories.json",
+        "python/advisories.json",
+        "rust/advisories.json",
+        "go/advisories.json"
+      ]
+    },
+    {
+      "criterion": "Document reproducibility and offline provisioning after authorized repairs",
+      "status": "passed",
+      "evidence": [
+        "rebuild.json",
+        "README.md",
+        "../../repairs/supply-chain/toolchains.json"
+      ]
+    }
+  ],
+  "technicalAcceptanceRequirementsWaived": false,
+  "originalTaskScopeChanged": false,
+  "architectureStatus": "Draft",
+  "architectureAccepted": false,
+  "allArchitectureGatesClosed": false,
+  "remainingCards": [
+    "NF-102-03",
+    "NF-102-04",
+    "NF-102-05",
+    "NF-102-06"
+  ],
+  "scope": "Technical supply-chain/provenance evidence and bounded current evaluation recipes; not blanket security, legal/distribution approval, frozen target lifecycle, signing, performance ranking or architecture acceptance",
+  "publicationVerification": "Actual PR/main CI and merge receipts are recorded externally after publication; no self-referential future CI claim in this commit",
+  "notTested": [
+    "independent toolchain source rebuild/signing attestation",
+    "general-purpose online Cargo/pip execution",
+    "all OS backports and general V8/HTML/JIT execution",
+    "Linux/Windows/frozen-macOS lifecycle and signing"
+  ],
+  "collectorSources": [
+    {
+      "file": "scripts/runtime-supply-chain-completion.mjs",
+      "sha256": "609f88372561e4fd377e9e06123a1978ab0195a843019cde5d1907bdbc8f2287"
+    }
+  ]
+}

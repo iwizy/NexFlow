@@ -1,0 +1,1620 @@
+{
+  "$schema": "http://cyclonedx.org/schema/bom-1.6.schema.json",
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-10-15T13:06:00.636Z",
+    "component": {
+      "type": "application",
+      "bom-ref": "candidate:tool-native",
+      "name": "nexflow-tool-native-evaluation",
+      "version": "23e576efd0dda0f00f5462eda9295c1ae4ec8fee",
+      "properties": [
+        {
+          "name": "nexflow:scope",
+          "value": "disposable-validation-only-not-release"
+        },
+        {
+          "name": "nexflow:collectorRevision",
+          "value": "9be540223d7ca177b8320c66f28e541f7cdf6e8e"
+        }
+      ]
+    }
+  },
+  "components": [
+    {
+      "type": "library",
+      "bom-ref": "pkg:generic/node@26.12.0?owner=node",
+      "name": "node",
+      "version": "26.12.0",
+      "purl": "pkg:generic/node@26.12.0?owner=node",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "observed-node-runtime-and-data-versions"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "process.versions + complete verified composite Node LICENSE"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:generic/acorn@8.19.0?owner=node",
+      "name": "acorn",
+      "version": "8.19.0",
+      "purl": "pkg:generic/acorn@8.19.0?owner=node",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "observed-node-runtime-and-data-versions"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "process.versions + complete verified composite Node LICENSE"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:generic/ada@4.0.0?owner=node",
+      "name": "ada",
+      "version": "4.0.0",
+      "purl": "pkg:generic/ada@4.0.0?owner=node",
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0 OR MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "observed-node-runtime-and-data-versions"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "process.versions + complete verified composite Node LICENSE"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:generic/amaro@1.1.11?owner=node",
+      "name": "amaro",
+      "version": "1.1.11",
+      "purl": "pkg:generic/amaro@1.1.11?owner=node",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "observed-node-runtime-and-data-versions"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "process.versions + complete verified composite Node LICENSE"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:generic/ares@1.34.8?owner=node",
+      "name": "ares",
+      "version": "1.34.8",
+      "purl": "pkg:generic/ares@1.34.8?owner=node",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "observed-node-runtime-and-data-versions"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "process.versions + complete verified composite Node LICENSE"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:generic/brotli@1.2.0?owner=node",
+      "name": "brotli",
+      "version": "1.2.0",
+      "purl": "pkg:generic/brotli@1.2.0?owner=node",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "observed-node-runtime-and-data-versions"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "process.versions + complete verified composite Node LICENSE"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:generic/cldr@48.0?owner=node",
+      "name": "cldr",
+      "version": "48.0",
+      "purl": "pkg:generic/cldr@48.0?owner=node",
+      "licenses": [
+        {
+          "license": {
+            "name": "Unicode-3.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "observed-node-runtime-and-data-versions"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "process.versions + complete verified composite Node LICENSE"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:generic/icu@78.3?owner=node",
+      "name": "icu",
+      "version": "78.3",
+      "purl": "pkg:generic/icu@78.3?owner=node",
+      "licenses": [
+        {
+          "license": {
+            "name": "Unicode-3.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "observed-node-runtime-and-data-versions"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "process.versions + complete verified composite Node LICENSE"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:generic/libffi@3.8.0?owner=node",
+      "name": "libffi",
+      "version": "3.8.0",
+      "purl": "pkg:generic/libffi@3.8.0?owner=node",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "observed-node-runtime-and-data-versions"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "process.versions + complete verified composite Node LICENSE"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:generic/lief@1.0.0?owner=node",
+      "name": "lief",
+      "version": "1.0.0",
+      "purl": "pkg:generic/lief@1.0.0?owner=node",
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "observed-node-runtime-and-data-versions"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "process.versions + complete verified composite Node LICENSE"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:generic/llhttp@9.4.3?owner=node",
+      "name": "llhttp",
+      "version": "9.4.3",
+      "purl": "pkg:generic/llhttp@9.4.3?owner=node",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "observed-node-runtime-and-data-versions"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "process.versions + complete verified composite Node LICENSE"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:generic/merve@1.2.2?owner=node",
+      "name": "merve",
+      "version": "1.2.2",
+      "purl": "pkg:generic/merve@1.2.2?owner=node",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "observed-node-runtime-and-data-versions"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "process.versions + complete verified composite Node LICENSE"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:generic/nbytes@0.1.4?owner=node",
+      "name": "nbytes",
+      "version": "0.1.4",
+      "purl": "pkg:generic/nbytes@0.1.4?owner=node",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "observed-node-runtime-and-data-versions"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "process.versions + complete verified composite Node LICENSE"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:generic/ncrypto@0.0.1?owner=node",
+      "name": "ncrypto",
+      "version": "0.0.1",
+      "purl": "pkg:generic/ncrypto@0.0.1?owner=node",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "observed-node-runtime-and-data-versions"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "process.versions + complete verified composite Node LICENSE"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:generic/nghttp2@1.70.0?owner=node",
+      "name": "nghttp2",
+      "version": "1.70.0",
+      "purl": "pkg:generic/nghttp2@1.70.0?owner=node",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "observed-node-runtime-and-data-versions"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "process.versions + complete verified composite Node LICENSE"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:generic/openssl@3.5.9?owner=node",
+      "name": "openssl",
+      "version": "3.5.9",
+      "purl": "pkg:generic/openssl@3.5.9?owner=node",
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "observed-node-runtime-and-data-versions"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "process.versions + complete verified composite Node LICENSE"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:generic/simdjson@5.0.3?owner=node",
+      "name": "simdjson",
+      "version": "5.0.3",
+      "purl": "pkg:generic/simdjson@5.0.3?owner=node",
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "observed-node-runtime-and-data-versions"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "process.versions + complete verified composite Node LICENSE"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:generic/simdutf@7.7.0?owner=node",
+      "name": "simdutf",
+      "version": "7.7.0",
+      "purl": "pkg:generic/simdutf@7.7.0?owner=node",
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0 OR MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "observed-node-runtime-and-data-versions"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "process.versions + complete verified composite Node LICENSE"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:generic/sqlite@3.54.0?owner=node",
+      "name": "sqlite",
+      "version": "3.54.0",
+      "purl": "pkg:generic/sqlite@3.54.0?owner=node",
+      "licenses": [
+        {
+          "license": {
+            "name": "LicenseRef-Public-Domain"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "observed-node-runtime-and-data-versions"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "process.versions + complete verified composite Node LICENSE"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:generic/tz@2026e?owner=node",
+      "name": "tz",
+      "version": "2026e",
+      "purl": "pkg:generic/tz@2026e?owner=node",
+      "licenses": [
+        {
+          "license": {
+            "name": "LicenseRef-Public-Domain"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "observed-node-runtime-and-data-versions"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "process.versions + complete verified composite Node LICENSE"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:generic/undici@8.11.2?owner=node",
+      "name": "undici",
+      "version": "8.11.2",
+      "purl": "pkg:generic/undici@8.11.2?owner=node",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "observed-node-runtime-and-data-versions"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "process.versions + complete verified composite Node LICENSE"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:generic/unicode@17.0?owner=node",
+      "name": "unicode",
+      "version": "17.0",
+      "purl": "pkg:generic/unicode@17.0?owner=node",
+      "licenses": [
+        {
+          "license": {
+            "name": "Unicode-3.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "observed-node-runtime-and-data-versions"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "process.versions + complete verified composite Node LICENSE"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:generic/uv@1.52.1?owner=node",
+      "name": "uv",
+      "version": "1.52.1",
+      "purl": "pkg:generic/uv@1.52.1?owner=node",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "observed-node-runtime-and-data-versions"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "process.versions + complete verified composite Node LICENSE"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:generic/uvwasi@0.0.23?owner=node",
+      "name": "uvwasi",
+      "version": "0.0.23",
+      "purl": "pkg:generic/uvwasi@0.0.23?owner=node",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "observed-node-runtime-and-data-versions"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "process.versions + complete verified composite Node LICENSE"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:generic/v8@14.6.202.34-node.39?owner=node",
+      "name": "v8",
+      "version": "14.6.202.34-node.39",
+      "purl": "pkg:generic/v8@14.6.202.34-node.39?owner=node",
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-3-Clause"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "observed-node-runtime-and-data-versions"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "process.versions + complete verified composite Node LICENSE"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:generic/zlib@1.3.2.1-motley-456ae73?owner=node",
+      "name": "zlib",
+      "version": "1.3.2.1-motley-456ae73",
+      "purl": "pkg:generic/zlib@1.3.2.1-motley-456ae73?owner=node",
+      "licenses": [
+        {
+          "license": {
+            "name": "Zlib"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "observed-node-runtime-and-data-versions"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "process.versions + complete verified composite Node LICENSE"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:generic/zstd@1.5.7?owner=node",
+      "name": "zstd",
+      "version": "1.5.7",
+      "purl": "pkg:generic/zstd@1.5.7?owner=node",
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-3-Clause"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "observed-node-runtime-and-data-versions"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "process.versions + complete verified composite Node LICENSE"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:generic/bzip2@1.0.8?owner=python",
+      "name": "bzip2",
+      "version": "1.0.8",
+      "purl": "pkg:generic/bzip2@1.0.8?owner=python",
+      "licenses": [
+        {
+          "license": {
+            "name": "bzip2-1.0.6"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "ab5a03176ee106d3f0fa90e381da478ddae405918153cca248e682cd0c4a2269"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "interpreter-static-input"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "verified PYTHON.json + exact upstream downloads manifest"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:generic/libffi@3.8.0?owner=python",
+      "name": "libffi",
+      "version": "3.8.0",
+      "purl": "pkg:generic/libffi@3.8.0?owner=python",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "7da3e2d9a171eb0a038f592ecad3ff2bb2550f3496d87b3b29ad0cf4430c0db4"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "interpreter-static-input"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "verified PYTHON.json + exact upstream downloads manifest"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:generic/mpdecimal@4.0.0?owner=python",
+      "name": "mpdecimal",
+      "version": "4.0.0",
+      "purl": "pkg:generic/mpdecimal@4.0.0?owner=python",
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-2-Clause"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "942445c3245b22730fd41a67a7c5c231d11cb1b9936b9c0f76334fb7d0b4468c"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "interpreter-static-input"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "verified PYTHON.json + exact upstream downloads manifest"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:generic/openssl-3.5@3.5.9?owner=python",
+      "name": "openssl-3.5",
+      "version": "3.5.9",
+      "purl": "pkg:generic/openssl-3.5@3.5.9?owner=python",
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "603f5602e2eef00d77fbd429d34dcd5822bb301757a1bc9cdb24c670f1eb859a"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "interpreter-static-input"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "verified PYTHON.json + exact upstream downloads manifest"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:generic/xz@5.8.4?owner=python",
+      "name": "xz",
+      "version": "5.8.4",
+      "purl": "pkg:generic/xz@5.8.4?owner=python",
+      "licenses": [
+        {
+          "license": {
+            "name": "0BSD"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "0014c7886930454fe8bd4228665b51af55eeae560ea135c9c4cd33f55b2591d9"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "interpreter-static-input"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "verified PYTHON.json + exact upstream downloads manifest"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:generic/sqlite@3.53.1.0?owner=python",
+      "name": "sqlite",
+      "version": "3.53.1.0",
+      "purl": "pkg:generic/sqlite@3.53.1.0?owner=python",
+      "licenses": [
+        {
+          "license": {
+            "name": "LicenseRef-Public-Domain"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "83e6b2020a034e9a7ad4a72feea59e1ad52f162e09cbd26735a3ffb98359fc4f"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "interpreter-static-input"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "verified PYTHON.json + exact upstream downloads manifest"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:generic/tcl@9.0.4?owner=python",
+      "name": "tcl",
+      "version": "9.0.4",
+      "purl": "pkg:generic/tcl@9.0.4?owner=python",
+      "licenses": [
+        {
+          "license": {
+            "name": "TCL"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "d0aed49230bc02a65c1e0229e65f34590a4b037ec40d546f32573b467f7551ea"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "interpreter-static-input"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "verified PYTHON.json + exact upstream downloads manifest"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:generic/tk@9.0.4?owner=python",
+      "name": "tk",
+      "version": "9.0.4",
+      "purl": "pkg:generic/tk@9.0.4?owner=python",
+      "licenses": [
+        {
+          "license": {
+            "name": "TCL"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "d7a146d2917eb8b5cc95276dbf0e3d03c7464d2b19c1675357857c989301dbb4"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "interpreter-static-input"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "verified PYTHON.json + exact upstream downloads manifest"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:generic/uuid@1.0.3?owner=python",
+      "name": "uuid",
+      "version": "1.0.3",
+      "purl": "pkg:generic/uuid@1.0.3?owner=python",
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-3-Clause"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "46af3275291091009ad7f1b899de3d0cea0252737550e7919d17237997db5644"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "interpreter-static-input"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "verified PYTHON.json + exact upstream downloads manifest"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:generic/expat@2.9.0?owner=python",
+      "name": "expat",
+      "version": "2.9.0",
+      "purl": "pkg:generic/expat@2.9.0?owner=python",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "1e6371862cc31999b368c3b89b49994f0677e1bab5f1b2b85ae3741f5d803051"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "interpreter-static-input"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "verified PYTHON.json + exact upstream downloads manifest"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:generic/CPython@3.12.15",
+      "name": "CPython",
+      "version": "3.12.15",
+      "purl": "pkg:generic/CPython@3.12.15",
+      "licenses": [
+        {
+          "license": {
+            "name": "Python-2.0 AND CNRI-Python"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "verified-interpreter"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "verified full interpreter archive/PYTHON.json"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:generic/libyaml@0.2.5",
+      "name": "libyaml",
+      "version": "0.2.5",
+      "purl": "pkg:generic/libyaml@0.2.5",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "native-PyYAML-wheel"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "actual PyYAML native version + hash-locked wheel"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:generic/macOS@26A434",
+      "name": "macOS",
+      "version": "26A434",
+      "purl": "pkg:generic/macOS@26A434",
+      "licenses": [
+        {
+          "license": {
+            "name": "external-operating-system-license"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "external-not-redistributed-OS-prerequisite"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "actual sw_vers plus all retained native install names"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:generic/Rust@1.99.0?owner=rust-toolchain",
+      "name": "Rust",
+      "version": "1.99.0",
+      "purl": "pkg:generic/Rust@1.99.0?owner=rust-toolchain",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "verified-compiler-and-standard-library"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "verified tool archives + cargo/rustc/LLVM verbose versions + exact Cargo source lock"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:generic/LLVM@23.1.1-rust-1.99.0-stable?owner=rust-toolchain",
+      "name": "LLVM",
+      "version": "23.1.1-rust-1.99.0-stable",
+      "purl": "pkg:generic/LLVM@23.1.1-rust-1.99.0-stable?owner=rust-toolchain",
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0 WITH LLVM-exception"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "verified-Rust-LLVM-fork"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "verified tool archives + cargo/rustc/LLVM verbose versions + exact Cargo source lock"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:generic/OpenSSL@3.6.3?owner=rust-toolchain",
+      "name": "OpenSSL",
+      "version": "3.6.3",
+      "purl": "pkg:generic/OpenSSL@3.6.3?owner=rust-toolchain",
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "Cargo-native-static-input"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "verified tool archives + cargo/rustc/LLVM verbose versions + exact Cargo source lock"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:generic/libgit2@1.9.6?owner=rust-toolchain",
+      "name": "libgit2",
+      "version": "1.9.6",
+      "purl": "pkg:generic/libgit2@1.9.6?owner=rust-toolchain",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "Cargo-native-vendored-input"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "verified tool archives + cargo/rustc/LLVM verbose versions + exact Cargo source lock"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:generic/libcurl@8.7.1?owner=rust-toolchain",
+      "name": "libcurl",
+      "version": "8.7.1",
+      "purl": "pkg:generic/libcurl@8.7.1?owner=rust-toolchain",
+      "licenses": [
+        {
+          "license": {
+            "name": "curl"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "external-OS-not-redistributed"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "verified tool archives + cargo/rustc/LLVM verbose versions + exact Cargo source lock"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:generic/LibreSSL@3.3.6?owner=rust-toolchain",
+      "name": "LibreSSL",
+      "version": "3.3.6",
+      "purl": "pkg:generic/LibreSSL@3.3.6?owner=rust-toolchain",
+      "licenses": [
+        {
+          "license": {
+            "name": "external-operating-system-license"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "reported-external-OS-backend-not-redistributed"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "verified tool archives + cargo/rustc/LLVM verbose versions + exact Cargo source lock"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "candidate:tool-native",
+      "dependsOn": [
+        "pkg:generic/node@26.12.0?owner=node",
+        "pkg:generic/acorn@8.19.0?owner=node",
+        "pkg:generic/ada@4.0.0?owner=node",
+        "pkg:generic/amaro@1.1.11?owner=node",
+        "pkg:generic/ares@1.34.8?owner=node",
+        "pkg:generic/brotli@1.2.0?owner=node",
+        "pkg:generic/cldr@48.0?owner=node",
+        "pkg:generic/icu@78.3?owner=node",
+        "pkg:generic/libffi@3.8.0?owner=node",
+        "pkg:generic/lief@1.0.0?owner=node",
+        "pkg:generic/llhttp@9.4.3?owner=node",
+        "pkg:generic/merve@1.2.2?owner=node",
+        "pkg:generic/nbytes@0.1.4?owner=node",
+        "pkg:generic/ncrypto@0.0.1?owner=node",
+        "pkg:generic/nghttp2@1.70.0?owner=node",
+        "pkg:generic/openssl@3.5.9?owner=node",
+        "pkg:generic/simdjson@5.0.3?owner=node",
+        "pkg:generic/simdutf@7.7.0?owner=node",
+        "pkg:generic/sqlite@3.54.0?owner=node",
+        "pkg:generic/tz@2026e?owner=node",
+        "pkg:generic/undici@8.11.2?owner=node",
+        "pkg:generic/unicode@17.0?owner=node",
+        "pkg:generic/uv@1.52.1?owner=node",
+        "pkg:generic/uvwasi@0.0.23?owner=node",
+        "pkg:generic/v8@14.6.202.34-node.39?owner=node",
+        "pkg:generic/zlib@1.3.2.1-motley-456ae73?owner=node",
+        "pkg:generic/zstd@1.5.7?owner=node",
+        "pkg:generic/bzip2@1.0.8?owner=python",
+        "pkg:generic/libffi@3.8.0?owner=python",
+        "pkg:generic/mpdecimal@4.0.0?owner=python",
+        "pkg:generic/openssl-3.5@3.5.9?owner=python",
+        "pkg:generic/xz@5.8.4?owner=python",
+        "pkg:generic/sqlite@3.53.1.0?owner=python",
+        "pkg:generic/tcl@9.0.4?owner=python",
+        "pkg:generic/tk@9.0.4?owner=python",
+        "pkg:generic/uuid@1.0.3?owner=python",
+        "pkg:generic/expat@2.9.0?owner=python",
+        "pkg:generic/CPython@3.12.15",
+        "pkg:generic/libyaml@0.2.5",
+        "pkg:generic/macOS@26A434",
+        "pkg:generic/Rust@1.99.0?owner=rust-toolchain",
+        "pkg:generic/LLVM@23.1.1-rust-1.99.0-stable?owner=rust-toolchain",
+        "pkg:generic/OpenSSL@3.6.3?owner=rust-toolchain",
+        "pkg:generic/libgit2@1.9.6?owner=rust-toolchain",
+        "pkg:generic/libcurl@8.7.1?owner=rust-toolchain",
+        "pkg:generic/LibreSSL@3.3.6?owner=rust-toolchain"
+      ]
+    },
+    {
+      "ref": "pkg:generic/node@26.12.0?owner=node",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/acorn@8.19.0?owner=node",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/ada@4.0.0?owner=node",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/amaro@1.1.11?owner=node",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/ares@1.34.8?owner=node",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/brotli@1.2.0?owner=node",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/cldr@48.0?owner=node",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/icu@78.3?owner=node",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/libffi@3.8.0?owner=node",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/lief@1.0.0?owner=node",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/llhttp@9.4.3?owner=node",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/merve@1.2.2?owner=node",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/nbytes@0.1.4?owner=node",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/ncrypto@0.0.1?owner=node",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/nghttp2@1.70.0?owner=node",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/openssl@3.5.9?owner=node",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/simdjson@5.0.3?owner=node",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/simdutf@7.7.0?owner=node",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/sqlite@3.54.0?owner=node",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/tz@2026e?owner=node",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/undici@8.11.2?owner=node",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/unicode@17.0?owner=node",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/uv@1.52.1?owner=node",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/uvwasi@0.0.23?owner=node",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/v8@14.6.202.34-node.39?owner=node",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/zlib@1.3.2.1-motley-456ae73?owner=node",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/zstd@1.5.7?owner=node",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/bzip2@1.0.8?owner=python",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/libffi@3.8.0?owner=python",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/mpdecimal@4.0.0?owner=python",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/openssl-3.5@3.5.9?owner=python",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/xz@5.8.4?owner=python",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/sqlite@3.53.1.0?owner=python",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/tcl@9.0.4?owner=python",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/tk@9.0.4?owner=python",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/uuid@1.0.3?owner=python",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/expat@2.9.0?owner=python",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/CPython@3.12.15",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/libyaml@0.2.5",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/macOS@26A434",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/Rust@1.99.0?owner=rust-toolchain",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/LLVM@23.1.1-rust-1.99.0-stable?owner=rust-toolchain",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/OpenSSL@3.6.3?owner=rust-toolchain",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/libgit2@1.9.6?owner=rust-toolchain",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/libcurl@8.7.1?owner=rust-toolchain",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/LibreSSL@3.3.6?owner=rust-toolchain",
+      "dependsOn": []
+    }
+  ],
+  "compositions": [
+    {
+      "aggregate": "incomplete",
+      "assemblies": [
+        "candidate:tool-native"
+      ]
+    }
+  ]
+}

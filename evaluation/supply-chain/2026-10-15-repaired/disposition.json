@@ -1,0 +1,3723 @@
+{
+  "task": "NF-102-02",
+  "sourceRevision": "23e576efd0dda0f00f5462eda9295c1ae4ec8fee",
+  "collectorRevision": "9be540223d7ca177b8320c66f28e541f7cdf6e8e",
+  "recordedAt": "2026-10-15T13:07:25.723Z",
+  "reviewMode": "single-maintainer",
+  "independentAssuranceClaimed": false,
+  "previous": [
+    {
+      "inputId": "python:GHSA-58pv-8j8x-9vj2",
+      "oldVerdict": "needs_review",
+      "disposition": "resolved-for-current-evaluation-scope",
+      "reason": "Removed packaging/build graph; nine runtime packages have zero matches, retained local-only pip vendor matches are separately reviewed above."
+    },
+    {
+      "inputId": "python:GHSA-5rjg-fvgr-3xxf",
+      "oldVerdict": "needs_review",
+      "disposition": "resolved-for-current-evaluation-scope",
+      "reason": "Removed packaging/build graph; nine runtime packages have zero matches, retained local-only pip vendor matches are separately reviewed above."
+    },
+    {
+      "inputId": "python:GHSA-6v7p-g79w-8964",
+      "oldVerdict": "needs_review",
+      "disposition": "resolved-for-current-evaluation-scope",
+      "reason": "Removed packaging/build graph; nine runtime packages have zero matches, retained local-only pip vendor matches are separately reviewed above."
+    },
+    {
+      "inputId": "python:GHSA-8988-9cw3-xx77",
+      "oldVerdict": "needs_review",
+      "disposition": "resolved-for-current-evaluation-scope",
+      "reason": "Removed packaging/build graph; nine runtime packages have zero matches, retained local-only pip vendor matches are separately reviewed above."
+    },
+    {
+      "inputId": "python:GHSA-8rrh-rw8j-w5fx",
+      "oldVerdict": "needs_review",
+      "disposition": "resolved-for-current-evaluation-scope",
+      "reason": "Removed packaging/build graph; nine runtime packages have zero matches, retained local-only pip vendor matches are separately reviewed above."
+    },
+    {
+      "inputId": "python:GHSA-gh4c-6fx4-qh6g",
+      "oldVerdict": "needs_review",
+      "disposition": "resolved-for-current-evaluation-scope",
+      "reason": "Removed packaging/build graph; nine runtime packages have zero matches, retained local-only pip vendor matches are separately reviewed above."
+    },
+    {
+      "inputId": "python:GHSA-h35f-9h28-mq5c",
+      "oldVerdict": "needs_review",
+      "disposition": "resolved-for-current-evaluation-scope",
+      "reason": "Removed packaging/build graph; nine runtime packages have zero matches, retained local-only pip vendor matches are separately reviewed above."
+    },
+    {
+      "inputId": "python:GHSA-vxq7-64xx-v4gw",
+      "oldVerdict": "needs_review",
+      "disposition": "resolved-for-current-evaluation-scope",
+      "reason": "Removed packaging/build graph; nine runtime packages have zero matches, retained local-only pip vendor matches are separately reviewed above."
+    },
+    {
+      "inputId": "python:PYSEC-2025-49",
+      "oldVerdict": "needs_review",
+      "disposition": "resolved-for-current-evaluation-scope",
+      "reason": "Removed packaging/build graph; nine runtime packages have zero matches, retained local-only pip vendor matches are separately reviewed above."
+    },
+    {
+      "inputId": "python:PYSEC-2026-1469",
+      "oldVerdict": "needs_review",
+      "disposition": "resolved-for-current-evaluation-scope",
+      "reason": "Removed packaging/build graph; nine runtime packages have zero matches, retained local-only pip vendor matches are separately reviewed above."
+    },
+    {
+      "inputId": "python:PYSEC-2026-2047",
+      "oldVerdict": "needs_review",
+      "disposition": "resolved-for-current-evaluation-scope",
+      "reason": "Removed packaging/build graph; nine runtime packages have zero matches, retained local-only pip vendor matches are separately reviewed above."
+    },
+    {
+      "inputId": "python:PYSEC-2026-3447",
+      "oldVerdict": "needs_review",
+      "disposition": "resolved-for-current-evaluation-scope",
+      "reason": "Removed packaging/build graph; nine runtime packages have zero matches, retained local-only pip vendor matches are separately reviewed above."
+    },
+    {
+      "inputId": "python:PYSEC-2026-3625",
+      "oldVerdict": "needs_review",
+      "disposition": "resolved-for-current-evaluation-scope",
+      "reason": "Removed packaging/build graph; nine runtime packages have zero matches, retained local-only pip vendor matches are separately reviewed above."
+    },
+    {
+      "inputId": "python:PYSEC-2026-4175",
+      "oldVerdict": "needs_review",
+      "disposition": "resolved-for-current-evaluation-scope",
+      "reason": "Removed packaging/build graph; nine runtime packages have zero matches, retained local-only pip vendor matches are separately reviewed above."
+    },
+    {
+      "inputId": "python:PYSEC-2026-4176",
+      "oldVerdict": "needs_review",
+      "disposition": "resolved-for-current-evaluation-scope",
+      "reason": "Removed packaging/build graph; nine runtime packages have zero matches, retained local-only pip vendor matches are separately reviewed above."
+    },
+    {
+      "inputId": "python:PYSEC-2026-4177",
+      "oldVerdict": "needs_review",
+      "disposition": "resolved-for-current-evaluation-scope",
+      "reason": "Removed packaging/build graph; nine runtime packages have zero matches, retained local-only pip vendor matches are separately reviewed above."
+    },
+    {
+      "inputId": "go:GO-2026-5024",
+      "oldVerdict": "not_actionable",
+      "disposition": "resolved-for-current-evaluation-scope",
+      "reason": "Candidate/compiler/std version pins updated; current candidate Go graph and stdlib query have zero matches; compiler vendor-source matches retained separately."
+    },
+    {
+      "inputId": "go:GO-2026-5970",
+      "oldVerdict": "not_actionable",
+      "disposition": "resolved-for-current-evaluation-scope",
+      "reason": "Candidate/compiler/std version pins updated; current candidate Go graph and stdlib query have zero matches; compiler vendor-source matches retained separately."
+    },
+    {
+      "inputId": "go:GO-2026-6179",
+      "oldVerdict": "not_actionable",
+      "disposition": "resolved-for-current-evaluation-scope",
+      "reason": "Candidate/compiler/std version pins updated; current candidate Go graph and stdlib query have zero matches; compiler vendor-source matches retained separately."
+    },
+    {
+      "inputId": "go:GO-2026-6180",
+      "oldVerdict": "not_actionable",
+      "disposition": "resolved-for-current-evaluation-scope",
+      "reason": "Candidate/compiler/std version pins updated; current candidate Go graph and stdlib query have zero matches; compiler vendor-source matches retained separately."
+    },
+    {
+      "inputId": "go:GO-2026-6599",
+      "oldVerdict": "not_actionable",
+      "disposition": "resolved-for-current-evaluation-scope",
+      "reason": "Candidate/compiler/std version pins updated; current candidate Go graph and stdlib query have zero matches; compiler vendor-source matches retained separately."
+    },
+    {
+      "inputId": "go:GO-2026-6600",
+      "oldVerdict": "not_actionable",
+      "disposition": "resolved-for-current-evaluation-scope",
+      "reason": "Candidate/compiler/std version pins updated; current candidate Go graph and stdlib query have zero matches; compiler vendor-source matches retained separately."
+    },
+    {
+      "inputId": "go:GO-2026-6603",
+      "oldVerdict": "needs_review",
+      "disposition": "resolved-for-current-evaluation-scope",
+      "reason": "Candidate/compiler/std version pins updated; current candidate Go graph and stdlib query have zero matches; compiler vendor-source matches retained separately."
+    },
+    {
+      "inputId": "go:GO-2026-6604",
+      "oldVerdict": "needs_review",
+      "disposition": "resolved-for-current-evaluation-scope",
+      "reason": "Candidate/compiler/std version pins updated; current candidate Go graph and stdlib query have zero matches; compiler vendor-source matches retained separately."
+    },
+    {
+      "inputId": "go:GO-2026-6605",
+      "oldVerdict": "needs_review",
+      "disposition": "resolved-for-current-evaluation-scope",
+      "reason": "Candidate/compiler/std version pins updated; current candidate Go graph and stdlib query have zero matches; compiler vendor-source matches retained separately."
+    },
+    {
+      "inputId": "go:GO-2026-6607",
+      "oldVerdict": "needs_review",
+      "disposition": "resolved-for-current-evaluation-scope",
+      "reason": "Candidate/compiler/std version pins updated; current candidate Go graph and stdlib query have zero matches; compiler vendor-source matches retained separately."
+    },
+    {
+      "inputId": "go:GO-2026-6608",
+      "oldVerdict": "needs_review",
+      "disposition": "resolved-for-current-evaluation-scope",
+      "reason": "Candidate/compiler/std version pins updated; current candidate Go graph and stdlib query have zero matches; compiler vendor-source matches retained separately."
+    },
+    {
+      "inputId": "go:GO-2026-6609",
+      "oldVerdict": "needs_review",
+      "disposition": "resolved-for-current-evaluation-scope",
+      "reason": "Candidate/compiler/std version pins updated; current candidate Go graph and stdlib query have zero matches; compiler vendor-source matches retained separately."
+    },
+    {
+      "inputId": "go:GO-2026-6610",
+      "oldVerdict": "needs_review",
+      "disposition": "resolved-for-current-evaluation-scope",
+      "reason": "Candidate/compiler/std version pins updated; current candidate Go graph and stdlib query have zero matches; compiler vendor-source matches retained separately."
+    },
+    {
+      "inputId": "go:GO-2026-6611",
+      "oldVerdict": "needs_review",
+      "disposition": "resolved-for-current-evaluation-scope",
+      "reason": "Candidate/compiler/std version pins updated; current candidate Go graph and stdlib query have zero matches; compiler vendor-source matches retained separately."
+    },
+    {
+      "inputId": "go:GO-2026-6612",
+      "oldVerdict": "needs_review",
+      "disposition": "resolved-for-current-evaluation-scope",
+      "reason": "Candidate/compiler/std version pins updated; current candidate Go graph and stdlib query have zero matches; compiler vendor-source matches retained separately."
+    },
+    {
+      "inputId": "go:GO-2026-6613",
+      "oldVerdict": "needs_review",
+      "disposition": "resolved-for-current-evaluation-scope",
+      "reason": "Candidate/compiler/std version pins updated; current candidate Go graph and stdlib query have zero matches; compiler vendor-source matches retained separately."
+    },
+    {
+      "inputId": "go:GO-2026-6617",
+      "oldVerdict": "needs_review",
+      "disposition": "resolved-for-current-evaluation-scope",
+      "reason": "Candidate/compiler/std version pins updated; current candidate Go graph and stdlib query have zero matches; compiler vendor-source matches retained separately."
+    },
+    {
+      "inputId": "go:GO-2026-6629",
+      "oldVerdict": "not_actionable",
+      "disposition": "resolved-for-current-evaluation-scope",
+      "reason": "Candidate/compiler/std version pins updated; current candidate Go graph and stdlib query have zero matches; compiler vendor-source matches retained separately."
+    },
+    {
+      "inputId": "node-tooling:GHSA-23hp-3jrh-7fpw",
+      "oldVerdict": "needs_review",
+      "disposition": "resolved-for-current-evaluation-scope",
+      "reason": "Runtime-only Node26 excludes old bundled npm/Corepack; independently hydrated repaired npm graph has zero version matches."
+    },
+    {
+      "inputId": "node-tooling:GHSA-3jxr-9vmj-r5cp",
+      "oldVerdict": "needs_review",
+      "disposition": "resolved-for-current-evaluation-scope",
+      "reason": "Runtime-only Node26 excludes old bundled npm/Corepack; independently hydrated repaired npm graph has zero version matches."
+    },
+    {
+      "inputId": "node-tooling:GHSA-3v7f-55p6-f55p",
+      "oldVerdict": "needs_review",
+      "disposition": "resolved-for-current-evaluation-scope",
+      "reason": "Runtime-only Node26 excludes old bundled npm/Corepack; independently hydrated repaired npm graph has zero version matches."
+    },
+    {
+      "inputId": "node-tooling:GHSA-52v5-jr5w-gjxr",
+      "oldVerdict": "needs_review",
+      "disposition": "resolved-for-current-evaluation-scope",
+      "reason": "Runtime-only Node26 excludes old bundled npm/Corepack; independently hydrated repaired npm graph has zero version matches."
+    },
+    {
+      "inputId": "node-tooling:GHSA-6j4f-fj2g-mc7p",
+      "oldVerdict": "needs_review",
+      "disposition": "resolved-for-current-evaluation-scope",
+      "reason": "Runtime-only Node26 excludes old bundled npm/Corepack; independently hydrated repaired npm graph has zero version matches."
+    },
+    {
+      "inputId": "node-tooling:GHSA-8x88-c5mf-7j5w",
+      "oldVerdict": "needs_review",
+      "disposition": "resolved-for-current-evaluation-scope",
+      "reason": "Runtime-only Node26 excludes old bundled npm/Corepack; independently hydrated repaired npm graph has zero version matches."
+    },
+    {
+      "inputId": "node-tooling:GHSA-c2c7-rcm5-vvqj",
+      "oldVerdict": "needs_review",
+      "disposition": "resolved-for-current-evaluation-scope",
+      "reason": "Runtime-only Node26 excludes old bundled npm/Corepack; independently hydrated repaired npm graph has zero version matches."
+    },
+    {
+      "inputId": "node-tooling:GHSA-ch52-4w7c-c8xp",
+      "oldVerdict": "needs_review",
+      "disposition": "resolved-for-current-evaluation-scope",
+      "reason": "Runtime-only Node26 excludes old bundled npm/Corepack; independently hydrated repaired npm graph has zero version matches."
+    },
+    {
+      "inputId": "node-tooling:GHSA-f886-m6hf-6m8v",
+      "oldVerdict": "needs_review",
+      "disposition": "resolved-for-current-evaluation-scope",
+      "reason": "Runtime-only Node26 excludes old bundled npm/Corepack; independently hydrated repaired npm graph has zero version matches."
+    },
+    {
+      "inputId": "node-tooling:GHSA-gvwx-54wh-qm9j",
+      "oldVerdict": "needs_review",
+      "disposition": "resolved-for-current-evaluation-scope",
+      "reason": "Runtime-only Node26 excludes old bundled npm/Corepack; independently hydrated repaired npm graph has zero version matches."
+    },
+    {
+      "inputId": "node-tooling:GHSA-h3mg-xc3c-68pw",
+      "oldVerdict": "needs_review",
+      "disposition": "resolved-for-current-evaluation-scope",
+      "reason": "Runtime-only Node26 excludes old bundled npm/Corepack; independently hydrated repaired npm graph has zero version matches."
+    },
+    {
+      "inputId": "node-tooling:GHSA-j6r3-76f7-8jcv",
+      "oldVerdict": "needs_review",
+      "disposition": "resolved-for-current-evaluation-scope",
+      "reason": "Runtime-only Node26 excludes old bundled npm/Corepack; independently hydrated repaired npm graph has zero version matches."
+    },
+    {
+      "inputId": "node-tooling:GHSA-jfc7-64v2-mr8c",
+      "oldVerdict": "needs_review",
+      "disposition": "resolved-for-current-evaluation-scope",
+      "reason": "Runtime-only Node26 excludes old bundled npm/Corepack; independently hydrated repaired npm graph has zero version matches."
+    },
+    {
+      "inputId": "node-tooling:GHSA-mh99-v99m-4gvg",
+      "oldVerdict": "needs_review",
+      "disposition": "resolved-for-current-evaluation-scope",
+      "reason": "Runtime-only Node26 excludes old bundled npm/Corepack; independently hydrated repaired npm graph has zero version matches."
+    },
+    {
+      "inputId": "node-tooling:GHSA-mwp4-54f8-5fhr",
+      "oldVerdict": "needs_review",
+      "disposition": "resolved-for-current-evaluation-scope",
+      "reason": "Runtime-only Node26 excludes old bundled npm/Corepack; independently hydrated repaired npm graph has zero version matches."
+    },
+    {
+      "inputId": "node-tooling:GHSA-q2hr-2g5m-vwhr",
+      "oldVerdict": "needs_review",
+      "disposition": "resolved-for-current-evaluation-scope",
+      "reason": "Runtime-only Node26 excludes old bundled npm/Corepack; independently hydrated repaired npm graph has zero version matches."
+    },
+    {
+      "inputId": "node-tooling:GHSA-qhr7-859c-m2p7",
+      "oldVerdict": "needs_review",
+      "disposition": "resolved-for-current-evaluation-scope",
+      "reason": "Runtime-only Node26 excludes old bundled npm/Corepack; independently hydrated repaired npm graph has zero version matches."
+    },
+    {
+      "inputId": "node-tooling:GHSA-r292-9mhp-454m",
+      "oldVerdict": "needs_review",
+      "disposition": "resolved-for-current-evaluation-scope",
+      "reason": "Runtime-only Node26 excludes old bundled npm/Corepack; independently hydrated repaired npm graph has zero version matches."
+    },
+    {
+      "inputId": "node-tooling:GHSA-rgw5-rvv9-x895",
+      "oldVerdict": "needs_review",
+      "disposition": "resolved-for-current-evaluation-scope",
+      "reason": "Runtime-only Node26 excludes old bundled npm/Corepack; independently hydrated repaired npm graph has zero version matches."
+    },
+    {
+      "inputId": "node-tooling:GHSA-rj75-hqrm-r3gf",
+      "oldVerdict": "needs_review",
+      "disposition": "resolved-for-current-evaluation-scope",
+      "reason": "Runtime-only Node26 excludes old bundled npm/Corepack; independently hydrated repaired npm graph has zero version matches."
+    },
+    {
+      "inputId": "node-tooling:GHSA-rpw4-54j3-4h4q",
+      "oldVerdict": "needs_review",
+      "disposition": "resolved-for-current-evaluation-scope",
+      "reason": "Runtime-only Node26 excludes old bundled npm/Corepack; independently hydrated repaired npm graph has zero version matches."
+    },
+    {
+      "inputId": "node-tooling:GHSA-v2v4-37r5-5v8g",
+      "oldVerdict": "needs_review",
+      "disposition": "resolved-for-current-evaluation-scope",
+      "reason": "Runtime-only Node26 excludes old bundled npm/Corepack; independently hydrated repaired npm graph has zero version matches."
+    },
+    {
+      "inputId": "node-tooling:GHSA-vmf3-w455-68vh",
+      "oldVerdict": "needs_review",
+      "disposition": "resolved-for-current-evaluation-scope",
+      "reason": "Runtime-only Node26 excludes old bundled npm/Corepack; independently hydrated repaired npm graph has zero version matches."
+    },
+    {
+      "inputId": "node-tooling:GHSA-w4pp-8pjf-rmxw",
+      "oldVerdict": "needs_review",
+      "disposition": "resolved-for-current-evaluation-scope",
+      "reason": "Runtime-only Node26 excludes old bundled npm/Corepack; independently hydrated repaired npm graph has zero version matches."
+    },
+    {
+      "inputId": "node-tooling:GHSA-w8wr-v893-vjvp",
+      "oldVerdict": "needs_review",
+      "disposition": "resolved-for-current-evaluation-scope",
+      "reason": "Runtime-only Node26 excludes old bundled npm/Corepack; independently hydrated repaired npm graph has zero version matches."
+    },
+    {
+      "inputId": "node-tooling:GHSA-w9m9-85wc-3x92",
+      "oldVerdict": "needs_review",
+      "disposition": "resolved-for-current-evaluation-scope",
+      "reason": "Runtime-only Node26 excludes old bundled npm/Corepack; independently hydrated repaired npm graph has zero version matches."
+    },
+    {
+      "inputId": "go-toolchain:GO-2026-6601",
+      "oldVerdict": "not_actionable",
+      "disposition": "resolved-for-current-evaluation-scope",
+      "reason": "Candidate/compiler/std version pins updated; current candidate Go graph and stdlib query have zero matches; compiler vendor-source matches retained separately."
+    },
+    {
+      "inputId": "go-toolchain:GO-2026-6602",
+      "oldVerdict": "not_actionable",
+      "disposition": "resolved-for-current-evaluation-scope",
+      "reason": "Candidate/compiler/std version pins updated; current candidate Go graph and stdlib query have zero matches; compiler vendor-source matches retained separately."
+    }
+  ],
+  "current": [
+    {
+      "inputId": "pip:GHSA-5rjg-fvgr-3xxf",
+      "advisory": "GHSA-5rjg-fvgr-3xxf",
+      "aliases": [
+        "BIT-setuptools-2025-47273",
+        "CVE-2025-47273",
+        "PYSEC-2025-49"
+      ],
+      "packages": [
+        "setuptools@70.3.0"
+      ],
+      "verdict": "not-actionable-in-local-only-provisioner",
+      "evidence": [
+        "Runtime virtualenv has exactly nine locked distributions, no pip/setuptools/wheel/build.",
+        "Pip receives only a validated local wheelhouse, exact-name/version/hash lock, no-index and wheel-only options; config/environment are isolated.",
+        "Matched setuptools vendor is pkg_resources only; affected package_index/sdist/FileList implementations are absent.",
+        "CacheControl calls msgpack.loads with a new pure-Python Unpacker, not reuse of native unpacker after failure."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "pip:GHSA-6v7p-g79w-8964",
+      "advisory": "GHSA-6v7p-g79w-8964",
+      "aliases": [
+        "CVE-2026-57585",
+        "PYSEC-2026-3625"
+      ],
+      "packages": [
+        "msgpack@1.1.2"
+      ],
+      "verdict": "not-actionable-in-local-only-provisioner",
+      "evidence": [
+        "Runtime virtualenv has exactly nine locked distributions, no pip/setuptools/wheel/build.",
+        "Pip receives only a validated local wheelhouse, exact-name/version/hash lock, no-index and wheel-only options; config/environment are isolated.",
+        "Matched setuptools vendor is pkg_resources only; affected package_index/sdist/FileList implementations are absent.",
+        "CacheControl calls msgpack.loads with a new pure-Python Unpacker, not reuse of native unpacker after failure."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "pip:GHSA-8988-9cw3-xx77",
+      "advisory": "GHSA-8988-9cw3-xx77",
+      "aliases": [
+        "CVE-2026-97687",
+        "PYSEC-2026-4175"
+      ],
+      "packages": [
+        "urllib3@2.7.0"
+      ],
+      "verdict": "not-actionable-in-local-only-provisioner",
+      "evidence": [
+        "Runtime virtualenv has exactly nine locked distributions, no pip/setuptools/wheel/build.",
+        "Pip receives only a validated local wheelhouse, exact-name/version/hash lock, no-index and wheel-only options; config/environment are isolated.",
+        "Matched setuptools vendor is pkg_resources only; affected package_index/sdist/FileList implementations are absent.",
+        "CacheControl calls msgpack.loads with a new pure-Python Unpacker, not reuse of native unpacker after failure."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "pip:GHSA-gh4c-6fx4-qh6g",
+      "advisory": "GHSA-gh4c-6fx4-qh6g",
+      "aliases": [
+        "CVE-2026-97688",
+        "PYSEC-2026-4176"
+      ],
+      "packages": [
+        "urllib3@2.7.0"
+      ],
+      "verdict": "not-actionable-in-local-only-provisioner",
+      "evidence": [
+        "Runtime virtualenv has exactly nine locked distributions, no pip/setuptools/wheel/build.",
+        "Pip receives only a validated local wheelhouse, exact-name/version/hash lock, no-index and wheel-only options; config/environment are isolated.",
+        "Matched setuptools vendor is pkg_resources only; affected package_index/sdist/FileList implementations are absent.",
+        "CacheControl calls msgpack.loads with a new pure-Python Unpacker, not reuse of native unpacker after failure."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "pip:GHSA-h35f-9h28-mq5c",
+      "advisory": "GHSA-h35f-9h28-mq5c",
+      "aliases": [
+        "BIT-setuptools-2026-59890",
+        "CVE-2026-59890",
+        "PYSEC-2026-3447"
+      ],
+      "packages": [
+        "setuptools@70.3.0"
+      ],
+      "verdict": "not-actionable-in-local-only-provisioner",
+      "evidence": [
+        "Runtime virtualenv has exactly nine locked distributions, no pip/setuptools/wheel/build.",
+        "Pip receives only a validated local wheelhouse, exact-name/version/hash lock, no-index and wheel-only options; config/environment are isolated.",
+        "Matched setuptools vendor is pkg_resources only; affected package_index/sdist/FileList implementations are absent.",
+        "CacheControl calls msgpack.loads with a new pure-Python Unpacker, not reuse of native unpacker after failure."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "pip:GHSA-vxq7-64xx-v4gw",
+      "advisory": "GHSA-vxq7-64xx-v4gw",
+      "aliases": [
+        "CVE-2026-97689",
+        "PYSEC-2026-4177"
+      ],
+      "packages": [
+        "urllib3@2.7.0"
+      ],
+      "verdict": "not-actionable-in-local-only-provisioner",
+      "evidence": [
+        "Runtime virtualenv has exactly nine locked distributions, no pip/setuptools/wheel/build.",
+        "Pip receives only a validated local wheelhouse, exact-name/version/hash lock, no-index and wheel-only options; config/environment are isolated.",
+        "Matched setuptools vendor is pkg_resources only; affected package_index/sdist/FileList implementations are absent.",
+        "CacheControl calls msgpack.loads with a new pure-Python Unpacker, not reuse of native unpacker after failure."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "pip:PYSEC-2025-49",
+      "advisory": "PYSEC-2025-49",
+      "aliases": [
+        "BIT-setuptools-2025-47273",
+        "CVE-2025-47273",
+        "GHSA-5rjg-fvgr-3xxf"
+      ],
+      "packages": [
+        "setuptools@70.3.0"
+      ],
+      "verdict": "not-actionable-in-local-only-provisioner",
+      "evidence": [
+        "Runtime virtualenv has exactly nine locked distributions, no pip/setuptools/wheel/build.",
+        "Pip receives only a validated local wheelhouse, exact-name/version/hash lock, no-index and wheel-only options; config/environment are isolated.",
+        "Matched setuptools vendor is pkg_resources only; affected package_index/sdist/FileList implementations are absent.",
+        "CacheControl calls msgpack.loads with a new pure-Python Unpacker, not reuse of native unpacker after failure."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "pip:PYSEC-2026-3447",
+      "advisory": "PYSEC-2026-3447",
+      "aliases": [
+        "BIT-setuptools-2026-59890",
+        "CVE-2026-59890",
+        "GHSA-h35f-9h28-mq5c"
+      ],
+      "packages": [
+        "setuptools@70.3.0"
+      ],
+      "verdict": "not-actionable-in-local-only-provisioner",
+      "evidence": [
+        "Runtime virtualenv has exactly nine locked distributions, no pip/setuptools/wheel/build.",
+        "Pip receives only a validated local wheelhouse, exact-name/version/hash lock, no-index and wheel-only options; config/environment are isolated.",
+        "Matched setuptools vendor is pkg_resources only; affected package_index/sdist/FileList implementations are absent.",
+        "CacheControl calls msgpack.loads with a new pure-Python Unpacker, not reuse of native unpacker after failure."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "pip:PYSEC-2026-3625",
+      "advisory": "PYSEC-2026-3625",
+      "aliases": [
+        "CVE-2026-57585",
+        "GHSA-6v7p-g79w-8964"
+      ],
+      "packages": [
+        "msgpack@1.1.2"
+      ],
+      "verdict": "not-actionable-in-local-only-provisioner",
+      "evidence": [
+        "Runtime virtualenv has exactly nine locked distributions, no pip/setuptools/wheel/build.",
+        "Pip receives only a validated local wheelhouse, exact-name/version/hash lock, no-index and wheel-only options; config/environment are isolated.",
+        "Matched setuptools vendor is pkg_resources only; affected package_index/sdist/FileList implementations are absent.",
+        "CacheControl calls msgpack.loads with a new pure-Python Unpacker, not reuse of native unpacker after failure."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "pip:PYSEC-2026-4175",
+      "advisory": "PYSEC-2026-4175",
+      "aliases": [
+        "CVE-2026-97687",
+        "GHSA-8988-9cw3-xx77"
+      ],
+      "packages": [
+        "urllib3@2.7.0"
+      ],
+      "verdict": "not-actionable-in-local-only-provisioner",
+      "evidence": [
+        "Runtime virtualenv has exactly nine locked distributions, no pip/setuptools/wheel/build.",
+        "Pip receives only a validated local wheelhouse, exact-name/version/hash lock, no-index and wheel-only options; config/environment are isolated.",
+        "Matched setuptools vendor is pkg_resources only; affected package_index/sdist/FileList implementations are absent.",
+        "CacheControl calls msgpack.loads with a new pure-Python Unpacker, not reuse of native unpacker after failure."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "pip:PYSEC-2026-4176",
+      "advisory": "PYSEC-2026-4176",
+      "aliases": [
+        "CVE-2026-97688",
+        "GHSA-gh4c-6fx4-qh6g"
+      ],
+      "packages": [
+        "urllib3@2.7.0"
+      ],
+      "verdict": "not-actionable-in-local-only-provisioner",
+      "evidence": [
+        "Runtime virtualenv has exactly nine locked distributions, no pip/setuptools/wheel/build.",
+        "Pip receives only a validated local wheelhouse, exact-name/version/hash lock, no-index and wheel-only options; config/environment are isolated.",
+        "Matched setuptools vendor is pkg_resources only; affected package_index/sdist/FileList implementations are absent.",
+        "CacheControl calls msgpack.loads with a new pure-Python Unpacker, not reuse of native unpacker after failure."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "pip:PYSEC-2026-4177",
+      "advisory": "PYSEC-2026-4177",
+      "aliases": [
+        "CVE-2026-97689",
+        "GHSA-vxq7-64xx-v4gw"
+      ],
+      "packages": [
+        "urllib3@2.7.0"
+      ],
+      "verdict": "not-actionable-in-local-only-provisioner",
+      "evidence": [
+        "Runtime virtualenv has exactly nine locked distributions, no pip/setuptools/wheel/build.",
+        "Pip receives only a validated local wheelhouse, exact-name/version/hash lock, no-index and wheel-only options; config/environment are isolated.",
+        "Matched setuptools vendor is pkg_resources only; affected package_index/sdist/FileList implementations are absent.",
+        "CacheControl calls msgpack.loads with a new pure-Python Unpacker, not reuse of native unpacker after failure."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "rustCompiler:GHSA-2mjx-qc3c-rqvc",
+      "advisory": "GHSA-2mjx-qc3c-rqvc",
+      "aliases": [
+        "RUSTSEC-2026-0285"
+      ],
+      "packages": [
+        "rustls@0.23.13",
+        "rustls@0.23.41"
+      ],
+      "verdict": "reviewed-upstream-source-superset-offline-only",
+      "evidence": [
+        "COPYRIGHT compiler/stdlib and exact Cargo source lock are declared all-target/dev supersets, not a target binary call graph.",
+        "Selected Rust candidate dependency graph is independently scanned with zero exact-version matches.",
+        "Only fixed reviewed sources/locks are compiled; Cargo metadata/build/test use offline/frozen with verified preprovisioned cache, no git or network retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "rustCompiler:GHSA-434x-w66g-qw3r",
+      "advisory": "GHSA-434x-w66g-qw3r",
+      "aliases": [
+        "CVE-2026-25541",
+        "RUSTSEC-2026-0007"
+      ],
+      "packages": [
+        "bytes@1.7.1"
+      ],
+      "verdict": "reviewed-upstream-source-superset-offline-only",
+      "evidence": [
+        "COPYRIGHT compiler/stdlib and exact Cargo source lock are declared all-target/dev supersets, not a target binary call graph.",
+        "Selected Rust candidate dependency graph is independently scanned with zero exact-version matches.",
+        "Only fixed reviewed sources/locks are compiled; Cargo metadata/build/test use offline/frozen with verified preprovisioned cache, no git or network retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "rustCompiler:GHSA-4w2j-m93h-cj5j",
+      "advisory": "GHSA-4w2j-m93h-cj5j",
+      "aliases": [
+        "CVE-2026-25800",
+        "RUSTSEC-2026-0185"
+      ],
+      "packages": [
+        "quinn-proto@0.11.8"
+      ],
+      "verdict": "reviewed-upstream-source-superset-offline-only",
+      "evidence": [
+        "COPYRIGHT compiler/stdlib and exact Cargo source lock are declared all-target/dev supersets, not a target binary call graph.",
+        "Selected Rust candidate dependency graph is independently scanned with zero exact-version matches.",
+        "Only fixed reviewed sources/locks are compiled; Cargo metadata/build/test use offline/frozen with verified preprovisioned cache, no git or network retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "rustCompiler:GHSA-6xvm-j4wr-6v98",
+      "advisory": "GHSA-6xvm-j4wr-6v98",
+      "aliases": [
+        "CVE-2026-31812",
+        "RUSTSEC-2026-0037"
+      ],
+      "packages": [
+        "quinn-proto@0.11.8"
+      ],
+      "verdict": "reviewed-upstream-source-superset-offline-only",
+      "evidence": [
+        "COPYRIGHT compiler/stdlib and exact Cargo source lock are declared all-target/dev supersets, not a target binary call graph.",
+        "Selected Rust candidate dependency graph is independently scanned with zero exact-version matches.",
+        "Only fixed reviewed sources/locks are compiled; Cargo metadata/build/test use offline/frozen with verified preprovisioned cache, no git or network retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "rustCompiler:GHSA-7gcf-g7xr-8hxj",
+      "advisory": "GHSA-7gcf-g7xr-8hxj",
+      "aliases": [],
+      "packages": [
+        "serde_with@3.18.0"
+      ],
+      "verdict": "reviewed-upstream-source-superset-offline-only",
+      "evidence": [
+        "COPYRIGHT compiler/stdlib and exact Cargo source lock are declared all-target/dev supersets, not a target binary call graph.",
+        "Selected Rust candidate dependency graph is independently scanned with zero exact-version matches.",
+        "Only fixed reviewed sources/locks are compiled; Cargo metadata/build/test use offline/frozen with verified preprovisioned cache, no git or network retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "rustCompiler:GHSA-82j2-j2ch-gfr8",
+      "advisory": "GHSA-82j2-j2ch-gfr8",
+      "aliases": [
+        "CVE-2026-93599",
+        "RUSTSEC-2026-0104"
+      ],
+      "packages": [
+        "rustls-webpki@0.102.8"
+      ],
+      "verdict": "reviewed-upstream-source-superset-offline-only",
+      "evidence": [
+        "COPYRIGHT compiler/stdlib and exact Cargo source lock are declared all-target/dev supersets, not a target binary call graph.",
+        "Selected Rust candidate dependency graph is independently scanned with zero exact-version matches.",
+        "Only fixed reviewed sources/locks are compiled; Cargo metadata/build/test use offline/frozen with verified preprovisioned cache, no git or network retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "rustCompiler:GHSA-965h-392x-2mh5",
+      "advisory": "GHSA-965h-392x-2mh5",
+      "aliases": [
+        "CVE-2026-93600",
+        "RUSTSEC-2026-0098"
+      ],
+      "packages": [
+        "rustls-webpki@0.102.8"
+      ],
+      "verdict": "reviewed-upstream-source-superset-offline-only",
+      "evidence": [
+        "COPYRIGHT compiler/stdlib and exact Cargo source lock are declared all-target/dev supersets, not a target binary call graph.",
+        "Selected Rust candidate dependency graph is independently scanned with zero exact-version matches.",
+        "Only fixed reviewed sources/locks are compiled; Cargo metadata/build/test use offline/frozen with verified preprovisioned cache, no git or network retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "rustCompiler:GHSA-cq8v-f236-94qc",
+      "advisory": "GHSA-cq8v-f236-94qc",
+      "aliases": [
+        "RUSTSEC-2026-0097"
+      ],
+      "packages": [
+        "rand@0.8.5"
+      ],
+      "verdict": "reviewed-upstream-source-superset-offline-only",
+      "evidence": [
+        "COPYRIGHT compiler/stdlib and exact Cargo source lock are declared all-target/dev supersets, not a target binary call graph.",
+        "Selected Rust candidate dependency graph is independently scanned with zero exact-version matches.",
+        "Only fixed reviewed sources/locks are compiled; Cargo metadata/build/test use offline/frozen with verified preprovisioned cache, no git or network retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "rustCompiler:GHSA-h97m-ww89-6jmq",
+      "advisory": "GHSA-h97m-ww89-6jmq",
+      "aliases": [
+        "CVE-2024-12224",
+        "RUSTSEC-2024-0421"
+      ],
+      "packages": [
+        "idna@0.5.0"
+      ],
+      "verdict": "reviewed-upstream-source-superset-offline-only",
+      "evidence": [
+        "COPYRIGHT compiler/stdlib and exact Cargo source lock are declared all-target/dev supersets, not a target binary call graph.",
+        "Selected Rust candidate dependency graph is independently scanned with zero exact-version matches.",
+        "Only fixed reviewed sources/locks are compiled; Cargo metadata/build/test use offline/frozen with verified preprovisioned cache, no git or network retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "rustCompiler:GHSA-j39j-6gw9-jw6h",
+      "advisory": "GHSA-j39j-6gw9-jw6h",
+      "aliases": [
+        "RUSTSEC-2026-0008"
+      ],
+      "packages": [
+        "git2@0.20.2"
+      ],
+      "verdict": "reviewed-upstream-source-superset-offline-only",
+      "evidence": [
+        "COPYRIGHT compiler/stdlib and exact Cargo source lock are declared all-target/dev supersets, not a target binary call graph.",
+        "Selected Rust candidate dependency graph is independently scanned with zero exact-version matches.",
+        "Only fixed reviewed sources/locks are compiled; Cargo metadata/build/test use offline/frozen with verified preprovisioned cache, no git or network retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "rustCompiler:GHSA-pwjx-qhcg-rvj4",
+      "advisory": "GHSA-pwjx-qhcg-rvj4",
+      "aliases": [
+        "CVE-2026-93602",
+        "RUSTSEC-2026-0049"
+      ],
+      "packages": [
+        "rustls-webpki@0.102.8"
+      ],
+      "verdict": "reviewed-upstream-source-superset-offline-only",
+      "evidence": [
+        "COPYRIGHT compiler/stdlib and exact Cargo source lock are declared all-target/dev supersets, not a target binary call graph.",
+        "Selected Rust candidate dependency graph is independently scanned with zero exact-version matches.",
+        "Only fixed reviewed sources/locks are compiled; Cargo metadata/build/test use offline/frozen with verified preprovisioned cache, no git or network retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "rustCompiler:GHSA-qg5g-gv98-5ffh",
+      "advisory": "GHSA-qg5g-gv98-5ffh",
+      "aliases": [
+        "CVE-2024-11738",
+        "RUSTSEC-2024-0399"
+      ],
+      "packages": [
+        "rustls@0.23.13"
+      ],
+      "verdict": "reviewed-upstream-source-superset-offline-only",
+      "evidence": [
+        "COPYRIGHT compiler/stdlib and exact Cargo source lock are declared all-target/dev supersets, not a target binary call graph.",
+        "Selected Rust candidate dependency graph is independently scanned with zero exact-version matches.",
+        "Only fixed reviewed sources/locks are compiled; Cargo metadata/build/test use offline/frozen with verified preprovisioned cache, no git or network retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "rustCompiler:GHSA-rr8g-9fpq-6wmg",
+      "advisory": "GHSA-rr8g-9fpq-6wmg",
+      "aliases": [
+        "RUSTSEC-2025-0023"
+      ],
+      "packages": [
+        "tokio@1.37.0"
+      ],
+      "verdict": "reviewed-upstream-source-superset-offline-only",
+      "evidence": [
+        "COPYRIGHT compiler/stdlib and exact Cargo source lock are declared all-target/dev supersets, not a target binary call graph.",
+        "Selected Rust candidate dependency graph is independently scanned with zero exact-version matches.",
+        "Only fixed reviewed sources/locks are compiled; Cargo metadata/build/test use offline/frozen with verified preprovisioned cache, no git or network retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "rustCompiler:GHSA-xgp8-3hg3-c2mh",
+      "advisory": "GHSA-xgp8-3hg3-c2mh",
+      "aliases": [
+        "CVE-2026-93601",
+        "RUSTSEC-2026-0099"
+      ],
+      "packages": [
+        "rustls-webpki@0.102.8"
+      ],
+      "verdict": "reviewed-upstream-source-superset-offline-only",
+      "evidence": [
+        "COPYRIGHT compiler/stdlib and exact Cargo source lock are declared all-target/dev supersets, not a target binary call graph.",
+        "Selected Rust candidate dependency graph is independently scanned with zero exact-version matches.",
+        "Only fixed reviewed sources/locks are compiled; Cargo metadata/build/test use offline/frozen with verified preprovisioned cache, no git or network retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "rustCompiler:RUSTSEC-2024-0320",
+      "advisory": "RUSTSEC-2024-0320",
+      "aliases": [],
+      "packages": [
+        "yaml-rust@0.4.5"
+      ],
+      "verdict": "reviewed-upstream-source-superset-offline-only",
+      "evidence": [
+        "COPYRIGHT compiler/stdlib and exact Cargo source lock are declared all-target/dev supersets, not a target binary call graph.",
+        "Selected Rust candidate dependency graph is independently scanned with zero exact-version matches.",
+        "Only fixed reviewed sources/locks are compiled; Cargo metadata/build/test use offline/frozen with verified preprovisioned cache, no git or network retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "rustCompiler:RUSTSEC-2024-0399",
+      "advisory": "RUSTSEC-2024-0399",
+      "aliases": [
+        "CVE-2024-11738",
+        "GHSA-qg5g-gv98-5ffh"
+      ],
+      "packages": [
+        "rustls@0.23.13"
+      ],
+      "verdict": "reviewed-upstream-source-superset-offline-only",
+      "evidence": [
+        "COPYRIGHT compiler/stdlib and exact Cargo source lock are declared all-target/dev supersets, not a target binary call graph.",
+        "Selected Rust candidate dependency graph is independently scanned with zero exact-version matches.",
+        "Only fixed reviewed sources/locks are compiled; Cargo metadata/build/test use offline/frozen with verified preprovisioned cache, no git or network retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "rustCompiler:RUSTSEC-2024-0421",
+      "advisory": "RUSTSEC-2024-0421",
+      "aliases": [
+        "CVE-2024-12224",
+        "GHSA-h97m-ww89-6jmq"
+      ],
+      "packages": [
+        "idna@0.5.0"
+      ],
+      "verdict": "reviewed-upstream-source-superset-offline-only",
+      "evidence": [
+        "COPYRIGHT compiler/stdlib and exact Cargo source lock are declared all-target/dev supersets, not a target binary call graph.",
+        "Selected Rust candidate dependency graph is independently scanned with zero exact-version matches.",
+        "Only fixed reviewed sources/locks are compiled; Cargo metadata/build/test use offline/frozen with verified preprovisioned cache, no git or network retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "rustCompiler:RUSTSEC-2024-0436",
+      "advisory": "RUSTSEC-2024-0436",
+      "aliases": [],
+      "packages": [
+        "paste@1.0.15"
+      ],
+      "verdict": "reviewed-upstream-source-superset-offline-only",
+      "evidence": [
+        "COPYRIGHT compiler/stdlib and exact Cargo source lock are declared all-target/dev supersets, not a target binary call graph.",
+        "Selected Rust candidate dependency graph is independently scanned with zero exact-version matches.",
+        "Only fixed reviewed sources/locks are compiled; Cargo metadata/build/test use offline/frozen with verified preprovisioned cache, no git or network retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "rustCompiler:RUSTSEC-2025-0023",
+      "advisory": "RUSTSEC-2025-0023",
+      "aliases": [
+        "GHSA-rr8g-9fpq-6wmg"
+      ],
+      "packages": [
+        "tokio@1.37.0"
+      ],
+      "verdict": "reviewed-upstream-source-superset-offline-only",
+      "evidence": [
+        "COPYRIGHT compiler/stdlib and exact Cargo source lock are declared all-target/dev supersets, not a target binary call graph.",
+        "Selected Rust candidate dependency graph is independently scanned with zero exact-version matches.",
+        "Only fixed reviewed sources/locks are compiled; Cargo metadata/build/test use offline/frozen with verified preprovisioned cache, no git or network retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "rustCompiler:RUSTSEC-2025-0056",
+      "advisory": "RUSTSEC-2025-0056",
+      "aliases": [],
+      "packages": [
+        "adler@1.0.2"
+      ],
+      "verdict": "reviewed-upstream-source-superset-offline-only",
+      "evidence": [
+        "COPYRIGHT compiler/stdlib and exact Cargo source lock are declared all-target/dev supersets, not a target binary call graph.",
+        "Selected Rust candidate dependency graph is independently scanned with zero exact-version matches.",
+        "Only fixed reviewed sources/locks are compiled; Cargo metadata/build/test use offline/frozen with verified preprovisioned cache, no git or network retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "rustCompiler:RUSTSEC-2025-0057",
+      "advisory": "RUSTSEC-2025-0057",
+      "aliases": [],
+      "packages": [
+        "fxhash@0.2.1"
+      ],
+      "verdict": "reviewed-upstream-source-superset-offline-only",
+      "evidence": [
+        "COPYRIGHT compiler/stdlib and exact Cargo source lock are declared all-target/dev supersets, not a target binary call graph.",
+        "Selected Rust candidate dependency graph is independently scanned with zero exact-version matches.",
+        "Only fixed reviewed sources/locks are compiled; Cargo metadata/build/test use offline/frozen with verified preprovisioned cache, no git or network retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "rustCompiler:RUSTSEC-2025-0134",
+      "advisory": "RUSTSEC-2025-0134",
+      "aliases": [],
+      "packages": [
+        "rustls-pemfile@2.1.3"
+      ],
+      "verdict": "reviewed-upstream-source-superset-offline-only",
+      "evidence": [
+        "COPYRIGHT compiler/stdlib and exact Cargo source lock are declared all-target/dev supersets, not a target binary call graph.",
+        "Selected Rust candidate dependency graph is independently scanned with zero exact-version matches.",
+        "Only fixed reviewed sources/locks are compiled; Cargo metadata/build/test use offline/frozen with verified preprovisioned cache, no git or network retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "rustCompiler:RUSTSEC-2025-0141",
+      "advisory": "RUSTSEC-2025-0141",
+      "aliases": [],
+      "packages": [
+        "bincode@1.3.3"
+      ],
+      "verdict": "reviewed-upstream-source-superset-offline-only",
+      "evidence": [
+        "COPYRIGHT compiler/stdlib and exact Cargo source lock are declared all-target/dev supersets, not a target binary call graph.",
+        "Selected Rust candidate dependency graph is independently scanned with zero exact-version matches.",
+        "Only fixed reviewed sources/locks are compiled; Cargo metadata/build/test use offline/frozen with verified preprovisioned cache, no git or network retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "rustCompiler:RUSTSEC-2026-0007",
+      "advisory": "RUSTSEC-2026-0007",
+      "aliases": [
+        "CVE-2026-25541",
+        "GHSA-434x-w66g-qw3r"
+      ],
+      "packages": [
+        "bytes@1.7.1"
+      ],
+      "verdict": "reviewed-upstream-source-superset-offline-only",
+      "evidence": [
+        "COPYRIGHT compiler/stdlib and exact Cargo source lock are declared all-target/dev supersets, not a target binary call graph.",
+        "Selected Rust candidate dependency graph is independently scanned with zero exact-version matches.",
+        "Only fixed reviewed sources/locks are compiled; Cargo metadata/build/test use offline/frozen with verified preprovisioned cache, no git or network retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "rustCompiler:RUSTSEC-2026-0008",
+      "advisory": "RUSTSEC-2026-0008",
+      "aliases": [
+        "GHSA-j39j-6gw9-jw6h"
+      ],
+      "packages": [
+        "git2@0.20.2"
+      ],
+      "verdict": "reviewed-upstream-source-superset-offline-only",
+      "evidence": [
+        "COPYRIGHT compiler/stdlib and exact Cargo source lock are declared all-target/dev supersets, not a target binary call graph.",
+        "Selected Rust candidate dependency graph is independently scanned with zero exact-version matches.",
+        "Only fixed reviewed sources/locks are compiled; Cargo metadata/build/test use offline/frozen with verified preprovisioned cache, no git or network retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "rustCompiler:RUSTSEC-2026-0037",
+      "advisory": "RUSTSEC-2026-0037",
+      "aliases": [
+        "CVE-2026-31812",
+        "GHSA-6xvm-j4wr-6v98"
+      ],
+      "packages": [
+        "quinn-proto@0.11.8"
+      ],
+      "verdict": "reviewed-upstream-source-superset-offline-only",
+      "evidence": [
+        "COPYRIGHT compiler/stdlib and exact Cargo source lock are declared all-target/dev supersets, not a target binary call graph.",
+        "Selected Rust candidate dependency graph is independently scanned with zero exact-version matches.",
+        "Only fixed reviewed sources/locks are compiled; Cargo metadata/build/test use offline/frozen with verified preprovisioned cache, no git or network retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "rustCompiler:RUSTSEC-2026-0049",
+      "advisory": "RUSTSEC-2026-0049",
+      "aliases": [
+        "CVE-2026-93602",
+        "GHSA-pwjx-qhcg-rvj4"
+      ],
+      "packages": [
+        "rustls-webpki@0.102.8"
+      ],
+      "verdict": "reviewed-upstream-source-superset-offline-only",
+      "evidence": [
+        "COPYRIGHT compiler/stdlib and exact Cargo source lock are declared all-target/dev supersets, not a target binary call graph.",
+        "Selected Rust candidate dependency graph is independently scanned with zero exact-version matches.",
+        "Only fixed reviewed sources/locks are compiled; Cargo metadata/build/test use offline/frozen with verified preprovisioned cache, no git or network retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "rustCompiler:RUSTSEC-2026-0097",
+      "advisory": "RUSTSEC-2026-0097",
+      "aliases": [
+        "GHSA-cq8v-f236-94qc"
+      ],
+      "packages": [
+        "rand@0.8.5"
+      ],
+      "verdict": "reviewed-upstream-source-superset-offline-only",
+      "evidence": [
+        "COPYRIGHT compiler/stdlib and exact Cargo source lock are declared all-target/dev supersets, not a target binary call graph.",
+        "Selected Rust candidate dependency graph is independently scanned with zero exact-version matches.",
+        "Only fixed reviewed sources/locks are compiled; Cargo metadata/build/test use offline/frozen with verified preprovisioned cache, no git or network retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "rustCompiler:RUSTSEC-2026-0098",
+      "advisory": "RUSTSEC-2026-0098",
+      "aliases": [
+        "CVE-2026-93600",
+        "GHSA-965h-392x-2mh5"
+      ],
+      "packages": [
+        "rustls-webpki@0.102.8"
+      ],
+      "verdict": "reviewed-upstream-source-superset-offline-only",
+      "evidence": [
+        "COPYRIGHT compiler/stdlib and exact Cargo source lock are declared all-target/dev supersets, not a target binary call graph.",
+        "Selected Rust candidate dependency graph is independently scanned with zero exact-version matches.",
+        "Only fixed reviewed sources/locks are compiled; Cargo metadata/build/test use offline/frozen with verified preprovisioned cache, no git or network retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "rustCompiler:RUSTSEC-2026-0099",
+      "advisory": "RUSTSEC-2026-0099",
+      "aliases": [
+        "CVE-2026-93601",
+        "GHSA-xgp8-3hg3-c2mh"
+      ],
+      "packages": [
+        "rustls-webpki@0.102.8"
+      ],
+      "verdict": "reviewed-upstream-source-superset-offline-only",
+      "evidence": [
+        "COPYRIGHT compiler/stdlib and exact Cargo source lock are declared all-target/dev supersets, not a target binary call graph.",
+        "Selected Rust candidate dependency graph is independently scanned with zero exact-version matches.",
+        "Only fixed reviewed sources/locks are compiled; Cargo metadata/build/test use offline/frozen with verified preprovisioned cache, no git or network retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "rustCompiler:RUSTSEC-2026-0104",
+      "advisory": "RUSTSEC-2026-0104",
+      "aliases": [
+        "CVE-2026-93599",
+        "GHSA-82j2-j2ch-gfr8"
+      ],
+      "packages": [
+        "rustls-webpki@0.102.8"
+      ],
+      "verdict": "reviewed-upstream-source-superset-offline-only",
+      "evidence": [
+        "COPYRIGHT compiler/stdlib and exact Cargo source lock are declared all-target/dev supersets, not a target binary call graph.",
+        "Selected Rust candidate dependency graph is independently scanned with zero exact-version matches.",
+        "Only fixed reviewed sources/locks are compiled; Cargo metadata/build/test use offline/frozen with verified preprovisioned cache, no git or network retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "rustCompiler:RUSTSEC-2026-0173",
+      "advisory": "RUSTSEC-2026-0173",
+      "aliases": [],
+      "packages": [
+        "proc-macro-error2@2.0.1"
+      ],
+      "verdict": "reviewed-upstream-source-superset-offline-only",
+      "evidence": [
+        "COPYRIGHT compiler/stdlib and exact Cargo source lock are declared all-target/dev supersets, not a target binary call graph.",
+        "Selected Rust candidate dependency graph is independently scanned with zero exact-version matches.",
+        "Only fixed reviewed sources/locks are compiled; Cargo metadata/build/test use offline/frozen with verified preprovisioned cache, no git or network retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "rustCompiler:RUSTSEC-2026-0183",
+      "advisory": "RUSTSEC-2026-0183",
+      "aliases": [],
+      "packages": [
+        "git2@0.20.2"
+      ],
+      "verdict": "reviewed-upstream-source-superset-offline-only",
+      "evidence": [
+        "COPYRIGHT compiler/stdlib and exact Cargo source lock are declared all-target/dev supersets, not a target binary call graph.",
+        "Selected Rust candidate dependency graph is independently scanned with zero exact-version matches.",
+        "Only fixed reviewed sources/locks are compiled; Cargo metadata/build/test use offline/frozen with verified preprovisioned cache, no git or network retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "rustCompiler:RUSTSEC-2026-0184",
+      "advisory": "RUSTSEC-2026-0184",
+      "aliases": [],
+      "packages": [
+        "git2@0.20.2"
+      ],
+      "verdict": "reviewed-upstream-source-superset-offline-only",
+      "evidence": [
+        "COPYRIGHT compiler/stdlib and exact Cargo source lock are declared all-target/dev supersets, not a target binary call graph.",
+        "Selected Rust candidate dependency graph is independently scanned with zero exact-version matches.",
+        "Only fixed reviewed sources/locks are compiled; Cargo metadata/build/test use offline/frozen with verified preprovisioned cache, no git or network retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "rustCompiler:RUSTSEC-2026-0185",
+      "advisory": "RUSTSEC-2026-0185",
+      "aliases": [
+        "CVE-2026-25800",
+        "GHSA-4w2j-m93h-cj5j"
+      ],
+      "packages": [
+        "quinn-proto@0.11.8"
+      ],
+      "verdict": "reviewed-upstream-source-superset-offline-only",
+      "evidence": [
+        "COPYRIGHT compiler/stdlib and exact Cargo source lock are declared all-target/dev supersets, not a target binary call graph.",
+        "Selected Rust candidate dependency graph is independently scanned with zero exact-version matches.",
+        "Only fixed reviewed sources/locks are compiled; Cargo metadata/build/test use offline/frozen with verified preprovisioned cache, no git or network retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "rustCompiler:RUSTSEC-2026-0186",
+      "advisory": "RUSTSEC-2026-0186",
+      "aliases": [],
+      "packages": [
+        "memmap2@0.2.3"
+      ],
+      "verdict": "reviewed-upstream-source-superset-offline-only",
+      "evidence": [
+        "COPYRIGHT compiler/stdlib and exact Cargo source lock are declared all-target/dev supersets, not a target binary call graph.",
+        "Selected Rust candidate dependency graph is independently scanned with zero exact-version matches.",
+        "Only fixed reviewed sources/locks are compiled; Cargo metadata/build/test use offline/frozen with verified preprovisioned cache, no git or network retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "rustCompiler:RUSTSEC-2026-0190",
+      "advisory": "RUSTSEC-2026-0190",
+      "aliases": [],
+      "packages": [
+        "anyhow@1.0.102"
+      ],
+      "verdict": "reviewed-upstream-source-superset-offline-only",
+      "evidence": [
+        "COPYRIGHT compiler/stdlib and exact Cargo source lock are declared all-target/dev supersets, not a target binary call graph.",
+        "Selected Rust candidate dependency graph is independently scanned with zero exact-version matches.",
+        "Only fixed reviewed sources/locks are compiled; Cargo metadata/build/test use offline/frozen with verified preprovisioned cache, no git or network retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "rustCompiler:RUSTSEC-2026-0194",
+      "advisory": "RUSTSEC-2026-0194",
+      "aliases": [],
+      "packages": [
+        "quick-xml@0.33.0",
+        "quick-xml@0.37.5",
+        "quick-xml@0.39.4"
+      ],
+      "verdict": "reviewed-upstream-source-superset-offline-only",
+      "evidence": [
+        "COPYRIGHT compiler/stdlib and exact Cargo source lock are declared all-target/dev supersets, not a target binary call graph.",
+        "Selected Rust candidate dependency graph is independently scanned with zero exact-version matches.",
+        "Only fixed reviewed sources/locks are compiled; Cargo metadata/build/test use offline/frozen with verified preprovisioned cache, no git or network retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "rustCompiler:RUSTSEC-2026-0195",
+      "advisory": "RUSTSEC-2026-0195",
+      "aliases": [],
+      "packages": [
+        "quick-xml@0.33.0",
+        "quick-xml@0.37.5",
+        "quick-xml@0.39.4"
+      ],
+      "verdict": "reviewed-upstream-source-superset-offline-only",
+      "evidence": [
+        "COPYRIGHT compiler/stdlib and exact Cargo source lock are declared all-target/dev supersets, not a target binary call graph.",
+        "Selected Rust candidate dependency graph is independently scanned with zero exact-version matches.",
+        "Only fixed reviewed sources/locks are compiled; Cargo metadata/build/test use offline/frozen with verified preprovisioned cache, no git or network retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "rustCompiler:RUSTSEC-2026-0202",
+      "advisory": "RUSTSEC-2026-0202",
+      "aliases": [],
+      "packages": [
+        "cxx@1.0.188"
+      ],
+      "verdict": "reviewed-upstream-source-superset-offline-only",
+      "evidence": [
+        "COPYRIGHT compiler/stdlib and exact Cargo source lock are declared all-target/dev supersets, not a target binary call graph.",
+        "Selected Rust candidate dependency graph is independently scanned with zero exact-version matches.",
+        "Only fixed reviewed sources/locks are compiled; Cargo metadata/build/test use offline/frozen with verified preprovisioned cache, no git or network retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "rustCompiler:RUSTSEC-2026-0204",
+      "advisory": "RUSTSEC-2026-0204",
+      "aliases": [],
+      "packages": [
+        "crossbeam-epoch@0.9.18"
+      ],
+      "verdict": "reviewed-upstream-source-superset-offline-only",
+      "evidence": [
+        "COPYRIGHT compiler/stdlib and exact Cargo source lock are declared all-target/dev supersets, not a target binary call graph.",
+        "Selected Rust candidate dependency graph is independently scanned with zero exact-version matches.",
+        "Only fixed reviewed sources/locks are compiled; Cargo metadata/build/test use offline/frozen with verified preprovisioned cache, no git or network retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "rustCompiler:RUSTSEC-2026-0247",
+      "advisory": "RUSTSEC-2026-0247",
+      "aliases": [],
+      "packages": [
+        "bitmaps@2.1.0"
+      ],
+      "verdict": "reviewed-upstream-source-superset-offline-only",
+      "evidence": [
+        "COPYRIGHT compiler/stdlib and exact Cargo source lock are declared all-target/dev supersets, not a target binary call graph.",
+        "Selected Rust candidate dependency graph is independently scanned with zero exact-version matches.",
+        "Only fixed reviewed sources/locks are compiled; Cargo metadata/build/test use offline/frozen with verified preprovisioned cache, no git or network retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "rustCompiler:RUSTSEC-2026-0250",
+      "advisory": "RUSTSEC-2026-0250",
+      "aliases": [],
+      "packages": [
+        "im-rc@15.1.0"
+      ],
+      "verdict": "reviewed-upstream-source-superset-offline-only",
+      "evidence": [
+        "COPYRIGHT compiler/stdlib and exact Cargo source lock are declared all-target/dev supersets, not a target binary call graph.",
+        "Selected Rust candidate dependency graph is independently scanned with zero exact-version matches.",
+        "Only fixed reviewed sources/locks are compiled; Cargo metadata/build/test use offline/frozen with verified preprovisioned cache, no git or network retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "rustCompiler:RUSTSEC-2026-0251",
+      "advisory": "RUSTSEC-2026-0251",
+      "aliases": [],
+      "packages": [
+        "sized-chunks@0.6.5"
+      ],
+      "verdict": "reviewed-upstream-source-superset-offline-only",
+      "evidence": [
+        "COPYRIGHT compiler/stdlib and exact Cargo source lock are declared all-target/dev supersets, not a target binary call graph.",
+        "Selected Rust candidate dependency graph is independently scanned with zero exact-version matches.",
+        "Only fixed reviewed sources/locks are compiled; Cargo metadata/build/test use offline/frozen with verified preprovisioned cache, no git or network retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "rustCompiler:RUSTSEC-2026-0253",
+      "advisory": "RUSTSEC-2026-0253",
+      "aliases": [],
+      "packages": [
+        "lru@0.18.0"
+      ],
+      "verdict": "reviewed-upstream-source-superset-offline-only",
+      "evidence": [
+        "COPYRIGHT compiler/stdlib and exact Cargo source lock are declared all-target/dev supersets, not a target binary call graph.",
+        "Selected Rust candidate dependency graph is independently scanned with zero exact-version matches.",
+        "Only fixed reviewed sources/locks are compiled; Cargo metadata/build/test use offline/frozen with verified preprovisioned cache, no git or network retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "rustCompiler:RUSTSEC-2026-0255",
+      "advisory": "RUSTSEC-2026-0255",
+      "aliases": [],
+      "packages": [
+        "sized-chunks@0.6.5"
+      ],
+      "verdict": "reviewed-upstream-source-superset-offline-only",
+      "evidence": [
+        "COPYRIGHT compiler/stdlib and exact Cargo source lock are declared all-target/dev supersets, not a target binary call graph.",
+        "Selected Rust candidate dependency graph is independently scanned with zero exact-version matches.",
+        "Only fixed reviewed sources/locks are compiled; Cargo metadata/build/test use offline/frozen with verified preprovisioned cache, no git or network retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "rustCompiler:RUSTSEC-2026-0258",
+      "advisory": "RUSTSEC-2026-0258",
+      "aliases": [
+        "GHSA-q83h-524g-xf6h"
+      ],
+      "packages": [
+        "h2@0.4.15"
+      ],
+      "verdict": "reviewed-upstream-source-superset-offline-only",
+      "evidence": [
+        "COPYRIGHT compiler/stdlib and exact Cargo source lock are declared all-target/dev supersets, not a target binary call graph.",
+        "Selected Rust candidate dependency graph is independently scanned with zero exact-version matches.",
+        "Only fixed reviewed sources/locks are compiled; Cargo metadata/build/test use offline/frozen with verified preprovisioned cache, no git or network retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "rustCompiler:RUSTSEC-2026-0285",
+      "advisory": "RUSTSEC-2026-0285",
+      "aliases": [
+        "GHSA-2mjx-qc3c-rqvc"
+      ],
+      "packages": [
+        "rustls@0.23.13",
+        "rustls@0.23.41"
+      ],
+      "verdict": "reviewed-upstream-source-superset-offline-only",
+      "evidence": [
+        "COPYRIGHT compiler/stdlib and exact Cargo source lock are declared all-target/dev supersets, not a target binary call graph.",
+        "Selected Rust candidate dependency graph is independently scanned with zero exact-version matches.",
+        "Only fixed reviewed sources/locks are compiled; Cargo metadata/build/test use offline/frozen with verified preprovisioned cache, no git or network retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "rustCompiler:RUSTSEC-2026-0306",
+      "advisory": "RUSTSEC-2026-0306",
+      "aliases": [],
+      "packages": [
+        "faster-hex@0.10.0"
+      ],
+      "verdict": "reviewed-upstream-source-superset-offline-only",
+      "evidence": [
+        "COPYRIGHT compiler/stdlib and exact Cargo source lock are declared all-target/dev supersets, not a target binary call graph.",
+        "Selected Rust candidate dependency graph is independently scanned with zero exact-version matches.",
+        "Only fixed reviewed sources/locks are compiled; Cargo metadata/build/test use offline/frozen with verified preprovisioned cache, no git or network retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "rustCompiler:RUSTSEC-2026-0308",
+      "advisory": "RUSTSEC-2026-0308",
+      "aliases": [
+        "GHSA-xc3w-55vh-cw3w"
+      ],
+      "packages": [
+        "salsa@0.28.2"
+      ],
+      "verdict": "reviewed-upstream-source-superset-offline-only",
+      "evidence": [
+        "COPYRIGHT compiler/stdlib and exact Cargo source lock are declared all-target/dev supersets, not a target binary call graph.",
+        "Selected Rust candidate dependency graph is independently scanned with zero exact-version matches.",
+        "Only fixed reviewed sources/locks are compiled; Cargo metadata/build/test use offline/frozen with verified preprovisioned cache, no git or network retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "rustCompiler:RUSTSEC-2026-0338",
+      "advisory": "RUSTSEC-2026-0338",
+      "aliases": [
+        "GHSA-465w-v9q3-7j98"
+      ],
+      "packages": [
+        "quinn-proto@0.11.16",
+        "quinn-proto@0.11.8"
+      ],
+      "verdict": "reviewed-upstream-source-superset-offline-only",
+      "evidence": [
+        "COPYRIGHT compiler/stdlib and exact Cargo source lock are declared all-target/dev supersets, not a target binary call graph.",
+        "Selected Rust candidate dependency graph is independently scanned with zero exact-version matches.",
+        "Only fixed reviewed sources/locks are compiled; Cargo metadata/build/test use offline/frozen with verified preprovisioned cache, no git or network retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "rustCompiler:RUSTSEC-2026-0339",
+      "advisory": "RUSTSEC-2026-0339",
+      "aliases": [
+        "GHSA-hmxj-32vh-65vr"
+      ],
+      "packages": [
+        "quinn-proto@0.11.16",
+        "quinn-proto@0.11.8"
+      ],
+      "verdict": "reviewed-upstream-source-superset-offline-only",
+      "evidence": [
+        "COPYRIGHT compiler/stdlib and exact Cargo source lock are declared all-target/dev supersets, not a target binary call graph.",
+        "Selected Rust candidate dependency graph is independently scanned with zero exact-version matches.",
+        "Only fixed reviewed sources/locks are compiled; Cargo metadata/build/test use offline/frozen with verified preprovisioned cache, no git or network retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "rustCompiler:RUSTSEC-2026-0340",
+      "advisory": "RUSTSEC-2026-0340",
+      "aliases": [
+        "GHSA-3g6h-r5qx-f6hq"
+      ],
+      "packages": [
+        "quinn-proto@0.11.16",
+        "quinn-proto@0.11.8"
+      ],
+      "verdict": "reviewed-upstream-source-superset-offline-only",
+      "evidence": [
+        "COPYRIGHT compiler/stdlib and exact Cargo source lock are declared all-target/dev supersets, not a target binary call graph.",
+        "Selected Rust candidate dependency graph is independently scanned with zero exact-version matches.",
+        "Only fixed reviewed sources/locks are compiled; Cargo metadata/build/test use offline/frozen with verified preprovisioned cache, no git or network retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "rustCompiler:RUSTSEC-2026-0341",
+      "advisory": "RUSTSEC-2026-0341",
+      "aliases": [
+        "GHSA-qfwj-vfxf-92j2"
+      ],
+      "packages": [
+        "quinn-proto@0.11.16"
+      ],
+      "verdict": "reviewed-upstream-source-superset-offline-only",
+      "evidence": [
+        "COPYRIGHT compiler/stdlib and exact Cargo source lock are declared all-target/dev supersets, not a target binary call graph.",
+        "Selected Rust candidate dependency graph is independently scanned with zero exact-version matches.",
+        "Only fixed reviewed sources/locks are compiled; Cargo metadata/build/test use offline/frozen with verified preprovisioned cache, no git or network retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "rustCompiler:RUSTSEC-2026-0342",
+      "advisory": "RUSTSEC-2026-0342",
+      "aliases": [
+        "GHSA-2hv7-gw8g-gpq5"
+      ],
+      "packages": [
+        "quinn-proto@0.11.16",
+        "quinn-proto@0.11.8"
+      ],
+      "verdict": "reviewed-upstream-source-superset-offline-only",
+      "evidence": [
+        "COPYRIGHT compiler/stdlib and exact Cargo source lock are declared all-target/dev supersets, not a target binary call graph.",
+        "Selected Rust candidate dependency graph is independently scanned with zero exact-version matches.",
+        "Only fixed reviewed sources/locks are compiled; Cargo metadata/build/test use offline/frozen with verified preprovisioned cache, no git or network retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "rustCompiler:RUSTSEC-2026-0344",
+      "advisory": "RUSTSEC-2026-0344",
+      "aliases": [],
+      "packages": [
+        "ruzstd@0.8.2",
+        "ruzstd@0.8.3"
+      ],
+      "verdict": "reviewed-upstream-source-superset-offline-only",
+      "evidence": [
+        "COPYRIGHT compiler/stdlib and exact Cargo source lock are declared all-target/dev supersets, not a target binary call graph.",
+        "Selected Rust candidate dependency graph is independently scanned with zero exact-version matches.",
+        "Only fixed reviewed sources/locks are compiled; Cargo metadata/build/test use offline/frozen with verified preprovisioned cache, no git or network retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "rustCompiler:RUSTSEC-2026-0346",
+      "advisory": "RUSTSEC-2026-0346",
+      "aliases": [
+        "GHSA-c8m5-c952-6cm4"
+      ],
+      "packages": [
+        "rustls@0.23.13",
+        "rustls@0.23.41"
+      ],
+      "verdict": "reviewed-upstream-source-superset-offline-only",
+      "evidence": [
+        "COPYRIGHT compiler/stdlib and exact Cargo source lock are declared all-target/dev supersets, not a target binary call graph.",
+        "Selected Rust candidate dependency graph is independently scanned with zero exact-version matches.",
+        "Only fixed reviewed sources/locks are compiled; Cargo metadata/build/test use offline/frozen with verified preprovisioned cache, no git or network retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "rustCompiler:RUSTSEC-2026-0348",
+      "advisory": "RUSTSEC-2026-0348",
+      "aliases": [
+        "GHSA-h2v8-394m-p7vv"
+      ],
+      "packages": [
+        "rustls@0.23.13",
+        "rustls@0.23.41"
+      ],
+      "verdict": "reviewed-upstream-source-superset-offline-only",
+      "evidence": [
+        "COPYRIGHT compiler/stdlib and exact Cargo source lock are declared all-target/dev supersets, not a target binary call graph.",
+        "Selected Rust candidate dependency graph is independently scanned with zero exact-version matches.",
+        "Only fixed reviewed sources/locks are compiled; Cargo metadata/build/test use offline/frozen with verified preprovisioned cache, no git or network retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "rustCompiler:RUSTSEC-2026-0349",
+      "advisory": "RUSTSEC-2026-0349",
+      "aliases": [
+        "GHSA-w44r-93j7-qv28"
+      ],
+      "packages": [
+        "rustls@0.23.13",
+        "rustls@0.23.41"
+      ],
+      "verdict": "reviewed-upstream-source-superset-offline-only",
+      "evidence": [
+        "COPYRIGHT compiler/stdlib and exact Cargo source lock are declared all-target/dev supersets, not a target binary call graph.",
+        "Selected Rust candidate dependency graph is independently scanned with zero exact-version matches.",
+        "Only fixed reviewed sources/locks are compiled; Cargo metadata/build/test use offline/frozen with verified preprovisioned cache, no git or network retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "goCompiler:GO-2026-5932",
+      "advisory": "GO-2026-5932",
+      "aliases": [],
+      "packages": [
+        "golang.org/x/crypto@v0.52.1-0.20260526024921-9beb694f9766"
+      ],
+      "verdict": "not-actionable-in-fixed-offline-compiler-recipe",
+      "evidence": [
+        "Full shipped Go compiler vendor sources are separate from the eight candidate modules and actual imported standard-library packages.",
+        "Candidate and stdlib 1.27.2 exact-version queries have no matches.",
+        "Fixed-input build uses local toolchain, readonly modules, disabled proxy/sumdb/auth/config and CGO=0; no runtime/provider retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "goCompiler:GO-2026-5942",
+      "advisory": "GO-2026-5942",
+      "aliases": [
+        "BIT-golang-2026-46600",
+        "CVE-2026-46600"
+      ],
+      "packages": [
+        "golang.org/x/net@v0.55.1-0.20260731170536-c1d18010be90"
+      ],
+      "verdict": "not-actionable-in-fixed-offline-compiler-recipe",
+      "evidence": [
+        "Full shipped Go compiler vendor sources are separate from the eight candidate modules and actual imported standard-library packages.",
+        "Candidate and stdlib 1.27.2 exact-version queries have no matches.",
+        "Fixed-input build uses local toolchain, readonly modules, disabled proxy/sumdb/auth/config and CGO=0; no runtime/provider retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "goCompiler:GO-2026-5970",
+      "advisory": "GO-2026-5970",
+      "aliases": [
+        "CVE-2026-56852"
+      ],
+      "packages": [
+        "golang.org/x/text@v0.37.0"
+      ],
+      "verdict": "not-actionable-in-fixed-offline-compiler-recipe",
+      "evidence": [
+        "Full shipped Go compiler vendor sources are separate from the eight candidate modules and actual imported standard-library packages.",
+        "Candidate and stdlib 1.27.2 exact-version queries have no matches.",
+        "Fixed-input build uses local toolchain, readonly modules, disabled proxy/sumdb/auth/config and CGO=0; no runtime/provider retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "goCompiler:GO-2026-6179",
+      "advisory": "GO-2026-6179",
+      "aliases": [
+        "BIT-golang-2026-56865",
+        "CVE-2026-56865"
+      ],
+      "packages": [
+        "golang.org/x/mod@v0.36.1-0.20260813213634-8569e2639ca1"
+      ],
+      "verdict": "not-actionable-in-fixed-offline-compiler-recipe",
+      "evidence": [
+        "Full shipped Go compiler vendor sources are separate from the eight candidate modules and actual imported standard-library packages.",
+        "Candidate and stdlib 1.27.2 exact-version queries have no matches.",
+        "Fixed-input build uses local toolchain, readonly modules, disabled proxy/sumdb/auth/config and CGO=0; no runtime/provider retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "goCompiler:GO-2026-6180",
+      "advisory": "GO-2026-6180",
+      "aliases": [
+        "BIT-golang-2026-56864",
+        "CVE-2026-56864"
+      ],
+      "packages": [
+        "golang.org/x/mod@v0.36.1-0.20260813213634-8569e2639ca1"
+      ],
+      "verdict": "not-actionable-in-fixed-offline-compiler-recipe",
+      "evidence": [
+        "Full shipped Go compiler vendor sources are separate from the eight candidate modules and actual imported standard-library packages.",
+        "Candidate and stdlib 1.27.2 exact-version queries have no matches.",
+        "Fixed-input build uses local toolchain, readonly modules, disabled proxy/sumdb/auth/config and CGO=0; no runtime/provider retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "goCompiler:GO-2026-6303",
+      "advisory": "GO-2026-6303",
+      "aliases": [
+        "CVE-2026-56854"
+      ],
+      "packages": [
+        "golang.org/x/crypto@v0.52.1-0.20260526024921-9beb694f9766"
+      ],
+      "verdict": "not-actionable-in-fixed-offline-compiler-recipe",
+      "evidence": [
+        "Full shipped Go compiler vendor sources are separate from the eight candidate modules and actual imported standard-library packages.",
+        "Candidate and stdlib 1.27.2 exact-version queries have no matches.",
+        "Fixed-input build uses local toolchain, readonly modules, disabled proxy/sumdb/auth/config and CGO=0; no runtime/provider retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "goCompiler:GO-2026-6354",
+      "advisory": "GO-2026-6354",
+      "aliases": [
+        "CVE-2026-78662"
+      ],
+      "packages": [
+        "golang.org/x/crypto@v0.52.1-0.20260526024921-9beb694f9766"
+      ],
+      "verdict": "not-actionable-in-fixed-offline-compiler-recipe",
+      "evidence": [
+        "Full shipped Go compiler vendor sources are separate from the eight candidate modules and actual imported standard-library packages.",
+        "Candidate and stdlib 1.27.2 exact-version queries have no matches.",
+        "Fixed-input build uses local toolchain, readonly modules, disabled proxy/sumdb/auth/config and CGO=0; no runtime/provider retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "goCompiler:GO-2026-6355",
+      "advisory": "GO-2026-6355",
+      "aliases": [
+        "CVE-2026-56855"
+      ],
+      "packages": [
+        "golang.org/x/crypto@v0.52.1-0.20260526024921-9beb694f9766"
+      ],
+      "verdict": "not-actionable-in-fixed-offline-compiler-recipe",
+      "evidence": [
+        "Full shipped Go compiler vendor sources are separate from the eight candidate modules and actual imported standard-library packages.",
+        "Candidate and stdlib 1.27.2 exact-version queries have no matches.",
+        "Fixed-input build uses local toolchain, readonly modules, disabled proxy/sumdb/auth/config and CGO=0; no runtime/provider retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "goCompiler:GO-2026-6603",
+      "advisory": "GO-2026-6603",
+      "aliases": [
+        "CVE-2026-78659"
+      ],
+      "packages": [
+        "golang.org/x/net@v0.55.1-0.20260731170536-c1d18010be90"
+      ],
+      "verdict": "not-actionable-in-fixed-offline-compiler-recipe",
+      "evidence": [
+        "Full shipped Go compiler vendor sources are separate from the eight candidate modules and actual imported standard-library packages.",
+        "Candidate and stdlib 1.27.2 exact-version queries have no matches.",
+        "Fixed-input build uses local toolchain, readonly modules, disabled proxy/sumdb/auth/config and CGO=0; no runtime/provider retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "goCompiler:GO-2026-6610",
+      "advisory": "GO-2026-6610",
+      "aliases": [
+        "CVE-2026-78660"
+      ],
+      "packages": [
+        "golang.org/x/net@v0.55.1-0.20260731170536-c1d18010be90"
+      ],
+      "verdict": "not-actionable-in-fixed-offline-compiler-recipe",
+      "evidence": [
+        "Full shipped Go compiler vendor sources are separate from the eight candidate modules and actual imported standard-library packages.",
+        "Candidate and stdlib 1.27.2 exact-version queries have no matches.",
+        "Fixed-input build uses local toolchain, readonly modules, disabled proxy/sumdb/auth/config and CGO=0; no runtime/provider retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "goCompiler:GO-2026-6611",
+      "advisory": "GO-2026-6611",
+      "aliases": [
+        "CVE-2026-78669"
+      ],
+      "packages": [
+        "golang.org/x/net@v0.55.1-0.20260731170536-c1d18010be90"
+      ],
+      "verdict": "not-actionable-in-fixed-offline-compiler-recipe",
+      "evidence": [
+        "Full shipped Go compiler vendor sources are separate from the eight candidate modules and actual imported standard-library packages.",
+        "Candidate and stdlib 1.27.2 exact-version queries have no matches.",
+        "Fixed-input build uses local toolchain, readonly modules, disabled proxy/sumdb/auth/config and CGO=0; no runtime/provider retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "goCompiler:GO-2026-6612",
+      "advisory": "GO-2026-6612",
+      "aliases": [
+        "CVE-2026-78663"
+      ],
+      "packages": [
+        "golang.org/x/net@v0.55.1-0.20260731170536-c1d18010be90"
+      ],
+      "verdict": "not-actionable-in-fixed-offline-compiler-recipe",
+      "evidence": [
+        "Full shipped Go compiler vendor sources are separate from the eight candidate modules and actual imported standard-library packages.",
+        "Candidate and stdlib 1.27.2 exact-version queries have no matches.",
+        "Fixed-input build uses local toolchain, readonly modules, disabled proxy/sumdb/auth/config and CGO=0; no runtime/provider retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "goCompiler:GO-2026-6617",
+      "advisory": "GO-2026-6617",
+      "aliases": [
+        "CVE-2026-97032"
+      ],
+      "packages": [
+        "golang.org/x/net@v0.55.1-0.20260731170536-c1d18010be90"
+      ],
+      "verdict": "not-actionable-in-fixed-offline-compiler-recipe",
+      "evidence": [
+        "Full shipped Go compiler vendor sources are separate from the eight candidate modules and actual imported standard-library packages.",
+        "Candidate and stdlib 1.27.2 exact-version queries have no matches.",
+        "Fixed-input build uses local toolchain, readonly modules, disabled proxy/sumdb/auth/config and CGO=0; no runtime/provider retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "goCompiler:GO-2026-6629",
+      "advisory": "GO-2026-6629",
+      "aliases": [
+        "CVE-2026-56851"
+      ],
+      "packages": [
+        "golang.org/x/text@v0.37.0"
+      ],
+      "verdict": "not-actionable-in-fixed-offline-compiler-recipe",
+      "evidence": [
+        "Full shipped Go compiler vendor sources are separate from the eight candidate modules and actual imported standard-library packages.",
+        "Candidate and stdlib 1.27.2 exact-version queries have no matches.",
+        "Fixed-input build uses local toolchain, readonly modules, disabled proxy/sumdb/auth/config and CGO=0; no runtime/provider retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "cargo:GHSA-2mjx-qc3c-rqvc",
+      "advisory": "GHSA-2mjx-qc3c-rqvc",
+      "aliases": [
+        "RUSTSEC-2026-0285"
+      ],
+      "packages": [
+        "rustls@0.23.41"
+      ],
+      "verdict": "reviewed-upstream-source-superset-offline-only",
+      "evidence": [
+        "COPYRIGHT compiler/stdlib and exact Cargo source lock are declared all-target/dev supersets, not a target binary call graph.",
+        "Selected Rust candidate dependency graph is independently scanned with zero exact-version matches.",
+        "Only fixed reviewed sources/locks are compiled; Cargo metadata/build/test use offline/frozen with verified preprovisioned cache, no git or network retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "cargo:RUSTSEC-2026-0173",
+      "advisory": "RUSTSEC-2026-0173",
+      "aliases": [],
+      "packages": [
+        "proc-macro-error2@2.0.1"
+      ],
+      "verdict": "reviewed-upstream-source-superset-offline-only",
+      "evidence": [
+        "COPYRIGHT compiler/stdlib and exact Cargo source lock are declared all-target/dev supersets, not a target binary call graph.",
+        "Selected Rust candidate dependency graph is independently scanned with zero exact-version matches.",
+        "Only fixed reviewed sources/locks are compiled; Cargo metadata/build/test use offline/frozen with verified preprovisioned cache, no git or network retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "cargo:RUSTSEC-2026-0204",
+      "advisory": "RUSTSEC-2026-0204",
+      "aliases": [],
+      "packages": [
+        "crossbeam-epoch@0.9.18"
+      ],
+      "verdict": "reviewed-upstream-source-superset-offline-only",
+      "evidence": [
+        "COPYRIGHT compiler/stdlib and exact Cargo source lock are declared all-target/dev supersets, not a target binary call graph.",
+        "Selected Rust candidate dependency graph is independently scanned with zero exact-version matches.",
+        "Only fixed reviewed sources/locks are compiled; Cargo metadata/build/test use offline/frozen with verified preprovisioned cache, no git or network retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "cargo:RUSTSEC-2026-0247",
+      "advisory": "RUSTSEC-2026-0247",
+      "aliases": [],
+      "packages": [
+        "bitmaps@2.1.0"
+      ],
+      "verdict": "reviewed-upstream-source-superset-offline-only",
+      "evidence": [
+        "COPYRIGHT compiler/stdlib and exact Cargo source lock are declared all-target/dev supersets, not a target binary call graph.",
+        "Selected Rust candidate dependency graph is independently scanned with zero exact-version matches.",
+        "Only fixed reviewed sources/locks are compiled; Cargo metadata/build/test use offline/frozen with verified preprovisioned cache, no git or network retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "cargo:RUSTSEC-2026-0250",
+      "advisory": "RUSTSEC-2026-0250",
+      "aliases": [],
+      "packages": [
+        "im-rc@15.1.0"
+      ],
+      "verdict": "reviewed-upstream-source-superset-offline-only",
+      "evidence": [
+        "COPYRIGHT compiler/stdlib and exact Cargo source lock are declared all-target/dev supersets, not a target binary call graph.",
+        "Selected Rust candidate dependency graph is independently scanned with zero exact-version matches.",
+        "Only fixed reviewed sources/locks are compiled; Cargo metadata/build/test use offline/frozen with verified preprovisioned cache, no git or network retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "cargo:RUSTSEC-2026-0251",
+      "advisory": "RUSTSEC-2026-0251",
+      "aliases": [],
+      "packages": [
+        "sized-chunks@0.6.5"
+      ],
+      "verdict": "reviewed-upstream-source-superset-offline-only",
+      "evidence": [
+        "COPYRIGHT compiler/stdlib and exact Cargo source lock are declared all-target/dev supersets, not a target binary call graph.",
+        "Selected Rust candidate dependency graph is independently scanned with zero exact-version matches.",
+        "Only fixed reviewed sources/locks are compiled; Cargo metadata/build/test use offline/frozen with verified preprovisioned cache, no git or network retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "cargo:RUSTSEC-2026-0255",
+      "advisory": "RUSTSEC-2026-0255",
+      "aliases": [],
+      "packages": [
+        "sized-chunks@0.6.5"
+      ],
+      "verdict": "reviewed-upstream-source-superset-offline-only",
+      "evidence": [
+        "COPYRIGHT compiler/stdlib and exact Cargo source lock are declared all-target/dev supersets, not a target binary call graph.",
+        "Selected Rust candidate dependency graph is independently scanned with zero exact-version matches.",
+        "Only fixed reviewed sources/locks are compiled; Cargo metadata/build/test use offline/frozen with verified preprovisioned cache, no git or network retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "cargo:RUSTSEC-2026-0258",
+      "advisory": "RUSTSEC-2026-0258",
+      "aliases": [
+        "GHSA-q83h-524g-xf6h"
+      ],
+      "packages": [
+        "h2@0.4.15"
+      ],
+      "verdict": "reviewed-upstream-source-superset-offline-only",
+      "evidence": [
+        "COPYRIGHT compiler/stdlib and exact Cargo source lock are declared all-target/dev supersets, not a target binary call graph.",
+        "Selected Rust candidate dependency graph is independently scanned with zero exact-version matches.",
+        "Only fixed reviewed sources/locks are compiled; Cargo metadata/build/test use offline/frozen with verified preprovisioned cache, no git or network retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "cargo:RUSTSEC-2026-0285",
+      "advisory": "RUSTSEC-2026-0285",
+      "aliases": [
+        "GHSA-2mjx-qc3c-rqvc"
+      ],
+      "packages": [
+        "rustls@0.23.41"
+      ],
+      "verdict": "reviewed-upstream-source-superset-offline-only",
+      "evidence": [
+        "COPYRIGHT compiler/stdlib and exact Cargo source lock are declared all-target/dev supersets, not a target binary call graph.",
+        "Selected Rust candidate dependency graph is independently scanned with zero exact-version matches.",
+        "Only fixed reviewed sources/locks are compiled; Cargo metadata/build/test use offline/frozen with verified preprovisioned cache, no git or network retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "cargo:RUSTSEC-2026-0306",
+      "advisory": "RUSTSEC-2026-0306",
+      "aliases": [],
+      "packages": [
+        "faster-hex@0.10.0"
+      ],
+      "verdict": "reviewed-upstream-source-superset-offline-only",
+      "evidence": [
+        "COPYRIGHT compiler/stdlib and exact Cargo source lock are declared all-target/dev supersets, not a target binary call graph.",
+        "Selected Rust candidate dependency graph is independently scanned with zero exact-version matches.",
+        "Only fixed reviewed sources/locks are compiled; Cargo metadata/build/test use offline/frozen with verified preprovisioned cache, no git or network retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "cargo:RUSTSEC-2026-0346",
+      "advisory": "RUSTSEC-2026-0346",
+      "aliases": [
+        "GHSA-c8m5-c952-6cm4"
+      ],
+      "packages": [
+        "rustls@0.23.41"
+      ],
+      "verdict": "reviewed-upstream-source-superset-offline-only",
+      "evidence": [
+        "COPYRIGHT compiler/stdlib and exact Cargo source lock are declared all-target/dev supersets, not a target binary call graph.",
+        "Selected Rust candidate dependency graph is independently scanned with zero exact-version matches.",
+        "Only fixed reviewed sources/locks are compiled; Cargo metadata/build/test use offline/frozen with verified preprovisioned cache, no git or network retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "cargo:RUSTSEC-2026-0348",
+      "advisory": "RUSTSEC-2026-0348",
+      "aliases": [
+        "GHSA-h2v8-394m-p7vv"
+      ],
+      "packages": [
+        "rustls@0.23.41"
+      ],
+      "verdict": "reviewed-upstream-source-superset-offline-only",
+      "evidence": [
+        "COPYRIGHT compiler/stdlib and exact Cargo source lock are declared all-target/dev supersets, not a target binary call graph.",
+        "Selected Rust candidate dependency graph is independently scanned with zero exact-version matches.",
+        "Only fixed reviewed sources/locks are compiled; Cargo metadata/build/test use offline/frozen with verified preprovisioned cache, no git or network retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    },
+    {
+      "inputId": "cargo:RUSTSEC-2026-0349",
+      "advisory": "RUSTSEC-2026-0349",
+      "aliases": [
+        "GHSA-w44r-93j7-qv28"
+      ],
+      "packages": [
+        "rustls@0.23.41"
+      ],
+      "verdict": "reviewed-upstream-source-superset-offline-only",
+      "evidence": [
+        "COPYRIGHT compiler/stdlib and exact Cargo source lock are declared all-target/dev supersets, not a target binary call graph.",
+        "Selected Rust candidate dependency graph is independently scanned with zero exact-version matches.",
+        "Only fixed reviewed sources/locks are compiled; Cargo metadata/build/test use offline/frozen with verified preprovisioned cache, no git or network retrieval."
+      ],
+      "limits": [
+        "No dynamic exploit claim or general-purpose toolchain security certification.",
+        "Reassess if sources, flags, online provisioning, supported APIs or target change.",
+        "Upstream maintenance/advisory declarations and aliases retained; not all records describe exploitable vulnerabilities."
+      ]
+    }
+  ],
+  "native": [
+    {
+      "inputId": "node:v8:CVE-2011-3886",
+      "advisory": "CVE-2011-3886",
+      "component": "v8",
+      "version": "14.6.202.34",
+      "verdict": "reviewed-contextual-risk-not-accepted-for-general-execution",
+      "reason": "Two wildcard matches describe 2011 engines; the current Chrome/HTML/JIT match is not proof about Node's fork. Candidate does not accept JavaScript/HTML execution. General V8 execution/backport applicability is not certified or silently declared fixed.",
+      "evidence": [
+        "observed process.versions; Node backports may differ from upstream CPE",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "node:v8:CVE-2011-5037",
+      "advisory": "CVE-2011-5037",
+      "component": "v8",
+      "version": "14.6.202.34",
+      "verdict": "reviewed-contextual-risk-not-accepted-for-general-execution",
+      "reason": "Two wildcard matches describe 2011 engines; the current Chrome/HTML/JIT match is not proof about Node's fork. Candidate does not accept JavaScript/HTML execution. General V8 execution/backport applicability is not certified or silently declared fixed.",
+      "evidence": [
+        "observed process.versions; Node backports may differ from upstream CPE",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "node:v8:CVE-2026-85046",
+      "advisory": "CVE-2026-85046",
+      "component": "v8",
+      "version": "14.6.202.34",
+      "verdict": "reviewed-contextual-risk-not-accepted-for-general-execution",
+      "reason": "Two wildcard matches describe 2011 engines; the current Chrome/HTML/JIT match is not proof about Node's fork. Candidate does not accept JavaScript/HTML execution. General V8 execution/backport applicability is not certified or silently declared fixed.",
+      "evidence": [
+        "observed process.versions; Node backports may differ from upstream CPE",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "python:cpython:CVE-2025-12084",
+      "advisory": "CVE-2025-12084",
+      "component": "cpython",
+      "version": "3.12.15",
+      "verdict": "not-actionable-in-declared-candidate-surface",
+      "reason": "Matched plist/XML/cookie/webbrowser/tarfile/Windows shutil extraction and alternate-base64 APIs are not exposed by candidate validate/inspect. Provisioner only opens integrity-verified wheels via zipfile and does not call shutil.unpack_archive; all Windows lifecycle claims remain untested.",
+      "evidence": [
+        "observed interpreter plus verified archive",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "python:cpython:CVE-2025-12781",
+      "advisory": "CVE-2025-12781",
+      "component": "cpython",
+      "version": "3.12.15",
+      "verdict": "not-actionable-in-declared-candidate-surface",
+      "reason": "Matched plist/XML/cookie/webbrowser/tarfile/Windows shutil extraction and alternate-base64 APIs are not exposed by candidate validate/inspect. Provisioner only opens integrity-verified wheels via zipfile and does not call shutil.unpack_archive; all Windows lifecycle claims remain untested.",
+      "evidence": [
+        "observed interpreter plus verified archive",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "python:cpython:CVE-2025-13462",
+      "advisory": "CVE-2025-13462",
+      "component": "cpython",
+      "version": "3.12.15",
+      "verdict": "not-actionable-in-declared-candidate-surface",
+      "reason": "Matched plist/XML/cookie/webbrowser/tarfile/Windows shutil extraction and alternate-base64 APIs are not exposed by candidate validate/inspect. Provisioner only opens integrity-verified wheels via zipfile and does not call shutil.unpack_archive; all Windows lifecycle claims remain untested.",
+      "evidence": [
+        "observed interpreter plus verified archive",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "python:cpython:CVE-2025-13837",
+      "advisory": "CVE-2025-13837",
+      "component": "cpython",
+      "version": "3.12.15",
+      "verdict": "not-actionable-in-declared-candidate-surface",
+      "reason": "Matched plist/XML/cookie/webbrowser/tarfile/Windows shutil extraction and alternate-base64 APIs are not exposed by candidate validate/inspect. Provisioner only opens integrity-verified wheels via zipfile and does not call shutil.unpack_archive; all Windows lifecycle claims remain untested.",
+      "evidence": [
+        "observed interpreter plus verified archive",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "python:cpython:CVE-2026-3087",
+      "advisory": "CVE-2026-3087",
+      "component": "cpython",
+      "version": "3.12.15",
+      "verdict": "not-actionable-in-declared-candidate-surface",
+      "reason": "Matched plist/XML/cookie/webbrowser/tarfile/Windows shutil extraction and alternate-base64 APIs are not exposed by candidate validate/inspect. Provisioner only opens integrity-verified wheels via zipfile and does not call shutil.unpack_archive; all Windows lifecycle claims remain untested.",
+      "evidence": [
+        "observed interpreter plus verified archive",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "python:cpython:CVE-2026-3644",
+      "advisory": "CVE-2026-3644",
+      "component": "cpython",
+      "version": "3.12.15",
+      "verdict": "not-actionable-in-declared-candidate-surface",
+      "reason": "Matched plist/XML/cookie/webbrowser/tarfile/Windows shutil extraction and alternate-base64 APIs are not exposed by candidate validate/inspect. Provisioner only opens integrity-verified wheels via zipfile and does not call shutil.unpack_archive; all Windows lifecycle claims remain untested.",
+      "evidence": [
+        "observed interpreter plus verified archive",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "python:cpython:CVE-2026-4519",
+      "advisory": "CVE-2026-4519",
+      "component": "cpython",
+      "version": "3.12.15",
+      "verdict": "not-actionable-in-declared-candidate-surface",
+      "reason": "Matched plist/XML/cookie/webbrowser/tarfile/Windows shutil extraction and alternate-base64 APIs are not exposed by candidate validate/inspect. Provisioner only opens integrity-verified wheels via zipfile and does not call shutil.unpack_archive; all Windows lifecycle claims remain untested.",
+      "evidence": [
+        "observed interpreter plus verified archive",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "python:cpython:CVE-2026-6019",
+      "advisory": "CVE-2026-6019",
+      "component": "cpython",
+      "version": "3.12.15",
+      "verdict": "not-actionable-in-declared-candidate-surface",
+      "reason": "Matched plist/XML/cookie/webbrowser/tarfile/Windows shutil extraction and alternate-base64 APIs are not exposed by candidate validate/inspect. Provisioner only opens integrity-verified wheels via zipfile and does not call shutil.unpack_archive; all Windows lifecycle claims remain untested.",
+      "evidence": [
+        "observed interpreter plus verified archive",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "python:cpython:CVE-2026-7210",
+      "advisory": "CVE-2026-7210",
+      "component": "cpython",
+      "version": "3.12.15",
+      "verdict": "not-actionable-in-declared-candidate-surface",
+      "reason": "Matched plist/XML/cookie/webbrowser/tarfile/Windows shutil extraction and alternate-base64 APIs are not exposed by candidate validate/inspect. Provisioner only opens integrity-verified wheels via zipfile and does not call shutil.unpack_archive; all Windows lifecycle claims remain untested.",
+      "evidence": [
+        "observed interpreter plus verified archive",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "python:sqlite:CVE-2026-11822",
+      "advisory": "CVE-2026-11822",
+      "component": "sqlite",
+      "version": "3.53.1",
+      "verdict": "not-actionable-in-declared-candidate-surface",
+      "reason": "FTS5 database parsing/MATCH queries are not imported or called by candidates; version observation reads sqlite_version only, with no database or attacker SQL.",
+      "evidence": [
+        "verified PYTHON.json static input + exact upstream build manifest + archive hash",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "python:sqlite:CVE-2026-11824",
+      "advisory": "CVE-2026-11824",
+      "component": "sqlite",
+      "version": "3.53.1",
+      "verdict": "not-actionable-in-declared-candidate-surface",
+      "reason": "FTS5 database parsing/MATCH queries are not imported or called by candidates; version observation reads sqlite_version only, with no database or attacker SQL.",
+      "evidence": [
+        "verified PYTHON.json static input + exact upstream build manifest + archive hash",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "external-os:zlib:CVE-2022-37434",
+      "advisory": "CVE-2022-37434",
+      "component": "zlib",
+      "version": "1.2.12",
+      "verdict": "not-actionable-in-current-recipe",
+      "reason": "Minizip/untgz/combine and inflateGetHeader conditions are not candidate APIs. Provisioning parses only fixed checksum-verified artifacts; external OS backports are not independently certified.",
+      "evidence": [
+        "observed system zlib version; OS backports unknown",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "external-os:zlib:CVE-2023-45853",
+      "advisory": "CVE-2023-45853",
+      "component": "zlib",
+      "version": "1.2.12",
+      "verdict": "not-actionable-in-current-recipe",
+      "reason": "Minizip/untgz/combine and inflateGetHeader conditions are not candidate APIs. Provisioning parses only fixed checksum-verified artifacts; external OS backports are not independently certified.",
+      "evidence": [
+        "observed system zlib version; OS backports unknown",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "external-os:zlib:CVE-2026-22184",
+      "advisory": "CVE-2026-22184",
+      "component": "zlib",
+      "version": "1.2.12",
+      "verdict": "not-actionable-in-current-recipe",
+      "reason": "Minizip/untgz/combine and inflateGetHeader conditions are not candidate APIs. Provisioning parses only fixed checksum-verified artifacts; external OS backports are not independently certified.",
+      "evidence": [
+        "observed system zlib version; OS backports unknown",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "external-os:zlib:CVE-2026-27171",
+      "advisory": "CVE-2026-27171",
+      "component": "zlib",
+      "version": "1.2.12",
+      "verdict": "not-actionable-in-current-recipe",
+      "reason": "Minizip/untgz/combine and inflateGetHeader conditions are not candidate APIs. Provisioning parses only fixed checksum-verified artifacts; external OS backports are not independently certified.",
+      "evidence": [
+        "observed system zlib version; OS backports unknown",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "cargo:openssl:CVE-2026-14457",
+      "advisory": "CVE-2026-14457",
+      "component": "openssl",
+      "version": "3.6.3",
+      "verdict": "not-actionable-for-offline-recipe",
+      "reason": "No Cargo/libcurl/OpenSSL network/auth/redirect/cookie/proxy session in the qualified native recipe: all Cargo commands use offline/frozen. Do not reuse this disposition for general online Cargo use.",
+      "evidence": [
+        "observed cargo -Vv native linkage",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "cargo:openssl:CVE-2026-18798",
+      "advisory": "CVE-2026-18798",
+      "component": "openssl",
+      "version": "3.6.3",
+      "verdict": "not-actionable-for-offline-recipe",
+      "reason": "No Cargo/libcurl/OpenSSL network/auth/redirect/cookie/proxy session in the qualified native recipe: all Cargo commands use offline/frozen. Do not reuse this disposition for general online Cargo use.",
+      "evidence": [
+        "observed cargo -Vv native linkage",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "cargo:openssl:CVE-2026-35189",
+      "advisory": "CVE-2026-35189",
+      "component": "openssl",
+      "version": "3.6.3",
+      "verdict": "not-actionable-for-offline-recipe",
+      "reason": "No Cargo/libcurl/OpenSSL network/auth/redirect/cookie/proxy session in the qualified native recipe: all Cargo commands use offline/frozen. Do not reuse this disposition for general online Cargo use.",
+      "evidence": [
+        "observed cargo -Vv native linkage",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "cargo:openssl:CVE-2026-35191",
+      "advisory": "CVE-2026-35191",
+      "component": "openssl",
+      "version": "3.6.3",
+      "verdict": "not-actionable-for-offline-recipe",
+      "reason": "No Cargo/libcurl/OpenSSL network/auth/redirect/cookie/proxy session in the qualified native recipe: all Cargo commands use offline/frozen. Do not reuse this disposition for general online Cargo use.",
+      "evidence": [
+        "observed cargo -Vv native linkage",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "cargo:openssl:CVE-2026-42772",
+      "advisory": "CVE-2026-42772",
+      "component": "openssl",
+      "version": "3.6.3",
+      "verdict": "not-actionable-for-offline-recipe",
+      "reason": "No Cargo/libcurl/OpenSSL network/auth/redirect/cookie/proxy session in the qualified native recipe: all Cargo commands use offline/frozen. Do not reuse this disposition for general online Cargo use.",
+      "evidence": [
+        "observed cargo -Vv native linkage",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "cargo:openssl:CVE-2026-54872",
+      "advisory": "CVE-2026-54872",
+      "component": "openssl",
+      "version": "3.6.3",
+      "verdict": "not-actionable-for-offline-recipe",
+      "reason": "No Cargo/libcurl/OpenSSL network/auth/redirect/cookie/proxy session in the qualified native recipe: all Cargo commands use offline/frozen. Do not reuse this disposition for general online Cargo use.",
+      "evidence": [
+        "observed cargo -Vv native linkage",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "cargo:openssl:CVE-2026-54873",
+      "advisory": "CVE-2026-54873",
+      "component": "openssl",
+      "version": "3.6.3",
+      "verdict": "not-actionable-for-offline-recipe",
+      "reason": "No Cargo/libcurl/OpenSSL network/auth/redirect/cookie/proxy session in the qualified native recipe: all Cargo commands use offline/frozen. Do not reuse this disposition for general online Cargo use.",
+      "evidence": [
+        "observed cargo -Vv native linkage",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "cargo:openssl:CVE-2026-54874",
+      "advisory": "CVE-2026-54874",
+      "component": "openssl",
+      "version": "3.6.3",
+      "verdict": "not-actionable-for-offline-recipe",
+      "reason": "No Cargo/libcurl/OpenSSL network/auth/redirect/cookie/proxy session in the qualified native recipe: all Cargo commands use offline/frozen. Do not reuse this disposition for general online Cargo use.",
+      "evidence": [
+        "observed cargo -Vv native linkage",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "cargo:openssl:CVE-2026-54875",
+      "advisory": "CVE-2026-54875",
+      "component": "openssl",
+      "version": "3.6.3",
+      "verdict": "not-actionable-for-offline-recipe",
+      "reason": "No Cargo/libcurl/OpenSSL network/auth/redirect/cookie/proxy session in the qualified native recipe: all Cargo commands use offline/frozen. Do not reuse this disposition for general online Cargo use.",
+      "evidence": [
+        "observed cargo -Vv native linkage",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "cargo:openssl:CVE-2026-63072",
+      "advisory": "CVE-2026-63072",
+      "component": "openssl",
+      "version": "3.6.3",
+      "verdict": "not-actionable-for-offline-recipe",
+      "reason": "No Cargo/libcurl/OpenSSL network/auth/redirect/cookie/proxy session in the qualified native recipe: all Cargo commands use offline/frozen. Do not reuse this disposition for general online Cargo use.",
+      "evidence": [
+        "observed cargo -Vv native linkage",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "cargo:openssl:CVE-2026-63073",
+      "advisory": "CVE-2026-63073",
+      "component": "openssl",
+      "version": "3.6.3",
+      "verdict": "not-actionable-for-offline-recipe",
+      "reason": "No Cargo/libcurl/OpenSSL network/auth/redirect/cookie/proxy session in the qualified native recipe: all Cargo commands use offline/frozen. Do not reuse this disposition for general online Cargo use.",
+      "evidence": [
+        "observed cargo -Vv native linkage",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "cargo:openssl:CVE-2026-63074",
+      "advisory": "CVE-2026-63074",
+      "component": "openssl",
+      "version": "3.6.3",
+      "verdict": "not-actionable-for-offline-recipe",
+      "reason": "No Cargo/libcurl/OpenSSL network/auth/redirect/cookie/proxy session in the qualified native recipe: all Cargo commands use offline/frozen. Do not reuse this disposition for general online Cargo use.",
+      "evidence": [
+        "observed cargo -Vv native linkage",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "cargo:openssl:CVE-2026-63075",
+      "advisory": "CVE-2026-63075",
+      "component": "openssl",
+      "version": "3.6.3",
+      "verdict": "not-actionable-for-offline-recipe",
+      "reason": "No Cargo/libcurl/OpenSSL network/auth/redirect/cookie/proxy session in the qualified native recipe: all Cargo commands use offline/frozen. Do not reuse this disposition for general online Cargo use.",
+      "evidence": [
+        "observed cargo -Vv native linkage",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "cargo:openssl:CVE-2026-63076",
+      "advisory": "CVE-2026-63076",
+      "component": "openssl",
+      "version": "3.6.3",
+      "verdict": "not-actionable-for-offline-recipe",
+      "reason": "No Cargo/libcurl/OpenSSL network/auth/redirect/cookie/proxy session in the qualified native recipe: all Cargo commands use offline/frozen. Do not reuse this disposition for general online Cargo use.",
+      "evidence": [
+        "observed cargo -Vv native linkage",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "cargo:openssl:CVE-2026-72897",
+      "advisory": "CVE-2026-72897",
+      "component": "openssl",
+      "version": "3.6.3",
+      "verdict": "not-actionable-for-offline-recipe",
+      "reason": "No Cargo/libcurl/OpenSSL network/auth/redirect/cookie/proxy session in the qualified native recipe: all Cargo commands use offline/frozen. Do not reuse this disposition for general online Cargo use.",
+      "evidence": [
+        "observed cargo -Vv native linkage",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "cargo:openssl:CVE-2026-75803",
+      "advisory": "CVE-2026-75803",
+      "component": "openssl",
+      "version": "3.6.3",
+      "verdict": "not-actionable-for-offline-recipe",
+      "reason": "No Cargo/libcurl/OpenSSL network/auth/redirect/cookie/proxy session in the qualified native recipe: all Cargo commands use offline/frozen. Do not reuse this disposition for general online Cargo use.",
+      "evidence": [
+        "observed cargo -Vv native linkage",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "cargo:openssl:CVE-2026-75804",
+      "advisory": "CVE-2026-75804",
+      "component": "openssl",
+      "version": "3.6.3",
+      "verdict": "not-actionable-for-offline-recipe",
+      "reason": "No Cargo/libcurl/OpenSSL network/auth/redirect/cookie/proxy session in the qualified native recipe: all Cargo commands use offline/frozen. Do not reuse this disposition for general online Cargo use.",
+      "evidence": [
+        "observed cargo -Vv native linkage",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "cargo:openssl:CVE-2026-75805",
+      "advisory": "CVE-2026-75805",
+      "component": "openssl",
+      "version": "3.6.3",
+      "verdict": "not-actionable-for-offline-recipe",
+      "reason": "No Cargo/libcurl/OpenSSL network/auth/redirect/cookie/proxy session in the qualified native recipe: all Cargo commands use offline/frozen. Do not reuse this disposition for general online Cargo use.",
+      "evidence": [
+        "observed cargo -Vv native linkage",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "cargo:openssl:CVE-2026-75806",
+      "advisory": "CVE-2026-75806",
+      "component": "openssl",
+      "version": "3.6.3",
+      "verdict": "not-actionable-for-offline-recipe",
+      "reason": "No Cargo/libcurl/OpenSSL network/auth/redirect/cookie/proxy session in the qualified native recipe: all Cargo commands use offline/frozen. Do not reuse this disposition for general online Cargo use.",
+      "evidence": [
+        "observed cargo -Vv native linkage",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "cargo:openssl:CVE-2026-77696",
+      "advisory": "CVE-2026-77696",
+      "component": "openssl",
+      "version": "3.6.3",
+      "verdict": "not-actionable-for-offline-recipe",
+      "reason": "No Cargo/libcurl/OpenSSL network/auth/redirect/cookie/proxy session in the qualified native recipe: all Cargo commands use offline/frozen. Do not reuse this disposition for general online Cargo use.",
+      "evidence": [
+        "observed cargo -Vv native linkage",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "cargo:openssl:CVE-2026-84782",
+      "advisory": "CVE-2026-84782",
+      "component": "openssl",
+      "version": "3.6.3",
+      "verdict": "not-actionable-for-offline-recipe",
+      "reason": "No Cargo/libcurl/OpenSSL network/auth/redirect/cookie/proxy session in the qualified native recipe: all Cargo commands use offline/frozen. Do not reuse this disposition for general online Cargo use.",
+      "evidence": [
+        "observed cargo -Vv native linkage",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "cargo:openssl:CVE-2026-84784",
+      "advisory": "CVE-2026-84784",
+      "component": "openssl",
+      "version": "3.6.3",
+      "verdict": "not-actionable-for-offline-recipe",
+      "reason": "No Cargo/libcurl/OpenSSL network/auth/redirect/cookie/proxy session in the qualified native recipe: all Cargo commands use offline/frozen. Do not reuse this disposition for general online Cargo use.",
+      "evidence": [
+        "observed cargo -Vv native linkage",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "cargo:libcurl:CVE-2024-11053",
+      "advisory": "CVE-2024-11053",
+      "component": "libcurl",
+      "version": "8.7.1",
+      "verdict": "not-actionable-for-offline-recipe",
+      "reason": "No Cargo/libcurl/OpenSSL network/auth/redirect/cookie/proxy session in the qualified native recipe: all Cargo commands use offline/frozen. Do not reuse this disposition for general online Cargo use.",
+      "evidence": [
+        "observed cargo -Vv native linkage",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "cargo:libcurl:CVE-2024-8096",
+      "advisory": "CVE-2024-8096",
+      "component": "libcurl",
+      "version": "8.7.1",
+      "verdict": "not-actionable-for-offline-recipe",
+      "reason": "No Cargo/libcurl/OpenSSL network/auth/redirect/cookie/proxy session in the qualified native recipe: all Cargo commands use offline/frozen. Do not reuse this disposition for general online Cargo use.",
+      "evidence": [
+        "observed cargo -Vv native linkage",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "cargo:libcurl:CVE-2024-9681",
+      "advisory": "CVE-2024-9681",
+      "component": "libcurl",
+      "version": "8.7.1",
+      "verdict": "not-actionable-for-offline-recipe",
+      "reason": "No Cargo/libcurl/OpenSSL network/auth/redirect/cookie/proxy session in the qualified native recipe: all Cargo commands use offline/frozen. Do not reuse this disposition for general online Cargo use.",
+      "evidence": [
+        "observed cargo -Vv native linkage",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "cargo:libcurl:CVE-2025-0167",
+      "advisory": "CVE-2025-0167",
+      "component": "libcurl",
+      "version": "8.7.1",
+      "verdict": "not-actionable-for-offline-recipe",
+      "reason": "No Cargo/libcurl/OpenSSL network/auth/redirect/cookie/proxy session in the qualified native recipe: all Cargo commands use offline/frozen. Do not reuse this disposition for general online Cargo use.",
+      "evidence": [
+        "observed cargo -Vv native linkage",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "cargo:libcurl:CVE-2025-0725",
+      "advisory": "CVE-2025-0725",
+      "component": "libcurl",
+      "version": "8.7.1",
+      "verdict": "not-actionable-for-offline-recipe",
+      "reason": "No Cargo/libcurl/OpenSSL network/auth/redirect/cookie/proxy session in the qualified native recipe: all Cargo commands use offline/frozen. Do not reuse this disposition for general online Cargo use.",
+      "evidence": [
+        "observed cargo -Vv native linkage",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "cargo:libcurl:CVE-2025-10966",
+      "advisory": "CVE-2025-10966",
+      "component": "libcurl",
+      "version": "8.7.1",
+      "verdict": "not-actionable-for-offline-recipe",
+      "reason": "No Cargo/libcurl/OpenSSL network/auth/redirect/cookie/proxy session in the qualified native recipe: all Cargo commands use offline/frozen. Do not reuse this disposition for general online Cargo use.",
+      "evidence": [
+        "observed cargo -Vv native linkage",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "cargo:libcurl:CVE-2025-14017",
+      "advisory": "CVE-2025-14017",
+      "component": "libcurl",
+      "version": "8.7.1",
+      "verdict": "not-actionable-for-offline-recipe",
+      "reason": "No Cargo/libcurl/OpenSSL network/auth/redirect/cookie/proxy session in the qualified native recipe: all Cargo commands use offline/frozen. Do not reuse this disposition for general online Cargo use.",
+      "evidence": [
+        "observed cargo -Vv native linkage",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "cargo:libcurl:CVE-2025-14524",
+      "advisory": "CVE-2025-14524",
+      "component": "libcurl",
+      "version": "8.7.1",
+      "verdict": "not-actionable-for-offline-recipe",
+      "reason": "No Cargo/libcurl/OpenSSL network/auth/redirect/cookie/proxy session in the qualified native recipe: all Cargo commands use offline/frozen. Do not reuse this disposition for general online Cargo use.",
+      "evidence": [
+        "observed cargo -Vv native linkage",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "cargo:libcurl:CVE-2025-14819",
+      "advisory": "CVE-2025-14819",
+      "component": "libcurl",
+      "version": "8.7.1",
+      "verdict": "not-actionable-for-offline-recipe",
+      "reason": "No Cargo/libcurl/OpenSSL network/auth/redirect/cookie/proxy session in the qualified native recipe: all Cargo commands use offline/frozen. Do not reuse this disposition for general online Cargo use.",
+      "evidence": [
+        "observed cargo -Vv native linkage",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "cargo:libcurl:CVE-2025-15079",
+      "advisory": "CVE-2025-15079",
+      "component": "libcurl",
+      "version": "8.7.1",
+      "verdict": "not-actionable-for-offline-recipe",
+      "reason": "No Cargo/libcurl/OpenSSL network/auth/redirect/cookie/proxy session in the qualified native recipe: all Cargo commands use offline/frozen. Do not reuse this disposition for general online Cargo use.",
+      "evidence": [
+        "observed cargo -Vv native linkage",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "cargo:libcurl:CVE-2025-15224",
+      "advisory": "CVE-2025-15224",
+      "component": "libcurl",
+      "version": "8.7.1",
+      "verdict": "not-actionable-for-offline-recipe",
+      "reason": "No Cargo/libcurl/OpenSSL network/auth/redirect/cookie/proxy session in the qualified native recipe: all Cargo commands use offline/frozen. Do not reuse this disposition for general online Cargo use.",
+      "evidence": [
+        "observed cargo -Vv native linkage",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "cargo:libcurl:CVE-2025-5025",
+      "advisory": "CVE-2025-5025",
+      "component": "libcurl",
+      "version": "8.7.1",
+      "verdict": "not-actionable-for-offline-recipe",
+      "reason": "No Cargo/libcurl/OpenSSL network/auth/redirect/cookie/proxy session in the qualified native recipe: all Cargo commands use offline/frozen. Do not reuse this disposition for general online Cargo use.",
+      "evidence": [
+        "observed cargo -Vv native linkage",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "cargo:libcurl:CVE-2026-10536",
+      "advisory": "CVE-2026-10536",
+      "component": "libcurl",
+      "version": "8.7.1",
+      "verdict": "not-actionable-for-offline-recipe",
+      "reason": "No Cargo/libcurl/OpenSSL network/auth/redirect/cookie/proxy session in the qualified native recipe: all Cargo commands use offline/frozen. Do not reuse this disposition for general online Cargo use.",
+      "evidence": [
+        "observed cargo -Vv native linkage",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "cargo:libcurl:CVE-2026-11856",
+      "advisory": "CVE-2026-11856",
+      "component": "libcurl",
+      "version": "8.7.1",
+      "verdict": "not-actionable-for-offline-recipe",
+      "reason": "No Cargo/libcurl/OpenSSL network/auth/redirect/cookie/proxy session in the qualified native recipe: all Cargo commands use offline/frozen. Do not reuse this disposition for general online Cargo use.",
+      "evidence": [
+        "observed cargo -Vv native linkage",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "cargo:libcurl:CVE-2026-12064",
+      "advisory": "CVE-2026-12064",
+      "component": "libcurl",
+      "version": "8.7.1",
+      "verdict": "not-actionable-for-offline-recipe",
+      "reason": "No Cargo/libcurl/OpenSSL network/auth/redirect/cookie/proxy session in the qualified native recipe: all Cargo commands use offline/frozen. Do not reuse this disposition for general online Cargo use.",
+      "evidence": [
+        "observed cargo -Vv native linkage",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "cargo:libcurl:CVE-2026-13608",
+      "advisory": "CVE-2026-13608",
+      "component": "libcurl",
+      "version": "8.7.1",
+      "verdict": "not-actionable-for-offline-recipe",
+      "reason": "No Cargo/libcurl/OpenSSL network/auth/redirect/cookie/proxy session in the qualified native recipe: all Cargo commands use offline/frozen. Do not reuse this disposition for general online Cargo use.",
+      "evidence": [
+        "observed cargo -Vv native linkage",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "cargo:libcurl:CVE-2026-18924",
+      "advisory": "CVE-2026-18924",
+      "component": "libcurl",
+      "version": "8.7.1",
+      "verdict": "not-actionable-for-offline-recipe",
+      "reason": "No Cargo/libcurl/OpenSSL network/auth/redirect/cookie/proxy session in the qualified native recipe: all Cargo commands use offline/frozen. Do not reuse this disposition for general online Cargo use.",
+      "evidence": [
+        "observed cargo -Vv native linkage",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "cargo:libcurl:CVE-2026-1965",
+      "advisory": "CVE-2026-1965",
+      "component": "libcurl",
+      "version": "8.7.1",
+      "verdict": "not-actionable-for-offline-recipe",
+      "reason": "No Cargo/libcurl/OpenSSL network/auth/redirect/cookie/proxy session in the qualified native recipe: all Cargo commands use offline/frozen. Do not reuse this disposition for general online Cargo use.",
+      "evidence": [
+        "observed cargo -Vv native linkage",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "cargo:libcurl:CVE-2026-19931",
+      "advisory": "CVE-2026-19931",
+      "component": "libcurl",
+      "version": "8.7.1",
+      "verdict": "not-actionable-for-offline-recipe",
+      "reason": "No Cargo/libcurl/OpenSSL network/auth/redirect/cookie/proxy session in the qualified native recipe: all Cargo commands use offline/frozen. Do not reuse this disposition for general online Cargo use.",
+      "evidence": [
+        "observed cargo -Vv native linkage",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "cargo:libcurl:CVE-2026-3783",
+      "advisory": "CVE-2026-3783",
+      "component": "libcurl",
+      "version": "8.7.1",
+      "verdict": "not-actionable-for-offline-recipe",
+      "reason": "No Cargo/libcurl/OpenSSL network/auth/redirect/cookie/proxy session in the qualified native recipe: all Cargo commands use offline/frozen. Do not reuse this disposition for general online Cargo use.",
+      "evidence": [
+        "observed cargo -Vv native linkage",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "cargo:libcurl:CVE-2026-3784",
+      "advisory": "CVE-2026-3784",
+      "component": "libcurl",
+      "version": "8.7.1",
+      "verdict": "not-actionable-for-offline-recipe",
+      "reason": "No Cargo/libcurl/OpenSSL network/auth/redirect/cookie/proxy session in the qualified native recipe: all Cargo commands use offline/frozen. Do not reuse this disposition for general online Cargo use.",
+      "evidence": [
+        "observed cargo -Vv native linkage",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "cargo:libcurl:CVE-2026-4873",
+      "advisory": "CVE-2026-4873",
+      "component": "libcurl",
+      "version": "8.7.1",
+      "verdict": "not-actionable-for-offline-recipe",
+      "reason": "No Cargo/libcurl/OpenSSL network/auth/redirect/cookie/proxy session in the qualified native recipe: all Cargo commands use offline/frozen. Do not reuse this disposition for general online Cargo use.",
+      "evidence": [
+        "observed cargo -Vv native linkage",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "cargo:libcurl:CVE-2026-5545",
+      "advisory": "CVE-2026-5545",
+      "component": "libcurl",
+      "version": "8.7.1",
+      "verdict": "not-actionable-for-offline-recipe",
+      "reason": "No Cargo/libcurl/OpenSSL network/auth/redirect/cookie/proxy session in the qualified native recipe: all Cargo commands use offline/frozen. Do not reuse this disposition for general online Cargo use.",
+      "evidence": [
+        "observed cargo -Vv native linkage",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "cargo:libcurl:CVE-2026-5773",
+      "advisory": "CVE-2026-5773",
+      "component": "libcurl",
+      "version": "8.7.1",
+      "verdict": "not-actionable-for-offline-recipe",
+      "reason": "No Cargo/libcurl/OpenSSL network/auth/redirect/cookie/proxy session in the qualified native recipe: all Cargo commands use offline/frozen. Do not reuse this disposition for general online Cargo use.",
+      "evidence": [
+        "observed cargo -Vv native linkage",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "cargo:libcurl:CVE-2026-6253",
+      "advisory": "CVE-2026-6253",
+      "component": "libcurl",
+      "version": "8.7.1",
+      "verdict": "not-actionable-for-offline-recipe",
+      "reason": "No Cargo/libcurl/OpenSSL network/auth/redirect/cookie/proxy session in the qualified native recipe: all Cargo commands use offline/frozen. Do not reuse this disposition for general online Cargo use.",
+      "evidence": [
+        "observed cargo -Vv native linkage",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "cargo:libcurl:CVE-2026-6276",
+      "advisory": "CVE-2026-6276",
+      "component": "libcurl",
+      "version": "8.7.1",
+      "verdict": "not-actionable-for-offline-recipe",
+      "reason": "No Cargo/libcurl/OpenSSL network/auth/redirect/cookie/proxy session in the qualified native recipe: all Cargo commands use offline/frozen. Do not reuse this disposition for general online Cargo use.",
+      "evidence": [
+        "observed cargo -Vv native linkage",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "cargo:libcurl:CVE-2026-6429",
+      "advisory": "CVE-2026-6429",
+      "component": "libcurl",
+      "version": "8.7.1",
+      "verdict": "not-actionable-for-offline-recipe",
+      "reason": "No Cargo/libcurl/OpenSSL network/auth/redirect/cookie/proxy session in the qualified native recipe: all Cargo commands use offline/frozen. Do not reuse this disposition for general online Cargo use.",
+      "evidence": [
+        "observed cargo -Vv native linkage",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "cargo:libcurl:CVE-2026-7168",
+      "advisory": "CVE-2026-7168",
+      "component": "libcurl",
+      "version": "8.7.1",
+      "verdict": "not-actionable-for-offline-recipe",
+      "reason": "No Cargo/libcurl/OpenSSL network/auth/redirect/cookie/proxy session in the qualified native recipe: all Cargo commands use offline/frozen. Do not reuse this disposition for general online Cargo use.",
+      "evidence": [
+        "observed cargo -Vv native linkage",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "cargo:libcurl:CVE-2026-80230",
+      "advisory": "CVE-2026-80230",
+      "component": "libcurl",
+      "version": "8.7.1",
+      "verdict": "not-actionable-for-offline-recipe",
+      "reason": "No Cargo/libcurl/OpenSSL network/auth/redirect/cookie/proxy session in the qualified native recipe: all Cargo commands use offline/frozen. Do not reuse this disposition for general online Cargo use.",
+      "evidence": [
+        "observed cargo -Vv native linkage",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "cargo:libcurl:CVE-2026-80231",
+      "advisory": "CVE-2026-80231",
+      "component": "libcurl",
+      "version": "8.7.1",
+      "verdict": "not-actionable-for-offline-recipe",
+      "reason": "No Cargo/libcurl/OpenSSL network/auth/redirect/cookie/proxy session in the qualified native recipe: all Cargo commands use offline/frozen. Do not reuse this disposition for general online Cargo use.",
+      "evidence": [
+        "observed cargo -Vv native linkage",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "cargo:libcurl:CVE-2026-82209",
+      "advisory": "CVE-2026-82209",
+      "component": "libcurl",
+      "version": "8.7.1",
+      "verdict": "not-actionable-for-offline-recipe",
+      "reason": "No Cargo/libcurl/OpenSSL network/auth/redirect/cookie/proxy session in the qualified native recipe: all Cargo commands use offline/frozen. Do not reuse this disposition for general online Cargo use.",
+      "evidence": [
+        "observed cargo -Vv native linkage",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "cargo:libcurl:CVE-2026-8286",
+      "advisory": "CVE-2026-8286",
+      "component": "libcurl",
+      "version": "8.7.1",
+      "verdict": "not-actionable-for-offline-recipe",
+      "reason": "No Cargo/libcurl/OpenSSL network/auth/redirect/cookie/proxy session in the qualified native recipe: all Cargo commands use offline/frozen. Do not reuse this disposition for general online Cargo use.",
+      "evidence": [
+        "observed cargo -Vv native linkage",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "cargo:libcurl:CVE-2026-8458",
+      "advisory": "CVE-2026-8458",
+      "component": "libcurl",
+      "version": "8.7.1",
+      "verdict": "not-actionable-for-offline-recipe",
+      "reason": "No Cargo/libcurl/OpenSSL network/auth/redirect/cookie/proxy session in the qualified native recipe: all Cargo commands use offline/frozen. Do not reuse this disposition for general online Cargo use.",
+      "evidence": [
+        "observed cargo -Vv native linkage",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "cargo:libcurl:CVE-2026-8924",
+      "advisory": "CVE-2026-8924",
+      "component": "libcurl",
+      "version": "8.7.1",
+      "verdict": "not-actionable-for-offline-recipe",
+      "reason": "No Cargo/libcurl/OpenSSL network/auth/redirect/cookie/proxy session in the qualified native recipe: all Cargo commands use offline/frozen. Do not reuse this disposition for general online Cargo use.",
+      "evidence": [
+        "observed cargo -Vv native linkage",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "cargo:libcurl:CVE-2026-8927",
+      "advisory": "CVE-2026-8927",
+      "component": "libcurl",
+      "version": "8.7.1",
+      "verdict": "not-actionable-for-offline-recipe",
+      "reason": "No Cargo/libcurl/OpenSSL network/auth/redirect/cookie/proxy session in the qualified native recipe: all Cargo commands use offline/frozen. Do not reuse this disposition for general online Cargo use.",
+      "evidence": [
+        "observed cargo -Vv native linkage",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "cargo:libcurl:CVE-2026-8932",
+      "advisory": "CVE-2026-8932",
+      "component": "libcurl",
+      "version": "8.7.1",
+      "verdict": "not-actionable-for-offline-recipe",
+      "reason": "No Cargo/libcurl/OpenSSL network/auth/redirect/cookie/proxy session in the qualified native recipe: all Cargo commands use offline/frozen. Do not reuse this disposition for general online Cargo use.",
+      "evidence": [
+        "observed cargo -Vv native linkage",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "cargo:libcurl:CVE-2026-9547",
+      "advisory": "CVE-2026-9547",
+      "component": "libcurl",
+      "version": "8.7.1",
+      "verdict": "not-actionable-for-offline-recipe",
+      "reason": "No Cargo/libcurl/OpenSSL network/auth/redirect/cookie/proxy session in the qualified native recipe: all Cargo commands use offline/frozen. Do not reuse this disposition for general online Cargo use.",
+      "evidence": [
+        "observed cargo -Vv native linkage",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "external-os:macOS:CVE-1999-0590",
+      "advisory": "CVE-1999-0590",
+      "component": "macOS",
+      "version": "27.0.1",
+      "verdict": "not-actionable-product-or-policy-mismatch",
+      "reason": "Matched records concern a 1999 login-banner policy and Mac OS 9 control panel, not the observed modern macOS build or validation API.",
+      "evidence": [
+        "actual sw_vers version/build, supplemental native cohort",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    },
+    {
+      "inputId": "external-os:macOS:CVE-2001-0102",
+      "advisory": "CVE-2001-0102",
+      "component": "macOS",
+      "version": "27.0.1",
+      "verdict": "not-actionable-product-or-policy-mismatch",
+      "reason": "Matched records concern a 1999 login-banner policy and Mac OS 9 control panel, not the observed modern macOS build or validation API.",
+      "evidence": [
+        "actual sw_vers version/build, supplemental native cohort",
+        "Exact native byte/version/OS/linking receipts and original primary CPE responses retained."
+      ],
+      "limits": [
+        "No product/release/target acceptance or blanket CVE-free statement.",
+        "Changed APIs/online use/OS/build/fork require new qualification."
+      ]
+    }
+  ],
+  "licenseLimitations": [
+    {
+      "ref": "pkg:npm/%40npmcli/agent@5.0.2",
+      "limitation": "Upstream declares ISC but publishes no separate own copyright/license notice; canonical text is a reference, not an invented publisher notice or legal/distribution approval.",
+      "verdict": "reviewed-declaration-by-reference-no-distribution-approval"
+    },
+    {
+      "ref": "pkg:npm/proxy-agent-negotiate@1.1.0",
+      "limitation": "Upstream declares MIT but publishes no separate own copyright/license notice; canonical text is a reference, not an invented publisher notice or legal/distribution approval.",
+      "verdict": "reviewed-declaration-by-reference-no-distribution-approval"
+    }
+  ],
+  "riskAcceptanceInvented": false,
+  "architectureAccepted": false
+}

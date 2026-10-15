@@ -1,0 +1,566 @@
+{
+  "candidate": "tool-pip",
+  "sourceRevision": "23e576efd0dda0f00f5462eda9295c1ae4ec8fee",
+  "collectorRevision": "3beb349157d80692b6312cc94ce889cb8a5faab9",
+  "recordedAt": "2026-10-15T13:09:10.283Z",
+  "components": [
+    {
+      "ref": "pkg:pypi/pip@26.2.1",
+      "name": "pip",
+      "version": "26.2.1",
+      "license": "MIT",
+      "scope": "local-only-build-provisioner",
+      "ecosystem": "PyPI",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "licenses/LICENSE.txt",
+          "sha256": "634300a669d49aeae65b12c6c48c924c51a4cdf3d1ff086dc3456dc8bcaa2104",
+          "bytes": 1093
+        },
+        {
+          "file": "licenses/src/pip/_vendor/cachecontrol/LICENSE.txt",
+          "sha256": "86eeee87be2a43f3ff1f56496f451f69243926f025fedbb033666c304c4c161b",
+          "bytes": 558
+        },
+        {
+          "file": "licenses/src/pip/_vendor/certifi/LICENSE",
+          "sha256": "e93716da6b9c0d5a4a1df60fe695b370f0695603d21f6f83f053e42cfc10caf7",
+          "bytes": 989
+        },
+        {
+          "file": "licenses/src/pip/_vendor/distlib/LICENSE.txt",
+          "sha256": "808e10c8a6ab8deb149ff9b3fb19f447a808094606d712a9ca57fead3552599d",
+          "bytes": 14531
+        },
+        {
+          "file": "licenses/src/pip/_vendor/distro/LICENSE",
+          "sha256": "cb5e8e7e5f4a3988e1063c142c60dc2df75605f4c46515e776e3aca6df976e14",
+          "bytes": 11325
+        },
+        {
+          "file": "licenses/src/pip/_vendor/idna/LICENSE.md",
+          "sha256": "1a9a4f0e3d479a27240ddd59a9137a66ab4a0f9dfdc8ca6188cc0bfd85187f04",
+          "bytes": 1541
+        },
+        {
+          "file": "licenses/src/pip/_vendor/msgpack/COPYING",
+          "sha256": "492dedba85da5872f78e6091bcd1fea474d660d35acb4dee964b8aab3f007427",
+          "bytes": 614
+        },
+        {
+          "file": "licenses/src/pip/_vendor/packaging/LICENSE",
+          "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48",
+          "bytes": 197
+        },
+        {
+          "file": "licenses/src/pip/_vendor/packaging/LICENSE.APACHE",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+          "bytes": 10174
+        },
+        {
+          "file": "licenses/src/pip/_vendor/packaging/LICENSE.BSD",
+          "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5",
+          "bytes": 1344
+        },
+        {
+          "file": "licenses/src/pip/_vendor/pkg_resources/LICENSE",
+          "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741",
+          "bytes": 1023
+        },
+        {
+          "file": "licenses/src/pip/_vendor/platformdirs/LICENSE",
+          "sha256": "29e0fd62e929850e86eb28c3fdccf0cefdf4fa94879011cffb3d0d4bed6d4db6",
+          "bytes": 1089
+        },
+        {
+          "file": "licenses/src/pip/_vendor/pygments/LICENSE",
+          "sha256": "a9d66f1d526df02e29dce73436d34e56e8632f46c275bbdffc70569e882f9f17",
+          "bytes": 1331
+        },
+        {
+          "file": "licenses/src/pip/_vendor/pyproject_hooks/LICENSE",
+          "sha256": "1b22b049b5267d6dfc23a67bf4a84d8ec04b9fdfb1a51d360e42b4342c8b4154",
+          "bytes": 1081
+        },
+        {
+          "file": "licenses/src/pip/_vendor/requests/LICENSE",
+          "sha256": "09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b",
+          "bytes": 10142
+        },
+        {
+          "file": "licenses/src/pip/_vendor/resolvelib/LICENSE",
+          "sha256": "f388fd38cad13112c1dc0f669bbe80e7f84541edbafb72f3030d2ca7642c3c9d",
+          "bytes": 751
+        },
+        {
+          "file": "licenses/src/pip/_vendor/rich/LICENSE",
+          "sha256": "deed7c17a4318158190a3ea239cc879a5a50271cebb98ae7025f48fbe58dca15",
+          "bytes": 1056
+        },
+        {
+          "file": "licenses/src/pip/_vendor/tomli/LICENSE",
+          "sha256": "b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe",
+          "bytes": 1072
+        },
+        {
+          "file": "licenses/src/pip/_vendor/tomli_w/LICENSE",
+          "sha256": "b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe",
+          "bytes": 1072
+        },
+        {
+          "file": "licenses/src/pip/_vendor/truststore/LICENSE",
+          "sha256": "33be7b7e8fa4fd19b1760e1a8ed8a668bdab852c91b692dd41424bcb725a9fca",
+          "bytes": 1086
+        },
+        {
+          "file": "licenses/src/pip/_vendor/urllib3/LICENSE.txt",
+          "sha256": "130e3a64d5fdd5d096a752694634a7d9df284469de86e5732100268041e3d686",
+          "bytes": 1093
+        }
+      ]
+    },
+    {
+      "ref": "pkg:pypi/cachecontrol@0.14.4",
+      "name": "cachecontrol",
+      "version": "0.14.4",
+      "license": "Apache-2.0",
+      "scope": "local-only-build-provisioner-vendor",
+      "ecosystem": "PyPI",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "LICENSE.txt",
+          "sha256": "86eeee87be2a43f3ff1f56496f451f69243926f025fedbb033666c304c4c161b",
+          "bytes": 558
+        }
+      ],
+      "selection": "pip vendor.txt plus selected payload"
+    },
+    {
+      "ref": "pkg:pypi/distlib@0.4.2",
+      "name": "distlib",
+      "version": "0.4.2",
+      "license": "Python-2.0",
+      "scope": "local-only-build-provisioner-vendor",
+      "ecosystem": "PyPI",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "LICENSE.txt",
+          "sha256": "808e10c8a6ab8deb149ff9b3fb19f447a808094606d712a9ca57fead3552599d",
+          "bytes": 14531
+        }
+      ],
+      "selection": "pip vendor.txt plus selected payload"
+    },
+    {
+      "ref": "pkg:pypi/distro@1.9.0",
+      "name": "distro",
+      "version": "1.9.0",
+      "license": "Apache-2.0",
+      "scope": "local-only-build-provisioner-vendor",
+      "ecosystem": "PyPI",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "cb5e8e7e5f4a3988e1063c142c60dc2df75605f4c46515e776e3aca6df976e14",
+          "bytes": 11325
+        }
+      ],
+      "selection": "pip vendor.txt plus selected payload"
+    },
+    {
+      "ref": "pkg:pypi/msgpack@1.1.2",
+      "name": "msgpack",
+      "version": "1.1.2",
+      "license": "Apache-2.0",
+      "scope": "local-only-build-provisioner-vendor",
+      "ecosystem": "PyPI",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "COPYING",
+          "sha256": "492dedba85da5872f78e6091bcd1fea474d660d35acb4dee964b8aab3f007427",
+          "bytes": 614
+        }
+      ],
+      "selection": "pip vendor.txt plus selected payload"
+    },
+    {
+      "ref": "pkg:pypi/packaging@26.2",
+      "name": "packaging",
+      "version": "26.2",
+      "license": "Apache-2.0 OR BSD-2-Clause",
+      "scope": "local-only-build-provisioner-vendor",
+      "ecosystem": "PyPI",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48",
+          "bytes": 197
+        },
+        {
+          "file": "LICENSE.APACHE",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+          "bytes": 10174
+        },
+        {
+          "file": "LICENSE.BSD",
+          "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5",
+          "bytes": 1344
+        }
+      ],
+      "selection": "pip vendor.txt plus selected payload"
+    },
+    {
+      "ref": "pkg:pypi/platformdirs@4.10.0",
+      "name": "platformdirs",
+      "version": "4.10.0",
+      "license": "MIT",
+      "scope": "local-only-build-provisioner-vendor",
+      "ecosystem": "PyPI",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "29e0fd62e929850e86eb28c3fdccf0cefdf4fa94879011cffb3d0d4bed6d4db6",
+          "bytes": 1089
+        }
+      ],
+      "selection": "pip vendor.txt plus selected payload"
+    },
+    {
+      "ref": "pkg:pypi/pyproject-hooks@1.2.0",
+      "name": "pyproject-hooks",
+      "version": "1.2.0",
+      "license": "MIT",
+      "scope": "local-only-build-provisioner-vendor",
+      "ecosystem": "PyPI",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "1b22b049b5267d6dfc23a67bf4a84d8ec04b9fdfb1a51d360e42b4342c8b4154",
+          "bytes": 1081
+        }
+      ],
+      "selection": "pip vendor.txt plus selected payload"
+    },
+    {
+      "ref": "pkg:pypi/requests@2.34.2",
+      "name": "requests",
+      "version": "2.34.2",
+      "license": "Apache-2.0",
+      "scope": "local-only-build-provisioner-vendor",
+      "ecosystem": "PyPI",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b",
+          "bytes": 10142
+        }
+      ],
+      "selection": "pip vendor.txt plus selected payload"
+    },
+    {
+      "ref": "pkg:pypi/certifi@2026.6.17",
+      "name": "certifi",
+      "version": "2026.6.17",
+      "license": "MPL-2.0",
+      "scope": "local-only-build-provisioner-vendor",
+      "ecosystem": "PyPI",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "e93716da6b9c0d5a4a1df60fe695b370f0695603d21f6f83f053e42cfc10caf7",
+          "bytes": 989
+        }
+      ],
+      "selection": "pip vendor.txt plus selected payload"
+    },
+    {
+      "ref": "pkg:pypi/idna@3.18",
+      "name": "idna",
+      "version": "3.18",
+      "license": "BSD-3-Clause",
+      "scope": "local-only-build-provisioner-vendor",
+      "ecosystem": "PyPI",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "LICENSE.md",
+          "sha256": "1a9a4f0e3d479a27240ddd59a9137a66ab4a0f9dfdc8ca6188cc0bfd85187f04",
+          "bytes": 1541
+        }
+      ],
+      "selection": "pip vendor.txt plus selected payload"
+    },
+    {
+      "ref": "pkg:pypi/urllib3@2.7.0",
+      "name": "urllib3",
+      "version": "2.7.0",
+      "license": "MIT",
+      "scope": "local-only-build-provisioner-vendor",
+      "ecosystem": "PyPI",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "LICENSE.txt",
+          "sha256": "130e3a64d5fdd5d096a752694634a7d9df284469de86e5732100268041e3d686",
+          "bytes": 1093
+        }
+      ],
+      "selection": "pip vendor.txt plus selected payload"
+    },
+    {
+      "ref": "pkg:pypi/rich@14.2.0",
+      "name": "rich",
+      "version": "14.2.0",
+      "license": "MIT",
+      "scope": "local-only-build-provisioner-vendor",
+      "ecosystem": "PyPI",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "deed7c17a4318158190a3ea239cc879a5a50271cebb98ae7025f48fbe58dca15",
+          "bytes": 1056
+        }
+      ],
+      "selection": "pip vendor.txt plus selected payload"
+    },
+    {
+      "ref": "pkg:pypi/pygments@2.20.0",
+      "name": "pygments",
+      "version": "2.20.0",
+      "license": "BSD-2-Clause",
+      "scope": "local-only-build-provisioner-vendor",
+      "ecosystem": "PyPI",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "a9d66f1d526df02e29dce73436d34e56e8632f46c275bbdffc70569e882f9f17",
+          "bytes": 1331
+        }
+      ],
+      "selection": "pip vendor.txt plus selected payload"
+    },
+    {
+      "ref": "pkg:pypi/resolvelib@1.2.1",
+      "name": "resolvelib",
+      "version": "1.2.1",
+      "license": "ISC",
+      "scope": "local-only-build-provisioner-vendor",
+      "ecosystem": "PyPI",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "f388fd38cad13112c1dc0f669bbe80e7f84541edbafb72f3030d2ca7642c3c9d",
+          "bytes": 751
+        }
+      ],
+      "selection": "pip vendor.txt plus selected payload"
+    },
+    {
+      "ref": "pkg:pypi/setuptools@70.3.0",
+      "name": "setuptools",
+      "version": "70.3.0",
+      "license": "MIT",
+      "scope": "local-only-build-provisioner-vendor",
+      "ecosystem": "PyPI",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741",
+          "bytes": 1023
+        }
+      ],
+      "selection": "pkg_resources only; setuptools build/package_index modules absent"
+    },
+    {
+      "ref": "pkg:pypi/tomli@2.4.1",
+      "name": "tomli",
+      "version": "2.4.1",
+      "license": "MIT",
+      "scope": "local-only-build-provisioner-vendor",
+      "ecosystem": "PyPI",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe",
+          "bytes": 1072
+        }
+      ],
+      "selection": "pip vendor.txt plus selected payload"
+    },
+    {
+      "ref": "pkg:pypi/tomli-w@1.2.0",
+      "name": "tomli-w",
+      "version": "1.2.0",
+      "license": "MIT",
+      "scope": "local-only-build-provisioner-vendor",
+      "ecosystem": "PyPI",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe",
+          "bytes": 1072
+        }
+      ],
+      "selection": "pip vendor.txt plus selected payload"
+    },
+    {
+      "ref": "pkg:pypi/truststore@0.10.4",
+      "name": "truststore",
+      "version": "0.10.4",
+      "license": "MIT",
+      "scope": "local-only-build-provisioner-vendor",
+      "ecosystem": "PyPI",
+      "metadataSource": "verified-distribution-metadata",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "33be7b7e8fa4fd19b1760e1a8ed8a668bdab852c91b692dd41424bcb725a9fca",
+          "bytes": 1086
+        }
+      ],
+      "selection": "pip vendor.txt plus selected payload"
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "candidate:tool-pip",
+      "dependsOn": [
+        "pkg:pypi/pip@26.2.1",
+        "pkg:pypi/cachecontrol@0.14.4",
+        "pkg:pypi/distlib@0.4.2",
+        "pkg:pypi/distro@1.9.0",
+        "pkg:pypi/msgpack@1.1.2",
+        "pkg:pypi/packaging@26.2",
+        "pkg:pypi/platformdirs@4.10.0",
+        "pkg:pypi/pyproject-hooks@1.2.0",
+        "pkg:pypi/requests@2.34.2",
+        "pkg:pypi/certifi@2026.6.17",
+        "pkg:pypi/idna@3.18",
+        "pkg:pypi/urllib3@2.7.0",
+        "pkg:pypi/rich@14.2.0",
+        "pkg:pypi/pygments@2.20.0",
+        "pkg:pypi/resolvelib@1.2.1",
+        "pkg:pypi/setuptools@70.3.0",
+        "pkg:pypi/tomli@2.4.1",
+        "pkg:pypi/tomli-w@1.2.0",
+        "pkg:pypi/truststore@0.10.4"
+      ]
+    },
+    {
+      "ref": "pkg:pypi/pip@26.2.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/cachecontrol@0.14.4",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/distlib@0.4.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/distro@1.9.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/msgpack@1.1.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/packaging@26.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/platformdirs@4.10.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/pyproject-hooks@1.2.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/requests@2.34.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/certifi@2026.6.17",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/idna@3.18",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/urllib3@2.7.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/rich@14.2.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/pygments@2.20.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/resolvelib@1.2.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/setuptools@70.3.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/tomli@2.4.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/tomli-w@1.2.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/truststore@0.10.4",
+      "dependsOn": []
+    }
+  ],
+  "scanReuse": {
+    "file": "pip-advisories.json",
+    "sha256": "a5e4149c2b1014207d4df0389d81481fde9da0a1f1649c5e7301604ae1a4196a",
+    "reason": "identical exact package/version/ref query graph; original response dates and collector revision retained"
+  }
+}

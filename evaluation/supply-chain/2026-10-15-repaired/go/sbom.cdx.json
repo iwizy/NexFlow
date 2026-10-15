@@ -1,0 +1,382 @@
+{
+  "$schema": "http://cyclonedx.org/schema/bom-1.6.schema.json",
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-10-15T13:06:21.874Z",
+    "component": {
+      "type": "application",
+      "bom-ref": "candidate:go",
+      "name": "nexflow-go-evaluation",
+      "version": "23e576efd0dda0f00f5462eda9295c1ae4ec8fee",
+      "properties": [
+        {
+          "name": "nexflow:scope",
+          "value": "disposable-validation-only-not-release"
+        },
+        {
+          "name": "nexflow:collectorRevision",
+          "value": "9be540223d7ca177b8320c66f28e541f7cdf6e8e"
+        }
+      ]
+    }
+  },
+  "components": [
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/github.com/dlclark/regexp2@v1.11.0",
+      "name": "github.com/dlclark/regexp2",
+      "version": "v1.11.0",
+      "purl": "pkg:golang/github.com/dlclark/regexp2@v1.11.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "NOASSERTION"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "2a93432600feacb866669789bb7910ff283e1af764fcd03d70c6592f9619aeb4"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-test-module"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "go-list-full-module-graph-cache"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        },
+        {
+          "name": "nexflow:goModuleSum",
+          "value": "h1:G/nrcoOa7ZXlpoa/91N3X7mM3r8eIlMBBJZvsz/mxKI="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/github.com/santhosh-tekuri/jsonschema/v6@v6.0.2",
+      "name": "github.com/santhosh-tekuri/jsonschema/v6",
+      "version": "v6.0.2",
+      "purl": "pkg:golang/github.com/santhosh-tekuri/jsonschema/v6@v6.0.2",
+      "licenses": [
+        {
+          "license": {
+            "name": "NOASSERTION"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "fe5eb88614e560d2072d1f95708ac217b6cb047789531ad633114ec277338635"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "compiled-module"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "go-list-full-module-graph-cache"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        },
+        {
+          "name": "nexflow:goModuleSum",
+          "value": "h1:KRzFb2m7YtdldCEkzs6KqmJw4nqEVZGK7IN2kJkjTuQ="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/go.yaml.in/yaml/v3@v3.0.4",
+      "name": "go.yaml.in/yaml/v3",
+      "version": "v3.0.4",
+      "purl": "pkg:golang/go.yaml.in/yaml/v3@v3.0.4",
+      "licenses": [
+        {
+          "license": {
+            "name": "NOASSERTION"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "0317dae56eaa9e9954467c8768fd6a89ba2005f1534e2c26fce5163ad8d2ef31"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "compiled-module"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "go-list-full-module-graph-cache"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        },
+        {
+          "name": "nexflow:goModuleSum",
+          "value": "h1:tfq32ie2Jv2UxXFdLJdh3jXuOzWiL1fo0bu/FbuKpbc="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/golang.org/x/mod@v0.41.0",
+      "name": "golang.org/x/mod",
+      "version": "v0.41.0",
+      "purl": "pkg:golang/golang.org/x/mod@v0.41.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "NOASSERTION"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "201e678d0a35b18b246abe58d80017b75d60be21cbaf4cbb9e963b48872565a9"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-test-module"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "go-list-full-module-graph-cache"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        },
+        {
+          "name": "nexflow:goModuleSum",
+          "value": "h1:qJmnOUb4YB+FsEuM3HcWucdZASCPGhsX6uljO6pog0c="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/golang.org/x/sync@v0.24.0",
+      "name": "golang.org/x/sync",
+      "version": "v0.24.0",
+      "purl": "pkg:golang/golang.org/x/sync@v0.24.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "NOASSERTION"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "ca3fcf3ea8259e75891f7947e1a816a5b89402c542d45d8bbbd9e061b0c58019"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-test-module"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "go-list-full-module-graph-cache"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        },
+        {
+          "name": "nexflow:goModuleSum",
+          "value": "h1:iqiDrGoDgyuvAKrhLQthUEzU/R378N78gXbBjxed7oA="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/golang.org/x/text@v0.43.0",
+      "name": "golang.org/x/text",
+      "version": "v0.43.0",
+      "purl": "pkg:golang/golang.org/x/text@v0.43.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "NOASSERTION"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "b75131f628f6e2e4892fd638d33127e952a5027775e0162b94ba069cb4e13863"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "compiled-module"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "go-list-full-module-graph-cache"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        },
+        {
+          "name": "nexflow:goModuleSum",
+          "value": "h1:1QivrlhwAsnMOcqgOdl9my7s9OyZl8O5/UGUTJVXoWc="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/golang.org/x/tools@v0.51.0",
+      "name": "golang.org/x/tools",
+      "version": "v0.51.0",
+      "purl": "pkg:golang/golang.org/x/tools@v0.51.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "NOASSERTION"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "176a49a54ed781feb196235cc640f0454884f4e59d0b859ab4ecc9169cde513c"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-test-module"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "go-list-full-module-graph-cache"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        },
+        {
+          "name": "nexflow:goModuleSum",
+          "value": "h1:k4Xc/1Om9jwkBJBo4NVLMSARBoWtK10mx+W5BnXCeAI="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/gopkg.in/check.v1@v0.0.0-20161208181325-20d25e280405",
+      "name": "gopkg.in/check.v1",
+      "version": "v0.0.0-20161208181325-20d25e280405",
+      "purl": "pkg:golang/gopkg.in/check.v1@v0.0.0-20161208181325-20d25e280405",
+      "licenses": [
+        {
+          "license": {
+            "name": "NOASSERTION"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "4e1817f964ca34e545b81afda0325a5e89cf58de2e413d8207c0afddd0fdc15c"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nexflow:selection",
+          "value": "resolved-test-module"
+        },
+        {
+          "name": "nexflow:metadataSource",
+          "value": "go-list-full-module-graph-cache"
+        },
+        {
+          "name": "nexflow:licenseAssessment",
+          "value": "upstream-declared-not-legal-approval"
+        },
+        {
+          "name": "nexflow:goModuleSum",
+          "value": "h1:yhCVgyC4o1eVCa2tZl7eS0r+SDo693bJlVdllGtEeKM="
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "candidate:go",
+      "dependsOn": [
+        "pkg:golang/github.com/santhosh-tekuri/jsonschema/v6@v6.0.2",
+        "pkg:golang/go.yaml.in/yaml/v3@v3.0.4"
+      ]
+    },
+    {
+      "ref": "pkg:golang/github.com/dlclark/regexp2@v1.11.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:golang/github.com/santhosh-tekuri/jsonschema/v6@v6.0.2",
+      "dependsOn": [
+        "pkg:golang/golang.org/x/text@v0.43.0"
+      ]
+    },
+    {
+      "ref": "pkg:golang/go.yaml.in/yaml/v3@v3.0.4",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:golang/golang.org/x/mod@v0.41.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:golang/golang.org/x/sync@v0.24.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:golang/golang.org/x/text@v0.43.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:golang/golang.org/x/tools@v0.51.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:golang/gopkg.in/check.v1@v0.0.0-20161208181325-20d25e280405",
+      "dependsOn": []
+    }
+  ],
+  "compositions": [
+    {
+      "aggregate": "incomplete",
+      "assemblies": [
+        "candidate:go"
+      ]
+    }
+  ]
+}

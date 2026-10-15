@@ -1,0 +1,1124 @@
+{
+  "formatVersion": 1,
+  "task": "NF-102-02",
+  "candidate": "python",
+  "collectorVersion": "nf-102-02-repair-v1",
+  "recordedAt": "2026-10-15T13:06:21.874Z",
+  "collectorRevision": "9be540223d7ca177b8320c66f28e541f7cdf6e8e",
+  "sourceRevision": "23e576efd0dda0f00f5462eda9295c1ae4ec8fee",
+  "publishedHead": "23e576efd0dda0f00f5462eda9295c1ae4ec8fee",
+  "pullRequest": null,
+  "toolchain": "CPython 3.12.14; PyYAML 6.0.3; jsonschema 4.26.0",
+  "specificationRevision": "1d1fa238ab5729a79bee9389d5c66cfd20a61256",
+  "evaluationPackageRevision": "23e576efd0dda0f00f5462eda9295c1ae4ec8fee",
+  "corpusSha256": "01b116005f0650ac980194b22c02188289eaf1e8626b227aecf3684ece0d8f6b",
+  "catalogSha256": "f1bf8cb786442a212e14c79eb39279a2cdbf05ec20b09901374359d545d74e90",
+  "sourceManifest": [
+    {
+      "file": "evaluation/prototypes/python/.python-version",
+      "sha256": "845c494b4a7e1a741db19fd42eda239d3ee03b65f08276008943349a3055c9cc",
+      "bytes": 8
+    },
+    {
+      "file": "evaluation/prototypes/python/README.md",
+      "sha256": "fa80c4e7cf49c0b2d538cf015997c513735726a469aa59b5e19011d26129c531",
+      "bytes": 5361
+    },
+    {
+      "file": "evaluation/prototypes/python/cli.py",
+      "sha256": "ac602e08999c07b14215c577b38b411e3c298b902f5700db681a61839c5d1fe5",
+      "bytes": 3112
+    },
+    {
+      "file": "evaluation/prototypes/python/library_driver.py",
+      "sha256": "4c7d2a24e5eb330dcdf60caf3fbebcc347ba9d9d9f57feb7c9cc67191c9334e2",
+      "bytes": 1786
+    },
+    {
+      "file": "evaluation/prototypes/python/nexflow_python_evaluation/__init__.py",
+      "sha256": "b0b4d4b76c2e19981a4791177534d58c7e17d55ced1cb27a2da7efd8917cb5c6",
+      "bytes": 551
+    },
+    {
+      "file": "evaluation/prototypes/python/nexflow_python_evaluation/discovery.py",
+      "sha256": "42e101935704f55f43b57252e5c9b60f1fb21186f1adc687e76831a6dc45ca88",
+      "bytes": 6431
+    },
+    {
+      "file": "evaluation/prototypes/python/nexflow_python_evaluation/files.py",
+      "sha256": "4bbf3e9894d39e0309c00198783c983c312c119618e3612889e5eebb3ee74eaf",
+      "bytes": 2757
+    },
+    {
+      "file": "evaluation/prototypes/python/nexflow_python_evaluation/inspection.py",
+      "sha256": "5a49f74f3ed434e462f0b64403f91af33685681e0b5f2d801cb238fd25aee0c7",
+      "bytes": 6396
+    },
+    {
+      "file": "evaluation/prototypes/python/nexflow_python_evaluation/library.py",
+      "sha256": "5a50be62787d304441ba54759f1fdc2704a3d1c2183b4ebd075277293b2596ee",
+      "bytes": 5420
+    },
+    {
+      "file": "evaluation/prototypes/python/nexflow_python_evaluation/model.py",
+      "sha256": "2429b1e2ac8ca511f6074a43f28a1d2f8e287675fc8cffbcf1ee573a3334a440",
+      "bytes": 3787
+    },
+    {
+      "file": "evaluation/prototypes/python/nexflow_python_evaluation/public.py",
+      "sha256": "e3cf57d26dd2d4bee247a604633752defd3172592355be4bd61c18b860a9d56c",
+      "bytes": 2507
+    },
+    {
+      "file": "evaluation/prototypes/python/nexflow_python_evaluation/schema.py",
+      "sha256": "f00871b39d1d47b2c67c9d8450b412644543c034ee296391050d449b09b6887b",
+      "bytes": 5593
+    },
+    {
+      "file": "evaluation/prototypes/python/nexflow_python_evaluation/semantic-rules.json",
+      "sha256": "4aa1981c1e74ee6676a0f1fdb1266380e1296a9e017a3dc21f2e5316217b45c0",
+      "bytes": 6873
+    },
+    {
+      "file": "evaluation/prototypes/python/nexflow_python_evaluation/semantics.py",
+      "sha256": "46f302b4dd2e750bf5c3f39d3e51fc7a2d11e4d4028815f29cc61b6fa2c2dca9",
+      "bytes": 12497
+    },
+    {
+      "file": "evaluation/prototypes/python/nexflow_python_evaluation/yaml_input.py",
+      "sha256": "4c460e98505c283e46dee355b500afcab3a18aa807e75384d816e4cdab8daa63",
+      "bytes": 3827
+    },
+    {
+      "file": "evaluation/prototypes/python/requirements.in",
+      "sha256": "5eb0969fa05027e2549cd254b67c7c31160c08c6ed14c02e9188fecd73ef953e",
+      "bytes": 58
+    },
+    {
+      "file": "evaluation/prototypes/python/requirements.lock",
+      "sha256": "6d95fc741f0f204c6f16c218360bd502188ba86bc95234c5b04d47e535ad25d7",
+      "bytes": 16883
+    },
+    {
+      "file": "evaluation/prototypes/python/self_test.py",
+      "sha256": "c689ee6bdbbe156bca26fd8904486bde4004e06a0650dea749a239ec878e4f02",
+      "bytes": 11563
+    }
+  ],
+  "target": "macos/arm64",
+  "components": [
+    {
+      "ref": "pkg:cargo/archery@1.2.2",
+      "ecosystem": "crates.io",
+      "name": "archery",
+      "version": "1.2.2",
+      "scope": "wheel-upstream-sbom",
+      "license": "MIT",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "metadataSource": "rpds-py-wheel-embedded-SBOM",
+      "upstreamSbomSha256": "65420f27e5cb2e81bcbb5a8c7334149ec68e36e94b0301b2e4f6a7933468bb11",
+      "archiveSha256": "70e0a5f99dfebb87bb342d0f53bb92c81842e100bbb915223e38349580e5441d",
+      "linkageAssessment": "upstream-all-targets-declaration-not-independent-binary-verification"
+    },
+    {
+      "ref": "pkg:cargo/heck@0.5.0",
+      "ecosystem": "crates.io",
+      "name": "heck",
+      "version": "0.5.0",
+      "scope": "wheel-upstream-sbom",
+      "license": "MIT OR Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "metadataSource": "rpds-py-wheel-embedded-SBOM",
+      "upstreamSbomSha256": "65420f27e5cb2e81bcbb5a8c7334149ec68e36e94b0301b2e4f6a7933468bb11",
+      "archiveSha256": "2304e00983f87ffb38b55b444b5e3b60a884b5d30c0fca7d82fe33449bbe55ea",
+      "linkageAssessment": "upstream-all-targets-declaration-not-independent-binary-verification"
+    },
+    {
+      "ref": "pkg:cargo/libc@0.2.177",
+      "ecosystem": "crates.io",
+      "name": "libc",
+      "version": "0.2.177",
+      "scope": "wheel-upstream-sbom",
+      "license": "MIT OR Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "metadataSource": "rpds-py-wheel-embedded-SBOM",
+      "upstreamSbomSha256": "65420f27e5cb2e81bcbb5a8c7334149ec68e36e94b0301b2e4f6a7933468bb11",
+      "archiveSha256": "2874a2af47a2325c2001a6e6fad9b16a53b802102b528163885171cf92b15976",
+      "linkageAssessment": "upstream-all-targets-declaration-not-independent-binary-verification"
+    },
+    {
+      "ref": "pkg:cargo/once_cell@1.21.3",
+      "ecosystem": "crates.io",
+      "name": "once_cell",
+      "version": "1.21.3",
+      "scope": "wheel-upstream-sbom",
+      "license": "MIT OR Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "metadataSource": "rpds-py-wheel-embedded-SBOM",
+      "upstreamSbomSha256": "65420f27e5cb2e81bcbb5a8c7334149ec68e36e94b0301b2e4f6a7933468bb11",
+      "archiveSha256": "42f5e15c9953c5e4ccceeb2e7382a716482c34515315f7b03532b8b4e8393d2d",
+      "linkageAssessment": "upstream-all-targets-declaration-not-independent-binary-verification"
+    },
+    {
+      "ref": "pkg:cargo/proc-macro2@1.0.103",
+      "ecosystem": "crates.io",
+      "name": "proc-macro2",
+      "version": "1.0.103",
+      "scope": "wheel-upstream-sbom",
+      "license": "MIT OR Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "metadataSource": "rpds-py-wheel-embedded-SBOM",
+      "upstreamSbomSha256": "65420f27e5cb2e81bcbb5a8c7334149ec68e36e94b0301b2e4f6a7933468bb11",
+      "archiveSha256": "5ee95bc4ef87b8d5ba32e8b7714ccc834865276eab0aed5c9958d00ec45f49e8",
+      "linkageAssessment": "upstream-all-targets-declaration-not-independent-binary-verification"
+    },
+    {
+      "ref": "pkg:cargo/pyo3-build-config@0.29.0",
+      "ecosystem": "crates.io",
+      "name": "pyo3-build-config",
+      "version": "0.29.0",
+      "scope": "wheel-upstream-sbom",
+      "license": "MIT OR Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "metadataSource": "rpds-py-wheel-embedded-SBOM",
+      "upstreamSbomSha256": "65420f27e5cb2e81bcbb5a8c7334149ec68e36e94b0301b2e4f6a7933468bb11",
+      "archiveSha256": "c5e2a7d2f0d013342f295c048ad19237add5154a55b1c5a254c0ec93d4109078",
+      "linkageAssessment": "upstream-all-targets-declaration-not-independent-binary-verification"
+    },
+    {
+      "ref": "pkg:cargo/pyo3-ffi@0.29.0",
+      "ecosystem": "crates.io",
+      "name": "pyo3-ffi",
+      "version": "0.29.0",
+      "scope": "wheel-upstream-sbom",
+      "license": "MIT OR Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "metadataSource": "rpds-py-wheel-embedded-SBOM",
+      "upstreamSbomSha256": "65420f27e5cb2e81bcbb5a8c7334149ec68e36e94b0301b2e4f6a7933468bb11",
+      "archiveSha256": "ca85c467da1bbc8d866eea5deff9cf29ea5f7785054a17da36e65bda9c05845b",
+      "linkageAssessment": "upstream-all-targets-declaration-not-independent-binary-verification"
+    },
+    {
+      "ref": "pkg:cargo/pyo3-macros-backend@0.29.0",
+      "ecosystem": "crates.io",
+      "name": "pyo3-macros-backend",
+      "version": "0.29.0",
+      "scope": "wheel-upstream-sbom",
+      "license": "MIT OR Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "metadataSource": "rpds-py-wheel-embedded-SBOM",
+      "upstreamSbomSha256": "65420f27e5cb2e81bcbb5a8c7334149ec68e36e94b0301b2e4f6a7933468bb11",
+      "archiveSha256": "4ca3a1557399783172dc5bf39cfca835157732532cba56b71d2292161e53b362",
+      "linkageAssessment": "upstream-all-targets-declaration-not-independent-binary-verification"
+    },
+    {
+      "ref": "pkg:cargo/pyo3-macros@0.29.0",
+      "ecosystem": "crates.io",
+      "name": "pyo3-macros",
+      "version": "0.29.0",
+      "scope": "wheel-upstream-sbom",
+      "license": "MIT OR Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "metadataSource": "rpds-py-wheel-embedded-SBOM",
+      "upstreamSbomSha256": "65420f27e5cb2e81bcbb5a8c7334149ec68e36e94b0301b2e4f6a7933468bb11",
+      "archiveSha256": "9ac53762fd065daa3194dd09337a38bd793a188100fd1a9304c4ab312d901771",
+      "linkageAssessment": "upstream-all-targets-declaration-not-independent-binary-verification"
+    },
+    {
+      "ref": "pkg:cargo/pyo3@0.29.0",
+      "ecosystem": "crates.io",
+      "name": "pyo3",
+      "version": "0.29.0",
+      "scope": "wheel-upstream-sbom",
+      "license": "MIT OR Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "metadataSource": "rpds-py-wheel-embedded-SBOM",
+      "upstreamSbomSha256": "65420f27e5cb2e81bcbb5a8c7334149ec68e36e94b0301b2e4f6a7933468bb11",
+      "archiveSha256": "cd274650b21d4bfc26a0a47587962c1edb425f69287324355cd040c3ea66071c",
+      "linkageAssessment": "upstream-all-targets-declaration-not-independent-binary-verification"
+    },
+    {
+      "ref": "pkg:cargo/quote@1.0.42",
+      "ecosystem": "crates.io",
+      "name": "quote",
+      "version": "1.0.42",
+      "scope": "wheel-upstream-sbom",
+      "license": "MIT OR Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "metadataSource": "rpds-py-wheel-embedded-SBOM",
+      "upstreamSbomSha256": "65420f27e5cb2e81bcbb5a8c7334149ec68e36e94b0301b2e4f6a7933468bb11",
+      "archiveSha256": "a338cc41d27e6cc6dce6cefc13a0729dfbb81c262b1f519331575dd80ef3067f",
+      "linkageAssessment": "upstream-all-targets-declaration-not-independent-binary-verification"
+    },
+    {
+      "ref": "pkg:cargo/rpds@1.2.1",
+      "ecosystem": "crates.io",
+      "name": "rpds",
+      "version": "1.2.1",
+      "scope": "wheel-upstream-sbom",
+      "license": "MIT",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "metadataSource": "rpds-py-wheel-embedded-SBOM",
+      "upstreamSbomSha256": "65420f27e5cb2e81bcbb5a8c7334149ec68e36e94b0301b2e4f6a7933468bb11",
+      "archiveSha256": "e025feb26210bc196b908e72deb063b1b4000754304341cbc168a1e72c857ebc",
+      "linkageAssessment": "upstream-all-targets-declaration-not-independent-binary-verification"
+    },
+    {
+      "ref": "pkg:cargo/smallvec@1.15.1",
+      "ecosystem": "crates.io",
+      "name": "smallvec",
+      "version": "1.15.1",
+      "scope": "wheel-upstream-sbom",
+      "license": "MIT OR Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "metadataSource": "rpds-py-wheel-embedded-SBOM",
+      "upstreamSbomSha256": "65420f27e5cb2e81bcbb5a8c7334149ec68e36e94b0301b2e4f6a7933468bb11",
+      "archiveSha256": "67b1b7a3b5fe4f1376887184045fcf45c69e92af734b7aaddc05fb777b6fbd03",
+      "linkageAssessment": "upstream-all-targets-declaration-not-independent-binary-verification"
+    },
+    {
+      "ref": "pkg:cargo/syn@2.0.111",
+      "ecosystem": "crates.io",
+      "name": "syn",
+      "version": "2.0.111",
+      "scope": "wheel-upstream-sbom",
+      "license": "MIT OR Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "metadataSource": "rpds-py-wheel-embedded-SBOM",
+      "upstreamSbomSha256": "65420f27e5cb2e81bcbb5a8c7334149ec68e36e94b0301b2e4f6a7933468bb11",
+      "archiveSha256": "390cc9a294ab71bdb1aa2e99d13be9c753cd2d7bd6560c77118597410c4d2e87",
+      "linkageAssessment": "upstream-all-targets-declaration-not-independent-binary-verification"
+    },
+    {
+      "ref": "pkg:cargo/target-lexicon@0.13.3",
+      "ecosystem": "crates.io",
+      "name": "target-lexicon",
+      "version": "0.13.3",
+      "scope": "wheel-upstream-sbom",
+      "license": "Apache-2.0 WITH LLVM-exception",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "metadataSource": "rpds-py-wheel-embedded-SBOM",
+      "upstreamSbomSha256": "65420f27e5cb2e81bcbb5a8c7334149ec68e36e94b0301b2e4f6a7933468bb11",
+      "archiveSha256": "df7f62577c25e07834649fc3b39fafdc597c0a3527dc1c60129201ccfcbaa50c",
+      "linkageAssessment": "upstream-all-targets-declaration-not-independent-binary-verification"
+    },
+    {
+      "ref": "pkg:cargo/triomphe@0.1.15",
+      "ecosystem": "crates.io",
+      "name": "triomphe",
+      "version": "0.1.15",
+      "scope": "wheel-upstream-sbom",
+      "license": "MIT OR Apache-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "metadataSource": "rpds-py-wheel-embedded-SBOM",
+      "upstreamSbomSha256": "65420f27e5cb2e81bcbb5a8c7334149ec68e36e94b0301b2e4f6a7933468bb11",
+      "archiveSha256": "dd69c5aa8f924c7519d6372789a74eac5b94fb0f8fcf0d4a97eb0bfc3e785f39",
+      "linkageAssessment": "upstream-all-targets-declaration-not-independent-binary-verification"
+    },
+    {
+      "ref": "pkg:cargo/unicode-ident@1.0.22",
+      "ecosystem": "crates.io",
+      "name": "unicode-ident",
+      "version": "1.0.22",
+      "scope": "wheel-upstream-sbom",
+      "license": "(MIT OR Apache-2.0) AND Unicode-3.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "metadataSource": "rpds-py-wheel-embedded-SBOM",
+      "upstreamSbomSha256": "65420f27e5cb2e81bcbb5a8c7334149ec68e36e94b0301b2e4f6a7933468bb11",
+      "archiveSha256": "9312f7c4f6ff9069b165498234ce8be658059c6728633667c526e27dc2cf1df5",
+      "linkageAssessment": "upstream-all-targets-declaration-not-independent-binary-verification"
+    },
+    {
+      "ref": "pkg:pypi/attrs@26.1.0",
+      "ecosystem": "PyPI",
+      "name": "attrs",
+      "version": "26.1.0",
+      "scope": "installed",
+      "license": "MIT",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "metadataSha256": "4cd40e690f23bf37cbcad34efd6758e062df1df07c86833f7e3ce95bf1fa38cc",
+      "licenseFiles": [
+        {
+          "file": "attrs-26.1.0.dist-info/licenses/LICENSE",
+          "sha256": "882115c95dfc2af1eeb6714f8ec6d5cbcabf667caff8729f42420da63f714e9f"
+        }
+      ],
+      "nativeFiles": [],
+      "licenseClassifiers": [],
+      "metadataSource": "installed-wheel-METADATA",
+      "requirements": []
+    },
+    {
+      "ref": "pkg:pypi/jsonschema-specifications@2025.9.1",
+      "ecosystem": "PyPI",
+      "name": "jsonschema-specifications",
+      "version": "2025.9.1",
+      "scope": "installed",
+      "license": "MIT",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "metadataSha256": "35abd41757f32b4ea24756920ded47b70173d77cbc052a5a6d3ab583b2e8d89d",
+      "licenseFiles": [
+        {
+          "file": "jsonschema_specifications-2025.9.1.dist-info/licenses/COPYING",
+          "sha256": "42dcd63495f87b4eb7c7757afa379bb55a53f94afd7a5f657d9adf57236e515c"
+        }
+      ],
+      "nativeFiles": [],
+      "licenseClassifiers": [],
+      "metadataSource": "installed-wheel-METADATA",
+      "requirements": [
+        {
+          "name": "referencing",
+          "specifier": ">=0.31.0",
+          "marker": null,
+          "active": true
+        }
+      ]
+    },
+    {
+      "ref": "pkg:pypi/jsonschema@4.26.0",
+      "ecosystem": "PyPI",
+      "name": "jsonschema",
+      "version": "4.26.0",
+      "scope": "installed",
+      "license": "MIT",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "metadataSha256": "05b189866ca98a96da3934bf6b83687ced3ff85325273b77e16b705f6d8b26d2",
+      "licenseFiles": [
+        {
+          "file": "jsonschema-4.26.0.dist-info/licenses/COPYING",
+          "sha256": "4f92a015a13c4d1a040bef018aa13430b4f1bc73b41b16bb846c346766de7439"
+        }
+      ],
+      "nativeFiles": [],
+      "licenseClassifiers": [],
+      "metadataSource": "installed-wheel-METADATA",
+      "requirements": [
+        {
+          "name": "attrs",
+          "specifier": ">=22.2.0",
+          "marker": null,
+          "active": true
+        },
+        {
+          "name": "jsonschema-specifications",
+          "specifier": ">=2023.03.6",
+          "marker": null,
+          "active": true
+        },
+        {
+          "name": "referencing",
+          "specifier": ">=0.28.4",
+          "marker": null,
+          "active": true
+        },
+        {
+          "name": "rpds-py",
+          "specifier": ">=0.25.0",
+          "marker": null,
+          "active": true
+        },
+        {
+          "name": "fqdn",
+          "specifier": "",
+          "marker": "extra == \"format\"",
+          "active": false
+        },
+        {
+          "name": "idna",
+          "specifier": "",
+          "marker": "extra == \"format\"",
+          "active": false
+        },
+        {
+          "name": "isoduration",
+          "specifier": "",
+          "marker": "extra == \"format\"",
+          "active": false
+        },
+        {
+          "name": "jsonpointer",
+          "specifier": ">1.13",
+          "marker": "extra == \"format\"",
+          "active": false
+        },
+        {
+          "name": "rfc3339-validator",
+          "specifier": "",
+          "marker": "extra == \"format\"",
+          "active": false
+        },
+        {
+          "name": "rfc3987",
+          "specifier": "",
+          "marker": "extra == \"format\"",
+          "active": false
+        },
+        {
+          "name": "uri-template",
+          "specifier": "",
+          "marker": "extra == \"format\"",
+          "active": false
+        },
+        {
+          "name": "webcolors",
+          "specifier": ">=1.11",
+          "marker": "extra == \"format\"",
+          "active": false
+        },
+        {
+          "name": "fqdn",
+          "specifier": "",
+          "marker": "extra == \"format-nongpl\"",
+          "active": false
+        },
+        {
+          "name": "idna",
+          "specifier": "",
+          "marker": "extra == \"format-nongpl\"",
+          "active": false
+        },
+        {
+          "name": "isoduration",
+          "specifier": "",
+          "marker": "extra == \"format-nongpl\"",
+          "active": false
+        },
+        {
+          "name": "jsonpointer",
+          "specifier": ">1.13",
+          "marker": "extra == \"format-nongpl\"",
+          "active": false
+        },
+        {
+          "name": "rfc3339-validator",
+          "specifier": "",
+          "marker": "extra == \"format-nongpl\"",
+          "active": false
+        },
+        {
+          "name": "rfc3986-validator",
+          "specifier": ">0.1.0",
+          "marker": "extra == \"format-nongpl\"",
+          "active": false
+        },
+        {
+          "name": "rfc3987-syntax",
+          "specifier": ">=1.1.0",
+          "marker": "extra == \"format-nongpl\"",
+          "active": false
+        },
+        {
+          "name": "uri-template",
+          "specifier": "",
+          "marker": "extra == \"format-nongpl\"",
+          "active": false
+        },
+        {
+          "name": "webcolors",
+          "specifier": ">=24.6.0",
+          "marker": "extra == \"format-nongpl\"",
+          "active": false
+        }
+      ]
+    },
+    {
+      "ref": "pkg:pypi/pyyaml@6.0.3",
+      "ecosystem": "PyPI",
+      "name": "pyyaml",
+      "version": "6.0.3",
+      "scope": "installed",
+      "license": "MIT",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "metadataSha256": "03c3b415ed38d09faedc49360e930769b40c58f68585e6de00e2e4916a858d34",
+      "licenseFiles": [
+        {
+          "file": "pyyaml-6.0.3.dist-info/licenses/LICENSE",
+          "sha256": "8d3928f9dc4490fd635707cb88eb26bd764102a7282954307d3e5167a577e8a4"
+        }
+      ],
+      "nativeFiles": [
+        {
+          "file": "yaml/_yaml.cpython-312-darwin.so",
+          "sha256": "e22e20c9ba0922aea16158d839a651b58226eb0e86544879b7d5f5229135d928"
+        }
+      ],
+      "licenseClassifiers": [
+        "License :: OSI Approved :: MIT License"
+      ],
+      "metadataSource": "installed-wheel-METADATA",
+      "requirements": []
+    },
+    {
+      "ref": "pkg:pypi/referencing@0.37.0",
+      "ecosystem": "PyPI",
+      "name": "referencing",
+      "version": "0.37.0",
+      "scope": "installed",
+      "license": "MIT",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "metadataSha256": "c93b00e6ab1524fd60848376604c189a114374776475c25a31d57be47b29de6a",
+      "licenseFiles": [
+        {
+          "file": "referencing-0.37.0.dist-info/licenses/COPYING",
+          "sha256": "42dcd63495f87b4eb7c7757afa379bb55a53f94afd7a5f657d9adf57236e515c"
+        }
+      ],
+      "nativeFiles": [],
+      "licenseClassifiers": [],
+      "metadataSource": "installed-wheel-METADATA",
+      "requirements": [
+        {
+          "name": "attrs",
+          "specifier": ">=22.2.0",
+          "marker": null,
+          "active": true
+        },
+        {
+          "name": "rpds-py",
+          "specifier": ">=0.7.0",
+          "marker": null,
+          "active": true
+        },
+        {
+          "name": "typing-extensions",
+          "specifier": ">=4.4.0",
+          "marker": "python_version < \"3.13\"",
+          "active": true
+        }
+      ]
+    },
+    {
+      "ref": "pkg:pypi/rfc3339-validator@0.1.4",
+      "ecosystem": "PyPI",
+      "name": "rfc3339-validator",
+      "version": "0.1.4",
+      "scope": "installed",
+      "license": "MIT license",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "metadataSha256": "ac4dc2cdea6a8b61c16babbf35c0e9fa6e22e45f1c0338e66e089108dde872d2",
+      "licenseFiles": [
+        {
+          "file": "rfc3339_validator-0.1.4.dist-info/LICENSE",
+          "sha256": "5ba1a4f03626ccca6dcbf53a554545e4f776a335bfdaa233ec3bfe9bb7fac15d"
+        }
+      ],
+      "nativeFiles": [],
+      "licenseClassifiers": [
+        "License :: OSI Approved :: MIT License"
+      ],
+      "metadataSource": "installed-wheel-METADATA",
+      "requirements": [
+        {
+          "name": "six",
+          "specifier": "",
+          "marker": null,
+          "active": true
+        }
+      ]
+    },
+    {
+      "ref": "pkg:pypi/rpds-py@2026.6.3",
+      "ecosystem": "PyPI",
+      "name": "rpds-py",
+      "version": "2026.6.3",
+      "scope": "installed",
+      "license": "MIT",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "metadataSha256": "f8be7b17da3980b2c48596941411a43c70ac41b1e2d530aa531f2c15eab2eb1c",
+      "licenseFiles": [
+        {
+          "file": "rpds_py-2026.6.3.dist-info/licenses/LICENSE",
+          "sha256": "314e4e91be3baa93c0fb4bccc9e4e97cd643eb839b065af921782c2175fe9909"
+        }
+      ],
+      "nativeFiles": [
+        {
+          "file": "rpds/rpds.cpython-312-darwin.so",
+          "sha256": "c3bf158b853dd34cac6667bb8b57e7228a15c7006fe259a55ce0f575bd36fc03"
+        }
+      ],
+      "licenseClassifiers": [],
+      "metadataSource": "installed-wheel-METADATA",
+      "requirements": []
+    },
+    {
+      "ref": "pkg:pypi/six@1.17.0",
+      "ecosystem": "PyPI",
+      "name": "six",
+      "version": "1.17.0",
+      "scope": "installed",
+      "license": "MIT",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "metadataSha256": "562042078c2752549f6d8a7c86dbc5dd708088a7be6d80672ec7b07100b72468",
+      "licenseFiles": [
+        {
+          "file": "six-1.17.0.dist-info/LICENSE",
+          "sha256": "4375ba20e2b9c6c4e7cad2940a628fd90e95cc3d50ee92aae755715d8ba1fbd0"
+        }
+      ],
+      "nativeFiles": [],
+      "licenseClassifiers": [
+        "License :: OSI Approved :: MIT License"
+      ],
+      "metadataSource": "installed-wheel-METADATA",
+      "requirements": []
+    },
+    {
+      "ref": "pkg:pypi/typing-extensions@4.16.0",
+      "ecosystem": "PyPI",
+      "name": "typing-extensions",
+      "version": "4.16.0",
+      "scope": "installed",
+      "license": "PSF-2.0",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "metadataSha256": "b05084ca1d50879865178d9fff9fabeab61bdfb1f361bfbde95421ffc8f9be46",
+      "licenseFiles": [
+        {
+          "file": "typing_extensions-4.16.0.dist-info/licenses/LICENSE",
+          "sha256": "3b2f81fe21d181c499c59a256c8e1968455d6689d269aa85373bfb6af41da3bf"
+        }
+      ],
+      "nativeFiles": [],
+      "licenseClassifiers": [],
+      "metadataSource": "installed-wheel-METADATA",
+      "requirements": []
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "candidate:python",
+      "dependsOn": [
+        "pkg:pypi/attrs@26.1.0",
+        "pkg:pypi/jsonschema-specifications@2025.9.1",
+        "pkg:pypi/jsonschema@4.26.0",
+        "pkg:pypi/pyyaml@6.0.3",
+        "pkg:pypi/referencing@0.37.0",
+        "pkg:pypi/rfc3339-validator@0.1.4",
+        "pkg:pypi/rpds-py@2026.6.3",
+        "pkg:pypi/six@1.17.0",
+        "pkg:pypi/typing-extensions@4.16.0"
+      ]
+    },
+    {
+      "ref": "pkg:cargo/archery@1.2.2",
+      "dependsOn": [
+        "pkg:cargo/triomphe@0.1.15"
+      ]
+    },
+    {
+      "ref": "pkg:cargo/heck@0.5.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:cargo/libc@0.2.177",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:cargo/once_cell@1.21.3",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:cargo/proc-macro2@1.0.103",
+      "dependsOn": [
+        "pkg:cargo/unicode-ident@1.0.22"
+      ]
+    },
+    {
+      "ref": "pkg:cargo/pyo3-build-config@0.29.0",
+      "dependsOn": [
+        "pkg:cargo/target-lexicon@0.13.3"
+      ]
+    },
+    {
+      "ref": "pkg:cargo/pyo3-ffi@0.29.0",
+      "dependsOn": [
+        "pkg:cargo/libc@0.2.177",
+        "pkg:cargo/pyo3-build-config@0.29.0"
+      ]
+    },
+    {
+      "ref": "pkg:cargo/pyo3-macros-backend@0.29.0",
+      "dependsOn": [
+        "pkg:cargo/heck@0.5.0",
+        "pkg:cargo/proc-macro2@1.0.103",
+        "pkg:cargo/quote@1.0.42",
+        "pkg:cargo/syn@2.0.111"
+      ]
+    },
+    {
+      "ref": "pkg:cargo/pyo3-macros@0.29.0",
+      "dependsOn": [
+        "pkg:cargo/proc-macro2@1.0.103",
+        "pkg:cargo/pyo3-macros-backend@0.29.0",
+        "pkg:cargo/quote@1.0.42",
+        "pkg:cargo/syn@2.0.111"
+      ]
+    },
+    {
+      "ref": "pkg:cargo/pyo3@0.29.0",
+      "dependsOn": [
+        "pkg:cargo/libc@0.2.177",
+        "pkg:cargo/once_cell@1.21.3",
+        "pkg:cargo/pyo3-build-config@0.29.0",
+        "pkg:cargo/pyo3-ffi@0.29.0",
+        "pkg:cargo/pyo3-macros@0.29.0"
+      ]
+    },
+    {
+      "ref": "pkg:cargo/quote@1.0.42",
+      "dependsOn": [
+        "pkg:cargo/proc-macro2@1.0.103"
+      ]
+    },
+    {
+      "ref": "pkg:cargo/rpds@1.2.1",
+      "dependsOn": [
+        "pkg:cargo/archery@1.2.2",
+        "pkg:cargo/smallvec@1.15.1"
+      ]
+    },
+    {
+      "ref": "pkg:cargo/smallvec@1.15.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:cargo/syn@2.0.111",
+      "dependsOn": [
+        "pkg:cargo/proc-macro2@1.0.103",
+        "pkg:cargo/quote@1.0.42",
+        "pkg:cargo/unicode-ident@1.0.22"
+      ]
+    },
+    {
+      "ref": "pkg:cargo/target-lexicon@0.13.3",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:cargo/triomphe@0.1.15",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:cargo/unicode-ident@1.0.22",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/attrs@26.1.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/jsonschema-specifications@2025.9.1",
+      "dependsOn": [
+        "pkg:pypi/referencing@0.37.0"
+      ]
+    },
+    {
+      "ref": "pkg:pypi/jsonschema@4.26.0",
+      "dependsOn": [
+        "pkg:pypi/attrs@26.1.0",
+        "pkg:pypi/jsonschema-specifications@2025.9.1",
+        "pkg:pypi/referencing@0.37.0",
+        "pkg:pypi/rpds-py@2026.6.3"
+      ]
+    },
+    {
+      "ref": "pkg:pypi/pyyaml@6.0.3",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/referencing@0.37.0",
+      "dependsOn": [
+        "pkg:pypi/attrs@26.1.0",
+        "pkg:pypi/rpds-py@2026.6.3",
+        "pkg:pypi/typing-extensions@4.16.0"
+      ]
+    },
+    {
+      "ref": "pkg:pypi/rfc3339-validator@0.1.4",
+      "dependsOn": [
+        "pkg:pypi/six@1.17.0"
+      ]
+    },
+    {
+      "ref": "pkg:pypi/rpds-py@2026.6.3",
+      "dependsOn": [
+        "pkg:cargo/archery@1.2.2",
+        "pkg:cargo/pyo3@0.29.0",
+        "pkg:cargo/rpds@1.2.1"
+      ]
+    },
+    {
+      "ref": "pkg:pypi/six@1.17.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/typing-extensions@4.16.0",
+      "dependsOn": []
+    }
+  ],
+  "artifacts": [
+    {
+      "file": "__pycache__/cli.cpython-312.pyc",
+      "sha256": "52c0e9a752fa2ff28143bd4ae3a9f0bad5169188cffd24bff3842d261689a501",
+      "bytes": 5384,
+      "kind": "compiled-bytecode"
+    },
+    {
+      "file": "__pycache__/library_driver.cpython-312.pyc",
+      "sha256": "03bb751d78f0832a1446fab0371563a83f1ffdffc4bff3945e8602f506d6eeef",
+      "bytes": 3112,
+      "kind": "compiled-bytecode"
+    },
+    {
+      "file": "__pycache__/self_test.cpython-312.pyc",
+      "sha256": "bd9a25047664ae8a813969f6bfa8805c6917a1f62a20323fb7e8a200f18ec0fc",
+      "bytes": 20956,
+      "kind": "compiled-bytecode"
+    },
+    {
+      "file": "cli.py",
+      "sha256": "ac602e08999c07b14215c577b38b411e3c298b902f5700db681a61839c5d1fe5",
+      "bytes": 3112,
+      "kind": "source-entry"
+    },
+    {
+      "file": "library_driver.py",
+      "sha256": "4c7d2a24e5eb330dcdf60caf3fbebcc347ba9d9d9f57feb7c9cc67191c9334e2",
+      "bytes": 1786,
+      "kind": "source-entry"
+    },
+    {
+      "file": "nexflow_python_evaluation/__init__.py",
+      "sha256": "b0b4d4b76c2e19981a4791177534d58c7e17d55ced1cb27a2da7efd8917cb5c6",
+      "bytes": 551,
+      "kind": "source-entry"
+    },
+    {
+      "file": "nexflow_python_evaluation/__pycache__/__init__.cpython-312.pyc",
+      "sha256": "80a91578d9f48dc2219758bcdbd2b795c7ce89f5d274f3887d409405f85e3cd3",
+      "bytes": 727,
+      "kind": "compiled-bytecode"
+    },
+    {
+      "file": "nexflow_python_evaluation/__pycache__/discovery.cpython-312.pyc",
+      "sha256": "c382afeaff549e6ac399e101463fb97199cfb882d731ff67f36ded1379c25f96",
+      "bytes": 9271,
+      "kind": "compiled-bytecode"
+    },
+    {
+      "file": "nexflow_python_evaluation/__pycache__/files.cpython-312.pyc",
+      "sha256": "d74ed08a449536b185d02f4dd9c725b24f13342e82b0ea925ba1a8d719ca07d5",
+      "bytes": 4737,
+      "kind": "compiled-bytecode"
+    },
+    {
+      "file": "nexflow_python_evaluation/__pycache__/inspection.cpython-312.pyc",
+      "sha256": "521397c914e1932a09a447e2c205a66dc68fc644f8ea2c87d21492677303d4c4",
+      "bytes": 9498,
+      "kind": "compiled-bytecode"
+    },
+    {
+      "file": "nexflow_python_evaluation/__pycache__/library.cpython-312.pyc",
+      "sha256": "473b80a1f3db7d6a266de4fd78c4aadb5b6505855abbb126b61a35f05fa71736",
+      "bytes": 7094,
+      "kind": "compiled-bytecode"
+    },
+    {
+      "file": "nexflow_python_evaluation/__pycache__/model.cpython-312.pyc",
+      "sha256": "c2d31510ea40d73d10ba909290a899a78f451bb0a4652a4abb2fa98d91da3631",
+      "bytes": 6579,
+      "kind": "compiled-bytecode"
+    },
+    {
+      "file": "nexflow_python_evaluation/__pycache__/public.cpython-312.pyc",
+      "sha256": "5a1b3bf8e7d5824a5fb53b37b00e533a9a40fca0e5a126bf5dded1ae8f68e353",
+      "bytes": 3952,
+      "kind": "compiled-bytecode"
+    },
+    {
+      "file": "nexflow_python_evaluation/__pycache__/schema.cpython-312.pyc",
+      "sha256": "764075904d93e6b38d86016fb37484a5dd8db265e188703982267cdc792c9b8f",
+      "bytes": 9599,
+      "kind": "compiled-bytecode"
+    },
+    {
+      "file": "nexflow_python_evaluation/__pycache__/semantics.cpython-312.pyc",
+      "sha256": "95058fb39be5e63170a12d8d9bde8b1fe4f07f583089f4d0f4e478c0f7d13a5a",
+      "bytes": 17701,
+      "kind": "compiled-bytecode"
+    },
+    {
+      "file": "nexflow_python_evaluation/__pycache__/yaml_input.cpython-312.pyc",
+      "sha256": "5a7b8c063f6cc8c759dec04cc4ae452d2667e171d4f8e6f6ecf391311b4dc5a1",
+      "bytes": 6752,
+      "kind": "compiled-bytecode"
+    },
+    {
+      "file": "nexflow_python_evaluation/discovery.py",
+      "sha256": "42e101935704f55f43b57252e5c9b60f1fb21186f1adc687e76831a6dc45ca88",
+      "bytes": 6431,
+      "kind": "source-entry"
+    },
+    {
+      "file": "nexflow_python_evaluation/files.py",
+      "sha256": "4bbf3e9894d39e0309c00198783c983c312c119618e3612889e5eebb3ee74eaf",
+      "bytes": 2757,
+      "kind": "source-entry"
+    },
+    {
+      "file": "nexflow_python_evaluation/inspection.py",
+      "sha256": "5a49f74f3ed434e462f0b64403f91af33685681e0b5f2d801cb238fd25aee0c7",
+      "bytes": 6396,
+      "kind": "source-entry"
+    },
+    {
+      "file": "nexflow_python_evaluation/library.py",
+      "sha256": "5a50be62787d304441ba54759f1fdc2704a3d1c2183b4ebd075277293b2596ee",
+      "bytes": 5420,
+      "kind": "source-entry"
+    },
+    {
+      "file": "nexflow_python_evaluation/model.py",
+      "sha256": "2429b1e2ac8ca511f6074a43f28a1d2f8e287675fc8cffbcf1ee573a3334a440",
+      "bytes": 3787,
+      "kind": "source-entry"
+    },
+    {
+      "file": "nexflow_python_evaluation/public.py",
+      "sha256": "e3cf57d26dd2d4bee247a604633752defd3172592355be4bd61c18b860a9d56c",
+      "bytes": 2507,
+      "kind": "source-entry"
+    },
+    {
+      "file": "nexflow_python_evaluation/schema.py",
+      "sha256": "f00871b39d1d47b2c67c9d8450b412644543c034ee296391050d449b09b6887b",
+      "bytes": 5593,
+      "kind": "source-entry"
+    },
+    {
+      "file": "nexflow_python_evaluation/semantics.py",
+      "sha256": "46f302b4dd2e750bf5c3f39d3e51fc7a2d11e4d4028815f29cc61b6fa2c2dca9",
+      "bytes": 12497,
+      "kind": "source-entry"
+    },
+    {
+      "file": "nexflow_python_evaluation/yaml_input.py",
+      "sha256": "4c460e98505c283e46dee355b500afcab3a18aa807e75384d816e4cdab8daa63",
+      "bytes": 3827,
+      "kind": "source-entry"
+    },
+    {
+      "file": "self_test.py",
+      "sha256": "c689ee6bdbbe156bca26fd8904486bde4004e06a0650dea749a239ec878e4f02",
+      "bytes": 11563,
+      "kind": "source-entry"
+    }
+  ],
+  "commands": [
+    "separate local-only pip provisioner --python <candidate> check",
+    "python -I -m compileall -q -f --invalidation-mode checked-hash -s <source> -p evaluation/prototypes/python <source>"
+  ],
+  "outcome": "not-ready",
+  "supplyChainAcceptance": "partial",
+  "signedProvenance": "not-tested",
+  "reproducibleBuild": "two-clean-roots-byte-identical",
+  "distributionLifecycle": "not-tested",
+  "limitations": [
+    "Dependency metadata and licenses are declarations, not independent legal approval.",
+    "Checksums bind observed bytes; no signed build attestation, signing or reproducibility claim.",
+    "This native macOS source-bound experiment is not a frozen target cohort or a Linux/Windows distribution.",
+    "Compiler/interpreter/native closure is indexed separately in tool-closure.json; external OS prerequisites are not redistributed.",
+    "No package manager offline flag or virtual environment establishes an OS security boundary.",
+    "Package/version advisory matches do not establish reachability; absence does not certify security.",
+    "rpds embedded SBOM is an upstream all-target superset, explicitly separated from the native wheel receipt.",
+    "Native libyaml version/license and interpreter build-input declarations are indexed in tool-closure.json."
+  ],
+  "wheels": [
+    {
+      "file": "attrs-26.1.0-py3-none-any.whl",
+      "sha256": "c647aa4a12dfbad9333ca4e71fe62ddc36f4e63b2d260a37a8b83d2f043ac309",
+      "bytes": 67548
+    },
+    {
+      "file": "jsonschema-4.26.0-py3-none-any.whl",
+      "sha256": "d489f15263b8d200f8387e64b4c3a75f06629559fb73deb8fdfb525f2dab50ce",
+      "bytes": 90630
+    },
+    {
+      "file": "jsonschema_specifications-2025.9.1-py3-none-any.whl",
+      "sha256": "98802fee3a11ee76ecaca44429fda8a41bff98b00a0f2838151b113f210cc6fe",
+      "bytes": 18437
+    },
+    {
+      "file": "pyyaml-6.0.3-cp312-cp312-macosx_11_0_arm64.whl",
+      "sha256": "fc09d0aa354569bc501d4e787133afc08552722d3ab34836a80547331bb5d4a0",
+      "bytes": 173973
+    },
+    {
+      "file": "referencing-0.37.0-py3-none-any.whl",
+      "sha256": "381329a9f99628c9069361716891d34ad94af76e461dcb0335825aecc7692231",
+      "bytes": 26766
+    },
+    {
+      "file": "rfc3339_validator-0.1.4-py2.py3-none-any.whl",
+      "sha256": "24f6ec1eda14ef823da9e36ec7113124b39c04d50a4d3d3a3c2859577e7791fa",
+      "bytes": 3490
+    },
+    {
+      "file": "rpds_py-2026.6.3-cp312-cp312-macosx_11_0_arm64.whl",
+      "sha256": "538949e262e46caa31ac01bdb3c1e8f642622922cacbabbae6a8445d9dc33eaf",
+      "bytes": 338542
+    },
+    {
+      "file": "six-1.17.0-py2.py3-none-any.whl",
+      "sha256": "4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274",
+      "bytes": 11050
+    },
+    {
+      "file": "typing_extensions-4.16.0-py3-none-any.whl",
+      "sha256": "481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8",
+      "bytes": 45571
+    }
+  ],
+  "runtime": {
+    "name": "CPython",
+    "version": "3.12.15",
+    "executableSha256": "aed8ed802d0387d6831dead5885840e4e2ff3a7984dd7297e9a5f4466e9cda1d",
+    "requiredExternal": true,
+    "downloadProvenance": "verified-20261013-full-archive-and-build-metadata"
+  },
+  "locks": [
+    {
+      "file": "evaluation/prototypes/python/requirements.lock",
+      "sha256": "6d95fc741f0f204c6f16c218360bd502188ba86bc95234c5b04d47e535ad25d7",
+      "bytes": 16883
+    }
+  ],
+  "rebuildSha256": "0869ce8a1e363181ae28e8bb3754836318eae0d621d34dda64376ba44ac8e517",
+  "reproducibilityScope": "same supplemental native cohort, preprovisioned verified dependency caches; not cross-target or independently signed build attestation",
+  "collectorSources": [
+    {
+      "file": "scripts/runtime-supply-chain-repaired-collect.mjs",
+      "sha256": "6aff0fe0d8d371bf85829610b274c8b92184093b28d48318d6cc32c53a63ed96"
+    },
+    {
+      "file": "scripts/runtime-supply-chain-repaired-run.mjs",
+      "sha256": "17892a81e6a32a9db60bbf87a6d93930a6adf993202991702c9b8fb77f6365ac"
+    },
+    {
+      "file": "scripts/runtime-supply-chain-repaired-scan.mjs",
+      "sha256": "7fa671e4c60949367116692a37d245d3fc58a6d870eb1f31a6ca65b85dc82031"
+    },
+    {
+      "file": "scripts/lib/supply-chain-python-repaired.py",
+      "sha256": "0430526a179778f3576361902386ef3fecf08649b60071c6f4d23cf0b848b2fc"
+    },
+    {
+      "file": "scripts/lib/supply-chain-evidence.mjs",
+      "sha256": "4c88cfe2eaeb8e5d23840703e14e053c39daeb5618bfc4614059881cdcc8bfae"
+    }
+  ],
+  "baselineCandidateSource": "63c86bc4a010bdca79af8190a9a521838f421b75",
+  "sbomSha256": "9e8491f63f219006e42276463e0c797747275e72c275249f746ed94b872a7d14",
+  "advisoriesSha256": "2f72ea19b14664b05f65dd82d483cf690f0bb6fbf81c182df036e40659f7832c"
+}

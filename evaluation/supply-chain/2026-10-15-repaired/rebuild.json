@@ -1,0 +1,716 @@
+{
+  "task": "NF-102-02",
+  "sourceRevision": "23e576efd0dda0f00f5462eda9295c1ae4ec8fee",
+  "collectorRevision": "9be540223d7ca177b8320c66f28e541f7cdf6e8e",
+  "recordedAt": "2026-10-15T13:05:55.278Z",
+  "target": "macos/arm64",
+  "cohort": {
+    "os": "27.0.1",
+    "build": "26A434",
+    "architecture": "arm64",
+    "cpu": "Apple M4 Pro",
+    "classification": "supplemental-not-frozen-target"
+  },
+  "runs": [
+    {
+      "runId": "repaired-clean-root-1",
+      "sourceRevision": "23e576efd0dda0f00f5462eda9295c1ae4ec8fee",
+      "artifacts": {
+        "typescript": [
+          {
+            "file": "dist/cli.d.ts",
+            "sha256": "43e818adf60173644896298637f47b01d5819b17eda46eaa32d0c7d64724d012",
+            "bytes": 31
+          },
+          {
+            "file": "dist/cli.js",
+            "sha256": "3b1b41a8e2903d19e8c737348ac3c865d0c33730d55d57dab6d9001237a8fedd",
+            "bytes": 3026
+          },
+          {
+            "file": "dist/diagnostics.d.ts",
+            "sha256": "b55acb3403802dde1eeaeae996ca024c74936c1df9086645d56fb074ef74e845",
+            "bytes": 497
+          },
+          {
+            "file": "dist/diagnostics.js",
+            "sha256": "e0503fbd357171d9e0a98597b8843c70c8ccde2609d15a1ac5a282b6c9f496b9",
+            "bytes": 1757
+          },
+          {
+            "file": "dist/discovery.d.ts",
+            "sha256": "b0ec47d0e61fc59f80ddd787dc879bc3c21ae5e7ce3c57412620a96a0fcc8dd2",
+            "bytes": 128
+          },
+          {
+            "file": "dist/discovery.js",
+            "sha256": "8ed176a7eb6484e57f805ad3f28066696c4f377fa1c249e341cb5024912c3b39",
+            "bytes": 7147
+          },
+          {
+            "file": "dist/files.d.ts",
+            "sha256": "51b762bccbd04942153ec7ed800411b80071520afa074130b7ff7f7823234793",
+            "bytes": 320
+          },
+          {
+            "file": "dist/files.js",
+            "sha256": "861671ded50435b298ab94470edd1b0ca87533bf367619844a017ec64a8af366",
+            "bytes": 3581
+          },
+          {
+            "file": "dist/inspection.d.ts",
+            "sha256": "78c92cb25da913b118b4c8cc03fd2509e60d34393c74127174a3988a9ad26853",
+            "bytes": 184
+          },
+          {
+            "file": "dist/inspection.js",
+            "sha256": "4fc5feb787172c3c3b2eab14adf32431c948e92a05c560bfe6785aeb07c89245",
+            "bytes": 6470
+          },
+          {
+            "file": "dist/library.d.ts",
+            "sha256": "349d46db79d671aae1c5a333e2a9769e3ff67fb5f1e3c05f32c0375d2b9ccb5b",
+            "bytes": 1036
+          },
+          {
+            "file": "dist/library.js",
+            "sha256": "f2b44d15b53037666bdc60ccd4533f0584d7bdd1551068041d25136e148e8896",
+            "bytes": 6857
+          },
+          {
+            "file": "dist/model.d.ts",
+            "sha256": "f29d46a6d25c5a49fd9cf0f2b5ba6f0a1b55aaf81deb2b409b5c1ad287de2a0c",
+            "bytes": 3774
+          },
+          {
+            "file": "dist/model.js",
+            "sha256": "764277da055a025a3b6b091d529beb6196a23071790454dc4511e022ecfb4a8d",
+            "bytes": 1368
+          },
+          {
+            "file": "dist/public.d.ts",
+            "sha256": "57146d75cea0ad18e76eed92e15b120e9741eb80b02bba5323fda5bda572cb2f",
+            "bytes": 210
+          },
+          {
+            "file": "dist/public.js",
+            "sha256": "547bde1fd07d5779133db830043495adc70c2c51f05a80115517cecd6141708c",
+            "bytes": 2665
+          },
+          {
+            "file": "dist/schema.d.ts",
+            "sha256": "bfaaa96ca1271a2d642053235658c8ae031f3a712667f7ad44860f1ae9fab597",
+            "bytes": 654
+          },
+          {
+            "file": "dist/schema.js",
+            "sha256": "48f732b45a7203c1af1c76c5ed723d0596a33e76392bca0a2afa92ebf093441b",
+            "bytes": 4082
+          },
+          {
+            "file": "dist/self-test.d.ts",
+            "sha256": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881",
+            "bytes": 11
+          },
+          {
+            "file": "dist/self-test.js",
+            "sha256": "4e3a68bd877a0ef82af5aa61279360182b7859d83da453dcb8ac01e7ec8a73d1",
+            "bytes": 7968
+          },
+          {
+            "file": "dist/semantics.d.ts",
+            "sha256": "b340f17de09fb719bc3de65f571d1b54187629cc83a9b269eeab87250bd6bc9a",
+            "bytes": 421
+          },
+          {
+            "file": "dist/semantics.js",
+            "sha256": "52ed7cb82f184e2b3c418c5533c9b506a8d35d05d93515b7a5ea4e1168127a91",
+            "bytes": 12812
+          },
+          {
+            "file": "dist/yaml.d.ts",
+            "sha256": "59a19d5764855f5ba85db57354cf8d609df1b160518b3219b54c038e79a8dd76",
+            "bytes": 206
+          },
+          {
+            "file": "dist/yaml.js",
+            "sha256": "316a2def68394acaefe3f9748e8d9f5ec72db51394a8940bb49410d3c7fe800d",
+            "bytes": 1628
+          }
+        ],
+        "python": [
+          {
+            "file": "__pycache__/cli.cpython-312.pyc",
+            "sha256": "52c0e9a752fa2ff28143bd4ae3a9f0bad5169188cffd24bff3842d261689a501",
+            "bytes": 5384
+          },
+          {
+            "file": "__pycache__/library_driver.cpython-312.pyc",
+            "sha256": "03bb751d78f0832a1446fab0371563a83f1ffdffc4bff3945e8602f506d6eeef",
+            "bytes": 3112
+          },
+          {
+            "file": "__pycache__/self_test.cpython-312.pyc",
+            "sha256": "bd9a25047664ae8a813969f6bfa8805c6917a1f62a20323fb7e8a200f18ec0fc",
+            "bytes": 20956
+          },
+          {
+            "file": "cli.py",
+            "sha256": "ac602e08999c07b14215c577b38b411e3c298b902f5700db681a61839c5d1fe5",
+            "bytes": 3112
+          },
+          {
+            "file": "library_driver.py",
+            "sha256": "4c7d2a24e5eb330dcdf60caf3fbebcc347ba9d9d9f57feb7c9cc67191c9334e2",
+            "bytes": 1786
+          },
+          {
+            "file": "nexflow_python_evaluation/__init__.py",
+            "sha256": "b0b4d4b76c2e19981a4791177534d58c7e17d55ced1cb27a2da7efd8917cb5c6",
+            "bytes": 551
+          },
+          {
+            "file": "nexflow_python_evaluation/__pycache__/__init__.cpython-312.pyc",
+            "sha256": "80a91578d9f48dc2219758bcdbd2b795c7ce89f5d274f3887d409405f85e3cd3",
+            "bytes": 727
+          },
+          {
+            "file": "nexflow_python_evaluation/__pycache__/discovery.cpython-312.pyc",
+            "sha256": "c382afeaff549e6ac399e101463fb97199cfb882d731ff67f36ded1379c25f96",
+            "bytes": 9271
+          },
+          {
+            "file": "nexflow_python_evaluation/__pycache__/files.cpython-312.pyc",
+            "sha256": "d74ed08a449536b185d02f4dd9c725b24f13342e82b0ea925ba1a8d719ca07d5",
+            "bytes": 4737
+          },
+          {
+            "file": "nexflow_python_evaluation/__pycache__/inspection.cpython-312.pyc",
+            "sha256": "521397c914e1932a09a447e2c205a66dc68fc644f8ea2c87d21492677303d4c4",
+            "bytes": 9498
+          },
+          {
+            "file": "nexflow_python_evaluation/__pycache__/library.cpython-312.pyc",
+            "sha256": "473b80a1f3db7d6a266de4fd78c4aadb5b6505855abbb126b61a35f05fa71736",
+            "bytes": 7094
+          },
+          {
+            "file": "nexflow_python_evaluation/__pycache__/model.cpython-312.pyc",
+            "sha256": "c2d31510ea40d73d10ba909290a899a78f451bb0a4652a4abb2fa98d91da3631",
+            "bytes": 6579
+          },
+          {
+            "file": "nexflow_python_evaluation/__pycache__/public.cpython-312.pyc",
+            "sha256": "5a1b3bf8e7d5824a5fb53b37b00e533a9a40fca0e5a126bf5dded1ae8f68e353",
+            "bytes": 3952
+          },
+          {
+            "file": "nexflow_python_evaluation/__pycache__/schema.cpython-312.pyc",
+            "sha256": "764075904d93e6b38d86016fb37484a5dd8db265e188703982267cdc792c9b8f",
+            "bytes": 9599
+          },
+          {
+            "file": "nexflow_python_evaluation/__pycache__/semantics.cpython-312.pyc",
+            "sha256": "95058fb39be5e63170a12d8d9bde8b1fe4f07f583089f4d0f4e478c0f7d13a5a",
+            "bytes": 17701
+          },
+          {
+            "file": "nexflow_python_evaluation/__pycache__/yaml_input.cpython-312.pyc",
+            "sha256": "5a7b8c063f6cc8c759dec04cc4ae452d2667e171d4f8e6f6ecf391311b4dc5a1",
+            "bytes": 6752
+          },
+          {
+            "file": "nexflow_python_evaluation/discovery.py",
+            "sha256": "42e101935704f55f43b57252e5c9b60f1fb21186f1adc687e76831a6dc45ca88",
+            "bytes": 6431
+          },
+          {
+            "file": "nexflow_python_evaluation/files.py",
+            "sha256": "4bbf3e9894d39e0309c00198783c983c312c119618e3612889e5eebb3ee74eaf",
+            "bytes": 2757
+          },
+          {
+            "file": "nexflow_python_evaluation/inspection.py",
+            "sha256": "5a49f74f3ed434e462f0b64403f91af33685681e0b5f2d801cb238fd25aee0c7",
+            "bytes": 6396
+          },
+          {
+            "file": "nexflow_python_evaluation/library.py",
+            "sha256": "5a50be62787d304441ba54759f1fdc2704a3d1c2183b4ebd075277293b2596ee",
+            "bytes": 5420
+          },
+          {
+            "file": "nexflow_python_evaluation/model.py",
+            "sha256": "2429b1e2ac8ca511f6074a43f28a1d2f8e287675fc8cffbcf1ee573a3334a440",
+            "bytes": 3787
+          },
+          {
+            "file": "nexflow_python_evaluation/public.py",
+            "sha256": "e3cf57d26dd2d4bee247a604633752defd3172592355be4bd61c18b860a9d56c",
+            "bytes": 2507
+          },
+          {
+            "file": "nexflow_python_evaluation/schema.py",
+            "sha256": "f00871b39d1d47b2c67c9d8450b412644543c034ee296391050d449b09b6887b",
+            "bytes": 5593
+          },
+          {
+            "file": "nexflow_python_evaluation/semantics.py",
+            "sha256": "46f302b4dd2e750bf5c3f39d3e51fc7a2d11e4d4028815f29cc61b6fa2c2dca9",
+            "bytes": 12497
+          },
+          {
+            "file": "nexflow_python_evaluation/yaml_input.py",
+            "sha256": "4c460e98505c283e46dee355b500afcab3a18aa807e75384d816e4cdab8daa63",
+            "bytes": 3827
+          },
+          {
+            "file": "self_test.py",
+            "sha256": "c689ee6bdbbe156bca26fd8904486bde4004e06a0650dea749a239ec878e4f02",
+            "bytes": 11563
+          },
+          {
+            "file": "wheels/attrs-26.1.0-py3-none-any.whl",
+            "sha256": "c647aa4a12dfbad9333ca4e71fe62ddc36f4e63b2d260a37a8b83d2f043ac309",
+            "bytes": 67548
+          },
+          {
+            "file": "wheels/jsonschema-4.26.0-py3-none-any.whl",
+            "sha256": "d489f15263b8d200f8387e64b4c3a75f06629559fb73deb8fdfb525f2dab50ce",
+            "bytes": 90630
+          },
+          {
+            "file": "wheels/jsonschema_specifications-2025.9.1-py3-none-any.whl",
+            "sha256": "98802fee3a11ee76ecaca44429fda8a41bff98b00a0f2838151b113f210cc6fe",
+            "bytes": 18437
+          },
+          {
+            "file": "wheels/pyyaml-6.0.3-cp312-cp312-macosx_11_0_arm64.whl",
+            "sha256": "fc09d0aa354569bc501d4e787133afc08552722d3ab34836a80547331bb5d4a0",
+            "bytes": 173973
+          },
+          {
+            "file": "wheels/referencing-0.37.0-py3-none-any.whl",
+            "sha256": "381329a9f99628c9069361716891d34ad94af76e461dcb0335825aecc7692231",
+            "bytes": 26766
+          },
+          {
+            "file": "wheels/rfc3339_validator-0.1.4-py2.py3-none-any.whl",
+            "sha256": "24f6ec1eda14ef823da9e36ec7113124b39c04d50a4d3d3a3c2859577e7791fa",
+            "bytes": 3490
+          },
+          {
+            "file": "wheels/rpds_py-2026.6.3-cp312-cp312-macosx_11_0_arm64.whl",
+            "sha256": "538949e262e46caa31ac01bdb3c1e8f642622922cacbabbae6a8445d9dc33eaf",
+            "bytes": 338542
+          },
+          {
+            "file": "wheels/six-1.17.0-py2.py3-none-any.whl",
+            "sha256": "4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274",
+            "bytes": 11050
+          },
+          {
+            "file": "wheels/typing_extensions-4.16.0-py3-none-any.whl",
+            "sha256": "481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8",
+            "bytes": 45571
+          }
+        ],
+        "rust": [
+          {
+            "file": "nexflow-rust-evaluation",
+            "sha256": "ee1123e4448548539942b0f8b027923ecd602c068596c972d9e41fff52758f41",
+            "bytes": 7131584
+          },
+          {
+            "file": "library-driver",
+            "sha256": "ccbc6dbacf86998272ebe4689cf0f33058c8d29ab4d30196f29cf05c54e0b2e9",
+            "bytes": 7294576
+          },
+          {
+            "file": "libnexflow_rust_evaluation.rlib",
+            "sha256": "df80f668557f0dc4e7db8343d0c381b8c6c78128c332fabe160908f6c2b7e1d0",
+            "bytes": 3735280
+          }
+        ],
+        "go": [
+          {
+            "file": "nexflow-go-evaluation",
+            "sha256": "973b631400444810540398dcdadcfe9b6c3eaa0c5c7a7effd96501bf2ed460fe",
+            "bytes": 6140178
+          },
+          {
+            "file": "library-driver",
+            "sha256": "23e2dc277a5654aba5d84217a3303cfc46e06f07988821498b9a21e63ae383ec",
+            "bytes": 6189282
+          }
+        ]
+      },
+      "completedAt": "2026-10-15T13:05:36.434Z"
+    },
+    {
+      "runId": "repaired-clean-root-2",
+      "sourceRevision": "23e576efd0dda0f00f5462eda9295c1ae4ec8fee",
+      "artifacts": {
+        "typescript": [
+          {
+            "file": "dist/cli.d.ts",
+            "sha256": "43e818adf60173644896298637f47b01d5819b17eda46eaa32d0c7d64724d012",
+            "bytes": 31
+          },
+          {
+            "file": "dist/cli.js",
+            "sha256": "3b1b41a8e2903d19e8c737348ac3c865d0c33730d55d57dab6d9001237a8fedd",
+            "bytes": 3026
+          },
+          {
+            "file": "dist/diagnostics.d.ts",
+            "sha256": "b55acb3403802dde1eeaeae996ca024c74936c1df9086645d56fb074ef74e845",
+            "bytes": 497
+          },
+          {
+            "file": "dist/diagnostics.js",
+            "sha256": "e0503fbd357171d9e0a98597b8843c70c8ccde2609d15a1ac5a282b6c9f496b9",
+            "bytes": 1757
+          },
+          {
+            "file": "dist/discovery.d.ts",
+            "sha256": "b0ec47d0e61fc59f80ddd787dc879bc3c21ae5e7ce3c57412620a96a0fcc8dd2",
+            "bytes": 128
+          },
+          {
+            "file": "dist/discovery.js",
+            "sha256": "8ed176a7eb6484e57f805ad3f28066696c4f377fa1c249e341cb5024912c3b39",
+            "bytes": 7147
+          },
+          {
+            "file": "dist/files.d.ts",
+            "sha256": "51b762bccbd04942153ec7ed800411b80071520afa074130b7ff7f7823234793",
+            "bytes": 320
+          },
+          {
+            "file": "dist/files.js",
+            "sha256": "861671ded50435b298ab94470edd1b0ca87533bf367619844a017ec64a8af366",
+            "bytes": 3581
+          },
+          {
+            "file": "dist/inspection.d.ts",
+            "sha256": "78c92cb25da913b118b4c8cc03fd2509e60d34393c74127174a3988a9ad26853",
+            "bytes": 184
+          },
+          {
+            "file": "dist/inspection.js",
+            "sha256": "4fc5feb787172c3c3b2eab14adf32431c948e92a05c560bfe6785aeb07c89245",
+            "bytes": 6470
+          },
+          {
+            "file": "dist/library.d.ts",
+            "sha256": "349d46db79d671aae1c5a333e2a9769e3ff67fb5f1e3c05f32c0375d2b9ccb5b",
+            "bytes": 1036
+          },
+          {
+            "file": "dist/library.js",
+            "sha256": "f2b44d15b53037666bdc60ccd4533f0584d7bdd1551068041d25136e148e8896",
+            "bytes": 6857
+          },
+          {
+            "file": "dist/model.d.ts",
+            "sha256": "f29d46a6d25c5a49fd9cf0f2b5ba6f0a1b55aaf81deb2b409b5c1ad287de2a0c",
+            "bytes": 3774
+          },
+          {
+            "file": "dist/model.js",
+            "sha256": "764277da055a025a3b6b091d529beb6196a23071790454dc4511e022ecfb4a8d",
+            "bytes": 1368
+          },
+          {
+            "file": "dist/public.d.ts",
+            "sha256": "57146d75cea0ad18e76eed92e15b120e9741eb80b02bba5323fda5bda572cb2f",
+            "bytes": 210
+          },
+          {
+            "file": "dist/public.js",
+            "sha256": "547bde1fd07d5779133db830043495adc70c2c51f05a80115517cecd6141708c",
+            "bytes": 2665
+          },
+          {
+            "file": "dist/schema.d.ts",
+            "sha256": "bfaaa96ca1271a2d642053235658c8ae031f3a712667f7ad44860f1ae9fab597",
+            "bytes": 654
+          },
+          {
+            "file": "dist/schema.js",
+            "sha256": "48f732b45a7203c1af1c76c5ed723d0596a33e76392bca0a2afa92ebf093441b",
+            "bytes": 4082
+          },
+          {
+            "file": "dist/self-test.d.ts",
+            "sha256": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881",
+            "bytes": 11
+          },
+          {
+            "file": "dist/self-test.js",
+            "sha256": "4e3a68bd877a0ef82af5aa61279360182b7859d83da453dcb8ac01e7ec8a73d1",
+            "bytes": 7968
+          },
+          {
+            "file": "dist/semantics.d.ts",
+            "sha256": "b340f17de09fb719bc3de65f571d1b54187629cc83a9b269eeab87250bd6bc9a",
+            "bytes": 421
+          },
+          {
+            "file": "dist/semantics.js",
+            "sha256": "52ed7cb82f184e2b3c418c5533c9b506a8d35d05d93515b7a5ea4e1168127a91",
+            "bytes": 12812
+          },
+          {
+            "file": "dist/yaml.d.ts",
+            "sha256": "59a19d5764855f5ba85db57354cf8d609df1b160518b3219b54c038e79a8dd76",
+            "bytes": 206
+          },
+          {
+            "file": "dist/yaml.js",
+            "sha256": "316a2def68394acaefe3f9748e8d9f5ec72db51394a8940bb49410d3c7fe800d",
+            "bytes": 1628
+          }
+        ],
+        "python": [
+          {
+            "file": "__pycache__/cli.cpython-312.pyc",
+            "sha256": "52c0e9a752fa2ff28143bd4ae3a9f0bad5169188cffd24bff3842d261689a501",
+            "bytes": 5384
+          },
+          {
+            "file": "__pycache__/library_driver.cpython-312.pyc",
+            "sha256": "03bb751d78f0832a1446fab0371563a83f1ffdffc4bff3945e8602f506d6eeef",
+            "bytes": 3112
+          },
+          {
+            "file": "__pycache__/self_test.cpython-312.pyc",
+            "sha256": "bd9a25047664ae8a813969f6bfa8805c6917a1f62a20323fb7e8a200f18ec0fc",
+            "bytes": 20956
+          },
+          {
+            "file": "cli.py",
+            "sha256": "ac602e08999c07b14215c577b38b411e3c298b902f5700db681a61839c5d1fe5",
+            "bytes": 3112
+          },
+          {
+            "file": "library_driver.py",
+            "sha256": "4c7d2a24e5eb330dcdf60caf3fbebcc347ba9d9d9f57feb7c9cc67191c9334e2",
+            "bytes": 1786
+          },
+          {
+            "file": "nexflow_python_evaluation/__init__.py",
+            "sha256": "b0b4d4b76c2e19981a4791177534d58c7e17d55ced1cb27a2da7efd8917cb5c6",
+            "bytes": 551
+          },
+          {
+            "file": "nexflow_python_evaluation/__pycache__/__init__.cpython-312.pyc",
+            "sha256": "80a91578d9f48dc2219758bcdbd2b795c7ce89f5d274f3887d409405f85e3cd3",
+            "bytes": 727
+          },
+          {
+            "file": "nexflow_python_evaluation/__pycache__/discovery.cpython-312.pyc",
+            "sha256": "c382afeaff549e6ac399e101463fb97199cfb882d731ff67f36ded1379c25f96",
+            "bytes": 9271
+          },
+          {
+            "file": "nexflow_python_evaluation/__pycache__/files.cpython-312.pyc",
+            "sha256": "d74ed08a449536b185d02f4dd9c725b24f13342e82b0ea925ba1a8d719ca07d5",
+            "bytes": 4737
+          },
+          {
+            "file": "nexflow_python_evaluation/__pycache__/inspection.cpython-312.pyc",
+            "sha256": "521397c914e1932a09a447e2c205a66dc68fc644f8ea2c87d21492677303d4c4",
+            "bytes": 9498
+          },
+          {
+            "file": "nexflow_python_evaluation/__pycache__/library.cpython-312.pyc",
+            "sha256": "473b80a1f3db7d6a266de4fd78c4aadb5b6505855abbb126b61a35f05fa71736",
+            "bytes": 7094
+          },
+          {
+            "file": "nexflow_python_evaluation/__pycache__/model.cpython-312.pyc",
+            "sha256": "c2d31510ea40d73d10ba909290a899a78f451bb0a4652a4abb2fa98d91da3631",
+            "bytes": 6579
+          },
+          {
+            "file": "nexflow_python_evaluation/__pycache__/public.cpython-312.pyc",
+            "sha256": "5a1b3bf8e7d5824a5fb53b37b00e533a9a40fca0e5a126bf5dded1ae8f68e353",
+            "bytes": 3952
+          },
+          {
+            "file": "nexflow_python_evaluation/__pycache__/schema.cpython-312.pyc",
+            "sha256": "764075904d93e6b38d86016fb37484a5dd8db265e188703982267cdc792c9b8f",
+            "bytes": 9599
+          },
+          {
+            "file": "nexflow_python_evaluation/__pycache__/semantics.cpython-312.pyc",
+            "sha256": "95058fb39be5e63170a12d8d9bde8b1fe4f07f583089f4d0f4e478c0f7d13a5a",
+            "bytes": 17701
+          },
+          {
+            "file": "nexflow_python_evaluation/__pycache__/yaml_input.cpython-312.pyc",
+            "sha256": "5a7b8c063f6cc8c759dec04cc4ae452d2667e171d4f8e6f6ecf391311b4dc5a1",
+            "bytes": 6752
+          },
+          {
+            "file": "nexflow_python_evaluation/discovery.py",
+            "sha256": "42e101935704f55f43b57252e5c9b60f1fb21186f1adc687e76831a6dc45ca88",
+            "bytes": 6431
+          },
+          {
+            "file": "nexflow_python_evaluation/files.py",
+            "sha256": "4bbf3e9894d39e0309c00198783c983c312c119618e3612889e5eebb3ee74eaf",
+            "bytes": 2757
+          },
+          {
+            "file": "nexflow_python_evaluation/inspection.py",
+            "sha256": "5a49f74f3ed434e462f0b64403f91af33685681e0b5f2d801cb238fd25aee0c7",
+            "bytes": 6396
+          },
+          {
+            "file": "nexflow_python_evaluation/library.py",
+            "sha256": "5a50be62787d304441ba54759f1fdc2704a3d1c2183b4ebd075277293b2596ee",
+            "bytes": 5420
+          },
+          {
+            "file": "nexflow_python_evaluation/model.py",
+            "sha256": "2429b1e2ac8ca511f6074a43f28a1d2f8e287675fc8cffbcf1ee573a3334a440",
+            "bytes": 3787
+          },
+          {
+            "file": "nexflow_python_evaluation/public.py",
+            "sha256": "e3cf57d26dd2d4bee247a604633752defd3172592355be4bd61c18b860a9d56c",
+            "bytes": 2507
+          },
+          {
+            "file": "nexflow_python_evaluation/schema.py",
+            "sha256": "f00871b39d1d47b2c67c9d8450b412644543c034ee296391050d449b09b6887b",
+            "bytes": 5593
+          },
+          {
+            "file": "nexflow_python_evaluation/semantics.py",
+            "sha256": "46f302b4dd2e750bf5c3f39d3e51fc7a2d11e4d4028815f29cc61b6fa2c2dca9",
+            "bytes": 12497
+          },
+          {
+            "file": "nexflow_python_evaluation/yaml_input.py",
+            "sha256": "4c460e98505c283e46dee355b500afcab3a18aa807e75384d816e4cdab8daa63",
+            "bytes": 3827
+          },
+          {
+            "file": "self_test.py",
+            "sha256": "c689ee6bdbbe156bca26fd8904486bde4004e06a0650dea749a239ec878e4f02",
+            "bytes": 11563
+          },
+          {
+            "file": "wheels/attrs-26.1.0-py3-none-any.whl",
+            "sha256": "c647aa4a12dfbad9333ca4e71fe62ddc36f4e63b2d260a37a8b83d2f043ac309",
+            "bytes": 67548
+          },
+          {
+            "file": "wheels/jsonschema-4.26.0-py3-none-any.whl",
+            "sha256": "d489f15263b8d200f8387e64b4c3a75f06629559fb73deb8fdfb525f2dab50ce",
+            "bytes": 90630
+          },
+          {
+            "file": "wheels/jsonschema_specifications-2025.9.1-py3-none-any.whl",
+            "sha256": "98802fee3a11ee76ecaca44429fda8a41bff98b00a0f2838151b113f210cc6fe",
+            "bytes": 18437
+          },
+          {
+            "file": "wheels/pyyaml-6.0.3-cp312-cp312-macosx_11_0_arm64.whl",
+            "sha256": "fc09d0aa354569bc501d4e787133afc08552722d3ab34836a80547331bb5d4a0",
+            "bytes": 173973
+          },
+          {
+            "file": "wheels/referencing-0.37.0-py3-none-any.whl",
+            "sha256": "381329a9f99628c9069361716891d34ad94af76e461dcb0335825aecc7692231",
+            "bytes": 26766
+          },
+          {
+            "file": "wheels/rfc3339_validator-0.1.4-py2.py3-none-any.whl",
+            "sha256": "24f6ec1eda14ef823da9e36ec7113124b39c04d50a4d3d3a3c2859577e7791fa",
+            "bytes": 3490
+          },
+          {
+            "file": "wheels/rpds_py-2026.6.3-cp312-cp312-macosx_11_0_arm64.whl",
+            "sha256": "538949e262e46caa31ac01bdb3c1e8f642622922cacbabbae6a8445d9dc33eaf",
+            "bytes": 338542
+          },
+          {
+            "file": "wheels/six-1.17.0-py2.py3-none-any.whl",
+            "sha256": "4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274",
+            "bytes": 11050
+          },
+          {
+            "file": "wheels/typing_extensions-4.16.0-py3-none-any.whl",
+            "sha256": "481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8",
+            "bytes": 45571
+          }
+        ],
+        "rust": [
+          {
+            "file": "nexflow-rust-evaluation",
+            "sha256": "ee1123e4448548539942b0f8b027923ecd602c068596c972d9e41fff52758f41",
+            "bytes": 7131584
+          },
+          {
+            "file": "library-driver",
+            "sha256": "ccbc6dbacf86998272ebe4689cf0f33058c8d29ab4d30196f29cf05c54e0b2e9",
+            "bytes": 7294576
+          },
+          {
+            "file": "libnexflow_rust_evaluation.rlib",
+            "sha256": "df80f668557f0dc4e7db8343d0c381b8c6c78128c332fabe160908f6c2b7e1d0",
+            "bytes": 3735280
+          }
+        ],
+        "go": [
+          {
+            "file": "nexflow-go-evaluation",
+            "sha256": "973b631400444810540398dcdadcfe9b6c3eaa0c5c7a7effd96501bf2ed460fe",
+            "bytes": 6140178
+          },
+          {
+            "file": "library-driver",
+            "sha256": "23e2dc277a5654aba5d84217a3303cfc46e06f07988821498b9a21e63ae383ec",
+            "bytes": 6189282
+          }
+        ]
+      },
+      "completedAt": "2026-10-15T13:05:55.268Z"
+    }
+  ],
+  "repeatability": {
+    "typescript": {
+      "status": "byte-identical",
+      "differentFiles": [],
+      "artifactCount": 24
+    },
+    "python": {
+      "status": "byte-identical",
+      "differentFiles": [],
+      "artifactCount": 35
+    },
+    "rust": {
+      "status": "byte-identical",
+      "differentFiles": [],
+      "artifactCount": 3
+    },
+    "go": {
+      "status": "byte-identical",
+      "differentFiles": [],
+      "artifactCount": 2
+    }
+  },
+  "recipes": {
+    "typescript": "offline exact npm lock, TS6.0.3",
+    "python": "nine verified runtime wheels, separate local-only pip, no installed pip, checked-hash source bytecode with normalized filenames",
+    "rust": "release, frozen/offline, no incremental, entire clean-root and registry source remapped",
+    "go": "readonly/offline, CGO disabled, trimpath, buildvcs=false, independent empty build caches"
+  },
+  "offlineBoundary": "package-manager deny-fetch recipes, not OS sandbox or target lifecycle acceptance",
+  "architectureAccepted": false
+}

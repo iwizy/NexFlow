@@ -1,0 +1,1194 @@
+{
+  "candidate": "tool-native",
+  "sourceRevision": "23e576efd0dda0f00f5462eda9295c1ae4ec8fee",
+  "collectorRevision": "9be540223d7ca177b8320c66f28e541f7cdf6e8e",
+  "recordedAt": "2026-10-15T13:06:00.636Z",
+  "components": [
+    {
+      "ref": "pkg:generic/node@26.12.0?owner=node",
+      "name": "node",
+      "version": "26.12.0",
+      "scope": "observed-node-runtime-and-data-versions",
+      "license": "MIT",
+      "metadataSource": "process.versions + complete verified composite Node LICENSE",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "8e603aa87c70d36e497004f0dec63111511cb61b7d65ace12e10ea791599286c",
+          "bytes": 156386
+        }
+      ]
+    },
+    {
+      "ref": "pkg:generic/acorn@8.19.0?owner=node",
+      "name": "acorn",
+      "version": "8.19.0",
+      "scope": "observed-node-runtime-and-data-versions",
+      "license": "MIT",
+      "metadataSource": "process.versions + complete verified composite Node LICENSE",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "8e603aa87c70d36e497004f0dec63111511cb61b7d65ace12e10ea791599286c",
+          "bytes": 156386
+        }
+      ]
+    },
+    {
+      "ref": "pkg:generic/ada@4.0.0?owner=node",
+      "name": "ada",
+      "version": "4.0.0",
+      "scope": "observed-node-runtime-and-data-versions",
+      "license": "Apache-2.0 OR MIT",
+      "metadataSource": "process.versions + complete verified composite Node LICENSE",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "8e603aa87c70d36e497004f0dec63111511cb61b7d65ace12e10ea791599286c",
+          "bytes": 156386
+        }
+      ]
+    },
+    {
+      "ref": "pkg:generic/amaro@1.1.11?owner=node",
+      "name": "amaro",
+      "version": "1.1.11",
+      "scope": "observed-node-runtime-and-data-versions",
+      "license": "MIT",
+      "metadataSource": "process.versions + complete verified composite Node LICENSE",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "8e603aa87c70d36e497004f0dec63111511cb61b7d65ace12e10ea791599286c",
+          "bytes": 156386
+        }
+      ]
+    },
+    {
+      "ref": "pkg:generic/ares@1.34.8?owner=node",
+      "name": "ares",
+      "version": "1.34.8",
+      "scope": "observed-node-runtime-and-data-versions",
+      "license": "MIT",
+      "metadataSource": "process.versions + complete verified composite Node LICENSE",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "8e603aa87c70d36e497004f0dec63111511cb61b7d65ace12e10ea791599286c",
+          "bytes": 156386
+        }
+      ]
+    },
+    {
+      "ref": "pkg:generic/brotli@1.2.0?owner=node",
+      "name": "brotli",
+      "version": "1.2.0",
+      "scope": "observed-node-runtime-and-data-versions",
+      "license": "MIT",
+      "metadataSource": "process.versions + complete verified composite Node LICENSE",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "8e603aa87c70d36e497004f0dec63111511cb61b7d65ace12e10ea791599286c",
+          "bytes": 156386
+        }
+      ]
+    },
+    {
+      "ref": "pkg:generic/cldr@48.0?owner=node",
+      "name": "cldr",
+      "version": "48.0",
+      "scope": "observed-node-runtime-and-data-versions",
+      "license": "Unicode-3.0",
+      "metadataSource": "process.versions + complete verified composite Node LICENSE",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "8e603aa87c70d36e497004f0dec63111511cb61b7d65ace12e10ea791599286c",
+          "bytes": 156386
+        }
+      ]
+    },
+    {
+      "ref": "pkg:generic/icu@78.3?owner=node",
+      "name": "icu",
+      "version": "78.3",
+      "scope": "observed-node-runtime-and-data-versions",
+      "license": "Unicode-3.0",
+      "metadataSource": "process.versions + complete verified composite Node LICENSE",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "8e603aa87c70d36e497004f0dec63111511cb61b7d65ace12e10ea791599286c",
+          "bytes": 156386
+        }
+      ]
+    },
+    {
+      "ref": "pkg:generic/libffi@3.8.0?owner=node",
+      "name": "libffi",
+      "version": "3.8.0",
+      "scope": "observed-node-runtime-and-data-versions",
+      "license": "MIT",
+      "metadataSource": "process.versions + complete verified composite Node LICENSE",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "8e603aa87c70d36e497004f0dec63111511cb61b7d65ace12e10ea791599286c",
+          "bytes": 156386
+        }
+      ]
+    },
+    {
+      "ref": "pkg:generic/lief@1.0.0?owner=node",
+      "name": "lief",
+      "version": "1.0.0",
+      "scope": "observed-node-runtime-and-data-versions",
+      "license": "Apache-2.0",
+      "metadataSource": "process.versions + complete verified composite Node LICENSE",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "8e603aa87c70d36e497004f0dec63111511cb61b7d65ace12e10ea791599286c",
+          "bytes": 156386
+        }
+      ]
+    },
+    {
+      "ref": "pkg:generic/llhttp@9.4.3?owner=node",
+      "name": "llhttp",
+      "version": "9.4.3",
+      "scope": "observed-node-runtime-and-data-versions",
+      "license": "MIT",
+      "metadataSource": "process.versions + complete verified composite Node LICENSE",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "8e603aa87c70d36e497004f0dec63111511cb61b7d65ace12e10ea791599286c",
+          "bytes": 156386
+        }
+      ]
+    },
+    {
+      "ref": "pkg:generic/merve@1.2.2?owner=node",
+      "name": "merve",
+      "version": "1.2.2",
+      "scope": "observed-node-runtime-and-data-versions",
+      "license": "MIT",
+      "metadataSource": "process.versions + complete verified composite Node LICENSE",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "8e603aa87c70d36e497004f0dec63111511cb61b7d65ace12e10ea791599286c",
+          "bytes": 156386
+        }
+      ]
+    },
+    {
+      "ref": "pkg:generic/nbytes@0.1.4?owner=node",
+      "name": "nbytes",
+      "version": "0.1.4",
+      "scope": "observed-node-runtime-and-data-versions",
+      "license": "MIT",
+      "metadataSource": "process.versions + complete verified composite Node LICENSE",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "8e603aa87c70d36e497004f0dec63111511cb61b7d65ace12e10ea791599286c",
+          "bytes": 156386
+        }
+      ]
+    },
+    {
+      "ref": "pkg:generic/ncrypto@0.0.1?owner=node",
+      "name": "ncrypto",
+      "version": "0.0.1",
+      "scope": "observed-node-runtime-and-data-versions",
+      "license": "MIT",
+      "metadataSource": "process.versions + complete verified composite Node LICENSE",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "8e603aa87c70d36e497004f0dec63111511cb61b7d65ace12e10ea791599286c",
+          "bytes": 156386
+        }
+      ]
+    },
+    {
+      "ref": "pkg:generic/nghttp2@1.70.0?owner=node",
+      "name": "nghttp2",
+      "version": "1.70.0",
+      "scope": "observed-node-runtime-and-data-versions",
+      "license": "MIT",
+      "metadataSource": "process.versions + complete verified composite Node LICENSE",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "8e603aa87c70d36e497004f0dec63111511cb61b7d65ace12e10ea791599286c",
+          "bytes": 156386
+        }
+      ]
+    },
+    {
+      "ref": "pkg:generic/openssl@3.5.9?owner=node",
+      "name": "openssl",
+      "version": "3.5.9",
+      "scope": "observed-node-runtime-and-data-versions",
+      "license": "Apache-2.0",
+      "metadataSource": "process.versions + complete verified composite Node LICENSE",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "8e603aa87c70d36e497004f0dec63111511cb61b7d65ace12e10ea791599286c",
+          "bytes": 156386
+        }
+      ]
+    },
+    {
+      "ref": "pkg:generic/simdjson@5.0.3?owner=node",
+      "name": "simdjson",
+      "version": "5.0.3",
+      "scope": "observed-node-runtime-and-data-versions",
+      "license": "Apache-2.0",
+      "metadataSource": "process.versions + complete verified composite Node LICENSE",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "8e603aa87c70d36e497004f0dec63111511cb61b7d65ace12e10ea791599286c",
+          "bytes": 156386
+        }
+      ]
+    },
+    {
+      "ref": "pkg:generic/simdutf@7.7.0?owner=node",
+      "name": "simdutf",
+      "version": "7.7.0",
+      "scope": "observed-node-runtime-and-data-versions",
+      "license": "Apache-2.0 OR MIT",
+      "metadataSource": "process.versions + complete verified composite Node LICENSE",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "8e603aa87c70d36e497004f0dec63111511cb61b7d65ace12e10ea791599286c",
+          "bytes": 156386
+        }
+      ]
+    },
+    {
+      "ref": "pkg:generic/sqlite@3.54.0?owner=node",
+      "name": "sqlite",
+      "version": "3.54.0",
+      "scope": "observed-node-runtime-and-data-versions",
+      "license": "LicenseRef-Public-Domain",
+      "metadataSource": "process.versions + complete verified composite Node LICENSE",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "8e603aa87c70d36e497004f0dec63111511cb61b7d65ace12e10ea791599286c",
+          "bytes": 156386
+        }
+      ]
+    },
+    {
+      "ref": "pkg:generic/tz@2026e?owner=node",
+      "name": "tz",
+      "version": "2026e",
+      "scope": "observed-node-runtime-and-data-versions",
+      "license": "LicenseRef-Public-Domain",
+      "metadataSource": "process.versions + complete verified composite Node LICENSE",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "8e603aa87c70d36e497004f0dec63111511cb61b7d65ace12e10ea791599286c",
+          "bytes": 156386
+        }
+      ]
+    },
+    {
+      "ref": "pkg:generic/undici@8.11.2?owner=node",
+      "name": "undici",
+      "version": "8.11.2",
+      "scope": "observed-node-runtime-and-data-versions",
+      "license": "MIT",
+      "metadataSource": "process.versions + complete verified composite Node LICENSE",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "8e603aa87c70d36e497004f0dec63111511cb61b7d65ace12e10ea791599286c",
+          "bytes": 156386
+        }
+      ]
+    },
+    {
+      "ref": "pkg:generic/unicode@17.0?owner=node",
+      "name": "unicode",
+      "version": "17.0",
+      "scope": "observed-node-runtime-and-data-versions",
+      "license": "Unicode-3.0",
+      "metadataSource": "process.versions + complete verified composite Node LICENSE",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "8e603aa87c70d36e497004f0dec63111511cb61b7d65ace12e10ea791599286c",
+          "bytes": 156386
+        }
+      ]
+    },
+    {
+      "ref": "pkg:generic/uv@1.52.1?owner=node",
+      "name": "uv",
+      "version": "1.52.1",
+      "scope": "observed-node-runtime-and-data-versions",
+      "license": "MIT",
+      "metadataSource": "process.versions + complete verified composite Node LICENSE",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "8e603aa87c70d36e497004f0dec63111511cb61b7d65ace12e10ea791599286c",
+          "bytes": 156386
+        }
+      ]
+    },
+    {
+      "ref": "pkg:generic/uvwasi@0.0.23?owner=node",
+      "name": "uvwasi",
+      "version": "0.0.23",
+      "scope": "observed-node-runtime-and-data-versions",
+      "license": "MIT",
+      "metadataSource": "process.versions + complete verified composite Node LICENSE",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "8e603aa87c70d36e497004f0dec63111511cb61b7d65ace12e10ea791599286c",
+          "bytes": 156386
+        }
+      ]
+    },
+    {
+      "ref": "pkg:generic/v8@14.6.202.34-node.39?owner=node",
+      "name": "v8",
+      "version": "14.6.202.34-node.39",
+      "scope": "observed-node-runtime-and-data-versions",
+      "license": "BSD-3-Clause",
+      "metadataSource": "process.versions + complete verified composite Node LICENSE",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "8e603aa87c70d36e497004f0dec63111511cb61b7d65ace12e10ea791599286c",
+          "bytes": 156386
+        }
+      ]
+    },
+    {
+      "ref": "pkg:generic/zlib@1.3.2.1-motley-456ae73?owner=node",
+      "name": "zlib",
+      "version": "1.3.2.1-motley-456ae73",
+      "scope": "observed-node-runtime-and-data-versions",
+      "license": "Zlib",
+      "metadataSource": "process.versions + complete verified composite Node LICENSE",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "8e603aa87c70d36e497004f0dec63111511cb61b7d65ace12e10ea791599286c",
+          "bytes": 156386
+        }
+      ]
+    },
+    {
+      "ref": "pkg:generic/zstd@1.5.7?owner=node",
+      "name": "zstd",
+      "version": "1.5.7",
+      "scope": "observed-node-runtime-and-data-versions",
+      "license": "BSD-3-Clause",
+      "metadataSource": "process.versions + complete verified composite Node LICENSE",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "LICENSE",
+          "sha256": "8e603aa87c70d36e497004f0dec63111511cb61b7d65ace12e10ea791599286c",
+          "bytes": 156386
+        }
+      ]
+    },
+    {
+      "ref": "pkg:generic/bzip2@1.0.8?owner=python",
+      "name": "bzip2",
+      "version": "1.0.8",
+      "scope": "interpreter-static-input",
+      "license": "bzip2-1.0.6",
+      "metadataSource": "verified PYTHON.json + exact upstream downloads manifest",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "ab5a03176ee106d3f0fa90e381da478ddae405918153cca248e682cd0c4a2269",
+      "licenseFiles": [
+        {
+          "file": "licenses/LICENSE.bzip2.txt",
+          "sha256": "1f38bbc7caacafd65169276d759c0d88c991b753b643ce35d0e45ea1971dd441",
+          "bytes": 1743
+        }
+      ]
+    },
+    {
+      "ref": "pkg:generic/libffi@3.8.0?owner=python",
+      "name": "libffi",
+      "version": "3.8.0",
+      "scope": "interpreter-static-input",
+      "license": "MIT",
+      "metadataSource": "verified PYTHON.json + exact upstream downloads manifest",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "7da3e2d9a171eb0a038f592ecad3ff2bb2550f3496d87b3b29ad0cf4430c0db4",
+      "licenseFiles": [
+        {
+          "file": "licenses/LICENSE.libffi.txt",
+          "sha256": "deaf3a42effb551a5b140fa9afefed183a27f1341c6d1bf430d106a5e6931fc0",
+          "bytes": 1132
+        }
+      ]
+    },
+    {
+      "ref": "pkg:generic/mpdecimal@4.0.0?owner=python",
+      "name": "mpdecimal",
+      "version": "4.0.0",
+      "scope": "interpreter-static-input",
+      "license": "BSD-2-Clause",
+      "metadataSource": "verified PYTHON.json + exact upstream downloads manifest",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "942445c3245b22730fd41a67a7c5c231d11cb1b9936b9c0f76334fb7d0b4468c",
+      "licenseFiles": [
+        {
+          "file": "licenses/LICENSE.mpdecimal.txt",
+          "sha256": "669512af7219f58be03a398766d7c9da11a3b3df9d3f05cb74c5ceca25c8da3b",
+          "bytes": 1284
+        }
+      ]
+    },
+    {
+      "ref": "pkg:generic/openssl-3.5@3.5.9?owner=python",
+      "name": "openssl-3.5",
+      "version": "3.5.9",
+      "scope": "interpreter-static-input",
+      "license": "Apache-2.0",
+      "metadataSource": "verified PYTHON.json + exact upstream downloads manifest",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "603f5602e2eef00d77fbd429d34dcd5822bb301757a1bc9cdb24c670f1eb859a",
+      "licenseFiles": [
+        {
+          "file": "licenses/LICENSE.openssl-3.txt",
+          "sha256": "7d5450cb2d142651b8afa315b5f238efc805dad827d91ba367d8516bc9d49e7a",
+          "bytes": 10175
+        }
+      ]
+    },
+    {
+      "ref": "pkg:generic/xz@5.8.4?owner=python",
+      "name": "xz",
+      "version": "5.8.4",
+      "scope": "interpreter-static-input",
+      "license": "0BSD",
+      "metadataSource": "verified PYTHON.json + exact upstream downloads manifest",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "0014c7886930454fe8bd4228665b51af55eeae560ea135c9c4cd33f55b2591d9",
+      "licenseFiles": [
+        {
+          "file": "licenses/LICENSE.liblzma.txt",
+          "sha256": "9a4062de0a2c388a98cf35a35d348b62fa97c838a71c3c28ee1a2d7d0a565b02",
+          "bytes": 660
+        }
+      ]
+    },
+    {
+      "ref": "pkg:generic/sqlite@3.53.1.0?owner=python",
+      "name": "sqlite",
+      "version": "3.53.1.0",
+      "scope": "interpreter-static-input",
+      "license": "LicenseRef-Public-Domain",
+      "metadataSource": "verified PYTHON.json + exact upstream downloads manifest",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "83e6b2020a034e9a7ad4a72feea59e1ad52f162e09cbd26735a3ffb98359fc4f",
+      "licenseFiles": [
+        {
+          "file": "licenses/LICENSE.sqlite.txt",
+          "sha256": "38bef3d28b24f145ea293bd3b6eb4b20396982abc8303128fb493986ea5bc719",
+          "bytes": 1481
+        }
+      ]
+    },
+    {
+      "ref": "pkg:generic/tcl@9.0.4?owner=python",
+      "name": "tcl",
+      "version": "9.0.4",
+      "scope": "interpreter-static-input",
+      "license": "TCL",
+      "metadataSource": "verified PYTHON.json + exact upstream downloads manifest",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "d0aed49230bc02a65c1e0229e65f34590a4b037ec40d546f32573b467f7551ea",
+      "licenseFiles": [
+        {
+          "file": "licenses/LICENSE.tcl.txt",
+          "sha256": "c0a69a2bfd757361ec7e6143973b103c90409316b49e9c88db26ad6388e79f16",
+          "bytes": 2255
+        }
+      ]
+    },
+    {
+      "ref": "pkg:generic/tk@9.0.4?owner=python",
+      "name": "tk",
+      "version": "9.0.4",
+      "scope": "interpreter-static-input",
+      "license": "TCL",
+      "metadataSource": "verified PYTHON.json + exact upstream downloads manifest",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "d7a146d2917eb8b5cc95276dbf0e3d03c7464d2b19c1675357857c989301dbb4",
+      "licenseFiles": [
+        {
+          "file": "licenses/LICENSE.tcl.txt",
+          "sha256": "c0a69a2bfd757361ec7e6143973b103c90409316b49e9c88db26ad6388e79f16",
+          "bytes": 2255
+        }
+      ]
+    },
+    {
+      "ref": "pkg:generic/uuid@1.0.3?owner=python",
+      "name": "uuid",
+      "version": "1.0.3",
+      "scope": "interpreter-static-input",
+      "license": "BSD-3-Clause",
+      "metadataSource": "verified PYTHON.json + exact upstream downloads manifest",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "46af3275291091009ad7f1b899de3d0cea0252737550e7919d17237997db5644",
+      "licenseFiles": [
+        {
+          "file": "licenses/LICENSE.libuuid.txt",
+          "sha256": "122ee1f7e258f2c3c0e538a75c037684f420454bf3850ddc74ce750bbf5fe86b",
+          "bytes": 1432
+        }
+      ]
+    },
+    {
+      "ref": "pkg:generic/expat@2.9.0?owner=python",
+      "name": "expat",
+      "version": "2.9.0",
+      "scope": "interpreter-static-input",
+      "license": "MIT",
+      "metadataSource": "verified PYTHON.json + exact upstream downloads manifest",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "archiveSha256": "1e6371862cc31999b368c3b89b49994f0677e1bab5f1b2b85ae3741f5d803051",
+      "licenseFiles": [
+        {
+          "file": "licenses/LICENSE.expat.txt",
+          "sha256": "122f2c27000472a201d337b9b31f7eb2b52d091b02857061a8880371612d9534",
+          "bytes": 1144
+        }
+      ]
+    },
+    {
+      "ref": "pkg:generic/CPython@3.12.15",
+      "name": "CPython",
+      "version": "3.12.15",
+      "scope": "verified-interpreter",
+      "license": "Python-2.0 AND CNRI-Python",
+      "metadataSource": "verified full interpreter archive/PYTHON.json",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "LICENSE.bdb.txt",
+          "sha256": "3bdff06e69991c94664f2ef5c5f8096f60b7dbec071756ea6cc26b445e06ec5b",
+          "bytes": 7293
+        },
+        {
+          "file": "LICENSE.bzip2.txt",
+          "sha256": "1f38bbc7caacafd65169276d759c0d88c991b753b643ce35d0e45ea1971dd441",
+          "bytes": 1743
+        },
+        {
+          "file": "LICENSE.cpython.txt",
+          "sha256": "86e61415828a8b5b06ec8d024e6f086ce155a8b85fd0c419c0ba4dc004e74fdd",
+          "bytes": 36164
+        },
+        {
+          "file": "LICENSE.expat.txt",
+          "sha256": "122f2c27000472a201d337b9b31f7eb2b52d091b02857061a8880371612d9534",
+          "bytes": 1144
+        },
+        {
+          "file": "LICENSE.libX11.txt",
+          "sha256": "2daec087a88e7c9b8082557cdeebad5bbb8155a4137472f0b22e269cd99d0c1e",
+          "bytes": 47018
+        },
+        {
+          "file": "LICENSE.libXau.txt",
+          "sha256": "56abe29bb1d9806a9e04fa9f80fed2c0f18027594df3f098148d814aef6bddfa",
+          "bytes": 1148
+        },
+        {
+          "file": "LICENSE.libedit.txt",
+          "sha256": "29cea33c32bbc9785142386377915612a2fa786482c46843383384aded2e09b1",
+          "bytes": 1614
+        },
+        {
+          "file": "LICENSE.libffi.txt",
+          "sha256": "deaf3a42effb551a5b140fa9afefed183a27f1341c6d1bf430d106a5e6931fc0",
+          "bytes": 1132
+        },
+        {
+          "file": "LICENSE.liblzma.txt",
+          "sha256": "9a4062de0a2c388a98cf35a35d348b62fa97c838a71c3c28ee1a2d7d0a565b02",
+          "bytes": 660
+        },
+        {
+          "file": "LICENSE.libuuid.txt",
+          "sha256": "122ee1f7e258f2c3c0e538a75c037684f420454bf3850ddc74ce750bbf5fe86b",
+          "bytes": 1432
+        },
+        {
+          "file": "LICENSE.libxcb.txt",
+          "sha256": "c5ffbfeaa501071ceeb97b7de2c0d703fdaa35de01c0fb6cbac1c28453a3e9fd",
+          "bytes": 1337
+        },
+        {
+          "file": "LICENSE.mpdecimal.txt",
+          "sha256": "669512af7219f58be03a398766d7c9da11a3b3df9d3f05cb74c5ceca25c8da3b",
+          "bytes": 1284
+        },
+        {
+          "file": "LICENSE.ncurses.txt",
+          "sha256": "87a4c4442337b8968ef956031c406b74f9cb7149b7ba87311bdaba534816201c",
+          "bytes": 1447
+        },
+        {
+          "file": "LICENSE.openssl-1.1.txt",
+          "sha256": "9c04cce50c4989d5601dd8b07f6ab922c40388b66ac736c9007cb1ed9d9dd560",
+          "bytes": 6120
+        },
+        {
+          "file": "LICENSE.openssl-3.txt",
+          "sha256": "7d5450cb2d142651b8afa315b5f238efc805dad827d91ba367d8516bc9d49e7a",
+          "bytes": 10175
+        },
+        {
+          "file": "LICENSE.sqlite.txt",
+          "sha256": "38bef3d28b24f145ea293bd3b6eb4b20396982abc8303128fb493986ea5bc719",
+          "bytes": 1481
+        },
+        {
+          "file": "LICENSE.tcl.txt",
+          "sha256": "c0a69a2bfd757361ec7e6143973b103c90409316b49e9c88db26ad6388e79f16",
+          "bytes": 2255
+        },
+        {
+          "file": "LICENSE.tix.txt",
+          "sha256": "3ac5cdd0bef6c43ce34c6a7ced452081d9e5a0bf94082b9f9147d23ec9e214f5",
+          "bytes": 2826
+        },
+        {
+          "file": "LICENSE.zlib.txt",
+          "sha256": "818922b2620f12801a12bf78e399644a30990e66824abd8ca8ec24d451d6f92c",
+          "bytes": 995
+        }
+      ]
+    },
+    {
+      "ref": "pkg:generic/libyaml@0.2.5",
+      "name": "libyaml",
+      "version": "0.2.5",
+      "scope": "native-PyYAML-wheel",
+      "license": "MIT",
+      "metadataSource": "actual PyYAML native version + hash-locked wheel",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "pyyaml-6.0.3.dist-info/licenses/LICENSE",
+          "sha256": "8d3928f9dc4490fd635707cb88eb26bd764102a7282954307d3e5167a577e8a4"
+        }
+      ]
+    },
+    {
+      "ref": "pkg:generic/macOS@26A434",
+      "name": "macOS",
+      "version": "26A434",
+      "scope": "external-not-redistributed-OS-prerequisite",
+      "license": "external-operating-system-license",
+      "metadataSource": "actual sw_vers plus all retained native install names",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": []
+    },
+    {
+      "ref": "pkg:generic/Rust@1.99.0?owner=rust-toolchain",
+      "name": "Rust",
+      "version": "1.99.0",
+      "scope": "verified-compiler-and-standard-library",
+      "license": "MIT OR Apache-2.0",
+      "metadataSource": "verified tool archives + cargo/rustc/LLVM verbose versions + exact Cargo source lock",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "cargo/LICENSE-APACHE",
+          "sha256": "8ada45cd9f843acf64e4722ae262c622a2b3b3007c7310ef36ac1061a30f6adb",
+          "bytes": 10860
+        },
+        {
+          "file": "cargo/LICENSE-MIT",
+          "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+          "bytes": 1023
+        },
+        {
+          "file": "cargo/LICENSE-THIRD-PARTY",
+          "sha256": "cbc759b1f17a2ac38fe3eb9e9563b1a08ba0f900611c49faaf68b46907b6d898",
+          "bytes": 68430
+        },
+        {
+          "file": "rust/COPYRIGHT-library.html",
+          "sha256": "5647be074c8edf7339fd863055923a8fc80bc5610a8d4661ec3b767b9d392c27",
+          "bytes": 1499465
+        },
+        {
+          "file": "rust/COPYRIGHT.html",
+          "sha256": "d518ae2d76bc7a1f0cbf0069b8deafb56efc39c2614cab74a859ef0b467f8373",
+          "bytes": 14423589
+        }
+      ]
+    },
+    {
+      "ref": "pkg:generic/LLVM@23.1.1-rust-1.99.0-stable?owner=rust-toolchain",
+      "name": "LLVM",
+      "version": "23.1.1-rust-1.99.0-stable",
+      "scope": "verified-Rust-LLVM-fork",
+      "license": "Apache-2.0 WITH LLVM-exception",
+      "metadataSource": "verified tool archives + cargo/rustc/LLVM verbose versions + exact Cargo source lock",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "cargo/LICENSE-APACHE",
+          "sha256": "8ada45cd9f843acf64e4722ae262c622a2b3b3007c7310ef36ac1061a30f6adb",
+          "bytes": 10860
+        },
+        {
+          "file": "cargo/LICENSE-MIT",
+          "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+          "bytes": 1023
+        },
+        {
+          "file": "cargo/LICENSE-THIRD-PARTY",
+          "sha256": "cbc759b1f17a2ac38fe3eb9e9563b1a08ba0f900611c49faaf68b46907b6d898",
+          "bytes": 68430
+        },
+        {
+          "file": "rust/COPYRIGHT-library.html",
+          "sha256": "5647be074c8edf7339fd863055923a8fc80bc5610a8d4661ec3b767b9d392c27",
+          "bytes": 1499465
+        },
+        {
+          "file": "rust/COPYRIGHT.html",
+          "sha256": "d518ae2d76bc7a1f0cbf0069b8deafb56efc39c2614cab74a859ef0b467f8373",
+          "bytes": 14423589
+        }
+      ]
+    },
+    {
+      "ref": "pkg:generic/OpenSSL@3.6.3?owner=rust-toolchain",
+      "name": "OpenSSL",
+      "version": "3.6.3",
+      "scope": "Cargo-native-static-input",
+      "license": "Apache-2.0",
+      "metadataSource": "verified tool archives + cargo/rustc/LLVM verbose versions + exact Cargo source lock",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "openssl-src-300.6.1+3.6.3/LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+          "bytes": 10847
+        },
+        {
+          "file": "openssl-src-300.6.1+3.6.3/LICENSE-MIT",
+          "sha256": "378f5840b258e2779c39418f3f2d7b2ba96f1c7917dd6be0713f88305dbda397",
+          "bytes": 1057
+        },
+        {
+          "file": "openssl-src-300.6.1+3.6.3/openssl/LICENSE.txt",
+          "sha256": "7d5450cb2d142651b8afa315b5f238efc805dad827d91ba367d8516bc9d49e7a",
+          "bytes": 10175
+        },
+        {
+          "file": "openssl-src-300.6.1+3.6.3/openssl/crypto/x509/v3_usernotice.c",
+          "sha256": "db1eb4c4563d44b9b5b92c2467b3ed8211ce13a6511b3e330fd7af81cfba17f7",
+          "bytes": 2836
+        },
+        {
+          "file": "openssl-src-300.6.1+3.6.3/openssl/external/perl/Text-Template-1.56/LICENSE",
+          "sha256": "9837f05336ef3cbacb6a96e1672a0426d81ad01191f214b8d48e22ca62338181",
+          "bytes": 18412
+        }
+      ]
+    },
+    {
+      "ref": "pkg:generic/libgit2@1.9.6?owner=rust-toolchain",
+      "name": "libgit2",
+      "version": "1.9.6",
+      "scope": "Cargo-native-vendored-input",
+      "license": "MIT",
+      "metadataSource": "verified tool archives + cargo/rustc/LLVM verbose versions + exact Cargo source lock",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "cargo/LICENSE-APACHE",
+          "sha256": "8ada45cd9f843acf64e4722ae262c622a2b3b3007c7310ef36ac1061a30f6adb",
+          "bytes": 10860
+        },
+        {
+          "file": "cargo/LICENSE-MIT",
+          "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+          "bytes": 1023
+        },
+        {
+          "file": "cargo/LICENSE-THIRD-PARTY",
+          "sha256": "cbc759b1f17a2ac38fe3eb9e9563b1a08ba0f900611c49faaf68b46907b6d898",
+          "bytes": 68430
+        },
+        {
+          "file": "rust/COPYRIGHT-library.html",
+          "sha256": "5647be074c8edf7339fd863055923a8fc80bc5610a8d4661ec3b767b9d392c27",
+          "bytes": 1499465
+        },
+        {
+          "file": "rust/COPYRIGHT.html",
+          "sha256": "d518ae2d76bc7a1f0cbf0069b8deafb56efc39c2614cab74a859ef0b467f8373",
+          "bytes": 14423589
+        }
+      ]
+    },
+    {
+      "ref": "pkg:generic/libcurl@8.7.1?owner=rust-toolchain",
+      "name": "libcurl",
+      "version": "8.7.1",
+      "scope": "external-OS-not-redistributed",
+      "license": "curl",
+      "metadataSource": "verified tool archives + cargo/rustc/LLVM verbose versions + exact Cargo source lock",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "cargo/LICENSE-APACHE",
+          "sha256": "8ada45cd9f843acf64e4722ae262c622a2b3b3007c7310ef36ac1061a30f6adb",
+          "bytes": 10860
+        },
+        {
+          "file": "cargo/LICENSE-MIT",
+          "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+          "bytes": 1023
+        },
+        {
+          "file": "cargo/LICENSE-THIRD-PARTY",
+          "sha256": "cbc759b1f17a2ac38fe3eb9e9563b1a08ba0f900611c49faaf68b46907b6d898",
+          "bytes": 68430
+        },
+        {
+          "file": "rust/COPYRIGHT-library.html",
+          "sha256": "5647be074c8edf7339fd863055923a8fc80bc5610a8d4661ec3b767b9d392c27",
+          "bytes": 1499465
+        },
+        {
+          "file": "rust/COPYRIGHT.html",
+          "sha256": "d518ae2d76bc7a1f0cbf0069b8deafb56efc39c2614cab74a859ef0b467f8373",
+          "bytes": 14423589
+        }
+      ]
+    },
+    {
+      "ref": "pkg:generic/LibreSSL@3.3.6?owner=rust-toolchain",
+      "name": "LibreSSL",
+      "version": "3.3.6",
+      "scope": "reported-external-OS-backend-not-redistributed",
+      "license": "external-operating-system-license",
+      "metadataSource": "verified tool archives + cargo/rustc/LLVM verbose versions + exact Cargo source lock",
+      "licenseAssessment": "upstream-declared-not-legal-approval",
+      "licenseFiles": [
+        {
+          "file": "cargo/LICENSE-APACHE",
+          "sha256": "8ada45cd9f843acf64e4722ae262c622a2b3b3007c7310ef36ac1061a30f6adb",
+          "bytes": 10860
+        },
+        {
+          "file": "cargo/LICENSE-MIT",
+          "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+          "bytes": 1023
+        },
+        {
+          "file": "cargo/LICENSE-THIRD-PARTY",
+          "sha256": "cbc759b1f17a2ac38fe3eb9e9563b1a08ba0f900611c49faaf68b46907b6d898",
+          "bytes": 68430
+        },
+        {
+          "file": "rust/COPYRIGHT-library.html",
+          "sha256": "5647be074c8edf7339fd863055923a8fc80bc5610a8d4661ec3b767b9d392c27",
+          "bytes": 1499465
+        },
+        {
+          "file": "rust/COPYRIGHT.html",
+          "sha256": "d518ae2d76bc7a1f0cbf0069b8deafb56efc39c2614cab74a859ef0b467f8373",
+          "bytes": 14423589
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "candidate:tool-native",
+      "dependsOn": [
+        "pkg:generic/node@26.12.0?owner=node",
+        "pkg:generic/acorn@8.19.0?owner=node",
+        "pkg:generic/ada@4.0.0?owner=node",
+        "pkg:generic/amaro@1.1.11?owner=node",
+        "pkg:generic/ares@1.34.8?owner=node",
+        "pkg:generic/brotli@1.2.0?owner=node",
+        "pkg:generic/cldr@48.0?owner=node",
+        "pkg:generic/icu@78.3?owner=node",
+        "pkg:generic/libffi@3.8.0?owner=node",
+        "pkg:generic/lief@1.0.0?owner=node",
+        "pkg:generic/llhttp@9.4.3?owner=node",
+        "pkg:generic/merve@1.2.2?owner=node",
+        "pkg:generic/nbytes@0.1.4?owner=node",
+        "pkg:generic/ncrypto@0.0.1?owner=node",
+        "pkg:generic/nghttp2@1.70.0?owner=node",
+        "pkg:generic/openssl@3.5.9?owner=node",
+        "pkg:generic/simdjson@5.0.3?owner=node",
+        "pkg:generic/simdutf@7.7.0?owner=node",
+        "pkg:generic/sqlite@3.54.0?owner=node",
+        "pkg:generic/tz@2026e?owner=node",
+        "pkg:generic/undici@8.11.2?owner=node",
+        "pkg:generic/unicode@17.0?owner=node",
+        "pkg:generic/uv@1.52.1?owner=node",
+        "pkg:generic/uvwasi@0.0.23?owner=node",
+        "pkg:generic/v8@14.6.202.34-node.39?owner=node",
+        "pkg:generic/zlib@1.3.2.1-motley-456ae73?owner=node",
+        "pkg:generic/zstd@1.5.7?owner=node",
+        "pkg:generic/bzip2@1.0.8?owner=python",
+        "pkg:generic/libffi@3.8.0?owner=python",
+        "pkg:generic/mpdecimal@4.0.0?owner=python",
+        "pkg:generic/openssl-3.5@3.5.9?owner=python",
+        "pkg:generic/xz@5.8.4?owner=python",
+        "pkg:generic/sqlite@3.53.1.0?owner=python",
+        "pkg:generic/tcl@9.0.4?owner=python",
+        "pkg:generic/tk@9.0.4?owner=python",
+        "pkg:generic/uuid@1.0.3?owner=python",
+        "pkg:generic/expat@2.9.0?owner=python",
+        "pkg:generic/CPython@3.12.15",
+        "pkg:generic/libyaml@0.2.5",
+        "pkg:generic/macOS@26A434",
+        "pkg:generic/Rust@1.99.0?owner=rust-toolchain",
+        "pkg:generic/LLVM@23.1.1-rust-1.99.0-stable?owner=rust-toolchain",
+        "pkg:generic/OpenSSL@3.6.3?owner=rust-toolchain",
+        "pkg:generic/libgit2@1.9.6?owner=rust-toolchain",
+        "pkg:generic/libcurl@8.7.1?owner=rust-toolchain",
+        "pkg:generic/LibreSSL@3.3.6?owner=rust-toolchain"
+      ]
+    },
+    {
+      "ref": "pkg:generic/node@26.12.0?owner=node",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/acorn@8.19.0?owner=node",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/ada@4.0.0?owner=node",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/amaro@1.1.11?owner=node",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/ares@1.34.8?owner=node",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/brotli@1.2.0?owner=node",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/cldr@48.0?owner=node",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/icu@78.3?owner=node",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/libffi@3.8.0?owner=node",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/lief@1.0.0?owner=node",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/llhttp@9.4.3?owner=node",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/merve@1.2.2?owner=node",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/nbytes@0.1.4?owner=node",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/ncrypto@0.0.1?owner=node",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/nghttp2@1.70.0?owner=node",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/openssl@3.5.9?owner=node",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/simdjson@5.0.3?owner=node",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/simdutf@7.7.0?owner=node",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/sqlite@3.54.0?owner=node",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/tz@2026e?owner=node",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/undici@8.11.2?owner=node",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/unicode@17.0?owner=node",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/uv@1.52.1?owner=node",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/uvwasi@0.0.23?owner=node",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/v8@14.6.202.34-node.39?owner=node",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/zlib@1.3.2.1-motley-456ae73?owner=node",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/zstd@1.5.7?owner=node",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/bzip2@1.0.8?owner=python",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/libffi@3.8.0?owner=python",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/mpdecimal@4.0.0?owner=python",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/openssl-3.5@3.5.9?owner=python",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/xz@5.8.4?owner=python",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/sqlite@3.53.1.0?owner=python",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/tcl@9.0.4?owner=python",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/tk@9.0.4?owner=python",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/uuid@1.0.3?owner=python",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/expat@2.9.0?owner=python",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/CPython@3.12.15",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/libyaml@0.2.5",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/macOS@26A434",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/Rust@1.99.0?owner=rust-toolchain",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/LLVM@23.1.1-rust-1.99.0-stable?owner=rust-toolchain",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/OpenSSL@3.6.3?owner=rust-toolchain",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/libgit2@1.9.6?owner=rust-toolchain",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/libcurl@8.7.1?owner=rust-toolchain",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:generic/LibreSSL@3.3.6?owner=rust-toolchain",
+      "dependsOn": []
+    }
+  ]
+}

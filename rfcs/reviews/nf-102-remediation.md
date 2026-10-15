@@ -1,6 +1,6 @@
 # NF-102: Owned Architecture Acceptance Blockers
 
-Status: follow-up tracker from the [2026-10-11 review](2026-10-11-runtime-architecture-review.md). [NF-102 is closed as a completed review](2026-10-11-runtime-review-closure.md) with outcome not-ready by explicit maintainer scope amendment. NF-102-01's declared scope is complete; the other five cards remain open architecture-acceptance blockers. RFC-0023 remains Draft. Every card is owned by Alexander Agafonov under the bounded NF-101 roles; no new SLA, signing authority or paid resource is promised. Historical review dispositions remain unchanged.
+Status: follow-up tracker from the [2026-10-11 review](2026-10-11-runtime-architecture-review.md). [NF-102 is closed as a completed review](2026-10-11-runtime-review-closure.md) with outcome not-ready by explicit maintainer scope amendment. NF-102-01 and NF-102-02's declared scopes are complete; the other four cards remain open architecture-acceptance blockers. RFC-0023 remains Draft. Every card is owned by Alexander Agafonov under the bounded NF-101 roles; no new SLA, signing authority or paid resource is promised. Historical review dispositions remain unchanged.
 
 These cards address gaps after completed preparation and scoped repairs. Do not repeat the old 224-case implementation or infer that a historical failure still occurs at the repaired revision. Each future change needs checks, neutral metadata, its own commit/push/PR and actual CI. Keep mandatory blockers before acceptance; do not relabel them optional.
 
@@ -22,14 +22,20 @@ Authority limit: Evidence/report preparation only; candidate code or oracle chan
 
 Close current supply-chain and provenance evidence.
 
-Owner: Alexander Agafonov. Status: evidence-collected-acceptance-blocked, see [2026-10-15 evidence](../../evaluation/supply-chain/2026-10-15/README.md). Mandatory gates: 3, 6, 9. Depends on: none.
+Owner: Alexander Agafonov. Status: declared-scope-complete, see [authorized repair and closure](../../evaluation/supply-chain/2026-10-15-repaired/README.md). Mandatory gates: 3, 6, 9 are not all closed by this bounded task. Depends on: none.
 
-Current-source inventories, four SBOMs, fresh advisory/first-pass reachability and
-license review, external file/native receipts and two clean offline builds are
-recorded. Complete compiler/interpreter/native/license provenance, unresolved
-build/provisioning advisory disposition and Rust byte reproducibility remain
-unqualified. Public metadata/evidence authority was used; no dependencies,
-candidate locks, frozen inputs or architecture gates were changed or waived.
+The [original evidence-only collection](../../evaluation/supply-chain/2026-10-15/README.md)
+is preserved unchanged. On 2026-10-15 the maintainer explicitly authorized
+dependency/toolchain repairs, a separate PR and merge when ready. The new record
+binds current artifacts, ten SBOMs, full declared compiler/interpreter/native
+closures, 2,276 component license rows and dated advisory dispositions. All four
+candidate graphs have zero exact-version advisory matches; residual tool/native
+matches and two missing upstream notices remain explicit, not blanket security
+or distribution approval. Two independent clean offline roots produce identical
+bytes, also matching the primary artifacts; the unchanged full public contract
+passes for every candidate. No frozen corpus, original task criteria or
+architecture gate was changed or waived. Target lifecycle, isolation, signing,
+cross-target measurements and architecture acceptance remain other cards.
 
 Acceptance evidence:
 
@@ -37,7 +43,7 @@ Acceptance evidence:
 - Refresh dated vulnerability evidence for all four actual graphs and review reachability, unresolved matches and license uncertainties; root npm audit is not a substitute.
 - Document reproducibility and offline provisioning; any necessary dependency repair remains separately authorized with new locks/evidence.
 
-Authority limit: Public metadata scans and evidence collection only; no automatic fixes, credentials or new infrastructure.
+Authority limit: Explicit 2026-10-15 dependency/toolchain repair and evidence publication/merge; no credentials, new infrastructure, product release or architecture acceptance.
 
 ## NF-102-03
 

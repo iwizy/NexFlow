@@ -119,6 +119,12 @@ for (const mutate of closureMutations) {
 }
 const closureNote = read("rfcs/reviews/2026-10-11-runtime-review-closure.md");
 for (const token of ["closed as a completed review", "RFC-0023 remains Draft", "not satisfied", "All", "eleven mandatory"]) assert.ok(closureNote.includes(token), token);
-assert.ok(cards.includes("All six cards remain open architecture-acceptance blockers"));
-console.log(`NF-102 task closure: explicit review-only amendment, Draft/not-ready, six open acceptance blockers and ${closureMutations.length} rejection controls.`);
+// The six-card state belongs to the immutable review, not the live tracker:
+// NF-102-01's later bounded closure must not rewrite the historical review.
+const originalCards = execFileSync("git", ["show", "9ae9d76b173515ba189ede6917faf97695bb5ed5:rfcs/reviews/nf-102-remediation.md"], { cwd: repositoryRoot, encoding: "utf8" });
+assert.ok(originalCards.includes("All six cards remain open architecture-acceptance blockers"));
+assert.ok(cards.includes("the other five cards remain open architecture-acceptance blockers"));
+assert.ok(cards.includes("Status: declared-scope-complete"));
+assert.ok(cards.includes("Status: evidence-collected-acceptance-blocked"));
+console.log(`NF-102 task closure: explicit review-only amendment, Draft/not-ready, original six blockers preserved and ${closureMutations.length} rejection controls.`);
 console.log(`NF-102 review: 74 exact inputs, recognized four-candidate repair, 11 blocked gates, 6 owned cards and ${mutations.length} rejection controls; no acceptance inferred.`);

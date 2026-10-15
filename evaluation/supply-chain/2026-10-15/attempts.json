@@ -1,0 +1,29 @@
+{
+  "task": "NF-102-02",
+  "sourceRevision": "a3dea0a3de7018e14057a9bc15307325439b500d",
+  "attempts": [
+    {
+      "stage": "metadata-provisioning",
+      "outcome": "corrected-local-side-effect",
+      "observation": "go mod download all added six checksum lines for three non-compiled transitive modules despite GOFLAGS=-mod=readonly.",
+      "correction": "Only those generated additions were removed; all later downloads used a disposable copy of go.mod/go.sum. Published candidate locks remain byte-identical."
+    },
+    {
+      "collectorRevision": "9c40fd74eb0861ea6a2d245f3a74b9f1d59ab3fc",
+      "stage": "candidate-collection",
+      "outcome": "failed-harness-prerequisite",
+      "observation": "npm could not start: the pre-existing temporary Node tree had a dangling npm-cli.js symlink.",
+      "correction": "Fresh official exact-version Node archive acquired and checksum-verified; complete caches provisioned separately."
+    },
+    {
+      "collectorRevision": "a568f7a1146d9277dea6177766c3c636a2690309",
+      "stage": "first-independent-clean-build",
+      "outcome": "failed-harness-input-export",
+      "observation": "Rust exit 101: eighteen include_str! inputs in schemas were absent because the evidence harness exported only candidate directories.",
+      "correctionRevision": "2dda6a5e3eb3cc4f71cd4f491eea7fffb2ba4a4a",
+      "correction": "Export frozen schemas as compile inputs. Two new clean roots then completed all four builds; no candidate code or locks changed."
+    }
+  ],
+  "candidateDefectClaimed": false,
+  "historicalRecordsChanged": false
+}

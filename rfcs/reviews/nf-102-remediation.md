@@ -1,6 +1,6 @@
 # NF-102: Owned Architecture Acceptance Blockers
 
-Status: planned blockers from the [2026-10-11 review](2026-10-11-runtime-architecture-review.md), not approved implementation or execution. [NF-102 is closed as a completed review](2026-10-11-runtime-review-closure.md) with outcome not-ready by explicit maintainer scope amendment. All six cards remain open architecture-acceptance blockers; RFC-0023 remains Draft. Every card is owned by Alexander Agafonov under the bounded NF-101 roles; no new SLA, signing authority or paid resource is promised.
+Status: follow-up tracker from the [2026-10-11 review](2026-10-11-runtime-architecture-review.md). [NF-102 is closed as a completed review](2026-10-11-runtime-review-closure.md) with outcome not-ready by explicit maintainer scope amendment. NF-102-01's declared scope is complete; the other five cards remain open architecture-acceptance blockers. RFC-0023 remains Draft. Every card is owned by Alexander Agafonov under the bounded NF-101 roles; no new SLA, signing authority or paid resource is promised. Historical review dispositions remain unchanged.
 
 These cards address gaps after completed preparation and scoped repairs. Do not repeat the old 224-case implementation or infer that a historical failure still occurs at the repaired revision. Each future change needs checks, neutral metadata, its own commit/push/PR and actual CI. Keep mandatory blockers before acceptance; do not relabel them optional.
 
@@ -8,7 +8,7 @@ These cards address gaps after completed preparation and scoped repairs. Do not 
 
 Requalify repaired validation and public diagnostics.
 
-Owner: Alexander Agafonov. Status: planned-blocker. Mandatory gates: 2, 3, 5, 10. Depends on: none.
+Owner: Alexander Agafonov. Status: declared-scope-complete, see [closure](2026-10-13-nf-102-01-closure.md). Mandatory gates: 2, 3, 5, 10 are not all closed by this bounded task. Depends on: none.
 
 Acceptance evidence:
 
@@ -22,7 +22,14 @@ Authority limit: Evidence/report preparation only; candidate code or oracle chan
 
 Close current supply-chain and provenance evidence.
 
-Owner: Alexander Agafonov. Status: planned-blocker. Mandatory gates: 3, 6, 9. Depends on: none.
+Owner: Alexander Agafonov. Status: evidence-collected-acceptance-blocked, see [2026-10-15 evidence](../../evaluation/supply-chain/2026-10-15/README.md). Mandatory gates: 3, 6, 9. Depends on: none.
+
+Current-source inventories, four SBOMs, fresh advisory/first-pass reachability and
+license review, external file/native receipts and two clean offline builds are
+recorded. Complete compiler/interpreter/native/license provenance, unresolved
+build/provisioning advisory disposition and Rust byte reproducibility remain
+unqualified. Public metadata/evidence authority was used; no dependencies,
+candidate locks, frozen inputs or architecture gates were changed or waived.
 
 Acceptance evidence:
 

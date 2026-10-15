@@ -1,0 +1,218 @@
+{
+  "formatVersion": 1,
+  "scannerVersion": "nf-056-11-osv-v1",
+  "apiVersion": "v1",
+  "api": "https://api.osv.dev/v1",
+  "startedAt": "2026-10-15T10:16:03.116Z",
+  "completedAt": "2026-10-15T10:16:04.398Z",
+  "databaseVersion": "unavailable-live-service-no-snapshot-id",
+  "candidate": "go-toolchain",
+  "sourceRevision": "a3dea0a3de7018e14057a9bc15307325439b500d",
+  "collectorRevision": "2dda6a5e3eb3cc4f71cd4f491eea7fffb2ba4a4a",
+  "scope": "exact-version-matching-no-reachability-or-security-certification",
+  "status": "completed",
+  "queries": [
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Go",
+          "name": "toolchain"
+        },
+        "version": "1.27.1"
+      },
+      "refs": [
+        "pkg:golang/toolchain@1.27.1"
+      ],
+      "matches": [
+        {
+          "id": "GO-2026-6601",
+          "modified": "2026-10-10T11:47:17.934451Z"
+        },
+        {
+          "id": "GO-2026-6602",
+          "modified": "2026-10-10T11:47:17.675007Z"
+        }
+      ]
+    }
+  ],
+  "pages": [
+    {
+      "queries": [
+        {
+          "package": {
+            "ecosystem": "Go",
+            "name": "toolchain"
+          },
+          "version": "1.27.1"
+        }
+      ],
+      "response": {
+        "results": [
+          {
+            "vulns": [
+              {
+                "id": "GO-2026-6601",
+                "modified": "2026-10-10T11:47:17.934451Z"
+              },
+              {
+                "id": "GO-2026-6602",
+                "modified": "2026-10-10T11:47:17.675007Z"
+              }
+            ]
+          }
+        ]
+      },
+      "responseSha256": "dd3c69dbefb4ad3a71aea561cd6b4709a3922115281e40e1b07b8c73904652d3"
+    }
+  ],
+  "advisories": [
+    {
+      "id": "GO-2026-6601",
+      "aliases": [
+        "CVE-2026-94444"
+      ],
+      "modified": "2026-10-10T11:47:17.934451424Z",
+      "published": "2026-10-08T22:31:09Z",
+      "withdrawn": null,
+      "sourceSha256": "4497d057a72de930c6e4773be84f6729a4055cc7f64c1298190ec5ecd081ca3b",
+      "severity": [],
+      "databaseSpecific": {
+        "url": "https://pkg.go.dev/vuln/GO-2026-6601",
+        "review_status": "REVIEWED"
+      },
+      "affected": [
+        {
+          "package": {
+            "name": "toolchain",
+            "ecosystem": "Go",
+            "purl": "pkg:golang/toolchain"
+          },
+          "ranges": [
+            {
+              "type": "SEMVER",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "1.26.9"
+                },
+                {
+                  "introduced": "1.27.0-0"
+                },
+                {
+                  "fixed": "1.27.2"
+                }
+              ]
+            }
+          ],
+          "ecosystem_specific": {
+            "imports": [
+              {
+                "path": "cmd/go"
+              }
+            ]
+          },
+          "database_specific": {
+            "source": "https://vuln.go.dev/ID/GO-2026-6601.json"
+          }
+        }
+      ],
+      "references": [
+        {
+          "type": "FIX",
+          "url": "https://go.dev/cl/840685"
+        },
+        {
+          "type": "REPORT",
+          "url": "https://go.dev/issue/81833"
+        },
+        {
+          "type": "WEB",
+          "url": "https://groups.google.com/g/golang-announce/c/U2fTuyDJznI"
+        }
+      ],
+      "url": "https://osv.dev/vulnerability/GO-2026-6601"
+    },
+    {
+      "id": "GO-2026-6602",
+      "aliases": [
+        "CVE-2026-94447"
+      ],
+      "modified": "2026-10-10T11:47:17.675007200Z",
+      "published": "2026-10-08T22:31:09Z",
+      "withdrawn": null,
+      "sourceSha256": "88f1ef51b33f83ec421c448e6c08eac3aba13d92497098d899541a861fe801e4",
+      "severity": [],
+      "databaseSpecific": {
+        "review_status": "REVIEWED",
+        "url": "https://pkg.go.dev/vuln/GO-2026-6602"
+      },
+      "affected": [
+        {
+          "package": {
+            "name": "toolchain",
+            "ecosystem": "Go",
+            "purl": "pkg:golang/toolchain"
+          },
+          "ranges": [
+            {
+              "type": "SEMVER",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "1.26.9"
+                },
+                {
+                  "introduced": "1.27.0-0"
+                },
+                {
+                  "fixed": "1.27.2"
+                }
+              ]
+            }
+          ],
+          "ecosystem_specific": {
+            "imports": [
+              {
+                "path": "cmd/go"
+              }
+            ]
+          },
+          "database_specific": {
+            "source": "https://vuln.go.dev/ID/GO-2026-6602.json"
+          }
+        }
+      ],
+      "references": [
+        {
+          "type": "FIX",
+          "url": "https://go.dev/cl/840785"
+        },
+        {
+          "type": "REPORT",
+          "url": "https://go.dev/issue/81834"
+        },
+        {
+          "type": "WEB",
+          "url": "https://groups.google.com/g/golang-announce/c/U2fTuyDJznI"
+        }
+      ],
+      "url": "https://osv.dev/vulnerability/GO-2026-6602"
+    }
+  ],
+  "queryCount": 1,
+  "matchedPackageCount": 1,
+  "advisoryCount": 2,
+  "fixesApplied": false,
+  "untested": [
+    "OS/distribution advisories",
+    "compiler and interpreter bundled native closure",
+    "unpublished vulnerabilities",
+    "independent dependency source audit",
+    "exploit reachability",
+    "runtime/compiler vulnerability matching"
+  ]
+}

@@ -1,0 +1,1681 @@
+{
+  "candidate": "node-tooling",
+  "sourceRevision": "a3dea0a3de7018e14057a9bc15307325439b500d",
+  "collectorRevision": "2dda6a5e3eb3cc4f71cd4f491eea7fffb2ba4a4a",
+  "components": [
+    {
+      "ref": "pkg:npm/corepack@0.34.6",
+      "ecosystem": "npm",
+      "name": "corepack",
+      "version": "0.34.6",
+      "license": "MIT",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "ca4688703775d897ac1111c3cfec8eb9aa3801c08dfb02a59acde6225206cce9"
+    },
+    {
+      "ref": "pkg:npm/npm@10.9.8",
+      "ecosystem": "npm",
+      "name": "npm",
+      "version": "10.9.8",
+      "license": "Artistic-2.0",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "3f6dff62de33c82d89e986a05ddd5644e6b613344a54ecf2820a612bfbaee7d7"
+    },
+    {
+      "ref": "pkg:npm/%40isaacs/cliui@8.0.2",
+      "ecosystem": "npm",
+      "name": "@isaacs/cliui",
+      "version": "8.0.2",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "b4f9cc8d09602a487dea1c227ce24777cda87e2ad8a29ab9f741214ab78dc065"
+    },
+    {
+      "ref": "pkg:npm/ansi-regex@6.2.2",
+      "ecosystem": "npm",
+      "name": "ansi-regex",
+      "version": "6.2.2",
+      "license": "MIT",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "a58f1d6dbaca116f4aaa83906a0a992da2303a07ca920b2ce877573988eae352"
+    },
+    {
+      "ref": "pkg:npm/emoji-regex@9.2.2",
+      "ecosystem": "npm",
+      "name": "emoji-regex",
+      "version": "9.2.2",
+      "license": "MIT",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "181fa046bdbb7d8958c57dcef2e63aea9af667036e218c7222479a8618375f1a"
+    },
+    {
+      "ref": "pkg:npm/string-width@5.1.2",
+      "ecosystem": "npm",
+      "name": "string-width",
+      "version": "5.1.2",
+      "license": "MIT",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "adbcb3b95ea29c1f2a91a0af600fd9136ce408a38622332848ba4630dc473659"
+    },
+    {
+      "ref": "pkg:npm/strip-ansi@7.2.0",
+      "ecosystem": "npm",
+      "name": "strip-ansi",
+      "version": "7.2.0",
+      "license": "MIT",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "228b214dd06ca80ab3c36e2b890a8696a39cea65585f6d61498c922c615e18a0"
+    },
+    {
+      "ref": "pkg:npm/%40isaacs/fs-minipass@4.0.1",
+      "ecosystem": "npm",
+      "name": "@isaacs/fs-minipass",
+      "version": "4.0.1",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "ab8c1c2bce664e4c76b1937fa1a28f00ca5231a70cf0c1f78dd473101a9d2a88"
+    },
+    {
+      "ref": "pkg:npm/%40isaacs/string-locale-compare@1.1.0",
+      "ecosystem": "npm",
+      "name": "@isaacs/string-locale-compare",
+      "version": "1.1.0",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "45b3f486e72a9d0e0279cda0003713dde115b7d0d75c4acfa7129cffb97e4ab3"
+    },
+    {
+      "ref": "pkg:npm/%40npmcli/agent@3.0.0",
+      "ecosystem": "npm",
+      "name": "@npmcli/agent",
+      "version": "3.0.0",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "d67f4edf03680423c43434e3b28902feec2a136da2e85355034b174ba286828b"
+    },
+    {
+      "ref": "pkg:npm/%40npmcli/arborist@8.0.5",
+      "ecosystem": "npm",
+      "name": "@npmcli/arborist",
+      "version": "8.0.5",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "ef3199b9a2bff8840c6fbe243f0661b55ddfab0c08618402110ecc3624db9a82"
+    },
+    {
+      "ref": "pkg:npm/%40npmcli/config@9.0.0",
+      "ecosystem": "npm",
+      "name": "@npmcli/config",
+      "version": "9.0.0",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "cb093d0a7be6ee69ed456da7d0f7bfbcb7780df87e5b564da27465b012edb1e2"
+    },
+    {
+      "ref": "pkg:npm/%40npmcli/fs@4.0.0",
+      "ecosystem": "npm",
+      "name": "@npmcli/fs",
+      "version": "4.0.0",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "028cce261f1b1840efa893492a88911e0f4832e29b46ae0dd38eb6ba5ae85856"
+    },
+    {
+      "ref": "pkg:npm/%40npmcli/git@6.0.3",
+      "ecosystem": "npm",
+      "name": "@npmcli/git",
+      "version": "6.0.3",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "2ad512c56d175e84a07d5d74c9f67081951cb4f070ff30c1442478a54e37cd4a"
+    },
+    {
+      "ref": "pkg:npm/%40npmcli/installed-package-contents@3.0.0",
+      "ecosystem": "npm",
+      "name": "@npmcli/installed-package-contents",
+      "version": "3.0.0",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "d58b31861897438303facbf9707730089a3ff62adbbe52d0ae2017256b07c770"
+    },
+    {
+      "ref": "pkg:npm/%40npmcli/map-workspaces@4.0.2",
+      "ecosystem": "npm",
+      "name": "@npmcli/map-workspaces",
+      "version": "4.0.2",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "fe34e013a222d4cdf5051c3ba5eee877d436eefe5c11e0a3d6a66ca039fe2abf"
+    },
+    {
+      "ref": "pkg:npm/%40npmcli/metavuln-calculator@8.0.1",
+      "ecosystem": "npm",
+      "name": "@npmcli/metavuln-calculator",
+      "version": "8.0.1",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "11c9eadb21736cd4f606cb0fc57442fc791a363d46f8d308c80844b800c446e0"
+    },
+    {
+      "ref": "pkg:npm/pacote@20.0.1",
+      "ecosystem": "npm",
+      "name": "pacote",
+      "version": "20.0.1",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "b76d4db15b4a28511c44db1f1cda3e71c7ffca995d7f6694c180c9beac003607"
+    },
+    {
+      "ref": "pkg:npm/%40npmcli/name-from-folder@3.0.0",
+      "ecosystem": "npm",
+      "name": "@npmcli/name-from-folder",
+      "version": "3.0.0",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "fef258b0c43099539cc0b45cc637f7ba451013516e5589c80273651366382e3f"
+    },
+    {
+      "ref": "pkg:npm/%40npmcli/node-gyp@4.0.0",
+      "ecosystem": "npm",
+      "name": "@npmcli/node-gyp",
+      "version": "4.0.0",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "dadfbd2c2a18e2dbda9292f19da081959a78ffab2fc30be80f6aaed77d05bafd"
+    },
+    {
+      "ref": "pkg:npm/%40npmcli/package-json@6.2.0",
+      "ecosystem": "npm",
+      "name": "@npmcli/package-json",
+      "version": "6.2.0",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "06124bac42438c270f69ed32587406f5c3086c6a14f63b708a53e524010e1da5"
+    },
+    {
+      "ref": "pkg:npm/%40npmcli/promise-spawn@8.0.3",
+      "ecosystem": "npm",
+      "name": "@npmcli/promise-spawn",
+      "version": "8.0.3",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "df2179ff71bc853ae4b40a1d9f3968ac710a2be47540aaf76bdd7519896c1dc5"
+    },
+    {
+      "ref": "pkg:npm/%40npmcli/query@4.0.1",
+      "ecosystem": "npm",
+      "name": "@npmcli/query",
+      "version": "4.0.1",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "c4794671a3e862e43d15f8e1d9d3ebbccffa992ff25b1a21916ba9266d2a2541"
+    },
+    {
+      "ref": "pkg:npm/%40npmcli/redact@3.2.2",
+      "ecosystem": "npm",
+      "name": "@npmcli/redact",
+      "version": "3.2.2",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "8afc5ec861c464ea4cd32d93db525e67c16cce727de5119dacfa1bd2ad3ec1cd"
+    },
+    {
+      "ref": "pkg:npm/%40npmcli/run-script@9.1.0",
+      "ecosystem": "npm",
+      "name": "@npmcli/run-script",
+      "version": "9.1.0",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "933a005ff27cff9bb5af616413f80525c1c7e6301448cbc3e17a74a9e5ef5a18"
+    },
+    {
+      "ref": "pkg:npm/%40pkgjs/parseargs@0.11.0",
+      "ecosystem": "npm",
+      "name": "@pkgjs/parseargs",
+      "version": "0.11.0",
+      "license": "MIT",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "c52af8cea1efc18fc306336d6ade5a1d8d9ccd8916a5d2246bc585a92635901e"
+    },
+    {
+      "ref": "pkg:npm/%40sigstore/bundle@3.1.0",
+      "ecosystem": "npm",
+      "name": "@sigstore/bundle",
+      "version": "3.1.0",
+      "license": "Apache-2.0",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "e67b398f9fc73c66e7a67442c9069ce6c25473a9195408c5d8f05f7aa8d0c5b7"
+    },
+    {
+      "ref": "pkg:npm/%40sigstore/core@2.0.0",
+      "ecosystem": "npm",
+      "name": "@sigstore/core",
+      "version": "2.0.0",
+      "license": "Apache-2.0",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "1218c5f6d3d28a16656304b73e4d985a69055a2879925220f65172a3bdedf9e5"
+    },
+    {
+      "ref": "pkg:npm/%40sigstore/protobuf-specs@0.4.3",
+      "ecosystem": "npm",
+      "name": "@sigstore/protobuf-specs",
+      "version": "0.4.3",
+      "license": "Apache-2.0",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "5eddc56bb2e0bd3cd96e5a1a690516013e2a21d142dbf9247dce84230f72ea3d"
+    },
+    {
+      "ref": "pkg:npm/%40sigstore/sign@3.1.0",
+      "ecosystem": "npm",
+      "name": "@sigstore/sign",
+      "version": "3.1.0",
+      "license": "Apache-2.0",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "ae39583408d62b282b3e0bac3bfe1eb2209b254c92b17491973a12026eb85334"
+    },
+    {
+      "ref": "pkg:npm/%40sigstore/tuf@3.1.1",
+      "ecosystem": "npm",
+      "name": "@sigstore/tuf",
+      "version": "3.1.1",
+      "license": "Apache-2.0",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "ae664d0d05531be2c51052a51161c2d9c9ac41e6e3563fe573288f940e1c33f7"
+    },
+    {
+      "ref": "pkg:npm/%40sigstore/verify@2.1.1",
+      "ecosystem": "npm",
+      "name": "@sigstore/verify",
+      "version": "2.1.1",
+      "license": "Apache-2.0",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "68d7387e84118be7099407749b057035dd631ba354ede2e945548fd2cf762b53"
+    },
+    {
+      "ref": "pkg:npm/%40tufjs/canonical-json@2.0.0",
+      "ecosystem": "npm",
+      "name": "@tufjs/canonical-json",
+      "version": "2.0.0",
+      "license": "MIT",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "8c09f4774a7dddb18c24d85cc833c8a847b829f87ce45f1c2a74a61a23a4f4fd"
+    },
+    {
+      "ref": "pkg:npm/abbrev@3.0.1",
+      "ecosystem": "npm",
+      "name": "abbrev",
+      "version": "3.0.1",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "1903498f98eab52f962076359b74e436bb24cf484fd1a75af97a2509712029ae"
+    },
+    {
+      "ref": "pkg:npm/agent-base@7.1.4",
+      "ecosystem": "npm",
+      "name": "agent-base",
+      "version": "7.1.4",
+      "license": "MIT",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "7a08cb2fe1d2b788e0a7bf6a9b7597dbeeeae804698c2fbd15de786d284d327c"
+    },
+    {
+      "ref": "pkg:npm/ansi-regex@5.0.1",
+      "ecosystem": "npm",
+      "name": "ansi-regex",
+      "version": "5.0.1",
+      "license": "MIT",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "8b2dc166f2b74d5098bad38bdd3dd2f4d4775c626199872f5e36dbb48c40931d"
+    },
+    {
+      "ref": "pkg:npm/ansi-styles@6.2.3",
+      "ecosystem": "npm",
+      "name": "ansi-styles",
+      "version": "6.2.3",
+      "license": "MIT",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "0cf1f46ceee4b380298db6e6a54f14d345abe09abd5f650cbc20c8ac2ab27744"
+    },
+    {
+      "ref": "pkg:npm/aproba@2.1.0",
+      "ecosystem": "npm",
+      "name": "aproba",
+      "version": "2.1.0",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "101af34140df8cc001408d7efff7f6a87967228755caa846276ab6e72dfe0e7a"
+    },
+    {
+      "ref": "pkg:npm/archy@1.0.0",
+      "ecosystem": "npm",
+      "name": "archy",
+      "version": "1.0.0",
+      "license": "MIT",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "110f0d7b53d31af7e873b09aaeed3f951bed467697ce3b672fb7e8a9b8a4925a"
+    },
+    {
+      "ref": "pkg:npm/balanced-match@1.0.2",
+      "ecosystem": "npm",
+      "name": "balanced-match",
+      "version": "1.0.2",
+      "license": "MIT",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "b30c328501dead1870b894ad604405b2284b571c1f12664cdc61d92a2e3397c2"
+    },
+    {
+      "ref": "pkg:npm/bin-links@5.0.0",
+      "ecosystem": "npm",
+      "name": "bin-links",
+      "version": "5.0.0",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "8a502dd6bbd7e9c9a6f3361575d497d33ae4082692e8d1e2015e2f993af886c8"
+    },
+    {
+      "ref": "pkg:npm/binary-extensions@2.3.0",
+      "ecosystem": "npm",
+      "name": "binary-extensions",
+      "version": "2.3.0",
+      "license": "MIT",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "f775eb159a64b320a9a62aaa831ae67e13ab05bd9ca375b8ec830a1e53cbc56d"
+    },
+    {
+      "ref": "pkg:npm/brace-expansion@2.0.2",
+      "ecosystem": "npm",
+      "name": "brace-expansion",
+      "version": "2.0.2",
+      "license": "MIT",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "3247d7a57a8b8c75fbbce15488d3a4ffacb6ffc56c89ec63dccf9028a15d8af5"
+    },
+    {
+      "ref": "pkg:npm/cacache@19.0.1",
+      "ecosystem": "npm",
+      "name": "cacache",
+      "version": "19.0.1",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "3b4d9ce8c3a3f853d903c06b5ec38a06c8ac9a2ccb236bf6a532d92cfe1b07de"
+    },
+    {
+      "ref": "pkg:npm/chalk@5.6.2",
+      "ecosystem": "npm",
+      "name": "chalk",
+      "version": "5.6.2",
+      "license": "MIT",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "ef029c254479723c952a24c0d8d758378bd8ddf031f5bd6f027f65e1a3d030f3"
+    },
+    {
+      "ref": "pkg:npm/chownr@3.0.0",
+      "ecosystem": "npm",
+      "name": "chownr",
+      "version": "3.0.0",
+      "license": "BlueOak-1.0.0",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "4300e90fdd91ec7035047473c60f880251a9801bd786302729d4277751d3b948"
+    },
+    {
+      "ref": "pkg:npm/ci-info@4.4.0",
+      "ecosystem": "npm",
+      "name": "ci-info",
+      "version": "4.4.0",
+      "license": "MIT",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "1d38ded11841182cf7d0d5b664c48c8e56c3a85cd8990a7711cb73c2bc0d8f7e"
+    },
+    {
+      "ref": "pkg:npm/cidr-regex@4.1.3",
+      "ecosystem": "npm",
+      "name": "cidr-regex",
+      "version": "4.1.3",
+      "license": "BSD-2-Clause",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "f4bc059e31db8583d9e983e80e64edb4b723fb8c795a8eaae1f29efb5abd25b6"
+    },
+    {
+      "ref": "pkg:npm/cli-columns@4.0.0",
+      "ecosystem": "npm",
+      "name": "cli-columns",
+      "version": "4.0.0",
+      "license": "MIT",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "891744a36ecf1b807b47550f752193fab79289340fd6fb8ca79e0e8ca77a3843"
+    },
+    {
+      "ref": "pkg:npm/cmd-shim@7.0.0",
+      "ecosystem": "npm",
+      "name": "cmd-shim",
+      "version": "7.0.0",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "cb9f167324c07962144f8a1066fd9dda56f9763a67faf314db4b8f8a21a58444"
+    },
+    {
+      "ref": "pkg:npm/color-convert@2.0.1",
+      "ecosystem": "npm",
+      "name": "color-convert",
+      "version": "2.0.1",
+      "license": "MIT",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "9471d21744ca3137410448da6b3bd7b30ee91d42edce3b82ebcbf84faef74fb4"
+    },
+    {
+      "ref": "pkg:npm/color-name@1.1.4",
+      "ecosystem": "npm",
+      "name": "color-name",
+      "version": "1.1.4",
+      "license": "MIT",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "4a557ea373907e4643badb89ff21b3f4b969d20631086d78eab2e03d05c2efa4"
+    },
+    {
+      "ref": "pkg:npm/common-ancestor-path@1.0.1",
+      "ecosystem": "npm",
+      "name": "common-ancestor-path",
+      "version": "1.0.1",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "955a82f4789b3f8f8ae204bba817f18c7fa732aca47ceb93538f749890e9ddf3"
+    },
+    {
+      "ref": "pkg:npm/cross-spawn@7.0.6",
+      "ecosystem": "npm",
+      "name": "cross-spawn",
+      "version": "7.0.6",
+      "license": "MIT",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "2e106cd9b4ae4e34ead35218371a0d4e172da72515a4f8f97d69a2e1fe3dee82"
+    },
+    {
+      "ref": "pkg:npm/which@2.0.2",
+      "ecosystem": "npm",
+      "name": "which",
+      "version": "2.0.2",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "43010039ed5e89f7186960be682b3cb5cda5ab6cdfb06cbfd4f081cf0e7b4260"
+    },
+    {
+      "ref": "pkg:npm/cssesc@3.0.0",
+      "ecosystem": "npm",
+      "name": "cssesc",
+      "version": "3.0.0",
+      "license": "MIT",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "23f134be44f2877c298ca56c5464ebbe190ddb49c3ce9b82be3c73a64512d014"
+    },
+    {
+      "ref": "pkg:npm/debug@4.4.3",
+      "ecosystem": "npm",
+      "name": "debug",
+      "version": "4.4.3",
+      "license": "MIT",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "ea8e33d63fe5f3a4c36609b6c3df8e2ef1f8b8ba2fc3a2e1e53cb27291f384af"
+    },
+    {
+      "ref": "pkg:npm/diff@5.2.2",
+      "ecosystem": "npm",
+      "name": "diff",
+      "version": "5.2.2",
+      "license": "BSD-3-Clause",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "ee916c7daabf7b0e4cd51db1060a6a0208e30d25c3ec8540f056226b16853b47"
+    },
+    {
+      "ref": "pkg:npm/eastasianwidth@0.2.0",
+      "ecosystem": "npm",
+      "name": "eastasianwidth",
+      "version": "0.2.0",
+      "license": "MIT",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "51db62f97656d02d4bc9670393cae42930dbd1ed89f5837056851807e602867a"
+    },
+    {
+      "ref": "pkg:npm/emoji-regex@8.0.0",
+      "ecosystem": "npm",
+      "name": "emoji-regex",
+      "version": "8.0.0",
+      "license": "MIT",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "7bec29b9ca68f2c4becc60e866c2f9342ecdc89fab39841a818ccd9eda15c148"
+    },
+    {
+      "ref": "pkg:npm/encoding@0.1.13",
+      "ecosystem": "npm",
+      "name": "encoding",
+      "version": "0.1.13",
+      "license": "MIT",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "8a868d7c206bf2eb71c0721a957b7a255738678f72c290c880b46fec4ec54dbe"
+    },
+    {
+      "ref": "pkg:npm/env-paths@2.2.1",
+      "ecosystem": "npm",
+      "name": "env-paths",
+      "version": "2.2.1",
+      "license": "MIT",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "b92833e5851ec53bd4cd8093f6099d0c6e6818c4374ec1d09aa25d4f9ba91ec4"
+    },
+    {
+      "ref": "pkg:npm/err-code@2.0.3",
+      "ecosystem": "npm",
+      "name": "err-code",
+      "version": "2.0.3",
+      "license": "MIT",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "ff5360c17c3e197fc4a4a4fa0d07640292556d585a49c8651fd198e926d47bcc"
+    },
+    {
+      "ref": "pkg:npm/exponential-backoff@3.1.3",
+      "ecosystem": "npm",
+      "name": "exponential-backoff",
+      "version": "3.1.3",
+      "license": "Apache-2.0",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "c3076cc23aa8d9f5123900305b9c174af612bfef91211c658ab914611dd86fa8"
+    },
+    {
+      "ref": "pkg:npm/fastest-levenshtein@1.0.16",
+      "ecosystem": "npm",
+      "name": "fastest-levenshtein",
+      "version": "1.0.16",
+      "license": "MIT",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "1678454ed179a645bc098b43276d816966f88d134195664538d4de1af13a61b4"
+    },
+    {
+      "ref": "pkg:npm/fdir@6.5.0",
+      "ecosystem": "npm",
+      "name": "fdir",
+      "version": "6.5.0",
+      "license": "MIT",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "aca49395d61ef383a09f74555c66ed45817ca2b5724e710a4dc9e0471b83d8f5"
+    },
+    {
+      "ref": "pkg:npm/foreground-child@3.3.1",
+      "ecosystem": "npm",
+      "name": "foreground-child",
+      "version": "3.3.1",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "434959cc3a188aa891e21bc23f5684421425722faf2dec45b7cff2ca2934bd6a"
+    },
+    {
+      "ref": "pkg:npm/fs-minipass@3.0.3",
+      "ecosystem": "npm",
+      "name": "fs-minipass",
+      "version": "3.0.3",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "e90117e65341117ce56ab6aaa8b59291210601f69c63996fbe446a9a30237fc6"
+    },
+    {
+      "ref": "pkg:npm/glob@10.5.0",
+      "ecosystem": "npm",
+      "name": "glob",
+      "version": "10.5.0",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "5455b1a29f8c3f3b6a41c2c053bf0684f14464bb5360f7b8c8702bf45b2da0bb"
+    },
+    {
+      "ref": "pkg:npm/graceful-fs@4.2.11",
+      "ecosystem": "npm",
+      "name": "graceful-fs",
+      "version": "4.2.11",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "5747d4ba6b17165c6ecac30ab3a331715f41c7ad546e1f1574dab1bdcb116181"
+    },
+    {
+      "ref": "pkg:npm/hosted-git-info@8.1.0",
+      "ecosystem": "npm",
+      "name": "hosted-git-info",
+      "version": "8.1.0",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "88fbe44e89a67bb19b62746c7a076c3f5671c5c767699db07fbb0b87cbe8a2c7"
+    },
+    {
+      "ref": "pkg:npm/http-cache-semantics@4.2.0",
+      "ecosystem": "npm",
+      "name": "http-cache-semantics",
+      "version": "4.2.0",
+      "license": "BSD-2-Clause",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "bee0609d5ab09a590afe0e1209d3702b0afb0a3c158492f90902a724d889d22b"
+    },
+    {
+      "ref": "pkg:npm/http-proxy-agent@7.0.2",
+      "ecosystem": "npm",
+      "name": "http-proxy-agent",
+      "version": "7.0.2",
+      "license": "MIT",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "38b61961aa0ba3028f2e120b3d883179281f6ba25fe22ff2214bf9f363161b65"
+    },
+    {
+      "ref": "pkg:npm/https-proxy-agent@7.0.6",
+      "ecosystem": "npm",
+      "name": "https-proxy-agent",
+      "version": "7.0.6",
+      "license": "MIT",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "b08c1977d38f14f4be7fb5be33aab545e3e5a6e2e12100733a6ad97dec995206"
+    },
+    {
+      "ref": "pkg:npm/iconv-lite@0.6.3",
+      "ecosystem": "npm",
+      "name": "iconv-lite",
+      "version": "0.6.3",
+      "license": "MIT",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "3a9582fd121f841c245d1fcf84ef0b9e41c94b785b8d7eb63f9f5aec9bad0b98"
+    },
+    {
+      "ref": "pkg:npm/ignore-walk@7.0.0",
+      "ecosystem": "npm",
+      "name": "ignore-walk",
+      "version": "7.0.0",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "446ece6eb14022240d90295f566e19a4c6be37a706e957a4f67ecdcacbedeec0"
+    },
+    {
+      "ref": "pkg:npm/imurmurhash@0.1.4",
+      "ecosystem": "npm",
+      "name": "imurmurhash",
+      "version": "0.1.4",
+      "license": "MIT",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "aa3b07e7fa3d63aa96e401c3842b8cca1dd3247954baf92377094766e903c185"
+    },
+    {
+      "ref": "pkg:npm/ini@5.0.0",
+      "ecosystem": "npm",
+      "name": "ini",
+      "version": "5.0.0",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "61fcee262c673cf42004df446c64d4efba607ede336749b385727b0f37fdf169"
+    },
+    {
+      "ref": "pkg:npm/init-package-json@7.0.2",
+      "ecosystem": "npm",
+      "name": "init-package-json",
+      "version": "7.0.2",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "17bf26f5b3dab82e6ef658636e1a881ced445326828f804c1740eda5661a4a4a"
+    },
+    {
+      "ref": "pkg:npm/ip-address@10.1.0",
+      "ecosystem": "npm",
+      "name": "ip-address",
+      "version": "10.1.0",
+      "license": "MIT",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "24794c4d22eff884bd155ae1a0a1ceb541f3f5336f000be97804ffd72b4807d2"
+    },
+    {
+      "ref": "pkg:npm/ip-regex@5.0.0",
+      "ecosystem": "npm",
+      "name": "ip-regex",
+      "version": "5.0.0",
+      "license": "MIT",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "957590a0cf94a6e422f58ff29014d760dea4fb98f4be4aca7a3fc1cb4e5f7438"
+    },
+    {
+      "ref": "pkg:npm/is-cidr@5.1.1",
+      "ecosystem": "npm",
+      "name": "is-cidr",
+      "version": "5.1.1",
+      "license": "BSD-2-Clause",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "e84062423597f7ba5795dad6d5b93c407a5b169945a14cb4913aabb96e986fd1"
+    },
+    {
+      "ref": "pkg:npm/is-fullwidth-code-point@3.0.0",
+      "ecosystem": "npm",
+      "name": "is-fullwidth-code-point",
+      "version": "3.0.0",
+      "license": "MIT",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "5b48496ca129073ed44a677b777ea3b91366c8bc228bc75fe858749a78ac1a32"
+    },
+    {
+      "ref": "pkg:npm/isexe@2.0.0",
+      "ecosystem": "npm",
+      "name": "isexe",
+      "version": "2.0.0",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "395c2af9abeeaafe7391974c1eacfb2a2bdeef187f21c3f5582c49e0368e59bf"
+    },
+    {
+      "ref": "pkg:npm/jackspeak@3.4.3",
+      "ecosystem": "npm",
+      "name": "jackspeak",
+      "version": "3.4.3",
+      "license": "BlueOak-1.0.0",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "3379e9c1be25729a6c7fc160e840108e15895c368e8060e42f68598f9f3065cd"
+    },
+    {
+      "ref": "pkg:npm/json-parse-even-better-errors@4.0.0",
+      "ecosystem": "npm",
+      "name": "json-parse-even-better-errors",
+      "version": "4.0.0",
+      "license": "MIT",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "6252659894dcb439b23b60f2baf50c1b68df7e519458eb3dccc4e6304cbb7029"
+    },
+    {
+      "ref": "pkg:npm/json-stringify-nice@1.1.4",
+      "ecosystem": "npm",
+      "name": "json-stringify-nice",
+      "version": "1.1.4",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "b1517d9a73d96ecf3b9c8b868f48e2bea71b8e13631bfceb2d7e9ce5830e69fa"
+    },
+    {
+      "ref": "pkg:npm/jsonparse@1.3.1",
+      "ecosystem": "npm",
+      "name": "jsonparse",
+      "version": "1.3.1",
+      "license": "MIT",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "fd84a394475582d3aca1da89b9d2dbb193ba7952da9f8c01a5a5474505185a29"
+    },
+    {
+      "ref": "pkg:npm/just-diff@6.0.2",
+      "ecosystem": "npm",
+      "name": "just-diff",
+      "version": "6.0.2",
+      "license": "MIT",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "1df75d52a92778b327ec79137008038e49fcbb35f1b6518f6ffbeba86d797a3b"
+    },
+    {
+      "ref": "pkg:npm/just-diff-apply@5.5.0",
+      "ecosystem": "npm",
+      "name": "just-diff-apply",
+      "version": "5.5.0",
+      "license": "MIT",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "1b721a43b3cff361a573c58e9769ccdc4350351d07d91ce69b72a2363406e61a"
+    },
+    {
+      "ref": "pkg:npm/libnpmaccess@9.0.0",
+      "ecosystem": "npm",
+      "name": "libnpmaccess",
+      "version": "9.0.0",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "8755f1e6075767583eeba4e2d4634db32a0aba37c4e0308cf9bef26edd11f871"
+    },
+    {
+      "ref": "pkg:npm/libnpmdiff@7.0.5",
+      "ecosystem": "npm",
+      "name": "libnpmdiff",
+      "version": "7.0.5",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "2abc6b0677cbab4998d1cf486aa5ad7fcbe9f11318ae7c2a3a006d0c1fef474c"
+    },
+    {
+      "ref": "pkg:npm/libnpmexec@9.0.5",
+      "ecosystem": "npm",
+      "name": "libnpmexec",
+      "version": "9.0.5",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "9cc30e76f205ed68226f1b9039a13a7bfd55f6a2b8d0fc8b5b33c72f44b8358c"
+    },
+    {
+      "ref": "pkg:npm/libnpmfund@6.0.5",
+      "ecosystem": "npm",
+      "name": "libnpmfund",
+      "version": "6.0.5",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "67b471ea4e41a180bff5e118f7cd7f8643c115ee1902db2649662868c5711a41"
+    },
+    {
+      "ref": "pkg:npm/libnpmhook@11.0.0",
+      "ecosystem": "npm",
+      "name": "libnpmhook",
+      "version": "11.0.0",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "28b0dcd7771eca1be713044e1804967142e0a916b623bbeeeb3620d47ddad8cb"
+    },
+    {
+      "ref": "pkg:npm/libnpmorg@7.0.0",
+      "ecosystem": "npm",
+      "name": "libnpmorg",
+      "version": "7.0.0",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "ea4efea8a48a4bc99d34fc20600c4b223568b3c67f5e908873d295b9d54a4262"
+    },
+    {
+      "ref": "pkg:npm/libnpmpack@8.0.5",
+      "ecosystem": "npm",
+      "name": "libnpmpack",
+      "version": "8.0.5",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "07e09ab113cee22b8274d19d2f4f4062399e47a9dbfb248a02a99d4081d9336f"
+    },
+    {
+      "ref": "pkg:npm/libnpmpublish@10.0.2",
+      "ecosystem": "npm",
+      "name": "libnpmpublish",
+      "version": "10.0.2",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "ee3b063ea0753c69923f6bd285307eb04a318a5f3915b1044232c77a6a9ca4a4"
+    },
+    {
+      "ref": "pkg:npm/libnpmsearch@8.0.0",
+      "ecosystem": "npm",
+      "name": "libnpmsearch",
+      "version": "8.0.0",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "8370959adf3ba534f73b003a439eaf9821a8598b2e0d04af351b6614f81806b6"
+    },
+    {
+      "ref": "pkg:npm/libnpmteam@7.0.0",
+      "ecosystem": "npm",
+      "name": "libnpmteam",
+      "version": "7.0.0",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "97fc048e17807b8bc36bb9058b1da5621f6e2130af8d23316011e7544f149237"
+    },
+    {
+      "ref": "pkg:npm/libnpmversion@7.0.0",
+      "ecosystem": "npm",
+      "name": "libnpmversion",
+      "version": "7.0.0",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "048e82766aa4fe86c9305bdbda028b6ad7f0abed090d705c11b0f2c2a540079d"
+    },
+    {
+      "ref": "pkg:npm/lru-cache@10.4.3",
+      "ecosystem": "npm",
+      "name": "lru-cache",
+      "version": "10.4.3",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "a7e05794a5dc81dfc79a0f186c5219f442f2f735b08a3e9b91aba59833badc2d"
+    },
+    {
+      "ref": "pkg:npm/make-fetch-happen@14.0.3",
+      "ecosystem": "npm",
+      "name": "make-fetch-happen",
+      "version": "14.0.3",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "279b653b3c792aefb9cef4f0822747a5d81c1fd135bc92bc1251112ddc695b84"
+    },
+    {
+      "ref": "pkg:npm/minimatch@9.0.9",
+      "ecosystem": "npm",
+      "name": "minimatch",
+      "version": "9.0.9",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "07347ae64d38f4cc1be3ffcc83322ec40d4609f5f3e9dc027ae91a4617239ac2"
+    },
+    {
+      "ref": "pkg:npm/minipass@7.1.3",
+      "ecosystem": "npm",
+      "name": "minipass",
+      "version": "7.1.3",
+      "license": "BlueOak-1.0.0",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "b8ab116187d5e9375d494f17437eb862cbee4b329c21f15412c6a5170ec2f55c"
+    },
+    {
+      "ref": "pkg:npm/minipass-collect@2.0.1",
+      "ecosystem": "npm",
+      "name": "minipass-collect",
+      "version": "2.0.1",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "042ab826c5440a7d01a1cafae44c54840618319e2e64ed40df006c542b0768f8"
+    },
+    {
+      "ref": "pkg:npm/minipass-fetch@4.0.1",
+      "ecosystem": "npm",
+      "name": "minipass-fetch",
+      "version": "4.0.1",
+      "license": "MIT",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "75e1d21fe4253c6a01b012e347900cf44c13f0ff541a5e000ff930faa504d84b"
+    },
+    {
+      "ref": "pkg:npm/minipass-flush@1.0.5",
+      "ecosystem": "npm",
+      "name": "minipass-flush",
+      "version": "1.0.5",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "822c46377be9b8a54b3565210b03f874f65f28c88cca59168368fd11842219cd"
+    },
+    {
+      "ref": "pkg:npm/minipass@3.3.6",
+      "ecosystem": "npm",
+      "name": "minipass",
+      "version": "3.3.6",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "e99f6b67ba6e5cda438efb7a23dd399ee5c2070af69ce77720d95de5fb42921e"
+    },
+    {
+      "ref": "pkg:npm/yallist@4.0.0",
+      "ecosystem": "npm",
+      "name": "yallist",
+      "version": "4.0.0",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "c56b604bce814520105739e9559142ea9d4417454ebb933fd5687ca1d8d89bd5"
+    },
+    {
+      "ref": "pkg:npm/minipass-pipeline@1.2.4",
+      "ecosystem": "npm",
+      "name": "minipass-pipeline",
+      "version": "1.2.4",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "c20f059ca6012af5a3d255948c7ab1fccc06ad1d0019c669b08ba251cd4b281d"
+    },
+    {
+      "ref": "pkg:npm/minipass-sized@1.0.3",
+      "ecosystem": "npm",
+      "name": "minipass-sized",
+      "version": "1.0.3",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "55b337582c4192528f19eea2ababf77b18fe2ada15f346b25a2c1d276fec182b"
+    },
+    {
+      "ref": "pkg:npm/minizlib@3.1.0",
+      "ecosystem": "npm",
+      "name": "minizlib",
+      "version": "3.1.0",
+      "license": "MIT",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "3e3b206f94f3bd444f18fed847d8caeacb84925c628ae3d87805bc1dd6c4c470"
+    },
+    {
+      "ref": "pkg:npm/ms@2.1.3",
+      "ecosystem": "npm",
+      "name": "ms",
+      "version": "2.1.3",
+      "license": "MIT",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "1a6b4d9739790c0b94ab96c8cc0507e281c164c311ff4fbf5e57fb8d26290b40"
+    },
+    {
+      "ref": "pkg:npm/mute-stream@2.0.0",
+      "ecosystem": "npm",
+      "name": "mute-stream",
+      "version": "2.0.0",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "40ce37fd068f8da06c2f50e2192e94b6b1bdffdb1da8a9a1f3c183ce0fc5b2e7"
+    },
+    {
+      "ref": "pkg:npm/negotiator@1.0.0",
+      "ecosystem": "npm",
+      "name": "negotiator",
+      "version": "1.0.0",
+      "license": "MIT",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "a33b5a293825b22957629dafe778ea4164e577499418cd907d937b874f27675a"
+    },
+    {
+      "ref": "pkg:npm/node-gyp@11.5.0",
+      "ecosystem": "npm",
+      "name": "node-gyp",
+      "version": "11.5.0",
+      "license": "MIT",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "11896cdb5e5657602a5e6163c5a8fa145011b7feb27ce5d5222b1c82df84314a"
+    },
+    {
+      "ref": "pkg:npm/nopt@8.1.0",
+      "ecosystem": "npm",
+      "name": "nopt",
+      "version": "8.1.0",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "a892ac4d9de9c19c5649cd38963ff353ce637455f83667a6b3a691bee62a7912"
+    },
+    {
+      "ref": "pkg:npm/normalize-package-data@7.0.1",
+      "ecosystem": "npm",
+      "name": "normalize-package-data",
+      "version": "7.0.1",
+      "license": "BSD-2-Clause",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "f179b42d123c10b517f6d9df46ed457f8abbb5fbfa826379d4921e7c5639f58a"
+    },
+    {
+      "ref": "pkg:npm/npm-audit-report@6.0.0",
+      "ecosystem": "npm",
+      "name": "npm-audit-report",
+      "version": "6.0.0",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "346fcc9258d4d1e8d891f6a3547110ac591f23be1cf37def28111abba31609c1"
+    },
+    {
+      "ref": "pkg:npm/npm-bundled@4.0.0",
+      "ecosystem": "npm",
+      "name": "npm-bundled",
+      "version": "4.0.0",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "7e9b86ac55f8dc684594682012172ec5e1b567b017af77e529c377920061572d"
+    },
+    {
+      "ref": "pkg:npm/npm-install-checks@7.1.2",
+      "ecosystem": "npm",
+      "name": "npm-install-checks",
+      "version": "7.1.2",
+      "license": "BSD-2-Clause",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "da123565808760cfb8874f5fa2b4d6359eb677c424973a53868db3f6e0424ccf"
+    },
+    {
+      "ref": "pkg:npm/npm-normalize-package-bin@4.0.0",
+      "ecosystem": "npm",
+      "name": "npm-normalize-package-bin",
+      "version": "4.0.0",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "6a3f6893eb24165fe23008c8bc216efc7812931fd5a2e5329e51cf74a4f7cc4d"
+    },
+    {
+      "ref": "pkg:npm/npm-package-arg@12.0.2",
+      "ecosystem": "npm",
+      "name": "npm-package-arg",
+      "version": "12.0.2",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "ba73c8bf8b71e12a659e918f47ad0bbe593919a3cf23b817e856fb7d6bb91d32"
+    },
+    {
+      "ref": "pkg:npm/npm-packlist@9.0.0",
+      "ecosystem": "npm",
+      "name": "npm-packlist",
+      "version": "9.0.0",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "ede21408c7220b392280c11c5dec07ec686197d601b9339210d5ea72230ab8e8"
+    },
+    {
+      "ref": "pkg:npm/npm-pick-manifest@10.0.0",
+      "ecosystem": "npm",
+      "name": "npm-pick-manifest",
+      "version": "10.0.0",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "86bb571f2a709b39e7c09ba5f4c9dce9a2a1be1c41a3a2bb19337d10a63a4aab"
+    },
+    {
+      "ref": "pkg:npm/npm-profile@11.0.1",
+      "ecosystem": "npm",
+      "name": "npm-profile",
+      "version": "11.0.1",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "dd1d1b56b51896d998f57823e8592db208ed1b52861023b8ec7837f5844858b2"
+    },
+    {
+      "ref": "pkg:npm/npm-registry-fetch@18.0.2",
+      "ecosystem": "npm",
+      "name": "npm-registry-fetch",
+      "version": "18.0.2",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "35822c442c35ffe2ac4d2d6285ef591863f422b9f575033cbde229da64a4531a"
+    },
+    {
+      "ref": "pkg:npm/npm-user-validate@3.0.0",
+      "ecosystem": "npm",
+      "name": "npm-user-validate",
+      "version": "3.0.0",
+      "license": "BSD-2-Clause",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "48e96f27d2c4cdcdcb2065aa8b5bf9c9a403a70fc7e9cff87b2c7a4f981fe877"
+    },
+    {
+      "ref": "pkg:npm/p-map@7.0.4",
+      "ecosystem": "npm",
+      "name": "p-map",
+      "version": "7.0.4",
+      "license": "MIT",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "3869a3eed147c70e77d2faece50ee97e7e55b851e8f46428fe71e218a349237f"
+    },
+    {
+      "ref": "pkg:npm/package-json-from-dist@1.0.1",
+      "ecosystem": "npm",
+      "name": "package-json-from-dist",
+      "version": "1.0.1",
+      "license": "BlueOak-1.0.0",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "38fdaf168bc63a6422a7dbe7e41a7b52b02326edef8b14019e0333ef60b37b47"
+    },
+    {
+      "ref": "pkg:npm/pacote@19.0.2",
+      "ecosystem": "npm",
+      "name": "pacote",
+      "version": "19.0.2",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "874de452ca436ca261620e503b47cc0e5ba81b4778bf42daf486148f3fa03b70"
+    },
+    {
+      "ref": "pkg:npm/parse-conflict-json@4.0.0",
+      "ecosystem": "npm",
+      "name": "parse-conflict-json",
+      "version": "4.0.0",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "f7535731d5f4fe4148135d87e72018184a4d14b0fbd40ce66971256646bd699b"
+    },
+    {
+      "ref": "pkg:npm/path-key@3.1.1",
+      "ecosystem": "npm",
+      "name": "path-key",
+      "version": "3.1.1",
+      "license": "MIT",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "25594dab72681c910d9cc919263a4daf27d77a75e0d2c26a4d958d6d6b798f86"
+    },
+    {
+      "ref": "pkg:npm/path-scurry@1.11.1",
+      "ecosystem": "npm",
+      "name": "path-scurry",
+      "version": "1.11.1",
+      "license": "BlueOak-1.0.0",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "eda5ff683c26f88a134198fa2700b371abc9092c61a81474226bdfc6f9348c14"
+    },
+    {
+      "ref": "pkg:npm/picomatch@4.0.3",
+      "ecosystem": "npm",
+      "name": "picomatch",
+      "version": "4.0.3",
+      "license": "MIT",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "ef0245814fbc6d3cee835c9a9c43f31daab1825cebcd6d005723aabea0f9136f"
+    },
+    {
+      "ref": "pkg:npm/postcss-selector-parser@7.1.1",
+      "ecosystem": "npm",
+      "name": "postcss-selector-parser",
+      "version": "7.1.1",
+      "license": "MIT",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "d682f345f734f8b8a94b13f784fae7f8261d04a6a3d056cfae6616f8b5be3597"
+    },
+    {
+      "ref": "pkg:npm/proc-log@5.0.0",
+      "ecosystem": "npm",
+      "name": "proc-log",
+      "version": "5.0.0",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "636f411adcca5bcfec9c68ee39ce18f3ee00d27934dbbcde3c6635929faceb85"
+    },
+    {
+      "ref": "pkg:npm/proggy@3.0.0",
+      "ecosystem": "npm",
+      "name": "proggy",
+      "version": "3.0.0",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "390ea7b3b5a42179280b4744fd2333856c9c5d68dbdc1346d5165306ec40b48c"
+    },
+    {
+      "ref": "pkg:npm/promise-all-reject-late@1.0.1",
+      "ecosystem": "npm",
+      "name": "promise-all-reject-late",
+      "version": "1.0.1",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "ef9ce306616fe550aaefdb5d3770bf9d0dddce3b512bca8f1e621f0401850fae"
+    },
+    {
+      "ref": "pkg:npm/promise-call-limit@3.0.2",
+      "ecosystem": "npm",
+      "name": "promise-call-limit",
+      "version": "3.0.2",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "ff202bc02a6d7369f69c8abaf4b12b9af44f2f0c03bc07802cd629f7cb369be2"
+    },
+    {
+      "ref": "pkg:npm/promise-retry@2.0.1",
+      "ecosystem": "npm",
+      "name": "promise-retry",
+      "version": "2.0.1",
+      "license": "MIT",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "71c2995725304ffa82e03be2c21e83f3b7c0c557846df88aaed0f2b9fa75d911"
+    },
+    {
+      "ref": "pkg:npm/promzard@2.0.0",
+      "ecosystem": "npm",
+      "name": "promzard",
+      "version": "2.0.0",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "b941d24d337fc52f985b3b44a0ba7eb4222e1cc8aa47d52187af0fb310a4260b"
+    },
+    {
+      "ref": "pkg:npm/qrcode-terminal@0.12.0",
+      "ecosystem": "npm",
+      "name": "qrcode-terminal",
+      "version": "0.12.0",
+      "license": "NOASSERTION",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "25c89a03126b144a0080c0200a25037d0f2fb0a49177506776cfb492210955cd"
+    },
+    {
+      "ref": "pkg:npm/read@4.1.0",
+      "ecosystem": "npm",
+      "name": "read",
+      "version": "4.1.0",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "f46baf500d981913809eb00c790d19a58b704da2afd56493c1935cfed3de8fa9"
+    },
+    {
+      "ref": "pkg:npm/read-cmd-shim@5.0.0",
+      "ecosystem": "npm",
+      "name": "read-cmd-shim",
+      "version": "5.0.0",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "a59f2c8f67565da13fc40e79e1b04382d23939c186e80e2bd691c0072659c67c"
+    },
+    {
+      "ref": "pkg:npm/read-package-json-fast@4.0.0",
+      "ecosystem": "npm",
+      "name": "read-package-json-fast",
+      "version": "4.0.0",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "71bd6962d1acf524d3d1e9bc3417777d8438b9a13df544b9dbe5d14ac509d414"
+    },
+    {
+      "ref": "pkg:npm/retry@0.12.0",
+      "ecosystem": "npm",
+      "name": "retry",
+      "version": "0.12.0",
+      "license": "MIT",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "c0733eb226e2a6572c7c9c2bc8b4a0efabe233971b0dee1e6d62c6898257e1da"
+    },
+    {
+      "ref": "pkg:npm/safer-buffer@2.1.2",
+      "ecosystem": "npm",
+      "name": "safer-buffer",
+      "version": "2.1.2",
+      "license": "MIT",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "4247a3a63c45a6a7ced1557fe4dd9d2a163af4915d594b95e5867b69a53edb52"
+    },
+    {
+      "ref": "pkg:npm/semver@7.7.4",
+      "ecosystem": "npm",
+      "name": "semver",
+      "version": "7.7.4",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "ba0d1b548512e65c15b1cddbcd6caa16cc9070e8af8987d02ba929a1f06c0177"
+    },
+    {
+      "ref": "pkg:npm/shebang-command@2.0.0",
+      "ecosystem": "npm",
+      "name": "shebang-command",
+      "version": "2.0.0",
+      "license": "MIT",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "44de390ae5ed6c5f9758b8b9c90b93fa53977d5361731600429f1de08f4b3f30"
+    },
+    {
+      "ref": "pkg:npm/shebang-regex@3.0.0",
+      "ecosystem": "npm",
+      "name": "shebang-regex",
+      "version": "3.0.0",
+      "license": "MIT",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "b8018c6b8cc9900dfd1ac18a54956ba34c453fdc2da5e5fe555ee8f04133a1c5"
+    },
+    {
+      "ref": "pkg:npm/signal-exit@4.1.0",
+      "ecosystem": "npm",
+      "name": "signal-exit",
+      "version": "4.1.0",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "cd1c6cfa95782e432dd2affaa88c3a6dda7f46c8088d91f3acc0fba79dce5075"
+    },
+    {
+      "ref": "pkg:npm/sigstore@3.1.0",
+      "ecosystem": "npm",
+      "name": "sigstore",
+      "version": "3.1.0",
+      "license": "Apache-2.0",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "c83ea0d91bc9e8e3f36d818b9b4a0dbffb1042e04de285045458c3a66f84f059"
+    },
+    {
+      "ref": "pkg:npm/smart-buffer@4.2.0",
+      "ecosystem": "npm",
+      "name": "smart-buffer",
+      "version": "4.2.0",
+      "license": "MIT",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "188644cdf467d6a768ad25ed3ee8eb845dc5cb29aadc4c88ca7c5cb5f631d66a"
+    },
+    {
+      "ref": "pkg:npm/socks@2.8.7",
+      "ecosystem": "npm",
+      "name": "socks",
+      "version": "2.8.7",
+      "license": "MIT",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "5967ec98ebf86a4adf2666870ae878d655104f04b264b1d630dcf324a4091223"
+    },
+    {
+      "ref": "pkg:npm/socks-proxy-agent@8.0.5",
+      "ecosystem": "npm",
+      "name": "socks-proxy-agent",
+      "version": "8.0.5",
+      "license": "MIT",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "5667d50ea8b62c802757a3a2737a6515edbae3129bb3ef0980ca5d15c91ed99f"
+    },
+    {
+      "ref": "pkg:npm/spdx-correct@3.2.0",
+      "ecosystem": "npm",
+      "name": "spdx-correct",
+      "version": "3.2.0",
+      "license": "Apache-2.0",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "4d5b264748a7510ad96a135debdae4833a62506bfc95df06c70d657096df6aaa"
+    },
+    {
+      "ref": "pkg:npm/spdx-expression-parse@3.0.1",
+      "ecosystem": "npm",
+      "name": "spdx-expression-parse",
+      "version": "3.0.1",
+      "license": "MIT",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "019a60839cf6b909b3f7f7079888edce8d9aa7de6c296bb4ef7e2df587173afb"
+    },
+    {
+      "ref": "pkg:npm/spdx-exceptions@2.5.0",
+      "ecosystem": "npm",
+      "name": "spdx-exceptions",
+      "version": "2.5.0",
+      "license": "CC-BY-3.0",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "0af9bd4b68c9e3d1bc7a9208881cbde84da140d564a3bb42cf53184c6e83f2e3"
+    },
+    {
+      "ref": "pkg:npm/spdx-expression-parse@4.0.0",
+      "ecosystem": "npm",
+      "name": "spdx-expression-parse",
+      "version": "4.0.0",
+      "license": "MIT",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "3e8b59ed9c34d30597c8e5e3da963fe23ae97f5f20611ae523f842a7b243c044"
+    },
+    {
+      "ref": "pkg:npm/spdx-license-ids@3.0.23",
+      "ecosystem": "npm",
+      "name": "spdx-license-ids",
+      "version": "3.0.23",
+      "license": "CC0-1.0",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "669d0ba75505d331031cf79b0d208393601307f41cd4ae4355ce99e6eaef4c8c"
+    },
+    {
+      "ref": "pkg:npm/ssri@12.0.0",
+      "ecosystem": "npm",
+      "name": "ssri",
+      "version": "12.0.0",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "5c18917c39afce09b6ebdfd212c736c390d74d1a72db8bd1561117f949669252"
+    },
+    {
+      "ref": "pkg:npm/string-width@4.2.3",
+      "ecosystem": "npm",
+      "name": "string-width",
+      "version": "4.2.3",
+      "license": "MIT",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "6457a02418f004fe5d3fbbb19c7cbcc1450a8b887ff9a471dc6985ac83a48d36"
+    },
+    {
+      "ref": "pkg:npm/strip-ansi@6.0.1",
+      "ecosystem": "npm",
+      "name": "strip-ansi",
+      "version": "6.0.1",
+      "license": "MIT",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "0130850b9da0584f54cc20d3dab6365c807e9436ac78e016d5009efa99bd0530"
+    },
+    {
+      "ref": "pkg:npm/supports-color@9.4.0",
+      "ecosystem": "npm",
+      "name": "supports-color",
+      "version": "9.4.0",
+      "license": "MIT",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "9d6e7a1db42ee13fd1287d94e8630a2f6bfbb7dec5e5a03dc3c8dfd6ef00178a"
+    },
+    {
+      "ref": "pkg:npm/tar@7.5.11",
+      "ecosystem": "npm",
+      "name": "tar",
+      "version": "7.5.11",
+      "license": "BlueOak-1.0.0",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "2ce723525e92b0a71a5a16c34a927c60931c3129b58bc6ce48af1df8873f53db"
+    },
+    {
+      "ref": "pkg:npm/text-table@0.2.0",
+      "ecosystem": "npm",
+      "name": "text-table",
+      "version": "0.2.0",
+      "license": "MIT",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "2b410792046c1bf8bca05d26236cc1e301011ea67546b9c6a0416c417fa6d8b6"
+    },
+    {
+      "ref": "pkg:npm/tiny-relative-date@1.3.0",
+      "ecosystem": "npm",
+      "name": "tiny-relative-date",
+      "version": "1.3.0",
+      "license": "MIT",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "9d770fee4a8577bcb8dd2ad2c4ab664a580193b2b1c4ceea693c428053f6ae26"
+    },
+    {
+      "ref": "pkg:npm/tinyglobby@0.2.15",
+      "ecosystem": "npm",
+      "name": "tinyglobby",
+      "version": "0.2.15",
+      "license": "MIT",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "473bd5e2e8708e7c5700b2196c4225b42418c310d29893d4043aece3d5dea51d"
+    },
+    {
+      "ref": "pkg:npm/treeverse@3.0.0",
+      "ecosystem": "npm",
+      "name": "treeverse",
+      "version": "3.0.0",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "f3f8ef63cba6010d27629a7e08eb87d62ad1f12056d1e6a4e32de79a159a95d4"
+    },
+    {
+      "ref": "pkg:npm/tuf-js@3.1.0",
+      "ecosystem": "npm",
+      "name": "tuf-js",
+      "version": "3.1.0",
+      "license": "MIT",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "76c98a3e0801feb234fba87d84fc4f2d94e715048d1145b6182d26f36e5c9162"
+    },
+    {
+      "ref": "pkg:npm/%40tufjs/models@3.0.1",
+      "ecosystem": "npm",
+      "name": "@tufjs/models",
+      "version": "3.0.1",
+      "license": "MIT",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "a6d260d8888564868d819078ed0c43d9a7f3fe0322127e809ccbefbb10c8b6ea"
+    },
+    {
+      "ref": "pkg:npm/unique-filename@4.0.0",
+      "ecosystem": "npm",
+      "name": "unique-filename",
+      "version": "4.0.0",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "ac3d03b4b239b3eff717b2fdb3dac9f32fd9bf49ee8c20cd87f82fd148c2a7e5"
+    },
+    {
+      "ref": "pkg:npm/unique-slug@5.0.0",
+      "ecosystem": "npm",
+      "name": "unique-slug",
+      "version": "5.0.0",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "23b9c2630936c9633601c95d91165f2d5dd8f099886e058873eb282ac537fdb7"
+    },
+    {
+      "ref": "pkg:npm/util-deprecate@1.0.2",
+      "ecosystem": "npm",
+      "name": "util-deprecate",
+      "version": "1.0.2",
+      "license": "MIT",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "7bba467f049074957e693fc06672848b040c38fa071b6eed8690f5fbe090a8b2"
+    },
+    {
+      "ref": "pkg:npm/validate-npm-package-license@3.0.4",
+      "ecosystem": "npm",
+      "name": "validate-npm-package-license",
+      "version": "3.0.4",
+      "license": "Apache-2.0",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "e510bebf52a39ff777c88c3494b0bba688252b361edf0774aec2b7dd8bb1fde4"
+    },
+    {
+      "ref": "pkg:npm/validate-npm-package-name@6.0.2",
+      "ecosystem": "npm",
+      "name": "validate-npm-package-name",
+      "version": "6.0.2",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "bedc8ec07c42539179b64db84a1ee477ccd95c43e208349b3cf84c7340d4b80b"
+    },
+    {
+      "ref": "pkg:npm/walk-up-path@3.0.1",
+      "ecosystem": "npm",
+      "name": "walk-up-path",
+      "version": "3.0.1",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "90b1bd3a798e7d54b016402b484244552fba350ea8395116cfd9b56c70379ebb"
+    },
+    {
+      "ref": "pkg:npm/which@5.0.0",
+      "ecosystem": "npm",
+      "name": "which",
+      "version": "5.0.0",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "9f06638e5fcb977409c2181382492dd0d62885999e5739a8f285960d5a78906d"
+    },
+    {
+      "ref": "pkg:npm/isexe@3.1.5",
+      "ecosystem": "npm",
+      "name": "isexe",
+      "version": "3.1.5",
+      "license": "BlueOak-1.0.0",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "668c167be26edf600ee1c4fab262d7afa5afa66f3fd389b3c4c942bab249f0c4"
+    },
+    {
+      "ref": "pkg:npm/wrap-ansi@8.1.0",
+      "ecosystem": "npm",
+      "name": "wrap-ansi",
+      "version": "8.1.0",
+      "license": "MIT",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "609dd6ab176847e57e799dba2e4c4ad355abe463ec67a5ab0dccec08b67e6761"
+    },
+    {
+      "ref": "pkg:npm/wrap-ansi@7.0.0",
+      "ecosystem": "npm",
+      "name": "wrap-ansi",
+      "version": "7.0.0",
+      "license": "MIT",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "0b0cf0bf62bd0cc71da2128e3269e63edd566feffdd501aa3692acd6db93c3c9"
+    },
+    {
+      "ref": "pkg:npm/ansi-styles@4.3.0",
+      "ecosystem": "npm",
+      "name": "ansi-styles",
+      "version": "4.3.0",
+      "license": "MIT",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "d405f010681d53f77691015e98461f8484b2afe6a9edfdd2ddb27b1e8a8e883d"
+    },
+    {
+      "ref": "pkg:npm/write-file-atomic@6.0.0",
+      "ecosystem": "npm",
+      "name": "write-file-atomic",
+      "version": "6.0.0",
+      "license": "ISC",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "d7d29119aa8a6d3fe3ab864452f700c64320c9e16e56bae38438ed623bd4efd1"
+    },
+    {
+      "ref": "pkg:npm/yallist@5.0.0",
+      "ecosystem": "npm",
+      "name": "yallist",
+      "version": "5.0.0",
+      "license": "BlueOak-1.0.0",
+      "metadataSource": "installed-npm-tooling-package.json",
+      "metadataSha256": "1b9d47057ce39814531ff93f668823b4fa03e7d23945449c274a1ff6d4cc297f"
+    }
+  ]
+}

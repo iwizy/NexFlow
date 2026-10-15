@@ -1,5 +1,12 @@
 # Candidate Supply-chain Evidence
 
+Current follow-up: [NF-102-02 evidence, 2026-10-15](2026-10-15/README.md)
+binds the repaired public-contract candidates, full Go module selection,
+external tool distributions, fresh advisory/license review and independent
+offline rebuilds. Acceptance remains blocked. The NF-056-11 snapshot below is
+historical and unchanged; its zero-match and incomplete-closure observations
+are not current security approval.
+
 NF-056-11 collects dependency metadata for the four exact source revisions in
 [source-pins.json](../fidelity/source-pins.json). It does not change candidate
 code, versions, dependency locks, the frozen corpus, fidelity verdicts or

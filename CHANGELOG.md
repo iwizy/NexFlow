@@ -8,6 +8,13 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Added
 
+- Collected NF-102-02 current-source supply-chain/provenance evidence: four
+  SBOMs, full selected Go graph, external tooling/native inventories, dated
+  advisory and license review, and two clean offline builds per candidate.
+  Retained incomplete closure, unresolved tooling risks and differing Rust
+  debug artifact hashes; acceptance remains blocked. No dependency, candidate,
+  version, release or architecture change.
+
 - Completed NF-102-01's declared validation/diagnostic qualification with four
   native versioned public data entries, explicit separation of raw native
   details, 362 complete public-library cases, preserved legacy CLI behavior and

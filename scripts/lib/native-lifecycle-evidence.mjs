@@ -1,5 +1,10 @@
 import {digest,baseline,safeRelative,compareOutput} from "./runtime-evaluation.mjs";
 export const nativeCandidates=["typescript","python","rust","go"];
+export function privatePathPointers(value,pointer=""){
+ if(typeof value==="string")return /\/(?:Users|private|home\/runner|opt\/hostedtoolcache|var\/folders)\//u.test(value)||/(?:^|[^A-Za-z0-9_])[A-Za-z]:[\\/]/u.test(value)?[pointer]:[];
+ if(value&&typeof value==="object")return Object.entries(value).flatMap(([key,item])=>privatePathPointers(item,pointer+"/"+key));
+ return [];
+}
 export const nativeCollectorFiles=["scripts/runtime-native-lifecycle-collect.mjs","scripts/runtime-native-lifecycle-provision.mjs","scripts/lib/native-lifecycle-evidence.mjs","scripts/lib/runtime-evaluation.mjs","scripts/lib/evaluation-environment.mjs","scripts/runtime-evaluation-environment.mjs","scripts/evaluation-npm-provision.mjs","scripts/evaluation-python-provision.py","evaluation/lifecycle/requalification/contract.json","evaluation/lifecycle/requalification/python-runtimes.json",".github/workflows/native-lifecycle.yml"];
 export function nativeRecordErrors(record,contract){
  const errors=[],need=(ok,why)=>{if(!ok)errors.push(why);},sha=s=>/^[a-f0-9]{64}$/u.test(s??"");

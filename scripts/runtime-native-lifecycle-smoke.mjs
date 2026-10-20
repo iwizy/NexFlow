@@ -2,13 +2,15 @@
 import assert from "node:assert/strict";
 import {readFileSync,existsSync} from "node:fs";
 import {spawnSync} from "node:child_process";
-import {nativeCandidates,nativeCollectorFiles,nativeRecordErrors} from "./lib/native-lifecycle-evidence.mjs";
+import {nativeCandidates,nativeCollectorFiles,nativeRecordErrors,privatePathPointers} from "./lib/native-lifecycle-evidence.mjs";
 import {digest,baseline} from "./lib/runtime-evaluation.mjs";
 const root="evaluation/lifecycle/requalification",json=f=>JSON.parse(readFileSync(root+"/"+f)),contract=json("contract.json");
 assert.equal(contract.architectureAccepted,false);assert.equal(contract.previousArtifacts.status,"unavailable");assert.equal(contract.signing.status,"unavailable");
 const env={platform:"linux",architecture:"x64",runnerLabel:"ubuntu-24.04"};
 const control={task:"NF-102-03",candidate:"rust",target:"linux/amd64",sourceRevision:contract.candidateSourceRevision,collectorRevision:"1".repeat(40),collectorSources:nativeCollectorFiles.map(path=>({path,sha256:"2".repeat(64)})),environment:env,environmentSha256:digest(JSON.stringify(env)),specificationRevision:baseline.specificationRevision,corpusSha256:baseline.corpus.sha256,sourceManifest:[{path:"schemas/project.schema.json",sha256:"2".repeat(64)}],previousArtifact:null,artifact:null,stages:Object.fromEntries(["build","package","install","validateInspect","offlineUse","uninstall","upgrade","rollback","signing","notarization"].map(s=>[s,{status:"not-tested",evidence:["explicit missing prerequisite"]}])),blockers:["previous artifact unavailable","signing unavailable"],immutability:{sources:true,corpus:true},taskStatus:"blocked",outcome:"not-ready",architectureAccepted:false};
 assert.deepEqual(nativeRecordErrors(control,contract),[]);let negativeControls=0;
+assert.deepEqual(privatePathPointers({message:"Error:\nThe setup output is retained."}),[]);
+assert.deepEqual(privatePathPointers({message:"File: C:\\fictional-private\\payload"}),["/message"]);
 for(const mutate of [r=>r.sourceRevision="0".repeat(40),r=>r.architectureAccepted=true,r=>r.previousArtifact={version:"fabricated"},r=>r.stages.signing.status="passed",r=>r.immutability.sources=false,r=>r.environment.architecture="arm64",r=>r.stages.validateInspect.status="passed",r=>r.stages.offlineUse.status="passed",r=>r.sourceManifest=[]]){const r=structuredClone(control);mutate(r);assert.ok(nativeRecordErrors(r,contract).length);negativeControls++;}
 const folders=["linux-amd64","macos-arm64","windows-amd64"],any=folders.some(f=>existsSync(root+"/"+f+"/cohort.json"));let records=0;
 if(any){

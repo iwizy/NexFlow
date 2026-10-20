@@ -41,6 +41,13 @@
       "preserved": "The corrected Windows Python installer uses the same exact interpreter and locked wheels. Genuine upgrade/rollback and permitted project signing remain unavailable; architecture stays Draft/not-ready."
     }
   ],
+  "consumerIntegration": {
+    "runId": 39406078583,
+    "head": "11eaadbc5d715cc6e1898d3ff64dbf294453774c",
+    "result": "The retained-record consumer path failed on all three fresh runners before validation: ERR_MODULE_NOT_FOUND for ajv. Actual native observations from run 39404401314 remain valid at their original producer revision.",
+    "correction": "Provision the same pinned maintenance-only dependency graph before reading stored evidence. Never fetch candidate build tools or relabel observation results in the consumer path.",
+    "followup": "Changed producer/workflow hashes require fresh source-bound native observations, then final consumer CI. The integration failure is retained, not ignored for merge."
+  },
   "noFabricatedPredecessor": true,
   "architectureAccepted": false
 }

@@ -16,6 +16,7 @@ const npmRoot=path.join(destination,"npm"),bootstrap=run(process.execPath,["scri
 const npmArgs=[path.join(npmRoot,"bin/npm-cli.js")],config={node:process.execPath,npmCli:npmArgs[0],wheelhouse:path.join(destination,"wheelhouse"),pipProvisioner:path.join(destination,"pip"),statuses:{}};
 const npm=(args,cwd=process.cwd())=>run(process.execPath,[...npmArgs,...args],cwd,{npm_config_ignore_scripts:"true"});
 const maintenance=npm(["ci","--ignore-scripts","--no-audit","--fund=false"]);assert.equal(maintenance.status,0,maintenance.stderr);
+if(process.argv[3]==="--maintenance-only"){console.log("Pinned evidence-consumer dependencies installed; candidate provisioning not requested.");process.exit(0);}
 config.statuses.typescript=npm(["ci","--ignore-scripts","--no-audit","--fund=false"],"evaluation/prototypes/typescript").status===0;
 const py=run("python",["-I","-c","import sys;print(sys.executable);print('.'.join(map(str,sys.version_info[:3])))"]);
 let pyLines=(py.stdout??"").trim().split(/\r?\n/u);config.pythonBase=pyLines[0];

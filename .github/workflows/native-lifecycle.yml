@@ -85,4 +85,7 @@ jobs:
           if-no-files-found: error
       - name: Verify preserved native evidence without repeating confirmed runs
         if: steps.plan.outputs.collect != 'true'
-        run: node scripts/runtime-native-lifecycle-smoke.mjs
+        shell: bash
+        run: |
+          node scripts/runtime-native-lifecycle-provision.mjs "$RUNNER_TEMP/evidence-tools" --maintenance-only
+          node scripts/runtime-native-lifecycle-smoke.mjs

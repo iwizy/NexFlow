@@ -121,15 +121,15 @@ def provision(lock, wheelhouse, provisioner, venv, offline=False):
     if venv.exists():
         raise ValueError("use a new scoped virtualenv")
     system = {key: os.environ[key] for key in ("SystemRoot", "WINDIR", "TEMP", "TMP") if key in os.environ} if os.name == "nt" else {}
-    env = {**system, "PATH": os.pathsep.join([str(Path(sys.executable).parent), str(Path(os.environ["SystemRoot"]) / "System32")]) if os.name == "nt" else "/usr/bin:/bin", "LANG": "C", "LC_ALL": "C", "PIP_CONFIG_FILE": os.devnull}
-    subprocess.run([sys.executable, "-I", "-m", "venv", "--without-pip", str(venv)], check=True, env=env)
+    env = {**system, "PATH": os.pathsep.join([str(Path(sys.executable).parent), str(Path(os.environ["SystemRoot"]) / "System32")]) if os.name == "nt" else "/usr/bin:/bin", "LANG": "C", "LC_ALL": "C", "PIP_CONFIG_FILE": os.devnull, "PYTHONUTF8": "1"}
+    subprocess.run([sys.executable, "-I", "-X", "utf8", "-m", "venv", "--without-pip", str(venv)], check=True, env=env)
     interpreter = venv / ("Scripts/python.exe" if os.name == "nt" else "bin/python")
     bootstrap = "import sys;sys.path.insert(0,sys.argv.pop(1));from pip._internal.cli.main import main;raise SystemExit(main())"
-    subprocess.run([sys.executable, "-I", "-c", bootstrap, str(pip_root), "--isolated", "--python", str(interpreter),
+    subprocess.run([sys.executable, "-I", "-X", "utf8", "-c", bootstrap, str(pip_root), "--isolated", "--python", str(interpreter),
                     "install", "--no-index", "--find-links", str(wheelhouse.resolve()), "--require-hashes", "--only-binary=:all:",
                     "--no-cache-dir", "--no-compile", "--disable-pip-version-check", "-r", str(lock.resolve())], check=True, env=env)
     # pip check via separate provisioner, never install it into the candidate.
-    subprocess.run([sys.executable, "-I", "-c", bootstrap, str(pip_root), "--isolated", "--python", str(interpreter),
+    subprocess.run([sys.executable, "-I", "-X", "utf8", "-c", bootstrap, str(pip_root), "--isolated", "--python", str(interpreter),
                     "check", "--disable-pip-version-check"], check=True, env=env)
     return receipts
 

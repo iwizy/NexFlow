@@ -1,0 +1,2006 @@
+{
+  "task": "NF-102-03",
+  "candidate": "rust",
+  "target": "macos/arm64",
+  "sourceRevision": "23e576efd0dda0f00f5462eda9295c1ae4ec8fee",
+  "collectorRevision": "3cbbd1bc02da0768c9c116a18f56dab9a3ef3cb6",
+  "collectorSources": [
+    {
+      "path": "scripts/runtime-native-lifecycle-collect.mjs",
+      "sha256": "881fd11d3b9dadfef3ab8a5e70db7eae422db8ce86588589b0f6bba6fc2f565e"
+    },
+    {
+      "path": "scripts/runtime-native-lifecycle-provision.mjs",
+      "sha256": "fb7216c25a861aeea05740e3c990085aa6f9b50ad12063ac3a68147e3e77109b"
+    },
+    {
+      "path": "scripts/lib/native-lifecycle-evidence.mjs",
+      "sha256": "81add6527cd29385c95c48106f006c172e840a17b713a2427e5a14653f7c1773"
+    },
+    {
+      "path": "scripts/lib/runtime-evaluation.mjs",
+      "sha256": "1a85d476adfb4db06325ca88faa3a70cb88c2490c53be9fe85efc0076e6eefeb"
+    },
+    {
+      "path": "scripts/lib/evaluation-environment.mjs",
+      "sha256": "025d9ec0bb3bbc03f3d10ff59d7de692f36b51d71763733f97c81594ca44db0d"
+    },
+    {
+      "path": "scripts/runtime-evaluation-environment.mjs",
+      "sha256": "f84af11b7603107c2884789f365aae3b550eaccf2d8d83db58fe458a824984b6"
+    },
+    {
+      "path": "scripts/evaluation-npm-provision.mjs",
+      "sha256": "fe9901c233cb0bce0f36bc455076c9633c98642243db72a60348b43db97177c1"
+    },
+    {
+      "path": "scripts/evaluation-python-provision.py",
+      "sha256": "b6654c59b1aa7ea2321134d8834a43305e1229832e9d03cd0923d684aad0fd35"
+    },
+    {
+      "path": "evaluation/lifecycle/requalification/contract.json",
+      "sha256": "34d8dbe903d6cc42545bab5e73c2cd370cb54b4009a312c525c162a64f384197"
+    },
+    {
+      "path": "evaluation/lifecycle/requalification/python-runtimes.json",
+      "sha256": "ab8c8c540530cab7bab9793afa455a582bd154412ff73a22b2f2a802ca01d1d0"
+    },
+    {
+      "path": ".github/workflows/native-lifecycle.yml",
+      "sha256": "3e677e6489eac003a98eb296ba7a1c9b9de0fa89123a833ec25491a9aef0449b"
+    }
+  ],
+  "specificationRevision": "1d1fa238ab5729a79bee9389d5c66cfd20a61256",
+  "corpusSha256": "01b116005f0650ac980194b22c02188289eaf1e8626b227aecf3684ece0d8f6b",
+  "catalogSha256": "f1bf8cb786442a212e14c79eb39279a2cdbf05ec20b09901374359d545d74e90",
+  "recordedAt": "2026-10-20T10:14:37.782Z",
+  "environment": {
+    "target": "macos/arm64",
+    "platform": "darwin",
+    "architecture": "arm64",
+    "runnerLabel": "macos-15",
+    "imageOS": "macos15",
+    "imageVersion": "20260907.0337.1",
+    "osVersion": "15.7.9",
+    "osBuild": "24G830",
+    "osCaption": "macOS 15.7.9",
+    "kernel": "24.6.0",
+    "libc": null,
+    "cpuModel": "Apple M1 (Virtual)",
+    "cpuCount": 3,
+    "memoryBytes": 7516192768,
+    "translated": false
+  },
+  "environmentSha256": "918a3e08c60e5a4a72340fcff7e350511ed68aa0123e00737490d008a8d65d81",
+  "frozenComparison": {
+    "fingerprint": "matched",
+    "blockers": [],
+    "candidateEvaluation": "not-tested"
+  },
+  "cohort": {
+    "approval": "explicit-2026-10-20",
+    "allFourCandidatesInSameNativeJob": true
+  },
+  "sourceManifest": [
+    {
+      "path": "evaluation/prototypes/rust/Cargo.lock",
+      "sha256": "e487d51d74d156867e6a80c7ccb646f5c008862065dff69d09a9d83b088885a3"
+    },
+    {
+      "path": "evaluation/prototypes/rust/Cargo.toml",
+      "sha256": "a1880620ad46efde31f3d558bae1bedfb5f1f204c46fb59190473a017c250c9c"
+    },
+    {
+      "path": "evaluation/prototypes/rust/README.md",
+      "sha256": "4a755a54fda3f419e822cfd28b1db5eee5238b54b552b8e9e3f824a87dc8e0f3"
+    },
+    {
+      "path": "evaluation/prototypes/rust/rust-toolchain.toml",
+      "sha256": "515c80a149c1e927d497dbebc399e241822aa0197e8f778c21bf5c136c90afd2"
+    },
+    {
+      "path": "evaluation/prototypes/rust/semantic-rules.json",
+      "sha256": "4aa1981c1e74ee6676a0f1fdb1266380e1296a9e017a3dc21f2e5316217b45c0"
+    },
+    {
+      "path": "evaluation/prototypes/rust/src/discovery.rs",
+      "sha256": "7189bfbcc82fb1e725a0773ee43a7658ab42453176565f00fccc69e28aac2ab1"
+    },
+    {
+      "path": "evaluation/prototypes/rust/src/files.rs",
+      "sha256": "7b4032e69ff59c4cd61c2c5863a42d30fd856f8784ea78f390247f1b1c5ca55f"
+    },
+    {
+      "path": "evaluation/prototypes/rust/src/inspection.rs",
+      "sha256": "2aff2ef94d4dcdb1e13c4d7d50321a38eb369e728eaf308f4eb8debd407296d1"
+    },
+    {
+      "path": "evaluation/prototypes/rust/src/lib.rs",
+      "sha256": "f6262e5f0239ec209cb263813347b3bfbc021526a8f0c1e32824861c4344af96"
+    },
+    {
+      "path": "evaluation/prototypes/rust/src/library_driver.rs",
+      "sha256": "2e4b30f503a1ad7859ffb9562c794059df4ba4b1f70f6acd6b1d2cc024f4ebbc"
+    },
+    {
+      "path": "evaluation/prototypes/rust/src/main.rs",
+      "sha256": "923088e79f629a8efe1b17115f597e192f3bf34032c7eb11ceb26b5045208190"
+    },
+    {
+      "path": "evaluation/prototypes/rust/src/public.rs",
+      "sha256": "3612b99b52e746cc473f347326ff6fcedfb9285d5235424c507c93f7eb0ff02f"
+    },
+    {
+      "path": "evaluation/prototypes/rust/src/schema.rs",
+      "sha256": "28435ac0b6ae19e62aac420f9cb42312807f12acab7c4ec6beb36f1978d4e4c8"
+    },
+    {
+      "path": "evaluation/prototypes/rust/src/semantics.rs",
+      "sha256": "8ce9563fad6bb21d46e27f3d7e612ee90ef70eb7bc8ba70be62cdb887269f2a0"
+    },
+    {
+      "path": "evaluation/prototypes/rust/src/yaml.rs",
+      "sha256": "99276e269fb5b90986e2abe285a3c88562214baf6c2272346c22c41c8ff6a51e"
+    },
+    {
+      "path": "evaluation/prototypes/rust/tests/boundaries.rs",
+      "sha256": "e084686ffd29d465fd573f5832a9062d3f231c64384949c2c724d1ff49f18fa0"
+    },
+    {
+      "path": "schemas/README.md",
+      "sha256": "28d1715b391c414c1a4c46410046277e783f5df60768761ea127630c8773a890"
+    },
+    {
+      "path": "schemas/actors.schema.json",
+      "sha256": "fb376254763eaa670696618678629f049cb6f782b7816aa20e0216e9625c21a3"
+    },
+    {
+      "path": "schemas/agent-definitions.schema.json",
+      "sha256": "0faad7750d9fd95914e09ee7ffbfb23236da303fbcfd211ce77c45589bfa68d7"
+    },
+    {
+      "path": "schemas/agents.schema.json",
+      "sha256": "7505ce0ad4ce18eb74a477982b31b77ca06d8069022300171c28e1ada419b24e"
+    },
+    {
+      "path": "schemas/capabilities.schema.json",
+      "sha256": "4fc446a356b2f7709bf259ad6fbf4632a64bc77800a43e77b81354710e5e3026"
+    },
+    {
+      "path": "schemas/common.schema.json",
+      "sha256": "a02f583325e2b20ffbb659efa451206579779a557a5fc89fbb412c10414630cc"
+    },
+    {
+      "path": "schemas/context.schema.json",
+      "sha256": "ad0fc663f5e4bf92eb033d250e38c2ef914947834aa03fc257d601a6226ad7a8"
+    },
+    {
+      "path": "schemas/events.schema.json",
+      "sha256": "d08c9cce4106394c5bf53a034ff8a574bfe11ccf085ac53f508459d7a0e98a65"
+    },
+    {
+      "path": "schemas/extensions.schema.json",
+      "sha256": "1c87855f8ec5eeba871981ab8d0feac4f026c508b943644bfbc350685270a31d"
+    },
+    {
+      "path": "schemas/handoffs.schema.json",
+      "sha256": "40af0a3c48b63f8709e8297badf4a9100fdcc3b22f66cc3c748b88628e5b1ab5"
+    },
+    {
+      "path": "schemas/memory.schema.json",
+      "sha256": "75a655d9b1aa57be73c6ec738e10faea327837838ecf2a4b7a1031e28486fb59"
+    },
+    {
+      "path": "schemas/model-profiles.schema.json",
+      "sha256": "0503322e7f73d62d3bbcad226799d6615ffc36339c2e9d9afe951c542a57ed00"
+    },
+    {
+      "path": "schemas/permissions.schema.json",
+      "sha256": "64084ad81e53b3629dfc4ecab3faf4ebd765105a3072c5f627c5d31daee2fbb0"
+    },
+    {
+      "path": "schemas/project.schema.json",
+      "sha256": "586bc846277b846f723371a734952fc30cf29e8c916d6b52db1897ac32fc0778"
+    },
+    {
+      "path": "schemas/prompt-sets.schema.json",
+      "sha256": "feaff935c6337638e4bd2cffdcd54d7bad516958cad0d0407185261dc2439d02"
+    },
+    {
+      "path": "schemas/providers.schema.json",
+      "sha256": "e3b55c4fbc2a86c05a82be8a7b3ef8126e04a13d425d5654a0e2ee0bca31e4fb"
+    },
+    {
+      "path": "schemas/retrieval-profiles.schema.json",
+      "sha256": "685bce372bc68e454b015afd39f412adc88c386f45c56144842fc11e4ff75ade"
+    },
+    {
+      "path": "schemas/tasks.schema.json",
+      "sha256": "4cf1f1f35396240abf7da7e018e03a0e99b99c71cb9881c4f729c0175a07a250"
+    },
+    {
+      "path": "schemas/workflow.schema.json",
+      "sha256": "1821ec6e26cc1e6060cd2388c22fc51c77a3678cf4ac8c1140934fe612a1b446"
+    }
+  ],
+  "sourceSchemasHidden": true,
+  "previousArtifact": null,
+  "stages": {
+    "build": {
+      "status": "passed",
+      "evidence": [
+        "Exact repaired locks and native tool versions; package-manager no-fetch build flags, not OS build isolation."
+      ]
+    },
+    "package": {
+      "status": "passed",
+      "evidence": [
+        "Native capsule and exact complete regular-file inventory retained; no public product package/tag."
+      ]
+    },
+    "install": {
+      "status": "passed",
+      "evidence": [
+        "Final Unicode-space prefix contains all verified capsule files; exact external runtime, no global installation."
+      ]
+    },
+    "validateInspect": {
+      "status": "passed",
+      "evidence": [
+        "All 11 unchanged CLI cases twice from installed Unicode-space prefix and Unicode-space inputs with source schemas unavailable."
+      ]
+    },
+    "offlineUse": {
+      "status": "passed",
+      "evidence": [
+        "Independent paired loopback controls verified OS network denial before candidate execution."
+      ]
+    },
+    "uninstall": {
+      "status": "passed",
+      "evidence": [
+        "Only task-created installation prefix removed; capsule, outside canary and exact external runtime preserved."
+      ]
+    },
+    "upgrade": {
+      "status": "not-tested",
+      "evidence": [
+        "No actual previous evaluation package: upgrade and rollback cannot be verified."
+      ]
+    },
+    "rollback": {
+      "status": "not-tested",
+      "evidence": [
+        "No actual previous evaluation package: upgrade and rollback cannot be verified."
+      ]
+    },
+    "signing": {
+      "status": "not-tested",
+      "evidence": [
+        "No permitted project signing/notarization path or certificates."
+      ]
+    },
+    "notarization": {
+      "status": "not-tested",
+      "evidence": [
+        "No permitted project signing/notarization path or certificates."
+      ]
+    }
+  },
+  "artifact": {
+    "version": "23e576efd0dda0f00f5462eda9295c1ae4ec8fee.macos.arm64.3cbbd1bc02da0768c9c116a18f56dab9a3ef3cb6",
+    "filename": "rust-23e576efd0dda0f00f5462eda9295c1ae4ec8fee.macos.arm64.3cbbd1bc02da0768c9c116a18f56dab9a3ef3cb6.tar.gz",
+    "sha256": "cea61a30b72a5d0e951f19d369d88cc2de59501d221ae5d6210dd0286d0bf293",
+    "bytes": 4988330,
+    "files": [
+      {
+        "path": "evaluation/prototypes/rust/bin/library-driver",
+        "bytes": 7294560,
+        "sha256": "59841b48402ec17d39e82b356c7325925bedd254b16eebc9e003feb94426b58b"
+      },
+      {
+        "path": "evaluation/prototypes/rust/bin/nexflow-rust-evaluation",
+        "bytes": 7148096,
+        "sha256": "5e0b4f1a05bf37a761e9ee73653c816c324119b78aed12be2d4533ec70fd5b15"
+      },
+      {
+        "path": "evaluation/prototypes/rust/Cargo.lock",
+        "bytes": 20633,
+        "sha256": "e487d51d74d156867e6a80c7ccb646f5c008862065dff69d09a9d83b088885a3"
+      },
+      {
+        "path": "evaluation/prototypes/rust/Cargo.toml",
+        "bytes": 347,
+        "sha256": "a1880620ad46efde31f3d558bae1bedfb5f1f204c46fb59190473a017c250c9c"
+      },
+      {
+        "path": "evaluation/prototypes/rust/README.md",
+        "bytes": 5924,
+        "sha256": "4a755a54fda3f419e822cfd28b1db5eee5238b54b552b8e9e3f824a87dc8e0f3"
+      },
+      {
+        "path": "evaluation/prototypes/rust/rust-toolchain.toml",
+        "bytes": 51,
+        "sha256": "515c80a149c1e927d497dbebc399e241822aa0197e8f778c21bf5c136c90afd2"
+      },
+      {
+        "path": "evaluation/prototypes/rust/semantic-rules.json",
+        "bytes": 6873,
+        "sha256": "4aa1981c1e74ee6676a0f1fdb1266380e1296a9e017a3dc21f2e5316217b45c0"
+      },
+      {
+        "path": "evaluation/prototypes/rust/src/discovery.rs",
+        "bytes": 7229,
+        "sha256": "7189bfbcc82fb1e725a0773ee43a7658ab42453176565f00fccc69e28aac2ab1"
+      },
+      {
+        "path": "evaluation/prototypes/rust/src/files.rs",
+        "bytes": 2928,
+        "sha256": "7b4032e69ff59c4cd61c2c5863a42d30fd856f8784ea78f390247f1b1c5ca55f"
+      },
+      {
+        "path": "evaluation/prototypes/rust/src/inspection.rs",
+        "bytes": 6872,
+        "sha256": "2aff2ef94d4dcdb1e13c4d7d50321a38eb369e728eaf308f4eb8debd407296d1"
+      },
+      {
+        "path": "evaluation/prototypes/rust/src/lib.rs",
+        "bytes": 9158,
+        "sha256": "f6262e5f0239ec209cb263813347b3bfbc021526a8f0c1e32824861c4344af96"
+      },
+      {
+        "path": "evaluation/prototypes/rust/src/library_driver.rs",
+        "bytes": 1823,
+        "sha256": "2e4b30f503a1ad7859ffb9562c794059df4ba4b1f70f6acd6b1d2cc024f4ebbc"
+      },
+      {
+        "path": "evaluation/prototypes/rust/src/main.rs",
+        "bytes": 4274,
+        "sha256": "923088e79f629a8efe1b17115f597e192f3bf34032c7eb11ceb26b5045208190"
+      },
+      {
+        "path": "evaluation/prototypes/rust/src/public.rs",
+        "bytes": 3309,
+        "sha256": "3612b99b52e746cc473f347326ff6fcedfb9285d5235424c507c93f7eb0ff02f"
+      },
+      {
+        "path": "evaluation/prototypes/rust/src/schema.rs",
+        "bytes": 10138,
+        "sha256": "28435ac0b6ae19e62aac420f9cb42312807f12acab7c4ec6beb36f1978d4e4c8"
+      },
+      {
+        "path": "evaluation/prototypes/rust/src/semantics.rs",
+        "bytes": 13632,
+        "sha256": "8ce9563fad6bb21d46e27f3d7e612ee90ef70eb7bc8ba70be62cdb887269f2a0"
+      },
+      {
+        "path": "evaluation/prototypes/rust/src/yaml.rs",
+        "bytes": 2532,
+        "sha256": "99276e269fb5b90986e2abe285a3c88562214baf6c2272346c22c41c8ff6a51e"
+      },
+      {
+        "path": "evaluation/prototypes/rust/tests/boundaries.rs",
+        "bytes": 5960,
+        "sha256": "e084686ffd29d465fd573f5832a9062d3f231c64384949c2c724d1ff49f18fa0"
+      },
+      {
+        "path": "schemas/actors.schema.json",
+        "bytes": 4648,
+        "sha256": "fb376254763eaa670696618678629f049cb6f782b7816aa20e0216e9625c21a3"
+      },
+      {
+        "path": "schemas/agent-definitions.schema.json",
+        "bytes": 8515,
+        "sha256": "0faad7750d9fd95914e09ee7ffbfb23236da303fbcfd211ce77c45589bfa68d7"
+      },
+      {
+        "path": "schemas/agents.schema.json",
+        "bytes": 4731,
+        "sha256": "7505ce0ad4ce18eb74a477982b31b77ca06d8069022300171c28e1ada419b24e"
+      },
+      {
+        "path": "schemas/capabilities.schema.json",
+        "bytes": 1216,
+        "sha256": "4fc446a356b2f7709bf259ad6fbf4632a64bc77800a43e77b81354710e5e3026"
+      },
+      {
+        "path": "schemas/common.schema.json",
+        "bytes": 31287,
+        "sha256": "a02f583325e2b20ffbb659efa451206579779a557a5fc89fbb412c10414630cc"
+      },
+      {
+        "path": "schemas/context.schema.json",
+        "bytes": 6012,
+        "sha256": "ad0fc663f5e4bf92eb033d250e38c2ef914947834aa03fc257d601a6226ad7a8"
+      },
+      {
+        "path": "schemas/events.schema.json",
+        "bytes": 1686,
+        "sha256": "d08c9cce4106394c5bf53a034ff8a574bfe11ccf085ac53f508459d7a0e98a65"
+      },
+      {
+        "path": "schemas/extensions.schema.json",
+        "bytes": 1960,
+        "sha256": "1c87855f8ec5eeba871981ab8d0feac4f026c508b943644bfbc350685270a31d"
+      },
+      {
+        "path": "schemas/handoffs.schema.json",
+        "bytes": 1729,
+        "sha256": "40af0a3c48b63f8709e8297badf4a9100fdcc3b22f66cc3c748b88628e5b1ab5"
+      },
+      {
+        "path": "schemas/memory.schema.json",
+        "bytes": 2317,
+        "sha256": "75a655d9b1aa57be73c6ec738e10faea327837838ecf2a4b7a1031e28486fb59"
+      },
+      {
+        "path": "schemas/model-profiles.schema.json",
+        "bytes": 5624,
+        "sha256": "0503322e7f73d62d3bbcad226799d6615ffc36339c2e9d9afe951c542a57ed00"
+      },
+      {
+        "path": "schemas/permissions.schema.json",
+        "bytes": 1547,
+        "sha256": "64084ad81e53b3629dfc4ecab3faf4ebd765105a3072c5f627c5d31daee2fbb0"
+      },
+      {
+        "path": "schemas/project.schema.json",
+        "bytes": 4030,
+        "sha256": "586bc846277b846f723371a734952fc30cf29e8c916d6b52db1897ac32fc0778"
+      },
+      {
+        "path": "schemas/prompt-sets.schema.json",
+        "bytes": 5339,
+        "sha256": "feaff935c6337638e4bd2cffdcd54d7bad516958cad0d0407185261dc2439d02"
+      },
+      {
+        "path": "schemas/providers.schema.json",
+        "bytes": 6897,
+        "sha256": "e3b55c4fbc2a86c05a82be8a7b3ef8126e04a13d425d5654a0e2ee0bca31e4fb"
+      },
+      {
+        "path": "schemas/README.md",
+        "bytes": 16217,
+        "sha256": "28d1715b391c414c1a4c46410046277e783f5df60768761ea127630c8773a890"
+      },
+      {
+        "path": "schemas/retrieval-profiles.schema.json",
+        "bytes": 8548,
+        "sha256": "685bce372bc68e454b015afd39f412adc88c386f45c56144842fc11e4ff75ade"
+      },
+      {
+        "path": "schemas/tasks.schema.json",
+        "bytes": 1938,
+        "sha256": "4cf1f1f35396240abf7da7e018e03a0e99b99c71cb9881c4f729c0175a07a250"
+      },
+      {
+        "path": "schemas/workflow.schema.json",
+        "bytes": 3728,
+        "sha256": "1821ec6e26cc1e6060cd2388c22fc51c77a3678cf4ac8c1140934fe612a1b446"
+      }
+    ],
+    "manifestSha256": "03b3855bef8bcae1219161d358b340f6b64ffc425b13517dec6fa432361beb7c",
+    "format": "revision-versioned source-layout evaluation capsule; external runtimes",
+    "productRelease": false
+  },
+  "nativeInspections": [
+    {
+      "file": "installed-candidate",
+      "sha256": "5e0b4f1a05bf37a761e9ee73653c816c324119b78aed12be2d4533ec70fd5b15",
+      "architecture": "arm64",
+      "format": "Mach-O",
+      "signature": {
+        "inspection": "read-only",
+        "exitCode": 0,
+        "kind": "ad-hoc",
+        "detail": "Executable=<evaluation-path>/rust/installed space юникод/evaluation/prototypes/rust/bin/nexflow-rust-evaluation\nIdentifier=nexflow_rust_evaluation-b636d32f4116bd74\nFormat=Mach-O thin (arm64)\nCodeDirectory v=20400 size=55560 flags=0x20002(adhoc,linker-signed) hashes=1732+0 location=embedded\nHash type=sha256 size=32\nCandidateCDHash sha256=708d5a3f22f979ed46ccdd66b97ca50bae566dfa\nCandidateCDHashFull sha256=708d5a3f22f979ed46ccdd66b97ca50bae566dfa174c240ca1b6cd24fb1182e7\nHash choices=sha256\nCMSDigest=708d5a3f22f979ed46ccdd66b97ca50bae566dfa174c240ca1b6cd24fb1182e7\nCMSDigestType=2\nCDHash=708d5a3f22f979ed46ccdd66b97ca50bae566dfa\nSignature=adhoc\nInfo.plist=not bound\nTeamIdentifier=not set\nSealed Resources=none\nInternal requirements=none\nwarning: Specifying ':' in the path is deprecated and will not work in a future release\n"
+      }
+    }
+  ],
+  "buildCommands": [
+    {
+      "program": "cargo",
+      "arguments": [
+        "+1.99.0",
+        "build",
+        "--release",
+        "--frozen",
+        "--offline"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": "   Compiling proc-macro2 v1.0.107\n   Compiling unicode-ident v1.0.26\n   Compiling quote v1.0.47\n   Compiling autocfg v1.5.1\n   Compiling num-traits v0.2.19\n   Compiling serde_core v1.0.229\n   Compiling libc v0.2.189\n   Compiling cfg-if v1.0.5\n   Compiling syn v3.0.6\n   Compiling serde v1.0.229\n   Compiling memchr v2.8.3\n   Compiling num-integer v0.1.47\n   Compiling serde_derive v1.0.229\n   Compiling getrandom v0.3.4\n   Compiling rustversion v1.0.23\n   Compiling foldhash v0.2.0\n   Compiling zerocopy v0.8.59\n   Compiling scopeguard v1.2.0\n   Compiling version_check v0.9.5\n   Compiling num-bigint v0.4.8\n   Compiling ahash v0.8.12\n   Compiling serde_json v1.0.145\n   Compiling regex-syntax v0.8.11\n   Compiling parking_lot_core v0.9.12\n   Compiling ref-cast v1.0.27\n   Compiling num-rational v0.4.2\n   Compiling ref-cast-impl v1.0.27\n   Compiling num-iter v0.1.46\n   Compiling aho-corasick v1.1.5\n   Compiling num-complex v0.4.6\n   Compiling zmij v1.0.23\n   Compiling ryu v1.0.23\n   Compiling once_cell v1.21.4\n   Compiling smallvec v1.16.2\n   Compiling itoa v1.0.18\n   Compiling num v0.4.3\n   Compiling regex-automata v0.4.18\n   Compiling encoding_rs v0.8.42\n   Compiling lock_api v0.4.14\n   Compiling syn v2.0.119\n   Compiling heck v0.5.0\n   Compiling equivalent v1.0.2\n   Compiling allocator-api2 v0.2.21\n   Compiling jsonschema-value v0.58.4\n   Compiling unicode-general-category v1.1.0\n   Compiling borrow-or-share v0.2.4\n   Compiling bit-vec v0.8.0\n   Compiling bit-set v0.8.0\n   Compiling fluent-uri v0.4.1\n   Compiling hashbrown v0.17.1\n   Compiling strum_macros v0.28.0\n   Compiling parking_lot v0.12.5\n   Compiling fraction v0.17.0\n   Compiling hashbrown v0.16.1\n   Compiling percent-encoding v2.3.2\n   Compiling bytecount v0.6.9\n   Compiling micromap v0.3.0\n   Compiling num-cmp v0.1.0\n   Compiling outref v0.5.2\n   Compiling vsimd v0.8.0\n   Compiling simdutf8 v0.1.5\n   Compiling multiversion_no_op v1.0.0\n   Compiling uuid-simd v0.8.0\n   Compiling referencing v0.58.4\n   Compiling hashlink v0.11.1\n   Compiling strum v0.28.0\n   Compiling fancy-regex v0.19.2\n   Compiling regex v1.13.1\n   Compiling jsonschema-regex v0.58.4\n   Compiling email_address v0.2.9\n   Compiling data-encoding v2.11.1\n   Compiling arraydeque v0.5.1\n   Compiling yaml-rust2 v0.11.0\n   Compiling jsonschema v0.58.4\n   Compiling nexflow-rust-evaluation v0.0.0 (<evaluation-path>/evaluation/prototypes/rust)\n    Finished `release` profile [optimized] target(s) in 1m 15s\n"
+    }
+  ],
+  "installation": {
+    "archiveVerified": true,
+    "manifestVerified": true,
+    "unicodePrefix": true,
+    "method": "ASCII staging extraction followed by native Unicode-space directory rename; no ASCII execution fallback",
+    "installedManifestSha256": "03b3855bef8bcae1219161d358b340f6b64ffc425b13517dec6fa432361beb7c"
+  },
+  "execution": {
+    "cases": [
+      {
+        "id": "validate-project-hints",
+        "errors": [],
+        "attempts": [
+          {
+            "exitCode": 0,
+            "signal": null,
+            "error": null,
+            "stdoutSha256": "2f921e25f66e26614e946f21fda756c66763be1dbbe93bfd2355301a1ebe4eba",
+            "stderr": "",
+            "output": {
+              "checks": {
+                "coreProfile": "not-run",
+                "discovery": "passed",
+                "extensionProfiles": "not-run",
+                "schema": "passed",
+                "semantic": "not-run"
+              },
+              "command": "validate",
+              "diagnostics": [],
+              "executionAuthorized": false,
+              "exitCode": 0,
+              "formatVersion": "0.4-draft",
+              "inputMode": "project-source-hints",
+              "result": {
+                "documentCount": 3,
+                "documents": [
+                  {
+                    "file": "actors.yaml",
+                    "kind": "ActorSet"
+                  },
+                  {
+                    "file": "agents.yaml",
+                    "kind": "AgentSet"
+                  },
+                  {
+                    "file": "project.yaml",
+                    "kind": "Project"
+                  }
+                ]
+              },
+              "success": true,
+              "supportedSpecVersions": [
+                "0.1"
+              ],
+              "tool": {
+                "name": "nexflow-rust-evaluation",
+                "version": "unreleased"
+              },
+              "truncated": false
+            }
+          },
+          {
+            "exitCode": 0,
+            "signal": null,
+            "error": null,
+            "stdoutSha256": "2f921e25f66e26614e946f21fda756c66763be1dbbe93bfd2355301a1ebe4eba",
+            "stderr": "",
+            "output": {
+              "checks": {
+                "coreProfile": "not-run",
+                "discovery": "passed",
+                "extensionProfiles": "not-run",
+                "schema": "passed",
+                "semantic": "not-run"
+              },
+              "command": "validate",
+              "diagnostics": [],
+              "executionAuthorized": false,
+              "exitCode": 0,
+              "formatVersion": "0.4-draft",
+              "inputMode": "project-source-hints",
+              "result": {
+                "documentCount": 3,
+                "documents": [
+                  {
+                    "file": "actors.yaml",
+                    "kind": "ActorSet"
+                  },
+                  {
+                    "file": "agents.yaml",
+                    "kind": "AgentSet"
+                  },
+                  {
+                    "file": "project.yaml",
+                    "kind": "Project"
+                  }
+                ]
+              },
+              "success": true,
+              "supportedSpecVersions": [
+                "0.1"
+              ],
+              "tool": {
+                "name": "nexflow-rust-evaluation",
+                "version": "unreleased"
+              },
+              "truncated": false
+            }
+          }
+        ]
+      },
+      {
+        "id": "inspect-valid-project",
+        "errors": [],
+        "attempts": [
+          {
+            "exitCode": 0,
+            "signal": null,
+            "error": null,
+            "stdoutSha256": "7cc3ae555bdf48f256662bc2255aeb001d7e709253db8be0f098b3b1305de394",
+            "stderr": "",
+            "output": {
+              "checks": {
+                "coreProfile": "not-run",
+                "discovery": "passed",
+                "extensionProfiles": "not-run",
+                "schema": "passed",
+                "semantic": "not-run"
+              },
+              "command": "inspect",
+              "diagnostics": [],
+              "executionAuthorized": false,
+              "exitCode": 0,
+              "formatVersion": "0.4-draft",
+              "inputMode": "directory-project",
+              "result": {
+                "documentCount": 3,
+                "documents": [
+                  {
+                    "file": "actors.yaml",
+                    "kind": "ActorSet"
+                  },
+                  {
+                    "file": "agents.yaml",
+                    "kind": "AgentSet"
+                  },
+                  {
+                    "file": "project.yaml",
+                    "kind": "Project"
+                  }
+                ],
+                "inspection": {
+                  "mode": "declared-only",
+                  "project": {
+                    "file": "project.yaml",
+                    "id": "cli-fixture",
+                    "path": "/project"
+                  },
+                  "referenceCoverage": "selected-fields",
+                  "references": [
+                    {
+                      "file": "actors.yaml",
+                      "id": "fixture-agent",
+                      "kind": "agent",
+                      "path": "/actors/1/agentRef/id",
+                      "scope": null
+                    },
+                    {
+                      "file": "project.yaml",
+                      "id": "human-maintainer",
+                      "kind": "participant",
+                      "path": "/project/maintainers/0/id",
+                      "scope": null
+                    }
+                  ],
+                  "referencesResolved": false,
+                  "resources": [
+                    {
+                      "file": "actors.yaml",
+                      "id": "human-maintainer",
+                      "kind": "actor",
+                      "path": "/actors/0",
+                      "scope": null
+                    },
+                    {
+                      "file": "actors.yaml",
+                      "id": "fixture-agent",
+                      "kind": "actor",
+                      "path": "/actors/1",
+                      "scope": null
+                    },
+                    {
+                      "file": "agents.yaml",
+                      "id": "fixture-agent",
+                      "kind": "agent",
+                      "path": "/agents/0",
+                      "scope": null
+                    },
+                    {
+                      "file": "project.yaml",
+                      "id": "cli-fixture",
+                      "kind": "project",
+                      "path": "/project",
+                      "scope": null
+                    }
+                  ],
+                  "summary": [
+                    {
+                      "documentCount": 1,
+                      "kind": "ActorSet",
+                      "resourceCount": 2
+                    },
+                    {
+                      "documentCount": 1,
+                      "kind": "AgentSet",
+                      "resourceCount": 1
+                    },
+                    {
+                      "documentCount": 1,
+                      "kind": "Project",
+                      "resourceCount": 1
+                    }
+                  ]
+                }
+              },
+              "success": true,
+              "supportedSpecVersions": [
+                "0.1"
+              ],
+              "tool": {
+                "name": "nexflow-rust-evaluation",
+                "version": "unreleased"
+              },
+              "truncated": false
+            }
+          },
+          {
+            "exitCode": 0,
+            "signal": null,
+            "error": null,
+            "stdoutSha256": "7cc3ae555bdf48f256662bc2255aeb001d7e709253db8be0f098b3b1305de394",
+            "stderr": "",
+            "output": {
+              "checks": {
+                "coreProfile": "not-run",
+                "discovery": "passed",
+                "extensionProfiles": "not-run",
+                "schema": "passed",
+                "semantic": "not-run"
+              },
+              "command": "inspect",
+              "diagnostics": [],
+              "executionAuthorized": false,
+              "exitCode": 0,
+              "formatVersion": "0.4-draft",
+              "inputMode": "directory-project",
+              "result": {
+                "documentCount": 3,
+                "documents": [
+                  {
+                    "file": "actors.yaml",
+                    "kind": "ActorSet"
+                  },
+                  {
+                    "file": "agents.yaml",
+                    "kind": "AgentSet"
+                  },
+                  {
+                    "file": "project.yaml",
+                    "kind": "Project"
+                  }
+                ],
+                "inspection": {
+                  "mode": "declared-only",
+                  "project": {
+                    "file": "project.yaml",
+                    "id": "cli-fixture",
+                    "path": "/project"
+                  },
+                  "referenceCoverage": "selected-fields",
+                  "references": [
+                    {
+                      "file": "actors.yaml",
+                      "id": "fixture-agent",
+                      "kind": "agent",
+                      "path": "/actors/1/agentRef/id",
+                      "scope": null
+                    },
+                    {
+                      "file": "project.yaml",
+                      "id": "human-maintainer",
+                      "kind": "participant",
+                      "path": "/project/maintainers/0/id",
+                      "scope": null
+                    }
+                  ],
+                  "referencesResolved": false,
+                  "resources": [
+                    {
+                      "file": "actors.yaml",
+                      "id": "human-maintainer",
+                      "kind": "actor",
+                      "path": "/actors/0",
+                      "scope": null
+                    },
+                    {
+                      "file": "actors.yaml",
+                      "id": "fixture-agent",
+                      "kind": "actor",
+                      "path": "/actors/1",
+                      "scope": null
+                    },
+                    {
+                      "file": "agents.yaml",
+                      "id": "fixture-agent",
+                      "kind": "agent",
+                      "path": "/agents/0",
+                      "scope": null
+                    },
+                    {
+                      "file": "project.yaml",
+                      "id": "cli-fixture",
+                      "kind": "project",
+                      "path": "/project",
+                      "scope": null
+                    }
+                  ],
+                  "summary": [
+                    {
+                      "documentCount": 1,
+                      "kind": "ActorSet",
+                      "resourceCount": 2
+                    },
+                    {
+                      "documentCount": 1,
+                      "kind": "AgentSet",
+                      "resourceCount": 1
+                    },
+                    {
+                      "documentCount": 1,
+                      "kind": "Project",
+                      "resourceCount": 1
+                    }
+                  ]
+                }
+              },
+              "success": true,
+              "supportedSpecVersions": [
+                "0.1"
+              ],
+              "tool": {
+                "name": "nexflow-rust-evaluation",
+                "version": "unreleased"
+              },
+              "truncated": false
+            }
+          }
+        ]
+      },
+      {
+        "id": "reject-yaml-syntax",
+        "errors": [],
+        "attempts": [
+          {
+            "exitCode": 1,
+            "signal": null,
+            "error": null,
+            "stdoutSha256": "68ddbd4890af39bd130305b48997f0bab5b4b6cedf8175e953b0d5609eecca99",
+            "stderr": "",
+            "output": {
+              "checks": {
+                "coreProfile": "not-run",
+                "discovery": "failed",
+                "extensionProfiles": "not-run",
+                "schema": "not-run",
+                "semantic": "not-run"
+              },
+              "command": "validate",
+              "diagnostics": [
+                {
+                  "code": "NF-DISCOVERY-NO-PROJECT",
+                  "file": "<input>",
+                  "keyword": null,
+                  "kind": null,
+                  "message": "Selected manifest input does not satisfy discovery policy.",
+                  "path": null,
+                  "related": [],
+                  "severity": "error"
+                },
+                {
+                  "code": "NF-DISCOVERY-UNSAFE-SOURCE",
+                  "file": "project.yaml",
+                  "keyword": null,
+                  "kind": null,
+                  "message": "Selected manifest input does not satisfy discovery policy.",
+                  "path": null,
+                  "related": [],
+                  "severity": "error"
+                }
+              ],
+              "executionAuthorized": false,
+              "exitCode": 1,
+              "formatVersion": "0.4-draft",
+              "inputMode": "directory-project",
+              "result": null,
+              "success": false,
+              "supportedSpecVersions": [
+                "0.1"
+              ],
+              "tool": {
+                "name": "nexflow-rust-evaluation",
+                "version": "unreleased"
+              },
+              "truncated": false
+            }
+          },
+          {
+            "exitCode": 1,
+            "signal": null,
+            "error": null,
+            "stdoutSha256": "68ddbd4890af39bd130305b48997f0bab5b4b6cedf8175e953b0d5609eecca99",
+            "stderr": "",
+            "output": {
+              "checks": {
+                "coreProfile": "not-run",
+                "discovery": "failed",
+                "extensionProfiles": "not-run",
+                "schema": "not-run",
+                "semantic": "not-run"
+              },
+              "command": "validate",
+              "diagnostics": [
+                {
+                  "code": "NF-DISCOVERY-NO-PROJECT",
+                  "file": "<input>",
+                  "keyword": null,
+                  "kind": null,
+                  "message": "Selected manifest input does not satisfy discovery policy.",
+                  "path": null,
+                  "related": [],
+                  "severity": "error"
+                },
+                {
+                  "code": "NF-DISCOVERY-UNSAFE-SOURCE",
+                  "file": "project.yaml",
+                  "keyword": null,
+                  "kind": null,
+                  "message": "Selected manifest input does not satisfy discovery policy.",
+                  "path": null,
+                  "related": [],
+                  "severity": "error"
+                }
+              ],
+              "executionAuthorized": false,
+              "exitCode": 1,
+              "formatVersion": "0.4-draft",
+              "inputMode": "directory-project",
+              "result": null,
+              "success": false,
+              "supportedSpecVersions": [
+                "0.1"
+              ],
+              "tool": {
+                "name": "nexflow-rust-evaluation",
+                "version": "unreleased"
+              },
+              "truncated": false
+            }
+          }
+        ]
+      },
+      {
+        "id": "reject-schema-invalid-project",
+        "errors": [],
+        "attempts": [
+          {
+            "exitCode": 1,
+            "signal": null,
+            "error": null,
+            "stdoutSha256": "7604535ac468f62dbe208ae77780b7adb57d0a94daa3b75a0f15971af9779d97",
+            "stderr": "",
+            "output": {
+              "checks": {
+                "coreProfile": "not-run",
+                "discovery": "passed",
+                "extensionProfiles": "not-run",
+                "schema": "failed",
+                "semantic": "not-run"
+              },
+              "command": "validate",
+              "diagnostics": [
+                {
+                  "code": "NF-SCHEMA",
+                  "file": "project.yaml",
+                  "keyword": "required",
+                  "kind": "Project",
+                  "message": "Local schema constraint is not satisfied.",
+                  "path": "/project/description",
+                  "related": [],
+                  "severity": "error"
+                }
+              ],
+              "executionAuthorized": false,
+              "exitCode": 1,
+              "formatVersion": "0.4-draft",
+              "inputMode": "directory-project",
+              "result": null,
+              "success": false,
+              "supportedSpecVersions": [
+                "0.1"
+              ],
+              "tool": {
+                "name": "nexflow-rust-evaluation",
+                "version": "unreleased"
+              },
+              "truncated": false
+            }
+          },
+          {
+            "exitCode": 1,
+            "signal": null,
+            "error": null,
+            "stdoutSha256": "7604535ac468f62dbe208ae77780b7adb57d0a94daa3b75a0f15971af9779d97",
+            "stderr": "",
+            "output": {
+              "checks": {
+                "coreProfile": "not-run",
+                "discovery": "passed",
+                "extensionProfiles": "not-run",
+                "schema": "failed",
+                "semantic": "not-run"
+              },
+              "command": "validate",
+              "diagnostics": [
+                {
+                  "code": "NF-SCHEMA",
+                  "file": "project.yaml",
+                  "keyword": "required",
+                  "kind": "Project",
+                  "message": "Local schema constraint is not satisfied.",
+                  "path": "/project/description",
+                  "related": [],
+                  "severity": "error"
+                }
+              ],
+              "executionAuthorized": false,
+              "exitCode": 1,
+              "formatVersion": "0.4-draft",
+              "inputMode": "directory-project",
+              "result": null,
+              "success": false,
+              "supportedSpecVersions": [
+                "0.1"
+              ],
+              "tool": {
+                "name": "nexflow-rust-evaluation",
+                "version": "unreleased"
+              },
+              "truncated": false
+            }
+          }
+        ]
+      },
+      {
+        "id": "reject-unsupported-version",
+        "errors": [],
+        "attempts": [
+          {
+            "exitCode": 3,
+            "signal": null,
+            "error": null,
+            "stdoutSha256": "1037de28434e2a9ed29564cd932efa112c47b741dacac6c9d539ee7857bfff88",
+            "stderr": "",
+            "output": {
+              "checks": {
+                "coreProfile": "not-run",
+                "discovery": "failed",
+                "extensionProfiles": "not-run",
+                "schema": "not-run",
+                "semantic": "not-run"
+              },
+              "command": "validate",
+              "diagnostics": [
+                {
+                  "code": "NF-DISCOVERY-NO-PROJECT",
+                  "file": "<input>",
+                  "keyword": null,
+                  "kind": null,
+                  "message": "Selected manifest input does not satisfy discovery policy.",
+                  "path": null,
+                  "related": [],
+                  "severity": "error"
+                },
+                {
+                  "code": "NF-DISCOVERY-UNSUPPORTED-VERSION",
+                  "file": "project.yaml",
+                  "keyword": null,
+                  "kind": null,
+                  "message": "Selected manifest input does not satisfy discovery policy.",
+                  "path": null,
+                  "related": [],
+                  "severity": "error"
+                }
+              ],
+              "executionAuthorized": false,
+              "exitCode": 3,
+              "formatVersion": "0.4-draft",
+              "inputMode": "directory-project",
+              "result": null,
+              "success": false,
+              "supportedSpecVersions": [
+                "0.1"
+              ],
+              "tool": {
+                "name": "nexflow-rust-evaluation",
+                "version": "unreleased"
+              },
+              "truncated": false
+            }
+          },
+          {
+            "exitCode": 3,
+            "signal": null,
+            "error": null,
+            "stdoutSha256": "1037de28434e2a9ed29564cd932efa112c47b741dacac6c9d539ee7857bfff88",
+            "stderr": "",
+            "output": {
+              "checks": {
+                "coreProfile": "not-run",
+                "discovery": "failed",
+                "extensionProfiles": "not-run",
+                "schema": "not-run",
+                "semantic": "not-run"
+              },
+              "command": "validate",
+              "diagnostics": [
+                {
+                  "code": "NF-DISCOVERY-NO-PROJECT",
+                  "file": "<input>",
+                  "keyword": null,
+                  "kind": null,
+                  "message": "Selected manifest input does not satisfy discovery policy.",
+                  "path": null,
+                  "related": [],
+                  "severity": "error"
+                },
+                {
+                  "code": "NF-DISCOVERY-UNSUPPORTED-VERSION",
+                  "file": "project.yaml",
+                  "keyword": null,
+                  "kind": null,
+                  "message": "Selected manifest input does not satisfy discovery policy.",
+                  "path": null,
+                  "related": [],
+                  "severity": "error"
+                }
+              ],
+              "executionAuthorized": false,
+              "exitCode": 3,
+              "formatVersion": "0.4-draft",
+              "inputMode": "directory-project",
+              "result": null,
+              "success": false,
+              "supportedSpecVersions": [
+                "0.1"
+              ],
+              "tool": {
+                "name": "nexflow-rust-evaluation",
+                "version": "unreleased"
+              },
+              "truncated": false
+            }
+          }
+        ]
+      },
+      {
+        "id": "reject-unsupported-kind",
+        "errors": [],
+        "attempts": [
+          {
+            "exitCode": 3,
+            "signal": null,
+            "error": null,
+            "stdoutSha256": "47b1ae109a0a6a64bb169cbb78453821b77725ce7a39e90047e00c76285292c3",
+            "stderr": "",
+            "output": {
+              "checks": {
+                "coreProfile": "not-run",
+                "discovery": "failed",
+                "extensionProfiles": "not-run",
+                "schema": "not-run",
+                "semantic": "not-run"
+              },
+              "command": "validate",
+              "diagnostics": [
+                {
+                  "code": "NF-DISCOVERY-NO-PROJECT",
+                  "file": "<input>",
+                  "keyword": null,
+                  "kind": null,
+                  "message": "Selected manifest input does not satisfy discovery policy.",
+                  "path": null,
+                  "related": [],
+                  "severity": "error"
+                },
+                {
+                  "code": "NF-DISCOVERY-UNSUPPORTED-KIND",
+                  "file": "project.yaml",
+                  "keyword": null,
+                  "kind": null,
+                  "message": "Selected manifest input does not satisfy discovery policy.",
+                  "path": null,
+                  "related": [],
+                  "severity": "error"
+                }
+              ],
+              "executionAuthorized": false,
+              "exitCode": 3,
+              "formatVersion": "0.4-draft",
+              "inputMode": "directory-project",
+              "result": null,
+              "success": false,
+              "supportedSpecVersions": [
+                "0.1"
+              ],
+              "tool": {
+                "name": "nexflow-rust-evaluation",
+                "version": "unreleased"
+              },
+              "truncated": false
+            }
+          },
+          {
+            "exitCode": 3,
+            "signal": null,
+            "error": null,
+            "stdoutSha256": "47b1ae109a0a6a64bb169cbb78453821b77725ce7a39e90047e00c76285292c3",
+            "stderr": "",
+            "output": {
+              "checks": {
+                "coreProfile": "not-run",
+                "discovery": "failed",
+                "extensionProfiles": "not-run",
+                "schema": "not-run",
+                "semantic": "not-run"
+              },
+              "command": "validate",
+              "diagnostics": [
+                {
+                  "code": "NF-DISCOVERY-NO-PROJECT",
+                  "file": "<input>",
+                  "keyword": null,
+                  "kind": null,
+                  "message": "Selected manifest input does not satisfy discovery policy.",
+                  "path": null,
+                  "related": [],
+                  "severity": "error"
+                },
+                {
+                  "code": "NF-DISCOVERY-UNSUPPORTED-KIND",
+                  "file": "project.yaml",
+                  "keyword": null,
+                  "kind": null,
+                  "message": "Selected manifest input does not satisfy discovery policy.",
+                  "path": null,
+                  "related": [],
+                  "severity": "error"
+                }
+              ],
+              "executionAuthorized": false,
+              "exitCode": 3,
+              "formatVersion": "0.4-draft",
+              "inputMode": "directory-project",
+              "result": null,
+              "success": false,
+              "supportedSpecVersions": [
+                "0.1"
+              ],
+              "tool": {
+                "name": "nexflow-rust-evaluation",
+                "version": "unreleased"
+              },
+              "truncated": false
+            }
+          }
+        ]
+      },
+      {
+        "id": "reject-source-outside-root",
+        "errors": [],
+        "attempts": [
+          {
+            "exitCode": 1,
+            "signal": null,
+            "error": null,
+            "stdoutSha256": "efeaebd08a9be8aedc4c460a8fd7bb8d5c3940dd648b9475fa1fe2e4db883d4b",
+            "stderr": "",
+            "output": {
+              "checks": {
+                "coreProfile": "not-run",
+                "discovery": "failed",
+                "extensionProfiles": "not-run",
+                "schema": "not-run",
+                "semantic": "not-run"
+              },
+              "command": "validate",
+              "diagnostics": [
+                {
+                  "code": "NF-DISCOVERY-OUTSIDE-ROOT",
+                  "file": "<redacted-source>",
+                  "keyword": null,
+                  "kind": null,
+                  "message": "Selected manifest input does not satisfy discovery policy.",
+                  "path": null,
+                  "related": [],
+                  "severity": "error"
+                }
+              ],
+              "executionAuthorized": false,
+              "exitCode": 1,
+              "formatVersion": "0.4-draft",
+              "inputMode": "directory-project",
+              "result": null,
+              "success": false,
+              "supportedSpecVersions": [
+                "0.1"
+              ],
+              "tool": {
+                "name": "nexflow-rust-evaluation",
+                "version": "unreleased"
+              },
+              "truncated": false
+            }
+          },
+          {
+            "exitCode": 1,
+            "signal": null,
+            "error": null,
+            "stdoutSha256": "efeaebd08a9be8aedc4c460a8fd7bb8d5c3940dd648b9475fa1fe2e4db883d4b",
+            "stderr": "",
+            "output": {
+              "checks": {
+                "coreProfile": "not-run",
+                "discovery": "failed",
+                "extensionProfiles": "not-run",
+                "schema": "not-run",
+                "semantic": "not-run"
+              },
+              "command": "validate",
+              "diagnostics": [
+                {
+                  "code": "NF-DISCOVERY-OUTSIDE-ROOT",
+                  "file": "<redacted-source>",
+                  "keyword": null,
+                  "kind": null,
+                  "message": "Selected manifest input does not satisfy discovery policy.",
+                  "path": null,
+                  "related": [],
+                  "severity": "error"
+                }
+              ],
+              "executionAuthorized": false,
+              "exitCode": 1,
+              "formatVersion": "0.4-draft",
+              "inputMode": "directory-project",
+              "result": null,
+              "success": false,
+              "supportedSpecVersions": [
+                "0.1"
+              ],
+              "tool": {
+                "name": "nexflow-rust-evaluation",
+                "version": "unreleased"
+              },
+              "truncated": false
+            }
+          }
+        ]
+      },
+      {
+        "id": "reject-source-kind-mismatch",
+        "errors": [],
+        "attempts": [
+          {
+            "exitCode": 1,
+            "signal": null,
+            "error": null,
+            "stdoutSha256": "7924e7834f2414ad831007bae029732837dbb9797c3f1405572a236b8e99f4b9",
+            "stderr": "",
+            "output": {
+              "checks": {
+                "coreProfile": "not-run",
+                "discovery": "failed",
+                "extensionProfiles": "not-run",
+                "schema": "not-run",
+                "semantic": "not-run"
+              },
+              "command": "validate",
+              "diagnostics": [
+                {
+                  "code": "NF-DISCOVERY-KIND-MISMATCH",
+                  "file": "agents.yaml",
+                  "keyword": null,
+                  "kind": null,
+                  "message": "Selected manifest input does not satisfy discovery policy.",
+                  "path": null,
+                  "related": [],
+                  "severity": "error"
+                }
+              ],
+              "executionAuthorized": false,
+              "exitCode": 1,
+              "formatVersion": "0.4-draft",
+              "inputMode": "directory-project",
+              "result": null,
+              "success": false,
+              "supportedSpecVersions": [
+                "0.1"
+              ],
+              "tool": {
+                "name": "nexflow-rust-evaluation",
+                "version": "unreleased"
+              },
+              "truncated": false
+            }
+          },
+          {
+            "exitCode": 1,
+            "signal": null,
+            "error": null,
+            "stdoutSha256": "7924e7834f2414ad831007bae029732837dbb9797c3f1405572a236b8e99f4b9",
+            "stderr": "",
+            "output": {
+              "checks": {
+                "coreProfile": "not-run",
+                "discovery": "failed",
+                "extensionProfiles": "not-run",
+                "schema": "not-run",
+                "semantic": "not-run"
+              },
+              "command": "validate",
+              "diagnostics": [
+                {
+                  "code": "NF-DISCOVERY-KIND-MISMATCH",
+                  "file": "agents.yaml",
+                  "keyword": null,
+                  "kind": null,
+                  "message": "Selected manifest input does not satisfy discovery policy.",
+                  "path": null,
+                  "related": [],
+                  "severity": "error"
+                }
+              ],
+              "executionAuthorized": false,
+              "exitCode": 1,
+              "formatVersion": "0.4-draft",
+              "inputMode": "directory-project",
+              "result": null,
+              "success": false,
+              "supportedSpecVersions": [
+                "0.1"
+              ],
+              "tool": {
+                "name": "nexflow-rust-evaluation",
+                "version": "unreleased"
+              },
+              "truncated": false
+            }
+          }
+        ]
+      },
+      {
+        "id": "reject-runtime-command",
+        "errors": [],
+        "attempts": [
+          {
+            "exitCode": 2,
+            "signal": null,
+            "error": null,
+            "stdoutSha256": "7c5435a91e9d6ff3943945f2c8d1e9a5eb2c9403ca5ea077dfabfe8773c5ae12",
+            "stderr": "",
+            "output": {
+              "checks": {
+                "coreProfile": "not-run",
+                "discovery": "not-run",
+                "extensionProfiles": "not-run",
+                "schema": "not-run",
+                "semantic": "not-run"
+              },
+              "command": null,
+              "diagnostics": [
+                {
+                  "code": "NEXFLOW-PROTOTYPE-USAGE",
+                  "file": null,
+                  "keyword": null,
+                  "kind": null,
+                  "message": "Only validate or inspect with an explicit root and supported options are accepted.",
+                  "path": null,
+                  "related": [],
+                  "severity": "error"
+                }
+              ],
+              "executionAuthorized": false,
+              "exitCode": 2,
+              "formatVersion": "0.4-draft",
+              "inputMode": null,
+              "result": null,
+              "success": false,
+              "supportedSpecVersions": [
+                "0.1"
+              ],
+              "tool": {
+                "name": "nexflow-rust-evaluation",
+                "version": "unreleased"
+              },
+              "truncated": false
+            }
+          },
+          {
+            "exitCode": 2,
+            "signal": null,
+            "error": null,
+            "stdoutSha256": "7c5435a91e9d6ff3943945f2c8d1e9a5eb2c9403ca5ea077dfabfe8773c5ae12",
+            "stderr": "",
+            "output": {
+              "checks": {
+                "coreProfile": "not-run",
+                "discovery": "not-run",
+                "extensionProfiles": "not-run",
+                "schema": "not-run",
+                "semantic": "not-run"
+              },
+              "command": null,
+              "diagnostics": [
+                {
+                  "code": "NEXFLOW-PROTOTYPE-USAGE",
+                  "file": null,
+                  "keyword": null,
+                  "kind": null,
+                  "message": "Only validate or inspect with an explicit root and supported options are accepted.",
+                  "path": null,
+                  "related": [],
+                  "severity": "error"
+                }
+              ],
+              "executionAuthorized": false,
+              "exitCode": 2,
+              "formatVersion": "0.4-draft",
+              "inputMode": null,
+              "result": null,
+              "success": false,
+              "supportedSpecVersions": [
+                "0.1"
+              ],
+              "tool": {
+                "name": "nexflow-rust-evaluation",
+                "version": "unreleased"
+              },
+              "truncated": false
+            }
+          }
+        ]
+      },
+      {
+        "id": "reject-ambiguous-project-entry",
+        "errors": [],
+        "attempts": [
+          {
+            "exitCode": 1,
+            "signal": null,
+            "error": null,
+            "stdoutSha256": "767ab9fb8501028c3ce2b3b33f572a6c8f05c9aac2da29154af16c310bf6da17",
+            "stderr": "",
+            "output": {
+              "checks": {
+                "coreProfile": "not-run",
+                "discovery": "failed",
+                "extensionProfiles": "not-run",
+                "schema": "not-run",
+                "semantic": "not-run"
+              },
+              "command": "validate",
+              "diagnostics": [
+                {
+                  "code": "NF-DISCOVERY-MULTIPLE-PROJECTS",
+                  "file": "<input>",
+                  "keyword": null,
+                  "kind": null,
+                  "message": "Selected manifest input does not satisfy discovery policy.",
+                  "path": null,
+                  "related": [],
+                  "severity": "error"
+                }
+              ],
+              "executionAuthorized": false,
+              "exitCode": 1,
+              "formatVersion": "0.4-draft",
+              "inputMode": "directory-project",
+              "result": null,
+              "success": false,
+              "supportedSpecVersions": [
+                "0.1"
+              ],
+              "tool": {
+                "name": "nexflow-rust-evaluation",
+                "version": "unreleased"
+              },
+              "truncated": false
+            }
+          },
+          {
+            "exitCode": 1,
+            "signal": null,
+            "error": null,
+            "stdoutSha256": "767ab9fb8501028c3ce2b3b33f572a6c8f05c9aac2da29154af16c310bf6da17",
+            "stderr": "",
+            "output": {
+              "checks": {
+                "coreProfile": "not-run",
+                "discovery": "failed",
+                "extensionProfiles": "not-run",
+                "schema": "not-run",
+                "semantic": "not-run"
+              },
+              "command": "validate",
+              "diagnostics": [
+                {
+                  "code": "NF-DISCOVERY-MULTIPLE-PROJECTS",
+                  "file": "<input>",
+                  "keyword": null,
+                  "kind": null,
+                  "message": "Selected manifest input does not satisfy discovery policy.",
+                  "path": null,
+                  "related": [],
+                  "severity": "error"
+                }
+              ],
+              "executionAuthorized": false,
+              "exitCode": 1,
+              "formatVersion": "0.4-draft",
+              "inputMode": "directory-project",
+              "result": null,
+              "success": false,
+              "supportedSpecVersions": [
+                "0.1"
+              ],
+              "tool": {
+                "name": "nexflow-rust-evaluation",
+                "version": "unreleased"
+              },
+              "truncated": false
+            }
+          }
+        ]
+      },
+      {
+        "id": "reject-duplicate-root-key",
+        "errors": [],
+        "attempts": [
+          {
+            "exitCode": 1,
+            "signal": null,
+            "error": null,
+            "stdoutSha256": "68ddbd4890af39bd130305b48997f0bab5b4b6cedf8175e953b0d5609eecca99",
+            "stderr": "",
+            "output": {
+              "checks": {
+                "coreProfile": "not-run",
+                "discovery": "failed",
+                "extensionProfiles": "not-run",
+                "schema": "not-run",
+                "semantic": "not-run"
+              },
+              "command": "validate",
+              "diagnostics": [
+                {
+                  "code": "NF-DISCOVERY-NO-PROJECT",
+                  "file": "<input>",
+                  "keyword": null,
+                  "kind": null,
+                  "message": "Selected manifest input does not satisfy discovery policy.",
+                  "path": null,
+                  "related": [],
+                  "severity": "error"
+                },
+                {
+                  "code": "NF-DISCOVERY-UNSAFE-SOURCE",
+                  "file": "project.yaml",
+                  "keyword": null,
+                  "kind": null,
+                  "message": "Selected manifest input does not satisfy discovery policy.",
+                  "path": null,
+                  "related": [],
+                  "severity": "error"
+                }
+              ],
+              "executionAuthorized": false,
+              "exitCode": 1,
+              "formatVersion": "0.4-draft",
+              "inputMode": "directory-project",
+              "result": null,
+              "success": false,
+              "supportedSpecVersions": [
+                "0.1"
+              ],
+              "tool": {
+                "name": "nexflow-rust-evaluation",
+                "version": "unreleased"
+              },
+              "truncated": false
+            }
+          },
+          {
+            "exitCode": 1,
+            "signal": null,
+            "error": null,
+            "stdoutSha256": "68ddbd4890af39bd130305b48997f0bab5b4b6cedf8175e953b0d5609eecca99",
+            "stderr": "",
+            "output": {
+              "checks": {
+                "coreProfile": "not-run",
+                "discovery": "failed",
+                "extensionProfiles": "not-run",
+                "schema": "not-run",
+                "semantic": "not-run"
+              },
+              "command": "validate",
+              "diagnostics": [
+                {
+                  "code": "NF-DISCOVERY-NO-PROJECT",
+                  "file": "<input>",
+                  "keyword": null,
+                  "kind": null,
+                  "message": "Selected manifest input does not satisfy discovery policy.",
+                  "path": null,
+                  "related": [],
+                  "severity": "error"
+                },
+                {
+                  "code": "NF-DISCOVERY-UNSAFE-SOURCE",
+                  "file": "project.yaml",
+                  "keyword": null,
+                  "kind": null,
+                  "message": "Selected manifest input does not satisfy discovery policy.",
+                  "path": null,
+                  "related": [],
+                  "severity": "error"
+                }
+              ],
+              "executionAuthorized": false,
+              "exitCode": 1,
+              "formatVersion": "0.4-draft",
+              "inputMode": "directory-project",
+              "result": null,
+              "success": false,
+              "supportedSpecVersions": [
+                "0.1"
+              ],
+              "tool": {
+                "name": "nexflow-rust-evaluation",
+                "version": "unreleased"
+              },
+              "truncated": false
+            }
+          }
+        ]
+      }
+    ],
+    "networkMode": "OS-denied"
+  },
+  "isolation": {
+    "scope": "OS network denial only; not complete NF-102-04 filesystem/process/credential isolation",
+    "positive": {
+      "exitCode": 0,
+      "output": ""
+    },
+    "denied": {
+      "exitCode": 13,
+      "output": "EPERM\n",
+      "stderr": ""
+    }
+  },
+  "blockers": [
+    "No actual previous evaluation package: upgrade and rollback cannot be verified.",
+    "No permitted project signing/notarization path or certificates."
+  ],
+  "immutability": {
+    "sources": true,
+    "corpus": true
+  },
+  "taskStatus": "blocked",
+  "outcome": "not-ready",
+  "architectureAccepted": false,
+  "uninstall": {
+    "prefixAbsent": true,
+    "outsidePreserved": true,
+    "archivePreserved": true,
+    "runtimePreserved": true
+  },
+  "toolchain": {
+    "node": {
+      "node": "26.12.0",
+      "acorn": "8.19.0",
+      "ada": "4.0.0",
+      "amaro": "1.1.11",
+      "ares": "1.34.8",
+      "brotli": "1.2.0",
+      "cldr": "48.0",
+      "icu": "78.3",
+      "libffi": "3.8.0",
+      "lief": "1.0.0",
+      "llhttp": "9.4.3",
+      "merve": "1.2.2",
+      "modules": "147",
+      "napi": "10",
+      "nbytes": "0.1.4",
+      "ncrypto": "0.0.1",
+      "nghttp2": "1.70.0",
+      "nghttp3": "",
+      "ngtcp2": "",
+      "openssl": "3.5.9",
+      "simdjson": "5.0.3",
+      "simdutf": "7.7.0",
+      "sqlite": "3.54.0",
+      "tz": "2026e",
+      "undici": "8.11.2",
+      "unicode": "17.0",
+      "uv": "1.52.1",
+      "uvwasi": "0.0.23",
+      "v8": "14.6.202.34-node.39",
+      "zlib": "1.3.2.1-motley-456ae73",
+      "zstd": "1.5.7"
+    },
+    "pythonDistribution": {
+      "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20261013/cpython-3.12.15%2B20261013-aarch64-apple-darwin-install_only.tar.gz",
+      "sha256": "ba32036ad8f4c434d97a1ee7feef8b7edc0fac16777639b97e39c74a108e4440",
+      "version": "3.12.15",
+      "verifiedBeforeExtraction": true,
+      "selection": "native exact-version alternative distribution, not fallback to a different interpreter version"
+    },
+    "nativeClosure": "Target-specific versions/architecture/receipts only; do not substitute the older macOS supply-chain binary closure for other target artifacts."
+  },
+  "provisioning": [
+    {
+      "program": "tar",
+      "arguments": [
+        "--version"
+      ],
+      "exitCode": 0,
+      "output": "bsdtar 3.5.3 - libarchive 3.7.4 zlib/1.2.12 liblzma/5.4.3 bz2lib/1.0.8 \n\n"
+    },
+    {
+      "program": "node",
+      "arguments": [
+        "scripts/evaluation-npm-provision.mjs",
+        "<task-tools>/npm"
+      ],
+      "exitCode": 0,
+      "output": "<evaluation-path>/npm/bin\n\n"
+    },
+    {
+      "program": "node",
+      "arguments": [
+        "<task-tools>/npm/bin/npm-cli.js",
+        "ci",
+        "--ignore-scripts",
+        "--no-audit",
+        "--fund=false"
+      ],
+      "exitCode": 0,
+      "output": "\nadded 7 packages in 911ms\n\n"
+    },
+    {
+      "program": "node",
+      "arguments": [
+        "<task-tools>/npm/bin/npm-cli.js",
+        "ci",
+        "--ignore-scripts",
+        "--no-audit",
+        "--fund=false"
+      ],
+      "exitCode": 0,
+      "output": "\nadded 10 packages in 949ms\n\n"
+    },
+    {
+      "program": "python",
+      "arguments": [
+        "-I",
+        "-c",
+        "import sys;print(sys.executable);print('.'.join(map(str,sys.version_info[:3])))"
+      ],
+      "exitCode": 0,
+      "output": "/Library/Frameworks/Python.framework/Versions/3.14/bin/python\n3.14.7\n\n"
+    },
+    {
+      "program": "tar",
+      "arguments": [
+        "-tf",
+        "<task-tools>/python-runtime.tar.gz"
+      ],
+      "exitCode": 0,
+      "output": "thon/lib/tcl9.0/encoding/gb2312-raw.enc\npython/lib/tcl9.0/encoding/gb2312.enc\npython/lib/tcl9.0/encoding/iso2022-jp.enc\npython/lib/tcl9.0/encoding/iso2022-kr.enc\npython/lib/tcl9.0/encoding/iso2022.enc\npython/lib/tcl9.0/encoding/iso8859-1.enc\npython/lib/tcl9.0/encoding/iso8859-10.enc\npython/lib/tcl9.0/encoding/iso8859-11.enc\npython/lib/tcl9.0/encoding/iso8859-13.enc\npython/lib/tcl9.0/encoding/iso8859-14.enc\npython/lib/tcl9.0/encoding/iso8859-15.enc\npython/lib/tcl9.0/encoding/iso8859-16.enc\npython/lib/tcl9.0/encoding/iso8859-2.enc\npython/lib/tcl9.0/encoding/iso8859-3.enc\npython/lib/tcl9.0/encoding/iso8859-4.enc\npython/lib/tcl9.0/encoding/iso8859-5.enc\npython/lib/tcl9.0/encoding/iso8859-6.enc\npython/lib/tcl9.0/encoding/iso8859-7.enc\npython/lib/tcl9.0/encoding/iso8859-8.enc\npython/lib/tcl9.0/encoding/iso8859-9.enc\npython/lib/tcl9.0/encoding/jis0201.enc\npython/lib/tcl9.0/encoding/jis0208.enc\npython/lib/tcl9.0/encoding/jis0212.enc\npython/lib/tcl9.0/encoding/koi8-r.enc\npython/lib/tcl9.0/encoding/koi8-ru.enc\npython/lib/tcl9.0/encoding/koi8-t.enc\npython/lib/tcl9.0/encoding/koi8-u.enc\npython/lib/tcl9.0/encoding/ksc5601.enc\npython/lib/tcl9.0/encoding/macCentEuro.enc\npython/lib/tcl9.0/encoding/macCroatian.enc\npython/lib/tcl9.0/encoding/macCyrillic.enc\npython/lib/tcl9.0/encoding/macDingbats.enc\npython/lib/tcl9.0/encoding/macGreek.enc\npython/lib/tcl9.0/encoding/macIceland.enc\npython/lib/tcl9.0/encoding/macJapan.enc\npython/lib/tcl9.0/encoding/macRoman.enc\npython/lib/tcl9.0/encoding/macRomania.enc\npython/lib/tcl9.0/encoding/macThai.enc\npython/lib/tcl9.0/encoding/macTurkish.enc\npython/lib/tcl9.0/encoding/macUkraine.enc\npython/lib/tcl9.0/encoding/shiftjis.enc\npython/lib/tcl9.0/encoding/symbol.enc\npython/lib/tcl9.0/encoding/tis-620.enc\npython/lib/tcl9.0/foreachline.tcl\npython/lib/tcl9.0/history.tcl\npython/lib/tcl9.0/icu.tcl\npython/lib/tcl9.0/init.tcl\npython/lib/tcl9.0/install.tcl\npython/lib/tcl9.0/opt0.4/optparse.tcl\npython/lib/tcl9.0/opt0.4/pkgIndex.tcl\npython/lib/tcl9.0/package.tcl\npython/lib/tcl9.0/parray.tcl\npython/lib/tcl9.0/readfile.tcl\npython/lib/tcl9.0/safe.tcl\npython/lib/tcl9.0/tclAppInit.c\npython/lib/tcl9.0/tclIndex\npython/lib/tcl9.0/tm.tcl\npython/lib/tcl9.0/word.tcl\npython/lib/tcl9.0/writefile.tcl\npython/lib/tcl9/9.0/http-2.10.2.tm\npython/lib/tcl9/9.0/msgcat-1.7.1.tm\npython/lib/tcl9/9.0/platform-1.1.0.tm\npython/lib/tcl9/9.0/platform/shell-1.1.4.tm\npython/lib/tcl9/9.0/tcltest-2.5.11.tm\npython/lib/thread3.0.6/libtcl9thread3.0.6.dylib\npython/lib/thread3.0.6/libthread3.0.6.dylib\npython/lib/thread3.0.6/pkgIndex.tcl\npython/lib/thread3.0.6/ttrace.tcl\npython/lib/tk9.0/bgerror.tcl\npython/lib/tk9.0/button.tcl\npython/lib/tk9.0/choosedir.tcl\npython/lib/tk9.0/clrpick.tcl\npython/lib/tk9.0/comdlg.tcl\npython/lib/tk9.0/console.tcl\npython/lib/tk9.0/dialog.tcl\npython/lib/tk9.0/entry.tcl\npython/lib/tk9.0/focus.tcl\npython/lib/tk9.0/fontchooser.tcl\npython/lib/tk9.0/iconbadges.tcl\npython/lib/tk9.0/iconlist.tcl\npython/lib/tk9.0/icons.tcl\npython/lib/tk9.0/images/README\npython/lib/tk9.0/images/logo.eps\npython/lib/tk9.0/images/logo100.gif\npython/lib/tk9.0/images/logo64.gif\npython/lib/tk9.0/images/logoLarge.gif\npython/lib/tk9.0/images/logoMed.gif\npython/lib/tk9.0/images/pwrdLogo.eps\npython/lib/tk9.0/images/pwrdLogo100.gif\npython/lib/tk9.0/images/pwrdLogo150.gif\npython/lib/tk9.0/images/pwrdLogo175.gif\npython/lib/tk9.0/images/pwrdLogo200.gif\npython/lib/tk9.0/images/pwrdLogo75.gif\npython/lib/tk9.0/images/tai-ku.gif\npython/lib/tk9.0/listbox.tcl\npython/lib/tk9.0/megawidget.tcl\npython/lib/tk9.0/menu.tcl\npython/lib/tk9.0/mkpsenc.tcl\npython/lib/tk9.0/msgbox.tcl\npython/lib/tk9.0/optMenu.tcl\npython/lib/tk9.0/palette.tcl\npython/lib/tk9.0/panedwindow.tcl\npython/lib/tk9.0/pkgIndex.tcl\npython/lib/tk9.0/print.tcl\npython/lib/tk9.0/safetk.tcl\npython/lib/tk9.0/scale.tcl\npython/lib/tk9.0/scaling.tcl\npython/lib/tk9.0/scrlbar.tcl\npython/lib/tk9.0/spinbox.tcl\npython/lib/tk9.0/systray.tcl\npython/lib/tk9.0/tclIndex\npython/lib/tk9.0/tearoff.tcl\npython/lib/tk9.0/text.tcl\npython/lib/tk9.0/tk.tcl\npython/lib/tk9.0/tkAppInit.c\npython/lib/tk9.0/tkfbox.tcl\npython/lib/tk9.0/ttk/altTheme.tcl\npython/lib/tk9.0/ttk/aquaTheme.tcl\npython/lib/tk9.0/ttk/button.tcl\npython/lib/tk9.0/ttk/clamTheme.tcl\npython/lib/tk9.0/ttk/classicTheme.tcl\npython/lib/tk9.0/ttk/combobox.tcl\npython/lib/tk9.0/ttk/cursors.tcl\npython/lib/tk9.0/ttk/defaults.tcl\npython/lib/tk9.0/ttk/entry.tcl\npython/lib/tk9.0/ttk/fonts.tcl\npython/lib/tk9.0/ttk/menubutton.tcl\npython/lib/tk9.0/ttk/notebook.tcl\npython/lib/tk9.0/ttk/panedwindow.tcl\npython/lib/tk9.0/ttk/progress.tcl\npython/lib/tk9.0/ttk/scale.tcl\npython/lib/tk9.0/ttk/scrollbar.tcl\npython/lib/tk9.0/ttk/sizegrip.tcl\npython/lib/tk9.0/ttk/spinbox.tcl\npython/lib/tk9.0/ttk/treeview.tcl\npython/lib/tk9.0/ttk/ttk.tcl\npython/lib/tk9.0/ttk/utils.tcl\npython/lib/tk9.0/ttk/vistaTheme.tcl\npython/lib/tk9.0/ttk/winTheme.tcl\npython/lib/tk9.0/ttk/xpTheme.tcl\npython/lib/tk9.0/xmfbox.tcl\npython/share/man/man1/python.1\npython/share/man/man1/python3.1\npython/share/man/man1/python3.12.1\n\n"
+    },
+    {
+      "program": "tar",
+      "arguments": [
+        "-xf",
+        "<task-tools>/python-runtime.tar.gz",
+        "-C",
+        "<task-tools>/python-runtime"
+      ],
+      "exitCode": 0,
+      "output": "\n"
+    },
+    {
+      "program": "python3.12",
+      "arguments": [
+        "-I",
+        "-c",
+        "import sys;print(sys.executable);print('.'.join(map(str,sys.version_info[:3])))"
+      ],
+      "exitCode": 0,
+      "output": "<evaluation-path>\n3.12.15\n\n"
+    },
+    {
+      "program": "python3.12",
+      "arguments": [
+        "-I",
+        "scripts/evaluation-python-provision.py",
+        "--venv",
+        "<task-tools>/build-venv",
+        "--wheelhouse",
+        "<task-tools>/wheelhouse",
+        "--provisioner",
+        "<task-tools>/pip"
+      ],
+      "exitCode": 0,
+      "output": "Looking in links: <evaluation-path>/wheelhouse\nProcessing <evaluation-path>/wheelhouse/attrs-26.1.0-py3-none-any.whl (from -r <evaluation-path>/evaluation/prototypes/python/requirements.lock (line 4))\nProcessing <evaluation-path>/wheelhouse/jsonschema-4.26.0-py3-none-any.whl (from -r <evaluation-path>/evaluation/prototypes/python/requirements.lock (line 6))\nProcessing <evaluation-path>/wheelhouse/jsonschema_specifications-2025.9.1-py3-none-any.whl (from -r <evaluation-path>/evaluation/prototypes/python/requirements.lock (line 8))\nProcessing <evaluation-path>/wheelhouse/pyyaml-6.0.3-cp312-cp312-macosx_11_0_arm64.whl (from -r <evaluation-path>/evaluation/prototypes/python/requirements.lock (line 10))\nProcessing <evaluation-path>/wheelhouse/referencing-0.37.0-py3-none-any.whl (from -r <evaluation-path>/evaluation/prototypes/python/requirements.lock (line 83))\nProcessing <evaluation-path>/wheelhouse/rfc3339_validator-0.1.4-py2.py3-none-any.whl (from -r <evaluation-path>/evaluation/prototypes/python/requirements.lock (line 85))\nProcessing <evaluation-path>/wheelhouse/rpds_py-2026.6.3-cp312-cp312-macosx_11_0_arm64.whl (from -r <evaluation-path>/evaluation/prototypes/python/requirements.lock (line 87))\nProcessing <evaluation-path>/wheelhouse/six-1.17.0-py2.py3-none-any.whl (from -r <evaluation-path>/evaluation/prototypes/python/requirements.lock (line 203))\nProcessing <evaluation-path>/wheelhouse/typing_extensions-4.16.0-py3-none-any.whl (from -r <evaluation-path>/evaluation/prototypes/python/requirements.lock (line 205))\nInstalling collected packages: typing_extensions, six, rpds-py, PyYAML, attrs, rfc3339-validator, referencing, jsonschema-specifications, jsonschema\n\nSuccessfully installed PyYAML-6.0.3 attrs-26.1.0 jsonschema-4.26.0 jsonschema-specifications-2025.9.1 referencing-0.37.0 rfc3339-validator-0.1.4 rpds-py-2026.6.3 six-1.17.0 typing_extensions-4.16.0\nNo broken requirements found.\n\n"
+    },
+    {
+      "program": "rustup",
+      "arguments": [
+        "toolchain",
+        "install",
+        "1.99.0",
+        "--profile",
+        "minimal",
+        "--no-self-update"
+      ],
+      "exitCode": 0,
+      "output": "\n  1.99.0-aarch64-apple-darwin installed - rustc 1.99.0 (b940084d7 2026-09-28)\n\n\ninfo: syncing channel updates for 1.99.0-aarch64-apple-darwin\ninfo: latest update on 2026-10-01 for version 1.99.0 (b940084d7 2026-09-28)\ninfo: downloading 3 components\ninfo: self-update is disabled for this build of rustup\ninfo: any updates to rustup will need to be fetched with your system package manager\n"
+    },
+    {
+      "program": "cargo",
+      "arguments": [
+        "+1.99.0",
+        "fetch",
+        "--locked",
+        "--manifest-path",
+        "evaluation/prototypes/rust/Cargo.toml"
+      ],
+      "exitCode": 0,
+      "output": "\n    Updating crates.io index\n Downloading crates ...\n  Downloaded uuid-simd v0.8.0\n  Downloaded scopeguard v1.2.0\n  Downloaded outref v0.5.2\n  Downloaded bit-set v0.8.0\n  Downloaded wasm-bindgen-shared v0.2.129\n  Downloaded borrow-or-share v0.2.4\n  Downloaded foldhash v0.2.0\n  Downloaded vsimd v0.8.0\n  Downloaded strum v0.28.0\n  Downloaded num-rational v0.4.2\n  Downloaded jsonschema-regex v0.58.4\n  Downloaded data-encoding v2.11.1\n  Downloaded hashlink v0.11.1\n  Downloaded redox_syscall v0.5.18\n  Downloaded bytecount v0.6.9\n  Downloaded heck v0.5.0\n  Downloaded windows-link v0.2.1\n  Downloaded ref-cast-impl v1.0.27\n  Downloaded zmij v1.0.23\n  Downloaded num-iter v0.1.46\n  Downloaded rustversion v1.0.23\n  Downloaded multiversion_no_op v1.0.0\n  Downloaded proc-macro2 v1.0.107\n  Downloaded itoa v1.0.18\n  Downloaded unicode-general-category v1.1.0\n  Downloaded percent-encoding v2.3.2\n  Downloaded parking_lot v0.12.5\n  Downloaded smallvec v1.16.2\n  Downloaded equivalent v1.0.2\n  Downloaded wasm-bindgen-macro v0.2.129\n  Downloaded once_cell v1.21.4\n  Downloaded ref-cast v1.0.27\n  Downloaded version_check v0.9.5\n  Downloaded autocfg v1.5.1\n  Downloaded num-cmp v0.1.0\n  Downloaded num-integer v0.1.47\n  Downloaded num v0.4.3\n  Downloaded simdutf8 v0.1.5\n  Downloaded core_detect v1.0.0\n  Downloaded cfg-if v1.0.5\n  Downloaded arraydeque v0.5.1\n  Downloaded serde_core v1.0.229\n  Downloaded quote v1.0.47\n  Downloaded strum_macros v0.28.0\n  Downloaded parking_lot_core v0.9.12\n  Downloaded lock_api v0.4.14\n  Downloaded ahash v0.8.12\n  Downloaded num-complex v0.4.6\n  Downloaded bit-vec v0.8.0\n  Downloaded email_address v0.2.9\n  Downloaded yaml-rust2 v0.11.0\n  Downloaded unicode-ident v1.0.26\n  Downloaded referencing v0.58.4\n  Downloaded bitflags v2.13.2\n  Downloaded getrandom v0.3.4\n  Downloaded wit-bindgen v0.57.1\n  Downloaded r-efi v5.3.0\n  Downloaded num-traits v0.2.19\n  Downloaded serde_derive v1.0.229\n  Downloaded ryu v1.0.23\n  Downloaded micromap v0.3.0\n  Downloaded allocator-api2 v0.2.21\n  Downloaded bumpalo v3.20.3\n  Downloaded fluent-uri v0.4.1\n  Downloaded jsonschema-value v0.58.4\n  Downloaded num-bigint v0.4.8\n  Downloaded wasm-bindgen v0.2.129\n  Downloaded serde v1.0.229\n  Downloaded memchr v2.8.3\n  Downloaded fraction v0.17.0\n  Downloaded hashbrown v0.16.1\n  Downloaded wasm-bindgen-macro-support v0.2.129\n  Downloaded js-sys v0.3.106\n  Downloaded zerocopy-derive v0.8.59\n  Downloaded serde_json v1.0.145\n  Downloaded regex v1.13.1\n  Downloaded hashbrown v0.17.1\n  Downloaded aho-corasick v1.1.5\n  Downloaded wasip2 v1.0.4+wasi-0.2.12\n  Downloaded fancy-regex v0.19.2\n  Downloaded zerocopy v0.8.59\n  Downloaded syn v3.0.6\n  Downloaded syn v2.0.119\n  Downloaded regex-syntax v0.8.11\n  Downloaded encoding_rs v0.8.42\n  Downloaded regex-automata v0.4.18\n  Downloaded jsonschema v0.58.4\n  Downloaded libc v0.2.189\n"
+    },
+    {
+      "program": "go",
+      "arguments": [
+        "version"
+      ],
+      "exitCode": 0,
+      "output": "go version go1.27.2 darwin/arm64\n\n"
+    },
+    {
+      "program": "go",
+      "arguments": [
+        "mod",
+        "download"
+      ],
+      "exitCode": 0,
+      "output": "\n"
+    },
+    {
+      "program": "go",
+      "arguments": [
+        "mod",
+        "verify"
+      ],
+      "exitCode": 0,
+      "output": "all modules verified\n\n"
+    }
+  ]
+}

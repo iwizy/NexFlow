@@ -1,0 +1,62 @@
+{
+  "task": "NF-102-03",
+  "recordedAt": "2026-10-20T10:21:19.256Z",
+  "conclusion": "success",
+  "headSha": "3cbbd1bc02da0768c9c116a18f56dab9a3ef3cb6",
+  "jobs": [
+    {
+      "completedAt": "2026-10-20T10:16:14Z",
+      "conclusion": "success",
+      "jobId": 118573081462,
+      "name": "Current lifecycle (macos/arm64)",
+      "startedAt": "2026-10-20T10:13:08Z",
+      "url": "https://github.com/iwizy/NexFlow/actions/runs/39406341776/job/118573081462"
+    },
+    {
+      "completedAt": "2026-10-20T10:14:47Z",
+      "conclusion": "success",
+      "jobId": 118573081983,
+      "name": "Current lifecycle (linux/amd64)",
+      "startedAt": "2026-10-20T10:13:01Z",
+      "url": "https://github.com/iwizy/NexFlow/actions/runs/39406341776/job/118573081983"
+    },
+    {
+      "completedAt": "2026-10-20T10:20:20Z",
+      "conclusion": "success",
+      "jobId": 118573081989,
+      "name": "Current lifecycle (windows/amd64)",
+      "startedAt": "2026-10-20T10:13:01Z",
+      "url": "https://github.com/iwizy/NexFlow/actions/runs/39406341776/job/118573081989"
+    }
+  ],
+  "runId": 39406341776,
+  "url": "https://github.com/iwizy/NexFlow/actions/runs/39406341776",
+  "artifacts": [
+    {
+      "digest": "sha256:abc1703b67a9cb04520941abc895458060ad84bbb6de2e68c50fcaae7443c512",
+      "expired": false,
+      "expires_at": "2027-01-18T10:12:57Z",
+      "id": 12257950968,
+      "name": "current-native-linux-amd64-3cbbd1bc02da0768c9c116a18f56dab9a3ef3cb6",
+      "size_in_bytes": 15271433
+    },
+    {
+      "digest": "sha256:e3d0f5dd72111f968728f3e86dfbfcfdec0500e79734d9b31ff40ba0ec2177da",
+      "expired": false,
+      "expires_at": "2027-01-18T10:12:57Z",
+      "id": 12257432129,
+      "name": "current-native-macos-arm64-3cbbd1bc02da0768c9c116a18f56dab9a3ef3cb6",
+      "size_in_bytes": 13362942
+    },
+    {
+      "digest": "sha256:c98ffc4a786fb1e915e2d42320a439e9a2f983adc3bf106b96cc92106510306a",
+      "expired": false,
+      "expires_at": "2027-01-18T10:12:57Z",
+      "id": 12257287873,
+      "name": "current-native-windows-amd64-3cbbd1bc02da0768c9c116a18f56dab9a3ef3cb6",
+      "size_in_bytes": 13680032
+    }
+  ],
+  "retentionDays": 90,
+  "scope": "Native observation delivery and exact retained evaluation capsules; not product release, upgrade/rollback, signing or architecture acceptance"
+}

@@ -1,0 +1,34 @@
+{
+  "task": "NF-102-03",
+  "target": "windows/amd64",
+  "collectorRevision": "3cbbd1bc02da0768c9c116a18f56dab9a3ef3cb6",
+  "environment": {
+    "target": "windows/amd64",
+    "platform": "win32",
+    "architecture": "x64",
+    "runnerLabel": "windows-2025",
+    "imageOS": "win25-vs2026",
+    "imageVersion": "20261007.264.1",
+    "osVersion": "10.0.26100",
+    "osBuild": "26100",
+    "osCaption": "Microsoft Windows Server 2025 Datacenter",
+    "kernel": "10.0.26100",
+    "libc": null,
+    "cpuModel": "AMD EPYC 7763 64-Core Processor                ",
+    "cpuCount": 4,
+    "memoryBytes": 17174360064,
+    "translated": false
+  },
+  "environmentSha256": "72f8d6cae67bf64ba11ab2e3063ba9c128e5be03f022b42fb2a10ffb67666534",
+  "beforeAfterIdentical": true,
+  "candidates": [
+    "typescript",
+    "python",
+    "rust",
+    "go"
+  ],
+  "runId": "39406341776",
+  "runAttempt": "1",
+  "allFourInSameNativeJob": true,
+  "architectureAccepted": false
+}

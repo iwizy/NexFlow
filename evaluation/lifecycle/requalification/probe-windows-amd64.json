@@ -1,0 +1,25 @@
+{
+  "target": "windows/amd64",
+  "platform": "win32",
+  "architecture": "x64",
+  "runnerLabel": "windows-2025",
+  "imageOS": "win25-vs2026",
+  "imageVersion": "20261007.264.1",
+  "osVersion": "10.0.26100",
+  "osBuild": "26100",
+  "osCaption": "Microsoft Windows Server 2025 Datacenter",
+  "kernel": "10.0.26100",
+  "libc": null,
+  "cpuModel": "AMD EPYC 9V74 80-Core Processor                ",
+  "cpuCount": 4,
+  "memoryBytes": 17174360064,
+  "translated": false,
+  "cohortCheck": {
+    "fingerprint": "not-matched",
+    "blockers": [
+      "environment-drift:imageVersion",
+      "environment-drift:cpuModel"
+    ],
+    "candidateEvaluation": "not-tested"
+  }
+}

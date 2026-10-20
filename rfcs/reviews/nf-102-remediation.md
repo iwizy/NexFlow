@@ -49,7 +49,17 @@ Authority limit: Explicit 2026-10-15 dependency/toolchain repair and evidence pu
 
 Requalify native target cohorts and artifact lifecycle.
 
-Owner: Alexander Agafonov. Status: planned-blocker. Mandatory gates: 2, 3, 9. Depends on: NF-102-01, NF-102-02.
+Owner: Alexander Agafonov. Status: evidence-collected-acceptance-blocked, see
+[2026-10-20 native evidence](../../evaluation/lifecycle/requalification/README.md).
+Mandatory gates: 2, 3, 9. Depends on: NF-102-01, NF-102-02.
+
+The maintainer approved new common standard native cohorts and publication/merge
+on 2026-10-20, and confirmed no genuine previous packages or permitted signing
+path exist. All twelve repaired evaluation capsules passed build, installation,
+installed Unicode-path validate/inspect and scoped uninstall; Linux/macOS also
+passed network-denied execution. Windows OS network denial, genuine upgrade and
+rollback, and permitted project signing/notarization remain not-tested. The
+original criteria below are unchanged, not waived; NF-102-03 is not complete.
 
 Acceptance evidence:
 
@@ -58,7 +68,10 @@ Acceptance evidence:
 - Verify install, validate/inspect, OS-denied offline use, upgrade, rollback and scoped uninstall using a verified real predecessor artifact where available.
 - Obtain specific permitted signing/notarization and verification authority; missing keys/target access remain blockers, not ownership passes.
 
-Authority limit: Existing approved native environments only; contract changes, repair, signing, credentials and paid resources need their own authority.
+Authority limit: Explicitly approved 2026-10-20 common standard native cohorts,
+bounded provisioning corrections, evidence publication and merge. No project
+signing, borrowed credentials, paid resources, product release or architecture
+acceptance; original historical environment contract remains unchanged.
 
 ## NF-102-04
 

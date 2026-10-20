@@ -1,0 +1,91 @@
+name: Current Native Lifecycle
+on:
+  pull_request:
+    paths:
+      - 'evaluation/lifecycle/requalification/**'
+      - 'scripts/runtime-native-lifecycle*'
+      - 'scripts/lib/native-lifecycle-evidence.mjs'
+      - 'scripts/evaluation-npm-provision.mjs'
+      - 'scripts/evaluation-python-provision.py'
+      - '.github/workflows/native-lifecycle.yml'
+permissions:
+  contents: read
+jobs:
+  lifecycle:
+    name: Current lifecycle (${{ matrix.target }})
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {target: linux/amd64, runner: ubuntu-24.04, artifact: linux-amd64}
+          - {target: macos/arm64, runner: macos-15, artifact: macos-arm64}
+          - {target: windows/amd64, runner: windows-2025, artifact: windows-amd64}
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 30
+    env:
+      GOTOOLCHAIN: local
+      CGO_ENABLED: '0'
+      PYTHONUTF8: '1'
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - name: Preserve exact repository bytes in disposable runner
+        shell: bash
+        run: git config --global core.autocrlf false
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '26.12.0'
+      - name: Reuse unchanged native observations, never relabel their failures
+        id: plan
+        shell: bash
+        run: |
+          node --input-type=module <<'JS'
+          import fs from 'node:fs';
+          import crypto from 'node:crypto';
+          const root='evaluation/lifecycle/requalification/${{ matrix.artifact }}';
+          let collect=true;
+          try {
+            const contract=JSON.parse(fs.readFileSync('evaluation/lifecycle/requalification/contract.json'));
+            const records=['typescript','python','rust','go'].map(id=>JSON.parse(fs.readFileSync(root+'/'+id+'.json')));
+            collect=!records.every(r=>r.sourceRevision===contract.candidateSourceRevision&&r.target==='${{ matrix.target }}'&&[...r.sourceManifest,...r.collectorSources].every(f=>crypto.createHash('sha256').update(fs.readFileSync(f.path)).digest('hex')===f.sha256));
+          } catch {}
+          fs.appendFileSync(process.env.GITHUB_OUTPUT,'collect='+collect+'\n');
+          JS
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1
+        if: steps.plan.outputs.collect == 'true'
+        continue-on-error: true
+        with:
+          python-version: '3.12.15'
+      - uses: actions/setup-go@924ae3a1cded613372ab5595356fb5720e22ba16
+        if: steps.plan.outputs.collect == 'true'
+        continue-on-error: true
+        with:
+          go-version: '1.27.2'
+          cache: false
+      - name: Provision reviewed exact tools and dependency caches separately
+        if: steps.plan.outputs.collect == 'true'
+        shell: bash
+        run: node scripts/runtime-native-lifecycle-provision.mjs "$RUNNER_TEMP/native-tools"
+      - name: Capture one real native cohort and all four candidate lifecycle records
+        if: steps.plan.outputs.collect == 'true'
+        shell: bash
+        run: node scripts/runtime-native-lifecycle-collect.mjs '${{ matrix.target }}' "$RUNNER_TEMP/native-tools/config.json" "$RUNNER_TEMP/native-results"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.plan.outputs.collect == 'true' && always()
+        with:
+          name: current-native-${{ matrix.artifact }}-${{ github.event.pull_request.head.sha }}
+          path: |
+            ${{ runner.temp }}/native-results/*.json
+            ${{ runner.temp }}/native-results/*.tar.gz
+          retention-days: 90
+          if-no-files-found: error
+      - name: Verify preserved native evidence without repeating confirmed runs
+        if: steps.plan.outputs.collect != 'true'
+        shell: bash
+        run: |
+          node scripts/runtime-native-lifecycle-provision.mjs "$RUNNER_TEMP/evidence-tools" --maintenance-only
+          node scripts/runtime-native-lifecycle-smoke.mjs

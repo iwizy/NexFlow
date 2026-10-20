@@ -56,6 +56,12 @@ The [Windows AMD64 lifecycle review](lifecycle/windows/README.md) records native
 capsule build/install/execution results separately from untested offline OS
 denial, previous-artifact upgrade/rollback and signing gates.
 
+The [current NF-102-03 native requalification](lifecycle/requalification/README.md)
+records repaired artifacts for all four candidates on newly approved common
+native cohorts. Installed Unicode-path execution and scoped uninstall passed on
+all three targets; genuine upgrade/rollback, project signing and Windows OS
+network denial remain explicit blockers. Historical lifecycle records are unchanged.
+
 The [cross-target measurement gap record](measurements/README.md) binds all seven
 metrics for four candidates and three targets to exact published lifecycle and
 fidelity evidence. Historical capsule sizes are observations, not comparable

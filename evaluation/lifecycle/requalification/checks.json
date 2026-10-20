@@ -1,0 +1,258 @@
+{
+  "recordedAt": "2026-10-20T10:22:15.351Z",
+  "node": "v26.12.0",
+  "scope": "Local repository/evidence consumer regressions, not native lifecycle acceptance",
+  "nativeRun": "39406341776",
+  "passed": 62,
+  "failed": 0,
+  "results": [
+    {
+      "command": "npm run a2a-extension-smoke",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run agent-definition-authority-smoke",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run agent-identity-schema-smoke",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run approval-gate-target-schema-smoke",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run actor-schema-smoke",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run beta-checkpoint-smoke",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run candidate-readiness-smoke",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run cli-fixture-smoke",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run cli-diagnostics-smoke",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run cli-graph-smoke",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run cli-init-smoke",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run cli-inspection-smoke",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run cli-no-runtime-guardrails-smoke",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run cli-prototype-smoke",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run cli-validation-smoke",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run conformance-claim-smoke",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run core-profile-smoke",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run credential-handling-schema-smoke",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run documentation-navigation-smoke",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run extension-registry-smoke",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run feature-status-registry-smoke",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run github-extension-smoke",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run human-override-schema-smoke",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run issue-tracker-extension-smoke",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run manifest-discovery-smoke",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run mcp-extension-smoke",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run negative-schema-fixtures",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run provider-constraint-schema-smoke",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run provider-feature-schema-smoke",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run runtime-evaluation-smoke",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run runtime-evaluation-environment-smoke",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run runtime-evaluation-library-smoke",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run runtime-toolchain-smoke",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run runtime-python-prototype-smoke",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run runtime-rust-prototype-smoke",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run runtime-go-prototype-smoke",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run runtime-typescript-prototype-smoke",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run runtime-fidelity-smoke",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run runtime-supply-chain-smoke",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run runtime-supply-chain-current-smoke",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run runtime-supply-chain-repaired-smoke",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run runtime-native-lifecycle-smoke",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run runtime-linux-lifecycle-smoke",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run runtime-macos-lifecycle-smoke",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run runtime-windows-lifecycle-smoke",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run runtime-comparable-measurements-smoke",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run runtime-architecture-alternatives-smoke",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run runtime-candidate-report-bundles-smoke",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run runtime-decision-bundle-smoke",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run runtime-reviewer-ownership-smoke",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run single-maintainer-governance-smoke",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run single-maintainer-ownership-smoke",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run runtime-architecture-review-smoke",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run runtime-diagnostics-requalification-smoke",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run runtime-diagnostic-projection-repair-smoke",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run runtime-validation-contract-smoke",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run runtime-isolation-smoke",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run semantic-smoke",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run typed-reference-schema-smoke",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run work-reference-namespace-smoke",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run validate",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run validation-checkpoint-smoke",
+      "exitCode": 0
+    }
+  ]
+}

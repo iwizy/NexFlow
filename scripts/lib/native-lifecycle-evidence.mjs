@@ -1,6 +1,6 @@
 import {digest,baseline,safeRelative,compareOutput} from "./runtime-evaluation.mjs";
 export const nativeCandidates=["typescript","python","rust","go"];
-export const nativeCollectorFiles=["scripts/runtime-native-lifecycle-collect.mjs","scripts/runtime-native-lifecycle-provision.mjs","scripts/lib/native-lifecycle-evidence.mjs","scripts/lib/runtime-evaluation.mjs","scripts/lib/evaluation-environment.mjs","scripts/runtime-evaluation-environment.mjs","scripts/evaluation-npm-provision.mjs","scripts/evaluation-python-provision.py","evaluation/lifecycle/requalification/contract.json",".github/workflows/native-lifecycle.yml"];
+export const nativeCollectorFiles=["scripts/runtime-native-lifecycle-collect.mjs","scripts/runtime-native-lifecycle-provision.mjs","scripts/lib/native-lifecycle-evidence.mjs","scripts/lib/runtime-evaluation.mjs","scripts/lib/evaluation-environment.mjs","scripts/runtime-evaluation-environment.mjs","scripts/evaluation-npm-provision.mjs","scripts/evaluation-python-provision.py","evaluation/lifecycle/requalification/contract.json","evaluation/lifecycle/requalification/python-runtimes.json",".github/workflows/native-lifecycle.yml"];
 export function nativeRecordErrors(record,contract){
  const errors=[],need=(ok,why)=>{if(!ok)errors.push(why);},sha=s=>/^[a-f0-9]{64}$/u.test(s??"");
  need(record?.task==="NF-102-03"&&nativeCandidates.includes(record.candidate),"identity");

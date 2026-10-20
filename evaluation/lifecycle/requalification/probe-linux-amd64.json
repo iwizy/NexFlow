@@ -1,0 +1,24 @@
+{
+  "target": "linux/amd64",
+  "platform": "linux",
+  "architecture": "x64",
+  "runnerLabel": "ubuntu-24.04",
+  "imageOS": "ubuntu24",
+  "imageVersion": "20261012.334.1",
+  "osVersion": "24.04",
+  "osBuild": "6.17.0-1022-azure",
+  "osCaption": "Ubuntu 24.04.5 LTS",
+  "kernel": "6.17.0-1022-azure",
+  "libc": "glibc 2.39",
+  "cpuModel": "AMD EPYC 9V45 96-Core Processor",
+  "cpuCount": 4,
+  "memoryBytes": 16766414848,
+  "translated": false,
+  "cohortCheck": {
+    "fingerprint": "not-matched",
+    "blockers": [
+      "environment-drift:imageVersion"
+    ],
+    "candidateEvaluation": "not-tested"
+  }
+}

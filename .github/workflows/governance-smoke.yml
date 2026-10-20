@@ -43,3 +43,4 @@ jobs:
           npm run runtime-validation-contract-smoke
           npm run runtime-supply-chain-current-smoke
           npm run runtime-supply-chain-repaired-smoke
+          npm run runtime-native-lifecycle-smoke

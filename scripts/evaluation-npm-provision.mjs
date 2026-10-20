@@ -3,7 +3,7 @@
 import assert from "node:assert/strict";
 import { createHash } from "node:crypto";
 import { cpSync, existsSync, mkdirSync, mkdtempSync, readFileSync, writeFileSync, chmodSync } from "node:fs";
-import { dirname, join, resolve } from "node:path";
+import { dirname, join, resolve, delimiter } from "node:path";
 import { tmpdir } from "node:os";
 import { fileURLToPath } from "node:url";
 import { spawnSync } from "node:child_process";
@@ -35,7 +35,8 @@ mkdirSync(target);
 for(const name of ["bin","lib","docs","man","LICENSE","README.md"]) if(existsSync(join(upstream,name))) cpSync(join(upstream,name),join(target,name),{recursive:true});
 for(const name of ["package.json","package-lock.json"]) cpSync(join(source,name),join(target,name));
 for(const name of ["user.npmrc","global.npmrc"]) writeFileSync(join(temporary,name),"");
-const env={PATH:dirname(process.execPath)+":/usr/bin:/bin",LANG:"C",LC_ALL:"C",npm_config_userconfig:join(temporary,"user.npmrc"),npm_config_globalconfig:join(temporary,"global.npmrc"),npm_config_cache:join(temporary,"cache")};
+const system=process.platform==="win32"?{SystemRoot:process.env.SystemRoot,WINDIR:process.env.WINDIR,TEMP:process.env.TEMP,TMP:process.env.TMP}:{};
+const env={...system,PATH:[dirname(process.execPath),...(process.platform==="win32"?[join(process.env.SystemRoot,"System32")]:["/usr/bin","/bin"])].join(delimiter),LANG:"C",LC_ALL:"C",npm_config_userconfig:join(temporary,"user.npmrc"),npm_config_globalconfig:join(temporary,"global.npmrc"),npm_config_cache:join(temporary,"cache")};
 // Do not execute the upstream bundled dependency graph, even for bootstrap.
 // Every archive is trusted only after matching its committed integrity hash.
 let index=0;

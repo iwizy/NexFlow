@@ -120,7 +120,8 @@ def provision(lock, wheelhouse, provisioner, venv, offline=False):
             raise ValueError("wheel not bound to current lock")
     if venv.exists():
         raise ValueError("use a new scoped virtualenv")
-    env = {"PATH": "/usr/bin:/bin", "LANG": "C", "LC_ALL": "C", "PIP_CONFIG_FILE": os.devnull}
+    system = {key: os.environ[key] for key in ("SystemRoot", "WINDIR", "TEMP", "TMP") if key in os.environ} if os.name == "nt" else {}
+    env = {**system, "PATH": os.pathsep.join([str(Path(sys.executable).parent), str(Path(os.environ["SystemRoot"]) / "System32")]) if os.name == "nt" else "/usr/bin:/bin", "LANG": "C", "LC_ALL": "C", "PIP_CONFIG_FILE": os.devnull}
     subprocess.run([sys.executable, "-I", "-m", "venv", "--without-pip", str(venv)], check=True, env=env)
     interpreter = venv / ("Scripts/python.exe" if os.name == "nt" else "bin/python")
     bootstrap = "import sys;sys.path.insert(0,sys.argv.pop(1));from pip._internal.cli.main import main;raise SystemExit(main())"

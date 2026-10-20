@@ -1,0 +1,14 @@
+{
+  "task": "NF-102-03",
+  "candidateSourceRevision": "23e576efd0dda0f00f5462eda9295c1ae4ec8fee",
+  "prerequisiteMainRevision": "388f0720ed1036167ab04554807f138ea5a2e4b6",
+  "historicalEnvironmentContract": "evaluation/environment-contract.json",
+  "approval": "Direct maintainer response on 2026-10-20 approves new common standard ubuntu-24.04, macos-15 and windows-2025 cohorts; original snapshots stay unchanged.",
+  "cohortRule": "One native job and one exact pre-build snapshot per target for all four candidates; recheck snapshot after the group. No cross-target ranking or old/new hardware mixing.",
+  "targets": [{"id":"linux/amd64","runner":"ubuntu-24.04","platform":"linux","architecture":"x64"},{"id":"macos/arm64","runner":"macos-15","platform":"darwin","architecture":"arm64"},{"id":"windows/amd64","runner":"windows-2025","platform":"win32","architecture":"x64"}],
+  "candidates": ["typescript","python","rust","go"],
+  "previousArtifacts": {"status":"unavailable","evidence":"Repository retained artifact catalogue contains no available evaluation capsule; maintainer explicitly confirmed no saved previous packages on 2026-10-20.","replacement":"No second identical package or fabricated release is accepted as upgrade history."},
+  "signing": {"status":"unavailable","authority":"Maintainer confirmed no permitted signing path on 2026-10-20.","allowed":"Read-only existing binary signature inspection only; no keychain/store inventory, certificate borrowing, signing or notarization submission."},
+  "productRelease": false,
+  "architectureAccepted": false
+}

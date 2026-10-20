@@ -1,0 +1,19 @@
+{
+  "task": "NF-102-03",
+  "checkedOn": "2026-10-20",
+  "prerequisites": [
+    {"task":"NF-102-01","pullRequest":120,"head":"f5526e6a88774ac7149c36c06a39b7235cf29ee6","merge":"a3dea0a3de7018e14057a9bc15307325439b500d","state":"MERGED"},
+    {"task":"NF-102-02","pullRequest":122,"head":"179ddcad7129ede51288c62860015ffb67b1b10c","merge":"388f0720ed1036167ab04554807f138ea5a2e4b6","state":"MERGED"}
+  ],
+  "mainRevision": "388f0720ed1036167ab04554807f138ea5a2e4b6",
+  "mainSuccessfulRuns": [38742098773,38742098774,38742098779,38742098902],
+  "preflightProbeRun": 39399146779,
+  "preflightProbeHead": "388f0720ed1036167ab04554807f138ea5a2e4b6",
+  "preflightProbeConclusion": "SUCCESS",
+  "access": "Existing standard public-repository hosted runners; no registered self-hosted runners or new paid resources.",
+  "previousPackageSearch": {"method":"Fresh paginated repository Actions artifact inventory filtered for lifecycle/evaluation capsules, plus direct maintainer confirmation on 2026-10-20","availablePackages":[],"maintainerAnswer":"none"},
+  "signingAuthority": {"status":"unavailable","maintainerAnswer":"none","certificateOrKeyStoreRead":false},
+  "newCohortAuthority": "Explicit direct maintainer approval on 2026-10-20 for new common standard native cohorts, preserving the old environment contract.",
+  "scope": "Readiness and infrastructure access only, not candidate lifecycle/upgrade/signing acceptance.",
+  "architectureAccepted": false
+}

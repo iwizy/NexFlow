@@ -1,0 +1,22 @@
+{
+  "target": "macos/arm64",
+  "platform": "darwin",
+  "architecture": "arm64",
+  "runnerLabel": "macos-15",
+  "imageOS": "macos15",
+  "imageVersion": "20260907.0337.1",
+  "osVersion": "15.7.9",
+  "osBuild": "24G830",
+  "osCaption": "macOS 15.7.9",
+  "kernel": "24.6.0",
+  "libc": null,
+  "cpuModel": "Apple M1 (Virtual)",
+  "cpuCount": 3,
+  "memoryBytes": 7516192768,
+  "translated": false,
+  "cohortCheck": {
+    "fingerprint": "matched",
+    "blockers": [],
+    "candidateEvaluation": "not-tested"
+  }
+}

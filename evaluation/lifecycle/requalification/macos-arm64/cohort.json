@@ -1,7 +1,7 @@
 {
   "task": "NF-102-03",
   "target": "macos/arm64",
-  "collectorRevision": "b7c01f5704851cfd3b6a89a1eb8acd92e38a3694",
+  "collectorRevision": "3cbbd1bc02da0768c9c116a18f56dab9a3ef3cb6",
   "environment": {
     "target": "macos/arm64",
     "platform": "darwin",
@@ -27,7 +27,7 @@
     "rust",
     "go"
   ],
-  "runId": "39404401314",
+  "runId": "39406341776",
   "runAttempt": "1",
   "allFourInSameNativeJob": true,
   "architectureAccepted": false

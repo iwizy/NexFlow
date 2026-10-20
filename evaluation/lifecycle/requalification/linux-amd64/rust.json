@@ -3,7 +3,7 @@
   "candidate": "rust",
   "target": "linux/amd64",
   "sourceRevision": "23e576efd0dda0f00f5462eda9295c1ae4ec8fee",
-  "collectorRevision": "b7c01f5704851cfd3b6a89a1eb8acd92e38a3694",
+  "collectorRevision": "3cbbd1bc02da0768c9c116a18f56dab9a3ef3cb6",
   "collectorSources": [
     {
       "path": "scripts/runtime-native-lifecycle-collect.mjs",
@@ -11,7 +11,7 @@
     },
     {
       "path": "scripts/runtime-native-lifecycle-provision.mjs",
-      "sha256": "d8c1fecdea18d8c46fec6ef85678da9b1a12d50660cb43621551be95e652c263"
+      "sha256": "fb7216c25a861aeea05740e3c990085aa6f9b50ad12063ac3a68147e3e77109b"
     },
     {
       "path": "scripts/lib/native-lifecycle-evidence.mjs",
@@ -47,13 +47,13 @@
     },
     {
       "path": ".github/workflows/native-lifecycle.yml",
-      "sha256": "1b07ffd9f4e728e499966e53087805e6d88e9eadbf0d72af63fef02513a145ba"
+      "sha256": "3e677e6489eac003a98eb296ba7a1c9b9de0fa89123a833ec25491a9aef0449b"
     }
   ],
   "specificationRevision": "1d1fa238ab5729a79bee9389d5c66cfd20a61256",
   "corpusSha256": "01b116005f0650ac980194b22c02188289eaf1e8626b227aecf3684ece0d8f6b",
   "catalogSha256": "f1bf8cb786442a212e14c79eb39279a2cdbf05ec20b09901374359d545d74e90",
-  "recordedAt": "2026-10-20T09:57:56.739Z",
+  "recordedAt": "2026-10-20T10:13:55.150Z",
   "environment": {
     "target": "linux/amd64",
     "platform": "linux",
@@ -66,19 +66,18 @@
     "osCaption": "Ubuntu 24.04.5 LTS",
     "kernel": "7.0.0-1017-azure",
     "libc": "glibc 2.39",
-    "cpuModel": "AMD EPYC 7763 64-Core Processor",
+    "cpuModel": "AMD EPYC 9V45 96-Core Processor",
     "cpuCount": 4,
     "memoryBytes": 16760344576,
     "translated": false
   },
-  "environmentSha256": "6ed3b94d294659953894454e3014043816a70a9cb2ec83284471cd3fefb52df8",
+  "environmentSha256": "1a7b8d42643606fd2ec76685e7412faeb7813873ef9dbdfaaf194c6e9b996051",
   "frozenComparison": {
     "fingerprint": "not-matched",
     "blockers": [
       "environment-drift:imageVersion",
       "environment-drift:osBuild",
       "environment-drift:kernel",
-      "environment-drift:cpuModel",
       "environment-drift:memoryBytes"
     ],
     "candidateEvaluation": "not-tested"
@@ -294,10 +293,10 @@
     }
   },
   "artifact": {
-    "version": "23e576efd0dda0f00f5462eda9295c1ae4ec8fee.linux.amd64.b7c01f5704851cfd3b6a89a1eb8acd92e38a3694",
-    "filename": "rust-23e576efd0dda0f00f5462eda9295c1ae4ec8fee.linux.amd64.b7c01f5704851cfd3b6a89a1eb8acd92e38a3694.tar.gz",
-    "sha256": "6d02afd535bfb226fea240c36d57f416375a74a5c95527ad9d5289e1d98b9ec3",
-    "bytes": 5837477,
+    "version": "23e576efd0dda0f00f5462eda9295c1ae4ec8fee.linux.amd64.3cbbd1bc02da0768c9c116a18f56dab9a3ef3cb6",
+    "filename": "rust-23e576efd0dda0f00f5462eda9295c1ae4ec8fee.linux.amd64.3cbbd1bc02da0768c9c116a18f56dab9a3ef3cb6.tar.gz",
+    "sha256": "f82d4ffacd3c6b4f2a3c8c5fb09ebf234846e7a378e518fab226bac67a07f538",
+    "bytes": 5837762,
     "files": [
       {
         "path": "evaluation/prototypes/rust/bin/library-driver",
@@ -509,7 +508,7 @@
       ],
       "exitCode": 0,
       "stdout": "",
-      "stderr": "   Compiling proc-macro2 v1.0.107\n   Compiling unicode-ident v1.0.26\n   Compiling quote v1.0.47\n   Compiling autocfg v1.5.1\n   Compiling serde_core v1.0.229\n   Compiling cfg-if v1.0.5\n   Compiling libc v0.2.189\n   Compiling num-traits v0.2.19\n   Compiling memchr v2.8.3\n   Compiling syn v3.0.6\n   Compiling serde v1.0.229\n   Compiling num-integer v0.1.47\n   Compiling foldhash v0.2.0\n   Compiling scopeguard v1.2.0\n   Compiling rustversion v1.0.23\n   Compiling version_check v0.9.5\n   Compiling getrandom v0.3.4\n   Compiling zerocopy v0.8.59\n   Compiling ahash v0.8.12\n   Compiling num-bigint v0.4.8\n   Compiling ref-cast v1.0.27\n   Compiling parking_lot_core v0.9.12\n   Compiling serde_json v1.0.145\n   Compiling regex-syntax v0.8.11\n   Compiling serde_derive v1.0.229\n   Compiling num-rational v0.4.2\n   Compiling ref-cast-impl v1.0.27\n   Compiling num-iter v0.1.46\n   Compiling num-complex v0.4.6\n   Compiling aho-corasick v1.1.5\n   Compiling itoa v1.0.18\n   Compiling smallvec v1.16.2\n   Compiling ryu v1.0.23\n   Compiling once_cell v1.21.4\n   Compiling zmij v1.0.23\n   Compiling regex-automata v0.4.18\n   Compiling num v0.4.3\n   Compiling encoding_rs v0.8.42\n   Compiling lock_api v0.4.14\n   Compiling syn v2.0.119\n   Compiling equivalent v1.0.2\n   Compiling bit-vec v0.8.0\n   Compiling allocator-api2 v0.2.21\n   Compiling jsonschema-value v0.58.4\n   Compiling borrow-or-share v0.2.4\n   Compiling unicode-general-category v1.1.0\n   Compiling heck v0.5.0\n   Compiling strum_macros v0.28.0\n   Compiling fluent-uri v0.4.1\n   Compiling hashbrown v0.17.1\n   Compiling bit-set v0.8.0\n   Compiling parking_lot v0.12.5\n   Compiling fraction v0.17.0\n   Compiling hashbrown v0.16.1\n   Compiling core_detect v1.0.0\n   Compiling multiversion_no_op v1.0.0\n   Compiling simdutf8 v0.1.5\n   Compiling percent-encoding v2.3.2\n   Compiling micromap v0.3.0\n   Compiling num-cmp v0.1.0\n   Compiling vsimd v0.8.0\n   Compiling bytecount v0.6.9\n   Compiling outref v0.5.2\n   Compiling hashlink v0.11.1\n   Compiling uuid-simd v0.8.0\n   Compiling referencing v0.58.4\n   Compiling strum v0.28.0\n   Compiling fancy-regex v0.19.2\n   Compiling regex v1.13.1\n   Compiling email_address v0.2.9\n   Compiling jsonschema-regex v0.58.4\n   Compiling data-encoding v2.11.1\n   Compiling arraydeque v0.5.1\n   Compiling yaml-rust2 v0.11.0\n   Compiling jsonschema v0.58.4\n   Compiling nexflow-rust-evaluation v0.0.0 (<evaluation-path>/evaluation/prototypes/rust)\n    Finished `release` profile [optimized] target(s) in 56.23s\n"
+      "stderr": "   Compiling proc-macro2 v1.0.107\n   Compiling quote v1.0.47\n   Compiling unicode-ident v1.0.26\n   Compiling autocfg v1.5.1\n   Compiling serde_core v1.0.229\n   Compiling cfg-if v1.0.5\n   Compiling libc v0.2.189\n   Compiling num-traits v0.2.19\n   Compiling serde v1.0.229\n   Compiling syn v3.0.6\n   Compiling memchr v2.8.3\n   Compiling num-integer v0.1.47\n   Compiling getrandom v0.3.4\n   Compiling zerocopy v0.8.59\n   Compiling foldhash v0.2.0\n   Compiling scopeguard v1.2.0\n   Compiling rustversion v1.0.23\n   Compiling version_check v0.9.5\n   Compiling num-bigint v0.4.8\n   Compiling regex-syntax v0.8.11\n   Compiling ahash v0.8.12\n   Compiling ref-cast v1.0.27\n   Compiling serde_derive v1.0.229\n   Compiling parking_lot_core v0.9.12\n   Compiling serde_json v1.0.145\n   Compiling ref-cast-impl v1.0.27\n   Compiling num-rational v0.4.2\n   Compiling num-iter v0.1.46\n   Compiling aho-corasick v1.1.5\n   Compiling num-complex v0.4.6\n   Compiling zmij v1.0.23\n   Compiling once_cell v1.21.4\n   Compiling itoa v1.0.18\n   Compiling smallvec v1.16.2\n   Compiling ryu v1.0.23\n   Compiling regex-automata v0.4.18\n   Compiling num v0.4.3\n   Compiling encoding_rs v0.8.42\n   Compiling lock_api v0.4.14\n   Compiling syn v2.0.119\n   Compiling heck v0.5.0\n   Compiling equivalent v1.0.2\n   Compiling bit-vec v0.8.0\n   Compiling allocator-api2 v0.2.21\n   Compiling jsonschema-value v0.58.4\n   Compiling borrow-or-share v0.2.4\n   Compiling unicode-general-category v1.1.0\n   Compiling fluent-uri v0.4.1\n   Compiling hashbrown v0.17.1\n   Compiling strum_macros v0.28.0\n   Compiling bit-set v0.8.0\n   Compiling parking_lot v0.12.5\n   Compiling fraction v0.17.0\n   Compiling hashbrown v0.16.1\n   Compiling num-cmp v0.1.0\n   Compiling bytecount v0.6.9\n   Compiling core_detect v1.0.0\n   Compiling vsimd v0.8.0\n   Compiling outref v0.5.2\n   Compiling simdutf8 v0.1.5\n   Compiling multiversion_no_op v1.0.0\n   Compiling percent-encoding v2.3.2\n   Compiling micromap v0.3.0\n   Compiling uuid-simd v0.8.0\n   Compiling referencing v0.58.4\n   Compiling hashlink v0.11.1\n   Compiling strum v0.28.0\n   Compiling fancy-regex v0.19.2\n   Compiling regex v1.13.1\n   Compiling email_address v0.2.9\n   Compiling jsonschema-regex v0.58.4\n   Compiling data-encoding v2.11.1\n   Compiling arraydeque v0.5.1\n   Compiling yaml-rust2 v0.11.0\n   Compiling jsonschema v0.58.4\n   Compiling nexflow-rust-evaluation v0.0.0 (<evaluation-path>/evaluation/prototypes/rust)\n    Finished `release` profile [optimized] target(s) in 37.32s\n"
     }
   ],
   "installation": {
@@ -1878,7 +1877,7 @@
         "--fund=false"
       ],
       "exitCode": 0,
-      "output": "\nadded 7 packages in 668ms\n\n"
+      "output": "\nadded 7 packages in 758ms\n\n"
     },
     {
       "program": "node",
@@ -1890,7 +1889,7 @@
         "--fund=false"
       ],
       "exitCode": 0,
-      "output": "\nadded 10 packages in 745ms\n\n"
+      "output": "\nadded 10 packages in 451ms\n\n"
     },
     {
       "program": "python",
@@ -1940,7 +1939,7 @@
         "evaluation/prototypes/rust/Cargo.toml"
       ],
       "exitCode": 0,
-      "output": "\n    Updating crates.io index\n Downloading crates ...\n  Downloaded multiversion_no_op v1.0.0\n  Downloaded redox_syscall v0.5.18\n  Downloaded cfg-if v1.0.5\n  Downloaded unicode-ident v1.0.26\n  Downloaded scopeguard v1.2.0\n  Downloaded foldhash v0.2.0\n  Downloaded yaml-rust2 v0.11.0\n  Downloaded hashlink v0.11.1\n  Downloaded hashbrown v0.16.1\n  Downloaded simdutf8 v0.1.5\n  Downloaded core_detect v1.0.0\n  Downloaded encoding_rs v0.8.42\n  Downloaded rustversion v1.0.23\n  Downloaded ryu v1.0.23\n  Downloaded jsonschema v0.58.4\n  Downloaded regex-automata v0.4.18\n  Downloaded aho-corasick v1.1.5\n  Downloaded smallvec v1.16.2\n  Downloaded lock_api v0.4.14\n  Downloaded equivalent v1.0.2\n  Downloaded wasm-bindgen-shared v0.2.129\n  Downloaded wasm-bindgen-macro v0.2.129\n  Downloaded vsimd v0.8.0\n  Downloaded heck v0.5.0\n  Downloaded getrandom v0.3.4\n  Downloaded ref-cast-impl v1.0.27\n  Downloaded strum_macros v0.28.0\n  Downloaded strum v0.28.0\n  Downloaded itoa v1.0.18\n  Downloaded num-iter v0.1.46\n  Downloaded bit-set v0.8.0\n  Downloaded outref v0.5.2\n  Downloaded num v0.4.3\n  Downloaded jsonschema-regex v0.58.4\n  Downloaded uuid-simd v0.8.0\n  Downloaded unicode-general-category v1.1.0\n  Downloaded percent-encoding v2.3.2\n  Downloaded windows-link v0.2.1\n  Downloaded bitflags v2.13.2\n  Downloaded micromap v0.3.0\n  Downloaded allocator-api2 v0.2.21\n  Downloaded ref-cast v1.0.27\n  Downloaded borrow-or-share v0.2.4\n  Downloaded version_check v0.9.5\n  Downloaded autocfg v1.5.1\n  Downloaded num-cmp v0.1.0\n  Downloaded zmij v1.0.23\n  Downloaded num-integer v0.1.47\n  Downloaded num-rational v0.4.2\n  Downloaded num-complex v0.4.6\n  Downloaded bytecount v0.6.9\n  Downloaded email_address v0.2.9\n  Downloaded data-encoding v2.11.1\n  Downloaded arraydeque v0.5.1\n  Downloaded serde_core v1.0.229\n  Downloaded quote v1.0.47\n  Downloaded parking_lot_core v0.9.12\n  Downloaded ahash v0.8.12\n  Downloaded num-traits v0.2.19\n  Downloaded serde_derive v1.0.229\n  Downloaded proc-macro2 v1.0.107\n  Downloaded serde v1.0.229\n  Downloaded referencing v0.58.4\n  Downloaded parking_lot v0.12.5\n  Downloaded once_cell v1.21.4\n  Downloaded r-efi v5.3.0\n  Downloaded fluent-uri v0.4.1\n  Downloaded bit-vec v0.8.0\n  Downloaded wasm-bindgen v0.2.129\n  Downloaded wit-bindgen v0.57.1\n  Downloaded serde_json v1.0.145\n  Downloaded wasm-bindgen-macro-support v0.2.129\n  Downloaded jsonschema-value v0.58.4\n  Downloaded num-bigint v0.4.8\n  Downloaded regex v1.13.1\n  Downloaded bumpalo v3.20.3\n  Downloaded js-sys v0.3.106\n  Downloaded fraction v0.17.0\n  Downloaded memchr v2.8.3\n  Downloaded zerocopy-derive v0.8.59\n  Downloaded hashbrown v0.17.1\n  Downloaded wasip2 v1.0.4+wasi-0.2.12\n  Downloaded fancy-regex v0.19.2\n  Downloaded syn v2.0.119\n  Downloaded zerocopy v0.8.59\n  Downloaded syn v3.0.6\n  Downloaded regex-syntax v0.8.11\n  Downloaded libc v0.2.189\n"
+      "output": "\n    Updating crates.io index\n Downloading crates ...\n  Downloaded itoa v1.0.18\n  Downloaded multiversion_no_op v1.0.0\n  Downloaded foldhash v0.2.0\n  Downloaded hashlink v0.11.1\n  Downloaded uuid-simd v0.8.0\n  Downloaded wasm-bindgen-macro v0.2.129\n  Downloaded quote v1.0.47\n  Downloaded outref v0.5.2\n  Downloaded strum v0.28.0\n  Downloaded vsimd v0.8.0\n  Downloaded version_check v0.9.5\n  Downloaded ref-cast-impl v1.0.27\n  Downloaded num-iter v0.1.46\n  Downloaded heck v0.5.0\n  Downloaded ref-cast v1.0.27\n  Downloaded borrow-or-share v0.2.4\n  Downloaded num v0.4.3\n  Downloaded equivalent v1.0.2\n  Downloaded cfg-if v1.0.5\n  Downloaded scopeguard v1.2.0\n  Downloaded percent-encoding v2.3.2\n  Downloaded num-cmp v0.1.0\n  Downloaded wasm-bindgen-shared v0.2.129\n  Downloaded num-integer v0.1.47\n  Downloaded autocfg v1.5.1\n  Downloaded zmij v1.0.23\n  Downloaded data-encoding v2.11.1\n  Downloaded num-rational v0.4.2\n  Downloaded bytecount v0.6.9\n  Downloaded jsonschema-regex v0.58.4\n  Downloaded windows-link v0.2.1\n  Downloaded bit-set v0.8.0\n  Downloaded strum_macros v0.28.0\n  Downloaded bit-vec v0.8.0\n  Downloaded core_detect v1.0.0\n  Downloaded arraydeque v0.5.1\n  Downloaded redox_syscall v0.5.18\n  Downloaded rustversion v1.0.23\n  Downloaded email_address v0.2.9\n  Downloaded num-complex v0.4.6\n  Downloaded unicode-general-category v1.1.0\n  Downloaded lock_api v0.4.14\n  Downloaded simdutf8 v0.1.5\n  Downloaded once_cell v1.21.4\n  Downloaded smallvec v1.16.2\n  Downloaded parking_lot v0.12.5\n  Downloaded unicode-ident v1.0.26\n  Downloaded parking_lot_core v0.9.12\n  Downloaded ahash v0.8.12\n  Downloaded getrandom v0.3.4\n  Downloaded num-traits v0.2.19\n  Downloaded proc-macro2 v1.0.107\n  Downloaded bitflags v2.13.2\n  Downloaded fluent-uri v0.4.1\n  Downloaded serde v1.0.229\n  Downloaded micromap v0.3.0\n  Downloaded wit-bindgen v0.57.1\n  Downloaded serde_core v1.0.229\n  Downloaded allocator-api2 v0.2.21\n  Downloaded r-efi v5.3.0\n  Downloaded ryu v1.0.23\n  Downloaded yaml-rust2 v0.11.0\n  Downloaded referencing v0.58.4\n  Downloaded wasm-bindgen v0.2.129\n  Downloaded jsonschema-value v0.58.4\n  Downloaded serde_derive v1.0.229\n  Downloaded bumpalo v3.20.3\n  Downloaded memchr v2.8.3\n  Downloaded js-sys v0.3.106\n  Downloaded num-bigint v0.4.8\n  Downloaded fraction v0.17.0\n  Downloaded wasm-bindgen-macro-support v0.2.129\n  Downloaded zerocopy-derive v0.8.59\n  Downloaded hashbrown v0.16.1\n  Downloaded wasip2 v1.0.4+wasi-0.2.12\n  Downloaded hashbrown v0.17.1\n  Downloaded serde_json v1.0.145\n  Downloaded aho-corasick v1.1.5\n  Downloaded regex v1.13.1\n  Downloaded fancy-regex v0.19.2\n  Downloaded zerocopy v0.8.59\n  Downloaded syn v3.0.6\n  Downloaded syn v2.0.119\n  Downloaded regex-syntax v0.8.11\n  Downloaded encoding_rs v0.8.42\n  Downloaded regex-automata v0.4.18\n  Downloaded libc v0.2.189\n  Downloaded jsonschema v0.58.4\n"
     },
     {
       "program": "go",

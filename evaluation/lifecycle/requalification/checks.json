@@ -1,7 +1,8 @@
 {
-  "recordedAt": "2026-10-20T10:10:02.102Z",
+  "recordedAt": "2026-10-20T10:22:15.351Z",
   "node": "v26.12.0",
   "scope": "Local repository/evidence consumer regressions, not native lifecycle acceptance",
+  "nativeRun": "39406341776",
   "passed": 62,
   "failed": 0,
   "results": [

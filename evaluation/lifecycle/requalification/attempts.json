@@ -46,8 +46,15 @@
     "head": "11eaadbc5d715cc6e1898d3ff64dbf294453774c",
     "result": "The retained-record consumer path failed on all three fresh runners before validation: ERR_MODULE_NOT_FOUND for ajv. Actual native observations from run 39404401314 remain valid at their original producer revision.",
     "correction": "Provision the same pinned maintenance-only dependency graph before reading stored evidence. Never fetch candidate build tools or relabel observation results in the consumer path.",
+    "cleanCheckoutCheck": "Corrected maintenance-only mode passed in a fresh local native macOS checkout with exact Node 26.12.0: pinned dependencies loaded and the retained Windows Python record validated; no candidate tools or builds requested. This checks the consumer path, not Windows target compatibility.",
     "followup": "Changed producer/workflow hashes require fresh source-bound native observations, then final consumer CI. The integration failure is retained, not ignored for merge."
   },
   "noFabricatedPredecessor": true,
+  "sourceBoundRefresh": {
+    "runId": 39406341776,
+    "head": "3cbbd1bc02da0768c9c116a18f56dab9a3ef3cb6",
+    "collectorCI": "success",
+    "result": "Fresh observations after the maintenance-only consumer correction; all twelve actual package/install/CLI/uninstall combinations and Linux/macOS OS-denied execution passed. Archives independently reverified. Genuine predecessor, project signing and Windows OS denial remain missing; no architecture acceptance."
+  },
   "architectureAccepted": false
 }

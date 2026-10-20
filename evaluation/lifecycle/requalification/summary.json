@@ -1,8 +1,8 @@
 {
   "task": "NF-102-03",
-  "recordedAt": "2026-10-20T10:04:56.423Z",
+  "recordedAt": "2026-10-20T10:20:44.346Z",
   "sourceRevision": "23e576efd0dda0f00f5462eda9295c1ae4ec8fee",
-  "nativeRun": "39404401314",
+  "nativeRun": "39406341776",
   "taskStatus": "blocked",
   "originalAcceptanceCriteriaSatisfied": false,
   "technicalAcceptanceRequirementsWaived": false,
@@ -43,8 +43,8 @@
     {
       "target": "linux/amd64",
       "candidate": "typescript",
-      "collectorRevision": "b7c01f5704851cfd3b6a89a1eb8acd92e38a3694",
-      "environmentSha256": "6ed3b94d294659953894454e3014043816a70a9cb2ec83284471cd3fefb52df8",
+      "collectorRevision": "3cbbd1bc02da0768c9c116a18f56dab9a3ef3cb6",
+      "environmentSha256": "1a7b8d42643606fd2ec76685e7412faeb7813873ef9dbdfaaf194c6e9b996051",
       "stages": {
         "build": "passed",
         "package": "passed",
@@ -60,8 +60,8 @@
       "cases": 11,
       "failedCases": [],
       "artifact": {
-        "filename": "typescript-23e576efd0dda0f00f5462eda9295c1ae4ec8fee.linux.amd64.b7c01f5704851cfd3b6a89a1eb8acd92e38a3694.tar.gz",
-        "sha256": "aa94aa8218ca282756ee4b82dc2c1581fe45c35cc6a1ee76e46722d0d8ae27ed"
+        "filename": "typescript-23e576efd0dda0f00f5462eda9295c1ae4ec8fee.linux.amd64.3cbbd1bc02da0768c9c116a18f56dab9a3ef3cb6.tar.gz",
+        "sha256": "822a4f1b080cbe337b271831387a3f6c8f64a9e36b5353b703e9b224a09ccadb"
       },
       "blockers": [
         "No actual previous evaluation package: upgrade and rollback cannot be verified.",
@@ -71,8 +71,8 @@
     {
       "target": "linux/amd64",
       "candidate": "python",
-      "collectorRevision": "b7c01f5704851cfd3b6a89a1eb8acd92e38a3694",
-      "environmentSha256": "6ed3b94d294659953894454e3014043816a70a9cb2ec83284471cd3fefb52df8",
+      "collectorRevision": "3cbbd1bc02da0768c9c116a18f56dab9a3ef3cb6",
+      "environmentSha256": "1a7b8d42643606fd2ec76685e7412faeb7813873ef9dbdfaaf194c6e9b996051",
       "stages": {
         "build": "passed",
         "package": "passed",
@@ -88,8 +88,8 @@
       "cases": 11,
       "failedCases": [],
       "artifact": {
-        "filename": "python-23e576efd0dda0f00f5462eda9295c1ae4ec8fee.linux.amd64.b7c01f5704851cfd3b6a89a1eb8acd92e38a3694.tar.gz",
-        "sha256": "cb701102cc0b39208afe355461043f2325d2311386847fad0515d9221657bb1f"
+        "filename": "python-23e576efd0dda0f00f5462eda9295c1ae4ec8fee.linux.amd64.3cbbd1bc02da0768c9c116a18f56dab9a3ef3cb6.tar.gz",
+        "sha256": "0843edd594806f923c2c1c5f0cd343939f8ab4354adddb945413c31f2e806e3f"
       },
       "blockers": [
         "No actual previous evaluation package: upgrade and rollback cannot be verified.",
@@ -99,8 +99,8 @@
     {
       "target": "linux/amd64",
       "candidate": "rust",
-      "collectorRevision": "b7c01f5704851cfd3b6a89a1eb8acd92e38a3694",
-      "environmentSha256": "6ed3b94d294659953894454e3014043816a70a9cb2ec83284471cd3fefb52df8",
+      "collectorRevision": "3cbbd1bc02da0768c9c116a18f56dab9a3ef3cb6",
+      "environmentSha256": "1a7b8d42643606fd2ec76685e7412faeb7813873ef9dbdfaaf194c6e9b996051",
       "stages": {
         "build": "passed",
         "package": "passed",
@@ -116,8 +116,8 @@
       "cases": 11,
       "failedCases": [],
       "artifact": {
-        "filename": "rust-23e576efd0dda0f00f5462eda9295c1ae4ec8fee.linux.amd64.b7c01f5704851cfd3b6a89a1eb8acd92e38a3694.tar.gz",
-        "sha256": "6d02afd535bfb226fea240c36d57f416375a74a5c95527ad9d5289e1d98b9ec3"
+        "filename": "rust-23e576efd0dda0f00f5462eda9295c1ae4ec8fee.linux.amd64.3cbbd1bc02da0768c9c116a18f56dab9a3ef3cb6.tar.gz",
+        "sha256": "f82d4ffacd3c6b4f2a3c8c5fb09ebf234846e7a378e518fab226bac67a07f538"
       },
       "blockers": [
         "No actual previous evaluation package: upgrade and rollback cannot be verified.",
@@ -127,8 +127,8 @@
     {
       "target": "linux/amd64",
       "candidate": "go",
-      "collectorRevision": "b7c01f5704851cfd3b6a89a1eb8acd92e38a3694",
-      "environmentSha256": "6ed3b94d294659953894454e3014043816a70a9cb2ec83284471cd3fefb52df8",
+      "collectorRevision": "3cbbd1bc02da0768c9c116a18f56dab9a3ef3cb6",
+      "environmentSha256": "1a7b8d42643606fd2ec76685e7412faeb7813873ef9dbdfaaf194c6e9b996051",
       "stages": {
         "build": "passed",
         "package": "passed",
@@ -144,8 +144,8 @@
       "cases": 11,
       "failedCases": [],
       "artifact": {
-        "filename": "go-23e576efd0dda0f00f5462eda9295c1ae4ec8fee.linux.amd64.b7c01f5704851cfd3b6a89a1eb8acd92e38a3694.tar.gz",
-        "sha256": "a45cb0a2e96b029e17571fa094c56028ea1f14e867c99fe9068f081c56af5331"
+        "filename": "go-23e576efd0dda0f00f5462eda9295c1ae4ec8fee.linux.amd64.3cbbd1bc02da0768c9c116a18f56dab9a3ef3cb6.tar.gz",
+        "sha256": "63864943f91308df78b803759f6e2deb9325ad5805699329d668cd8c835264ed"
       },
       "blockers": [
         "No actual previous evaluation package: upgrade and rollback cannot be verified.",
@@ -155,7 +155,7 @@
     {
       "target": "macos/arm64",
       "candidate": "typescript",
-      "collectorRevision": "b7c01f5704851cfd3b6a89a1eb8acd92e38a3694",
+      "collectorRevision": "3cbbd1bc02da0768c9c116a18f56dab9a3ef3cb6",
       "environmentSha256": "918a3e08c60e5a4a72340fcff7e350511ed68aa0123e00737490d008a8d65d81",
       "stages": {
         "build": "passed",
@@ -172,8 +172,8 @@
       "cases": 11,
       "failedCases": [],
       "artifact": {
-        "filename": "typescript-23e576efd0dda0f00f5462eda9295c1ae4ec8fee.macos.arm64.b7c01f5704851cfd3b6a89a1eb8acd92e38a3694.tar.gz",
-        "sha256": "f8d85ff3196952b989c5a49de0208a2950ef721b49bd64da4d47a4a953efe8c7"
+        "filename": "typescript-23e576efd0dda0f00f5462eda9295c1ae4ec8fee.macos.arm64.3cbbd1bc02da0768c9c116a18f56dab9a3ef3cb6.tar.gz",
+        "sha256": "b62a4ddd01f664e993b280452671267c15ce4d87dcec02bf9e70db7bac30d0e2"
       },
       "blockers": [
         "No actual previous evaluation package: upgrade and rollback cannot be verified.",
@@ -183,7 +183,7 @@
     {
       "target": "macos/arm64",
       "candidate": "python",
-      "collectorRevision": "b7c01f5704851cfd3b6a89a1eb8acd92e38a3694",
+      "collectorRevision": "3cbbd1bc02da0768c9c116a18f56dab9a3ef3cb6",
       "environmentSha256": "918a3e08c60e5a4a72340fcff7e350511ed68aa0123e00737490d008a8d65d81",
       "stages": {
         "build": "passed",
@@ -200,8 +200,8 @@
       "cases": 11,
       "failedCases": [],
       "artifact": {
-        "filename": "python-23e576efd0dda0f00f5462eda9295c1ae4ec8fee.macos.arm64.b7c01f5704851cfd3b6a89a1eb8acd92e38a3694.tar.gz",
-        "sha256": "01973d5439fb7b98255f59f88f54e97d1fa9ff3231862ecccc9edaf5856e8eae"
+        "filename": "python-23e576efd0dda0f00f5462eda9295c1ae4ec8fee.macos.arm64.3cbbd1bc02da0768c9c116a18f56dab9a3ef3cb6.tar.gz",
+        "sha256": "3fb29ad9312d429e61397478d9cafbc313319926a0e0820dac4eee6d510deef5"
       },
       "blockers": [
         "No actual previous evaluation package: upgrade and rollback cannot be verified.",
@@ -211,7 +211,7 @@
     {
       "target": "macos/arm64",
       "candidate": "rust",
-      "collectorRevision": "b7c01f5704851cfd3b6a89a1eb8acd92e38a3694",
+      "collectorRevision": "3cbbd1bc02da0768c9c116a18f56dab9a3ef3cb6",
       "environmentSha256": "918a3e08c60e5a4a72340fcff7e350511ed68aa0123e00737490d008a8d65d81",
       "stages": {
         "build": "passed",
@@ -228,8 +228,8 @@
       "cases": 11,
       "failedCases": [],
       "artifact": {
-        "filename": "rust-23e576efd0dda0f00f5462eda9295c1ae4ec8fee.macos.arm64.b7c01f5704851cfd3b6a89a1eb8acd92e38a3694.tar.gz",
-        "sha256": "599c8c1601a90edf2330a18b237d908abcf3ba39b355e071cfda13426bcf3983"
+        "filename": "rust-23e576efd0dda0f00f5462eda9295c1ae4ec8fee.macos.arm64.3cbbd1bc02da0768c9c116a18f56dab9a3ef3cb6.tar.gz",
+        "sha256": "cea61a30b72a5d0e951f19d369d88cc2de59501d221ae5d6210dd0286d0bf293"
       },
       "blockers": [
         "No actual previous evaluation package: upgrade and rollback cannot be verified.",
@@ -239,7 +239,7 @@
     {
       "target": "macos/arm64",
       "candidate": "go",
-      "collectorRevision": "b7c01f5704851cfd3b6a89a1eb8acd92e38a3694",
+      "collectorRevision": "3cbbd1bc02da0768c9c116a18f56dab9a3ef3cb6",
       "environmentSha256": "918a3e08c60e5a4a72340fcff7e350511ed68aa0123e00737490d008a8d65d81",
       "stages": {
         "build": "passed",
@@ -256,8 +256,8 @@
       "cases": 11,
       "failedCases": [],
       "artifact": {
-        "filename": "go-23e576efd0dda0f00f5462eda9295c1ae4ec8fee.macos.arm64.b7c01f5704851cfd3b6a89a1eb8acd92e38a3694.tar.gz",
-        "sha256": "e11e894b195df85c05a982a3a929237b1a294def5db9ec9ee3493c4fc1cfd58f"
+        "filename": "go-23e576efd0dda0f00f5462eda9295c1ae4ec8fee.macos.arm64.3cbbd1bc02da0768c9c116a18f56dab9a3ef3cb6.tar.gz",
+        "sha256": "10afb2fcf988347bbd97fe9cc2fe4e2c4444c7846dd84496e8f969b9151efaf6"
       },
       "blockers": [
         "No actual previous evaluation package: upgrade and rollback cannot be verified.",
@@ -267,8 +267,8 @@
     {
       "target": "windows/amd64",
       "candidate": "typescript",
-      "collectorRevision": "b7c01f5704851cfd3b6a89a1eb8acd92e38a3694",
-      "environmentSha256": "c69fe6903411cdbb85ee3eb9819ac63096b2cacb2e672fefa9af9005af5894bd",
+      "collectorRevision": "3cbbd1bc02da0768c9c116a18f56dab9a3ef3cb6",
+      "environmentSha256": "72f8d6cae67bf64ba11ab2e3063ba9c128e5be03f022b42fb2a10ffb67666534",
       "stages": {
         "build": "passed",
         "package": "passed",
@@ -284,8 +284,8 @@
       "cases": 11,
       "failedCases": [],
       "artifact": {
-        "filename": "typescript-23e576efd0dda0f00f5462eda9295c1ae4ec8fee.windows.amd64.b7c01f5704851cfd3b6a89a1eb8acd92e38a3694.tar.gz",
-        "sha256": "29f194cfbcfe9b18dcd5c954cf6e0501370f2f0c1e3b82a93e3ac71c1dd84ada"
+        "filename": "typescript-23e576efd0dda0f00f5462eda9295c1ae4ec8fee.windows.amd64.3cbbd1bc02da0768c9c116a18f56dab9a3ef3cb6.tar.gz",
+        "sha256": "f0ffdf3bb2500bbd4baf1b607947b345ab80126fe9ba571df19aecb71d11e641"
       },
       "blockers": [
         "No actual previous evaluation package: upgrade and rollback cannot be verified.",
@@ -296,8 +296,8 @@
     {
       "target": "windows/amd64",
       "candidate": "python",
-      "collectorRevision": "b7c01f5704851cfd3b6a89a1eb8acd92e38a3694",
-      "environmentSha256": "c69fe6903411cdbb85ee3eb9819ac63096b2cacb2e672fefa9af9005af5894bd",
+      "collectorRevision": "3cbbd1bc02da0768c9c116a18f56dab9a3ef3cb6",
+      "environmentSha256": "72f8d6cae67bf64ba11ab2e3063ba9c128e5be03f022b42fb2a10ffb67666534",
       "stages": {
         "build": "passed",
         "package": "passed",
@@ -313,8 +313,8 @@
       "cases": 11,
       "failedCases": [],
       "artifact": {
-        "filename": "python-23e576efd0dda0f00f5462eda9295c1ae4ec8fee.windows.amd64.b7c01f5704851cfd3b6a89a1eb8acd92e38a3694.tar.gz",
-        "sha256": "ab5e94c6fa473a2b291bb46c1d0a07b713b81c92b2455b453e64374fb5024c64"
+        "filename": "python-23e576efd0dda0f00f5462eda9295c1ae4ec8fee.windows.amd64.3cbbd1bc02da0768c9c116a18f56dab9a3ef3cb6.tar.gz",
+        "sha256": "42b529cd9c2cd556761a3fe384d11597daee04632022b62f8c069610f5abaeba"
       },
       "blockers": [
         "No actual previous evaluation package: upgrade and rollback cannot be verified.",
@@ -325,8 +325,8 @@
     {
       "target": "windows/amd64",
       "candidate": "rust",
-      "collectorRevision": "b7c01f5704851cfd3b6a89a1eb8acd92e38a3694",
-      "environmentSha256": "c69fe6903411cdbb85ee3eb9819ac63096b2cacb2e672fefa9af9005af5894bd",
+      "collectorRevision": "3cbbd1bc02da0768c9c116a18f56dab9a3ef3cb6",
+      "environmentSha256": "72f8d6cae67bf64ba11ab2e3063ba9c128e5be03f022b42fb2a10ffb67666534",
       "stages": {
         "build": "passed",
         "package": "passed",
@@ -342,8 +342,8 @@
       "cases": 11,
       "failedCases": [],
       "artifact": {
-        "filename": "rust-23e576efd0dda0f00f5462eda9295c1ae4ec8fee.windows.amd64.b7c01f5704851cfd3b6a89a1eb8acd92e38a3694.tar.gz",
-        "sha256": "595bb657b6c3a85926e877ba96c357b2e1027f0f94e09d6adac1a8163d63f518"
+        "filename": "rust-23e576efd0dda0f00f5462eda9295c1ae4ec8fee.windows.amd64.3cbbd1bc02da0768c9c116a18f56dab9a3ef3cb6.tar.gz",
+        "sha256": "ff0ef70df4184681a78d855fe0ad7577938ee2edca3de8c430f822f2505273ef"
       },
       "blockers": [
         "No actual previous evaluation package: upgrade and rollback cannot be verified.",
@@ -354,8 +354,8 @@
     {
       "target": "windows/amd64",
       "candidate": "go",
-      "collectorRevision": "b7c01f5704851cfd3b6a89a1eb8acd92e38a3694",
-      "environmentSha256": "c69fe6903411cdbb85ee3eb9819ac63096b2cacb2e672fefa9af9005af5894bd",
+      "collectorRevision": "3cbbd1bc02da0768c9c116a18f56dab9a3ef3cb6",
+      "environmentSha256": "72f8d6cae67bf64ba11ab2e3063ba9c128e5be03f022b42fb2a10ffb67666534",
       "stages": {
         "build": "passed",
         "package": "passed",
@@ -371,8 +371,8 @@
       "cases": 11,
       "failedCases": [],
       "artifact": {
-        "filename": "go-23e576efd0dda0f00f5462eda9295c1ae4ec8fee.windows.amd64.b7c01f5704851cfd3b6a89a1eb8acd92e38a3694.tar.gz",
-        "sha256": "1b4c9c5a6775561e44ed546a83af9ae3f1a4ae1f0fb954fc9fa9c44a935cb649"
+        "filename": "go-23e576efd0dda0f00f5462eda9295c1ae4ec8fee.windows.amd64.3cbbd1bc02da0768c9c116a18f56dab9a3ef3cb6.tar.gz",
+        "sha256": "505ac527464ad8784ee6daa72bf2cdab5e260d3f4dcc5bee53b7eda0d360432c"
       },
       "blockers": [
         "No actual previous evaluation package: upgrade and rollback cannot be verified.",
@@ -385,7 +385,7 @@
     "days": 90,
     "scope": "Current evaluation capsules, not product releases or a fabricated prior version"
   },
-  "collectorRevision": "b7c01f5704851cfd3b6a89a1eb8acd92e38a3694",
+  "collectorRevision": "3cbbd1bc02da0768c9c116a18f56dab9a3ef3cb6",
   "collectorSources": [
     {
       "path": "scripts/runtime-native-lifecycle-import.mjs",

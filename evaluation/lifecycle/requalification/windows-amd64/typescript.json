@@ -3,7 +3,7 @@
   "candidate": "typescript",
   "target": "windows/amd64",
   "sourceRevision": "23e576efd0dda0f00f5462eda9295c1ae4ec8fee",
-  "collectorRevision": "b7c01f5704851cfd3b6a89a1eb8acd92e38a3694",
+  "collectorRevision": "3cbbd1bc02da0768c9c116a18f56dab9a3ef3cb6",
   "collectorSources": [
     {
       "path": "scripts/runtime-native-lifecycle-collect.mjs",
@@ -11,7 +11,7 @@
     },
     {
       "path": "scripts/runtime-native-lifecycle-provision.mjs",
-      "sha256": "d8c1fecdea18d8c46fec6ef85678da9b1a12d50660cb43621551be95e652c263"
+      "sha256": "fb7216c25a861aeea05740e3c990085aa6f9b50ad12063ac3a68147e3e77109b"
     },
     {
       "path": "scripts/lib/native-lifecycle-evidence.mjs",
@@ -47,13 +47,13 @@
     },
     {
       "path": ".github/workflows/native-lifecycle.yml",
-      "sha256": "1b07ffd9f4e728e499966e53087805e6d88e9eadbf0d72af63fef02513a145ba"
+      "sha256": "3e677e6489eac003a98eb296ba7a1c9b9de0fa89123a833ec25491a9aef0449b"
     }
   ],
   "specificationRevision": "1d1fa238ab5729a79bee9389d5c66cfd20a61256",
   "corpusSha256": "01b116005f0650ac980194b22c02188289eaf1e8626b227aecf3684ece0d8f6b",
   "catalogSha256": "f1bf8cb786442a212e14c79eb39279a2cdbf05ec20b09901374359d545d74e90",
-  "recordedAt": "2026-10-20T09:58:33.666Z",
+  "recordedAt": "2026-10-20T10:14:45.790Z",
   "environment": {
     "target": "windows/amd64",
     "platform": "win32",
@@ -68,15 +68,14 @@
     "libc": null,
     "cpuModel": "AMD EPYC 7763 64-Core Processor                ",
     "cpuCount": 4,
-    "memoryBytes": 17178693632,
+    "memoryBytes": 17174360064,
     "translated": false
   },
-  "environmentSha256": "c69fe6903411cdbb85ee3eb9819ac63096b2cacb2e672fefa9af9005af5894bd",
+  "environmentSha256": "72f8d6cae67bf64ba11ab2e3063ba9c128e5be03f022b42fb2a10ffb67666534",
   "frozenComparison": {
     "fingerprint": "not-matched",
     "blockers": [
-      "environment-drift:imageVersion",
-      "environment-drift:memoryBytes"
+      "environment-drift:imageVersion"
     ],
     "candidateEvaluation": "not-tested"
   },
@@ -295,10 +294,10 @@
     }
   },
   "artifact": {
-    "version": "23e576efd0dda0f00f5462eda9295c1ae4ec8fee.windows.amd64.b7c01f5704851cfd3b6a89a1eb8acd92e38a3694",
-    "filename": "typescript-23e576efd0dda0f00f5462eda9295c1ae4ec8fee.windows.amd64.b7c01f5704851cfd3b6a89a1eb8acd92e38a3694.tar.gz",
-    "sha256": "29f194cfbcfe9b18dcd5c954cf6e0501370f2f0c1e3b82a93e3ac71c1dd84ada",
-    "bytes": 501938,
+    "version": "23e576efd0dda0f00f5462eda9295c1ae4ec8fee.windows.amd64.3cbbd1bc02da0768c9c116a18f56dab9a3ef3cb6",
+    "filename": "typescript-23e576efd0dda0f00f5462eda9295c1ae4ec8fee.windows.amd64.3cbbd1bc02da0768c9c116a18f56dab9a3ef3cb6.tar.gz",
+    "sha256": "f0ffdf3bb2500bbd4baf1b607947b345ab80126fe9ba571df19aecb71d11e641",
+    "bytes": 501864,
     "files": [
       {
         "path": "evaluation/prototypes/typescript/dist/cli.d.ts",
@@ -5923,7 +5922,7 @@
         "--fund=false"
       ],
       "exitCode": 0,
-      "output": "\nadded 7 packages in 1s\n\n"
+      "output": "\nadded 7 packages in 2s\n\n"
     },
     {
       "program": "node.exe",
@@ -6015,7 +6014,7 @@
         "evaluation/prototypes/rust/Cargo.toml"
       ],
       "exitCode": 0,
-      "output": "\n    Updating crates.io index\n Downloading crates ...\n  Downloaded quote v1.0.47\n  Downloaded version_check v0.9.5\n  Downloaded yaml-rust2 v0.11.0\n  Downloaded simdutf8 v0.1.5\n  Downloaded proc-macro2 v1.0.107\n  Downloaded multiversion_no_op v1.0.0\n  Downloaded unicode-ident v1.0.26\n  Downloaded ryu v1.0.23\n  Downloaded hashbrown v0.16.1\n  Downloaded rustversion v1.0.23\n  Downloaded unicode-general-category v1.1.0\n  Downloaded encoding_rs v0.8.42\n  Downloaded serde_derive v1.0.229\n  Downloaded foldhash v0.2.0\n  Downloaded hashlink v0.11.1\n  Downloaded outref v0.5.2\n  Downloaded uuid-simd v0.8.0\n  Downloaded strum v0.28.0\n  Downloaded strum_macros v0.28.0\n  Downloaded fluent-uri v0.4.1\n  Downloaded bumpalo v3.20.3\n  Downloaded data-encoding v2.11.1\n  Downloaded scopeguard v1.2.0\n  Downloaded serde_core v1.0.229\n  Downloaded syn v3.0.6\n  Downloaded vsimd v0.8.0\n  Downloaded itoa v1.0.18\n  Downloaded percent-encoding v2.3.2\n  Downloaded ref-cast v1.0.27\n  Downloaded jsonschema-regex v0.58.4\n  Downloaded heck v0.5.0\n  Downloaded wasm-bindgen-shared v0.2.129\n  Downloaded num-rational v0.4.2\n  Downloaded num-iter v0.1.46\n  Downloaded syn v2.0.119\n  Downloaded zmij v1.0.23\n  Downloaded ahash v0.8.12\n  Downloaded wasm-bindgen-macro v0.2.129\n  Downloaded num-traits v0.2.19\n  Downloaded equivalent v1.0.2\n  Downloaded num-complex v0.4.6\n  Downloaded getrandom v0.3.4\n  Downloaded core_detect v1.0.0\n  Downloaded borrow-or-share v0.2.4\n  Downloaded num-cmp v0.1.0\n  Downloaded windows-link v0.2.1\n  Downloaded cfg-if v1.0.5\n  Downloaded serde v1.0.229\n  Downloaded ref-cast-impl v1.0.27\n  Downloaded num v0.4.3\n  Downloaded bit-set v0.8.0\n  Downloaded bit-vec v0.8.0\n  Downloaded email_address v0.2.9\n  Downloaded arraydeque v0.5.1\n  Downloaded parking_lot v0.12.5\n  Downloaded smallvec v1.16.2\n  Downloaded bitflags v2.13.2\n  Downloaded lock_api v0.4.14\n  Downloaded wit-bindgen v0.57.1\n  Downloaded js-sys v0.3.106\n  Downloaded autocfg v1.5.1\n  Downloaded num-integer v0.1.47\n  Downloaded bytecount v0.6.9\n  Downloaded parking_lot_core v0.9.12\n  Downloaded redox_syscall v0.5.18\n  Downloaded micromap v0.3.0\n  Downloaded allocator-api2 v0.2.21\n  Downloaded once_cell v1.21.4\n  Downloaded wasip2 v1.0.4+wasi-0.2.12\n  Downloaded r-efi v5.3.0\n  Downloaded memchr v2.8.3\n  Downloaded referencing v0.58.4\n  Downloaded jsonschema-value v0.58.4\n  Downloaded num-bigint v0.4.8\n  Downloaded wasm-bindgen v0.2.129\n  Downloaded fraction v0.17.0\n  Downloaded wasm-bindgen-macro-support v0.2.129\n  Downloaded zerocopy-derive v0.8.59\n  Downloaded serde_json v1.0.145\n  Downloaded regex v1.13.1\n  Downloaded aho-corasick v1.1.5\n  Downloaded hashbrown v0.17.1\n  Downloaded fancy-regex v0.19.2\n  Downloaded zerocopy v0.8.59\n  Downloaded regex-syntax v0.8.11\n  Downloaded jsonschema v0.58.4\n  Downloaded regex-automata v0.4.18\n  Downloaded libc v0.2.189\n"
+      "output": "\n    Updating crates.io index\n Downloading crates ...\n  Downloaded multiversion_no_op v1.0.0\n  Downloaded scopeguard v1.2.0\n  Downloaded outref v0.5.2\n  Downloaded rustversion v1.0.23\n  Downloaded cfg-if v1.0.5\n  Downloaded hashlink v0.11.1\n  Downloaded foldhash v0.2.0\n  Downloaded simdutf8 v0.1.5\n  Downloaded arraydeque v0.5.1\n  Downloaded itoa v1.0.18\n  Downloaded uuid-simd v0.8.0\n  Downloaded yaml-rust2 v0.11.0\n  Downloaded core_detect v1.0.0\n  Downloaded serde_core v1.0.229\n  Downloaded serde_derive v1.0.229\n  Downloaded unicode-ident v1.0.26\n  Downloaded serde v1.0.229\n  Downloaded ryu v1.0.23\n  Downloaded vsimd v0.8.0\n  Downloaded unicode-general-category v1.1.0\n  Downloaded hashbrown v0.16.1\n  Downloaded serde_json v1.0.145\n  Downloaded memchr v2.8.3\n  Downloaded windows-link v0.2.1\n  Downloaded lock_api v0.4.14\n  Downloaded wasm-bindgen-macro v0.2.129\n  Downloaded strum_macros v0.28.0\n  Downloaded micromap v0.3.0\n  Downloaded percent-encoding v2.3.2\n  Downloaded parking_lot_core v0.9.12\n  Downloaded equivalent v1.0.2\n  Downloaded ref-cast v1.0.27\n  Downloaded version_check v0.9.5\n  Downloaded num-cmp v0.1.0\n  Downloaded num-iter v0.1.46\n  Downloaded allocator-api2 v0.2.21\n  Downloaded redox_syscall v0.5.18\n  Downloaded num v0.4.3\n  Downloaded bit-vec v0.8.0\n  Downloaded ref-cast-impl v1.0.27\n  Downloaded borrow-or-share v0.2.4\n  Downloaded bit-set v0.8.0\n  Downloaded heck v0.5.0\n  Downloaded wasm-bindgen-shared v0.2.129\n  Downloaded strum v0.28.0\n  Downloaded referencing v0.58.4\n  Downloaded zmij v1.0.23\n  Downloaded num-rational v0.4.2\n  Downloaded num-complex v0.4.6\n  Downloaded data-encoding v2.11.1\n  Downloaded quote v1.0.47\n  Downloaded bytecount v0.6.9\n  Downloaded jsonschema-regex v0.58.4\n  Downloaded email_address v0.2.9\n  Downloaded num-integer v0.1.47\n  Downloaded bitflags v2.13.2\n  Downloaded once_cell v1.21.4\n  Downloaded r-efi v5.3.0\n  Downloaded ahash v0.8.12\n  Downloaded autocfg v1.5.1\n  Downloaded proc-macro2 v1.0.107\n  Downloaded parking_lot v0.12.5\n  Downloaded smallvec v1.16.2\n  Downloaded getrandom v0.3.4\n  Downloaded wasm-bindgen v0.2.129\n  Downloaded num-traits v0.2.19\n  Downloaded syn v3.0.6\n  Downloaded fluent-uri v0.4.1\n  Downloaded wit-bindgen v0.57.1\n  Downloaded wasm-bindgen-macro-support v0.2.129\n  Downloaded jsonschema-value v0.58.4\n  Downloaded js-sys v0.3.106\n  Downloaded hashbrown v0.17.1\n  Downloaded bumpalo v3.20.3\n  Downloaded fraction v0.17.0\n  Downloaded num-bigint v0.4.8\n  Downloaded regex v1.13.1\n  Downloaded wasip2 v1.0.4+wasi-0.2.12\n  Downloaded aho-corasick v1.1.5\n  Downloaded zerocopy-derive v0.8.59\n  Downloaded syn v2.0.119\n  Downloaded fancy-regex v0.19.2\n  Downloaded zerocopy v0.8.59\n  Downloaded encoding_rs v0.8.42\n  Downloaded regex-syntax v0.8.11\n  Downloaded regex-automata v0.4.18\n  Downloaded jsonschema v0.58.4\n  Downloaded libc v0.2.189\n"
     },
     {
       "program": "go",

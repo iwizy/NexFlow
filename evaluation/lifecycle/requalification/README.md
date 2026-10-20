@@ -90,8 +90,8 @@ NF-102-03 remains open until its original criteria are actually satisfied.
 
 ## Observed Results On 2026-10-20
 
-The [native run](https://github.com/iwizy/NexFlow/actions/runs/39404401314)
-captured collector revision `b7c01f5704851cfd3b6a89a1eb8acd92e38a3694`.
+The [native run](https://github.com/iwizy/NexFlow/actions/runs/39406341776)
+captured collector revision `3cbbd1bc02da0768c9c116a18f56dab9a3ef3cb6`.
 The [summary](summary.json) retains each original criterion and candidate result;
 [runner receipts](runner-receipts.json) bind exact job/artifact IDs and expiry.
 
@@ -125,3 +125,5 @@ are required. `runtime-native-lifecycle-import.mjs` independently verifies every
 retained capsule's hash, size and extracted file inventory before recording it.
 Unchanged source-bound native records are reused rather than rerun just because
 an evidence document or PR integration commit changed.
+The reuse path first provisions the same pinned maintenance-only dependency
+graph in its fresh checkout; it does not provision or rebuild candidate tools.

@@ -1,60 +1,60 @@
 {
   "task": "NF-102-03",
-  "recordedAt": "2026-10-20T10:09:20.482Z",
+  "recordedAt": "2026-10-20T10:21:19.256Z",
   "conclusion": "success",
-  "headSha": "b7c01f5704851cfd3b6a89a1eb8acd92e38a3694",
+  "headSha": "3cbbd1bc02da0768c9c116a18f56dab9a3ef3cb6",
   "jobs": [
     {
-      "completedAt": "2026-10-20T09:59:09Z",
+      "completedAt": "2026-10-20T10:16:14Z",
       "conclusion": "success",
-      "jobId": 118566696598,
-      "name": "Current lifecycle (linux/amd64)",
-      "startedAt": "2026-10-20T09:57:04Z",
-      "url": "https://github.com/iwizy/NexFlow/actions/runs/39404401314/job/118566696598"
-    },
-    {
-      "completedAt": "2026-10-20T09:58:54Z",
-      "conclusion": "success",
-      "jobId": 118566696709,
+      "jobId": 118573081462,
       "name": "Current lifecycle (macos/arm64)",
-      "startedAt": "2026-10-20T09:57:07Z",
-      "url": "https://github.com/iwizy/NexFlow/actions/runs/39404401314/job/118566696709"
+      "startedAt": "2026-10-20T10:13:08Z",
+      "url": "https://github.com/iwizy/NexFlow/actions/runs/39406341776/job/118573081462"
     },
     {
-      "completedAt": "2026-10-20T10:04:06Z",
+      "completedAt": "2026-10-20T10:14:47Z",
       "conclusion": "success",
-      "jobId": 118566697001,
+      "jobId": 118573081983,
+      "name": "Current lifecycle (linux/amd64)",
+      "startedAt": "2026-10-20T10:13:01Z",
+      "url": "https://github.com/iwizy/NexFlow/actions/runs/39406341776/job/118573081983"
+    },
+    {
+      "completedAt": "2026-10-20T10:20:20Z",
+      "conclusion": "success",
+      "jobId": 118573081989,
       "name": "Current lifecycle (windows/amd64)",
-      "startedAt": "2026-10-20T09:57:04Z",
-      "url": "https://github.com/iwizy/NexFlow/actions/runs/39404401314/job/118566697001"
+      "startedAt": "2026-10-20T10:13:01Z",
+      "url": "https://github.com/iwizy/NexFlow/actions/runs/39406341776/job/118573081989"
     }
   ],
-  "runId": 39404401314,
-  "url": "https://github.com/iwizy/NexFlow/actions/runs/39404401314",
+  "runId": 39406341776,
+  "url": "https://github.com/iwizy/NexFlow/actions/runs/39406341776",
   "artifacts": [
     {
-      "digest": "sha256:8f4cd452e0c9e201f1d16794db884373979fa01c0fc3f32cdb44e3a4fc69550d",
+      "digest": "sha256:abc1703b67a9cb04520941abc895458060ad84bbb6de2e68c50fcaae7443c512",
       "expired": false,
-      "expires_at": "2027-01-18T09:57:01Z",
-      "id": 12256304191,
-      "name": "current-native-linux-amd64-b7c01f5704851cfd3b6a89a1eb8acd92e38a3694",
-      "size_in_bytes": 15271580
+      "expires_at": "2027-01-18T10:12:57Z",
+      "id": 12257950968,
+      "name": "current-native-linux-amd64-3cbbd1bc02da0768c9c116a18f56dab9a3ef3cb6",
+      "size_in_bytes": 15271433
     },
     {
-      "digest": "sha256:8c75157e1ab1a512550a245fa8f98f23bdfac16c594d619d4d25b8868248a032",
+      "digest": "sha256:e3d0f5dd72111f968728f3e86dfbfcfdec0500e79734d9b31ff40ba0ec2177da",
       "expired": false,
-      "expires_at": "2027-01-18T09:57:01Z",
-      "id": 12256114969,
-      "name": "current-native-windows-amd64-b7c01f5704851cfd3b6a89a1eb8acd92e38a3694",
-      "size_in_bytes": 13680963
+      "expires_at": "2027-01-18T10:12:57Z",
+      "id": 12257432129,
+      "name": "current-native-macos-arm64-3cbbd1bc02da0768c9c116a18f56dab9a3ef3cb6",
+      "size_in_bytes": 13362942
     },
     {
-      "digest": "sha256:838ae195cec5255c0fe59f0a39812cc270139ee5785407a9135ef3044078eecc",
+      "digest": "sha256:c98ffc4a786fb1e915e2d42320a439e9a2f983adc3bf106b96cc92106510306a",
       "expired": false,
-      "expires_at": "2027-01-18T09:57:01Z",
-      "id": 12255378671,
-      "name": "current-native-macos-arm64-b7c01f5704851cfd3b6a89a1eb8acd92e38a3694",
-      "size_in_bytes": 13362505
+      "expires_at": "2027-01-18T10:12:57Z",
+      "id": 12257287873,
+      "name": "current-native-windows-amd64-3cbbd1bc02da0768c9c116a18f56dab9a3ef3cb6",
+      "size_in_bytes": 13680032
     }
   ],
   "retentionDays": 90,

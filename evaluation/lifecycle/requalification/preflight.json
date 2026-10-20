@@ -12,7 +12,7 @@
   "preflightProbeConclusion": "SUCCESS",
   "access": "Existing standard public-repository hosted runners; no registered self-hosted runners or new paid resources.",
   "previousPackageSearch": {"method":"Fresh paginated repository Actions artifact inventory filtered for lifecycle/evaluation capsules, plus direct maintainer confirmation on 2026-10-20","availablePackages":[],"maintainerAnswer":"none"},
-  "signingAuthority": {"status":"unavailable","maintainerAnswer":"none","certificateOrKeyStoreRead":false},
+  "signingAuthority": {"status":"unavailable","maintainerAnswer":"none","certificateOrKeyStoreEnumerated":false},
   "newCohortAuthority": "Explicit direct maintainer approval on 2026-10-20 for new common standard native cohorts, preserving the old environment contract.",
   "scope": "Readiness and infrastructure access only, not candidate lifecycle/upgrade/signing acceptance.",
   "architectureAccepted": false

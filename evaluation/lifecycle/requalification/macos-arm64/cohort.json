@@ -1,0 +1,34 @@
+{
+  "task": "NF-102-03",
+  "target": "macos/arm64",
+  "collectorRevision": "b7c01f5704851cfd3b6a89a1eb8acd92e38a3694",
+  "environment": {
+    "target": "macos/arm64",
+    "platform": "darwin",
+    "architecture": "arm64",
+    "runnerLabel": "macos-15",
+    "imageOS": "macos15",
+    "imageVersion": "20260907.0337.1",
+    "osVersion": "15.7.9",
+    "osBuild": "24G830",
+    "osCaption": "macOS 15.7.9",
+    "kernel": "24.6.0",
+    "libc": null,
+    "cpuModel": "Apple M1 (Virtual)",
+    "cpuCount": 3,
+    "memoryBytes": 7516192768,
+    "translated": false
+  },
+  "environmentSha256": "918a3e08c60e5a4a72340fcff7e350511ed68aa0123e00737490d008a8d65d81",
+  "beforeAfterIdentical": true,
+  "candidates": [
+    "typescript",
+    "python",
+    "rust",
+    "go"
+  ],
+  "runId": "39404401314",
+  "runAttempt": "1",
+  "allFourInSameNativeJob": true,
+  "architectureAccepted": false
+}

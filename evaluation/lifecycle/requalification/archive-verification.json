@@ -1,0 +1,100 @@
+{
+  "task": "NF-102-03",
+  "recordedAt": "2026-10-20T10:04:56.417Z",
+  "collectorRevision": "b7c01f5704851cfd3b6a89a1eb8acd92e38a3694",
+  "runId": "39404401314",
+  "results": [
+    {
+      "target": "linux/amd64",
+      "candidate": "typescript",
+      "archiveSha256": "aa94aa8218ca282756ee4b82dc2c1581fe45c35cc6a1ee76e46722d0d8ae27ed",
+      "files": 845,
+      "passed": true
+    },
+    {
+      "target": "linux/amd64",
+      "candidate": "python",
+      "archiveSha256": "cb701102cc0b39208afe355461043f2325d2311386847fad0515d9221657bb1f",
+      "files": 47,
+      "passed": true
+    },
+    {
+      "target": "linux/amd64",
+      "candidate": "rust",
+      "archiveSha256": "6d02afd535bfb226fea240c36d57f416375a74a5c95527ad9d5289e1d98b9ec3",
+      "files": 37,
+      "passed": true
+    },
+    {
+      "target": "linux/amd64",
+      "candidate": "go",
+      "archiveSha256": "a45cb0a2e96b029e17571fa094c56028ea1f14e867c99fe9068f081c56af5331",
+      "files": 40,
+      "passed": true
+    },
+    {
+      "target": "macos/arm64",
+      "candidate": "typescript",
+      "archiveSha256": "f8d85ff3196952b989c5a49de0208a2950ef721b49bd64da4d47a4a953efe8c7",
+      "files": 845,
+      "passed": true
+    },
+    {
+      "target": "macos/arm64",
+      "candidate": "python",
+      "archiveSha256": "01973d5439fb7b98255f59f88f54e97d1fa9ff3231862ecccc9edaf5856e8eae",
+      "files": 47,
+      "passed": true
+    },
+    {
+      "target": "macos/arm64",
+      "candidate": "rust",
+      "archiveSha256": "599c8c1601a90edf2330a18b237d908abcf3ba39b355e071cfda13426bcf3983",
+      "files": 37,
+      "passed": true
+    },
+    {
+      "target": "macos/arm64",
+      "candidate": "go",
+      "archiveSha256": "e11e894b195df85c05a982a3a929237b1a294def5db9ec9ee3493c4fc1cfd58f",
+      "files": 40,
+      "passed": true
+    },
+    {
+      "target": "windows/amd64",
+      "candidate": "typescript",
+      "archiveSha256": "29f194cfbcfe9b18dcd5c954cf6e0501370f2f0c1e3b82a93e3ac71c1dd84ada",
+      "files": 845,
+      "passed": true
+    },
+    {
+      "target": "windows/amd64",
+      "candidate": "python",
+      "archiveSha256": "ab5e94c6fa473a2b291bb46c1d0a07b713b81c92b2455b453e64374fb5024c64",
+      "files": 47,
+      "passed": true
+    },
+    {
+      "target": "windows/amd64",
+      "candidate": "rust",
+      "archiveSha256": "595bb657b6c3a85926e877ba96c357b2e1027f0f94e09d6adac1a8163d63f518",
+      "files": 37,
+      "passed": true
+    },
+    {
+      "target": "windows/amd64",
+      "candidate": "go",
+      "archiveSha256": "1b4c9c5a6775561e44ed546a83af9ae3f1a4ae1f0fb954fc9fa9c44a935cb649",
+      "files": 40,
+      "passed": true
+    }
+  ],
+  "failed": 0,
+  "scope": "Exact archive bytes and all regular files independently extracted/hashed; no product/signing/upgrade acceptance",
+  "collectorSources": [
+    {
+      "path": "scripts/runtime-native-lifecycle-import.mjs",
+      "sha256": "eb43139d47ae0743f6fcab633d15d3f5dcdb2e4beb0029c69eb2f18359f6ed58"
+    }
+  ]
+}

@@ -1,0 +1,395 @@
+{
+  "task": "NF-102-03",
+  "recordedAt": "2026-10-20T10:04:56.423Z",
+  "sourceRevision": "23e576efd0dda0f00f5462eda9295c1ae4ec8fee",
+  "nativeRun": "39404401314",
+  "taskStatus": "blocked",
+  "originalAcceptanceCriteriaSatisfied": false,
+  "technicalAcceptanceRequirementsWaived": false,
+  "architectureStatus": "Draft",
+  "architectureAccepted": false,
+  "originalCriteria": [
+    {
+      "criterion": "One exact approved common native cohort per target",
+      "status": "passed",
+      "evidence": [
+        "linux-amd64/cohort.json",
+        "macos-arm64/cohort.json",
+        "windows-amd64/cohort.json"
+      ]
+    },
+    {
+      "criterion": "Revision-versioned repaired artifacts, Windows interpreter/Unicode paths and Rust relocation on each target",
+      "status": "passed",
+      "evidence": [
+        "archive-verification.json",
+        "linux-amd64/<candidate>.json",
+        "macos-arm64/<candidate>.json",
+        "windows-amd64/<candidate>.json"
+      ]
+    },
+    {
+      "criterion": "Install, validate/inspect, OS-denied offline use, genuine upgrade/rollback and scoped uninstall",
+      "status": "blocked",
+      "reason": "No genuine previous evaluation package; upgrade/rollback are not-tested. Target-specific offline or execution failures remain explicit."
+    },
+    {
+      "criterion": "Specific permitted signing/notarization and verification authority",
+      "status": "blocked",
+      "reason": "Maintainer confirmed no permitted project signing path; existing/ad-hoc/upstream signatures do not satisfy it."
+    }
+  ],
+  "results": [
+    {
+      "target": "linux/amd64",
+      "candidate": "typescript",
+      "collectorRevision": "b7c01f5704851cfd3b6a89a1eb8acd92e38a3694",
+      "environmentSha256": "6ed3b94d294659953894454e3014043816a70a9cb2ec83284471cd3fefb52df8",
+      "stages": {
+        "build": "passed",
+        "package": "passed",
+        "install": "passed",
+        "validateInspect": "passed",
+        "offlineUse": "passed",
+        "uninstall": "passed",
+        "upgrade": "not-tested",
+        "rollback": "not-tested",
+        "signing": "not-tested",
+        "notarization": "not-tested"
+      },
+      "cases": 11,
+      "failedCases": [],
+      "artifact": {
+        "filename": "typescript-23e576efd0dda0f00f5462eda9295c1ae4ec8fee.linux.amd64.b7c01f5704851cfd3b6a89a1eb8acd92e38a3694.tar.gz",
+        "sha256": "aa94aa8218ca282756ee4b82dc2c1581fe45c35cc6a1ee76e46722d0d8ae27ed"
+      },
+      "blockers": [
+        "No actual previous evaluation package: upgrade and rollback cannot be verified.",
+        "No permitted project signing/notarization path or certificates."
+      ]
+    },
+    {
+      "target": "linux/amd64",
+      "candidate": "python",
+      "collectorRevision": "b7c01f5704851cfd3b6a89a1eb8acd92e38a3694",
+      "environmentSha256": "6ed3b94d294659953894454e3014043816a70a9cb2ec83284471cd3fefb52df8",
+      "stages": {
+        "build": "passed",
+        "package": "passed",
+        "install": "passed",
+        "validateInspect": "passed",
+        "offlineUse": "passed",
+        "uninstall": "passed",
+        "upgrade": "not-tested",
+        "rollback": "not-tested",
+        "signing": "not-tested",
+        "notarization": "not-tested"
+      },
+      "cases": 11,
+      "failedCases": [],
+      "artifact": {
+        "filename": "python-23e576efd0dda0f00f5462eda9295c1ae4ec8fee.linux.amd64.b7c01f5704851cfd3b6a89a1eb8acd92e38a3694.tar.gz",
+        "sha256": "cb701102cc0b39208afe355461043f2325d2311386847fad0515d9221657bb1f"
+      },
+      "blockers": [
+        "No actual previous evaluation package: upgrade and rollback cannot be verified.",
+        "No permitted project signing/notarization path or certificates."
+      ]
+    },
+    {
+      "target": "linux/amd64",
+      "candidate": "rust",
+      "collectorRevision": "b7c01f5704851cfd3b6a89a1eb8acd92e38a3694",
+      "environmentSha256": "6ed3b94d294659953894454e3014043816a70a9cb2ec83284471cd3fefb52df8",
+      "stages": {
+        "build": "passed",
+        "package": "passed",
+        "install": "passed",
+        "validateInspect": "passed",
+        "offlineUse": "passed",
+        "uninstall": "passed",
+        "upgrade": "not-tested",
+        "rollback": "not-tested",
+        "signing": "not-tested",
+        "notarization": "not-tested"
+      },
+      "cases": 11,
+      "failedCases": [],
+      "artifact": {
+        "filename": "rust-23e576efd0dda0f00f5462eda9295c1ae4ec8fee.linux.amd64.b7c01f5704851cfd3b6a89a1eb8acd92e38a3694.tar.gz",
+        "sha256": "6d02afd535bfb226fea240c36d57f416375a74a5c95527ad9d5289e1d98b9ec3"
+      },
+      "blockers": [
+        "No actual previous evaluation package: upgrade and rollback cannot be verified.",
+        "No permitted project signing/notarization path or certificates."
+      ]
+    },
+    {
+      "target": "linux/amd64",
+      "candidate": "go",
+      "collectorRevision": "b7c01f5704851cfd3b6a89a1eb8acd92e38a3694",
+      "environmentSha256": "6ed3b94d294659953894454e3014043816a70a9cb2ec83284471cd3fefb52df8",
+      "stages": {
+        "build": "passed",
+        "package": "passed",
+        "install": "passed",
+        "validateInspect": "passed",
+        "offlineUse": "passed",
+        "uninstall": "passed",
+        "upgrade": "not-tested",
+        "rollback": "not-tested",
+        "signing": "not-tested",
+        "notarization": "not-tested"
+      },
+      "cases": 11,
+      "failedCases": [],
+      "artifact": {
+        "filename": "go-23e576efd0dda0f00f5462eda9295c1ae4ec8fee.linux.amd64.b7c01f5704851cfd3b6a89a1eb8acd92e38a3694.tar.gz",
+        "sha256": "a45cb0a2e96b029e17571fa094c56028ea1f14e867c99fe9068f081c56af5331"
+      },
+      "blockers": [
+        "No actual previous evaluation package: upgrade and rollback cannot be verified.",
+        "No permitted project signing/notarization path or certificates."
+      ]
+    },
+    {
+      "target": "macos/arm64",
+      "candidate": "typescript",
+      "collectorRevision": "b7c01f5704851cfd3b6a89a1eb8acd92e38a3694",
+      "environmentSha256": "918a3e08c60e5a4a72340fcff7e350511ed68aa0123e00737490d008a8d65d81",
+      "stages": {
+        "build": "passed",
+        "package": "passed",
+        "install": "passed",
+        "validateInspect": "passed",
+        "offlineUse": "passed",
+        "uninstall": "passed",
+        "upgrade": "not-tested",
+        "rollback": "not-tested",
+        "signing": "not-tested",
+        "notarization": "not-tested"
+      },
+      "cases": 11,
+      "failedCases": [],
+      "artifact": {
+        "filename": "typescript-23e576efd0dda0f00f5462eda9295c1ae4ec8fee.macos.arm64.b7c01f5704851cfd3b6a89a1eb8acd92e38a3694.tar.gz",
+        "sha256": "f8d85ff3196952b989c5a49de0208a2950ef721b49bd64da4d47a4a953efe8c7"
+      },
+      "blockers": [
+        "No actual previous evaluation package: upgrade and rollback cannot be verified.",
+        "No permitted project signing/notarization path or certificates."
+      ]
+    },
+    {
+      "target": "macos/arm64",
+      "candidate": "python",
+      "collectorRevision": "b7c01f5704851cfd3b6a89a1eb8acd92e38a3694",
+      "environmentSha256": "918a3e08c60e5a4a72340fcff7e350511ed68aa0123e00737490d008a8d65d81",
+      "stages": {
+        "build": "passed",
+        "package": "passed",
+        "install": "passed",
+        "validateInspect": "passed",
+        "offlineUse": "passed",
+        "uninstall": "passed",
+        "upgrade": "not-tested",
+        "rollback": "not-tested",
+        "signing": "not-tested",
+        "notarization": "not-tested"
+      },
+      "cases": 11,
+      "failedCases": [],
+      "artifact": {
+        "filename": "python-23e576efd0dda0f00f5462eda9295c1ae4ec8fee.macos.arm64.b7c01f5704851cfd3b6a89a1eb8acd92e38a3694.tar.gz",
+        "sha256": "01973d5439fb7b98255f59f88f54e97d1fa9ff3231862ecccc9edaf5856e8eae"
+      },
+      "blockers": [
+        "No actual previous evaluation package: upgrade and rollback cannot be verified.",
+        "No permitted project signing/notarization path or certificates."
+      ]
+    },
+    {
+      "target": "macos/arm64",
+      "candidate": "rust",
+      "collectorRevision": "b7c01f5704851cfd3b6a89a1eb8acd92e38a3694",
+      "environmentSha256": "918a3e08c60e5a4a72340fcff7e350511ed68aa0123e00737490d008a8d65d81",
+      "stages": {
+        "build": "passed",
+        "package": "passed",
+        "install": "passed",
+        "validateInspect": "passed",
+        "offlineUse": "passed",
+        "uninstall": "passed",
+        "upgrade": "not-tested",
+        "rollback": "not-tested",
+        "signing": "not-tested",
+        "notarization": "not-tested"
+      },
+      "cases": 11,
+      "failedCases": [],
+      "artifact": {
+        "filename": "rust-23e576efd0dda0f00f5462eda9295c1ae4ec8fee.macos.arm64.b7c01f5704851cfd3b6a89a1eb8acd92e38a3694.tar.gz",
+        "sha256": "599c8c1601a90edf2330a18b237d908abcf3ba39b355e071cfda13426bcf3983"
+      },
+      "blockers": [
+        "No actual previous evaluation package: upgrade and rollback cannot be verified.",
+        "No permitted project signing/notarization path or certificates."
+      ]
+    },
+    {
+      "target": "macos/arm64",
+      "candidate": "go",
+      "collectorRevision": "b7c01f5704851cfd3b6a89a1eb8acd92e38a3694",
+      "environmentSha256": "918a3e08c60e5a4a72340fcff7e350511ed68aa0123e00737490d008a8d65d81",
+      "stages": {
+        "build": "passed",
+        "package": "passed",
+        "install": "passed",
+        "validateInspect": "passed",
+        "offlineUse": "passed",
+        "uninstall": "passed",
+        "upgrade": "not-tested",
+        "rollback": "not-tested",
+        "signing": "not-tested",
+        "notarization": "not-tested"
+      },
+      "cases": 11,
+      "failedCases": [],
+      "artifact": {
+        "filename": "go-23e576efd0dda0f00f5462eda9295c1ae4ec8fee.macos.arm64.b7c01f5704851cfd3b6a89a1eb8acd92e38a3694.tar.gz",
+        "sha256": "e11e894b195df85c05a982a3a929237b1a294def5db9ec9ee3493c4fc1cfd58f"
+      },
+      "blockers": [
+        "No actual previous evaluation package: upgrade and rollback cannot be verified.",
+        "No permitted project signing/notarization path or certificates."
+      ]
+    },
+    {
+      "target": "windows/amd64",
+      "candidate": "typescript",
+      "collectorRevision": "b7c01f5704851cfd3b6a89a1eb8acd92e38a3694",
+      "environmentSha256": "c69fe6903411cdbb85ee3eb9819ac63096b2cacb2e672fefa9af9005af5894bd",
+      "stages": {
+        "build": "passed",
+        "package": "passed",
+        "install": "passed",
+        "validateInspect": "passed",
+        "offlineUse": "not-tested",
+        "uninstall": "passed",
+        "upgrade": "not-tested",
+        "rollback": "not-tested",
+        "signing": "not-tested",
+        "notarization": "not-tested"
+      },
+      "cases": 11,
+      "failedCases": [],
+      "artifact": {
+        "filename": "typescript-23e576efd0dda0f00f5462eda9295c1ae4ec8fee.windows.amd64.b7c01f5704851cfd3b6a89a1eb8acd92e38a3694.tar.gz",
+        "sha256": "29f194cfbcfe9b18dcd5c954cf6e0501370f2f0c1e3b82a93e3ac71c1dd84ada"
+      },
+      "blockers": [
+        "No actual previous evaluation package: upgrade and rollback cannot be verified.",
+        "No permitted project signing/notarization path or certificates.",
+        "OS network denial not verified on this target."
+      ]
+    },
+    {
+      "target": "windows/amd64",
+      "candidate": "python",
+      "collectorRevision": "b7c01f5704851cfd3b6a89a1eb8acd92e38a3694",
+      "environmentSha256": "c69fe6903411cdbb85ee3eb9819ac63096b2cacb2e672fefa9af9005af5894bd",
+      "stages": {
+        "build": "passed",
+        "package": "passed",
+        "install": "passed",
+        "validateInspect": "passed",
+        "offlineUse": "not-tested",
+        "uninstall": "passed",
+        "upgrade": "not-tested",
+        "rollback": "not-tested",
+        "signing": "not-tested",
+        "notarization": "not-tested"
+      },
+      "cases": 11,
+      "failedCases": [],
+      "artifact": {
+        "filename": "python-23e576efd0dda0f00f5462eda9295c1ae4ec8fee.windows.amd64.b7c01f5704851cfd3b6a89a1eb8acd92e38a3694.tar.gz",
+        "sha256": "ab5e94c6fa473a2b291bb46c1d0a07b713b81c92b2455b453e64374fb5024c64"
+      },
+      "blockers": [
+        "No actual previous evaluation package: upgrade and rollback cannot be verified.",
+        "No permitted project signing/notarization path or certificates.",
+        "OS network denial not verified on this target."
+      ]
+    },
+    {
+      "target": "windows/amd64",
+      "candidate": "rust",
+      "collectorRevision": "b7c01f5704851cfd3b6a89a1eb8acd92e38a3694",
+      "environmentSha256": "c69fe6903411cdbb85ee3eb9819ac63096b2cacb2e672fefa9af9005af5894bd",
+      "stages": {
+        "build": "passed",
+        "package": "passed",
+        "install": "passed",
+        "validateInspect": "passed",
+        "offlineUse": "not-tested",
+        "uninstall": "passed",
+        "upgrade": "not-tested",
+        "rollback": "not-tested",
+        "signing": "not-tested",
+        "notarization": "not-tested"
+      },
+      "cases": 11,
+      "failedCases": [],
+      "artifact": {
+        "filename": "rust-23e576efd0dda0f00f5462eda9295c1ae4ec8fee.windows.amd64.b7c01f5704851cfd3b6a89a1eb8acd92e38a3694.tar.gz",
+        "sha256": "595bb657b6c3a85926e877ba96c357b2e1027f0f94e09d6adac1a8163d63f518"
+      },
+      "blockers": [
+        "No actual previous evaluation package: upgrade and rollback cannot be verified.",
+        "No permitted project signing/notarization path or certificates.",
+        "OS network denial not verified on this target."
+      ]
+    },
+    {
+      "target": "windows/amd64",
+      "candidate": "go",
+      "collectorRevision": "b7c01f5704851cfd3b6a89a1eb8acd92e38a3694",
+      "environmentSha256": "c69fe6903411cdbb85ee3eb9819ac63096b2cacb2e672fefa9af9005af5894bd",
+      "stages": {
+        "build": "passed",
+        "package": "passed",
+        "install": "passed",
+        "validateInspect": "passed",
+        "offlineUse": "not-tested",
+        "uninstall": "passed",
+        "upgrade": "not-tested",
+        "rollback": "not-tested",
+        "signing": "not-tested",
+        "notarization": "not-tested"
+      },
+      "cases": 11,
+      "failedCases": [],
+      "artifact": {
+        "filename": "go-23e576efd0dda0f00f5462eda9295c1ae4ec8fee.windows.amd64.b7c01f5704851cfd3b6a89a1eb8acd92e38a3694.tar.gz",
+        "sha256": "1b4c9c5a6775561e44ed546a83af9ae3f1a4ae1f0fb954fc9fa9c44a935cb649"
+      },
+      "blockers": [
+        "No actual previous evaluation package: upgrade and rollback cannot be verified.",
+        "No permitted project signing/notarization path or certificates.",
+        "OS network denial not verified on this target."
+      ]
+    }
+  ],
+  "retention": {
+    "days": 90,
+    "scope": "Current evaluation capsules, not product releases or a fabricated prior version"
+  },
+  "collectorRevision": "b7c01f5704851cfd3b6a89a1eb8acd92e38a3694",
+  "collectorSources": [
+    {
+      "path": "scripts/runtime-native-lifecycle-import.mjs",
+      "sha256": "eb43139d47ae0743f6fcab633d15d3f5dcdb2e4beb0029c69eb2f18359f6ed58"
+    }
+  ]
+}

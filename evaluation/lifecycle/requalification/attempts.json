@@ -1,0 +1,46 @@
+{
+  "task": "NF-102-03",
+  "attempts": [
+    {
+      "runId": 39401514430,
+      "head": "e8ad1fa9cdc5527619d5eaf211440d7c1b18274f",
+      "overall": "failed",
+      "linux": "Four native candidates passed package/install/validate-inspect/network-denied execution/scoped uninstall; original raw capsules and records retained in the run.",
+      "macos": "TypeScript/Rust/Go passed the tested stages; Python correctly rejected the unpinned 3.14.7 default when setup-python could not provide exact 3.12.15.",
+      "windows": "Bootstrap stopped before candidate capture: initial npm source archive extraction exited 128. setup-python separately reported exact 3.12.15 unavailable; no candidate or lifecycle pass inferred.",
+      "correction": "Explicit Windows System32 tar selection rather than Git-Bash PATH resolution; hash-verified native CPython 3.12.15 distributions from the already reviewed upstream, not a different interpreter version or dependency lock.",
+      "interpretation": "Real failed provisioning/collection attempt retained. New collector revisions require new source-bound observations; no old record is relabeled as new success."
+    },
+    {
+      "runId": 39402447967,
+      "head": "0cf9f897ae2c50915ad7ddf1d8f5c98cedac835e",
+      "overall": "failed",
+      "linux": "All four candidates passed build/package/Unicode installation/installed execution/OS network denial/scoped uninstall.",
+      "macos": "All four candidates passed the tested stages, including exact native CPython 3.12.15 after verified provisioning.",
+      "windows": "Native bootstrap corrected; TypeScript passed Unicode installation/installed execution/uninstall. Collector publication guard stopped at Python record; an archive without a saved record is not counted as a validated lifecycle result.",
+      "correction": "Inspect path strings before JSON serialization rather than treating escape sequences in JSON text as drive paths. Preserve fail-closed field-pointer diagnostics and assert raw public outputs do not disclose actual paths.",
+      "regression": "A normal Error followed by a newline is not a drive path; a fictional Windows drive path remains rejected."
+    },
+    {
+      "runId": 39403137530,
+      "head": "7744512b90a6ebb1a5724369053c851cdc3180f3",
+      "collectorCI": "success",
+      "candidateAcceptance": "partial-not-ready",
+      "result": "All twelve archives were independently hash/file verified (2907 regular files). Eleven candidate-target combinations passed the tested installation/execution stages; Windows Python installation failed on a Unicode-space prefix.",
+      "finding": "pip's re-executed target interpreter rendered progress using a Windows charmap; Cyrillic installation paths raised UnicodeEncodeError. The isolated provisioner discarded inherited PYTHONUTF8 and -I ignores Python environment settings for its own process.",
+      "correction": "Set fixed PYTHONUTF8=1 for the re-executed child and explicit -X utf8 for isolated provisioning/venv commands. Do not change candidate code, interpreter version or wheel hashes.",
+      "preserved": "A green evidence-capture job did not turn the real Windows installation failure into a pass; original run/capsules remain available."
+    },
+    {
+      "runId": 39404401314,
+      "head": "b7c01f5704851cfd3b6a89a1eb8acd92e38a3694",
+      "collectorCI": "success",
+      "candidateAcceptance": "tested-stages-passed-original-lifecycle-acceptance-blocked",
+      "result": "All twelve candidates/targets passed native build, packaging, final Unicode-space installation, installed validate/inspect and scoped uninstall. Linux and macOS also passed independently controlled OS network denial; Windows offlineUse remains not-tested.",
+      "archiveVerification": "Twelve exact archives independently extracted; all 2907 regular files matched manifests.",
+      "preserved": "The corrected Windows Python installer uses the same exact interpreter and locked wheels. Genuine upgrade/rollback and permitted project signing remain unavailable; architecture stays Draft/not-ready."
+    }
+  ],
+  "noFabricatedPredecessor": true,
+  "architectureAccepted": false
+}

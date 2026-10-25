@@ -31,7 +31,7 @@ int main(int argc,char **argv){
   uint64_t rights=(1ULL<<15)-1;if(abi>=5)rights|=LANDLOCK_ACCESS_FS_IOCTL_DEV;
   struct landlock_ruleset_attr attr={.handled_access_fs=rights};int rules=syscall(SYS_landlock_create_ruleset,&attr,sizeof(attr),0);if(rules<0)fail("landlock_create_ruleset");
   uint64_t read=LANDLOCK_ACCESS_FS_READ_FILE|LANDLOCK_ACCESS_FS_READ_DIR;
-  const char *system[]={"/usr/lib","/usr/lib64","/lib","/lib64","/usr/share/locale","/etc/ld.so.cache","/etc/ld.so.preload","/dev/urandom","/dev/random","/sys/devices/system/cpu","/sys/kernel/mm/transparent_hugepage",NULL};
+  const char *system[]={"/usr/lib","/usr/lib64","/lib","/lib64","/usr/share/locale","/etc/ld.so.cache","/etc/ld.so.preload","/etc/ssl/openssl.cnf","/dev/urandom","/dev/random","/sys/devices/system/cpu","/sys/kernel/mm/transparent_hugepage",NULL};
   for(int i=0;system[i];i++)add(rules,system[i],read);
   add(rules,"/lib64/ld-linux-x86-64.so.2",LANDLOCK_ACCESS_FS_EXECUTE|LANDLOCK_ACCESS_FS_READ_FILE);
   add(rules,"/dev/null",LANDLOCK_ACCESS_FS_READ_FILE|LANDLOCK_ACCESS_FS_WRITE_FILE);

@@ -1,0 +1,89 @@
+name: Evaluation Lifecycle Completion
+on:
+  pull_request:
+    paths:
+      - 'evaluation/delivery/**'
+      - 'evaluation/lifecycle/completion/**'
+      - 'scripts/qualification/lifecycle.mjs'
+      - 'scripts/qualification/common.mjs'
+      - 'scripts/qualification/windows-session.*'
+      - 'scripts/qualification/verify.mjs'
+      - '.github/workflows/native-lifecycle-completion.yml'
+permissions:
+  contents: read
+  actions: read
+jobs:
+  lifecycle:
+    name: Unsigned lifecycle (${{ matrix.target }})
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {target: linux/amd64, runner: ubuntu-24.04, folder: linux-amd64}
+          - {target: macos/arm64, runner: macos-15, folder: macos-arm64}
+          - {target: windows/amd64, runner: windows-2025, folder: windows-amd64}
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 30
+    env:
+      PYTHONUTF8: '1'
+      PYTHONDONTWRITEBYTECODE: '1'
+      GOTOOLCHAIN: local
+      CGO_ENABLED: '0'
+    steps:
+      - shell: bash
+        run: git config --global core.autocrlf false
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '26.12.0'
+      - name: Preserve source-bound observations
+        id: plan
+        shell: bash
+        run: |
+          node --input-type=module <<'JS'
+          import fs from 'node:fs';import crypto from 'node:crypto';
+          let collect=true;try {const root='evaluation/lifecycle/completion/${{ matrix.folder }}';const r=JSON.parse(fs.readFileSync(root+'/typescript.json'));collect=!r.producer.sources.every(f=>crypto.createHash('sha256').update(fs.readFileSync(f.path)).digest('hex')===f.sha256);}catch{}
+          fs.appendFileSync(process.env.GITHUB_OUTPUT,'collect='+collect+'\n');
+          JS
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        if: steps.plan.outputs.collect == 'true'
+        with:
+          github-token: ${{ github.token }}
+          run-id: '39406341776'
+          name: current-native-${{ matrix.folder }}-3cbbd1bc02da0768c9c116a18f56dab9a3ef3cb6
+          path: ${{ runner.temp }}/predecessors
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1
+        if: steps.plan.outputs.collect == 'true'
+        continue-on-error: true
+        with:
+          python-version: '3.12.15'
+      - uses: actions/setup-go@924ae3a1cded613372ab5595356fb5720e22ba16
+        if: steps.plan.outputs.collect == 'true'
+        with:
+          go-version: '1.27.2'
+          cache: false
+      - name: Provision exact tools separately
+        if: steps.plan.outputs.collect == 'true'
+        shell: bash
+        run: node scripts/runtime-native-lifecycle-provision.mjs "$RUNNER_TEMP/qualification-tools"
+      - name: Verify genuine previous install, upgrade, rollback and denied network
+        if: steps.plan.outputs.collect == 'true'
+        shell: bash
+        run: node scripts/qualification/lifecycle.mjs '${{ matrix.target }}' "$RUNNER_TEMP/qualification-tools/config.json" "$RUNNER_TEMP/predecessors" "$RUNNER_TEMP/lifecycle-completion"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.plan.outputs.collect == 'true' && always()
+        with:
+          name: lifecycle-completion-${{ matrix.folder }}-${{ github.event.pull_request.head.sha }}
+          path: ${{ runner.temp }}/lifecycle-completion/*
+          retention-days: 90
+          if-no-files-found: error
+      - name: Check preserved evidence with pinned consumers
+        if: steps.plan.outputs.collect != 'true'
+        shell: bash
+        run: |
+          node scripts/runtime-native-lifecycle-provision.mjs "$RUNNER_TEMP/consumer-tools" --maintenance-only
+          node scripts/qualification/verify.mjs lifecycle

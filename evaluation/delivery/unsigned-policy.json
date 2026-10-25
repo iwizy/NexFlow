@@ -1,0 +1,14 @@
+{
+  "decisionDate": "2026-10-25",
+  "authority": "Maintainer delegates technical decisions and explicitly asks to proceed without unavailable signing certificates/accounts.",
+  "mode": "unsigned-evaluation-developer-only",
+  "productDistributionSupported": false,
+  "signing": "not-performed",
+  "notarization": "not-performed",
+  "originalSigningCriterionSatisfied": false,
+  "amendment": "Project signing/notarization is deferred to public distribution readiness, not claimed passed or replaced by local ad-hoc signing. Current lifecycle task acceptance is limited to explicitly obtained unsigned evaluation capsules.",
+  "integrity": "Source-bound SHA-256 manifests, exact retained CI package identities, independently verified archives and immutable installed versions; hashes alone are not a trusted publisher signature.",
+  "futurePublicDistributionGate": "NF-103 must obtain project-owned permitted signing/notarization, trusted publisher verification and complete distribution rights before public product delivery.",
+  "noCredentialUse": true,
+  "noVersionBumpOrProductRelease": true
+}

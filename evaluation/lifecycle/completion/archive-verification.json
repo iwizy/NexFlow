@@ -1,0 +1,117 @@
+{
+  "task": "NF-102-03",
+  "recordedAt": "2026-10-25T21:26:41.118Z",
+  "runId": "40234645590",
+  "producer": {
+    "revision": "2a28b632994eecd1ec41a7f20ec508313d6f2b64",
+    "sources": [
+      {
+        "path": "scripts/qualification/import-lifecycle.mjs",
+        "sha256": "d23cb6ee69448cc49994610d862f40a184853a891c264fef5642a950c33eb070"
+      }
+    ]
+  },
+  "results": [
+    {
+      "target": "linux/amd64",
+      "candidate": "typescript",
+      "archiveSha256": "13d14a66f2eddf574402c664e6ec921c2f1e89c1426f4d796bfa7d1ce6c6efe6",
+      "files": 847,
+      "previousFilesUnchanged": 845,
+      "passed": true
+    },
+    {
+      "target": "linux/amd64",
+      "candidate": "python",
+      "archiveSha256": "014fca2532853401161656a8fa2db9debaca05f193446a47125deedfd4725bfc",
+      "files": 51,
+      "previousFilesUnchanged": 47,
+      "passed": true
+    },
+    {
+      "target": "linux/amd64",
+      "candidate": "rust",
+      "archiveSha256": "58298d02782b00621269100d3da4512c284ed8004137581297318e579b706501",
+      "files": 39,
+      "previousFilesUnchanged": 37,
+      "passed": true
+    },
+    {
+      "target": "linux/amd64",
+      "candidate": "go",
+      "archiveSha256": "acfc70aac8323b9a91ee304f4c847b5ab9ec8d70b4605d963b23114fc2187e35",
+      "files": 42,
+      "previousFilesUnchanged": 40,
+      "passed": true
+    },
+    {
+      "target": "macos/arm64",
+      "candidate": "typescript",
+      "archiveSha256": "51379c5dea160427f3fd739c12a8edb7b3c7a751ec7f92a3a178cdcee0164dd3",
+      "files": 847,
+      "previousFilesUnchanged": 845,
+      "passed": true
+    },
+    {
+      "target": "macos/arm64",
+      "candidate": "python",
+      "archiveSha256": "245968c257c792bdd2568f55487863b91ac9e06042f862631a6b739f09595544",
+      "files": 51,
+      "previousFilesUnchanged": 47,
+      "passed": true
+    },
+    {
+      "target": "macos/arm64",
+      "candidate": "rust",
+      "archiveSha256": "e97d59f0ec9e6910e11096fd50793a21da5eec2335ccbe1b7600fa57dd9e110e",
+      "files": 39,
+      "previousFilesUnchanged": 37,
+      "passed": true
+    },
+    {
+      "target": "macos/arm64",
+      "candidate": "go",
+      "archiveSha256": "2073a06395e9778eead845b29f7cabc707cdd72d0b4fc04c3769c4d85c5c17a0",
+      "files": 42,
+      "previousFilesUnchanged": 40,
+      "passed": true
+    },
+    {
+      "target": "windows/amd64",
+      "candidate": "typescript",
+      "archiveSha256": "585eb20a1f1456f075603aba90335a8ebf6b625f4cbcfa51fce10d50296507ab",
+      "files": 847,
+      "previousFilesUnchanged": 845,
+      "passed": true
+    },
+    {
+      "target": "windows/amd64",
+      "candidate": "python",
+      "archiveSha256": "a7a008208f5456c7e940acde10d91715f3475391ab4c0cc2d1e96db69fccbfd5",
+      "files": 51,
+      "previousFilesUnchanged": 47,
+      "passed": true
+    },
+    {
+      "target": "windows/amd64",
+      "candidate": "rust",
+      "archiveSha256": "ba4e85222a6f14c8b79330d55bc3ae5156d80977b76f2d7d0d28b429e2be3b08",
+      "files": 39,
+      "previousFilesUnchanged": 37,
+      "passed": true
+    },
+    {
+      "target": "windows/amd64",
+      "candidate": "go",
+      "archiveSha256": "8f540a3292a23d38c82221950bc102fa1a569851414fe178b75d32021dade444",
+      "files": 42,
+      "previousFilesUnchanged": 40,
+      "passed": true
+    }
+  ],
+  "archives": 12,
+  "files": 2937,
+  "failed": 0,
+  "sourcePayloadUnchanged": true,
+  "scope": "Independent extraction/hash checks of actual retained native v2 archives against unchanged v1 payload plus shipped delivery layer"
+}

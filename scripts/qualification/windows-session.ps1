@@ -7,8 +7,19 @@ Add-Type -Path (Join-Path $PSScriptRoot 'windows-session.cs')
 $settings = Get-Content -Raw -LiteralPath $Configuration | ConvertFrom-Json
 $name = 'NexFlow.Evaluation.' + [Guid]::NewGuid().ToString('N')
 $session = [EvaluationContainer]::new($name)
+$metadataParents = [Collections.Generic.HashSet[string]]::new([StringComparer]::OrdinalIgnoreCase)
 try {
   $scopeRoot = [IO.Path]::GetFullPath($settings.scope).TrimEnd('\')
+  # Read attributes/traverse of literal ancestors, never directory listing or file contents.
+  $metadataParent = [IO.Path]::GetDirectoryName($scopeRoot)
+  while ($metadataParent) {
+    [void]$metadataParents.Add($metadataParent)
+    & "$env:SystemRoot\System32\icacls.exe" $metadataParent /grant "*$($session.Sid):(RA,REA,X,RC,S)" /Q | Out-Null
+    if ($LASTEXITCODE -ne 0) {throw 'Literal ancestor metadata grant failed'}
+    $nextParent = [IO.Path]::GetDirectoryName($metadataParent)
+    if ($nextParent -eq $metadataParent) {break}
+    $metadataParent = $nextParent
+  }
   $parents = [Collections.Generic.HashSet[string]]::new([StringComparer]::OrdinalIgnoreCase)
   foreach ($root in $settings.readable) {
     $full = [IO.Path]::GetFullPath($root)
@@ -38,4 +49,11 @@ try {
       [Console]::Out.WriteLine(($result | ConvertTo-Json -Compress -Depth 8))
     } catch {[Console]::Out.WriteLine((@{launcherError=$_.Exception.Message}|ConvertTo-Json -Compress))}
   }
-} finally {$session.Dispose()}
+} finally {
+  try {
+    foreach ($ancestor in $metadataParents) {
+      & "$env:SystemRoot\System32\icacls.exe" $ancestor /remove:g "*$($session.Sid)" /Q | Out-Null
+      if ($LASTEXITCODE -ne 0) {throw 'Literal ancestor metadata cleanup failed'}
+    }
+  } finally {$session.Dispose()}
+}

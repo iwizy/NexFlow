@@ -23,6 +23,8 @@ expected inventory; it is not a cryptographic publisher trust signature.
 Windows offline execution uses a task-scoped capability-free AppContainer,
 not environment flags or a shared firewall change. Only owned temporary payload,
 runtime and input ACLs are granted read/execute; the profile is deleted afterwards.
+Literal ancestor metadata/traversal permissions exclude directory listing and
+file contents, have no inheritance, and are removed before profile teardown.
 The API and child-policy contracts are documented in
 [Microsoft's AppContainer launch guide](https://learn.microsoft.com/en-us/windows/win32/secauthz/implementing-an-appcontainer)
 and [process attribute reference](https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-updateprocthreadattribute).

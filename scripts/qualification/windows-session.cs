@@ -4,6 +4,7 @@ using System.Text;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 // Task-scoped AppContainer with no network capabilities. No global firewall changes.
 public sealed class EvaluationContainer : IDisposable {
   [StructLayout(LayoutKind.Sequential)] struct SECURITY_CAPABILITIES {public IntPtr Sid,Capabilities;public uint Count,Reserved;}
@@ -36,7 +37,7 @@ public sealed class EvaluationContainer : IDisposable {
   [DllImport("psapi.dll")] static extern bool GetProcessMemoryInfo(IntPtr process,ref MEMORY_COUNTERS info,uint size);
   [DllImport("kernel32.dll")] static extern bool CloseHandle(IntPtr p);
   readonly string name;readonly IntPtr sid;public string Sid {get;private set;}
-  static void Require(bool ok) {if(!ok)throw new Win32Exception(Marshal.GetLastWin32Error());}
+  static void Require(bool ok,[CallerArgumentExpression("ok")] string operation=null) {if(!ok){int error=Marshal.GetLastWin32Error();throw new Exception(operation+"; Win32="+error+": "+new Win32Exception(error).Message);}}
   static string Quote(string s) {var b=new StringBuilder("\"");int slashes=0;foreach(char c in s){if(c=='\\'){slashes++;continue;}if(c=='\"'){b.Append('\\',slashes*2+1).Append(c);}else{b.Append('\\',slashes).Append(c);}slashes=0;}return b.Append('\\',slashes*2).Append('"').ToString();}
   public EvaluationContainer(string name) {this.name=name;int hr=CreateAppContainerProfile(name,name,"Temporary validation-only evaluation",IntPtr.Zero,0,out sid);if(hr<0)Marshal.ThrowExceptionForHR(hr);IntPtr text;Require(ConvertSidToStringSid(sid,out text));Sid=Marshal.PtrToStringUni(text);LocalFree(text);}
   public object Run(string command,string[] args,string cwd,Dictionary<string,string> env,string output,int timeout,bool restrictChildren) {

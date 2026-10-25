@@ -67,6 +67,10 @@ The [unsigned evaluation delivery policy](delivery/README.md) records the explic
 not falsely passed. A real v2 verified installer is evaluated against genuine
 retained October 20 predecessor capsules for upgrade and rollback.
 
+The [current native validation-boundary qualification](security-qualification/README.md)
+uses paired OS controls on all three targets plus a separate inert authority,
+public-queue and revocation model. It does not certify an executable production runtime.
+
 The [cross-target measurement gap record](measurements/README.md) binds all seven
 metrics for four candidates and three targets to exact published lifecycle and
 fidelity evidence. Historical capsule sizes are observations, not comparable

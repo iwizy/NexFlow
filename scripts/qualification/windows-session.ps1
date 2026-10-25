@@ -1,5 +1,8 @@
 param([Parameter(Mandatory=$true)][string]$Configuration)
 $ErrorActionPreference = 'Stop'
+[Console]::InputEncoding = [Text.UTF8Encoding]::new($false)
+[Console]::OutputEncoding = [Text.UTF8Encoding]::new($false)
+$OutputEncoding = [Text.UTF8Encoding]::new($false)
 Add-Type -Path (Join-Path $PSScriptRoot 'windows-session.cs')
 $settings = Get-Content -Raw -LiteralPath $Configuration | ConvertFrom-Json
 $name = 'NexFlow.Evaluation.' + [Guid]::NewGuid().ToString('N')
@@ -12,7 +15,7 @@ try {
     & "$env:SystemRoot\System32\icacls.exe" $full /grant "*$($session.Sid):(OI)(CI)(RX)" /T /Q | Out-Null
     if ($LASTEXITCODE -ne 0) {throw 'Scoped ACL grant failed'}
   }
-  [Console]::Out.WriteLine('{"ready":true,"networkCapabilities":0}')
+  [Console]::Out.WriteLine('{"ready":true,"networkCapabilities":0,"unicodeProbe":"юникод"}')
   while ($null -ne ($line = [Console]::In.ReadLine())) {
     $request = $line | ConvertFrom-Json
     if ($request.close) {break}

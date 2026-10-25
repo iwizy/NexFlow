@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
+using System.Security.Cryptography;
 // Task-scoped AppContainer with no network capabilities. No global firewall changes.
 public sealed class EvaluationContainer : IDisposable {
   [StructLayout(LayoutKind.Sequential)] struct SECURITY_CAPABILITIES {public IntPtr Sid,Capabilities;public uint Count,Reserved;}
@@ -69,7 +70,8 @@ public sealed class EvaluationContainer : IDisposable {
       bool timedOut=WaitForSingleObject(pi.Process,(uint)timeout)==0x102;if(timedOut){TerminateJobObject(job,124);WaitForSingleObject(pi.Process,5000);}
       uint code;Require(GetExitCodeProcess(pi.Process,out code));var memory=new MEMORY_COUNTERS {size=(uint)Marshal.SizeOf(typeof(MEMORY_COUNTERS))};Require(GetProcessMemoryInfo(pi.Process,ref memory,memory.size));
       CloseHandle(stdout);stdout=IntPtr.Zero;CloseHandle(stderr);stderr=IntPtr.Zero;
-      return new {exitCode=(long)code,timedOut=timedOut,peakMemoryBytes=memory.peakWorking.ToUInt64(),appContainer=isContainer,capabilityCount=capabilityCount,stdout=File.ReadAllText(output+".out",Encoding.UTF8),stderr=File.ReadAllText(output+".err",Encoding.UTF8)};
+      var commandParts=new List<string>{command};commandParts.AddRange(args);string argumentsSha256=Convert.ToHexString(SHA256.HashData(Encoding.UTF8.GetBytes(string.Join("\0",commandParts)))).ToLowerInvariant();
+      return new {exitCode=(long)code,timedOut=timedOut,peakMemoryBytes=memory.peakWorking.ToUInt64(),appContainer=isContainer,capabilityCount=capabilityCount,argumentsSha256=argumentsSha256,stdout=File.ReadAllText(output+".out",Encoding.UTF8),stderr=File.ReadAllText(output+".err",Encoding.UTF8)};
     } finally {
       if(started&&pi.Process!=IntPtr.Zero)TerminateProcess(pi.Process,125);
       foreach(var h in new[]{pi.Thread,pi.Process,stdin,stdout,stderr,job,token})if(h!=IntPtr.Zero&&h!=new IntPtr(-1))CloseHandle(h);

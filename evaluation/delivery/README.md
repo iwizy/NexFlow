@@ -15,6 +15,11 @@ of corrupt updates without changing the active pointer. It is a packaging change
 not a date/collector-only rebuild. The genuine October 20 capsules remain the
 previous version, with their exact hashes and actual retained CI artifacts.
 Candidate implementation/locks and the frozen specification/corpus stay unchanged.
+Windows Python runs the exact base interpreter with the verified venv's locked
+site-packages and the shipped [native entry shim](launch-python.py), explicitly
+in UTF-8 mode. This avoids a venv redirector subprocess and allows child creation
+to remain denied; it does not use a backend in another language. The new installer
+also supplies this compatibility shim when executing genuine v1 capsules.
 
 The trusted installer is evaluation tooling, not a manifest command or candidate
 runtime capability. A SHA-256 manifest detects corruption against an obtained

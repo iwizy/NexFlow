@@ -1,0 +1,19 @@
+{
+  "candidate": "python",
+  "passes": 100,
+  "observation": {
+    "exitCode": -1,
+    "signal": 24,
+    "error": null,
+    "stdout": "",
+    "stderr": "",
+    "timedOut": false,
+    "memoryExceeded": false,
+    "outputExceeded": false,
+    "observedRssBytes": 1441792,
+    "elapsedMs": 121459.925591,
+    "accounting": "external 50ms RSS watchdog; sampled observation, not an OS peak-memory benchmark",
+    "peakMemoryBytes": 28954624,
+    "instrument": "CLOCK_MONOTONIC and wait4 ru_maxrss, interpreter included; no separate descendant aggregation"
+  }
+}

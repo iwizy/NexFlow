@@ -62,6 +62,11 @@ native cohorts. Installed Unicode-path execution and scoped uninstall passed on
 all three targets; genuine upgrade/rollback, project signing and Windows OS
 network denial remain explicit blockers. Historical lifecycle records are unchanged.
 
+The [unsigned evaluation delivery policy](delivery/README.md) records the explicit
+2026-10-25 maintainer scope amendment: signed public distribution is deferred,
+not falsely passed. A real v2 verified installer is evaluated against genuine
+retained October 20 predecessor capsules for upgrade and rollback.
+
 The [cross-target measurement gap record](measurements/README.md) binds all seven
 metrics for four candidates and three targets to exact published lifecycle and
 fidelity evidence. Historical capsule sizes are observations, not comparable

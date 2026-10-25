@@ -48,6 +48,7 @@
     "runtime-supply-chain-current-smoke": "node scripts/runtime-supply-chain-current-smoke.mjs",
     "runtime-supply-chain-repaired-smoke": "node scripts/runtime-supply-chain-repaired-smoke.mjs",
     "runtime-native-lifecycle-smoke": "node scripts/runtime-native-lifecycle-smoke.mjs",
+    "qualification-lifecycle-smoke": "node scripts/qualification/verify.mjs lifecycle",
     "runtime-linux-lifecycle-smoke": "node scripts/runtime-linux-lifecycle-smoke.mjs",
     "runtime-macos-lifecycle-smoke": "node scripts/runtime-macos-lifecycle-smoke.mjs",
     "runtime-windows-lifecycle-smoke": "node scripts/runtime-windows-lifecycle-smoke.mjs",

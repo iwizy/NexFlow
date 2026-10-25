@@ -3,6 +3,10 @@
 NF-102-04 tests the exact repaired native candidate bytes under real target OS
 controls, not a virtual environment or fixture pretending to be a sandbox.
 Actual native records are required before any target acceptance.
+The maintainer-delegated [candidate disposition](../delivery/candidate-disposition.json)
+excludes Rust after its actual failed Windows path-confinement gate. Its results
+stay failed and unscored; this does not waive any selected candidate's boundary
+requirement. Completed evaluation is distinct from all four candidates qualifying.
 
 Linux combines unprivileged Landlock read roots and a seccomp syscall policy:
 network, process creation, foreign process tracing, namespace changes, keyring

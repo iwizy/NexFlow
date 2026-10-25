@@ -43,7 +43,8 @@ try{
   if(process.platform==='win32')session=await windowsSession({scope,readable:[runtime,fixtureRoot,...prepared.map(p=>p.store)]});
   async function invoke(command,args,denied=true){if(!denied)return run(command,args,{cwd:scope,env,timeout:30000});if(session)return session.run(command,args,{cwd:runtime,env});if(process.platform==='darwin')return run('/usr/bin/sandbox-exec',['-p','(version 1)(allow default)(deny network*)',command,...args],{cwd:scope,env,timeout:30000});return run('sudo',['unshare','--net','setpriv','--reuid',String(process.getuid()),'--regid',String(process.getgid()),'--clear-groups','--bounding-set=-all','--inh-caps=-all','--ambient-caps=-all',command,...args],{cwd:scope,env,timeout:30000});}
   const positive=await invoke(node,['-e',networkCode,String(server.address().port)],false),denied=await invoke(node,['-e',networkCode,String(server.address().port)]);
-  assert.equal(positive.exitCode,0,'Positive network control failed');assert.equal(denied.exitCode,13,'OS network denial inactive');assert.match(denied.stdout,/EACCES|EPERM|ENETUNREACH|EHOSTUNREACH/u);
+  assert.equal(positive.exitCode,0,'Positive network control failed');assert.equal(denied.exitCode,13,'OS network denial inactive');
+  if(session){assert.equal(denied.appContainer,true);assert.equal(denied.capabilityCount,0);assert.match(denied.stdout,/EACCES|EPERM|ENETUNREACH|EHOSTUNREACH|ETIMEDOUT/u);}else assert.match(denied.stdout,/EACCES|EPERM|ENETUNREACH|EHOSTUNREACH/u);
   renameSync(schemas,hidden);
   for(const p of prepared){
     const {id,prior,store,previous,current,previousVersion,currentVersion,manifest,installedApi}=p,canary=path.join(scope,id,'outside-canary');writeFileSync(canary,'synthetic-preserved');

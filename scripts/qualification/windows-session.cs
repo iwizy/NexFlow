@@ -20,6 +20,8 @@ public sealed class EvaluationContainer : IDisposable {
   [DllImport("userenv.dll",CharSet=CharSet.Unicode)] static extern int DeleteAppContainerProfile(string n);
   [DllImport("advapi32.dll",CharSet=CharSet.Unicode,SetLastError=true)] static extern bool ConvertSidToStringSid(IntPtr sid,out IntPtr str);
   [DllImport("advapi32.dll")] static extern IntPtr FreeSid(IntPtr sid);
+  [DllImport("advapi32.dll",SetLastError=true)] static extern bool OpenProcessToken(IntPtr process,uint access,out IntPtr token);
+  [DllImport("advapi32.dll",SetLastError=true)] static extern bool GetTokenInformation(IntPtr token,int kind,IntPtr info,uint size,out uint needed);
   [DllImport("kernel32.dll")] static extern IntPtr LocalFree(IntPtr p);
   [DllImport("kernel32.dll",SetLastError=true)] static extern bool InitializeProcThreadAttributeList(IntPtr p,int count,int flags,ref IntPtr size);
   [DllImport("kernel32.dll",SetLastError=true)] static extern bool UpdateProcThreadAttribute(IntPtr p,uint flags,IntPtr key,IntPtr value,IntPtr size,IntPtr prev,IntPtr ret);
@@ -42,7 +44,7 @@ public sealed class EvaluationContainer : IDisposable {
   public EvaluationContainer(string name) {this.name=name;int hr=CreateAppContainerProfile(name,name,"Temporary validation-only evaluation",IntPtr.Zero,0,out sid);if(hr<0)Marshal.ThrowExceptionForHR(hr);IntPtr text;Require(ConvertSidToStringSid(sid,out text));Sid=Marshal.PtrToStringUni(text);LocalFree(text);}
   public object Run(string command,string[] args,string cwd,Dictionary<string,string> env,string output,int timeout,bool restrictChildren) {
     IntPtr attributes=IntPtr.Zero,size=IntPtr.Zero,caps=IntPtr.Zero,handles=IntPtr.Zero,childPolicy=IntPtr.Zero,environment=IntPtr.Zero,job=IntPtr.Zero;
-    IntPtr stdin=IntPtr.Zero,stdout=IntPtr.Zero,stderr=IntPtr.Zero;PROCESS_INFORMATION pi=new PROCESS_INFORMATION();bool started=false;
+    IntPtr stdin=IntPtr.Zero,stdout=IntPtr.Zero,stderr=IntPtr.Zero,token=IntPtr.Zero;PROCESS_INFORMATION pi=new PROCESS_INFORMATION();bool started=false;
     try {
       var sa=new SECURITY_ATTRIBUTES {Length=Marshal.SizeOf(typeof(SECURITY_ATTRIBUTES)),Inherit=true};
       stdin=CreateFile("NUL",0x80000000,3,ref sa,3,0,IntPtr.Zero);stdout=CreateFile(output+".out",0x40000000,3,ref sa,2,0,IntPtr.Zero);stderr=CreateFile(output+".err",0x40000000,3,ref sa,2,0,IntPtr.Zero);
@@ -57,15 +59,20 @@ public sealed class EvaluationContainer : IDisposable {
       var keys=new List<string>(env.Keys);keys.Sort(StringComparer.OrdinalIgnoreCase);var block=new StringBuilder();foreach(var key in keys){if(key.Contains("=")||key.Contains("\0")||env[key].Contains("\0"))throw new Exception("Invalid environment");block.Append(key).Append('=').Append(env[key]).Append('\0');}block.Append('\0');environment=Marshal.StringToHGlobalUni(block.ToString());
       var si=new STARTUPINFOEX {Info=new STARTUPINFO {cb=Marshal.SizeOf(typeof(STARTUPINFOEX)),flags=0x100,input=stdin,output=stdout,error=stderr},Attributes=attributes};
       Require(CreateProcess(command,text,IntPtr.Zero,IntPtr.Zero,true,0x80000|0x400|4,environment,cwd,ref si,out pi));started=true;
+      Require(OpenProcessToken(pi.Process,8,out token));uint needed;IntPtr tokenFlag=Marshal.AllocHGlobal(4);bool isContainer;
+      try{Require(GetTokenInformation(token,29,tokenFlag,4,out needed));isContainer=Marshal.ReadInt32(tokenFlag)!=0;}finally{Marshal.FreeHGlobal(tokenFlag);}
+      GetTokenInformation(token,30,IntPtr.Zero,0,out needed);IntPtr capabilities=Marshal.AllocHGlobal((int)needed);int capabilityCount;
+      try{Require(GetTokenInformation(token,30,capabilities,needed,out needed));capabilityCount=Marshal.ReadInt32(capabilities);}finally{Marshal.FreeHGlobal(capabilities);}
+      if(!isContainer||capabilityCount!=0)throw new Exception("Inactive container token or unexpected capabilities");
       job=CreateJobObject(IntPtr.Zero,null);Require(job!=IntPtr.Zero);var limits=new EXTENDED_LIMIT {basic=new BASIC_LIMIT {flags=0x2000|0x100},processMemory=new UIntPtr(1024UL*1024*1024)};
       Require(SetInformationJobObject(job,9,ref limits,(uint)Marshal.SizeOf(typeof(EXTENDED_LIMIT))));Require(AssignProcessToJobObject(job,pi.Process));Require(ResumeThread(pi.Thread)!=0xffffffff);
       bool timedOut=WaitForSingleObject(pi.Process,(uint)timeout)==0x102;if(timedOut){TerminateJobObject(job,124);WaitForSingleObject(pi.Process,5000);}
       uint code;Require(GetExitCodeProcess(pi.Process,out code));var memory=new MEMORY_COUNTERS {size=(uint)Marshal.SizeOf(typeof(MEMORY_COUNTERS))};Require(GetProcessMemoryInfo(pi.Process,ref memory,memory.size));
       CloseHandle(stdout);stdout=IntPtr.Zero;CloseHandle(stderr);stderr=IntPtr.Zero;
-      return new {exitCode=(long)code,timedOut=timedOut,peakMemoryBytes=memory.peakWorking.ToUInt64(),stdout=File.ReadAllText(output+".out",Encoding.UTF8),stderr=File.ReadAllText(output+".err",Encoding.UTF8)};
+      return new {exitCode=(long)code,timedOut=timedOut,peakMemoryBytes=memory.peakWorking.ToUInt64(),appContainer=isContainer,capabilityCount=capabilityCount,stdout=File.ReadAllText(output+".out",Encoding.UTF8),stderr=File.ReadAllText(output+".err",Encoding.UTF8)};
     } finally {
       if(started&&pi.Process!=IntPtr.Zero)TerminateProcess(pi.Process,125);
-      foreach(var h in new[]{pi.Thread,pi.Process,stdin,stdout,stderr,job})if(h!=IntPtr.Zero&&h!=new IntPtr(-1))CloseHandle(h);
+      foreach(var h in new[]{pi.Thread,pi.Process,stdin,stdout,stderr,job,token})if(h!=IntPtr.Zero&&h!=new IntPtr(-1))CloseHandle(h);
       if(attributes!=IntPtr.Zero){DeleteProcThreadAttributeList(attributes);Marshal.FreeHGlobal(attributes);}foreach(var p in new[]{caps,handles,childPolicy,environment})if(p!=IntPtr.Zero)Marshal.FreeHGlobal(p);
       foreach(var f in new[]{output+".out",output+".err"})if(File.Exists(f))File.Delete(f);
     }

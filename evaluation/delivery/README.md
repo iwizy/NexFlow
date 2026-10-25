@@ -8,6 +8,11 @@ It does not pretend to provide Developer ID, notarization, Authenticode publishe
 trust, a public product release or permission to disable platform protection.
 Public distribution remains an NF-103 gate; historical failed signing criteria
 are preserved and are not retroactively marked passed.
+The [candidate disposition](candidate-disposition.json) records a separate
+maintainer-delegated evaluation decision: Rust's failed Windows confinement gate
+excludes it from selection. Completing evaluation does not qualify every candidate;
+all four records and all failed results remain visible. Remaining candidates need
+actual all-target success. No unsuccessful exit receives a validation timing/score.
 
 The v2 capsule adds the real [verified installer](install.mjs): immutable version
 slots, exact regular-file manifests, verify-before-atomic-activation, and refusal

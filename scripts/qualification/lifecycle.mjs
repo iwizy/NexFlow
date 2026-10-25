@@ -7,7 +7,7 @@ import {pathToFileURL} from 'node:url';
 import {inventory,verifyPayload,installVerified,activateVerified,activeVersion} from '../../evaluation/delivery/install.mjs';
 import {baseline,compareOutput,verifyCorpus} from '../lib/runtime-evaluation.mjs';
 import {candidates,sha,fileSha,json,run,checked,git,sourceBinding,writeRecord,extract,capsuleCommand,cleanEnvironment,windowsSession} from './common.mjs';
-export const producerFiles=['scripts/qualification/lifecycle.mjs','scripts/qualification/common.mjs','scripts/qualification/windows-session.cs','scripts/qualification/windows-session.ps1','evaluation/delivery/install.mjs','evaluation/delivery/launch-python.py','evaluation/delivery/windows_paths.py','evaluation/delivery/unsigned-policy.json','.github/workflows/native-lifecycle-completion.yml'];
+export const producerFiles=['scripts/qualification/lifecycle.mjs','scripts/qualification/common.mjs','scripts/qualification/windows-session.cs','scripts/qualification/windows-session.ps1','evaluation/delivery/install.mjs','evaluation/delivery/launch-python.py','evaluation/delivery/windows_paths.py','evaluation/delivery/unsigned-policy.json','evaluation/delivery/candidate-disposition.json','.github/workflows/native-lifecycle-completion.yml'];
 const [target,configFile,predecessorDir,outputDir]=process.argv.slice(2),tools=json(configFile),platforms={'linux/amd64':['linux','x64'],'macos/arm64':['darwin','arm64'],'windows/amd64':['win32','x64']};
 assert.deepEqual([process.platform,process.arch],platforms[target]);assert.equal(process.versions.node,'26.12.0');assert.deepEqual(verifyCorpus(),[]);
 const producer=sourceBinding(producerFiles),scope=realpathSync(mkdtempSync(path.join(process.env.RUNNER_TEMP??os.tmpdir(),'nf-lifecycle-complete-'))),output=path.resolve(outputDir);mkdirSync(output,{recursive:true});
@@ -65,7 +65,7 @@ try{
     await observe('rollback',previousVersion,previous,prior.artifact.files);
     verifyPayload(previous,prior.artifact.files);verifyPayload(current,manifest);
     const archiveBefore=fileSha(p.currentArchive),runtimeBefore=fileSha(node);rmSync(store,{recursive:true});record.uninstall={prefixAbsent:!existsSync(store),outsidePreserved:readFileSync(canary,'utf8')==='synthetic-preserved',archivePreserved:fileSha(p.currentArchive)===archiveBefore,runtimePreserved:fileSha(node)===runtimeBefore};
-    record.result=record.steps.every(s=>s.passed)&&Object.values(record.uninstall).every(Boolean)?'passed-amended-unsigned-scope':'failed';writeRecord(path.join(output,id+'.json'),record,roots);assert.equal(record.result,'passed-amended-unsigned-scope',id+' real lifecycle failed');
+    record.result=record.steps.every(s=>s.passed)&&Object.values(record.uninstall).every(Boolean)?'passed-amended-unsigned-scope':'failed';record.selectionDisposition=id==='rust'?'rejected-retain-failed-windows-gate':'requires-all-target-qualification';writeRecord(path.join(output,id+'.json'),record,roots);if(id!=='rust')assert.equal(record.result,'passed-amended-unsigned-scope',id+' real lifecycle failed');
   }
   renameSync(hidden,schemas);assert.deepEqual(verifyCorpus(),[]);
   const after=JSON.parse(checked(process.execPath,['scripts/runtime-evaluation-environment.mjs',target]));delete after.cohortCheck;assert.deepEqual(after,environment);

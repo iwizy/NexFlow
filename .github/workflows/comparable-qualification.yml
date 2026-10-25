@@ -15,8 +15,6 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - {target: linux/amd64, runner: ubuntu-24.04, folder: linux-amd64}
-          - {target: macos/arm64, runner: macos-15, folder: macos-arm64}
           - {target: windows/amd64, runner: windows-2025, folder: windows-amd64}
     runs-on: ${{ matrix.runner }}
     timeout-minutes: 120

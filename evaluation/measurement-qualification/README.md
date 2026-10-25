@@ -38,6 +38,18 @@ memory-denial tests retain their own direct-entry watchdog evidence. Windows
 uses the native process Job limit during measurement. These enforcement details
 are disclosed per target and are the same for both candidates on that target.
 
+Linux/macOS use the complete pair of observations from producer
+`83eaee46fc91da51a55f493290a44d2b3f6adead`. The continuation workflow captures
+Windows only after a locally reproduced delayed-CRLF framing defect in the
+measurement JSONL client. Its dedicated client uses `crlfDelay: Infinity`;
+the already-qualified lifecycle/security clients and OS policies are unchanged.
+The fixed method, native API drivers, candidate archives and full workloads do
+not change. Each target pair stays in one actual native host/source cohort;
+partial runs are never pooled. `approved-captures.json` pins the exact producer,
+source inventory, run and successful job for each completed target. Consumers
+verify those immutable Git blobs rather than pretending old observations were
+executed by the latest collector. No comparison across OS/hardware is implied.
+
 Clean build: five runs with project output removed, provisioned dependencies,
 OS-denied network. Cached build: one warmup then five unchanged-output runs.
 One explicitly separate recipe preflight catches build/packaging defects before

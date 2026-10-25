@@ -1,0 +1,75 @@
+{
+  "task": "NF-102-04",
+  "target": "linux/amd64",
+  "candidate": "typescript",
+  "producer": {
+    "revision": "40a0110f794f5860b7371706d6b46e11ede29f2f",
+    "sources": [
+      {
+        "path": "scripts/qualification/security.mjs",
+        "sha256": "1b2b98fbde9f1d25ea83520392a1351493ef9b25062f4ac4e4fc1f372e2fa306"
+      },
+      {
+        "path": "scripts/qualification/linux-boundary.c",
+        "sha256": "14d53698f2628e893e1aaf2112a28ac7ce41a28fcd075dbcd5939ba6927386d9"
+      },
+      {
+        "path": "scripts/qualification/boundary-model.mjs",
+        "sha256": "7bfa454d4c0aa592647598754b2f03475d625213337239512c925130f694f12e"
+      },
+      {
+        "path": "scripts/qualification/supervisor.mjs",
+        "sha256": "8a97fa8bbafedee0bf98b69d23d5870a033c337cfa2b01156b242c95e5f47b78"
+      },
+      {
+        "path": "scripts/qualification/common.mjs",
+        "sha256": "3e01ab001966cb7eb0822cab3a53a2233da7c4db3460f304cf7a9c89fa856da6"
+      },
+      {
+        "path": "scripts/qualification/windows-session.cs",
+        "sha256": "5b1e595d97d89ce37fffa68ee11301f6f9bacff4e350f06bec5d841d5b45e0f3"
+      },
+      {
+        "path": "scripts/qualification/windows-session.ps1",
+        "sha256": "ea9c3e558c454e48e9ec91031f451acf4352ea600afd4d1ed95443c364eae106"
+      },
+      {
+        "path": "scripts/lib/isolation-evidence.mjs",
+        "sha256": "44e9bd539b75abdd387e5e2f15f05b164b10ce8a0aeffea51053fa8896e70688"
+      },
+      {
+        "path": "evaluation/isolation/deny-canary.c",
+        "sha256": "da8229510b0112e27d05992701c5ea83c4e06debcd358a5f9aaeb33bbd473e6a"
+      },
+      {
+        "path": "evaluation/delivery/launch-python.py",
+        "sha256": "ee5d01da5b9b0a6024fcf326d4d2174fa6be81c9618d36b1415593e1248b4173"
+      },
+      {
+        "path": "evaluation/delivery/windows_paths.py",
+        "sha256": "74c98bad4c6cc1c289faca5bd1520e6c98de9e46c32fe49f8006598bec1cbb01"
+      },
+      {
+        "path": ".github/workflows/security-qualification.yml",
+        "sha256": "fbc32bdfc07cfe4f908e04bac1afef4ac4be6212feb3b189128b3d4af146f323"
+      },
+      {
+        "path": "evaluation/delivery/candidate-disposition.json",
+        "sha256": "8d2530231d5c91c42ba18aab8b48d425025a6ee91a64e7c4c411e34bf7955de7"
+      }
+    ]
+  },
+  "timeoutControl": {
+    "exitCode": -1,
+    "signal": "SIGKILL",
+    "error": null,
+    "stdout": "",
+    "stderr": "",
+    "timedOut": true,
+    "memoryExceeded": false,
+    "outputExceeded": false,
+    "observedRssBytes": 57114624,
+    "elapsedMs": 259.5445090000003,
+    "accounting": "external 50ms RSS watchdog; sampled observation, not an OS peak-memory benchmark"
+  }
+}

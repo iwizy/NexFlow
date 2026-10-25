@@ -2,7 +2,12 @@
 
 NF-102-04 tests the exact repaired native candidate bytes under real target OS
 controls, not a virtual environment or fixture pretending to be a sandbox.
-Actual native records are required before any target acceptance.
+Actual native records were captured in
+[run 40235462106](https://github.com/iwizy/NexFlow/actions/runs/40235462106),
+producer `40a0110f794f5860b7371706d6b46e11ede29f2f`: all four Linux/macOS
+records pass; Windows TypeScript/Python pass and Rust/Go fail. Twelve records
+retain the same nineteen cases twice, controls and exact per-target shared
+cohorts. Evaluation completion is distinct from all four candidates qualifying.
 The maintainer-delegated [candidate disposition](../delivery/candidate-disposition.json)
 excludes Rust and Go after their actual failed Windows confinement gates. Their results
 stay failed and unscored; this does not waive any selected candidate's boundary

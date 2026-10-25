@@ -1,0 +1,40 @@
+{
+  "task": "NF-102-05",
+  "mode": "attempt",
+  "runId": "40238363753",
+  "producer": {
+    "revision": "118e17db6c74e82c050cddcc601c72b0fbfb7f2d",
+    "sources": [
+      {
+        "path": "scripts/qualification/import-measurements.mjs",
+        "sha256": "955a173643b99cf42a950b01af47e7b1e653781a7272220eda8e475f1e27968d"
+      }
+    ]
+  },
+  "records": [
+    {
+      "target": "windows-amd64",
+      "candidate": "python",
+      "rawBytes": 4804461,
+      "rawSha256": "f91519ef1683e822b425842c846d34b58f3108757eedbc5978e56a5f1d19ca05",
+      "gzipSha256": "de7a2450d26aeebfa719722fac1844377a3815dc00fb13ce2cd125328647821a",
+      "gzipBytes": 156857,
+      "lossless": true,
+      "source": "83eaee46fc91da51a55f493290a44d2b3f6adead",
+      "runId": "40238363753"
+    },
+    {
+      "target": "windows-amd64",
+      "candidate": "typescript",
+      "rawBytes": 4953058,
+      "rawSha256": "01e75e2b39038db2be7cb28c507847f07a73b2c20f38c781e5de4d55e8f26695",
+      "gzipSha256": "e98bc3349eef685340d4cd87ba42bcc8e2d190d5c71f925b9519da16cf983309",
+      "gzipBytes": 161956,
+      "lossless": true,
+      "source": "83eaee46fc91da51a55f493290a44d2b3f6adead",
+      "runId": "40238363753"
+    }
+  ],
+  "rawSamplesRemoved": 0,
+  "losslessCompression": true
+}

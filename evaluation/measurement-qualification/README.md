@@ -11,7 +11,12 @@ value or score. The original all-four-success criterion remains unsatisfied.
 The [method amendment](../../scripts/qualification/measurement-method.json)
 preserves the frozen complete 352-case catalog, 11 CLI scenarios, repetitions,
 warmups, individual deadlines and cache disclosures. Only the outer job window
-is extended to 120 minutes. A library sample calls the unchanged native API with
+is extended to 120 minutes for Linux/macOS. The explicit Windows-only
+[sizing addendum](../../scripts/qualification/windows-orchestration.json) extends
+its outer job window to 240 minutes: observed partial batches forecast more
+than128 minutes for the complete API matrix alone. That is capacity planning,
+not an accepted performance number or a change to a measured workload/limit.
+A library sample calls the unchanged native API with
 one warmup batch then a measured batch of 1/10/100 full corpus passes. The caller
 receives no oracle; the outer consumer checks every result with the frozen
 oracle. Startup/schema initialization is outside that API clock. The combined

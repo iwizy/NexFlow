@@ -17,7 +17,8 @@ jobs:
         include:
           - {target: windows/amd64, runner: windows-2025, folder: windows-amd64}
     runs-on: ${{ matrix.runner }}
-    timeout-minutes: 120
+    # Windows-only sizing addendum; per-workload limits/repetitions are unchanged.
+    timeout-minutes: 240
     env:
       PYTHONUTF8: '1'
       PYTHONDONTWRITEBYTECODE: '1'

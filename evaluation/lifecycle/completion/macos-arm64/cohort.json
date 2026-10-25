@@ -1,0 +1,71 @@
+{
+  "task": "NF-102-03",
+  "target": "macos/arm64",
+  "producer": {
+    "revision": "2a28b632994eecd1ec41a7f20ec508313d6f2b64",
+    "sources": [
+      {
+        "path": "scripts/qualification/lifecycle.mjs",
+        "sha256": "d7e78e1d2113f16789dde14e31e2fdb92a6af379acb61556bef9dbd8b380f4bd"
+      },
+      {
+        "path": "scripts/qualification/common.mjs",
+        "sha256": "3e01ab001966cb7eb0822cab3a53a2233da7c4db3460f304cf7a9c89fa856da6"
+      },
+      {
+        "path": "scripts/qualification/windows-session.cs",
+        "sha256": "5b1e595d97d89ce37fffa68ee11301f6f9bacff4e350f06bec5d841d5b45e0f3"
+      },
+      {
+        "path": "scripts/qualification/windows-session.ps1",
+        "sha256": "ea9c3e558c454e48e9ec91031f451acf4352ea600afd4d1ed95443c364eae106"
+      },
+      {
+        "path": "evaluation/delivery/install.mjs",
+        "sha256": "d8856bb08661060a4f5a415eb76e0438961f6e5170b0e01b3a4b2098f9d7ca02"
+      },
+      {
+        "path": "evaluation/delivery/launch-python.py",
+        "sha256": "ee5d01da5b9b0a6024fcf326d4d2174fa6be81c9618d36b1415593e1248b4173"
+      },
+      {
+        "path": "evaluation/delivery/windows_paths.py",
+        "sha256": "74c98bad4c6cc1c289faca5bd1520e6c98de9e46c32fe49f8006598bec1cbb01"
+      },
+      {
+        "path": "evaluation/delivery/unsigned-policy.json",
+        "sha256": "36c877c5a3b3ca3d27f739ba831da9da64b132dca49c98dc8af56a3c8dc3d958"
+      },
+      {
+        "path": "evaluation/delivery/candidate-disposition.json",
+        "sha256": "8d2530231d5c91c42ba18aab8b48d425025a6ee91a64e7c4c411e34bf7955de7"
+      },
+      {
+        "path": ".github/workflows/native-lifecycle-completion.yml",
+        "sha256": "d111dd6ff10e498d9b98d840da28db390108e45f86dd24eab3446b010e039372"
+      }
+    ]
+  },
+  "environment": {
+    "target": "macos/arm64",
+    "platform": "darwin",
+    "architecture": "arm64",
+    "runnerLabel": "macos-15",
+    "imageOS": "macos15",
+    "imageVersion": "20260907.0337.1",
+    "osVersion": "15.7.9",
+    "osBuild": "24G830",
+    "osCaption": "macOS 15.7.9",
+    "kernel": "24.6.0",
+    "libc": null,
+    "cpuModel": "Apple M1 (Virtual)",
+    "cpuCount": 3,
+    "memoryBytes": 7516192768,
+    "translated": false
+  },
+  "environmentSha256": "918a3e08c60e5a4a72340fcff7e350511ed68aa0123e00737490d008a8d65d81",
+  "allFourInSameNativeJob": true,
+  "beforeAfterIdentical": true,
+  "runId": "40234645590",
+  "distributionMode": "unsigned-evaluation-developer-only"
+}

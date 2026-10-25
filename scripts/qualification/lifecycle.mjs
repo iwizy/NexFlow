@@ -20,7 +20,7 @@ const fixtureRoot=path.join(scope,'inputs space юникод');mkdirSync(fixture
 const networkCode='const n=require("node:net"),s=n.connect({host:"127.0.0.1",port:Number(process.argv[1])});s.setTimeout(2000,()=>process.exit(12));s.on("error",e=>{console.log(e.code);process.exit(13)});s.on("connect",()=>{s.destroy();process.exit(0)});';
 const server=createServer(s=>s.destroy());await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));
 const prepared=[],roots=[scope,process.cwd(),path.dirname(configFile),pythonBase],env=cleanEnvironment(scope);
-let session;const schemas=path.resolve('schemas'),hidden=path.join(scope,'checkout-schemas-unavailable');
+let session;const schemas=path.resolve('schemas'),hidden=schemas+'.nf-lifecycle-hidden-'+process.pid;assert.ok(!existsSync(hidden));
 try{
   for(const id of candidates){
     const prior=json('evaluation/lifecycle/requalification/'+target.replace('/','-')+'/'+id+'.json');assert.equal(prior.collectorRevision,'3cbbd1bc02da0768c9c116a18f56dab9a3ef3cb6');

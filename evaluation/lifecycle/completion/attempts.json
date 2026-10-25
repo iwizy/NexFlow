@@ -42,6 +42,13 @@
     "macos": "passed full tested lifecycle",
     "windows": "TypeScript passed install/upgrade/rollback under OS denial. Python ran but rejected Unicode roots through the Windows venv redirector path; the paired security run confirmed that the redirector also needs a child process, correctly denied by the strict policy.",
     "correction": "Ship a minimal native Python entry shim: exact base interpreter, -I -X utf8 -B and explicitly verified locked venv site-packages. No alternate-language backend and no child-policy exception; use the new installer's compatibility entry for genuine v1 packages too."
+  },{
+    "runId": "40231934343",
+    "producerRevision": "e24cf97e63e446b5874df1d393e3f46b31827b34",
+    "linux": "passed tested lifecycle",
+    "macos": "passed tested lifecycle",
+    "windows": "TypeScript passed. Native base Python now starts without a child, but pathlib.resolve/GetFinalPathNameByHandleW(VOLUME_NAME_DOS) is denied by AppContainer Mount Manager isolation.",
+    "correction": "Ship a kernel-backed Windows path adapter using VOLUME_NAME_NT and a host-captured single-volume mapping; no lexical fallback, Mount Manager grant, alternate backend or unchecked root assumption. Qualify the new runtime variant on real target controls."
   }],
   "signing": "not-performed; explicit unsigned-evaluation scope amendment",
   "architectureAccepted": false

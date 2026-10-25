@@ -2,6 +2,9 @@
 import runpy
 import sys
 from pathlib import Path
+from windows_paths import enable_container_paths
+
+enable_container_paths()
 
 site = Path(sys.argv[1]).resolve(strict=True)
 entry = Path(sys.argv[2]).resolve(strict=True)

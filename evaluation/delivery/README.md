@@ -20,6 +20,13 @@ site-packages and the shipped [native entry shim](launch-python.py), explicitly
 in UTF-8 mode. This avoids a venv redirector subprocess and allows child creation
 to remain denied; it does not use a backend in another language. The new installer
 also supplies this compatibility shim when executing genuine v1 capsules.
+The [Windows path adapter](windows_paths.py) uses a real file handle and
+`GetFinalPathNameByHandleW(VOLUME_NAME_NT)`, with a host-owned single-volume
+mapping captured before confinement. It does not use lexical path fallback or
+grant Mount Manager access. Unmapped volumes and failed kernel resolution fail
+closed; symlinks/reparse points remain resolved by the kernel. The adapter is
+part of the shipped evaluation runtime variant and its source-bound tests.
+See the [native API contract](https://learn.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-getfinalpathnamebyhandlew).
 
 The trusted installer is evaluation tooling, not a manifest command or candidate
 runtime capability. A SHA-256 manifest detects corruption against an obtained

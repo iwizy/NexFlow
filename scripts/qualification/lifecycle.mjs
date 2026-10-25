@@ -7,7 +7,7 @@ import {pathToFileURL} from 'node:url';
 import {inventory,verifyPayload,installVerified,activateVerified,activeVersion} from '../../evaluation/delivery/install.mjs';
 import {baseline,compareOutput,verifyCorpus} from '../lib/runtime-evaluation.mjs';
 import {candidates,sha,fileSha,json,run,checked,git,sourceBinding,writeRecord,extract,capsuleCommand,cleanEnvironment,windowsSession} from './common.mjs';
-export const producerFiles=['scripts/qualification/lifecycle.mjs','scripts/qualification/common.mjs','scripts/qualification/windows-session.cs','scripts/qualification/windows-session.ps1','evaluation/delivery/install.mjs','evaluation/delivery/launch-python.py','evaluation/delivery/unsigned-policy.json','.github/workflows/native-lifecycle-completion.yml'];
+export const producerFiles=['scripts/qualification/lifecycle.mjs','scripts/qualification/common.mjs','scripts/qualification/windows-session.cs','scripts/qualification/windows-session.ps1','evaluation/delivery/install.mjs','evaluation/delivery/launch-python.py','evaluation/delivery/windows_paths.py','evaluation/delivery/unsigned-policy.json','.github/workflows/native-lifecycle-completion.yml'];
 const [target,configFile,predecessorDir,outputDir]=process.argv.slice(2),tools=json(configFile),platforms={'linux/amd64':['linux','x64'],'macos/arm64':['darwin','arm64'],'windows/amd64':['win32','x64']};
 assert.deepEqual([process.platform,process.arch],platforms[target]);assert.equal(process.versions.node,'26.12.0');assert.deepEqual(verifyCorpus(),[]);
 const producer=sourceBinding(producerFiles),scope=realpathSync(mkdtempSync(path.join(process.env.RUNNER_TEMP??os.tmpdir(),'nf-lifecycle-complete-'))),output=path.resolve(outputDir);mkdirSync(output,{recursive:true});
@@ -28,7 +28,7 @@ try{
     const original=path.join(scope,id,'previous-extracted');extract(archive,original);verifyPayload(original,prior.artifact.files);
     const bundle=path.join(scope,id,'next-bundle');cpSync(original,bundle,{recursive:true});mkdirSync(path.join(bundle,'delivery'));
     cpSync('evaluation/delivery/install.mjs',path.join(bundle,'delivery/install.mjs'));
-    if(id==='python')cpSync('evaluation/delivery/launch-python.py',path.join(bundle,'delivery/launch-python.py'));
+    if(id==='python')for(const file of['launch-python.py','windows_paths.py'])cpSync('evaluation/delivery/'+file,path.join(bundle,'delivery',file));
     writeFileSync(path.join(bundle,'delivery/capsule.json'),JSON.stringify({format:'nexflow-evaluation-delivery-v2',candidate:id,target,sourceRevision:prior.sourceRevision,packageRevision:producer.revision,previousArchiveSha256:prior.artifact.sha256,installerSha256:fileSha('evaluation/delivery/install.mjs'),distributionMode:'unsigned-evaluation-developer-only',features:['exact-inventory-install','immutable-version-slots','verify-before-atomic-activation','refuse-tampered-activation']},null,2)+'\n');
     const manifest=inventory(bundle),filename=id+'-delivery-v2-'+producer.revision+'.'+target.replace('/','.')+'.tar.gz',currentArchive=path.join(output,filename),tar=process.platform==='win32'?path.join(process.env.SystemRoot,'System32/tar.exe'):'tar';
     checked(tar,['-czf',currentArchive,'-C',bundle,'.']);const fresh=path.join(scope,id,'current-extracted');extract(currentArchive,fresh);verifyPayload(fresh,manifest);

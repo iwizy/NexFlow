@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import {readFileSync,writeFileSync,mkdirSync,mkdtempSync,cpSync,rmSync,existsSync,openSync,closeSync,symlinkSync,readdirSync,readlinkSync} from 'node:fs';
+import {readFileSync,writeFileSync,mkdirSync,mkdtempSync,cpSync,rmSync,existsSync,openSync,closeSync,symlinkSync,readdirSync,readlinkSync,realpathSync} from 'node:fs';
 import {createServer} from 'node:net';
 import path from 'node:path';
 import os from 'node:os';
@@ -13,7 +13,7 @@ const [target,configFile,predecessorDir,outputDir]=process.argv.slice(2),tools=j
 function fixtureHash(root){const visit=at=>readdirSync(at,{withFileTypes:true}).sort((a,b)=>a.name.localeCompare(b.name,'en')).map(e=>{const f=path.join(at,e.name);return [e.name,e.isSymbolicLink()?['link',readlinkSync(f)]:e.isDirectory()?visit(f):fileSha(f)];});return sha(JSON.stringify(visit(root)));}
 assert.deepEqual([process.platform,process.arch],platforms[target]);assert.equal(process.versions.node,'26.12.0');assert.deepEqual(verifyCorpus(),[]);
 const files=['scripts/qualification/security.mjs','scripts/qualification/linux-boundary.c','scripts/qualification/boundary-model.mjs','scripts/qualification/supervisor.mjs','scripts/qualification/common.mjs','scripts/qualification/windows-session.cs','scripts/qualification/windows-session.ps1','scripts/lib/isolation-evidence.mjs','evaluation/isolation/deny-canary.c','.github/workflows/security-qualification.yml'];
-const producer=sourceBinding(files),scope=mkdtempSync(path.join(os.tmpdir(),'nf-security-')),runtime=path.join(scope,'runtime'),fixtures=path.join(scope,'inputs space юникод'),output=path.resolve(outputDir);for(const at of[runtime,fixtures,output])mkdirSync(at,{recursive:true});
+const producer=sourceBinding(files),scope=realpathSync(mkdtempSync(path.join(process.env.RUNNER_TEMP??os.tmpdir(),'nf-security-'))),runtime=path.join(scope,'runtime'),fixtures=path.join(scope,'inputs space юникод'),output=path.resolve(outputDir);for(const at of[runtime,fixtures,output])mkdirSync(at,{recursive:true});
 const environment=JSON.parse(checked(process.execPath,['scripts/runtime-evaluation-environment.mjs',target]));delete environment.cohortCheck;const environmentSha256=sha(JSON.stringify(environment));
 const node=path.join(runtime,'node'+(process.platform==='win32'?'.exe':''));cpSync(process.execPath,node);let pythonBase=tools.pythonBase;if(process.platform==='win32'){cpSync(path.dirname(pythonBase),path.join(runtime,'python'),{recursive:true});pythonBase=path.join(runtime,'python/python.exe');}
 const env=cleanEnvironment(scope),secret=path.join(scope,'synthetic-credential'),outside=path.join(scope,'outside-write'),marker='NF_QUALIFICATION_PRIVATE_7f1a';writeFileSync(secret,marker);
@@ -33,7 +33,7 @@ try{
     const profile=process.platform==='darwin'?seatbeltProfile({executable:command[0],canary,readable}):null;
     async function invoke(program,args,options={}){if(session)return session.run(program,args,{cwd:runtime,env,restrictChildren:true,timeout:options.timeout??30000});const native=process.platform==='linux'?[launcher,[...readable,'--',program,...args]]:['/usr/bin/sandbox-exec',['-p',profile,program,...args]];return supervise(native[0],native[1],{cwd:runtime,env,...options});}
     const controlCommand=process.platform==='win32'?[node,['-e',winControl,secret,outside,String(server.address().port)]]:[canary,[secret,outside,String(server.address().port)]];
-    const positive=run(controlCommand[0],controlCommand[1],{cwd:runtime,env,timeout:30000}),negative=await invoke(...controlCommand);assert.equal(positive.exitCode,0);assert.equal(negative.exitCode,0);const positiveValues=JSON.parse(positive.stdout),deniedValues=JSON.parse(negative.stdout);
+    const positive=run(controlCommand[0],controlCommand[1],{cwd:runtime,env,timeout:30000}),negative=await invoke(...controlCommand);writeRecord(path.join(output,id+'-controls.json'),{task:'NF-102-04',target,candidate:id,producer,positive,negative},[scope,process.cwd(),path.dirname(configFile),pythonBase,marker]);assert.equal(positive.exitCode,0);assert.equal(negative.exitCode,0);const positiveValues=JSON.parse(positive.stdout),deniedValues=JSON.parse(negative.stdout);
     const keys=process.platform==='win32'?['read','write','connect','spawn','spawnSelf']:['read','write','connect','bind','fork','spawn','spawnSelf'];
     for(const key of keys){assert.equal(positiveValues[key],0,'Positive control '+key);assert.ok(process.platform==='win32'?['EACCES','EPERM','ETIMEDOUT','ENETUNREACH','EHOSTUNREACH'].includes(deniedValues[key]):[1,13].includes(deniedValues[key]),'Inactive OS denial: '+key+'='+deniedValues[key]);}
     if(session){assert.equal(negative.appContainer,true);assert.equal(negative.capabilityCount,0);}
@@ -50,7 +50,7 @@ try{
     assert.equal(fileSha(outside),outsideBefore);assert.equal(readFileSync(secret,'utf8'),marker);assert.equal(sha(JSON.stringify(inventory(prefix))),sourceBefore);
     const fd=openSync(secret,'r'),inheritCode="const f=require('node:fs');try{if(!f.fstatSync(3).isFile())process.exit(13);const b=f.readFileSync(3,'utf8');process.exit(b===process.argv[1]?0:13)}catch{process.exit(13)}";
     let inheritedPositive,inheritedDenied;try{inheritedPositive=run(node,['-e',inheritCode,marker],{cwd:runtime,env,stdio:['pipe','pipe','pipe',fd],timeout:30000});inheritedDenied=await invoke(node,['-e',inheritCode,marker]);}finally{closeSync(fd);}assert.equal(inheritedPositive.exitCode,0);assert.equal(inheritedDenied.exitCode,13);
-    const timeoutControl=await invoke(node,['-e','while(true){}'],{timeout:250});assert.equal(timeoutControl.timedOut,true);
+    const timeoutControl=await invoke(node,['-e','while(true){}'],{timeout:250});writeRecord(path.join(output,id+'-deadline-control.json'),{task:'NF-102-04',target,candidate:id,producer,timeoutControl},[scope,process.cwd(),path.dirname(configFile),pythonBase,marker]);assert.equal(timeoutControl.timedOut,true);
     const memoryPositive=await invoke(node,['-e','const b=Buffer.alloc(32*1024*1024,7);console.log(b.length)']);assert.equal(memoryPositive.exitCode,0);
     const memoryPressure=await invoke(node,['-e','const a=[];while(true)a.push(Buffer.alloc(32*1024*1024,7))']);assert.notEqual(memoryPressure.exitCode,0);assert.equal(memoryPressure.timedOut,false);if(!session)assert.equal(memoryPressure.memoryExceeded,true);
     boundary.revoke();assert.throws(()=>boundary.publish({generation:0,authority:'read-only-validation'},{diagnostics:[]}));

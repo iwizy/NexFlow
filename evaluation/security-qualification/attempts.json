@@ -1,0 +1,5 @@
+{
+  "task": "NF-102-04",
+  "attempts": [{"runId":"40230261489","producerRevision":"92bc7964b490c8644b80cfad29ed7196948c7cca","linux":"Control setup passed; actual deadline control exited before the watchdog; no native pass claimed. Added independent sanitized bootstrap/deadline diagnostic records.","macos":"Initial confined canary exited 71: noncanonical temporary path policy. Use canonical native RUNNER_TEMP with the same strict read roots.","windows":"Inherited the lifecycle profile-temp/realpath failure. No candidate pass; predecessor CLI source is unchanged.","correction":"Canonical temporary roots and independently retained failure diagnostics; no broader filesystem or network authority."}],
+  "architectureAccepted": false
+}

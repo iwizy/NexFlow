@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import {readFileSync,writeFileSync,mkdirSync,mkdtempSync,cpSync,rmSync,existsSync,renameSync} from 'node:fs';
+import {readFileSync,writeFileSync,mkdirSync,mkdtempSync,cpSync,rmSync,existsSync,renameSync,realpathSync} from 'node:fs';
 import {createServer} from 'node:net';
 import path from 'node:path';
 import os from 'node:os';
@@ -10,7 +10,7 @@ import {candidates,sha,fileSha,json,run,checked,git,sourceBinding,writeRecord,ex
 export const producerFiles=['scripts/qualification/lifecycle.mjs','scripts/qualification/common.mjs','scripts/qualification/windows-session.cs','scripts/qualification/windows-session.ps1','evaluation/delivery/install.mjs','evaluation/delivery/unsigned-policy.json','.github/workflows/native-lifecycle-completion.yml'];
 const [target,configFile,predecessorDir,outputDir]=process.argv.slice(2),tools=json(configFile),platforms={'linux/amd64':['linux','x64'],'macos/arm64':['darwin','arm64'],'windows/amd64':['win32','x64']};
 assert.deepEqual([process.platform,process.arch],platforms[target]);assert.equal(process.versions.node,'26.12.0');assert.deepEqual(verifyCorpus(),[]);
-const producer=sourceBinding(producerFiles),scope=mkdtempSync(path.join(os.tmpdir(),'nf-lifecycle-complete-')),output=path.resolve(outputDir);mkdirSync(output,{recursive:true});
+const producer=sourceBinding(producerFiles),scope=realpathSync(mkdtempSync(path.join(process.env.RUNNER_TEMP??os.tmpdir(),'nf-lifecycle-complete-'))),output=path.resolve(outputDir);mkdirSync(output,{recursive:true});
 const environment=JSON.parse(checked(process.execPath,['scripts/runtime-evaluation-environment.mjs',target]));delete environment.cohortCheck;
 const environmentSha256=sha(JSON.stringify(environment)),predecessorRoot=path.resolve(predecessorDir),runtime=path.join(scope,'runtime');mkdirSync(runtime);
 const node=path.join(runtime,'node'+(process.platform==='win32'?'.exe':''));cpSync(process.execPath,node);

@@ -4,7 +4,7 @@ NF-102-04 tests the exact repaired native candidate bytes under real target OS
 controls, not a virtual environment or fixture pretending to be a sandbox.
 Actual native records are required before any target acceptance.
 The maintainer-delegated [candidate disposition](../delivery/candidate-disposition.json)
-excludes Rust after its actual failed Windows path-confinement gate. Its results
+excludes Rust and Go after their actual failed Windows confinement gates. Their results
 stay failed and unscored; this does not waive any selected candidate's boundary
 requirement. Completed evaluation is distinct from all four candidates qualifying.
 

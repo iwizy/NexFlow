@@ -8,12 +8,25 @@ $settings = Get-Content -Raw -LiteralPath $Configuration | ConvertFrom-Json
 $name = 'NexFlow.Evaluation.' + [Guid]::NewGuid().ToString('N')
 $session = [EvaluationContainer]::new($name)
 try {
+  $scopeRoot = [IO.Path]::GetFullPath($settings.scope).TrimEnd('\')
+  $parents = [Collections.Generic.HashSet[string]]::new([StringComparer]::OrdinalIgnoreCase)
   foreach ($root in $settings.readable) {
     $full = [IO.Path]::GetFullPath($root)
     $scope = [IO.Path]::GetFullPath($settings.scope).TrimEnd('\') + '\'
     if (-not $full.StartsWith($scope,[StringComparison]::OrdinalIgnoreCase)) {throw 'Only task-owned temporary ACL roots are allowed'}
+    $ancestor = [IO.Path]::GetDirectoryName($full)
+    while ($ancestor -and ($ancestor -eq $scopeRoot -or $ancestor.StartsWith($scope,[StringComparison]::OrdinalIgnoreCase))) {
+      [void]$parents.Add($ancestor)
+      if ($ancestor -eq $scopeRoot) {break}
+      $ancestor = [IO.Path]::GetDirectoryName($ancestor)
+    }
     & "$env:SystemRoot\System32\icacls.exe" $full /grant "*$($session.Sid):(OI)(CI)(RX)" /T /Q | Out-Null
     if ($LASTEXITCODE -ne 0) {throw 'Scoped ACL grant failed'}
+  }
+  # Literal task-owned ancestor metadata/traversal only: no inheritance and no file read grant.
+  foreach ($ancestor in $parents) {
+    & "$env:SystemRoot\System32\icacls.exe" $ancestor /grant "*$($session.Sid):(RX)" /Q | Out-Null
+    if ($LASTEXITCODE -ne 0) {throw 'Scoped ancestor traversal grant failed'}
   }
   [Console]::Out.WriteLine('{"ready":true,"networkCapabilities":0,"unicodeProbe":"юникод"}')
   while ($null -ne ($line = [Console]::In.ReadLine())) {

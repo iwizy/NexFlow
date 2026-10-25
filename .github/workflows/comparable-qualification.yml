@@ -1,0 +1,198 @@
+name: Eligible Candidate Measurements
+on:
+  pull_request:
+    paths:
+      - 'scripts/qualification/**'
+      - 'evaluation/measurement-qualification/**'
+      - '.github/workflows/comparable-qualification.yml'
+permissions:
+  contents: read
+  actions: read
+jobs:
+  measurements:
+    name: Eligible measurements (${{ matrix.target }})
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {target: linux/amd64, runner: ubuntu-24.04, folder: linux-amd64}
+          - {target: macos/arm64, runner: macos-15, folder: macos-arm64}
+          - {target: windows/amd64, runner: windows-2025, folder: windows-amd64}
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 120
+    env:
+      PYTHONUTF8: '1'
+      PYTHONDONTWRITEBYTECODE: '1'
+      GOTOOLCHAIN: local
+      CGO_ENABLED: '0'
+    steps:
+      - shell: bash
+        run: git config --global core.autocrlf false
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '26.12.0'
+      - name: Preserve exact source-bound observations
+        id: plan
+        shell: bash
+        run: |
+          node --input-type=module <<'JS'
+          import fs from 'node:fs';import crypto from 'node:crypto';let collect=true;
+          try{const r=JSON.parse(fs.readFileSync('evaluation/measurement-qualification/${{ matrix.folder }}/typescript.json'));collect=!r.producer.sources.every(f=>crypto.createHash('sha256').update(fs.readFileSync(f.path)).digest('hex')===f.sha256);}catch{}
+          fs.appendFileSync(process.env.GITHUB_OUTPUT,'collect='+collect+'\n');
+          JS
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        if: steps.plan.outputs.collect == 'true'
+        with:
+          github-token: ${{ github.token }}
+          run-id: '40234645590'
+          name: lifecycle-completion-${{ matrix.folder }}-2a28b632994eecd1ec41a7f20ec508313d6f2b64
+          path: ${{ runner.temp }}/qualified-capsules
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1
+        if: steps.plan.outputs.collect == 'true'
+        continue-on-error: true
+        with:
+          python-version: '3.12.15'
+      - uses: actions/setup-go@924ae3a1cded613372ab5595356fb5720e22ba16
+        if: steps.plan.outputs.collect == 'true'
+        with:
+          go-version: '1.27.2'
+          cache: false
+      - name: Provision exact tools outside measured workloads
+        if: steps.plan.outputs.collect == 'true'
+        shell: bash
+        run: node scripts/runtime-native-lifecycle-provision.mjs "$RUNNER_TEMP/measurement-tools"
+      - name: Check published native prerequisite evidence
+        if: steps.plan.outputs.collect == 'true'
+        shell: bash
+        run: |
+          node scripts/qualification/verify.mjs lifecycle
+          node scripts/qualification/verify-security.mjs
+      - name: Full frozen core measurements
+        id: core
+        if: steps.plan.outputs.collect == 'true'
+        shell: bash
+        run: node scripts/qualification/measurements.mjs collect '${{ matrix.target }}' "$RUNNER_TEMP/measurement-tools/config.json" "$RUNNER_TEMP/qualified-capsules" "$RUNNER_TEMP/measurement-results"
+      - name: Pipeline lane typescript 1
+        id: typescript0
+        if: steps.plan.outputs.collect == 'true'
+        shell: bash
+        run: node scripts/qualification/measurements.mjs lane-start '${{ steps.core.outputs.state }}' typescript 0
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        id: uploadtypescript0
+        if: steps.plan.outputs.collect == 'true'
+        with:
+          name: measurement-lane-${{ matrix.folder }}-typescript0-${{ github.event.pull_request.head.sha }}
+          path: ${{ steps.typescript0.outputs.upload }}/*
+          retention-days: 90
+          if-no-files-found: error
+      - name: Record actual upload interval
+        if: steps.plan.outputs.collect == 'true'
+        shell: bash
+        run: node scripts/qualification/measurements.mjs lane-end '${{ steps.core.outputs.state }}' typescript 0 '${{ steps.uploadtypescript0.outputs.artifact-id }}'
+      - name: Pipeline lane python 1
+        id: python0
+        if: steps.plan.outputs.collect == 'true'
+        shell: bash
+        run: node scripts/qualification/measurements.mjs lane-start '${{ steps.core.outputs.state }}' python 0
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        id: uploadpython0
+        if: steps.plan.outputs.collect == 'true'
+        with:
+          name: measurement-lane-${{ matrix.folder }}-python0-${{ github.event.pull_request.head.sha }}
+          path: ${{ steps.python0.outputs.upload }}/*
+          retention-days: 90
+          if-no-files-found: error
+      - name: Record actual upload interval
+        if: steps.plan.outputs.collect == 'true'
+        shell: bash
+        run: node scripts/qualification/measurements.mjs lane-end '${{ steps.core.outputs.state }}' python 0 '${{ steps.uploadpython0.outputs.artifact-id }}'
+      - name: Pipeline lane python 2
+        id: python1
+        if: steps.plan.outputs.collect == 'true'
+        shell: bash
+        run: node scripts/qualification/measurements.mjs lane-start '${{ steps.core.outputs.state }}' python 1
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        id: uploadpython1
+        if: steps.plan.outputs.collect == 'true'
+        with:
+          name: measurement-lane-${{ matrix.folder }}-python1-${{ github.event.pull_request.head.sha }}
+          path: ${{ steps.python1.outputs.upload }}/*
+          retention-days: 90
+          if-no-files-found: error
+      - name: Record actual upload interval
+        if: steps.plan.outputs.collect == 'true'
+        shell: bash
+        run: node scripts/qualification/measurements.mjs lane-end '${{ steps.core.outputs.state }}' python 1 '${{ steps.uploadpython1.outputs.artifact-id }}'
+      - name: Pipeline lane typescript 2
+        id: typescript1
+        if: steps.plan.outputs.collect == 'true'
+        shell: bash
+        run: node scripts/qualification/measurements.mjs lane-start '${{ steps.core.outputs.state }}' typescript 1
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        id: uploadtypescript1
+        if: steps.plan.outputs.collect == 'true'
+        with:
+          name: measurement-lane-${{ matrix.folder }}-typescript1-${{ github.event.pull_request.head.sha }}
+          path: ${{ steps.typescript1.outputs.upload }}/*
+          retention-days: 90
+          if-no-files-found: error
+      - name: Record actual upload interval
+        if: steps.plan.outputs.collect == 'true'
+        shell: bash
+        run: node scripts/qualification/measurements.mjs lane-end '${{ steps.core.outputs.state }}' typescript 1 '${{ steps.uploadtypescript1.outputs.artifact-id }}'
+      - name: Pipeline lane typescript 3
+        id: typescript2
+        if: steps.plan.outputs.collect == 'true'
+        shell: bash
+        run: node scripts/qualification/measurements.mjs lane-start '${{ steps.core.outputs.state }}' typescript 2
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        id: uploadtypescript2
+        if: steps.plan.outputs.collect == 'true'
+        with:
+          name: measurement-lane-${{ matrix.folder }}-typescript2-${{ github.event.pull_request.head.sha }}
+          path: ${{ steps.typescript2.outputs.upload }}/*
+          retention-days: 90
+          if-no-files-found: error
+      - name: Record actual upload interval
+        if: steps.plan.outputs.collect == 'true'
+        shell: bash
+        run: node scripts/qualification/measurements.mjs lane-end '${{ steps.core.outputs.state }}' typescript 2 '${{ steps.uploadtypescript2.outputs.artifact-id }}'
+      - name: Pipeline lane python 3
+        id: python2
+        if: steps.plan.outputs.collect == 'true'
+        shell: bash
+        run: node scripts/qualification/measurements.mjs lane-start '${{ steps.core.outputs.state }}' python 2
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        id: uploadpython2
+        if: steps.plan.outputs.collect == 'true'
+        with:
+          name: measurement-lane-${{ matrix.folder }}-python2-${{ github.event.pull_request.head.sha }}
+          path: ${{ steps.python2.outputs.upload }}/*
+          retention-days: 90
+          if-no-files-found: error
+      - name: Record actual upload interval
+        if: steps.plan.outputs.collect == 'true'
+        shell: bash
+        run: node scripts/qualification/measurements.mjs lane-end '${{ steps.core.outputs.state }}' python 2 '${{ steps.uploadpython2.outputs.artifact-id }}'
+      - name: Final cohort and cleanup
+        if: steps.plan.outputs.collect == 'true'
+        shell: bash
+        run: node scripts/qualification/measurements.mjs finalize '${{ steps.core.outputs.state }}'
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.plan.outputs.collect == 'true' && always()
+        with:
+          name: measurement-results-${{ matrix.folder }}-${{ github.event.pull_request.head.sha }}
+          path: ${{ runner.temp }}/measurement-results/*
+          retention-days: 90
+          if-no-files-found: error
+      - name: Verify preserved full evidence
+        if: steps.plan.outputs.collect != 'true'
+        shell: bash
+        run: |
+          node scripts/runtime-native-lifecycle-provision.mjs "$RUNNER_TEMP/consumer-tools" --maintenance-only
+          node scripts/qualification/verify-measurements.mjs

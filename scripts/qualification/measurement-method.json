@@ -1,0 +1,12 @@
+{
+  "task": "NF-102-05",
+  "decisionDate": "2026-10-26",
+  "authority": "Maintainer delegates technical decisions for completion of the four evaluation tasks.",
+  "baseContract": "evaluation/environment-contract.json",
+  "preserved": ["complete ordered frozen catalog/corpus","11 unchanged CLI scenarios","1/10/100 corpus passes","cold and memory 10 runs / zero warmups","library 30 runs / one warmup","clean build five runs","cached build five runs / one warmup","CI three repetitions / zero warmups","per-invocation 30s, per-library-batch 120s, per-build 600s","no outlier deletion","within-target matched cohort and rotating candidate order"],
+  "outerOrchestration": {"historicalJobMinutes":20,"currentJobMinutes":120,"reason":"The complete multi-candidate repetition matrix and five clean builds must not be reduced to fit the original preparation-job window. Individual workload deadlines and frozen repetitions remain unchanged."},
+  "eligibleScope": "Compare TypeScript and Python only after qualification on all three targets. Preserve all 84 original cells: 42 Rust/Go cells are excluded, without successful values or scores, and 42 eligible cells require actual observations. This explicit amendment does not satisfy the original all-four-success criterion.",
+  "libraryClock": "Monotonic trusted native driver outside the evaluated library API, in the same warmed process. Startup/schema setup excluded; warmup and measured batch separately retained. No oracle is passed to the implementation; the outer consumer verifies every returned case against the unchanged catalog.",
+  "ciDefinition": "Three identical candidate pipeline-lane repetitions within one native Actions job, not three differently provisioned VMs. Record provision/build/test and actual artifact-upload stage intervals separately, excluding queue time. Shared job bootstrap is separate and not falsely attributed to a language. This explicit lane-level definition replaces the historical separate-job interpretation, preserving repetitions/cache disclosures and a truly matched host.",
+  "notClaimed": ["intrinsic language ranking independent of workload/hardware","direct comparison of different OS/hardware","full four-candidate comparability","signed product release","production runtime or stable product ABI"]
+}

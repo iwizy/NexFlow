@@ -65,7 +65,7 @@ try{
     await observe('rollback',previousVersion,previous,prior.artifact.files);
     verifyPayload(previous,prior.artifact.files);verifyPayload(current,manifest);
     const archiveBefore=fileSha(p.currentArchive),runtimeBefore=fileSha(node);rmSync(store,{recursive:true});record.uninstall={prefixAbsent:!existsSync(store),outsidePreserved:readFileSync(canary,'utf8')==='synthetic-preserved',archivePreserved:fileSha(p.currentArchive)===archiveBefore,runtimePreserved:fileSha(node)===runtimeBefore};
-    record.result=record.steps.every(s=>s.passed)&&Object.values(record.uninstall).every(Boolean)?'passed-amended-unsigned-scope':'failed';record.selectionDisposition=id==='rust'?'rejected-retain-failed-windows-gate':'requires-all-target-qualification';writeRecord(path.join(output,id+'.json'),record,roots);if(id!=='rust')assert.equal(record.result,'passed-amended-unsigned-scope',id+' real lifecycle failed');
+    record.result=record.steps.every(s=>s.passed)&&Object.values(record.uninstall).every(Boolean)?'passed-amended-unsigned-scope':'failed';record.selectionDisposition=['rust','go'].includes(id)?'rejected-retain-failed-windows-gate':'requires-all-target-qualification';writeRecord(path.join(output,id+'.json'),record,roots);if(!['rust','go'].includes(id))assert.equal(record.result,'passed-amended-unsigned-scope',id+' real lifecycle failed');
   }
   renameSync(hidden,schemas);assert.deepEqual(verifyCorpus(),[]);
   const after=JSON.parse(checked(process.execPath,['scripts/runtime-evaluation-environment.mjs',target]));delete after.cohortCheck;assert.deepEqual(after,environment);

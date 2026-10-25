@@ -1,0 +1,11 @@
+{
+  "decisionDate": "2026-10-26",
+  "authority": "Maintainer delegates all technical decisions for NF-102-03 through NF-102-06.",
+  "scope": "Evaluate all four candidates; select and score only fully qualified candidates. A verified failed candidate remains failed, not repaired automatically or marked passed to equalize a scorecard.",
+  "rejected": [{"candidate":"rust","target":"windows/amd64","gate":"native-installed-CLI-under-OS-denial","sourceRevision":"23e576efd0dda0f00f5462eda9295c1ae4ec8fee","observedRun":"40232934055","reason":"Native Windows canonicalization is incompatible with the selected AppContainer boundary. Retain actual CLI failures and exclude the candidate from selection; no DLL hook, filesystem authority exception or artificial successful benchmark."}],
+  "remainingCandidates": ["typescript","python","go"],
+  "remainingStatus": "Require actual successful qualification on every supported target; this policy is not their pass evidence.",
+  "measurementDisposition": "Collect comparable successful workloads for eligible candidates. Preserve all 84 original metric cells: failed/unsupported cells for a rejected candidate are not timings, scores, zero values or a claim of full four-candidate comparability.",
+  "taskClosureBoundary": "Evidence/evaluation tasks may complete with an explicitly rejected candidate; no failed hard gate is promoted to pass. Original all-four-success/signing objectives are recorded separately from the amended eligible-candidate decision scope.",
+  "architectureAccepted": false
+}

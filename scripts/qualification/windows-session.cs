@@ -39,6 +39,8 @@ public sealed class EvaluationContainer : IDisposable {
   [DllImport("kernel32.dll")] static extern bool GetExitCodeProcess(IntPtr process,out uint code);
   [DllImport("psapi.dll")] static extern bool GetProcessMemoryInfo(IntPtr process,ref MEMORY_COUNTERS info,uint size);
   [DllImport("kernel32.dll")] static extern bool CloseHandle(IntPtr p);
+  [DllImport("kernel32.dll",CharSet=CharSet.Unicode,SetLastError=true)] static extern uint QueryDosDevice(string drive,StringBuilder target,uint size);
+  public static string DeviceForDrive(string drive){if(drive.Length!=2||drive[1]!=':')throw new Exception("Expected task volume");var buffer=new StringBuilder(32768);Require(QueryDosDevice(drive,buffer,(uint)buffer.Capacity)!=0);return buffer.ToString();}
   readonly string name;readonly IntPtr sid;public string Sid {get;private set;}
   static void Require(bool ok,[CallerArgumentExpression("ok")] string operation=null) {if(!ok){int error=Marshal.GetLastWin32Error();throw new Exception(operation+"; Win32="+error+": "+new Win32Exception(error).Message);}}
   static string Quote(string s) {var b=new StringBuilder("\"");int slashes=0;foreach(char c in s){if(c=='\\'){slashes++;continue;}if(c=='\"'){b.Append('\\',slashes*2+1).Append(c);}else{b.Append('\\',slashes).Append(c);}slashes=0;}return b.Append('\\',slashes*2).Append('"').ToString();}

@@ -10,6 +10,8 @@ $session = [EvaluationContainer]::new($name)
 $metadataParents = [Collections.Generic.HashSet[string]]::new([StringComparer]::OrdinalIgnoreCase)
 try {
   $scopeRoot = [IO.Path]::GetFullPath($settings.scope).TrimEnd('\')
+  $drive = [IO.Path]::GetPathRoot($scopeRoot).TrimEnd('\')
+  $volumeMapping = @{drive=$drive;device=[EvaluationContainer]::DeviceForDrive($drive)} | ConvertTo-Json -Compress
   # Read attributes/traverse of literal ancestors, never directory listing or file contents.
   $metadataParent = [IO.Path]::GetDirectoryName($scopeRoot)
   while ($metadataParent) {
@@ -45,6 +47,7 @@ try {
     if ($request.close) {break}
     $environment = [Collections.Generic.Dictionary[string,string]]::new()
     foreach ($p in $request.env.PSObject.Properties) {$environment[$p.Name]=[string]$p.Value}
+    $environment['NF_EVALUATION_DOS_MAP'] = $volumeMapping
     try {$result=$session.Run([string]$request.command,[string[]]$request.args,[string]$request.cwd,$environment,[string]$request.output,[int]$request.timeout,[bool]$request.restrictChildren)
       [Console]::Out.WriteLine(($result | ConvertTo-Json -Compress -Depth 8))
     } catch {[Console]::Out.WriteLine((@{launcherError=$_.Exception.Message}|ConvertTo-Json -Compress))}

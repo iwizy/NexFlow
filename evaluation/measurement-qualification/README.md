@@ -16,6 +16,10 @@ one warmup batch then a measured batch of 1/10/100 full corpus passes. The calle
 receives no oracle; the outer consumer checks every result with the frozen
 oracle. Startup/schema initialization is outside that API clock. The combined
 warmup+sample process has a 240s outer deadline; each batch retains its 120s limit.
+The measurement-only Linux launcher derives from the unchanged NF-102-04 source
+by one verified literal replacement: CPU 120/121 becomes 240/241 for the combined
+two-batch process. Individual batch clocks still enforce 120s; no candidate,
+filesystem/network/process policy or original security qualification changes.
 
 Cold start and native peak RSS/working-set use fresh CLI processes, ten samples
 for each unchanged scenario. Successful scenarios and expected rejections are
@@ -24,9 +28,20 @@ monotonic clock and wait4 ru_maxrss; Windows uses external monotonic parent time
 and native PeakWorkingSetSize. Interpreter and launcher costs are disclosed;
 there is no separate aggregation of simultaneous descendants or cross-OS ranking.
 All raw observations, errors, samples and nearest-rank p95 dispersion are kept.
+Large raw records are stored losslessly as `.json.gz`; the import receipt binds
+both original JSON and compressed hashes and verifies byte-for-byte decompression.
+No sample, failed result or per-case output is removed to shrink the evidence.
+The Unix process-group deadline/output watchdog surrounds the trusted wait4
+instrument. Its sampled RSS is the instrument's RSS, not a candidate memory
+limit or metric. Candidate peaks come only from wait4; the separate NF-102-04
+memory-denial tests retain their own direct-entry watchdog evidence. Windows
+uses the native process Job limit during measurement. These enforcement details
+are disclosed per target and are the same for both candidates on that target.
 
 Clean build: five runs with project output removed, provisioned dependencies,
 OS-denied network. Cached build: one warmup then five unchanged-output runs.
+One explicitly separate recipe preflight catches build/packaging defects before
+long timing batches; it is not a timed sample or a replacement for any repetition.
 TypeScript uses the pinned nonincremental compiler and must reproduce the exact
 qualified distribution files. Python compileall checked-hash caches are build
 validation only, excluded from its shipped source/wheel capsule. Artifact bytes

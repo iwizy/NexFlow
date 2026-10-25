@@ -41,8 +41,8 @@ jobs:
         shell: bash
         run: |
           node --input-type=module <<'JS'
-          import fs from 'node:fs';import crypto from 'node:crypto';let collect=true;
-          try{const r=JSON.parse(fs.readFileSync('evaluation/measurement-qualification/${{ matrix.folder }}/typescript.json'));collect=!r.producer.sources.every(f=>crypto.createHash('sha256').update(fs.readFileSync(f.path)).digest('hex')===f.sha256);}catch{}
+          import fs from 'node:fs';import crypto from 'node:crypto';import {gunzipSync} from 'node:zlib';let collect=true;
+          try{const r=JSON.parse(gunzipSync(fs.readFileSync('evaluation/measurement-qualification/${{ matrix.folder }}/typescript.json.gz')));collect=!r.producer.sources.every(f=>crypto.createHash('sha256').update(fs.readFileSync(f.path)).digest('hex')===f.sha256);}catch{}
           fs.appendFileSync(process.env.GITHUB_OUTPUT,'collect='+collect+'\n');
           JS
       - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093

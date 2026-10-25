@@ -2,6 +2,9 @@
 import runpy
 import sys
 from pathlib import Path
+if not Path(__file__).is_absolute():
+    raise ValueError("Verified absolute launcher path required")
+sys.path.insert(0, str(Path(__file__).parent))
 from windows_paths import enable_container_paths
 
 enable_container_paths()

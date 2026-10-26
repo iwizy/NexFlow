@@ -1,0 +1,12 @@
+{
+  "candidate": "typescript",
+  "clean": true,
+  "elapsedMs": 2665.821729,
+  "observation": {
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "stdout": "",
+    "stderr": ""
+  }
+}

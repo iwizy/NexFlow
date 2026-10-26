@@ -1,0 +1,29 @@
+{
+  "task": "NF-102-05",
+  "target": "linux/amd64",
+  "scope": "Outer CI capacity only; no workload, sample, individual batch or candidate limit changes.",
+  "baseMethodSha256": "da4f8dba67204b180648d3b4a023a505ac3fc0138c5bb0f71e151f17417ae568",
+  "baseJobMinutes": 120,
+  "effectiveLinuxJobMinutes": 240,
+  "authority": "Maintainer delegates technical completion decisions on the existing permitted standard native runners.",
+  "sizingEvidence": {
+    "runId": "40238363753",
+    "jobId": "121304670172",
+    "producerRevision": "83eaee46fc91da51a55f493290a44d2b3f6adead",
+    "conclusion": "cancelled at the 120-minute job limit; not a candidate rejection",
+    "coldSamplesPerCandidate": 110,
+    "completedLibrarySamplesPerCandidate": 89,
+    "onePassSamples": 30,
+    "tenPassSamples": 30,
+    "hundredPassSamples": 29,
+    "lastHundredPassBatchesMs": {
+      "typescript": {"warmup": 16628.453823, "measured": 16051.80973},
+      "python": {"warmup": 91519.442421, "measured": 90636.946878}
+    },
+    "interpretation": "The unchanged full matrix plus real upload lanes requires more than the original 120-minute window. These partial observations are capacity evidence only, never pooled into complete performance metrics."
+  },
+  "preserved": ["352 cases", "11 CLI scenarios", "10 cold runs", "30 samples at 1/10/100 passes", "one full warmup batch", "batch 120s", "combined process 240s", "CLI 30s", "build 600s", "clean 5 and cached 5 plus warmup", "three actual upload lanes", "one actual native host for both eligible candidates", "all errors and raw observations"],
+  "otherCaptures": "Reuse complete macOS producer 83eaee46 and preserve ongoing Windows producer efbc1863; no repeated capture or cross-cohort sample pooling.",
+  "originalAllFourSuccessfulCriterionSatisfied": false,
+  "reference": "https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#jobsjob_idtimeout-minutes"
+}

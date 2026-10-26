@@ -1,0 +1,488 @@
+{
+  "task": "NF-103",
+  "sourceRevision": "1c3ca2566b10f25fdef88116dbb87eed22bdb838",
+  "startedAt": "2026-10-26T09:48:28.033Z",
+  "completedAt": "2026-10-26T09:49:10.794Z",
+  "toolchain": {
+    "node": "v26.12.0",
+    "nodeExecutableSha256": "12ccc7c7d8b9b33ac0740fc7c2590d2aba14ccfa0a40f3d3f7a6c4c60c87f07c",
+    "npm": "12.2.0",
+    "platform": "darwin",
+    "architecture": "arm64",
+    "os": "macOS 27.0.1 (26A434)"
+  },
+  "scope": "Supplemental repository maintenance/static evidence verification on macOS ARM64; not a rerun of the three native target cohorts or public artifact lifecycle.",
+  "checks": [
+    {
+      "name": "a2a-extension-smoke",
+      "command": "node scripts/a2a-extension-smoke.mjs",
+      "exitCode": 0,
+      "result": "passed",
+      "outputSha256": "814153fb513f0e75887ab9948f61473c40ea7488d73e9cc7fb4e8ddb6c23853c"
+    },
+    {
+      "name": "agent-definition-authority-smoke",
+      "command": "node scripts/agent-definition-authority-smoke.mjs",
+      "exitCode": 0,
+      "result": "passed",
+      "outputSha256": "34f5771fccff95e16e5836e1e35ab737e9725d9f13a74e17db066ab17c53bb11"
+    },
+    {
+      "name": "agent-identity-schema-smoke",
+      "command": "node scripts/agent-identity-schema-smoke.mjs",
+      "exitCode": 0,
+      "result": "passed",
+      "outputSha256": "58df02ed3e07865ca582d8b4be131a4cd56fcc7166b4ea92e50ddd8d06a10b4f"
+    },
+    {
+      "name": "approval-gate-target-schema-smoke",
+      "command": "node scripts/approval-gate-target-schema-smoke.mjs",
+      "exitCode": 0,
+      "result": "passed",
+      "outputSha256": "b6155b5daf6fbdfda3ef882e15c8e9c06c9a69cd3cbcea672df9f256976c3ba9"
+    },
+    {
+      "name": "actor-schema-smoke",
+      "command": "node scripts/actor-schema-smoke.mjs",
+      "exitCode": 0,
+      "result": "passed",
+      "outputSha256": "c890c72f1390b3ffc52449403ab5b5e2dd6d55eb7e15399ff101f0e6aed46254"
+    },
+    {
+      "name": "beta-checkpoint-smoke",
+      "command": "node scripts/beta-checkpoint-smoke.mjs",
+      "exitCode": 0,
+      "result": "passed",
+      "outputSha256": "ca636a224e99ff6e3e64ec3e54c71454089d7af71a48231d4b6a3ed4c0436a6e"
+    },
+    {
+      "name": "candidate-readiness-smoke",
+      "command": "node scripts/candidate-readiness-smoke.mjs",
+      "exitCode": 0,
+      "result": "passed",
+      "outputSha256": "ce931503e2f264abe58e7c037eefc64ead4346bf4679ea0455d5ac3abb4e621f"
+    },
+    {
+      "name": "cli-fixture-smoke",
+      "command": "node scripts/cli-fixture-smoke.mjs",
+      "exitCode": 0,
+      "result": "passed",
+      "outputSha256": "0cfd984394c46e66ab634858dc1bedf195c1cb45871d6ef3cf0337ac294467ea"
+    },
+    {
+      "name": "cli-diagnostics-smoke",
+      "command": "node scripts/cli-diagnostics-smoke.mjs",
+      "exitCode": 0,
+      "result": "passed",
+      "outputSha256": "ae38d58fc69a79d5913dd7737a97e7f161cce660a16667711753b358d8d91e39"
+    },
+    {
+      "name": "cli-graph-smoke",
+      "command": "node scripts/cli-graph-smoke.mjs",
+      "exitCode": 0,
+      "result": "passed",
+      "outputSha256": "d7f0ea9f7c853a192c8013b9eb4c55e414e7c9e00f532f7b09871188c5628575"
+    },
+    {
+      "name": "cli-init-smoke",
+      "command": "node scripts/cli-init-smoke.mjs",
+      "exitCode": 0,
+      "result": "passed",
+      "outputSha256": "ee8629bee58b24221a46dc97309bb902326c8159ab6b83d3012d43a9683d3f24"
+    },
+    {
+      "name": "cli-inspection-smoke",
+      "command": "node scripts/cli-inspection-smoke.mjs",
+      "exitCode": 0,
+      "result": "passed",
+      "outputSha256": "b97d13ca336ed6ebb6bb6ba6b4ed0f158e568a7b6df8427b15ee4cc62af0095b"
+    },
+    {
+      "name": "cli-no-runtime-guardrails-smoke",
+      "command": "node scripts/cli-no-runtime-guardrails-smoke.mjs",
+      "exitCode": 0,
+      "result": "passed",
+      "outputSha256": "d52ecfec62d143c512dcc1562de787faea9ee241887764a89ec23cbce53aac66"
+    },
+    {
+      "name": "cli-prototype-smoke",
+      "command": "node scripts/cli-prototype-smoke.mjs",
+      "exitCode": 0,
+      "result": "passed",
+      "outputSha256": "4bb5a060f0f72970f412e52cb06d3ad1f2971fc98dd3c9e028db4e555b671bbe"
+    },
+    {
+      "name": "cli-validation-smoke",
+      "command": "node scripts/cli-validation-smoke.mjs",
+      "exitCode": 0,
+      "result": "passed",
+      "outputSha256": "8c64a4732157d0bda2cf550180d2812942482772dd75b540bc4e77bcfb3722a2"
+    },
+    {
+      "name": "conformance-claim-smoke",
+      "command": "node scripts/conformance-claim-smoke.mjs",
+      "exitCode": 0,
+      "result": "passed",
+      "outputSha256": "d268a9b0580ce6db657f2bfaffacab2ae4484bb2c58e783e88f2175ca231f356"
+    },
+    {
+      "name": "core-profile-smoke",
+      "command": "node scripts/core-profile-smoke.mjs",
+      "exitCode": 0,
+      "result": "passed",
+      "outputSha256": "f69ad910dc44601442fd29f8134309b3c1d3bfc0f03d6bc70d7d757065bbc183"
+    },
+    {
+      "name": "credential-handling-schema-smoke",
+      "command": "node scripts/credential-handling-schema-smoke.mjs",
+      "exitCode": 0,
+      "result": "passed",
+      "outputSha256": "3980ae4670df9868abd8209145138fefb50bee819075c456047dc23d4931ca17"
+    },
+    {
+      "name": "documentation-navigation-smoke",
+      "command": "node scripts/documentation-navigation-smoke.mjs",
+      "exitCode": 0,
+      "result": "passed",
+      "outputSha256": "060c383d6df8a161c70131cb1441e6949620271b118ef95cea4771dad224d47a"
+    },
+    {
+      "name": "extension-registry-smoke",
+      "command": "node scripts/extension-registry-smoke.mjs",
+      "exitCode": 0,
+      "result": "passed",
+      "outputSha256": "499687cf0fabccddeba5f3948c6f5f1a626b8f1246fdd1e234d133aab8b163db"
+    },
+    {
+      "name": "feature-status-registry-smoke",
+      "command": "node scripts/feature-status-registry-smoke.mjs",
+      "exitCode": 0,
+      "result": "passed",
+      "outputSha256": "ecc90933fb056cda26e44270b9447844f0e6e017229ba637866962319bc645df"
+    },
+    {
+      "name": "github-extension-smoke",
+      "command": "node scripts/github-extension-smoke.mjs",
+      "exitCode": 0,
+      "result": "passed",
+      "outputSha256": "93ba33ea007f55e19d2b459715fd78ea0dd4505e66ab7e5147ba8016078e446e"
+    },
+    {
+      "name": "human-override-schema-smoke",
+      "command": "node scripts/human-override-schema-smoke.mjs",
+      "exitCode": 0,
+      "result": "passed",
+      "outputSha256": "1aef2e96eaec97df1de47b6f0889b07e93df12c334b3ef639a981f4c12aed35c"
+    },
+    {
+      "name": "issue-tracker-extension-smoke",
+      "command": "node scripts/issue-tracker-extension-smoke.mjs",
+      "exitCode": 0,
+      "result": "passed",
+      "outputSha256": "fb7d75cdd9445e763154a95eba0be05e7b7c8ccc22edad4297087bed5503dffd"
+    },
+    {
+      "name": "manifest-discovery-smoke",
+      "command": "node scripts/manifest-discovery-smoke.mjs",
+      "exitCode": 0,
+      "result": "passed",
+      "outputSha256": "5b27e8bf68d26dc6649857550c762a3a68020010cd11299f227807063b9dc293"
+    },
+    {
+      "name": "mcp-extension-smoke",
+      "command": "node scripts/mcp-extension-smoke.mjs",
+      "exitCode": 0,
+      "result": "passed",
+      "outputSha256": "fc12ae475d4bf7f178611acf36ebe902847c36701163fb33e016a6c3e3a83bea"
+    },
+    {
+      "name": "negative-schema-fixtures",
+      "command": "node scripts/negative-schema-fixtures.mjs",
+      "exitCode": 0,
+      "result": "passed",
+      "outputSha256": "b5ef31a810f6cdd846c055cda6be3cedd93a7ede4d6f591a983c63d3b5498740"
+    },
+    {
+      "name": "provider-constraint-schema-smoke",
+      "command": "node scripts/provider-constraint-schema-smoke.mjs",
+      "exitCode": 0,
+      "result": "passed",
+      "outputSha256": "2ad8b009df1cafccdf5b53bfbfeddd643b560e7fced746e5b846e18735e585fb"
+    },
+    {
+      "name": "provider-feature-schema-smoke",
+      "command": "node scripts/provider-feature-schema-smoke.mjs",
+      "exitCode": 0,
+      "result": "passed",
+      "outputSha256": "49502ab40e2447d06efdb1d67fc6ddff2eac4e7668fdaa5e8aeccdb1fdef7ad6"
+    },
+    {
+      "name": "runtime-evaluation-smoke",
+      "command": "node scripts/runtime-evaluation-smoke.mjs",
+      "exitCode": 0,
+      "result": "passed",
+      "outputSha256": "2db36caaff7086349f4d6956df6baa1077c3e1926a4fa40b594b3ea79fa1be5f"
+    },
+    {
+      "name": "runtime-evaluation-environment-smoke",
+      "command": "node scripts/runtime-evaluation-environment-smoke.mjs",
+      "exitCode": 0,
+      "result": "passed",
+      "outputSha256": "e69fad7d1168185d2db746b06590fa0b36487eca09b499210abf0018fecfcabf"
+    },
+    {
+      "name": "runtime-evaluation-library-smoke",
+      "command": "node scripts/runtime-evaluation-library-smoke.mjs",
+      "exitCode": 0,
+      "result": "passed",
+      "outputSha256": "1b475b72b25d9e24105bdafc89b0688e4441ac9f6d87e686450fd598c854ee7a"
+    },
+    {
+      "name": "runtime-toolchain-smoke",
+      "command": "node scripts/runtime-toolchain-smoke.mjs",
+      "exitCode": 0,
+      "result": "passed",
+      "outputSha256": "b27d75ad1c28170d4a237e6376e543c7d5d408cb8b7a86b2c5d5395e9e1d728e"
+    },
+    {
+      "name": "runtime-python-prototype-smoke",
+      "command": "node scripts/runtime-python-prototype-smoke.mjs",
+      "exitCode": 0,
+      "result": "passed",
+      "outputSha256": "66eb96a690c038970d837f10d80d7ad2afe7e2b9ae968ff80307aa232cafe3b9"
+    },
+    {
+      "name": "runtime-rust-prototype-smoke",
+      "command": "node scripts/runtime-rust-prototype-smoke.mjs",
+      "exitCode": 0,
+      "result": "passed",
+      "outputSha256": "25317237313c502104f042339697bd47686159c86b9d36a181aaa242152b79b8"
+    },
+    {
+      "name": "runtime-go-prototype-smoke",
+      "command": "node scripts/runtime-go-prototype-smoke.mjs",
+      "exitCode": 0,
+      "result": "passed",
+      "outputSha256": "27d73ac9ca37334c891ac83e5982fadb3006da42bdfb8b276f1a2d0f602b60e9"
+    },
+    {
+      "name": "runtime-typescript-prototype-smoke",
+      "command": "node scripts/runtime-typescript-prototype-smoke.mjs",
+      "exitCode": 0,
+      "result": "passed",
+      "outputSha256": "01943dab8bc21e0c90c810517da14dbda4ab80fd1f7d6cb379458dc02b51c288"
+    },
+    {
+      "name": "runtime-fidelity-smoke",
+      "command": "node scripts/runtime-fidelity-smoke.mjs",
+      "exitCode": 0,
+      "result": "passed",
+      "outputSha256": "f477053955835637ae0478effd8fcf31713bb1f397c0a60049ca6566cba38f17"
+    },
+    {
+      "name": "runtime-supply-chain-smoke",
+      "command": "node scripts/runtime-supply-chain-smoke.mjs",
+      "exitCode": 0,
+      "result": "passed",
+      "outputSha256": "65c5c4aae3ff0a130520313e860683a5ff108e47fb1c03a36c012f83d99de39b"
+    },
+    {
+      "name": "runtime-supply-chain-current-smoke",
+      "command": "node scripts/runtime-supply-chain-current-smoke.mjs",
+      "exitCode": 0,
+      "result": "passed",
+      "outputSha256": "5540cb52f5268b6580be6b381f846db221f2b8530408789398743ba8aeaad739"
+    },
+    {
+      "name": "runtime-supply-chain-repaired-smoke",
+      "command": "node scripts/runtime-supply-chain-repaired-smoke.mjs",
+      "exitCode": 0,
+      "result": "passed",
+      "outputSha256": "13f19755d923faea4ffee855981065a155ef4753d185f92145e03d3a2fd7958a"
+    },
+    {
+      "name": "runtime-native-lifecycle-smoke",
+      "command": "node scripts/runtime-native-lifecycle-smoke.mjs",
+      "exitCode": 0,
+      "result": "passed",
+      "outputSha256": "61f6a29a47253ef2f628225042f4474f0ebbf5a36d80d5ee6de714eefe43cca8"
+    },
+    {
+      "name": "qualification-lifecycle-smoke",
+      "command": "node scripts/qualification/verify.mjs lifecycle",
+      "exitCode": 0,
+      "result": "passed",
+      "outputSha256": "9b64cc955385821d320bbbcd1a3e88c6e1feb9edd0aab301653433263bb3f412"
+    },
+    {
+      "name": "qualification-security-smoke",
+      "command": "node scripts/qualification/verify-security.mjs",
+      "exitCode": 0,
+      "result": "passed",
+      "outputSha256": "7802a670cddbf481fdbb1ee68cf3641b0683740beb49b2aff78c6bca4f8ed130"
+    },
+    {
+      "name": "qualification-measurements-smoke",
+      "command": "node scripts/qualification/verify-measurements.mjs",
+      "exitCode": 0,
+      "result": "passed",
+      "outputSha256": "1241d604ca4bfeeb02380aee30368dbfa445dfb7f9b86ff4e9eb2383c5166f5b"
+    },
+    {
+      "name": "revised-architecture-smoke",
+      "command": "node scripts/runtime-revised-architecture-smoke.mjs",
+      "exitCode": 0,
+      "result": "passed",
+      "outputSha256": "58f8806c84b63eb7c394b7ba90886bee80c9ff9e6989979b9947b9b87b7ac6f6"
+    },
+    {
+      "name": "runtime-linux-lifecycle-smoke",
+      "command": "node scripts/runtime-linux-lifecycle-smoke.mjs",
+      "exitCode": 0,
+      "result": "passed",
+      "outputSha256": "a94d9d4942522cafa26a93cef83af7a7d88f9a70b8d36c2a29e6265577b812c8"
+    },
+    {
+      "name": "runtime-macos-lifecycle-smoke",
+      "command": "node scripts/runtime-macos-lifecycle-smoke.mjs",
+      "exitCode": 0,
+      "result": "passed",
+      "outputSha256": "d90ace7e507d6218c1969e4e2cf60e6912ab5c29a7d141ae8860503827ce917b"
+    },
+    {
+      "name": "runtime-windows-lifecycle-smoke",
+      "command": "node scripts/runtime-windows-lifecycle-smoke.mjs",
+      "exitCode": 0,
+      "result": "passed",
+      "outputSha256": "24f7e23862eb8fc22a319e280452470461e11ee5b2b588abb4fba230050760f7"
+    },
+    {
+      "name": "runtime-comparable-measurements-smoke",
+      "command": "node scripts/runtime-comparable-measurements-smoke.mjs",
+      "exitCode": 0,
+      "result": "passed",
+      "outputSha256": "8d5a3c4b400683ac877be128f49d0cc25ccf9b2da50ff986d158a7f295e8b519"
+    },
+    {
+      "name": "runtime-architecture-alternatives-smoke",
+      "command": "node scripts/runtime-architecture-alternatives-smoke.mjs",
+      "exitCode": 0,
+      "result": "passed",
+      "outputSha256": "05c568a5be4c9450f6e76d30a0199bbac6e42046dda92123f1682fffd753ece3"
+    },
+    {
+      "name": "runtime-candidate-report-bundles-smoke",
+      "command": "node scripts/runtime-candidate-report-bundles-smoke.mjs",
+      "exitCode": 0,
+      "result": "passed",
+      "outputSha256": "6da15fbc6997aee2154fbad0cd3a3c0b7e853d600f68794a13bad5234c0e4caa"
+    },
+    {
+      "name": "runtime-decision-bundle-smoke",
+      "command": "node scripts/runtime-decision-bundle-smoke.mjs",
+      "exitCode": 0,
+      "result": "passed",
+      "outputSha256": "3c33e353936a4733866ea08ffd719c56583db20528be02d815187299f31a07a1"
+    },
+    {
+      "name": "runtime-reviewer-ownership-smoke",
+      "command": "node scripts/runtime-reviewer-ownership-smoke.mjs",
+      "exitCode": 0,
+      "result": "passed",
+      "outputSha256": "db679adbe4bc0c952eeb2aa4e282aed718d9228cff2588b3012ad286f1fabcbc"
+    },
+    {
+      "name": "single-maintainer-governance-smoke",
+      "command": "node scripts/single-maintainer-governance-smoke.mjs",
+      "exitCode": 0,
+      "result": "passed",
+      "outputSha256": "49b5f6f9cc8fc7c180cd151ed82a8bf428610beffb62a2f2da16e84fe8119765"
+    },
+    {
+      "name": "single-maintainer-ownership-smoke",
+      "command": "node scripts/single-maintainer-ownership-smoke.mjs",
+      "exitCode": 0,
+      "result": "passed",
+      "outputSha256": "9fa6daa161ee1ce0ffa2b6ccbe71ca841c63c74b9d047fad8f784724a8711d85"
+    },
+    {
+      "name": "runtime-architecture-review-smoke",
+      "command": "node scripts/runtime-architecture-review-smoke.mjs",
+      "exitCode": 0,
+      "result": "passed",
+      "outputSha256": "444b667d1dc5275475bb7dd3daece4a69e9c46358646e51d17a599e66542b805"
+    },
+    {
+      "name": "runtime-diagnostics-requalification-smoke",
+      "command": "node scripts/runtime-diagnostics-requalification-smoke.mjs --historical",
+      "exitCode": 0,
+      "result": "passed",
+      "outputSha256": "eb2d562120499f64f1e78e20e3f7002507c9e66c159740bd99be45c661590d1b"
+    },
+    {
+      "name": "runtime-diagnostic-projection-repair-smoke",
+      "command": "node scripts/runtime-diagnostic-projection-repair-smoke.mjs --historical",
+      "exitCode": 0,
+      "result": "passed",
+      "outputSha256": "17d4c4225f65fcb7299b4682e7cc247024e3d65e49da4ed2390904274f15888d"
+    },
+    {
+      "name": "runtime-validation-contract-smoke",
+      "command": "node scripts/runtime-validation-contract-smoke.mjs --historical && node scripts/runtime-validation-contract-smoke.mjs --directory evaluation/qualification/supply-chain-repair",
+      "exitCode": 0,
+      "result": "passed",
+      "outputSha256": "e2cfade3530bd3c72e939f4be3f1dc647e3dd89808edaa47eea824c18acbe126"
+    },
+    {
+      "name": "runtime-isolation-smoke",
+      "command": "node scripts/runtime-isolation-smoke.mjs",
+      "exitCode": 0,
+      "result": "passed",
+      "outputSha256": "a664cff3c77992c2b5522b12fbab21e9fccebd892ad096e6993bcfc253e52c10"
+    },
+    {
+      "name": "semantic-smoke",
+      "command": "node scripts/semantic-reference-smoke.mjs",
+      "exitCode": 0,
+      "result": "passed",
+      "outputSha256": "18bb198dc0bf5eca720f1272a923498411b52049fad03ac9d34b42da2d64aaaf"
+    },
+    {
+      "name": "typed-reference-schema-smoke",
+      "command": "node scripts/typed-reference-schema-smoke.mjs",
+      "exitCode": 0,
+      "result": "passed",
+      "outputSha256": "b2f4800e7ebf6aa7f6444ab3cfee6d3d33be6a69a4e302b9d5d89696a61e49e7"
+    },
+    {
+      "name": "work-reference-namespace-smoke",
+      "command": "node scripts/work-reference-namespace-smoke.mjs",
+      "exitCode": 0,
+      "result": "passed",
+      "outputSha256": "592eab867740d02c0c55502c46f9e3dfb6955b50b43237a75899c85938d1a1b6"
+    },
+    {
+      "name": "validate",
+      "command": "node scripts/validate-schemas.mjs",
+      "exitCode": 0,
+      "result": "passed",
+      "outputSha256": "e1307db3e20296575bfa90553f033b5b870ac491fe216714f830dab785052e17"
+    },
+    {
+      "name": "validation-checkpoint-smoke",
+      "command": "node scripts/validation-checkpoint-smoke.mjs",
+      "exitCode": 0,
+      "result": "passed",
+      "outputSha256": "1320461e422d9ffec6ca4ed702d8c9da777eeb6203cfb67dd6140d6d3392ba98"
+    }
+  ],
+  "passed": 66,
+  "failed": 0,
+  "cleanSourceBefore": true,
+  "cleanSourceAfter": true,
+  "excludedEntries": [
+    "cli-prototype",
+    "runtime-evaluation-report"
+  ],
+  "outputHashScope": "SHA-256 of each concatenated stdout/stderr after replacing checkout and tooling paths with neutral placeholders; full local log retained outside the repository, not a downloadable release asset."
+}

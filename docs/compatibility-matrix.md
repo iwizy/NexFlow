@@ -18,6 +18,12 @@ TypeScript/layout B for unsigned developer validation and future host interface
 design. Product CLI/runtime support and trusted public distribution remain
 separate from architecture acceptance and the evaluated source capsules.
 
+The dated [0.4 readiness review](../release/0.4-readiness-review.md) records
+`not-ready`, with two open release blockers and current advisory matches.
+Its proposed repository source/evidence release contains no executable assets;
+it neither adds target support nor turns previous evaluation results into
+public package, signing or runtime guarantees.
+
 For compatibility rules and breaking change guidance, see
 [Compatibility](compatibility.md). For support claim vocabulary, see
 [Conformance](conformance.md). For the feature boundary used by the first

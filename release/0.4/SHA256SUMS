@@ -1,0 +1,10 @@
+acc303795c11e599c6828054a808c369c902435b7894d82d8296a7f6dee513fb  release/0.4-readiness-review.md
+75fae34918d91bea1e081e0b3dc43be8af27540631ee610e7bdf5611133b8c11  release/0.4-release-notes.md
+215d7d0f614febc3a71f61229f8d0c3fcb547ab25088a8ad790cd6dd5b95641f  release/0.4/advisories.json.gz
+ba2d94375d0f4dff61f26ced26de7ad6a6276e2b2573b7c98f0c879a6724c933  release/0.4/advisory-review.json
+a73c554ab9c7d3796c2c50f4caf4091209be3337a1dfe12f5251267681e077f8  release/0.4/evidence-index.json
+bffb5f52f7e7445240b5024da3e99a41a255d438babe888f13f542c63435b848  release/0.4/npm-audit.json
+8bc782f741861d786c206c423c02c1b639d974d15c621b0c4ca169195cf9064c  release/0.4/record.json
+032e97c160584c244cdd2a061a915d379f2f8ae0d4b1e7ff17ed8fc52d2f7130  release/0.4/remote-state.json
+feb5c3e9eb9206e81249208cd995ce46093488fd04ac67246732ae884c166433  release/0.4/source-checks.json
+d9ad23011b1dece1871fc4320d354744a12c449493f1080ca2c38d58b28a25a1  scripts/release-0-4-readiness-smoke.mjs

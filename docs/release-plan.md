@@ -178,6 +178,14 @@ Release readiness:
   specification, prototype, and evidence revisions; every mandatory gate passes
   and every blocker is closed before acceptance
 
+The [2026-10-26 readiness review](../release/0.4-readiness-review.md) maps these
+eight unchanged requirements to one exact source commit. Outcome: `not-ready`.
+RFC-0025 is Accepted for unsigned developer validation and future host interface
+design, but only two candidates have eligible weighted scorecards and native
+measurements; Rust/Go remain rejected and unscored. NF-103-01 must resolve this
+four-candidate release criterion, and NF-103-02 must close new dependency advisory
+dispositions. This assessment does not amend these criteria or authorize release.
+
 Non-goals:
 
 - no final runtime language recommendation unless the decision process has completed

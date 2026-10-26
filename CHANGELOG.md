@@ -8,6 +8,14 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Added
 
+- Assessed all eight `0.4` release-plan criteria at an immutable source revision,
+  with exact architecture/CI receipts, 66 passed maintenance checks, fresh
+  nine-graph advisory responses, source-only distribution boundaries, checksums
+  and unpublished release notes. Outcome remains not-ready: the four-candidate
+  comparison criterion and new advisory dispositions are owned follow-ups.
+  Scoped RFC-0025 acceptance and historical failures remain unchanged; no
+  candidate repair, release, package, tag or version change is introduced.
+
 - Collected NF-102-02 current-source supply-chain/provenance evidence: four
   SBOMs, full selected Go graph, external tooling/native inventories, dated
   advisory and license review, and two clean offline builds per candidate.

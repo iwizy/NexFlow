@@ -1,0 +1,382 @@
+{
+  "task": "NF-103",
+  "assessmentSourceRevision": "1c3ca2566b10f25fdef88116dbb87eed22bdb838",
+  "entries": [
+    {
+      "path": "README.md",
+      "revision": "1c3ca2566b10f25fdef88116dbb87eed22bdb838",
+      "sha256": "fe6986011549fc1f982dc7aa022373e1b4ccc954b9343c0a273ca669eead104c",
+      "bytes": 34537,
+      "currentBytesMustMatch": false,
+      "url": "https://github.com/iwizy/NexFlow/blob/1c3ca2566b10f25fdef88116dbb87eed22bdb838/README.md"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "revision": "1c3ca2566b10f25fdef88116dbb87eed22bdb838",
+      "sha256": "dc35467c6b988ebde62228f1b54204705ac0b2362294d0d3714afd57905a0815",
+      "bytes": 45943,
+      "currentBytesMustMatch": false,
+      "url": "https://github.com/iwizy/NexFlow/blob/1c3ca2566b10f25fdef88116dbb87eed22bdb838/CHANGELOG.md"
+    },
+    {
+      "path": "package.json",
+      "revision": "1c3ca2566b10f25fdef88116dbb87eed22bdb838",
+      "sha256": "41ed87fc89721c6078d29ce73f912e5d6517bdd81dd84b1234463c4fcca33763",
+      "bytes": 6167,
+      "currentBytesMustMatch": true,
+      "url": "https://github.com/iwizy/NexFlow/blob/1c3ca2566b10f25fdef88116dbb87eed22bdb838/package.json"
+    },
+    {
+      "path": "package-lock.json",
+      "revision": "1c3ca2566b10f25fdef88116dbb87eed22bdb838",
+      "sha256": "52a0d98e38a0ffccb6e84397965918a8303b1b527e231105faab3dded7038bbd",
+      "bytes": 3507,
+      "currentBytesMustMatch": true,
+      "url": "https://github.com/iwizy/NexFlow/blob/1c3ca2566b10f25fdef88116dbb87eed22bdb838/package-lock.json"
+    },
+    {
+      "path": "docs/release-plan.md",
+      "revision": "1c3ca2566b10f25fdef88116dbb87eed22bdb838",
+      "sha256": "34611ea2301baf732b8a9883bfa53071dd9ba383857e2213a109b2a0193301ae",
+      "bytes": 16239,
+      "currentBytesMustMatch": false,
+      "url": "https://github.com/iwizy/NexFlow/blob/1c3ca2566b10f25fdef88116dbb87eed22bdb838/docs/release-plan.md"
+    },
+    {
+      "path": "docs/maintainer-guide.md",
+      "revision": "1c3ca2566b10f25fdef88116dbb87eed22bdb838",
+      "sha256": "fb73ba5503d4dd8133267ef1cd07449b52d3e3b7acf9dfd2456e113c3a4b87a5",
+      "bytes": 13373,
+      "currentBytesMustMatch": true,
+      "url": "https://github.com/iwizy/NexFlow/blob/1c3ca2566b10f25fdef88116dbb87eed22bdb838/docs/maintainer-guide.md"
+    },
+    {
+      "path": "docs/governance.md",
+      "revision": "1c3ca2566b10f25fdef88116dbb87eed22bdb838",
+      "sha256": "b1243ca816a0ff7b5f81f939446f3fbac40424f07fac1ce3d1091d31d97611d3",
+      "bytes": 4273,
+      "currentBytesMustMatch": true,
+      "url": "https://github.com/iwizy/NexFlow/blob/1c3ca2566b10f25fdef88116dbb87eed22bdb838/docs/governance.md"
+    },
+    {
+      "path": "docs/single-maintainer-governance.md",
+      "revision": "1c3ca2566b10f25fdef88116dbb87eed22bdb838",
+      "sha256": "230be6cfa166b6e66616be932bedd3d9e171601b047a82412c96d2801f886cbb",
+      "bytes": 7997,
+      "currentBytesMustMatch": true,
+      "url": "https://github.com/iwizy/NexFlow/blob/1c3ca2566b10f25fdef88116dbb87eed22bdb838/docs/single-maintainer-governance.md"
+    },
+    {
+      "path": "docs/versioning.md",
+      "revision": "1c3ca2566b10f25fdef88116dbb87eed22bdb838",
+      "sha256": "c7a025010f1f3fb29f6153b716a5867a6fedb0bacb680f4fefae9912f50b7b55",
+      "bytes": 28130,
+      "currentBytesMustMatch": true,
+      "url": "https://github.com/iwizy/NexFlow/blob/1c3ca2566b10f25fdef88116dbb87eed22bdb838/docs/versioning.md"
+    },
+    {
+      "path": "docs/roadmap.md",
+      "revision": "1c3ca2566b10f25fdef88116dbb87eed22bdb838",
+      "sha256": "de63e4f186a8afd63aea38da2f5fba0498d8f11fd792bcdb623ff28b80ab64ef",
+      "bytes": 25754,
+      "currentBytesMustMatch": false,
+      "url": "https://github.com/iwizy/NexFlow/blob/1c3ca2566b10f25fdef88116dbb87eed22bdb838/docs/roadmap.md"
+    },
+    {
+      "path": "docs/compatibility-matrix.md",
+      "revision": "1c3ca2566b10f25fdef88116dbb87eed22bdb838",
+      "sha256": "a457210957028ef7e9839a9ecf3ee825b9237c3203127e51d08ce90ea9b7806d",
+      "bytes": 48117,
+      "currentBytesMustMatch": false,
+      "url": "https://github.com/iwizy/NexFlow/blob/1c3ca2566b10f25fdef88116dbb87eed22bdb838/docs/compatibility-matrix.md"
+    },
+    {
+      "path": "docs/language-evaluation-matrix.md",
+      "revision": "1c3ca2566b10f25fdef88116dbb87eed22bdb838",
+      "sha256": "5dbbbe4b5b88cfab64f4d4995a02dfacc7be7d70f5fe0d62a3950e481e0bd15c",
+      "bytes": 18491,
+      "currentBytesMustMatch": true,
+      "url": "https://github.com/iwizy/NexFlow/blob/1c3ca2566b10f25fdef88116dbb87eed22bdb838/docs/language-evaluation-matrix.md"
+    },
+    {
+      "path": "docs/reference-cli.md",
+      "revision": "1c3ca2566b10f25fdef88116dbb87eed22bdb838",
+      "sha256": "f7f1c623ef9a4236d72fcef4e3eadb933973720fe6a2e8e558efec48300ceb59",
+      "bytes": 9275,
+      "currentBytesMustMatch": true,
+      "url": "https://github.com/iwizy/NexFlow/blob/1c3ca2566b10f25fdef88116dbb87eed22bdb838/docs/reference-cli.md"
+    },
+    {
+      "path": "docs/cli-runtime-boundary.md",
+      "revision": "1c3ca2566b10f25fdef88116dbb87eed22bdb838",
+      "sha256": "16bd2d7c04309ec3dfde2b58046ebf2b6476e79849daf4220064e72490f0f41f",
+      "bytes": 22468,
+      "currentBytesMustMatch": true,
+      "url": "https://github.com/iwizy/NexFlow/blob/1c3ca2566b10f25fdef88116dbb87eed22bdb838/docs/cli-runtime-boundary.md"
+    },
+    {
+      "path": "docs/extension-loading-boundary.md",
+      "revision": "1c3ca2566b10f25fdef88116dbb87eed22bdb838",
+      "sha256": "03169b3bad3aa12e932ddb6002577b1afc3e13a5de4140ccfa79253dc10288be",
+      "bytes": 16090,
+      "currentBytesMustMatch": true,
+      "url": "https://github.com/iwizy/NexFlow/blob/1c3ca2566b10f25fdef88116dbb87eed22bdb838/docs/extension-loading-boundary.md"
+    },
+    {
+      "path": "docs/security-model.md",
+      "revision": "1c3ca2566b10f25fdef88116dbb87eed22bdb838",
+      "sha256": "19f86a6a554e3df3348f5a24b469f31fc4bf0fa13d0b4c2fdd0fcba277eb24ad",
+      "bytes": 28484,
+      "currentBytesMustMatch": true,
+      "url": "https://github.com/iwizy/NexFlow/blob/1c3ca2566b10f25fdef88116dbb87eed22bdb838/docs/security-model.md"
+    },
+    {
+      "path": "docs/conformance.md",
+      "revision": "1c3ca2566b10f25fdef88116dbb87eed22bdb838",
+      "sha256": "fa6695787010d431d5216d38e2a2fafd3e00d342c9faeb98f2a158a9de949775",
+      "bytes": 19207,
+      "currentBytesMustMatch": true,
+      "url": "https://github.com/iwizy/NexFlow/blob/1c3ca2566b10f25fdef88116dbb87eed22bdb838/docs/conformance.md"
+    },
+    {
+      "path": "docs/compatibility.md",
+      "revision": "1c3ca2566b10f25fdef88116dbb87eed22bdb838",
+      "sha256": "0e9d416b05e4a8f1837f113486c1f646ce2feb9d89a50995427136a3951baef5",
+      "bytes": 25992,
+      "currentBytesMustMatch": true,
+      "url": "https://github.com/iwizy/NexFlow/blob/1c3ca2566b10f25fdef88116dbb87eed22bdb838/docs/compatibility.md"
+    },
+    {
+      "path": "docs/0.4-alpha-checkpoint.md",
+      "revision": "1c3ca2566b10f25fdef88116dbb87eed22bdb838",
+      "sha256": "2f1f1a3ec34378df679749746008e25241d6e9b74d2922fe43aaf0c2291c3b3e",
+      "bytes": 9956,
+      "currentBytesMustMatch": true,
+      "url": "https://github.com/iwizy/NexFlow/blob/1c3ca2566b10f25fdef88116dbb87eed22bdb838/docs/0.4-alpha-checkpoint.md"
+    },
+    {
+      "path": "rfcs/RFC-0025-reference-implementation-architecture.md",
+      "revision": "1c3ca2566b10f25fdef88116dbb87eed22bdb838",
+      "sha256": "cfbe597095c5c3fdde035cb99ad1bc950105e3aa8ddd5e32d103b1589b22f371",
+      "bytes": 10633,
+      "currentBytesMustMatch": true,
+      "url": "https://github.com/iwizy/NexFlow/blob/1c3ca2566b10f25fdef88116dbb87eed22bdb838/rfcs/RFC-0025-reference-implementation-architecture.md"
+    },
+    {
+      "path": "rfcs/reviews/2026-10-11-single-maintainer-ownership.md",
+      "revision": "1c3ca2566b10f25fdef88116dbb87eed22bdb838",
+      "sha256": "38d3ddd372d40a7820cd9cfddcc9b85f7ab5423a5bf785a08955b20e6be32390",
+      "bytes": 5827,
+      "currentBytesMustMatch": true,
+      "url": "https://github.com/iwizy/NexFlow/blob/1c3ca2566b10f25fdef88116dbb87eed22bdb838/rfcs/reviews/2026-10-11-single-maintainer-ownership.md"
+    },
+    {
+      "path": "evaluation/architecture/revised/proposal.json",
+      "revision": "1c3ca2566b10f25fdef88116dbb87eed22bdb838",
+      "sha256": "911c28e286286b4a631e4cbbbef1d18fb6aa5cb56e6932da97955cd9f4f9f5b1",
+      "bytes": 48147,
+      "currentBytesMustMatch": true,
+      "url": "https://github.com/iwizy/NexFlow/blob/1c3ca2566b10f25fdef88116dbb87eed22bdb838/evaluation/architecture/revised/proposal.json"
+    },
+    {
+      "path": "evaluation/architecture/revised/review.json",
+      "revision": "1c3ca2566b10f25fdef88116dbb87eed22bdb838",
+      "sha256": "bdbb4439d733ce7be9b8116e48b00bebe9b444a4433318eecedd5ce6e3175af9",
+      "bytes": 17172,
+      "currentBytesMustMatch": true,
+      "url": "https://github.com/iwizy/NexFlow/blob/1c3ca2566b10f25fdef88116dbb87eed22bdb838/evaluation/architecture/revised/review.json"
+    },
+    {
+      "path": "evaluation/architecture/revised/decision.json",
+      "revision": "1c3ca2566b10f25fdef88116dbb87eed22bdb838",
+      "sha256": "ec8e0ff9f9791b08cd9a3236a1f011e7f4e96a5a3fc9d65c55e78a32f132bfc8",
+      "bytes": 11180,
+      "currentBytesMustMatch": true,
+      "url": "https://github.com/iwizy/NexFlow/blob/1c3ca2566b10f25fdef88116dbb87eed22bdb838/evaluation/architecture/revised/decision.json"
+    },
+    {
+      "path": "evaluation/architecture/revised/conformance-plan.md",
+      "revision": "1c3ca2566b10f25fdef88116dbb87eed22bdb838",
+      "sha256": "17c2867f2e73b31c4d556c96c7b2c6a7071780f5ccadd0f00507db01b30e4468",
+      "bytes": 6006,
+      "currentBytesMustMatch": true,
+      "url": "https://github.com/iwizy/NexFlow/blob/1c3ca2566b10f25fdef88116dbb87eed22bdb838/evaluation/architecture/revised/conformance-plan.md"
+    },
+    {
+      "path": "evaluation/architecture/revised/boundaries.md",
+      "revision": "1c3ca2566b10f25fdef88116dbb87eed22bdb838",
+      "sha256": "59197e501ea5a31a90e69b20ac843079e53aed60bf3470a16c9560ad2e17b2a4",
+      "bytes": 9936,
+      "currentBytesMustMatch": true,
+      "url": "https://github.com/iwizy/NexFlow/blob/1c3ca2566b10f25fdef88116dbb87eed22bdb838/evaluation/architecture/revised/boundaries.md"
+    },
+    {
+      "path": "evaluation/architecture/revised/source-distribution.json",
+      "revision": "1c3ca2566b10f25fdef88116dbb87eed22bdb838",
+      "sha256": "58afaee763b0de8edc9d966f2f77a848c299b7220e1d9779a401c8bc78f499a5",
+      "bytes": 33836,
+      "currentBytesMustMatch": true,
+      "url": "https://github.com/iwizy/NexFlow/blob/1c3ca2566b10f25fdef88116dbb87eed22bdb838/evaluation/architecture/revised/source-distribution.json"
+    },
+    {
+      "path": "evaluation/measurement-qualification/summary.json",
+      "revision": "1c3ca2566b10f25fdef88116dbb87eed22bdb838",
+      "sha256": "00dea873866f65606c13971ece52ed4dcd002ee68239ecc12562fcfa1cab8260",
+      "bytes": 55938,
+      "currentBytesMustMatch": true,
+      "url": "https://github.com/iwizy/NexFlow/blob/1c3ca2566b10f25fdef88116dbb87eed22bdb838/evaluation/measurement-qualification/summary.json"
+    },
+    {
+      "path": "evaluation/measurement-qualification/approved-captures.json",
+      "revision": "1c3ca2566b10f25fdef88116dbb87eed22bdb838",
+      "sha256": "567c6990eb6e7ee3ec1fbe7326b7c2689d278e1378cb1d420d1a1385a672a15d",
+      "bytes": 5334,
+      "currentBytesMustMatch": true,
+      "url": "https://github.com/iwizy/NexFlow/blob/1c3ca2566b10f25fdef88116dbb87eed22bdb838/evaluation/measurement-qualification/approved-captures.json"
+    },
+    {
+      "path": "evaluation/measurement-qualification/job-receipts/linux-amd64.json",
+      "revision": "1c3ca2566b10f25fdef88116dbb87eed22bdb838",
+      "sha256": "c9cc46f3aa2802e45c8729720f94d488a3e8dec217fc9d7c36a6e12dc6fe29d7",
+      "bytes": 5120,
+      "currentBytesMustMatch": true,
+      "url": "https://github.com/iwizy/NexFlow/blob/1c3ca2566b10f25fdef88116dbb87eed22bdb838/evaluation/measurement-qualification/job-receipts/linux-amd64.json"
+    },
+    {
+      "path": "evaluation/measurement-qualification/job-receipts/macos-arm64.json",
+      "revision": "1c3ca2566b10f25fdef88116dbb87eed22bdb838",
+      "sha256": "f83cb462a8a309a036b659f13bf8e349948a148eada792108a18d88bfffa4c11",
+      "bytes": 5120,
+      "currentBytesMustMatch": true,
+      "url": "https://github.com/iwizy/NexFlow/blob/1c3ca2566b10f25fdef88116dbb87eed22bdb838/evaluation/measurement-qualification/job-receipts/macos-arm64.json"
+    },
+    {
+      "path": "evaluation/measurement-qualification/job-receipts/windows-amd64.json",
+      "revision": "1c3ca2566b10f25fdef88116dbb87eed22bdb838",
+      "sha256": "6faeb0052ac46846ba9e73c086306030f55b809c32a60169a24aa81af924e6e3",
+      "bytes": 5120,
+      "currentBytesMustMatch": true,
+      "url": "https://github.com/iwizy/NexFlow/blob/1c3ca2566b10f25fdef88116dbb87eed22bdb838/evaluation/measurement-qualification/job-receipts/windows-amd64.json"
+    },
+    {
+      "path": "evaluation/security-qualification/README.md",
+      "revision": "1c3ca2566b10f25fdef88116dbb87eed22bdb838",
+      "sha256": "22a14e1b1186c58c1e1c703fe6c2aa4c3cdd9ca6d5d3d486b693e441bdb8930e",
+      "bytes": 3879,
+      "currentBytesMustMatch": true,
+      "url": "https://github.com/iwizy/NexFlow/blob/1c3ca2566b10f25fdef88116dbb87eed22bdb838/evaluation/security-qualification/README.md"
+    },
+    {
+      "path": "evaluation/lifecycle/completion/archive-verification.json",
+      "revision": "1c3ca2566b10f25fdef88116dbb87eed22bdb838",
+      "sha256": "c5fc4f43b18c13eb035c74cb8da85d22d436c35934675a3464cd0230aa69a993",
+      "bytes": 3498,
+      "currentBytesMustMatch": true,
+      "url": "https://github.com/iwizy/NexFlow/blob/1c3ca2566b10f25fdef88116dbb87eed22bdb838/evaluation/lifecycle/completion/archive-verification.json"
+    },
+    {
+      "path": "evaluation/repairs/supply-chain/toolchains.json",
+      "revision": "1c3ca2566b10f25fdef88116dbb87eed22bdb838",
+      "sha256": "8565d55122879ec448e01c6d466823c77b2c5ad420acf6b68d494769dcc6dc25",
+      "bytes": 1040,
+      "currentBytesMustMatch": true,
+      "url": "https://github.com/iwizy/NexFlow/blob/1c3ca2566b10f25fdef88116dbb87eed22bdb838/evaluation/repairs/supply-chain/toolchains.json"
+    },
+    {
+      "path": "evaluation/supply-chain/2026-10-15-repaired/disposition.json",
+      "revision": "1c3ca2566b10f25fdef88116dbb87eed22bdb838",
+      "sha256": "a2c1568cd00e6a1d5a227bfc51a04cff0eb35f1dd42e6453532bdd44e434e0ec",
+      "bytes": 188477,
+      "currentBytesMustMatch": true,
+      "url": "https://github.com/iwizy/NexFlow/blob/1c3ca2566b10f25fdef88116dbb87eed22bdb838/evaluation/supply-chain/2026-10-15-repaired/disposition.json"
+    },
+    {
+      "path": "scripts/runtime-supply-chain-repaired-scan.mjs",
+      "revision": "1c3ca2566b10f25fdef88116dbb87eed22bdb838",
+      "sha256": "7fa671e4c60949367116692a37d245d3fc58a6d870eb1f31a6ca65b85dc82031",
+      "bytes": 4330,
+      "currentBytesMustMatch": true,
+      "url": "https://github.com/iwizy/NexFlow/blob/1c3ca2566b10f25fdef88116dbb87eed22bdb838/scripts/runtime-supply-chain-repaired-scan.mjs"
+    },
+    {
+      "path": ".github/workflows/schema-smoke.yml",
+      "revision": "1c3ca2566b10f25fdef88116dbb87eed22bdb838",
+      "sha256": "0cd74ddae6f05a46838df8e41d3048a7143ecd0ef17ea84d61be99851c838f1e",
+      "bytes": 4661,
+      "currentBytesMustMatch": true,
+      "url": "https://github.com/iwizy/NexFlow/blob/1c3ca2566b10f25fdef88116dbb87eed22bdb838/.github/workflows/schema-smoke.yml"
+    },
+    {
+      "path": "evaluation/supply-chain/2026-10-15-repaired/typescript/inventory.json",
+      "revision": "1c3ca2566b10f25fdef88116dbb87eed22bdb838",
+      "sha256": "1593e2c92e9008cecb11538139c5404d8528888effdd1a7154f4b8571df5163a",
+      "bytes": 19174,
+      "currentBytesMustMatch": true,
+      "url": "https://github.com/iwizy/NexFlow/blob/1c3ca2566b10f25fdef88116dbb87eed22bdb838/evaluation/supply-chain/2026-10-15-repaired/typescript/inventory.json"
+    },
+    {
+      "path": "evaluation/supply-chain/2026-10-15-repaired/python/inventory.json",
+      "revision": "1c3ca2566b10f25fdef88116dbb87eed22bdb838",
+      "sha256": "54790143c3c19808e0ce8d800a478236f944e1736eed501941e5ef7166b1b14b",
+      "bytes": 39724,
+      "currentBytesMustMatch": true,
+      "url": "https://github.com/iwizy/NexFlow/blob/1c3ca2566b10f25fdef88116dbb87eed22bdb838/evaluation/supply-chain/2026-10-15-repaired/python/inventory.json"
+    },
+    {
+      "path": "evaluation/supply-chain/2026-10-15-repaired/rust/inventory.json",
+      "revision": "1c3ca2566b10f25fdef88116dbb87eed22bdb838",
+      "sha256": "fd63341203460c6162d2a96d2e2678548cc554ecc4b2e89e60328a7a70752d00",
+      "bytes": 113458,
+      "currentBytesMustMatch": true,
+      "url": "https://github.com/iwizy/NexFlow/blob/1c3ca2566b10f25fdef88116dbb87eed22bdb838/evaluation/supply-chain/2026-10-15-repaired/rust/inventory.json"
+    },
+    {
+      "path": "evaluation/supply-chain/2026-10-15-repaired/go/inventory.json",
+      "revision": "1c3ca2566b10f25fdef88116dbb87eed22bdb838",
+      "sha256": "2fc4c8931e7e6e7335f9e3e94ced2c862a24d8ff2568d93f0ce3349a0f41b381",
+      "bytes": 20494,
+      "currentBytesMustMatch": true,
+      "url": "https://github.com/iwizy/NexFlow/blob/1c3ca2566b10f25fdef88116dbb87eed22bdb838/evaluation/supply-chain/2026-10-15-repaired/go/inventory.json"
+    },
+    {
+      "path": "evaluation/supply-chain/2026-10-15-repaired/npm-inventory.json",
+      "revision": "1c3ca2566b10f25fdef88116dbb87eed22bdb838",
+      "sha256": "658c58f5aa2fc5a15d10d5bdc1251ef4273d2e6cd72a629b8bcb2c15276feebc",
+      "bytes": 137803,
+      "currentBytesMustMatch": true,
+      "url": "https://github.com/iwizy/NexFlow/blob/1c3ca2566b10f25fdef88116dbb87eed22bdb838/evaluation/supply-chain/2026-10-15-repaired/npm-inventory.json"
+    },
+    {
+      "path": "evaluation/supply-chain/2026-10-15-repaired/pip-inventory.json",
+      "revision": "1c3ca2566b10f25fdef88116dbb87eed22bdb838",
+      "sha256": "6b39279184611ed07a8b0d873ca0822d14c6f9b535856eeb5b920dba995b5d4a",
+      "bytes": 18225,
+      "currentBytesMustMatch": true,
+      "url": "https://github.com/iwizy/NexFlow/blob/1c3ca2566b10f25fdef88116dbb87eed22bdb838/evaluation/supply-chain/2026-10-15-repaired/pip-inventory.json"
+    },
+    {
+      "path": "evaluation/supply-chain/2026-10-15-repaired/cargo-inventory.json",
+      "revision": "1c3ca2566b10f25fdef88116dbb87eed22bdb838",
+      "sha256": "ca5c3a858e3f46f27126ad361b3955a033ddc5353bae1625d622566fe545c29e",
+      "bytes": 442822,
+      "currentBytesMustMatch": true,
+      "url": "https://github.com/iwizy/NexFlow/blob/1c3ca2566b10f25fdef88116dbb87eed22bdb838/evaluation/supply-chain/2026-10-15-repaired/cargo-inventory.json"
+    },
+    {
+      "path": "evaluation/supply-chain/2026-10-15-repaired/goCompiler-inventory.json",
+      "revision": "1c3ca2566b10f25fdef88116dbb87eed22bdb838",
+      "sha256": "3574d74de61a0cf9f40c2c774ba0f30d9b8807e5c82ef7f6bf9e0fd989815553",
+      "bytes": 16515,
+      "currentBytesMustMatch": true,
+      "url": "https://github.com/iwizy/NexFlow/blob/1c3ca2566b10f25fdef88116dbb87eed22bdb838/evaluation/supply-chain/2026-10-15-repaired/goCompiler-inventory.json"
+    },
+    {
+      "path": "evaluation/supply-chain/2026-10-15-repaired/rustCompiler-inventory.json",
+      "revision": "1c3ca2566b10f25fdef88116dbb87eed22bdb838",
+      "sha256": "291653b40fb10990a2136a263c46c740f95fab84521111c843daac3bdc1bb39a",
+      "bytes": 1404774,
+      "currentBytesMustMatch": true,
+      "url": "https://github.com/iwizy/NexFlow/blob/1c3ca2566b10f25fdef88116dbb87eed22bdb838/evaluation/supply-chain/2026-10-15-repaired/rustCompiler-inventory.json"
+    }
+  ]
+}

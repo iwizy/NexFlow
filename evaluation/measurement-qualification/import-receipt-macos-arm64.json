@@ -1,0 +1,40 @@
+{
+  "task": "NF-102-05",
+  "mode": "complete",
+  "runId": "40238363753",
+  "producer": {
+    "revision": "efbc18638f98592beb92cced213084d6973138a9",
+    "sources": [
+      {
+        "path": "scripts/qualification/import-measurements.mjs",
+        "sha256": "955a173643b99cf42a950b01af47e7b1e653781a7272220eda8e475f1e27968d"
+      }
+    ]
+  },
+  "records": [
+    {
+      "target": "macos-arm64",
+      "candidate": "python",
+      "rawBytes": 13376123,
+      "rawSha256": "87976db8d037d76d88c592fc1432d2c6cd8a6f5e25c9b0c23b011b60f046fe62",
+      "gzipSha256": "2f64e9703376c4557baa27628802d1ccb67986e00e49dd02d9a16c49a774f9ab",
+      "gzipBytes": 430810,
+      "lossless": true,
+      "source": "83eaee46fc91da51a55f493290a44d2b3f6adead",
+      "runId": "40238363753"
+    },
+    {
+      "target": "macos-arm64",
+      "candidate": "typescript",
+      "rawBytes": 13377134,
+      "rawSha256": "48d2ad45a8e0eae6917169c67051e6939bae443d699be37d357b182ff03723b4",
+      "gzipSha256": "2543444fee3832db49c93e732b6317e0bd137dc4d43f073b137a0e715c819822",
+      "gzipBytes": 431304,
+      "lossless": true,
+      "source": "83eaee46fc91da51a55f493290a44d2b3f6adead",
+      "runId": "40238363753"
+    }
+  ],
+  "rawSamplesRemoved": 0,
+  "losslessCompression": true
+}

@@ -1,0 +1,84 @@
+{
+  "task": "NF-102-05",
+  "mode": "attempt",
+  "runId": "40236474958",
+  "producer": {
+    "revision": "c715f0452e499d6ceb7051502afc23d9595da11d",
+    "sources": [
+      {
+        "path": "scripts/qualification/import-measurements.mjs",
+        "sha256": "53a95d4bb322d846e9bad045d487ac73d14bdfd35a913c416e2fe322ca33124c"
+      }
+    ]
+  },
+  "records": [
+    {
+      "target": "linux-amd64",
+      "candidate": "python",
+      "rawBytes": 8936469,
+      "rawSha256": "bb01b8b16cb729cdbd756802528052e6fe7bff99a295a84205b7680855e3c9a0",
+      "gzipSha256": "16ab6ccb746afb866b79d74a61600cfe83d14a1a392d84e0207fbdd827096356",
+      "gzipBytes": 288738,
+      "lossless": true,
+      "source": "d4c219c212ee4bd90a5ea87f28558fc7588e037d",
+      "runId": "40236474958"
+    },
+    {
+      "target": "linux-amd64",
+      "candidate": "typescript",
+      "rawBytes": 9085372,
+      "rawSha256": "0ab4d56676293eb21c6dc61df0d40d2bd0c90040f2a3e92c248cec0a5ecbbe47",
+      "gzipSha256": "eb279290743bf3d3f70d6f5d94675b119b81d8073c7182e5baea09645795fd2c",
+      "gzipBytes": 293897,
+      "lossless": true,
+      "source": "d4c219c212ee4bd90a5ea87f28558fc7588e037d",
+      "runId": "40236474958"
+    },
+    {
+      "target": "macos-arm64",
+      "candidate": "python",
+      "rawBytes": 9527296,
+      "rawSha256": "5fff7fd6bce1de4be97e62a87d43b6f9e15f6f2609f5db6c303a9ebaa12413ca",
+      "gzipSha256": "5dcbc08cc1799d016bbfebcd41f2b7b48883f8e27bde8ae6cedeceb85e4584a9",
+      "gzipBytes": 307340,
+      "lossless": true,
+      "source": "d4c219c212ee4bd90a5ea87f28558fc7588e037d",
+      "runId": "40236474958"
+    },
+    {
+      "target": "macos-arm64",
+      "candidate": "typescript",
+      "rawBytes": 9676226,
+      "rawSha256": "ea1ab2d040f5b262b3cea9aeea2b9799db133bfb54a7f2be698c308bfc59f057",
+      "gzipSha256": "899e79b6e12b36cd4dd724d701ae21c07e3fc58003aa8c010020b15e9d25764b",
+      "gzipBytes": 312511,
+      "lossless": true,
+      "source": "d4c219c212ee4bd90a5ea87f28558fc7588e037d",
+      "runId": "40236474958"
+    },
+    {
+      "target": "windows-amd64",
+      "candidate": "python",
+      "rawBytes": 8647209,
+      "rawSha256": "ae391e1c0221fe2323b57de56daad11dbbddae68e58a5c4418715eb844675bd0",
+      "gzipSha256": "e4e5fd88fbfbacc2d83cc95815c323f81f6fe4d4b71aa1a1dac0d9c1870f317f",
+      "gzipBytes": 279392,
+      "lossless": true,
+      "source": "d4c219c212ee4bd90a5ea87f28558fc7588e037d",
+      "runId": "40236474958"
+    },
+    {
+      "target": "windows-amd64",
+      "candidate": "typescript",
+      "rawBytes": 8796178,
+      "rawSha256": "b7652f7cb7df1baaa930b79eac204c6b205f770d9387c0bfa0d4a42a57daaea8",
+      "gzipSha256": "989411c012ec04ea0a8cde958e6de6e936a6fc55f6c95ec04a758b1f1feedacf",
+      "gzipBytes": 284552,
+      "lossless": true,
+      "source": "d4c219c212ee4bd90a5ea87f28558fc7588e037d",
+      "runId": "40236474958"
+    }
+  ],
+  "rawSamplesRemoved": 0,
+  "losslessCompression": true
+}

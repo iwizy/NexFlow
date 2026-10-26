@@ -1,0 +1,109 @@
+{
+  "task": "NF-102-05",
+  "recordedAt": "2026-10-26T02:15:43.752Z",
+  "approvalKind": "Source-bound technical capture allowlist under explicit maintainer delegation; not a personal signature or independent review.",
+  "targets": {
+    "linux-amd64": {
+      "producerRevision": "a1d7ec4cd03869987e47d963f675651f087d6ac0",
+      "sourceInventorySha256": "537f233112e8ad2416451eb27c3cbc7dde200553d8175634f239b8d2cec025c3",
+      "runId": "40247733095",
+      "jobId": "121332778980",
+      "jobConclusion": "success",
+      "workflowConclusion": "success",
+      "jobUrl": "https://github.com/iwizy/NexFlow/actions/runs/40247733095/job/121332778980",
+      "jobReceiptPath": "evaluation/measurement-qualification/job-receipts/linux-amd64.json",
+      "jobReceiptSha256": "c9cc46f3aa2802e45c8729720f94d488a3e8dec217fc9d7c36a6e12dc6fe29d7",
+      "environmentSha256": "9e0e6687b1b97e54ca6129a7bc3e35babe35d833533fcb2f067c5bb6ae1571a7",
+      "priorQualificationComparison": {
+        "lifecycle/completion": {
+          "exactFingerprintMatch": true,
+          "differences": [],
+          "evidence": "evaluation/lifecycle/completion/linux-amd64/typescript.json"
+        },
+        "security-qualification": {
+          "exactFingerprintMatch": false,
+          "differences": [
+            {
+              "key": "cpuModel",
+              "qualified": "AMD EPYC 9V74 80-Core Processor",
+              "measured": "AMD EPYC 7763 64-Core Processor"
+            }
+          ],
+          "evidence": "evaluation/security-qualification/linux-amd64/typescript.json"
+        }
+      }
+    },
+    "macos-arm64": {
+      "producerRevision": "83eaee46fc91da51a55f493290a44d2b3f6adead",
+      "sourceInventorySha256": "291e221414c901fa89fb197d6aeb4ce97ec44123f73833ac1016b20a0f831a30",
+      "runId": "40238363753",
+      "jobId": "121304670235",
+      "jobConclusion": "success",
+      "workflowConclusion": "failure",
+      "jobUrl": "https://github.com/iwizy/NexFlow/actions/runs/40238363753/job/121304670235",
+      "jobReceiptPath": "evaluation/measurement-qualification/job-receipts/macos-arm64.json",
+      "jobReceiptSha256": "f83cb462a8a309a036b659f13bf8e349948a148eada792108a18d88bfffa4c11",
+      "environmentSha256": "918a3e08c60e5a4a72340fcff7e350511ed68aa0123e00737490d008a8d65d81",
+      "priorQualificationComparison": {
+        "lifecycle/completion": {
+          "exactFingerprintMatch": true,
+          "differences": [],
+          "evidence": "evaluation/lifecycle/completion/macos-arm64/typescript.json"
+        },
+        "security-qualification": {
+          "exactFingerprintMatch": true,
+          "differences": [],
+          "evidence": "evaluation/security-qualification/macos-arm64/typescript.json"
+        }
+      }
+    },
+    "windows-amd64": {
+      "producerRevision": "efbc18638f98592beb92cced213084d6973138a9",
+      "sourceInventorySha256": "e854ea00c7cc60367cf65a31e959c44bc74ea367a6ea24709658601ebd05f77b",
+      "runId": "40243355131",
+      "jobId": "121319679002",
+      "jobConclusion": "success",
+      "workflowConclusion": "success",
+      "jobUrl": "https://github.com/iwizy/NexFlow/actions/runs/40243355131/job/121319679002",
+      "jobReceiptPath": "evaluation/measurement-qualification/job-receipts/windows-amd64.json",
+      "jobReceiptSha256": "6faeb0052ac46846ba9e73c086306030f55b809c32a60169a24aa81af924e6e3",
+      "environmentSha256": "d5c8e84c1702a13f2f7444d29f01e77e0e4303b1c22969d84c03c4c99477e745",
+      "priorQualificationComparison": {
+        "lifecycle/completion": {
+          "exactFingerprintMatch": false,
+          "differences": [
+            {
+              "key": "memoryBytes",
+              "qualified": 17178693632,
+              "measured": 17174360064
+            }
+          ],
+          "evidence": "evaluation/lifecycle/completion/windows-amd64/typescript.json"
+        },
+        "security-qualification": {
+          "exactFingerprintMatch": false,
+          "differences": [
+            {
+              "key": "cpuModel",
+              "qualified": "AMD EPYC 9V74 80-Core Processor                ",
+              "measured": "AMD EPYC 7763 64-Core Processor                "
+            }
+          ],
+          "evidence": "evaluation/security-qualification/windows-amd64/typescript.json"
+        }
+      }
+    }
+  },
+  "commonMethodSha256": "da4f8dba67204b180648d3b4a023a505ac3fc0138c5bb0f71e151f17417ae568",
+  "candidateSourceRevision": "23e576efd0dda0f00f5462eda9295c1ae4ec8fee",
+  "toolchainPins": {
+    "path": "evaluation/repairs/supply-chain/toolchains.json",
+    "sha256": "8565d55122879ec448e01c6d466823c77b2c5ad420acf6b68d494769dcc6dc25",
+    "basis": "Exact provisioned versions enforced by the immutable producer workflow/provisioning and compiler recipes. Runtime executable digests are not separately retained in these measurement records; qualification runtime evidence is distinct."
+  },
+  "cohortAuthority": "Explicit approval of common standard native ubuntu-24.04/macos-15/windows-2025 environments and delegated technical decisions; each measurement pair shares one actual host. Prior qualification fingerprint differences are retained, never called exact matches.",
+  "crossTargetNumericRanking": false,
+  "partialSamplesPooled": false,
+  "originalAllFourSuccessfulCriterionSatisfied": false,
+  "originalSigningCriterionSatisfied": false
+}

@@ -1,0 +1,15 @@
+{
+  "candidate": "typescript",
+  "clean": true,
+  "elapsedMs": 3207.5716,
+  "observation": {
+    "exitCode": 0,
+    "timedOut": false,
+    "peakMemoryBytes": 326742016,
+    "appContainer": true,
+    "capabilityCount": 0,
+    "argumentsSha256": "eb6a5526ce647ca31d87a7358fde72471fc960c4f65ec5ef4468091eebd21a8b",
+    "stdout": "",
+    "stderr": ""
+  }
+}

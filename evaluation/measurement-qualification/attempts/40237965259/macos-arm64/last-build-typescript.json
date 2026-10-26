@@ -1,0 +1,12 @@
+{
+  "candidate": "typescript",
+  "clean": true,
+  "elapsedMs": 1690.459,
+  "observation": {
+    "exitCode": 2,
+    "signal": null,
+    "error": null,
+    "stdout": "src/schema.ts(2,66): error TS2307: Cannot find module 'ajv/dist/2020.js' or its corresponding type declarations.\nsrc/schema.ts(3,24): error TS2307: Cannot find module 'ajv-formats' or its corresponding type declarations.\nsrc/yaml.ts(1,35): error TS7016: Could not find a declaration file for module 'yaml'. '<evaluation-path>/build/typescript/evaluation/prototypes/typescript/node_modules/yaml/browser/index.js' implicitly has an 'any' type.\n  Try `npm i --save-dev @types/yaml` if it exists or add a new declaration (.d.ts) file containing `declare module 'yaml';`\nsrc/yaml.ts(12,38): error TS7006: Parameter 'error' implicitly has an 'any' type.\n",
+    "stderr": ""
+  }
+}

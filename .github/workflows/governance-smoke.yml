@@ -46,3 +46,4 @@ jobs:
           npm run runtime-native-lifecycle-smoke
           npm run qualification-lifecycle-smoke
           npm run qualification-security-smoke
+          npm run qualification-measurements-smoke

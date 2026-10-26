@@ -33,8 +33,9 @@ schema or prototype implementation does not change a Draft RFC to Accepted.
 | [RFC-0020](RFC-0020-github-extension-profile.md) | GitHub Extension Profile | Draft; machine-readable profile implemented |
 | [RFC-0021](RFC-0021-issue-tracker-extension-profile.md) | Issue Tracker Extension Profile | Draft; machine-readable policy profile and offline checks implemented |
 | [RFC-0022](RFC-0022-security-policy-composition.md) | Security Policy Composition | Draft |
-| [RFC-0023](RFC-0023-runtime-architecture-decision.md) | Runtime Architecture Decision | Draft; not-ready, no language/layout selected |
+| [RFC-0023](RFC-0023-runtime-architecture-decision.md) | Runtime Architecture Decision | Draft; historical not-ready discussion, current developer/design direction recorded separately in RFC-0025 |
 | [RFC-0024](RFC-0024-single-maintainer-governance.md) | Single-Maintainer Governance | Accepted; explicit maintainer adoption on 2026-10-11, technical gates unchanged |
+| [RFC-0025](RFC-0025-reference-implementation-architecture.md) | Reference Implementation Architecture | Accepted; revision-bound TypeScript/layout B developer/design direction, unsigned evaluation only, no runtime implementation or release |
 
 The [0.1 Candidate Scope](../docs/0.1-scope.md) records how each RFC is treated
 by the frozen candidate boundary. That treatment does not change an RFC's stage
@@ -42,15 +43,25 @@ or imply that an implemented slice accepts the entire RFC.
 
 ## Cross-RFC Reviews
 
+- [NF-102-06 Immutable Review](../evaluation/architecture/revised/review.md)
+  and [separate decision](../evaluation/architecture/revised/decision.json) bind
+  the exact RFC-0025 proposal, both lenses, original weights, all eleven scoped
+  gates and explicit maintainer delegation. TypeScript/layout B is accepted for
+  developer validation and future host interface design. Original signing and
+  all-four-success criteria remain false; public delivery/release and actual
+  runtime implementation are unperformed. Historical records below retain their
+  dated outcomes and are not the current language/layout decision.
+
 - [Single-Maintainer Runtime Architecture Review — 2026-10-11](reviews/2026-10-11-runtime-architecture-review.md)
   reviews the exact Draft plus subsequent repairs and adopted governance through
   both lenses. Fragment coverage and bounded ownership are recognized; current
-  cross-target qualification remains incomplete. Outcome not-ready, no scoring
+  cross-target qualification was incomplete at that review. Outcome not-ready, no scoring
   or acceptance; [six owned blocker cards](reviews/nf-102-remediation.md) precede
   a revised proposal and repeat decision review. [NF-102 is closed as a completed
   review](reviews/2026-10-11-runtime-review-closure.md) by explicit maintainer
   scope amendment; its original Accepted-decision objective is not satisfied.
-  RFC-0023 stays Draft and all six acceptance blockers remain open.
+  RFC-0023 stays Draft. Its six recorded blockers are historical; subsequent
+  requalification and the bounded forward decision are recorded in RFC-0025.
 
 - [Single-Maintainer Governance](../docs/single-maintainer-governance.md) defines
   the adopted forward-only review-mode amendment in RFC-0024. It replaces only
@@ -72,7 +83,9 @@ or imply that an implemented slice accepts the entire RFC.
   defines the mandatory evidence, review gates, blocker classes, and acceptance
   rule for [Draft RFC-0023](RFC-0023-runtime-architecture-decision.md). Its
   [source-bound bundle](reviews/runtime-architecture-decision-draft.json) maps
-  all eleven gates to evidence and blockers. No runtime decision is accepted.
+  all eleven gates to its original evidence and blockers. RFC-0025 applies the
+  same eleven-gate framework with the adopted single-maintainer policy and its
+  explicit developer/design scope; the old discussion packet stays unchanged.
 - [Runtime Reviewer And Ownership Record — 2026-10-09](reviews/2026-10-09-runtime-reviewer-ownership.md)
   records NF-101's two unconfirmed reviewer slots and seven pending maintenance
   roles against exact Draft/report revisions. It does not appoint people, supply

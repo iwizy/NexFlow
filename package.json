@@ -51,6 +51,7 @@
     "qualification-lifecycle-smoke": "node scripts/qualification/verify.mjs lifecycle",
     "qualification-security-smoke": "node scripts/qualification/verify-security.mjs",
     "qualification-measurements-smoke": "node scripts/qualification/verify-measurements.mjs",
+    "revised-architecture-smoke": "node scripts/runtime-revised-architecture-smoke.mjs",
     "runtime-linux-lifecycle-smoke": "node scripts/runtime-linux-lifecycle-smoke.mjs",
     "runtime-macos-lifecycle-smoke": "node scripts/runtime-macos-lifecycle-smoke.mjs",
     "runtime-windows-lifecycle-smoke": "node scripts/runtime-windows-lifecycle-smoke.mjs",

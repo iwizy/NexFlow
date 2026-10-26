@@ -117,16 +117,21 @@ The runtime is future work. A conforming runtime is expected to:
 
 The current repository does not execute workflows.
 
-The future implementation language must be selected through the
-[Runtime Language Evaluation Matrix](language-evaluation-matrix.md) and a
-reviewed Runtime Architecture Decision. Existing JavaScript maintenance scripts
-do not select TypeScript, Python, Rust, Go, or any other runtime language.
+The [Accepted RFC-0025](../rfcs/RFC-0025-reference-implementation-architecture.md)
+and [exact decision](../evaluation/architecture/revised/decision.json) adopt
+TypeScript/layout B for validation/developer architecture and inert future host
+interfaces. Original-weight source-bound scores, six native measurement records
+and the two review lenses support that direction. Existing JavaScript maintenance
+scripts retain their identity and were not treated as a language-selection vote.
 
 The decision is accepted only after it satisfies the
 [Runtime Architecture Decision Review](../rfcs/reviews/runtime-architecture-decision-review.md),
 including comparative evidence, CLI/runtime separation, security, packaging,
 extension, provider, audit, conformance, compatibility, and ownership gates.
-The current outcome is `not-ready`, so runtime implementation remains blocked.
+The current outcome is `accepted` within that explicit scope. Delivery remains
+unsigned developer source with separately provisioned Node. Project signing,
+notarization and trusted public product delivery are unperformed. Runtime
+implementation and NF-103 release approval remain separate decisions.
 
 ### Architecture Decision Gate
 

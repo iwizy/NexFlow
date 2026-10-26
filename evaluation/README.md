@@ -1,6 +1,17 @@
 # Runtime Evaluation Packet
 
-Status: evaluation preparation and initial prototypes; no candidate selected.
+Current direction: [Accepted RFC-0025](../rfcs/RFC-0025-reference-implementation-architecture.md)
+and its [exact decision](architecture/revised/decision.json) adopt TypeScript/layout B
+for unsigned developer validation and future host interface design. The
+[new review](architecture/revised/review.md) binds both lenses and all eleven
+scoped gates to immutable inputs. It authorizes no runtime implementation or release.
+
+Six complete [native measurement records](measurement-qualification/README.md)
+cover eligible TypeScript/Python: 42 measured cells, with 42 rejected/null
+Rust/Go cells retained after actual Windows failures. Original signing and
+all-four-success objectives remain false. Current project signing/notarization,
+public publisher trust, full product conformance and production runtime are
+unperformed; NF-103 release readiness remains separate.
 
 Current review routing is defined by [Governance](../docs/governance.md) and the
 explicitly adopted [review-mode policy](../docs/single-maintainer-governance.md).
@@ -10,28 +21,33 @@ retroactive signature or edited historical scorecard.
 
 The [2026-10-11 NF-101 record](../rfcs/reviews/2026-10-11-single-maintainer-ownership.md)
 assigns Alexander Agafonov both review lenses and seven bounded maintenance roles.
-Organization and the NF-102 evidence-analysis review are complete; technical
-gates, permitted signing and NF-103 release readiness remain outstanding.
+Organization is complete; the forward NF-102-06 technical review and separate
+decision now supply the bounded architecture direction. Permitted signing and
+NF-103 product-release readiness are separate from that developer/design decision.
 No independent review is claimed.
 
 The [NF-102 single-maintainer review](../rfcs/reviews/2026-10-11-runtime-architecture-review.md)
 recognizes the subsequent 352-case library repairs without rewriting the original
-reports. Both evidence-analysis lenses are complete; the Accepted-decision goal
-remains not-ready with six owned blocker cards, not a language selection.
+reports. At that 2026-10-11 snapshot both evidence-analysis lenses were complete,
+but the decision was not-ready with six owned blocker cards. It remains a
+historical result, not the current language/layout selection.
 
 The maintainer explicitly [closed NF-102 as a completed review](../rfcs/reviews/2026-10-11-runtime-review-closure.md),
-not an Accepted architecture decision. The current [remediation tracker](../rfcs/reviews/nf-102-remediation.md)
+not an Accepted architecture decision. The historical [remediation tracker](../rfcs/reviews/nf-102-remediation.md)
 records NF-102-01 and [NF-102-02](supply-chain/2026-10-15-repaired/README.md)
-as declared-scope complete. NF-102-03 through NF-102-06 remain open acceptance
-blockers, with their original technical criteria and authority limits. Historical
-six-blocker assessments above remain dated review evidence, not current status.
+as declared-scope complete at its snapshot. Subsequent lifecycle/security and
+measurement completion, candidate rejection and the forward developer/design
+decision are now indexed above. Historical six-blocker assessments retain their
+original criteria and authority limits; they are not current task status.
+
+## Historical Preparation And Initial Evidence
 
 The independent [TypeScript](prototypes/typescript/README.md),
 [Python](prototypes/python/README.md), [Rust](prototypes/rust/README.md) and
 [Go](prototypes/go/README.md)
-candidates are initial validation-only
-prototypes with partial library coverage. They do not pass architecture gates
-or establish distribution support.
+candidates began as validation-only prototypes with partial library coverage.
+Those initial source snapshots did not pass architecture gates or establish
+distribution support; the current qualifications and decision are indexed above.
 
 See the [preparation verification record](preparation-review.md) for performed
 checks and their limits.
@@ -187,11 +203,12 @@ as performance evidence, or as a successful runtime evaluation.
 
 ## Candidate Records
 
-The [assembled four-candidate report packet](reports/README.md) supplies current
+The historical [assembled four-candidate report packet](reports/README.md) supplies
 source-bound schema-shaped reports, scope-bearing companions, all retained
 failed/partial/not-tested evidence, two blank independent scorecards and a blank
-reconciliation form. All four assessor results are ineligible; the packet and
-architecture remain not-ready. The initial records below are historical
+reconciliation form. Its four assessor results remain ineligible/not-ready at
+that pinned revision; they are not rewritten by the current qualified-candidate
+review. The initial records below are historical
 prototype-stage snapshots, not the later assembled evaluation.
 
 Separate [TypeScript](candidates/typescript.json),
@@ -280,6 +297,7 @@ visible blocker.
    after an accepted decision, within its named scope.
 
 The preparation milestone is complete when the pinned packet, shared-case
-rehearsal, report rejection tests and documentation checks pass. NF-056 remains
-`not-ready` until actual candidate evidence and the architecture proposal
-pass their published review gates.
+rehearsal, report rejection tests and documentation checks pass. Actual candidate
+evidence and the forward RFC-0025 proposal now pass the explicitly adopted
+developer/design review scope. Public release and runtime implementation are
+separate from the original preparation milestone and remain unperformed.

@@ -47,3 +47,4 @@ jobs:
           npm run qualification-lifecycle-smoke
           npm run qualification-security-smoke
           npm run qualification-measurements-smoke
+          npm run revised-architecture-smoke

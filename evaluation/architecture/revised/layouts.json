@@ -1,0 +1,50 @@
+{
+  "task": "NF-102-06",
+  "scope": "Proposed component boundaries, verified by inert contracts; no production runtime or published package is created.",
+  "alternatives": [
+    {
+      "id": "A",
+      "layout": "same-language-shared-packages",
+      "advantages": ["One compiler/interpreter family", "Fewer package-version combinations"],
+      "costs": ["Shared package exports must enforce a static-only CLI closure", "Runtime authority and dependency growth can accidentally reach CLI startup"],
+      "evidence": ["evaluation/architecture/alternatives.json", "evaluation/architecture/revised/contract-model.mjs"],
+      "disposition": "considered; package count alone does not prove startup isolation"
+    },
+    {
+      "id": "B",
+      "layout": "same-language-separate-packages",
+      "advantages": ["Explicit CLI import closure", "Separately versioned static validation and host authority", "No FFI or subprocess backend for validation"],
+      "costs": ["Compatibility pairs must fail closed", "More artifact/provenance records and dependency inventories"],
+      "evidence": ["evaluation/architecture/revised/contract-model.mjs", "evaluation/security-qualification/README.md"],
+      "disposition": "preferred boundary proposal; final language remains tied to qualified measurements and scorecards"
+    },
+    {
+      "id": "C",
+      "layout": "different-languages",
+      "advantages": ["Independent host implementation choices remain possible", "A versioned protocol can isolate authority"],
+      "costs": ["Duplicate semantic/version ownership or an additional protocol boundary", "Two toolchain and supply-chain maintenance paths", "No measured future host/FFI/IPC workload exists"],
+      "evidence": ["evaluation/measurement-qualification/README.md", "evaluation/architecture/revised/contract-model.mjs"],
+      "disposition": "not selected for initial development; no unsupported bridge-performance claim"
+    }
+  ],
+  "dependencyGraph": {
+    "spec": [],
+    "validation": ["spec"],
+    "cli": ["spec", "validation"],
+    "contracts": ["spec"],
+    "host": ["spec", "validation", "contracts"],
+    "adapters": ["contracts"],
+    "extensions": ["contracts"]
+  },
+  "versionDomains": {
+    "spec": "0.1 unchanged frozen manifest dialect",
+    "diagnostics": "nf-validation-diagnostics-v1 existing experimental diagnostics projection",
+    "library": "evaluation-api-v1; no stable product ABI",
+    "cli": "evaluation-cli-v1; validate/inspect only",
+    "host": "future design only; no runtime compatibility promise",
+    "adaptersAndExtensions": "inert declarations only; executable ABI unsupported"
+  },
+  "startup": "CLI statically imports spec/validation only; privileged host/catalog/broker/store constructors are unavailable. Import maps reject reverse edges. Native OS tests independently deny actual forbidden effects.",
+  "ownership": "Alexander Agafonov under the existing bounded NF-101 single-maintainer acknowledgement; pre-release best effort, no invented SLA, backup, signing credentials or on-call commitment.",
+  "boundaryProofLimit": "The graph and version-pair checks prove the proposed inert contract. They do not assert that future packages/runtime have been implemented or certified."
+}

@@ -4,6 +4,14 @@ Conformance describes what it means for a manifest set, validator, CLI, runtime,
 
 This draft is intentionally lightweight. It gives implementers a shared vocabulary without pretending that a production runtime exists today.
 
+[Accepted RFC-0025](../rfcs/RFC-0025-reference-implementation-architecture.md)
+and the [exact decision](../evaluation/architecture/revised/decision.json) adopt
+the developer implementation direction. Its
+[claim/fixture/version mapping](../evaluation/architecture/revised/conformance-plan.md)
+does not expand NF-SCHEMA, full NF-SEMANTIC, NF-CLI, NF-RUNTIME or extension support.
+Qualified evaluation capsules and inert design models remain separate from
+trusted public distribution and an implemented production runtime.
+
 Related RFCs:
 
 - [RFC-0003: Conformance Levels](../rfcs/RFC-0003-conformance-levels.md)

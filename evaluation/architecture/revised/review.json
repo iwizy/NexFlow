@@ -1,0 +1,265 @@
+{
+  "task": "NF-102-06",
+  "recordedAt": "2026-10-26T02:34:39.051Z",
+  "outcome": "technical-review-complete-for-separate-decision",
+  "architectureAccepted": false,
+  "reviewMode": "single-maintainer",
+  "maintainer": "Alexander Agafonov",
+  "policyRevision": "2cd3b442d4549f0e5c1cd4c4363f9449796010df",
+  "reviewedRfcRevision": "d0f3949543faff32bc579b243e92c177392dab42",
+  "reviewedEvidenceRevision": "d0f3949543faff32bc579b243e92c177392dab42",
+  "proposalInputsRevision": "b7b4811670a712e05d8e645dfd923f3fbd4041ff",
+  "specificationRevision": "1d1fa238ab5729a79bee9389d5c66cfd20a61256",
+  "candidateSourceRevision": "23e576efd0dda0f00f5462eda9295c1ae4ec8fee",
+  "assessmentBasis": "Revision-bound source and actual CI evidence review performed under explicit maintainer delegation; this does not assert a separately received personal or independent review.",
+  "humanPersonallyPerformedReviewClaimed": false,
+  "independenceClaimed": false,
+  "authorshipConflictDisclosed": true,
+  "authorshipDisclosure": "Sole-maintainer project materials and the new review are self-authored under delegated technical work; no cross-person independence or certification.",
+  "lenses": {
+    "architecture": {
+      "completed": true,
+      "confidence": "moderate",
+      "findings": "Qualified throughput favors TypeScript; Python cold/memory/build advantages and missing onboarding remain visible. Layout B keeps explicit static/host interfaces without an unmeasured second-language bridge. The pure kernel and future host remain design work."
+    },
+    "security": {
+      "completed": true,
+      "confidence": "moderate within the declared validation threat model; no independent certification",
+      "findings": "Real selected-candidate target denial/lifecycle evidence, dated supply-chain closure and inert contract failures support the offered developer scope. Unsigned public delivery, future runtime/store/executable extensions and broader broker/kernel threats are not certified."
+    }
+  },
+  "gates": [
+    {
+      "id": 1,
+      "name": "Proposal completeness",
+      "status": "passed",
+      "scope": "Applicable design and unsigned developer-evaluation requirements only; no promotion of an unperformed product/runtime claim",
+      "basis": "The immutable RFC proposes TypeScript/layout B, exact evaluation targets, all component owners, non-goals, security, compatibility, alternatives and deferred implementation. No native product release or runtime implementation is offered.",
+      "evidence": [
+        "rfcs/RFC-0025-reference-implementation-architecture.md",
+        "evaluation/architecture/revised/layouts.json",
+        "evaluation/architecture/revised/boundaries.md"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Evidence integrity and comparability",
+      "status": "passed",
+      "scope": "Applicable design and unsigned developer-evaluation requirements only; no promotion of an unperformed product/runtime claim",
+      "basis": "One immutable specification/corpus/catalog and candidate revision are retained. Six full eligible native records use one shared host per target and source-bound producer/job receipts; partial observations are not pooled. All 84 cells remain visible, including 42 rejected/null cells. Original weights are retained, absent onboarding scores zero, and no independent personal review is claimed.",
+      "evidence": [
+        "evaluation/measurement-qualification/approved-captures.json",
+        "evaluation/measurement-qualification/summary.json",
+        "evaluation/architecture/revised/proposal.json"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Candidate eligibility",
+      "status": "passed",
+      "scope": "Applicable design and unsigned developer-evaluation requirements only; no promotion of an unperformed product/runtime claim",
+      "basis": "Selected TypeScript passes the actual approved validation/diagnostic, dependency/license, offline, lifecycle and security scope on every evaluated target. Failed current Rust/Go Windows gates remain rejected and unscored. This is unsigned developer evaluation, not a signed-product, full semantic/Core or runtime conformance claim.",
+      "evidence": [
+        "evaluation/qualification/supply-chain-repair/typescript.json",
+        "evaluation/supply-chain/2026-10-15-repaired/completion.json",
+        "evaluation/delivery/candidate-disposition.json",
+        "evaluation/security-qualification/README.md",
+        "evaluation/lifecycle/completion/README.md"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Architecture and dependency direction",
+      "status": "passed",
+      "scope": "Applicable design and unsigned developer-evaluation requirements only; no promotion of an unperformed product/runtime claim",
+      "basis": "Layout B separates static spec/validation/CLI from host contracts and future authority. Version/import/startup failure models verify the proposed graph. The current rooted facade still reads declared files; filesystem-free kernel extraction is a future contract, not an already shipped refactor or proof based only on topology.",
+      "evidence": [
+        "evaluation/architecture/revised/layouts.json",
+        "evaluation/architecture/revised/boundaries.md",
+        "evaluation/architecture/revised/contract-model.mjs"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "CLI and runtime separation",
+      "status": "passed",
+      "scope": "Applicable design and unsigned developer-evaluation requirements only; no promotion of an unperformed product/runtime claim",
+      "basis": "Actual native validate/inspect remain offline and deny undeclared effects. Existing JavaScript graph/init retain their original fixtures/budgets and identity. The TypeScript prototype does not acquire graph/init, full NF-CLI or runtime support by selection; future porting must rerun those contracts.",
+      "evidence": [
+        "docs/cli-runtime-boundary.md",
+        "scripts/cli-graph-smoke.mjs",
+        "scripts/cli-init-smoke.mjs",
+        "scripts/cli-no-runtime-guardrails-smoke.mjs",
+        "evaluation/architecture/revised/conformance-plan.md"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Security and authority boundaries",
+      "status": "passed",
+      "scope": "Applicable design and unsigned developer-evaluation requirements only; no promotion of an unperformed product/runtime claim",
+      "basis": "Native OS effects, descriptors, resource failure and public projection are qualified in the declared validation threat model. Host-issued scoped/expiring/revocable grants and opaque handles cannot import provider/protocol authority. The inert public queue now invokes the strict event DTO allowlist before enqueue. Kernel/privileged-parent, arbitrary broker and universal secret-detection guarantees are not claimed.",
+      "evidence": [
+        "evaluation/security-qualification/README.md",
+        "evaluation/architecture/revised/contract-model.mjs",
+        "evaluation/architecture/revised/boundaries.md"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Extension and provider boundaries",
+      "status": "passed",
+      "scope": "Applicable design and unsigned developer-evaluation requirements only; no promotion of an unperformed product/runtime claim",
+      "basis": "Declaration/discovery/resolution/digest verification/inert loading/activation are distinct tested design stages. Exact provider grants reject hidden fallback, unavailable/ambiguous entries and forged/revoked credentials. Executable extension loading and foreign protocol authority remain unsupported; no production provider or credential backend is implemented.",
+      "evidence": [
+        "docs/extension-loading-boundary.md",
+        "docs/provider-adapter-boundary.md",
+        "docs/mcp-a2a-boundaries.md",
+        "evaluation/architecture/revised/contract-model.mjs"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Event, audit and state boundaries",
+      "status": "passed",
+      "scope": "Applicable design and unsigned developer-evaluation requirements only; no promotion of an unperformed product/runtime claim",
+      "basis": "The design defines host ownership, classified public projection, ordering, trusted-anchor integrity, idempotency, pre-effect store failure, post-effect unknown outcome, reconciliation, no automatic replay and retention gates. The 85 inert controls test those failure contracts. In-memory arrays are not disk durability; actual append/fsync/crash recovery must be qualified before any future store is deployed.",
+      "evidence": [
+        "docs/event-audit-storage-boundary.md",
+        "evaluation/architecture/revised/boundaries.md",
+        "evaluation/architecture/revised/contract-model.mjs"
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Packaging, distribution and operations",
+      "status": "passed",
+      "scope": "Applicable design and unsigned developer-evaluation requirements only; no promotion of an unperformed product/runtime claim",
+      "basis": "Genuine retained V1-to-V2 install/upgrade/tamper-refusal/rollback/uninstall succeeds for the selected candidate on all three native targets. The selected developer delivery is JavaScript source plus separately provisioned Node: actual capsules contain no native project executable or nested archive, with identical 24-file distributions. Checksums/manifests/Git provenance and the dependency inventory are retained. Under the explicit instruction to proceed without certificates, this design offers no signed native app/installer or trusted public product delivery. Project signing/notarization remains NOT PERFORMED and the original signing criterion remains FALSE, not passed. NF-103 must review publisher/runtime trust and any applicable future signing path. Existing signing ownership is coordination only, without invented keys or authority.",
+      "evidence": [
+        "evaluation/lifecycle/completion/archive-verification.json",
+        "evaluation/delivery/unsigned-policy.json",
+        "evaluation/architecture/revised/source-distribution.json",
+        "rfcs/reviews/2026-10-11-single-maintainer-ownership.md"
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Conformance, compatibility and migration",
+      "status": "passed",
+      "scope": "Applicable design and unsigned developer-evaluation requirements only; no promotion of an unperformed product/runtime claim",
+      "basis": "The plan maps schema/selected semantic fragments/CLI/runtime/extension claims separately, with pinned fixtures and spec/diagnostic/API/package/artifact/state version domains. No current manifest meaning or version changes. Full project semantics, stable product ABI and executable runtime remain unclaimed. Actual evaluation rollback does not stand in for future ABI/database/journal migration.",
+      "evidence": [
+        "evaluation/architecture/revised/conformance-plan.md",
+        "evaluation/architecture/revised/layouts.json",
+        "docs/compatibility.md",
+        "docs/conformance.md"
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Rationale, governance and ownership",
+      "status": "passed",
+      "scope": "Applicable design and unsigned developer-evaluation requirements only; no promotion of an unperformed product/runtime claim",
+      "basis": "Original-weight source-bound scores favor TypeScript 55.8 versus Python 52.8. Python wins cold start, native peak memory and all nine build/CI pairs; TypeScript wins the nine library-throughput pairs and has the explicitly bounded type/API-maintenance judgment. There is no numerical-ranking override. All three layouts and confidence limits are retained. Adopted single-maintainer ownership and explicit delegation cover this technical review and decision; self-authorship is disclosed, with no invented independent/personal review or signature. This review is not acceptance: a separate decision must pin this exact RFC and committed review before its result takes effect.",
+      "evidence": [
+        "docs/single-maintainer-governance.md",
+        "rfcs/reviews/2026-10-11-single-maintainer-ownership.md",
+        "evaluation/architecture/revised/proposal.json",
+        "evaluation/architecture/revised/layouts.json"
+      ]
+    }
+  ],
+  "immutableInputs": [
+    {
+      "path": "rfcs/RFC-0025-reference-implementation-architecture.md",
+      "sha256": "649e000c06cadbeee949dada4ae44f0f01c65ced8135785fa62d848d3a7c3480"
+    },
+    {
+      "path": "evaluation/architecture/revised/proposal.json",
+      "sha256": "911c28e286286b4a631e4cbbbef1d18fb6aa5cb56e6932da97955cd9f4f9f5b1"
+    },
+    {
+      "path": "evaluation/architecture/revised/contract-model.mjs",
+      "sha256": "1b45c3477c9b16084c101c01e49f4d06ac85f3a9a39df209f297471fc8a0fa44"
+    },
+    {
+      "path": "evaluation/architecture/revised/layouts.json",
+      "sha256": "a25996b9553afbb1ccf949914230a07db67316ae2c79c591b4c708bd740836df"
+    },
+    {
+      "path": "evaluation/architecture/revised/boundaries.md",
+      "sha256": "59197e501ea5a31a90e69b20ac843079e53aed60bf3470a16c9560ad2e17b2a4"
+    },
+    {
+      "path": "scripts/qualification/prepare-architecture-review.mjs",
+      "sha256": "36a0a5817fc17793f56c02f8e1c3ca80fdf9c8abe943eb7bf01571cc3717e1b4"
+    },
+    {
+      "path": "evaluation/architecture/revised/source-distribution.json",
+      "sha256": "58afaee763b0de8edc9d966f2f77a848c299b7220e1d9779a401c8bc78f499a5"
+    },
+    {
+      "path": "evaluation/architecture/revised/review-distribution.mjs",
+      "sha256": "5ea538aef261599b5c32c52d83a6b0919ec2872e67946ce8ad6fbc8a3d862ad8"
+    },
+    {
+      "path": "evaluation/architecture/revised/conformance-plan.md",
+      "sha256": "17c2867f2e73b31c4d556c96c7b2c6a7071780f5ccadd0f00507db01b30e4468"
+    },
+    {
+      "path": "scripts/runtime-revised-architecture-smoke.mjs",
+      "sha256": "894d47f4b5a38f6f04f32a2fdd00b4a6f2e0eaa29bb8edb55d2e5a53715c2ca4"
+    },
+    {
+      "path": "package.json",
+      "sha256": "41ed87fc89721c6078d29ce73f912e5d6517bdd81dd84b1234463c4fcca33763"
+    },
+    {
+      "path": ".github/workflows/governance-smoke.yml",
+      "sha256": "62e9ec0a90148c64b7639b83767321e3d518203abca97055595f07aea4c79e92"
+    }
+  ],
+  "openApplicableBlockers": [],
+  "applicabilityDecisions": [
+    {
+      "subject": "Original project signing/notarization criterion",
+      "result": "not-performed; original criterion false",
+      "disposition": "No signed native project app/installer or trusted public product is offered. Current unsigned source-capsule evaluation is explicitly authorized; future public publisher/runtime trust and applicable native signing remain NF-103."
+    },
+    {
+      "subject": "All-four-success measurement objective",
+      "result": "false",
+      "disposition": "Current Rust/Go fail a Windows hard gate and remain rejected/unscored; their 42 cells stay excluded/null rather than fabricated or compensated."
+    },
+    {
+      "subject": "Full project semantics, stable product CLI/ABI and NF-RUNTIME",
+      "result": "not-established",
+      "disposition": "Prototype/source-bound fragment coverage and proposed interfaces only. No broader conformance, implementation or runtime execution authority is created."
+    },
+    {
+      "subject": "Human contributor onboarding and independent assurance",
+      "result": "not-tested / not-received",
+      "disposition": "Onboarding score zero; disclose sole-maintainer authorship and technical delegation, without invented people, signatures, personal execution or independence."
+    },
+    {
+      "subject": "Cohort/runtime/instrument limits",
+      "result": "explicitly retained",
+      "disposition": "Prior qualification CPU/Windows-memory drift is recorded. Compare each pair only inside its actual native host; runtime executable digests are not separately retained in measurement records, source/provision pins are distinct from binary identity. Concurrency is not measured, CI is lane-level, OS cache is uncontrolled and Unix RSS enforcement is sampled."
+    }
+  ],
+  "residualRisks": [
+    "No permitted project signing/notarization or trusted public product delivery",
+    "Dated supply-chain scans are bounded observations, not perpetual absence of vulnerabilities; refresh before release or changed inputs",
+    "Future pure-kernel/package extraction, graph/init porting, durable store and executable adapters need implementation-specific evidence before use",
+    "No full semantic/Core/extension, stable product ABI, NF-CLI or NF-RUNTIME conformance expansion",
+    "Kernel compromise, hostile privileged parent and arbitrary broker/IPC are outside the declared threat model",
+    "No universal secret detector; strict modeled public DTOs and classified host metadata are narrower guarantees",
+    "Sampled Unix memory enforcement can overshoot; Windows traffic isolation is not universal bind-syscall denial",
+    "Single native cohort per target; no intrinsic language ranking, concurrency study or independent human assurance",
+    "One maintainer, pre-release best effort, no SLA, backup, on-call promise or invented signing authority"
+  ],
+  "separateDecisionRequired": true,
+  "runtimeImplementationAuthorized": false,
+  "productReleaseAuthorized": false
+}

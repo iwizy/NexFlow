@@ -2,6 +2,12 @@
 
 NexFlow is specification-first. Runtime work starts only after the core model is coherent.
 
+Current architecture direction: [Accepted RFC-0025](../rfcs/RFC-0025-reference-implementation-architecture.md)
+and the [exact decision](../evaluation/architecture/revised/decision.json) adopt
+TypeScript/layout B for unsigned developer validation and future host interface
+design. Runtime implementation and NF-103 product-release approval are separate.
+The dated preparation/review snapshots below preserve their historical scope.
+
 For version-by-version readiness criteria from `0.1` draft through `1.0`, see the [Release Plan](release-plan.md).
 
 For the first candidate review, see the [0.1 Readiness Checklist](readiness-checklist.md).
@@ -59,8 +65,8 @@ readiness record, command output, and cross-surface review are attached to the
 [`v0.1.0` release](https://github.com/iwizy/NexFlow/releases/tag/v0.1.0).
 The blocker IDs and closure evidence are maintained in the
 [0.1 Candidate Scope](0.1-scope.md). Candidate publication does not resolve the
-separate Runtime Architecture Decision, whose current outcome remains
-`not-ready`.
+separate architecture decision; that candidate publication itself selected no
+language. The current bounded direction is now recorded in RFC-0025 above.
 
 The candidate boundary is deliberately narrow:
 
@@ -137,8 +143,9 @@ dispatch, discovery inventory, local JSON Schema validation, declared-only
 [inspection](cli-inspection.md), bounded [static graphing](cli-graph.md),
 [starter initialization](cli-init.md), and an experimental
 versioned [JSON diagnostic envelope](cli-diagnostics.md). It is not a
-reference CLI alpha or a completed language-evaluation candidate; the architecture decision is still
-`not-ready`, and no runtime or package layout has been selected.
+reference CLI alpha or one of the independently evaluated language candidates.
+The forward RFC-0025 choice does not rename that historical prototype or expand
+its conformance claims.
 Inspection lists declarations and selected references without resolving them;
 it does not implement the separate Agent Assembly contract.
 Initialization writes only a three-manifest, provider-neutral Core Profile
@@ -222,7 +229,8 @@ Relevant docs: [Validation](validation.md), [Conformance](conformance.md),
 
 ## `0.3` Architecture Preparation Checkpoint
 
-Checkpoint state: **prepared with decision blockers**.
+Historical checkpoint state: **prepared with decision blockers**. This
+pre-requalification snapshot is retained below; RFC-0025 is the current decision.
 
 This checkpoint records architecture boundary work completed alongside the
 `0.3` semantic-consistency workstream. It does not redefine the public version
@@ -235,7 +243,7 @@ implementation language, or authorize a CLI or runtime package.
 
 ### Checkpoint Evidence
 
-| Area | Current state | Evidence |
+| Area | State at the preparation snapshot | Evidence |
 | --- | --- | --- |
 | Language evaluation | Ready as a neutral process; no candidate scored or selected | [Runtime Language Evaluation Matrix](language-evaluation-matrix.md) |
 | CLI/runtime separation | Command effect budgets and static-versus-runtime fact ownership specified | [CLI And Runtime Responsibility Boundary](cli-runtime-boundary.md) |
@@ -247,7 +255,7 @@ implementation language, or authorize a CLI or runtime package.
 
 ### Checkpoint Blockers
 
-The checkpoint cannot become an accepted architecture decision because:
+At that snapshot the checkpoint could not become an accepted decision because:
 
 - no Runtime Architecture Decision RFC proposes one language, architecture
   layout, package ownership model, and exact target matrix
@@ -267,26 +275,30 @@ This checkpoint summarizes them; it does not create a second decision process.
 
 The `0.3` architecture preparation checkpoint is ready to publish as a factual
 status snapshot. It is **not ready to pass** the Runtime Architecture Decision
-gate. Milestone 4 remains in evidence preparation, and Milestone 5 Reference
-CLI work must not begin until a revision-pinned decision RFC reaches
-`accepted`.
+gate by itself. The later RFC-0025 decision supplies the bounded implementation
+direction; it does not retroactively accept this preparation checkpoint or
+authorize a product release/runtime implementation.
 
 ## Milestone 4: Runtime Architecture Decision
 
-Status: reviewed with blockers. The published review outcome is `not-ready`; no
-runtime language, package layout, supported target matrix, or implementation
-authorization has been accepted.
+Status: RFC-0025 accepted for unsigned developer validation and future host
+interface design. TypeScript/layout B is selected on original-weight scorecards,
+six complete native measurement records and both revision-bound review lenses.
+The current source-package route uses external Node and no project native
+executable. Public signing/trust, product release and runtime implementation
+remain unperformed; the original signing/all-four-success objectives stay false.
 
 The [2026-10-11 single-maintainer review](../rfcs/reviews/2026-10-11-runtime-architecture-review.md)
 pins the Draft, subsequent four-candidate library repair and adopted NF-101
-ownership. Both evidence-analysis lenses are complete; six owned remediation
-cards precede a revised proposal and repeat acceptance review. Historical
+ownership. Both evidence-analysis lenses were complete; its six remediation
+cards led to the later requalification and forward RFC-0025 review. Historical
 checkpoints below/above retain their own dated scope, not a current lack of prototypes.
 
 [NF-102 is closed as a completed review](../rfcs/reviews/2026-10-11-runtime-review-closure.md)
 under an explicit maintainer scope amendment. Its outcome remains `not-ready`;
-all six acceptance blockers remain open. This does not complete Milestone 4,
-accept RFC-0023 or authorize Milestone 5.
+its six recorded blockers remain historical dispositions at that revision.
+The new scoped decision leaves RFC-0023's Draft bytes unchanged and publishes no
+Milestone 5 package or product release.
 
 The [0.4 Alpha Preparation Checkpoint](0.4-alpha-checkpoint.md) assesses the
 current CLI-related evidence against this gate. It is prepared with blockers
@@ -302,29 +314,27 @@ the public version plan or authorize Milestone 5.
   storage boundaries
 - mandatory architecture review gates, evidence rules, blocker classes, and
   acceptance criteria
-- four native validation candidates, original source-bound partial reports and
-  later 352-case library repair evidence, with no full target acceptance
+- four native validation candidates and preserved historical reports; current
+  TypeScript/Python qualification and six complete measurements on three targets,
+  with rejected Rust/Go Windows failures visible and unscored
 - Draft RFC-0023, three architecture alternatives, adopted single-maintainer
   policy and seven bounded NF-101 maintenance roles
+- Accepted RFC-0025, exact reviewed proposal/review/decision revisions, original
+  weights and 85 inert boundary/failure controls
 
-These inputs constrain a future decision. They are not a substitute for the
-decision RFC or candidate evidence.
+The exact decision binds these inputs and its scoped tradeoffs; publication,
+CI and historical preparation alone are not architecture acceptance.
 
-### Open Acceptance Blockers
+### Remaining Implementation And Public Distribution Work
 
-- no Runtime Architecture Decision RFC proposes a language, architecture
-  layout, package ownership, and exact release targets
-- prototypes and reports exist, but repaired full-gate qualification, comparable
-  target measurements and eligible-candidate scores are incomplete
-- package boundaries, cross-package version ownership, and distribution
-  mechanisms remain undecided
-- complete runtime threat and credential boundaries are not available as
-  decision evidence
-- exact supported compatibility/conformance combinations and their evidence
-  remain incomplete despite bounded validation/CLI ownership
-- artifact signing, provenance, installation, upgrade, rollback, and
-  current native lifecycle have not been fully demonstrated; signing coordination
-  is not signing authority
+- NF-103 must review fresh release/publisher/runtime-prerequisite evidence and
+  any applicable future native app/installer signing/notarization route.
+- Pure-kernel extraction, graph/init porting and broader semantic/Core/extension
+  or stable CLI/ABI claims need separately reviewed implementation evidence.
+- Actual host admission, credentials, durable storage and executable integration
+  need their own bounded implementation/qualification before runtime support.
+- Existing evaluation targets and unsigned capsules are not supported product
+  installations; ownership grants no signing key, SLA or production authority.
 
 ### Decision Closure Sequence
 

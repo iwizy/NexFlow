@@ -1,0 +1,197 @@
+{
+  "task": "NF-102-06",
+  "recordedAt": "2026-10-26T02:37:44.777Z",
+  "outcome": "accepted",
+  "scope": "Reference validation/developer implementation direction and inert future host interface design only; current delivery is unsigned source evaluation with external runtime prerequisites.",
+  "selectedCandidate": "typescript",
+  "selectedLayout": "B",
+  "rfc": "rfcs/RFC-0025-reference-implementation-architecture.md",
+  "acceptedRfcSha256": "cfbe597095c5c3fdde035cb99ad1bc950105e3aa8ddd5e32d103b1589b22f371",
+  "reviewedRfcRevision": "d0f3949543faff32bc579b243e92c177392dab42",
+  "reviewedEvidenceRevision": "d0f3949543faff32bc579b243e92c177392dab42",
+  "reviewRecordRevision": "4a1e2c350bf59be06a7ef9177bf4015ba61641f2",
+  "reviewRecordSha256": "bdbb4439d733ce7be9b8116e48b00bebe9b444a4433318eecedd5ce6e3175af9",
+  "reviewSummarySha256": "d8f150f906f3d33ee1479cd3d08f36e953ea926005ea4735f3be5b760b6d8992",
+  "policyRevision": "2cd3b442d4549f0e5c1cd4c4363f9449796010df",
+  "policyAdoptionMerge": "f6a1f5cb26ea2c048d950039641a951b04e19db4",
+  "maintainer": "Alexander Agafonov",
+  "decisionMode": "explicit-maintainer-delegation",
+  "authorityEvidence": "The maintainer explicitly directs completion of NF-102-03 through NF-102-06, separate commits/pushes/PRs and sequential merges, and delegates all technical decisions. He expressly confirms project signing certificates/accounts are unavailable and requests a certificate-free way forward. This separate decision exercises that authority on the exact committed RFC and technical review; it does not infer acceptance from CI, publication or merge, or claim a separately received personal review/signature.",
+  "humanPersonallyPerformedReviewClaimed": false,
+  "independenceClaimed": false,
+  "inventedSignature": false,
+  "authorshipConflictDisclosed": true,
+  "rationale": "Adopt TypeScript and layout B on qualified source-bound evidence and the unchanged original weights: 55.8 versus Python 52.8. Python cold-start, native-memory and all build/CI advantages remain explicit. TypeScript wins the nine library-throughput pairs and has the limited type/API-maintenance judgment; no ranking override or failed-gate compensation occurs. Its actual identical source/declaration distributions support external-Node JavaScript delivery without shipping a project native executable. No unperformed project signing or public trust is called passed.",
+  "gates": [
+    {
+      "id": 1,
+      "status": "passed",
+      "reviewBasis": "Proposal completeness"
+    },
+    {
+      "id": 2,
+      "status": "passed",
+      "reviewBasis": "Evidence integrity and comparability"
+    },
+    {
+      "id": 3,
+      "status": "passed",
+      "reviewBasis": "Candidate eligibility"
+    },
+    {
+      "id": 4,
+      "status": "passed",
+      "reviewBasis": "Architecture and dependency direction"
+    },
+    {
+      "id": 5,
+      "status": "passed",
+      "reviewBasis": "CLI and runtime separation"
+    },
+    {
+      "id": 6,
+      "status": "passed",
+      "reviewBasis": "Security and authority boundaries"
+    },
+    {
+      "id": 7,
+      "status": "passed",
+      "reviewBasis": "Extension and provider boundaries"
+    },
+    {
+      "id": 8,
+      "status": "passed",
+      "reviewBasis": "Event, audit and state boundaries"
+    },
+    {
+      "id": 9,
+      "status": "passed",
+      "reviewBasis": "Packaging, distribution and operations"
+    },
+    {
+      "id": 10,
+      "status": "passed",
+      "reviewBasis": "Conformance, compatibility and migration"
+    },
+    {
+      "id": 11,
+      "status": "passed",
+      "reviewBasis": "Rationale, governance and ownership"
+    }
+  ],
+  "openApplicableBlockers": [],
+  "distributionMode": "unsigned-evaluation-developer-only",
+  "originalPublicSigningCriterionSatisfied": false,
+  "originalAllFourSuccessfulCriterionSatisfied": false,
+  "allFourComparable": false,
+  "signingPerformed": false,
+  "notarizationPerformed": false,
+  "trustedPublicProductDistributionClaimed": false,
+  "runtimeImplementationAuthorized": false,
+  "productReleaseAuthorized": false,
+  "packageTagOrVersionChangeAuthorized": false,
+  "acceptedObligations": {
+    "record": "rfcs/reviews/2026-10-11-single-maintainer-ownership.md",
+    "sha256": "38d3ddd372d40a7820cd9cfddcc9b85f7ab5423a5bf785a08955b20e6be32390",
+    "roles": [
+      "CLI",
+      "validation libraries",
+      "future runtime design",
+      "security coordination",
+      "dependencies",
+      "release/CI",
+      "signing/distribution coordination"
+    ],
+    "support": "Pre-release best effort, no SLA, backup or on-call promise; no signing keys/certificates or production authority is invented."
+  },
+  "residualRisks": [
+    "No permitted project signing/notarization or trusted public product delivery",
+    "Dated supply-chain scans are bounded observations, not perpetual absence of vulnerabilities; refresh before release or changed inputs",
+    "Future pure-kernel/package extraction, graph/init porting, durable store and executable adapters need implementation-specific evidence before use",
+    "No full semantic/Core/extension, stable product ABI, NF-CLI or NF-RUNTIME conformance expansion",
+    "Kernel compromise, hostile privileged parent and arbitrary broker/IPC are outside the declared threat model",
+    "No universal secret detector; strict modeled public DTOs and classified host metadata are narrower guarantees",
+    "Sampled Unix memory enforcement can overshoot; Windows traffic isolation is not universal bind-syscall denial",
+    "Single native cohort per target; no intrinsic language ranking, concurrency study or independent human assurance",
+    "One maintainer, pre-release best effort, no SLA, backup, on-call promise or invented signing authority",
+    "Two npm build/provisioning tool packages retain missing publisher notices; they are absent from the selected source capsule manifests. Inventory is not legal or future redistribution approval."
+  ],
+  "applicabilityDecisions": [
+    {
+      "subject": "Original project signing/notarization criterion",
+      "result": "not-performed; original criterion false",
+      "disposition": "No signed native project app/installer or trusted public product is offered. Current unsigned source-capsule evaluation is explicitly authorized; future public publisher/runtime trust and applicable native signing remain NF-103."
+    },
+    {
+      "subject": "All-four-success measurement objective",
+      "result": "false",
+      "disposition": "Current Rust/Go fail a Windows hard gate and remain rejected/unscored; their 42 cells stay excluded/null rather than fabricated or compensated."
+    },
+    {
+      "subject": "Full project semantics, stable product CLI/ABI and NF-RUNTIME",
+      "result": "not-established",
+      "disposition": "Prototype/source-bound fragment coverage and proposed interfaces only. No broader conformance, implementation or runtime execution authority is created."
+    },
+    {
+      "subject": "Human contributor onboarding and independent assurance",
+      "result": "not-tested / not-received",
+      "disposition": "Onboarding score zero; disclose sole-maintainer authorship and technical delegation, without invented people, signatures, personal execution or independence."
+    },
+    {
+      "subject": "Cohort/runtime/instrument limits",
+      "result": "explicitly retained",
+      "disposition": "Prior qualification CPU/Windows-memory drift is recorded. Compare each pair only inside its actual native host; runtime executable digests are not separately retained in measurement records, source/provision pins are distinct from binary identity. Concurrency is not measured, CI is lane-level, OS cache is uncontrolled and Unix RSS enforcement is sampled."
+    }
+  ],
+  "followUps": [
+    {
+      "owner": "Alexander Agafonov",
+      "scope": "NF-103 release/publisher/runtime trust readiness",
+      "boundary": "Separate release decision and fresh applicable dependency, distribution and publisher verification. Native standalone/app/installer packaging reopens the permitted signing/notarization path. No release/package/tag is published now."
+    },
+    {
+      "owner": "Alexander Agafonov",
+      "scope": "Any separately authorized implementation or expanded conformance",
+      "boundary": "Implement and verify the proposed pure-kernel/workspace adapter split, graph/init ports, version pairs and claimed semantic coverage before offering them; qualify actual durable storage, host admission and executable integration before any runtime claim. This decision authorizes no runtime implementation."
+    }
+  ],
+  "historicalRecords": "RFC-0023 and pinned review/candidate snapshots keep their original bytes, Draft/not-ready outcomes and failures. This forward RFC-0025 decision supersedes current language/layout guidance only in its explicitly adopted developer/design scope.",
+  "publicationVerification": "PR/main CI and merge receipts are verified after publication and recorded in the canonical task registry; no future self-referential CI or merge claim is made here.",
+  "licenseDisposition": {
+    "evidence": "evaluation/supply-chain/2026-10-15-repaired/disposition.json",
+    "legalApproval": false,
+    "noticeLimitations": [
+      {
+        "ref": "pkg:npm/%40npmcli/agent@5.0.2",
+        "limitation": "Upstream declares ISC but publishes no separate own copyright/license notice; canonical text is a reference, not an invented publisher notice or legal/distribution approval.",
+        "verdict": "reviewed-declaration-by-reference-no-distribution-approval"
+      },
+      {
+        "ref": "pkg:npm/proxy-agent-negotiate@1.1.0",
+        "limitation": "Upstream declares MIT but publishes no separate own copyright/license notice; canonical text is a reference, not an invented publisher notice or legal/distribution approval.",
+        "verdict": "reviewed-declaration-by-reference-no-distribution-approval"
+      }
+    ],
+    "currentSelectedCapsuleInspection": [
+      {
+        "target": "linux-amd64",
+        "missingNoticeBuildToolPackagesInSelectedCapsule": 0
+      },
+      {
+        "target": "macos-arm64",
+        "missingNoticeBuildToolPackagesInSelectedCapsule": 0
+      },
+      {
+        "target": "windows-amd64",
+        "missingNoticeBuildToolPackagesInSelectedCapsule": 0
+      }
+    ],
+    "boundary": "The two retained missing upstream copyright/notice declarations belong to the npm build/provisioning tool graph, absent from the actual selected source capsules. This does not grant legal or future toolchain/public redistribution approval; retain the limitations and review applicable notices before release."
+  },
+  "historicalVerificationCompatibility": {
+    "source": "scripts/lib/runtime-decision-bundle.mjs",
+    "sha256": "b61a2c12708b4c616a5472b3d6a9b290f592b65c5611cad2b4c0c6ee3f264e4d",
+    "reason": "The 2026-10-09 bundle keeps the same 33 archived Git inputs and unchanged failed/Draft assessment while current compatibility/conformance notices evolve. Only those two narrative documents join the existing governance exception; corpus, candidates, report bytes and mandatory framework sections remain guarded unchanged.",
+    "candidateOrOracleChanges": false
+  }
+}

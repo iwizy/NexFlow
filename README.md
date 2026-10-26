@@ -82,15 +82,15 @@ states, not synonyms for the implementation evidence summarized below.
 | Event interoperability | Specified as CloudEvents and OpenTelemetry EventRecord mappings; no exporter or transport | [Event Interoperability](docs/event-interoperability.md), [Event Model](docs/events.md) |
 | Conformance claim format | Implemented as a standalone schema, profile-qualified YAML and Markdown templates, and 37 cataloged claim-format cases; a revision-pinned repository-validator statement remains draft and partial, not an `NF-CLI` claim | `npm run conformance-claim-smoke`, [Conformance Fixtures](fixtures/conformance/), [Draft Validator Statement](conformance/REPOSITORY-VALIDATOR-CLAIM.md), [Conformance Claims](docs/conformance-claims.md) |
 | Candidate readiness record | Implemented as a standalone eight-gate schema and non-claiming `0.1` template; evaluated evidence is published for `v0.1.0`, `v0.2.0`, and `v0.3.0` | `npm run candidate-readiness-smoke`, [0.1 Readiness Checklist](docs/readiness-checklist.md), [Release Evidence](release/README.md) |
-| Current milestone | Published `0.3` semantic-consistency milestone after `0.2`; `0.4` architecture and `0.5` tooling publication remain blocked | [Changelog](CHANGELOG.md), [Release Reviews](release/README.md), [Roadmap](docs/roadmap.md) |
+| Current milestone | Published `0.3`; RFC-0025 selects the developer architecture. `0.4` release readiness and `0.5` public tooling remain separate, unapproved work | [Changelog](CHANGELOG.md), [Release Reviews](release/README.md), [Roadmap](docs/roadmap.md) |
 | Semantic reference checks | Partial repository smoke coverage | `npm run semantic-smoke`, [Validation](docs/validation.md) |
 | Governance and RFC process | Implemented in documentation | [Governance](docs/governance.md), [RFCs](rfcs/README.md) |
 | Foundational model changes | ActorSet, compact AgentSet, and authoritative unique-active-definition slices implemented; RFCs remain Draft | [Actor Model](docs/actor-model.md), [Effective Agent Configuration](docs/effective-agent-configuration.md), [Foundational Model Review](rfcs/reviews/2026-07-foundational-model-review.md) |
 | Human override policy | Structured fail-closed manifest model implemented; runtime enforcement absent | [Human Override](docs/human-override.md), [RFC-0017](rfcs/RFC-0017-human-override.md) |
 | Credential handling policy | Structured fail-closed manifest model and focused checks implemented; credential broker, values, and runtime mediation absent | `npm run credential-handling-schema-smoke`, [Credential Handling](docs/credential-handling.md) |
 | Threat model | Current repository and conditional future-runtime trust boundaries, attacker stories, mitigations, assumptions, and severity calibration documented; not a vulnerability report or runtime claim | [Threat Model](docs/threat-model.md), [Security Policy](SECURITY.md) |
-| Runtime architecture decision | Review framework published; current outcome is `not-ready`, with no language or package layout selected | [Runtime Architecture Decision Review](rfcs/reviews/runtime-architecture-decision-review.md), [Runtime Options](docs/runtime-options.md), [Roadmap](docs/roadmap.md) |
-| Runtime language candidates | Four independent Experimental validation-only source prototypes and immutable fidelity reports; 128 library cases supported and 224 not-tested per candidate, all specification-fidelity gates failed | [Evaluation Packet](evaluation/README.md), [Fidelity Review](evaluation/fidelity/README.md), [Feature Status Registry](docs/feature-status-registry.md) |
+| Runtime architecture decision | Accepted TypeScript/layout B for unsigned developer validation and future host interface design; no runtime implementation or release authorized | [RFC-0025](rfcs/RFC-0025-reference-implementation-architecture.md), [Exact decision](evaluation/architecture/revised/decision.json), [Runtime Options](docs/runtime-options.md) |
+| Runtime language candidates | Four independent Experimental prototypes; TypeScript/Python qualify in the current evaluation scope, while current Rust/Go fail Windows confinement. Original failed reports remain historical evidence | [Evaluation Packet](evaluation/README.md), [Current measurements](evaluation/measurement-qualification/README.md), [Feature Status Registry](docs/feature-status-registry.md) |
 | Reference CLI | Validation-only target and command map documented; alpha and beta preparation checkpoints are `not-ready`; no installable package or release implemented | [Reference CLI](docs/reference-cli.md), [Alpha Preparation Checkpoint](docs/0.4-alpha-checkpoint.md), [0.5 Beta Readiness Checklist](docs/0.5-beta-readiness-checklist.md), [Beta Preparation Checkpoint](docs/0.5-beta-checkpoint.md), [CLI Release Dry Run](docs/cli-release-dry-run.md), [CLI And Runtime Responsibility Boundary](docs/cli-runtime-boundary.md), [RFC-0011](rfcs/RFC-0011-reference-cli-scope.md) |
 | Repository CLI prototype | Experimental local discovery, JSON Schema validation, declared inspection, static graphing, bounded starter initialization, versioned JSON output, executable no-runtime guardrails, cataloged fixtures, and dedicated CI; not a reference CLI alpha, language decision, operating-system sandbox, or `NF-CLI` claim | `npm run cli-prototype -- --help`, `npm run cli-no-runtime-guardrails-smoke`, `npm run cli-fixture-smoke`, [CLI Workflow](.github/workflows/cli-smoke.yml), [Prototype Scope](docs/cli-prototype.md), [JSON Diagnostics](docs/cli-diagnostics.md), [Declared Inspection](docs/cli-inspection.md), [Static Graph](docs/cli-graph.md), [Starter Initialization](docs/cli-init.md) |
 | Runtime and provider execution | Planned, not implemented | [Architecture](docs/architecture.md), [Runtime Options](docs/runtime-options.md) |
@@ -105,10 +105,11 @@ Start with the [Adopter Guide](docs/adopter-guide.md) to choose a small pilot,
 create your own manifests, validate the selected project, and record evidence
 and implementation limits.
 
-The architecture review has not selected an implementation. The next runtime
-milestone is to close the published decision blockers with comparable,
-revision-pinned evidence and record an explicit review outcome. CLI and runtime
-implementation remain blocked while the outcome is `not-ready`.
+The [revision-bound decision](evaluation/architecture/revised/decision.json)
+adopts TypeScript and separately owned static/host packages in RFC-0025. The
+current delivery scope is unsigned evaluation source with external Node;
+project signing/notarization and trusted public product delivery are unperformed.
+Runtime implementation and product release require their own authorized work.
 
 A disposable repository CLI prototype exercises local discovery and structural
 validation using existing maintenance dependencies. Try
@@ -345,14 +346,12 @@ The current priorities are:
    before broader field or example migration.
 3. Expand positive and negative fixtures, stabilize diagnostics, and broaden
    semantic checks.
-4. Close the Runtime Architecture Decision blockers: publish the proposal,
-   complete package, threat, credential, and conformance inputs, and produce
-   comparable candidate evidence using the
-   [Runtime Language Evaluation Matrix](docs/language-evaluation-matrix.md).
-5. Record an explicit outcome under the mandatory
-   [Runtime Architecture Decision Review](rfcs/reviews/runtime-architecture-decision-review.md);
-   no language or implementation is selected while the outcome is `not-ready`.
-6. After an accepted decision, build a validation-focused reference CLI for
+4. Use [Accepted RFC-0025](rfcs/RFC-0025-reference-implementation-architecture.md)
+   for separately reviewed validation-library/package planning, preserving its
+   exact effect, version, ownership and conformance boundaries.
+5. Complete NF-103 release/publisher/runtime-prerequisite readiness before any
+   product release; the architecture decision publishes no package or tag.
+6. Plan separately authorized validation-focused reference CLI work for
    `init`, `validate`, `inspect`, and `graph`; it must not orchestrate work. Review the
    [0.5 Beta Readiness Checklist](docs/0.5-beta-readiness-checklist.md) before
    proposing any public tooling beta.

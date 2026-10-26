@@ -2,6 +2,14 @@
 
 NexFlow compatibility is about preserving the meaning of manifests across tools and time.
 
+[Accepted RFC-0025](../rfcs/RFC-0025-reference-implementation-architecture.md)
+and its [revision-bound decision](../evaluation/architecture/revised/decision.json)
+select TypeScript/layout B for the developer architecture. The
+[compatibility/conformance plan](../evaluation/architecture/revised/conformance-plan.md)
+keeps manifest `0.1`, experimental diagnostics, package/API and future stored-state
+domains separate. This decision changes no manifest version, stable product ABI,
+supported product installation or runtime conformance claim.
+
 For the current supported combinations and explicit implementation gaps, see
 the [Compatibility Matrix](compatibility-matrix.md). For the reusable change
 classification, migration record, validation, and rollback structure, see the

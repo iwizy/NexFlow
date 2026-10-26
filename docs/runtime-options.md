@@ -1,20 +1,24 @@
 # Runtime Options
 
-NexFlow does not choose a runtime language yet.
+[Accepted RFC-0025](../rfcs/RFC-0025-reference-implementation-architecture.md)
+adopts **TypeScript, layout B**: one language with separately owned static and
+future host packages. The [exact decision](../evaluation/architecture/revised/decision.json)
+covers unsigned developer validation and future host interface design. It
+authorizes no runtime implementation, public product distribution or release.
 
 A runtime architecture decision must happen before implementation begins.
 
 The decision must be evaluated against the
 [Runtime Architecture Decision Review](../rfcs/reviews/runtime-architecture-decision-review.md).
-The [current single-maintainer review](../rfcs/reviews/2026-10-11-runtime-architecture-review.md)
-outcome is `not-ready`: scoped library repairs and NF-101 ownership are recognized,
-but current full-gate qualification remains incomplete. No candidate is eligible
-for scoring and no implementation choice is accepted.
+The [historical single-maintainer review](../rfcs/reviews/2026-10-11-runtime-architecture-review.md)
+recorded `not-ready` on 2026-10-11. That immutable result remains unchanged;
+the [new review](../evaluation/architecture/revised/review.md) and separate
+RFC-0025 decision are the current developer/design direction.
 
 [NF-102's review task is closed](../rfcs/reviews/2026-10-11-runtime-review-closure.md)
-by explicit maintainer scope amendment, with outcome `not-ready`. The architecture
-remains Draft and all six technical acceptance blockers remain open; task closure
-is not acceptance or a waiver of any gate.
+by explicit maintainer scope amendment, with outcome `not-ready`. Its original
+Draft and six-blocker assessment are historical. Later requalification and the
+forward RFC-0025 decision do not retroactively turn that review into acceptance.
 
 Language-specific repository maintenance tooling, including schema validation dependencies, does not constitute a runtime implementation or a Runtime Architecture Decision.
 
@@ -25,11 +29,32 @@ draft validation-only command, effect, and shared-library boundaries.
 
 ## Current Decision State
 
-The architecture process has completed its neutral evaluation framework and
-several runtime-independent boundary contracts. It has not completed the
-evidence needed to select an implementation architecture.
+Six complete native [measurement records](../evaluation/measurement-qualification/README.md)
+support the two eligible candidates on Ubuntu 24.04 AMD64, macOS 15 ARM64 and
+Windows Server 2025 AMD64. Each pair shares one actual native host, with exact
+fingerprints and explicit prior-qualification drift. TypeScript scores 55.8 and
+Python 52.8 under the original weights; absent onboarding evidence scores zero.
+TypeScript wins nine library-throughput pairs and the bounded type/API-maintenance
+assessment. Python wins cold start, native peak memory and all nine build/CI
+comparisons. Current Rust/Go fail Windows confinement and remain rejected/unscored.
+All 84 cells remain visible: 42 measured and 42 excluded/null, without cross-OS
+numerical pooling, invented timings or an intrinsic language ranking.
 
-Available inputs:
+Layout B separates static validation from future authority without an unmeasured
+second-language bridge. The [three alternatives](../evaluation/architecture/revised/layouts.json),
+[85 inert controls](../evaluation/architecture/revised/contract-model.mjs) and
+[conformance/version plan](../evaluation/architecture/revised/conformance-plan.md)
+retain the actual rooted facade, proposed pure-kernel extraction, graph/init
+porting, full semantics, stable ABI and production runtime as distinct scopes.
+
+The developer delivery uses JavaScript source/declarations and separately
+provisioned Node. Actual TypeScript capsules have the same 24-file distributions
+and no detected native project executable or nested archive. Project signing,
+notarization and trusted public delivery remain unperformed; original signing
+and all-four-success objectives remain false. NF-103 must review publisher and
+runtime trust and any applicable future native signing before product delivery.
+
+Historical preparation inputs, supplemented by that current decision:
 
 - language hard gates, weighted criteria, and a common prototype contract
 - explicit CLI command effect budgets and runtime-preflight separation
@@ -43,7 +68,10 @@ Available inputs:
 - four source-bound [library repair records](../evaluation/repairs/README.md),
   each passing the frozen 352-case catalog in supplemental native macOS scope
 
-Open decision blockers:
+### Historical Decision Blockers — 2026-10-11
+
+These describe the earlier snapshot, whose bytes remain in RFC-0023 and the
+dated review. Current scoped dispositions are in the RFC-0025 review above.
 
 - no decision RFC proposes one language, architecture layout, package model,
   and exact target matrix
@@ -55,11 +83,9 @@ Open decision blockers:
   verified predecessor upgrade/rollback and current repaired-target qualification
   remain unresolved; maintenance consent is bounded, not missing or signing authority
 
-The next step is evidence closure, not implementation. The project must draft
-the decision proposal, complete the missing boundary inputs, preserve the frozen
-common specification revision, close candidate evidence gaps, and record an explicit
-review outcome. Existing JavaScript validation tooling gives no candidate a
-presumptive advantage.
+That evidence-closure sequence produced the forward developer/design decision.
+Future implementation and public release need separately authorized work and
+their own evidence; existing JavaScript tooling was not a selection vote.
 
 An `accepted` outcome permits only the implementation scope named by the RFC.
 Any `not-ready`, `changes-requested`, `rejected`, or `superseded` outcome keeps
@@ -76,8 +102,9 @@ rehearsal is not a TypeScript evaluation or a language selection.
 
 The [Runtime Language Evaluation Matrix](language-evaluation-matrix.md) defines
 hard gates, weighted criteria, a common validation-only prototype, evidence
-records, target testing, and the decision procedure. No candidate has a score
-until the same prototype and measurements have been completed for all four.
+records, target testing, and the decision procedure. Current scores cover only
+qualified TypeScript/Python. Failed current Rust/Go remain visible and unscored;
+their missing successful metrics are not replaced by numbers or favorable votes.
 
 Candidate runtimes are evaluated on:
 
@@ -99,6 +126,9 @@ boundaries, supply-chain evidence, provider neutrality, and scope integrity.
 Weighted scores cannot compensate for a failed hard gate.
 
 ## TypeScript
+
+Historical qualitative hypotheses below motivated the original matrix. The
+actual source-bound records above govern current selection and scores.
 
 Strengths:
 

@@ -4,9 +4,17 @@ NexFlow is specification-first. Releases describe specification maturity, valida
 
 This plan is public guidance for contributors and implementers. It is not a private work schedule, release calendar, or promise of delivery dates.
 
+The [RFC-0025 decision](../evaluation/architecture/revised/decision.json) accepts
+TypeScript/layout B for unsigned validation/developer architecture and future
+host interface design. [The accepted RFC](../rfcs/RFC-0025-reference-implementation-architecture.md)
+authorizes no product release, package, tag, version change or runtime implementation.
+NF-103 must review fresh release evidence, source-package publisher/runtime trust
+and any applicable future native signing/notarization path. Current project
+signing/notarization remains unperformed; architecture acceptance is not release GO.
+
 ## Release Principles
 
-- The specification is the product until a runtime architecture decision is accepted.
+- The specification remains the current product; architecture acceptance alone does not ship a reference CLI or runtime.
 - Runtime behavior must not appear before the corresponding specification text, schema expectations, and compatibility notes exist.
 - Releases should improve interoperability, auditability, and safety rather than add implementation surface prematurely.
 - Draft releases may change names, fields, and semantics when that improves the model.

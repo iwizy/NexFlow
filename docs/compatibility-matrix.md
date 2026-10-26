@@ -12,6 +12,12 @@ and Planned lifecycle rows do not replace the evidence/support states below.
 A deprecated field can remain schema-valid, and an implemented experimental
 slice does not accept its owning Draft RFC.
 
+[Accepted RFC-0025](../rfcs/RFC-0025-reference-implementation-architecture.md)
+and the [exact decision](../evaluation/architecture/revised/decision.json) select
+TypeScript/layout B for unsigned developer validation and future host interface
+design. Product CLI/runtime support and trusted public distribution remain
+separate from architecture acceptance and the evaluated source capsules.
+
 For compatibility rules and breaking change guidance, see
 [Compatibility](compatibility.md). For support claim vocabulary, see
 [Conformance](conformance.md). For the feature boundary used by the first
@@ -89,7 +95,7 @@ row, manifest dialect, published release or older validator claim subject.
 | Candidate readiness record | Standalone `recordVersion: "0.1"` schema, eight-gate template, and 14 focused cases | Implemented | `release/`, `npm run candidate-readiness-smoke`, `v0.1.0` release assets | Repository checks validate record structure and decision guards; the published decision is maintainer-reviewed evidence, not automated approval or a conformance certificate. |
 | Semantic reference inventory | P0-P3 target namespaces, coverage, gaps, and deferred fields | Specified | `docs/semantic-reference-inventory.md` | Documentation contract only; it is not a manifest, generated registry, validator, or conformance suite. |
 | Semantic reference smoke | Selected cross-manifest reference, active definition authority, and duplicate checks | Partial | `npm run semantic-smoke`, semantic reference inventory | Does not cover every inventoried field or establish full `NF-SEMANTIC` conformance, graph safety, or policy correctness. |
-| Runtime language evaluation | Hard gates, weighted criteria, four independent validation-only source prototypes and immutable fidelity/diagnostic comparison | Partial | [Evaluation Packet](../evaluation/README.md), [Fidelity Review](../evaluation/fidelity/README.md), `docs/language-evaluation-matrix.md` | Each candidate supports 128 library cases and leaves 224 semantic/namespace cases not-tested; specification fidelity failed, full deterministic diagnostics not-tested. No accepted target lifecycle, comparable performance, independent scores, language selection, package layout or Runtime Architecture Decision. |
+| Runtime language evaluation | Four independent prototypes, current qualification, six native measurement records and revision-bound TypeScript/layout B developer decision | Partial | [Evaluation Packet](../evaluation/README.md), [Exact decision](../evaluation/architecture/revised/decision.json), [Measurements](../evaluation/measurement-qualification/README.md) | Current TypeScript/Python qualify in the amended unsigned evaluation scope; Rust/Go fail Windows confinement and remain unscored. Original failed reports, missing public signing/trust and full product semantic/CLI/runtime gaps stay visible; architecture acceptance does not grant broader support. |
 | Reference CLI | Validation-only target, command map, effect boundary, promotion gates, and blocker-bearing alpha checkpoint documented | Planned | `docs/reference-cli.md`, `docs/0.4-alpha-checkpoint.md`, RFC-0011 | No `nexflow` executable, distributed package, stable command or output contract, or `NF-CLI` implementation exists. |
 | Repository CLI prototype | Help, unreleased version, local discovery, structural `validate`, declared-only `inspect`, static `graph`, bounded `init`, and opt-in JSON output | Partial | `docs/cli-prototype.md`, `npm run cli-prototype-smoke`, `npm run cli-validation-smoke`, `npm run cli-init-smoke` | Disposable maintenance tooling, not a reference CLI alpha or completed architecture candidate; no full semantic validation, stable JSON envelope, package, or conformance claim. |
 | Prototype JSON diagnostics | Experimental `formatVersion: "0.4-draft"` envelope and separate output schema | Implemented | `docs/cli-diagnostics.md`, `scripts/contracts/cli-output.schema.json`, `npm run cli-diagnostics-smoke` | Versioned repository output, not stable catalog or public CLI conformance; no semantic diagnostics, SARIF, automatic fixes, or runtime authority. |
@@ -463,7 +469,8 @@ by the specification and RFCs. Passing it must not be presented as complete
 No reference CLI is implemented.
 
 The [0.4 Alpha Preparation Checkpoint](0.4-alpha-checkpoint.md) records the
-current decision as `not-ready`. Its repository evidence does not change the
+its dated release decision as `not-ready`. RFC-0025's developer architecture
+selection does not change the
 `Planned` reference CLI or `Partial` prototype support levels below.
 
 The [repository CLI prototype](cli-prototype.md) is an unreleased command
@@ -524,13 +531,12 @@ pairing.
 
 ## Runtime Compatibility
 
-No NexFlow runtime is implemented or selected.
-
-The repository intentionally does not choose TypeScript, Python, Rust, or Go for
-a runtime. Documentation and RFCs define evaluation criteria and future
-behavioral requirements; the four disposable source prototypes exercise local
-structural validation and declared inspection only. Their [fidelity comparison](../evaluation/fidelity/README.md)
-preserves unsupported semantic cases and does not implement or select a runtime.
+No NexFlow runtime is implemented. RFC-0025 selects TypeScript/layout B for the
+developer architecture and future host design without authorizing runtime
+implementation. Current source-bound qualification and selected fragment/API
+coverage are distinct from full project semantics or a production runtime.
+The [historical fidelity comparison](../evaluation/fidelity/README.md) preserves
+the original unsupported cases; new evidence never rewrites those snapshots.
 
 There is currently no supported pairing between `specVersion: "0.1"` and an
 executable runtime.
@@ -724,7 +730,7 @@ Changes to the matrix must stay synchronized with:
   only the publication contract is specified.
 - No complete semantic validator exists.
 - No reference CLI exists.
-- No runtime architecture decision has been accepted.
+- The accepted developer/design architecture does not supply runtime implementation, public signing/trust or broader product conformance.
 - No runtime exists.
 - No extension registry or extension loader exists.
 - No compatibility fixtures cover multiple accepted spec versions because only

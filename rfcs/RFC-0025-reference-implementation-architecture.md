@@ -2,7 +2,7 @@
 
 ## Status
 
-Draft
+Accepted
 
 - Task: NF-102-06
 - Decision owner: Alexander Agafonov, adopted single-maintainer mode

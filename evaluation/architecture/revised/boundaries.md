@@ -121,6 +121,28 @@ runtime implementation, broader target claims, signed public delivery and
 release publication remain separate work and require their own evidence.
 The proposed journal/backend and executable adapter interfaces are design-only.
 
+## External-Runtime Source Distribution Option
+
+The [archive-format inspection](source-distribution.json) verifies the already
+qualified twelve capsule hashes/manifests and scans their actual file headers.
+All three TypeScript payloads contain the identical 24-file JavaScript/type
+declaration distribution, without detected native ELF/PE/Mach-O files or nested
+archives. This supports a source-package option invoked by separately provisioned
+Node, without shipping a project app, native launcher, SEA or interpreter.
+The Python alternative retains its explicit target-specific native wheels;
+nested wheel members are not reclassified as pure source by this inspection.
+
+For current developer-only evaluation, project signatures/notarization are
+not performed; the original signing criterion remains false. Hashes, retained
+native jobs and Git provenance bind bytes but are not trusted publisher
+signatures. Inspecting an embedded upstream runtime signature is supplemental
+metadata, not a Gatekeeper/notarization or Windows trust acceptance test. A future
+source-package release still needs an explicit integrity, provenance, runtime
+prerequisite and publisher-verification design through NF-103. A native app,
+installer, embedded interpreter or standalone executable reopens its applicable
+platform-signing path. No security preference, quarantine or trust policy is
+changed to make an unsigned package appear trusted.
+
 ## Residual Risks
 
 No kernel compromise, hostile privileged parent, arbitrary OS IPC/broker,

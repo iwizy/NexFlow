@@ -1,0 +1,778 @@
+{
+  "task": "NF-102-06",
+  "recordedAt": "2026-10-25T23:30:38.716Z",
+  "inputRevision": "2bd7923c212de85de7d6e4020771178241112f07",
+  "analysisSource": "evaluation/architecture/revised/review-distribution.mjs",
+  "analysisSourceSha256": "5ea538aef261599b5c32c52d83a6b0919ec2872e67946ce8ad6fbc8a3d862ad8",
+  "scope": "Archive-format facts and proposed external-runtime distribution option, not legal/platform trust certification or product release.",
+  "rows": [
+    {
+      "candidate": "typescript",
+      "target": "linux/amd64",
+      "manifestSource": "evaluation/lifecycle/completion/linux-amd64/typescript.json",
+      "manifestSourceSha256": "b0e3f3fbe28d722d32a9d2a1c3e18df5cf918965c280d0f5d28584eb1b2a69ad",
+      "archiveSha256": "13d14a66f2eddf574402c664e6ec921c2f1e89c1426f4d796bfa7d1ce6c6efe6",
+      "packageRevision": "2a28b632994eecd1ec41a7f20ec508313d6f2b64",
+      "prototypeRevision": "23e576efd0dda0f00f5462eda9295c1ae4ec8fee",
+      "files": 847,
+      "nativeFiles": [],
+      "nestedArchives": [],
+      "nestedMembersInspected": false,
+      "typescriptDist": [
+        {
+          "path": "evaluation/prototypes/typescript/dist/cli.d.ts",
+          "bytes": 31,
+          "sha256": "43e818adf60173644896298637f47b01d5819b17eda46eaa32d0c7d64724d012"
+        },
+        {
+          "path": "evaluation/prototypes/typescript/dist/cli.js",
+          "bytes": 3026,
+          "sha256": "3b1b41a8e2903d19e8c737348ac3c865d0c33730d55d57dab6d9001237a8fedd"
+        },
+        {
+          "path": "evaluation/prototypes/typescript/dist/diagnostics.d.ts",
+          "bytes": 497,
+          "sha256": "b55acb3403802dde1eeaeae996ca024c74936c1df9086645d56fb074ef74e845"
+        },
+        {
+          "path": "evaluation/prototypes/typescript/dist/diagnostics.js",
+          "bytes": 1757,
+          "sha256": "e0503fbd357171d9e0a98597b8843c70c8ccde2609d15a1ac5a282b6c9f496b9"
+        },
+        {
+          "path": "evaluation/prototypes/typescript/dist/discovery.d.ts",
+          "bytes": 128,
+          "sha256": "b0ec47d0e61fc59f80ddd787dc879bc3c21ae5e7ce3c57412620a96a0fcc8dd2"
+        },
+        {
+          "path": "evaluation/prototypes/typescript/dist/discovery.js",
+          "bytes": 7147,
+          "sha256": "8ed176a7eb6484e57f805ad3f28066696c4f377fa1c249e341cb5024912c3b39"
+        },
+        {
+          "path": "evaluation/prototypes/typescript/dist/files.d.ts",
+          "bytes": 320,
+          "sha256": "51b762bccbd04942153ec7ed800411b80071520afa074130b7ff7f7823234793"
+        },
+        {
+          "path": "evaluation/prototypes/typescript/dist/files.js",
+          "bytes": 3581,
+          "sha256": "861671ded50435b298ab94470edd1b0ca87533bf367619844a017ec64a8af366"
+        },
+        {
+          "path": "evaluation/prototypes/typescript/dist/inspection.d.ts",
+          "bytes": 184,
+          "sha256": "78c92cb25da913b118b4c8cc03fd2509e60d34393c74127174a3988a9ad26853"
+        },
+        {
+          "path": "evaluation/prototypes/typescript/dist/inspection.js",
+          "bytes": 6470,
+          "sha256": "4fc5feb787172c3c3b2eab14adf32431c948e92a05c560bfe6785aeb07c89245"
+        },
+        {
+          "path": "evaluation/prototypes/typescript/dist/library.d.ts",
+          "bytes": 1036,
+          "sha256": "349d46db79d671aae1c5a333e2a9769e3ff67fb5f1e3c05f32c0375d2b9ccb5b"
+        },
+        {
+          "path": "evaluation/prototypes/typescript/dist/library.js",
+          "bytes": 6857,
+          "sha256": "f2b44d15b53037666bdc60ccd4533f0584d7bdd1551068041d25136e148e8896"
+        },
+        {
+          "path": "evaluation/prototypes/typescript/dist/model.d.ts",
+          "bytes": 3774,
+          "sha256": "f29d46a6d25c5a49fd9cf0f2b5ba6f0a1b55aaf81deb2b409b5c1ad287de2a0c"
+        },
+        {
+          "path": "evaluation/prototypes/typescript/dist/model.js",
+          "bytes": 1368,
+          "sha256": "764277da055a025a3b6b091d529beb6196a23071790454dc4511e022ecfb4a8d"
+        },
+        {
+          "path": "evaluation/prototypes/typescript/dist/public.d.ts",
+          "bytes": 210,
+          "sha256": "57146d75cea0ad18e76eed92e15b120e9741eb80b02bba5323fda5bda572cb2f"
+        },
+        {
+          "path": "evaluation/prototypes/typescript/dist/public.js",
+          "bytes": 2665,
+          "sha256": "547bde1fd07d5779133db830043495adc70c2c51f05a80115517cecd6141708c"
+        },
+        {
+          "path": "evaluation/prototypes/typescript/dist/schema.d.ts",
+          "bytes": 654,
+          "sha256": "bfaaa96ca1271a2d642053235658c8ae031f3a712667f7ad44860f1ae9fab597"
+        },
+        {
+          "path": "evaluation/prototypes/typescript/dist/schema.js",
+          "bytes": 4082,
+          "sha256": "48f732b45a7203c1af1c76c5ed723d0596a33e76392bca0a2afa92ebf093441b"
+        },
+        {
+          "path": "evaluation/prototypes/typescript/dist/self-test.d.ts",
+          "bytes": 11,
+          "sha256": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881"
+        },
+        {
+          "path": "evaluation/prototypes/typescript/dist/self-test.js",
+          "bytes": 7968,
+          "sha256": "4e3a68bd877a0ef82af5aa61279360182b7859d83da453dcb8ac01e7ec8a73d1"
+        },
+        {
+          "path": "evaluation/prototypes/typescript/dist/semantics.d.ts",
+          "bytes": 421,
+          "sha256": "b340f17de09fb719bc3de65f571d1b54187629cc83a9b269eeab87250bd6bc9a"
+        },
+        {
+          "path": "evaluation/prototypes/typescript/dist/semantics.js",
+          "bytes": 12812,
+          "sha256": "52ed7cb82f184e2b3c418c5533c9b506a8d35d05d93515b7a5ea4e1168127a91"
+        },
+        {
+          "path": "evaluation/prototypes/typescript/dist/yaml.d.ts",
+          "bytes": 206,
+          "sha256": "59a19d5764855f5ba85db57354cf8d609df1b160518b3219b54c038e79a8dd76"
+        },
+        {
+          "path": "evaluation/prototypes/typescript/dist/yaml.js",
+          "bytes": 1628,
+          "sha256": "316a2def68394acaefe3f9748e8d9f5ec72db51394a8940bb49410d3c7fe800d"
+        }
+      ],
+      "javascriptSourceOnly": true,
+      "entryFormat": "JavaScript source invoked by external Node",
+      "projectSigningPerformed": false,
+      "projectNotarizationPerformed": false
+    },
+    {
+      "candidate": "python",
+      "target": "linux/amd64",
+      "manifestSource": "evaluation/lifecycle/completion/linux-amd64/python.json",
+      "manifestSourceSha256": "b6ddce32de04f6b972d174b9a7fa782181ef8532d8416df20fc9636233214d5a",
+      "archiveSha256": "014fca2532853401161656a8fa2db9debaca05f193446a47125deedfd4725bfc",
+      "packageRevision": "2a28b632994eecd1ec41a7f20ec508313d6f2b64",
+      "prototypeRevision": "23e576efd0dda0f00f5462eda9295c1ae4ec8fee",
+      "files": 51,
+      "nativeFiles": [],
+      "nestedArchives": [
+        {
+          "path": "wheelhouse/attrs-26.1.0-py3-none-any.whl",
+          "sha256": "c647aa4a12dfbad9333ca4e71fe62ddc36f4e63b2d260a37a8b83d2f043ac309"
+        },
+        {
+          "path": "wheelhouse/jsonschema_specifications-2025.9.1-py3-none-any.whl",
+          "sha256": "98802fee3a11ee76ecaca44429fda8a41bff98b00a0f2838151b113f210cc6fe"
+        },
+        {
+          "path": "wheelhouse/jsonschema-4.26.0-py3-none-any.whl",
+          "sha256": "d489f15263b8d200f8387e64b4c3a75f06629559fb73deb8fdfb525f2dab50ce"
+        },
+        {
+          "path": "wheelhouse/pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+          "sha256": "ba1cc08a7ccde2d2ec775841541641e4548226580ab850948cbfda66a1befcdc"
+        },
+        {
+          "path": "wheelhouse/referencing-0.37.0-py3-none-any.whl",
+          "sha256": "381329a9f99628c9069361716891d34ad94af76e461dcb0335825aecc7692231"
+        },
+        {
+          "path": "wheelhouse/rfc3339_validator-0.1.4-py2.py3-none-any.whl",
+          "sha256": "24f6ec1eda14ef823da9e36ec7113124b39c04d50a4d3d3a3c2859577e7791fa"
+        },
+        {
+          "path": "wheelhouse/rpds_py-2026.6.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+          "sha256": "ecabd69db66de867690f9797f2f8fa27ba501bbc24540cbdbdc649cd15888ba6"
+        },
+        {
+          "path": "wheelhouse/six-1.17.0-py2.py3-none-any.whl",
+          "sha256": "4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274"
+        },
+        {
+          "path": "wheelhouse/typing_extensions-4.16.0-py3-none-any.whl",
+          "sha256": "481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8"
+        }
+      ],
+      "nestedMembersInspected": false,
+      "typescriptDist": [],
+      "javascriptSourceOnly": false,
+      "entryFormat": "Python source plus locked wheelhouse; native closure is separately inventoried",
+      "projectSigningPerformed": false,
+      "projectNotarizationPerformed": false
+    },
+    {
+      "candidate": "rust",
+      "target": "linux/amd64",
+      "manifestSource": "evaluation/lifecycle/completion/linux-amd64/rust.json",
+      "manifestSourceSha256": "3a37d9b592669e471a4efa6205521c52c2c2223513957de3106450b5bfb5907c",
+      "archiveSha256": "58298d02782b00621269100d3da4512c284ed8004137581297318e579b706501",
+      "packageRevision": "2a28b632994eecd1ec41a7f20ec508313d6f2b64",
+      "prototypeRevision": "23e576efd0dda0f00f5462eda9295c1ae4ec8fee",
+      "files": 39,
+      "nativeFiles": [
+        {
+          "path": "evaluation/prototypes/rust/bin/library-driver",
+          "format": "ELF",
+          "sha256": "cb2002fdb3b54ec1c5609adc9a5a1a2df61f67aa3b2eaf41a9c51dde45df2c40"
+        },
+        {
+          "path": "evaluation/prototypes/rust/bin/nexflow-rust-evaluation",
+          "format": "ELF",
+          "sha256": "8d60f5ec8d9945fc57b73e7358badb46a492a722df8bb0a57cd952210d313df1"
+        }
+      ],
+      "nestedArchives": [],
+      "nestedMembersInspected": false,
+      "typescriptDist": [],
+      "javascriptSourceOnly": false,
+      "entryFormat": "Native project executable",
+      "projectSigningPerformed": false,
+      "projectNotarizationPerformed": false
+    },
+    {
+      "candidate": "go",
+      "target": "linux/amd64",
+      "manifestSource": "evaluation/lifecycle/completion/linux-amd64/go.json",
+      "manifestSourceSha256": "3fe17ac09b03dc381f47ec06b51c5f8af86f8748f0abf020c13f5f1bfeabbf1c",
+      "archiveSha256": "acfc70aac8323b9a91ee304f4c847b5ab9ec8d70b4605d963b23114fc2187e35",
+      "packageRevision": "2a28b632994eecd1ec41a7f20ec508313d6f2b64",
+      "prototypeRevision": "23e576efd0dda0f00f5462eda9295c1ae4ec8fee",
+      "files": 42,
+      "nativeFiles": [
+        {
+          "path": "evaluation/prototypes/go/bin/library-driver",
+          "format": "ELF",
+          "sha256": "9c45c8ecad0eb8b7aee6b0073d74fa8546bacdb8c88baa66af0ec8be948caeaa"
+        },
+        {
+          "path": "evaluation/prototypes/go/bin/nexflow-go-evaluation",
+          "format": "ELF",
+          "sha256": "559272ae4e8df7e303fc5566b39f595e4aac9636967effe0303120af15170d98"
+        }
+      ],
+      "nestedArchives": [],
+      "nestedMembersInspected": false,
+      "typescriptDist": [],
+      "javascriptSourceOnly": false,
+      "entryFormat": "Native project executable",
+      "projectSigningPerformed": false,
+      "projectNotarizationPerformed": false
+    },
+    {
+      "candidate": "typescript",
+      "target": "macos/arm64",
+      "manifestSource": "evaluation/lifecycle/completion/macos-arm64/typescript.json",
+      "manifestSourceSha256": "885ae4567a332cc16eefa349af60214a6cfc26e2cebd74402ae2f2b413393dca",
+      "archiveSha256": "51379c5dea160427f3fd739c12a8edb7b3c7a751ec7f92a3a178cdcee0164dd3",
+      "packageRevision": "2a28b632994eecd1ec41a7f20ec508313d6f2b64",
+      "prototypeRevision": "23e576efd0dda0f00f5462eda9295c1ae4ec8fee",
+      "files": 847,
+      "nativeFiles": [],
+      "nestedArchives": [],
+      "nestedMembersInspected": false,
+      "typescriptDist": [
+        {
+          "path": "evaluation/prototypes/typescript/dist/cli.d.ts",
+          "bytes": 31,
+          "sha256": "43e818adf60173644896298637f47b01d5819b17eda46eaa32d0c7d64724d012"
+        },
+        {
+          "path": "evaluation/prototypes/typescript/dist/cli.js",
+          "bytes": 3026,
+          "sha256": "3b1b41a8e2903d19e8c737348ac3c865d0c33730d55d57dab6d9001237a8fedd"
+        },
+        {
+          "path": "evaluation/prototypes/typescript/dist/diagnostics.d.ts",
+          "bytes": 497,
+          "sha256": "b55acb3403802dde1eeaeae996ca024c74936c1df9086645d56fb074ef74e845"
+        },
+        {
+          "path": "evaluation/prototypes/typescript/dist/diagnostics.js",
+          "bytes": 1757,
+          "sha256": "e0503fbd357171d9e0a98597b8843c70c8ccde2609d15a1ac5a282b6c9f496b9"
+        },
+        {
+          "path": "evaluation/prototypes/typescript/dist/discovery.d.ts",
+          "bytes": 128,
+          "sha256": "b0ec47d0e61fc59f80ddd787dc879bc3c21ae5e7ce3c57412620a96a0fcc8dd2"
+        },
+        {
+          "path": "evaluation/prototypes/typescript/dist/discovery.js",
+          "bytes": 7147,
+          "sha256": "8ed176a7eb6484e57f805ad3f28066696c4f377fa1c249e341cb5024912c3b39"
+        },
+        {
+          "path": "evaluation/prototypes/typescript/dist/files.d.ts",
+          "bytes": 320,
+          "sha256": "51b762bccbd04942153ec7ed800411b80071520afa074130b7ff7f7823234793"
+        },
+        {
+          "path": "evaluation/prototypes/typescript/dist/files.js",
+          "bytes": 3581,
+          "sha256": "861671ded50435b298ab94470edd1b0ca87533bf367619844a017ec64a8af366"
+        },
+        {
+          "path": "evaluation/prototypes/typescript/dist/inspection.d.ts",
+          "bytes": 184,
+          "sha256": "78c92cb25da913b118b4c8cc03fd2509e60d34393c74127174a3988a9ad26853"
+        },
+        {
+          "path": "evaluation/prototypes/typescript/dist/inspection.js",
+          "bytes": 6470,
+          "sha256": "4fc5feb787172c3c3b2eab14adf32431c948e92a05c560bfe6785aeb07c89245"
+        },
+        {
+          "path": "evaluation/prototypes/typescript/dist/library.d.ts",
+          "bytes": 1036,
+          "sha256": "349d46db79d671aae1c5a333e2a9769e3ff67fb5f1e3c05f32c0375d2b9ccb5b"
+        },
+        {
+          "path": "evaluation/prototypes/typescript/dist/library.js",
+          "bytes": 6857,
+          "sha256": "f2b44d15b53037666bdc60ccd4533f0584d7bdd1551068041d25136e148e8896"
+        },
+        {
+          "path": "evaluation/prototypes/typescript/dist/model.d.ts",
+          "bytes": 3774,
+          "sha256": "f29d46a6d25c5a49fd9cf0f2b5ba6f0a1b55aaf81deb2b409b5c1ad287de2a0c"
+        },
+        {
+          "path": "evaluation/prototypes/typescript/dist/model.js",
+          "bytes": 1368,
+          "sha256": "764277da055a025a3b6b091d529beb6196a23071790454dc4511e022ecfb4a8d"
+        },
+        {
+          "path": "evaluation/prototypes/typescript/dist/public.d.ts",
+          "bytes": 210,
+          "sha256": "57146d75cea0ad18e76eed92e15b120e9741eb80b02bba5323fda5bda572cb2f"
+        },
+        {
+          "path": "evaluation/prototypes/typescript/dist/public.js",
+          "bytes": 2665,
+          "sha256": "547bde1fd07d5779133db830043495adc70c2c51f05a80115517cecd6141708c"
+        },
+        {
+          "path": "evaluation/prototypes/typescript/dist/schema.d.ts",
+          "bytes": 654,
+          "sha256": "bfaaa96ca1271a2d642053235658c8ae031f3a712667f7ad44860f1ae9fab597"
+        },
+        {
+          "path": "evaluation/prototypes/typescript/dist/schema.js",
+          "bytes": 4082,
+          "sha256": "48f732b45a7203c1af1c76c5ed723d0596a33e76392bca0a2afa92ebf093441b"
+        },
+        {
+          "path": "evaluation/prototypes/typescript/dist/self-test.d.ts",
+          "bytes": 11,
+          "sha256": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881"
+        },
+        {
+          "path": "evaluation/prototypes/typescript/dist/self-test.js",
+          "bytes": 7968,
+          "sha256": "4e3a68bd877a0ef82af5aa61279360182b7859d83da453dcb8ac01e7ec8a73d1"
+        },
+        {
+          "path": "evaluation/prototypes/typescript/dist/semantics.d.ts",
+          "bytes": 421,
+          "sha256": "b340f17de09fb719bc3de65f571d1b54187629cc83a9b269eeab87250bd6bc9a"
+        },
+        {
+          "path": "evaluation/prototypes/typescript/dist/semantics.js",
+          "bytes": 12812,
+          "sha256": "52ed7cb82f184e2b3c418c5533c9b506a8d35d05d93515b7a5ea4e1168127a91"
+        },
+        {
+          "path": "evaluation/prototypes/typescript/dist/yaml.d.ts",
+          "bytes": 206,
+          "sha256": "59a19d5764855f5ba85db57354cf8d609df1b160518b3219b54c038e79a8dd76"
+        },
+        {
+          "path": "evaluation/prototypes/typescript/dist/yaml.js",
+          "bytes": 1628,
+          "sha256": "316a2def68394acaefe3f9748e8d9f5ec72db51394a8940bb49410d3c7fe800d"
+        }
+      ],
+      "javascriptSourceOnly": true,
+      "entryFormat": "JavaScript source invoked by external Node",
+      "projectSigningPerformed": false,
+      "projectNotarizationPerformed": false
+    },
+    {
+      "candidate": "python",
+      "target": "macos/arm64",
+      "manifestSource": "evaluation/lifecycle/completion/macos-arm64/python.json",
+      "manifestSourceSha256": "1b99490e3befb3f5ff5c5f2f51270d05e626521dadbefa19aae15ef4c36be3e5",
+      "archiveSha256": "245968c257c792bdd2568f55487863b91ac9e06042f862631a6b739f09595544",
+      "packageRevision": "2a28b632994eecd1ec41a7f20ec508313d6f2b64",
+      "prototypeRevision": "23e576efd0dda0f00f5462eda9295c1ae4ec8fee",
+      "files": 51,
+      "nativeFiles": [],
+      "nestedArchives": [
+        {
+          "path": "wheelhouse/attrs-26.1.0-py3-none-any.whl",
+          "sha256": "c647aa4a12dfbad9333ca4e71fe62ddc36f4e63b2d260a37a8b83d2f043ac309"
+        },
+        {
+          "path": "wheelhouse/jsonschema_specifications-2025.9.1-py3-none-any.whl",
+          "sha256": "98802fee3a11ee76ecaca44429fda8a41bff98b00a0f2838151b113f210cc6fe"
+        },
+        {
+          "path": "wheelhouse/jsonschema-4.26.0-py3-none-any.whl",
+          "sha256": "d489f15263b8d200f8387e64b4c3a75f06629559fb73deb8fdfb525f2dab50ce"
+        },
+        {
+          "path": "wheelhouse/pyyaml-6.0.3-cp312-cp312-macosx_11_0_arm64.whl",
+          "sha256": "fc09d0aa354569bc501d4e787133afc08552722d3ab34836a80547331bb5d4a0"
+        },
+        {
+          "path": "wheelhouse/referencing-0.37.0-py3-none-any.whl",
+          "sha256": "381329a9f99628c9069361716891d34ad94af76e461dcb0335825aecc7692231"
+        },
+        {
+          "path": "wheelhouse/rfc3339_validator-0.1.4-py2.py3-none-any.whl",
+          "sha256": "24f6ec1eda14ef823da9e36ec7113124b39c04d50a4d3d3a3c2859577e7791fa"
+        },
+        {
+          "path": "wheelhouse/rpds_py-2026.6.3-cp312-cp312-macosx_11_0_arm64.whl",
+          "sha256": "538949e262e46caa31ac01bdb3c1e8f642622922cacbabbae6a8445d9dc33eaf"
+        },
+        {
+          "path": "wheelhouse/six-1.17.0-py2.py3-none-any.whl",
+          "sha256": "4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274"
+        },
+        {
+          "path": "wheelhouse/typing_extensions-4.16.0-py3-none-any.whl",
+          "sha256": "481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8"
+        }
+      ],
+      "nestedMembersInspected": false,
+      "typescriptDist": [],
+      "javascriptSourceOnly": false,
+      "entryFormat": "Python source plus locked wheelhouse; native closure is separately inventoried",
+      "projectSigningPerformed": false,
+      "projectNotarizationPerformed": false
+    },
+    {
+      "candidate": "rust",
+      "target": "macos/arm64",
+      "manifestSource": "evaluation/lifecycle/completion/macos-arm64/rust.json",
+      "manifestSourceSha256": "af1cde257ea508e0a5e279b02e3f6a3932daaa2a9411718998d0b0e5ce7d7c6f",
+      "archiveSha256": "e97d59f0ec9e6910e11096fd50793a21da5eec2335ccbe1b7600fa57dd9e110e",
+      "packageRevision": "2a28b632994eecd1ec41a7f20ec508313d6f2b64",
+      "prototypeRevision": "23e576efd0dda0f00f5462eda9295c1ae4ec8fee",
+      "files": 39,
+      "nativeFiles": [
+        {
+          "path": "evaluation/prototypes/rust/bin/library-driver",
+          "format": "Mach-O-or-fat-header",
+          "sha256": "59841b48402ec17d39e82b356c7325925bedd254b16eebc9e003feb94426b58b"
+        },
+        {
+          "path": "evaluation/prototypes/rust/bin/nexflow-rust-evaluation",
+          "format": "Mach-O-or-fat-header",
+          "sha256": "5e0b4f1a05bf37a761e9ee73653c816c324119b78aed12be2d4533ec70fd5b15"
+        }
+      ],
+      "nestedArchives": [],
+      "nestedMembersInspected": false,
+      "typescriptDist": [],
+      "javascriptSourceOnly": false,
+      "entryFormat": "Native project executable",
+      "projectSigningPerformed": false,
+      "projectNotarizationPerformed": false
+    },
+    {
+      "candidate": "go",
+      "target": "macos/arm64",
+      "manifestSource": "evaluation/lifecycle/completion/macos-arm64/go.json",
+      "manifestSourceSha256": "c83da62c554f4a58b6ab50ac596d0e4e9f3cd5e4a44f4073b04194410a2943b2",
+      "archiveSha256": "2073a06395e9778eead845b29f7cabc707cdd72d0b4fc04c3769c4d85c5c17a0",
+      "packageRevision": "2a28b632994eecd1ec41a7f20ec508313d6f2b64",
+      "prototypeRevision": "23e576efd0dda0f00f5462eda9295c1ae4ec8fee",
+      "files": 42,
+      "nativeFiles": [
+        {
+          "path": "evaluation/prototypes/go/bin/library-driver",
+          "format": "Mach-O-or-fat-header",
+          "sha256": "23e2dc277a5654aba5d84217a3303cfc46e06f07988821498b9a21e63ae383ec"
+        },
+        {
+          "path": "evaluation/prototypes/go/bin/nexflow-go-evaluation",
+          "format": "Mach-O-or-fat-header",
+          "sha256": "973b631400444810540398dcdadcfe9b6c3eaa0c5c7a7effd96501bf2ed460fe"
+        }
+      ],
+      "nestedArchives": [],
+      "nestedMembersInspected": false,
+      "typescriptDist": [],
+      "javascriptSourceOnly": false,
+      "entryFormat": "Native project executable",
+      "projectSigningPerformed": false,
+      "projectNotarizationPerformed": false
+    },
+    {
+      "candidate": "typescript",
+      "target": "windows/amd64",
+      "manifestSource": "evaluation/lifecycle/completion/windows-amd64/typescript.json",
+      "manifestSourceSha256": "ca867833571bf3514efb6b47b8134808f031bb949c2d3166af9e5175855d995d",
+      "archiveSha256": "585eb20a1f1456f075603aba90335a8ebf6b625f4cbcfa51fce10d50296507ab",
+      "packageRevision": "2a28b632994eecd1ec41a7f20ec508313d6f2b64",
+      "prototypeRevision": "23e576efd0dda0f00f5462eda9295c1ae4ec8fee",
+      "files": 847,
+      "nativeFiles": [],
+      "nestedArchives": [],
+      "nestedMembersInspected": false,
+      "typescriptDist": [
+        {
+          "path": "evaluation/prototypes/typescript/dist/cli.d.ts",
+          "bytes": 31,
+          "sha256": "43e818adf60173644896298637f47b01d5819b17eda46eaa32d0c7d64724d012"
+        },
+        {
+          "path": "evaluation/prototypes/typescript/dist/cli.js",
+          "bytes": 3026,
+          "sha256": "3b1b41a8e2903d19e8c737348ac3c865d0c33730d55d57dab6d9001237a8fedd"
+        },
+        {
+          "path": "evaluation/prototypes/typescript/dist/diagnostics.d.ts",
+          "bytes": 497,
+          "sha256": "b55acb3403802dde1eeaeae996ca024c74936c1df9086645d56fb074ef74e845"
+        },
+        {
+          "path": "evaluation/prototypes/typescript/dist/diagnostics.js",
+          "bytes": 1757,
+          "sha256": "e0503fbd357171d9e0a98597b8843c70c8ccde2609d15a1ac5a282b6c9f496b9"
+        },
+        {
+          "path": "evaluation/prototypes/typescript/dist/discovery.d.ts",
+          "bytes": 128,
+          "sha256": "b0ec47d0e61fc59f80ddd787dc879bc3c21ae5e7ce3c57412620a96a0fcc8dd2"
+        },
+        {
+          "path": "evaluation/prototypes/typescript/dist/discovery.js",
+          "bytes": 7147,
+          "sha256": "8ed176a7eb6484e57f805ad3f28066696c4f377fa1c249e341cb5024912c3b39"
+        },
+        {
+          "path": "evaluation/prototypes/typescript/dist/files.d.ts",
+          "bytes": 320,
+          "sha256": "51b762bccbd04942153ec7ed800411b80071520afa074130b7ff7f7823234793"
+        },
+        {
+          "path": "evaluation/prototypes/typescript/dist/files.js",
+          "bytes": 3581,
+          "sha256": "861671ded50435b298ab94470edd1b0ca87533bf367619844a017ec64a8af366"
+        },
+        {
+          "path": "evaluation/prototypes/typescript/dist/inspection.d.ts",
+          "bytes": 184,
+          "sha256": "78c92cb25da913b118b4c8cc03fd2509e60d34393c74127174a3988a9ad26853"
+        },
+        {
+          "path": "evaluation/prototypes/typescript/dist/inspection.js",
+          "bytes": 6470,
+          "sha256": "4fc5feb787172c3c3b2eab14adf32431c948e92a05c560bfe6785aeb07c89245"
+        },
+        {
+          "path": "evaluation/prototypes/typescript/dist/library.d.ts",
+          "bytes": 1036,
+          "sha256": "349d46db79d671aae1c5a333e2a9769e3ff67fb5f1e3c05f32c0375d2b9ccb5b"
+        },
+        {
+          "path": "evaluation/prototypes/typescript/dist/library.js",
+          "bytes": 6857,
+          "sha256": "f2b44d15b53037666bdc60ccd4533f0584d7bdd1551068041d25136e148e8896"
+        },
+        {
+          "path": "evaluation/prototypes/typescript/dist/model.d.ts",
+          "bytes": 3774,
+          "sha256": "f29d46a6d25c5a49fd9cf0f2b5ba6f0a1b55aaf81deb2b409b5c1ad287de2a0c"
+        },
+        {
+          "path": "evaluation/prototypes/typescript/dist/model.js",
+          "bytes": 1368,
+          "sha256": "764277da055a025a3b6b091d529beb6196a23071790454dc4511e022ecfb4a8d"
+        },
+        {
+          "path": "evaluation/prototypes/typescript/dist/public.d.ts",
+          "bytes": 210,
+          "sha256": "57146d75cea0ad18e76eed92e15b120e9741eb80b02bba5323fda5bda572cb2f"
+        },
+        {
+          "path": "evaluation/prototypes/typescript/dist/public.js",
+          "bytes": 2665,
+          "sha256": "547bde1fd07d5779133db830043495adc70c2c51f05a80115517cecd6141708c"
+        },
+        {
+          "path": "evaluation/prototypes/typescript/dist/schema.d.ts",
+          "bytes": 654,
+          "sha256": "bfaaa96ca1271a2d642053235658c8ae031f3a712667f7ad44860f1ae9fab597"
+        },
+        {
+          "path": "evaluation/prototypes/typescript/dist/schema.js",
+          "bytes": 4082,
+          "sha256": "48f732b45a7203c1af1c76c5ed723d0596a33e76392bca0a2afa92ebf093441b"
+        },
+        {
+          "path": "evaluation/prototypes/typescript/dist/self-test.d.ts",
+          "bytes": 11,
+          "sha256": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881"
+        },
+        {
+          "path": "evaluation/prototypes/typescript/dist/self-test.js",
+          "bytes": 7968,
+          "sha256": "4e3a68bd877a0ef82af5aa61279360182b7859d83da453dcb8ac01e7ec8a73d1"
+        },
+        {
+          "path": "evaluation/prototypes/typescript/dist/semantics.d.ts",
+          "bytes": 421,
+          "sha256": "b340f17de09fb719bc3de65f571d1b54187629cc83a9b269eeab87250bd6bc9a"
+        },
+        {
+          "path": "evaluation/prototypes/typescript/dist/semantics.js",
+          "bytes": 12812,
+          "sha256": "52ed7cb82f184e2b3c418c5533c9b506a8d35d05d93515b7a5ea4e1168127a91"
+        },
+        {
+          "path": "evaluation/prototypes/typescript/dist/yaml.d.ts",
+          "bytes": 206,
+          "sha256": "59a19d5764855f5ba85db57354cf8d609df1b160518b3219b54c038e79a8dd76"
+        },
+        {
+          "path": "evaluation/prototypes/typescript/dist/yaml.js",
+          "bytes": 1628,
+          "sha256": "316a2def68394acaefe3f9748e8d9f5ec72db51394a8940bb49410d3c7fe800d"
+        }
+      ],
+      "javascriptSourceOnly": true,
+      "entryFormat": "JavaScript source invoked by external Node",
+      "projectSigningPerformed": false,
+      "projectNotarizationPerformed": false
+    },
+    {
+      "candidate": "python",
+      "target": "windows/amd64",
+      "manifestSource": "evaluation/lifecycle/completion/windows-amd64/python.json",
+      "manifestSourceSha256": "0fadaffda2ec4178cf122120291e83d3ea747155c1d1d10e7a07c47d643e07ab",
+      "archiveSha256": "a7a008208f5456c7e940acde10d91715f3475391ab4c0cc2d1e96db69fccbfd5",
+      "packageRevision": "2a28b632994eecd1ec41a7f20ec508313d6f2b64",
+      "prototypeRevision": "23e576efd0dda0f00f5462eda9295c1ae4ec8fee",
+      "files": 51,
+      "nativeFiles": [],
+      "nestedArchives": [
+        {
+          "path": "wheelhouse/attrs-26.1.0-py3-none-any.whl",
+          "sha256": "c647aa4a12dfbad9333ca4e71fe62ddc36f4e63b2d260a37a8b83d2f043ac309"
+        },
+        {
+          "path": "wheelhouse/jsonschema_specifications-2025.9.1-py3-none-any.whl",
+          "sha256": "98802fee3a11ee76ecaca44429fda8a41bff98b00a0f2838151b113f210cc6fe"
+        },
+        {
+          "path": "wheelhouse/jsonschema-4.26.0-py3-none-any.whl",
+          "sha256": "d489f15263b8d200f8387e64b4c3a75f06629559fb73deb8fdfb525f2dab50ce"
+        },
+        {
+          "path": "wheelhouse/pyyaml-6.0.3-cp312-cp312-win_amd64.whl",
+          "sha256": "5fcd34e47f6e0b794d17de1b4ff496c00986e1c83f7ab2fb8fcfe9616ff7477b"
+        },
+        {
+          "path": "wheelhouse/referencing-0.37.0-py3-none-any.whl",
+          "sha256": "381329a9f99628c9069361716891d34ad94af76e461dcb0335825aecc7692231"
+        },
+        {
+          "path": "wheelhouse/rfc3339_validator-0.1.4-py2.py3-none-any.whl",
+          "sha256": "24f6ec1eda14ef823da9e36ec7113124b39c04d50a4d3d3a3c2859577e7791fa"
+        },
+        {
+          "path": "wheelhouse/rpds_py-2026.6.3-cp312-cp312-win_amd64.whl",
+          "sha256": "2c958bf94822e9290a40aaf2a822d4bc5c88099093e3948ad6c571eca9272e5f"
+        },
+        {
+          "path": "wheelhouse/six-1.17.0-py2.py3-none-any.whl",
+          "sha256": "4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274"
+        },
+        {
+          "path": "wheelhouse/typing_extensions-4.16.0-py3-none-any.whl",
+          "sha256": "481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8"
+        }
+      ],
+      "nestedMembersInspected": false,
+      "typescriptDist": [],
+      "javascriptSourceOnly": false,
+      "entryFormat": "Python source plus locked wheelhouse; native closure is separately inventoried",
+      "projectSigningPerformed": false,
+      "projectNotarizationPerformed": false
+    },
+    {
+      "candidate": "rust",
+      "target": "windows/amd64",
+      "manifestSource": "evaluation/lifecycle/completion/windows-amd64/rust.json",
+      "manifestSourceSha256": "8cfbc9de1eb3f8d3c5495c9dddd6b7de5b768313d6042f664b1c89479f4b4eab",
+      "archiveSha256": "ba4e85222a6f14c8b79330d55bc3ae5156d80977b76f2d7d0d28b429e2be3b08",
+      "packageRevision": "2a28b632994eecd1ec41a7f20ec508313d6f2b64",
+      "prototypeRevision": "23e576efd0dda0f00f5462eda9295c1ae4ec8fee",
+      "files": 39,
+      "nativeFiles": [
+        {
+          "path": "evaluation/prototypes/rust/bin/library-driver.exe",
+          "format": "PE",
+          "sha256": "6b69cc5aac09146a82f72878f2d135e643dc5c447841e3415cf01690ae5ed2ec"
+        },
+        {
+          "path": "evaluation/prototypes/rust/bin/nexflow-rust-evaluation.exe",
+          "format": "PE",
+          "sha256": "d1336eba277e7ed2d10557e6b1d47774d0e2faffd839c06ee3daa2920cecd9ac"
+        }
+      ],
+      "nestedArchives": [],
+      "nestedMembersInspected": false,
+      "typescriptDist": [],
+      "javascriptSourceOnly": false,
+      "entryFormat": "Native project executable",
+      "projectSigningPerformed": false,
+      "projectNotarizationPerformed": false
+    },
+    {
+      "candidate": "go",
+      "target": "windows/amd64",
+      "manifestSource": "evaluation/lifecycle/completion/windows-amd64/go.json",
+      "manifestSourceSha256": "5c2c8d1fe6be0568917180638c834f1a9c51e42affd596d9127c83fb04cc7bc3",
+      "archiveSha256": "8f540a3292a23d38c82221950bc102fa1a569851414fe178b75d32021dade444",
+      "packageRevision": "2a28b632994eecd1ec41a7f20ec508313d6f2b64",
+      "prototypeRevision": "23e576efd0dda0f00f5462eda9295c1ae4ec8fee",
+      "files": 42,
+      "nativeFiles": [
+        {
+          "path": "evaluation/prototypes/go/bin/library-driver.exe",
+          "format": "PE",
+          "sha256": "ddcf89e3abd94f862e934767531b85ae005623e577894eab3ec80f86537eaa94"
+        },
+        {
+          "path": "evaluation/prototypes/go/bin/nexflow-go-evaluation.exe",
+          "format": "PE",
+          "sha256": "3c56d7e0adaea88a710f7c70f0eb1574a9e986903d738c938eab214e92a50fc7"
+        }
+      ],
+      "nestedArchives": [],
+      "nestedMembersInspected": false,
+      "typescriptDist": [],
+      "javascriptSourceOnly": false,
+      "entryFormat": "Native project executable",
+      "projectSigningPerformed": false,
+      "projectNotarizationPerformed": false
+    }
+  ],
+  "runtime": {
+    "scope": "Supplemental static metadata for exact same runtime bytes; local OS inspection is not native target Gatekeeper/trust/notarization acceptance.",
+    "sha256": "12ccc7c7d8b9b33ac0740fc7c2590d2aba14ccfa0a40f3d3f7a6c4c60c87f07c",
+    "matchesQualifiedNativeRuntime": true,
+    "displayExit": 0,
+    "display": "Executable=<evaluation-path>\nIdentifier=node\nFormat=Mach-O thin (arm64)\nCodeDirectory v=20500 size=1142384 flags=0x10000(runtime) hashes=35689+7 location=embedded\nSignature size=8987\nAuthority=(unavailable)\nInfo.plist=not bound\nTeamIdentifier=HX7739G8FX\nRuntime Version=15.5.0\nSealed Resources=none\nInternal requirements count=1 size=164\nTotal signatures=1\nChosen signature=1\n",
+    "projectCertificateUsed": false,
+    "notarizationClaimed": false
+  },
+  "conclusion": "The TypeScript evaluation payloads contain identical 24-file JavaScript/declaration distributions and no detected native ELF/PE/Mach-O files or nested native archives. A proposed external-runtime JS package does not ship a project Mach-O/app/native executable. Project Developer ID/notarization are not performed and no Gatekeeper or trusted-public-delivery pass is inferred. Upstream runtime prerequisites/trust remain separate; native standalone packaging would reopen applicable signing requirements.",
+  "originalSigningCriterionSatisfied": false,
+  "releaseAuthorized": false
+}

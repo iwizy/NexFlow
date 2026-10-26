@@ -35,6 +35,7 @@ schema or prototype implementation does not change a Draft RFC to Accepted.
 | [RFC-0022](RFC-0022-security-policy-composition.md) | Security Policy Composition | Draft |
 | [RFC-0023](RFC-0023-runtime-architecture-decision.md) | Runtime Architecture Decision | Draft; not-ready, no language/layout selected |
 | [RFC-0024](RFC-0024-single-maintainer-governance.md) | Single-Maintainer Governance | Accepted; explicit maintainer adoption on 2026-10-11, technical gates unchanged |
+| [RFC-0025](RFC-0025-reference-implementation-architecture.md) | Reference Implementation Architecture | Draft; source-bound TypeScript/layout B proposal under review, no acceptance or release |
 
 The [0.1 Candidate Scope](../docs/0.1-scope.md) records how each RFC is treated
 by the frozen candidate boundary. That treatment does not change an RFC's stage

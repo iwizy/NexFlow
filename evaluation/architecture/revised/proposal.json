@@ -1,0 +1,910 @@
+{
+  "task": "NF-102-06",
+  "recordedAt": "2026-10-26T02:25:42.003Z",
+  "outcome": "proposal-ready-for-immutable-review",
+  "architectureAccepted": false,
+  "inputRevision": "b7b4811670a712e05d8e645dfd923f3fbd4041ff",
+  "specificationRevision": "1d1fa238ab5729a79bee9389d5c66cfd20a61256",
+  "prototypeRevision": "23e576efd0dda0f00f5462eda9295c1ae4ec8fee",
+  "corpusSha256": "01b116005f0650ac980194b22c02188289eaf1e8626b227aecf3684ece0d8f6b",
+  "catalogSha256": "f1bf8cb786442a212e14c79eb39279a2cdbf05ec20b09901374359d545d74e90",
+  "measurementSummarySha256": "00dea873866f65606c13971ece52ed4dcd002ee68239ecc12562fcfa1cab8260",
+  "distributionMode": "unsigned-evaluation-developer-only",
+  "selection": {
+    "candidate": "typescript",
+    "layout": "B",
+    "status": "proposed",
+    "tieBreak": "If totals tie, use the already declared maintainability score; never compensate a failed hard gate."
+  },
+  "scorecards": [
+    {
+      "candidate": "typescript",
+      "eligibility": "qualified-for-amended-unsigned-validation-evaluation",
+      "notClaimed": [
+        "full product NF-CLI or NF-RUNTIME conformance",
+        "signed public distribution",
+        "stable product ABI",
+        "independent human review"
+      ],
+      "maintainer": "Alexander Agafonov",
+      "reviewMode": "single-maintainer",
+      "analysisPreparedUnderExplicitDelegation": true,
+      "personalIndependentScoresClaimed": false,
+      "criteria": [
+        {
+          "id": "specificationAndValidationFidelity",
+          "weight": 20,
+          "score": 4,
+          "weighted": 16,
+          "rationale": "Complete frozen/native/public oracle evidence and all comparable successful library samples; full project semantics and product conformance remain outside the prototype claim.",
+          "evidence": [
+            "evaluation/measurement-qualification/summary.json",
+            "evaluation/architecture/revised/boundaries.md",
+            "evaluation/qualification/supply-chain-repair/typescript.json",
+            "evaluation/security-qualification/README.md",
+            "evaluation/lifecycle/completion/README.md"
+          ]
+        },
+        {
+          "id": "securityAndIsolationFit",
+          "weight": 15,
+          "score": 3,
+          "weighted": 9,
+          "rationale": "Actual OS denial, inherited-handle, redaction/revocation and resource controls on all three targets; bounded declared threat model, no general runtime or arbitrary-broker certification.",
+          "evidence": [
+            "evaluation/measurement-qualification/summary.json",
+            "evaluation/architecture/revised/boundaries.md",
+            "evaluation/qualification/supply-chain-repair/typescript.json",
+            "evaluation/security-qualification/README.md",
+            "evaluation/lifecycle/completion/README.md"
+          ]
+        },
+        {
+          "id": "crossPlatformDistribution",
+          "weight": 15,
+          "score": 2,
+          "weighted": 6,
+          "rationale": "Genuine install/upgrade/rollback/uninstall on three targets, immutable payload/checksums/provenance. Score 2 retains manual runtime prerequisites and unsigned developer-only distribution; no public trust approval.",
+          "evidence": [
+            "evaluation/measurement-qualification/summary.json",
+            "evaluation/architecture/revised/boundaries.md",
+            "evaluation/qualification/supply-chain-repair/typescript.json",
+            "evaluation/security-qualification/README.md",
+            "evaluation/lifecycle/completion/README.md"
+          ]
+        },
+        {
+          "id": "ecosystemAndIntegrationFit",
+          "weight": 10,
+          "score": 2,
+          "weighted": 4,
+          "rationale": "Observed pinned YAML/schema/native CLI libraries work. Future graphs/policy/provider/protocol integrations are not implemented and receive no reputation-based credit.",
+          "evidence": [
+            "evaluation/measurement-qualification/summary.json",
+            "evaluation/architecture/revised/boundaries.md",
+            "evaluation/qualification/supply-chain-repair/typescript.json",
+            "evaluation/security-qualification/README.md",
+            "evaluation/lifecycle/completion/README.md"
+          ]
+        },
+        {
+          "id": "contributorAccessibility",
+          "weight": 10,
+          "score": 0,
+          "weighted": 0,
+          "rationale": "No dedicated human onboarding/editor/recruitment study was performed; missing evidence scores zero rather than an invented usability result.",
+          "evidence": []
+        },
+        {
+          "id": "maintainability",
+          "weight": 10,
+          "score": 4,
+          "weighted": 8,
+          "rationale": "Strict compiler/type/error contracts and 24 reproducible distribution/declaration files support the proposed same-language package interfaces; runtime validation remains mandatory. This is a limited code/compile judgment, not a language-popularity claim.",
+          "evidence": [
+            "evaluation/measurement-qualification/summary.json",
+            "evaluation/architecture/revised/boundaries.md",
+            "evaluation/qualification/supply-chain-repair/typescript.json",
+            "evaluation/security-qualification/README.md",
+            "evaluation/lifecycle/completion/README.md"
+          ]
+        },
+        {
+          "id": "performanceAndResourceUse",
+          "weight": 8,
+          "score": 4,
+          "weighted": 6.4,
+          "rationale": "Within each target compare cold CLI, native peak memory and all 1/10/100-pass library medians: 15 same-host workload pairs. Score 4 only for a majority of these fixed single-process pairs, otherwise 3; no score 5 or cross-OS numeric pooling. Every raw sample/dispersion is retained. Concurrency and future host/FFI/IPC workloads are not tested or scored as established capabilities.",
+          "evidence": [
+            "evaluation/measurement-qualification/summary.json",
+            "evaluation/architecture/revised/boundaries.md",
+            "evaluation/qualification/supply-chain-repair/typescript.json",
+            "evaluation/security-qualification/README.md",
+            "evaluation/lifecycle/completion/README.md"
+          ]
+        },
+        {
+          "id": "observabilityAndDiagnostics",
+          "weight": 5,
+          "score": 3,
+          "weighted": 3,
+          "rationale": "Deterministic versioned public JSON, native detail separation and redaction are tested. Production tracing/crash/telemetry infrastructure is not implemented.",
+          "evidence": [
+            "evaluation/measurement-qualification/summary.json",
+            "evaluation/architecture/revised/boundaries.md",
+            "evaluation/qualification/supply-chain-repair/typescript.json",
+            "evaluation/security-qualification/README.md",
+            "evaluation/lifecycle/completion/README.md"
+          ]
+        },
+        {
+          "id": "embeddingAndInteroperability",
+          "weight": 4,
+          "score": 2,
+          "weighted": 1.6,
+          "rationale": "Independent native experimental library API is exercised without another-language backend. Stable product ABI, foreign embedding and executable IPC remain unestablished.",
+          "evidence": [
+            "evaluation/measurement-qualification/summary.json",
+            "evaluation/architecture/revised/boundaries.md",
+            "evaluation/qualification/supply-chain-repair/typescript.json",
+            "evaluation/security-qualification/README.md",
+            "evaluation/lifecycle/completion/README.md"
+          ]
+        },
+        {
+          "id": "operationalFootprint",
+          "weight": 3,
+          "score": 3,
+          "weighted": 1.8,
+          "rationale": "Nine within-target clean/cached-build/actual-CI-lane median pairs. Score 4 only for a majority, otherwise 3. Shared provisioning, uncontrolled OS cache, lane upload/handoff and archive/runtime footprint limits remain explicit.",
+          "evidence": [
+            "evaluation/measurement-qualification/summary.json",
+            "evaluation/architecture/revised/boundaries.md",
+            "evaluation/qualification/supply-chain-repair/typescript.json",
+            "evaluation/security-qualification/README.md",
+            "evaluation/lifecycle/completion/README.md"
+          ]
+        }
+      ],
+      "total": 55.8,
+      "withinTargetPairWins": {
+        "performance": 9,
+        "operations": 0
+      }
+    },
+    {
+      "candidate": "python",
+      "eligibility": "qualified-for-amended-unsigned-validation-evaluation",
+      "notClaimed": [
+        "full product NF-CLI or NF-RUNTIME conformance",
+        "signed public distribution",
+        "stable product ABI",
+        "independent human review"
+      ],
+      "maintainer": "Alexander Agafonov",
+      "reviewMode": "single-maintainer",
+      "analysisPreparedUnderExplicitDelegation": true,
+      "personalIndependentScoresClaimed": false,
+      "criteria": [
+        {
+          "id": "specificationAndValidationFidelity",
+          "weight": 20,
+          "score": 4,
+          "weighted": 16,
+          "rationale": "Complete frozen/native/public oracle evidence and all comparable successful library samples; full project semantics and product conformance remain outside the prototype claim.",
+          "evidence": [
+            "evaluation/measurement-qualification/summary.json",
+            "evaluation/architecture/revised/boundaries.md",
+            "evaluation/qualification/supply-chain-repair/python.json",
+            "evaluation/security-qualification/README.md",
+            "evaluation/lifecycle/completion/README.md"
+          ]
+        },
+        {
+          "id": "securityAndIsolationFit",
+          "weight": 15,
+          "score": 3,
+          "weighted": 9,
+          "rationale": "Actual OS denial, inherited-handle, redaction/revocation and resource controls on all three targets; bounded declared threat model, no general runtime or arbitrary-broker certification.",
+          "evidence": [
+            "evaluation/measurement-qualification/summary.json",
+            "evaluation/architecture/revised/boundaries.md",
+            "evaluation/qualification/supply-chain-repair/python.json",
+            "evaluation/security-qualification/README.md",
+            "evaluation/lifecycle/completion/README.md"
+          ]
+        },
+        {
+          "id": "crossPlatformDistribution",
+          "weight": 15,
+          "score": 2,
+          "weighted": 6,
+          "rationale": "Genuine install/upgrade/rollback/uninstall on three targets, immutable payload/checksums/provenance. Score 2 retains manual runtime prerequisites and unsigned developer-only distribution; no public trust approval.",
+          "evidence": [
+            "evaluation/measurement-qualification/summary.json",
+            "evaluation/architecture/revised/boundaries.md",
+            "evaluation/qualification/supply-chain-repair/python.json",
+            "evaluation/security-qualification/README.md",
+            "evaluation/lifecycle/completion/README.md"
+          ]
+        },
+        {
+          "id": "ecosystemAndIntegrationFit",
+          "weight": 10,
+          "score": 2,
+          "weighted": 4,
+          "rationale": "Observed pinned YAML/schema/native CLI libraries work. Future graphs/policy/provider/protocol integrations are not implemented and receive no reputation-based credit.",
+          "evidence": [
+            "evaluation/measurement-qualification/summary.json",
+            "evaluation/architecture/revised/boundaries.md",
+            "evaluation/qualification/supply-chain-repair/python.json",
+            "evaluation/security-qualification/README.md",
+            "evaluation/lifecycle/completion/README.md"
+          ]
+        },
+        {
+          "id": "contributorAccessibility",
+          "weight": 10,
+          "score": 0,
+          "weighted": 0,
+          "rationale": "No dedicated human onboarding/editor/recruitment study was performed; missing evidence scores zero rather than an invented usability result.",
+          "evidence": []
+        },
+        {
+          "id": "maintainability",
+          "weight": 10,
+          "score": 3,
+          "weighted": 6,
+          "rationale": "Explicit native modules, annotations, exceptions and contract regressions work; current dict-based runtime interfaces need additional boundary checks. This is a source-bound maintenance judgment, not a claim about all Python projects.",
+          "evidence": [
+            "evaluation/measurement-qualification/summary.json",
+            "evaluation/architecture/revised/boundaries.md",
+            "evaluation/qualification/supply-chain-repair/python.json",
+            "evaluation/security-qualification/README.md",
+            "evaluation/lifecycle/completion/README.md"
+          ]
+        },
+        {
+          "id": "performanceAndResourceUse",
+          "weight": 8,
+          "score": 3,
+          "weighted": 4.8,
+          "rationale": "Within each target compare cold CLI, native peak memory and all 1/10/100-pass library medians: 15 same-host workload pairs. Score 4 only for a majority of these fixed single-process pairs, otherwise 3; no score 5 or cross-OS numeric pooling. Every raw sample/dispersion is retained. Concurrency and future host/FFI/IPC workloads are not tested or scored as established capabilities.",
+          "evidence": [
+            "evaluation/measurement-qualification/summary.json",
+            "evaluation/architecture/revised/boundaries.md",
+            "evaluation/qualification/supply-chain-repair/python.json",
+            "evaluation/security-qualification/README.md",
+            "evaluation/lifecycle/completion/README.md"
+          ]
+        },
+        {
+          "id": "observabilityAndDiagnostics",
+          "weight": 5,
+          "score": 3,
+          "weighted": 3,
+          "rationale": "Deterministic versioned public JSON, native detail separation and redaction are tested. Production tracing/crash/telemetry infrastructure is not implemented.",
+          "evidence": [
+            "evaluation/measurement-qualification/summary.json",
+            "evaluation/architecture/revised/boundaries.md",
+            "evaluation/qualification/supply-chain-repair/python.json",
+            "evaluation/security-qualification/README.md",
+            "evaluation/lifecycle/completion/README.md"
+          ]
+        },
+        {
+          "id": "embeddingAndInteroperability",
+          "weight": 4,
+          "score": 2,
+          "weighted": 1.6,
+          "rationale": "Independent native experimental library API is exercised without another-language backend. Stable product ABI, foreign embedding and executable IPC remain unestablished.",
+          "evidence": [
+            "evaluation/measurement-qualification/summary.json",
+            "evaluation/architecture/revised/boundaries.md",
+            "evaluation/qualification/supply-chain-repair/python.json",
+            "evaluation/security-qualification/README.md",
+            "evaluation/lifecycle/completion/README.md"
+          ]
+        },
+        {
+          "id": "operationalFootprint",
+          "weight": 3,
+          "score": 4,
+          "weighted": 2.4,
+          "rationale": "Nine within-target clean/cached-build/actual-CI-lane median pairs. Score 4 only for a majority, otherwise 3. Shared provisioning, uncontrolled OS cache, lane upload/handoff and archive/runtime footprint limits remain explicit.",
+          "evidence": [
+            "evaluation/measurement-qualification/summary.json",
+            "evaluation/architecture/revised/boundaries.md",
+            "evaluation/qualification/supply-chain-repair/python.json",
+            "evaluation/security-qualification/README.md",
+            "evaluation/lifecycle/completion/README.md"
+          ]
+        }
+      ],
+      "total": 52.8,
+      "withinTargetPairWins": {
+        "performance": 6,
+        "operations": 9
+      }
+    }
+  ],
+  "unscored": [
+    {
+      "candidate": "rust",
+      "reason": "actual failed Windows confinement gate"
+    },
+    {
+      "candidate": "go",
+      "reason": "actual failed Windows confinement gate"
+    }
+  ],
+  "pairedComparison": {
+    "observations": {
+      "linux-amd64": {
+        "typescript": {
+          "coldStartMs": 345.93465749999996,
+          "peakMemoryBytes": 94509056,
+          "validationOnePassMs": 246.79789899999997,
+          "validationTenPassMs": 1738.9385340000001,
+          "validationHundredPassMs": 16274.885956999997,
+          "cleanBuildMs": 2726.621964,
+          "cachedBuildMs": 2689.051437,
+          "ciLaneMs": 5688.711631,
+          "artifactBytes": 515248,
+          "environmentSha256": "9e0e6687b1b97e54ca6129a7bc3e35babe35d833533fcb2f067c5bb6ae1571a7",
+          "runId": "40247733095",
+          "producer": "a1d7ec4cd03869987e47d963f675651f087d6ac0"
+        },
+        "python": {
+          "coldStartMs": 266.427351,
+          "peakMemoryBytes": 28104704,
+          "validationOnePassMs": 939.2780785,
+          "validationTenPassMs": 9474.8000585,
+          "validationHundredPassMs": 93120.0357545,
+          "cleanBuildMs": 73.233109,
+          "cachedBuildMs": 74.353617,
+          "ciLaneMs": 4435.476436,
+          "artifactBytes": 1473088,
+          "environmentSha256": "9e0e6687b1b97e54ca6129a7bc3e35babe35d833533fcb2f067c5bb6ae1571a7",
+          "runId": "40247733095",
+          "producer": "a1d7ec4cd03869987e47d963f675651f087d6ac0"
+        }
+      },
+      "macos-arm64": {
+        "typescript": {
+          "coldStartMs": 206.816,
+          "peakMemoryBytes": 95723520,
+          "validationOnePassMs": 124.55550000000002,
+          "validationTenPassMs": 1131.0304374999998,
+          "validationHundredPassMs": 10260.676875,
+          "cleanBuildMs": 1521.106542,
+          "cachedBuildMs": 1540.646083,
+          "ciLaneMs": 3099.966791,
+          "artifactBytes": 508834,
+          "environmentSha256": "918a3e08c60e5a4a72340fcff7e350511ed68aa0123e00737490d008a8d65d81",
+          "runId": "40238363753",
+          "producer": "83eaee46fc91da51a55f493290a44d2b3f6adead"
+        },
+        "python": {
+          "coldStartMs": 177.9915,
+          "peakMemoryBytes": 35495936,
+          "validationOnePassMs": 483.614125,
+          "validationTenPassMs": 4894.7100415,
+          "validationHundredPassMs": 43892.7394375,
+          "cleanBuildMs": 62.701625,
+          "cachedBuildMs": 56.432875,
+          "ciLaneMs": 2230.0385,
+          "artifactBytes": 813740,
+          "environmentSha256": "918a3e08c60e5a4a72340fcff7e350511ed68aa0123e00737490d008a8d65d81",
+          "runId": "40238363753",
+          "producer": "83eaee46fc91da51a55f493290a44d2b3f6adead"
+        }
+      },
+      "windows-amd64": {
+        "typescript": {
+          "coldStartMs": 374.6733499999973,
+          "peakMemoryBytes": 71905280,
+          "validationOnePassMs": 270.49359999999996,
+          "validationTenPassMs": 2131.2384,
+          "validationHundredPassMs": 20240.54735,
+          "cleanBuildMs": 2682.6329,
+          "cachedBuildMs": 2655.3166,
+          "ciLaneMs": 53393.6853,
+          "artifactBytes": 503349,
+          "environmentSha256": "d5c8e84c1702a13f2f7444d29f01e77e0e4303b1c22969d84c03c4c99477e745",
+          "runId": "40243355131",
+          "producer": "efbc18638f98592beb92cced213084d6973138a9"
+        },
+        "python": {
+          "coldStartMs": 313.2868499999968,
+          "peakMemoryBytes": 31766528,
+          "validationOnePassMs": 917.9358500000001,
+          "validationTenPassMs": 9196.7248,
+          "validationHundredPassMs": 91732.3741,
+          "cleanBuildMs": 80.859,
+          "cachedBuildMs": 81.9914,
+          "ciLaneMs": 52004.6084,
+          "artifactBytes": 676861,
+          "environmentSha256": "d5c8e84c1702a13f2f7444d29f01e77e0e4303b1c22969d84c03c4c99477e745",
+          "runId": "40243355131",
+          "producer": "efbc18638f98592beb92cced213084d6973138a9"
+        }
+      }
+    },
+    "wins": {
+      "typescript": {
+        "performance": 9,
+        "operations": 0
+      },
+      "python": {
+        "performance": 6,
+        "operations": 9
+      }
+    },
+    "ties": {
+      "performance": 0,
+      "operations": 0
+    },
+    "performancePairs": 15,
+    "operationalPairs": 9,
+    "comparison": "Only paired medians inside each single target cohort. Wins aggregate equal-workload comparisons, not raw metrics from different OS/hardware. No intrinsic language ranking."
+  },
+  "models": {
+    "controls": 85,
+    "scope": "inert models only; no production effect/store/credential backend",
+    "independentAssurance": false
+  },
+  "evidenceIndex": [
+    {
+      "path": "evaluation/baseline.json",
+      "sha256": "7cd10254220dd565f4473be0c0e44d99f2ec9ab42e906717536c38ab01492834",
+      "gitBlob": "4bcb67ae4e132ef1e7803231bc28860c8b6537fb",
+      "revision": "b7b4811670a712e05d8e645dfd923f3fbd4041ff",
+      "url": "https://github.com/iwizy/NexFlow/blob/b7b4811670a712e05d8e645dfd923f3fbd4041ff/evaluation/baseline.json"
+    },
+    {
+      "path": "evaluation/library-cases.json",
+      "sha256": "f1bf8cb786442a212e14c79eb39279a2cdbf05ec20b09901374359d545d74e90",
+      "gitBlob": "32ff1617364b8574d8488f03cc8a8127941120b4",
+      "revision": "b7b4811670a712e05d8e645dfd923f3fbd4041ff",
+      "url": "https://github.com/iwizy/NexFlow/blob/b7b4811670a712e05d8e645dfd923f3fbd4041ff/evaluation/library-cases.json"
+    },
+    {
+      "path": "evaluation/environment-contract.json",
+      "sha256": "e222227ad6f117ee2516cb185032ebbdadcd59e9f6e87d9394d56852a0914818",
+      "gitBlob": "7dc510d2d2faa57439e78f919fa36bb9dfe3e733",
+      "revision": "b7b4811670a712e05d8e645dfd923f3fbd4041ff",
+      "url": "https://github.com/iwizy/NexFlow/blob/b7b4811670a712e05d8e645dfd923f3fbd4041ff/evaluation/environment-contract.json"
+    },
+    {
+      "path": "evaluation/delivery/unsigned-policy.json",
+      "sha256": "36c877c5a3b3ca3d27f739ba831da9da64b132dca49c98dc8af56a3c8dc3d958",
+      "gitBlob": "69bd34f67608cedff76de1df6022336135819441",
+      "revision": "b7b4811670a712e05d8e645dfd923f3fbd4041ff",
+      "url": "https://github.com/iwizy/NexFlow/blob/b7b4811670a712e05d8e645dfd923f3fbd4041ff/evaluation/delivery/unsigned-policy.json"
+    },
+    {
+      "path": "evaluation/delivery/candidate-disposition.json",
+      "sha256": "8d2530231d5c91c42ba18aab8b48d425025a6ee91a64e7c4c411e34bf7955de7",
+      "gitBlob": "62013c64be5ba007bd9c5a511610c1a888b0e86d",
+      "revision": "b7b4811670a712e05d8e645dfd923f3fbd4041ff",
+      "url": "https://github.com/iwizy/NexFlow/blob/b7b4811670a712e05d8e645dfd923f3fbd4041ff/evaluation/delivery/candidate-disposition.json"
+    },
+    {
+      "path": "evaluation/lifecycle/completion/archive-verification.json",
+      "sha256": "c5fc4f43b18c13eb035c74cb8da85d22d436c35934675a3464cd0230aa69a993",
+      "gitBlob": "a71d7ba7d7f6f12c5502f53ce82f560a821c9fa1",
+      "revision": "b7b4811670a712e05d8e645dfd923f3fbd4041ff",
+      "url": "https://github.com/iwizy/NexFlow/blob/b7b4811670a712e05d8e645dfd923f3fbd4041ff/evaluation/lifecycle/completion/archive-verification.json"
+    },
+    {
+      "path": "evaluation/measurement-qualification/summary.json",
+      "sha256": "00dea873866f65606c13971ece52ed4dcd002ee68239ecc12562fcfa1cab8260",
+      "gitBlob": "85d74827d240362e283ed37da31788b94f851a34",
+      "revision": "b7b4811670a712e05d8e645dfd923f3fbd4041ff",
+      "url": "https://github.com/iwizy/NexFlow/blob/b7b4811670a712e05d8e645dfd923f3fbd4041ff/evaluation/measurement-qualification/summary.json"
+    },
+    {
+      "path": "evaluation/measurement-qualification/approved-captures.json",
+      "sha256": "567c6990eb6e7ee3ec1fbe7326b7c2689d278e1378cb1d420d1a1385a672a15d",
+      "gitBlob": "ee32b9cc3df9fd2f0b7f8ae8b039932e1e382a4c",
+      "revision": "b7b4811670a712e05d8e645dfd923f3fbd4041ff",
+      "url": "https://github.com/iwizy/NexFlow/blob/b7b4811670a712e05d8e645dfd923f3fbd4041ff/evaluation/measurement-qualification/approved-captures.json"
+    },
+    {
+      "path": "scripts/qualification/measurement-method.json",
+      "sha256": "da4f8dba67204b180648d3b4a023a505ac3fc0138c5bb0f71e151f17417ae568",
+      "gitBlob": "54cededddf1b7793760d2752212eb81490d4ba61",
+      "revision": "b7b4811670a712e05d8e645dfd923f3fbd4041ff",
+      "url": "https://github.com/iwizy/NexFlow/blob/b7b4811670a712e05d8e645dfd923f3fbd4041ff/scripts/qualification/measurement-method.json"
+    },
+    {
+      "path": "scripts/qualification/verify-measurements.mjs",
+      "sha256": "be33566d100f3777b7f13e076d992dc0a257bc6c67331ebd593dd54ee3bcd5b0",
+      "gitBlob": "087505cbebdf68b6b6d083d17b6de46f8eacc17c",
+      "revision": "b7b4811670a712e05d8e645dfd923f3fbd4041ff",
+      "url": "https://github.com/iwizy/NexFlow/blob/b7b4811670a712e05d8e645dfd923f3fbd4041ff/scripts/qualification/verify-measurements.mjs"
+    },
+    {
+      "path": "docs/single-maintainer-governance.md",
+      "sha256": "230be6cfa166b6e66616be932bedd3d9e171601b047a82412c96d2801f886cbb",
+      "gitBlob": "49ff6e7aa4f2c0cd83852591062c2e87085d33d8",
+      "revision": "b7b4811670a712e05d8e645dfd923f3fbd4041ff",
+      "url": "https://github.com/iwizy/NexFlow/blob/b7b4811670a712e05d8e645dfd923f3fbd4041ff/docs/single-maintainer-governance.md"
+    },
+    {
+      "path": "rfcs/RFC-0024-single-maintainer-governance.md",
+      "sha256": "70b7c18cc61631226c2c565b120063d6003ba7aae72ff06082b443559cb8e4ac",
+      "gitBlob": "3c2fe463bba7bd2ba0c8749ddb115ccaeff8a38f",
+      "revision": "b7b4811670a712e05d8e645dfd923f3fbd4041ff",
+      "url": "https://github.com/iwizy/NexFlow/blob/b7b4811670a712e05d8e645dfd923f3fbd4041ff/rfcs/RFC-0024-single-maintainer-governance.md"
+    },
+    {
+      "path": "rfcs/reviews/2026-10-11-single-maintainer-ownership.md",
+      "sha256": "38d3ddd372d40a7820cd9cfddcc9b85f7ab5423a5bf785a08955b20e6be32390",
+      "gitBlob": "4068c0df1035409907207afec59c19a9ec34c825",
+      "revision": "b7b4811670a712e05d8e645dfd923f3fbd4041ff",
+      "url": "https://github.com/iwizy/NexFlow/blob/b7b4811670a712e05d8e645dfd923f3fbd4041ff/rfcs/reviews/2026-10-11-single-maintainer-ownership.md"
+    },
+    {
+      "path": "evaluation/supply-chain/2026-10-15-repaired/completion.json",
+      "sha256": "604a5981c8a5601ab6f9f7fb3c2c1adbad8f5930d860ea834e37685ae1454735",
+      "gitBlob": "2f04dbe9e9f1ef892f8fa1e20414dffeb13fc393",
+      "revision": "b7b4811670a712e05d8e645dfd923f3fbd4041ff",
+      "url": "https://github.com/iwizy/NexFlow/blob/b7b4811670a712e05d8e645dfd923f3fbd4041ff/evaluation/supply-chain/2026-10-15-repaired/completion.json"
+    },
+    {
+      "path": "evaluation/supply-chain/2026-10-15-repaired/disposition.json",
+      "sha256": "a2c1568cd00e6a1d5a227bfc51a04cff0eb35f1dd42e6453532bdd44e434e0ec",
+      "gitBlob": "f6d0ed93a17e83045c78897a389f08a3cc97459e",
+      "revision": "b7b4811670a712e05d8e645dfd923f3fbd4041ff",
+      "url": "https://github.com/iwizy/NexFlow/blob/b7b4811670a712e05d8e645dfd923f3fbd4041ff/evaluation/supply-chain/2026-10-15-repaired/disposition.json"
+    },
+    {
+      "path": "evaluation/supply-chain/2026-10-15-repaired/license-index.json",
+      "sha256": "7e12aa79eb6752f67a8bd706fedb6b9cb7c9b9c51e365d94bfb4bbd143b4f53b",
+      "gitBlob": "4bc790ab65888820710112bc782d6f39e7554803",
+      "revision": "b7b4811670a712e05d8e645dfd923f3fbd4041ff",
+      "url": "https://github.com/iwizy/NexFlow/blob/b7b4811670a712e05d8e645dfd923f3fbd4041ff/evaluation/supply-chain/2026-10-15-repaired/license-index.json"
+    },
+    {
+      "path": "evaluation/repairs/supply-chain/toolchains.json",
+      "sha256": "8565d55122879ec448e01c6d466823c77b2c5ad420acf6b68d494769dcc6dc25",
+      "gitBlob": "74ef5791a35123977153befbcf032497337e8b1e",
+      "revision": "b7b4811670a712e05d8e645dfd923f3fbd4041ff",
+      "url": "https://github.com/iwizy/NexFlow/blob/b7b4811670a712e05d8e645dfd923f3fbd4041ff/evaluation/repairs/supply-chain/toolchains.json"
+    },
+    {
+      "path": "scripts/qualification/windows-orchestration.json",
+      "sha256": "71f78aa3bc67f8f42ef1f0a8cf380f95a81805615eec55567fc9529abf978c74",
+      "gitBlob": "e1f73451c384c59e567b9967004590e627742416",
+      "revision": "b7b4811670a712e05d8e645dfd923f3fbd4041ff",
+      "url": "https://github.com/iwizy/NexFlow/blob/b7b4811670a712e05d8e645dfd923f3fbd4041ff/scripts/qualification/windows-orchestration.json"
+    },
+    {
+      "path": "scripts/qualification/linux-orchestration.json",
+      "sha256": "9050c3c173f7328ec035b4dc9fb19a2802624d67a580f6c361527b033cb6f4fb",
+      "gitBlob": "8503b7c2b3a00e60392898b0bd2a775f9c2bd2cb",
+      "revision": "b7b4811670a712e05d8e645dfd923f3fbd4041ff",
+      "url": "https://github.com/iwizy/NexFlow/blob/b7b4811670a712e05d8e645dfd923f3fbd4041ff/scripts/qualification/linux-orchestration.json"
+    },
+    {
+      "path": "evaluation/prototypes/typescript/src/library.ts",
+      "sha256": "6e11f3b0ce91c3667500561b856ff0c3e39840e9c9a30e49c37846bb1e8a4d00",
+      "gitBlob": "ec3cf6b0b7b6a88e1c0d97fdddc386c567855ad7",
+      "revision": "b7b4811670a712e05d8e645dfd923f3fbd4041ff",
+      "url": "https://github.com/iwizy/NexFlow/blob/b7b4811670a712e05d8e645dfd923f3fbd4041ff/evaluation/prototypes/typescript/src/library.ts"
+    },
+    {
+      "path": "evaluation/prototypes/typescript/src/model.ts",
+      "sha256": "f09630fbdc1c2682552c885df3f2ca8df84c8eb75f0183fdbdff19dc994d9037",
+      "gitBlob": "1de8583f017bc44306dec3bde1f4713fd516845a",
+      "revision": "b7b4811670a712e05d8e645dfd923f3fbd4041ff",
+      "url": "https://github.com/iwizy/NexFlow/blob/b7b4811670a712e05d8e645dfd923f3fbd4041ff/evaluation/prototypes/typescript/src/model.ts"
+    },
+    {
+      "path": "evaluation/prototypes/typescript/tsconfig.json",
+      "sha256": "d87eb02469ee54484ba0873efed40f9289c9cef2a196b1ce4affdc922d84bc20",
+      "gitBlob": "f8b0e9973831ff7707c951d4b58aa4011e899050",
+      "revision": "b7b4811670a712e05d8e645dfd923f3fbd4041ff",
+      "url": "https://github.com/iwizy/NexFlow/blob/b7b4811670a712e05d8e645dfd923f3fbd4041ff/evaluation/prototypes/typescript/tsconfig.json"
+    },
+    {
+      "path": "evaluation/prototypes/python/nexflow_python_evaluation/library.py",
+      "sha256": "5a50be62787d304441ba54759f1fdc2704a3d1c2183b4ebd075277293b2596ee",
+      "gitBlob": "040e3840eb30d6e47d5c20226cb28f6a0fb4e25e",
+      "revision": "b7b4811670a712e05d8e645dfd923f3fbd4041ff",
+      "url": "https://github.com/iwizy/NexFlow/blob/b7b4811670a712e05d8e645dfd923f3fbd4041ff/evaluation/prototypes/python/nexflow_python_evaluation/library.py"
+    },
+    {
+      "path": "evaluation/prototypes/python/nexflow_python_evaluation/model.py",
+      "sha256": "2429b1e2ac8ca511f6074a43f28a1d2f8e287675fc8cffbcf1ee573a3334a440",
+      "gitBlob": "8fa7dc6c95670e8e0f195285ff6f0f69c28b3c29",
+      "revision": "b7b4811670a712e05d8e645dfd923f3fbd4041ff",
+      "url": "https://github.com/iwizy/NexFlow/blob/b7b4811670a712e05d8e645dfd923f3fbd4041ff/evaluation/prototypes/python/nexflow_python_evaluation/model.py"
+    },
+    {
+      "path": "evaluation/measurement-qualification/linux-amd64/cohort.json",
+      "sha256": "dd4e05dadc534ef644322e1351b2338f3e02c1d7f502b4135c59b3513b369738",
+      "gitBlob": "e6cd226bc50862f87efb8124d242cdc5933efe14",
+      "revision": "b7b4811670a712e05d8e645dfd923f3fbd4041ff",
+      "url": "https://github.com/iwizy/NexFlow/blob/b7b4811670a712e05d8e645dfd923f3fbd4041ff/evaluation/measurement-qualification/linux-amd64/cohort.json"
+    },
+    {
+      "path": "evaluation/measurement-qualification/linux-amd64/typescript.json.gz",
+      "sha256": "b478fdcee019d6b9ef0db3276dc6fde227e22f53ad26e3eeba6c6cc04cc7b2ae",
+      "gitBlob": "f59dd25cf864ebd917e4da335dc39a0e8cb49123",
+      "revision": "b7b4811670a712e05d8e645dfd923f3fbd4041ff",
+      "url": "https://github.com/iwizy/NexFlow/blob/b7b4811670a712e05d8e645dfd923f3fbd4041ff/evaluation/measurement-qualification/linux-amd64/typescript.json.gz"
+    },
+    {
+      "path": "evaluation/measurement-qualification/linux-amd64/python.json.gz",
+      "sha256": "cd5c006ff546da15bede7667e0c9ce1e86633908af91006a39509f3294f71d36",
+      "gitBlob": "07ad6722ce750f06f040ae776957d9215eda86dc",
+      "revision": "b7b4811670a712e05d8e645dfd923f3fbd4041ff",
+      "url": "https://github.com/iwizy/NexFlow/blob/b7b4811670a712e05d8e645dfd923f3fbd4041ff/evaluation/measurement-qualification/linux-amd64/python.json.gz"
+    },
+    {
+      "path": "evaluation/lifecycle/completion/linux-amd64/typescript.json",
+      "sha256": "b0e3f3fbe28d722d32a9d2a1c3e18df5cf918965c280d0f5d28584eb1b2a69ad",
+      "gitBlob": "d5e54a10a274345526a6af5ca59598c83b5db0b5",
+      "revision": "b7b4811670a712e05d8e645dfd923f3fbd4041ff",
+      "url": "https://github.com/iwizy/NexFlow/blob/b7b4811670a712e05d8e645dfd923f3fbd4041ff/evaluation/lifecycle/completion/linux-amd64/typescript.json"
+    },
+    {
+      "path": "evaluation/security-qualification/linux-amd64/typescript.json",
+      "sha256": "13f8837a78a5aba3ae7b9a25737c304b08883c2adf5c1d4a4d325f7737c77475",
+      "gitBlob": "6ded05ab0be3d2ad66489203bb81b7817530aad6",
+      "revision": "b7b4811670a712e05d8e645dfd923f3fbd4041ff",
+      "url": "https://github.com/iwizy/NexFlow/blob/b7b4811670a712e05d8e645dfd923f3fbd4041ff/evaluation/security-qualification/linux-amd64/typescript.json"
+    },
+    {
+      "path": "evaluation/lifecycle/completion/linux-amd64/python.json",
+      "sha256": "b6ddce32de04f6b972d174b9a7fa782181ef8532d8416df20fc9636233214d5a",
+      "gitBlob": "03eff0c27c3b602e98af1ee174684d2e3236cf86",
+      "revision": "b7b4811670a712e05d8e645dfd923f3fbd4041ff",
+      "url": "https://github.com/iwizy/NexFlow/blob/b7b4811670a712e05d8e645dfd923f3fbd4041ff/evaluation/lifecycle/completion/linux-amd64/python.json"
+    },
+    {
+      "path": "evaluation/security-qualification/linux-amd64/python.json",
+      "sha256": "ce040ce912a3e22a51cd5fc5e47c0af84fbb712f9784c5d874ae1945f46f7145",
+      "gitBlob": "79a5dd1fd47199105f2cb0f17a42a773e5a92d42",
+      "revision": "b7b4811670a712e05d8e645dfd923f3fbd4041ff",
+      "url": "https://github.com/iwizy/NexFlow/blob/b7b4811670a712e05d8e645dfd923f3fbd4041ff/evaluation/security-qualification/linux-amd64/python.json"
+    },
+    {
+      "path": "evaluation/lifecycle/completion/linux-amd64/rust.json",
+      "sha256": "3a37d9b592669e471a4efa6205521c52c2c2223513957de3106450b5bfb5907c",
+      "gitBlob": "564774e8e55df8f2eeaeba48470d0ffc9fc2fe53",
+      "revision": "b7b4811670a712e05d8e645dfd923f3fbd4041ff",
+      "url": "https://github.com/iwizy/NexFlow/blob/b7b4811670a712e05d8e645dfd923f3fbd4041ff/evaluation/lifecycle/completion/linux-amd64/rust.json"
+    },
+    {
+      "path": "evaluation/security-qualification/linux-amd64/rust.json",
+      "sha256": "ed7ff6fcb3269dbc5f28738906552dcb2769dccffed13e06553aa06515e51860",
+      "gitBlob": "abaed33206a236aa6066558203d982d423db828f",
+      "revision": "b7b4811670a712e05d8e645dfd923f3fbd4041ff",
+      "url": "https://github.com/iwizy/NexFlow/blob/b7b4811670a712e05d8e645dfd923f3fbd4041ff/evaluation/security-qualification/linux-amd64/rust.json"
+    },
+    {
+      "path": "evaluation/lifecycle/completion/linux-amd64/go.json",
+      "sha256": "3fe17ac09b03dc381f47ec06b51c5f8af86f8748f0abf020c13f5f1bfeabbf1c",
+      "gitBlob": "97bbdb3adab9abb504ebeb460e09d6c22b662d0d",
+      "revision": "b7b4811670a712e05d8e645dfd923f3fbd4041ff",
+      "url": "https://github.com/iwizy/NexFlow/blob/b7b4811670a712e05d8e645dfd923f3fbd4041ff/evaluation/lifecycle/completion/linux-amd64/go.json"
+    },
+    {
+      "path": "evaluation/security-qualification/linux-amd64/go.json",
+      "sha256": "cd463c6c4e6238d496611bef8ff95253bc47cd3c2e9ad39d60efc81d1a87c644",
+      "gitBlob": "b69b7852db831b7e9d002a12c2624e2320909105",
+      "revision": "b7b4811670a712e05d8e645dfd923f3fbd4041ff",
+      "url": "https://github.com/iwizy/NexFlow/blob/b7b4811670a712e05d8e645dfd923f3fbd4041ff/evaluation/security-qualification/linux-amd64/go.json"
+    },
+    {
+      "path": "evaluation/measurement-qualification/macos-arm64/cohort.json",
+      "sha256": "23c9f30ee9bcf1a253f43dcd0566d6aafb0990bdb4d771d990e2073609940136",
+      "gitBlob": "0d47a8f3238f557ca80507a19c52457766a3ab8d",
+      "revision": "b7b4811670a712e05d8e645dfd923f3fbd4041ff",
+      "url": "https://github.com/iwizy/NexFlow/blob/b7b4811670a712e05d8e645dfd923f3fbd4041ff/evaluation/measurement-qualification/macos-arm64/cohort.json"
+    },
+    {
+      "path": "evaluation/measurement-qualification/macos-arm64/typescript.json.gz",
+      "sha256": "2543444fee3832db49c93e732b6317e0bd137dc4d43f073b137a0e715c819822",
+      "gitBlob": "856336038b4461fc3f1d1ea0146c8b358fc798d8",
+      "revision": "b7b4811670a712e05d8e645dfd923f3fbd4041ff",
+      "url": "https://github.com/iwizy/NexFlow/blob/b7b4811670a712e05d8e645dfd923f3fbd4041ff/evaluation/measurement-qualification/macos-arm64/typescript.json.gz"
+    },
+    {
+      "path": "evaluation/measurement-qualification/macos-arm64/python.json.gz",
+      "sha256": "2f64e9703376c4557baa27628802d1ccb67986e00e49dd02d9a16c49a774f9ab",
+      "gitBlob": "de885102b6ed71ec974be52cdaed61ad00ee4534",
+      "revision": "b7b4811670a712e05d8e645dfd923f3fbd4041ff",
+      "url": "https://github.com/iwizy/NexFlow/blob/b7b4811670a712e05d8e645dfd923f3fbd4041ff/evaluation/measurement-qualification/macos-arm64/python.json.gz"
+    },
+    {
+      "path": "evaluation/lifecycle/completion/macos-arm64/typescript.json",
+      "sha256": "885ae4567a332cc16eefa349af60214a6cfc26e2cebd74402ae2f2b413393dca",
+      "gitBlob": "1c1049a92501b65b69eac36a5a5d52a5c758984c",
+      "revision": "b7b4811670a712e05d8e645dfd923f3fbd4041ff",
+      "url": "https://github.com/iwizy/NexFlow/blob/b7b4811670a712e05d8e645dfd923f3fbd4041ff/evaluation/lifecycle/completion/macos-arm64/typescript.json"
+    },
+    {
+      "path": "evaluation/security-qualification/macos-arm64/typescript.json",
+      "sha256": "f2f3286d1a2362cfcd2a8a0f014ecc208e43f7308a5e78e32a209c53bf2437ba",
+      "gitBlob": "a85fb8bbb6a0ca7f64002cedee1af30bcfcf7472",
+      "revision": "b7b4811670a712e05d8e645dfd923f3fbd4041ff",
+      "url": "https://github.com/iwizy/NexFlow/blob/b7b4811670a712e05d8e645dfd923f3fbd4041ff/evaluation/security-qualification/macos-arm64/typescript.json"
+    },
+    {
+      "path": "evaluation/lifecycle/completion/macos-arm64/python.json",
+      "sha256": "1b99490e3befb3f5ff5c5f2f51270d05e626521dadbefa19aae15ef4c36be3e5",
+      "gitBlob": "67cf31dcca87e9bd7aee885a4baf614c1e7a6d44",
+      "revision": "b7b4811670a712e05d8e645dfd923f3fbd4041ff",
+      "url": "https://github.com/iwizy/NexFlow/blob/b7b4811670a712e05d8e645dfd923f3fbd4041ff/evaluation/lifecycle/completion/macos-arm64/python.json"
+    },
+    {
+      "path": "evaluation/security-qualification/macos-arm64/python.json",
+      "sha256": "b4bd244b73418051d5e07f77329421a46a395461e0e87cd9ad8b56a543a0b63a",
+      "gitBlob": "aacba3b11783ad8ff445d5fa3f5336cbefd17ad8",
+      "revision": "b7b4811670a712e05d8e645dfd923f3fbd4041ff",
+      "url": "https://github.com/iwizy/NexFlow/blob/b7b4811670a712e05d8e645dfd923f3fbd4041ff/evaluation/security-qualification/macos-arm64/python.json"
+    },
+    {
+      "path": "evaluation/lifecycle/completion/macos-arm64/rust.json",
+      "sha256": "af1cde257ea508e0a5e279b02e3f6a3932daaa2a9411718998d0b0e5ce7d7c6f",
+      "gitBlob": "463a3922c0fb842b4e218707f256d47f63f040fd",
+      "revision": "b7b4811670a712e05d8e645dfd923f3fbd4041ff",
+      "url": "https://github.com/iwizy/NexFlow/blob/b7b4811670a712e05d8e645dfd923f3fbd4041ff/evaluation/lifecycle/completion/macos-arm64/rust.json"
+    },
+    {
+      "path": "evaluation/security-qualification/macos-arm64/rust.json",
+      "sha256": "4cbebeeac3d4bf3e3adfea6d495993e484d6dd2f927563ec258fef7971bf6380",
+      "gitBlob": "1c538c34033d6cc0d25c70d07b597065b9d6e821",
+      "revision": "b7b4811670a712e05d8e645dfd923f3fbd4041ff",
+      "url": "https://github.com/iwizy/NexFlow/blob/b7b4811670a712e05d8e645dfd923f3fbd4041ff/evaluation/security-qualification/macos-arm64/rust.json"
+    },
+    {
+      "path": "evaluation/lifecycle/completion/macos-arm64/go.json",
+      "sha256": "c83da62c554f4a58b6ab50ac596d0e4e9f3cd5e4a44f4073b04194410a2943b2",
+      "gitBlob": "2e23bca33f7411d4d39f86483c66d438f29fbc55",
+      "revision": "b7b4811670a712e05d8e645dfd923f3fbd4041ff",
+      "url": "https://github.com/iwizy/NexFlow/blob/b7b4811670a712e05d8e645dfd923f3fbd4041ff/evaluation/lifecycle/completion/macos-arm64/go.json"
+    },
+    {
+      "path": "evaluation/security-qualification/macos-arm64/go.json",
+      "sha256": "c39de6d016c11467c8e3b5e2423b4eb7a263e2b9adcf4cb0a7f1bfa8d5f67e62",
+      "gitBlob": "a5bdff73580d79482e5f0d6fc556e3a5526f3e04",
+      "revision": "b7b4811670a712e05d8e645dfd923f3fbd4041ff",
+      "url": "https://github.com/iwizy/NexFlow/blob/b7b4811670a712e05d8e645dfd923f3fbd4041ff/evaluation/security-qualification/macos-arm64/go.json"
+    },
+    {
+      "path": "evaluation/measurement-qualification/windows-amd64/cohort.json",
+      "sha256": "923323167a83536c365e2214f20cce98b9e2ac55ebb49832cca2c304e0be83d6",
+      "gitBlob": "7ffcf52c5da1f49f296b4ea6177da57d70ef3cf2",
+      "revision": "b7b4811670a712e05d8e645dfd923f3fbd4041ff",
+      "url": "https://github.com/iwizy/NexFlow/blob/b7b4811670a712e05d8e645dfd923f3fbd4041ff/evaluation/measurement-qualification/windows-amd64/cohort.json"
+    },
+    {
+      "path": "evaluation/measurement-qualification/windows-amd64/typescript.json.gz",
+      "sha256": "9244f08d552d4c9ea2cf6c04ca66c71f37ed1b3621fddf2bc225bfec32326658",
+      "gitBlob": "179a7be941d5a887f2307b4c9900712ee92d9137",
+      "revision": "b7b4811670a712e05d8e645dfd923f3fbd4041ff",
+      "url": "https://github.com/iwizy/NexFlow/blob/b7b4811670a712e05d8e645dfd923f3fbd4041ff/evaluation/measurement-qualification/windows-amd64/typescript.json.gz"
+    },
+    {
+      "path": "evaluation/measurement-qualification/windows-amd64/python.json.gz",
+      "sha256": "aba3da86f23648325265ba771ed8c7e9ce53bc912b3b4da37188611ee0c1ca81",
+      "gitBlob": "857e11c2aaae96fe76ffa63cd4d2d02153ea98bc",
+      "revision": "b7b4811670a712e05d8e645dfd923f3fbd4041ff",
+      "url": "https://github.com/iwizy/NexFlow/blob/b7b4811670a712e05d8e645dfd923f3fbd4041ff/evaluation/measurement-qualification/windows-amd64/python.json.gz"
+    },
+    {
+      "path": "evaluation/lifecycle/completion/windows-amd64/typescript.json",
+      "sha256": "ca867833571bf3514efb6b47b8134808f031bb949c2d3166af9e5175855d995d",
+      "gitBlob": "e5290cfd0954fd49073357affa32e76dfa51c46a",
+      "revision": "b7b4811670a712e05d8e645dfd923f3fbd4041ff",
+      "url": "https://github.com/iwizy/NexFlow/blob/b7b4811670a712e05d8e645dfd923f3fbd4041ff/evaluation/lifecycle/completion/windows-amd64/typescript.json"
+    },
+    {
+      "path": "evaluation/security-qualification/windows-amd64/typescript.json",
+      "sha256": "288e3ab1f4928ba3ff4895104fbfc05539e9ac8aeeed2a5187802951a09ad410",
+      "gitBlob": "b9d9982ca3359a1a28b4fe26e477c30608b8f67d",
+      "revision": "b7b4811670a712e05d8e645dfd923f3fbd4041ff",
+      "url": "https://github.com/iwizy/NexFlow/blob/b7b4811670a712e05d8e645dfd923f3fbd4041ff/evaluation/security-qualification/windows-amd64/typescript.json"
+    },
+    {
+      "path": "evaluation/lifecycle/completion/windows-amd64/python.json",
+      "sha256": "0fadaffda2ec4178cf122120291e83d3ea747155c1d1d10e7a07c47d643e07ab",
+      "gitBlob": "f646ba8c540210a567ac426a4a7f9e3b6e86630e",
+      "revision": "b7b4811670a712e05d8e645dfd923f3fbd4041ff",
+      "url": "https://github.com/iwizy/NexFlow/blob/b7b4811670a712e05d8e645dfd923f3fbd4041ff/evaluation/lifecycle/completion/windows-amd64/python.json"
+    },
+    {
+      "path": "evaluation/security-qualification/windows-amd64/python.json",
+      "sha256": "d932ea24b726da65a2d6752d4c603dc8f5b01b6ad3bc3bb5a481a8eb830c68b7",
+      "gitBlob": "a3a942687aa9c4260f2de2516015905fe2f434ca",
+      "revision": "b7b4811670a712e05d8e645dfd923f3fbd4041ff",
+      "url": "https://github.com/iwizy/NexFlow/blob/b7b4811670a712e05d8e645dfd923f3fbd4041ff/evaluation/security-qualification/windows-amd64/python.json"
+    },
+    {
+      "path": "evaluation/lifecycle/completion/windows-amd64/rust.json",
+      "sha256": "8cfbc9de1eb3f8d3c5495c9dddd6b7de5b768313d6042f664b1c89479f4b4eab",
+      "gitBlob": "602b179e4a862618ca1a1fa4509b61324ea71799",
+      "revision": "b7b4811670a712e05d8e645dfd923f3fbd4041ff",
+      "url": "https://github.com/iwizy/NexFlow/blob/b7b4811670a712e05d8e645dfd923f3fbd4041ff/evaluation/lifecycle/completion/windows-amd64/rust.json"
+    },
+    {
+      "path": "evaluation/security-qualification/windows-amd64/rust.json",
+      "sha256": "20dcaee89de1384d9c4f53f32022fc41e04bff2fb3911d8872a4ef9aee997e45",
+      "gitBlob": "15d60ae2e12813df6dd4f5a05a73f932616bf81e",
+      "revision": "b7b4811670a712e05d8e645dfd923f3fbd4041ff",
+      "url": "https://github.com/iwizy/NexFlow/blob/b7b4811670a712e05d8e645dfd923f3fbd4041ff/evaluation/security-qualification/windows-amd64/rust.json"
+    },
+    {
+      "path": "evaluation/lifecycle/completion/windows-amd64/go.json",
+      "sha256": "5c2c8d1fe6be0568917180638c834f1a9c51e42affd596d9127c83fb04cc7bc3",
+      "gitBlob": "7dc7a99bdf8f44a7bb17a670684128cb1c06745b",
+      "revision": "b7b4811670a712e05d8e645dfd923f3fbd4041ff",
+      "url": "https://github.com/iwizy/NexFlow/blob/b7b4811670a712e05d8e645dfd923f3fbd4041ff/evaluation/lifecycle/completion/windows-amd64/go.json"
+    },
+    {
+      "path": "evaluation/security-qualification/windows-amd64/go.json",
+      "sha256": "c2f9c844f8806a3f69d7c91c8af55c1d8891132705b253f0930bd96fc9b6b12d",
+      "gitBlob": "9b755e29291ed43a8edb06e227d3bfa57631dfb9",
+      "revision": "b7b4811670a712e05d8e645dfd923f3fbd4041ff",
+      "url": "https://github.com/iwizy/NexFlow/blob/b7b4811670a712e05d8e645dfd923f3fbd4041ff/evaluation/security-qualification/windows-amd64/go.json"
+    },
+    {
+      "path": "evaluation/qualification/supply-chain-repair/typescript.json",
+      "sha256": "785ca9db2c19066458070d1263d8ffc40791a688e9780975b25d3ce44205b83a",
+      "gitBlob": "2b191496ece76eea0071b9d93a362468626fc45b",
+      "revision": "b7b4811670a712e05d8e645dfd923f3fbd4041ff",
+      "url": "https://github.com/iwizy/NexFlow/blob/b7b4811670a712e05d8e645dfd923f3fbd4041ff/evaluation/qualification/supply-chain-repair/typescript.json"
+    },
+    {
+      "path": "evaluation/qualification/supply-chain-repair/python.json",
+      "sha256": "5320eb04aed1dc3e79c087dda116d2e68de3b19176c4f22a1920388f4f0a9c6a",
+      "gitBlob": "a860fb88373daea39ff61690c3eb281863605bf4",
+      "revision": "b7b4811670a712e05d8e645dfd923f3fbd4041ff",
+      "url": "https://github.com/iwizy/NexFlow/blob/b7b4811670a712e05d8e645dfd923f3fbd4041ff/evaluation/qualification/supply-chain-repair/python.json"
+    }
+  ],
+  "newSources": [
+    {
+      "path": "evaluation/architecture/revised/contract-model.mjs",
+      "sha256": "1b45c3477c9b16084c101c01e49f4d06ac85f3a9a39df209f297471fc8a0fa44"
+    },
+    {
+      "path": "evaluation/architecture/revised/layouts.json",
+      "sha256": "a25996b9553afbb1ccf949914230a07db67316ae2c79c591b4c708bd740836df"
+    },
+    {
+      "path": "evaluation/architecture/revised/boundaries.md",
+      "sha256": "59197e501ea5a31a90e69b20ac843079e53aed60bf3470a16c9560ad2e17b2a4"
+    },
+    {
+      "path": "scripts/qualification/prepare-architecture-review.mjs",
+      "sha256": "36a0a5817fc17793f56c02f8e1c3ca80fdf9c8abe943eb7bf01571cc3717e1b4"
+    },
+    {
+      "path": "evaluation/architecture/revised/source-distribution.json",
+      "sha256": "58afaee763b0de8edc9d966f2f77a848c299b7220e1d9779a401c8bc78f499a5"
+    },
+    {
+      "path": "evaluation/architecture/revised/review-distribution.mjs",
+      "sha256": "5ea538aef261599b5c32c52d83a6b0919ec2872e67946ce8ad6fbc8a3d862ad8"
+    },
+    {
+      "path": "evaluation/architecture/revised/conformance-plan.md",
+      "sha256": "17c2867f2e73b31c4d556c96c7b2c6a7071780f5ccadd0f00507db01b30e4468"
+    },
+    {
+      "path": "scripts/runtime-revised-architecture-smoke.mjs",
+      "sha256": "894d47f4b5a38f6f04f32a2fdd00b4a6f2e0eaa29bb8edb55d2e5a53715c2ca4"
+    }
+  ],
+  "humanIndependentReviewClaimed": false,
+  "productReleaseAuthorized": false,
+  "runtimeImplementationAuthorized": false,
+  "signingPerformed": false
+}

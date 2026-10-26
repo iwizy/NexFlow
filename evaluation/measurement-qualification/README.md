@@ -8,6 +8,20 @@ Windows failures. This explicitly amended evaluation preserves all 84 cells:
 42 eligible cells require measurements and 42 rejected cells carry no successful
 value or score. The original all-four-success criterion remains unsatisfied.
 
+The final [summary](summary.json) verifies six complete native records and all
+42 eligible cells. [Approved captures and job receipts](approved-captures.json)
+bind macOS producer `83eaee46`, Windows `efbc1863` and Linux `a1d7ec4c` to their
+actual successful jobs. The old macOS-containing workflow failed overall on
+other targets; only its independently successful macOS job is approved here.
+No partial/cancelled observation is pooled into a completed cohort.
+
+Qualification-to-measurement drift is explicit in that allowlist: Linux/Windows
+security hosts used EPYC 9V74 while measurements used EPYC 7763; Windows also
+reports a small physical-memory difference from its lifecycle host. These are
+separate declared cohorts, not claimed exact fingerprint matches. Each measured
+TypeScript/Python pair shares its own actual host/image/CPU and unchanged inputs;
+historical timings and hardware are never substituted or pooled.
+
 The [method amendment](../../scripts/qualification/measurement-method.json)
 preserves the frozen complete 352-case catalog, 11 CLI scenarios, repetitions,
 warmups, individual deadlines and cache disclosures. Only the outer job window
@@ -24,8 +38,13 @@ sample from another VM to the retained partial run. Individual limits and the
 complete original matrix remain unchanged.
 A library sample calls the unchanged native API with
 one warmup batch then a measured batch of 1/10/100 full corpus passes. The caller
-receives no oracle; the outer consumer checks every result with the frozen
-oracle, including the aggregate consumed-result checksum for every full pass.
+receives no oracle. For each sample, the outer consumer compares all 352 returned
+last-pass result objects with the frozen oracle and verifies the aggregate
+consumed valid/diagnostic-count checksum across every completed pass. The driver
+also requires matching warmup/measured checksums and last-pass results. Full
+intermediate-pass result objects are not exported; their call counts and consumed
+checksum are retained. This does not claim an independent full-field oracle
+comparison for each intermediate call.
 Startup/schema initialization is outside that API clock. The combined
 warmup+sample process has a 240s outer deadline; each batch retains its 120s limit.
 The measurement-only Linux launcher derives from the unchanged NF-102-04 source

@@ -1,0 +1,22 @@
+{
+  "task": "NF-102-05",
+  "scope": "recipe verification outside measured five clean/five cached repetitions",
+  "observations": [
+    {
+      "candidate": "typescript",
+      "elapsedMs": 1988.437292,
+      "exitCode": 0,
+      "timeout": false,
+      "cache": "empty-project-output-provisioned-dependencies",
+      "recipe": "Node 26.12.0 TypeScript 6.0.3 tsc -p tsconfig.json, nonincremental"
+    },
+    {
+      "candidate": "python",
+      "elapsedMs": 63.471541,
+      "exitCode": 0,
+      "timeout": false,
+      "cache": "empty-project-output-provisioned-dependencies",
+      "recipe": "CPython 3.12.15 compileall checked-hash with normalized filenames; pycache is build validation only and not shipped"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "candidate": "python",
+  "clean": true,
+  "elapsedMs": 61.56425,
+  "observation": {
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "stdout": "",
+    "stderr": ""
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "candidate": "python",
+  "clean": true,
+  "elapsedMs": 90.8351,
+  "observation": {
+    "exitCode": 0,
+    "timedOut": false,
+    "peakMemoryBytes": 16248832,
+    "appContainer": true,
+    "capabilityCount": 0,
+    "argumentsSha256": "0b02044a7b7105055c8743557916de6f69e3ee4701b0c9ec5106d1a9cccf8474",
+    "stdout": "",
+    "stderr": ""
+  }
+}

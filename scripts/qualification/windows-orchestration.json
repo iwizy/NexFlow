@@ -1,0 +1,23 @@
+{
+  "task": "NF-102-05",
+  "target": "windows/amd64",
+  "scope": "Orchestration sizing only; not a candidate performance result or workload/deadline change.",
+  "baseMethodSha256": "da4f8dba67204b180648d3b4a023a505ac3fc0138c5bb0f71e151f17417ae568",
+  "baseJobMinutes": 120,
+  "effectiveWindowsJobMinutes": 240,
+  "authority": "Maintainer explicitly delegates technical completion decisions on the existing permitted standard native runners.",
+  "sizingEvidence": {
+    "runId": "40236474958",
+    "kind": "Historical completed partial observations used only for capacity planning, never pooled into current comparable metrics.",
+    "typescriptTenPassWarmupMedianMs": 2463.2769,
+    "typescriptTenPassMeasuredMedianMs": 2184.3287,
+    "pythonTenPassWarmupMedianMs": 9232.2519,
+    "pythonTenPassMeasuredMedianMs": 9186.7497,
+    "forecastFullApiMatrixMinutes": 128.2,
+    "forecastStatus": "Estimate from observed 1/10-pass batches and fixed 30x1/10/100 method, not a measured 100-pass result. Add provisioning, cold CLI, builds and six real upload lanes; retain margin for host noise."
+  },
+  "preserved": ["full 352-case catalog", "both eligible candidates on one actual native host/source cohort", "30 samples at 1/10/100 passes with one full warmup batch", "individual API batch 120s and combined process 240s", "CLI 30s", "build 600s", "cold/memory 10 runs", "clean 5/cached 5 plus warmup", "three real CI upload lanes", "all failures/raw observations"],
+  "otherTargets": "Existing Linux/macOS producer 83eaee46 cohorts retain their 120-minute orchestration window and immutable source; do not restart them.",
+  "noContractPromotion": "Original all-four-success criterion remains false; rejected Rust/Go remain failed and unscored. No signing, runtime, product version or release authority is added.",
+  "reference": "https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#jobsjob_idtimeout-minutes"
+}

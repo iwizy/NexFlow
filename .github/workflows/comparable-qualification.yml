@@ -15,9 +15,10 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - {target: windows/amd64, runner: windows-2025, folder: windows-amd64}
+          - {target: linux/amd64, runner: ubuntu-24.04, folder: linux-amd64}
     runs-on: ${{ matrix.runner }}
-    timeout-minutes: 120
+    # Linux-only continuation; preserve completed macOS and ongoing Windows captures.
+    timeout-minutes: 240
     env:
       PYTHONUTF8: '1'
       PYTHONDONTWRITEBYTECODE: '1'

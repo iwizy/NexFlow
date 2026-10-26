@@ -23,3 +23,14 @@ Lossless gzip receipts verify that no observations were discarded.
 
 Only a later complete successful native run can populate current measurement
 cells; partial timings here are never pooled with a different cohort or source.
+
+Windows job in [run 40238363753](https://github.com/iwizy/NexFlow/actions/runs/40238363753),
+producer `83eaee46fc91da51a55f493290a44d2b3f6adead`, passed both actual build
+preflights, all 110 cold cases per candidate and part of the library matrix.
+It then failed the parent JSONL protocol on an empty frame. A local split-CRLF
+control reproduces the exact blank frame with readline's 100ms default when
+report processing delays the LF half; `crlfDelay: Infinity` preserves both JSON
+frames. Native last-library invocations still exited zero. The Windows partial
+records remain here; Linux/macOS continue their unchanged complete source/host
+cohorts in that run. Only Windows is recaptured with the dedicated measurement
+client; no qualified lifecycle/security helper or candidate is modified.

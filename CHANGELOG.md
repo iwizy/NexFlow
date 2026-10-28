@@ -6,8 +6,23 @@ This project follows a specification-first process. Breaking changes must includ
 
 ## [Unreleased]
 
-No product changes recorded after `v0.4.0`; the publication receipt and current
-release status are maintained separately from its immutable tag.
+### Added
+
+- Adopted NF-104's bounded 0.5 CLI implementation profile and revision-bound
+  architecture/security scope review: separate TypeScript validation/CLI
+  packages, explicit-root validate/inspect/static graph, a versioned preview
+  output target and external-Node tarball distribution. Init is deferred;
+  the broader RFC-0011 remains Draft. Actual packages, qualification and release
+  remain future work; no version, lock, manifest or conformance claim changes.
+
+### Changed
+
+- Corrected the current release-plan sequence to reflect published v0.4.0 and
+  identify 0.5 tooling as the next line, preserving historical blocked reviews.
+- Bound historical 0.4 readiness CI to its exact published source while retaining
+  an unchanged-record/verifier check on current branches and a separate current
+  preview-contract digest check. Forward documentation can evolve without
+  altering the old evidence or treating it as new tooling qualification.
 
 ## [0.4.0] - 2026-10-28
 

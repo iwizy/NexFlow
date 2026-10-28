@@ -6,7 +6,7 @@ manifest kind, every numbered RFC proposal, experimental implementation slices,
 explicitly deprecated fields and the planned implementations most easily
 confused with existing documentation.
 
-Current source snapshot: `a357309c7737d94b13330513da3deb20eef2b8f8`.
+Current source snapshot: `0751e6c7f89d4aebf9815a1e056ece9141905f57`.
 The inventory describes that source plus this documentation/consistency change.
 A later edit must update the affected rows and their evidence; this is not a
 live service or a registry of external implementations.
@@ -82,7 +82,7 @@ specific experimental/deprecated/planned rows below do not overwrite that stage.
 | `rfc:RFC-0008` | Memory Retention proposal | Draft | [Owning RFC](../rfcs/RFC-0008-memory-retention.md), [scope](memory-model.md). Policies are authored; no store, expiry, deletion or runtime enforcement. |
 | `rfc:RFC-0009` | Event Envelope proposal | Draft | [Owning RFC](../rfcs/RFC-0009-event-envelope.md), [scope](events.md). Declarations and envelope/interoperability rules exist; no emitter, transport or audit store. |
 | `rfc:RFC-0010` | Provider Selection proposal | Draft | [Owning RFC](../rfcs/RFC-0010-provider-selection.md), [scope](provider-abstraction.md). Eligibility declarations exist; no live selection, fallback engine or provider invocation. |
-| `rfc:RFC-0011` | Reference CLI Scope proposal | Draft | [Owning RFC](../rfcs/RFC-0011-reference-cli-scope.md), [scope](reference-cli.md). Proposed command scope only; experimental repository tooling is not a released reference CLI. |
+| `rfc:RFC-0011` | Reference CLI Scope proposal | Draft | [Owning RFC](../rfcs/RFC-0011-reference-cli-scope.md), [scope](reference-cli.md), [adopted 0.5 profile](0.5-cli-contract.md). Broader proposal remains Draft; bounded implementation scope adopted separately, with no installed CLI or release claim. |
 | `rfc:RFC-0012` | Manifest Bundling proposal | Draft | [Owning RFC](../rfcs/RFC-0012-manifest-bundling.md), [scope](manifest-discovery.md). Local files/source hints exist; no bundle expansion, remote loading or supported bundle format. |
 | `rfc:RFC-0013` | Actor Model proposal | Draft | [Owning RFC](../rfcs/RFC-0013-actor-model.md), [scope](actor-model.md). ActorSet and migration slices exist; no runtime principal binding. |
 | `rfc:RFC-0014` | Effective Agent Configuration proposal | Draft | [Owning RFC](../rfcs/RFC-0014-effective-agent-configuration.md), [scope](effective-agent-configuration.md). Unique active-definition authority is bounded; no complete resolver or Agent Assembly serializer. |

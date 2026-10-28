@@ -1,0 +1,56 @@
+{
+  "sourceRevision": "df87a985059906814411d82741675de225414826",
+  "collectedAt": "2026-10-28T11:14:50.367Z",
+  "runs": [
+    {
+      "conclusion": "success",
+      "createdAt": "2026-10-28T11:11:52Z",
+      "databaseId": 40678063767,
+      "headSha": "df87a985059906814411d82741675de225414826",
+      "status": "completed",
+      "updatedAt": "2026-10-28T11:12:13Z",
+      "url": "https://github.com/iwizy/NexFlow/actions/runs/40678063767",
+      "workflowName": "Comparable Measurement Evidence"
+    },
+    {
+      "conclusion": "success",
+      "createdAt": "2026-10-28T11:11:52Z",
+      "databaseId": 40678063771,
+      "headSha": "df87a985059906814411d82741675de225414826",
+      "status": "completed",
+      "updatedAt": "2026-10-28T11:12:23Z",
+      "url": "https://github.com/iwizy/NexFlow/actions/runs/40678063771",
+      "workflowName": "Review Governance"
+    },
+    {
+      "conclusion": "success",
+      "createdAt": "2026-10-28T11:11:52Z",
+      "databaseId": 40678063724,
+      "headSha": "df87a985059906814411d82741675de225414826",
+      "status": "completed",
+      "updatedAt": "2026-10-28T11:12:07Z",
+      "url": "https://github.com/iwizy/NexFlow/actions/runs/40678063724",
+      "workflowName": "Release Readiness Evidence"
+    },
+    {
+      "conclusion": "success",
+      "createdAt": "2026-10-28T11:11:52Z",
+      "databaseId": 40678063784,
+      "headSha": "df87a985059906814411d82741675de225414826",
+      "status": "completed",
+      "updatedAt": "2026-10-28T11:12:34Z",
+      "url": "https://github.com/iwizy/NexFlow/actions/runs/40678063784",
+      "workflowName": "Schema Validation"
+    },
+    {
+      "conclusion": "success",
+      "createdAt": "2026-10-28T11:11:52Z",
+      "databaseId": 40678063799,
+      "headSha": "df87a985059906814411d82741675de225414826",
+      "status": "completed",
+      "updatedAt": "2026-10-28T11:13:05Z",
+      "url": "https://github.com/iwizy/NexFlow/actions/runs/40678063799",
+      "workflowName": "CLI Prototype"
+    }
+  ]
+}

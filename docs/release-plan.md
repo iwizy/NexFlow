@@ -165,9 +165,10 @@ version line, approve a CLI package, or move reference tooling out of `0.5`.
 Release readiness:
 
 - runtime evaluation criteria are complete
-- TypeScript, Python, Rust, and Go have comparable hard-gate results, weighted
-  scorecards, target measurements, and pinned evidence from one specification
-  revision
+- TypeScript, Python, Rust, and Go have source-bound hard-gate assessments on
+  one specification revision; every eligible candidate has weighted scorecards
+  and comparable target measurements, while rejected candidates retain their
+  failed gates, explicit exclusion reasons and unscored/null measurements
 - reference CLI scope, command effect budgets, and separation from runtime
   preflight and enforcement are accepted or clearly bounded
 - extension loading and sandbox expectations are documented
@@ -177,6 +178,17 @@ Release readiness:
 - the Runtime Architecture Decision review record identifies exact RFC,
   specification, prototype, and evidence revisions; every mandatory gate passes
   and every blocker is closed before acceptance
+
+The [2026-10-28 completion review](../release/0.4-completion-review.md) records
+the explicit forward amendment to the comparison criterion under delegated
+maintainer authority. All four candidates must be evaluated; a failed hard gate
+must not earn a weighted score merely to fill a table. TypeScript/Python have
+two scorecards and 42 measured cells; Rust/Go remain rejected with 42 null/excluded
+cells. The original all-four-success objective remains false. Other criteria,
+weights, candidate sources and historical results are unchanged. The earlier
+[October 26 review](../release/0.4-readiness-review.md) retains its original
+`not-ready` result under the earlier wording. Architecture acceptance and release
+publication remain separate decisions.
 
 Non-goals:
 

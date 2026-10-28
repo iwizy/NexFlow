@@ -1,0 +1,209 @@
+{
+  "task": "NF-103",
+  "recordedAt": "2026-10-26T09:55:28.869Z",
+  "assessmentSourceRevision": "1c3ca2566b10f25fdef88116dbb87eed22bdb838",
+  "rawRecord": "advisories.json.gz",
+  "rawUncompressedSha256": "e84da02efef587bc42277fb262658391e113d8d1ef41533ecf66a4504cec7815",
+  "scannerPath": "scripts/runtime-supply-chain-repaired-scan.mjs",
+  "scannerSha256": "7fa671e4c60949367116692a37d245d3fc58a6d870eb1f31a6ca65b85dc82031",
+  "inventoryRefreshed": false,
+  "graphs": [
+    {
+      "candidate": "typescript",
+      "inventoryPath": "evaluation/supply-chain/2026-10-15-repaired/typescript/inventory.json",
+      "inventorySha256": "1593e2c92e9008cecb11538139c5404d8528888effdd1a7154f4b8571df5163a",
+      "previousScanPath": "evaluation/supply-chain/2026-10-15-repaired/typescript/advisories.json",
+      "previousScanSha256": "d052a650a01b921d8f932d719e422fb1da2be3ff39ffdf2131077ff513b1b05a",
+      "status": "completed",
+      "queryCount": 10,
+      "previousAdvisoryCount": 0,
+      "currentAdvisoryCount": 4,
+      "newIds": [
+        "GHSA-333x-w4r6-6crp",
+        "GHSA-w74x-v6f9-j3xg",
+        "GHSA-wjr9-j795-jxcr",
+        "GHSA-xhq7-xmqj-769h"
+      ],
+      "removedIds": []
+    },
+    {
+      "candidate": "python",
+      "inventoryPath": "evaluation/supply-chain/2026-10-15-repaired/python/inventory.json",
+      "inventorySha256": "54790143c3c19808e0ce8d800a478236f944e1736eed501941e5ef7166b1b14b",
+      "previousScanPath": "evaluation/supply-chain/2026-10-15-repaired/python/advisories.json",
+      "previousScanSha256": "2f72ea19b14664b05f65dd82d483cf690f0bb6fbf81c182df036e40659f7832c",
+      "status": "completed",
+      "queryCount": 26,
+      "previousAdvisoryCount": 0,
+      "currentAdvisoryCount": 0,
+      "newIds": [],
+      "removedIds": []
+    },
+    {
+      "candidate": "rust",
+      "inventoryPath": "evaluation/supply-chain/2026-10-15-repaired/rust/inventory.json",
+      "inventorySha256": "fd63341203460c6162d2a96d2e2678548cc554ecc4b2e89e60328a7a70752d00",
+      "previousScanPath": "evaluation/supply-chain/2026-10-15-repaired/rust/advisories.json",
+      "previousScanSha256": "f3be8e5c758e5b560aca724e36ad4560066ec1cfb1f667ed2e4c1bc492f92cab",
+      "status": "completed",
+      "queryCount": 74,
+      "previousAdvisoryCount": 0,
+      "currentAdvisoryCount": 0,
+      "newIds": [],
+      "removedIds": []
+    },
+    {
+      "candidate": "go",
+      "inventoryPath": "evaluation/supply-chain/2026-10-15-repaired/go/inventory.json",
+      "inventorySha256": "2fc4c8931e7e6e7335f9e3e94ced2c862a24d8ff2568d93f0ce3349a0f41b381",
+      "previousScanPath": "evaluation/supply-chain/2026-10-15-repaired/go/advisories.json",
+      "previousScanSha256": "27db32bb9530be074a9e42f397c7c4499743df34cda18fd895ddbaddf6221b67",
+      "status": "completed",
+      "queryCount": 9,
+      "previousAdvisoryCount": 0,
+      "currentAdvisoryCount": 1,
+      "newIds": [
+        "GO-2026-6809"
+      ],
+      "removedIds": []
+    },
+    {
+      "candidate": "tool-npm",
+      "inventoryPath": "evaluation/supply-chain/2026-10-15-repaired/npm-inventory.json",
+      "inventorySha256": "658c58f5aa2fc5a15d10d5bdc1251ef4273d2e6cd72a629b8bcb2c15276feebc",
+      "previousScanPath": "evaluation/supply-chain/2026-10-15-repaired/npm-advisories.json",
+      "previousScanSha256": "d8780881af92a5311dbbc566b8ee77de819cb32e087becd618c92c2d577fe3df",
+      "status": "completed",
+      "queryCount": 146,
+      "previousAdvisoryCount": 0,
+      "currentAdvisoryCount": 2,
+      "newIds": [
+        "GHSA-4qv8-2p9j-2685",
+        "GHSA-xjj6-f33q-929c"
+      ],
+      "removedIds": []
+    },
+    {
+      "candidate": "tool-pip",
+      "inventoryPath": "evaluation/supply-chain/2026-10-15-repaired/pip-inventory.json",
+      "inventorySha256": "6b39279184611ed07a8b0d873ca0822d14c6f9b535856eeb5b920dba995b5d4a",
+      "previousScanPath": "evaluation/supply-chain/2026-10-15-repaired/pip-advisories.json",
+      "previousScanSha256": "a5e4149c2b1014207d4df0389d81481fde9da0a1f1649c5e7301604ae1a4196a",
+      "status": "completed",
+      "queryCount": 19,
+      "previousAdvisoryCount": 12,
+      "currentAdvisoryCount": 15,
+      "newIds": [
+        "GHSA-6q48-6c7w-9gw2",
+        "GHSA-xmj3-9gf7-h52w",
+        "PYSEC-2026-4320"
+      ],
+      "removedIds": []
+    },
+    {
+      "candidate": "tool-cargo",
+      "inventoryPath": "evaluation/supply-chain/2026-10-15-repaired/cargo-inventory.json",
+      "inventorySha256": "ca5c3a858e3f46f27126ad361b3955a033ddc5353bae1625d622566fe545c29e",
+      "previousScanPath": "evaluation/supply-chain/2026-10-15-repaired/cargo-advisories.json",
+      "previousScanSha256": "d975ab8426e7edb464167810e64645712226c62749437adac86c996bc5c13bbd",
+      "status": "completed",
+      "queryCount": 523,
+      "previousAdvisoryCount": 13,
+      "currentAdvisoryCount": 17,
+      "newIds": [
+        "RUSTSEC-2026-0382",
+        "RUSTSEC-2026-0385",
+        "RUSTSEC-2026-0386",
+        "RUSTSEC-2026-0387"
+      ],
+      "removedIds": []
+    },
+    {
+      "candidate": "tool-goCompiler",
+      "inventoryPath": "evaluation/supply-chain/2026-10-15-repaired/goCompiler-inventory.json",
+      "inventorySha256": "3574d74de61a0cf9f40c2c774ba0f30d9b8807e5c82ef7f6bf9e0fd989815553",
+      "previousScanPath": "evaluation/supply-chain/2026-10-15-repaired/goCompiler-advisories.json",
+      "previousScanSha256": "e371a04a84d8ec31ba8a0b555df6764a06edbf9833f156582467ab59b6bf8384",
+      "status": "completed",
+      "queryCount": 15,
+      "previousAdvisoryCount": 14,
+      "currentAdvisoryCount": 14,
+      "newIds": [],
+      "removedIds": []
+    },
+    {
+      "candidate": "tool-rustCompiler",
+      "inventoryPath": "evaluation/supply-chain/2026-10-15-repaired/rustCompiler-inventory.json",
+      "inventorySha256": "291653b40fb10990a2136a263c46c740f95fab84521111c843daac3bdc1bb39a",
+      "previousScanPath": "evaluation/supply-chain/2026-10-15-repaired/rustCompiler-advisories.json",
+      "previousScanSha256": "29a4be65ed6cbd066cb5cbcf339db482db779afbe56416e35cc6086966f78a2a",
+      "status": "completed",
+      "queryCount": 1455,
+      "previousAdvisoryCount": 59,
+      "currentAdvisoryCount": 69,
+      "newIds": [
+        "RUSTSEC-2026-0367",
+        "RUSTSEC-2026-0368",
+        "RUSTSEC-2026-0369",
+        "RUSTSEC-2026-0374",
+        "RUSTSEC-2026-0381",
+        "RUSTSEC-2026-0382",
+        "RUSTSEC-2026-0383",
+        "RUSTSEC-2026-0385",
+        "RUSTSEC-2026-0386",
+        "RUSTSEC-2026-0387"
+      ],
+      "removedIds": []
+    }
+  ],
+  "queryCount": 2277,
+  "advisoryRowsAcrossGraphs": 122,
+  "countsAreUniqueVulnerabilities": false,
+  "rootAudit": {
+    "path": "npm-audit.json",
+    "exitCode": 1,
+    "moderatePackages": 1,
+    "advisoryReferences": 4
+  },
+  "disposition": "release-blocked-pending-new-id-applicability-review-or-authorized-repair",
+  "blocker": "NF-103-02",
+  "selectedCandidate": {
+    "name": "typescript",
+    "affectedPackage": "fast-uri",
+    "version": "3.1.8",
+    "upstreamPatched3x": "3.1.9",
+    "finding": "Exact affected-version match; current validator exploit reachability not established. Offline operation alone does not dispose URI/reference integrity concerns.",
+    "primarySources": [
+      "https://github.com/fastify/fast-uri/security/advisories/GHSA-333x-w4r6-6crp",
+      "https://github.com/fastify/fast-uri/security/advisories/GHSA-w74x-v6f9-j3xg",
+      "https://github.com/fastify/fast-uri/security/advisories/GHSA-wjr9-j795-jxcr",
+      "https://github.com/fastify/fast-uri/security/advisories/GHSA-xhq7-xmqj-769h"
+    ]
+  },
+  "otherNewMatches": [
+    {
+      "graph": "tool-npm",
+      "package": "undici",
+      "version": "6.29.0",
+      "patchedBranchVersion": "6.29.1",
+      "severity": "Includes upstream HIGH; severity is upstream, not demonstrated NexFlow reachability.",
+      "source": "https://github.com/nodejs/undici/security/advisories/GHSA-xjj6-f33q-929c"
+    },
+    {
+      "graph": "go",
+      "package": "stdlib",
+      "version": "1.27.2",
+      "patchedBranchVersion": "1.27.3",
+      "source": "https://go.dev/issue/82345"
+    }
+  ],
+  "olderDispositions": "Retained as dated offline/source-superset assessments only; no automatic approval of newly published IDs.",
+  "unrefreshed": [
+    "Native CPE/OS/backport and runtime binary closure",
+    "Independent dependency source audit",
+    "Exploit reachability",
+    "Unpublished advisories",
+    "Legal redistribution approval"
+  ],
+  "fixesApplied": false
+}

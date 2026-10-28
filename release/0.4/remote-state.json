@@ -1,0 +1,95 @@
+{
+  "task": "NF-103",
+  "recordedAt": "2026-10-26T09:55:28.869Z",
+  "assessmentSourceRevision": "1c3ca2566b10f25fdef88116dbb87eed22bdb838",
+  "repository": {
+    "owner": "iwizy",
+    "name": "NexFlow",
+    "url": "https://github.com/iwizy/NexFlow",
+    "visibility": "public",
+    "defaultBranch": "main",
+    "authenticatedMaintainerAdminPermissionObserved": true
+  },
+  "mainWorkflows": [
+    {
+      "conclusion": "success",
+      "createdAt": "2026-10-26T02:59:43Z",
+      "databaseId": 40261831408,
+      "headSha": "1c3ca2566b10f25fdef88116dbb87eed22bdb838",
+      "status": "completed",
+      "updatedAt": "2026-10-26T02:59:57Z",
+      "url": "https://github.com/iwizy/NexFlow/actions/runs/40261831408",
+      "workflowName": "Comparable Measurement Evidence"
+    },
+    {
+      "conclusion": "success",
+      "createdAt": "2026-10-26T02:59:43Z",
+      "databaseId": 40261831365,
+      "headSha": "1c3ca2566b10f25fdef88116dbb87eed22bdb838",
+      "status": "completed",
+      "updatedAt": "2026-10-26T03:00:10Z",
+      "url": "https://github.com/iwizy/NexFlow/actions/runs/40261831365",
+      "workflowName": "Schema Validation"
+    },
+    {
+      "conclusion": "success",
+      "createdAt": "2026-10-26T02:59:43Z",
+      "databaseId": 40261831366,
+      "headSha": "1c3ca2566b10f25fdef88116dbb87eed22bdb838",
+      "status": "completed",
+      "updatedAt": "2026-10-26T03:00:17Z",
+      "url": "https://github.com/iwizy/NexFlow/actions/runs/40261831366",
+      "workflowName": "Review Governance"
+    },
+    {
+      "conclusion": "success",
+      "createdAt": "2026-10-26T02:59:43Z",
+      "databaseId": 40261831427,
+      "headSha": "1c3ca2566b10f25fdef88116dbb87eed22bdb838",
+      "status": "completed",
+      "updatedAt": "2026-10-26T03:00:51Z",
+      "url": "https://github.com/iwizy/NexFlow/actions/runs/40261831427",
+      "workflowName": "CLI Prototype"
+    }
+  ],
+  "releases": [
+    {
+      "isDraft": false,
+      "isPrerelease": false,
+      "name": "NexFlow v0.3.0",
+      "publishedAt": "2026-10-01T11:17:24Z",
+      "tagName": "v0.3.0"
+    },
+    {
+      "isDraft": false,
+      "isPrerelease": false,
+      "name": "NexFlow v0.2.0",
+      "publishedAt": "2026-10-01T11:07:04Z",
+      "tagName": "v0.2.0"
+    },
+    {
+      "isDraft": false,
+      "isPrerelease": false,
+      "name": "NexFlow v0.1.0",
+      "publishedAt": "2026-08-23T15:22:30Z",
+      "tagName": "v0.1.0"
+    },
+    {
+      "isDraft": false,
+      "isPrerelease": true,
+      "name": "NexFlow v0.1.0-rc.1",
+      "publishedAt": "2026-08-23T15:14:55Z",
+      "tagName": "v0.1.0-rc.1"
+    }
+  ],
+  "architecturePr": {
+    "number": 127,
+    "state": "MERGED",
+    "head": "0f6f9a863e62eaa53032fc5a28c4ac7c4de2e7b1",
+    "merge": "1c3ca2566b10f25fdef88116dbb87eed22bdb838",
+    "mergedAt": "2026-10-26T02:59:42Z",
+    "url": "https://github.com/iwizy/NexFlow/pull/127"
+  },
+  "openPullRequestsBeforeAssessment": [],
+  "scope": "Read-only service snapshot, not publisher signature, personal release consent or future tag/asset verification."
+}

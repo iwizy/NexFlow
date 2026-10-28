@@ -8,6 +8,22 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Added
 
+- Completed NF-103 readiness with a separate exact-candidate `ready-with-notes`
+  decision for a source/decision/evidence milestone. Explicitly amended only
+  the eligible-candidate comparison criterion and dispositioned all 40 new
+  graph/advisory inputs from the October 28 refresh. Rejected Rust/Go, null
+  metrics, affected upstream versions and historical not-ready records remain
+  unchanged. No package, executable asset, tag, release, version change or
+  runtime implementation is authorized by this readiness result.
+
+- Assessed all eight `0.4` release-plan criteria at an immutable source revision,
+  with exact architecture/CI receipts, 66 passed maintenance checks, fresh
+  nine-graph advisory responses, source-only distribution boundaries, checksums
+  and unpublished release notes. Outcome remains not-ready: the four-candidate
+  comparison criterion and new advisory dispositions are owned follow-ups.
+  Scoped RFC-0025 acceptance and historical failures remain unchanged; no
+  candidate repair, release, package, tag or version change is introduced.
+
 - Collected NF-102-02 current-source supply-chain/provenance evidence: four
   SBOMs, full selected Go graph, external tooling/native inventories, dated
   advisory and license review, and two clean offline builds per candidate.

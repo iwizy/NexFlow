@@ -48,6 +48,15 @@ evidence. Scope approval does not replace final candidate checks. The
 `0.4` architecture readiness ahead of `0.5` tooling publication; later task
 completion does not skip these gates.
 
+The [October 28 completion review](release/0.4-completion-review.md) records
+**ready-with-notes** for a `0.4` repository source/decision/evidence milestone.
+The explicit eligible-candidate amendment and per-input advisory dispositions
+close its two previous blockers; the earlier
+[October 26 assessment](release/0.4-readiness-review.md) remains historical
+`not-ready` evidence. RFC-0025 retains its developer/design scope. A tag/release
+requires a separate command; no installable CLI, binary package or version bump
+is introduced by readiness completion.
+
 Preparation for a possible **`0.5` reference tooling beta** is separate from
 that current release line. The [beta readiness checklist](docs/0.5-beta-readiness-checklist.md)
 defines future review gates. The [beta preparation checkpoint](docs/0.5-beta-checkpoint.md)

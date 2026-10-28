@@ -27,7 +27,12 @@ semantic consistency released in order. The `0.3` scope and bounded manual
 expectations received maintainer approval and separate exact-candidate checks.
 The [release reviews](../release/README.md) preserve partial semantics, Draft
 RFCs, and blocked architecture/tooling claims. The next milestone is to close
-the `0.4` architecture decision gates; no runtime implementation is implied.
+the `0.4` publication step after the scoped RFC-0025 architecture decision. The
+[October 28 completion review](../release/0.4-completion-review.md) records
+`ready-with-notes` for repository source/decision/evidence publication after an
+explicit comparison-criterion amendment and current advisory dispositions.
+The earlier `not-ready` assessment remains historical. A publication command,
+tooling packages and runtime implementation remain separate work.
 
 The dated [0.2 validation/conformance checkpoint](0.2-validation-checkpoint.md)
 consolidates later source evidence and remaining gaps. It does not rewrite the

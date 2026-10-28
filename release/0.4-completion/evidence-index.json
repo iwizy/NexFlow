@@ -1,0 +1,221 @@
+{
+  "task": "NF-103-02",
+  "revision": "3027d0885060c7d83d85cf4e9711d38838621dc1",
+  "sourceEntries": [
+    {
+      "path": "SECURITY.md",
+      "sha256": "9a6390d3e001df3000b7da07010029b4eb8c6d65162672fa00ae67199492ea72",
+      "bytes": 2133
+    },
+    {
+      "path": "docs/threat-model.md",
+      "sha256": "17b08942674480b88551b2a915ed9ba6e4eabf164d5275be3160716902fa950c",
+      "bytes": 38048
+    },
+    {
+      "path": "scripts/lib/schema-validation.mjs",
+      "sha256": "3d880549efe41bb6145ffc51e241f6a39b726b297d2c15247e34d2041fb0c56f",
+      "bytes": 5699
+    },
+    {
+      "path": "scripts/lib/manifest-discovery.mjs",
+      "sha256": "4650e59dc76a74f3554700d4514c50902d3d2c5abd9e192d114614e8c6aea05b",
+      "bytes": 20915
+    },
+    {
+      "path": "scripts/validate-schemas.mjs",
+      "sha256": "862f82c3952f24db8ae8e18c4f88f8b9c247dca656ca665246c7c8cdf25d4531",
+      "bytes": 5634
+    },
+    {
+      "path": "evaluation/prototypes/typescript/src/schema.ts",
+      "sha256": "c72902565a7af04d2ce530556377ecef16940f75d923fc0df40f67a745708f8d",
+      "bytes": 4112
+    },
+    {
+      "path": "evaluation/prototypes/typescript/src/library.ts",
+      "sha256": "6e11f3b0ce91c3667500561b856ff0c3e39840e9c9a30e49c37846bb1e8a4d00",
+      "bytes": 6865
+    },
+    {
+      "path": "evaluation/prototypes/typescript/src/public.ts",
+      "sha256": "d7d7afda84a6ebaea2a449c25ba714b3f532d23385dede60637331a22a042ba0",
+      "bytes": 2561
+    },
+    {
+      "path": "evaluation/prototypes/typescript/package.json",
+      "sha256": "cb897e951b432c9df7d17c2152f66009de18b279eb9e0160238f1f18a70d8dbb",
+      "bytes": 523
+    },
+    {
+      "path": "evaluation/prototypes/go/schema.go",
+      "sha256": "ea86ceee9e99638b5553086bebabebd90a1d2d1ae8f0c7c1c8d7987dc3737f70",
+      "bytes": 10531
+    },
+    {
+      "path": "scripts/evaluation-npm-provision.mjs",
+      "sha256": "fe9901c233cb0bce0f36bc455076c9633c98642243db72a60348b43db97177c1",
+      "bytes": 5405
+    },
+    {
+      "path": "scripts/evaluation-python-provision.py",
+      "sha256": "b6654c59b1aa7ea2321134d8834a43305e1229832e9d03cd0923d684aad0fd35",
+      "bytes": 7780
+    },
+    {
+      "path": "scripts/runtime-supply-chain-repaired-rebuild.mjs",
+      "sha256": "68980abe8f02362bdf747c0be051fe0809f2b5448fe5736bbaa815ca4bd13f8f",
+      "bytes": 5822
+    },
+    {
+      "path": "evaluation/supply-chain/2026-10-15-repaired/tool-closure.json",
+      "sha256": "8e314ce932c7bb33b0b92ac66d0ab058b3974860366f0d5edaf381b9203689d2",
+      "bytes": 4601000
+    },
+    {
+      "path": "evaluation/supply-chain/2026-10-15-repaired/disposition.json",
+      "sha256": "a2c1568cd00e6a1d5a227bfc51a04cff0eb35f1dd42e6453532bdd44e434e0ec",
+      "bytes": 188477
+    },
+    {
+      "path": "evaluation/architecture/revised/decision.json",
+      "sha256": "ec8e0ff9f9791b08cd9a3236a1f011e7f4e96a5a3fc9d65c55e78a32f132bfc8",
+      "bytes": 11180
+    },
+    {
+      "path": "evaluation/architecture/revised/review.json",
+      "sha256": "bdbb4439d733ce7be9b8116e48b00bebe9b444a4433318eecedd5ce6e3175af9",
+      "bytes": 17172
+    },
+    {
+      "path": "evaluation/measurement-qualification/summary.json",
+      "sha256": "00dea873866f65606c13971ece52ed4dcd002ee68239ecc12562fcfa1cab8260",
+      "bytes": 55938
+    },
+    {
+      "path": "evaluation/supply-chain/2026-10-15-repaired/typescript/inventory.json",
+      "sha256": "1593e2c92e9008cecb11538139c5404d8528888effdd1a7154f4b8571df5163a",
+      "bytes": 19174
+    },
+    {
+      "path": "evaluation/supply-chain/2026-10-15-repaired/python/inventory.json",
+      "sha256": "54790143c3c19808e0ce8d800a478236f944e1736eed501941e5ef7166b1b14b",
+      "bytes": 39724
+    },
+    {
+      "path": "evaluation/supply-chain/2026-10-15-repaired/rust/inventory.json",
+      "sha256": "fd63341203460c6162d2a96d2e2678548cc554ecc4b2e89e60328a7a70752d00",
+      "bytes": 113458
+    },
+    {
+      "path": "evaluation/supply-chain/2026-10-15-repaired/go/inventory.json",
+      "sha256": "2fc4c8931e7e6e7335f9e3e94ced2c862a24d8ff2568d93f0ce3349a0f41b381",
+      "bytes": 20494
+    },
+    {
+      "path": "evaluation/supply-chain/2026-10-15-repaired/npm-inventory.json",
+      "sha256": "658c58f5aa2fc5a15d10d5bdc1251ef4273d2e6cd72a629b8bcb2c15276feebc",
+      "bytes": 137803
+    },
+    {
+      "path": "evaluation/supply-chain/2026-10-15-repaired/pip-inventory.json",
+      "sha256": "6b39279184611ed07a8b0d873ca0822d14c6f9b535856eeb5b920dba995b5d4a",
+      "bytes": 18225
+    },
+    {
+      "path": "evaluation/supply-chain/2026-10-15-repaired/cargo-inventory.json",
+      "sha256": "ca5c3a858e3f46f27126ad361b3955a033ddc5353bae1625d622566fe545c29e",
+      "bytes": 442822
+    },
+    {
+      "path": "evaluation/supply-chain/2026-10-15-repaired/goCompiler-inventory.json",
+      "sha256": "3574d74de61a0cf9f40c2c774ba0f30d9b8807e5c82ef7f6bf9e0fd989815553",
+      "bytes": 16515
+    },
+    {
+      "path": "evaluation/supply-chain/2026-10-15-repaired/rustCompiler-inventory.json",
+      "sha256": "291653b40fb10990a2136a263c46c740f95fab84521111c843daac3bdc1bb39a",
+      "bytes": 1404774
+    }
+  ],
+  "rawScanSha256": "34361d02f45fb4e1c5c723bb945a6f4105e1b7bf9af7f3cff9c7f057a5f2f5be",
+  "rawScanCompressedSha256": "90a29e8a765459064fe4f3240af341460f3add5a899c9fb704d1bdad4b755e88",
+  "queryCount": 2277,
+  "graphs": [
+    {
+      "candidate": "typescript",
+      "queryCount": 10,
+      "advisoryCount": 4,
+      "inventoryPath": "evaluation/supply-chain/2026-10-15-repaired/typescript/inventory.json",
+      "inventorySha256": "1593e2c92e9008cecb11538139c5404d8528888effdd1a7154f4b8571df5163a"
+    },
+    {
+      "candidate": "python",
+      "queryCount": 26,
+      "advisoryCount": 0,
+      "inventoryPath": "evaluation/supply-chain/2026-10-15-repaired/python/inventory.json",
+      "inventorySha256": "54790143c3c19808e0ce8d800a478236f944e1736eed501941e5ef7166b1b14b"
+    },
+    {
+      "candidate": "rust",
+      "queryCount": 74,
+      "advisoryCount": 0,
+      "inventoryPath": "evaluation/supply-chain/2026-10-15-repaired/rust/inventory.json",
+      "inventorySha256": "fd63341203460c6162d2a96d2e2678548cc554ecc4b2e89e60328a7a70752d00"
+    },
+    {
+      "candidate": "go",
+      "queryCount": 9,
+      "advisoryCount": 1,
+      "inventoryPath": "evaluation/supply-chain/2026-10-15-repaired/go/inventory.json",
+      "inventorySha256": "2fc4c8931e7e6e7335f9e3e94ced2c862a24d8ff2568d93f0ce3349a0f41b381"
+    },
+    {
+      "candidate": "tool-npm",
+      "queryCount": 146,
+      "advisoryCount": 5,
+      "inventoryPath": "evaluation/supply-chain/2026-10-15-repaired/npm-inventory.json",
+      "inventorySha256": "658c58f5aa2fc5a15d10d5bdc1251ef4273d2e6cd72a629b8bcb2c15276feebc"
+    },
+    {
+      "candidate": "tool-pip",
+      "queryCount": 19,
+      "advisoryCount": 16,
+      "inventoryPath": "evaluation/supply-chain/2026-10-15-repaired/pip-inventory.json",
+      "inventorySha256": "6b39279184611ed07a8b0d873ca0822d14c6f9b535856eeb5b920dba995b5d4a"
+    },
+    {
+      "candidate": "tool-cargo",
+      "queryCount": 523,
+      "advisoryCount": 22,
+      "inventoryPath": "evaluation/supply-chain/2026-10-15-repaired/cargo-inventory.json",
+      "inventorySha256": "ca5c3a858e3f46f27126ad361b3955a033ddc5353bae1625d622566fe545c29e"
+    },
+    {
+      "candidate": "tool-goCompiler",
+      "queryCount": 15,
+      "advisoryCount": 16,
+      "inventoryPath": "evaluation/supply-chain/2026-10-15-repaired/goCompiler-inventory.json",
+      "inventorySha256": "3574d74de61a0cf9f40c2c774ba0f30d9b8807e5c82ef7f6bf9e0fd989815553"
+    },
+    {
+      "candidate": "tool-rustCompiler",
+      "queryCount": 1455,
+      "advisoryCount": 74,
+      "inventoryPath": "evaluation/supply-chain/2026-10-15-repaired/rustCompiler-inventory.json",
+      "inventorySha256": "291653b40fb10990a2136a263c46c740f95fab84521111c843daac3bdc1bb39a"
+    }
+  ],
+  "externalNpmImporter": {
+    "file": "node_modules/node-gyp/lib/download.js",
+    "sha256": "e136afe6ae2828114abf0ddae296d1fdd0c8e418922f7f6f6363bc51761db5fe",
+    "usedByQualifiedInstall": false,
+    "proof": "Ignore-scripts installation followed by pure TypeScript compilation; matched external Undici importer belongs to node-gyp native-header downloader."
+  },
+  "trackedPayloadInspection": {
+    "revision": "3027d0885060c7d83d85cf4e9711d38838621dc1",
+    "trackedFiles": 1048,
+    "elfPeMachOHeaders": 0,
+    "scriptExecutionSafetyClaimed": false
+  }
+}

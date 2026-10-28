@@ -1,0 +1,151 @@
+{
+  "recordVersion": 1,
+  "task": "NF-103",
+  "recordedAt": "2026-10-26T09:55:28.869Z",
+  "releaseTarget": "v0.4.0",
+  "assessmentSourceRevision": "1c3ca2566b10f25fdef88116dbb87eed22bdb838",
+  "outcome": "not-ready",
+  "taskComplete": false,
+  "review": {
+    "maintainer": "Alexander Agafonov",
+    "mode": "single-maintainer",
+    "basis": "Explicit instruction to execute NF-103; technical preparation and self-review disclosed. No separate release approval inferred.",
+    "personalReviewClaimed": false,
+    "independenceClaimed": false,
+    "signatureInvented": false
+  },
+  "criteria": [
+    {
+      "id": "R1",
+      "status": "passed",
+      "criterion": "Complete evaluation criteria",
+      "evidence": "../0.4-readiness-review.md",
+      "blockerIds": []
+    },
+    {
+      "id": "R2",
+      "status": "blocked",
+      "criterion": "Four comparable candidate reports, weighted scorecards and target measurements",
+      "evidence": "../0.4-readiness-review.md",
+      "blockerIds": [
+        "NF-103-01"
+      ]
+    },
+    {
+      "id": "R3",
+      "status": "passed",
+      "criterion": "Bounded CLI and runtime separation",
+      "evidence": "../0.4-readiness-review.md",
+      "blockerIds": []
+    },
+    {
+      "id": "R4",
+      "status": "passed",
+      "criterion": "Documented extension loading and sandbox expectations",
+      "evidence": "../0.4-readiness-review.md",
+      "blockerIds": []
+    },
+    {
+      "id": "R5",
+      "status": "passed",
+      "criterion": "Explicit authority and destructive-action boundaries",
+      "evidence": "../0.4-readiness-review.md",
+      "blockerIds": []
+    },
+    {
+      "id": "R6",
+      "status": "passed",
+      "criterion": "Documented packaging/distribution criteria",
+      "evidence": "../0.4-readiness-review.md",
+      "blockerIds": []
+    },
+    {
+      "id": "R7",
+      "status": "passed",
+      "criterion": "Described conformance strategy",
+      "evidence": "../0.4-readiness-review.md",
+      "blockerIds": []
+    },
+    {
+      "id": "R8",
+      "status": "passed",
+      "criterion": "Exact accepted developer/design architecture review",
+      "evidence": "../0.4-readiness-review.md",
+      "blockerIds": []
+    }
+  ],
+  "sourceChecks": {
+    "path": "source-checks.json",
+    "passed": 66,
+    "failed": 0
+  },
+  "architecture": {
+    "status": "Accepted",
+    "rfc": "rfcs/RFC-0025-reference-implementation-architecture.md",
+    "reviewedRevision": "d0f3949543faff32bc579b243e92c177392dab42",
+    "reviewRecordRevision": "4a1e2c350bf59be06a7ef9177bf4015ba61641f2",
+    "decisionRevision": "0f6f9a863e62eaa53032fc5a28c4ac7c4de2e7b1",
+    "mergeRevision": "1c3ca2566b10f25fdef88116dbb87eed22bdb838",
+    "scope": "unsigned developer validation and future host interface design"
+  },
+  "comparison": {
+    "specificationRevision": "1d1fa238ab5729a79bee9389d5c66cfd20a61256",
+    "prototypeRevision": "23e576efd0dda0f00f5462eda9295c1ae4ec8fee",
+    "eligible": [
+      "typescript",
+      "python"
+    ],
+    "rejectedUnscored": [
+      "rust",
+      "go"
+    ],
+    "measuredCells": 42,
+    "excludedCells": 42,
+    "allFourComparable": false,
+    "originalAll84SuccessfulCriterionSatisfied": false
+  },
+  "releaseChecks": [
+    {
+      "id": "repository-checks",
+      "status": "passed"
+    },
+    {
+      "id": "fresh-dependency-disposition",
+      "status": "blocked",
+      "blockerIds": [
+        "NF-103-02"
+      ]
+    }
+  ],
+  "openBlockers": [
+    {
+      "id": "NF-103-01",
+      "owner": "Alexander Agafonov",
+      "scope": "Close the unchanged four-candidate release criterion through separately scoped repair/requalification or an explicit forward release-plan amendment; rejected results remain unscored."
+    },
+    {
+      "id": "NF-103-02",
+      "owner": "Alexander Agafonov",
+      "scope": "Disposition every new advisory on exact inputs or authorize repair and requalify affected evidence; no unchanged old scan or generic offline argument is approval."
+    }
+  ],
+  "proposedDistribution": {
+    "format": "repository-source-snapshot-plus-notes-evidence-checksums",
+    "executableAssets": false,
+    "evaluationCapsuleAssets": false,
+    "embeddedRuntime": false,
+    "projectNativeSigning": "not-applicable-to-proposed-assets",
+    "signingPerformed": false,
+    "notarizationPerformed": false,
+    "trustedNativePublisherClaimed": false,
+    "transportTrust": "GitHub account and HTTPS; hashes are integrity checks, not independent publisher signatures.",
+    "sourceContainsExperimentalCodeAndLocks": true
+  },
+  "maintainerReleaseDecision": "not-granted-technical-blockers-open",
+  "publicationAuthorized": false,
+  "tagAuthorized": false,
+  "packagePublicationAuthorized": false,
+  "versionChanges": false,
+  "runtimeImplementationAuthorized": false,
+  "finalCandidateReassessmentRequired": true
+}

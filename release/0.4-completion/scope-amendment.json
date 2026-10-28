@@ -1,0 +1,34 @@
+{
+  "task": "NF-103-01",
+  "recordedAt": "2026-10-28",
+  "maintainer": "Alexander Agafonov",
+  "decisionMode": "delegated-technical-scope-decision",
+  "authority": "The maintainer requests completion of NF-103 and its remaining work in this conversation, following standing delegation of technical decisions. This record explicitly chooses the eligible-candidate amendment; it does not claim a separately received personal review or release command.",
+  "reviewedPreviousRevision": "3027d0885060c7d83d85cf4e9711d38838621dc1",
+  "path": "docs/release-plan.md",
+  "criterion": "R2",
+  "outcome": "adopted-forward-amendment",
+  "oldText": "TypeScript, Python, Rust, and Go have comparable hard-gate results, weighted scorecards, target measurements, and pinned evidence from one specification revision",
+  "newText": "TypeScript, Python, Rust, and Go have source-bound hard-gate assessments on one specification revision; every eligible candidate has weighted scorecards and comparable target measurements, while rejected candidates retain their failed gates, explicit exclusion reasons and unscored/null measurements",
+  "rationale": "All four must be assessed. Scoring a rejected candidate contradicts the unchanged hard-gate framework; repairing rejected implementations solely to populate a release table is unnecessary for an evidence-based architecture decision. Retain complete rejections and measure eligible candidates without pretending the original all-four-success objective passed.",
+  "eligible": [
+    "typescript",
+    "python"
+  ],
+  "rejectedUnscored": [
+    "rust",
+    "go"
+  ],
+  "measuredCells": 42,
+  "excludedCells": 42,
+  "allFourComparable": false,
+  "originalAll84SuccessfulCriterionSatisfied": false,
+  "originalR2Satisfied": false,
+  "weightsChanged": false,
+  "hardGatesChanged": false,
+  "candidateSourcesChanged": false,
+  "personalReviewClaimed": false,
+  "independenceClaimed": false,
+  "publicationAuthorized": false,
+  "runtimeImplementationAuthorized": false
+}

@@ -1,0 +1,25 @@
+name: Release Readiness Evidence
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  readiness-evidence:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '20'
+      - name: Verify exact-source assessment, advisory integrity and open blockers
+        run: node scripts/release-0-4-readiness-smoke.mjs
+      - name: Verify forward scope, advisory dispositions and exact-candidate closure
+        run: node scripts/release-0-4-completion-smoke.mjs

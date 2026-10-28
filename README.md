@@ -16,9 +16,10 @@ It is **not** an AI coding agent, an LLM API wrapper, a chat application, or a p
 ## Status
 
 Latest published release: [GitHub release history](https://github.com/iwizy/NexFlow/releases/latest).
-Current release: [**`v0.3.0`**](https://github.com/iwizy/NexFlow/releases/tag/v0.3.0),
-the semantic-consistency milestone. It follows the separately
-published and verified `v0.2.0` validation milestone and `v0.1.0` foundation.
+Current release: [**`v0.4.0`**](https://github.com/iwizy/NexFlow/releases/tag/v0.4.0),
+the Runtime Decision Readiness source/decision/evidence milestone, published and
+download-verified on 2026-10-28. It follows the separately published `v0.3.0`
+semantic, `v0.2.0` validation and `v0.1.0` foundation milestones.
 Manifest `specVersion` remains `"0.1"`.
 
 The [`v0.1.0` release scope](docs/0.1-scope.md) remains frozen as the evaluated
@@ -40,7 +41,7 @@ adds a later exact-source assessment and reproducible checks. It preserves the
 published release history, partial semantics and draft conformance boundaries;
 it is not another release or a new support claim.
 
-The published release sequence is **`0.1` → `0.2` → `0.3`**, with separate
+The published release sequence is **`0.1` → `0.2` → `0.3` → `0.4`**, with separate
 [validation/conformance](release/0.2-release-review.md) and
 [semantic-consistency](release/0.3-release-review.md) reviews and commit-bound
 evidence. Scope approval does not replace final candidate checks. The
@@ -53,9 +54,13 @@ The [October 28 completion review](release/0.4-completion-review.md) records
 The explicit eligible-candidate amendment and per-input advisory dispositions
 close its two previous blockers; the earlier
 [October 26 assessment](release/0.4-readiness-review.md) remains historical
-`not-ready` evidence. RFC-0025 retains its developer/design scope. A tag/release
-requires a separate command; no installable CLI, binary package or version bump
-is introduced by readiness completion.
+`not-ready` evidence. RFC-0025 retains its developer/design scope. Readiness
+completion itself did not grant publication or introduce an installable CLI,
+binary package or version bump. The subsequent explicit publication
+instruction has now been executed: [publication verification](release/0.4-publication.md)
+binds the tag, five downloaded assets and all 1,059 source-archive files to
+the exact checked release commit. The earlier readiness records keep their
+original authority boundaries and timestamps.
 
 Preparation for a possible **`0.5` reference tooling beta** is separate from
 that current release line. The [beta readiness checklist](docs/0.5-beta-readiness-checklist.md)
@@ -90,8 +95,8 @@ states, not synonyms for the implementation evidence summarized below.
 | Extension registry model | Standalone `0.1-draft` metadata schema, fictional example, and focused checks; no registry service or published snapshot | `npm run extension-registry-smoke`, [Extension Registry Model](docs/extension-registry.md) |
 | Event interoperability | Specified as CloudEvents and OpenTelemetry EventRecord mappings; no exporter or transport | [Event Interoperability](docs/event-interoperability.md), [Event Model](docs/events.md) |
 | Conformance claim format | Implemented as a standalone schema, profile-qualified YAML and Markdown templates, and 37 cataloged claim-format cases; a revision-pinned repository-validator statement remains draft and partial, not an `NF-CLI` claim | `npm run conformance-claim-smoke`, [Conformance Fixtures](fixtures/conformance/), [Draft Validator Statement](conformance/REPOSITORY-VALIDATOR-CLAIM.md), [Conformance Claims](docs/conformance-claims.md) |
-| Candidate readiness record | Implemented as a standalone eight-gate schema and non-claiming `0.1` template; evaluated evidence is published for `v0.1.0`, `v0.2.0`, and `v0.3.0` | `npm run candidate-readiness-smoke`, [0.1 Readiness Checklist](docs/readiness-checklist.md), [Release Evidence](release/README.md) |
-| Current milestone | Published `0.3`; RFC-0025 selects the developer architecture. `0.4` release readiness and `0.5` public tooling remain separate, unapproved work | [Changelog](CHANGELOG.md), [Release Reviews](release/README.md), [Roadmap](docs/roadmap.md) |
+| Candidate readiness record | Standalone `0.1` schema/template and milestone-specific evaluated evidence for published `v0.1.0` through `v0.4.0`; the generic schema alone does not approve later milestones | `npm run candidate-readiness-smoke`, [0.1 Readiness Checklist](docs/readiness-checklist.md), [Release Evidence](release/README.md) |
+| Current milestone | Published and verified `0.4` source/decision/evidence milestone; RFC-0025 selects the bounded developer architecture. `0.5` public tooling remains separate work | [Publication Verification](release/0.4-publication.md), [Changelog](CHANGELOG.md), [Release Reviews](release/README.md), [Roadmap](docs/roadmap.md) |
 | Semantic reference checks | Partial repository smoke coverage | `npm run semantic-smoke`, [Validation](docs/validation.md) |
 | Governance and RFC process | Implemented in documentation | [Governance](docs/governance.md), [RFCs](rfcs/README.md) |
 | Foundational model changes | ActorSet, compact AgentSet, and authoritative unique-active-definition slices implemented; RFCs remain Draft | [Actor Model](docs/actor-model.md), [Effective Agent Configuration](docs/effective-agent-configuration.md), [Foundational Model Review](rfcs/reviews/2026-07-foundational-model-review.md) |

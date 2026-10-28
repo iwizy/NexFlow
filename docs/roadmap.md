@@ -20,19 +20,24 @@ adds a provider-neutral policy profile and offline validation evidence.
 Provider bindings, live issue operations, synchronization, and inbound events
 remain unimplemented; this does not advance a release or CLI readiness gate.
 
-## Current Checkpoint: `v0.3.0`
+## Current Checkpoint: `v0.4.0`
 
-Status: `v0.1.0` foundation, `v0.2.0` validation/conformance, and `v0.3.0`
-semantic consistency released in order. The `0.3` scope and bounded manual
+Status: `v0.1.0` foundation, `v0.2.0` validation/conformance, `v0.3.0`
+semantic consistency and `v0.4.0` Runtime Decision Readiness released in order.
+The [October 28 publication receipt](../release/0.4-publication.md) verifies
+the exact tag, five downloaded assets and complete source archive. This is a
+repository source/decision/evidence release, not an installed CLI or runtime.
+The earlier `0.3` scope and bounded manual
 expectations received maintainer approval and separate exact-candidate checks.
 The [release reviews](../release/README.md) preserve partial semantics, Draft
-RFCs, and blocked architecture/tooling claims. The next milestone is to close
-the `0.4` publication step after the scoped RFC-0025 architecture decision. The
+RFCs, and blocked architecture/tooling claims. The next release line is the
+separately gated `0.5` Reference Tooling Preview. The
 [October 28 completion review](../release/0.4-completion-review.md) records
 `ready-with-notes` for repository source/decision/evidence publication after an
 explicit comparison-criterion amendment and current advisory dispositions.
-The earlier `not-ready` assessment remains historical. A publication command,
-tooling packages and runtime implementation remain separate work.
+The earlier `not-ready` assessment remains historical. The later explicit
+publication instruction has been executed; tooling packages and runtime
+implementation remain separate work.
 
 The dated [0.2 validation/conformance checkpoint](0.2-validation-checkpoint.md)
 consolidates later source evidence and remaining gaps. It does not rewrite the

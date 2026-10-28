@@ -72,13 +72,23 @@ schema alone does not complete them.
 
 ## 0.4 Runtime Decision Readiness
 
-Current preparation: the [October 28 completion review](0.4-completion-review.md)
+Published and verified as [v0.4.0](https://github.com/iwizy/NexFlow/releases/tag/v0.4.0)
+on 2026-10-28, after the explicit merge/publication instruction. The
+[publication receipt](0.4-publication.md) binds release commit
+`5cb33caad080f61808949c1de17df2879da9996f`, 68 exact-source checks, five main CI
+workflows, all five downloaded assets and all 1,059 source-archive files.
+Assets contain source-bound decision/evidence/checksums; no executable package
+or runtime is published. Historical readiness records keep their original bytes.
+
+Prepublication preparation: the [October 28 completion review](0.4-completion-review.md)
 and [exact-candidate record](0.4-completion/record.json) close NF-103 with
 `ready-with-notes` for a repository source/decision/evidence milestone. Both
 previous blockers have explicit dispositions; rejected candidates and upstream
-affected versions stay visible. [Current draft notes](0.4-completion-notes.md)
-describe the offered format and limits. Tag/release/package publication requires
-a separate command and no version is changed here.
+affected versions stay visible. [Prepublication draft notes](0.4-completion-notes.md)
+describe the offered format and limits. Those records did not grant publication;
+the subsequent explicit instruction and actual service/download verification are
+recorded in the separate publication receipt. Independent version domains remain
+unchanged, and package registry publication is not included.
 
 `node scripts/release-0-4-completion-smoke.mjs` verifies the forward comparison
 amendment, every new graph/advisory input, exact code/inventory bindings,

@@ -1,0 +1,110 @@
+{
+  "recordVersion": 1,
+  "release": "v0.4.0",
+  "url": "https://github.com/iwizy/NexFlow/releases/tag/v0.4.0",
+  "releaseId": 426587231,
+  "publishedAt": "2026-10-28T11:32:55Z",
+  "releaseCommit": "5cb33caad080f61808949c1de17df2879da9996f",
+  "tagObject": "82c698ca67f789654c686c18ce5d66b5b51d5931",
+  "mergedPullRequest": 128,
+  "mergedPrHead": "574c60f8073d34cafb97b6991df7d34d41914f7d",
+  "author": "iwizy",
+  "draft": false,
+  "prerelease": false,
+  "outcome": "published-and-download-verified",
+  "readiness": "ready-with-notes",
+  "publicationAuthority": "Explicit maintainer instruction on 2026-10-28 to merge and publish v0.4.0.",
+  "scope": "Repository source, decision/evidence and checksums; no executable asset, capsule, embedded runtime or package registry publication.",
+  "localChecks": 68,
+  "mainCi": [
+    {
+      "conclusion": "success",
+      "databaseId": 40679983724,
+      "headSha": "5cb33caad080f61808949c1de17df2879da9996f",
+      "status": "completed",
+      "url": "https://github.com/iwizy/NexFlow/actions/runs/40679983724",
+      "workflowName": "Comparable Measurement Evidence"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 40679983649,
+      "headSha": "5cb33caad080f61808949c1de17df2879da9996f",
+      "status": "completed",
+      "url": "https://github.com/iwizy/NexFlow/actions/runs/40679983649",
+      "workflowName": "Release Readiness Evidence"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 40679983698,
+      "headSha": "5cb33caad080f61808949c1de17df2879da9996f",
+      "status": "completed",
+      "url": "https://github.com/iwizy/NexFlow/actions/runs/40679983698",
+      "workflowName": "Schema Validation"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 40679983629,
+      "headSha": "5cb33caad080f61808949c1de17df2879da9996f",
+      "status": "completed",
+      "url": "https://github.com/iwizy/NexFlow/actions/runs/40679983629",
+      "workflowName": "Review Governance"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 40679983737,
+      "headSha": "5cb33caad080f61808949c1de17df2879da9996f",
+      "status": "completed",
+      "url": "https://github.com/iwizy/NexFlow/actions/runs/40679983737",
+      "workflowName": "CLI Prototype"
+    }
+  ],
+  "assets": [
+    {
+      "name": "nexflow-v0.4.0-checks.json",
+      "bytes": 16787,
+      "sha256": "ae1d26b519a477bb6c2740af8e8a5d27f50a798625274121b18672bf81f88fad",
+      "url": "https://github.com/iwizy/NexFlow/releases/download/v0.4.0/nexflow-v0.4.0-checks.json",
+      "state": "uploaded"
+    },
+    {
+      "name": "nexflow-v0.4.0-evidence.tar.gz",
+      "bytes": 164077,
+      "sha256": "ac05048c91b819112d195ee5f16ebc87acd4f3dbaed6bd0f101d12fafa1054a2",
+      "url": "https://github.com/iwizy/NexFlow/releases/download/v0.4.0/nexflow-v0.4.0-evidence.tar.gz",
+      "state": "uploaded"
+    },
+    {
+      "name": "nexflow-v0.4.0-readiness.json",
+      "bytes": 5666,
+      "sha256": "84d6e060584dd513ac59f7f783d7028095811c31d6324ab057c34d1e37ebe684",
+      "url": "https://github.com/iwizy/NexFlow/releases/download/v0.4.0/nexflow-v0.4.0-readiness.json",
+      "state": "uploaded"
+    },
+    {
+      "name": "nexflow-v0.4.0-review.md",
+      "bytes": 2622,
+      "sha256": "5d33294352c6211c2317fa035ba1f47a05f81fc4b89aaf7f03167526632e7f1f",
+      "url": "https://github.com/iwizy/NexFlow/releases/download/v0.4.0/nexflow-v0.4.0-review.md",
+      "state": "uploaded"
+    },
+    {
+      "name": "SHA256SUMS",
+      "bytes": 377,
+      "sha256": "936f2550b9d9be04421de8bb49e8198a26c5b69066840b33d06b44a0ab842de2",
+      "url": "https://github.com/iwizy/NexFlow/releases/download/v0.4.0/SHA256SUMS",
+      "state": "uploaded"
+    }
+  ],
+  "assetVerification": "All five downloaded assets match prepared bytes; API SHA-256 digests matched when supplied.",
+  "sourceArchive": {
+    "url": "https://api.github.com/repos/iwizy/NexFlow/tarball/v0.4.0",
+    "sha256": "37b96512170829b48eae1bbe2800c348664a7d202c3c33375b9034186194a984",
+    "files": 1059,
+    "expectedGitTreeMatched": true,
+    "scope": "Normalized file names, content SHA-256 and executable mode compared with local git archive of the exact release commit; archive wrapper/compression metadata may differ."
+  },
+  "versionDomainsUnchanged": true,
+  "nativeSigningClaimed": false,
+  "runtimeImplementationClaimed": false,
+  "historicalReadinessRecordPreserved": true
+}

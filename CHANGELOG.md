@@ -6,6 +6,20 @@ This project follows a specification-first process. Breaking changes must includ
 
 ## [Unreleased]
 
+No product changes recorded after `v0.4.0`; the publication receipt and current
+release status are maintained separately from its immutable tag.
+
+## [0.4.0] - 2026-10-28
+
+Published the Runtime Decision Readiness source/decision/evidence milestone
+after explicit maintainer authorization. Release commit
+`5cb33caad080f61808949c1de17df2879da9996f` passed 68 source checks and five main
+CI workflows. Five downloaded assets and all 1,059 source-archive files were
+verified; see the [publication receipt](release/0.4-publication.md).
+No executable package, runtime, native signing or independent version-domain
+change is introduced. The development entries below retain their original
+scopes and failures rather than implying every intermediate proposal passed.
+
 ### Added
 
 - Completed NF-103 readiness with a separate exact-candidate `ready-with-notes`

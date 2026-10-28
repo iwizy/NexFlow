@@ -1,0 +1,1022 @@
+{
+  "task": "NF-103-02",
+  "recordedAt": "2026-10-28",
+  "reviewedSourceRevision": "3027d0885060c7d83d85cf4e9711d38838621dc1",
+  "maintainer": "Alexander Agafonov",
+  "reviewMode": "delegated-single-maintainer-static-review",
+  "personalReviewClaimed": false,
+  "independenceClaimed": false,
+  "scope": "Repository specification/source and evidence milestone, current fixed-schema CLI and explicitly qualified local recipes only. No executable assets or generic online/native toolchain use.",
+  "verdictMeaning": "not-actionable-in-current-milestone-scope; upstream affected versions remain unchanged",
+  "sourceReviewSha256": "a3b33a4271be4be8edddc7f0d3478dc9acbea6bebe0857a6a396c508156b81bb",
+  "exportTransformation": "Project review projection preserves every graph/advisory input and its code evidence; private repository paths and processing metadata are omitted.",
+  "findings": [
+    {
+      "id": "typescript:GHSA-333x-w4r6-6crp",
+      "advisoryId": "GHSA-333x-w4r6-6crp",
+      "verdict": "not_actionable",
+      "confidence": "high",
+      "reason": "Suffix-reference serialization needs a non-default suffix option followed by executable-scheme interpretation. The supported validation routes neither select that option nor navigate/render returned URIs.",
+      "locations": [
+        {
+          "label": "schema registry",
+          "path": "scripts/lib/schema-validation.mjs",
+          "lines": "38-81",
+          "detail": "Pinned repository schemas, no manifest-driven schema loading or URI authority sink."
+        },
+        {
+          "label": "experimental native library entry",
+          "path": "evaluation/prototypes/typescript/src/library.ts",
+          "lines": "67-87",
+          "detail": "Fixture schemas are an explicitly caller-controlled test channel, separate from manifest validation."
+        }
+      ],
+      "references": [
+        "https://osv.dev/vulnerability/GHSA-333x-w4r6-6crp",
+        "https://github.com/fastify/fast-uri/security/advisories/GHSA-333x-w4r6-6crp",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-110725",
+        "https://github.com/fastify/fast-uri/commit/39e6493c1356f30a0084171627eb266786e1620e"
+      ],
+      "sourceEvidence": "Exact graph and primary response SHA-256: 908c3a8d10017c86a8ad2689c8c64ce4fe15893bb22102d83f35425bcd9ab3d7",
+      "scopeLimit": "No general binary reachability audit or dynamic validation of unoffered compiler/toolchain workloads; any such use reopens assessment.",
+      "upstreamFixed": false
+    },
+    {
+      "id": "typescript:GHSA-w74x-v6f9-j3xg",
+      "advisoryId": "GHSA-w74x-v6f9-j3xg",
+      "verdict": "not_actionable",
+      "confidence": "high",
+      "reason": "The issue needs decoded schemes to enter browser rendering or scheme-based authorization. Supported outputs are JSON/text diagnostics and fixed-schema validation, with no navigation or URI authorization sink.",
+      "locations": [
+        {
+          "label": "schema registry",
+          "path": "scripts/lib/schema-validation.mjs",
+          "lines": "38-81",
+          "detail": "Pinned repository schemas, no manifest-driven schema loading or URI authority sink."
+        },
+        {
+          "label": "experimental native library entry",
+          "path": "evaluation/prototypes/typescript/src/library.ts",
+          "lines": "67-87",
+          "detail": "Fixture schemas are an explicitly caller-controlled test channel, separate from manifest validation."
+        }
+      ],
+      "references": [
+        "https://osv.dev/vulnerability/GHSA-w74x-v6f9-j3xg",
+        "https://github.com/fastify/fast-uri/security/advisories/GHSA-w74x-v6f9-j3xg",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-110306",
+        "https://github.com/fastify/fast-uri/commit/39933a1f1422986f14e2d844f552238feb40f5d4"
+      ],
+      "sourceEvidence": "Exact graph and primary response SHA-256: 56b0078c3654b5e82fbabb0e2e64c49beada1b6a4472a68e17b970fc222c6cab",
+      "scopeLimit": "No general binary reachability audit or dynamic validation of unoffered compiler/toolchain workloads; any such use reopens assessment.",
+      "upstreamFixed": false
+    },
+    {
+      "id": "typescript:GHSA-wjr9-j795-jxcr",
+      "advisoryId": "GHSA-wjr9-j795-jxcr",
+      "verdict": "not_actionable",
+      "confidence": "high",
+      "reason": "The issue needs raw-host policy checking followed by a differently canonicalized outbound host. The validator performs no outbound request and its remote schema loader is absent; repository-owned schema identities are fixed.",
+      "locations": [
+        {
+          "label": "schema registry",
+          "path": "scripts/lib/schema-validation.mjs",
+          "lines": "38-81",
+          "detail": "Pinned repository schemas, no manifest-driven schema loading or URI authority sink."
+        },
+        {
+          "label": "experimental native library entry",
+          "path": "evaluation/prototypes/typescript/src/library.ts",
+          "lines": "67-87",
+          "detail": "Fixture schemas are an explicitly caller-controlled test channel, separate from manifest validation."
+        }
+      ],
+      "references": [
+        "https://osv.dev/vulnerability/GHSA-wjr9-j795-jxcr",
+        "https://github.com/fastify/fast-uri/security/advisories/GHSA-wjr9-j795-jxcr",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-110180",
+        "https://github.com/fastify/fast-uri/commit/58c183d0b168ad87f98773266444ce1f6375803a"
+      ],
+      "sourceEvidence": "Exact graph and primary response SHA-256: 816dcc749de68fd2d0cabef0cd438f60f1c5ca84beb41ab30ced13dd299f71f3",
+      "scopeLimit": "No general binary reachability audit or dynamic validation of unoffered compiler/toolchain workloads; any such use reopens assessment.",
+      "upstreamFixed": false
+    },
+    {
+      "id": "typescript:GHSA-xhq7-xmqj-769h",
+      "advisoryId": "GHSA-xhq7-xmqj-769h",
+      "verdict": "not_actionable",
+      "confidence": "high",
+      "reason": "The issue needs normalized user-relative URIs to select filesystem/network resources or authorize/cache them. Manifest filesystem selection uses the separate confined path routines; schema refs come from pinned repository schemas. The exported fixture schema helper is caller-controlled test machinery, without an authority boundary.",
+      "locations": [
+        {
+          "label": "schema registry",
+          "path": "scripts/lib/schema-validation.mjs",
+          "lines": "38-81",
+          "detail": "Pinned repository schemas, no manifest-driven schema loading or URI authority sink."
+        },
+        {
+          "label": "experimental native library entry",
+          "path": "evaluation/prototypes/typescript/src/library.ts",
+          "lines": "67-87",
+          "detail": "Fixture schemas are an explicitly caller-controlled test channel, separate from manifest validation."
+        }
+      ],
+      "references": [
+        "https://osv.dev/vulnerability/GHSA-xhq7-xmqj-769h",
+        "https://github.com/fastify/fast-uri/security/advisories/GHSA-xhq7-xmqj-769h",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-110095",
+        "https://github.com/fastify/fast-uri/commit/048bbd0a252971be86d6579f0dfc87f8de5b9c47"
+      ],
+      "sourceEvidence": "Exact graph and primary response SHA-256: c53c6ab97af6f41f15dc778effbf9b965b3a7233af731fccf879db4b1e621fcf",
+      "scopeLimit": "No general binary reachability audit or dynamic validation of unoffered compiler/toolchain workloads; any such use reopens assessment.",
+      "upstreamFixed": false
+    },
+    {
+      "id": "go:GO-2026-6809",
+      "advisoryId": "GO-2026-6809",
+      "verdict": "not_actionable",
+      "confidence": "high",
+      "reason": "The matched standard-library certificate verification requires a TLS certificate path. Current candidate schemas use an explicit denying resource loader and no TLS endpoint; no Go executable or compiler is proposed as a release asset.",
+      "locations": [
+        {
+          "label": "denied schema loader",
+          "path": "evaluation/prototypes/go/schema.go",
+          "lines": "16-44",
+          "detail": "No remote schema or TLS resource resolution."
+        }
+      ],
+      "references": [
+        "https://osv.dev/vulnerability/GO-2026-6809",
+        "https://go.dev/issue/82345",
+        "https://groups.google.com/g/golang-announce/c/66pojueaQek"
+      ],
+      "sourceEvidence": "Exact graph and primary response SHA-256: 7d1a18f7e0409631e40b9532f8053683859f88886fe9cc5649a058c3de1bf36d",
+      "scopeLimit": "No general binary reachability audit or dynamic validation of unoffered compiler/toolchain workloads; any such use reopens assessment.",
+      "upstreamFixed": false
+    },
+    {
+      "id": "tool-npm:GHSA-2m5v-pch6-74hx",
+      "advisoryId": "GHSA-2m5v-pch6-74hx",
+      "verdict": "not_actionable",
+      "confidence": "high",
+      "reason": "The affected custom TLS callback on Undici Agent is reachable through node-gyp's downloader only when native rebuild/download is used. Qualified npm installation disables install scripts; the selected TypeScript build is pure TypeScript, not node-gyp.",
+      "locations": [
+        {
+          "label": "locked provisioner",
+          "path": "scripts/evaluation-npm-provision.mjs",
+          "lines": "16-21",
+          "detail": "Exact registry origins and archive integrity; the standard recipe disables candidate install scripts."
+        },
+        {
+          "label": "native rebuild exclusion",
+          "path": "scripts/runtime-supply-chain-repaired-rebuild.mjs",
+          "lines": "23-25",
+          "detail": "Offline ignore-scripts install followed by the reviewed pure TypeScript build."
+        }
+      ],
+      "references": [
+        "https://osv.dev/vulnerability/GHSA-2m5v-pch6-74hx",
+        "https://github.com/nodejs/undici/security/advisories/GHSA-2m5v-pch6-74hx",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-109383",
+        "https://github.com/nodejs/undici/commit/04cb74b1db131ff8f5b4557dce811cbf5f4664b4"
+      ],
+      "sourceEvidence": "Exact graph and primary response SHA-256: c8ba3bb5bb30d417ded2f41738b3d6f5cb6c09da3474ba0475937d029500a412",
+      "scopeLimit": "No general binary reachability audit or dynamic validation of unoffered compiler/toolchain workloads; any such use reopens assessment.",
+      "upstreamFixed": false
+    },
+    {
+      "id": "tool-npm:GHSA-4qv8-2p9j-2685",
+      "advisoryId": "GHSA-4qv8-2p9j-2685",
+      "verdict": "not_actionable",
+      "confidence": "high",
+      "reason": "EventSource response parsing is required. The sole external Undici importer in the verified npm source is node-gyp's ordinary downloader, and it does not create EventSource; native install scripts are disabled.",
+      "locations": [
+        {
+          "label": "locked provisioner",
+          "path": "scripts/evaluation-npm-provision.mjs",
+          "lines": "16-21",
+          "detail": "Exact registry origins and archive integrity; the standard recipe disables candidate install scripts."
+        },
+        {
+          "label": "native rebuild exclusion",
+          "path": "scripts/runtime-supply-chain-repaired-rebuild.mjs",
+          "lines": "23-25",
+          "detail": "Offline ignore-scripts install followed by the reviewed pure TypeScript build."
+        }
+      ],
+      "references": [
+        "https://osv.dev/vulnerability/GHSA-4qv8-2p9j-2685",
+        "https://github.com/nodejs/undici/security/advisories/GHSA-4qv8-2p9j-2685",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-109924",
+        "https://github.com/nodejs/undici/commit/299162740d5f39120092277e70efacb4d151c1c6"
+      ],
+      "sourceEvidence": "Exact graph and primary response SHA-256: a86948fcbb12ec149a813acad71b03f7601f5f0959e700b4b757433f01dc5c8d",
+      "scopeLimit": "No general binary reachability audit or dynamic validation of unoffered compiler/toolchain workloads; any such use reopens assessment.",
+      "upstreamFixed": false
+    },
+    {
+      "id": "tool-npm:GHSA-9fm3-97px-rjf6",
+      "advisoryId": "GHSA-9fm3-97px-rjf6",
+      "verdict": "not_actionable",
+      "confidence": "high",
+      "reason": "A WebSocket peer and automatic PONG handling are required. The npm importer is an HTTP native-header downloader, not a WebSocket client; supported installs disable that native script path.",
+      "locations": [
+        {
+          "label": "locked provisioner",
+          "path": "scripts/evaluation-npm-provision.mjs",
+          "lines": "16-21",
+          "detail": "Exact registry origins and archive integrity; the standard recipe disables candidate install scripts."
+        },
+        {
+          "label": "native rebuild exclusion",
+          "path": "scripts/runtime-supply-chain-repaired-rebuild.mjs",
+          "lines": "23-25",
+          "detail": "Offline ignore-scripts install followed by the reviewed pure TypeScript build."
+        }
+      ],
+      "references": [
+        "https://osv.dev/vulnerability/GHSA-9fm3-97px-rjf6",
+        "https://github.com/nodejs/undici/security/advisories/GHSA-9fm3-97px-rjf6",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-109932",
+        "https://github.com/nodejs/undici/commit/39f93e142df03e559fe7c3d1fc7fba9beee2c185"
+      ],
+      "sourceEvidence": "Exact graph and primary response SHA-256: 4b8359fd5f7f29053571c7b8c7824b66a572bd9d426f11d72d7be2a8bbc47809",
+      "scopeLimit": "No general binary reachability audit or dynamic validation of unoffered compiler/toolchain workloads; any such use reopens assessment.",
+      "upstreamFixed": false
+    },
+    {
+      "id": "tool-npm:GHSA-qrxm-fqhp-jwvm",
+      "advisoryId": "GHSA-qrxm-fqhp-jwvm",
+      "verdict": "not_actionable",
+      "confidence": "high",
+      "reason": "The failure needs an active Undici TLS connection and renegotiation by its peer. The matched npm copy is used by node-gyp's disabled native-download path, not the ordinary dependency fetcher; no tool binary is delivered.",
+      "locations": [
+        {
+          "label": "locked provisioner",
+          "path": "scripts/evaluation-npm-provision.mjs",
+          "lines": "16-21",
+          "detail": "Exact registry origins and archive integrity; the standard recipe disables candidate install scripts."
+        },
+        {
+          "label": "native rebuild exclusion",
+          "path": "scripts/runtime-supply-chain-repaired-rebuild.mjs",
+          "lines": "23-25",
+          "detail": "Offline ignore-scripts install followed by the reviewed pure TypeScript build."
+        }
+      ],
+      "references": [
+        "https://osv.dev/vulnerability/GHSA-qrxm-fqhp-jwvm",
+        "https://github.com/nodejs/undici/security/advisories/GHSA-qrxm-fqhp-jwvm",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-87018",
+        "https://github.com/nodejs/undici/commit/12cfd96c3f430897656e3edc1c5e02be8c1cd309"
+      ],
+      "sourceEvidence": "Exact graph and primary response SHA-256: 1e4bd9e17ab8eb63627919d1170293c1ece64e7e9f6d03bc7e58e6198f7b3751",
+      "scopeLimit": "No general binary reachability audit or dynamic validation of unoffered compiler/toolchain workloads; any such use reopens assessment.",
+      "upstreamFixed": false
+    },
+    {
+      "id": "tool-npm:GHSA-xjj6-f33q-929c",
+      "advisoryId": "GHSA-xjj6-f33q-929c",
+      "verdict": "not_actionable",
+      "confidence": "high",
+      "reason": "The failure needs an active Undici fetch response. The verified npm copy's only external importer is node-gyp's native downloader, excluded by ignore-scripts and the pure TypeScript build; no generic npm/native-build safety claim is made.",
+      "locations": [
+        {
+          "label": "locked provisioner",
+          "path": "scripts/evaluation-npm-provision.mjs",
+          "lines": "16-21",
+          "detail": "Exact registry origins and archive integrity; the standard recipe disables candidate install scripts."
+        },
+        {
+          "label": "native rebuild exclusion",
+          "path": "scripts/runtime-supply-chain-repaired-rebuild.mjs",
+          "lines": "23-25",
+          "detail": "Offline ignore-scripts install followed by the reviewed pure TypeScript build."
+        }
+      ],
+      "references": [
+        "https://osv.dev/vulnerability/GHSA-xjj6-f33q-929c",
+        "https://github.com/nodejs/undici/security/advisories/GHSA-xjj6-f33q-929c",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-109869",
+        "https://github.com/nodejs/undici/commit/07ded4941b1e72afec862958c3b8ddf468f3b429"
+      ],
+      "sourceEvidence": "Exact graph and primary response SHA-256: 274b31b531e987af925aef565d3d6b474a78d5cc77a6cb064afc577bbb70a0e2",
+      "scopeLimit": "No general binary reachability audit or dynamic validation of unoffered compiler/toolchain workloads; any such use reopens assessment.",
+      "upstreamFixed": false
+    },
+    {
+      "id": "tool-pip:GHSA-6q48-6c7w-9gw2",
+      "advisoryId": "GHSA-6q48-6c7w-9gw2",
+      "verdict": "not_actionable",
+      "confidence": "high",
+      "reason": "The affected certificate bundle belongs to outer pip. The provisioner invokes pip only with no-index, hash-locked local binary wheels, disabled cache/version checks and isolated configuration; network wheel bootstrap is separate from this certifi bundle.",
+      "locations": [
+        {
+          "label": "isolated wheel provisioning",
+          "path": "scripts/evaluation-python-provision.py",
+          "lines": "118-133",
+          "detail": "Locked local binary wheels, no index/cache/version requests; no setuptools legacy wheel installer."
+        }
+      ],
+      "references": [
+        "https://osv.dev/vulnerability/GHSA-6q48-6c7w-9gw2",
+        "https://github.com/certifi/python-certifi/security/advisories/GHSA-6q48-6c7w-9gw2",
+        "https://discuss.python.org/t/information-for-python-users-regarding-emudhra-emsign-ca-certificate-security-incident/109576",
+        "https://emudhra.we-have-a-problem.com"
+      ],
+      "sourceEvidence": "Exact graph and primary response SHA-256: a0dd4bedfe80103764b56ff3b0b44afab7a1820265cd9b9e5c965b20daa08fb8",
+      "scopeLimit": "No general binary reachability audit or dynamic validation of unoffered compiler/toolchain workloads; any such use reopens assessment.",
+      "upstreamFixed": false
+    },
+    {
+      "id": "tool-pip:GHSA-j586-36cw-2gc2",
+      "advisoryId": "GHSA-j586-36cw-2gc2",
+      "verdict": "not_actionable",
+      "confidence": "high",
+      "reason": "The advisory targets the msgpack C extension. The verified pip file inventory contains the pure-Python fallback and no msgpack native extension; cache use is disabled. The C extension is also absent from all four candidate inventories.",
+      "locations": [
+        {
+          "label": "isolated wheel provisioning",
+          "path": "scripts/evaluation-python-provision.py",
+          "lines": "118-133",
+          "detail": "Locked local binary wheels, no index/cache/version requests; no setuptools legacy wheel installer."
+        }
+      ],
+      "references": [
+        "https://osv.dev/vulnerability/GHSA-j586-36cw-2gc2",
+        "https://github.com/msgpack/msgpack-python/security/advisories/GHSA-j586-36cw-2gc2",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-114613",
+        "https://github.com/msgpack/msgpack-python/commit/620b0eb4c89cd72d4098564537624d9dbb2ce141"
+      ],
+      "sourceEvidence": "Exact graph and primary response SHA-256: 739a48cf115e650567f8d2826ebbde2712ea23532e4750d0e81e97425ab0032c",
+      "scopeLimit": "No general binary reachability audit or dynamic validation of unoffered compiler/toolchain workloads; any such use reopens assessment.",
+      "upstreamFixed": false
+    },
+    {
+      "id": "tool-pip:GHSA-xmj3-9gf7-h52w",
+      "advisoryId": "GHSA-xmj3-9gf7-h52w",
+      "verdict": "not_actionable",
+      "confidence": "high",
+      "reason": "The issue requires setuptools wheel.install_as_egg and namespace_packages processing. The selected pip vendor payload contains pkg_resources only, and setuptools/wheel.py is absent; installation uses pip's hash-locked binary-wheel route.",
+      "locations": [
+        {
+          "label": "isolated wheel provisioning",
+          "path": "scripts/evaluation-python-provision.py",
+          "lines": "118-133",
+          "detail": "Locked local binary wheels, no index/cache/version requests; no setuptools legacy wheel installer."
+        }
+      ],
+      "references": [
+        "https://osv.dev/vulnerability/GHSA-xmj3-9gf7-h52w",
+        "https://github.com/pypa/setuptools/security/advisories/GHSA-xmj3-9gf7-h52w",
+        "https://github.com/pypa/setuptools/pull/5329",
+        "https://github.com/pypa/setuptools/commit/6d07b8d17890dda58d944ac51e58f54af92d52af"
+      ],
+      "sourceEvidence": "Exact graph and primary response SHA-256: 77745a64f2cb4b46f5ebca74b01b1813a4d36351a7e75f6232d2218c244dda76",
+      "scopeLimit": "No general binary reachability audit or dynamic validation of unoffered compiler/toolchain workloads; any such use reopens assessment.",
+      "upstreamFixed": false
+    },
+    {
+      "id": "tool-pip:PYSEC-2026-4320",
+      "advisoryId": "PYSEC-2026-4320",
+      "verdict": "not_actionable",
+      "confidence": "high",
+      "reason": "This is a separately retained input alias for the same outer-pip certificate issue. No pip network/index/TLS path is admitted by the fixed local hash-locked wheel recipe.",
+      "locations": [
+        {
+          "label": "isolated wheel provisioning",
+          "path": "scripts/evaluation-python-provision.py",
+          "lines": "118-133",
+          "detail": "Locked local binary wheels, no index/cache/version requests; no setuptools legacy wheel installer."
+        }
+      ],
+      "references": [
+        "https://osv.dev/vulnerability/PYSEC-2026-4320",
+        "https://github.com/certifi/python-certifi/security/advisories/GHSA-6q48-6c7w-9gw2",
+        "https://discuss.python.org/t/information-for-python-users-regarding-emudhra-emsign-ca-certificate-security-incident/109576",
+        "https://emudhra.we-have-a-problem.com"
+      ],
+      "sourceEvidence": "Exact graph and primary response SHA-256: 90c25755ad072a95744c337b91e20bf980afbf273655bd0d4885cbd407214aac",
+      "scopeLimit": "No general binary reachability audit or dynamic validation of unoffered compiler/toolchain workloads; any such use reopens assessment.",
+      "upstreamFixed": false
+    },
+    {
+      "id": "tool-cargo:GHSA-c8m5-c952-6cm4",
+      "advisoryId": "GHSA-c8m5-c952-6cm4",
+      "verdict": "not_actionable",
+      "confidence": "medium",
+      "reason": "TLS session Debug formatting could expose secrets. The matched versions occur only in external Cargo/compiler source-superset inventories, not any of the four candidate graphs or tracked native release payloads. Supported rebuilds compile fixed reviewed sources using offline/frozen/local inputs; they expose no corresponding TLS, HTML/Markdown, secret arithmetic, ZIP-extraction or caller-callback service to manifest authors. General compiler/package-manager use and executable distribution require a new review.",
+      "locations": [
+        {
+          "label": "qualified build recipes",
+          "path": "scripts/runtime-supply-chain-repaired-rebuild.mjs",
+          "lines": "20-38",
+          "detail": "Fixed source archive, offline/frozen Cargo and Go builds; no executable artifact is offered by the source-only milestone."
+        }
+      ],
+      "references": [
+        "https://osv.dev/vulnerability/GHSA-c8m5-c952-6cm4",
+        "https://github.com/rustls/rustls/security/advisories/GHSA-c8m5-c952-6cm4",
+        "https://github.com/rustls/rustls/pull/3299",
+        "https://github.com/rustls/rustls/pull/3354"
+      ],
+      "sourceEvidence": "Exact graph and primary response SHA-256: 26e456528e7c60beeda721d3e47363b1e6e2a4d9786c04845787e7081c6f19ac",
+      "scopeLimit": "No general binary reachability audit or dynamic validation of unoffered compiler/toolchain workloads; any such use reopens assessment.",
+      "upstreamFixed": false
+    },
+    {
+      "id": "tool-cargo:GHSA-h2v8-394m-p7vv",
+      "advisoryId": "GHSA-h2v8-394m-p7vv",
+      "verdict": "not_actionable",
+      "confidence": "medium",
+      "reason": "Optional Brotli certificate decoding could allocate excessive memory. The matched versions occur only in external Cargo/compiler source-superset inventories, not any of the four candidate graphs or tracked native release payloads. Supported rebuilds compile fixed reviewed sources using offline/frozen/local inputs; they expose no corresponding TLS, HTML/Markdown, secret arithmetic, ZIP-extraction or caller-callback service to manifest authors. General compiler/package-manager use and executable distribution require a new review.",
+      "locations": [
+        {
+          "label": "qualified build recipes",
+          "path": "scripts/runtime-supply-chain-repaired-rebuild.mjs",
+          "lines": "20-38",
+          "detail": "Fixed source archive, offline/frozen Cargo and Go builds; no executable artifact is offered by the source-only milestone."
+        }
+      ],
+      "references": [
+        "https://osv.dev/vulnerability/GHSA-h2v8-394m-p7vv",
+        "https://github.com/rustls/rustls/security/advisories/GHSA-h2v8-394m-p7vv",
+        "https://github.com/rustls/rustls/pull/3297",
+        "https://github.com/rustls/rustls/pull/3354"
+      ],
+      "sourceEvidence": "Exact graph and primary response SHA-256: cac5096cc9ad821e6f98b2f2b181b586c31228e2d50e6da8976b69be5662a22a",
+      "scopeLimit": "No general binary reachability audit or dynamic validation of unoffered compiler/toolchain workloads; any such use reopens assessment.",
+      "upstreamFixed": false
+    },
+    {
+      "id": "tool-cargo:GHSA-qwgh-2vcv-g2f7",
+      "advisoryId": "GHSA-qwgh-2vcv-g2f7",
+      "verdict": "not_actionable",
+      "confidence": "medium",
+      "reason": "A panicking caller callback followed by buffer reuse could violate memory safety. The matched versions occur only in external Cargo/compiler source-superset inventories, not any of the four candidate graphs or tracked native release payloads. Supported rebuilds compile fixed reviewed sources using offline/frozen/local inputs; they expose no corresponding TLS, HTML/Markdown, secret arithmetic, ZIP-extraction or caller-callback service to manifest authors. General compiler/package-manager use and executable distribution require a new review.",
+      "locations": [
+        {
+          "label": "qualified build recipes",
+          "path": "scripts/runtime-supply-chain-repaired-rebuild.mjs",
+          "lines": "20-38",
+          "detail": "Fixed source archive, offline/frozen Cargo and Go builds; no executable artifact is offered by the source-only milestone."
+        }
+      ],
+      "references": [
+        "https://osv.dev/vulnerability/GHSA-qwgh-2vcv-g2f7",
+        "https://github.com/RustCrypto/utils/security/advisories/GHSA-qwgh-2vcv-g2f7",
+        "https://github.com/RustCrypto/utils/releases/tag/block-buffer-v0.12.1"
+      ],
+      "sourceEvidence": "Exact graph and primary response SHA-256: a35c62683978eb74c07ee32a1a78c303ca81869fbd6856509e3f6dce68d11105",
+      "scopeLimit": "No general binary reachability audit or dynamic validation of unoffered compiler/toolchain workloads; any such use reopens assessment.",
+      "upstreamFixed": false
+    },
+    {
+      "id": "tool-cargo:GHSA-w44r-93j7-qv28",
+      "advisoryId": "GHSA-w44r-93j7-qv28",
+      "verdict": "not_actionable",
+      "confidence": "medium",
+      "reason": "An unauthenticated TLS handshake could influence later key-share prediction. The matched versions occur only in external Cargo/compiler source-superset inventories, not any of the four candidate graphs or tracked native release payloads. Supported rebuilds compile fixed reviewed sources using offline/frozen/local inputs; they expose no corresponding TLS, HTML/Markdown, secret arithmetic, ZIP-extraction or caller-callback service to manifest authors. General compiler/package-manager use and executable distribution require a new review.",
+      "locations": [
+        {
+          "label": "qualified build recipes",
+          "path": "scripts/runtime-supply-chain-repaired-rebuild.mjs",
+          "lines": "20-38",
+          "detail": "Fixed source archive, offline/frozen Cargo and Go builds; no executable artifact is offered by the source-only milestone."
+        }
+      ],
+      "references": [
+        "https://osv.dev/vulnerability/GHSA-w44r-93j7-qv28",
+        "https://github.com/rustls/rustls/security/advisories/GHSA-w44r-93j7-qv28",
+        "https://github.com/rustls/rustls/pull/3355",
+        "https://github.com/rustls/rustls/commit/8fa0dc5d517a63411ad1e528249bdf5b098ae5e4"
+      ],
+      "sourceEvidence": "Exact graph and primary response SHA-256: cb51dd8e29b52cde964770a28a2ae22be7f411bb9b44a0dcfc06ec3120d6ecd2",
+      "scopeLimit": "No general binary reachability audit or dynamic validation of unoffered compiler/toolchain workloads; any such use reopens assessment.",
+      "upstreamFixed": false
+    },
+    {
+      "id": "tool-cargo:RUSTSEC-2026-0382",
+      "advisoryId": "RUSTSEC-2026-0382",
+      "verdict": "not_actionable",
+      "confidence": "medium",
+      "reason": "A TLS path might accept a distrusted intermediate. The matched versions occur only in external Cargo/compiler source-superset inventories, not any of the four candidate graphs or tracked native release payloads. Supported rebuilds compile fixed reviewed sources using offline/frozen/local inputs; they expose no corresponding TLS, HTML/Markdown, secret arithmetic, ZIP-extraction or caller-callback service to manifest authors. General compiler/package-manager use and executable distribution require a new review.",
+      "locations": [
+        {
+          "label": "qualified build recipes",
+          "path": "scripts/runtime-supply-chain-repaired-rebuild.mjs",
+          "lines": "20-38",
+          "detail": "Fixed source archive, offline/frozen Cargo and Go builds; no executable artifact is offered by the source-only milestone."
+        }
+      ],
+      "references": [
+        "https://osv.dev/vulnerability/RUSTSEC-2026-0382",
+        "https://rustsec.org/advisories/RUSTSEC-2026-0382.html",
+        "https://github.com/rustls/webpki/pull/546",
+        "https://emudhra.we-have-a-problem.com/"
+      ],
+      "sourceEvidence": "Exact graph and primary response SHA-256: 4d472c55dbc92db0ba80d7beb9fc807dda036484bacd4e1c5895d44a75e3a3fa",
+      "scopeLimit": "No general binary reachability audit or dynamic validation of unoffered compiler/toolchain workloads; any such use reopens assessment.",
+      "upstreamFixed": false
+    },
+    {
+      "id": "tool-cargo:RUSTSEC-2026-0385",
+      "advisoryId": "RUSTSEC-2026-0385",
+      "verdict": "not_actionable",
+      "confidence": "medium",
+      "reason": "Secret-dependent arithmetic branches might leak through timing. The matched versions occur only in external Cargo/compiler source-superset inventories, not any of the four candidate graphs or tracked native release payloads. Supported rebuilds compile fixed reviewed sources using offline/frozen/local inputs; they expose no corresponding TLS, HTML/Markdown, secret arithmetic, ZIP-extraction or caller-callback service to manifest authors. General compiler/package-manager use and executable distribution require a new review.",
+      "locations": [
+        {
+          "label": "qualified build recipes",
+          "path": "scripts/runtime-supply-chain-repaired-rebuild.mjs",
+          "lines": "20-38",
+          "detail": "Fixed source archive, offline/frozen Cargo and Go builds; no executable artifact is offered by the source-only milestone."
+        }
+      ],
+      "references": [
+        "https://osv.dev/vulnerability/RUSTSEC-2026-0385",
+        "https://rustsec.org/advisories/RUSTSEC-2026-0385.html",
+        "https://github.com/RustCrypto/utils/pull/1569"
+      ],
+      "sourceEvidence": "Exact graph and primary response SHA-256: 2d3ba7ec270259c3d743c6d03ab2149d6a15d6f823c5ca43d062f6afa6f28d68",
+      "scopeLimit": "No general binary reachability audit or dynamic validation of unoffered compiler/toolchain workloads; any such use reopens assessment.",
+      "upstreamFixed": false
+    },
+    {
+      "id": "tool-cargo:RUSTSEC-2026-0386",
+      "advisoryId": "RUSTSEC-2026-0386",
+      "verdict": "not_actionable",
+      "confidence": "medium",
+      "reason": "A caller-controlled invalid or replaced file descriptor could violate asynchronous I/O safety. The matched versions occur only in external Cargo/compiler source-superset inventories, not any of the four candidate graphs or tracked native release payloads. Supported rebuilds compile fixed reviewed sources using offline/frozen/local inputs; they expose no corresponding TLS, HTML/Markdown, secret arithmetic, ZIP-extraction or caller-callback service to manifest authors. General compiler/package-manager use and executable distribution require a new review.",
+      "locations": [
+        {
+          "label": "qualified build recipes",
+          "path": "scripts/runtime-supply-chain-repaired-rebuild.mjs",
+          "lines": "20-38",
+          "detail": "Fixed source archive, offline/frozen Cargo and Go builds; no executable artifact is offered by the source-only milestone."
+        }
+      ],
+      "references": [
+        "https://osv.dev/vulnerability/RUSTSEC-2026-0386",
+        "https://rustsec.org/advisories/RUSTSEC-2026-0386.html",
+        "https://github.com/tokio-rs/tokio/pull/8587",
+        "https://github.com/tokio-rs/tokio/issues/8538"
+      ],
+      "sourceEvidence": "Exact graph and primary response SHA-256: 7229bb632bca2a6d1e72673f2ed037bbe9e2575220e3f1fa094f00577bba5d90",
+      "scopeLimit": "No general binary reachability audit or dynamic validation of unoffered compiler/toolchain workloads; any such use reopens assessment.",
+      "upstreamFixed": false
+    },
+    {
+      "id": "tool-cargo:RUSTSEC-2026-0387",
+      "advisoryId": "RUSTSEC-2026-0387",
+      "verdict": "not_actionable",
+      "confidence": "medium",
+      "reason": "Secret arithmetic may have variable timing. The matched versions occur only in external Cargo/compiler source-superset inventories, not any of the four candidate graphs or tracked native release payloads. Supported rebuilds compile fixed reviewed sources using offline/frozen/local inputs; they expose no corresponding TLS, HTML/Markdown, secret arithmetic, ZIP-extraction or caller-callback service to manifest authors. General compiler/package-manager use and executable distribution require a new review.",
+      "locations": [
+        {
+          "label": "qualified build recipes",
+          "path": "scripts/runtime-supply-chain-repaired-rebuild.mjs",
+          "lines": "20-38",
+          "detail": "Fixed source archive, offline/frozen Cargo and Go builds; no executable artifact is offered by the source-only milestone."
+        }
+      ],
+      "references": [
+        "https://osv.dev/vulnerability/RUSTSEC-2026-0387",
+        "https://rustsec.org/advisories/RUSTSEC-2026-0387.html",
+        "https://github.com/RustCrypto/crypto-bigint/pull/1365"
+      ],
+      "sourceEvidence": "Exact graph and primary response SHA-256: b8c73852a4c6a3d1d6793f21bd2a66b0e7737ceb5f772c874c6b1a0a3f70e99f",
+      "scopeLimit": "No general binary reachability audit or dynamic validation of unoffered compiler/toolchain workloads; any such use reopens assessment.",
+      "upstreamFixed": false
+    },
+    {
+      "id": "tool-cargo:RUSTSEC-2026-0414",
+      "advisoryId": "RUSTSEC-2026-0414",
+      "verdict": "not_actionable",
+      "confidence": "medium",
+      "reason": "An explicitly enabled wikilink parser could expand hostile Markdown excessively. The matched versions occur only in external Cargo/compiler source-superset inventories, not any of the four candidate graphs or tracked native release payloads. Supported rebuilds compile fixed reviewed sources using offline/frozen/local inputs; they expose no corresponding TLS, HTML/Markdown, secret arithmetic, ZIP-extraction or caller-callback service to manifest authors. General compiler/package-manager use and executable distribution require a new review.",
+      "locations": [
+        {
+          "label": "qualified build recipes",
+          "path": "scripts/runtime-supply-chain-repaired-rebuild.mjs",
+          "lines": "20-38",
+          "detail": "Fixed source archive, offline/frozen Cargo and Go builds; no executable artifact is offered by the source-only milestone."
+        }
+      ],
+      "references": [
+        "https://osv.dev/vulnerability/RUSTSEC-2026-0414",
+        "https://rustsec.org/advisories/RUSTSEC-2026-0414.html",
+        "https://github.com/pulldown-cmark/pulldown-cmark/issues/1179",
+        "https://github.com/pulldown-cmark/pulldown-cmark/pull/1102"
+      ],
+      "sourceEvidence": "Exact graph and primary response SHA-256: 3f761b5c0ea5cd643538ea5136d3ff43a1947ab71ad1233dd21b552440940809",
+      "scopeLimit": "No general binary reachability audit or dynamic validation of unoffered compiler/toolchain workloads; any such use reopens assessment.",
+      "upstreamFixed": false
+    },
+    {
+      "id": "tool-goCompiler:GO-2026-6860",
+      "advisoryId": "GO-2026-6860",
+      "verdict": "not_actionable",
+      "confidence": "medium",
+      "reason": "Hostile HTML text could cause quadratic parser work. The matched versions occur only in external Cargo/compiler source-superset inventories, not any of the four candidate graphs or tracked native release payloads. Supported rebuilds compile fixed reviewed sources using offline/frozen/local inputs; they expose no corresponding TLS, HTML/Markdown, secret arithmetic, ZIP-extraction or caller-callback service to manifest authors. General compiler/package-manager use and executable distribution require a new review.",
+      "locations": [
+        {
+          "label": "qualified build recipes",
+          "path": "scripts/runtime-supply-chain-repaired-rebuild.mjs",
+          "lines": "20-38",
+          "detail": "Fixed source archive, offline/frozen Cargo and Go builds; no executable artifact is offered by the source-only milestone."
+        }
+      ],
+      "references": [
+        "https://osv.dev/vulnerability/GO-2026-6860",
+        "https://go.dev/issue/82224",
+        "https://groups.google.com/g/golang-announce/c/sqrs2vTx_Xs"
+      ],
+      "sourceEvidence": "Exact graph and primary response SHA-256: 4fadb4d7e5abd199a43f41f711c3e396807636703a125f8db47b94be20003329",
+      "scopeLimit": "No general binary reachability audit or dynamic validation of unoffered compiler/toolchain workloads; any such use reopens assessment.",
+      "upstreamFixed": false
+    },
+    {
+      "id": "tool-goCompiler:GO-2026-6866",
+      "advisoryId": "GO-2026-6866",
+      "verdict": "not_actionable",
+      "confidence": "medium",
+      "reason": "Foreign HTML namespace transitions could be rendered unsafely. The matched versions occur only in external Cargo/compiler source-superset inventories, not any of the four candidate graphs or tracked native release payloads. Supported rebuilds compile fixed reviewed sources using offline/frozen/local inputs; they expose no corresponding TLS, HTML/Markdown, secret arithmetic, ZIP-extraction or caller-callback service to manifest authors. General compiler/package-manager use and executable distribution require a new review.",
+      "locations": [
+        {
+          "label": "qualified build recipes",
+          "path": "scripts/runtime-supply-chain-repaired-rebuild.mjs",
+          "lines": "20-38",
+          "detail": "Fixed source archive, offline/frozen Cargo and Go builds; no executable artifact is offered by the source-only milestone."
+        }
+      ],
+      "references": [
+        "https://osv.dev/vulnerability/GO-2026-6866",
+        "https://go.dev/issue/82622",
+        "https://groups.google.com/g/golang-announce/c/sqrs2vTx_Xs"
+      ],
+      "sourceEvidence": "Exact graph and primary response SHA-256: b1f3bb87aef858b61fb345700d0f637291712835bcc45431d6a30a84bbfa51c5",
+      "scopeLimit": "No general binary reachability audit or dynamic validation of unoffered compiler/toolchain workloads; any such use reopens assessment.",
+      "upstreamFixed": false
+    },
+    {
+      "id": "tool-rustCompiler:GHSA-c8m5-c952-6cm4",
+      "advisoryId": "GHSA-c8m5-c952-6cm4",
+      "verdict": "not_actionable",
+      "confidence": "medium",
+      "reason": "TLS session Debug formatting could expose secrets. The matched versions occur only in external Cargo/compiler source-superset inventories, not any of the four candidate graphs or tracked native release payloads. Supported rebuilds compile fixed reviewed sources using offline/frozen/local inputs; they expose no corresponding TLS, HTML/Markdown, secret arithmetic, ZIP-extraction or caller-callback service to manifest authors. General compiler/package-manager use and executable distribution require a new review.",
+      "locations": [
+        {
+          "label": "qualified build recipes",
+          "path": "scripts/runtime-supply-chain-repaired-rebuild.mjs",
+          "lines": "20-38",
+          "detail": "Fixed source archive, offline/frozen Cargo and Go builds; no executable artifact is offered by the source-only milestone."
+        }
+      ],
+      "references": [
+        "https://osv.dev/vulnerability/GHSA-c8m5-c952-6cm4",
+        "https://github.com/rustls/rustls/security/advisories/GHSA-c8m5-c952-6cm4",
+        "https://github.com/rustls/rustls/pull/3299",
+        "https://github.com/rustls/rustls/pull/3354"
+      ],
+      "sourceEvidence": "Exact graph and primary response SHA-256: 26e456528e7c60beeda721d3e47363b1e6e2a4d9786c04845787e7081c6f19ac",
+      "scopeLimit": "No general binary reachability audit or dynamic validation of unoffered compiler/toolchain workloads; any such use reopens assessment.",
+      "upstreamFixed": false
+    },
+    {
+      "id": "tool-rustCompiler:GHSA-h2v8-394m-p7vv",
+      "advisoryId": "GHSA-h2v8-394m-p7vv",
+      "verdict": "not_actionable",
+      "confidence": "medium",
+      "reason": "Optional Brotli certificate decoding could allocate excessive memory. The matched versions occur only in external Cargo/compiler source-superset inventories, not any of the four candidate graphs or tracked native release payloads. Supported rebuilds compile fixed reviewed sources using offline/frozen/local inputs; they expose no corresponding TLS, HTML/Markdown, secret arithmetic, ZIP-extraction or caller-callback service to manifest authors. General compiler/package-manager use and executable distribution require a new review.",
+      "locations": [
+        {
+          "label": "qualified build recipes",
+          "path": "scripts/runtime-supply-chain-repaired-rebuild.mjs",
+          "lines": "20-38",
+          "detail": "Fixed source archive, offline/frozen Cargo and Go builds; no executable artifact is offered by the source-only milestone."
+        }
+      ],
+      "references": [
+        "https://osv.dev/vulnerability/GHSA-h2v8-394m-p7vv",
+        "https://github.com/rustls/rustls/security/advisories/GHSA-h2v8-394m-p7vv",
+        "https://github.com/rustls/rustls/pull/3297",
+        "https://github.com/rustls/rustls/pull/3354"
+      ],
+      "sourceEvidence": "Exact graph and primary response SHA-256: cac5096cc9ad821e6f98b2f2b181b586c31228e2d50e6da8976b69be5662a22a",
+      "scopeLimit": "No general binary reachability audit or dynamic validation of unoffered compiler/toolchain workloads; any such use reopens assessment.",
+      "upstreamFixed": false
+    },
+    {
+      "id": "tool-rustCompiler:GHSA-qwgh-2vcv-g2f7",
+      "advisoryId": "GHSA-qwgh-2vcv-g2f7",
+      "verdict": "not_actionable",
+      "confidence": "medium",
+      "reason": "A panicking caller callback followed by buffer reuse could violate memory safety. The matched versions occur only in external Cargo/compiler source-superset inventories, not any of the four candidate graphs or tracked native release payloads. Supported rebuilds compile fixed reviewed sources using offline/frozen/local inputs; they expose no corresponding TLS, HTML/Markdown, secret arithmetic, ZIP-extraction or caller-callback service to manifest authors. General compiler/package-manager use and executable distribution require a new review.",
+      "locations": [
+        {
+          "label": "qualified build recipes",
+          "path": "scripts/runtime-supply-chain-repaired-rebuild.mjs",
+          "lines": "20-38",
+          "detail": "Fixed source archive, offline/frozen Cargo and Go builds; no executable artifact is offered by the source-only milestone."
+        }
+      ],
+      "references": [
+        "https://osv.dev/vulnerability/GHSA-qwgh-2vcv-g2f7",
+        "https://github.com/RustCrypto/utils/security/advisories/GHSA-qwgh-2vcv-g2f7",
+        "https://github.com/RustCrypto/utils/releases/tag/block-buffer-v0.12.1"
+      ],
+      "sourceEvidence": "Exact graph and primary response SHA-256: a35c62683978eb74c07ee32a1a78c303ca81869fbd6856509e3f6dce68d11105",
+      "scopeLimit": "No general binary reachability audit or dynamic validation of unoffered compiler/toolchain workloads; any such use reopens assessment.",
+      "upstreamFixed": false
+    },
+    {
+      "id": "tool-rustCompiler:GHSA-w44r-93j7-qv28",
+      "advisoryId": "GHSA-w44r-93j7-qv28",
+      "verdict": "not_actionable",
+      "confidence": "medium",
+      "reason": "An unauthenticated TLS handshake could influence later key-share prediction. The matched versions occur only in external Cargo/compiler source-superset inventories, not any of the four candidate graphs or tracked native release payloads. Supported rebuilds compile fixed reviewed sources using offline/frozen/local inputs; they expose no corresponding TLS, HTML/Markdown, secret arithmetic, ZIP-extraction or caller-callback service to manifest authors. General compiler/package-manager use and executable distribution require a new review.",
+      "locations": [
+        {
+          "label": "qualified build recipes",
+          "path": "scripts/runtime-supply-chain-repaired-rebuild.mjs",
+          "lines": "20-38",
+          "detail": "Fixed source archive, offline/frozen Cargo and Go builds; no executable artifact is offered by the source-only milestone."
+        }
+      ],
+      "references": [
+        "https://osv.dev/vulnerability/GHSA-w44r-93j7-qv28",
+        "https://github.com/rustls/rustls/security/advisories/GHSA-w44r-93j7-qv28",
+        "https://github.com/rustls/rustls/pull/3355",
+        "https://github.com/rustls/rustls/commit/8fa0dc5d517a63411ad1e528249bdf5b098ae5e4"
+      ],
+      "sourceEvidence": "Exact graph and primary response SHA-256: cb51dd8e29b52cde964770a28a2ae22be7f411bb9b44a0dcfc06ec3120d6ecd2",
+      "scopeLimit": "No general binary reachability audit or dynamic validation of unoffered compiler/toolchain workloads; any such use reopens assessment.",
+      "upstreamFixed": false
+    },
+    {
+      "id": "tool-rustCompiler:RUSTSEC-2026-0367",
+      "advisoryId": "RUSTSEC-2026-0367",
+      "verdict": "not_actionable",
+      "confidence": "medium",
+      "reason": "Privileged ZIP extraction could preserve unsafe permission bits. The matched versions occur only in external Cargo/compiler source-superset inventories, not any of the four candidate graphs or tracked native release payloads. Supported rebuilds compile fixed reviewed sources using offline/frozen/local inputs; they expose no corresponding TLS, HTML/Markdown, secret arithmetic, ZIP-extraction or caller-callback service to manifest authors. General compiler/package-manager use and executable distribution require a new review.",
+      "locations": [
+        {
+          "label": "qualified build recipes",
+          "path": "scripts/runtime-supply-chain-repaired-rebuild.mjs",
+          "lines": "20-38",
+          "detail": "Fixed source archive, offline/frozen Cargo and Go builds; no executable artifact is offered by the source-only milestone."
+        }
+      ],
+      "references": [
+        "https://osv.dev/vulnerability/RUSTSEC-2026-0367",
+        "https://rustsec.org/advisories/RUSTSEC-2026-0367.html"
+      ],
+      "sourceEvidence": "Exact graph and primary response SHA-256: 7447992c864b19509e1d8f0812dc1d63b0c4c6b9064dc68f08f40234edbfa036",
+      "scopeLimit": "No general binary reachability audit or dynamic validation of unoffered compiler/toolchain workloads; any such use reopens assessment.",
+      "upstreamFixed": false
+    },
+    {
+      "id": "tool-rustCompiler:RUSTSEC-2026-0368",
+      "advisoryId": "RUSTSEC-2026-0368",
+      "verdict": "not_actionable",
+      "confidence": "medium",
+      "reason": "ZIP extraction could create a link escaping its destination. The matched versions occur only in external Cargo/compiler source-superset inventories, not any of the four candidate graphs or tracked native release payloads. Supported rebuilds compile fixed reviewed sources using offline/frozen/local inputs; they expose no corresponding TLS, HTML/Markdown, secret arithmetic, ZIP-extraction or caller-callback service to manifest authors. General compiler/package-manager use and executable distribution require a new review.",
+      "locations": [
+        {
+          "label": "qualified build recipes",
+          "path": "scripts/runtime-supply-chain-repaired-rebuild.mjs",
+          "lines": "20-38",
+          "detail": "Fixed source archive, offline/frozen Cargo and Go builds; no executable artifact is offered by the source-only milestone."
+        }
+      ],
+      "references": [
+        "https://osv.dev/vulnerability/RUSTSEC-2026-0368",
+        "https://rustsec.org/advisories/RUSTSEC-2026-0368.html"
+      ],
+      "sourceEvidence": "Exact graph and primary response SHA-256: a3cb7b6b95a62c31e2152f8e7ed6bdccddb986cd17c7e04774f57e23027b41f2",
+      "scopeLimit": "No general binary reachability audit or dynamic validation of unoffered compiler/toolchain workloads; any such use reopens assessment.",
+      "upstreamFixed": false
+    },
+    {
+      "id": "tool-rustCompiler:RUSTSEC-2026-0369",
+      "advisoryId": "RUSTSEC-2026-0369",
+      "verdict": "not_actionable",
+      "confidence": "medium",
+      "reason": "ZIP extraction could change permissions through an external link. The matched versions occur only in external Cargo/compiler source-superset inventories, not any of the four candidate graphs or tracked native release payloads. Supported rebuilds compile fixed reviewed sources using offline/frozen/local inputs; they expose no corresponding TLS, HTML/Markdown, secret arithmetic, ZIP-extraction or caller-callback service to manifest authors. General compiler/package-manager use and executable distribution require a new review.",
+      "locations": [
+        {
+          "label": "qualified build recipes",
+          "path": "scripts/runtime-supply-chain-repaired-rebuild.mjs",
+          "lines": "20-38",
+          "detail": "Fixed source archive, offline/frozen Cargo and Go builds; no executable artifact is offered by the source-only milestone."
+        }
+      ],
+      "references": [
+        "https://osv.dev/vulnerability/RUSTSEC-2026-0369",
+        "https://rustsec.org/advisories/RUSTSEC-2026-0369.html"
+      ],
+      "sourceEvidence": "Exact graph and primary response SHA-256: a82fef58c9b96750f6866bb9b238b63c9372e7aae434447ed0dfb112d5e477e5",
+      "scopeLimit": "No general binary reachability audit or dynamic validation of unoffered compiler/toolchain workloads; any such use reopens assessment.",
+      "upstreamFixed": false
+    },
+    {
+      "id": "tool-rustCompiler:RUSTSEC-2026-0374",
+      "advisoryId": "RUSTSEC-2026-0374",
+      "verdict": "not_actionable",
+      "confidence": "medium",
+      "reason": "An upstream compiler dependency is unmaintained; this is a maintenance risk. The matched versions occur only in external Cargo/compiler source-superset inventories, not any of the four candidate graphs or tracked native release payloads. Supported rebuilds compile fixed reviewed sources using offline/frozen/local inputs; they expose no corresponding TLS, HTML/Markdown, secret arithmetic, ZIP-extraction or caller-callback service to manifest authors. General compiler/package-manager use and executable distribution require a new review.",
+      "locations": [
+        {
+          "label": "qualified build recipes",
+          "path": "scripts/runtime-supply-chain-repaired-rebuild.mjs",
+          "lines": "20-38",
+          "detail": "Fixed source archive, offline/frozen Cargo and Go builds; no executable artifact is offered by the source-only milestone."
+        }
+      ],
+      "references": [
+        "https://osv.dev/vulnerability/RUSTSEC-2026-0374",
+        "https://rustsec.org/advisories/RUSTSEC-2026-0374.html",
+        "https://github.com/dtolnay/basic-toml/commit/dd2ea1df197f255a402b8990cb852ade3e37ea34"
+      ],
+      "sourceEvidence": "Exact graph and primary response SHA-256: d1bbdb438b3f00785c29212a87a8dd5356d120c2475e1e51c4cadcd75ef4b2a7",
+      "scopeLimit": "No general binary reachability audit or dynamic validation of unoffered compiler/toolchain workloads; any such use reopens assessment.",
+      "upstreamFixed": false
+    },
+    {
+      "id": "tool-rustCompiler:RUSTSEC-2026-0381",
+      "advisoryId": "RUSTSEC-2026-0381",
+      "verdict": "not_actionable",
+      "confidence": "medium",
+      "reason": "An old TLS root bundle could retain trust in distrusted intermediates. The matched versions occur only in external Cargo/compiler source-superset inventories, not any of the four candidate graphs or tracked native release payloads. Supported rebuilds compile fixed reviewed sources using offline/frozen/local inputs; they expose no corresponding TLS, HTML/Markdown, secret arithmetic, ZIP-extraction or caller-callback service to manifest authors. General compiler/package-manager use and executable distribution require a new review.",
+      "locations": [
+        {
+          "label": "qualified build recipes",
+          "path": "scripts/runtime-supply-chain-repaired-rebuild.mjs",
+          "lines": "20-38",
+          "detail": "Fixed source archive, offline/frozen Cargo and Go builds; no executable artifact is offered by the source-only milestone."
+        }
+      ],
+      "references": [
+        "https://osv.dev/vulnerability/RUSTSEC-2026-0381",
+        "https://rustsec.org/advisories/RUSTSEC-2026-0381.html",
+        "https://github.com/rustls/webpki-roots/pull/133",
+        "https://emudhra.we-have-a-problem.com/"
+      ],
+      "sourceEvidence": "Exact graph and primary response SHA-256: bbefe6052eff7454e2d5a945ff5e9e37115023f5c96166dbf5109059fb54b9f4",
+      "scopeLimit": "No general binary reachability audit or dynamic validation of unoffered compiler/toolchain workloads; any such use reopens assessment.",
+      "upstreamFixed": false
+    },
+    {
+      "id": "tool-rustCompiler:RUSTSEC-2026-0382",
+      "advisoryId": "RUSTSEC-2026-0382",
+      "verdict": "not_actionable",
+      "confidence": "medium",
+      "reason": "A TLS path might accept a distrusted intermediate. The matched versions occur only in external Cargo/compiler source-superset inventories, not any of the four candidate graphs or tracked native release payloads. Supported rebuilds compile fixed reviewed sources using offline/frozen/local inputs; they expose no corresponding TLS, HTML/Markdown, secret arithmetic, ZIP-extraction or caller-callback service to manifest authors. General compiler/package-manager use and executable distribution require a new review.",
+      "locations": [
+        {
+          "label": "qualified build recipes",
+          "path": "scripts/runtime-supply-chain-repaired-rebuild.mjs",
+          "lines": "20-38",
+          "detail": "Fixed source archive, offline/frozen Cargo and Go builds; no executable artifact is offered by the source-only milestone."
+        }
+      ],
+      "references": [
+        "https://osv.dev/vulnerability/RUSTSEC-2026-0382",
+        "https://rustsec.org/advisories/RUSTSEC-2026-0382.html",
+        "https://github.com/rustls/webpki/pull/546",
+        "https://emudhra.we-have-a-problem.com/"
+      ],
+      "sourceEvidence": "Exact graph and primary response SHA-256: 4d472c55dbc92db0ba80d7beb9fc807dda036484bacd4e1c5895d44a75e3a3fa",
+      "scopeLimit": "No general binary reachability audit or dynamic validation of unoffered compiler/toolchain workloads; any such use reopens assessment.",
+      "upstreamFixed": false
+    },
+    {
+      "id": "tool-rustCompiler:RUSTSEC-2026-0383",
+      "advisoryId": "RUSTSEC-2026-0383",
+      "verdict": "not_actionable",
+      "confidence": "medium",
+      "reason": "An old TLS root bundle could retain trust in distrusted intermediates. The matched versions occur only in external Cargo/compiler source-superset inventories, not any of the four candidate graphs or tracked native release payloads. Supported rebuilds compile fixed reviewed sources using offline/frozen/local inputs; they expose no corresponding TLS, HTML/Markdown, secret arithmetic, ZIP-extraction or caller-callback service to manifest authors. General compiler/package-manager use and executable distribution require a new review.",
+      "locations": [
+        {
+          "label": "qualified build recipes",
+          "path": "scripts/runtime-supply-chain-repaired-rebuild.mjs",
+          "lines": "20-38",
+          "detail": "Fixed source archive, offline/frozen Cargo and Go builds; no executable artifact is offered by the source-only milestone."
+        }
+      ],
+      "references": [
+        "https://osv.dev/vulnerability/RUSTSEC-2026-0383",
+        "https://rustsec.org/advisories/RUSTSEC-2026-0383.html",
+        "https://github.com/rustls/webpki-roots/pull/133",
+        "https://emudhra.we-have-a-problem.com/"
+      ],
+      "sourceEvidence": "Exact graph and primary response SHA-256: 315c86d9ab34b95cf666cc69ca1311407b807cc5bb4033e51601eda3a493021a",
+      "scopeLimit": "No general binary reachability audit or dynamic validation of unoffered compiler/toolchain workloads; any such use reopens assessment.",
+      "upstreamFixed": false
+    },
+    {
+      "id": "tool-rustCompiler:RUSTSEC-2026-0385",
+      "advisoryId": "RUSTSEC-2026-0385",
+      "verdict": "not_actionable",
+      "confidence": "medium",
+      "reason": "Secret-dependent arithmetic branches might leak through timing. The matched versions occur only in external Cargo/compiler source-superset inventories, not any of the four candidate graphs or tracked native release payloads. Supported rebuilds compile fixed reviewed sources using offline/frozen/local inputs; they expose no corresponding TLS, HTML/Markdown, secret arithmetic, ZIP-extraction or caller-callback service to manifest authors. General compiler/package-manager use and executable distribution require a new review.",
+      "locations": [
+        {
+          "label": "qualified build recipes",
+          "path": "scripts/runtime-supply-chain-repaired-rebuild.mjs",
+          "lines": "20-38",
+          "detail": "Fixed source archive, offline/frozen Cargo and Go builds; no executable artifact is offered by the source-only milestone."
+        }
+      ],
+      "references": [
+        "https://osv.dev/vulnerability/RUSTSEC-2026-0385",
+        "https://rustsec.org/advisories/RUSTSEC-2026-0385.html",
+        "https://github.com/RustCrypto/utils/pull/1569"
+      ],
+      "sourceEvidence": "Exact graph and primary response SHA-256: 2d3ba7ec270259c3d743c6d03ab2149d6a15d6f823c5ca43d062f6afa6f28d68",
+      "scopeLimit": "No general binary reachability audit or dynamic validation of unoffered compiler/toolchain workloads; any such use reopens assessment.",
+      "upstreamFixed": false
+    },
+    {
+      "id": "tool-rustCompiler:RUSTSEC-2026-0386",
+      "advisoryId": "RUSTSEC-2026-0386",
+      "verdict": "not_actionable",
+      "confidence": "medium",
+      "reason": "A caller-controlled invalid or replaced file descriptor could violate asynchronous I/O safety. The matched versions occur only in external Cargo/compiler source-superset inventories, not any of the four candidate graphs or tracked native release payloads. Supported rebuilds compile fixed reviewed sources using offline/frozen/local inputs; they expose no corresponding TLS, HTML/Markdown, secret arithmetic, ZIP-extraction or caller-callback service to manifest authors. General compiler/package-manager use and executable distribution require a new review.",
+      "locations": [
+        {
+          "label": "qualified build recipes",
+          "path": "scripts/runtime-supply-chain-repaired-rebuild.mjs",
+          "lines": "20-38",
+          "detail": "Fixed source archive, offline/frozen Cargo and Go builds; no executable artifact is offered by the source-only milestone."
+        }
+      ],
+      "references": [
+        "https://osv.dev/vulnerability/RUSTSEC-2026-0386",
+        "https://rustsec.org/advisories/RUSTSEC-2026-0386.html",
+        "https://github.com/tokio-rs/tokio/pull/8587",
+        "https://github.com/tokio-rs/tokio/issues/8538"
+      ],
+      "sourceEvidence": "Exact graph and primary response SHA-256: 7229bb632bca2a6d1e72673f2ed037bbe9e2575220e3f1fa094f00577bba5d90",
+      "scopeLimit": "No general binary reachability audit or dynamic validation of unoffered compiler/toolchain workloads; any such use reopens assessment.",
+      "upstreamFixed": false
+    },
+    {
+      "id": "tool-rustCompiler:RUSTSEC-2026-0387",
+      "advisoryId": "RUSTSEC-2026-0387",
+      "verdict": "not_actionable",
+      "confidence": "medium",
+      "reason": "Secret arithmetic may have variable timing. The matched versions occur only in external Cargo/compiler source-superset inventories, not any of the four candidate graphs or tracked native release payloads. Supported rebuilds compile fixed reviewed sources using offline/frozen/local inputs; they expose no corresponding TLS, HTML/Markdown, secret arithmetic, ZIP-extraction or caller-callback service to manifest authors. General compiler/package-manager use and executable distribution require a new review.",
+      "locations": [
+        {
+          "label": "qualified build recipes",
+          "path": "scripts/runtime-supply-chain-repaired-rebuild.mjs",
+          "lines": "20-38",
+          "detail": "Fixed source archive, offline/frozen Cargo and Go builds; no executable artifact is offered by the source-only milestone."
+        }
+      ],
+      "references": [
+        "https://osv.dev/vulnerability/RUSTSEC-2026-0387",
+        "https://rustsec.org/advisories/RUSTSEC-2026-0387.html",
+        "https://github.com/RustCrypto/crypto-bigint/pull/1365"
+      ],
+      "sourceEvidence": "Exact graph and primary response SHA-256: b8c73852a4c6a3d1d6793f21bd2a66b0e7737ceb5f772c874c6b1a0a3f70e99f",
+      "scopeLimit": "No general binary reachability audit or dynamic validation of unoffered compiler/toolchain workloads; any such use reopens assessment.",
+      "upstreamFixed": false
+    },
+    {
+      "id": "tool-rustCompiler:RUSTSEC-2026-0414",
+      "advisoryId": "RUSTSEC-2026-0414",
+      "verdict": "not_actionable",
+      "confidence": "medium",
+      "reason": "An explicitly enabled wikilink parser could expand hostile Markdown excessively. The matched versions occur only in external Cargo/compiler source-superset inventories, not any of the four candidate graphs or tracked native release payloads. Supported rebuilds compile fixed reviewed sources using offline/frozen/local inputs; they expose no corresponding TLS, HTML/Markdown, secret arithmetic, ZIP-extraction or caller-callback service to manifest authors. General compiler/package-manager use and executable distribution require a new review.",
+      "locations": [
+        {
+          "label": "qualified build recipes",
+          "path": "scripts/runtime-supply-chain-repaired-rebuild.mjs",
+          "lines": "20-38",
+          "detail": "Fixed source archive, offline/frozen Cargo and Go builds; no executable artifact is offered by the source-only milestone."
+        }
+      ],
+      "references": [
+        "https://osv.dev/vulnerability/RUSTSEC-2026-0414",
+        "https://rustsec.org/advisories/RUSTSEC-2026-0414.html",
+        "https://github.com/pulldown-cmark/pulldown-cmark/issues/1179",
+        "https://github.com/pulldown-cmark/pulldown-cmark/pull/1102"
+      ],
+      "sourceEvidence": "Exact graph and primary response SHA-256: 3f761b5c0ea5cd643538ea5136d3ff43a1947ab71ad1233dd21b552440940809",
+      "scopeLimit": "No general binary reachability audit or dynamic validation of unoffered compiler/toolchain workloads; any such use reopens assessment.",
+      "upstreamFixed": false
+    }
+  ],
+  "confirmedCurrentBoundaryViolations": 0,
+  "unresolvedApplicableReleaseBlockers": [],
+  "dynamicValidationPerformed": false,
+  "fixesApplied": false,
+  "retainedRisks": [
+    "Affected upstream versions are still present in exact locks; root npm audit retains four fast-uri advisory references.",
+    "No general compiler, online native provisioning, arbitrary-schema authorization, independent assurance or whole-toolchain safety conclusion.",
+    "Earlier advisory records, hard-gate failures, tool notices and untested future workloads remain unchanged."
+  ]
+}

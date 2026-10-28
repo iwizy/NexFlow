@@ -21,3 +21,5 @@ jobs:
           node-version: '20'
       - name: Verify exact-source assessment, advisory integrity and open blockers
         run: node scripts/release-0-4-readiness-smoke.mjs
+      - name: Verify forward scope, advisory dispositions and exact-candidate closure
+        run: node scripts/release-0-4-completion-smoke.mjs

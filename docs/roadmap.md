@@ -408,12 +408,20 @@ Relevant docs: [Architecture](architecture.md), [Runtime Options](runtime-option
 
 ## Milestone 5: Reference CLI
 
-Possible commands:
+Current next work follows the [adopted 0.5 implementation profile](0.5-cli-contract.md)
+and [NF-104 scope review](../rfcs/reviews/2026-10-28-cli-preview-scope.md).
+First-preview commands:
 
-- `nexflow init`
 - `nexflow validate`
 - `nexflow inspect`
 - `nexflow graph`
+- help/version
+
+`init` is deferred for the first preview. Implement the separate TypeScript
+validation and CLI packages, then qualify actual npm-compatible tarballs,
+dependency/security closure and native installation/upgrade/rollback on all
+three targets. The target label is `0.5.0-alpha.1` with external Node; package
+implementation and release are not completed by adopting the scope.
 
 The CLI should validate and inspect manifests only. It should not orchestrate real work.
 Its commands must preserve the offline, filesystem, process, extension,

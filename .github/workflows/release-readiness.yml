@@ -19,7 +19,32 @@ jobs:
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
           node-version: '20'
-      - name: Verify exact-source assessment, advisory integrity and open blockers
+      - name: Preserve the published readiness records and verifiers
+        run: |
+          git diff --exit-code 5cb33caad080f61808949c1de17df2879da9996f -- \
+            release/0.4 release/0.4-completion \
+            scripts/release-0-4-readiness-smoke.mjs \
+            scripts/release-0-4-completion-smoke.mjs
+      - name: Check out the exact published source for historical assessment
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: 5cb33caad080f61808949c1de17df2879da9996f
+          path: .release-0.4-snapshot
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Verify historical assessment, advisory integrity and retained blockers
+        working-directory: .release-0.4-snapshot
         run: node scripts/release-0-4-readiness-smoke.mjs
-      - name: Verify forward scope, advisory dispositions and exact-candidate closure
+      - name: Verify published scope, advisory dispositions and exact-candidate closure
+        working-directory: .release-0.4-snapshot
         run: node scripts/release-0-4-completion-smoke.mjs
+      - name: Verify current preview contract matches its review
+        run: |
+          node --input-type=module <<'JS'
+          import assert from 'node:assert/strict';
+          import { readFileSync } from 'node:fs';
+          import { createHash } from 'node:crypto';
+          const digest = createHash('sha256').update(readFileSync('docs/0.5-cli-contract.md')).digest('hex');
+          const review = readFileSync('rfcs/reviews/2026-10-28-cli-preview-scope.md', 'utf8');
+          assert.ok(review.includes('`' + digest + '`'), 'Preview scope changed after review');
+          JS

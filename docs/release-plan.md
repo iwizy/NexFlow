@@ -8,9 +8,12 @@ The [RFC-0025 decision](../evaluation/architecture/revised/decision.json) accept
 TypeScript/layout B for unsigned validation/developer architecture and future
 host interface design. [The accepted RFC](../rfcs/RFC-0025-reference-implementation-architecture.md)
 authorizes no product release, package, tag, version change or runtime implementation.
-NF-103 must review fresh release evidence, source-package publisher/runtime trust
-and any applicable future native signing/notarization path. Current project
-signing/notarization remains unperformed; architecture acceptance is not release GO.
+The completed NF-103 review and [v0.4.0 publication receipt](../release/0.4-publication.md)
+cover the released source/decision/evidence milestone. The separate
+[0.5 CLI implementation profile](0.5-cli-contract.md) defines the next bounded
+tooling target; its actual packages, publisher/runtime trust and applicable
+artifact checks remain future work. Current project signing/notarization remains
+unperformed; architecture or scope adoption is not tooling release GO.
 
 ## Release Principles
 
@@ -46,7 +49,8 @@ does not select a release version. Do not fill missing numbers with empty tags,
 backdate releases, or rewrite published history.
 
 `v0.2.0` and then `v0.3.0` were separately published and verified on
-`2026-10-01`. The next milestone is `0.4` runtime decision readiness, not `0.5`.
+`2026-10-01`. `v0.4.0` runtime decision readiness was separately published and
+download-verified on `2026-10-28`; the next line is `0.5` reference tooling.
 The [0.2 review packet](../release/0.2-release-review.md) and
 [0.3 review packet](../release/0.3-release-review.md) map the existing evidence
 to their respective criteria. Their scope, compatibility, and limitations were
@@ -55,13 +59,14 @@ exact-revision checks and completed readiness record attached to the GitHub
 release. Future candidates require the same separate review and evaluation;
 passing a preparatory checklist is not publication.
 
-`0.4` remains blocked by the incomplete comparative runtime evaluation and
-architecture decision. `0.5` cannot bypass that milestone merely because a
-repository CLI prototype or beta checklist exists.
+The [0.4 completion review](../release/0.4-completion-review.md) preserves rejected
+candidates and the explicit comparison-criterion amendment. Historical blocked
+reviews keep their original outcomes. Completing that milestone does not make
+the repository prototype or beta checklist an installable `0.5` CLI.
 
 Repository release tags and manifest `specVersion` are separate identifiers.
-The published `v0.2.0` and `v0.3.0` snapshots continue to accept only
-`specVersion: "0.1"`; they do not introduce `0.2` or `0.3` manifest dialects.
+The published `v0.2.0`, `v0.3.0` and `v0.4.0` snapshots continue to accept only
+`specVersion: "0.1"`; they do not introduce corresponding new manifest dialects.
 See [Versioning](versioning.md).
 
 ## `0.1` Draft Foundation
@@ -198,6 +203,14 @@ Non-goals:
 ## `0.5` Reference Tooling Preview
 
 The `0.5` line may introduce validation-focused tooling if the runtime decision process supports it.
+
+The [NF-104 CLI contract](0.5-cli-contract.md) and its
+[bounded scope review](../rfcs/reviews/2026-10-28-cli-preview-scope.md) adopt
+TypeScript validation/CLI package identities, `validate`/`inspect`/static `graph`,
+explicit root grammar, preview JSON and a GitHub tarball channel with external
+Node. `init` is deferred. The first candidate target is `v0.5.0-alpha.1`, not
+an automatically approved beta or a new manifest dialect. Actual implementation,
+installed-artifact qualification and publication remain separate gates.
 
 The [Draft Reference CLI Alpha Release Notes](cli-alpha-release-notes.md)
 prepare the evidence inventory, limitations, version separation, and

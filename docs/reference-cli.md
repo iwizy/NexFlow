@@ -1,12 +1,20 @@
 # Reference CLI
 
-Status: target contract documented; no reference CLI package or release exists.
+Status: [0.5 implementation profile adopted](0.5-cli-contract.md); no reference
+CLI package or release exists.
 
 NexFlow plans a validation-focused reference CLI for authoring and reviewing
 manifest projects. The command names are proposed by
 [RFC-0011](../rfcs/RFC-0011-reference-cli-scope.md), which remains Draft. The
 repository also contains an unreleased
 [CLI prototype](cli-prototype.md) used to test parts of that proposal.
+
+The [NF-104 scope review](../rfcs/reviews/2026-10-28-cli-preview-scope.md) adopts
+only the bounded 0.5 profile for implementation under delegated task authority.
+It does not accept every future option in Draft RFC-0011. That profile is the
+current grammar/package/output target: TypeScript `validate`, `inspect`, static
+`graph`, help/version, separate validation/CLI packages, explicit `--root`,
+external Node and npm-compatible GitHub tarballs. `init` is deferred.
 
 These are different surfaces:
 
@@ -36,8 +44,10 @@ test an installable alpha artifact or change the checkpoint decision.
 
 ## Command Map
 
-The initial reference CLI proposal contains four public commands. `discover`
-exists only in the repository prototype as a focused evaluation aid.
+The broader Draft proposal and historical prototype contain the forms below.
+The adopted 0.5 profile above takes precedence for new implementation; the
+prototype keeps its existing grammar, version and behavior. `discover` exists
+only in the prototype, and its existing `init` is not in the new preview.
 
 | Intent | Proposed public form | Runnable repository prototype | Current evidence |
 | --- | --- | --- | --- |
@@ -47,9 +57,10 @@ exists only in the repository prototype as a focused evaluation aid.
 | Create a safe starter project | `nexflow init` with an explicit destination and template | `node scripts/cli-prototype.mjs init --root <directory> --id <project-id>` | One built-in three-file starter with no overwrite mode. |
 | Inspect discovery input without validation | No proposed public command | `node scripts/cli-prototype.mjs discover --root <directory>` | Repository-only source inventory. |
 
-The proposed public syntax is not stable. Do not write installers, integrations,
-or automation that assume these positional arguments or flags. The runnable
-forms above describe the current repository revision only.
+The old positional proposal is not the adopted preview grammar. The
+[0.5 contract](0.5-cli-contract.md#command-grammar) freezes the new implementation
+target; it supplies no executable yet. Runnable forms above describe only the
+historical repository tooling.
 
 ## Try The Current Evidence
 
@@ -88,7 +99,7 @@ exactly one mode:
 The prototype does not recursively scan, search parent directories, expand
 globs, fetch remote sources, or load files outside the explicit root. See
 [Manifest Discovery](manifest-discovery.md) for limits and rejection rules.
-Input selection for the reference CLI remains subject to the RFC process.
+The new preview adopts these three bounded modes in its separate scope contract.
 
 ## Commands And Boundaries
 

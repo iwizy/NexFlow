@@ -21,7 +21,7 @@ schema or prototype implementation does not change a Draft RFC to Accepted.
 | [RFC-0008](RFC-0008-memory-retention.md) | Memory Retention | Draft |
 | [RFC-0009](RFC-0009-event-envelope.md) | Event Envelope | Draft |
 | [RFC-0010](RFC-0010-provider-selection.md) | Provider Selection | Draft |
-| [RFC-0011](RFC-0011-reference-cli-scope.md) | Reference CLI Scope | Draft |
+| [RFC-0011](RFC-0011-reference-cli-scope.md) | Reference CLI Scope | Draft; bounded 0.5 implementation profile adopted separately in NF-104 |
 | [RFC-0012](RFC-0012-manifest-bundling.md) | Manifest Bundling | Draft |
 | [RFC-0013](RFC-0013-actor-model.md) | Actor Model | Draft |
 | [RFC-0014](RFC-0014-effective-agent-configuration.md) | Effective Agent Configuration | Draft |
@@ -42,6 +42,11 @@ by the frozen candidate boundary. That treatment does not change an RFC's stage
 or imply that an implemented slice accepts the entire RFC.
 
 ## Cross-RFC Reviews
+
+- [0.5 CLI Preview Scope — 2026-10-28](reviews/2026-10-28-cli-preview-scope.md)
+  records both technical lenses and a delegated, bounded implementation decision
+  on the exact contract bytes. RFC-0011 stays Draft for broader future scope;
+  executable/package/target evidence and release approval are separate work.
 
 - [NF-102-06 Immutable Review](../evaluation/architecture/revised/review.md)
   and [separate decision](../evaluation/architecture/revised/decision.json) bind

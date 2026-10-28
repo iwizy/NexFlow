@@ -4,6 +4,14 @@
 
 Draft
 
+The broader proposal remains Draft. A bounded
+[0.5 implementation profile](../docs/0.5-cli-contract.md) was adopted under
+delegated NF-104 task authority in the
+[2026-10-28 scope review](reviews/2026-10-28-cli-preview-scope.md).
+It fixes validate/inspect/static graph, help/version, explicit-root grammar,
+package/output boundaries and deferred init. Future commands, formats and
+semantic expansions below are not accepted by that narrower decision.
+
 ## Summary
 
 This RFC proposes the initial scope for a future NexFlow reference CLI.

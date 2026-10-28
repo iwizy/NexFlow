@@ -1,0 +1,219 @@
+{
+  "recordVersion": 1,
+  "task": "NF-103",
+  "recordedAt": "2026-10-28T11:14:50.368Z",
+  "releaseTarget": "v0.4.0",
+  "outcome": "ready-with-notes",
+  "taskComplete": true,
+  "assessmentSourceRevision": "df87a985059906814411d82741675de225414826",
+  "maintainer": "Alexander Agafonov",
+  "decisionMode": "separate-delegated-technical-release-readiness-decision",
+  "authority": "The maintainer requests completion of NF-103 and its remaining work, following standing delegation of technical decisions. This separate decision binds the now committed scope/amendment/dispositions and actual source checks/CI, without inferring a personally performed review, signature, independence or a release-publication command.",
+  "personalReviewClaimed": false,
+  "independenceClaimed": false,
+  "criteria": [
+    {
+      "id": "R1",
+      "status": "passed",
+      "basis": "Bounded evidence and disposition in release/0.4-completion-review.md."
+    },
+    {
+      "id": "R2",
+      "status": "passed",
+      "basis": "Explicit forward eligible-candidate amendment; all four assessed, failed candidates remain unscored."
+    },
+    {
+      "id": "R3",
+      "status": "passed",
+      "basis": "Bounded evidence and disposition in release/0.4-completion-review.md."
+    },
+    {
+      "id": "R4",
+      "status": "passed",
+      "basis": "Bounded evidence and disposition in release/0.4-completion-review.md."
+    },
+    {
+      "id": "R5",
+      "status": "passed",
+      "basis": "Bounded evidence and disposition in release/0.4-completion-review.md."
+    },
+    {
+      "id": "R6",
+      "status": "passed",
+      "basis": "Bounded evidence and disposition in release/0.4-completion-review.md."
+    },
+    {
+      "id": "R7",
+      "status": "passed",
+      "basis": "Bounded evidence and disposition in release/0.4-completion-review.md."
+    },
+    {
+      "id": "R8",
+      "status": "passed",
+      "basis": "Bounded evidence and disposition in release/0.4-completion-review.md."
+    }
+  ],
+  "closedBlockers": [
+    "NF-103-01",
+    "NF-103-02"
+  ],
+  "openApplicableBlockers": [],
+  "closureEvidence": [
+    {
+      "id": "NF-103-01",
+      "path": "release/0.4-completion/scope-amendment.json",
+      "sha256": "1442a505e7f65d4d7d0deda132053ae266ef126cc3d4a84ecde34c23efd4cc33"
+    },
+    {
+      "id": "NF-103-02",
+      "path": "release/0.4-completion/advisory-dispositions.json",
+      "sha256": "2c14462516d6fec6a7bc9e2d99806f3a239a34cdbe2c29ed370e4cbba46bb820"
+    }
+  ],
+  "sourceChecks": {
+    "path": "release/0.4-completion/source-checks.json",
+    "passed": 68,
+    "failed": 0
+  },
+  "candidateCi": {
+    "path": "release/0.4-completion/candidate-ci.json",
+    "successfulWorkflows": 5
+  },
+  "architecture": {
+    "rfc": "RFC-0025",
+    "reviewedRevision": "d0f3949543faff32bc579b243e92c177392dab42",
+    "reviewRecordRevision": "4a1e2c350bf59be06a7ef9177bf4015ba61641f2",
+    "decisionRevision": "0f6f9a863e62eaa53032fc5a28c4ac7c4de2e7b1",
+    "status": "Accepted",
+    "scope": "unsigned developer validation and future host-interface design only"
+  },
+  "immutableInputs": [
+    {
+      "path": "docs/release-plan.md",
+      "sha256": "f007f58aee9e9a60766e9861be3fd1ade46554d44c06b386e191c654e64af204",
+      "currentBytesMustMatch": true
+    },
+    {
+      "path": "docs/versioning.md",
+      "sha256": "c7a025010f1f3fb29f6153b716a5867a6fedb0bacb680f4fefae9912f50b7b55",
+      "currentBytesMustMatch": true
+    },
+    {
+      "path": "package.json",
+      "sha256": "41ed87fc89721c6078d29ce73f912e5d6517bdd81dd84b1234463c4fcca33763",
+      "currentBytesMustMatch": true
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "52a0d98e38a0ffccb6e84397965918a8303b1b527e231105faab3dded7038bbd",
+      "currentBytesMustMatch": true
+    },
+    {
+      "path": "scripts/release-0-4-completion-smoke.mjs",
+      "sha256": "be2e70b1140c34aea439a34c3b714c2848462efd5386ca71301e15e57214f42f",
+      "currentBytesMustMatch": true
+    },
+    {
+      "path": ".github/workflows/release-readiness.yml",
+      "sha256": "0dcd34b13d0ad52ceb9af4fed3c53aecf042d51892e44d719383f964423dda98",
+      "currentBytesMustMatch": true
+    },
+    {
+      "path": "release/0.4-completion-review.md",
+      "sha256": "e93025d9edd2caa74047ccad79a7daacb46969d2db7f154b4b24f257c756d02e",
+      "currentBytesMustMatch": false
+    },
+    {
+      "path": "release/0.4-completion/advisories.json.gz",
+      "sha256": "90a29e8a765459064fe4f3240af341460f3add5a899c9fb704d1bdad4b755e88",
+      "currentBytesMustMatch": true
+    },
+    {
+      "path": "release/0.4-completion/advisory-dispositions.json",
+      "sha256": "2c14462516d6fec6a7bc9e2d99806f3a239a34cdbe2c29ed370e4cbba46bb820",
+      "currentBytesMustMatch": true
+    },
+    {
+      "path": "release/0.4-completion/evidence-index.json",
+      "sha256": "39728b45efa9c527118bc9a1de318f1a2b720f62eb8f57f1b65c082be415d927",
+      "currentBytesMustMatch": true
+    },
+    {
+      "path": "release/0.4-completion/scope-amendment.json",
+      "sha256": "1442a505e7f65d4d7d0deda132053ae266ef126cc3d4a84ecde34c23efd4cc33",
+      "currentBytesMustMatch": true
+    },
+    {
+      "path": "evaluation/prototypes/typescript/package-lock.json",
+      "sha256": "ea0ef7c56b10d67cfe63c2bc4412fd76bb05af3e4201f7924cbaef18eaa81d55",
+      "currentBytesMustMatch": true
+    },
+    {
+      "path": "evaluation/prototypes/python/requirements.lock",
+      "sha256": "6d95fc741f0f204c6f16c218360bd502188ba86bc95234c5b04d47e535ad25d7",
+      "currentBytesMustMatch": true
+    },
+    {
+      "path": "evaluation/prototypes/rust/Cargo.lock",
+      "sha256": "e487d51d74d156867e6a80c7ccb646f5c008862065dff69d09a9d83b088885a3",
+      "currentBytesMustMatch": true
+    },
+    {
+      "path": "evaluation/prototypes/go/go.mod",
+      "sha256": "19411fe995f877a1e545cf1291daf6b493420551c153fb497067c38a66df8739",
+      "currentBytesMustMatch": true
+    },
+    {
+      "path": "evaluation/prototypes/go/go.sum",
+      "sha256": "999f1641418aa9e87f5865d7999100544abfa5909a8bc41132c208a1f54cf454",
+      "currentBytesMustMatch": true
+    },
+    {
+      "path": "evaluation/architecture/revised/decision.json",
+      "sha256": "ec8e0ff9f9791b08cd9a3236a1f011e7f4e96a5a3fc9d65c55e78a32f132bfc8",
+      "currentBytesMustMatch": true
+    },
+    {
+      "path": "evaluation/architecture/revised/review.json",
+      "sha256": "bdbb4439d733ce7be9b8116e48b00bebe9b444a4433318eecedd5ce6e3175af9",
+      "currentBytesMustMatch": true
+    },
+    {
+      "path": "evaluation/measurement-qualification/summary.json",
+      "sha256": "00dea873866f65606c13971ece52ed4dcd002ee68239ecc12562fcfa1cab8260",
+      "currentBytesMustMatch": true
+    }
+  ],
+  "allFourComparable": false,
+  "originalAllFourSuccessfulCriterionSatisfied": false,
+  "measuredCells": 42,
+  "excludedCells": 42,
+  "advisoryInputsDispositioned": 40,
+  "uniqueNewAdvisoryIds": 31,
+  "dependencyFixesApplied": false,
+  "publicationAuthorized": false,
+  "tagAuthorized": false,
+  "packagePublicationAuthorized": false,
+  "versionChanges": false,
+  "runtimeImplementationAuthorized": false,
+  "signingPerformed": false,
+  "notarizationPerformed": false,
+  "proposedAssets": "repository source, notes, decision/evidence and checksums only; no binary, capsule, native app/installer or embedded runtime",
+  "publicationPrerequisites": [
+    "Separate explicit maintainer publication instruction",
+    "Select the unchanged final release commit and bind its exact final CI/evidence; any later substantive change requires reassessment",
+    "Verify remote tag and independently downloaded offered source/assets/checksums"
+  ],
+  "notes": [
+    "Forward amendment does not satisfy the original all-four-success objective; rejected Rust/Go and 42 null/excluded cells stay visible.",
+    "Upstream affected versions remain unchanged; bounded static advisory dispositions are not dependency repairs or general security approval.",
+    "No general online/native provisioning, arbitrary-schema authorization or compiler binary safety assurance is provided.",
+    "No production runtime, executable extension/provider, stable CLI/ABI, full project semantics or new conformance implementation claim.",
+    "Project signing/notarization are not performed or claimed for non-binary assets; native distribution reopens applicable trust/signing review.",
+    "No independent personal review/signature or legal/publisher certification is invented.",
+    "Two upstream npm tooling notices remain incomplete; external toolchain archives are not offered for redistribution.",
+    "One maintainer, pre-release best effort, no SLA, backup or on-call promise.",
+    "Native cohorts and measurements retain hardware drift, sampling, cache and single-process limits; no intrinsic language ranking.",
+    "October 26 and earlier not-ready/failed records retain their original bytes and scope."
+  ]
+}

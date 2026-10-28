@@ -72,6 +72,19 @@ schema alone does not complete them.
 
 ## 0.4 Runtime Decision Readiness
 
+Current preparation: the [October 28 completion review](0.4-completion-review.md)
+and [exact-candidate record](0.4-completion/record.json) close NF-103 with
+`ready-with-notes` for a repository source/decision/evidence milestone. Both
+previous blockers have explicit dispositions; rejected candidates and upstream
+affected versions stay visible. [Current draft notes](0.4-completion-notes.md)
+describe the offered format and limits. Tag/release/package publication requires
+a separate command and no version is changed here.
+
+`node scripts/release-0-4-completion-smoke.mjs` verifies the forward comparison
+amendment, every new graph/advisory input, exact code/inventory bindings,
+candidate checks/CI and the separate readiness decision. It makes no general
+runtime/toolchain safety or independent review claim.
+
 The [October 26 review](0.4-readiness-review.md) assesses the unchanged eight
 release-plan criteria at one exact source commit. It records `not-ready`, 66
 passed source checks, scoped Accepted RFC-0025 evidence, two owned release
@@ -83,8 +96,8 @@ architecture acceptance and release approval.
 `node scripts/release-0-4-readiness-smoke.mjs` verifies source bindings, response and file
 integrity, eight-criterion coverage and retained blockers. It does not scan for
 new vulnerabilities, re-run native benchmarks, amend the release plan, approve
-publication or manufacture maintainer consent. NF-103 remains open until its
-blockers and the separate exact-candidate release decision are closed.
+publication or manufacture maintainer consent. Its original open-blocker record
+is preserved; the October 28 completion above is the forward outcome.
 
 ## 0.2 Validation Checkpoint
 

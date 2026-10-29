@@ -1,0 +1,40 @@
+{
+  "name": "@nexflow/validation",
+  "version": "0.5.0-alpha.1",
+  "private": true,
+  "type": "module",
+  "description": "Pure validation and declared inspection for NexFlow 0.1; unreleased preview package.",
+  "scripts": {
+    "build": "node scripts/build.mjs"
+  },
+  "engines": {
+    "node": "26.13.0",
+    "npm": "11.20.0"
+  },
+  "dependencies": {
+    "ajv": "8.20.0",
+    "ajv-formats": "3.0.1",
+    "yaml": "2.9.0"
+  },
+  "devDependencies": {
+    "@types/node": "22.20.5",
+    "typescript": "6.0.3"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "LICENSE"
+  ],
+  "license": "MIT",
+  "sideEffects": false,
+  "bundledDependencies": [
+    "ajv",
+    "ajv-formats",
+    "yaml"
+  ]
+}

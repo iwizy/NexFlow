@@ -1,0 +1,35 @@
+name: Reference Validation Library
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validation-library:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '26.13.0'
+          cache: npm
+          cache-dependency-path: packages/validation/package-lock.json
+      - name: Install pinned maintenance and library dependencies without scripts
+        run: |
+          npm ci --ignore-scripts --no-audit --no-fund
+          npm ci --prefix packages/validation --ignore-scripts --no-audit --no-fund
+      - name: Verify pure entry, package relocation, reproducibility and complete corpus
+        run: node scripts/reference-validation-smoke.mjs --report "$RUNNER_TEMP/nf-105-qualification.json"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: reference-validation-library-evidence
+          path: ${{ runner.temp }}/nf-105-qualification.json
+          if-no-files-found: error

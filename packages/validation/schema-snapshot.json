@@ -1,0 +1,79 @@
+{
+  "sourceRevision": "80e58939be45c097cbda58f20bfeb47739324dcd",
+  "specVersion": "0.1",
+  "schemas": [
+    {
+      "file": "actors.schema.json",
+      "sha256": "fb376254763eaa670696618678629f049cb6f782b7816aa20e0216e9625c21a3"
+    },
+    {
+      "file": "agent-definitions.schema.json",
+      "sha256": "0faad7750d9fd95914e09ee7ffbfb23236da303fbcfd211ce77c45589bfa68d7"
+    },
+    {
+      "file": "agents.schema.json",
+      "sha256": "7505ce0ad4ce18eb74a477982b31b77ca06d8069022300171c28e1ada419b24e"
+    },
+    {
+      "file": "capabilities.schema.json",
+      "sha256": "4fc446a356b2f7709bf259ad6fbf4632a64bc77800a43e77b81354710e5e3026"
+    },
+    {
+      "file": "common.schema.json",
+      "sha256": "a02f583325e2b20ffbb659efa451206579779a557a5fc89fbb412c10414630cc"
+    },
+    {
+      "file": "context.schema.json",
+      "sha256": "ad0fc663f5e4bf92eb033d250e38c2ef914947834aa03fc257d601a6226ad7a8"
+    },
+    {
+      "file": "events.schema.json",
+      "sha256": "d08c9cce4106394c5bf53a034ff8a574bfe11ccf085ac53f508459d7a0e98a65"
+    },
+    {
+      "file": "extensions.schema.json",
+      "sha256": "1c87855f8ec5eeba871981ab8d0feac4f026c508b943644bfbc350685270a31d"
+    },
+    {
+      "file": "handoffs.schema.json",
+      "sha256": "40af0a3c48b63f8709e8297badf4a9100fdcc3b22f66cc3c748b88628e5b1ab5"
+    },
+    {
+      "file": "memory.schema.json",
+      "sha256": "75a655d9b1aa57be73c6ec738e10faea327837838ecf2a4b7a1031e28486fb59"
+    },
+    {
+      "file": "model-profiles.schema.json",
+      "sha256": "0503322e7f73d62d3bbcad226799d6615ffc36339c2e9d9afe951c542a57ed00"
+    },
+    {
+      "file": "permissions.schema.json",
+      "sha256": "64084ad81e53b3629dfc4ecab3faf4ebd765105a3072c5f627c5d31daee2fbb0"
+    },
+    {
+      "file": "project.schema.json",
+      "sha256": "586bc846277b846f723371a734952fc30cf29e8c916d6b52db1897ac32fc0778"
+    },
+    {
+      "file": "prompt-sets.schema.json",
+      "sha256": "feaff935c6337638e4bd2cffdcd54d7bad516958cad0d0407185261dc2439d02"
+    },
+    {
+      "file": "providers.schema.json",
+      "sha256": "e3b55c4fbc2a86c05a82be8a7b3ef8126e04a13d425d5654a0e2ee0bca31e4fb"
+    },
+    {
+      "file": "retrieval-profiles.schema.json",
+      "sha256": "685bce372bc68e454b015afd39f412adc88c386f45c56144842fc11e4ff75ade"
+    },
+    {
+      "file": "tasks.schema.json",
+      "sha256": "4cf1f1f35396240abf7da7e018e03a0e99b99c71cb9881c4f729c0175a07a250"
+    },
+    {
+      "file": "workflow.schema.json",
+      "sha256": "1821ec6e26cc1e6060cd2388c22fc51c77a3678cf4ac8c1140934fe612a1b446"
+    }
+  ],
+  "semanticRulesSha256": "4aa1981c1e74ee6676a0f1fdb1266380e1296a9e017a3dc21f2e5316217b45c0"
+}

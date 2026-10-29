@@ -6,6 +6,7 @@
 ![Runtime](https://img.shields.io/badge/runtime-not%20implemented-lightgrey)
 ![Provider Neutral](https://img.shields.io/badge/provider-neutral-brightgreen)
 ![License](https://img.shields.io/badge/license-MIT-blue)
+[![XERJ Corpus Hub contributor](https://hub.xerj.org/contributors/iwizy/badge.svg)](https://hub.xerj.org/contributors/iwizy)
 
 **Open specification and orchestration framework for AI developer teams.**
 

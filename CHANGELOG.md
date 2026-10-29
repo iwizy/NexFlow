@@ -29,6 +29,13 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Changed
 
+- Refreshed root security, contribution, conduct-reporting and roadmap guidance
+  for the unreleased reference validation library, separate workspace adapter
+  and completed 0.4 milestone. Distinguished release tags from manifest versions,
+  retained best-effort support limits and separated conduct requests from private
+  vulnerability reporting. Updated the current-tooling threat model without
+  changing severity calibration, historical evidence or executable behavior.
+
 - Corrected the current release-plan sequence to reflect published v0.4.0 and
   identify 0.5 tooling as the next line, preserving historical blocked reviews.
 - Bound historical 0.4 readiness CI to its exact published source while retaining

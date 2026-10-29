@@ -12,7 +12,10 @@
 
 NexFlow is a specification-first project for describing how humans, AI agents, automation systems, tools, context sources, approvals, and workflows cooperate on software projects.
 
-It is **not** an AI coding agent, an LLM API wrapper, a chat application, or a personal productivity tool. The specification is the product. Runtimes, CLIs, and orchestration engines are future work.
+It is **not** an AI coding agent, an LLM API wrapper, a chat application, or a
+personal productivity tool. The specification is the foundation. Repository
+validation tools and an unreleased reference validation library exist; an
+installable reference CLI and workflow runtime remain future work.
 
 ## Status
 
@@ -106,7 +109,7 @@ states, not synonyms for the implementation evidence summarized below.
 | Threat model | Current repository and conditional future-runtime trust boundaries, attacker stories, mitigations, assumptions, and severity calibration documented; not a vulnerability report or runtime claim | [Threat Model](docs/threat-model.md), [Security Policy](SECURITY.md) |
 | Runtime architecture decision | Accepted TypeScript/layout B for unsigned developer validation and future host interface design; no runtime implementation or release authorized | [RFC-0025](rfcs/RFC-0025-reference-implementation-architecture.md), [Exact decision](evaluation/architecture/revised/decision.json), [Runtime Options](docs/runtime-options.md) |
 | Runtime language candidates | Four independent Experimental prototypes; TypeScript/Python qualify in the current evaluation scope, while current Rust/Go fail Windows confinement. Original failed reports remain historical evidence | [Evaluation Packet](evaluation/README.md), [Current measurements](evaluation/measurement-qualification/README.md), [Feature Status Registry](docs/feature-status-registry.md) |
-| Reference CLI | Bounded 0.5 implementation profile adopted; validate/inspect/static graph and separate TypeScript packages planned, init deferred; historical preparation checkpoints remain not-ready, no installable package or release implemented | [0.5 CLI Contract](docs/0.5-cli-contract.md), [Reference CLI](docs/reference-cli.md), [Alpha Preparation Checkpoint](docs/0.4-alpha-checkpoint.md), [0.5 Beta Readiness Checklist](docs/0.5-beta-readiness-checklist.md), [Beta Preparation Checkpoint](docs/0.5-beta-checkpoint.md), [CLI Release Dry Run](docs/cli-release-dry-run.md), [CLI And Runtime Responsibility Boundary](docs/cli-runtime-boundary.md), [RFC-0011](rfcs/RFC-0011-reference-cli-scope.md) |
+| Reference CLI | Bounded 0.5 implementation profile adopted; separate validation library and read-only workspace adapter implemented, public command dispatcher and installable CLI planned, init deferred; historical preparation checkpoints remain not-ready | [0.5 CLI Contract](docs/0.5-cli-contract.md), [Reference CLI](docs/reference-cli.md), [Alpha Preparation Checkpoint](docs/0.4-alpha-checkpoint.md), [0.5 Beta Readiness Checklist](docs/0.5-beta-readiness-checklist.md), [Beta Preparation Checkpoint](docs/0.5-beta-checkpoint.md), [CLI Release Dry Run](docs/cli-release-dry-run.md), [CLI And Runtime Responsibility Boundary](docs/cli-runtime-boundary.md), [RFC-0011](rfcs/RFC-0011-reference-cli-scope.md) |
 | Reference validation library | Separate pure TypeScript package and read-only workspace adapter implemented for source evaluation; fixed schemas, declared inspection and package relocation checked, no executable CLI or published package | [Library Scope And Qualification](docs/reference-validation-library.md), [Package API](packages/validation/README.md), [Workspace Adapter](packages/cli/README.md) |
 | Repository CLI prototype | Experimental local discovery, JSON Schema validation, declared inspection, static graphing, bounded starter initialization, versioned JSON output, executable no-runtime guardrails, cataloged fixtures, and dedicated CI; not a reference CLI alpha, language decision, operating-system sandbox, or `NF-CLI` claim | `npm run cli-prototype -- --help`, `npm run cli-no-runtime-guardrails-smoke`, `npm run cli-fixture-smoke`, [CLI Workflow](.github/workflows/cli-smoke.yml), [Prototype Scope](docs/cli-prototype.md), [JSON Diagnostics](docs/cli-diagnostics.md), [Declared Inspection](docs/cli-inspection.md), [Static Graph](docs/cli-graph.md), [Starter Initialization](docs/cli-init.md) |
 | Runtime and provider execution | Planned, not implemented | [Architecture](docs/architecture.md), [Runtime Options](docs/runtime-options.md) |
@@ -301,8 +304,10 @@ NexFlow is intentionally split into layers:
 1. **Specification**: stable language-independent model and manifest semantics.
 2. **Schemas**: practical JSON Schemas for validation.
 3. **Examples**: reference teams and workflows.
-4. **Runtime**: future implementation that interprets the manifests.
-5. **Products**: possible future desktop, cloud, and hosted orchestration layers.
+4. **Validation tooling**: repository checks, experimental prototypes and the
+   separate reference validation library with its read-only workspace adapter.
+5. **Runtime**: future implementation that interprets the manifests.
+6. **Products**: possible future desktop, cloud, and hosted orchestration layers.
 
 ## Repository Map
 
@@ -316,6 +321,7 @@ the complete documentation catalog.
 | Examples | [Examples Guide](examples/README.md) | Compact learning projects and complete reference team configurations. |
 | Extensions | [Extension Profiles](extensions/README.md) | Maintained policy profiles for non-core integration behavior. |
 | Validation evidence | [Fixtures Guide](fixtures/README.md) | Focused positive and negative inputs with expected outcomes and owning checks. |
+| Reference tooling source | [Validation Library](packages/validation/README.md), [Workspace Adapter](packages/cli/README.md) | Unreleased pure library and bounded file-read adapter; no executable reference CLI yet. |
 | Design proposals | [RFC Index](rfcs/README.md) | Proposal lifecycle, draft RFCs, reviews, and recorded decisions. |
 | Conformance | [Conformance Templates](conformance/README.md) | Support-claim schema, templates, fixtures, and publication workflow. |
 | Releases | [Release Evidence Guide](release/README.md), [Changelog](CHANGELOG.md) | Candidate decision records, release evidence, and unreleased changes. |
@@ -354,24 +360,22 @@ the complete documentation catalog.
 
 The current priorities are:
 
-1. Review feedback from the published `0.1` / `0.2` / `0.3` milestones and
-   continue scoped validation/conformance hardening without widening runtime
-   claims; use the [dated checkpoint](docs/0.2-validation-checkpoint.md).
-2. Review the ActorSet, compact AgentSet, active-definition authority, human
-   override, Agent Assembly inspection, and typed-reference primitive slices
-   before broader field or example migration.
-3. Expand positive and negative fixtures, stabilize diagnostics, and broaden
-   semantic checks.
-4. Use [Accepted RFC-0025](rfcs/RFC-0025-reference-implementation-architecture.md)
-   for separately reviewed validation-library/package planning, preserving its
-   exact effect, version, ownership and conformance boundaries.
-5. Complete NF-103 release/publisher/runtime-prerequisite readiness before any
-   product release; the architecture decision publishes no package or tag.
-6. Plan separately authorized validation-focused reference CLI work for
-   `init`, `validate`, `inspect`, and `graph`; it must not orchestrate work. Review the
-   [0.5 Beta Readiness Checklist](docs/0.5-beta-readiness-checklist.md) before
-   proposing any public tooling beta.
-7. Explore a runtime prototype only after its permission, approval, credential,
+1. Preserve the published `0.1` through `0.4` milestones and their exact evidence.
+   NF-103 is complete; the [0.4 publication receipt](release/0.4-publication.md)
+   records the source/decision/evidence release.
+2. Build on NF-105's [separate validation library](docs/reference-validation-library.md)
+   and implement `validate`, `inspect`, static `graph`, help and version under
+   the [adopted 0.5 contract](docs/0.5-cli-contract.md). `init` is deferred for
+   this preview; the historical prototype's initializer remains experimental.
+3. Package the exact CLI/library pair and fixed schemas, then qualify its actual
+   dependencies, security boundaries and native installation/update/rollback
+   behavior. Source checks and old evaluation artifacts do not replace that work.
+4. Complete the candidate-bound release review, compatibility and support
+   decisions before a separately authorized preview publication. Use the
+   [Release Plan](docs/release-plan.md) and
+   [0.5 readiness checklist](docs/0.5-beta-readiness-checklist.md); preparation
+   does not establish beta readiness or a public CLI release.
+5. Explore a runtime prototype only after its permission, approval, credential,
    network, extension, and audit boundaries are specified.
 
 See [Roadmap](docs/roadmap.md), [Release Plan](docs/release-plan.md),

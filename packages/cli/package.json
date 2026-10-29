@@ -1,0 +1,17 @@
+{
+  "name": "@nexflow/cli",
+  "version": "0.5.0-alpha.1",
+  "private": true,
+  "type": "module",
+  "description": "Read-only workspace adapter; executable CLI is not implemented yet.",
+  "scripts": {
+    "build": "node ../validation/node_modules/typescript/bin/tsc -p tsconfig.json"
+  },
+  "engines": {
+    "node": "26.13.0",
+    "npm": "11.20.0"
+  },
+  "peerDependencies": {
+    "@nexflow/validation": "0.5.0-alpha.1"
+  }
+}

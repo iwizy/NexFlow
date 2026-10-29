@@ -8,6 +8,14 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Added
 
+- Extracted NF-105's separate pure TypeScript validation package, fixed-schema
+  payload and read-only workspace adapter. Added actual package relocation,
+  reproducible build/pack, typed API and full frozen-catalog verification.
+  Experimental sources/locks and their historical outcomes are preserved;
+  executable CLI, broader conformance, target lifecycle and publication remain
+  separate work. New private package metadata uses the already selected preview
+  version; existing manifest/tool version domains and locks are unchanged.
+
 - Adopted NF-104's bounded 0.5 CLI implementation profile and revision-bound
   architecture/security scope review: separate TypeScript validation/CLI
   packages, explicit-root validate/inspect/static graph, a versioned preview

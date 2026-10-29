@@ -3,6 +3,11 @@
 Status: [0.5 implementation profile adopted](0.5-cli-contract.md); no reference
 CLI package or release exists.
 
+NF-105 now supplies a [separate validation library and workspace adapter](reference-validation-library.md).
+The public command dispatcher, static graph command, final installable CLI and
+target lifecycle remain subsequent work; library build evidence does not
+promote the reference CLI to implemented or released.
+
 NexFlow plans a validation-focused reference CLI for authoring and reviewing
 manifest projects. The command names are proposed by
 [RFC-0011](../rfcs/RFC-0011-reference-cli-scope.md), which remains Draft. The

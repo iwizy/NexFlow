@@ -1,0 +1,3086 @@
+{
+  "task": "NF-105",
+  "baselineRevision": "80e58939be45c097cbda58f20bfeb47739324dcd",
+  "environment": {
+    "platform": "darwin",
+    "architecture": "arm64",
+    "kernelRelease": "27.2.0",
+    "osVersion": "27.2"
+  },
+  "node": "26.13.0",
+  "npm": "11.20.0",
+  "package": "@nexflow/validation",
+  "version": "0.5.0-alpha.1",
+  "recordedAt": "2026-10-29T13:32:02.698Z",
+  "verificationScriptSha256": "298ab044867ad83acd13c90bb75d14d97882e96bac4d6c08294aab5d1f7f29ea",
+  "buildInventory": [
+    [
+      "assembly.d.ts",
+      "4978145852dafbbf7bb2035fdbb99ea0fefad23fd79655b222c0fefa024fdaf4"
+    ],
+    [
+      "assembly.js",
+      "d7a9055141639a3f1492b1ab4ab79820215d448191fc7099a02491e4e450926f"
+    ],
+    [
+      "diagnostics.d.ts",
+      "b55acb3403802dde1eeaeae996ca024c74936c1df9086645d56fb074ef74e845"
+    ],
+    [
+      "diagnostics.js",
+      "6a204681dc030efc441839903c4e2265d1cd905737f5fdccb06b242ad6449877"
+    ],
+    [
+      "index.d.ts",
+      "00a1f6b68c88b364d851bed223f5912f93ef78f0b9e49368b919de29f30bede4"
+    ],
+    [
+      "index.js",
+      "518d1bc1c7e538637acc54720715cf668f51b9c8403818d4b801f8d9b7388c6a"
+    ],
+    [
+      "inspection.d.ts",
+      "78c92cb25da913b118b4c8cc03fd2509e60d34393c74127174a3988a9ad26853"
+    ],
+    [
+      "inspection.js",
+      "4fc5feb787172c3c3b2eab14adf32431c948e92a05c560bfe6785aeb07c89245"
+    ],
+    [
+      "model.d.ts",
+      "3d501f75bcc4e6a520427fc852b0dc55bbd30b9420fe844482b1fb63a72852aa"
+    ],
+    [
+      "model.js",
+      "764277da055a025a3b6b091d529beb6196a23071790454dc4511e022ecfb4a8d"
+    ],
+    [
+      "schema-data.d.ts",
+      "2ddc77a866949726510b7a8d33257152fc17ae772ce0d7c6c5131d3cbb02bca1"
+    ],
+    [
+      "schema-data.js",
+      "ea5e8feef6557232d3c67fad8a8715412cbbc9f297168d4856d3854ad17e2f08"
+    ],
+    [
+      "schema-snapshot.json",
+      "be5ff8d8d32f1fa099e253da8472c749c67cb6fd12786cda28263fa05b633d85"
+    ],
+    [
+      "schema.d.ts",
+      "0842a824ed0b00f50c687e5a29dc4582d768be3f63f944a479eebf01ab9f087b"
+    ],
+    [
+      "schema.js",
+      "55cc8835ba44ef8d50315511c54813b8e80aa330ee3dbf14e125e92a6a794803"
+    ],
+    [
+      "schemas/actors.schema.json",
+      "fb376254763eaa670696618678629f049cb6f782b7816aa20e0216e9625c21a3"
+    ],
+    [
+      "schemas/agent-definitions.schema.json",
+      "0faad7750d9fd95914e09ee7ffbfb23236da303fbcfd211ce77c45589bfa68d7"
+    ],
+    [
+      "schemas/agents.schema.json",
+      "7505ce0ad4ce18eb74a477982b31b77ca06d8069022300171c28e1ada419b24e"
+    ],
+    [
+      "schemas/capabilities.schema.json",
+      "4fc446a356b2f7709bf259ad6fbf4632a64bc77800a43e77b81354710e5e3026"
+    ],
+    [
+      "schemas/common.schema.json",
+      "a02f583325e2b20ffbb659efa451206579779a557a5fc89fbb412c10414630cc"
+    ],
+    [
+      "schemas/context.schema.json",
+      "ad0fc663f5e4bf92eb033d250e38c2ef914947834aa03fc257d601a6226ad7a8"
+    ],
+    [
+      "schemas/events.schema.json",
+      "d08c9cce4106394c5bf53a034ff8a574bfe11ccf085ac53f508459d7a0e98a65"
+    ],
+    [
+      "schemas/extensions.schema.json",
+      "1c87855f8ec5eeba871981ab8d0feac4f026c508b943644bfbc350685270a31d"
+    ],
+    [
+      "schemas/handoffs.schema.json",
+      "40af0a3c48b63f8709e8297badf4a9100fdcc3b22f66cc3c748b88628e5b1ab5"
+    ],
+    [
+      "schemas/memory.schema.json",
+      "75a655d9b1aa57be73c6ec738e10faea327837838ecf2a4b7a1031e28486fb59"
+    ],
+    [
+      "schemas/model-profiles.schema.json",
+      "0503322e7f73d62d3bbcad226799d6615ffc36339c2e9d9afe951c542a57ed00"
+    ],
+    [
+      "schemas/permissions.schema.json",
+      "64084ad81e53b3629dfc4ecab3faf4ebd765105a3072c5f627c5d31daee2fbb0"
+    ],
+    [
+      "schemas/project.schema.json",
+      "586bc846277b846f723371a734952fc30cf29e8c916d6b52db1897ac32fc0778"
+    ],
+    [
+      "schemas/prompt-sets.schema.json",
+      "feaff935c6337638e4bd2cffdcd54d7bad516958cad0d0407185261dc2439d02"
+    ],
+    [
+      "schemas/providers.schema.json",
+      "e3b55c4fbc2a86c05a82be8a7b3ef8126e04a13d425d5654a0e2ee0bca31e4fb"
+    ],
+    [
+      "schemas/retrieval-profiles.schema.json",
+      "685bce372bc68e454b015afd39f412adc88c386f45c56144842fc11e4ff75ade"
+    ],
+    [
+      "schemas/tasks.schema.json",
+      "4cf1f1f35396240abf7da7e018e03a0e99b99c71cb9881c4f729c0175a07a250"
+    ],
+    [
+      "schemas/workflow.schema.json",
+      "1821ec6e26cc1e6060cd2388c22fc51c77a3678cf4ac8c1140934fe612a1b446"
+    ],
+    [
+      "semantics.d.ts",
+      "b340f17de09fb719bc3de65f571d1b54187629cc83a9b269eeab87250bd6bc9a"
+    ],
+    [
+      "semantics.js",
+      "4d9f0b65cc44572e6a15483ff48b7455b65d9ebca8cfa5c115d1dc75f9984733"
+    ],
+    [
+      "yaml.d.ts",
+      "59a19d5764855f5ba85db57354cf8d609df1b160518b3219b54c038e79a8dd76"
+    ],
+    [
+      "yaml.js",
+      "036a81507f9776169ac5283f7fac262b8e80befa23f069dc1c8fa2f028080dc4"
+    ]
+  ],
+  "specificationRevision": "1d1fa238ab5729a79bee9389d5c66cfd20a61256",
+  "corpusSha256": "01b116005f0650ac980194b22c02188289eaf1e8626b227aecf3684ece0d8f6b",
+  "catalogSha256": "f1bf8cb786442a212e14c79eb39279a2cdbf05ec20b09901374359d545d74e90",
+  "schemaSnapshotSha256": "be5ff8d8d32f1fa099e253da8472c749c67cb6fd12786cda28263fa05b633d85",
+  "catalog": {
+    "total": 352,
+    "passed": 352,
+    "failed": 0,
+    "runsPerCase": 2,
+    "results": [
+      {
+        "id": "project-project-maintainers-0-id-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "project-project-maintainers-0-id-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "project-project-approvalgates-0-requiredapprovers-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "project-project-approvalgates-0-requiredapprovers-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "actorset-actors-0-operatedby-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "actorset-actors-0-operatedby-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "actorset-actors-0-representedby-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "actorset-actors-0-representedby-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "actorset-actors-0-integrationref-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "actorset-actors-0-integrationref-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "project-project-policies-networkaccess-rules-0-actors-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "project-project-policies-networkaccess-rules-0-actors-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "project-project-policies-networkaccess-rules-0-capabilities-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "project-project-policies-networkaccess-rules-0-capabilities-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "project-project-policies-networkaccess-rules-0-destinations-contextsources-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "project-project-policies-networkaccess-rules-0-destinations-contextsources-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "project-project-policies-networkaccess-rules-0-destinations-providers-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "project-project-policies-networkaccess-rules-0-destinations-providers-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "project-project-policies-networkaccess-rules-0-destinations-extensions-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "project-project-policies-networkaccess-rules-0-destinations-extensions-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "project-project-policies-networkaccess-rules-0-approvalgate-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "project-project-policies-networkaccess-rules-0-approvalgate-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "project-project-policies-networkaccess-audit-events-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "project-project-policies-networkaccess-audit-events-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "project-project-policies-credentialhandling-rules-0-actors-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "project-project-policies-credentialhandling-rules-0-actors-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "project-project-policies-credentialhandling-rules-0-capabilities-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "project-project-policies-credentialhandling-rules-0-capabilities-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "project-project-policies-credentialhandling-rules-0-targets-contextsources-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "project-project-policies-credentialhandling-rules-0-targets-contextsources-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "project-project-policies-credentialhandling-rules-0-targets-providers-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "project-project-policies-credentialhandling-rules-0-targets-providers-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "project-project-policies-credentialhandling-rules-0-targets-extensions-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "project-project-policies-credentialhandling-rules-0-targets-extensions-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "project-project-policies-credentialhandling-rules-0-approvalgate-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "project-project-policies-credentialhandling-rules-0-approvalgate-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "project-project-policies-credentialhandling-audit-events-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "project-project-policies-credentialhandling-audit-events-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "project-project-policies-humanoverride-resume-approvalgate-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "project-project-policies-humanoverride-resume-approvalgate-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "project-project-policies-humanoverride-audit-events-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "project-project-policies-humanoverride-audit-events-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "agentset-agents-0-permissions-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "agentset-agents-0-permissions-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "agentset-agents-0-capabilities-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "agentset-agents-0-capabilities-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "agentset-agents-0-contextaccess-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "agentset-agents-0-contextaccess-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "agentset-agents-0-memoryaccess-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "agentset-agents-0-memoryaccess-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "agentset-agents-0-providerpreferences-0-provider-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "agentset-agents-0-providerpreferences-0-provider-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "agentset-agents-0-extensions-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "agentset-agents-0-extensions-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "taskset-tasks-0-owner-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "taskset-tasks-0-owner-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "taskset-tasks-0-participants-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "taskset-tasks-0-participants-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "taskset-tasks-0-dependson-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "taskset-tasks-0-dependson-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "taskset-tasks-0-capabilitiesrequired-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "taskset-tasks-0-capabilitiesrequired-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "taskset-tasks-0-approvalgates-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "taskset-tasks-0-approvalgates-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "workflow-workflow-stages-0-steps-0-task-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "workflow-workflow-stages-0-steps-0-task-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "workflow-workflow-stages-0-steps-0-approvalgates-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "workflow-workflow-stages-0-steps-0-approvalgates-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "workflow-workflow-stages-0-steps-0-emits-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "workflow-workflow-stages-0-steps-0-emits-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "handoffset-handoffs-0-from-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "handoffset-handoffs-0-from-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "handoffset-handoffs-0-to-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "handoffset-handoffs-0-to-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "permissionset-permissions-0-subjects-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "permissionset-permissions-0-subjects-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "permissionset-permissions-0-capabilities-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "permissionset-permissions-0-capabilities-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "permissionset-permissions-0-approvalgate-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "permissionset-permissions-0-approvalgate-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "contextset-contextsources-0-access-allowedactors-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "contextset-contextsources-0-access-allowedactors-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "contextset-contextsources-0-approvalgates-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "contextset-contextsources-0-approvalgates-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "memoryset-memoryscopes-0-allowedconsumers-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "memoryset-memoryscopes-0-allowedconsumers-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "memoryset-memoryscopes-0-allowedwriters-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "memoryset-memoryscopes-0-allowedwriters-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "memoryset-memoryscopes-0-approvalgate-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "memoryset-memoryscopes-0-approvalgate-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "modelprofileset-modelprofiles-0-selection-providerrefs-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "modelprofileset-modelprofiles-0-selection-providerrefs-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "modelprofileset-modelprofiles-0-selection-providerrefs-0-providerref-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "modelprofileset-modelprofiles-0-selection-providerrefs-0-providerref-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "modelprofileset-modelprofiles-0-fallback-candidateproviderrefs-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "modelprofileset-modelprofiles-0-fallback-candidateproviderrefs-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "modelprofileset-modelprofiles-0-fallback-candidateproviderrefs-0-providerref-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "modelprofileset-modelprofiles-0-fallback-candidateproviderrefs-0-providerref-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "modelprofileset-modelprofiles-0-review-approvers-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "modelprofileset-modelprofiles-0-review-approvers-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "modelprofileset-modelprofiles-0-recommendedfor-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "modelprofileset-modelprofiles-0-recommendedfor-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "promptset-promptsets-0-owner-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "promptset-promptsets-0-owner-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "promptset-promptsets-0-review-approvers-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "promptset-promptsets-0-review-approvers-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "promptset-promptsets-0-compatibility-affectedagents-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "promptset-promptsets-0-compatibility-affectedagents-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "promptset-promptsets-0-recommendedfor-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "promptset-promptsets-0-recommendedfor-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "retrievalprofileset-retrievalprofiles-0-owner-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "retrievalprofileset-retrievalprofiles-0-owner-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "retrievalprofileset-retrievalprofiles-0-review-approvers-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "retrievalprofileset-retrievalprofiles-0-review-approvers-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "retrievalprofileset-retrievalprofiles-0-sources-0-contextsourceref-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "retrievalprofileset-retrievalprofiles-0-sources-0-contextsourceref-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "retrievalprofileset-retrievalprofiles-0-compatibility-affectedagents-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "retrievalprofileset-retrievalprofiles-0-compatibility-affectedagents-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "retrievalprofileset-retrievalprofiles-0-recommendedfor-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "retrievalprofileset-retrievalprofiles-0-recommendedfor-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "agentdefinitionset-agentdefinitions-0-agentref-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "agentdefinitionset-agentdefinitions-0-agentref-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "agentdefinitionset-agentdefinitions-0-compatibility-affectedagents-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "agentdefinitionset-agentdefinitions-0-compatibility-affectedagents-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "agentdefinitionset-agentdefinitions-0-owner-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "agentdefinitionset-agentdefinitions-0-owner-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "agentdefinitionset-agentdefinitions-0-review-approvers-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "agentdefinitionset-agentdefinitions-0-review-approvers-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "agentdefinitionset-agentdefinitions-0-components-modelprofileref-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "agentdefinitionset-agentdefinitions-0-components-modelprofileref-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "agentdefinitionset-agentdefinitions-0-components-promptsetref-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "agentdefinitionset-agentdefinitions-0-components-promptsetref-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "agentdefinitionset-agentdefinitions-0-components-retrievalprofileref-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "agentdefinitionset-agentdefinitions-0-components-retrievalprofileref-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "agentdefinitionset-agentdefinitions-0-components-permissionrefs-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "agentdefinitionset-agentdefinitions-0-components-permissionrefs-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "agentdefinitionset-agentdefinitions-0-components-capabilityrefs-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "agentdefinitionset-agentdefinitions-0-components-capabilityrefs-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "agentdefinitionset-agentdefinitions-0-components-contextsourcerefs-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "agentdefinitionset-agentdefinitions-0-components-contextsourcerefs-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "agentdefinitionset-agentdefinitions-0-components-memoryscopes-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "agentdefinitionset-agentdefinitions-0-components-memoryscopes-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "agentdefinitionset-agentdefinitions-0-components-extensionrefs-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "agentdefinitionset-agentdefinitions-0-components-extensionrefs-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "agentdefinitionset-agentdefinitions-0-review-approvalgate-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "agentdefinitionset-agentdefinitions-0-review-approvalgate-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "agentdefinitionset-agentdefinitions-0-audit-events-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "agentdefinitionset-agentdefinitions-0-audit-events-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "extensionset-extensions-0-requiredcapabilities-0-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "extensionset-extensions-0-requiredcapabilities-0-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "duplicate-actor",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "duplicate-agent",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "duplicate-task",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "duplicate-permission",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "duplicate-capability",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "duplicate-context-source",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "duplicate-memory-scope",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "duplicate-provider",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "duplicate-model-profile",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "duplicate-prompt-set",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "duplicate-retrieval-profile",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "duplicate-agent-definition",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "duplicate-event-type",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "duplicate-extension",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "duplicate-approval-gate",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "workflow-cross-stage-resolved",
+        "operation": "workflow-namespace",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "workflow-same-stage-duplicate",
+        "operation": "workflow-namespace",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "workflow-cross-stage-duplicate",
+        "operation": "workflow-namespace",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "workflow-separate-workflow-identity",
+        "operation": "workflow-namespace",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "workflow-inline-unresolved",
+        "operation": "workflow-namespace",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "workflow-edge-resolved",
+        "operation": "workflow-namespace",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "workflow-edge-unresolved",
+        "operation": "workflow-namespace",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "workflow-duplicate-stage",
+        "operation": "workflow-namespace",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "artifact-cross-task-resolved",
+        "operation": "artifact-namespace",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "artifact-same-task-duplicate",
+        "operation": "artifact-namespace",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "artifact-cross-task-duplicate",
+        "operation": "artifact-namespace",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "artifact-unresolved",
+        "operation": "artifact-namespace",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "artifact-separate-assembly-identity",
+        "operation": "artifact-namespace",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "agent-bridge-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "agent-bridge-missing",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "agent-bridge-duplicate",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "actor-reference-wrong-kind",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "actor-relationship-cycle",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "legacy-actor-fallback",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "override-human",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "override-authority",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "override-service",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "override-requires-actors",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "active-definition-ambiguous",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "promptsetref-eligible",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "promptsetref-inactive-component",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "promptsetref-unapproved-component",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "retrievalprofileref-inactive-component",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "provider-legacy-feature",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "gate-scoped-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "gate-scope-missing",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "gate-scope-wrong",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "gate-scoped-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "gate-unscoped-kind-has-scope",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "gate-unsupported-kind",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "gate-legacy-ambiguous",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-enterprise-team-agent-definitions",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-enterprise-team-agents",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-enterprise-team-capabilities",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-enterprise-team-context",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-enterprise-team-events",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-enterprise-team-extensions",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-enterprise-team-handoffs",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-enterprise-team-memory",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-enterprise-team-model-profiles",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-enterprise-team-permissions",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-enterprise-team-project",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-enterprise-team-prompt-sets",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-enterprise-team-providers",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-enterprise-team-retrieval-profiles",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-enterprise-team-tasks",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-enterprise-team-workflow",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-minimal-team-actors",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-minimal-team-agents",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-minimal-team-project",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-open-source-maintainer-agent-definitions",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-open-source-maintainer-agents",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-open-source-maintainer-capabilities",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-open-source-maintainer-context",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-open-source-maintainer-events",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-open-source-maintainer-extensions",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-open-source-maintainer-handoffs",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-open-source-maintainer-memory",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-open-source-maintainer-model-profiles",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-open-source-maintainer-permissions",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-open-source-maintainer-project",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-open-source-maintainer-prompt-sets",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-open-source-maintainer-providers",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-open-source-maintainer-retrieval-profiles",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-open-source-maintainer-tasks",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-open-source-maintainer-workflow",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-product-delivery-team-agent-definitions",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-product-delivery-team-agents",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-product-delivery-team-capabilities",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-product-delivery-team-context",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-product-delivery-team-events",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-product-delivery-team-extensions",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-product-delivery-team-handoffs",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-product-delivery-team-memory",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-product-delivery-team-model-profiles",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-product-delivery-team-permissions",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-product-delivery-team-project",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-product-delivery-team-prompt-sets",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-product-delivery-team-providers",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-product-delivery-team-retrieval-profiles",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-product-delivery-team-tasks",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-product-delivery-team-workflow",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-research-lab-agent-definitions",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-research-lab-agents",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-research-lab-capabilities",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-research-lab-context",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-research-lab-events",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-research-lab-extensions",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-research-lab-handoffs",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-research-lab-memory",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-research-lab-model-profiles",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-research-lab-permissions",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-research-lab-project",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-research-lab-prompt-sets",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-research-lab-providers",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-research-lab-retrieval-profiles",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-research-lab-tasks",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-research-lab-workflow",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-software-team-agent-definitions",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-software-team-agents",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-software-team-capabilities",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-software-team-context",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-software-team-events",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-software-team-extensions",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-software-team-handoffs",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-software-team-memory",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-software-team-model-profiles",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-software-team-permissions",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-software-team-project",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-software-team-prompt-sets",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-software-team-providers",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-software-team-retrieval-profiles",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-software-team-tasks",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-software-team-workflow",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-solo-developer-actors",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-solo-developer-agents",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-solo-developer-capabilities",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-solo-developer-context",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-solo-developer-events",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-solo-developer-handoffs",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-solo-developer-permissions",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-solo-developer-project",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-solo-developer-tasks",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-solo-developer-workflow",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-startup-team-agent-definitions",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-startup-team-agents",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-startup-team-capabilities",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-startup-team-context",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-startup-team-events",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-startup-team-extensions",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-startup-team-handoffs",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-startup-team-memory",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-startup-team-model-profiles",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-startup-team-permissions",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-startup-team-project",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-startup-team-prompt-sets",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-startup-team-providers",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-startup-team-retrieval-profiles",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-startup-team-tasks",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-examples-startup-team-workflow",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-negative-missing-required-field",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-negative-invalid-enum",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-negative-invalid-id",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "schema-negative-unknown-kind",
+        "operation": "manifest-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "local-ref-resolved",
+        "operation": "local-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "local-ref-wrong-type",
+        "operation": "local-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "local-ref-unavailable",
+        "operation": "local-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "draft-2020-prefixitems-accepted",
+        "operation": "local-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "draft-2020-prefixitems-rejected",
+        "operation": "local-schema",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "yaml-unique",
+        "operation": "yaml-parse",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "yaml-duplicate",
+        "operation": "yaml-parse",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "yaml-malformed",
+        "operation": "yaml-parse",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "discovery-validate-project-hints",
+        "operation": "discovery",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "discovery-reject-unsupported-version",
+        "operation": "discovery",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "discovery-reject-unsupported-kind",
+        "operation": "discovery",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "discovery-reject-source-outside-root",
+        "operation": "discovery",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "discovery-reject-source-kind-mismatch",
+        "operation": "discovery",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "discovery-reject-ambiguous-project-entry",
+        "operation": "discovery",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "discovery-multiple-workflows",
+        "operation": "discovery",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "agent-bridge-wrong-kind",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "agent-bridge-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "override-mixed-representation",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "gate-kind-agent-definition-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "gate-kind-agent-definition-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "gate-kind-capability-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "gate-kind-capability-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "gate-kind-permission-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "gate-kind-permission-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "gate-kind-context-source-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "gate-kind-context-source-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "gate-kind-memory-scope-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "gate-kind-memory-scope-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "gate-kind-provider-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "gate-kind-provider-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "gate-kind-task-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "gate-kind-task-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "gate-kind-extension-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "gate-kind-extension-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "gate-kind-workflow-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "gate-kind-workflow-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "gate-kind-workflow-stage-resolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      },
+      {
+        "id": "gate-kind-workflow-stage-unresolved",
+        "operation": "semantic-fragment",
+        "result": "passed",
+        "errors": [],
+        "repeatable": true,
+        "inputUnchanged": true
+      }
+    ]
+  },
+  "publicBoundaryChecks": [
+    {
+      "name": "reproducible clean compiled payload",
+      "result": "passed"
+    },
+    {
+      "name": "reproducible npm tarball",
+      "result": "passed"
+    },
+    {
+      "name": "relocated public validation and declared inspection",
+      "result": "passed"
+    },
+    {
+      "name": "public package exports no raw schema or semantic entry",
+      "result": "passed"
+    },
+    {
+      "name": "all pinned schema bytes and local refs travel with package",
+      "result": "passed"
+    },
+    {
+      "name": "main entry import and validation do not call effect APIs",
+      "result": "passed"
+    },
+    {
+      "name": "public declarations typecheck without checkout dependencies",
+      "result": "passed"
+    },
+    {
+      "name": "caller inputs are repeatable and not mutated",
+      "result": "passed"
+    },
+    {
+      "name": "JS accessors and cycles are rejected before evaluation",
+      "result": "passed"
+    },
+    {
+      "name": "unknown kind/version remain explicit unsupported without raw echo",
+      "result": "passed"
+    },
+    {
+      "name": "duplicates and malformed YAML fail closed",
+      "result": "passed"
+    },
+    {
+      "name": "diagnostics redact extra properties and preserve truncation failure",
+      "result": "passed"
+    },
+    {
+      "name": "unsafe workspace selections and empty root never fall back to cwd",
+      "result": "passed"
+    },
+    {
+      "name": "public source planning rejects unsafe locators without exposing values",
+      "result": "passed"
+    },
+    {
+      "name": "root symlinks, non-regular files, invalid UTF-8 and byte limits reject",
+      "result": "passed"
+    },
+    {
+      "name": "all 109 maintained example manifests pass the relocated public API",
+      "result": "passed"
+    },
+    {
+      "name": "pure import closure stays within the package and reviewed pure dependencies",
+      "result": "passed"
+    },
+    {
+      "name": "frozen prototype sources, locks and corpus were not modified",
+      "result": "passed"
+    }
+  ],
+  "artifact": {
+    "sha256": "fde69b129b40be0597b8907f87fdfe51667e3853aaf7a9aada800e6021cb0d11",
+    "name": "nexflow-validation-0.5.0-alpha.1.tgz",
+    "bytes": 453247,
+    "reproduciblePayload": true,
+    "reproducibleTarball": true,
+    "relocatedEntry": true
+  },
+  "coverage": "Catalog includes internal semantic-fragment/local-schema regressions and the read-only workspace facade. It does not mean all seven operations are a public API or complete project semantics.",
+  "notTested": [
+    "public CLI commands",
+    "full semantic/Core/extension conformance",
+    "native three-target lifecycle",
+    "signing/notarization",
+    "OS sandbox enforcement",
+    "current public-artifact advisory acceptance",
+    "release publication"
+  ]
+}

@@ -48,6 +48,7 @@ for (const file of readdirSync("rfcs").filter((name) => /^RFC-\d{4}-.+\.md$/u.te
 }
 
 expect("experiment:repository-cli", "Experimental", "cli-prototype.md");
+if (existsSync("packages/validation/package.json")) expect("experiment:reference-validation", "Experimental", "reference-validation-library.md");
 for (const entry of readdirSync("evaluation/prototypes", { withFileTypes: true })) {
   if (entry.isDirectory()) expect(`experiment:candidate-${entry.name}`, "Experimental",
     `../evaluation/prototypes/${entry.name}/README.md`);

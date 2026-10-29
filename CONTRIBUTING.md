@@ -78,9 +78,10 @@ Avoid implying that planned runtime behavior already exists.
 
 ## Local Validation
 
-This repository currently provides JSON Schemas but no official validation CLI.
-Install the pinned repository tooling and run the unified repository validator
-before opening a pull request:
+This repository provides JSON Schemas, maintenance checks, experimental tooling
+and an unreleased [reference validation library](packages/validation/README.md).
+An installable reference CLI is not yet available. Install the pinned root
+maintenance tooling and run the repository validator before opening a pull request:
 
 ```sh
 npm ci --ignore-scripts
@@ -111,13 +112,30 @@ npm run conformance-claim-smoke
 npm run semantic-smoke
 ```
 
-The command requires Node.js 20 or newer. It checks schema JSON and example YAML
-syntax, rejects aliases and duplicate mapping keys, verifies manifest-kind
+Root maintenance checks require Node.js 20 or newer. The validator checks schema
+JSON and example YAML syntax, rejects aliases and duplicate mapping keys, verifies manifest-kind
 discovery and example coverage, compiles every schema, and validates every
 example against the schema selected by its `kind`. `package-lock.json` pins the
-validation dependencies for reproducible contributor and CI use. Node.js is
-used only for repository maintenance tooling; this does not select or constrain
-a future NexFlow runtime language.
+validation dependencies for reproducible contributor and CI use. This root
+maintenance range is separate from the exact reference-library toolchain.
+TypeScript/layout B is adopted in [RFC-0025](rfcs/RFC-0025-reference-implementation-architecture.md)
+for the bounded developer/design scope; a workflow runtime is not implemented.
+
+Changes to the reference library or its workspace adapter also require Node.js
+26.13.0, npm 11.20.0 and the pinned TypeScript compiler. From the repository root:
+
+```sh
+npm ci --prefix packages/validation --ignore-scripts
+npm run build --prefix packages/validation
+node scripts/reference-validation-smoke.mjs
+```
+
+The focused verifier builds and packs the library, imports it outside the
+checkout, checks declarations and public boundaries, and compares the unchanged
+frozen catalog. Some catalog operations are internal migration regressions,
+not public API or full semantic conformance. The source-only workspace adapter
+has no executable CLI entry. These checks do not establish final CLI
+installation, target lifecycle, current advisory acceptance or release readiness.
 
 Documentation changes must keep local links valid, every first-level
 `docs/*.md` page discoverable from the documentation index, and the root README
@@ -129,7 +147,9 @@ The [repository CLI prototype](docs/cli-prototype.md) is also maintenance and
 evaluation tooling, not a reference CLI alpha. Its `discover` command reports
 inventory only; its `validate` command adds JSON Schema checks for the selected
 assembly. Neither replaces the repository-wide `npm run validate` and focused
-checks or accepts the pending architecture decision. Changes to either command
+checks or establishes full semantics, runtime readiness or product acceptance.
+The separately reviewed architecture decision does not promote this historical
+prototype to a reference CLI. Changes to either command
 must keep its documented selection, diagnostic, non-mutation, and safety
 boundaries synchronized with the smoke checks.
 

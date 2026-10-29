@@ -1,7 +1,7 @@
 # NexFlow Threat Model
 
-This document models threats against the current NexFlow specification
-repository and the runtime described by the specification. It is an
+This document models threats against the NexFlow specification, implemented
+validation tooling and the runtime described by the specification. It is an
 architecture review artifact, not a vulnerability report, penetration-test
 result, or claim that a NexFlow runtime exists.
 
@@ -10,6 +10,12 @@ future runtime is conditional until an implementation and deployment create
 that boundary. Evidence links identify the repository state on which the model
 is based.
 
+Current-tooling scope refreshed on 2026-10-30 after NF-105 and adoption of the
+integration/release branch flow. The [library qualification scope](reference-validation-library.md)
+and its source-bound record describe the new package evidence; original
+evaluation failures and dated advisory dispositions remain unchanged. This
+refresh does not certify the package or change severity calibration.
+
 ## 1. Overview
 
 ### Intended Use And Deployment Scope
@@ -17,9 +23,9 @@ is based.
 NexFlow is specification-first. The repository publishes documentation, JSON
 Schemas, examples, RFCs, and maintenance tooling for describing human, AI, and
 automation collaboration. It is explicitly not an agent, provider client, or
-orchestration engine ([`README.md:10-14`](../README.md#L10-L14)).
+orchestration engine ([Project status](../README.md#status)).
 
-The current executable surface is repository tooling:
+The current executable surfaces are source/evaluation tooling:
 
 - maintainers and contributors run Node.js checks against repository schemas,
   fixtures, and examples;
@@ -27,13 +33,22 @@ The current executable surface is repository tooling:
   validate, inspect, or graph an explicit manifest assembly;
 - users may ask that prototype to initialize three fixed starter manifests in
   an explicit existing directory;
+- four independent validation candidates retain their own source, toolchains,
+  locks and evaluation evidence; retained target failures are not erased;
+- callers may build/import the unreleased `@nexflow/validation` pure data API,
+  while a separate source-only workspace adapter reads selected local files;
 - GitHub Actions installs pinned npm dependencies and runs the maintained check
   set on pull requests and pushes to `main` or `develop`.
+
+The reference library is not an executable CLI. Its matching CLI commands,
+installable package and final target lifecycle remain separate work; `init` is
+deferred in the [first-preview contract](0.5-cli-contract.md). The historical
+prototype's initializer is still an existing write surface in this model.
 
 There is no hosted NexFlow service, multi-tenant control plane, provider call,
 credential broker, extension loader, workflow scheduler, memory backend, event
 store, deployment adapter, or runtime in this repository. The README states the
-same implementation boundary ([`README.md:63-71`](../README.md#L63-L71)).
+same implementation boundary ([Known limitations](../README.md#known-limitations)).
 
 The future-runtime portion of this model is a design constraint for NexFlow
 Runtime, Desktop, Cloud, and third-party implementations. It does not make those
@@ -43,8 +58,11 @@ products or controls current.
 
 | Component | Current role | Data or effects | Evidence |
 | --- | --- | --- | --- |
-| Specification docs, RFCs, schemas, and examples | Public source of authored semantics and structural contracts. | Git changes reviewed and published as repository revisions. | [`README.md:33-61`](../README.md#L33-L61), [`docs/governance.md:20-33`](governance.md#L20-L33) |
+| Specification docs, RFCs, schemas, and examples | Public source of authored semantics and structural contracts. | Git changes reviewed and published as repository revisions. | [Project status](../README.md#status), [Governance](governance.md) |
 | Repository validator | Loads repository-owned schemas and maintained YAML examples. | Reads repository files and returns validation status; it does not authorize execution. | [`package.json:6-32`](../package.json#L6-L32), [`scripts/lib/schema-validation.mjs:38-81`](../scripts/lib/schema-validation.mjs#L38-L81) |
+| Reference validation library | Unreleased pure parsing, fixed-schema validation and declared inspection API. | Processes supplied data using embedded schemas; no application-level project reads, network, subprocess, credential or runtime initialization. | [Public API](../packages/validation/README.md), [Library entry](../packages/validation/src/index.ts), [Qualification scope](reference-validation-library.md) |
+| Reference workspace adapter | Separate source-only, explicit-root file-read facade. | Rejects unsafe roots/paths, symbolic links, non-regular or oversized/non-UTF-8 files; returns raw in-memory documents for validation, not redacted public output. | [Adapter boundary](../packages/cli/README.md), [Bounded reads](../packages/cli/src/files.ts), [Discovery](../packages/cli/src/workspace.ts) |
+| Evaluation candidates | Four independent Experimental implementations with separate dependency graphs and evidence. | Source/evaluation execution only; actual isolation, target failures and dated supply-chain outcomes remain candidate-specific. | [Evaluation packet](../evaluation/README.md), [Feature status](feature-status-registry.md#experimental-implementation-slices) |
 | Manifest discovery | Selects an explicit local assembly from files, Project hints, or one root Project entry point. | Reads bounded local YAML without scanning unrelated files. | [`scripts/lib/manifest-discovery.mjs:127-179`](../scripts/lib/manifest-discovery.mjs#L127-L179), [`scripts/lib/manifest-discovery.mjs:634-665`](../scripts/lib/manifest-discovery.mjs#L634-L665) |
 | CLI prototype | Dispatches `discover`, `validate`, `inspect`, `graph`, and `init` through closed immutable effect budgets. | Reads selected manifests; `init` is the only project-file write effect. Every runtime-facing effect is disabled and no command authorizes execution. | [`scripts/lib/cli-boundary.mjs`](../scripts/lib/cli-boundary.mjs), [`scripts/lib/cli-prototype.mjs`](../scripts/lib/cli-prototype.mjs), [`scripts/cli-no-runtime-guardrails-smoke.mjs`](../scripts/cli-no-runtime-guardrails-smoke.mjs) |
 | CLI diagnostics and projections | Produces text or a versioned JSON result. | Exposes bounded structural facts and redacted source locations, not raw manifests or authority. | [`scripts/lib/cli-output.mjs:6-14`](../scripts/lib/cli-output.mjs#L6-L14), [`scripts/lib/cli-output.mjs:86-115`](../scripts/lib/cli-output.mjs#L86-L115) |
@@ -60,6 +78,9 @@ flowchart LR
   U["Untrusted local manifests"] --> D["Bounded discovery"]
   D --> V["Schema validation"]
   V --> O["Redacted inspect and graph output"]
+  D --> L["Pure reference validation library"]
+  J["Caller-supplied YAML/JSON"] --> L
+  L --> P["Safe validation and declared inspection results"]
   H["Human operator"] --> I["Explicit init destination"]
   I --> F["Three starter manifests"]
   S -. "future declarations" .-> R["Future runtime host"]
@@ -74,13 +95,14 @@ success.
 
 | Resource | Controller | Consumer | Current capability or limit |
 | --- | --- | --- | --- |
-| Repository revision | Contributor proposes; maintainer accepts. | Readers, CI, and downstream implementers. | Git review plus automated checks; repository branch-protection settings are operational state and are not proven by this repository. |
+| Repository revision | Contributor proposes; maintainer accepts. | Readers, CI, and downstream implementers. | Task PRs enter `develop`; reviewed release PRs from that repository's `develop` enter `main`. A separate [routing check](../.github/workflows/branch-flow.yml) checks PR direction; effective hosting protection remains operational state. |
 | Local manifest bytes and names | CLI operator and manifest author. | Discovery, parser, validator, and safe output projections. | Relative `.yaml` or `.yml` sources inside one canonical root; 128 documents, 1 MiB per file, and 100 aliases at most ([`scripts/lib/manifest-discovery.mjs:12-16`](../scripts/lib/manifest-discovery.mjs#L12-L16)). |
 | Repository schema registry | Repository maintainers. | Structural validator. | Only repository-owned schema files are compiled; manifest `$schema` values are inert ([`scripts/lib/schema-validation.mjs:38-60`](../scripts/lib/schema-validation.mjs#L38-L60)). |
+| Reference-library data and schema snapshot | Caller supplies data; reviewed build supplies schemas. | Pure library entry and its compilation cache. | Fixed 18-file local schema closure for 17 kinds, explicit unsupported results, bounded supplied data and diagnostics; arbitrary schema/semantic regression entries are internal ([Library API](../packages/validation/README.md)). |
 | Init destination | Local operator selects an existing directory. | Starter initializer. | Fixed filenames, exclusive creation, no overwrite flag, conflict refusal, and rollback of reserved files on failure ([`scripts/lib/project-init.mjs:87-157`](../scripts/lib/project-init.mjs#L87-L157)). |
 | CLI stdout and stderr | CLI implementation. | Human or local automation invoking the prototype. | Versioned, allowlisted projections; `executionAuthorized` is always `false` ([`scripts/lib/cli-output.mjs:100-115`](../scripts/lib/cli-output.mjs#L100-L115)). |
 | npm dependency artifacts | npm publishers and registry; lock file selects bytes. | Contributor and CI Node processes. | Exact top-level versions and integrity hashes in lockfile; installed with lifecycle scripts disabled ([`package-lock.json:1-20`](../package-lock.json#L1-L20), [`.github/workflows/schema-smoke.yml:21-22`](../.github/workflows/schema-smoke.yml#L21-L22)). |
-| GitHub Actions and runner token | GitHub and repository administrators. | Pull-request and branch CI jobs. | Workflow uses `pull_request`, but action references use mutable major tags and token permissions are not declared in the workflow. |
+| GitHub Actions and runner token | GitHub and repository administrators. | Pull-request and branch CI jobs. | Coverage is mixed: legacy schema CI uses mutable major action tags and has no explicit workflow token permissions; the [library workflow](../.github/workflows/reference-validation.yml) pins actions by digest and declares `contents: read`. One job's controls do not apply automatically to every workflow. |
 | Runtime credentials, network handles, context, memory, and effect adapters | Future deployment owner. | Future runtime actors and adapters. | Not present. The specification requires independent, operation-scoped policy decisions; enforcement evidence does not yet exist. |
 
 ## 2. Threat Model, Trust Boundaries, And Assumptions
@@ -107,6 +129,7 @@ success.
 | External contributor | Can propose repository content in a pull request and thereby supply code executed by ordinary pull-request CI. | No maintainer identity, protected-branch merge, release authority, repository secrets, or administrative settings unless separately misconfigured. |
 | Dependency or action publisher | Controls a newly published dependency version or a mutable action reference after its own supply-chain compromise. | No direct repository write access; exploitation requires a maintainer update, mutable reference, registry compromise, or platform failure. |
 | Local CLI operator | Selects CLI arguments, roots, manifests, and the init destination under the operator's OS account. | The CLI does not defend against an operator who already controls the same files or host account. |
+| Reference-library caller | Supplies YAML/JSON data and chooses which returned values to expose. | A successful check grants no effect authority. Executable caller code already runs in its own process; the data API is not a sandbox for such code. |
 | Future project actor | May request declared actions and supply task, prompt, artifact, or context content. | A declaration, role, capability, or model response is not permission or approval. |
 | Future provider, extension, MCP server, or A2A agent | May return untrusted content, metadata, tool requests, redirects, artifacts, or remote state through an authorized adapter. | External metadata and authentication do not grant local authority, transitive access, or permission to import artifacts. |
 | Future deployment administrator | Configures runtime-owned bindings, stores, adapters, and policy overlays. | Administrative access is not assumed to be unlimited unless the implementation explicitly defines that trust model and records it in conformance evidence. |
@@ -115,7 +138,7 @@ success.
 
 | Boundary | Crossing | Required property |
 | --- | --- | --- |
-| B1: contribution to trusted revision | Pull-request content enters CI and may later enter `main` or a release. | Treat proposed repository code as untrusted; minimize CI token authority; require review and passing checks for accepted changes. |
+| B1: contribution to trusted revision | Pull-request content enters CI, then `develop` and eventually `main` through release review. | Treat proposed repository code as untrusted; minimize CI token authority; require review and passing checks for accepted changes. Branch integration alone does not authorize publication. |
 | B2: filesystem to parser | Local bytes and names enter discovery and YAML parsing. | Canonicalize the root, reject escapes and symbolic links, bound reads and aliases, require one safe document, and fail without partial authority. |
 | B3: parsed object to validation result | Attacker-controlled keys and values enter schema diagnostics. | Use repository-owned schemas, no coercion or defaults, bounded diagnostics, allowlisted fields, and redacted paths. |
 | B4: validated declarations to inspection output | Selected declarations become human- or machine-readable output. | Output only reviewed projections; never make the output re-ingestable authorization or expose raw sensitive fields. |
@@ -126,6 +149,7 @@ success.
 | B9: future runtime to network and credential systems | An operation leaves the host or authenticates externally. | Require independent network and credential decisions, constrain final destinations, prevent ambient discovery, and redact values. |
 | B10: future runtime to context, memory, and audit stores | Information is fetched, retained, promoted, logged, or exported. | Enforce classification, consumers, writers, retention, minimization, redaction, tenant scope, integrity, ordering, and failure policy before crossing. |
 | B11: external protocol to local state | MCP/A2A metadata, task state, artifacts, or callbacks are mapped locally. | Require explicit local bindings and provenance; reauthorize every local effect; do not accept remote state as local authority. |
+| B12: caller/adapter to pure validation API | Supplied YAML/JSON or selected document data enters the library; results return to its caller. | Use fixed embedded schemas and bounded data; keep filesystem access in the separate adapter; distinguish raw parsing helpers from safe output; never infer authority from validation success. |
 
 ### Security Invariants And Existing Controls
 
@@ -139,6 +163,17 @@ success.
   verify the reviewed module graph, deny common runtime APIs, preserve read-only
   project snapshots, and constrain initializer writes
   ([CLI Prototype No-Runtime Guardrails](cli-prototype.md#executable-no-runtime-guardrails)).
+- The separate reference library exports pure validation and declared inspection
+  through one main entry. Its checked import graph and focused effect-denial
+  harness are application regression evidence, not operating-system containment
+  ([Library qualification](reference-validation-library.md#verification-scope)).
+- Root/discovery checks reject unsafe selected files, but parent-component race
+  resistance requires an OS boundary. The read facade must not be described as
+  a sandbox ([Read-only adapter](../packages/cli/README.md)).
+- Public library results are bounded safe projections; low-level parse/document
+  helpers deliberately return authored data. Callers must not serialize those
+  helpers as redacted output. Truncation or unsupported input cannot become
+  success ([Library API](../packages/validation/README.md#api)).
 - Extension and provider declarations are data. Executable implementations must
   be resolved from runtime-owned sources, verified, isolated, and authorized per
   operation ([`docs/extension-loading-boundary.md:50-64`](extension-loading-boundary.md#L50-L64),
@@ -199,6 +234,13 @@ publication, runtime tenancy, sandboxing, identity authentication, inbound
 network policy, credential broker, and audit-store technology. Implementations
 must resolve applicable unknowns before making support or security claims.
 
+The separate library has exact build pins and repeatable package/entry evidence,
+but its new dependency graph is not automatically cleared by the 0.4 milestone's
+dated advisory review. Current artifact security acceptance, final CLI package
+closure and native three-target install/upgrade/rollback evidence remain
+separate. This model does not suppress reports against either current tooling
+or an exact historical snapshot because an old assessment passed.
+
 ## 3. Attack Surface, Mitigations, And Attacker Stories
 
 Priority is remediation and design priority, not vulnerability severity. `P0`
@@ -213,7 +255,7 @@ depth or bounded current-tool hardening. Every row is a hypothesis, not a findin
 | P0 future | An extension or provider adapter is selected from an ambient path, mutable package label, or attacker-controlled metadata and obtains host filesystem, process, network, or policy access. | A future runtime loads executable implementations without immutable support records and isolation. | Runtime host compromise or policy bypass. | The extension boundary requires explicit runtime-owned resolution, immutable identity, separate lifecycle states, and deny-by-default host handles; no loader exists. | Require digest-bound support records, provenance and vulnerability evidence, an isolation boundary, resource limits, explicit activation, per-operation handles, and revocation tests. | [`docs/extension-loading-boundary.md:50-64`](extension-loading-boundary.md#L50-L64), [`docs/extension-loading-boundary.md:241-275`](extension-loading-boundary.md#L241-L275) |
 | P0 future | A network rule checks only an authored hostname; DNS rebinding, redirects, proxies, alternate addresses, or private targets reach a more privileged destination. | Future outbound networking exists and validates only pre-resolution strings. | SSRF, internal-service access, credential disclosure, or policy escape. | The structured model denies by default and specifies TLS, loopback, private-network, redirect, DNS, destination, and audit checks; enforcement is absent. | Enforce on each resolved address and redirect, ignore ambient proxy authority, bind credentials to the final authorized target, and test IPv4/IPv6 and canonicalization variants. | [`docs/network-access-policy.md:26-38`](network-access-policy.md#L26-L38), [`docs/network-access-policy.md:221-268`](network-access-policy.md#L221-L268) |
 | P1 current | A malicious pull request changes repository scripts or dependency metadata. Pull-request CI executes that code and it abuses the runner token, network, cache, or future secrets. | Untrusted contribution reaches the `pull_request` job; workflow permissions or connected resources are broader than intended. | CI resource abuse, cache poisoning, metadata access, or repository impact if token policy is permissive. | CI uses `pull_request`, a GitHub-hosted runner, `npm ci --ignore-scripts`, and a small lockfile; effective token permissions are not declared here. | Declare minimal workflow `permissions`, keep secrets and privileged environments out of untrusted jobs, pin actions immutably, review lockfile changes, and separate release workflows from pull-request code. | [`.github/workflows/schema-smoke.yml:3-22`](../.github/workflows/schema-smoke.yml#L3-L22), [`package-lock.json:1-20`](../package-lock.json#L1-L20) |
-| P1 current | A compromised mutable GitHub Action tag or npm dependency executes in CI or a contributor environment. | Upstream compromise, registry compromise, or malicious dependency update is accepted. | Repository-token misuse, source disclosure, or falsified validation results. | npm artifacts have resolved URLs and integrity hashes; install scripts are disabled. GitHub Actions use mutable `@v4` references. | Pin actions to reviewed commit digests, use automated provenance-aware updates, review lockfile deltas, restrict token permissions, and consider attestations or an SBOM for releases. | [`.github/workflows/schema-smoke.yml:10-22`](../.github/workflows/schema-smoke.yml#L10-L22), [`package-lock.json:17-44`](../package-lock.json#L17-L44) |
+| P1 current | A compromised mutable GitHub Action tag or npm dependency executes in CI or a contributor environment. | Upstream compromise, registry compromise, or malicious dependency update is accepted. | Repository-token misuse, source disclosure, or falsified validation results. | npm artifacts have resolved URLs and integrity hashes; install scripts are disabled. Legacy workflows retain mutable action tags; the reference-library job pins its actions and limits token permissions. | Review remaining mutable references, preserve digest-pinned jobs, review lockfile deltas and current advisories, restrict token permissions, and assess provenance/SBOMs for actual release bytes. | [Legacy schema workflow](../.github/workflows/schema-smoke.yml), [Library workflow](../.github/workflows/reference-validation.yml), [Library dependency lock](../packages/validation/package-lock.json) |
 | P1 current | A crafted source path, symbolic link, special file, oversized document, YAML alias expansion, duplicate key, or unsupported tag escapes the chosen manifest boundary or consumes excessive resources. | An operator validates attacker-controlled local files. | Read outside the selected root, parser confusion, or local/CI denial of service. | Canonical root and containment checks, symlink-ancestor rejection, non-following file open, regular-file checks, byte and alias limits, unique string keys, JSON-compatible output, and document count limits. | Add cross-platform adversarial fixtures and parser fuzzing; preserve no-follow checks through refactors; document CPU and nesting limits when measured. | [`scripts/lib/manifest-discovery.mjs:12-16`](../scripts/lib/manifest-discovery.mjs#L12-L16), [`scripts/lib/manifest-discovery.mjs:145-298`](../scripts/lib/manifest-discovery.mjs#L145-L298) |
 | P1 current | Attacker-selected keys, paths, IDs, or parser errors are reflected into diagnostics or inspection output and disclose local paths or sensitive manifest content. | A user emits CLI output from untrusted or confidential manifests into logs or CI artifacts. | Information disclosure or log injection. | Raw parser and filesystem errors are replaced; sources and schema paths are bounded/redacted; projections are allowlisted; JSON is ASCII escaped. | Keep diagnostic messages code-owned, add secret-shaped and control-character fixtures, document that relative filenames and declared IDs may still be visible, and review every new output field. | [`scripts/lib/schema-validation.mjs:84-129`](../scripts/lib/schema-validation.mjs#L84-L129), [`scripts/lib/cli-output.mjs:6-40`](../scripts/lib/cli-output.mjs#L6-L40) |
 | P1 current | `init` follows a changed directory entry, overwrites content, or leaves a partial project after a race or write failure. | A local adversary can mutate the destination concurrently, or the filesystem provides unexpected link semantics. | User-file corruption or files created outside the intended directory. | Existing destination must be a real non-symlink directory; generated filenames are fixed; conflicts fail; files use exclusive `wx`; reservations are removed after failure. | Add adversarial race and hard-link tests on supported platforms; before a stable CLI claim, use a platform-appropriate directory-handle/no-follow strategy and define durability semantics. | [`scripts/lib/project-init.mjs:87-157`](../scripts/lib/project-init.mjs#L87-L157) |

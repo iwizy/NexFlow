@@ -29,6 +29,12 @@ change routing, synchronized review, merge, release, and security boundaries.
 
 Small clarifications may be proposed directly in a pull request.
 
+Create task branches from the current `develop` and target their pull requests
+at `develop`, including documentation and maintenance changes. `develop` is the
+default integration branch. Pull requests into `main` must come from this
+repository's `develop` and promote a reviewed release candidate. Merging a task
+does not authorize a release. See the [branch and release flow](docs/maintainer-guide.md#branch-and-release-flow).
+
 Use the repository's bug report or specification proposal issue template when
 opening a public issue. Include a minimal public example and the affected
 revision when known. Use the pull request template to record compatibility,

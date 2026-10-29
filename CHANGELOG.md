@@ -8,6 +8,10 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Added
 
+- Documented task pull requests into `develop` and release promotion from
+  `develop` into `main`, with CI branch-routing checks and matching integration
+  coverage. Existing release history is preserved.
+
 - Extracted NF-105's separate pure TypeScript validation package, fixed-schema
   payload and read-only workspace adapter. Added actual package relocation,
   reproducible build/pack, typed API and full frozen-catalog verification.

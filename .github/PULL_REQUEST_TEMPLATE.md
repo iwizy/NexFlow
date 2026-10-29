@@ -3,6 +3,12 @@
 <!-- What changed, why, and which issue or RFC does it address? Include the
 scope and any important limitation. -->
 
+## Branch Flow
+
+<!-- Task and maintenance PRs target develop. At a release boundary, only this
+repository's develop may target main; identify the candidate/release review.
+Merging does not by itself authorize tag, package, or release publication. -->
+
 ## Change Type
 
 - [ ] Documentation clarification

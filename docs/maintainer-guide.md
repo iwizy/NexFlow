@@ -80,9 +80,36 @@ access or executing work.
 7. Keep unrelated formatting, generated churn, and private working material
    out of the public diff.
 
-The current repository convention uses `develop` as the integration branch and
-opens reviewed pull requests into `main`. Confirm current hosting rules before
-merging; repository documentation does not substitute for branch protection.
+## Branch And Release Flow
+
+`develop` is the default integration branch; `main` contains promoted release
+candidates. Use this flow for code, schemas, documentation and maintenance:
+
+1. Start a project-native task branch from the current `develop`.
+2. Open its pull request into `develop`, complete review and relevant checks,
+   resolve conflicts, and merge it there. Task completion does not promote
+   `main` or authorize publication.
+3. At a release boundary, freeze the exact candidate in `develop`, finish the
+   applicable release review and checks, and open a release pull request from
+   this repository's `develop` into `main`. Do not merge unrelated task branches
+   directly into `main`.
+4. After the authorized release merge, synchronize the resulting `main` commit
+   back into `develop` without rewriting history. Verify matching commits and
+   trees before beginning the next release's tasks.
+5. Tag/package/release publication still requires its own applicable authority
+   and downloaded-artifact verification. A branch merge is not publication.
+
+The adoption of this flow preserves work already merged into `main`, including
+NF-105. The one-time policy synchronization establishes equal branches without
+declaring a new product release; subsequent tasks enter `develop` first.
+
+Keep the hosting default branch at `develop`. Protection must name both
+`main` and `develop` explicitly so changing the default cannot silently remove
+`main` protection. CI rejects task-to-`main` pull requests and runs integration
+checks on both maintained branches. Confirm actual hosting rules before merging;
+documentation does not substitute for branch protection. Remove a task branch
+only after verifying its tip is included in `develop` and preserving any
+uncommitted work; branch deletion is separate from integration.
 
 ## Synchronization Rules
 

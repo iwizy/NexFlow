@@ -1,0 +1,33 @@
+name: Branch Flow
+
+on:
+  pull_request:
+  push:
+    branches: [main, develop]
+
+permissions:
+  contents: read
+
+jobs:
+  branch-routing:
+    name: Branch routing
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Verify integration and release branch routing
+        run: |
+          node --input-type=module <<'JS'
+          import assert from 'node:assert/strict';
+          import { readFileSync } from 'node:fs';
+          const event = JSON.parse(readFileSync(process.env.GITHUB_EVENT_PATH, 'utf8'));
+          if (process.env.GITHUB_EVENT_NAME === 'pull_request') {
+            const pr = event.pull_request;
+            if (pr.base.ref === 'main') {
+              assert.equal(pr.head.ref, 'develop', 'Release PRs into main must come from develop.');
+              assert.equal(pr.head.repo?.full_name, pr.base.repo.full_name, 'Release PRs must use this repository develop.');
+            } else {
+              assert.equal(pr.base.ref, 'develop', 'Task and maintenance PRs must target develop.');
+            }
+          }
+          console.log('Branch routing checked; merge does not authorize publication.');
+          JS

@@ -1,0 +1,1304 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nexflow.dev/contracts/cli/0.5-preview.1/output.schema.json",
+  "title": "NexFlow reference CLI 0.5 preview output",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "formatVersion",
+    "tool",
+    "supportedSpecVersions",
+    "command",
+    "success",
+    "exitCode",
+    "inputMode",
+    "checks",
+    "executionAuthorized",
+    "diagnostics",
+    "truncated",
+    "result"
+  ],
+  "properties": {
+    "formatVersion": {
+      "const": "0.5-preview.1"
+    },
+    "tool": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "version"
+      ],
+      "properties": {
+        "name": {
+          "const": "@nexflow/cli"
+        },
+        "version": {
+          "type": "string",
+          "pattern": "^\\d+\\.\\d+\\.\\d+(?:-[a-z0-9.-]+)?$"
+        }
+      }
+    },
+    "supportedSpecVersions": {
+      "const": [
+        "0.1"
+      ]
+    },
+    "command": {
+      "enum": [
+        null,
+        "validate",
+        "inspect",
+        "graph",
+        "help",
+        "version"
+      ]
+    },
+    "success": {
+      "type": "boolean"
+    },
+    "exitCode": {
+      "enum": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    "inputMode": {
+      "enum": [
+        null,
+        "directory-project",
+        "project-source-hints",
+        "explicit-file-list"
+      ]
+    },
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "discovery",
+        "schema",
+        "projection",
+        "semantic",
+        "coreProfile",
+        "extensionProfiles",
+        "runtime"
+      ],
+      "properties": {
+        "discovery": {
+          "$ref": "#/$defs/check"
+        },
+        "schema": {
+          "$ref": "#/$defs/check"
+        },
+        "projection": {
+          "$ref": "#/$defs/check"
+        },
+        "semantic": {
+          "const": "not-run"
+        },
+        "coreProfile": {
+          "const": "not-run"
+        },
+        "extensionProfiles": {
+          "const": "not-run"
+        },
+        "runtime": {
+          "const": "not-run"
+        }
+      }
+    },
+    "executionAuthorized": {
+      "const": false
+    },
+    "diagnostics": {
+      "type": "array",
+      "maxItems": 200,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "severity",
+          "code",
+          "message",
+          "file",
+          "kind",
+          "path",
+          "keyword",
+          "related"
+        ],
+        "properties": {
+          "severity": {
+            "const": "error"
+          },
+          "code": {
+            "type": "string",
+            "pattern": "^(NF-[A-Z0-9-]+|NEXFLOW-CLI-(USAGE|INTERNAL|LIMIT))$"
+          },
+          "message": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 512
+          },
+          "file": {
+            "$ref": "#/$defs/locator"
+          },
+          "kind": {
+            "enum": [
+              null,
+              "Project",
+              "ActorSet",
+              "AgentSet",
+              "AgentDefinitionSet",
+              "CapabilitySet",
+              "PermissionSet",
+              "TaskSet",
+              "Workflow",
+              "HandoffSet",
+              "ContextSet",
+              "MemorySet",
+              "ProviderSet",
+              "ModelProfileSet",
+              "PromptSet",
+              "RetrievalProfileSet",
+              "EventSet",
+              "ExtensionSet"
+            ]
+          },
+          "path": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 512,
+            "pattern": "^(|/.*|<redacted-field>)$"
+          },
+          "keyword": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 64
+          },
+          "related": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "file"
+              ],
+              "properties": {
+                "file": {
+                  "$ref": "#/$defs/locator"
+                }
+              }
+            },
+            "maxItems": 128
+          }
+        }
+      }
+    },
+    "truncated": {
+      "type": "boolean"
+    },
+    "result": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "#/$defs/inventory"
+        },
+        {
+          "$ref": "#/$defs/inspectionResult"
+        },
+        {
+          "$ref": "#/$defs/graphResult"
+        },
+        {
+          "$ref": "#/$defs/help"
+        },
+        {
+          "$ref": "#/$defs/version"
+        }
+      ]
+    }
+  },
+  "$defs": {
+    "check": {
+      "enum": [
+        "not-run",
+        "passed",
+        "failed"
+      ]
+    },
+    "locator": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "#/$defs/source"
+        }
+      ]
+    },
+    "inspectionId": {
+      "type": "string",
+      "maxLength": 128,
+      "pattern": "^(<redacted-id>|[a-z][a-z0-9]*(?:[-_.][a-z0-9]+)*)$"
+    },
+    "inspectionKind": {
+      "enum": [
+        "project",
+        "approval-gate",
+        "actor",
+        "agent",
+        "participant",
+        "agent-definition",
+        "capability",
+        "permission",
+        "task",
+        "artifact",
+        "workflow",
+        "workflow-stage",
+        "workflow-step",
+        "handoff",
+        "context-source",
+        "memory-scope",
+        "provider",
+        "model-profile",
+        "prompt-set",
+        "retrieval-profile",
+        "event",
+        "extension"
+      ]
+    },
+    "inspectionRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "file",
+        "path",
+        "kind",
+        "id",
+        "scope"
+      ],
+      "properties": {
+        "file": {
+          "$ref": "#/$defs/source"
+        },
+        "path": {
+          "type": "string",
+          "maxLength": 512,
+          "pattern": "^/"
+        },
+        "kind": {
+          "$ref": "#/$defs/inspectionKind"
+        },
+        "id": {
+          "$ref": "#/$defs/inspectionId"
+        },
+        "scope": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "kind",
+                "id"
+              ],
+              "properties": {
+                "kind": {
+                  "const": "workflow"
+                },
+                "id": {
+                  "$ref": "#/$defs/inspectionId"
+                }
+              }
+            }
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "enum": [
+                  "workflow-stage",
+                  "workflow-step"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "scope": {
+                "type": "object"
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "scope": {
+                "type": "null"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "inspection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mode",
+        "referencesResolved",
+        "referenceCoverage",
+        "project",
+        "summary",
+        "resources",
+        "references"
+      ],
+      "properties": {
+        "mode": {
+          "const": "declared-only"
+        },
+        "referencesResolved": {
+          "const": false
+        },
+        "referenceCoverage": {
+          "const": "selected-fields"
+        },
+        "project": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "id",
+            "file",
+            "path"
+          ],
+          "properties": {
+            "id": {
+              "$ref": "#/$defs/inspectionId"
+            },
+            "file": {
+              "$ref": "#/$defs/source"
+            },
+            "path": {
+              "const": "/project"
+            }
+          }
+        },
+        "summary": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 17,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "kind",
+              "documentCount",
+              "resourceCount"
+            ],
+            "properties": {
+              "kind": {
+                "type": "string",
+                "minLength": 1
+              },
+              "documentCount": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 128
+              },
+              "resourceCount": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 1000
+              }
+            }
+          }
+        },
+        "resources": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1000,
+          "items": {
+            "$ref": "#/$defs/inspectionRecord"
+          }
+        },
+        "references": {
+          "type": "array",
+          "maxItems": 2000,
+          "items": {
+            "$ref": "#/$defs/inspectionRecord"
+          }
+        }
+      }
+    },
+    "graphScope": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "id"
+          ],
+          "properties": {
+            "kind": {
+              "const": "workflow"
+            },
+            "id": {
+              "$ref": "#/$defs/inspectionId"
+            }
+          }
+        }
+      ]
+    },
+    "graphNode": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "kind",
+        "identity",
+        "scope",
+        "file",
+        "path"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^n[0-9]+$"
+        },
+        "kind": {
+          "$ref": "#/$defs/inspectionKind"
+        },
+        "identity": {
+          "$ref": "#/$defs/inspectionId"
+        },
+        "scope": {
+          "$ref": "#/$defs/graphScope"
+        },
+        "file": {
+          "$ref": "#/$defs/source"
+        },
+        "path": {
+          "type": "string",
+          "maxLength": 512,
+          "pattern": "^/"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "enum": [
+                  "workflow-stage",
+                  "workflow-step"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "scope": {
+                "type": "object"
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "scope": {
+                "type": "null"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "graphEdge": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "from",
+        "to",
+        "candidates",
+        "relation",
+        "target",
+        "status",
+        "file",
+        "path"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^e[0-9]+$"
+        },
+        "from": {
+          "type": "string",
+          "pattern": "^n[0-9]+$"
+        },
+        "to": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^n[0-9]+$"
+        },
+        "candidates": {
+          "type": "array",
+          "maxItems": 1000,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^n[0-9]+$"
+          }
+        },
+        "relation": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$",
+          "maxLength": 128
+        },
+        "target": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "identity",
+            "scope"
+          ],
+          "properties": {
+            "kind": {
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/inspectionKind"
+                },
+                {
+                  "const": "<unsupported-kind>"
+                }
+              ]
+            },
+            "identity": {
+              "$ref": "#/$defs/inspectionId"
+            },
+            "scope": {
+              "$ref": "#/$defs/graphScope"
+            }
+          }
+        },
+        "status": {
+          "enum": [
+            "resolved",
+            "unresolved",
+            "ambiguous",
+            "redacted",
+            "unsupported"
+          ]
+        },
+        "file": {
+          "$ref": "#/$defs/source"
+        },
+        "path": {
+          "type": "string",
+          "maxLength": 512,
+          "pattern": "^/"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "target": {
+                "properties": {
+                  "kind": {
+                    "const": "workflow-step"
+                  }
+                }
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "target": {
+                "properties": {
+                  "scope": {
+                    "type": "object"
+                  }
+                }
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "target": {
+                "properties": {
+                  "scope": {
+                    "type": "null"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "unsupported"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "target": {
+                "properties": {
+                  "kind": {
+                    "const": "<unsupported-kind>"
+                  }
+                }
+              },
+              "to": {
+                "type": "null"
+              },
+              "candidates": {
+                "maxItems": 0
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "resolved"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "to": {
+                "type": "string"
+              },
+              "candidates": {
+                "maxItems": 0
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "ambiguous"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "to": {
+                "type": "null"
+              },
+              "candidates": {
+                "minItems": 2
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "enum": [
+                  "unresolved",
+                  "redacted",
+                  "unsupported"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "to": {
+                "type": "null"
+              },
+              "candidates": {
+                "maxItems": 0
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "target": {
+                "properties": {
+                  "kind": {
+                    "const": "<unsupported-kind>"
+                  }
+                }
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "status": {
+                "const": "unsupported"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "graph": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mode",
+        "referenceCoverage",
+        "nodeCount",
+        "edgeCount",
+        "nodes",
+        "edges"
+      ],
+      "properties": {
+        "mode": {
+          "const": "static-declared"
+        },
+        "referenceCoverage": {
+          "const": "selected-fields"
+        },
+        "nodeCount": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1000
+        },
+        "edgeCount": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2000
+        },
+        "nodes": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1000,
+          "items": {
+            "$ref": "#/$defs/graphNode"
+          }
+        },
+        "edges": {
+          "type": "array",
+          "maxItems": 2000,
+          "items": {
+            "$ref": "#/$defs/graphEdge"
+          }
+        }
+      }
+    },
+    "source": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 512,
+      "pattern": "^(?!/)(?!.*[\\\\:\\u0000-\\u001f\\u007f-\\u009f\\u202a-\\u202e\\u2066-\\u2069])(?!.*(?:^|/)\\.\\.?(?:/|$))(?!.*//)(?!.*\\/$).+$"
+    },
+    "document": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "file",
+        "kind"
+      ],
+      "properties": {
+        "file": {
+          "$ref": "#/$defs/source"
+        },
+        "kind": {
+          "enum": [
+            "Project",
+            "ActorSet",
+            "AgentSet",
+            "AgentDefinitionSet",
+            "CapabilitySet",
+            "PermissionSet",
+            "TaskSet",
+            "Workflow",
+            "HandoffSet",
+            "ContextSet",
+            "MemorySet",
+            "ProviderSet",
+            "ModelProfileSet",
+            "PromptSet",
+            "RetrievalProfileSet",
+            "EventSet",
+            "ExtensionSet"
+          ]
+        }
+      }
+    },
+    "inventory": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "documentCount",
+        "documents"
+      ],
+      "properties": {
+        "documentCount": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 128
+        },
+        "documents": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 128,
+          "items": {
+            "$ref": "#/$defs/document"
+          }
+        }
+      }
+    },
+    "inspectionResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "documentCount",
+        "documents",
+        "inspection"
+      ],
+      "properties": {
+        "documentCount": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 128
+        },
+        "documents": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 128,
+          "items": {
+            "$ref": "#/$defs/document"
+          }
+        },
+        "inspection": {
+          "$ref": "#/$defs/inspection"
+        }
+      }
+    },
+    "graphResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "documentCount",
+        "documents",
+        "graph"
+      ],
+      "properties": {
+        "documentCount": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 128
+        },
+        "documents": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 128,
+          "items": {
+            "$ref": "#/$defs/document"
+          }
+        },
+        "graph": {
+          "$ref": "#/$defs/graph"
+        }
+      }
+    },
+    "help": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "topic",
+        "subject",
+        "usage",
+        "commands",
+        "unsupportedCommands",
+        "notice"
+      ],
+      "properties": {
+        "topic": {
+          "const": "help"
+        },
+        "subject": {
+          "enum": [
+            null,
+            "validate",
+            "inspect",
+            "graph"
+          ]
+        },
+        "usage": {
+          "type": "array",
+          "minItems": 6,
+          "maxItems": 6,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 512
+          }
+        },
+        "commands": {
+          "const": [
+            "validate",
+            "inspect",
+            "graph"
+          ]
+        },
+        "unsupportedCommands": {
+          "const": [
+            "init",
+            "discover",
+            "run"
+          ]
+        },
+        "notice": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 512
+        }
+      }
+    },
+    "version": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "topic",
+        "version",
+        "requiredLibraryApiVersion",
+        "notice"
+      ],
+      "properties": {
+        "topic": {
+          "const": "version"
+        },
+        "version": {
+          "type": "string",
+          "pattern": "^\\d+\\.\\d+\\.\\d+(?:-[a-z0-9.-]+)?$"
+        },
+        "notice": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 512
+        },
+        "requiredLibraryApiVersion": {
+          "const": "validation-api-v1-preview"
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "exitCode": {
+            "const": 0
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "success": {
+            "const": true
+          },
+          "command": {
+            "enum": [
+              "validate",
+              "inspect",
+              "graph",
+              "help",
+              "version"
+            ]
+          },
+          "diagnostics": {
+            "maxItems": 0
+          },
+          "truncated": {
+            "const": false
+          },
+          "result": {
+            "type": "object"
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "success": {
+            "const": false
+          },
+          "diagnostics": {
+            "minItems": 1
+          },
+          "result": {
+            "type": "null"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "exitCode": {
+            "const": 0
+          },
+          "command": {
+            "const": "validate"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "result": {
+            "$ref": "#/$defs/inventory"
+          },
+          "inputMode": {
+            "type": "string"
+          },
+          "checks": {
+            "properties": {
+              "discovery": {
+                "const": "passed"
+              },
+              "schema": {
+                "const": "passed"
+              },
+              "projection": {
+                "const": "not-run"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "exitCode": {
+            "const": 0
+          },
+          "command": {
+            "const": "inspect"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "result": {
+            "$ref": "#/$defs/inspectionResult"
+          },
+          "inputMode": {
+            "type": "string"
+          },
+          "checks": {
+            "properties": {
+              "discovery": {
+                "const": "passed"
+              },
+              "schema": {
+                "const": "passed"
+              },
+              "projection": {
+                "const": "passed"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "exitCode": {
+            "const": 0
+          },
+          "command": {
+            "const": "graph"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "result": {
+            "$ref": "#/$defs/graphResult"
+          },
+          "inputMode": {
+            "type": "string"
+          },
+          "checks": {
+            "properties": {
+              "discovery": {
+                "const": "passed"
+              },
+              "schema": {
+                "const": "passed"
+              },
+              "projection": {
+                "const": "passed"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "exitCode": {
+            "const": 0
+          },
+          "command": {
+            "const": "help"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "result": {
+            "$ref": "#/$defs/help"
+          },
+          "inputMode": {
+            "type": "null"
+          },
+          "checks": {
+            "properties": {
+              "discovery": {
+                "const": "not-run"
+              },
+              "schema": {
+                "const": "not-run"
+              },
+              "projection": {
+                "const": "not-run"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "exitCode": {
+            "const": 0
+          },
+          "command": {
+            "const": "version"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "result": {
+            "$ref": "#/$defs/version"
+          },
+          "inputMode": {
+            "type": "null"
+          },
+          "checks": {
+            "properties": {
+              "discovery": {
+                "const": "not-run"
+              },
+              "schema": {
+                "const": "not-run"
+              },
+              "projection": {
+                "const": "not-run"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "exitCode": {
+            "const": 2
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "diagnostics": {
+            "items": {
+              "properties": {
+                "code": {
+                  "const": "NEXFLOW-CLI-USAGE"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "exitCode": {
+            "const": 4
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "diagnostics": {
+            "items": {
+              "properties": {
+                "code": {
+                  "const": "NEXFLOW-CLI-INTERNAL"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "exitCode": {
+            "const": 3
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "diagnostics": {
+            "items": {
+              "properties": {
+                "code": {
+                  "enum": [
+                    "NF-DISCOVERY-UNSUPPORTED-VERSION",
+                    "NF-DISCOVERY-UNSUPPORTED-KIND",
+                    "NF-DISCOVERY-UNSUPPORTED-HINT"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

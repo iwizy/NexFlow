@@ -6,8 +6,8 @@ manifest kind, every numbered RFC proposal, experimental implementation slices,
 explicitly deprecated fields and the planned implementations most easily
 confused with existing documentation.
 
-Current source snapshot: `80e58939be45c097cbda58f20bfeb47739324dcd`.
-The inventory describes that source plus this documentation/consistency change.
+Current source snapshot: `5ee82f536984d54997cf7e514d730dd9d8e75c2a`.
+The inventory describes that source plus NF-106's source CLI and synchronized documentation.
 A later edit must update the affected rows and their evidence; this is not a
 live service or a registry of external implementations.
 
@@ -102,8 +102,9 @@ specific experimental/deprecated/planned rows below do not overwrite that stage.
 
 NF-105 adds a separate [pure validation library](reference-validation-library.md)
 and root-bound workspace adapter outside the frozen candidate directories. Its
-352-case kernel comparison and public entry/package checks do not turn the
-planned executable CLI, full semantics or runtime into implemented features.
+352-case kernel comparison and public entry/package checks are distinct from
+NF-106's separately implemented [source CLI](reference-cli-preview.md). Neither
+establishes final installable tooling, full semantics or a runtime.
 
 These rows apply only to the named offline/source-bound implementation, not its
 whole RFC or a future runtime. Original candidate reports retain 128/352 passes
@@ -122,7 +123,8 @@ It does not change any feature or RFC implementation/acceptance status.
 | ID | Surface and scope | Lifecycle | Evidence and boundary |
 | --- | --- | --- | --- |
 | `experiment:repository-cli` | Local repository CLI and JSON/inspection/graph/init contracts | Experimental | [Prototype scope](cli-prototype.md), [output contract](cli-diagnostics.md); bounded maintenance tooling, not stable public CLI or OS sandbox. |
-| `experiment:reference-validation` | Separate pure TypeScript validation package and root-bound workspace adapter | Experimental | [Scope and qualification](reference-validation-library.md), [package API](../packages/validation/README.md); corpus/internal regressions and public safe entry are distinct, no executable CLI, native lifecycle or release claim. |
+| `experiment:reference-validation` | Separate pure TypeScript validation package and root-bound workspace adapter | Experimental | [Scope and qualification](reference-validation-library.md), [package API](../packages/validation/README.md); corpus/internal regressions and public safe entry are distinct from the separate source CLI, with no native lifecycle or release claim. |
+| `experiment:reference-cli` | Separate TypeScript source CLI entry for validate/inspect/static graph and help/version | Experimental | [Source preview](reference-cli-preview.md), [package guide](../packages/cli/README.md); real-entry grammar/output/no-runtime evidence, final installable artifacts and product qualification remain separate. |
 | `experiment:candidate-go` | go validation-only source candidate | Experimental | [Native source](../evaluation/prototypes/go/README.md), [historical fidelity](../evaluation/fidelity/go.json), [repair](../evaluation/repairs/go.json); repaired 352/352 library cases on supplemental macOS, no full project/target qualification, language selection or distribution acceptance. |
 | `experiment:candidate-python` | python validation-only source candidate | Experimental | [Native source](../evaluation/prototypes/python/README.md), [historical fidelity](../evaluation/fidelity/python.json), [repair](../evaluation/repairs/python.json); repaired 352/352 library cases on supplemental macOS, no full project/target qualification, language selection or distribution acceptance. |
 | `experiment:candidate-rust` | rust validation-only source candidate | Experimental | [Native source](../evaluation/prototypes/rust/README.md), [historical fidelity](../evaluation/fidelity/rust.json), [repair](../evaluation/repairs/rust.json); repaired 352/352 library cases and supplemental macOS relocation, no full project/target qualification, language selection or distribution acceptance. |
@@ -160,7 +162,7 @@ the existing documentation.
 
 | ID | Surface and scope | Lifecycle | Evidence and boundary |
 | --- | --- | --- | --- |
-| `planned:reference-cli` | Installable reference CLI | Planned | [Contract or proposal](reference-cli.md). Not implemented or released; alpha/beta preparation is not-ready and does not grant publication. |
+| `planned:reference-cli` | Installable reference CLI | Planned | [Contract or proposal](reference-cli.md). Source commands are implemented separately; final installable artifacts and target/security qualification are not complete, and publication is not granted. |
 | `planned:runtime` | Runtime/orchestration/enforcement | Planned | [Contract or proposal](runtime-options.md). Not implemented; no accepted architecture, provider execution or workflow execution. |
 | `planned:provider-adapters` | Live provider adapters | Planned | [Contract or proposal](provider-adapter-boundary.md). Not implemented; documented invocation boundaries are not an adapter or live capability. |
 | `planned:extension-loading` | Executable extension loading and live integrations | Planned | [Contract or proposal](extension-loading-boundary.md). Not implemented; profiles and metadata cannot authorize loading or effects. |

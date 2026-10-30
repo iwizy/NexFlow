@@ -3,9 +3,11 @@
   "version": "0.5.0-alpha.1",
   "private": true,
   "type": "module",
-  "description": "Read-only workspace adapter; executable CLI is not implemented yet.",
+  "description": "Unreleased validation-only NexFlow reference CLI preview.",
+  "bin": { "nexflow": "dist/main.js" },
+  "files": ["dist", "contracts"],
   "scripts": {
-    "build": "node ../validation/node_modules/typescript/bin/tsc -p tsconfig.json"
+    "build": "node scripts/build.mjs"
   },
   "engines": {
     "node": "26.13.0",

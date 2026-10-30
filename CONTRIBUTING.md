@@ -128,13 +128,17 @@ Changes to the reference library or its workspace adapter also require Node.js
 npm ci --prefix packages/validation --ignore-scripts
 npm run build --prefix packages/validation
 node scripts/reference-validation-smoke.mjs
+npm run build --prefix packages/cli
+node scripts/reference-cli-smoke.mjs
 ```
 
 The focused verifier builds and packs the library, imports it outside the
 checkout, checks declarations and public boundaries, and compares the unchanged
 frozen catalog. Some catalog operations are internal migration regressions,
-not public API or full semantic conformance. The source-only workspace adapter
-has no executable CLI entry. These checks do not establish final CLI
+not public API or full semantic conformance. NF-106 adds the separate source CLI
+entry described in the [preview guide](docs/reference-cli-preview.md). Its
+verifier covers grammar, diagnostics, static graphing and denied effects from
+the real relocated entry. These checks do not establish final CLI
 installation, target lifecycle, current advisory acceptance or release readiness.
 
 Documentation changes must keep local links valid, every first-level

@@ -1,12 +1,13 @@
 # Reference CLI
 
-Status: [0.5 implementation profile adopted](0.5-cli-contract.md); no reference
-CLI package or release exists.
+Status: [0.5 implementation profile adopted](0.5-cli-contract.md), with
+[NF-106 source commands implemented](reference-cli-preview.md). Final installable
+CLI artifacts and a public release do not exist yet.
 
 NF-105 now supplies a [separate validation library and workspace adapter](reference-validation-library.md).
-The public command dispatcher, static graph command, final installable CLI and
-target lifecycle remain subsequent work; library build evidence does not
-promote the reference CLI to implemented or released.
+NF-106 connects it to a real source entry for validate/inspect/static graph and
+help/version. Final packaging and target lifecycle remain subsequent work;
+source command evidence does not establish a supported product release.
 
 NexFlow plans a validation-focused reference CLI for authoring and reviewing
 manifest projects. The command names are proposed by
@@ -23,8 +24,9 @@ external Node and npm-compatible GitHub tarballs. `init` is deferred.
 
 These are different surfaces:
 
-- the **reference CLI** is a future supported product with an explicit package,
-  compatibility policy, and `NF-CLI` evidence
+- the **reference CLI source preview** implements the bounded commands using
+  separate packages; a supported product still needs final artifacts,
+  compatibility, security/target qualification and `NF-CLI` evidence
 - the **repository CLI prototype** is disposable maintenance tooling invoked
   from a source checkout
 - a future **runtime** may execute work and mediate effects, but the reference
@@ -64,8 +66,9 @@ only in the prototype, and its existing `init` is not in the new preview.
 
 The old positional proposal is not the adopted preview grammar. The
 [0.5 contract](0.5-cli-contract.md#command-grammar) freezes the new implementation
-target; it supplies no executable yet. Runnable forms above describe only the
-historical repository tooling.
+target. The [new source entry](reference-cli-preview.md#build-and-run) implements
+that grammar. Runnable forms in the table above describe only the historical
+repository tooling.
 
 ## Try The Current Evidence
 

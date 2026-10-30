@@ -1,0 +1,449 @@
+{
+  "formatVersion": "0.5-preview.1",
+  "legacyCatalog": "../cli/index.json",
+  "legacyMapping": {
+    "discover": "unsupported command, exit 2",
+    "init": "deferred command, exit 2, no writes",
+    "unsupportedManifest": "exit 3; omit consequent NO-PROJECT when all primary issues are unsupported"
+  },
+  "grammarCases": [
+    {
+      "id": "empty-invocation",
+      "args": [],
+      "expected": {
+        "exitCode": 2,
+        "format": "text",
+        "command": null
+      }
+    },
+    {
+      "id": "global-help",
+      "args": [
+        "--help",
+        "--format",
+        "json"
+      ],
+      "expected": {
+        "exitCode": 0,
+        "format": "json",
+        "command": "help"
+      }
+    },
+    {
+      "id": "global-help-text",
+      "args": [
+        "--help"
+      ],
+      "expected": {
+        "exitCode": 0,
+        "format": "text",
+        "command": "help"
+      }
+    },
+    {
+      "id": "global-version",
+      "args": [
+        "--version",
+        "--format",
+        "json"
+      ],
+      "expected": {
+        "exitCode": 0,
+        "format": "json",
+        "command": "version"
+      }
+    },
+    {
+      "id": "operation-help",
+      "args": [
+        "validate",
+        "--help",
+        "--format",
+        "json"
+      ],
+      "expected": {
+        "exitCode": 0,
+        "format": "json",
+        "command": "help"
+      }
+    },
+    {
+      "id": "graph-help",
+      "args": [
+        "graph",
+        "--help"
+      ],
+      "expected": {
+        "exitCode": 0,
+        "format": "text",
+        "command": "help"
+      }
+    },
+    {
+      "id": "missing-root",
+      "args": [
+        "validate",
+        "--format",
+        "json"
+      ],
+      "expected": {
+        "exitCode": 2,
+        "format": "json",
+        "command": "validate"
+      }
+    },
+    {
+      "id": "empty-root",
+      "args": [
+        "validate",
+        "--root=",
+        "--format",
+        "json"
+      ],
+      "expected": {
+        "exitCode": 2,
+        "format": "json",
+        "command": "validate"
+      }
+    },
+    {
+      "id": "missing-root-value",
+      "args": [
+        "validate",
+        "--format",
+        "json",
+        "--root"
+      ],
+      "expected": {
+        "exitCode": 2,
+        "format": "json",
+        "command": "validate"
+      }
+    },
+    {
+      "id": "unknown-command",
+      "args": [
+        "run",
+        "--root",
+        "$ROOT",
+        "--format",
+        "json"
+      ],
+      "expected": {
+        "exitCode": 2,
+        "format": "json",
+        "command": null
+      }
+    },
+    {
+      "id": "deferred-init",
+      "args": [
+        "init",
+        "--root",
+        "$ROOT",
+        "--format",
+        "json"
+      ],
+      "expected": {
+        "exitCode": 2,
+        "format": "json",
+        "command": null
+      }
+    },
+    {
+      "id": "prototype-discover",
+      "args": [
+        "discover",
+        "--root",
+        "$ROOT",
+        "--format",
+        "json"
+      ],
+      "expected": {
+        "exitCode": 2,
+        "format": "json",
+        "command": null
+      }
+    },
+    {
+      "id": "unknown-option",
+      "args": [
+        "validate",
+        "--root",
+        "$ROOT",
+        "--private-option=PRIVATE_CANARY",
+        "--format",
+        "json"
+      ],
+      "expected": {
+        "exitCode": 2,
+        "format": "json",
+        "command": "validate"
+      }
+    },
+    {
+      "id": "positional-input",
+      "args": [
+        "validate",
+        "PRIVATE_CANARY",
+        "--format",
+        "json"
+      ],
+      "expected": {
+        "exitCode": 2,
+        "format": "json",
+        "command": "validate"
+      }
+    },
+    {
+      "id": "duplicate-root",
+      "args": [
+        "validate",
+        "--root",
+        "$ROOT",
+        "--root",
+        "$ROOT",
+        "--format",
+        "json"
+      ],
+      "expected": {
+        "exitCode": 2,
+        "format": "json",
+        "command": "validate"
+      }
+    },
+    {
+      "id": "duplicate-format",
+      "args": [
+        "validate",
+        "--root",
+        "$ROOT",
+        "--format",
+        "text",
+        "--format",
+        "json"
+      ],
+      "expected": {
+        "exitCode": 2,
+        "format": "json",
+        "command": "validate"
+      }
+    },
+    {
+      "id": "unsupported-output",
+      "args": [
+        "validate",
+        "--root",
+        "$ROOT",
+        "--format",
+        "sarif"
+      ],
+      "expected": {
+        "exitCode": 2,
+        "format": "text",
+        "command": "validate"
+      }
+    },
+    {
+      "id": "json-before-error",
+      "args": [
+        "validate",
+        "--format",
+        "json",
+        "--format",
+        "bad",
+        "--root",
+        "$ROOT"
+      ],
+      "expected": {
+        "exitCode": 2,
+        "format": "json",
+        "command": "validate"
+      }
+    },
+    {
+      "id": "source-mode-conflict",
+      "args": [
+        "validate",
+        "--root",
+        "$ROOT",
+        "--project",
+        "project.yaml",
+        "--file",
+        "actors.yaml",
+        "--format",
+        "json"
+      ],
+      "expected": {
+        "exitCode": 2,
+        "format": "json",
+        "command": "validate"
+      }
+    },
+    {
+      "id": "help-with-selection",
+      "args": [
+        "inspect",
+        "--help",
+        "--root",
+        "$ROOT",
+        "--format",
+        "json"
+      ],
+      "expected": {
+        "exitCode": 2,
+        "format": "json",
+        "command": "help"
+      }
+    },
+    {
+      "id": "version-with-operation",
+      "args": [
+        "validate",
+        "--version",
+        "--format",
+        "json"
+      ],
+      "expected": {
+        "exitCode": 2,
+        "format": "json",
+        "command": "version"
+      }
+    },
+    {
+      "id": "conflicting-information",
+      "args": [
+        "--help",
+        "--version",
+        "--format",
+        "json"
+      ],
+      "expected": {
+        "exitCode": 2,
+        "format": "json",
+        "command": "help"
+      }
+    },
+    {
+      "id": "duplicate-help",
+      "args": [
+        "--help",
+        "--help",
+        "--format",
+        "json"
+      ],
+      "expected": {
+        "exitCode": 2,
+        "format": "json",
+        "command": "help"
+      }
+    },
+    {
+      "id": "help-rejects-value",
+      "args": [
+        "--help=PRIVATE_CANARY",
+        "--format",
+        "json"
+      ],
+      "expected": {
+        "exitCode": 2,
+        "format": "json",
+        "command": "help"
+      }
+    },
+    {
+      "id": "consumed-format-is-data",
+      "args": [
+        "validate",
+        "--root",
+        "--format",
+        "json"
+      ],
+      "expected": {
+        "exitCode": 2,
+        "format": "text",
+        "command": "validate"
+      }
+    },
+    {
+      "id": "consumed-inline-format-is-data",
+      "args": [
+        "validate",
+        "--root",
+        "--format=json",
+        "PRIVATE_CANARY"
+      ],
+      "expected": {
+        "exitCode": 2,
+        "format": "text",
+        "command": "validate"
+      }
+    },
+    {
+      "id": "empty-file",
+      "args": [
+        "validate",
+        "--root",
+        "$ROOT",
+        "--file=",
+        "--format",
+        "json"
+      ],
+      "expected": {
+        "exitCode": 2,
+        "format": "json",
+        "command": "validate"
+      }
+    },
+    {
+      "id": "missing-file-value",
+      "args": [
+        "validate",
+        "--root",
+        "$ROOT",
+        "--format",
+        "json",
+        "--file"
+      ],
+      "expected": {
+        "exitCode": 2,
+        "format": "json",
+        "command": "validate"
+      }
+    },
+    {
+      "id": "equals-form",
+      "args": [
+        "validate",
+        "--root=$ROOT",
+        "--project=project.yaml",
+        "--format=json"
+      ],
+      "expected": {
+        "exitCode": 0,
+        "format": "json",
+        "command": "validate"
+      }
+    },
+    {
+      "id": "unordered-explicit-files",
+      "args": [
+        "inspect",
+        "--root",
+        "$ROOT",
+        "--file",
+        "agents.yaml",
+        "--file=project.yaml",
+        "--file",
+        "actors.yaml",
+        "--format",
+        "json"
+      ],
+      "expected": {
+        "exitCode": 0,
+        "format": "json",
+        "command": "inspect"
+      }
+    }
+  ]
+}

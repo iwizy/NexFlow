@@ -8,6 +8,14 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Added
 
+- Implemented NF-106's separate reference CLI source entry for validate, declared
+  inspect, static graph and help/version using the NF-105 public library. Added
+  the concrete `0.5-preview.1` schema, safe text/JSON output, exit/compatibility
+  checks and actual-entry fixture/no-runtime verification. Init is explicitly
+  deferred. Existing prototypes, frozen reports, dependency locks and package
+  versions are preserved; final installable artifacts and release qualification
+  remain separate work.
+
 - Documented task pull requests into `develop` and release promotion from
   `develop` into `main`, with CI branch-routing checks and matching integration
   coverage. Existing release history is preserved.

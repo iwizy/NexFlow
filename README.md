@@ -109,8 +109,8 @@ states, not synonyms for the implementation evidence summarized below.
 | Threat model | Current repository and conditional future-runtime trust boundaries, attacker stories, mitigations, assumptions, and severity calibration documented; not a vulnerability report or runtime claim | [Threat Model](docs/threat-model.md), [Security Policy](SECURITY.md) |
 | Runtime architecture decision | Accepted TypeScript/layout B for unsigned developer validation and future host interface design; no runtime implementation or release authorized | [RFC-0025](rfcs/RFC-0025-reference-implementation-architecture.md), [Exact decision](evaluation/architecture/revised/decision.json), [Runtime Options](docs/runtime-options.md) |
 | Runtime language candidates | Four independent Experimental prototypes; TypeScript/Python qualify in the current evaluation scope, while current Rust/Go fail Windows confinement. Original failed reports remain historical evidence | [Evaluation Packet](evaluation/README.md), [Current measurements](evaluation/measurement-qualification/README.md), [Feature Status Registry](docs/feature-status-registry.md) |
-| Reference CLI | Bounded 0.5 implementation profile adopted; separate validation library and read-only workspace adapter implemented, public command dispatcher and installable CLI planned, init deferred; historical preparation checkpoints remain not-ready | [0.5 CLI Contract](docs/0.5-cli-contract.md), [Reference CLI](docs/reference-cli.md), [Alpha Preparation Checkpoint](docs/0.4-alpha-checkpoint.md), [0.5 Beta Readiness Checklist](docs/0.5-beta-readiness-checklist.md), [Beta Preparation Checkpoint](docs/0.5-beta-checkpoint.md), [CLI Release Dry Run](docs/cli-release-dry-run.md), [CLI And Runtime Responsibility Boundary](docs/cli-runtime-boundary.md), [RFC-0011](rfcs/RFC-0011-reference-cli-scope.md) |
-| Reference validation library | Separate pure TypeScript package and read-only workspace adapter implemented for source evaluation; fixed schemas, declared inspection and package relocation checked, no executable CLI or published package | [Library Scope And Qualification](docs/reference-validation-library.md), [Package API](packages/validation/README.md), [Workspace Adapter](packages/cli/README.md) |
+| Reference CLI | Separate source entry implements validate/inspect/static graph and help/version using the validation library; init deferred, final installable artifacts and product release remain separate; historical preparation checkpoints remain not-ready | [Source Preview](docs/reference-cli-preview.md), [0.5 CLI Contract](docs/0.5-cli-contract.md), [Reference CLI](docs/reference-cli.md), [Alpha Preparation Checkpoint](docs/0.4-alpha-checkpoint.md), [0.5 Beta Readiness Checklist](docs/0.5-beta-readiness-checklist.md), [Beta Preparation Checkpoint](docs/0.5-beta-checkpoint.md), [CLI Release Dry Run](docs/cli-release-dry-run.md), [CLI And Runtime Responsibility Boundary](docs/cli-runtime-boundary.md), [RFC-0011](rfcs/RFC-0011-reference-cli-scope.md) |
+| Reference validation library | Separate pure TypeScript package and read-only workspace adapter implemented for source evaluation; fixed schemas, declared inspection and package relocation checked; source CLI has separate evidence, no published package | [Library Scope And Qualification](docs/reference-validation-library.md), [Package API](packages/validation/README.md), [CLI And Adapter](packages/cli/README.md) |
 | Repository CLI prototype | Experimental local discovery, JSON Schema validation, declared inspection, static graphing, bounded starter initialization, versioned JSON output, executable no-runtime guardrails, cataloged fixtures, and dedicated CI; not a reference CLI alpha, language decision, operating-system sandbox, or `NF-CLI` claim | `npm run cli-prototype -- --help`, `npm run cli-no-runtime-guardrails-smoke`, `npm run cli-fixture-smoke`, [CLI Workflow](.github/workflows/cli-smoke.yml), [Prototype Scope](docs/cli-prototype.md), [JSON Diagnostics](docs/cli-diagnostics.md), [Declared Inspection](docs/cli-inspection.md), [Static Graph](docs/cli-graph.md), [Starter Initialization](docs/cli-init.md) |
 | Runtime and provider execution | Planned, not implemented | [Architecture](docs/architecture.md), [Runtime Options](docs/runtime-options.md) |
 | Live integrations and extension loading | Not implemented | [Compatibility Matrix](docs/compatibility-matrix.md) |
@@ -321,7 +321,7 @@ the complete documentation catalog.
 | Examples | [Examples Guide](examples/README.md) | Compact learning projects and complete reference team configurations. |
 | Extensions | [Extension Profiles](extensions/README.md) | Maintained policy profiles for non-core integration behavior. |
 | Validation evidence | [Fixtures Guide](fixtures/README.md) | Focused positive and negative inputs with expected outcomes and owning checks. |
-| Reference tooling source | [Validation Library](packages/validation/README.md), [Workspace Adapter](packages/cli/README.md) | Unreleased pure library and bounded file-read adapter; no executable reference CLI yet. |
+| Reference tooling source | [Validation Library](packages/validation/README.md), [Source CLI And Adapter](packages/cli/README.md) | Unreleased pure library, source CLI commands and bounded file-read adapter; final installable artifacts remain separate. |
 | Design proposals | [RFC Index](rfcs/README.md) | Proposal lifecycle, draft RFCs, reviews, and recorded decisions. |
 | Conformance | [Conformance Templates](conformance/README.md) | Support-claim schema, templates, fixtures, and publication workflow. |
 | Releases | [Release Evidence Guide](release/README.md), [Changelog](CHANGELOG.md) | Candidate decision records, release evidence, and unreleased changes. |
@@ -363,8 +363,9 @@ The current priorities are:
 1. Preserve the published `0.1` through `0.4` milestones and their exact evidence.
    NF-103 is complete; the [0.4 publication receipt](release/0.4-publication.md)
    records the source/decision/evidence release.
-2. Build on NF-105's [separate validation library](docs/reference-validation-library.md)
-   and implement `validate`, `inspect`, static `graph`, help and version under
+2. Use NF-105's [separate validation library](docs/reference-validation-library.md)
+   and NF-106's [source commands](docs/reference-cli-preview.md) for `validate`,
+   `inspect`, static `graph`, help and version under
    the [adopted 0.5 contract](docs/0.5-cli-contract.md). `init` is deferred for
    this preview; the historical prototype's initializer remains experimental.
 3. Package the exact CLI/library pair and fixed schemas, then qualify its actual
@@ -412,9 +413,10 @@ See [Governance](docs/governance.md) and [RFCs](rfcs/README.md).
   identify a reproducible schema snapshot.
 - Draft RFCs may describe behavior that has not yet been incorporated into the
   manifest reference, schemas, examples, or compatibility contract.
-- No reference CLI, runtime engine, provider adapter, extension loader, live
-  integration, task execution, workflow orchestration, or deployment support
-  exists. The `0.5` beta checklist is preparation, not a release decision or
+- Reference CLI commands exist as unreleased source; a qualified installable CLI,
+  runtime engine, provider adapter, extension loader, live integration, task
+  execution, workflow orchestration or deployment support does not exist.
+  The `0.5` beta checklist is preparation, not a release decision or
   support claim.
 - GitHub, MCP, and A2A profiles are offline policy maps. They do not discover endpoints,
   negotiate protocol versions, authenticate, invoke tools or remote agents,

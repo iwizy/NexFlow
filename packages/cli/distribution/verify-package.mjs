@@ -99,7 +99,7 @@ export async function verifyPackage(directory) {
     files:count,generatedNpmShims,schemas:ids.size,manifestKinds:kinds.size,signatureVerified:false};
 }
 
-if(process.argv[1] && pathToFileURL(path.resolve(process.argv[1])).href===import.meta.url) {
+if(process.argv[1] && pathToFileURL(realpathSync(process.argv[1])).href===import.meta.url) {
   try {console.log(JSON.stringify(await verifyPackage(path.dirname(fileURLToPath(import.meta.url)))));}
   catch {console.error("Package integrity/schema verification failed.");process.exitCode=1;}
 }

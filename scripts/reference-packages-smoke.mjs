@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import {spawnSync,execFileSync} from "node:child_process";
-import {cpSync,existsSync,mkdirSync,mkdtempSync,readFileSync,readdirSync,rmSync,symlinkSync,writeFileSync} from "node:fs";
+import {cpSync,existsSync,mkdirSync,mkdtempSync,readFileSync,readdirSync,realpathSync,rmSync,symlinkSync,writeFileSync} from "node:fs";
 import {createRequire} from "node:module";
 import {tmpdir,platform,arch} from "node:os";
 import path from "node:path";
@@ -12,7 +12,7 @@ import {verifyPackage} from "../packages/cli/distribution/verify-package.mjs";
 const option=name=>{const i=process.argv.indexOf(name);assert.ok(i!==-1 && process.argv[i+1]);return path.resolve(process.argv[i+1]);};
 const output=option("--out"),reportFile=option("--report");
 assert.ok(!reportFile.startsWith(output+path.sep));
-const scratch=mkdtempSync(path.join(tmpdir(),"nexflow-install-"));
+const scratch=realpathSync(mkdtempSync(path.join(tmpdir(),"nexflow-install-")));
 const records=[];
 const check=(name,body)=>{body();records.push({name,result:"passed"});};
 const deny=path.join(repository,"scripts/test/package-network-deny.mjs"),effects=path.join(repository,"scripts/test/no-runtime-deny.mjs"),reads=path.join(repository,"scripts/test/reference-cli-read-guard.mjs");

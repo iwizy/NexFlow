@@ -26,7 +26,7 @@ export function archiveEntries(file) {
     assert.ok(entry.path.split("/").every(p=>p && p!=="." && p!==".."));
     assert.ok(!seen.has(entry.path));seen.add(entry.path);
     size+=entry.size;assert.ok(seen.size<=4096 && size<=32*1024*1024);
-    assert.ok(entry.size<=2*1024*1024);assert.equal(entry.uid,0);assert.equal(entry.gid,0);
+    assert.ok(entry.size<=2*1024*1024);assert.equal(entry.uid??0,0);assert.equal(entry.gid??0,0);
     entries.push({path:entry.path,bytes:entry.size});
   }});
   assert.ok(entries.length>0);return entries;

@@ -6,6 +6,12 @@ NF-106 implements the unreleased validation-only `nexflow` entry point in
 runtime operations are unsupported. Package metadata remains private
 `0.5.0-alpha.1`; it does not indicate a published download.
 
+NF-107 adds a separate [installable candidate build](../../docs/reference-package-candidate.md)
+with the exact library/production closure bundled in the CLI archive, legal
+notices, schema indexes and integrity/provenance records. Use that clean-revision
+pipeline for actual offline installation; the development build below is still
+only a source build. Artifact security/native lifecycle/publication remain open.
+
 Use the exact Node 26.13.0/npm 11.20.0 toolchain and the existing pinned compiler:
 
 ```sh

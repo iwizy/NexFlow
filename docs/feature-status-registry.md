@@ -103,8 +103,9 @@ specific experimental/deprecated/planned rows below do not overwrite that stage.
 NF-105 adds a separate [pure validation library](reference-validation-library.md)
 and root-bound workspace adapter outside the frozen candidate directories. Its
 352-case kernel comparison and public entry/package checks are distinct from
-NF-106's separately implemented [source CLI](reference-cli-preview.md). Neither
-establishes final installable tooling, full semantics or a runtime.
+NF-106's separately implemented [source CLI](reference-cli-preview.md).
+NF-107 adds an [offline-installable candidate](reference-package-candidate.md);
+artifact security, native lifecycle, full semantics and runtime remain separate.
 
 These rows apply only to the named offline/source-bound implementation, not its
 whole RFC or a future runtime. Original candidate reports retain 128/352 passes
@@ -124,7 +125,7 @@ It does not change any feature or RFC implementation/acceptance status.
 | --- | --- | --- | --- |
 | `experiment:repository-cli` | Local repository CLI and JSON/inspection/graph/init contracts | Experimental | [Prototype scope](cli-prototype.md), [output contract](cli-diagnostics.md); bounded maintenance tooling, not stable public CLI or OS sandbox. |
 | `experiment:reference-validation` | Separate pure TypeScript validation package and root-bound workspace adapter | Experimental | [Scope and qualification](reference-validation-library.md), [package API](../packages/validation/README.md); corpus/internal regressions and public safe entry are distinct from the separate source CLI, with no native lifecycle or release claim. |
-| `experiment:reference-cli` | Separate TypeScript source CLI entry for validate/inspect/static graph and help/version | Experimental | [Source preview](reference-cli-preview.md), [package guide](../packages/cli/README.md); real-entry grammar/output/no-runtime evidence, final installable artifacts and product qualification remain separate. |
+| `experiment:reference-cli` | Separate TypeScript source CLI entry and installable offline candidate | Experimental | [Source preview](reference-cli-preview.md), [candidate package](reference-package-candidate.md); actual bin/install/schema evidence, with artifact security/native lifecycle and release still separate. |
 | `experiment:candidate-go` | go validation-only source candidate | Experimental | [Native source](../evaluation/prototypes/go/README.md), [historical fidelity](../evaluation/fidelity/go.json), [repair](../evaluation/repairs/go.json); repaired 352/352 library cases on supplemental macOS, no full project/target qualification, language selection or distribution acceptance. |
 | `experiment:candidate-python` | python validation-only source candidate | Experimental | [Native source](../evaluation/prototypes/python/README.md), [historical fidelity](../evaluation/fidelity/python.json), [repair](../evaluation/repairs/python.json); repaired 352/352 library cases on supplemental macOS, no full project/target qualification, language selection or distribution acceptance. |
 | `experiment:candidate-rust` | rust validation-only source candidate | Experimental | [Native source](../evaluation/prototypes/rust/README.md), [historical fidelity](../evaluation/fidelity/rust.json), [repair](../evaluation/repairs/rust.json); repaired 352/352 library cases and supplemental macOS relocation, no full project/target qualification, language selection or distribution acceptance. |
@@ -162,7 +163,7 @@ the existing documentation.
 
 | ID | Surface and scope | Lifecycle | Evidence and boundary |
 | --- | --- | --- | --- |
-| `planned:reference-cli` | Installable reference CLI | Planned | [Contract or proposal](reference-cli.md). Source commands are implemented separately; final installable artifacts and target/security qualification are not complete, and publication is not granted. |
+| `planned:reference-cli` | Publicly qualified reference CLI | Planned | [Contract or proposal](reference-cli.md). Source commands and offline-installable candidates exist; target/security qualification and publication are not complete. |
 | `planned:runtime` | Runtime/orchestration/enforcement | Planned | [Contract or proposal](runtime-options.md). Not implemented; no accepted architecture, provider execution or workflow execution. |
 | `planned:provider-adapters` | Live provider adapters | Planned | [Contract or proposal](provider-adapter-boundary.md). Not implemented; documented invocation boundaries are not an adapter or live capability. |
 | `planned:extension-loading` | Executable extension loading and live integrations | Planned | [Contract or proposal](extension-loading-boundary.md). Not implemented; profiles and metadata cannot authorize loading or effects. |

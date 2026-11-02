@@ -5,7 +5,8 @@
   "type": "module",
   "description": "Unreleased validation-only NexFlow reference CLI preview.",
   "bin": { "nexflow": "dist/main.js" },
-  "files": ["dist", "contracts"],
+  "files": ["dist", "contracts", "schemas", "schema-bundle.json", "build-info.json", "package-inventory.json", "verify-package.mjs", "LICENSE", "NOTICE"],
+  "license": "MIT",
   "scripts": {
     "build": "node scripts/build.mjs"
   },
@@ -13,7 +14,8 @@
     "node": "26.13.0",
     "npm": "11.20.0"
   },
-  "peerDependencies": {
+  "dependencies": {
     "@nexflow/validation": "0.5.0-alpha.1"
-  }
+  },
+  "bundledDependencies": ["@nexflow/validation"]
 }

@@ -1,12 +1,13 @@
 # Reference CLI
 
 Status: [0.5 implementation profile adopted](0.5-cli-contract.md), with
-[NF-106 source commands implemented](reference-cli-preview.md). Final installable
-CLI artifacts and a public release do not exist yet.
+[NF-106 source commands implemented](reference-cli-preview.md) and an
+[NF-107 installable candidate](reference-package-candidate.md). Artifact security,
+native lifecycle and public release qualification remain separate.
 
 NF-105 now supplies a [separate validation library and workspace adapter](reference-validation-library.md).
 NF-106 connects it to a real source entry for validate/inspect/static graph and
-help/version. Final packaging and target lifecycle remain subsequent work;
+help/version. NF-107 supplies candidate packaging; target lifecycle remains separate;
 source command evidence does not establish a supported product release.
 
 NexFlow plans a validation-focused reference CLI for authoring and reviewing

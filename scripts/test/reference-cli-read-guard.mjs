@@ -9,6 +9,7 @@ import path from "node:path";
 const modules = path.resolve(process.env.NEXFLOW_TEST_MODULE_ROOT) + path.sep;
 const root = process.env.NEXFLOW_TEST_READ_ROOT ? path.resolve(process.env.NEXFLOW_TEST_READ_ROOT) : null;
 const metadata = new Set(["cli","validation"].map(name=>path.join(modules,"@nexflow",name,"package.json")));
+metadata.add(path.join(modules,"@nexflow/cli/node_modules/@nexflow/validation/package.json"));
 const deny = () => { process.stderr.write("NEXFLOW-TEST-FORBIDDEN-READ\n"); throw Error("Unexpected application read"); };
 const filename = file => path.resolve(file instanceof URL ? fileURLToPath(file) : String(file));
 const code = name => name.startsWith(modules) && /\.(?:c?js|json)$/.test(name) && new Error().stack.includes("node:internal/modules/");

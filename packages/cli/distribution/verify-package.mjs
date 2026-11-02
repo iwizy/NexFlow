@@ -73,7 +73,7 @@ export async function verifyPackage(directory) {
     ajv.addSchema(schema);
   }
   assert.equal(ids.size,18);assert.equal(kinds.size,17);
-  assert.equal(json(path.join(root,schemaRoot,"common.schema.json")).$defs.specVersion.const,index.specVersion);
+  assert.deepEqual(json(path.join(root,schemaRoot,"common.schema.json")).$defs.specVersion.enum,[index.specVersion]);
   for(const id of ids)assert.ok(ajv.getSchema(id));
   for(const item of index.schemas) {
     function refs(value) {

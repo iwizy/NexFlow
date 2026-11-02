@@ -14,8 +14,9 @@ NexFlow is a specification-first project for describing how humans, AI agents, a
 
 It is **not** an AI coding agent, an LLM API wrapper, a chat application, or a
 personal productivity tool. The specification is the foundation. Repository
-validation tools and an unreleased reference validation library exist; an
-installable reference CLI and workflow runtime remain future work.
+validation tools, a reference validation library and an
+[unreleased installable CLI candidate](docs/reference-package-candidate.md)
+exist. Public release qualification and workflow runtime remain future work.
 
 ## Status
 
@@ -321,7 +322,7 @@ the complete documentation catalog.
 | Examples | [Examples Guide](examples/README.md) | Compact learning projects and complete reference team configurations. |
 | Extensions | [Extension Profiles](extensions/README.md) | Maintained policy profiles for non-core integration behavior. |
 | Validation evidence | [Fixtures Guide](fixtures/README.md) | Focused positive and negative inputs with expected outcomes and owning checks. |
-| Reference tooling source | [Validation Library](packages/validation/README.md), [Source CLI And Adapter](packages/cli/README.md) | Unreleased pure library, source CLI commands and bounded file-read adapter; final installable artifacts remain separate. |
+| Reference tooling source | [Validation Library](packages/validation/README.md), [Source CLI And Adapter](packages/cli/README.md), [Installable Candidate](docs/reference-package-candidate.md) | Unreleased library/CLI and offline package candidate; artifact security, native lifecycle and release remain separate. |
 | Design proposals | [RFC Index](rfcs/README.md) | Proposal lifecycle, draft RFCs, reviews, and recorded decisions. |
 | Conformance | [Conformance Templates](conformance/README.md) | Support-claim schema, templates, fixtures, and publication workflow. |
 | Releases | [Release Evidence Guide](release/README.md), [Changelog](CHANGELOG.md) | Candidate decision records, release evidence, and unreleased changes. |
@@ -413,7 +414,7 @@ See [Governance](docs/governance.md) and [RFCs](rfcs/README.md).
   identify a reproducible schema snapshot.
 - Draft RFCs may describe behavior that has not yet been incorporated into the
   manifest reference, schemas, examples, or compatibility contract.
-- Reference CLI commands exist as unreleased source; a qualified installable CLI,
+- Reference CLI commands and an offline-installable candidate exist; a publicly qualified CLI,
   runtime engine, provider adapter, extension loader, live integration, task
   execution, workflow orchestration or deployment support does not exist.
   The `0.5` beta checklist is preparation, not a release decision or

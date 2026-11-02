@@ -141,6 +141,16 @@ verifier covers grammar, diagnostics, static graphing and denied effects from
 the real relocated entry. These checks do not establish final CLI
 installation, target lifecycle, current advisory acceptance or release readiness.
 
+NF-107's [candidate verifier](docs/reference-package-candidate.md) additionally
+requires a clean committed tree and new output/report paths outside it:
+
+```sh
+node scripts/reference-packages-smoke.mjs --out /absolute/new-candidate-directory --report /absolute/qualification.json
+```
+
+It qualifies actual offline installation of the candidate, not native lifecycle
+or release. Keep the first successful candidate intact for later upgrade/rollback.
+
 Documentation changes must keep local links valid, every first-level
 `docs/*.md` page discoverable from the documentation index, and the root README
 linked to each repository guide. Run `npm run documentation-navigation-smoke`

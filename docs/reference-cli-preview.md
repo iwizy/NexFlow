@@ -7,9 +7,10 @@ entry, not a historical CLI or another language backend.
 
 Status: **implemented source preview, unreleased**. Package identity is
 `@nexflow/cli` `0.5.0-alpha.1`, with matching `@nexflow/validation` and exact
-Node 26.13.0. The bin mapping points to `dist/main.js`; final tarballs, dependency
-closure, offline install, native lifecycle, security acceptance and publication
-are NF-107–NF-110 work. This is not an `NF-CLI` or full semantic claim.
+Node 26.13.0. The bin mapping points to `dist/main.js`. NF-107 supplies the
+[actual tarball/dependency closure and offline installation candidate](reference-package-candidate.md);
+native lifecycle, security acceptance and publication remain NF-108–NF-110 work.
+This is not an `NF-CLI` or full semantic claim.
 
 ## Build And Run
 

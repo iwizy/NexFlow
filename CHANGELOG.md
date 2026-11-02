@@ -8,6 +8,13 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Added
 
+- Added NF-107's reproducible npm-compatible CLI/library candidate assembly,
+  complete bundled production closure, original legal notices, embedded schema
+  indexes, provenance/checksums and installed consumer verification. Actual
+  offline installs use separate empty caches and the real installed bin.
+  These unreleased bytes do not grant artifact security, native lifecycle,
+  signing or publication acceptance; existing locks and versions are preserved.
+
 - Implemented NF-106's separate reference CLI source entry for validate, declared
   inspect, static graph and help/version using the NF-105 public library. Added
   the concrete `0.5-preview.1` schema, safe text/JSON output, exit/compatibility

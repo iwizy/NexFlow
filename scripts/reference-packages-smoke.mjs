@@ -48,7 +48,7 @@ try {
     const name=artifact.name.split("/").pop(),consumer=path.join(scratch,"consumer "+name+" \u00e9"),cache=path.join(scratch,"cache-"+name);
     mkdirSync(consumer);mkdirSync(cache);writeFileSync(path.join(consumer,"package.json"),'{"private":true,"type":"module"}\n');
     assert.deepEqual(readdirSync(cache),[]);
-    const child=spawnSync(process.execPath,["--import",deny,npm,"install","--prefix",consumer,"--offline","--ignore-scripts","--no-audit","--no-fund","--userconfig",config,"--cache",cache,"--registry=http://127.0.0.1:1",path.join(output,artifact.file)],{cwd:consumer,env,encoding:"utf8",timeout:60000});
+    const child=spawnSync(process.execPath,["--import",deny,npm,"install","--prefix",consumer,"--offline","--ignore-scripts","--no-audit","--no-fund","--update-notifier=false","--userconfig",config,"--cache",cache,"--registry=http://127.0.0.1:1",path.join(output,artifact.file)],{cwd:consumer,env,encoding:"utf8",timeout:60000});
     check("offline clean npm install from empty cache: "+name,()=>{assert.equal(child.status,0,child.stderr);assert.equal(child.signal,null);assert.doesNotMatch(child.stderr,/NEXFLOW-PACKAGE-NETWORK-DENIED/u);});
     const directory=path.join(consumer,"node_modules/@nexflow",name);installed[name]={consumer,directory};
     const verified=await verifyPackage(directory);
@@ -80,7 +80,7 @@ try {
   });
   const pure=spawnSync(process.execPath,["--import",effects,"--input-type=module","-e",'import {createValidator} from "@nexflow/validation"; console.log(createValidator().validateDocuments([]).valid);'],{cwd:installed.validation.consumer,env,encoding:"utf8"});
   check("separately installed pure public package import",()=>{assert.equal(pure.status,0,pure.stderr);assert.equal(pure.stderr,"");});
-  const mutated=path.join(scratch,"mutated");cpSync(directory,mutated,{recursive:true});
+  const mutated=path.join(scratch,"mutated");cpSync(directory,mutated,{recursive:true,verbatimSymlinks:true});await verifyPackage(mutated);
   const target=path.join(mutated,"schemas/0.1/project.schema.json"),original=readFileSync(target);
   writeFileSync(target,"{}\n");await assert.rejects(verifyPackage(mutated));writeFileSync(target,original);
   writeFileSync(path.join(mutated,"extra.txt"),"unlisted");await assert.rejects(verifyPackage(mutated));rmSync(path.join(mutated,"extra.txt"));

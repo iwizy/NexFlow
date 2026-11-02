@@ -57,7 +57,7 @@ Select one exact source revision and trusted candidate set. Verify its
 
 ```sh
 shasum -a 256 -c SHA256SUMS
-npm install --prefix ./consumer --offline --ignore-scripts --no-audit --no-fund --cache ./empty-cache ./nexflow-cli-0.5.0-alpha.1.tgz
+npm install --prefix ./consumer --offline --ignore-scripts --no-audit --no-fund --update-notifier=false --cache ./empty-cache ./nexflow-cli-0.5.0-alpha.1.tgz
 node ./consumer/node_modules/@nexflow/cli/verify-package.mjs
 ./consumer/node_modules/.bin/nexflow --help
 ./consumer/node_modules/.bin/nexflow --version
@@ -80,6 +80,13 @@ checks installed package/schema composition, compiles local schema refs and
 initializes the public validation API without network or writes. It does not
 authenticate an untrusted inventory or publisher. Checksum/Git identity is not
 an independent publisher signature.
+
+Archives contain no links. On the checked Unix installations, npm creates one
+declared YAML bin symlink inside the bundled closure. Verification permits only
+that exact link and its inventoried target; arbitrary links still reject.
+`--update-notifier=false` is required separately: npm's own update lookup may
+otherwise attempt a request despite `--offline`. The install verifier rejects
+any observed application-level network attempt, including that lookup.
 
 ## Embedded Schema Contract
 

@@ -12,7 +12,7 @@ Checksums establish byte identity, not an independent publisher signature.
 Install an exact local tarball into a new directory; scripts stay disabled:
 
 ```sh
-npm install --prefix ./consumer --offline --ignore-scripts --no-audit --no-fund --cache ./empty-cache ./nexflow-cli-0.5.0-alpha.1.tgz
+npm install --prefix ./consumer --offline --ignore-scripts --no-audit --no-fund --update-notifier=false --cache ./empty-cache ./nexflow-cli-0.5.0-alpha.1.tgz
 node ./consumer/node_modules/@nexflow/cli/verify-package.mjs
 ./consumer/node_modules/.bin/nexflow --version
 ./consumer/node_modules/.bin/nexflow --help
@@ -35,6 +35,10 @@ Its detached `.schemas.json` copy must be byte-identical. CLI copies use
 embedded package snapshots, not an independently published schema release.
 The consumer verifier checks composition, hashes, local closure and API setup;
 it neither authenticates the publisher nor rewrites files.
+The update notifier is disabled separately because npm may otherwise attempt
+its own update lookup even in offline mode. Archives contain no links; after
+installation the verifier permits only npm's exact declared YAML bin symlink,
+whose target remains covered by the inventory.
 
 The CLI emits `0.5-preview.1` text/JSON results. Successful schema/declared checks
 do not establish complete semantics, Core/extension profiles or execution

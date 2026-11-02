@@ -90,7 +90,7 @@ export async function buildPackages(output) {
       schemaSnapshotRevision:snapshot.sourceRevision,specVersion:"0.1",node:"26.13.0",npm:"11.20.0",typescript:"6.0.3",tar:"7.5.22",
       lockfiles:["package-lock.json","packages/validation/package-lock.json"].map(file=>({path:file,sha256:sha256(readFileSync(path.join(repository,file)))})),
       buildCommand:"node scripts/reference-packages.mjs --out <new-output-directory>",
-      installCommand:"npm install --prefix <empty-consumer> --offline --ignore-scripts --no-audit --no-fund --cache <empty-cache> <exact-local-tarball>",
+      installCommand:"npm install --prefix <empty-consumer> --offline --ignore-scripts --no-audit --no-fund --update-notifier=false --cache <empty-cache> <exact-local-tarball>",
       dependencies:deps,signatures:"not-provided",releaseStatus:"unreleased-candidate"};
     const artifacts=[];
     for(const [name,source] of [["validation",library],["cli",cli]]) {
@@ -132,7 +132,7 @@ export async function buildPackages(output) {
       write(path.join(stage,"package-inventory.json"),{formatVersion:"nexflow-package-inventory-v1",name:metadata.name,version:metadata.version,sourceRevision:revision,files:inventory(stage)});
       chmodSync(path.join(stage,"package-inventory.json"),0o644);
       await verifyPackage(stage);
-      const packed=JSON.parse(run([npm,"pack","--offline","--ignore-scripts","--cache",path.join(scratch,"cache"),"--json","--pack-destination",output],stage))[0];
+      const packed=JSON.parse(run([npm,"pack","--update-notifier=false","--offline","--ignore-scripts","--cache",path.join(scratch,"cache"),"--json","--pack-destination",output],stage))[0];
       const archive=path.join(output,packed.filename),entries=archiveEntries(archive);
       const extracted=path.join(scratch,name+"-extracted");extract(archive,extracted);
       await verifyPackage(extracted);

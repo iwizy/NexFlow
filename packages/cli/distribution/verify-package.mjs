@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { createHash } from "node:crypto";
-import { lstatSync, readFileSync, readdirSync, realpathSync } from "node:fs";
+import { lstatSync, readFileSync, readdirSync, readlinkSync, realpathSync } from "node:fs";
 import { createRequire } from "node:module";
 import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
@@ -28,11 +28,18 @@ export async function verifyPackage(directory) {
     assert.ok(!expected.has(entry.path));assert.match(entry.sha256,/^[a-f0-9]{64}$/u);
     expected.set(entry.path,entry);
   }
-  let count=0,total=0;
+  let count=0,total=0,generatedNpmShims=0;
+  const libraryRelative=metadata.name==="@nexflow/cli"?"node_modules/@nexflow/validation/":"";
+  const shim=libraryRelative+"node_modules/.bin/yaml",shimTarget=path.join(root,libraryRelative,"node_modules/yaml/bin.mjs");
   function walk(directory,prefix="") {
     for(const name of readdirSync(directory).sort()) {
       const file=path.join(directory,name),rel=prefix+name,stat=lstatSync(file);
-      assert.ok(!stat.isSymbolicLink());
+      if(stat.isSymbolicLink()) {
+        // npm creates this one link during install; archives contain no links.
+        assert.equal(rel,shim);assert.equal(readlinkSync(file),"../yaml/bin.mjs");
+        assert.equal(realpathSync(file),shimTarget);assert.ok(lstatSync(shimTarget).isFile());
+        generatedNpmShims++;continue;
+      }
       if(stat.isDirectory()){walk(file,rel+"/");continue;}
       assert.ok(stat.isFile() && stat.nlink===1);assert.ok(++count<=4097);
       total+=stat.size;assert.ok(total<=32*1024*1024);
@@ -89,7 +96,7 @@ export async function verifyPackage(directory) {
   const api=await import(pathToFileURL(path.join(library,"dist/index.js")));
   assert.equal(api.apiVersion,"validation-api-v1-preview");api.createValidator();
   return {name:metadata.name,version:metadata.version,sourceRevision:inventory.sourceRevision,
-    files:count,schemas:ids.size,manifestKinds:kinds.size,signatureVerified:false};
+    files:count,generatedNpmShims,schemas:ids.size,manifestKinds:kinds.size,signatureVerified:false};
 }
 
 if(process.argv[1] && pathToFileURL(path.resolve(process.argv[1])).href===import.meta.url) {

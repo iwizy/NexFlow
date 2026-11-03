@@ -19,7 +19,13 @@ export class SchemaEngine {
     };
     schemas.forEach(schema => {
       collect(schema);
-      this.ajv.addSchema(schema as object);
+      const compiled = structuredClone(schema);
+      const sourcePath = object(object(object(compiled).$defs).sourcePath);
+      // The unanchored existence tests accept exactly the same strings.
+      // Remove redundant greedy wildcards before compiling the fixed schema;
+      // retain the original published bytes, IDs and diagnostic keyword.
+      if (sourcePath.pattern === ".*\\S.*") sourcePath.pattern = "\\S";
+      this.ajv.addSchema(compiled as object);
     });
     for (const schema of schemas) {
       const entry = object(schema);

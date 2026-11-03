@@ -7,7 +7,8 @@ explicitly deprecated fields and the planned implementations most easily
 confused with existing documentation.
 
 Current source snapshot: `5ee82f536984d54997cf7e514d730dd9d8e75c2a`.
-The inventory describes that source plus NF-106's source CLI and synchronized documentation.
+The inventory describes that source plus the source CLI, installable candidate
+and bounded package security qualification, with synchronized documentation.
 A later edit must update the affected rows and their evidence; this is not a
 live service or a registry of external implementations.
 
@@ -105,7 +106,8 @@ and root-bound workspace adapter outside the frozen candidate directories. Its
 352-case kernel comparison and public entry/package checks are distinct from
 NF-106's separately implemented [source CLI](reference-cli-preview.md).
 NF-107 adds an [offline-installable candidate](reference-package-candidate.md);
-artifact security, native lifecycle, full semantics and runtime remain separate.
+NF-108 adds [bounded artifact security evidence](reference-package-security.md).
+Native lifecycle, publisher trust, full semantics and runtime remain separate.
 
 These rows apply only to the named offline/source-bound implementation, not its
 whole RFC or a future runtime. Original candidate reports retain 128/352 passes
@@ -125,7 +127,7 @@ It does not change any feature or RFC implementation/acceptance status.
 | --- | --- | --- | --- |
 | `experiment:repository-cli` | Local repository CLI and JSON/inspection/graph/init contracts | Experimental | [Prototype scope](cli-prototype.md), [output contract](cli-diagnostics.md); bounded maintenance tooling, not stable public CLI or OS sandbox. |
 | `experiment:reference-validation` | Separate pure TypeScript validation package and root-bound workspace adapter | Experimental | [Scope and qualification](reference-validation-library.md), [package API](../packages/validation/README.md); corpus/internal regressions and public safe entry are distinct from the separate source CLI, with no native lifecycle or release claim. |
-| `experiment:reference-cli` | Separate TypeScript source CLI entry and installable offline candidate | Experimental | [Source preview](reference-cli-preview.md), [candidate package](reference-package-candidate.md); actual bin/install/schema evidence, with artifact security/native lifecycle and release still separate. |
+| `experiment:reference-cli` | Separate TypeScript source CLI entry and installable offline candidate | Experimental | [Source preview](reference-cli-preview.md), [candidate package](reference-package-candidate.md), [bounded security qualification](reference-package-security.md); actual bin/install/schema and current dependency evidence, with native lifecycle, OS containment, publisher trust and release still separate. |
 | `experiment:candidate-go` | go validation-only source candidate | Experimental | [Native source](../evaluation/prototypes/go/README.md), [historical fidelity](../evaluation/fidelity/go.json), [repair](../evaluation/repairs/go.json); repaired 352/352 library cases on supplemental macOS, no full project/target qualification, language selection or distribution acceptance. |
 | `experiment:candidate-python` | python validation-only source candidate | Experimental | [Native source](../evaluation/prototypes/python/README.md), [historical fidelity](../evaluation/fidelity/python.json), [repair](../evaluation/repairs/python.json); repaired 352/352 library cases on supplemental macOS, no full project/target qualification, language selection or distribution acceptance. |
 | `experiment:candidate-rust` | rust validation-only source candidate | Experimental | [Native source](../evaluation/prototypes/rust/README.md), [historical fidelity](../evaluation/fidelity/rust.json), [repair](../evaluation/repairs/rust.json); repaired 352/352 library cases and supplemental macOS relocation, no full project/target qualification, language selection or distribution acceptance. |

@@ -169,7 +169,10 @@ try {
     assert.deepEqual(tree(path.join(root,"fixtures")),inputsBefore);assert.deepEqual(tree(path.join(root,"examples")),examplesBefore);
     const baseline=JSON.parse(readFileSync(path.join(root,"evaluation/baseline.json")));
     for(const item of baseline.corpus.files)assert.equal(hash(readFileSync(path.join(root,item.path))),item.sha256,item.path);
-    assert.equal(execFileSync("git",["diff","--name-only","5ee82f536984d54997cf7e514d730dd9d8e75c2a","--","schemas","evaluation/prototypes","evaluation/library-cases.json","packages/validation","scripts/lib","scripts/contracts/cli-output.schema.json","fixtures/cli"],{cwd:root,encoding:"utf8"}),"");
+    assert.equal(execFileSync("git",["diff","--name-only","5ee82f536984d54997cf7e514d730dd9d8e75c2a","--","schemas","evaluation/prototypes","evaluation/library-cases.json","scripts/lib","scripts/contracts/cli-output.schema.json","fixtures/cli"],{cwd:root,encoding:"utf8"}),"");
+    // NF-108 repairs current library code/lock, not the frozen corpus or schemas.
+    const libraryChanges=execFileSync("git",["diff","--name-only","5ee82f536984d54997cf7e514d730dd9d8e75c2a","--","packages/validation"],{cwd:root,encoding:"utf8"}).trim().split("\n").filter(Boolean);
+    assert.ok(libraryChanges.every(file=>["packages/validation/src/schema.ts","packages/validation/package-lock.json"].includes(file)));
   });
   const report={task:"NF-106",baseRevision:"5ee82f536984d54997cf7e514d730dd9d8e75c2a",recordedAt:new Date().toISOString(),node:process.versions.node,npm:npmVersion,typescript:typescriptVersion,environment:{platform:platform(),architecture:arch()},
     verifierSha256:hash(readFileSync(fileURLToPath(import.meta.url))),schemaSha256:hash(readFileSync(path.join(root,"packages/cli/contracts/output.schema.json"))),cliPayload,libraryTarballSha256:hash(readFileSync(path.join(scratch,packed.filename))),

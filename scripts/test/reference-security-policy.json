@@ -1,0 +1,57 @@
+{
+  "task": "NF-108",
+  "reviewedOn": "2026-11-03",
+  "reviewMode": "single-maintainer; code/data boundary and dependency/distribution lenses; no independent human audit",
+  "scope": "Exact candidate, reviewed repository commands and Node 26.13.0/npm 11.20.0; reassess before release, changed input, version, command, network/proxy configuration or schema authority",
+  "dispositions": [
+    {
+      "graphs": ["maintenance"], "name": "fast-uri", "version": "3.1.8",
+      "advisories": ["GHSA-333x-w4r6-6crp", "GHSA-w74x-v6f9-j3xg", "GHSA-wjr9-j795-jxcr", "GHSA-xhq7-xmqj-769h"],
+      "disposition": "bounded-not-applicable",
+      "basis": "Root maintenance validation compiles fixed local repository schemas with no loadSchema hook. URI resolution does not make hostname, protocol, navigation, authentication or filesystem authorization decisions. The shipped graph is separately repaired to 3.1.9.",
+      "limits": "Not a general URI-safety waiver. Do not use the root maintenance resolver as a URI access-control boundary, for authored schemas or remote schema loading. See scripts/lib/schema-validation.mjs and reference-package-security.md."
+    },
+    {
+      "graphs": ["npm-tool"], "name": "brace-expansion", "version": "5.0.9",
+      "advisories": ["GHSA-6j4f-fj2g-mc7p", "GHSA-q2hr-2g5m-vwhr", "GHSA-qhr7-859c-m2p7"],
+      "disposition": "bounded-tooling-risk",
+      "basis": "npm glob/minimatch consumes reviewed package file lists during pack/ci/install, not authored manifest hints. It is absent from delivered packages; local candidate packing and installation run offline with lifecycle scripts and update lookups disabled.",
+      "limits": "Affected code is retained, not repaired. Arbitrary npm/glob inputs, unreviewed package metadata or new commands require reassessment. Do not treat a manifest as npm package configuration."
+    },
+    {
+      "graphs": ["npm-tool"], "name": "minimatch", "version": "10.2.5",
+      "advisories": ["GHSA-g3hv-75wg-m249"],
+      "disposition": "bounded-tooling-risk",
+      "basis": "Only reviewed fixed package lists cross the npm glob boundary; no manifest-controlled patterns. Absent from delivered packages.",
+      "limits": "Affected parser remains. Untrusted npm configuration, package lists, commands or workspace patterns are outside this disposition."
+    },
+    {
+      "graphs": ["npm-tool"], "name": "glob", "version": "13.0.6",
+      "advisories": ["GHSA-3g3m-2fjr-6pw4"],
+      "disposition": "bounded-tooling-risk",
+      "basis": "Reviewed build/pack/install does not use glob cancellation as a security/resource boundary; workloads are fixed repository package lists. The affected tool is not shipped.",
+      "limits": "AbortSignal behavior remains affected. No general guarantee for arbitrary recursive patterns, cancellation or untrusted npm input."
+    },
+    {
+      "graphs": ["npm-tool"], "name": "ip-address", "version": "10.5.0",
+      "advisories": ["GHSA-2vr4-cq9g-pvrc", "GHSA-h3mg-xc3c-68pw", "GHSA-j6r3-76f7-8jcv", "GHSA-rpw4-54j3-4h4q", "GHSA-rxp7-6hxx-x8q5"],
+      "disposition": "bounded-not-applicable",
+      "basis": "npm's copy is consumed by socks. Qualified provisioning uses the official HTTPS registry without SOCKS/proxy configuration; local packing/install is offline. No address classifier is a NexFlow allowlist or authority boundary.",
+      "limits": "Proxy routes, attacker-selected proxy/destination configuration or IP-based authorization are not qualified. Native external runtime/OS networking remains separate."
+    },
+    {
+      "graphs": ["npm-tool"], "name": "postcss-selector-parser", "version": "7.1.4",
+      "advisories": ["GHSA-rj75-hqrm-r3gf"],
+      "disposition": "bounded-not-applicable",
+      "basis": "npm's @npmcli/query consumes selectors. The qualified commands are ci, pack and exact local install, not npm query or manifest-controlled selectors. Not shipped in the candidate.",
+      "limits": "npm query/selector input is outside scope. Source-based reachability review is not a proof for every possible npm command."
+    },
+    {
+      "graphs": ["npm-tool"], "name": "undici", "version": "6.28.0",
+      "advisories": ["GHSA-2m5v-pch6-74hx", "GHSA-3wwx-pv8p-q78v", "GHSA-4qv8-2p9j-2685", "GHSA-9fm3-97px-rjf6", "GHSA-qrxm-fqhp-jwvm", "GHSA-r53p-7pc4-xj5r", "GHSA-rfgv-xxqx-mfg5", "GHSA-xjj6-f33q-929c"],
+      "disposition": "bounded-not-applicable",
+      "basis": "The npm dependency's direct consumer is node-gyp/lib/download.js. Required --ignore-scripts disables dependency lifecycle/native downloads; fixed HTTPS npm provisioning does not use WebSocket/EventSource/custom TLS callbacks. Local packing/install is offline. Node's embedded undici is a distinct 8.12.2 component scanned separately.",
+      "limits": "Affected npm code remains. Enabling node-gyp/lifecycle scripts, arbitrary downloads, custom TLS/proxy policy or WebSocket/EventSource requires a new review. No generic npm or network-stack safety claim."
+    }
+  ]
+}

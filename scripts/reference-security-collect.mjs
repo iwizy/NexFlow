@@ -11,8 +11,13 @@ const candidate=option("--candidate"),out=option("--out");
 assert.ok(!existsSync(out));mkdirSync(out,{recursive:true});
 const read=file=>JSON.parse(readFileSync(file,"utf8"));
 const write=(file,value)=>writeFileSync(path.join(out,file),JSON.stringify(value,null,2)+"\n");
-const digest=value=>sha256(Buffer.from(JSON.stringify(value)));
+// API object-key order is not advisory content. Preserve array order while
+// recursively sorting keys before binding the reviewed response semantics.
+const canonical=value=>Array.isArray(value)?value.map(canonical):value&&typeof value==="object"
+  ?Object.fromEntries(Object.keys(value).sort().map(key=>[key,canonical(value[key])])):value;
+const digest=value=>sha256(Buffer.from(JSON.stringify(canonical(value))));
 const provenance=read(path.join(candidate,"PROVENANCE.json"));
+assert.equal(execFileSync("git",["status","--porcelain","--untracked-files=normal"],{cwd:repository,encoding:"utf8"}).trim(),"","Collect from a clean exact revision");
 assert.equal(provenance.sourceRevision,execFileSync("git",["rev-parse","HEAD"],{cwd:repository,encoding:"utf8"}).trim());
 assert.equal(process.versions.node,"26.13.0");
 assert.equal(execFileSync(process.execPath,[npm,"--version"],{encoding:"utf8"}).trim(),"11.20.0");
@@ -27,17 +32,18 @@ function ownFiles(directory,prefix="") {
   });
 }
 function installedGraph(name,root) {
+  root=path.resolve(root);
   const entries=[];
   function visit(directory,relative) {
     const metadata=read(path.join(directory,"package.json"));
     const sourceRoot=!relative&&["maintenance","validation-build"].includes(name);
     const files=sourceRoot?[]:ownFiles(directory);
-    const licenses=files.filter(f=>/(^|\/)(licen[sc]e|notice|copying|copyright)(\.|$)/iu.test(f.path));
+    const licenses=files.filter(f=>/(^|\/)(licen[sc]e|notice|copying|copyright)([.-]|$)/iu.test(f.path));
     assert.ok(sourceRoot||metadata.license||metadata.licenses,"Missing license metadata: "+metadata.name);
     // The first-party root's MIT file lives at repository level, not in source packages.
-    if(!metadata.name.startsWith("@nexflow/")&&relative)assert.ok(licenses.length,"Missing license text: "+metadata.name);
+    if(name.startsWith("delivered-")&&relative)assert.ok(licenses.length,"Missing delivered license text: "+metadata.name);
     entries.push({id:name+":"+(relative||"."),path:relative||".",name:metadata.name,version:metadata.version??"unversioned",
-      license:metadata.license??metadata.licenses??"MIT",licenses,files,integrity:metadata._integrity??null,
+      license:metadata.license??metadata.licenses??"MIT",licenses,licenseTextStatus:sourceRoot?"bound-by-source":licenses.length?"present":"absent-from-upstream-tool",files,integrity:metadata._integrity??null,
       lifecycleHooks:Object.keys(metadata.scripts??{}).filter(k=>/^(preinstall|install|postinstall)$/u.test(k)),
       nativeFiles:files.filter(f=>/\.(node|dll|so|dylib|exe)$/iu.test(f.path)).map(f=>f.path),
       dependencyNames:Object.keys({...metadata.dependencies,...(sourceRoot?metadata.devDependencies:{})}),optionalDependencyNames:Object.keys(metadata.optionalDependencies??{}),
@@ -65,6 +71,7 @@ function installedGraph(name,root) {
       if(found)entry.dependencies.push(found.id);
       else entry.absentDependencies.push({name:dependency,optional:entry.optionalDependencyNames.includes(dependency)});
     }
+    assert.ok(entry.absentDependencies.every(d=>d.optional),"Incomplete installed graph: "+entry.id);
     delete entry.directory;
   }
   const graph={name,components:entries};graphs.push(graph);return graph;
@@ -132,7 +139,9 @@ try {
     const known=policy.dispositions.find(d=>d.graphs.includes(graph.name)&&d.name===component.name&&d.version===component.version&&d.advisories.includes(match.id));
     const record={graph:graph.name,component:component.id,...match,severity:advisories.get(match.id).database_specific?.severity??"unknown",
       disposition:known?.disposition??"requires-review",basis:known?.basis??null,limits:known?.limits??null};
-    dispositions.push(record);if(!known)unresolved.push(record);
+    dispositions.push(record);
+    if(!known||policy.reviewedAdvisorySha256[match.id]!==digest(advisories.get(match.id)))unresolved.push({...record,
+      reason:known?"Advisory content changed since the applicability review":"Advisory requires an applicability review"});
   }
   for(const match of matches.filter(m=>m.name==="undici"&&m.version===process.versions.undici))unresolved.push({...match,graph:"external-node-runtime",disposition:"requires-review"});
   const sdk=path.resolve(path.dirname(process.execPath),".."),nodeLicense=path.join(sdk,"LICENSE");
@@ -155,10 +164,11 @@ try {
     dependencies:components.map(c=>({ref:c.id,dependsOn:c.dependencies}))};
   write("sbom.cdx.json",bom);write("dependency-inventory.json",{graphs,externalRuntime:runtime});
   const report={task:"NF-108",sourceRevision:provenance.sourceRevision,recordedAt:new Date().toISOString(),artifacts:provenance.artifacts,locks,
-    scanner:{name:"OSV exact-version API",collectorVersion:1,collectorSha256:sha256(readFileSync(new URL(import.meta.url))),policySha256:sha256(readFileSync(path.join(repository,"scripts/test/reference-security-policy.json"))),
+    scanner:{name:"OSV exact-version API",collectorVersion:1,responseHashMethod:"SHA-256 of recursively key-sorted JSON; array order preserved",collectorSha256:sha256(readFileSync(new URL(import.meta.url))),policySha256:sha256(readFileSync(path.join(repository,"scripts/test/reference-security-policy.json"))),
       limitations:"Dated advisory matches, not proof of absence; non-npm native/OS components require separate target qualification"},
     graphs:graphs.map(g=>({name:g.name,components:g.components.length,matchedAdvisoryInstances:dispositions.filter(d=>d.graph===g.name).length})),
-    dispositions,unresolved,outcome:unresolved.length?"requires-review":"qualified-with-bounded-tooling-risks",
+    dispositions,unresolved,missingToolLicenseTexts:components.filter(c=>c.licenseTextStatus==="absent-from-upstream-tool").map(c=>({id:c.id,name:c.name,version:c.version,license:c.license,
+      disposition:"metadata retained; external build tool is not redistributed; no claim that upstream supplied this text"})),outcome:unresolved.length?"requires-review":"qualified-with-bounded-tooling-risks",
     notTested:["independent audit","publisher signatures","OS sandbox and native target lifecycle","all upstream source code","non-npm native/CPE advisory coverage"]};
   write("security-report.json",report);
   const files=readdirSync(out).sort();writeFileSync(path.join(out,"SHA256SUMS"),files.map(f=>sha256(readFileSync(path.join(out,f)))+"  "+f+"\n").join(""));

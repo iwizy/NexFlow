@@ -88,6 +88,12 @@ The evidence artifact retains:
   unresolved/not-tested lists. The CI artifact has a checksum set and 90-day
   retention; retain verified copies before expiry.
 
+Four npm-tool dependencies (`@npmcli/agent`, `@sigstore/verify`,
+`spdx-exceptions`, `spdx-license-ids`) supply license metadata but no separate
+license text in this upstream npm distribution. Their missing-text records
+remain explicit. They are external build tools, not redistributed candidate
+contents; every delivered dependency must retain its original legal text.
+
 The dated policy is in
 [`reference-security-policy.json`](../scripts/test/reference-security-policy.json).
 The delivered graph must have **no undispositioned matches**. The currently
@@ -104,7 +110,8 @@ retained affected tool copies are visible rather than reported as repaired:
 These decisions were freshly scoped to the preview build/install paths on
 **2026-11-03**; they do not inherit v0.4 dispositions or declare npm globally
 safe. Reassess at release review or on any version, schema-authority, command,
-proxy/network-policy or advisory change. Unknown advisory IDs fail closed.
+proxy/network-policy or advisory change. Unknown IDs or changed reviewed
+advisory content fail closed.
 Affected upstream versions remain in inventories; new tool versions require
 an explicit toolchain update and requalification, not a silent transitive edit.
 

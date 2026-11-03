@@ -5,53 +5,136 @@
   "scope": "Exact candidate, reviewed repository commands and Node 26.13.0/npm 11.20.0; reassess before release, changed input, version, command, network/proxy configuration or schema authority",
   "dispositions": [
     {
-      "graphs": ["maintenance"], "name": "fast-uri", "version": "3.1.8",
-      "advisories": ["GHSA-333x-w4r6-6crp", "GHSA-w74x-v6f9-j3xg", "GHSA-wjr9-j795-jxcr", "GHSA-xhq7-xmqj-769h"],
+      "graphs": [
+        "maintenance"
+      ],
+      "name": "fast-uri",
+      "version": "3.1.8",
+      "advisories": [
+        "GHSA-333x-w4r6-6crp",
+        "GHSA-w74x-v6f9-j3xg",
+        "GHSA-wjr9-j795-jxcr",
+        "GHSA-xhq7-xmqj-769h"
+      ],
       "disposition": "bounded-not-applicable",
       "basis": "Root maintenance validation compiles fixed local repository schemas with no loadSchema hook. URI resolution does not make hostname, protocol, navigation, authentication or filesystem authorization decisions. The shipped graph is separately repaired to 3.1.9.",
       "limits": "Not a general URI-safety waiver. Do not use the root maintenance resolver as a URI access-control boundary, for authored schemas or remote schema loading. See scripts/lib/schema-validation.mjs and reference-package-security.md."
     },
     {
-      "graphs": ["npm-tool"], "name": "brace-expansion", "version": "5.0.9",
-      "advisories": ["GHSA-6j4f-fj2g-mc7p", "GHSA-q2hr-2g5m-vwhr", "GHSA-qhr7-859c-m2p7"],
+      "graphs": [
+        "npm-tool"
+      ],
+      "name": "brace-expansion",
+      "version": "5.0.9",
+      "advisories": [
+        "GHSA-6j4f-fj2g-mc7p",
+        "GHSA-q2hr-2g5m-vwhr",
+        "GHSA-qhr7-859c-m2p7"
+      ],
       "disposition": "bounded-tooling-risk",
       "basis": "npm glob/minimatch consumes reviewed package file lists during pack/ci/install, not authored manifest hints. It is absent from delivered packages; local candidate packing and installation run offline with lifecycle scripts and update lookups disabled.",
       "limits": "Affected code is retained, not repaired. Arbitrary npm/glob inputs, unreviewed package metadata or new commands require reassessment. Do not treat a manifest as npm package configuration."
     },
     {
-      "graphs": ["npm-tool"], "name": "minimatch", "version": "10.2.5",
-      "advisories": ["GHSA-g3hv-75wg-m249"],
+      "graphs": [
+        "npm-tool"
+      ],
+      "name": "minimatch",
+      "version": "10.2.5",
+      "advisories": [
+        "GHSA-g3hv-75wg-m249"
+      ],
       "disposition": "bounded-tooling-risk",
       "basis": "Only reviewed fixed package lists cross the npm glob boundary; no manifest-controlled patterns. Absent from delivered packages.",
       "limits": "Affected parser remains. Untrusted npm configuration, package lists, commands or workspace patterns are outside this disposition."
     },
     {
-      "graphs": ["npm-tool"], "name": "glob", "version": "13.0.6",
-      "advisories": ["GHSA-3g3m-2fjr-6pw4"],
+      "graphs": [
+        "npm-tool"
+      ],
+      "name": "glob",
+      "version": "13.0.6",
+      "advisories": [
+        "GHSA-3g3m-2fjr-6pw4"
+      ],
       "disposition": "bounded-tooling-risk",
       "basis": "Reviewed build/pack/install does not use glob cancellation as a security/resource boundary; workloads are fixed repository package lists. The affected tool is not shipped.",
       "limits": "AbortSignal behavior remains affected. No general guarantee for arbitrary recursive patterns, cancellation or untrusted npm input."
     },
     {
-      "graphs": ["npm-tool"], "name": "ip-address", "version": "10.5.0",
-      "advisories": ["GHSA-2vr4-cq9g-pvrc", "GHSA-h3mg-xc3c-68pw", "GHSA-j6r3-76f7-8jcv", "GHSA-rpw4-54j3-4h4q", "GHSA-rxp7-6hxx-x8q5"],
+      "graphs": [
+        "npm-tool"
+      ],
+      "name": "ip-address",
+      "version": "10.5.0",
+      "advisories": [
+        "GHSA-2vr4-cq9g-pvrc",
+        "GHSA-h3mg-xc3c-68pw",
+        "GHSA-j6r3-76f7-8jcv",
+        "GHSA-rpw4-54j3-4h4q",
+        "GHSA-rxp7-6hxx-x8q5"
+      ],
       "disposition": "bounded-not-applicable",
       "basis": "npm's copy is consumed by socks. Qualified provisioning uses the official HTTPS registry without SOCKS/proxy configuration; local packing/install is offline. No address classifier is a NexFlow allowlist or authority boundary.",
       "limits": "Proxy routes, attacker-selected proxy/destination configuration or IP-based authorization are not qualified. Native external runtime/OS networking remains separate."
     },
     {
-      "graphs": ["npm-tool"], "name": "postcss-selector-parser", "version": "7.1.4",
-      "advisories": ["GHSA-rj75-hqrm-r3gf"],
+      "graphs": [
+        "npm-tool"
+      ],
+      "name": "postcss-selector-parser",
+      "version": "7.1.4",
+      "advisories": [
+        "GHSA-rj75-hqrm-r3gf"
+      ],
       "disposition": "bounded-not-applicable",
       "basis": "npm's @npmcli/query consumes selectors. The qualified commands are ci, pack and exact local install, not npm query or manifest-controlled selectors. Not shipped in the candidate.",
       "limits": "npm query/selector input is outside scope. Source-based reachability review is not a proof for every possible npm command."
     },
     {
-      "graphs": ["npm-tool"], "name": "undici", "version": "6.28.0",
-      "advisories": ["GHSA-2m5v-pch6-74hx", "GHSA-3wwx-pv8p-q78v", "GHSA-4qv8-2p9j-2685", "GHSA-9fm3-97px-rjf6", "GHSA-qrxm-fqhp-jwvm", "GHSA-r53p-7pc4-xj5r", "GHSA-rfgv-xxqx-mfg5", "GHSA-xjj6-f33q-929c"],
+      "graphs": [
+        "npm-tool"
+      ],
+      "name": "undici",
+      "version": "6.28.0",
+      "advisories": [
+        "GHSA-2m5v-pch6-74hx",
+        "GHSA-3wwx-pv8p-q78v",
+        "GHSA-4qv8-2p9j-2685",
+        "GHSA-9fm3-97px-rjf6",
+        "GHSA-qrxm-fqhp-jwvm",
+        "GHSA-r53p-7pc4-xj5r",
+        "GHSA-rfgv-xxqx-mfg5",
+        "GHSA-xjj6-f33q-929c"
+      ],
       "disposition": "bounded-not-applicable",
       "basis": "The npm dependency's direct consumer is node-gyp/lib/download.js. Required --ignore-scripts disables dependency lifecycle/native downloads; fixed HTTPS npm provisioning does not use WebSocket/EventSource/custom TLS callbacks. Local packing/install is offline. Node's embedded undici is a distinct 8.12.2 component scanned separately.",
       "limits": "Affected npm code remains. Enabling node-gyp/lifecycle scripts, arbitrary downloads, custom TLS/proxy policy or WebSocket/EventSource requires a new review. No generic npm or network-stack safety claim."
     }
-  ]
+  ],
+  "reviewedAdvisorySha256": {
+    "GHSA-2m5v-pch6-74hx": "f055f6ee0a10ce9b269a89799a3cdfefbfb66846d4a842fe95f89cda8918e350",
+    "GHSA-2vr4-cq9g-pvrc": "55afe11c7fdaaaadbbbf641f7313239adc7a39986838cb8959481d323e96e870",
+    "GHSA-333x-w4r6-6crp": "614e7909b8c3dfe316829245279689a1e471860da7be214d4c4aa7cf303ec6b0",
+    "GHSA-3g3m-2fjr-6pw4": "6edf5d57639de7d490f68b26caa3414f291369227e0af01474a2615fefeadcbe",
+    "GHSA-3wwx-pv8p-q78v": "0a5d3751918d06aa1c858e03f6460dddc09d4fdedcd3f1dc97a60a601e2c8cc2",
+    "GHSA-4qv8-2p9j-2685": "97814c112cbe7fee30d04a819eaf53553bfa394f40d18ab37995b043b8018b4d",
+    "GHSA-6j4f-fj2g-mc7p": "b30c68090ff9cdba60443e25488851d655923f18062deacfdb1b3a72d93802e0",
+    "GHSA-9fm3-97px-rjf6": "eeb37266ad8d1ab832ce90d4cd29ed89562cca4cfd026b55d898525cb77473c4",
+    "GHSA-g3hv-75wg-m249": "b95559e204e1aa4f22ee0598c69598d75799ca5545df2f48a8ed44032951d5ba",
+    "GHSA-h3mg-xc3c-68pw": "621a58b056cb96fdcb9acd195601a1760edac7a071e0115f19a8dc8c2d33e8f1",
+    "GHSA-j6r3-76f7-8jcv": "e0058cff029c73acc2e83326507701264b1d4c1befd84fce4af109f0ad8d478b",
+    "GHSA-q2hr-2g5m-vwhr": "d1d825d8a0c46fb2d18a3e2351b8bf05d3c4878900c1a55f628591bdc10cc91c",
+    "GHSA-qhr7-859c-m2p7": "719544ac5efe4cbd900ba1c3c4afa6066b57caf87b7d7508686fe74bbf91e87b",
+    "GHSA-qrxm-fqhp-jwvm": "2d2fad30d967f2da09db461dcd8bb947e13887c561da053196d473957013da01",
+    "GHSA-r53p-7pc4-xj5r": "44047aee44a18b8f6aaa98051e33a971964da0821a993080268de9b9170be892",
+    "GHSA-rfgv-xxqx-mfg5": "7c3e630a4f107a09ee033dd007549073ae50b417befe0cf3867cdcd265393867",
+    "GHSA-rj75-hqrm-r3gf": "f84126ef7849b9a5909a0385777cc63a60a2720bf8a7e808e930b7eb1a4ef8ca",
+    "GHSA-rpw4-54j3-4h4q": "7004c4ca79e62c5030e3f3b6b7e83eb6e6ab40467ddc81187e34a5152cdc321f",
+    "GHSA-rxp7-6hxx-x8q5": "22b7a63a8e73579cc26dda759853df8f151256e659a7a167687e99a065f09bf9",
+    "GHSA-w74x-v6f9-j3xg": "48cb589e95121f0829648f0e9e6ea6a561357f0af76fadfc32dec1695e89e981",
+    "GHSA-wjr9-j795-jxcr": "54f3fb91824671bf5f2325f10fa29997341da8b2d4e0f5f802c53beb3c6ec4bd",
+    "GHSA-xhq7-xmqj-769h": "06ecce398747bb7f816ebf5eeb6d5cb5899f6f5d9627c51a8ddda54a1b7264f8",
+    "GHSA-xjj6-f33q-929c": "7a38d608b34904dc6648687e0791ba88674b2a3a985659846707b29c4b76770f"
+  }
 }

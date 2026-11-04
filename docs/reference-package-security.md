@@ -115,6 +115,13 @@ advisory content fail closed.
 Affected upstream versions remain in inventories; new tool versions require
 an explicit toolchain update and requalification, not a silent transitive edit.
 
+NF-109 refreshed `GHSA-g3hv-75wg-m249` on 2026-11-04: upstream narrowed the
+affected minimatch range to `>=7.0.0 <11.0.1` and added patch references. The
+retained npm-tool 10.2.5 copy remains affected; the reviewed fixed-package-list
+boundary and bounded tooling-risk disposition are unchanged. The new full
+advisory content hash is pinned explicitly. Failed scan evidence is retained
+even when its gate refuses a changed input.
+
 ## Remaining Gates
 
 The collector's npm advisory results do not fully assess Node's native C/C++

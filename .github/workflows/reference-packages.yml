@@ -31,6 +31,7 @@ jobs:
           node scripts/reference-security-smoke.mjs --candidate "$RUNNER_TEMP/nf-107-candidate" --report "$RUNNER_TEMP/nf-108-boundaries.json"
           node scripts/reference-security-collect.mjs --candidate "$RUNNER_TEMP/nf-107-candidate" --out "$RUNNER_TEMP/nf-108-supply-chain"
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
         with:
           name: reference-package-candidate-${{ github.event.pull_request.head.sha || github.sha }}
           path: |

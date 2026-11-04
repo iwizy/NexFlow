@@ -1,0 +1,25 @@
+{
+  "task": "NF-109",
+  "scope": "Unsigned external-Node validation-only developer preview; no product publication",
+  "node": "26.13.0",
+  "npm": "11.20.0",
+  "targets": [
+    {"id":"linux/amd64","platform":"linux","architecture":"x64","runner":"ubuntu-24.04","osMajor":"24.04"},
+    {"id":"macos/arm64","platform":"darwin","architecture":"arm64","runner":"macos-15","osMajor":"15"},
+    {"id":"windows/amd64","platform":"win32","architecture":"x64","runner":"windows-2025","osMajor":"2025"}
+  ],
+  "predecessor": {
+    "sourceRevision": "54facf50320168e099f2909f0e9ae65ae46fb6b3",
+    "runId": 41430738122,
+    "artifactId": 13134506057,
+    "previouslyVerifiedZipSha256": "e672059fbff647465a021d02ff9cf2b29dfc87dd7151f007d7b707dbf935acc4",
+    "artifacts": [
+      {"name":"@nexflow/validation","file":"nexflow-validation-0.5.0-alpha.1.tgz","sha256":"e1d164c8300773f36b174420b846b4431766d6ca17cfd315b8fb66c0383f167b"},
+      {"name":"@nexflow/cli","file":"nexflow-cli-0.5.0-alpha.1.tgz","sha256":"d0047d2a7085c911fbffd0ad4213bc32da2ebd31910276913409dd153bcbd5fc"}
+    ]
+  },
+  "current": "Build from the exact committed producer revision; bind actual digests, do not invent another preview version",
+  "meaningfulSuccessor": "NF-108 linear Project source-hint validation and fast-uri repair, plus exact Windows install-wrapper verification",
+  "mandatorySteps": ["install-previous","upgrade-current","reject-corrupt-update","reject-incompatible-update","rollback-previous","install-current","uninstall"],
+  "notClaimed": ["publisher signatures","Developer ID/notarization","Authenticode","general filesystem/process sandbox","full semantic/Core/extension conformance","release acceptance"]
+}

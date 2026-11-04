@@ -1,0 +1,79 @@
+name: Reference Native Lifecycle
+on:
+  pull_request:
+    paths:
+      - 'packages/**'
+      - 'scripts/reference-lifecycle.mjs'
+      - 'scripts/reference-packages.mjs'
+      - 'qualification/reference-lifecycle/**'
+      - '.github/workflows/reference-lifecycle.yml'
+permissions:
+  contents: read
+  actions: read
+jobs:
+  candidate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '26.13.0'
+      - name: Provision locked compiler and assemble exact current input
+        run: |
+          npm ci --ignore-scripts --no-audit --no-fund --update-notifier=false
+          npm ci --prefix packages/validation --ignore-scripts --no-audit --no-fund --update-notifier=false
+          node scripts/reference-packages.mjs --out "$RUNNER_TEMP/current-candidate"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: reference-native-inputs-${{ github.event.pull_request.head.sha }}
+          path: ${{ runner.temp }}/current-candidate/
+          if-no-files-found: error
+          retention-days: 90
+  lifecycle:
+    needs: candidate
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {target: linux/amd64, runner: ubuntu-24.04, folder: linux-amd64}
+          - {target: macos/arm64, runner: macos-15, folder: macos-arm64}
+          - {target: windows/amd64, runner: windows-2025, folder: windows-amd64}
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 25
+    steps:
+      - shell: bash
+        run: git config --global core.autocrlf false
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '26.13.0'
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: reference-native-inputs-${{ github.event.pull_request.head.sha }}
+          path: ${{ runner.temp }}/current-candidate
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          artifact-ids: '13134506057'
+          run-id: 41430738122
+          github-token: ${{ github.token }}
+          path: ${{ runner.temp }}/predecessor
+          merge-multiple: true
+      - name: Inspect actual target and exercise genuine offline native lifecycle
+        shell: bash
+        run: node scripts/reference-lifecycle.mjs '${{ matrix.target }}' "$RUNNER_TEMP/predecessor" "$RUNNER_TEMP/current-candidate" "$RUNNER_TEMP/reference-native-results"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: reference-lifecycle-${{ matrix.folder }}-${{ github.event.pull_request.head.sha }}
+          path: ${{ runner.temp }}/reference-native-results/
+          if-no-files-found: error
+          retention-days: 90

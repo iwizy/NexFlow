@@ -87,6 +87,8 @@ try{
   const effects=pathToFileURL(path.join(guards,"no-runtime-deny.mjs")).href,
     reads=pathToFileURL(path.join(guards,"reference-cli-read-guard.mjs")).href,network=pathToFileURL(path.join(guards,"package-network-deny.mjs")).href;
   const windows=process.platform==="win32",system=windows?path.join(process.env.SystemRoot,"System32"):"/usr/bin:/bin";
+  const powershell=windows?checked("where.exe",["pwsh.exe"]).split(/\r?\n/u)[0]:null;
+  if(windows)assert.ok(existsSync(powershell),"The existing native PowerShell launcher is required");
   const env={PATH:path.dirname(node)+path.delimiter+system,HOME:home,USERPROFILE:home,LANG:"C.UTF-8",LC_ALL:"C.UTF-8",TMPDIR:scope,
     NEXFLOW_TEST_SECRET:"NF109_PRIVATE_CANARY",...(windows?{SystemRoot:process.env.SystemRoot,WINDIR:process.env.WINDIR,SystemDrive:process.env.SystemDrive,
       LOCALAPPDATA:process.env.LOCALAPPDATA,COMSPEC:path.join(process.env.SystemRoot,"System32/cmd.exe"),PATHEXT:".COM;.EXE;.BAT;.CMD",TEMP:scope,TMP:scope}:{} )};
@@ -162,12 +164,12 @@ try{
       const wrapperEnv={...env,NODE_OPTIONS:`--import=${JSON.stringify(effects)} --import=${JSON.stringify(reads)}`,
         NEXFLOW_TEST_MODULE_ROOT:path.join(cliConsumer,"node_modules"),NEXFLOW_TEST_READ_ROOT:command==="--version"?"":unicode};
       let wrapper;
-      if(windows){wrapper=run("pwsh",["-NoProfile","-NonInteractive","-Command",command==="--version"
+      if(windows){wrapper=run(powershell,["-NoProfile","-NonInteractive","-Command",command==="--version"
         ?"& $env:NEXFLOW_NATIVE_BIN --version --format=json; exit $LASTEXITCODE"
         :"& $env:NEXFLOW_NATIVE_BIN $env:NEXFLOW_NATIVE_COMMAND --root $env:NEXFLOW_NATIVE_ROOT --format=json; exit $LASTEXITCODE"],
         {cwd:scope,env:{...wrapperEnv,NEXFLOW_NATIVE_BIN:bin,NEXFLOW_NATIVE_COMMAND:command,NEXFLOW_NATIVE_ROOT:unicode},timeout:30000});}
       else wrapper=run(bin,command==="--version"?[command,"--format=json"]:[command,"--root",unicode,"--format=json"],{cwd:scope,env:wrapperEnv,timeout:30000});
-      assert.equal(wrapper.exitCode,0,wrapper.stderr);assert.equal(wrapper.stderr,"");const value=JSON.parse(wrapper.stdout);assert.ok(validateOutput(value));assert.equal(value.tool.version,"0.5.0-alpha.1");
+      assert.equal(wrapper.exitCode,0,JSON.stringify({error:wrapper.error,signal:wrapper.signal,stderr:wrapper.stderr}));assert.equal(wrapper.stderr,"");const value=JSON.parse(wrapper.stdout);assert.ok(validateOutput(value));assert.equal(value.tool.version,"0.5.0-alpha.1");
       wrappers.push({command,exitCode:wrapper.exitCode,stdoutSha256:sha(wrapper.stdout)});
     }
     assert.equal(inputHash(),inputsBefore);

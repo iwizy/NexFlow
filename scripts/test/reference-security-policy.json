@@ -1,6 +1,6 @@
 {
   "task": "NF-108",
-  "reviewedOn": "2026-11-03",
+  "reviewedOn": "2026-11-04",
   "reviewMode": "single-maintainer; code/data boundary and dependency/distribution lenses; no independent human audit",
   "scope": "Exact candidate, reviewed repository commands and Node 26.13.0/npm 11.20.0; reassess before release, changed input, version, command, network/proxy configuration or schema authority",
   "dispositions": [
@@ -121,7 +121,7 @@
     "GHSA-4qv8-2p9j-2685": "97814c112cbe7fee30d04a819eaf53553bfa394f40d18ab37995b043b8018b4d",
     "GHSA-6j4f-fj2g-mc7p": "b30c68090ff9cdba60443e25488851d655923f18062deacfdb1b3a72d93802e0",
     "GHSA-9fm3-97px-rjf6": "eeb37266ad8d1ab832ce90d4cd29ed89562cca4cfd026b55d898525cb77473c4",
-    "GHSA-g3hv-75wg-m249": "b95559e204e1aa4f22ee0598c69598d75799ca5545df2f48a8ed44032951d5ba",
+    "GHSA-g3hv-75wg-m249": "2e09f17fa14e2cf81498f498fe06d7acc24c72ef6ee883e02da2aae2e7dad2a6",
     "GHSA-h3mg-xc3c-68pw": "621a58b056cb96fdcb9acd195601a1760edac7a071e0115f19a8dc8c2d33e8f1",
     "GHSA-j6r3-76f7-8jcv": "e0058cff029c73acc2e83326507701264b1d4c1befd84fce4af109f0ad8d478b",
     "GHSA-q2hr-2g5m-vwhr": "d1d825d8a0c46fb2d18a3e2351b8bf05d3c4878900c1a55f628591bdc10cc91c",
@@ -136,5 +136,14 @@
     "GHSA-wjr9-j795-jxcr": "54f3fb91824671bf5f2325f10fa29997341da8b2d4e0f5f802c53beb3c6ec4bd",
     "GHSA-xhq7-xmqj-769h": "06ecce398747bb7f816ebf5eeb6d5cb5899f6f5d9627c51a8ddda54a1b7264f8",
     "GHSA-xjj6-f33q-929c": "7a38d608b34904dc6648687e0791ba88674b2a3a985659846707b29c4b76770f"
-  }
+  },
+  "advisoryRefreshes": [
+    {
+      "id": "GHSA-g3hv-75wg-m249",
+      "reviewedOn": "2026-11-04",
+      "previousCanonicalSha256": "b95559e204e1aa4f22ee0598c69598d75799ca5545df2f48a8ed44032951d5ba",
+      "currentCanonicalSha256": "2e09f17fa14e2cf81498f498fe06d7acc24c72ef6ee883e02da2aae2e7dad2a6",
+      "basis": "Upstream narrowed introduced range from 0 to 7.0.0 and added patch references; details/severity unchanged. npm-tool minimatch 10.2.5 remains affected; fixed reviewed package lists do not receive manifest-controlled patterns. Existing bounded tooling-risk disposition retained, not repaired."
+    }
+  ]
 }

@@ -85,7 +85,8 @@ try{
   const effects=path.join(guards,"no-runtime-deny.mjs"),reads=path.join(guards,"reference-cli-read-guard.mjs"),network=path.join(guards,"package-network-deny.mjs");
   const windows=process.platform==="win32",system=windows?path.join(process.env.SystemRoot,"System32"):"/usr/bin:/bin";
   const env={PATH:path.dirname(node)+path.delimiter+system,HOME:home,USERPROFILE:home,LANG:"C.UTF-8",LC_ALL:"C.UTF-8",TMPDIR:scope,
-    NEXFLOW_TEST_SECRET:"NF109_PRIVATE_CANARY",...(windows?{SystemRoot:process.env.SystemRoot,WINDIR:process.env.WINDIR,SystemDrive:process.env.SystemDrive,TEMP:scope,TMP:scope}:{} )};
+    NEXFLOW_TEST_SECRET:"NF109_PRIVATE_CANARY",...(windows?{SystemRoot:process.env.SystemRoot,WINDIR:process.env.WINDIR,SystemDrive:process.env.SystemDrive,
+      LOCALAPPDATA:process.env.LOCALAPPDATA,COMSPEC:path.join(process.env.SystemRoot,"System32/cmd.exe"),PATHEXT:".COM;.EXE;.BAT;.CMD",TEMP:scope,TMP:scope}:{} )};
   const cliConsumer=path.join(consumers,"cli"),libraryConsumer=path.join(consumers,"library");
   for(const dir of [cliConsumer,libraryConsumer]){mkdirSync(dir);writeFileSync(path.join(dir,"package.json"),'{"private":true,"type":"module"}\n');}
   const project=path.join(fixtures,"project"),invalid=path.join(fixtures,"invalid"),unicode=path.join(fixtures,"unicode-project");
@@ -110,7 +111,10 @@ try{
     if(options.plain)return run(node,args,config);
     if(session)return session.run(node,args,{...config,restrictChildren:true});
     if(process.platform==="darwin")return run("/usr/bin/sandbox-exec",["-p","(version 1)(allow default)(deny network*)",node,...args],config);
-    return run("sudo",["unshare","--net","setpriv","--reuid",String(process.getuid()),"--regid",String(process.getgid()),"--clear-groups","--bounding-set=-all","--inh-caps=-all","--ambient-caps=-all",node,...args],config);
+    // sudo intentionally resets ambient variables. Recreate only this explicit
+    // clean child environment after dropping privileges inside the namespace.
+    return run("sudo",["unshare","--net","setpriv","--reuid",String(process.getuid()),"--regid",String(process.getgid()),"--clear-groups","--bounding-set=-all","--inh-caps=-all","--ambient-caps=-all",
+      "/usr/bin/env","-i",...Object.entries(config.env).map(([key,value])=>key+"="+value),node,...args],config);
   }
   server=createServer(socket=>socket.destroy());await new Promise(resolve=>server.listen(0,"127.0.0.1",resolve));
   const probe='const s=require("node:net").connect({host:"127.0.0.1",port:Number(process.argv[1])});s.setTimeout(2000,()=>process.exit(12));s.on("error",e=>{console.log(e.code);process.exit(13)});s.on("connect",()=>{s.destroy();process.exit(0)});';

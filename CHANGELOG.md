@@ -8,6 +8,13 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Added
 
+- Added NF-109's native archive lifecycle workflow for Ubuntu 24.04 AMD64,
+  macOS 15 ARM64 and Windows Server 2025 AMD64 with exact external Node 26.13.0.
+  Records bind genuine predecessor/current package bytes, offline installation,
+  upgrade/refusal/rollback/uninstall, command/API checks and OS network controls.
+  Consumer verification now recognizes only the exact Windows npm YAML wrappers;
+  malformed wrappers still reject. Publisher trust and release remain separate.
+
 - Added NF-108's installed-package security regressions, separate delivered,
   maintenance, compiler and npm-tool inventories/SBOM, dated advisory inputs
   and narrowly scoped tooling dispositions. Fixed quadratic validation of

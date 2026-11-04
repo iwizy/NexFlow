@@ -31,6 +31,14 @@ export async function verifyPackage(directory) {
   let count=0,total=0,generatedNpmShims=0;
   const libraryRelative=metadata.name==="@nexflow/cli"?"node_modules/@nexflow/validation/":"";
   const shim=libraryRelative+"node_modules/.bin/yaml",shimTarget=path.join(root,libraryRelative,"node_modules/yaml/bin.mjs");
+  // npm 11.20.0/cmd-shim 8.0.0 emits these exact wrappers for ../yaml/bin.mjs
+  // on Windows. Only their complete known bytes are install-generated files;
+  // arbitrary scripts or links remain outside the trusted inventory.
+  const windowsShims=new Map([
+    [shim,"16d4e808827daf638b1f0fc3f7f56de0e5f3a5e2950b0b8ef7535cdf4724bce6"],
+    [shim+".cmd","fd3e6538ec1018083ba89d43d80b406fc13ae722b7a5ba512211d70965d3f50a"],
+    [shim+".ps1","33e7d103b962140a5b3a797f1344e2299c31521c4486683c69e09c2310158c70"],
+  ]);
   function walk(directory,prefix="") {
     for(const name of readdirSync(directory).sort()) {
       const file=path.join(directory,name),rel=prefix+name,stat=lstatSync(file);
@@ -43,6 +51,10 @@ export async function verifyPackage(directory) {
       if(stat.isDirectory()){walk(file,rel+"/");continue;}
       assert.ok(stat.isFile() && stat.nlink===1);assert.ok(++count<=4097);
       total+=stat.size;assert.ok(total<=32*1024*1024);
+      if(process.platform==="win32"&&windowsShims.has(rel)) {
+        assert.equal(digest(readFileSync(file)),windowsShims.get(rel),"Unexpected generated npm wrapper");
+        generatedNpmShims++;continue;
+      }
       if(rel==="package-inventory.json")continue;
       const entry=expected.get(rel);assert.ok(entry,"Unlisted package file");
       assert.equal(stat.size,entry.bytes);assert.equal(digest(readFileSync(file)),entry.sha256);
@@ -51,6 +63,7 @@ export async function verifyPackage(directory) {
     }
   }
   walk(root);assert.equal(expected.size,0,"Missing package file");
+  if(process.platform==="win32")assert.ok(generatedNpmShims===0||generatedNpmShims===3,"Incomplete generated npm wrappers");
   const info=json(path.join(root,"build-info.json"));assert.equal(info.sourceRevision,inventory.sourceRevision);
   const index=json(path.join(root,"schema-bundle.json"));
   const library=metadata.name==="@nexflow/cli" ? path.join(root,"node_modules/@nexflow/validation") : root;

@@ -22,7 +22,9 @@ the complete existing production graph. Output must be a new directory outside
 the checkout; an existing candidate is never overwritten. Source dependency
 provisioning may need network or a separately provisioned cache. Package
 assembly uses only those installed locked inputs and offline npm packing;
-install/build scripts are disabled. No dependency repair is part of NF-107.
+install/build scripts are disabled. NF-107's original candidate is retained;
+[NF-108](reference-package-security.md) repairs the current library implementation
+and its production lock, then requalifies the newly built bytes.
 
 Each candidate set contains:
 
@@ -39,7 +41,7 @@ CLI and validation packages remain private `0.5.0-alpha.1`. The CLI declares and
 bundles its exact matching library; the library bundles all seven locked
 production dependencies. A separate CLI lock is not resolved from a registry:
 its only dependency is the actual bundled library, and that closure comes from
-the unchanged validation lock. Provenance records the actual graph and lock
+the selected validation lock. Provenance records the actual graph and lock
 hashes. Compiler/types are build inputs, not installed runtime dependencies.
 
 The distribution stage keeps compiled code/declarations, package metadata,
@@ -141,7 +143,7 @@ Upgrade/rollback remains not-tested until a substantively corrected successor
 exists and both real candidates are run on the target. Repacking identical
 code under an invented preview version is not a lifecycle test.
 
-NF-108 must assess these actual artifact dependencies/bytes; NF-109 qualifies
+NF-108 assesses these actual artifact dependencies/bytes; NF-109 qualifies
 the selected native targets and upstream runtime route; NF-110 reviews the final
 candidate and publication authority. No publisher signatures, Developer ID,
 notarization, Authenticode, embedded interpreter or installer are provided here.

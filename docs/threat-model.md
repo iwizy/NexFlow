@@ -10,11 +10,11 @@ future runtime is conditional until an implementation and deployment create
 that boundary. Evidence links identify the repository state on which the model
 is based.
 
-Current-tooling scope refreshed on 2026-10-30 after NF-105/NF-106 and adoption of the
-integration/release branch flow. The [library qualification scope](reference-validation-library.md)
-and its source-bound record describe the new package evidence; original
-evaluation failures and dated advisory dispositions remain unchanged. This
-refresh does not certify the package or change severity calibration.
+Current-tooling scope refreshed on 2026-11-03 after NF-107 packaging and
+[NF-108 security qualification](reference-package-security.md). The fixed
+Project-hint availability defect and production dependency repair apply to the
+new candidate, not historical evaluation reports. Native lifecycle and OS
+containment remain separate; severity calibration is unchanged.
 
 ## 1. Overview
 
@@ -25,7 +25,8 @@ Schemas, examples, RFCs, and maintenance tooling for describing human, AI, and
 automation collaboration. It is explicitly not an agent, provider client, or
 orchestration engine ([Project status](../README.md#status)).
 
-The current executable surfaces are source/evaluation tooling:
+The current executable surfaces include source/evaluation tooling and an
+unreleased offline-installable reference candidate:
 
 - maintainers and contributors run Node.js checks against repository schemas,
   fixtures, and examples;
@@ -36,15 +37,16 @@ The current executable surfaces are source/evaluation tooling:
 - four independent validation candidates retain their own source, toolchains,
   locks and evaluation evidence; retained target failures are not erased;
 - callers may build/import the unreleased `@nexflow/validation` pure data API,
-  while a separate source-only workspace adapter reads selected local files;
+while a separate workspace adapter reads selected local files;
 - GitHub Actions installs pinned npm dependencies and runs the maintained check
   set on pull requests and pushes to `main` or `develop`.
 
 The reference library is separate from NF-106's
 [executable source CLI](reference-cli-preview.md). That entry implements the
 bounded commands through the library and read adapter, with startup package
-checks and safe text/JSON output. Final installable bytes and target lifecycle
-remain separate work; `init` is deferred in the
+checks and safe text/JSON output. Its [actual package candidate](reference-package-candidate.md)
+bundles the fixed local schema/production closure; target lifecycle, OS-level
+controls and release acceptance remain separate work. `init` is deferred in the
 [first-preview contract](0.5-cli-contract.md). The historical prototype's
 initializer is still an existing write surface in this model.
 
@@ -64,8 +66,9 @@ products or controls current.
 | Specification docs, RFCs, schemas, and examples | Public source of authored semantics and structural contracts. | Git changes reviewed and published as repository revisions. | [Project status](../README.md#status), [Governance](governance.md) |
 | Repository validator | Loads repository-owned schemas and maintained YAML examples. | Reads repository files and returns validation status; it does not authorize execution. | [`package.json:6-32`](../package.json#L6-L32), [`scripts/lib/schema-validation.mjs:38-81`](../scripts/lib/schema-validation.mjs#L38-L81) |
 | Reference validation library | Unreleased pure parsing, fixed-schema validation and declared inspection API. | Processes supplied data using embedded schemas; no application-level project reads, network, subprocess, credential or runtime initialization. | [Public API](../packages/validation/README.md), [Library entry](../packages/validation/src/index.ts), [Qualification scope](reference-validation-library.md) |
-| Reference workspace adapter | Separate source-only, explicit-root file-read facade. | Rejects unsafe roots/paths, symbolic links, non-regular or oversized/non-UTF-8 files; returns raw in-memory documents for validation, not redacted public output. | [Adapter boundary](../packages/cli/README.md), [Bounded reads](../packages/cli/src/files.ts), [Discovery](../packages/cli/src/workspace.ts) |
+| Reference workspace adapter | Separate explicit-root file-read facade bundled in the candidate. | Rejects unsafe roots/paths, symbolic links, non-regular or oversized/non-UTF-8 files; returns raw in-memory documents for validation, not redacted public output. Application checks do not defeat hostile parent-directory races. | [Adapter boundary](../packages/cli/README.md), [Bounded reads](../packages/cli/src/files.ts), [Discovery](../packages/cli/src/workspace.ts) |
 | Reference CLI source entry | Unreleased validate/inspect/static graph, help and version. | Reads only fixed installed metadata and selected project inputs; validates runtime/package compatibility before workspace reads; no project/report writes or runtime effects. | [Preview contract and evidence](reference-cli-preview.md), [Entry](../packages/cli/src/main.ts), [Startup/dispatch](../packages/cli/src/runtime.ts) |
+| Reference package delivery | Revision/digest-bound CLI and library tarballs, not a product release. | Offline install with lifecycle/update scripts disabled, original legal texts and schema/file inventories. Dated runtime/tool graphs and retained tooling risks are separate; checksums do not authenticate publishers. | [Candidate](reference-package-candidate.md), [Security qualification](reference-package-security.md) |
 | Evaluation candidates | Four independent Experimental implementations with separate dependency graphs and evidence. | Source/evaluation execution only; actual isolation, target failures and dated supply-chain outcomes remain candidate-specific. | [Evaluation packet](../evaluation/README.md), [Feature status](feature-status-registry.md#experimental-implementation-slices) |
 | Manifest discovery | Selects an explicit local assembly from files, Project hints, or one root Project entry point. | Reads bounded local YAML without scanning unrelated files. | [`scripts/lib/manifest-discovery.mjs:127-179`](../scripts/lib/manifest-discovery.mjs#L127-L179), [`scripts/lib/manifest-discovery.mjs:634-665`](../scripts/lib/manifest-discovery.mjs#L634-L665) |
 | CLI prototype | Dispatches `discover`, `validate`, `inspect`, `graph`, and `init` through closed immutable effect budgets. | Reads selected manifests; `init` is the only project-file write effect. Every runtime-facing effect is disabled and no command authorizes execution. | [`scripts/lib/cli-boundary.mjs`](../scripts/lib/cli-boundary.mjs), [`scripts/lib/cli-prototype.mjs`](../scripts/lib/cli-prototype.mjs), [`scripts/cli-no-runtime-guardrails-smoke.mjs`](../scripts/cli-no-runtime-guardrails-smoke.mjs) |

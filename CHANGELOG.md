@@ -8,6 +8,14 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Added
 
+- Added NF-108's installed-package security regressions, separate delivered,
+  maintenance, compiler and npm-tool inventories/SBOM, dated advisory inputs
+  and narrowly scoped tooling dispositions. Fixed quadratic validation of
+  whitespace-only Project source hints without changing the frozen schemas,
+  and updated the delivered `fast-uri` closure to 3.1.9. The corrected candidate
+  remains unreleased; native lifecycle, OS containment and publisher trust are
+  separate gates.
+
 - Added NF-107's reproducible npm-compatible CLI/library candidate assembly,
   complete bundled production closure, original legal notices, embedded schema
   indexes, provenance/checksums and installed consumer verification. Actual

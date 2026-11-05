@@ -214,8 +214,10 @@ they do not establish full semantic validity, execution order, or authority.
 
 `init` is a bounded repository prototype command that creates only its three
 built-in starter files in an explicit existing directory and refuses conflicts.
-There is no reference CLI package or `NF-CLI` claim, and the architecture
-decision remains `not-ready`.
+The separate [installable reference preview](reference-cli-installation.md) has
+its own fixed-schema scope and candidate-bound evidence. It carries
+[no NF-CLI claim](../conformance/REFERENCE-CLI-PREVIEW-NON-CLAIM.md). The scoped
+RFC-0025 architecture is Accepted; earlier checkpoint failures remain historical.
 See [Manifest Discovery](manifest-discovery.md) for exact source and parser
 boundaries. The prototype does not replace repository-wide maintenance checks.
 

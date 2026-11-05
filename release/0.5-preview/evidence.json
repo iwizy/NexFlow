@@ -1,0 +1,779 @@
+{
+  "recordVersion": 1,
+  "task": "NF-110",
+  "scope": "Pre-publication technical readiness for the NF-104 first alpha; not beta readiness or publication approval",
+  "sourceRevision": "979cc07dc17f56a0cd0a6f4444ff0dcc58eee55f",
+  "maintainer": "Alexander Agafonov",
+  "decisionMode": "separate-delegated-technical-release-readiness-decision",
+  "authority": "Explicit NF-110 instruction on 2026-11-05 under the existing single-maintainer technical delegation; no personal signature, independent review or publication instruction inferred.",
+  "personalReviewClaimed": false,
+  "independenceClaimed": false,
+  "publication": {
+    "authority": "not-granted",
+    "publicDownloadVerified": false,
+    "tagCreated": false,
+    "proposedTag": "v0.5.0-alpha.1",
+    "channel": "GitHub prerelease, latest false; no npm registry"
+  },
+  "conformance": {
+    "nfCliClaim": false,
+    "record": "conformance/REFERENCE-CLI-PREVIEW-NON-CLAIM.md",
+    "completeSemanticCoreExtensionRuntimeClaim": false
+  },
+  "governancePins": [
+    {
+      "path": "docs/0.5-cli-contract.md",
+      "revision": "7b94c61ca8ec825b18d97faeb5926296afebe250",
+      "sha256": "bcefbde5dc7ac1e539f44a47424f8b602fa38f3fa3b6b371791b5dfdec9cd338"
+    },
+    {
+      "path": "rfcs/reviews/2026-10-28-cli-preview-scope.md",
+      "revision": "7b94c61ca8ec825b18d97faeb5926296afebe250",
+      "sha256": "dfbabdbf889fb030264814b8621761eda88303b85d1ecc1ab30e35f9543f731b"
+    },
+    {
+      "path": "rfcs/RFC-0025-reference-implementation-architecture.md",
+      "revision": "0f6f9a863e62eaa53032fc5a28c4ac7c4de2e7b1",
+      "sha256": "cfbe597095c5c3fdde035cb99ad1bc950105e3aa8ddd5e32d103b1589b22f371"
+    },
+    {
+      "path": "rfcs/RFC-0024-single-maintainer-governance.md",
+      "revision": "c8e21f06316174c2e02b906855141d9950fef058",
+      "sha256": "70b7c18cc61631226c2c565b120063d6003ba7aae72ff06082b443559cb8e4ac"
+    },
+    {
+      "path": "rfcs/reviews/2026-10-11-single-maintainer-ownership.md",
+      "revision": "c8e21f06316174c2e02b906855141d9950fef058",
+      "sha256": "38d3ddd372d40a7820cd9cfddcc9b85f7ab5423a5bf785a08955b20e6be32390"
+    }
+  ],
+  "gates": [
+    {
+      "id": "B1",
+      "status": "ready",
+      "scope": "pre-publication technical readiness",
+      "basis": "Adopted bounded NF-104 first-alpha profile, scoped Accepted RFC-0025, existing roles and independent version domains; wider RFC-0011 remains Draft."
+    },
+    {
+      "id": "B2",
+      "status": "ready",
+      "scope": "pre-publication technical readiness",
+      "basis": "Actual candidate grammar/help/commands/negative/unsupported cases and no init/runtime surface."
+    },
+    {
+      "id": "B3",
+      "status": "ready",
+      "scope": "pre-publication technical readiness",
+      "basis": "18 immutable local schemas/17 kinds, safe preview diagnostics and explicit absence of NF-CLI/full semantic claim."
+    },
+    {
+      "id": "B4",
+      "status": "ready",
+      "scope": "pre-publication technical readiness",
+      "basis": "Exact security graphs and 30 installed checks; three native OS-network controls, residual tool and untested general/native/CPE scope retained."
+    },
+    {
+      "id": "B5",
+      "status": "ready",
+      "scope": "pre-publication technical readiness",
+      "basis": "Actual staging tarballs, closure/legal/provenance and three native lifecycle records; public-channel observations remain a later publication-phase requirement."
+    },
+    {
+      "id": "B6",
+      "status": "ready",
+      "scope": "pre-publication technical readiness",
+      "basis": "68 source checks, ten exact-source workflows and repeatable actual archive builds; review-material CI separately required before integration."
+    },
+    {
+      "id": "B7",
+      "status": "ready",
+      "scope": "pre-publication technical readiness",
+      "basis": "Synchronized public/embedded installation, quick start, compatibility/rollback and best-effort support/correction guidance."
+    },
+    {
+      "id": "B8",
+      "status": "ready",
+      "scope": "pre-publication technical readiness",
+      "basis": "Separate delegated technical readiness review; architecture/security lenses in adopted single-maintainer mode. Publication permission and public verification remain pending, never implied."
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "@nexflow/validation",
+      "version": "0.5.0-alpha.1",
+      "file": "nexflow-validation-0.5.0-alpha.1.tgz",
+      "sha256": "41d4d44fae91a42b3434138f102985972f7b6b771360d8166a0057e20060d5c0",
+      "bytes": 356741,
+      "schemaIndex": "nexflow-validation-0.5.0-alpha.1.schemas.json",
+      "schemaIndexSha256": "13a5e1171de0ffe07c5e9185c64a5c5381cc8150567be11e797634cd5a13cdd5",
+      "files": 577,
+      "inventorySha256": "1011d2b11fb64c6f9c2a04d208a89c89741339ec325db7c1ea805c726ffb6052"
+    },
+    {
+      "name": "@nexflow/cli",
+      "version": "0.5.0-alpha.1",
+      "file": "nexflow-cli-0.5.0-alpha.1.tgz",
+      "sha256": "41ba4f5c9221a09527e5c659a7f4e09ae0963db4c7a3563b6f4cb20cbc1cc927",
+      "bytes": 400662,
+      "schemaIndex": "nexflow-cli-0.5.0-alpha.1.schemas.json",
+      "schemaIndexSha256": "6bc9eeffc217e7d26f3ba279e16c908dc4cc70ba5fd5d67b56ac3695f01e98f6",
+      "files": 619,
+      "inventorySha256": "3dae0bb0561b0d694d73137c8c120a8a0d44758fe73874257922d3d0506ecab0"
+    }
+  ],
+  "inputs": [
+    {
+      "label": "security",
+      "runId": 42045911024,
+      "artifactId": 13423768960,
+      "zipSha256": "028c3c99cca1c14c1a7179866d6713948963a4d89d8c81da4618b3170c174b91",
+      "files": [
+        {
+          "path": "nf-107-candidate/PROVENANCE.json",
+          "bytes": 3480,
+          "sha256": "ae2f2d52f15d91f1a8e07a7237a18d16989f4a36c5eff80b4f91353186e4cc13"
+        },
+        {
+          "path": "nf-107-candidate/SHA256SUMS",
+          "bytes": 498,
+          "sha256": "e6036512dd364f5be12362b086637161a22300b5b623f75cc73b813031e96c27"
+        },
+        {
+          "path": "nf-107-candidate/nexflow-cli-0.5.0-alpha.1.schemas.json",
+          "bytes": 5276,
+          "sha256": "6bc9eeffc217e7d26f3ba279e16c908dc4cc70ba5fd5d67b56ac3695f01e98f6"
+        },
+        {
+          "path": "nf-107-candidate/nexflow-cli-0.5.0-alpha.1.tgz",
+          "bytes": 400662,
+          "sha256": "41ba4f5c9221a09527e5c659a7f4e09ae0963db4c7a3563b6f4cb20cbc1cc927"
+        },
+        {
+          "path": "nf-107-candidate/nexflow-validation-0.5.0-alpha.1.schemas.json",
+          "bytes": 5294,
+          "sha256": "13a5e1171de0ffe07c5e9185c64a5c5381cc8150567be11e797634cd5a13cdd5"
+        },
+        {
+          "path": "nf-107-candidate/nexflow-validation-0.5.0-alpha.1.tgz",
+          "bytes": 356741,
+          "sha256": "41d4d44fae91a42b3434138f102985972f7b6b771360d8166a0057e20060d5c0"
+        },
+        {
+          "path": "nf-107-qualification.json",
+          "bytes": 7426,
+          "sha256": "e0a7f6734b2a6f593a302e8cd2375dabd9b29978454d13a684103841a7bc13de"
+        },
+        {
+          "path": "nf-108-boundaries.json",
+          "bytes": 4601,
+          "sha256": "69d5d5b69eb8036f0607c5c7e68752265d0eec1777214189e50eb4b66e70e4b3"
+        },
+        {
+          "path": "nf-108-supply-chain/SHA256SUMS",
+          "bytes": 596,
+          "sha256": "94c6e15f540b38e8a3a9f1eff7702ee6c155b44e7a3b00fe63c6ce5594304111"
+        },
+        {
+          "path": "nf-108-supply-chain/advisories.json",
+          "bytes": 145198,
+          "sha256": "7af5fdccb007c1e6300bb1bdaa704a447eb87601242e18a79d66bf0c430cf493"
+        },
+        {
+          "path": "nf-108-supply-chain/dependency-inventory.json",
+          "bytes": 1209483,
+          "sha256": "60649d6f6380a438ce8d21af719e00dc08849cf4fe5cc68448e969c539abb061"
+        },
+        {
+          "path": "nf-108-supply-chain/node-license.txt",
+          "bytes": 156386,
+          "sha256": "8e603aa87c70d36e497004f0dec63111511cb61b7d65ace12e10ea791599286c"
+        },
+        {
+          "path": "nf-108-supply-chain/node-release-input.json",
+          "bytes": 550179,
+          "sha256": "2014e8b3fc46fe5b85c199d2ad8554c0c7bc33be13f9a048b3ece126436edda4"
+        },
+        {
+          "path": "nf-108-supply-chain/osv-inputs.json",
+          "bytes": 30115,
+          "sha256": "5974f70c0965f6e6b8245803c6fecc3916aabc98ac65062c77105df9271f6f2f"
+        },
+        {
+          "path": "nf-108-supply-chain/sbom.cdx.json",
+          "bytes": 119781,
+          "sha256": "38e4182bb3fd2213df0a5f609e560bfe072b0ce0d97bfd8d1b5bb3f629865778"
+        },
+        {
+          "path": "nf-108-supply-chain/security-report.json",
+          "bytes": 21110,
+          "sha256": "cbef4fecdefe57b25c727826790b87e45e58fd8a70b10d784e3d484885e69d4f"
+        }
+      ]
+    },
+    {
+      "label": "native-inputs",
+      "runId": 42045911075,
+      "artifactId": 13424786110,
+      "zipSha256": "f923701dd3330a0245e5286d731f05fdc5007d4622af75fdafb79bc20da9253a",
+      "files": [
+        {
+          "path": "PROVENANCE.json",
+          "bytes": 3480,
+          "sha256": "ae2f2d52f15d91f1a8e07a7237a18d16989f4a36c5eff80b4f91353186e4cc13"
+        },
+        {
+          "path": "SHA256SUMS",
+          "bytes": 498,
+          "sha256": "e6036512dd364f5be12362b086637161a22300b5b623f75cc73b813031e96c27"
+        },
+        {
+          "path": "nexflow-cli-0.5.0-alpha.1.schemas.json",
+          "bytes": 5276,
+          "sha256": "6bc9eeffc217e7d26f3ba279e16c908dc4cc70ba5fd5d67b56ac3695f01e98f6"
+        },
+        {
+          "path": "nexflow-cli-0.5.0-alpha.1.tgz",
+          "bytes": 400662,
+          "sha256": "41ba4f5c9221a09527e5c659a7f4e09ae0963db4c7a3563b6f4cb20cbc1cc927"
+        },
+        {
+          "path": "nexflow-validation-0.5.0-alpha.1.schemas.json",
+          "bytes": 5294,
+          "sha256": "13a5e1171de0ffe07c5e9185c64a5c5381cc8150567be11e797634cd5a13cdd5"
+        },
+        {
+          "path": "nexflow-validation-0.5.0-alpha.1.tgz",
+          "bytes": 356741,
+          "sha256": "41d4d44fae91a42b3434138f102985972f7b6b771360d8166a0057e20060d5c0"
+        }
+      ]
+    },
+    {
+      "label": "linux-amd64",
+      "runId": 42045911075,
+      "artifactId": 13424078799,
+      "zipSha256": "04b3f3c4f7490151d7994a03156ecc98da70765175b4ff43194147bde9a309f5",
+      "files": [
+        {
+          "path": "lifecycle.json",
+          "bytes": 180719,
+          "sha256": "b6094cb02c531fb911d8d52a5700bc41b4ae0d955b1f15beea31592b3c5663b4"
+        },
+        {
+          "path": "node-LICENSE.txt",
+          "bytes": 156386,
+          "sha256": "8e603aa87c70d36e497004f0dec63111511cb61b7d65ace12e10ea791599286c"
+        },
+        {
+          "path": "node-SHASUMS256.txt",
+          "bytes": 3171,
+          "sha256": "9b0d4aa4d20a4f1afaf2cdcf99175ad90d1856d24c7d31dc46f72369b73e2d35"
+        }
+      ]
+    },
+    {
+      "label": "windows-amd64",
+      "runId": 42045911075,
+      "artifactId": 13423309144,
+      "zipSha256": "8c5552a69c64eacdbf14de4359809d795ef0f7c14c954cbfb462ddd23c876080",
+      "files": [
+        {
+          "path": "lifecycle.json",
+          "bytes": 180647,
+          "sha256": "a71da3b19610d7f7c1d939b80d9862d4f9bd31f1887c498a89fb11de1b28e5b5"
+        },
+        {
+          "path": "node-LICENSE.txt",
+          "bytes": 159309,
+          "sha256": "cbc91dba25c546898544155e1c0fce897f00e3f1df0afc795b8da891d38f92d9"
+        },
+        {
+          "path": "node-SHASUMS256.txt",
+          "bytes": 3171,
+          "sha256": "9b0d4aa4d20a4f1afaf2cdcf99175ad90d1856d24c7d31dc46f72369b73e2d35"
+        }
+      ]
+    },
+    {
+      "label": "macos-arm64",
+      "runId": 42045911075,
+      "artifactId": 13423094200,
+      "zipSha256": "09a22cc2334ba5f6e038397042b792dadd1c857c36d269d716019888f155926e",
+      "files": [
+        {
+          "path": "lifecycle.json",
+          "bytes": 180252,
+          "sha256": "fb55c0dccb438ba71b872b9429b2dd80a8b953b2198e6a73134c8f9cc8cb7a26"
+        },
+        {
+          "path": "node-LICENSE.txt",
+          "bytes": 156386,
+          "sha256": "8e603aa87c70d36e497004f0dec63111511cb61b7d65ace12e10ea791599286c"
+        },
+        {
+          "path": "node-SHASUMS256.txt",
+          "bytes": 3171,
+          "sha256": "9b0d4aa4d20a4f1afaf2cdcf99175ad90d1856d24c7d31dc46f72369b73e2d35"
+        }
+      ]
+    }
+  ],
+  "candidateCi": [
+    {
+      "id": 42045910832,
+      "name": "Branch Flow",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42045912029,
+      "name": "Release Readiness Evidence",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42045911215,
+      "name": "Schema Validation",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42045910872,
+      "name": "Review Governance",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42045910857,
+      "name": "Reference CLI Preview",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42045910813,
+      "name": "Reference Validation Library",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42045911142,
+      "name": "Comparable Measurement Evidence",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42045910822,
+      "name": "CLI Prototype",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42045911024,
+      "name": "Reference Package Candidate",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42045911075,
+      "name": "Reference Native Lifecycle",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "sourceChecks": {
+    "sourceRevision": "979cc07dc17f56a0cd0a6f4444ff0dcc58eee55f",
+    "environment": {
+      "kind": "local source validation, not target compatibility",
+      "platform": "Darwin",
+      "architecture": "arm64",
+      "osVersion": "27.2",
+      "node": "26.13.0",
+      "npm": "11.20.0"
+    },
+    "results": [
+      {
+        "name": "a2a-extension-smoke",
+        "exitCode": 0,
+        "seconds": 0.27
+      },
+      {
+        "name": "agent-definition-authority-smoke",
+        "exitCode": 0,
+        "seconds": 0.14
+      },
+      {
+        "name": "agent-identity-schema-smoke",
+        "exitCode": 0,
+        "seconds": 0.14
+      },
+      {
+        "name": "approval-gate-target-schema-smoke",
+        "exitCode": 0,
+        "seconds": 0.15
+      },
+      {
+        "name": "actor-schema-smoke",
+        "exitCode": 0,
+        "seconds": 0.14
+      },
+      {
+        "name": "beta-checkpoint-smoke",
+        "exitCode": 0,
+        "seconds": 0.13
+      },
+      {
+        "name": "candidate-readiness-smoke",
+        "exitCode": 0,
+        "seconds": 0.17
+      },
+      {
+        "name": "cli-fixture-smoke",
+        "exitCode": 0,
+        "seconds": 1.37
+      },
+      {
+        "name": "cli-diagnostics-smoke",
+        "exitCode": 0,
+        "seconds": 4.47
+      },
+      {
+        "name": "cli-graph-smoke",
+        "exitCode": 0,
+        "seconds": 2.46
+      },
+      {
+        "name": "cli-init-smoke",
+        "exitCode": 0,
+        "seconds": 0.71
+      },
+      {
+        "name": "cli-inspection-smoke",
+        "exitCode": 0,
+        "seconds": 3.04
+      },
+      {
+        "name": "cli-no-runtime-guardrails-smoke",
+        "exitCode": 0,
+        "seconds": 2.19
+      },
+      {
+        "name": "cli-prototype-smoke",
+        "exitCode": 0,
+        "seconds": 1.42
+      },
+      {
+        "name": "cli-validation-smoke",
+        "exitCode": 0,
+        "seconds": 3.97
+      },
+      {
+        "name": "conformance-claim-smoke",
+        "exitCode": 0,
+        "seconds": 0.23
+      },
+      {
+        "name": "core-profile-smoke",
+        "exitCode": 0,
+        "seconds": 0.25
+      },
+      {
+        "name": "credential-handling-schema-smoke",
+        "exitCode": 0,
+        "seconds": 0.17
+      },
+      {
+        "name": "documentation-navigation-smoke",
+        "exitCode": 0,
+        "seconds": 0.23
+      },
+      {
+        "name": "extension-registry-smoke",
+        "exitCode": 0,
+        "seconds": 0.18
+      },
+      {
+        "name": "feature-status-registry-smoke",
+        "exitCode": 0,
+        "seconds": 0.15
+      },
+      {
+        "name": "github-extension-smoke",
+        "exitCode": 0,
+        "seconds": 0.2
+      },
+      {
+        "name": "human-override-schema-smoke",
+        "exitCode": 0,
+        "seconds": 0.21
+      },
+      {
+        "name": "issue-tracker-extension-smoke",
+        "exitCode": 0,
+        "seconds": 0.2
+      },
+      {
+        "name": "manifest-discovery-smoke",
+        "exitCode": 0,
+        "seconds": 0.61
+      },
+      {
+        "name": "mcp-extension-smoke",
+        "exitCode": 0,
+        "seconds": 0.19
+      },
+      {
+        "name": "negative-schema-fixtures",
+        "exitCode": 0,
+        "seconds": 0.23
+      },
+      {
+        "name": "provider-constraint-schema-smoke",
+        "exitCode": 0,
+        "seconds": 0.18
+      },
+      {
+        "name": "provider-feature-schema-smoke",
+        "exitCode": 0,
+        "seconds": 0.17
+      },
+      {
+        "name": "runtime-evaluation-smoke",
+        "exitCode": 0,
+        "seconds": 2.03
+      },
+      {
+        "name": "runtime-evaluation-environment-smoke",
+        "exitCode": 0,
+        "seconds": 0.11
+      },
+      {
+        "name": "runtime-evaluation-library-smoke",
+        "exitCode": 0,
+        "seconds": 0.68
+      },
+      {
+        "name": "runtime-toolchain-smoke",
+        "exitCode": 0,
+        "seconds": 0.12
+      },
+      {
+        "name": "runtime-python-prototype-smoke",
+        "exitCode": 0,
+        "seconds": 0.12
+      },
+      {
+        "name": "runtime-rust-prototype-smoke",
+        "exitCode": 0,
+        "seconds": 0.11
+      },
+      {
+        "name": "runtime-go-prototype-smoke",
+        "exitCode": 0,
+        "seconds": 0.12
+      },
+      {
+        "name": "runtime-typescript-prototype-smoke",
+        "exitCode": 0,
+        "seconds": 0.12
+      },
+      {
+        "name": "runtime-fidelity-smoke",
+        "exitCode": 0,
+        "seconds": 0.2
+      },
+      {
+        "name": "runtime-supply-chain-smoke",
+        "exitCode": 0,
+        "seconds": 0.74
+      },
+      {
+        "name": "runtime-supply-chain-current-smoke",
+        "exitCode": 0,
+        "seconds": 1.55
+      },
+      {
+        "name": "runtime-supply-chain-repaired-smoke",
+        "exitCode": 0,
+        "seconds": 1.02
+      },
+      {
+        "name": "runtime-native-lifecycle-smoke",
+        "exitCode": 0,
+        "seconds": 4.95
+      },
+      {
+        "name": "qualification-lifecycle-smoke",
+        "exitCode": 0,
+        "seconds": 1.21
+      },
+      {
+        "name": "qualification-security-smoke",
+        "exitCode": 0,
+        "seconds": 1.84
+      },
+      {
+        "name": "qualification-measurements-smoke",
+        "exitCode": 0,
+        "seconds": 2.0
+      },
+      {
+        "name": "revised-architecture-smoke",
+        "exitCode": 0,
+        "seconds": 0.98
+      },
+      {
+        "name": "runtime-linux-lifecycle-smoke",
+        "exitCode": 0,
+        "seconds": 1.05
+      },
+      {
+        "name": "runtime-macos-lifecycle-smoke",
+        "exitCode": 0,
+        "seconds": 1.07
+      },
+      {
+        "name": "runtime-windows-lifecycle-smoke",
+        "exitCode": 0,
+        "seconds": 0.89
+      },
+      {
+        "name": "runtime-comparable-measurements-smoke",
+        "exitCode": 0,
+        "seconds": 0.32
+      },
+      {
+        "name": "runtime-architecture-alternatives-smoke",
+        "exitCode": 0,
+        "seconds": 0.3
+      },
+      {
+        "name": "runtime-candidate-report-bundles-smoke",
+        "exitCode": 0,
+        "seconds": 1.4
+      },
+      {
+        "name": "runtime-decision-bundle-smoke",
+        "exitCode": 0,
+        "seconds": 1.02
+      },
+      {
+        "name": "runtime-reviewer-ownership-smoke",
+        "exitCode": 0,
+        "seconds": 0.37
+      },
+      {
+        "name": "single-maintainer-governance-smoke",
+        "exitCode": 0,
+        "seconds": 0.8
+      },
+      {
+        "name": "single-maintainer-ownership-smoke",
+        "exitCode": 0,
+        "seconds": 0.21
+      },
+      {
+        "name": "runtime-architecture-review-smoke",
+        "exitCode": 0,
+        "seconds": 2.04
+      },
+      {
+        "name": "runtime-diagnostics-requalification-smoke",
+        "exitCode": 0,
+        "seconds": 2.4
+      },
+      {
+        "name": "runtime-diagnostic-projection-repair-smoke",
+        "exitCode": 0,
+        "seconds": 1.57
+      },
+      {
+        "name": "runtime-validation-contract-smoke",
+        "exitCode": 0,
+        "seconds": 3.0
+      },
+      {
+        "name": "runtime-isolation-smoke",
+        "exitCode": 0,
+        "seconds": 0.24
+      },
+      {
+        "name": "semantic-smoke",
+        "exitCode": 0,
+        "seconds": 0.18
+      },
+      {
+        "name": "typed-reference-schema-smoke",
+        "exitCode": 0,
+        "seconds": 0.13
+      },
+      {
+        "name": "work-reference-namespace-smoke",
+        "exitCode": 0,
+        "seconds": 0.1
+      },
+      {
+        "name": "validate",
+        "exitCode": 0,
+        "seconds": 0.27
+      },
+      {
+        "name": "validation-checkpoint-smoke",
+        "exitCode": 0,
+        "seconds": 0.17
+      },
+      {
+        "name": "release-0-4-readiness-smoke",
+        "exitCode": 0,
+        "seconds": 0.45,
+        "sourceRevision": "5cb33caad080f61808949c1de17df2879da9996f"
+      },
+      {
+        "name": "release-0-4-completion-smoke",
+        "exitCode": 0,
+        "seconds": 0.31,
+        "sourceRevision": "5cb33caad080f61808949c1de17df2879da9996f"
+      }
+    ]
+  },
+  "targets": [
+    {
+      "target": "linux/amd64",
+      "label": "linux-amd64",
+      "platformArchitecture": [
+        "linux",
+        "x64"
+      ],
+      "upstreamURLDerivedFromPinnedProducerAndVerifiedSHASUMS": "https://nodejs.org/dist/v26.13.0/node-v26.13.0-linux-x64.tar.gz"
+    },
+    {
+      "target": "macos/arm64",
+      "label": "macos-arm64",
+      "platformArchitecture": [
+        "darwin",
+        "arm64"
+      ],
+      "upstreamURLDerivedFromPinnedProducerAndVerifiedSHASUMS": "https://nodejs.org/dist/v26.13.0/node-v26.13.0-darwin-arm64.tar.gz"
+    },
+    {
+      "target": "windows/amd64",
+      "label": "windows-amd64",
+      "platformArchitecture": [
+        "win32",
+        "x64"
+      ],
+      "upstreamURLDerivedFromPinnedProducerAndVerifiedSHASUMS": "https://nodejs.org/dist/v26.13.0/node-v26.13.0-win-x64.zip"
+    }
+  ],
+  "rawRecordLimitations": [
+    "Shared path redaction masks URL-shaped strings; original Node checksum/license bytes and the pinned producer determine the exact upstream URL recorded above. Raw native records remain unchanged.",
+    "CI retention is temporary; verified local copies of every original ZIP and extracted file are retained.",
+    "No source-code or root audit alone substitutes for actual packaged graph and target observations."
+  ],
+  "applicableTechnicalBlockers": [],
+  "separatePublicationRequirements": [
+    "Direct maintainer release/promotion authority",
+    "Exact merged develop-to-main cut and successful CI/payload-equivalence check",
+    "Fresh applicable advisory/runtime input review",
+    "Actual public download/install verification and separate publication receipt"
+  ]
+}

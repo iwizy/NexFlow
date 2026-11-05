@@ -135,3 +135,23 @@ coverage and non-approval. It does not use the `0.1` readiness schema as a beta
 approval, evaluate a package, accept an architecture, or authorize publication.
 Release evidence for future candidate bytes requires a new exact-candidate
 record, real reviewer decisions, and completion of the preceding `0.4` gates.
+
+
+## 0.5 First Alpha Review
+
+NF-110 prepares the [current first-alpha review](0.5-preview-review.md) and
+[draft prerelease notes](0.5-preview-release-notes.md), with the selected
+NF-104 `v0.5.0-alpha.1` label. The existing B1–B8 checklist and standalone
+candidate-readiness record are reused; historical beta/alpha preparation remains
+unchanged. A technical readiness result is not publication authority. Exact
+selected archives have security/native evidence and synchronized
+[installation](../docs/reference-cli-installation.md),
+[compatibility/support](../docs/reference-cli-compatibility.md) and
+[conformance non-claim](../conformance/REFERENCE-CLI-PREVIEW-NON-CLAIM.md).
+The [candidate record](0.5-preview/record.json) and
+[evidence index](0.5-preview/evidence.json) are checked by
+[`release-preview-review.mjs`](../scripts/release-preview-review.mjs), which
+prepares the selected actual bytes, checksums and original evidence in CI.
+Its output is review material, not a publication. The
+[publication runbook](0.5-preview-publication.md) requires separate authority,
+the approved release cut and actual public-download/install receipts.

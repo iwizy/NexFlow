@@ -16,7 +16,8 @@ It is **not** an AI coding agent, an LLM API wrapper, a chat application, or a
 personal productivity tool. The specification is the foundation. Repository
 validation tools, a reference validation library and an
 [unreleased installable CLI candidate](docs/reference-package-candidate.md)
-exist. Public release qualification and workflow runtime remain future work.
+exist. The first alpha is in [release review](release/0.5-preview-review.md);
+public publication and workflow runtime remain separate decisions.
 
 ## Status
 
@@ -73,9 +74,10 @@ defines future review gates. The [beta preparation checkpoint](docs/0.5-beta-che
 assesses all eight gates at one exact source revision and remains `not-ready`;
 the [source-checkout dry run](docs/cli-release-dry-run.md) rehearses evidence
 collection. The [alpha preparation checkpoint](docs/0.4-alpha-checkpoint.md)
-is still `not-ready`. No beta candidate, installable reference CLI, `NF-CLI`
-claim, `0.5` release, or corresponding version bump has been approved or
-published.
+is still `not-ready`. The separately implemented installable first-alpha
+candidate has package/security/native evidence and is undergoing
+[its own release review](release/0.5-preview-review.md). No beta, NF-CLI claim
+or public 0.5 release is approved or published by that preparation.
 
 Feature lifecycle is tracked separately in the [Feature Status Registry](docs/feature-status-registry.md):
 Accepted, Draft, Experimental, Deprecated and Planned are scoped design/lifecycle
@@ -110,8 +112,8 @@ states, not synonyms for the implementation evidence summarized below.
 | Threat model | Current repository and conditional future-runtime trust boundaries, attacker stories, mitigations, assumptions, and severity calibration documented; not a vulnerability report or runtime claim | [Threat Model](docs/threat-model.md), [Security Policy](SECURITY.md) |
 | Runtime architecture decision | Accepted TypeScript/layout B for unsigned developer validation and future host interface design; no runtime implementation or release authorized | [RFC-0025](rfcs/RFC-0025-reference-implementation-architecture.md), [Exact decision](evaluation/architecture/revised/decision.json), [Runtime Options](docs/runtime-options.md) |
 | Runtime language candidates | Four independent Experimental prototypes; TypeScript/Python qualify in the current evaluation scope, while current Rust/Go fail Windows confinement. Original failed reports remain historical evidence | [Evaluation Packet](evaluation/README.md), [Current measurements](evaluation/measurement-qualification/README.md), [Feature Status Registry](docs/feature-status-registry.md) |
-| Reference CLI | Separate source entry implements validate/inspect/static graph and help/version using the validation library; init deferred, final installable artifacts and product release remain separate; historical preparation checkpoints remain not-ready | [Source Preview](docs/reference-cli-preview.md), [0.5 CLI Contract](docs/0.5-cli-contract.md), [Reference CLI](docs/reference-cli.md), [Alpha Preparation Checkpoint](docs/0.4-alpha-checkpoint.md), [0.5 Beta Readiness Checklist](docs/0.5-beta-readiness-checklist.md), [Beta Preparation Checkpoint](docs/0.5-beta-checkpoint.md), [CLI Release Dry Run](docs/cli-release-dry-run.md), [CLI And Runtime Responsibility Boundary](docs/cli-runtime-boundary.md), [RFC-0011](rfcs/RFC-0011-reference-cli-scope.md) |
-| Reference validation library | Separate pure TypeScript package and read-only workspace adapter implemented for source evaluation; fixed schemas, declared inspection and package relocation checked; source CLI has separate evidence, no published package | [Library Scope And Qualification](docs/reference-validation-library.md), [Package API](packages/validation/README.md), [CLI And Adapter](packages/cli/README.md) |
+| Reference CLI | Unreleased installable first-alpha candidate: validate/inspect/static graph, help/version, fixed schemas and safe preview JSON; init deferred. Exact package/security/native records support release review, with no NF-CLI claim or publication approval | [Source Preview](docs/reference-cli-preview.md), [0.5 CLI Contract](docs/0.5-cli-contract.md), [Reference CLI](docs/reference-cli.md), [Alpha Preparation Checkpoint](docs/0.4-alpha-checkpoint.md), [0.5 Beta Readiness Checklist](docs/0.5-beta-readiness-checklist.md), [Beta Preparation Checkpoint](docs/0.5-beta-checkpoint.md), [CLI Release Dry Run](docs/cli-release-dry-run.md), [CLI And Runtime Responsibility Boundary](docs/cli-runtime-boundary.md), [RFC-0011](rfcs/RFC-0011-reference-cli-scope.md) |
+| Reference validation library | Separate pure TypeScript package, bundled production closure and root-bound CLI read adapter; candidate-bound API/install/security/native evidence, no published package or full semantic claim | [Library Scope And Qualification](docs/reference-validation-library.md), [Package API](packages/validation/README.md), [CLI And Adapter](packages/cli/README.md) |
 | Repository CLI prototype | Experimental local discovery, JSON Schema validation, declared inspection, static graphing, bounded starter initialization, versioned JSON output, executable no-runtime guardrails, cataloged fixtures, and dedicated CI; not a reference CLI alpha, language decision, operating-system sandbox, or `NF-CLI` claim | `npm run cli-prototype -- --help`, `npm run cli-no-runtime-guardrails-smoke`, `npm run cli-fixture-smoke`, [CLI Workflow](.github/workflows/cli-smoke.yml), [Prototype Scope](docs/cli-prototype.md), [JSON Diagnostics](docs/cli-diagnostics.md), [Declared Inspection](docs/cli-inspection.md), [Static Graph](docs/cli-graph.md), [Starter Initialization](docs/cli-init.md) |
 | Runtime and provider execution | Planned, not implemented | [Architecture](docs/architecture.md), [Runtime Options](docs/runtime-options.md) |
 | Live integrations and extension loading | Not implemented | [Compatibility Matrix](docs/compatibility-matrix.md) |
@@ -164,6 +166,10 @@ artifact pairing and the [0.1 Readiness Checklist](docs/readiness-checklist.md)
 for the evidence criteria used to publish `v0.1.0`. `Specified`, `Partial`, and
 `Implemented` are distinct support claims; documented future behavior is not an
 implementation claim.
+
+For the installable first alpha, use the [portable quick start](docs/reference-cli-installation.md)
+and [compatibility/support guide](docs/reference-cli-compatibility.md). Its release
+review remains separate from the historical prototype commands above.
 
 ## Repository History Note
 

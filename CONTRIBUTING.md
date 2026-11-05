@@ -80,7 +80,9 @@ Avoid implying that planned runtime behavior already exists.
 
 This repository provides JSON Schemas, maintenance checks, experimental tooling
 and an unreleased [reference validation library](packages/validation/README.md).
-An installable reference CLI is not yet available. Install the pinned root
+An unreleased installable reference CLI candidate is available for
+[release qualification](release/0.5-preview-review.md); it is not a public release.
+Install the pinned root
 maintenance tooling and run the repository validator before opening a pull request:
 
 ```sh
@@ -148,8 +150,13 @@ requires a clean committed tree and new output/report paths outside it:
 node scripts/reference-packages-smoke.mjs --out /absolute/new-candidate-directory --report /absolute/qualification.json
 ```
 
-It qualifies actual offline installation of the candidate, not native lifecycle
-or release. Keep the first successful candidate intact for later upgrade/rollback.
+It qualifies actual offline installation of the candidate. Current
+[security](docs/reference-package-security.md) and [native lifecycle](docs/reference-native-lifecycle.md)
+records qualify their own exact bytes; they do not approve a release. Keep
+the genuine predecessor and selected successor intact for upgrade/rollback.
+NF-110 synchronizes the [installation](docs/reference-cli-installation.md),
+[compatibility](docs/reference-cli-compatibility.md) and release packet. Documentation
+inside an archive changes its digest and requires applicable requalification.
 
 Documentation changes must keep local links valid, every first-level
 `docs/*.md` page discoverable from the documentation index, and the root README

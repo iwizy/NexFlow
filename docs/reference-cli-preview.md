@@ -9,7 +9,11 @@ Status: **implemented source preview, unreleased**. Package identity is
 `@nexflow/cli` `0.5.0-alpha.1`, with matching `@nexflow/validation` and exact
 Node 26.13.0. The bin mapping points to `dist/main.js`. NF-107 supplies the
 [actual tarball/dependency closure and offline installation candidate](reference-package-candidate.md);
-native lifecycle, security acceptance and publication remain NF-108–NF-110 work.
+[security](reference-package-security.md) and [native lifecycle](reference-native-lifecycle.md)
+now have candidate-bound evidence. The [final review](../release/0.5-preview-review.md)
+selects the exact documented archives; publication requires separate authority.
+Use the [portable install/quick start](reference-cli-installation.md) and
+[compatibility/rollback guide](reference-cli-compatibility.md).
 This is not an `NF-CLI` or full semantic claim.
 
 ## Build And Run

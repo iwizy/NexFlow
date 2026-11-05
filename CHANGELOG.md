@@ -8,6 +8,13 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Added
 
+- Prepared NF-110's first-alpha installation/quick start, native/runtime and
+  compatibility/rollback matrix, support/correction guidance, explicit absence
+  of an NF-CLI claim, and prerelease review/notes. Corrected the shipped Windows
+  install instructions while preserving code, locks and version domains;
+  final archive evidence must be requalified before readiness is recorded.
+
+
 - Added NF-109's native archive lifecycle workflow for Ubuntu 24.04 AMD64,
   macOS 15 ARM64 and Windows Server 2025 AMD64 with exact external Node 26.13.0.
   Records bind genuine predecessor/current package bytes, offline installation,

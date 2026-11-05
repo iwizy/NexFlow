@@ -1,8 +1,8 @@
 # Security Policy
 
 NexFlow is a specification-first project with executable repository checks,
-experimental validation candidates and a separate unreleased reference
-validation library. It does not execute workflows, call providers, store
+experimental validation candidates and separate unreleased reference
+validation/CLI packages. It does not execute workflows, call providers, store
 credentials or run agents.
 
 Current security review covers untrusted manifest/data inputs, parsing and
@@ -11,8 +11,12 @@ diagnostics, CI and release-artifact integrity. The
 [reference validation library](packages/validation/README.md) has a pure data
 entry; its separate [workspace adapter](packages/cli/README.md) owns permitted
 project-file reads. The historical CLI prototype is a different executable
-surface, including its bounded `init` command. No installable reference CLI is
-published; `init` is deferred for the first reference preview.
+surface, including its bounded `init` command. Installable reference candidate
+archives have separate [security](docs/reference-package-security.md) and
+[native lifecycle](docs/reference-native-lifecycle.md) evidence. No reference CLI
+is publicly published by that qualification; `init` remains deferred.
+The [preview support/correction policy](docs/reference-cli-compatibility.md)
+retains the existing single-maintainer ownership and best-effort limits.
 
 The public [Threat Model](docs/threat-model.md) separates current repository
 risks from conditional future-runtime attacker stories and documents scope,

@@ -1,0 +1,161 @@
+{
+  "recordVersion": "0.1",
+  "kind": "NexFlowCandidateReadiness",
+  "candidate": {
+    "label": "First 0.5.0-alpha.1 developer preview; pre-publication technical review",
+    "specVersion": "0.1",
+    "proposedTag": "v0.5.0-alpha.1",
+    "commit": "979cc07dc17f56a0cd0a6f4444ff0dcc58eee55f",
+    "evaluatedAt": "2026-11-05T14:50:21Z",
+    "changelog": "CHANGELOG.md#unreleased"
+  },
+  "decision": {
+    "outcome": "ready-with-notes",
+    "decidedBy": "Alexander Agafonov",
+    "rationale": "Separate delegated NF-110 technical readiness decision under the adopted bounded first-alpha profile. Existing B1-B8 technical preparation criteria have factual candidate-bound evidence. This is not beta/full conformance readiness, personally performed/independent review, publication permission or public-install verification; those later authority/observations are explicitly pending in the evidence index and runbook."
+  },
+  "checks": {
+    "documentation": {
+      "status": "passed",
+      "summary": "Synchronized alpha installation, support, limitations and B1-B8 review material; review file hashes verified separately.",
+      "evidence": [
+        {
+          "type": "document",
+          "description": "Current first-alpha technical review",
+          "location": "release/0.5-preview-review.md",
+          "revision": "sha256:703f5736552687671af552787a4eb16d954f03e972fee6c9e15ece59a7ccf2ad"
+        },
+        {
+          "type": "document",
+          "description": "Portable install/quick-start instructions",
+          "location": "docs/reference-cli-installation.md",
+          "revision": "sha256:a667b01302b7fb56b7391710e6d29c8aff5b2805f38c74eadb56b3b1f5e39719"
+        }
+      ]
+    },
+    "schemas": {
+      "status": "passed",
+      "summary": "18 exact embedded schema files/17 kinds, local closure/indexes verified in the actual archives; no new manifest dialect.",
+      "evidence": [
+        {
+          "type": "command",
+          "description": "54 actual package checks with schema/index/ref consumer verification",
+          "location": "https://github.com/iwizy/NexFlow/actions/runs/42045911024",
+          "revision": "979cc07dc17f56a0cd0a6f4444ff0dcc58eee55f"
+        }
+      ]
+    },
+    "examples": {
+      "status": "passed",
+      "summary": "Maintained source examples and eight installed project sets passed; source and native evidence remain separately scoped.",
+      "evidence": [
+        {
+          "type": "command",
+          "description": "68 local source checks and successful exact-source CI",
+          "location": "0.5-preview/evidence.json",
+          "revision": "979cc07dc17f56a0cd0a6f4444ff0dcc58eee55f"
+        },
+        {
+          "type": "command",
+          "description": "Installed candidate maintained project checks",
+          "location": "https://github.com/iwizy/NexFlow/actions/runs/42045911024",
+          "revision": "979cc07dc17f56a0cd0a6f4444ff0dcc58eee55f"
+        }
+      ]
+    },
+    "validation": {
+      "status": "passed",
+      "summary": "Candidate CLI/library source regression, installed security/packaging and three native lifecycle records match selected bytes; semantic/Core/extension/runtime layers remain not-run.",
+      "evidence": [
+        {
+          "type": "command",
+          "description": "Native current and genuine predecessor lifecycle/commands/API/OS controls",
+          "location": "https://github.com/iwizy/NexFlow/actions/runs/42045911075",
+          "revision": "979cc07dc17f56a0cd0a6f4444ff0dcc58eee55f"
+        }
+      ]
+    },
+    "rfc-governance": {
+      "status": "passed",
+      "summary": "Adopted NF-104 first-alpha profile and scoped Accepted RFC-0025 under RFC-0024/ownership; delegated technical decision, no personal/independent or publication approval inferred.",
+      "evidence": [
+        {
+          "type": "document",
+          "description": "Accepted bounded implementation profile",
+          "location": "rfcs/reviews/2026-10-28-cli-preview-scope.md",
+          "revision": "sha256:dfbabdbf889fb030264814b8621761eda88303b85d1ecc1ab30e35f9543f731b"
+        },
+        {
+          "type": "document",
+          "description": "Existing owner and role authority",
+          "location": "rfcs/reviews/2026-10-11-single-maintainer-ownership.md",
+          "revision": "sha256:38d3ddd372d40a7820cd9cfddcc9b85f7ab5423a5bf785a08955b20e6be32390"
+        }
+      ]
+    },
+    "compatibility-migrations": {
+      "status": "passed",
+      "summary": "Independent version domains, no NF-CLI claim, old-output migration, exact native prerequisites and genuine rollback documented and checked.",
+      "evidence": [
+        {
+          "type": "document",
+          "description": "Current alpha compatibility/support/rollback",
+          "location": "docs/reference-cli-compatibility.md",
+          "revision": "sha256:42e0963cbecb92a6736ce55ff419547e909ecce68473668c43f1a64c497270e3"
+        },
+        {
+          "type": "document",
+          "description": "Explicit conformance non-claim",
+          "location": "conformance/REFERENCE-CLI-PREVIEW-NON-CLAIM.md",
+          "revision": "sha256:524c5fae48e747829686a18e378125bfcef4b8760724ae8841670c4c0a2dc62e"
+        }
+      ]
+    },
+    "security-limitations": {
+      "status": "passed",
+      "summary": "Selected actual runtime/build/tool graphs have dated full inputs; no unresolved matches, retained affected tooling and untested native/general isolation/publisher boundaries explicit.",
+      "evidence": [
+        {
+          "type": "audit",
+          "description": "Exact candidate security/advisory/limits and original records",
+          "location": "https://github.com/iwizy/NexFlow/actions/runs/42045911024/artifacts/13423768960",
+          "revision": "979cc07dc17f56a0cd0a6f4444ff0dcc58eee55f"
+        },
+        {
+          "type": "document",
+          "description": "Current reporting and bounded owner guidance",
+          "location": "SECURITY.md",
+          "revision": "sha256:1899caf20f223f82a4d9473cfa3226393a8cd9d4ff741c49ca3360fac5514e41"
+        }
+      ]
+    },
+    "release-evidence": {
+      "status": "passed",
+      "summary": "One immutable staged candidate, exact source/digests and all three native outcomes; prepared asset/runbook review only. Public release authority/download observations remain required later.",
+      "evidence": [
+        {
+          "type": "other",
+          "description": "Original exact native evidence and common archive inputs",
+          "location": "https://github.com/iwizy/NexFlow/actions/runs/42045911075",
+          "revision": "979cc07dc17f56a0cd0a6f4444ff0dcc58eee55f"
+        },
+        {
+          "type": "document",
+          "description": "Unexecuted publication/public-install verification requirements",
+          "location": "release/0.5-preview-publication.md",
+          "revision": "sha256:cc6c2647b4abe48e2989aedf878f38ae5c858a79e282136d34e8968ccdf0513c"
+        }
+      ]
+    }
+  },
+  "limitations": [
+    "No separate release/promotion/publication authority has been granted; no tag/release/public download verification is claimed.",
+    "Unsigned developer external-Node route only; exact Node 26.13.0/npm 11.20.0 and three recorded targets, with no general filesystem/process sandbox.",
+    "No NF-CLI/full semantic/Core/extension/runtime conformance claim; init and execution unsupported.",
+    "Root/npm tool advisory instances retain explicit bounded dispositions; current absence of delivered matches is not a permanent vulnerability guarantee.",
+    "No independent publisher signatures, Developer ID/notarization, Authenticode or complete native/CPE/OS advisory coverage.",
+    "Best-effort single-maintainer support without fixed SLA, lifetime, backup, on-call or independent assurance.",
+    "Original historical alpha/beta preparation not-ready records and failed/rejected evaluation results remain unchanged."
+  ],
+  "blockers": []
+}

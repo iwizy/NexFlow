@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: read
+  actions: read
 
 jobs:
   readiness-evidence:
@@ -14,6 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
           fetch-depth: 0
           persist-credentials: false
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
@@ -48,3 +50,60 @@ jobs:
           const review = readFileSync('rfcs/reviews/2026-10-28-cli-preview-scope.md', 'utf8');
           assert.ok(review.includes('`' + digest + '`'), 'Preview scope changed after review');
           JS
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '26.13.0'
+      - name: Install locked review dependencies
+        run: npm ci --ignore-scripts --no-audit --no-fund --update-notifier=false
+      - name: Download selected package and security inputs
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          github-token: ${{ github.token }}
+          run-id: 42045911024
+          artifact-ids: 13423768960
+          merge-multiple: true
+          path: ${{ runner.temp }}/preview-inputs/security
+      - name: Download selected common native package inputs
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          github-token: ${{ github.token }}
+          run-id: 42045911075
+          artifact-ids: 13424786110
+          merge-multiple: true
+          path: ${{ runner.temp }}/preview-inputs/native-inputs
+      - name: Download selected Linux lifecycle inputs
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          github-token: ${{ github.token }}
+          run-id: 42045911075
+          artifact-ids: 13424078799
+          merge-multiple: true
+          path: ${{ runner.temp }}/preview-inputs/linux-amd64
+      - name: Download selected macOS lifecycle inputs
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          github-token: ${{ github.token }}
+          run-id: 42045911075
+          artifact-ids: 13423094200
+          merge-multiple: true
+          path: ${{ runner.temp }}/preview-inputs/macos-arm64
+      - name: Download selected Windows lifecycle inputs
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          github-token: ${{ github.token }}
+          run-id: 42045911075
+          artifact-ids: 13423309144
+          merge-multiple: true
+          path: ${{ runner.temp }}/preview-inputs/windows-amd64
+      - name: Verify selected evidence and prepare first-alpha review assets
+        run: >-
+          node scripts/release-preview-review.mjs
+          --inputs "$RUNNER_TEMP/preview-inputs"
+          --out "$RUNNER_TEMP/preview-review"
+      - name: Retain the actual reviewed asset packet
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: reference-preview-review-${{ github.event.pull_request.head.sha || github.sha }}
+          path: ${{ runner.temp }}/preview-review
+          if-no-files-found: error
+          retention-days: 90

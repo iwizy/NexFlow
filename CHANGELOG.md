@@ -8,6 +8,44 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Added
 
+- Prepared NF-110's first-alpha installation/quick start, native/runtime and
+  compatibility/rollback matrix, support/correction guidance, explicit absence
+  of an NF-CLI claim, and prerelease review/notes. Corrected the shipped Windows
+  install instructions while preserving code, locks and version domains;
+  selected archives were requalified on all three native targets. The existing
+  readiness record, B1–B8 review and verified asset packet are ready with notes
+  for a separate first-alpha publication decision; no release is published.
+
+- Added NF-109's native archive lifecycle workflow for Ubuntu 24.04 AMD64,
+  macOS 15 ARM64 and Windows Server 2025 AMD64 with exact external Node 26.13.0.
+  Records bind genuine predecessor/current package bytes, offline installation,
+  upgrade/refusal/rollback/uninstall, command/API checks and OS network controls.
+  Consumer verification now recognizes only the exact Windows npm YAML wrappers;
+  malformed wrappers still reject. Publisher trust and release remain separate.
+
+- Added NF-108's installed-package security regressions, separate delivered,
+  maintenance, compiler and npm-tool inventories/SBOM, dated advisory inputs
+  and narrowly scoped tooling dispositions. Fixed quadratic validation of
+  whitespace-only Project source hints without changing the frozen schemas,
+  and updated the delivered `fast-uri` closure to 3.1.9. The corrected candidate
+  remains unreleased; native lifecycle, OS containment and publisher trust are
+  separate gates.
+
+- Added NF-107's reproducible npm-compatible CLI/library candidate assembly,
+  complete bundled production closure, original legal notices, embedded schema
+  indexes, provenance/checksums and installed consumer verification. Actual
+  offline installs use separate empty caches and the real installed bin.
+  These unreleased bytes do not grant artifact security, native lifecycle,
+  signing or publication acceptance; existing locks and versions are preserved.
+
+- Implemented NF-106's separate reference CLI source entry for validate, declared
+  inspect, static graph and help/version using the NF-105 public library. Added
+  the concrete `0.5-preview.1` schema, safe text/JSON output, exit/compatibility
+  checks and actual-entry fixture/no-runtime verification. Init is explicitly
+  deferred. Existing prototypes, frozen reports, dependency locks and package
+  versions are preserved; final installable artifacts and release qualification
+  remain separate work.
+
 - Documented task pull requests into `develop` and release promotion from
   `develop` into `main`, with CI branch-routing checks and matching integration
   coverage. Existing release history is preserved.
@@ -28,6 +66,13 @@ This project follows a specification-first process. Breaking changes must includ
   remain future work; no version, lock, manifest or conformance claim changes.
 
 ### Changed
+
+- Refreshed root security, contribution, conduct-reporting and roadmap guidance
+  for the unreleased reference validation library, separate workspace adapter
+  and completed 0.4 milestone. Distinguished release tags from manifest versions,
+  retained best-effort support limits and separated conduct requests from private
+  vulnerability reporting. Updated the current-tooling threat model without
+  changing severity calibration, historical evidence or executable behavior.
 
 - Corrected the current release-plan sequence to reflect published v0.4.0 and
   identify 0.5 tooling as the next line, preserving historical blocked reviews.

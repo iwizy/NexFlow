@@ -1,0 +1,458 @@
+{
+  "task": "NF-106",
+  "baseRevision": "5ee82f536984d54997cf7e514d730dd9d8e75c2a",
+  "recordedAt": "2026-10-30T19:50:55.300Z",
+  "node": "26.13.0",
+  "npm": "11.20.0",
+  "typescript": "6.0.3",
+  "environment": {
+    "platform": "darwin",
+    "architecture": "arm64"
+  },
+  "verifierSha256": "ae663a53360d19fd512747b87dfb076bf4ff0380981d1db74b1d1d9b1ea3fadf",
+  "schemaSha256": "caa23e0ec634fb336f5861273cbb3caba505309b20b1e466e8bdc835bb0a5548",
+  "cliPayload": [
+    [
+      "arguments.d.ts",
+      "73ced3e18e28c135ad002b8f16b4c45bfb02ecc77a0e71fa064e14a1b5c8e151"
+    ],
+    [
+      "arguments.js",
+      "37f809e5c0cf7197b9adb80f642cc6a5f5f370a4625be7b2950409358705823f"
+    ],
+    [
+      "files.d.ts",
+      "51b762bccbd04942153ec7ed800411b80071520afa074130b7ff7f7823234793"
+    ],
+    [
+      "files.js",
+      "4e2acb7802e88a58cffc588fe78fd1c134955c621e82cafbd187bbb6d143e83e"
+    ],
+    [
+      "graph.d.ts",
+      "c1dfffc8d28872d2ada0763773ff16c90ccf9cbc76638eb4a42f9cbe7ac4387d"
+    ],
+    [
+      "graph.js",
+      "5b8077fabb6f3141544c3ffa551f28136fb74dd4bf7e3a2f7a14487c39482cfa"
+    ],
+    [
+      "main.d.ts",
+      "43e818adf60173644896298637f47b01d5819b17eda46eaa32d0c7d64724d012"
+    ],
+    [
+      "main.js",
+      "9ce2ba7706ee1828a4165c93c5fa359b6e17d4bcd3ba6c4552b08b90fa51edfa"
+    ],
+    [
+      "output.d.ts",
+      "6442b4b0685854f875d59ceca5bdb2f149be222b4cfee3a0bf480bdfc255dcee"
+    ],
+    [
+      "output.js",
+      "2c932e0a0cb9df1b37631bf6159628ec7c2cb7636831c0cdcf5e72e849036783"
+    ],
+    [
+      "runtime.d.ts",
+      "07ab6817014190d095b45d09ca1334cb0d5ef29d1a20aefad31932a221a1a2c4"
+    ],
+    [
+      "runtime.js",
+      "5b2221d3cbba3870d72b114967915b2a0b92825a58090fd1e93018803347b278"
+    ],
+    [
+      "workspace.d.ts",
+      "2c7bb85b330bf3656b7e9744faf17c434a5120fb7ce9a97ddb09a8bebd9d90e6"
+    ],
+    [
+      "workspace.js",
+      "15ecc4a6da59f6ff0e72e6a7c829ca2f73c057176acb71bb847c7c31c5158863"
+    ]
+  ],
+  "libraryTarballSha256": "fde69b129b40be0597b8907f87fdfe51667e3853aaf7a9aada800e6021cb0d11",
+  "grammarCases": 30,
+  "existingCatalogCases": 15,
+  "maintainedProjects": 8,
+  "observations": [
+    {
+      "name": "repeatable CLI compiled payload",
+      "result": "passed"
+    },
+    {
+      "name": "grammar: empty-invocation",
+      "result": "passed"
+    },
+    {
+      "name": "grammar: global-help",
+      "result": "passed"
+    },
+    {
+      "name": "grammar: global-help-text",
+      "result": "passed"
+    },
+    {
+      "name": "grammar: global-version",
+      "result": "passed"
+    },
+    {
+      "name": "grammar: operation-help",
+      "result": "passed"
+    },
+    {
+      "name": "grammar: graph-help",
+      "result": "passed"
+    },
+    {
+      "name": "grammar: missing-root",
+      "result": "passed"
+    },
+    {
+      "name": "grammar: empty-root",
+      "result": "passed"
+    },
+    {
+      "name": "grammar: missing-root-value",
+      "result": "passed"
+    },
+    {
+      "name": "grammar: unknown-command",
+      "result": "passed"
+    },
+    {
+      "name": "grammar: deferred-init",
+      "result": "passed"
+    },
+    {
+      "name": "grammar: prototype-discover",
+      "result": "passed"
+    },
+    {
+      "name": "grammar: unknown-option",
+      "result": "passed"
+    },
+    {
+      "name": "grammar: positional-input",
+      "result": "passed"
+    },
+    {
+      "name": "grammar: duplicate-root",
+      "result": "passed"
+    },
+    {
+      "name": "grammar: duplicate-format",
+      "result": "passed"
+    },
+    {
+      "name": "grammar: unsupported-output",
+      "result": "passed"
+    },
+    {
+      "name": "grammar: json-before-error",
+      "result": "passed"
+    },
+    {
+      "name": "grammar: source-mode-conflict",
+      "result": "passed"
+    },
+    {
+      "name": "grammar: help-with-selection",
+      "result": "passed"
+    },
+    {
+      "name": "grammar: version-with-operation",
+      "result": "passed"
+    },
+    {
+      "name": "grammar: conflicting-information",
+      "result": "passed"
+    },
+    {
+      "name": "grammar: duplicate-help",
+      "result": "passed"
+    },
+    {
+      "name": "grammar: help-rejects-value",
+      "result": "passed"
+    },
+    {
+      "name": "grammar: consumed-format-is-data",
+      "result": "passed"
+    },
+    {
+      "name": "grammar: consumed-inline-format-is-data",
+      "result": "passed"
+    },
+    {
+      "name": "grammar: empty-file",
+      "result": "passed"
+    },
+    {
+      "name": "grammar: missing-file-value",
+      "result": "passed"
+    },
+    {
+      "name": "grammar: equals-form",
+      "result": "passed"
+    },
+    {
+      "name": "grammar: unordered-explicit-files",
+      "result": "passed"
+    },
+    {
+      "name": "existing fixture: discover-directory-project",
+      "result": "passed"
+    },
+    {
+      "name": "existing fixture: discover-explicit-files",
+      "result": "passed"
+    },
+    {
+      "name": "existing fixture: validate-project-hints",
+      "result": "passed"
+    },
+    {
+      "name": "existing fixture: inspect-valid-project",
+      "result": "passed"
+    },
+    {
+      "name": "existing fixture: graph-valid-project",
+      "result": "passed"
+    },
+    {
+      "name": "existing fixture: reject-yaml-syntax",
+      "result": "passed"
+    },
+    {
+      "name": "existing fixture: reject-schema-invalid-project",
+      "result": "passed"
+    },
+    {
+      "name": "existing fixture: reject-unsupported-version",
+      "result": "passed"
+    },
+    {
+      "name": "existing fixture: reject-unsupported-kind",
+      "result": "passed"
+    },
+    {
+      "name": "existing fixture: reject-ambiguous-project-entry",
+      "result": "passed"
+    },
+    {
+      "name": "existing fixture: reject-source-outside-root",
+      "result": "passed"
+    },
+    {
+      "name": "existing fixture: reject-source-kind-mismatch",
+      "result": "passed"
+    },
+    {
+      "name": "existing fixture: init-bounded-starter",
+      "result": "passed"
+    },
+    {
+      "name": "existing fixture: reject-init-conflict",
+      "result": "passed"
+    },
+    {
+      "name": "existing fixture: reject-runtime-command",
+      "result": "passed"
+    },
+    {
+      "name": "maintained project: enterprise-team/validate",
+      "result": "passed"
+    },
+    {
+      "name": "maintained project: enterprise-team/inspect",
+      "result": "passed"
+    },
+    {
+      "name": "maintained project: enterprise-team/graph",
+      "result": "passed"
+    },
+    {
+      "name": "declared inspection parity: enterprise-team",
+      "result": "passed"
+    },
+    {
+      "name": "maintained project: minimal-team/validate",
+      "result": "passed"
+    },
+    {
+      "name": "maintained project: minimal-team/inspect",
+      "result": "passed"
+    },
+    {
+      "name": "maintained project: minimal-team/graph",
+      "result": "passed"
+    },
+    {
+      "name": "declared inspection parity: minimal-team",
+      "result": "passed"
+    },
+    {
+      "name": "maintained project: open-source-maintainer/validate",
+      "result": "passed"
+    },
+    {
+      "name": "maintained project: open-source-maintainer/inspect",
+      "result": "passed"
+    },
+    {
+      "name": "maintained project: open-source-maintainer/graph",
+      "result": "passed"
+    },
+    {
+      "name": "declared inspection parity: open-source-maintainer",
+      "result": "passed"
+    },
+    {
+      "name": "maintained project: product-delivery-team/validate",
+      "result": "passed"
+    },
+    {
+      "name": "maintained project: product-delivery-team/inspect",
+      "result": "passed"
+    },
+    {
+      "name": "maintained project: product-delivery-team/graph",
+      "result": "passed"
+    },
+    {
+      "name": "declared inspection parity: product-delivery-team",
+      "result": "passed"
+    },
+    {
+      "name": "maintained project: research-lab/validate",
+      "result": "passed"
+    },
+    {
+      "name": "maintained project: research-lab/inspect",
+      "result": "passed"
+    },
+    {
+      "name": "maintained project: research-lab/graph",
+      "result": "passed"
+    },
+    {
+      "name": "declared inspection parity: research-lab",
+      "result": "passed"
+    },
+    {
+      "name": "maintained project: software-team/validate",
+      "result": "passed"
+    },
+    {
+      "name": "maintained project: software-team/inspect",
+      "result": "passed"
+    },
+    {
+      "name": "maintained project: software-team/graph",
+      "result": "passed"
+    },
+    {
+      "name": "declared inspection parity: software-team",
+      "result": "passed"
+    },
+    {
+      "name": "maintained project: solo-developer/validate",
+      "result": "passed"
+    },
+    {
+      "name": "maintained project: solo-developer/inspect",
+      "result": "passed"
+    },
+    {
+      "name": "maintained project: solo-developer/graph",
+      "result": "passed"
+    },
+    {
+      "name": "declared inspection parity: solo-developer",
+      "result": "passed"
+    },
+    {
+      "name": "maintained project: startup-team/validate",
+      "result": "passed"
+    },
+    {
+      "name": "maintained project: startup-team/inspect",
+      "result": "passed"
+    },
+    {
+      "name": "maintained project: startup-team/graph",
+      "result": "passed"
+    },
+    {
+      "name": "declared inspection parity: startup-team",
+      "result": "passed"
+    },
+    {
+      "name": "Workflow scopes, source modes and static counts",
+      "result": "passed"
+    },
+    {
+      "name": "repeatable JSON across cwd and reordered selected files",
+      "result": "passed"
+    },
+    {
+      "name": "default text equals explicit text for every operation",
+      "result": "passed"
+    },
+    {
+      "name": "actual graph labels ambiguous, unresolved and redacted references",
+      "result": "passed"
+    },
+    {
+      "name": "unknown hints and mixed invalid/unsupported input precedence",
+      "result": "passed"
+    },
+    {
+      "name": "duplicate sources, unsafe locators and symlinked roots reject",
+      "result": "passed"
+    },
+    {
+      "name": "byte, regular-file, duplicate-key and UTF-8 boundaries reject",
+      "result": "passed"
+    },
+    {
+      "name": "projection limit fails without partial inspect or graph",
+      "result": "passed"
+    },
+    {
+      "name": "bounded sorted diagnostics preserve truncation failure",
+      "result": "passed"
+    },
+    {
+      "name": "Unicode code-point ordering precedes global diagnostic truncation",
+      "result": "passed"
+    },
+    {
+      "name": "installed package mismatch and missing dependency fail before project reads",
+      "result": "passed"
+    },
+    {
+      "name": "unsupported runtime metadata rejects before project reads",
+      "result": "passed"
+    },
+    {
+      "name": "closed schema rejects old formats, extra payload and false layer claims",
+      "result": "passed"
+    },
+    {
+      "name": "runtime import closure uses only the public library and bounded built-ins",
+      "result": "passed"
+    },
+    {
+      "name": "all maintained inputs and frozen implementations remain unchanged",
+      "result": "passed"
+    }
+  ],
+  "notTested": [
+    "final CLI tarball installation and bundled dependency closure",
+    "native three-target lifecycle",
+    "current artifact vulnerability acceptance",
+    "operating-system sandbox",
+    "release publication"
+  ],
+  "runtimeRejectionMethod": "synthetic runtime metadata fault injection, not native runtime qualification"
+}

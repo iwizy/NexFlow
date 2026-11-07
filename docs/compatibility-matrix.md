@@ -93,7 +93,7 @@ row, manifest dialect, published release or older validator claim subject.
 | Provider constraint vocabulary | Structured provider eligibility fields, migrated examples, legacy training boolean, and 17 focused cases | Implemented | `docs/provider-constraints.md`, `npm run provider-constraint-schema-smoke` | Structural and migration evidence only; no complete constraint solver, live provider facts, selection, or runtime enforcement. |
 | Provider adapter boundary | Host-owned selection and fallback, bounded request translation, mediated credentials and network, normalized results and failures, and audit explanations | Specified | `docs/provider-adapter-boundary.md`, RFC-0010 | No adapter API, provider client, live call, retry engine, fallback engine, credential broker, or provider execution conformance evidence exists. |
 | Event and audit storage boundary | Separate event, audit record, evidence, projection, receipt, store, index, and telemetry roles with redaction, ordering, retention, integrity, access, and failure rules | Specified | `docs/event-audit-storage-boundary.md`, RFC-0009 | No event-instance validator, audit store, persistence adapter, evidence store, retention engine, exporter, or runtime storage conformance evidence exists. |
-| CLI and runtime responsibility boundary | Static validation and authoring command effect budgets separated from runtime preflight, credentials, executable extensions, remote access, orchestration, and enforcement | Specified | `docs/cli-runtime-boundary.md`, RFC-0011, RFC-0005 | No `nexflow` executable, CLI package, stable output contract, runtime preflight, or `NF-CLI` conformance evidence exists. |
+| CLI and runtime responsibility boundary | Static validation and authoring command effect budgets separated from runtime preflight, credentials, executable extensions, remote access, orchestration, and enforcement | Specified | `docs/cli-runtime-boundary.md`, RFC-0011, RFC-0005 | The separate bounded preview implements an installed CLI and explicit preview output; no stable contract, runtime preflight or NF-CLI conformance is claimed. |
 | GitHub extension draft | Machine-readable `io.nexflow.github` profile, repository/revision/review authority boundaries, Software Team binding, and focused checks | Implemented | `extensions/github/`, RFC-0020, `npm run github-extension-smoke` | Policy mapping only; no GitHub client, API binding, token flow, webhook receiver, repository mutation, pull request merge, Actions execution, or live compatibility evidence. |
 | MCP extension draft | Machine-readable `io.nexflow.mcp` profile, integration review companion, two declaration fragments, ContextSet boundary, selected Software Team declarations, and 25 focused cases | Implemented | `extensions/mcp/`, RFC-0018, `docs/mcp-integration-profile.md`, `npm run mcp-extension-smoke` | Offline policy mapping and selected structural checks only; no effective-policy evaluator, MCP client, server, transport, discovery, credential, protocol negotiation, or execution support. |
 | A2A extension draft | Machine-readable `io.nexflow.a2a` profile, protocol ownership map, and 13 focused cases | Implemented | `extensions/a2a/`, RFC-0019, `docs/mcp-a2a-boundaries.md`, `npm run a2a-extension-smoke` | Policy mapping only; no A2A client, server, binding, discovery, authentication, invocation, remote task synchronization, artifact import, streaming, or callbacks. |
@@ -104,7 +104,7 @@ row, manifest dialect, published release or older validator claim subject.
 | Semantic reference inventory | P0-P3 target namespaces, coverage, gaps, and deferred fields | Specified | `docs/semantic-reference-inventory.md` | Documentation contract only; it is not a manifest, generated registry, validator, or conformance suite. |
 | Semantic reference smoke | Selected cross-manifest reference, active definition authority, and duplicate checks | Partial | `npm run semantic-smoke`, semantic reference inventory | Does not cover every inventoried field or establish full `NF-SEMANTIC` conformance, graph safety, or policy correctness. |
 | Runtime language evaluation | Four independent prototypes, current qualification, six native measurement records and revision-bound TypeScript/layout B developer decision | Partial | [Evaluation Packet](../evaluation/README.md), [Exact decision](../evaluation/architecture/revised/decision.json), [Measurements](../evaluation/measurement-qualification/README.md) | Current TypeScript/Python qualify in the amended unsigned evaluation scope; Rust/Go fail Windows confinement and remain unscored. Original failed reports, missing public signing/trust and full product semantic/CLI/runtime gaps stay visible; architecture acceptance does not grant broader support. |
-| Reference CLI | Validation-only target, command map, effect boundary, promotion gates, and blocker-bearing alpha checkpoint documented | Planned | `docs/reference-cli.md`, `docs/0.4-alpha-checkpoint.md`, RFC-0011 | No `nexflow` executable, distributed package, stable command or output contract, or `NF-CLI` implementation exists. |
+| Reference CLI | Unreleased offline-installable first alpha, explicit-root validate/inspect/static graph/help/version, fixed schemas and preview JSON | Partial | [Install/quick start](reference-cli-installation.md), [candidate review](../release/0.5-preview-review.md), [native evidence](reference-native-lifecycle.md) | Candidate-bound structural/projection scope on exact Node/targets; no full semantic/Core/extension/runtime, stable output or NF-CLI claim; publication separately authorized. |
 | Repository CLI prototype | Help, unreleased version, local discovery, structural `validate`, declared-only `inspect`, static `graph`, bounded `init`, and opt-in JSON output | Partial | `docs/cli-prototype.md`, `npm run cli-prototype-smoke`, `npm run cli-validation-smoke`, `npm run cli-init-smoke` | Disposable maintenance tooling, not a reference CLI alpha or completed architecture candidate; no full semantic validation, stable JSON envelope, package, or conformance claim. |
 | Prototype JSON diagnostics | Experimental `formatVersion: "0.4-draft"` envelope and separate output schema | Implemented | `docs/cli-diagnostics.md`, `scripts/contracts/cli-output.schema.json`, `npm run cli-diagnostics-smoke` | Versioned repository output, not stable catalog or public CLI conformance; no semantic diagnostics, SARIF, automatic fixes, or runtime authority. |
 | Prototype declared inspection | Schema-first Project summary, declaration occurrences, and selected unresolved references across all 17 kinds | Implemented | `docs/cli-inspection.md`, `npm run cli-inspection-smoke` | Bounded, allowlisted projection only; no complete reference inventory, effective configuration, Agent Assembly resolver, or execution authority. |
@@ -117,7 +117,7 @@ row, manifest dialect, published release or older validator claim subject.
 
 | Manifest `specVersion` | Schema snapshot | Reference examples | Repository validator | Reference CLI | Runtime | Extensions | Repository support |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| `0.1` | Current 17-kind draft schema set | 8 maintained project sets | Schema validation implemented; semantic references partial | Not implemented | Not implemented | Declaration shape implemented; behavior not implemented | Current supported authoring and repository validation target |
+| `0.1` | Current 17-kind draft schema set | 8 maintained project sets | Schema validation implemented; semantic references partial | Unreleased bounded preview, exact candidate/runtime/targets | Not implemented | Declaration shape implemented; behavior not implemented | Current supported authoring and repository validation target |
 | Any other `0.x` | No published schema mapping | None | Must report unsupported version | Not implemented | Not implemented | Unsupported | Unsupported |
 | `1.0` | Not published | None | Must report unsupported version | Planned only | Planned only | Planned only | Future target, not currently supported |
 
@@ -479,7 +479,9 @@ No reference CLI is implemented.
 The [0.4 Alpha Preparation Checkpoint](0.4-alpha-checkpoint.md) records the
 its dated release decision as `not-ready`. RFC-0025's developer architecture
 selection does not change the
-`Planned` reference CLI or `Partial` prototype support levels below.
+separate implemented first-alpha slice or the `Partial` prototype below. The
+[preview pairing](reference-cli-compatibility.md) is bounded and unreleased;
+historical preparation outcomes are not relabeled.
 
 The [repository CLI prototype](cli-prototype.md) is an unreleased command
 tool with discovery, structural validation, declared inspection, static graph,
@@ -534,8 +536,10 @@ A future CLI release should publish:
 - extension-awareness limits
 - explicitly unsupported runtime behavior
 
-Until that information exists, there is no supported CLI/spec compatibility
-pairing.
+The current first-alpha [pairing](reference-cli-compatibility.md) supplies those
+version/coverage/limit declarations for exact candidate bytes, with
+[no NF-CLI claim](../conformance/REFERENCE-CLI-PREVIEW-NON-CLAIM.md). It does not
+make the broader RFC-0011 or historical prototype a conformant implementation.
 
 ## Runtime Compatibility
 
@@ -641,7 +645,7 @@ A future `NF-EXTENSION` compatibility claim should publish:
 | Mixed manifest versions in one project | Unsupported today | No migration runtime or mixed-version contract exists. |
 | Schema-valid manifest + claimed full semantic correctness | Unsupported claim | JSON Schema cannot prove cross-manifest meaning. |
 | Semantic-smoke pass + claimed runtime safety | Unsupported claim | Smoke validation does not enforce behavior. |
-| Current manifest + `nexflow` CLI | Unsupported | No reference CLI exists. |
+| Current manifest + selected reference preview | Partial | Explicit-root structural checks and declared projections only, on exact qualified Node/target/archive bytes; no full semantic or NF-CLI claim. |
 | Current manifest + NexFlow runtime | Unsupported | No runtime exists. |
 | Declared extension + claimed live integration | Unsupported claim | Declaration is not implementation or authorization. |
 | Unknown extension + additional access | Non-conforming | Unknown metadata cannot grant authority. |

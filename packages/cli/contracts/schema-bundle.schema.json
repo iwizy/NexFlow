@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Embedded NexFlow schema inventory, not an independent schema release",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["bundleFormatVersion", "kind", "artifactVersion", "specVersion", "jsonSchemaDialect", "source", "schemas"],
+  "properties": {
+    "bundleFormatVersion": {"const": "0.1"},
+    "kind": {"const": "NexFlowSchemaBundle"},
+    "artifactVersion": {"const": "0.5.0-alpha.1"},
+    "specVersion": {"const": "0.1"},
+    "jsonSchemaDialect": {"const": "https://json-schema.org/draft/2020-12/schema"},
+    "source": {
+      "type": "object", "additionalProperties": false, "required": ["repository", "revision"],
+      "properties": {"repository": {"const": "https://github.com/iwizy/NexFlow"}, "revision": {"type": "string", "pattern": "^[a-f0-9]{40}$"}}
+    },
+    "schemas": {
+      "type": "array", "minItems": 18, "maxItems": 18,
+      "items": {
+        "type": "object", "additionalProperties": false, "required": ["path", "id", "role", "sha256"],
+        "properties": {
+          "path": {"type": "string", "pattern": "^(schemas/0[.]1/|dist/schemas/)[a-z-]+[.]schema[.]json$"},
+          "id": {"type": "string", "pattern": "^https://nexflow[.]dev/schemas/[a-z-]+[.]schema[.]json$"},
+          "role": {"enum": ["definitions", "manifest"]},
+          "manifestKind": {"type": "string", "pattern": "^[A-Z][A-Za-z]+$"},
+          "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+        },
+        "allOf": [{"if": {"properties": {"role": {"const": "manifest"}}}, "then": {"required": ["manifestKind"]}, "else": {"not": {"required": ["manifestKind"]}}}]
+      }
+    }
+  }
+}

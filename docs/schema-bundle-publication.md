@@ -15,6 +15,12 @@ certificate. Manifest bundling remains a separate proposal in
 
 ## Current Status
 
+NF-107 implements the [embedded package subset](reference-package-candidate.md#embedded-schema-contract)
+of this contract: closed indexes, exact schema digests, local refs and consumer
+verification inside unreleased CLI/library candidates. Its two embedded layouts
+are not the independent archive product described below. The following
+publication limitations remain for that separate product.
+
 The repository currently publishes schema source files under [`schemas/`](../schemas/)
 and identifies reproducible snapshots by repository tag or commit. It does not
 currently provide:
@@ -165,9 +171,10 @@ The proposed initial index shape is:
 }
 ```
 
-This example defines the publication contract; no index schema or generated
-index is implemented yet. Before the first bundle is released, the index shape
-must receive its own JSON Schema and fixture coverage.
+This example defines the standalone publication contract. NF-107 supplies a
+[closed embedded index schema](../packages/cli/contracts/schema-bundle.schema.json)
+and verification for its containing packages. A standalone bundle must still
+qualify its own archive layout, version choice, fixtures and publication.
 
 ### Required Index Rules
 

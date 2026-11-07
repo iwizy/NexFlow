@@ -1,0 +1,43 @@
+name: Reference Package Candidate
+on:
+  pull_request:
+  push:
+    branches: [main, develop]
+permissions:
+  contents: read
+jobs:
+  packages:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '26.13.0'
+          cache: npm
+          cache-dependency-path: packages/validation/package-lock.json
+      - name: Provision existing locked build tools without scripts
+        run: |
+          npm ci --ignore-scripts --no-audit --no-fund --update-notifier=false --proxy=false --https-proxy=false --registry=https://registry.npmjs.org/
+          npm ci --prefix packages/validation --ignore-scripts --no-audit --no-fund --update-notifier=false --proxy=false --https-proxy=false --registry=https://registry.npmjs.org/
+      - name: Build exact candidate and verify real offline installs
+        run: node scripts/reference-packages-smoke.mjs --out "$RUNNER_TEMP/nf-107-candidate" --report "$RUNNER_TEMP/nf-107-qualification.json"
+      - name: Requalify installed security boundaries and collect current dependency evidence
+        run: |
+          node scripts/reference-security-smoke.mjs --candidate "$RUNNER_TEMP/nf-107-candidate" --report "$RUNNER_TEMP/nf-108-boundaries.json"
+          node scripts/reference-security-collect.mjs --candidate "$RUNNER_TEMP/nf-107-candidate" --out "$RUNNER_TEMP/nf-108-supply-chain"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: reference-package-candidate-${{ github.event.pull_request.head.sha || github.sha }}
+          path: |
+            ${{ runner.temp }}/nf-107-candidate/
+            ${{ runner.temp }}/nf-107-qualification.json
+            ${{ runner.temp }}/nf-108-boundaries.json
+            ${{ runner.temp }}/nf-108-supply-chain/
+          if-no-files-found: error
+          retention-days: 90

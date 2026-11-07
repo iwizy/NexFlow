@@ -22,7 +22,14 @@ NexFlow aims to be a practical, respectful, and technically serious open-source 
 
 Maintainers may moderate discussions, close issues, request edits, or restrict participation when behavior harms the project.
 
-Reports can be sent through the contact path in [SECURITY.md](SECURITY.md) when privacy is needed.
+For a non-sensitive moderation request, identify the relevant public issue or
+discussion without repeating private information. A dedicated confidential
+conduct-reporting contact is not currently published; do not post sensitive
+complaints or personal information in public issues.
+
+Security advisories are for vulnerability reports under [SECURITY.md](SECURITY.md),
+not a general conduct-reporting inbox. If a report also describes a security
+vulnerability, keep those details in the private security reporting path.
 
 ## Maintainer Standard
 

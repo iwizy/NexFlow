@@ -4,7 +4,9 @@ NF-105 implements the separate TypeScript validation package and read-only
 workspace adapter required by the [0.5 CLI contract](0.5-cli-contract.md).
 The [library API/build instructions](../packages/validation/README.md) and
 [adapter boundary](../packages/cli/README.md) describe actual source behavior.
-Neither package is published, and there is no executable reference CLI yet.
+Neither package is published. NF-106 adds a separate
+[executable source preview](reference-cli-preview.md); final CLI installation
+and release remain subsequent work.
 
 ## Extraction And Evidence
 
@@ -25,7 +27,8 @@ handling. It is not a drop-in ABI for the experimental `evaluateLibraryCase`,
 Raw schema diagnostic normalization is retained internally for comparison;
 preview-facing required-field locations use the sanitized field pointer and
 unknown kind values are not echoed. The executable CLI envelope/exit contract
-will be implemented separately in NF-106.
+is implemented separately by [NF-106](reference-cli-preview.md), without
+changing this library's frozen qualification record or source API.
 
 The focused [qualification record](../evaluation/reference-validation/nf-105.json)
 binds schema/catalog/corpus hashes, complete 352-case observations, safe public
@@ -50,9 +53,10 @@ not claim all seven catalog operations are a public product API.
 
 Local macOS results are supplemental library/build evidence. Linux CI verifies
 its exact library workload; neither substitutes for the three-target native
-CLI lifecycle in NF-109. CLI commands, complete semantic/Core/extension claims,
-OS containment, current public-artifact supply-chain/security acceptance,
-signing/notarization and release readiness remain not-tested here.
+CLI lifecycle in NF-109. The NF-105 record did not test CLI commands; NF-106 has
+separate source-command evidence. Complete semantic/Core/extension claims, OS
+containment, current public-artifact supply-chain/security acceptance,
+signing/notarization and release readiness remain outside this library record.
 
 The pinned dependencies are not upgraded or newly declared vulnerability-free.
 NF-108 must assess the actual new graph and distribution route, including prior

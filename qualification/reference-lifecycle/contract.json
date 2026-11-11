@@ -1,7 +1,7 @@
 {
   "task": "NF-109",
   "scope": "Unsigned external-Node validation-only developer preview; no product publication",
-  "node": "26.13.0",
+  "node": "26.13.1",
   "npm": "11.20.0",
   "targets": [
     {"id":"linux/amd64","platform":"linux","architecture":"x64","runner":"ubuntu-24.04","osMajor":"24.04"},
@@ -9,6 +9,8 @@
     {"id":"windows/amd64","platform":"win32","architecture":"x64","runner":"windows-2025","osMajor":"2025"}
   ],
   "predecessor": {
+    "node": "26.13.0",
+    "npm": "11.20.0",
     "sourceRevision": "54facf50320168e099f2909f0e9ae65ae46fb6b3",
     "runId": 41430738122,
     "artifactId": 13134506057,

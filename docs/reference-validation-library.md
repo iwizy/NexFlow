@@ -38,7 +38,7 @@ same verification on its own exact checkout, rather than reusing a local pass.
 
 ## Verification Scope
 
-`node scripts/reference-validation-smoke.mjs` requires the selected Node 26.13.0 and npm
+`node scripts/reference-validation-smoke.mjs` requires the selected Node 26.13.1 and npm
 11.20.0. It builds twice, compares complete output inventories and packed bytes,
 then relocates/extracts the library outside the source tree. It checks actual
 entry exports, declarations, all maintained example manifests, unchanged inputs,

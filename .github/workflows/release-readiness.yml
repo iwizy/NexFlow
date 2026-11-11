@@ -52,7 +52,7 @@ jobs:
           JS
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
-          node-version: '26.13.0'
+          node-version: '26.13.1'
       - name: Install locked review dependencies
         run: npm ci --ignore-scripts --no-audit --no-fund --update-notifier=false
       - name: Download selected package and security inputs

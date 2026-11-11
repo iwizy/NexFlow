@@ -32,7 +32,7 @@ export async function evaluate(argv: readonly string[]): Promise<{ format: Argum
     const metadata = JSON.parse(readFileSync(new URL("../package.json",import.meta.url),"utf8"));
     if (metadata.name !== identity.name || typeof metadata.version !== "string" || !/^\d+\.\d+\.\d+(?:-[a-z0-9.-]+)?$/u.test(metadata.version)) throw new Error();
     value.tool = { name: identity.name, version: metadata.version };
-    if (metadata.version !== identity.version || process.versions.node !== "26.13.0") throw new Error();
+    if (metadata.version !== identity.version || process.versions.node !== "26.13.1") throw new Error();
     if (args.command === "help" || args.command === "version") {
       return { format: args.format, value: { ...value, success: true, exitCode: 0, result: args.command === "help"
         ? { topic: "help", subject: args.subject, usage: [...usage], commands: ["validate","inspect","graph"], unsupportedCommands: ["init","discover","run"], notice }

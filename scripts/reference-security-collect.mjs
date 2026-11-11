@@ -19,7 +19,7 @@ const digest=value=>sha256(Buffer.from(JSON.stringify(canonical(value))));
 const provenance=read(path.join(candidate,"PROVENANCE.json"));
 assert.equal(execFileSync("git",["status","--porcelain","--untracked-files=normal"],{cwd:repository,encoding:"utf8"}).trim(),"","Collect from a clean exact revision");
 assert.equal(provenance.sourceRevision,execFileSync("git",["rev-parse","HEAD"],{cwd:repository,encoding:"utf8"}).trim());
-assert.equal(process.versions.node,"26.13.0");
+assert.equal(process.versions.node,"26.13.1");
 assert.equal(execFileSync(process.execPath,[npm,"--version"],{encoding:"utf8"}).trim(),"11.20.0");
 const scratch=mkdtempSync(path.join(tmpdir(),"nexflow-inventory-"));
 const graphs=[];
@@ -150,7 +150,7 @@ try {
     distribution:"external prerequisite, not redistributed in the candidate",upstreamIndex:"https://nodejs.org/dist/index.json",
     publisherSignature:"not independently verified",nativeCpeScan:"not-tested; npm OSV is not a complete native/OS vulnerability assessment"};
   const index=await request(runtime.upstreamIndex),line=index.filter(r=>r.version.startsWith("v26."));
-  const selected=line.find(r=>r.version==="v26.13.0");assert.ok(selected);
+  const selected=line.find(r=>r.version==="v26.13.1");assert.ok(selected);
   const security=line.find(r=>r.security);assert.ok(security);
   runtime.releaseReview={selected,latestLineSecurityRelease:security,review:"Selected release must not predate the latest known security release in this major line"};
   if(selected.date<security.date)unresolved.push({graph:"external-node-runtime",disposition:"newer-security-release-requires-review",release:security});

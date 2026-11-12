@@ -15,7 +15,7 @@ const environment = { platform: platform(), architecture: arch(), kernelRelease:
     : platform() === "linux" ? readFileSync("/etc/os-release","utf8").match(/^VERSION_ID="?([^"\n]+)"?$/m)?.[1] ?? "unknown" : release() };
 const npm = process.env.npm_execpath || fileURLToPath(new URL("../lib/node_modules/npm/bin/npm-cli.js", pathToFileURL(process.execPath)));
 const run = (args, cwd) => execFileSync(process.execPath, args, { cwd, encoding: "utf8", stdio: ["ignore", "pipe", "pipe"] });
-assert.equal(process.versions.node, "26.13.0", "Use the selected qualification runtime.");
+assert.equal(process.versions.node, "26.13.1", "Use the selected qualification runtime.");
 assert.equal(JSON.parse(readFileSync(path.join(library, "package.json"))).engines.npm, run([npm, "--version"], root).trim());
 assert.deepEqual(verifyCorpus(), []);
 const catalogBytes = readFileSync(path.join(root, "evaluation/library-cases.json"));

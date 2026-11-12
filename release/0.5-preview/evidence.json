@@ -2,10 +2,10 @@
   "recordVersion": 1,
   "task": "NF-110",
   "scope": "Pre-publication technical readiness for the NF-104 first alpha; not beta readiness or publication approval",
-  "sourceRevision": "979cc07dc17f56a0cd0a6f4444ff0dcc58eee55f",
+  "sourceRevision": "89292102783454140671d706c234f8e6d17a337c",
   "maintainer": "Alexander Agafonov",
   "decisionMode": "separate-delegated-technical-release-readiness-decision",
-  "authority": "Explicit NF-110 instruction on 2026-11-05 under the existing single-maintainer technical delegation; no personal signature, independent review or publication instruction inferred.",
+  "authority": "Delegated NF-110 technical readiness refresh after the November Node.js bulletin. Tagging, release promotion and publication require separate maintainer authority.",
   "personalReviewClaimed": false,
   "independenceClaimed": false,
   "publication": {
@@ -23,13 +23,13 @@
   "governancePins": [
     {
       "path": "docs/0.5-cli-contract.md",
-      "revision": "7b94c61ca8ec825b18d97faeb5926296afebe250",
-      "sha256": "bcefbde5dc7ac1e539f44a47424f8b602fa38f3fa3b6b371791b5dfdec9cd338"
+      "revision": "89292102783454140671d706c234f8e6d17a337c",
+      "sha256": "843604815ff3af949868231b915126fb59d86c7b4f48dea08e6fae5a2418f062"
     },
     {
       "path": "rfcs/reviews/2026-10-28-cli-preview-scope.md",
-      "revision": "7b94c61ca8ec825b18d97faeb5926296afebe250",
-      "sha256": "dfbabdbf889fb030264814b8621761eda88303b85d1ecc1ab30e35f9543f731b"
+      "revision": "89292102783454140671d706c234f8e6d17a337c",
+      "sha256": "c28f21415b4d09a0c3bf2bf590c1762c471c6d1f7524235377ea1e729e72e62a"
     },
     {
       "path": "rfcs/RFC-0025-reference-implementation-architecture.md",
@@ -82,7 +82,7 @@
       "id": "B6",
       "status": "ready",
       "scope": "pre-publication technical readiness",
-      "basis": "68 source checks, ten exact-source workflows and repeatable actual archive builds; review-material CI separately required before integration."
+      "basis": "68 source checks and nine successful qualification workflows on the selected package revision. Release Readiness Evidence verifies the assembled packet on the review revision."
     },
     {
       "id": "B7",
@@ -102,86 +102,86 @@
       "name": "@nexflow/validation",
       "version": "0.5.0-alpha.1",
       "file": "nexflow-validation-0.5.0-alpha.1.tgz",
-      "sha256": "41d4d44fae91a42b3434138f102985972f7b6b771360d8166a0057e20060d5c0",
-      "bytes": 356741,
+      "sha256": "07e3966c54bf3c15345811396b84f47677cdfeed99fef4e357676eb306d9f1e1",
+      "bytes": 356737,
       "schemaIndex": "nexflow-validation-0.5.0-alpha.1.schemas.json",
-      "schemaIndexSha256": "13a5e1171de0ffe07c5e9185c64a5c5381cc8150567be11e797634cd5a13cdd5",
+      "schemaIndexSha256": "48e16e4d7b4d8859193e740342cf3305b890064b2e03eb8fce259ee0db378bf8",
       "files": 577,
-      "inventorySha256": "1011d2b11fb64c6f9c2a04d208a89c89741339ec325db7c1ea805c726ffb6052"
+      "inventorySha256": "844f4bdef89d371d681ede1cb36ffe765998a5260ffedd6dfb7bba2af7b3d1ea"
     },
     {
       "name": "@nexflow/cli",
       "version": "0.5.0-alpha.1",
       "file": "nexflow-cli-0.5.0-alpha.1.tgz",
-      "sha256": "41ba4f5c9221a09527e5c659a7f4e09ae0963db4c7a3563b6f4cb20cbc1cc927",
-      "bytes": 400662,
+      "sha256": "82644c14ac1f7f7d28e7bee8938f11899299dbabf75694c7ba9f0c6e405deb09",
+      "bytes": 400691,
       "schemaIndex": "nexflow-cli-0.5.0-alpha.1.schemas.json",
-      "schemaIndexSha256": "6bc9eeffc217e7d26f3ba279e16c908dc4cc70ba5fd5d67b56ac3695f01e98f6",
+      "schemaIndexSha256": "c3d12c74796d40a282a6e1d3853786a6876c66ff5f3deb47cba169916beb71f8",
       "files": 619,
-      "inventorySha256": "3dae0bb0561b0d694d73137c8c120a8a0d44758fe73874257922d3d0506ecab0"
+      "inventorySha256": "d41bdba67a07dcbe27282973ee3027d3a1804391ceb4ca4b12da9fb2d5b4fadc"
     }
   ],
   "inputs": [
     {
       "label": "security",
-      "runId": 42045911024,
-      "artifactId": 13423768960,
-      "zipSha256": "028c3c99cca1c14c1a7179866d6713948963a4d89d8c81da4618b3170c174b91",
+      "runId": 43100334894,
+      "artifactId": 13891820738,
+      "zipSha256": "e28cfaf11c4abb66de37f0b0050bbadf93b1b7c0b823480634702e39070139d0",
       "files": [
         {
           "path": "nf-107-candidate/PROVENANCE.json",
           "bytes": 3480,
-          "sha256": "ae2f2d52f15d91f1a8e07a7237a18d16989f4a36c5eff80b4f91353186e4cc13"
+          "sha256": "413d4ca02ee5babbd0d9ba5e542358f931df9de79d1676e5bcbe36672589bb9c"
         },
         {
           "path": "nf-107-candidate/SHA256SUMS",
           "bytes": 498,
-          "sha256": "e6036512dd364f5be12362b086637161a22300b5b623f75cc73b813031e96c27"
+          "sha256": "ae42cd3928994246131e4ae58ab64b373a59d4f1406bc134a5464231f30a11b7"
         },
         {
           "path": "nf-107-candidate/nexflow-cli-0.5.0-alpha.1.schemas.json",
           "bytes": 5276,
-          "sha256": "6bc9eeffc217e7d26f3ba279e16c908dc4cc70ba5fd5d67b56ac3695f01e98f6"
+          "sha256": "c3d12c74796d40a282a6e1d3853786a6876c66ff5f3deb47cba169916beb71f8"
         },
         {
           "path": "nf-107-candidate/nexflow-cli-0.5.0-alpha.1.tgz",
-          "bytes": 400662,
-          "sha256": "41ba4f5c9221a09527e5c659a7f4e09ae0963db4c7a3563b6f4cb20cbc1cc927"
+          "bytes": 400691,
+          "sha256": "82644c14ac1f7f7d28e7bee8938f11899299dbabf75694c7ba9f0c6e405deb09"
         },
         {
           "path": "nf-107-candidate/nexflow-validation-0.5.0-alpha.1.schemas.json",
           "bytes": 5294,
-          "sha256": "13a5e1171de0ffe07c5e9185c64a5c5381cc8150567be11e797634cd5a13cdd5"
+          "sha256": "48e16e4d7b4d8859193e740342cf3305b890064b2e03eb8fce259ee0db378bf8"
         },
         {
           "path": "nf-107-candidate/nexflow-validation-0.5.0-alpha.1.tgz",
-          "bytes": 356741,
-          "sha256": "41d4d44fae91a42b3434138f102985972f7b6b771360d8166a0057e20060d5c0"
+          "bytes": 356737,
+          "sha256": "07e3966c54bf3c15345811396b84f47677cdfeed99fef4e357676eb306d9f1e1"
         },
         {
           "path": "nf-107-qualification.json",
           "bytes": 7426,
-          "sha256": "e0a7f6734b2a6f593a302e8cd2375dabd9b29978454d13a684103841a7bc13de"
+          "sha256": "6c9d6bef60be110d5ec220e38777136ab5504dfc2397d4b00a61a8b63b4e7996"
         },
         {
           "path": "nf-108-boundaries.json",
           "bytes": 4601,
-          "sha256": "69d5d5b69eb8036f0607c5c7e68752265d0eec1777214189e50eb4b66e70e4b3"
+          "sha256": "2b9b33e4a2d341ba3960bb0e27ac0e076d849316bd5e1826016ce29dbe1e2e92"
         },
         {
           "path": "nf-108-supply-chain/SHA256SUMS",
           "bytes": 596,
-          "sha256": "94c6e15f540b38e8a3a9f1eff7702ee6c155b44e7a3b00fe63c6ce5594304111"
+          "sha256": "e75d178caea95410092392908a9b47a60e94775114ccfded22bc54c82773cae6"
         },
         {
           "path": "nf-108-supply-chain/advisories.json",
           "bytes": 145198,
-          "sha256": "7af5fdccb007c1e6300bb1bdaa704a447eb87601242e18a79d66bf0c430cf493"
+          "sha256": "89ef8789d21d0ce72b8e5a0d45d14d6e4ca03f6c668df5cf76f5dfba64178271"
         },
         {
           "path": "nf-108-supply-chain/dependency-inventory.json",
-          "bytes": 1209483,
-          "sha256": "60649d6f6380a438ce8d21af719e00dc08849cf4fe5cc68448e969c539abb061"
+          "bytes": 1209380,
+          "sha256": "478945abc3dabf2e27ce7f327e5cf36642a7a13dc754330b9ac17fa56fc83a1c"
         },
         {
           "path": "nf-108-supply-chain/node-license.txt",
@@ -190,74 +190,36 @@
         },
         {
           "path": "nf-108-supply-chain/node-release-input.json",
-          "bytes": 550179,
-          "sha256": "2014e8b3fc46fe5b85c199d2ad8554c0c7bc33be13f9a048b3ece126436edda4"
+          "bytes": 552176,
+          "sha256": "766d6d269e14d60d58507a230c992ccbb24dbcbdd9cd88a5524ce12af4e72d82"
         },
         {
           "path": "nf-108-supply-chain/osv-inputs.json",
           "bytes": 30115,
-          "sha256": "5974f70c0965f6e6b8245803c6fecc3916aabc98ac65062c77105df9271f6f2f"
+          "sha256": "271d8e451b7602bed5e27c532b7723a1966f9cc2882376823b9751d2cf150426"
         },
         {
           "path": "nf-108-supply-chain/sbom.cdx.json",
           "bytes": 119781,
-          "sha256": "38e4182bb3fd2213df0a5f609e560bfe072b0ce0d97bfd8d1b5bb3f629865778"
+          "sha256": "e58bd672969897354490e030f09661a6d60bf1ffc4ebe0b4b99fbd478c33c0b8"
         },
         {
           "path": "nf-108-supply-chain/security-report.json",
           "bytes": 21110,
-          "sha256": "cbef4fecdefe57b25c727826790b87e45e58fd8a70b10d784e3d484885e69d4f"
+          "sha256": "729b362e1a886e558204c32941d79580a262a4fd1c29d65532853933638b9e65"
         }
       ]
     },
     {
-      "label": "native-inputs",
-      "runId": 42045911075,
-      "artifactId": 13424786110,
-      "zipSha256": "f923701dd3330a0245e5286d731f05fdc5007d4622af75fdafb79bc20da9253a",
-      "files": [
-        {
-          "path": "PROVENANCE.json",
-          "bytes": 3480,
-          "sha256": "ae2f2d52f15d91f1a8e07a7237a18d16989f4a36c5eff80b4f91353186e4cc13"
-        },
-        {
-          "path": "SHA256SUMS",
-          "bytes": 498,
-          "sha256": "e6036512dd364f5be12362b086637161a22300b5b623f75cc73b813031e96c27"
-        },
-        {
-          "path": "nexflow-cli-0.5.0-alpha.1.schemas.json",
-          "bytes": 5276,
-          "sha256": "6bc9eeffc217e7d26f3ba279e16c908dc4cc70ba5fd5d67b56ac3695f01e98f6"
-        },
-        {
-          "path": "nexflow-cli-0.5.0-alpha.1.tgz",
-          "bytes": 400662,
-          "sha256": "41ba4f5c9221a09527e5c659a7f4e09ae0963db4c7a3563b6f4cb20cbc1cc927"
-        },
-        {
-          "path": "nexflow-validation-0.5.0-alpha.1.schemas.json",
-          "bytes": 5294,
-          "sha256": "13a5e1171de0ffe07c5e9185c64a5c5381cc8150567be11e797634cd5a13cdd5"
-        },
-        {
-          "path": "nexflow-validation-0.5.0-alpha.1.tgz",
-          "bytes": 356741,
-          "sha256": "41d4d44fae91a42b3434138f102985972f7b6b771360d8166a0057e20060d5c0"
-        }
-      ]
-    },
-    {
-      "label": "linux-amd64",
-      "runId": 42045911075,
-      "artifactId": 13424078799,
-      "zipSha256": "04b3f3c4f7490151d7994a03156ecc98da70765175b4ff43194147bde9a309f5",
+      "label": "macos-arm64",
+      "runId": 43100335038,
+      "artifactId": 13892690742,
+      "zipSha256": "cc9af5c58ab84c48a5e2f35e8dcd378da4b3dc2128dde52e4b7ec06e3a10f98d",
       "files": [
         {
           "path": "lifecycle.json",
-          "bytes": 180719,
-          "sha256": "b6094cb02c531fb911d8d52a5700bc41b4ae0d955b1f15beea31592b3c5663b4"
+          "bytes": 181750,
+          "sha256": "e0457632f7d0597266a2e468aa0dafb9df9b00675b883a6983d707418eee07ff"
         },
         {
           "path": "node-LICENSE.txt",
@@ -267,20 +229,30 @@
         {
           "path": "node-SHASUMS256.txt",
           "bytes": 3171,
+          "sha256": "41f4c8ff7c0634558469d6f6c8744cecf417d3fd0aed5c57b3c2c571335a62dc"
+        },
+        {
+          "path": "predecessor-node-LICENSE.txt",
+          "bytes": 156386,
+          "sha256": "8e603aa87c70d36e497004f0dec63111511cb61b7d65ace12e10ea791599286c"
+        },
+        {
+          "path": "predecessor-node-SHASUMS256.txt",
+          "bytes": 3171,
           "sha256": "9b0d4aa4d20a4f1afaf2cdcf99175ad90d1856d24c7d31dc46f72369b73e2d35"
         }
       ]
     },
     {
       "label": "windows-amd64",
-      "runId": 42045911075,
-      "artifactId": 13423309144,
-      "zipSha256": "8c5552a69c64eacdbf14de4359809d795ef0f7c14c954cbfb462ddd23c876080",
+      "runId": 43100335038,
+      "artifactId": 13892505909,
+      "zipSha256": "5ca8752c89ab571e9cced8df2e6e0c878e9aa12aee30646146b258bf5485516c",
       "files": [
         {
           "path": "lifecycle.json",
-          "bytes": 180647,
-          "sha256": "a71da3b19610d7f7c1d939b80d9862d4f9bd31f1887c498a89fb11de1b28e5b5"
+          "bytes": 182142,
+          "sha256": "f098025a2fe16a177a9139a047b0bc41da27c89a98f4765a4f6866fbfe47f2fc"
         },
         {
           "path": "node-LICENSE.txt",
@@ -290,20 +262,30 @@
         {
           "path": "node-SHASUMS256.txt",
           "bytes": 3171,
+          "sha256": "41f4c8ff7c0634558469d6f6c8744cecf417d3fd0aed5c57b3c2c571335a62dc"
+        },
+        {
+          "path": "predecessor-node-LICENSE.txt",
+          "bytes": 159309,
+          "sha256": "cbc91dba25c546898544155e1c0fce897f00e3f1df0afc795b8da891d38f92d9"
+        },
+        {
+          "path": "predecessor-node-SHASUMS256.txt",
+          "bytes": 3171,
           "sha256": "9b0d4aa4d20a4f1afaf2cdcf99175ad90d1856d24c7d31dc46f72369b73e2d35"
         }
       ]
     },
     {
-      "label": "macos-arm64",
-      "runId": 42045911075,
-      "artifactId": 13423094200,
-      "zipSha256": "09a22cc2334ba5f6e038397042b792dadd1c857c36d269d716019888f155926e",
+      "label": "linux-amd64",
+      "runId": 43100335038,
+      "artifactId": 13891930598,
+      "zipSha256": "cca0423464c37900d54ba2d141ed94c85a3869648dc6002864b9ab199105c283",
       "files": [
         {
           "path": "lifecycle.json",
-          "bytes": 180252,
-          "sha256": "fb55c0dccb438ba71b872b9429b2dd80a8b953b2198e6a73134c8f9cc8cb7a26"
+          "bytes": 182214,
+          "sha256": "89885d3321e479093d50d83e68fabc2c25828921b9b553b014822b3eaa5c6aa5"
         },
         {
           "path": "node-LICENSE.txt",
@@ -313,248 +295,290 @@
         {
           "path": "node-SHASUMS256.txt",
           "bytes": 3171,
+          "sha256": "41f4c8ff7c0634558469d6f6c8744cecf417d3fd0aed5c57b3c2c571335a62dc"
+        },
+        {
+          "path": "predecessor-node-LICENSE.txt",
+          "bytes": 156386,
+          "sha256": "8e603aa87c70d36e497004f0dec63111511cb61b7d65ace12e10ea791599286c"
+        },
+        {
+          "path": "predecessor-node-SHASUMS256.txt",
+          "bytes": 3171,
           "sha256": "9b0d4aa4d20a4f1afaf2cdcf99175ad90d1856d24c7d31dc46f72369b73e2d35"
+        }
+      ]
+    },
+    {
+      "label": "native-inputs",
+      "runId": 43100335038,
+      "artifactId": 13890608237,
+      "zipSha256": "857f6cb585d83b2ff9ec48d5d32c9cae28e8c2abd2efce3f1b33f1a217fb0394",
+      "files": [
+        {
+          "path": "PROVENANCE.json",
+          "bytes": 3480,
+          "sha256": "413d4ca02ee5babbd0d9ba5e542358f931df9de79d1676e5bcbe36672589bb9c"
+        },
+        {
+          "path": "SHA256SUMS",
+          "bytes": 498,
+          "sha256": "ae42cd3928994246131e4ae58ab64b373a59d4f1406bc134a5464231f30a11b7"
+        },
+        {
+          "path": "nexflow-cli-0.5.0-alpha.1.schemas.json",
+          "bytes": 5276,
+          "sha256": "c3d12c74796d40a282a6e1d3853786a6876c66ff5f3deb47cba169916beb71f8"
+        },
+        {
+          "path": "nexflow-cli-0.5.0-alpha.1.tgz",
+          "bytes": 400691,
+          "sha256": "82644c14ac1f7f7d28e7bee8938f11899299dbabf75694c7ba9f0c6e405deb09"
+        },
+        {
+          "path": "nexflow-validation-0.5.0-alpha.1.schemas.json",
+          "bytes": 5294,
+          "sha256": "48e16e4d7b4d8859193e740342cf3305b890064b2e03eb8fce259ee0db378bf8"
+        },
+        {
+          "path": "nexflow-validation-0.5.0-alpha.1.tgz",
+          "bytes": 356737,
+          "sha256": "07e3966c54bf3c15345811396b84f47677cdfeed99fef4e357676eb306d9f1e1"
         }
       ]
     }
   ],
   "candidateCi": [
     {
-      "id": 42045910832,
-      "name": "Branch Flow",
-      "status": "completed",
-      "conclusion": "success"
-    },
-    {
-      "id": 42045912029,
-      "name": "Release Readiness Evidence",
-      "status": "completed",
-      "conclusion": "success"
-    },
-    {
-      "id": 42045911215,
-      "name": "Schema Validation",
-      "status": "completed",
-      "conclusion": "success"
-    },
-    {
-      "id": 42045910872,
-      "name": "Review Governance",
-      "status": "completed",
-      "conclusion": "success"
-    },
-    {
-      "id": 42045910857,
-      "name": "Reference CLI Preview",
-      "status": "completed",
-      "conclusion": "success"
-    },
-    {
-      "id": 42045910813,
-      "name": "Reference Validation Library",
-      "status": "completed",
-      "conclusion": "success"
-    },
-    {
-      "id": 42045911142,
+      "id": 43100335093,
       "name": "Comparable Measurement Evidence",
       "status": "completed",
       "conclusion": "success"
     },
     {
-      "id": 42045910822,
-      "name": "CLI Prototype",
+      "id": 43100334916,
+      "name": "Branch Flow",
       "status": "completed",
       "conclusion": "success"
     },
     {
-      "id": 42045911024,
+      "id": 43100335175,
+      "name": "Reference Validation Library",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 43100334894,
       "name": "Reference Package Candidate",
       "status": "completed",
       "conclusion": "success"
     },
     {
-      "id": 42045911075,
+      "id": 43100334924,
+      "name": "CLI Prototype",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 43100334940,
+      "name": "Review Governance",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 43100334954,
+      "name": "Reference CLI Preview",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 43100334903,
+      "name": "Schema Validation",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 43100335038,
       "name": "Reference Native Lifecycle",
       "status": "completed",
       "conclusion": "success"
     }
   ],
   "sourceChecks": {
-    "sourceRevision": "979cc07dc17f56a0cd0a6f4444ff0dcc58eee55f",
+    "sourceRevision": "89292102783454140671d706c234f8e6d17a337c",
     "environment": {
       "kind": "local source validation, not target compatibility",
       "platform": "Darwin",
       "architecture": "arm64",
-      "osVersion": "27.2",
-      "node": "26.13.0",
+      "osVersion": "27.2.1",
+      "node": "26.13.1",
       "npm": "11.20.0"
     },
     "results": [
       {
         "name": "a2a-extension-smoke",
         "exitCode": 0,
-        "seconds": 0.27
+        "seconds": 0.28
       },
       {
         "name": "agent-definition-authority-smoke",
         "exitCode": 0,
-        "seconds": 0.14
+        "seconds": 0.13
       },
       {
         "name": "agent-identity-schema-smoke",
         "exitCode": 0,
-        "seconds": 0.14
+        "seconds": 0.13
       },
       {
         "name": "approval-gate-target-schema-smoke",
         "exitCode": 0,
-        "seconds": 0.15
+        "seconds": 0.14
       },
       {
         "name": "actor-schema-smoke",
         "exitCode": 0,
-        "seconds": 0.14
+        "seconds": 0.13
       },
       {
         "name": "beta-checkpoint-smoke",
         "exitCode": 0,
-        "seconds": 0.13
+        "seconds": 0.12
       },
       {
         "name": "candidate-readiness-smoke",
         "exitCode": 0,
-        "seconds": 0.17
+        "seconds": 0.15
       },
       {
         "name": "cli-fixture-smoke",
         "exitCode": 0,
-        "seconds": 1.37
+        "seconds": 1.26
       },
       {
         "name": "cli-diagnostics-smoke",
         "exitCode": 0,
-        "seconds": 4.47
+        "seconds": 4.19
       },
       {
         "name": "cli-graph-smoke",
         "exitCode": 0,
-        "seconds": 2.46
+        "seconds": 2.31
       },
       {
         "name": "cli-init-smoke",
         "exitCode": 0,
-        "seconds": 0.71
+        "seconds": 0.68
       },
       {
         "name": "cli-inspection-smoke",
         "exitCode": 0,
-        "seconds": 3.04
+        "seconds": 3.05
       },
       {
         "name": "cli-no-runtime-guardrails-smoke",
         "exitCode": 0,
-        "seconds": 2.19
+        "seconds": 1.67
       },
       {
         "name": "cli-prototype-smoke",
         "exitCode": 0,
-        "seconds": 1.42
+        "seconds": 1.04
       },
       {
         "name": "cli-validation-smoke",
         "exitCode": 0,
-        "seconds": 3.97
+        "seconds": 3.01
       },
       {
         "name": "conformance-claim-smoke",
         "exitCode": 0,
-        "seconds": 0.23
+        "seconds": 0.19
       },
       {
         "name": "core-profile-smoke",
         "exitCode": 0,
-        "seconds": 0.25
+        "seconds": 0.17
       },
       {
         "name": "credential-handling-schema-smoke",
         "exitCode": 0,
-        "seconds": 0.17
+        "seconds": 0.15
       },
       {
         "name": "documentation-navigation-smoke",
         "exitCode": 0,
-        "seconds": 0.23
+        "seconds": 0.18
       },
       {
         "name": "extension-registry-smoke",
         "exitCode": 0,
-        "seconds": 0.18
+        "seconds": 0.16
       },
       {
         "name": "feature-status-registry-smoke",
         "exitCode": 0,
-        "seconds": 0.15
+        "seconds": 0.12
       },
       {
         "name": "github-extension-smoke",
         "exitCode": 0,
-        "seconds": 0.2
+        "seconds": 0.16
       },
       {
         "name": "human-override-schema-smoke",
         "exitCode": 0,
-        "seconds": 0.21
+        "seconds": 0.15
       },
       {
         "name": "issue-tracker-extension-smoke",
         "exitCode": 0,
-        "seconds": 0.2
+        "seconds": 0.18
       },
       {
         "name": "manifest-discovery-smoke",
         "exitCode": 0,
-        "seconds": 0.61
+        "seconds": 0.4
       },
       {
         "name": "mcp-extension-smoke",
         "exitCode": 0,
-        "seconds": 0.19
+        "seconds": 0.17
       },
       {
         "name": "negative-schema-fixtures",
         "exitCode": 0,
-        "seconds": 0.23
+        "seconds": 0.17
       },
       {
         "name": "provider-constraint-schema-smoke",
         "exitCode": 0,
-        "seconds": 0.18
+        "seconds": 0.14
       },
       {
         "name": "provider-feature-schema-smoke",
         "exitCode": 0,
-        "seconds": 0.17
+        "seconds": 0.14
       },
       {
         "name": "runtime-evaluation-smoke",
         "exitCode": 0,
-        "seconds": 2.03
+        "seconds": 1.56
       },
       {
         "name": "runtime-evaluation-environment-smoke",
         "exitCode": 0,
-        "seconds": 0.11
+        "seconds": 0.1
       },
       {
         "name": "runtime-evaluation-library-smoke",
         "exitCode": 0,
-        "seconds": 0.68
+        "seconds": 0.58
       },
       {
         "name": "runtime-toolchain-smoke",
         "exitCode": 0,
-        "seconds": 0.12
+        "seconds": 0.11
       },
       {
         "name": "runtime-python-prototype-smoke",
@@ -569,142 +593,142 @@
       {
         "name": "runtime-go-prototype-smoke",
         "exitCode": 0,
-        "seconds": 0.12
+        "seconds": 0.11
       },
       {
         "name": "runtime-typescript-prototype-smoke",
         "exitCode": 0,
-        "seconds": 0.12
+        "seconds": 0.11
       },
       {
         "name": "runtime-fidelity-smoke",
         "exitCode": 0,
-        "seconds": 0.2
+        "seconds": 0.18
       },
       {
         "name": "runtime-supply-chain-smoke",
         "exitCode": 0,
-        "seconds": 0.74
+        "seconds": 0.63
       },
       {
         "name": "runtime-supply-chain-current-smoke",
         "exitCode": 0,
-        "seconds": 1.55
+        "seconds": 1.27
       },
       {
         "name": "runtime-supply-chain-repaired-smoke",
         "exitCode": 0,
-        "seconds": 1.02
+        "seconds": 0.79
       },
       {
         "name": "runtime-native-lifecycle-smoke",
         "exitCode": 0,
-        "seconds": 4.95
+        "seconds": 3.63
       },
       {
         "name": "qualification-lifecycle-smoke",
         "exitCode": 0,
-        "seconds": 1.21
+        "seconds": 0.84
       },
       {
         "name": "qualification-security-smoke",
         "exitCode": 0,
-        "seconds": 1.84
+        "seconds": 1.02
       },
       {
         "name": "qualification-measurements-smoke",
         "exitCode": 0,
-        "seconds": 2.0
+        "seconds": 1.27
       },
       {
         "name": "revised-architecture-smoke",
         "exitCode": 0,
-        "seconds": 0.98
+        "seconds": 0.59
       },
       {
         "name": "runtime-linux-lifecycle-smoke",
         "exitCode": 0,
-        "seconds": 1.05
+        "seconds": 0.56
       },
       {
         "name": "runtime-macos-lifecycle-smoke",
         "exitCode": 0,
-        "seconds": 1.07
+        "seconds": 0.67
       },
       {
         "name": "runtime-windows-lifecycle-smoke",
         "exitCode": 0,
-        "seconds": 0.89
+        "seconds": 0.64
       },
       {
         "name": "runtime-comparable-measurements-smoke",
         "exitCode": 0,
-        "seconds": 0.32
+        "seconds": 0.25
       },
       {
         "name": "runtime-architecture-alternatives-smoke",
         "exitCode": 0,
-        "seconds": 0.3
+        "seconds": 0.23
       },
       {
         "name": "runtime-candidate-report-bundles-smoke",
         "exitCode": 0,
-        "seconds": 1.4
+        "seconds": 1.05
       },
       {
         "name": "runtime-decision-bundle-smoke",
         "exitCode": 0,
-        "seconds": 1.02
+        "seconds": 0.9
       },
       {
         "name": "runtime-reviewer-ownership-smoke",
         "exitCode": 0,
-        "seconds": 0.37
+        "seconds": 0.33
       },
       {
         "name": "single-maintainer-governance-smoke",
         "exitCode": 0,
-        "seconds": 0.8
+        "seconds": 0.74
       },
       {
         "name": "single-maintainer-ownership-smoke",
         "exitCode": 0,
-        "seconds": 0.21
+        "seconds": 0.19
       },
       {
         "name": "runtime-architecture-review-smoke",
         "exitCode": 0,
-        "seconds": 2.04
+        "seconds": 1.79
       },
       {
         "name": "runtime-diagnostics-requalification-smoke",
         "exitCode": 0,
-        "seconds": 2.4
+        "seconds": 2.11
       },
       {
         "name": "runtime-diagnostic-projection-repair-smoke",
         "exitCode": 0,
-        "seconds": 1.57
+        "seconds": 1.42
       },
       {
         "name": "runtime-validation-contract-smoke",
         "exitCode": 0,
-        "seconds": 3.0
+        "seconds": 2.68
       },
       {
         "name": "runtime-isolation-smoke",
         "exitCode": 0,
-        "seconds": 0.24
+        "seconds": 0.25
       },
       {
         "name": "semantic-smoke",
         "exitCode": 0,
-        "seconds": 0.18
+        "seconds": 0.19
       },
       {
         "name": "typed-reference-schema-smoke",
         "exitCode": 0,
-        "seconds": 0.13
+        "seconds": 0.14
       },
       {
         "name": "work-reference-namespace-smoke",
@@ -714,23 +738,23 @@
       {
         "name": "validate",
         "exitCode": 0,
-        "seconds": 0.27
+        "seconds": 0.28
       },
       {
         "name": "validation-checkpoint-smoke",
         "exitCode": 0,
-        "seconds": 0.17
+        "seconds": 0.19
       },
       {
         "name": "release-0-4-readiness-smoke",
         "exitCode": 0,
-        "seconds": 0.45,
+        "seconds": 0.54,
         "sourceRevision": "5cb33caad080f61808949c1de17df2879da9996f"
       },
       {
         "name": "release-0-4-completion-smoke",
         "exitCode": 0,
-        "seconds": 0.31,
+        "seconds": 0.38,
         "sourceRevision": "5cb33caad080f61808949c1de17df2879da9996f"
       }
     ]
@@ -743,7 +767,7 @@
         "linux",
         "x64"
       ],
-      "upstreamURLDerivedFromPinnedProducerAndVerifiedSHASUMS": "https://nodejs.org/dist/v26.13.0/node-v26.13.0-linux-x64.tar.gz"
+      "upstreamURLDerivedFromPinnedProducerAndVerifiedSHASUMS": "https://nodejs.org/dist/v26.13.1/node-v26.13.1-linux-x64.tar.gz"
     },
     {
       "target": "macos/arm64",
@@ -752,7 +776,7 @@
         "darwin",
         "arm64"
       ],
-      "upstreamURLDerivedFromPinnedProducerAndVerifiedSHASUMS": "https://nodejs.org/dist/v26.13.0/node-v26.13.0-darwin-arm64.tar.gz"
+      "upstreamURLDerivedFromPinnedProducerAndVerifiedSHASUMS": "https://nodejs.org/dist/v26.13.1/node-v26.13.1-darwin-arm64.tar.gz"
     },
     {
       "target": "windows/amd64",
@@ -761,7 +785,7 @@
         "win32",
         "x64"
       ],
-      "upstreamURLDerivedFromPinnedProducerAndVerifiedSHASUMS": "https://nodejs.org/dist/v26.13.0/node-v26.13.0-win-x64.zip"
+      "upstreamURLDerivedFromPinnedProducerAndVerifiedSHASUMS": "https://nodejs.org/dist/v26.13.1/node-v26.13.1-win-x64.zip"
     }
   ],
   "rawRecordLimitations": [

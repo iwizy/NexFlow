@@ -12,7 +12,7 @@ notices, schema indexes and integrity/provenance records. Use that clean-revisio
 pipeline for actual offline installation; the development build below is still
 only a source build. Artifact security/native lifecycle/publication remain open.
 
-Use the exact Node 26.13.0/npm 11.20.0 toolchain and the existing pinned compiler:
+Use the exact Node 26.13.1/npm 11.20.0 toolchain and the existing pinned compiler:
 
 ```sh
 npm ci --ignore-scripts

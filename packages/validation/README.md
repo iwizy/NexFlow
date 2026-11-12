@@ -48,7 +48,7 @@ exception returns a fixed internal diagnostic from validation methods.
 
 ## Build And Verify From The Repository
 
-Use Node 26.13.0, its npm 11.20.0 and the pinned TypeScript 6.0.3 toolchain:
+Use Node 26.13.1, its npm 11.20.0 and the pinned TypeScript 6.0.3 toolchain:
 
 ```sh
 npm ci --ignore-scripts

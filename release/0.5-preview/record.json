@@ -5,14 +5,14 @@
     "label": "First 0.5.0-alpha.1 developer preview; pre-publication technical review",
     "specVersion": "0.1",
     "proposedTag": "v0.5.0-alpha.1",
-    "commit": "979cc07dc17f56a0cd0a6f4444ff0dcc58eee55f",
-    "evaluatedAt": "2026-11-05T14:50:21Z",
+    "commit": "89292102783454140671d706c234f8e6d17a337c",
+    "evaluatedAt": "2026-11-11T21:10:54Z",
     "changelog": "CHANGELOG.md#unreleased"
   },
   "decision": {
     "outcome": "ready-with-notes",
     "decidedBy": "Alexander Agafonov",
-    "rationale": "Separate delegated NF-110 technical readiness decision under the adopted bounded first-alpha profile. Existing B1-B8 technical preparation criteria have factual candidate-bound evidence. This is not beta/full conformance readiness, personally performed/independent review, publication permission or public-install verification; those later authority/observations are explicitly pending in the evidence index and runbook."
+    "rationale": "Delegated NF-110 technical readiness refresh for the first alpha with Node.js 26.13.1. The release review records the applicable B1-B8 evidence and remaining release actions."
   },
   "checks": {
     "documentation": {
@@ -23,13 +23,13 @@
           "type": "document",
           "description": "Current first-alpha technical review",
           "location": "release/0.5-preview-review.md",
-          "revision": "sha256:703f5736552687671af552787a4eb16d954f03e972fee6c9e15ece59a7ccf2ad"
+          "revision": "sha256:90586f3d72981af233e02923244a01dd5167ed08def97566adb1865f7452fba5"
         },
         {
           "type": "document",
           "description": "Portable install/quick-start instructions",
           "location": "docs/reference-cli-installation.md",
-          "revision": "sha256:a667b01302b7fb56b7391710e6d29c8aff5b2805f38c74eadb56b3b1f5e39719"
+          "revision": "sha256:7a07591506896749da7a21bd76d0d1d7a029a5b6c6ed1c70384f352e199c0a30"
         }
       ]
     },
@@ -40,8 +40,8 @@
         {
           "type": "command",
           "description": "54 actual package checks with schema/index/ref consumer verification",
-          "location": "https://github.com/iwizy/NexFlow/actions/runs/42045911024",
-          "revision": "979cc07dc17f56a0cd0a6f4444ff0dcc58eee55f"
+          "location": "https://github.com/iwizy/NexFlow/actions/runs/43100334894",
+          "revision": "89292102783454140671d706c234f8e6d17a337c"
         }
       ]
     },
@@ -53,13 +53,13 @@
           "type": "command",
           "description": "68 local source checks and successful exact-source CI",
           "location": "0.5-preview/evidence.json",
-          "revision": "979cc07dc17f56a0cd0a6f4444ff0dcc58eee55f"
+          "revision": "89292102783454140671d706c234f8e6d17a337c"
         },
         {
           "type": "command",
           "description": "Installed candidate maintained project checks",
-          "location": "https://github.com/iwizy/NexFlow/actions/runs/42045911024",
-          "revision": "979cc07dc17f56a0cd0a6f4444ff0dcc58eee55f"
+          "location": "https://github.com/iwizy/NexFlow/actions/runs/43100334894",
+          "revision": "89292102783454140671d706c234f8e6d17a337c"
         }
       ]
     },
@@ -70,8 +70,8 @@
         {
           "type": "command",
           "description": "Native current and genuine predecessor lifecycle/commands/API/OS controls",
-          "location": "https://github.com/iwizy/NexFlow/actions/runs/42045911075",
-          "revision": "979cc07dc17f56a0cd0a6f4444ff0dcc58eee55f"
+          "location": "https://github.com/iwizy/NexFlow/actions/runs/43100335038",
+          "revision": "89292102783454140671d706c234f8e6d17a337c"
         }
       ]
     },
@@ -83,7 +83,7 @@
           "type": "document",
           "description": "Accepted bounded implementation profile",
           "location": "rfcs/reviews/2026-10-28-cli-preview-scope.md",
-          "revision": "sha256:dfbabdbf889fb030264814b8621761eda88303b85d1ecc1ab30e35f9543f731b"
+          "revision": "sha256:c28f21415b4d09a0c3bf2bf590c1762c471c6d1f7524235377ea1e729e72e62a"
         },
         {
           "type": "document",
@@ -101,7 +101,7 @@
           "type": "document",
           "description": "Current alpha compatibility/support/rollback",
           "location": "docs/reference-cli-compatibility.md",
-          "revision": "sha256:42e0963cbecb92a6736ce55ff419547e909ecce68473668c43f1a64c497270e3"
+          "revision": "sha256:43c238ef9f0938c06a5754201626c2eda8b872da2d7446c87dab2fb31748e776"
         },
         {
           "type": "document",
@@ -118,8 +118,8 @@
         {
           "type": "audit",
           "description": "Exact candidate security/advisory/limits and original records",
-          "location": "https://github.com/iwizy/NexFlow/actions/runs/42045911024/artifacts/13423768960",
-          "revision": "979cc07dc17f56a0cd0a6f4444ff0dcc58eee55f"
+          "location": "https://github.com/iwizy/NexFlow/actions/runs/43100334894/artifacts/13891820738",
+          "revision": "89292102783454140671d706c234f8e6d17a337c"
         },
         {
           "type": "document",
@@ -136,21 +136,21 @@
         {
           "type": "other",
           "description": "Original exact native evidence and common archive inputs",
-          "location": "https://github.com/iwizy/NexFlow/actions/runs/42045911075",
-          "revision": "979cc07dc17f56a0cd0a6f4444ff0dcc58eee55f"
+          "location": "https://github.com/iwizy/NexFlow/actions/runs/43100335038",
+          "revision": "89292102783454140671d706c234f8e6d17a337c"
         },
         {
           "type": "document",
           "description": "Unexecuted publication/public-install verification requirements",
           "location": "release/0.5-preview-publication.md",
-          "revision": "sha256:cc6c2647b4abe48e2989aedf878f38ae5c858a79e282136d34e8968ccdf0513c"
+          "revision": "sha256:db15b313915a60a6c84d10cbba1aed03a05c4aa6d8caca2ef26a7166931fb531"
         }
       ]
     }
   },
   "limitations": [
     "No separate release/promotion/publication authority has been granted; no tag/release/public download verification is claimed.",
-    "Unsigned developer external-Node route only; exact Node 26.13.0/npm 11.20.0 and three recorded targets, with no general filesystem/process sandbox.",
+    "Unsigned developer external-Node route only; exact Node 26.13.1/npm 11.20.0 and three recorded targets, with no general filesystem/process sandbox.",
     "No NF-CLI/full semantic/Core/extension/runtime conformance claim; init and execution unsupported.",
     "Root/npm tool advisory instances retain explicit bounded dispositions; current absence of delivered matches is not a permanent vulnerability guarantee.",
     "No independent publisher signatures, Developer ID/notarization, Authenticode or complete native/CPE/OS advisory coverage.",

@@ -2,7 +2,7 @@
   "task": "NF-108",
   "reviewedOn": "2026-11-04",
   "reviewMode": "single-maintainer; code/data boundary and dependency/distribution lenses; no independent human audit",
-  "scope": "Exact candidate, reviewed repository commands and Node 26.13.0/npm 11.20.0; reassess before release, changed input, version, command, network/proxy configuration or schema authority",
+  "scope": "Exact candidate, reviewed repository commands and Node 26.13.1/npm 11.20.0; reassess before release, changed input, version, command, network/proxy configuration or schema authority",
   "dispositions": [
     {
       "graphs": [

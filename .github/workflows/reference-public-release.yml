@@ -1,0 +1,52 @@
+name: Reference Public Release Verification
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_sha:
+        description: Approved commit SHA for v0.5.0-alpha.1
+        required: true
+        type: string
+      checksums_sha256:
+        description: SHA-256 of the reviewed packet's SHA256SUMS file
+        required: true
+        type: string
+      node_version:
+        description: Exact Node.js version from the reviewed package provenance
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  public-install:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { target: linux/amd64, runner: ubuntu-24.04, artifact: linux-amd64 }
+          - { target: macos/arm64, runner: macos-15, artifact: macos-arm64 }
+          - { target: windows/amd64, runner: windows-2025, artifact: windows-amd64 }
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: ${{ inputs.node_version }}
+      - name: Download and verify the public prerelease
+        env:
+          NEXFLOW_TARGET: ${{ matrix.target }}
+          NEXFLOW_RELEASE_SHA: ${{ inputs.release_sha }}
+          NEXFLOW_CHECKSUMS_SHA256: ${{ inputs.checksums_sha256 }}
+        run: node scripts/reference-public-release.mjs
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: reference-public-release-${{ matrix.artifact }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/reference-public-release/
+          if-no-files-found: warn
+          retention-days: 90

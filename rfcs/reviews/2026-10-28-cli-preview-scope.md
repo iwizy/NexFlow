@@ -99,3 +99,16 @@ compatibility/conformance/support evidence and the final publication decision.
 They block release, not this completed scope-preparation task. NF-110 must assess
 one actual candidate through all applicable B1–B8 gates; no package, tag, version
 file or runtime implementation changes in NF-104.
+
+
+## November 11 Runtime Security Update
+
+The maintainer delegated updating the preview runtime after the November Node.js
+bulletin. Node.js 26.13.1 is the fixed 26.x release. It replaces 26.13.0 in the
+current qualification route with npm 11.20.0. The offline CLI has no HTTP/2 or
+TLS server surface. Its exact external prerequisite still needs the security
+update before release. Command scope, schemas and supported target classes are
+unchanged. The earlier qualification remains available at its recorded revision.
+
+Updated contract SHA-256: `843604815ff3af949868231b915126fb59d86c7b4f48dea08e6fae5a2418f062`.
+[Node.js security bulletin](https://nodejs.org/en/blog/vulnerability/november-2026-security-releases).

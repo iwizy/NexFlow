@@ -70,7 +70,7 @@ function normalize(directory) {
 }
 /** Build only from a clean exact revision; dependency acquisition is a separate step. */
 export async function buildPackages(output) {
-  assert.equal(process.versions.node,"26.13.0");assert.equal(run([npm,"--version"]).trim(),"11.20.0");
+  assert.equal(process.versions.node,"26.13.1");assert.equal(run([npm,"--version"]).trim(),"11.20.0");
   const library=path.join(repository,"packages/validation"),cli=path.join(repository,"packages/cli");
   assert.equal(read(path.join(library,"node_modules/typescript/package.json")).version,"6.0.3");
   const git=args=>execFileSync("git",args,{cwd:repository,encoding:"utf8"}).trim();
@@ -87,7 +87,7 @@ export async function buildPackages(output) {
     run(["scripts/build.mjs"],library);run(["scripts/build.mjs"],cli);
     mkdirSync(output,{recursive:true});
     const info={formatVersion:"nexflow-package-build-v1",sourceRevision:revision,
-      schemaSnapshotRevision:snapshot.sourceRevision,specVersion:"0.1",node:"26.13.0",npm:"11.20.0",typescript:"6.0.3",tar:"7.5.22",
+      schemaSnapshotRevision:snapshot.sourceRevision,specVersion:"0.1",node:"26.13.1",npm:"11.20.0",typescript:"6.0.3",tar:"7.5.22",
       lockfiles:["package-lock.json","packages/validation/package-lock.json"].map(file=>({path:file,sha256:sha256(readFileSync(path.join(repository,file)))})),
       buildCommand:"node scripts/reference-packages.mjs --out <new-output-directory>",
       installCommand:"npm install --prefix <empty-consumer> --offline --ignore-scripts --no-audit --no-fund --update-notifier=false --cache <empty-cache> <exact-local-tarball>",

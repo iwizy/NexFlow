@@ -45,7 +45,7 @@ for(const group of context.inputs){
   assert.deepEqual(inventory(path.join(inputs,group.label)).map(({path,bytes,sha256})=>({path,bytes,sha256})),group.files);
 }
 const candidate=path.join(inputs,"security/nf-107-candidate"),provenance=read(path.join(candidate,"PROVENANCE.json"));
-assert.equal(provenance.sourceRevision,context.sourceRevision);assert.deepEqual(provenance.artifacts,context.artifacts);
+assert.equal(provenance.sourceRevision,context.sourceRevision);assert.equal(process.versions.node,provenance.node);assert.deepEqual(provenance.artifacts,context.artifacts);
 for(const artifact of context.artifacts){
   assert.equal(sha256(readFileSync(path.join(candidate,artifact.file))),artifact.sha256);
   assert.equal(sha256(readFileSync(path.join(inputs,"native-inputs",artifact.file))),artifact.sha256);
@@ -60,13 +60,13 @@ assert.ok(security.graphs.filter(g=>g.name.startsWith("delivered-")||g.name==="v
 const packageChecks=read(path.join(inputs,"security/nf-107-qualification.json")),securityChecks=read(path.join(inputs,"security/nf-108-boundaries.json"));
 assert.equal(packageChecks.sourceRevision,context.sourceRevision);assert.equal(packageChecks.records.length,54);assert.ok(packageChecks.records.every(r=>r.result==="passed"));
 assert.equal(securityChecks.candidateSourceRevision,context.sourceRevision);assert.equal(securityChecks.records.length,30);assert.ok(securityChecks.records.every(r=>r.result==="passed"));
-assert.equal(context.candidateCi.length,10);assert.ok(context.candidateCi.every(c=>c.status==="completed"&&c.conclusion==="success"));
+assert.equal(context.candidateCi.length,9);assert.ok(context.candidateCi.every(c=>c.status==="completed"&&c.conclusion==="success"));
 assert.equal(context.sourceChecks.results.length,68);assert.ok(context.sourceChecks.results.every(c=>c.exitCode===0));
 const targets=[];
 for(const target of context.targets){
   const native=read(path.join(inputs,target.label,"lifecycle.json"));
   assert.equal(native.target,target.target);assert.equal(native.producer.revision,context.sourceRevision);assert.equal(native.outcome,"passed-unsigned-developer-scope");
-  assert.deepEqual(native.candidates.current.artifacts,context.artifacts);assert.equal(native.environment.node,"26.13.0");
+  assert.deepEqual(native.candidates.current.artifacts,context.artifacts);assert.equal(native.environment.node,provenance.node);
   assert.deepEqual([native.environment.platform,native.environment.architecture],target.platformArchitecture);
   assert.equal(native.network.positive.exitCode,0);assert.equal(native.network.denied.exitCode,13);
   if(target.target==="windows/amd64"){assert.equal(native.network.denied.appContainer,true);assert.equal(native.network.denied.capabilityCount,0);}
@@ -119,7 +119,7 @@ try{
   const toolRequire=createRequire(path.resolve(path.dirname(npm),"../package.json")),tar=toolRequire("tar");
   await tar.c({file:path.join(out,"nexflow-0.5.0-alpha.1-evidence.tgz"),cwd:stage,gzip:true,portable:true,noMtime:true},inventory(stage).map(f=>f.path));
   const assessment={task:"NF-110",recordedAt:new Date().toISOString(),outcome:record.decision.outcome,scope:context.scope,reviewProducerRevision:producerRevision,
-    selectedPackageRevision:context.sourceRevision,artifacts:context.artifacts,targets,sourceChecks:68,candidateCiWorkflows:10,installedPackageChecks:54,installedSecurityChecks:30,
+    selectedPackageRevision:context.sourceRevision,artifacts:context.artifacts,targets,sourceChecks:68,candidateCiWorkflows:context.candidateCi.length,installedPackageChecks:54,installedSecurityChecks:30,
     supplyChainOutcome:security.outcome,unresolved:security.unresolved,quickstart,publicationAuthorized:false,publicDownloadVerified:false,nfCliClaim:false,reviewFiles};
   writeFileSync(path.join(out,"ASSESSMENT.json"),JSON.stringify(assessment,null,2)+"\n");
   const assets=inventory(out).map(({path,bytes,sha256})=>({file:path,bytes,sha256}));

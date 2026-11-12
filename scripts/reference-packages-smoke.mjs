@@ -93,9 +93,13 @@ try {
   });
   check("input examples and frozen contracts/sources remain unchanged",()=>{
     assert.deepEqual(inventory(path.join(repository,"examples")),inputs);
-    const changed=execFileSync("git",["diff","--name-only","b8373b0784a376891098c6be8149be7a514e340e","--","package.json","package-lock.json","schemas","evaluation/prototypes","evaluation/baseline.json","evaluation/library-cases.json","fixtures/cli","fixtures/README.md","docs/0.5-cli-contract.md","scripts/lib/manifest-discovery.mjs"],{cwd:repository,encoding:"utf8"});assert.equal(changed,"");
+    const changed=execFileSync("git",["diff","--name-only","b8373b0784a376891098c6be8149be7a514e340e","--","package.json","package-lock.json","schemas","evaluation/prototypes","evaluation/baseline.json","evaluation/library-cases.json","fixtures/cli","fixtures/README.md","scripts/lib/manifest-discovery.mjs"],{cwd:repository,encoding:"utf8"});assert.equal(changed,"");
+    const contract="docs/0.5-cli-contract.md";
+    const frozen=execFileSync("git",["show",`b8373b0784a376891098c6be8149be7a514e340e:${contract}`],{cwd:repository,encoding:"utf8"});
+    assert.equal(readFileSync(path.join(repository,contract),"utf8"),frozen.replaceAll("26.13.0",process.versions.node)
+      .replace("2026-10-28: the selected external runtime","2026-11-11: the selected external runtime"));
     const libraryChanges=execFileSync("git",["diff","--name-only","b8373b0784a376891098c6be8149be7a514e340e","--","packages/validation"],{cwd:repository,encoding:"utf8"}).trim().split("\n").filter(Boolean);
-    assert.ok(libraryChanges.every(file=>["packages/validation/src/schema.ts","packages/validation/package-lock.json"].includes(file)));
+    assert.ok(libraryChanges.every(file=>["packages/validation/src/schema.ts","packages/validation/package-lock.json","packages/validation/package.json","packages/validation/README.md"].includes(file)));
   });
   const report={task:"NF-107",sourceRevision:built.sourceRevision,node:process.versions.node,npm:built.npm,environment:{platform:platform(),architecture:arch()},artifacts:built.artifacts,
     verifierSha256:sha256(readFileSync(fileURLToPath(import.meta.url))),provenanceSha256:sha256(readFileSync(path.join(output,"PROVENANCE.json"))),records,

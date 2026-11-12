@@ -37,34 +37,36 @@ function tree(directory,prefix=""){
 function findCandidate(directory){if(existsSync(path.join(directory,"PROVENANCE.json")))return directory;
   const found=readdirSync(directory,{withFileTypes:true}).filter(d=>d.isDirectory()).map(d=>path.join(directory,d.name)).filter(d=>existsSync(path.join(d,"PROVENANCE.json")));
   assert.equal(found.length,1,"Exactly one downloaded candidate is required");return found[0];}
-function selected(directory,expected){
+function selected(directory,expected,runtime){
   directory=findCandidate(path.resolve(directory));const provenance=json(path.join(directory,"PROVENANCE.json"));
-  assert.equal(provenance.sourceRevision,expected);assert.equal(provenance.node,contract.node);assert.equal(provenance.npm,contract.npm);
+  assert.equal(provenance.sourceRevision,expected);assert.equal(provenance.node,runtime.node);assert.equal(provenance.npm,runtime.npm);
   for(const line of readFileSync(path.join(directory,"SHA256SUMS"),"utf8").trim().split("\n")){
     const [digest,file]=line.split("  ");assert.ok(file&&!file.includes("/")&&!file.includes("\\"));assert.equal(fileSha(path.join(directory,file)),digest);
   }
   for(const artifact of provenance.artifacts)assert.equal(fileSha(path.join(directory,artifact.file)),artifact.sha256);
   return {directory,provenance};
 }
-async function provision(){
+async function provision(runtime, current){
   const suffix=process.platform==="win32"?"win-x64.zip":`${process.platform==="darwin"?"darwin":"linux"}-${process.arch}.tar.gz`;
-  const filename=`node-v${contract.node}-${suffix}`,base=`https://nodejs.org/dist/v${contract.node}/`;
+  const filename=`node-v${runtime.node}-${suffix}`,base=`https://nodejs.org/dist/v${runtime.node}/`;
   const checks=await fetch(base+"SHASUMS256.txt",{signal:AbortSignal.timeout(60000)});assert.ok(checks.ok);const sums=await checks.text();
   const expected=sums.trim().split("\n").map(l=>l.trim().split(/\s+/u)).find(([,name])=>name===filename)?.[0];assert.match(expected??"",/^[a-f0-9]{64}$/u);
   const response=await fetch(base+filename,{signal:AbortSignal.timeout(180000)});assert.ok(response.ok);
   const bytes=Buffer.from(await response.arrayBuffer());assert.equal(sha(bytes),expected);
-  const tools=path.join(scope,"runtime");mkdirSync(tools);const archive=path.join(tools,filename);writeFileSync(archive,bytes);
+  const tools=path.join(scope,`runtime-${runtime.node}`);mkdirSync(tools);const archive=path.join(tools,filename);writeFileSync(archive,bytes);
   const tar=process.platform==="win32"?path.join(process.env.SystemRoot,"System32/tar.exe"):"tar";
   const names=checked(tar,["-tf",archive]).split(/\r?\n/u).filter(Boolean),root=filename.replace(/\.(?:tar\.gz|zip)$/u,"");
   assert.ok(names.every(n=>n.startsWith(root+"/")&&!n.split(/[\\/]/u).includes("..")));
   checked(tar,["-xf",archive,"-C",tools]);const sdk=path.join(tools,root),node=path.join(sdk,process.platform==="win32"?"node.exe":"bin/node");
-  assert.equal(fileSha(node),fileSha(process.execPath),"Qualified binary must match the exact official native Node archive");
+  if(current)assert.equal(fileSha(node),fileSha(process.execPath),"Qualified binary must match the exact official native Node archive");
   const npm=path.join(sdk,process.platform==="win32"?"node_modules/npm/bin/npm-cli.js":"lib/node_modules/npm/bin/npm-cli.js");
-  assert.equal(checked(node,[npm,"--version"]),contract.npm);
-  writeFileSync(path.join(output,"node-SHASUMS256.txt"),sums);cpSync(path.join(sdk,"LICENSE"),path.join(output,"node-LICENSE.txt"));
-  record.runtime={node:contract.node,npm:contract.npm,platform:process.platform,architecture:process.arch,url:base+filename,archiveSha256:expected,
-    archiveBytes:bytes.length,binarySha256:fileSha(node),licenseSha256:fileSha(path.join(sdk,"LICENSE")),embeddedComponents:process.versions,
-    verification:"Official HTTPS archive and same-origin checksum; actual executing binary matched; independent publisher signature not verified"};
+  assert.equal(checked(node,[npm,"--version"]),runtime.npm);
+  const components=JSON.parse(checked(node,["-p","JSON.stringify(process.versions)"]));assert.equal(components.node,runtime.node);
+  const prefix=current?"node":"predecessor-node";
+  writeFileSync(path.join(output,prefix+"-SHASUMS256.txt"),sums);cpSync(path.join(sdk,"LICENSE"),path.join(output,prefix+"-LICENSE.txt"));
+  record[current?"runtime":"predecessorRuntime"]={node:runtime.node,npm:runtime.npm,platform:process.platform,architecture:process.arch,url:base+filename,archiveSha256:expected,
+    archiveBytes:bytes.length,binarySha256:fileSha(node),licenseSha256:fileSha(path.join(sdk,"LICENSE")),embeddedComponents:components,
+    verification:"Official HTTPS archive and same-origin checksum; independent publisher signature not verified"};
   return {sdk,node,npm};
 }
 try{
@@ -73,11 +75,12 @@ try{
   if(process.platform==="darwin")assert.ok(record.environment.system.version.startsWith("15."));
   if(process.platform==="win32")assert.match(record.environment.system.Caption,/Windows Server 2025/u);
   observe("actual native target inspected",{cohort:"fresh target cohort; not the historical evaluation image"});
-  const previous=selected(previousDirectory,contract.predecessor.sourceRevision),current=selected(currentDirectory,producer.revision);
+  const previous=selected(previousDirectory,contract.predecessor.sourceRevision,contract.predecessor),current=selected(currentDirectory,producer.revision,contract);
   for(const prior of contract.predecessor.artifacts)assert.equal(previous.provenance.artifacts.find(a=>a.name===prior.name).sha256,prior.sha256);
   assert.notDeepEqual(previous.provenance.artifacts.map(a=>a.sha256),current.provenance.artifacts.map(a=>a.sha256));
   record.candidates={previous:previous.provenance,current:current.provenance,predecessorDelivery:contract.predecessor};
-  const {sdk,node,npm}=await provision(),runtimeHash=fileSha(node);
+  const currentRuntime=await provision(contract,true),previousRuntime=await provision(contract.predecessor,false);
+  let {node,npm}=currentRuntime;
   const home=path.join(scope,"empty-home"),cache=path.join(scope,"caches"),fixtures=path.join(scope,"inputs space юникод"),consumers=path.join(scope,"consumers space юникод"),guards=path.join(scope,"guards");
   for(const dir of [home,cache,fixtures,consumers,guards])mkdirSync(dir);
   const userconfig=path.join(home,"empty.npmrc");writeFileSync(userconfig,"");
@@ -110,7 +113,7 @@ try{
   }
   // The same scoped profile is reused as installed bytes change; directories
   // below it inherit read-only access. No host firewall/keychain changes.
-  if(windows)session=await windowsSession({scope,readable:[sdk,fixtures,consumers,guards]});
+  if(windows)session=await windowsSession({scope,readable:[currentRuntime.sdk,previousRuntime.sdk,fixtures,consumers,guards]});
   async function invoke(args,options={}){
     const config={cwd:scope,env:{...env,...options.env},timeout:30000};
     if(options.plain)return run(node,args,config);
@@ -137,6 +140,8 @@ try{
     return {exitCode:r.exitCode,stdoutSha256:sha(r.stdout),output:value};
   }
   async function checkStage(name,candidate){
+    const runtime=candidate===previous?previousRuntime:currentRuntime;
+    ({node,npm}=runtime);env.PATH=path.dirname(node)+path.delimiter+system;
     const cliArtifact=install(candidate,"@nexflow/cli",cliConsumer),libraryArtifact=install(candidate,"@nexflow/validation",libraryConsumer);
     // The current consumer verifier also checks the genuine predecessor without
     // relabeling its historical Unix-only verifier as Windows compatible.
@@ -173,7 +178,7 @@ try{
       wrappers.push({command,exitCode:wrapper.exitCode,stdoutSha256:sha(wrapper.stdout)});
     }
     assert.equal(inputHash(),inputsBefore);
-    observe(name,{sourceRevision:candidate.provenance.sourceRevision,artifacts:[cliArtifact,libraryArtifact],actualInstalledPairVerified:true,results,
+    observe(name,{sourceRevision:candidate.provenance.sourceRevision,node:candidate.provenance.node,artifacts:[cliArtifact,libraryArtifact],actualInstalledPairVerified:true,results,
       pureImport:{exitCode:imported.exitCode,stdoutSha256:sha(imported.stdout)},realNpmWrapper:{runs:wrappers,mode:windows?"cmd shim":"Unix bin link"},inputBytesUnchanged:true});
   }
   await checkStage("install-previous",previous);
@@ -195,7 +200,8 @@ try{
     assert.ok(!existsSync(path.join(consumer,"node_modules",name)));
   }
   for(const suffix of ["",".cmd",".ps1"])assert.ok(!existsSync(path.join(cliConsumer,"node_modules/.bin/nexflow"+suffix)));
-  assert.equal(readFileSync(canary,"utf8"),"synthetic-preserved");assert.equal(fileSha(node),runtimeHash);assert.equal(inputHash(),inputsBefore);
+  assert.equal(readFileSync(canary,"utf8"),"synthetic-preserved");assert.equal(fileSha(node),record.runtime.binarySha256);
+  assert.equal(fileSha(previousRuntime.node),record.predecessorRuntime.binarySha256);assert.equal(inputHash(),inputsBefore);
   for(const candidate of [previous,current])for(const a of candidate.provenance.artifacts)assert.equal(fileSha(path.join(candidate.directory,a.file)),a.sha256);
   observe("uninstall",{scopedPrefixesRemoved:true,externalRuntimeArchivesAndCanaryPreserved:true,inputBytesUnchanged:true});
   assert.deepEqual(fingerprint(),record.environment);observe("environment fingerprint unchanged");record.outcome="passed-unsigned-developer-scope";

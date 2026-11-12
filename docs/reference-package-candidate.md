@@ -8,7 +8,7 @@ separate decisions. The broader RFC-0011 remains Draft.
 
 ## Build From An Exact Revision
 
-Use external Node **26.13.0**, npm **11.20.0**, TypeScript **6.0.3**, and npm's
+Use external Node **26.13.1**, npm **11.20.0**, TypeScript **6.0.3**, and npm's
 bundled tar **7.5.22**. Provision the existing locks with scripts disabled:
 
 ```sh

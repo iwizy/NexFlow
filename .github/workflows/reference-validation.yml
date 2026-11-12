@@ -19,7 +19,7 @@ jobs:
           persist-credentials: false
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
-          node-version: '26.13.0'
+          node-version: '26.13.1'
           cache: npm
           cache-dependency-path: packages/validation/package-lock.json
       - name: Install pinned maintenance and library dependencies without scripts

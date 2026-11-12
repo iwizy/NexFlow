@@ -2,7 +2,7 @@
 
 This is validation-only tooling for manifests with `specVersion: "0.1"`.
 The package is `0.5.0-alpha.1`; it is not a published release or a runtime.
-Use external **Node 26.13.0 and npm 11.20.0**, acquired through a separately
+Use external **Node 26.13.1 and npm 11.20.0**, acquired through a separately
 verified upstream route. No interpreter or native executable is bundled.
 
 Select the exact source revision in `build-info.json` and obtain its complete
@@ -55,7 +55,7 @@ Preserve the original candidate bytes, provenance and checksum set. A genuine
 future corrected source revision may supply a successor for upgrade/rollback;
 relabeling these bytes is not a predecessor test. Qualification is always bound
 to exact archive digests: select the matching security and native records in
-the release review. Node 26.13.0/npm 11.20.0 targets are Ubuntu 24.04 AMD64,
+the release review. Node 26.13.1/npm 11.20.0 targets are Ubuntu 24.04 AMD64,
 macOS 15 ARM64 and Windows Server 2025 AMD64. Other versions are unsupported
 until separately qualified. A checked predecessor is test input, not a security
 recommendation to deploy an older affected candidate.

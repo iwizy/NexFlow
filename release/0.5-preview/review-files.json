@@ -13,7 +13,7 @@
   },
   {
     "path": "CHANGELOG.md",
-    "sha256": "dda7dd63f53c9b2db0477c6febf3208579ccd705c2b0ff738c55080f000be9f4"
+    "sha256": "2b514be499170f1b91e72b32964e66dd3c99d0668575e578439b12c058fd241a"
   },
   {
     "path": "docs/index.md",
@@ -21,7 +21,7 @@
   },
   {
     "path": "docs/reference-cli-preview.md",
-    "sha256": "f64a51514b68175dfed99d09d2234f05fe1b6652165716ac290463661c1dd3ff"
+    "sha256": "7244a8874b507e34d7f28b16fcc76fb2557eebc6c697a02acd5b6a3b23878f7d"
   },
   {
     "path": "docs/validation.md",
@@ -33,11 +33,11 @@
   },
   {
     "path": "docs/reference-cli-installation.md",
-    "sha256": "a667b01302b7fb56b7391710e6d29c8aff5b2805f38c74eadb56b3b1f5e39719"
+    "sha256": "7a07591506896749da7a21bd76d0d1d7a029a5b6c6ed1c70384f352e199c0a30"
   },
   {
     "path": "docs/reference-cli-compatibility.md",
-    "sha256": "42e0963cbecb92a6736ce55ff419547e909ecce68473668c43f1a64c497270e3"
+    "sha256": "43c238ef9f0938c06a5754201626c2eda8b872da2d7446c87dab2fb31748e776"
   },
   {
     "path": "conformance/REFERENCE-CLI-PREVIEW-NON-CLAIM.md",
@@ -49,30 +49,30 @@
   },
   {
     "path": "release/0.5-preview-review.md",
-    "sha256": "703f5736552687671af552787a4eb16d954f03e972fee6c9e15ece59a7ccf2ad"
+    "sha256": "90586f3d72981af233e02923244a01dd5167ed08def97566adb1865f7452fba5"
   },
   {
     "path": "release/0.5-preview-release-notes.md",
-    "sha256": "dd911f719690390846e6d2294e15a00e47f828d608e897a0f1a22daac5c5a536"
+    "sha256": "1d3759a629ab8eb463ca6c4bf33ec994f980ad208841cbbc9996ef9b3f12ca7a"
   },
   {
     "path": "release/0.5-preview-publication.md",
-    "sha256": "cc6c2647b4abe48e2989aedf878f38ae5c858a79e282136d34e8968ccdf0513c"
+    "sha256": "db15b313915a60a6c84d10cbba1aed03a05c4aa6d8caca2ef26a7166931fb531"
   },
   {
     "path": "release/0.5-preview/evidence.json",
-    "sha256": "f4b009457604ee73d0465c7ca528f71c4d8bc1a9e85d2b8c14776a07d22302ef"
+    "sha256": "323bb44f3c69a28414b10711bdbd10ef54325b49a2c9634fabdfa8f52937699c"
   },
   {
     "path": "release/0.5-preview/record.json",
-    "sha256": "d8f55d2122b9571d6262dba6dc740033a5f8a846c5f2fb2da7be36629e0d2694"
+    "sha256": "fe45de35a39774442984c69ccc7e6373f26e2151fdd2597b74c0a801f88b7ce6"
   },
   {
     "path": "scripts/release-preview-review.mjs",
-    "sha256": "1bc2b7d77ae868d3bc288d1ea5c82dfe12dcaba571495fdf0ec28a4efcd64aa5"
+    "sha256": "baad063cd14f5683d9c94b1d27599330af6d8d2e9c531018efba6a98c4816691"
   },
   {
     "path": ".github/workflows/release-readiness.yml",
-    "sha256": "f2b6ab0d3f6acce3752df8d3de05173b553f76f6f451618bdb5e83b5f8cfa911"
+    "sha256": "7e235fac6fd6b48bd54f7b4a8daadce5679bed1cc6ab57fa58f49ad8fcabdc9a"
   }
 ]

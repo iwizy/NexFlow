@@ -8,6 +8,9 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Added
 
+- Updated the exact first-alpha runtime to Node.js 26.13.1 after the November
+  security bulletin and requalified the selected packages on all three targets.
+
 - Prepared NF-110's first-alpha installation/quick start, native/runtime and
   compatibility/rollback matrix, support/correction guidance, explicit absence
   of an NF-CLI claim, and prerelease review/notes. Corrected the shipped Windows

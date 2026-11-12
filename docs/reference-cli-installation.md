@@ -8,7 +8,7 @@ proposed release is not a live download merely because these instructions exist.
 
 ## Select The Exact Package And Runtime
 
-Use external **Node 26.13.0 / npm 11.20.0** on Ubuntu 24.04 AMD64, macOS 15 ARM64
+Use external **Node 26.13.1 / npm 11.20.0** on Ubuntu 24.04 AMD64, macOS 15 ARM64
 or Windows Server 2025 AMD64. Check `node --version` and `npm --version` before
 installing. Obtain the native Node archive through its official HTTPS route and
 verify the corresponding upstream checksum; the native records also bind the

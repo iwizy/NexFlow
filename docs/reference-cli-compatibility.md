@@ -9,7 +9,7 @@ snapshot and `0.5-preview.1` output are independent version domains.
 
 | Surface | Qualified boundary |
 | --- | --- |
-| Native prerequisites | Node 26.13.0/npm 11.20.0; Ubuntu 24.04 AMD64, macOS 15 ARM64, Windows Server 2025 AMD64; exact observed images/fingerprints stay in the records. |
+| Native prerequisites | Node 26.13.1/npm 11.20.0; Ubuntu 24.04 AMD64, macOS 15 ARM64, Windows Server 2025 AMD64; exact observed images/fingerprints stay in the records. |
 | Commands | Help/version, explicit-root `validate`, declared-only `inspect`, explanatory static `graph`; directory/Project/explicit-file modes. `init`, recursive discovery, remote schema/bundle sources and execution are unsupported. |
 | Inputs | UTF-8 local `.yaml`/`.yml`, exact manifest `0.1`, 17 kinds and 18 embedded schema files; no independent schema publication. |
 | Validation | Parsing/discovery association/schema; inspection/graph are bounded projections. Complete semantic/Core/extension/runtime layers are `not-run`. |

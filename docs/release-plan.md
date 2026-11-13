@@ -254,6 +254,8 @@ Non-goals:
 ## `0.6` Runtime Prototype Boundary
 
 The `0.6` line may define how a runtime prototype can be explored safely.
+The [NF-111 scope proposal](0.6-runtime-prototype-scope.md) defines the first
+offline fixture, host boundary and admission checks for review before NF-112.
 
 Release readiness:
 

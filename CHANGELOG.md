@@ -8,6 +8,10 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Added
 
+- Proposed the 0.6 runtime prototype scope in NF-111, with one offline fixture,
+  a separate host interface, explicit preflight and admission decisions, and
+  acceptance cases for NF-112.
+
 - Updated the exact first-alpha runtime to Node.js 26.13.1 after the November
   security bulletin and requalified the selected packages on all three targets.
 

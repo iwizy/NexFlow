@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "declaration": true,
+    "types": ["node"],
+    "typeRoots": ["../packages/validation/node_modules/@types"],
+    "rootDir": ".",
+    "outDir": "dist"
+  },
+  "include": ["host/src/**/*.ts", "host-contracts/src/**/*.ts"]
+}

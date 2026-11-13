@@ -1,0 +1,59 @@
+name: Runtime Prototype
+
+on:
+  pull_request:
+    paths:
+      - 'prototype/**'
+      - 'packages/validation/package-lock.json'
+      - 'scripts/test/no-runtime-deny.mjs'
+      - 'scripts/test/reference-cli-read-guard.mjs'
+      - '.github/workflows/runtime-prototype.yml'
+  push:
+    branches: [develop, main]
+    paths:
+      - 'prototype/**'
+      - 'packages/validation/package-lock.json'
+      - 'scripts/test/no-runtime-deny.mjs'
+      - 'scripts/test/reference-cli-read-guard.mjs'
+      - '.github/workflows/runtime-prototype.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  offline-fixture:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '26.13.1'
+      - name: Provision the pinned compiler and published validator
+        run: |
+          curl --fail --silent --show-error --location \
+            https://github.com/iwizy/NexFlow/releases/download/v0.5.0-alpha.1/nexflow-validation-0.5.0-alpha.1.tgz \
+            --output "$RUNNER_TEMP/nexflow-validation-0.5.0-alpha.1.tgz"
+          echo "07e3966c54bf3c15345811396b84f47677cdfeed99fef4e357676eb306d9f1e1  $RUNNER_TEMP/nexflow-validation-0.5.0-alpha.1.tgz" | sha256sum --check
+          npm ci --prefix packages/validation --ignore-scripts --no-audit --no-fund
+          npm install --prefix prototype --offline --ignore-scripts --no-audit --no-fund --no-save --no-package-lock \
+            "$RUNNER_TEMP/nexflow-validation-0.5.0-alpha.1.tgz"
+          ln -s ../../packages/validation/node_modules/yaml prototype/node_modules/yaml
+      - name: Verify the bounded fixture under effect guardrails
+        run: |
+          test "$(node --version)" = v26.13.1
+          test "$(npm --version)" = 11.20.0
+          test "$(node packages/validation/node_modules/typescript/bin/tsc --version)" = "Version 6.0.3"
+          node packages/validation/node_modules/typescript/bin/tsc -p prototype/tsconfig.json
+          NEXFLOW_TEST_REVISION="$(git rev-parse HEAD)" \
+            node --import ./scripts/test/no-runtime-deny.mjs prototype/tests/admission.mjs \
+            > "$RUNNER_TEMP/nf-112-admission.json"
+          node -p 'require(process.argv[1]).caseCount + " fixture cases passed"' "$RUNNER_TEMP/nf-112-admission.json"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: nf-112-offline-fixture-evidence
+          path: ${{ runner.temp }}/nf-112-admission.json
+          if-no-files-found: error

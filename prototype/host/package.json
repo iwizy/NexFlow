@@ -1,0 +1,9 @@
+{
+  "name": "@nexflow/fixture-host",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@nexflow/validation": "0.5.0-alpha.1",
+    "yaml": "2.9.0"
+  }
+}

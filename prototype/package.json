@@ -1,0 +1,5 @@
+{
+  "name": "nexflow-runtime-prototype",
+  "private": true,
+  "type": "module"
+}

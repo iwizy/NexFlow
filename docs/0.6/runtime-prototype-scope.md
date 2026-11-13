@@ -1,7 +1,7 @@
 # 0.6 Runtime Prototype Scope
 
 NF-111 review proposal for NF-112. The scope applies the accepted TypeScript
-layout B in [RFC-0025](../rfcs/RFC-0025-reference-implementation-architecture.md).
+layout B in [RFC-0025](../../rfcs/RFC-0025-reference-implementation-architecture.md).
 The baseline is the published [v0.5.0-alpha.1](https://github.com/iwizy/NexFlow/releases/tag/v0.5.0-alpha.1)
 at `3aabaf610a5bd72f4f58f4ddb1b4a91dc5ee164b`. The
 [public archive verification](https://github.com/iwizy/NexFlow/actions/runs/43292142506)
@@ -37,8 +37,8 @@ host fact at a time. The operation budget is one read of one fixture record,
 with zero filesystem access, writes, network requests, credential lookups,
 subprocesses, provider calls, extension loading and destructive actions.
 The host rejects a nonzero request for any of those effects before dispatch.
-This uses the zero-access case of the [network](network-access-policy.md),
-[credential](credential-handling.md) and [security](security-model.md) policies.
+This uses the zero-access case of the [network](../network-access-policy.md),
+[credential](../credential-handling.md) and [security](../security-model.md) policies.
 
 ## Layout And Entry Points
 
@@ -63,7 +63,7 @@ The host evaluates the resolved operation and current facts. Keep the CLI
 output contract and its `executionAuthorized: false` behavior. The host
 explicitly checks the supported policy relations for this scenario because the
 library reports broader semantic and runtime checks as `not-run`. See the
-[CLI and runtime boundary](cli-runtime-boundary.md).
+[CLI and runtime boundary](../cli-runtime-boundary.md).
 
 ## Inputs And State Transitions
 
@@ -112,8 +112,8 @@ with the affected fact identified.
 
 ## Approval, Override And Dispatch
 
-Evaluate [approval gates](approval-gates.md),
-[typed targets](approval-gate-targets.md) and [human override](human-override.md)
+Evaluate [approval gates](../approval-gates.md),
+[typed targets](../approval-gate-targets.md) and [human override](../human-override.md)
 within the supported fixture slice. An explicit deny takes precedence over an
 allow. The required approval comes from the fixture host and binds its declared
 reviewer, gate, exact operation tuple, assembly digest, policy epoch and expiry.
@@ -149,14 +149,14 @@ distributed revocation races require later qualification.
 
 | Source | Required slice for review and NF-112 |
 | --- | --- |
-| [RFC-0025](../rfcs/RFC-0025-reference-implementation-architecture.md) and [RFC-0005](../rfcs/RFC-0005-validation-strategy.md) | Layout B imports and startup, exact static inputs and schema checks, separate host authority. |
-| [RFC-0011](../rfcs/RFC-0011-reference-cli-scope.md) | Preserve the published static CLI surface. |
-| [RFC-0013](../rfcs/RFC-0013-actor-model.md), [RFC-0015](../rfcs/RFC-0015-typed-references.md) and [RFC-0007](../rfcs/RFC-0007-approval-gates.md) | Explicit actor identity, exact scoped target and approval. |
-| [RFC-0017](../rfcs/RFC-0017-human-override.md) and [RFC-0022](../rfcs/RFC-0022-security-policy-composition.md) | Override narrows authority, deny wins, applicable controls intersect and mutable facts are rechecked. |
-| [RFC-0009](../rfcs/RFC-0009-event-envelope.md) and [RFC-0010](../rfcs/RFC-0010-provider-selection.md) | Correlated attempt evidence and host-owned adapter selection with no implicit fallback. Full event interoperability and real providers remain NF-113 or later scope. |
+| [RFC-0025](../../rfcs/RFC-0025-reference-implementation-architecture.md) and [RFC-0005](../../rfcs/RFC-0005-validation-strategy.md) | Layout B imports and startup, exact static inputs and schema checks, separate host authority. |
+| [RFC-0011](../../rfcs/RFC-0011-reference-cli-scope.md) | Preserve the published static CLI surface. |
+| [RFC-0013](../../rfcs/RFC-0013-actor-model.md), [RFC-0015](../../rfcs/RFC-0015-typed-references.md) and [RFC-0007](../../rfcs/RFC-0007-approval-gates.md) | Explicit actor identity, exact scoped target and approval. |
+| [RFC-0017](../../rfcs/RFC-0017-human-override.md) and [RFC-0022](../../rfcs/RFC-0022-security-policy-composition.md) | Override narrows authority, deny wins, applicable controls intersect and mutable facts are rechecked. |
+| [RFC-0009](../../rfcs/RFC-0009-event-envelope.md) and [RFC-0010](../../rfcs/RFC-0010-provider-selection.md) | Correlated attempt evidence and host-owned adapter selection with no implicit fallback. Full event interoperability and real providers remain NF-113 or later scope. |
 
 This profile applies the named slices. The owning RFC stages and manifest
-semantics remain as recorded in the [RFC index](../rfcs/README.md).
+semantics remain as recorded in the [RFC index](../../rfcs/README.md).
 
 ## Compatibility And Support
 

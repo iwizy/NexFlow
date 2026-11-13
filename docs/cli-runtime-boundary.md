@@ -17,7 +17,6 @@ Related documents:
 - [Manifest Discovery](manifest-discovery.md)
 - [Extension Loading Boundary](extension-loading-boundary.md)
 - [Runtime Options](runtime-options.md)
-- [0.6 Runtime Prototype Scope](0.6-runtime-prototype-scope.md)
 - [Runtime Language Evaluation Matrix](language-evaluation-matrix.md)
 - [RFC-0011: Reference CLI Scope](../rfcs/RFC-0011-reference-cli-scope.md)
 - [RFC-0005: Validation Strategy](../rfcs/RFC-0005-validation-strategy.md)

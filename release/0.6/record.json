@@ -1,0 +1,160 @@
+{
+  "recordVersion": "0.1",
+  "kind": "NexFlowCandidateReadiness",
+  "candidate": {
+    "label": "0.6 Runtime Prototype Boundary (repository source milestone)",
+    "specVersion": "0.1",
+    "proposedTag": "v0.6.0",
+    "commit": "06ff15955f8bf5728351c8853c642a907f07c4b5",
+    "evaluatedAt": "2026-11-15T11:09:18+00:00",
+    "changelog": "0.6/release-notes.md"
+  },
+  "decision": {
+    "outcome": "ready-with-notes",
+    "decidedBy": "NF-114 technical assessment for the single maintainer",
+    "rationale": "All five 0.6 release-plan criteria are covered by the bounded offline fixture. The recorded revision qualifies for a source-only milestone, subject to separate maintainer publication authority and exact-cut checks."
+  },
+  "checks": {
+    "documentation": {
+      "status": "passed",
+      "summary": "The qualified fixture, its setup, audit behavior and limitations are documented.",
+      "evidence": [
+        {
+          "type": "document",
+          "description": "Implemented prototype and setup",
+          "location": "../prototype/README.md",
+          "revision": "06ff15955f8bf5728351c8853c642a907f07c4b5"
+        },
+        {
+          "type": "document",
+          "description": "Five-criterion release-plan mapping",
+          "location": "0.6/review.md",
+          "revision": "06ff15955f8bf5728351c8853c642a907f07c4b5"
+        }
+      ]
+    },
+    "schemas": {
+      "status": "passed",
+      "summary": "The candidate keeps the preview schema and manifest dialect. Repository schema CI passed.",
+      "evidence": [
+        {
+          "type": "other",
+          "description": "Schema Validation CI",
+          "location": "https://github.com/iwizy/NexFlow/actions/runs/43707108575",
+          "revision": "06ff15955f8bf5728351c8853c642a907f07c4b5"
+        }
+      ]
+    },
+    "examples": {
+      "status": "passed",
+      "summary": "The maintained example set passes repository validation. The synthetic fixture uses four valid manifest types.",
+      "evidence": [
+        {
+          "type": "other",
+          "description": "Schema and example checks",
+          "location": "https://github.com/iwizy/NexFlow/actions/runs/43707108575",
+          "revision": "06ff15955f8bf5728351c8853c642a907f07c4b5"
+        },
+        {
+          "type": "other",
+          "description": "Native fixture validation",
+          "location": "https://github.com/iwizy/NexFlow/actions/runs/43707108591",
+          "revision": "06ff15955f8bf5728351c8853c642a907f07c4b5"
+        }
+      ]
+    },
+    "validation": {
+      "status": "passed",
+      "summary": "All 76 fixture cases agree across three native platforms, including 66 retained baseline cases.",
+      "evidence": [
+        {
+          "type": "other",
+          "description": "Post-merge platform comparison",
+          "location": "https://github.com/iwizy/NexFlow/actions/runs/43707108591/artifacts/14158971517",
+          "revision": "06ff15955f8bf5728351c8853c642a907f07c4b5"
+        }
+      ]
+    },
+    "rfc-governance": {
+      "status": "passed",
+      "summary": "The host follows Accepted RFC-0025 layout B. The existing review governance CI passed.",
+      "evidence": [
+        {
+          "type": "document",
+          "description": "Accepted architecture",
+          "location": "../rfcs/RFC-0025-reference-implementation-architecture.md",
+          "revision": "06ff15955f8bf5728351c8853c642a907f07c4b5"
+        },
+        {
+          "type": "other",
+          "description": "Governance CI",
+          "location": "https://github.com/iwizy/NexFlow/actions/runs/43707108581",
+          "revision": "06ff15955f8bf5728351c8853c642a907f07c4b5"
+        }
+      ]
+    },
+    "compatibility-migrations": {
+      "status": "passed",
+      "summary": "Static CLI and validator are unchanged from the published alpha. The experimental host binds the exact API and schema pair. No manifest migration is needed.",
+      "evidence": [
+        {
+          "type": "other",
+          "description": "Reference CLI regression checks",
+          "location": "https://github.com/iwizy/NexFlow/actions/runs/43707108594",
+          "revision": "06ff15955f8bf5728351c8853c642a907f07c4b5"
+        },
+        {
+          "type": "document",
+          "description": "Fixture compatibility contract",
+          "location": "../docs/0.6/runtime-prototype-scope.md",
+          "revision": "06ff15955f8bf5728351c8853c642a907f07c4b5"
+        }
+      ]
+    },
+    "security-limitations": {
+      "status": "passed",
+      "summary": "The fixture blocks external effects and keeps redacted in-memory receipts. Current validation lock audit has zero matches, and known root maintenance findings remain disclosed.",
+      "evidence": [
+        {
+          "type": "audit",
+          "description": "Separate lockfile inventory, audit receipt and retained findings",
+          "location": "0.6/evidence.json",
+          "revision": "06ff15955f8bf5728351c8853c642a907f07c4b5"
+        },
+        {
+          "type": "other",
+          "description": "Native guardrails and admission cases",
+          "location": "https://github.com/iwizy/NexFlow/actions/runs/43707108591",
+          "revision": "06ff15955f8bf5728351c8853c642a907f07c4b5"
+        }
+      ]
+    },
+    "release-evidence": {
+      "status": "passed",
+      "summary": "Exact-source CI, native fixture reports and fresh source-archive setup support the technical review. Public 0.6 bytes are pending publication.",
+      "evidence": [
+        {
+          "type": "document",
+          "description": "Source, reports, clean setup and dependency evidence",
+          "location": "0.6/evidence.json",
+          "revision": "06ff15955f8bf5728351c8853c642a907f07c4b5"
+        },
+        {
+          "type": "document",
+          "description": "Proposed release notes",
+          "location": "0.6/release-notes.md",
+          "revision": "06ff15955f8bf5728351c8853c642a907f07c4b5"
+        }
+      ]
+    }
+  },
+  "limitations": [
+    "Source-only prototype with one synthetic, explicit offline read.",
+    "No live provider, credential or filesystem access, deployment or autonomous destructive action.",
+    "No durable audit, recovery, cross-restart replay prevention or OS isolation claim.",
+    "No native installer, project publisher signature, NF-RUNTIME or NF-CLI conformance claim.",
+    "The unchanged root maintenance graph retains four fast-uri advisories affecting one dependency.",
+    "Publication authority and verification from public 0.6 archives are separate and pending."
+  ],
+  "blockers": []
+}

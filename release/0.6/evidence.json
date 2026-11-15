@@ -1,0 +1,321 @@
+{
+  "task": "NF-114",
+  "sourceRevision": "06ff15955f8bf5728351c8853c642a907f07c4b5",
+  "sourceTree": "9190c2e9cc68525ecec42584c24b78c371d399d6",
+  "previewReleaseRevision": "3aabaf610a5bd72f4f58f4ddb1b4a91dc5ee164b",
+  "prerequisites": {
+    "NF-111": {
+      "pr": 146,
+      "merge": "19809d7d9a7bef5d2c587efae4cbd9a892b08a69",
+      "workflowRun": 43404022395
+    },
+    "NF-112": {
+      "pr": 147,
+      "merge": "6f7933dad9d142b0baa5eaab2699219353c80b46",
+      "workflowRun": 43501873957
+    },
+    "NF-113": {
+      "pr": 148,
+      "merge": "06ff15955f8bf5728351c8853c642a907f07c4b5",
+      "workflowRun": 43707108591
+    }
+  },
+  "candidateCI": [
+    {
+      "name": "Branch Flow",
+      "id": 43707108586,
+      "url": "https://github.com/iwizy/NexFlow/actions/runs/43707108586",
+      "conclusion": "success"
+    },
+    {
+      "name": "CLI Prototype",
+      "id": 43707108571,
+      "url": "https://github.com/iwizy/NexFlow/actions/runs/43707108571",
+      "conclusion": "success"
+    },
+    {
+      "name": "Comparable Measurement Evidence",
+      "id": 43707108596,
+      "url": "https://github.com/iwizy/NexFlow/actions/runs/43707108596",
+      "conclusion": "success"
+    },
+    {
+      "name": "Reference CLI Preview",
+      "id": 43707108594,
+      "url": "https://github.com/iwizy/NexFlow/actions/runs/43707108594",
+      "conclusion": "success"
+    },
+    {
+      "name": "Reference Package Candidate",
+      "id": 43707108605,
+      "url": "https://github.com/iwizy/NexFlow/actions/runs/43707108605",
+      "conclusion": "success"
+    },
+    {
+      "name": "Reference Validation Library",
+      "id": 43707108579,
+      "url": "https://github.com/iwizy/NexFlow/actions/runs/43707108579",
+      "conclusion": "success"
+    },
+    {
+      "name": "Release Readiness Evidence",
+      "id": 43707108587,
+      "url": "https://github.com/iwizy/NexFlow/actions/runs/43707108587",
+      "conclusion": "success"
+    },
+    {
+      "name": "Review Governance",
+      "id": 43707108581,
+      "url": "https://github.com/iwizy/NexFlow/actions/runs/43707108581",
+      "conclusion": "success"
+    },
+    {
+      "name": "Runtime Prototype",
+      "id": 43707108591,
+      "url": "https://github.com/iwizy/NexFlow/actions/runs/43707108591",
+      "conclusion": "success"
+    },
+    {
+      "name": "Schema Validation",
+      "id": 43707108575,
+      "url": "https://github.com/iwizy/NexFlow/actions/runs/43707108575",
+      "conclusion": "success"
+    }
+  ],
+  "qualification": {
+    "nativeCases": 76,
+    "retainedBaselineCases": 66,
+    "comparison": {
+      "artifact": "https://github.com/iwizy/NexFlow/actions/runs/43707108591/artifacts/14158971517",
+      "zipDigest": "sha256:a54fc085e3859253a052f151cb4eeb7def6abc838d141424a40c20dae26ed4e3",
+      "reportSha256": "7574fcc643100c2f04490d21383629c95f26072b71200832d788a6a4a3310dbf"
+    },
+    "targets": {
+      "offline-fixture-linux-x64": {
+        "platform": "linux",
+        "architecture": "x64",
+        "image": "ubuntu24",
+        "imageVersion": "20261111.370.1",
+        "osRelease": "7.0.0-1017-azure",
+        "artifact": "https://github.com/iwizy/NexFlow/actions/runs/43707108591/artifacts/14157729947",
+        "zipDigest": "sha256:2d8a3107e081c8e62c4745978b7be9924b8f650486d0ef63a6b49e2c5f4ef001",
+        "reportSha256": "65919eb92dd2743b65dcf62c2fc03da8edcb6484c2e4c7e7c7133aaf52c7fd65"
+      },
+      "offline-fixture-darwin-arm64": {
+        "platform": "darwin",
+        "architecture": "arm64",
+        "image": "macos15",
+        "imageVersion": "20261104.0514.1",
+        "osRelease": "24.6.0",
+        "artifact": "https://github.com/iwizy/NexFlow/actions/runs/43707108591/artifacts/14158707804",
+        "zipDigest": "sha256:5fb876a88d9b679ce16313f3ac0f6732f4ebab4c1c2e0920bee476c505afadf0",
+        "reportSha256": "9302ff01923b4096f4ad8dfaf2aee855500e967631088e03dda3308429398b7a"
+      },
+      "offline-fixture-win32-x64": {
+        "platform": "win32",
+        "architecture": "x64",
+        "image": "win25-vs2026",
+        "imageVersion": "20261103.298.1",
+        "osRelease": "10.0.26100",
+        "artifact": "https://github.com/iwizy/NexFlow/actions/runs/43707108591/artifacts/14159335182",
+        "zipDigest": "sha256:e812a3759d3895a7c4fa46e1ed8a8a05303faf57f633d85e602a7c7d9f6b7195",
+        "reportSha256": "31f1743f26c55c2361194fd47212ab31792d7bf922ccf70165099b6623cd3734"
+      }
+    },
+    "cleanSourceArchive": {
+      "method": "git archive --format=tar.gz --prefix=NexFlow/ at the evaluated revision",
+      "archiveSha256": "bff7565426a38ca98c1a8adf2d6895f977561340b996f5df30f5cf32289d4415",
+      "platform": "darwin",
+      "architecture": "arm64",
+      "osRelease": "27.2.0",
+      "cases": 76,
+      "reportSha256": "396b70a8656b384e921669ed3c0c01d459be475ca274a761bbcf1bac2781cfbc",
+      "scope": "Fresh extraction without .git or build output, pinned compiler provisioning from a seeded cache, offline validator installation, compilation and fixture execution."
+    }
+  },
+  "dependencies": {
+    "toolchain": {
+      "node": "26.13.1",
+      "npm": "11.20.0",
+      "typescript": "6.0.3"
+    },
+    "validationArchive": {
+      "url": "https://github.com/iwizy/NexFlow/releases/download/v0.5.0-alpha.1/nexflow-validation-0.5.0-alpha.1.tgz",
+      "sha256": "07e3966c54bf3c15345811396b84f47677cdfeed99fef4e357676eb306d9f1e1",
+      "sourceRevision": "89292102783454140671d706c234f8e6d17a337c",
+      "embeddedLicensesAndNotices": [
+        "package/LICENSE",
+        "package/NOTICE",
+        "package/node_modules/ajv-formats/LICENSE",
+        "package/node_modules/ajv/LICENSE",
+        "package/node_modules/fast-deep-equal/LICENSE",
+        "package/node_modules/fast-uri/LICENSE",
+        "package/node_modules/json-schema-traverse/LICENSE",
+        "package/node_modules/require-from-string/license",
+        "package/node_modules/yaml/LICENSE"
+      ]
+    },
+    "auditStartedAt": "2026-11-15T11:06:12Z",
+    "auditMethod": "npm audit --package-lock-only --ignore-scripts --json against the npm registry, separately for both locks",
+    "graphs": {
+      "maintenance": {
+        "lockfile": "package-lock.json",
+        "sha256": "52a0d98e38a0ffccb6e84397965918a8303b1b527e231105faab3dded7038bbd",
+        "packages": [
+          {
+            "name": "ajv",
+            "version": "8.20.0",
+            "license": "MIT",
+            "developmentOnly": true
+          },
+          {
+            "name": "ajv-formats",
+            "version": "3.0.1",
+            "license": "MIT",
+            "developmentOnly": true
+          },
+          {
+            "name": "fast-deep-equal",
+            "version": "3.1.3",
+            "license": "MIT",
+            "developmentOnly": true
+          },
+          {
+            "name": "fast-uri",
+            "version": "3.1.8",
+            "license": "BSD-3-Clause",
+            "developmentOnly": true
+          },
+          {
+            "name": "json-schema-traverse",
+            "version": "1.0.0",
+            "license": "MIT",
+            "developmentOnly": true
+          },
+          {
+            "name": "require-from-string",
+            "version": "2.0.2",
+            "license": "MIT",
+            "developmentOnly": true
+          },
+          {
+            "name": "yaml",
+            "version": "2.9.0",
+            "license": "ISC",
+            "developmentOnly": true
+          }
+        ],
+        "audit": {
+          "exitCode": 1,
+          "reportSha256": "bffb5f52f7e7445240b5024da3e99a41a255d438babe888f13f542c63435b848",
+          "counts": {
+            "info": 0,
+            "low": 0,
+            "moderate": 1,
+            "high": 0,
+            "critical": 0,
+            "total": 1
+          },
+          "findings": [
+            {
+              "package": "fast-uri",
+              "version": "3.1.8",
+              "severity": "moderate",
+              "advisories": [
+                "https://github.com/advisories/GHSA-333x-w4r6-6crp",
+                "https://github.com/advisories/GHSA-w74x-v6f9-j3xg",
+                "https://github.com/advisories/GHSA-wjr9-j795-jxcr",
+                "https://github.com/advisories/GHSA-xhq7-xmqj-769h"
+              ]
+            }
+          ]
+        }
+      },
+      "validation": {
+        "lockfile": "packages/validation/package-lock.json",
+        "sha256": "e359af03ea9c262d18459caecc713471ca3191cf4a20eb5a4d9f11338a754dd6",
+        "packages": [
+          {
+            "name": "@types/node",
+            "version": "22.20.5",
+            "license": "MIT",
+            "developmentOnly": true
+          },
+          {
+            "name": "ajv",
+            "version": "8.20.0",
+            "license": "MIT",
+            "developmentOnly": false
+          },
+          {
+            "name": "ajv-formats",
+            "version": "3.0.1",
+            "license": "MIT",
+            "developmentOnly": false
+          },
+          {
+            "name": "fast-deep-equal",
+            "version": "3.1.3",
+            "license": "MIT",
+            "developmentOnly": false
+          },
+          {
+            "name": "fast-uri",
+            "version": "3.1.9",
+            "license": "BSD-3-Clause",
+            "developmentOnly": false
+          },
+          {
+            "name": "json-schema-traverse",
+            "version": "1.0.0",
+            "license": "MIT",
+            "developmentOnly": false
+          },
+          {
+            "name": "require-from-string",
+            "version": "2.0.2",
+            "license": "MIT",
+            "developmentOnly": false
+          },
+          {
+            "name": "typescript",
+            "version": "6.0.3",
+            "license": "Apache-2.0",
+            "developmentOnly": true
+          },
+          {
+            "name": "undici-types",
+            "version": "6.21.0",
+            "license": "MIT",
+            "developmentOnly": true
+          },
+          {
+            "name": "yaml",
+            "version": "2.9.0",
+            "license": "ISC",
+            "developmentOnly": false
+          }
+        ],
+        "audit": {
+          "exitCode": 0,
+          "reportSha256": "72755c77af8e2b54a7caac33b72af4993a43662cf575962a072bd44b02934020",
+          "counts": {
+            "info": 0,
+            "low": 0,
+            "moderate": 0,
+            "high": 0,
+            "critical": 0,
+            "total": 0
+          },
+          "findings": []
+        }
+      }
+    }
+  },
+  "distribution": {
+    "scope": "Repository source, review notes and evidence.",
+    "nativePackages": "not-applicable",
+    "nativeSigning": "not-applicable",
+    "publicArchiveVerification": "pending-publication"
+  }
+}

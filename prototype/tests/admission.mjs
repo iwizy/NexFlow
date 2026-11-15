@@ -1,10 +1,13 @@
 import assert from "node:assert/strict";
+import { createHash } from "node:crypto";
 import { release as osRelease } from "node:os";
 import { fileURLToPath } from "node:url";
 import { compatibility, createFixtureHost } from "../dist/host/src/index.js";
 import { fixtureDocuments, fixtureFacts, fixtureRequest } from "./fixture.mjs";
 
 // Load test code first, then deny application reads with no manifest root.
+const target = `${process.platform}-${process.arch}`;
+if (process.env.NEXFLOW_TEST_TARGET) assert.equal(target, process.env.NEXFLOW_TEST_TARGET);
 process.env.NEXFLOW_TEST_MODULE_ROOT = fileURLToPath(new URL("../..", import.meta.url));
 delete process.env.NEXFLOW_TEST_READ_ROOT;
 await import("../../scripts/test/reference-cli-read-guard.mjs");
@@ -22,6 +25,12 @@ function record(name, host, result, extra = {}) {
   const text = JSON.stringify({ result, evidence });
   assert.doesNotMatch(text, /fixture-secret|absolute-machine-path|Synthetic fixture actor|approvalGate|manifests|expiresAt/u);
   cases.push({ name, result, ...evidence, ...extra });
+}
+
+function canonical(value) {
+  if (Array.isArray(value)) return value.map(canonical);
+  if (value === null || typeof value !== "object") return value;
+  return Object.fromEntries(Object.keys(value).sort().map(key => [key, canonical(value[key])]));
 }
 
 function refused(name, host, request, state, reason) {
@@ -230,11 +239,133 @@ for (const [option, reason] of [["failAdapter", "adapter-outcome-unknown"], ["fa
   cases.push({ name: "bounded journal and attempts", result: full, adapterCalls: 100, receiptCount: 200 });
 }
 
+// Retain all decisions, call counts and receipts from the NF-112 platform runs.
+// The only added receipt field is the NF-113 event projection.
+assert.equal(cases.length, 66);
+const baselineCases = JSON.parse(JSON.stringify(cases, (key, value) => key === "event" ? undefined : value));
+const baselineDigest = createHash("sha256").update(JSON.stringify(canonical(baselineCases)) + "\n").digest("hex");
+assert.equal(baselineDigest, "db19556fe711bb0459bfdd809c71a87d1d5dfc20b4df751eaad0568b0e7a9bc3");
+
+for (const [adapterAvailable, state, reason] of [
+  ["unsupported", "unsupported", "adapter-unsupported"],
+  [false, "blocked", "adapter-unavailable"],
+]) {
+  const { host, request, facts } = harness();
+  facts.adapterAvailable = adapterAvailable;
+  refused("host-selected adapter " + reason, host, request, state, reason);
+}
+
+{
+  const request = fixtureRequest();
+  const facts = fixtureFacts(request);
+  const { host } = harness(request, {
+    readFacts: () => facts,
+    onIntent() { facts.adapterAvailable = false; },
+  });
+  const result = host.runFixture(request);
+  assert.equal(result.receipt.reason, "adapter-unavailable");
+  assert.equal(result.receipt.event.causationId, host.evidence().receipts[0].event.eventId);
+  assert.equal(host.evidence().adapterCalls, 0);
+  record("selected adapter became unavailable before dispatch", host, result);
+}
+
+for (const [name, options, expectedStage] of [
+  ["completed audit", {}, "outcome"],
+  ["uncertain adapter audit", { failAdapter: true }, "outcome"],
+  ["missing outcome recorder audit", { failOutcome: true }, "outcome"],
+  ["post-intent override audit", { onIntent(facts) { facts.override = "block_action"; } }, "admission"],
+]) {
+  const request = fixtureRequest();
+  const facts = fixtureFacts(request);
+  const { host } = harness(request, { ...options, onIntent: () => options.onIntent?.(facts), readFacts: () => facts });
+  const result = host.runFixture(request);
+  const before = host.evidence();
+  const intent = before.receipts[0];
+  assert.equal(result.receipt.stage, expectedStage);
+  assert.match(intent.event.eventId, /^fixture-host-\d+-event-1$/u);
+  assert.equal(intent.event.causationId, null);
+  for (const receipt of [intent, result.receipt]) {
+    assert.deepEqual(Object.keys(receipt.event).sort(), ["actor", "causationId", "correlationId", "eventId", "policyRevision", "subject"]);
+    assert.deepEqual(receipt.event.actor, { kind: "actor", id: request.operation.actor });
+    assert.deepEqual(receipt.event.subject, { kind: "fixture-record", id: request.operation.resource });
+    assert.equal(receipt.event.correlationId, request.attemptId);
+    assert.equal(receipt.event.policyRevision, facts.policyEpoch);
+  }
+  assert.equal(result.receipt.event.causationId, intent.event.eventId);
+  assert.notEqual(result.receipt.event.eventId, intent.event.eventId);
+  assert.equal(before.adapterCalls, expectedStage === "outcome" ? 1 : 0);
+  const foreignReceipt = structuredClone(result.receipt);
+  foreignReceipt.event.policyRevision = 999;
+  assert.deepEqual(host.evidence(), before);
+  const exported = host.evidence();
+  exported.receipts[0].event.actor.id = "fixture-secret";
+  assert.deepEqual(host.evidence(), before);
+  const forged = host.runFixture({ ...request, receipt: foreignReceipt });
+  assert.equal(forged.receipt.reason, "input-invalid");
+  assert.equal(forged.receipt.event.actor, null);
+  assert.equal(forged.receipt.event.subject, null);
+  assert.equal(forged.receipt.event.correlationId, null);
+  assert.equal(forged.receipt.event.policyRevision, null);
+  assert.equal(host.evidence().adapterCalls, before.adapterCalls);
+  record(name, host, result, { forged });
+}
+
+{
+  const docs = fixtureDocuments();
+  docs["project.yaml"].project.description = "fixture-secret https://synthetic.invalid/private /absolute-machine-path";
+  const { host, request } = harness(fixtureRequest(7, docs));
+  const result = host.runFixture(request);
+  assert.equal(result.state, "completed");
+  assert.doesNotMatch(JSON.stringify({ result, evidence: host.evidence() }), /synthetic\.invalid|fixture-approval-1/u);
+  record("private manifest content omitted from projected audit", host, result);
+}
+
+{
+  const { host, request } = harness(undefined, { failOutcome: true });
+  const gap = host.runFixture(request);
+  assert.equal(gap.state, "outcome-unknown");
+  assert.equal(host.runFixture(request).receipt.reason, "attempt-duplicate");
+  const fresh = harness(request);
+  fresh.facts.approval = null;
+  assert.deepEqual(fresh.host.evidence(), { adapterCalls: 0, receipts: [], outcomeGaps: [] });
+  const refusedRestore = fresh.host.runFixture({ ...request, receipt: gap.receipt });
+  assert.equal(refusedRestore.receipt.reason, "input-invalid");
+  const refusedRequest = fresh.host.runFixture(request);
+  assert.equal(refusedRequest.receipt.reason, "approval-unknown");
+  assert.equal(fresh.host.evidence().adapterCalls, 0);
+  record("fresh host has no replay or journal recovery", fresh.host, refusedRequest, { refusedRestore });
+}
+
+{
+  const { host, request } = harness();
+  const environment = process.env;
+  const canary = "NEXFLOW_TEST_FIXTURE_CREDENTIAL";
+  environment[canary] = "fixture-secret";
+  let credentialReads = 0;
+  const denied = () => { credentialReads++; throw Error("Unexpected credential lookup"); };
+  process.env = new Proxy(environment, {
+    get(target, key, receiver) { return key === canary ? denied() : Reflect.get(target, key, receiver); },
+    has(target, key) { return key === canary ? denied() : Reflect.has(target, key); },
+    getOwnPropertyDescriptor(target, key) { return key === canary ? denied() : Reflect.getOwnPropertyDescriptor(target, key); },
+    ownKeys: denied,
+  });
+  try {
+    const result = host.runFixture(request);
+    assert.equal(result.state, "completed");
+    assert.equal(credentialReads, 0);
+    record("fixture run does not consult the synthetic credential", host, result, { credentialReads });
+  } finally {
+    process.env = environment;
+    delete environment[canary];
+  }
+}
+
 console.log(JSON.stringify({
-  task: "NF-112", scope: "synthetic offline fixture",
+  task: "NF-113", scope: "synthetic offline fixture",
   revision: process.env.NEXFLOW_TEST_REVISION,
   platform: process.platform, architecture: process.arch, osRelease: osRelease(),
+  image: process.env.ImageOS, imageVersion: process.env.ImageVersion,
   node: process.versions.node, npm: "11.20.0", typescript: "6.0.3",
   validationArchiveSha256: "07e3966c54bf3c15345811396b84f47677cdfeed99fef4e357676eb306d9f1e1",
-  compatibility, caseCount: cases.length, cases,
+  compatibility, baselineCases: baselineCases.length, baselineDigest, caseCount: cases.length, cases,
 }, null, 2));

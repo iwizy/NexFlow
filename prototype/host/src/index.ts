@@ -1,7 +1,8 @@
 import { createHash } from "node:crypto";
 import { createValidator, apiVersion, schemaSnapshot } from "@nexflow/validation";
 import {
-  hostApi, fixtureOperation, type AttemptResult, type AttemptScope, type HostFacts, type Preflight, type Reason, type Receipt,
+  hostApi, fixtureOperation, type AttemptResult, type AttemptScope, type HostFacts, type Preflight, type Reason,
+  type Receipt, type ReceiptData, type ReceiptEvent,
 } from "../../host-contracts/src/index.js";
 import { matches, readInput, validateAssembly } from "./input.js";
 import { checkFacts, checkPolicy, type Authority } from "./policy.js";
@@ -25,6 +26,8 @@ type Assessment =
   | { state: "ready"; scope: AttemptScope; authority: Authority }
   | Exclude<Preflight, { state: "ready" }>;
 
+let hostSequence = 0;
+
 export function createFixtureHost(options: FixtureHostOptions) {
   const { readFacts, onIntent, failAdapter, failOutcome } = options;
   const actualSchema = createHash("sha256").update(JSON.stringify(schemaSnapshot)).digest("hex");
@@ -38,6 +41,8 @@ export function createFixtureHost(options: FixtureHostOptions) {
   const maxReceipts = maxAttempts * 2;
   let adapterCalls = 0;
   let busy = false;
+  const stream = ++hostSequence;
+  let eventSequence = 0;
 
   function assess(request: unknown): Assessment {
     if (!validator) return { state: "unsupported", reason: "version-unsupported" };
@@ -50,7 +55,7 @@ export function createFixtureHost(options: FixtureHostOptions) {
     if (policy) return { state: policy === "policy-unsupported" ? "unsupported" : "blocked", reason: policy, scope };
     const authority = checkFacts(readFacts, scope);
     return typeof authority === "string"
-      ? { state: "blocked", reason: authority, scope }
+      ? { state: authority === "adapter-unsupported" ? "unsupported" : "blocked", reason: authority, scope }
       : { state: "ready", scope, authority };
   }
 
@@ -59,8 +64,24 @@ export function createFixtureHost(options: FixtureHostOptions) {
     return assessment.state === "ready" ? { state: "ready", scope: assessment.scope } : assessment;
   }
 
-  function deny(reason: Reason, scope?: AttemptScope, policyEpoch: number | null = null, record = true): AttemptResult {
-    const receipt = { stage: "admission", decision: "denied", reason, ...(scope && { scope }), policyEpoch } as const;
+  function withEvent<T extends ReceiptData>(receipt: T, cause: string | null = null): T & { event: ReceiptEvent } {
+    const scope = receipt.scope;
+    return {
+      ...receipt,
+      event: {
+        eventId: `fixture-host-${stream}-event-${++eventSequence}`,
+        actor: scope ? { kind: "actor", id: scope.operation.actor } : null,
+        subject: scope ? { kind: "fixture-record", id: scope.operation.resource } : null,
+        correlationId: scope?.attemptId ?? null,
+        causationId: cause,
+        policyRevision: receipt.policyEpoch,
+      },
+    };
+  }
+
+  function deny(reason: Reason, scope?: AttemptScope, policyEpoch: number | null = null, cause: string | null = null): AttemptResult {
+    const receipt = withEvent({ stage: "admission", decision: "denied", reason, ...(scope && { scope }), policyEpoch }, cause);
+    const record = reason !== "host-busy";
     if (record && journal.length < maxReceipts) journal.push(structuredClone(receipt));
     return { state: "denied", admission: "denied", receipt };
   }
@@ -72,7 +93,7 @@ export function createFixtureHost(options: FixtureHostOptions) {
   }
 
   function runFixture(request: unknown): AttemptResult {
-    if (busy) return deny("host-busy", undefined, null, false);
+    if (busy) return deny("host-busy");
     busy = true;
     try {
       const assessment = assess(request);
@@ -88,36 +109,39 @@ export function createFixtureHost(options: FixtureHostOptions) {
       if (assessment.state !== "ready") return deny(assessment.reason, scope);
 
       const { scope: readyScope, authority } = assessment;
+      let intent: Receipt;
       try {
         onIntent?.();
-        journal.push(structuredClone({ stage: "intent", decision: "pending", scope: readyScope, policyEpoch: authority.policyEpoch }));
+        intent = withEvent({ stage: "intent", decision: "pending", scope: readyScope, policyEpoch: authority.policyEpoch });
+        journal.push(structuredClone(intent));
       } catch {
         return deny("intent-unavailable", readyScope, authority.policyEpoch);
       }
 
+      const cause = intent.event.eventId;
       const current = checkFacts(readFacts, readyScope);
-      if (typeof current === "string") return deny(current, readyScope, authority.policyEpoch);
+      if (typeof current === "string") return deny(current, readyScope, authority.policyEpoch, cause);
       if (current.policyEpoch !== authority.policyEpoch || current.approvalId !== authority.approvalId ||
-          current.expiresAt !== authority.expiresAt) return deny("authority-changed", readyScope, authority.policyEpoch);
+          current.expiresAt !== authority.expiresAt) return deny("authority-changed", readyScope, authority.policyEpoch, cause);
 
       let value: "sample record";
       try {
         value = readFixture(readyScope.operation.resource);
       } catch {
-        const receipt = { stage: "outcome", decision: "outcome-unknown", reason: "adapter-outcome-unknown",
-          scope: readyScope, policyEpoch: authority.policyEpoch } as const;
+        const receipt = withEvent({ stage: "outcome", decision: "outcome-unknown", reason: "adapter-outcome-unknown",
+          scope: readyScope, policyEpoch: authority.policyEpoch }, cause);
         journal.push(structuredClone(receipt));
         return { state: "outcome-unknown", admission: "admitted", receipt };
       }
       if (failOutcome) {
-        const receipt = {
+        const receipt = withEvent({
           stage: "outcome", decision: "outcome-unknown", reason: "outcome-unavailable",
           scope: readyScope, policyEpoch: authority.policyEpoch,
-        } as const;
+        }, cause);
         outcomeGaps.push(structuredClone(receipt));
         return { state: "outcome-unknown", admission: "admitted", receipt };
       }
-      const receipt = { stage: "outcome", decision: "completed", scope: readyScope, policyEpoch: authority.policyEpoch } as const;
+      const receipt = withEvent({ stage: "outcome", decision: "completed", scope: readyScope, policyEpoch: authority.policyEpoch }, cause);
       journal.push(structuredClone(receipt));
       return { state: "completed", admission: "admitted", value, receipt };
     } finally {

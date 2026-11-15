@@ -46,7 +46,7 @@ export interface HostFacts {
   policyEpoch: number | null;
   actor: string | null;
   capabilityAvailable: boolean | null;
-  adapterAvailable: boolean | null;
+  adapterAvailable: boolean | "unsupported" | null;
   budgetAvailable: boolean | null;
   approval: Approval | null;
   override: "inactive" | "block_action" | "revoke_approval" | null;
@@ -62,7 +62,7 @@ export type Reason =
   | "input-invalid" | "manifest-invalid" | "version-unsupported" | "operation-unsupported"
   | "effects-unsupported" | "policy-unsupported" | "permission-denied" | "permission-missing"
   | "facts-unknown" | "clock-unknown" | "policy-unknown" | "actor-unknown" | "actor-mismatch"
-  | "capability-unknown" | "capability-unavailable" | "adapter-unknown" | "adapter-unavailable"
+  | "capability-unknown" | "capability-unavailable" | "adapter-unknown" | "adapter-unavailable" | "adapter-unsupported"
   | "budget-unknown" | "budget-unavailable" | "override-unknown" | "override-block-action"
   | "override-revoke-approval" | "approval-unknown" | "approval-scope-mismatch"
   | "approval-requested" | "approval-rejected" | "approval-changes_requested"
@@ -74,11 +74,22 @@ export type Preflight =
   | { state: "ready"; scope: AttemptScope }
   | { state: "invalid" | "unsupported" | "blocked"; reason: Reason; scope?: AttemptScope };
 
-export type Receipt =
+export type ReceiptData =
   | { stage: "intent"; decision: "pending"; scope: AttemptScope; policyEpoch: number }
   | { stage: "admission"; decision: "denied"; reason: Reason; scope?: AttemptScope; policyEpoch: number | null }
   | { stage: "outcome"; decision: "completed"; scope: AttemptScope; policyEpoch: number }
   | { stage: "outcome"; decision: "outcome-unknown"; reason: Reason; scope: AttemptScope; policyEpoch: number };
+
+export interface ReceiptEvent {
+  eventId: string;
+  actor: { kind: "actor"; id: typeof fixtureOperation.actor } | null;
+  subject: { kind: "fixture-record"; id: typeof fixtureOperation.resource } | null;
+  correlationId: string | null;
+  causationId: string | null;
+  policyRevision: number | null;
+}
+
+export type Receipt = ReceiptData & { event: ReceiptEvent };
 
 export type AttemptResult =
   | { state: "denied"; admission: "denied"; receipt: Extract<Receipt, { stage: "admission" }> }

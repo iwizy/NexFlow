@@ -1,5 +1,6 @@
 """Verify both public source archives before making their files available to the fixture."""
 import hashlib
+import io
 import json
 from pathlib import Path, PurePosixPath
 import shutil
@@ -32,10 +33,26 @@ assert not release["prerelease"] and not release["assets"]
 assert reference["object"]["type"] == "commit" and reference["object"]["sha"] == revision
 assert release["target_commitish"] == revision
 
-# Expected paths and bytes come from Git objects, unaffected by checkout EOL rules.
-expected_archive = root / "expected.tar"
-with expected_archive.open("wb") as stream:
-    subprocess.run(["git", "archive", "--format=tar", "--prefix=source/", revision], stdout=stream, check=True)
+# Read blobs directly so Windows line-ending conversions cannot affect the comparison.
+entries = subprocess.check_output(["git", "ls-tree", "-rz", revision]).split(b"\0")
+expected_paths = {}
+for entry in filter(None, entries):
+    metadata, name = entry.split(b"\t", 1)
+    mode, kind, oid = metadata.split()
+    assert mode in (b"100644", b"100755") and kind == b"blob"
+    expected_paths[name.decode("utf-8")] = oid
+blob_data = subprocess.run(
+    ["git", "cat-file", "--batch"], input=b"\n".join(expected_paths.values()) + b"\n",
+    stdout=subprocess.PIPE, check=True,
+).stdout
+expected = {}
+with io.BytesIO(blob_data) as stream:
+    for name, oid in expected_paths.items():
+        actual_oid, kind, size = stream.readline().split()
+        assert actual_oid == oid and kind == b"blob"
+        expected[name] = stream.read(int(size))
+        assert stream.read(1) == b"\n", name
+    assert stream.read() == b""
 
 def members(archive):
     if isinstance(archive, zipfile.ZipFile):
@@ -69,8 +86,6 @@ def files(archive):
     assert len(result) > 1000
     return result
 
-with tarfile.open(expected_archive) as archive:
-    expected = files(archive)
 assert len({key.casefold() for key in expected}) == len(expected), "case-insensitive archive collision"
 inventory = digest(json.dumps([[name, digest(expected[name])] for name in sorted(expected)], separators=(",", ":")).encode())
 reports = {}

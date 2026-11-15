@@ -256,6 +256,8 @@ Non-goals:
 The `0.6` line may define how a runtime prototype can be explored safely.
 The [NF-111 scope proposal](0.6/runtime-prototype-scope.md) defines the first
 offline fixture, host boundary and admission checks for review before NF-112.
+The [NF-114 release review](../release/0.6/review.md) maps the criteria below to
+the tested prototype and the proposed source distribution.
 
 Release readiness:
 

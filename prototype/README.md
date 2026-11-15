@@ -24,7 +24,7 @@ The following commands use that verified archive as `$archive`.
 npm ci --prefix packages/validation --ignore-scripts --no-audit --no-fund
 npm install --prefix prototype --offline --ignore-scripts --no-audit --no-fund \
   --no-save --no-package-lock "$archive"
-ln -s ../../packages/validation/node_modules/yaml prototype/node_modules/yaml
+cp -R packages/validation/node_modules/yaml prototype/node_modules/yaml
 node packages/validation/node_modules/typescript/bin/tsc -p prototype/tsconfig.json
 NEXFLOW_TEST_REVISION="$(git rev-parse HEAD)" \
   node --import ./scripts/test/no-runtime-deny.mjs prototype/tests/admission.mjs
@@ -37,8 +37,38 @@ Setup uses package provisioning. The fixture run uses the existing effect
 guardrails and needs no external inputs. The output records decisions, receipts,
 adapter call counts, toolchain, revision and platform.
 
+## NF-113 qualification
+
+The Runtime Prototype workflow runs the same fixture on Ubuntu 24.04 AMD64,
+macOS 15 ARM64 and Windows Server 2025 AMD64. Each job records its exact image,
+kernel, architecture and source revision. The comparison job requires identical
+decisions, call counts and projected receipts on all three targets. It retains
+the 66 NF-112 cases and verifies their normalized digest against the prior
+Linux and macOS evidence. The workflow retains each native report and the
+platform comparison as artifacts.
+
+Additional cases exercise an unsupported adapter and loss of availability
+before and after intent recording. The host selects only the fixed fixture
+adapter and supplies only the admitted resource key. A refused selection makes
+zero calls. An unclear result leaves a gap with at most one attempted call and
+no fallback or replay. The filesystem, network and credential request budgets
+are zero. The harness checks the application read/write and network guardrails
+and monitors a synthetic credential environment variable during an approved run.
+
+The public receipt projects an event ID unique within the process, the scoped
+requester and fixture subject, the attempt correlation ID, the intent ID as
+causation for a post-intent decision, and the policy epoch used for the decision.
+Fields without safely attributable scope or policy use null. The projection
+omits manifest bodies, paths, synthetic credentials, approval data and raw
+exceptions. It exposes neither a real identity authentication claim nor the
+full event interoperability envelope. Tests assert that caller-supplied
+receipts cannot be used as authority and that modifying returned data leaves
+the stored copy intact.
+
 This is a source-only prototype. The synchronous recheck covers the synthetic
-host's state changes before dispatch. Real identity authentication, durable audit,
-crash recovery, distributed revocation, native OS isolation, real adapters and
-production execution remain outside the scope. NF-113 covers broader policy and
-event qualification. The prototype carries no NF-RUNTIME conformance claim.
+host's state changes before dispatch. Receipts, attempt consumption and outcome
+gaps live only in that host instance. A fresh host starts empty and has no
+recovery or receipt-import path. Cross-restart deduplication and reconciliation
+are unsupported. Real identity authentication, durable audit, distributed
+revocation, OS isolation, real adapters and production execution remain outside
+the scope. The prototype carries no NF-RUNTIME conformance claim.

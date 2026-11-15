@@ -110,6 +110,7 @@ export function checkFacts(read: () => HostFacts, scope: AttemptScope): Reason |
   if (facts.override !== "inactive") return "override-unknown";
   if (typeof facts.capabilityAvailable !== "boolean") return "capability-unknown";
   if (!facts.capabilityAvailable) return "capability-unavailable";
+  if (facts.adapterAvailable === "unsupported") return "adapter-unsupported";
   if (typeof facts.adapterAvailable !== "boolean") return "adapter-unknown";
   if (!facts.adapterAvailable) return "adapter-unavailable";
   if (typeof facts.budgetAvailable !== "boolean") return "budget-unknown";

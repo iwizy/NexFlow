@@ -1,0 +1,90 @@
+name: Verify v0.6.0 Public Source Archives
+
+on:
+  push:
+    branches: [verify-v0.6.0-source]
+
+permissions:
+  contents: read
+
+env:
+  RELEASE_REVISION: 22364e3235e2ac273466318255d67331b49f47db
+
+jobs:
+  public-source:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { runner: ubuntu-24.04, target: linux-x64 }
+          - { runner: macos-15, target: darwin-arm64 }
+          - { runner: windows-2025, target: win32-x64 }
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 15
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '26.13.1'
+      - name: Download ZIP and TAR.GZ and verify paths and payloads against the tag
+        run: |
+          mkdir "$RUNNER_TEMP/verification"
+          python scripts/verify-v060-source.py "$RELEASE_REVISION" "$RUNNER_TEMP/source" \
+            > "$RUNNER_TEMP/verification/archive-verification.json"
+          cat "$RUNNER_TEMP/verification/archive-verification.json"
+      - name: Fetch the published validator with its pinned digest
+        run: |
+          curl --fail --silent --show-error --location --retry 3 \
+            https://github.com/iwizy/NexFlow/releases/download/v0.5.0-alpha.1/nexflow-validation-0.5.0-alpha.1.tgz \
+            --output "$RUNNER_TEMP/validator.tgz"
+          node --input-type=module -e '
+            import assert from "node:assert/strict";
+            import { createHash } from "node:crypto";
+            import { readFileSync } from "node:fs";
+            assert.equal(createHash("sha256").update(readFileSync(process.argv[1])).digest("hex"),
+              "07e3966c54bf3c15345811396b84f47677cdfeed99fef4e357676eb306d9f1e1");
+          ' "$RUNNER_TEMP/validator.tgz"
+      - name: Build and run the fixture separately from both archives
+        env:
+          NEXFLOW_TEST_TARGET: ${{ matrix.target }}
+          NEXFLOW_TEST_REVISION: ${{ env.RELEASE_REVISION }}
+          npm_config_cache: ${{ runner.temp }}/archive-install-cache
+        run: |
+          test "$(node --version)" = v26.13.1
+          test "$(npm --version)" = 11.20.0
+          for format in zip tar; do
+            cd "$RUNNER_TEMP/source/$format"
+            test ! -e .git && test ! -e prototype/dist && test ! -e prototype/node_modules
+            npm ci --prefix packages/validation --ignore-scripts --no-audit --no-fund
+            npm install --prefix prototype --offline --ignore-scripts --no-audit --no-fund --no-save --no-package-lock \
+              "$RUNNER_TEMP/validator.tgz"
+            cp -R packages/validation/node_modules/yaml prototype/node_modules/yaml
+            test "$(node packages/validation/node_modules/typescript/bin/tsc --version)" = "Version 6.0.3"
+            node packages/validation/node_modules/typescript/bin/tsc -p prototype/tsconfig.json
+            node --import ./scripts/test/no-runtime-deny.mjs prototype/tests/admission.mjs \
+              > "$RUNNER_TEMP/verification/admission-$format.json" 2> "$RUNNER_TEMP/admission-$format.stderr" || {
+                cat "$RUNNER_TEMP/admission-$format.stderr" >&2
+                exit 1
+              }
+            if test -s "$RUNNER_TEMP/admission-$format.stderr"; then
+              cat "$RUNNER_TEMP/admission-$format.stderr" >&2
+              exit 1
+            fi
+            node -e '
+              const report = require(process.argv[1]);
+              require("node:assert/strict").equal(report.caseCount, 76);
+              console.log(report.caseCount + " fixture cases passed");
+            ' "$RUNNER_TEMP/verification/admission-$format.json"
+          done
+          cmp "$RUNNER_TEMP/verification/admission-zip.json" "$RUNNER_TEMP/verification/admission-tar.json"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: public-source-${{ matrix.target }}
+          path: ${{ runner.temp }}/verification
+          if-no-files-found: error

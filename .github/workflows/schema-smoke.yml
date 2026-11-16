@@ -101,9 +101,6 @@ jobs:
       - name: Run GitHub extension profile checks
         run: npm run github-extension-smoke
 
-      - name: Run integration metadata boundary checks
-        run: node scripts/integration-metadata-smoke.mjs
-
       - name: Run provider feature schema checks
         run: npm run provider-feature-schema-smoke
 

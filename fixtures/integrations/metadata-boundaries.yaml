@@ -1,0 +1,84 @@
+# Fictional inputs for an offline review model. Wire versions are test labels.
+profiles:
+  github:
+    namespace: io.nexflow.github
+    profileVersion: "0.1-draft"
+    sha256: a7379ecf049073bedf5cc6a1e6c1de01f4896531cb718b0e6224910fed6237a9
+    protocol: fixture-github-api
+    protocolVersion: fixture-v1
+  issue-tracker:
+    namespace: io.nexflow.issue_tracker
+    profileVersion: "0.1-draft"
+    sha256: 60cd58606b455876f5bb99d5ffb00c8a05c9fd7d48872c7e05cda6dc5b62d861
+    protocol: fixture-tracker-api
+    protocolVersion: fixture-v1
+  mcp:
+    namespace: io.nexflow.mcp
+    profileVersion: "0.1-draft"
+    sha256: 43281201ee949b53f14777bda11d4a7b45c774ecf304b699341a48cd33a60fcc
+    protocol: fixture-mcp
+    protocolVersion: fixture-v2
+  a2a:
+    namespace: io.nexflow.a2a
+    profileVersion: "0.1-draft"
+    sha256: 4a292d5d84726c55f954ba068e1547c036877aa390ac544aacfb05f09e7bcedf
+    protocol: fixture-a2a
+    protocolVersion: fixture-v3
+operations:
+  github-read:
+    profile: github
+    surface: repository
+    operation: read_repository
+    effect: read
+    target: { binding: fixture-repository, kind: commit, id: sample-object }
+    revision: "0000000000000000000000000000000000000001"
+  github-write:
+    profile: github
+    surface: pull_request
+    operation: create_pull_request
+    effect: write
+    target: { binding: fixture-repository, kind: repository, id: sample-repository }
+    revision: "0000000000000000000000000000000000000001"
+  tracker-update:
+    profile: issue-tracker
+    surface: issue
+    operation: update_issue
+    effect: write
+    target: { binding: fixture-instance-container, kind: issue, id: sample-object }
+    revision: fixture-issue-revision
+  mcp-context:
+    profile: mcp
+    surface: resources
+    operation: read_fixture_resource
+    effect: read
+    target: { binding: fixture-server, kind: resource, id: sample-object }
+    revision: fixture-resource-revision
+  mcp-tool:
+    profile: mcp
+    surface: tools
+    operation: read_fixture_record
+    effect: action
+    allowedOperations: [read_fixture_record]
+    target: { binding: fixture-server, kind: tool, id: sample-tool }
+    revision: fixture-tool-revision
+  a2a-skill:
+    profile: a2a
+    surface: skill
+    operation: request_fixture_review
+    effect: action
+    target: { binding: fixture-remote-agent, kind: skill, id: sample-skill }
+    revision: fixture-card-revision
+  a2a-import:
+    profile: a2a
+    surface: artifact
+    operation: import_fixture_copy
+    effect: import
+    target: { binding: fixture-remote-agent, kind: artifact, id: sample-object }
+    revision: fixture-artifact-revision
+    provenance:
+      agent: fixture-remote-agent
+      task: fixture-remote-task
+      artifact: sample-object
+      mediaType: text/plain
+      retrievedAt: "2026-11-16T00:00:00Z"
+      sha256: "0000000000000000000000000000000000000000000000000000000000000001"

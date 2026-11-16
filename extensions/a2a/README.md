@@ -137,3 +137,7 @@ defines disputes, deprecation and revocation for pinned records. A new
 profile version needs explicit review. Any future installed implementation
 needs its own support and integrity check, and the host evaluates credentials,
 network, permissions and approval independently for each operation.
+
+See the [shared integration metadata contract](../../docs/integrations.md#external-metadata-and-local-decisions)
+for exact compatibility, scoped evidence, callback refusals and authority
+checks across integration boundaries.

@@ -103,7 +103,12 @@ NexFlow should reserve namespace families for different ownership models.
 | `com.*`, `org.*`, `dev.*`, `net.*` | Domain or organization owner | Public, company, community, or research extensions. |
 | `local.*` | Repository or local project owner | Local-only experiments that should not claim ecosystem compatibility. |
 
-This RFC does not require domain verification. A future registry may define stronger ownership checks.
+A reverse-DNS name is a naming convention. External ownership is a scoped
+claim that a registry publisher or private deployment operator reviews against
+an identified namespace. The reserved `io.nexflow` family requires NexFlow
+governance evidence, and `local.*` stays private. A transfer or competing claim
+requires a recorded decision. While unresolved, keep the disputed namespace
+inert under the relying trust policy. See the [registry ownership model](../docs/extension-registry.md#ownership-and-verification).
 
 ## Namespace Ownership
 
@@ -135,41 +140,16 @@ Extension lifecycle states remain:
 | `deprecated` | Still recognized for compatibility, but not recommended for new manifests. |
 | `removed` | No longer supported by the target spec version or tool. |
 
-### Experimental To Stable
-
-An extension SHOULD NOT become `stable` until it documents:
-
-- namespace owner
-- behavior summary
-- supported manifest kinds
-- required capabilities
-- permission implications
-- context and memory implications
-- event type or event payload additions
-- credential and network behavior
-- compatibility policy
-- security and safety considerations
-
-### Stable To Deprecated
-
-Deprecation SHOULD identify:
-
-- reason for deprecation
-- replacement namespace or extension, if any
-- expected support timeline
-- migration guidance
-- compatibility impact
-
-### Deprecated To Removed
-
-Removal SHOULD require:
-
-- clear prior deprecation
-- migration guidance
-- validation behavior for manifests that still reference the namespace
-- changelog entry
-
-A future runtime or validator MUST NOT silently treat a removed extension as supported.
+An extension normally advances from experimental to stable, deprecated and then
+removed. Experimental profiles may go directly to deprecated. Stable support
+requires published compatibility limits, policy and security expectations,
+and reviewed evidence. Deprecation records a reason, migration route and
+support cutoff, with an explicit unknown cutoff until one is committed.
+Removal after that cutoff retains history and reports the profile as
+unsupported. Emergency security revocation can block the exact pin immediately
+without waiting for the ordinary sunset. Rollback must respect the same block.
+Registry record publication and runtime deployment state have separate
+transitions. See the [registry publication lifecycle](../docs/extension-registry.md#publication-lifecycle).
 
 ## Future Registry Expectations
 
@@ -192,35 +172,27 @@ registry or imply runtime integration support.
 
 A future registry may be useful after extension usage grows. It should be optional at first and should not block private extensions.
 
-A future public registry entry may include:
+The `0.2-draft` registry format records one entry per exact namespace and
+profile version, inclusive of retired and revoked pins. Each record binds
+profile version, source repository, exact commit, path and SHA-256. The same
+version cannot be reassigned to different bytes, changed compatibility or
+requirements. A replacement is a new version with its own review, pin and
+lifecycle. Older snapshots retain their original meaning.
 
-- namespace
-- display name
-- owner
-- lifecycle
-- documentation URL
-- supported `specVersion` values
-- supported conformance levels
-- required capabilities
-- permission implications
-- context sources exposed
-- event types emitted
-- credential requirements
-- security contact
-- compatibility notes
-- replacement namespace when deprecated
-
-Private organizations may keep an internal registry with the same fields.
-
-Registry entries are discovery metadata rather than authority. They must not
-be interpreted as project manifests, implementation locks, install
-instructions, permission grants, conformance certificates, or runtime support
-records. Public and private catalogs may share the model without making public
-registration mandatory.
+Authored metadata expresses a project's requested namespace and behavior.
+Registry assertions describe publisher-reviewed discovery evidence. Installed
+implementation identity and support are deployment-owned and apply to exact
+artifacts. Execution authority is host-owned and evaluated for each operation
+under the project's policy. Ownership, publication, an installed artifact and
+compatibility each carry zero authority to access credentials, use the
+network or satisfy approval requirements.
 
 ## Extension Compatibility
 
-Extension compatibility should be explicit.
+A consumer checks the exact profile version and pin, manifest `specVersion`
+and attachment area. Compatibility needs a separate implemented support
+record. Do not infer compatibility from a shared namespace, approximate
+version, newer manifest dialect or replacement recommendation.
 
 Examples:
 
@@ -313,18 +285,12 @@ A tool should not claim broad "NexFlow extension support" without listing namesp
 
 ## Compatibility Impact
 
-This RFC does not change manifest structure.
-
-If accepted, it may guide:
-
-- future `docs/extensions.md` updates
-- future `docs/integrations.md` updates
-- future schema additions for optional owner, version, registry, or security metadata
-- future extension registry publication, signing, revocation, and governance
-- future semantic validation checks
-- future compatibility notes for extension namespace changes
-
-No existing schema, example, or manifest needs migration because of this RFC.
+Manifest `specVersion: "0.1"`, the `ExtensionSet` schema and existing profile
+assets are preserved. The standalone `0.2-draft` registry adds exact version
+records, disputes, deprecation and revocation metadata. Existing `0.1-draft`
+snapshots remain readable as discovery data. The
+[migration instructions](../docs/extension-registry.md#migration-from-01-draft)
+preserve historical records while reviewing fresh pins and notices.
 
 ## Security and Safety Impact
 
@@ -369,7 +335,6 @@ This would violate provider neutrality and would not cover task systems, design 
 ## Open Questions
 
 - Should NexFlow define a stricter namespace grammar before `1.0`?
-- Should public namespace ownership require verification?
 - Should extension manifests include optional `owner`, `version`, `securityContact`, or `registry` fields in `0.1`?
 - Should extension-specific event types use a namespace prefix?
 - Should a future registry support signed extension metadata?

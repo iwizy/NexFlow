@@ -64,6 +64,11 @@ Extension namespaces should be stable and ownership-aware. The draft namespace m
 
 The `io.nexflow.*` namespace family is reserved for NexFlow-maintained or governance-accepted extension drafts. Private organizations should prefer reverse-DNS namespaces such as `com.example.platform`.
 
+Treat `ExtensionSet` lifecycle and namespace values as authored metadata.
+The [extension registry model](extension-registry.md) describes disputed
+ownership, exact profile revisions and revocation. Any installed implementation
+needs separate deployment evidence. The host grants access per operation.
+
 ## Extension Rules
 
 Extensions MUST:

@@ -1,4 +1,4 @@
-registryFormatVersion: "0.1-draft"
+registryFormatVersion: "0.2-draft"
 kind: NexFlowExtensionRegistry
 metadata:
   registryId: example-extension-registry
@@ -17,7 +17,9 @@ entries:
       type: organization
       identifier: https://example.invalid/
       verification:
-        status: self_asserted
+        status: registry_verified
+        method: repository
+        evidence: https://example.invalid/verification/issue-tracker
     lifecycle: experimental
     profile:
       version: "0.1-draft"
@@ -50,6 +52,58 @@ entries:
       specification: https://example.invalid/extensions/issue-tracker/specification
       security: https://example.invalid/security
     publication:
+      status: revoked
+      publishedAt: "2026-09-18T00:00:00Z"
+    withdrawal:
+      reason: Fictional policy withdrawal used to demonstrate a retained record.
+      effectiveAt: "2026-09-20T00:00:00Z"
+      evidence: https://example.invalid/withdrawals/issue-tracker-0.1
+    limitations:
+      - This is fictional metadata and does not identify an installable or supported extension.
+  - namespace: com.example.issue_tracker
+    displayName: Example Issue Tracker
+    summary: Fictional extension metadata used only to demonstrate the draft registry format.
+    owner:
+      name: Example Organization
+      type: organization
+      identifier: https://example.invalid/
+      verification:
+        status: registry_verified
+        method: repository
+        evidence: https://example.invalid/verification/issue-tracker
+    lifecycle: experimental
+    profile:
+      version: "0.2-draft"
       status: draft
+      specification: https://example.invalid/extensions/issue-tracker/0.2/specification
+      source:
+        repository: https://example.invalid/extensions
+        revision: "1111111111111111111111111111111111111111"
+        path: extensions/issue-tracker/profile.yaml
+        sha256: "1111111111111111111111111111111111111111111111111111111111111111"
+    compatibility:
+      specVersions:
+        - "0.1"
+      profileVersions:
+        - "0.2-draft"
+      attachmentAreas:
+        - context
+        - events
+        - tasks
+      conformanceLevels:
+        - NF-EXTENSION
+    requirements:
+      capabilities:
+        - read_context
+      networkAccess: required
+      credentials: optional
+      executableCode: true
+    documentation:
+      homepage: https://example.invalid/extensions/issue-tracker
+      specification: https://example.invalid/extensions/issue-tracker/0.2/specification
+      security: https://example.invalid/security
+    publication:
+      status: published
+      publishedAt: "2026-09-20T00:00:00Z"
     limitations:
       - This is fictional metadata and does not identify an installable or supported extension.

@@ -93,3 +93,14 @@ separate interoperability and runtime decisions.
 
 See [RFC-0018](../../rfcs/RFC-0018-mcp-extension-profile.md) for the proposal,
 compatibility notes, validation rules, and open questions.
+
+## Ownership And Profile Pinning
+
+This `0.1-draft` MCP profile is experimental and governed in the
+`io.nexflow.*` namespace. For compatibility evidence, bind the exact profile
+and schema revision to manifest `specVersion: "0.1"` and the covered attachment
+areas. The [extension registry contract](../../docs/extension-registry.md)
+defines disputes, deprecation and revocation for pinned records. A new
+profile version needs explicit review. Any future installed implementation
+needs its own support and integrity check, and the host evaluates credentials,
+network, permissions and approval independently for each operation.

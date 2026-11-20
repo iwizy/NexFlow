@@ -140,6 +140,12 @@ The exact npm-tool entry has a `bounded-not-applicable` disposition. Changes
 to advisory content, callers, tool versions, patterns, lifecycle/native-build
 configuration or npm package inputs require reassessment.
 
+The release readiness workflow checks the published alpha evidence from its
+exact release revision, `3aabaf610a5bd72f4f58f4ddb1b4a91dc5ee164b`, and checks
+that its retained records and verifier match that revision. Current-source
+package and security acceptance runs in the Reference Package Candidate
+workflow with the current policy.
+
 ## Remaining Gates
 
 The collector's npm advisory results do not fully assess Node's native C/C++

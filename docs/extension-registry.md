@@ -14,6 +14,7 @@ Related documents:
 - [Extension Loading Boundary](extension-loading-boundary.md)
 - [Conformance](conformance.md)
 - [Compatibility Matrix](compatibility-matrix.md)
+- [Unsupported Extension Compatibility](0.7/extension-compatibility.md)
 
 The machine-readable draft accepts `0.1-draft` and `0.2-draft` in
 [`extensions/registry.schema.json`](../extensions/registry.schema.json). The

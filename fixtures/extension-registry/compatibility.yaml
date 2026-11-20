@@ -1,0 +1,74 @@
+# The catalog pins fictional registry rows, not installed implementations.
+selection:
+  namespace: com.example.issue_tracker
+  profileVersion: "0.2-draft"
+  specVersion: "0.1"
+  attachmentArea: context
+catalog:
+  - namespace: com.example.issue_tracker
+    profileVersion: "0.2-draft"
+    source:
+      repository: https://example.invalid/extensions
+      revision: "1111111111111111111111111111111111111111"
+      path: extensions/issue-tracker/profile.yaml
+      sha256: "1111111111111111111111111111111111111111111111111111111111111111"
+cases:
+  - id: known-pair
+    expected: compatible-metadata
+  - id: unknown-namespace
+    selection: { namespace: com.example.unknown }
+    expected: unsupported-namespace
+  - id: unknown-profile
+    registry: unknown-profile
+    selection: { namespace: com.example.unrecognized }
+    expected: unsupported-profile
+  - id: unknown-version
+    selection: { profileVersion: "9.0" }
+    expected: unsupported-profile-version
+  - id: incompatible-manifest-pair
+    registry: other-spec
+    expected: incompatible-pair
+  - id: incompatible-attachment
+    selection: { attachmentArea: workflow }
+    expected: incompatible-pair
+  - id: mismatched-source-pin
+    registry: changed-pin
+    expected: profile-pin-mismatch
+  - id: revoked-with-existing-successor
+    selection: { profileVersion: "0.1-draft" }
+    expected: revoked-profile
+  - id: withdrawn
+    registry: withdrawn
+    expected: withdrawn-profile
+  - id: disputed
+    registry: disputed
+    expected: disputed-ownership
+  - id: invalid-snapshot
+    registry: invalid-source
+    expected: invalid-registry
+  - id: ambiguous-snapshot
+    registry: duplicate
+    expected: inconsistent-registry
+  - id: legacy-snapshot
+    registry: legacy
+    selection: { profileVersion: "0.1-draft" }
+    expected: legacy-registry
+  - id: migrated-snapshot
+    registry: migrated
+    selection: { profileVersion: "0.1-draft" }
+    expected: unpublished-profile
+  - id: legacy-downgrade
+    registry: legacy
+    compareHistory: true
+    selection: { profileVersion: "0.1-draft" }
+    expected: inconsistent-registry
+  - id: unsupported-manifest-dialect
+    selection: { specVersion: "0.2" }
+    expected: incompatible-pair
+    static: unsupported
+    diagnostics: [NF-DISCOVERY-UNSUPPORTED-VERSION]
+  - id: invalid-authored-lifecycle
+    lifecycle: revoked
+    expected: compatible-metadata
+    static: invalid
+    diagnostics: [NF-SCHEMA]

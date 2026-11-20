@@ -286,6 +286,7 @@ Release readiness:
 - the experimental A2A profile keeps Agent Cards, remote identity, skill claims,
   messages, tasks, and artifacts separate from local authority and work state
 - extension compatibility expectations are represented in conformance language
+  with [offline fixtures and observed support](0.7/extension-compatibility.md)
 
 ## `0.8` Interoperability Review
 

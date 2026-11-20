@@ -1,6 +1,6 @@
 {
   "task": "NF-108",
-  "reviewedOn": "2026-11-04",
+  "reviewedOn": "2026-11-20",
   "reviewMode": "single-maintainer; code/data boundary and dependency/distribution lenses; no independent human audit",
   "scope": "Exact candidate, reviewed repository commands and Node 26.13.1/npm 11.20.0; reassess before release, changed input, version, command, network/proxy configuration or schema authority",
   "dispositions": [
@@ -65,6 +65,19 @@
       "graphs": [
         "npm-tool"
       ],
+      "name": "picomatch",
+      "version": "4.0.4",
+      "advisories": [
+        "GHSA-fc5q-39xc-vjpf"
+      ],
+      "disposition": "bounded-not-applicable",
+      "basis": "Upstream withdrew this advisory on 2026-11-18. In npm 11.20.0, node-gyp 12.4.0 is the sole consumer of tinyglobby 0.2.17 and its picomatch 4.0.4. node-gyp/lib/build.js passes the fixed patterns build/*.sln and build/*.mk only on Windows. Qualified ci/pack/local-install commands use --ignore-scripts, and the candidate job runs on Linux. Authored manifests reach the installed validation/CLI entry after installation; the delivered packages contain no picomatch.",
+      "limits": "Scoped to this exact npm graph and the reviewed commands. Reassess changed advisory content, tool versions, callers, patterns, lifecycle/native-build configuration or user-controlled npm package metadata. Retain previous failed evidence and the upstream withdrawal record."
+    },
+    {
+      "graphs": [
+        "npm-tool"
+      ],
       "name": "ip-address",
       "version": "10.5.0",
       "advisories": [
@@ -121,6 +134,7 @@
     "GHSA-4qv8-2p9j-2685": "97814c112cbe7fee30d04a819eaf53553bfa394f40d18ab37995b043b8018b4d",
     "GHSA-6j4f-fj2g-mc7p": "b30c68090ff9cdba60443e25488851d655923f18062deacfdb1b3a72d93802e0",
     "GHSA-9fm3-97px-rjf6": "eeb37266ad8d1ab832ce90d4cd29ed89562cca4cfd026b55d898525cb77473c4",
+    "GHSA-fc5q-39xc-vjpf": "256d69a1ebdc0346f66a72ccc975adca0dde1d98605de583028d1aa1d8ab437e",
     "GHSA-g3hv-75wg-m249": "2e09f17fa14e2cf81498f498fe06d7acc24c72ef6ee883e02da2aae2e7dad2a6",
     "GHSA-h3mg-xc3c-68pw": "621a58b056cb96fdcb9acd195601a1760edac7a071e0115f19a8dc8c2d33e8f1",
     "GHSA-j6r3-76f7-8jcv": "e0058cff029c73acc2e83326507701264b1d4c1befd84fce4af109f0ad8d478b",
@@ -144,6 +158,13 @@
       "previousCanonicalSha256": "b95559e204e1aa4f22ee0598c69598d75799ca5545df2f48a8ed44032951d5ba",
       "currentCanonicalSha256": "2e09f17fa14e2cf81498f498fe06d7acc24c72ef6ee883e02da2aae2e7dad2a6",
       "basis": "Upstream narrowed introduced range from 0 to 7.0.0 and added patch references; details/severity unchanged. npm-tool minimatch 10.2.5 remains affected; fixed reviewed package lists do not receive manifest-controlled patterns. Existing bounded tooling-risk disposition retained, not repaired."
+    },
+    {
+      "id": "GHSA-fc5q-39xc-vjpf",
+      "reviewedOn": "2026-11-20",
+      "previousCanonicalSha256": "88abf5b2382db287c3b2b22b656720d55bfa75b90ca67ba219242cccbb8dc54f",
+      "currentCanonicalSha256": "256d69a1ebdc0346f66a72ccc975adca0dde1d98605de583028d1aa1d8ab437e",
+      "basis": "The previous CI response reported this advisory on 2026-11-18. The current OSV record retains the affected range with withdrawn=2026-11-18T15:38:56Z; its exact-version query returns no matches on 2026-11-20. The upstream notice says the report is not a security issue. Static review independently bounds the sole npm-tool consumer to node-gyp's fixed Windows build-file patterns and disabled lifecycle scripts."
     }
   ]
 }

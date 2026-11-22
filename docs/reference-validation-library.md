@@ -4,9 +4,11 @@ NF-105 implements the separate TypeScript validation package and read-only
 workspace adapter required by the [0.5 CLI contract](0.5-cli-contract.md).
 The [library API/build instructions](../packages/validation/README.md) and
 [adapter boundary](../packages/cli/README.md) describe actual source behavior.
-Neither package is published. NF-106 adds a separate
-[executable source preview](reference-cli-preview.md); final CLI installation
-and release remain subsequent work.
+The CLI and validator are published as
+[`0.5.0-alpha.1`](https://github.com/iwizy/NexFlow/releases/tag/v0.5.0-alpha.1).
+The [CLI preview](reference-cli-preview.md) and
+[installation guide](reference-cli-installation.md) describe that bounded
+public package pair. The extraction evidence below retains its historical scope.
 
 ## Extraction And Evidence
 

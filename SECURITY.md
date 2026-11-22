@@ -1,9 +1,9 @@
 # Security Policy
 
 NexFlow is a specification-first project with executable repository checks,
-experimental validation candidates and separate unreleased reference
-validation/CLI packages. It does not execute workflows, call providers, store
-credentials or run agents.
+experimental validation candidates, published reference validation/CLI packages,
+and a source-only host for one synthetic offline operation. Production workflow,
+provider, credential and executable-extension support remains deferred.
 
 Current security review covers untrusted manifest/data inputs, parsing and
 validation dependencies, bounded filesystem reads, prototype initializer writes,
@@ -13,8 +13,9 @@ entry; its separate [workspace adapter](packages/cli/README.md) owns permitted
 project-file reads. The historical CLI prototype is a different executable
 surface, including its bounded `init` command. Installable reference candidate
 archives have separate [security](docs/reference-package-security.md) and
-[native lifecycle](docs/reference-native-lifecycle.md) evidence. No reference CLI
-is publicly published by that qualification; `init` remains deferred.
+[native lifecycle](docs/reference-native-lifecycle.md) evidence. The
+[published alpha](https://github.com/iwizy/NexFlow/releases/tag/v0.5.0-alpha.1)
+contains the reference CLI and validator; `init` remains deferred.
 The [preview support/correction policy](docs/reference-cli-compatibility.md)
 retains the existing single-maintainer ownership and best-effort limits.
 
@@ -96,10 +97,10 @@ triage against current code does not promise backports to every historical tag.
 | Surface | Current status |
 | --- | --- |
 | `develop` | Active pre-release specification and implemented-tooling maintenance. |
-| `v0.4.0` | Latest published source/decision/evidence milestone; not an installable CLI or runtime. |
+| `v0.6.0` | Latest published source milestone; the host supports one synthetic offline fixture with the limits in `prototype/README.md`. |
 | Earlier release tags | Historical snapshots; include the exact revision when reporting an issue. |
 | Manifest `specVersion: "0.1"` | The authored format, separate from release and package versions; not a security-support branch identifier. |
-| Validation package `0.5.0-alpha.1` | Private, unreleased preview source; no published CLI or native-target support claim. |
+| CLI and validation packages `0.5.0-alpha.1` | Published unsigned developer preview; exact archive and target limits are recorded in the installation and support guides. |
 
 See [Versioning](docs/versioning.md) for the independent version domains and
 [library qualification scope](docs/reference-validation-library.md) for its

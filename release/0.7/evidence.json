@@ -1,0 +1,688 @@
+{
+  "task": "NF-118",
+  "sourceRevision": "58c1897eb47fae92f73d9a0681bb58e9e277eb57",
+  "sourceTree": "25d0a542519d0511b5f7cd1f555a4340314ab2b1",
+  "recordedAt": "2026-11-22T10:41:05.845Z",
+  "scope": {
+    "distribution": "repository-source",
+    "newExecutableIntegration": false,
+    "publicationAuthorized": false,
+    "personalReviewClaimed": false,
+    "independenceClaimed": false
+  },
+  "previousMilestone": {
+    "tag": "v0.6.0",
+    "revision": "22364e3235e2ac273466318255d67331b49f47db",
+    "published": true,
+    "publishedAt": "2026-11-15T11:22:34Z",
+    "url": "https://github.com/iwizy/NexFlow/releases/tag/v0.6.0"
+  },
+  "prerequisites": [
+    {
+      "task": "NF-115",
+      "pr": 151,
+      "headRevision": "63196aed8c08605548eaf56a8872d48aae3352e4",
+      "mergeRevision": "ef12e9fee15b5f64ecee98528c1cbc4711c5cd91",
+      "ci": [
+        {
+          "name": "Branch Flow",
+          "id": 43865731926,
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/43865731926",
+          "sourceRevision": "ef12e9fee15b5f64ecee98528c1cbc4711c5cd91",
+          "conclusion": "success"
+        },
+        {
+          "name": "CLI Prototype",
+          "id": 43865731878,
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/43865731878",
+          "sourceRevision": "ef12e9fee15b5f64ecee98528c1cbc4711c5cd91",
+          "conclusion": "success"
+        },
+        {
+          "name": "Comparable Measurement Evidence",
+          "id": 43865731857,
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/43865731857",
+          "sourceRevision": "ef12e9fee15b5f64ecee98528c1cbc4711c5cd91",
+          "conclusion": "success"
+        },
+        {
+          "name": "Reference CLI Preview",
+          "id": 43865732178,
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/43865732178",
+          "sourceRevision": "ef12e9fee15b5f64ecee98528c1cbc4711c5cd91",
+          "conclusion": "success"
+        },
+        {
+          "name": "Reference Package Candidate",
+          "id": 43865731915,
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/43865731915",
+          "sourceRevision": "ef12e9fee15b5f64ecee98528c1cbc4711c5cd91",
+          "conclusion": "success"
+        },
+        {
+          "name": "Reference Validation Library",
+          "id": 43865731891,
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/43865731891",
+          "sourceRevision": "ef12e9fee15b5f64ecee98528c1cbc4711c5cd91",
+          "conclusion": "success"
+        },
+        {
+          "name": "Release Readiness Evidence",
+          "id": 43865732227,
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/43865732227",
+          "sourceRevision": "ef12e9fee15b5f64ecee98528c1cbc4711c5cd91",
+          "conclusion": "success"
+        },
+        {
+          "name": "Review Governance",
+          "id": 43865732014,
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/43865732014",
+          "sourceRevision": "ef12e9fee15b5f64ecee98528c1cbc4711c5cd91",
+          "conclusion": "success"
+        },
+        {
+          "name": "Schema Validation",
+          "id": 43865731957,
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/43865731957",
+          "sourceRevision": "ef12e9fee15b5f64ecee98528c1cbc4711c5cd91",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "task": "NF-116",
+      "pr": 152,
+      "headRevision": "da16f91cba6b58ffc35a6ceff21b7d39924db7fb",
+      "mergeRevision": "1a4b291553bb6d1f258de21aa06f9bdf418eaa6c",
+      "ci": [
+        {
+          "name": "Branch Flow",
+          "id": 43868135284,
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/43868135284",
+          "sourceRevision": "1a4b291553bb6d1f258de21aa06f9bdf418eaa6c",
+          "conclusion": "success"
+        },
+        {
+          "name": "CLI Prototype",
+          "id": 43868135242,
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/43868135242",
+          "sourceRevision": "1a4b291553bb6d1f258de21aa06f9bdf418eaa6c",
+          "conclusion": "success"
+        },
+        {
+          "name": "Comparable Measurement Evidence",
+          "id": 43868135335,
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/43868135335",
+          "sourceRevision": "1a4b291553bb6d1f258de21aa06f9bdf418eaa6c",
+          "conclusion": "success"
+        },
+        {
+          "name": "Integration Metadata Boundaries",
+          "id": 43868135261,
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/43868135261",
+          "sourceRevision": "1a4b291553bb6d1f258de21aa06f9bdf418eaa6c",
+          "conclusion": "success"
+        },
+        {
+          "name": "Reference CLI Preview",
+          "id": 43868135463,
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/43868135463",
+          "sourceRevision": "1a4b291553bb6d1f258de21aa06f9bdf418eaa6c",
+          "conclusion": "success"
+        },
+        {
+          "name": "Reference Package Candidate",
+          "id": 43868135353,
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/43868135353",
+          "sourceRevision": "1a4b291553bb6d1f258de21aa06f9bdf418eaa6c",
+          "conclusion": "success"
+        },
+        {
+          "name": "Reference Validation Library",
+          "id": 43868135451,
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/43868135451",
+          "sourceRevision": "1a4b291553bb6d1f258de21aa06f9bdf418eaa6c",
+          "conclusion": "success"
+        },
+        {
+          "name": "Release Readiness Evidence",
+          "id": 43868135262,
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/43868135262",
+          "sourceRevision": "1a4b291553bb6d1f258de21aa06f9bdf418eaa6c",
+          "conclusion": "success"
+        },
+        {
+          "name": "Review Governance",
+          "id": 43868135303,
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/43868135303",
+          "sourceRevision": "1a4b291553bb6d1f258de21aa06f9bdf418eaa6c",
+          "conclusion": "success"
+        },
+        {
+          "name": "Schema Validation",
+          "id": 43868135354,
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/43868135354",
+          "sourceRevision": "1a4b291553bb6d1f258de21aa06f9bdf418eaa6c",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "task": "NF-117",
+      "pr": 153,
+      "headRevision": "e29f1c5da452e9352fa611c6b5b5fb643f3679d4",
+      "mergeRevision": "58c1897eb47fae92f73d9a0681bb58e9e277eb57",
+      "ci": [
+        {
+          "name": "Branch Flow",
+          "id": 44740863896,
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/44740863896",
+          "sourceRevision": "58c1897eb47fae92f73d9a0681bb58e9e277eb57",
+          "conclusion": "success"
+        },
+        {
+          "name": "CLI Prototype",
+          "id": 44740863612,
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/44740863612",
+          "sourceRevision": "58c1897eb47fae92f73d9a0681bb58e9e277eb57",
+          "conclusion": "success"
+        },
+        {
+          "name": "Comparable Measurement Evidence",
+          "id": 44740864046,
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/44740864046",
+          "sourceRevision": "58c1897eb47fae92f73d9a0681bb58e9e277eb57",
+          "conclusion": "success"
+        },
+        {
+          "name": "Extension Compatibility",
+          "id": 44740863655,
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/44740863655",
+          "sourceRevision": "58c1897eb47fae92f73d9a0681bb58e9e277eb57",
+          "conclusion": "success"
+        },
+        {
+          "name": "Reference CLI Preview",
+          "id": 44740863575,
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/44740863575",
+          "sourceRevision": "58c1897eb47fae92f73d9a0681bb58e9e277eb57",
+          "conclusion": "success"
+        },
+        {
+          "name": "Reference Package Candidate",
+          "id": 44740863675,
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/44740863675",
+          "sourceRevision": "58c1897eb47fae92f73d9a0681bb58e9e277eb57",
+          "conclusion": "success"
+        },
+        {
+          "name": "Reference Validation Library",
+          "id": 44740863650,
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/44740863650",
+          "sourceRevision": "58c1897eb47fae92f73d9a0681bb58e9e277eb57",
+          "conclusion": "success"
+        },
+        {
+          "name": "Release Readiness Evidence",
+          "id": 44740863884,
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/44740863884",
+          "sourceRevision": "58c1897eb47fae92f73d9a0681bb58e9e277eb57",
+          "conclusion": "success"
+        },
+        {
+          "name": "Review Governance",
+          "id": 44740863560,
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/44740863560",
+          "sourceRevision": "58c1897eb47fae92f73d9a0681bb58e9e277eb57",
+          "conclusion": "success"
+        },
+        {
+          "name": "Schema Validation",
+          "id": 44740863626,
+          "url": "https://github.com/iwizy/NexFlow/actions/runs/44740863626",
+          "sourceRevision": "58c1897eb47fae92f73d9a0681bb58e9e277eb57",
+          "conclusion": "success"
+        }
+      ]
+    }
+  ],
+  "candidateCI": [
+    {
+      "name": "Branch Flow",
+      "id": 44740863896,
+      "url": "https://github.com/iwizy/NexFlow/actions/runs/44740863896",
+      "sourceRevision": "58c1897eb47fae92f73d9a0681bb58e9e277eb57",
+      "conclusion": "success"
+    },
+    {
+      "name": "CLI Prototype",
+      "id": 44740863612,
+      "url": "https://github.com/iwizy/NexFlow/actions/runs/44740863612",
+      "sourceRevision": "58c1897eb47fae92f73d9a0681bb58e9e277eb57",
+      "conclusion": "success"
+    },
+    {
+      "name": "Comparable Measurement Evidence",
+      "id": 44740864046,
+      "url": "https://github.com/iwizy/NexFlow/actions/runs/44740864046",
+      "sourceRevision": "58c1897eb47fae92f73d9a0681bb58e9e277eb57",
+      "conclusion": "success"
+    },
+    {
+      "name": "Extension Compatibility",
+      "id": 44740863655,
+      "url": "https://github.com/iwizy/NexFlow/actions/runs/44740863655",
+      "sourceRevision": "58c1897eb47fae92f73d9a0681bb58e9e277eb57",
+      "conclusion": "success"
+    },
+    {
+      "name": "Reference CLI Preview",
+      "id": 44740863575,
+      "url": "https://github.com/iwizy/NexFlow/actions/runs/44740863575",
+      "sourceRevision": "58c1897eb47fae92f73d9a0681bb58e9e277eb57",
+      "conclusion": "success"
+    },
+    {
+      "name": "Reference Package Candidate",
+      "id": 44740863675,
+      "url": "https://github.com/iwizy/NexFlow/actions/runs/44740863675",
+      "sourceRevision": "58c1897eb47fae92f73d9a0681bb58e9e277eb57",
+      "conclusion": "success"
+    },
+    {
+      "name": "Reference Validation Library",
+      "id": 44740863650,
+      "url": "https://github.com/iwizy/NexFlow/actions/runs/44740863650",
+      "sourceRevision": "58c1897eb47fae92f73d9a0681bb58e9e277eb57",
+      "conclusion": "success"
+    },
+    {
+      "name": "Release Readiness Evidence",
+      "id": 44740863884,
+      "url": "https://github.com/iwizy/NexFlow/actions/runs/44740863884",
+      "sourceRevision": "58c1897eb47fae92f73d9a0681bb58e9e277eb57",
+      "conclusion": "success"
+    },
+    {
+      "name": "Review Governance",
+      "id": 44740863560,
+      "url": "https://github.com/iwizy/NexFlow/actions/runs/44740863560",
+      "sourceRevision": "58c1897eb47fae92f73d9a0681bb58e9e277eb57",
+      "conclusion": "success"
+    },
+    {
+      "name": "Schema Validation",
+      "id": 44740863626,
+      "url": "https://github.com/iwizy/NexFlow/actions/runs/44740863626",
+      "sourceRevision": "58c1897eb47fae92f73d9a0681bb58e9e277eb57",
+      "conclusion": "success"
+    }
+  ],
+  "releaseCriteria": [
+    {
+      "id": "namespace-ownership",
+      "criterion": "extension namespace ownership rules are clear",
+      "status": "passed"
+    },
+    {
+      "id": "lifecycle-preservation",
+      "criterion": "lifecycle states are stable enough for tools to preserve unsupported extensions safely",
+      "status": "passed"
+    },
+    {
+      "id": "integration-metadata",
+      "criterion": "integration metadata expectations are documented",
+      "status": "passed"
+    },
+    {
+      "id": "mcp-boundaries",
+      "criterion": "the experimental MCP profile keeps context and action surfaces, capabilities, permissions, approvals, network access, credentials, and audit boundaries separate",
+      "status": "passed"
+    },
+    {
+      "id": "a2a-boundaries",
+      "criterion": "the experimental A2A profile keeps Agent Cards, remote identity, skill claims, messages, tasks, and artifacts separate from local authority and work state",
+      "status": "passed"
+    },
+    {
+      "id": "extension-compatibility",
+      "criterion": "extension compatibility expectations are represented in conformance language",
+      "status": "passed"
+    }
+  ],
+  "profiles": [
+    {
+      "path": "extensions/github/profile.yaml",
+      "sha256": "a7379ecf049073bedf5cc6a1e6c1de01f4896531cb718b0e6224910fed6237a9",
+      "namespace": "io.nexflow.github",
+      "profileVersion": "0.1-draft"
+    },
+    {
+      "path": "extensions/issue-tracker/profile.yaml",
+      "sha256": "60cd58606b455876f5bb99d5ffb00c8a05c9fd7d48872c7e05cda6dc5b62d861",
+      "namespace": "io.nexflow.issue_tracker",
+      "profileVersion": "0.1-draft"
+    },
+    {
+      "path": "extensions/mcp/profile.yaml",
+      "sha256": "43281201ee949b53f14777bda11d4a7b45c774ecf304b699341a48cd33a60fcc",
+      "namespace": "io.nexflow.mcp",
+      "profileVersion": "0.1-draft"
+    },
+    {
+      "path": "extensions/a2a/profile.yaml",
+      "sha256": "4a292d5d84726c55f954ba068e1547c036877aa390ac544aacfb05f09e7bcedf",
+      "namespace": "io.nexflow.a2a",
+      "profileVersion": "0.1-draft"
+    }
+  ],
+  "implementationTrees": [
+    {
+      "path": "packages",
+      "tree": "07b59e1f0b63e8f8ea4a85584188a4ede70c6a95"
+    },
+    {
+      "path": "prototype",
+      "tree": "56a01a9361b4694a967fb14e41956dfb36dfd744"
+    },
+    {
+      "path": "schemas",
+      "tree": "d6746335be04b528a4db4579ad243ba106d18838"
+    }
+  ],
+  "sourceInputs": [
+    {
+      "path": "extensions/registry.schema.json",
+      "sha256": "8b7a5e378447b09024f60da4d74e6ecc45bc7bb2217ee7deab72c0738b811654"
+    },
+    {
+      "path": "extensions/registry-policy.mjs",
+      "sha256": "7c51aaa36bc9ba9af2ef3d20c9ca383e09c38761a2ba34ae0fe31a29ef27204a"
+    },
+    {
+      "path": "extensions/registry.example.yaml",
+      "sha256": "0951b79ddf291e8a1a6fb611032b03a96a586bf0014122738eae5b1eec97f8f4"
+    },
+    {
+      "path": "fixtures/extension-registry/legacy.yaml",
+      "sha256": "3c9225078db8c44ef938a39f6dd489d3d465ad0cdd991d254e2535a6ba75f642"
+    },
+    {
+      "path": "fixtures/extension-registry/compatibility.yaml",
+      "sha256": "3eae23c146052733950efa2335f01447a1b575491a082bc1c76f1749ab969729"
+    },
+    {
+      "path": "fixtures/integrations/metadata-boundaries.yaml",
+      "sha256": "24903fa3d792fa41dcc44338f311456b49f945f47cdb9d84d8e9dafc7f13df96"
+    },
+    {
+      "path": "scripts/extension-registry-smoke.mjs",
+      "sha256": "d71ad87d449413048095be618a6a0fb9415615862e5e5dc482d0b1f4599b899f"
+    },
+    {
+      "path": "scripts/integration-metadata-smoke.mjs",
+      "sha256": "921d52e0394a4a77076fbdeaead966e20b6b09754e6043d08811989b8e65aa24"
+    },
+    {
+      "path": "scripts/extension-compatibility-smoke.mjs",
+      "sha256": "5c8acf9fb9d4db23487d3d97c34d9c19c4162b9f252858d04c30f34038f748de"
+    },
+    {
+      "path": "scripts/github-extension-smoke.mjs",
+      "sha256": "a182d06448c358508fd1532e472884486aca7d76f88758952d3d5b7835f9801c"
+    },
+    {
+      "path": "scripts/issue-tracker-extension-smoke.mjs",
+      "sha256": "22bdd2049bde13baff167c30c5319f08bc3fb3671a684c6023c1e736921000ab"
+    },
+    {
+      "path": "scripts/mcp-extension-smoke.mjs",
+      "sha256": "bf03bec357c9e1b4500f4a219f7100bc83b1e0031ebeff8418c018c102d7183e"
+    },
+    {
+      "path": "scripts/a2a-extension-smoke.mjs",
+      "sha256": "6ae6f8216c5cbed3b606f04131ec07e9750b39536c324e7041a975a4ba3db654"
+    },
+    {
+      "path": "scripts/reference-security-collect.mjs",
+      "sha256": "e605e79ff6b03e9f83a13a4bdf8b37c2dd20a0acae83688cf22d2b376d1c58e8"
+    },
+    {
+      "path": "scripts/test/reference-security-policy.json",
+      "sha256": "242fbc0657c16c8503c6d5279c0cec41d2c3498e57a8b0ee2055ed88033faaf2"
+    },
+    {
+      "path": ".github/workflows/runtime-prototype.yml",
+      "sha256": "a2874d038394474ee5dc4e02a69948daf9d1c6319d9ddd7f744c428be59b46f8"
+    },
+    {
+      "path": "package.json",
+      "sha256": "41ed87fc89721c6078d29ce73f912e5d6517bdd81dd84b1234463c4fcca33763"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "52a0d98e38a0ffccb6e84397965918a8303b1b527e231105faab3dded7038bbd"
+    },
+    {
+      "path": "docs/extension-registry.md",
+      "sha256": "21fc48c24c2e91a3df81b61dfc89a82bcaeb7db2aae0a0cfce4d648b48931635"
+    },
+    {
+      "path": "docs/integrations.md",
+      "sha256": "671f19c96561a7e77afd5363f344c2c18e5d9710170260ca60a0d4239f7b85e5"
+    },
+    {
+      "path": "docs/0.7/extension-compatibility.md",
+      "sha256": "cd2c49a9d01ec82d0270d04ed2c72ce0c0ffcc2254c5dd1d3c059fa80b38db52"
+    },
+    {
+      "path": "docs/extension-loading-boundary.md",
+      "sha256": "03169b3bad3aa12e932ddb6002577b1afc3e13a5de4140ccfa79253dc10288be"
+    },
+    {
+      "path": "docs/mcp-a2a-boundaries.md",
+      "sha256": "5a0423d21a44645af5462bd3d34f47d4131c53ec142ea9b4b15113d125f82853"
+    },
+    {
+      "path": "rfcs/RFC-0006-extension-namespaces.md",
+      "sha256": "00de03c8b4107c6ce201e78d3d0bff5b73c88d3dbd95d4d46a9d73f0befea5d9"
+    },
+    {
+      "path": "rfcs/RFC-0024-single-maintainer-governance.md",
+      "sha256": "70b7c18cc61631226c2c565b120063d6003ba7aae72ff06082b443559cb8e4ac"
+    },
+    {
+      "path": "rfcs/RFC-0025-reference-implementation-architecture.md",
+      "sha256": "cfbe597095c5c3fdde035cb99ad1bc950105e3aa8ddd5e32d103b1589b22f371"
+    },
+    {
+      "path": "extensions/github/profile.yaml",
+      "sha256": "a7379ecf049073bedf5cc6a1e6c1de01f4896531cb718b0e6224910fed6237a9"
+    },
+    {
+      "path": "extensions/github/profile.schema.json",
+      "sha256": "652a63a420763dda131877917ccdc809026fabde968f808d4d20e189e17b74fd"
+    },
+    {
+      "path": "extensions/issue-tracker/profile.yaml",
+      "sha256": "60cd58606b455876f5bb99d5ffb00c8a05c9fd7d48872c7e05cda6dc5b62d861"
+    },
+    {
+      "path": "extensions/issue-tracker/profile.schema.json",
+      "sha256": "b8359b732ff04c3e4976d747a512b01a1d528ff6a31d12ef6ab1f3012c001df2"
+    },
+    {
+      "path": "extensions/mcp/profile.yaml",
+      "sha256": "43281201ee949b53f14777bda11d4a7b45c774ecf304b699341a48cd33a60fcc"
+    },
+    {
+      "path": "extensions/mcp/profile.schema.json",
+      "sha256": "fbb4d4dbed0f2beeae340544ab92bf406ac6ccba9bdb21ec6133ca9b0c316679"
+    },
+    {
+      "path": "extensions/a2a/profile.yaml",
+      "sha256": "4a292d5d84726c55f954ba068e1547c036877aa390ac544aacfb05f09e7bcedf"
+    },
+    {
+      "path": "extensions/a2a/profile.schema.json",
+      "sha256": "6a927fdf316978060ab39d8813a0c42a2102e9083584f6c95fa65157513dcfdf"
+    }
+  ],
+  "reviewInputs": [
+    {
+      "path": "README.md",
+      "sha256": "85bd62200caea8dd0d1440f080e7becfb411c08300dd4e20a12f5a23637fa6ac"
+    },
+    {
+      "path": "SECURITY.md",
+      "sha256": "8a88d647cbe7b6ca928fed9adc55ef29345079144b97c7fb5c35e1780ffbc45f"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "sha256": "4eac08c23445385253034db66a342180f220dc95c37a093a96290a7577a72470"
+    },
+    {
+      "path": "docs/index.md",
+      "sha256": "dd74bbf8fcee527b11b5c63f439b36079a5c43e33e84c78c23fe1af8367c2510"
+    },
+    {
+      "path": "docs/compatibility-matrix.md",
+      "sha256": "1c3803c1ea7ff9747cec9798d7762b6f1f62e19c20f9f27ba308a1dc3e9b5038"
+    },
+    {
+      "path": "docs/reference-cli-compatibility.md",
+      "sha256": "226fb790b04a4bbab488fea7b1be192f35da5a9ca30e8fa784e7ed370bf9a214"
+    },
+    {
+      "path": "docs/reference-cli-installation.md",
+      "sha256": "2a4f9cce30190e9d7e14c5303f51b053f3798c6de29e5efeed3c3ad7a97c81b7"
+    },
+    {
+      "path": "docs/reference-cli-preview.md",
+      "sha256": "f1d3641803637083a88241b6fa4f124a579b9865d73f4effc10be882629c9ed2"
+    },
+    {
+      "path": "docs/reference-validation-library.md",
+      "sha256": "f036c5ac640c1381080fd41f6e2eb55b185bef138bfbbb927eb9b529ef88bac4"
+    },
+    {
+      "path": "docs/release-plan.md",
+      "sha256": "f5e77661614a5350f2ff647223a24bff32f5b652e4368d6c935a53ddb1217a16"
+    },
+    {
+      "path": "docs/migration-guide.md",
+      "sha256": "dba05e881af574c3e5cd7522453c2d01a53b2f2f153dad8e998e8464416b19b8"
+    },
+    {
+      "path": "release/README.md",
+      "sha256": "0b7a31078b575ccdf1f0d92df365010f28b2ddc792cf71c5715b763e681c7c59"
+    },
+    {
+      "path": "release/0.7/review.md",
+      "sha256": "a783437933d3496924b2c25c55bca7889b94bcb9acc636a89ab80b8f1fa491b0"
+    },
+    {
+      "path": "release/0.7/release-notes.md",
+      "sha256": "ee53f9f435eb9218d67f60fad52b69943bafd7b6782e3c61fc988775a42b6173"
+    },
+    {
+      "path": "release/0.7/record.json",
+      "sha256": "11ffb602b87219cf9bb2189e2fab97242fc9b1167d685f223e3213befcebdbe7"
+    },
+    {
+      "path": "release/0.7/source-checks.json",
+      "sha256": "53df42603406d92c3be6d93189460fa1d0c70d341bfd971cd4885bb485524b0c"
+    },
+    {
+      "path": "release/0.7/compatibility-results.json",
+      "sha256": "c195e962e4dc4d493bfd0b8f20280815a6fa70b42e412639d49c13b5d385ee93"
+    },
+    {
+      "path": "scripts/release-0-7-readiness-smoke.mjs",
+      "sha256": "a1f1380dca536b667f8e176f6cc754350151f7dfce7e6be3781e5b2de20af987"
+    },
+    {
+      "path": ".github/workflows/extension-compatibility.yml",
+      "sha256": "75ab7d00c0370b2bdbd742d86988e0caba616a8aadb172dde0c727db78208c9f"
+    }
+  ],
+  "versions": {
+    "manifest": "0.1",
+    "registry": [
+      "0.1-draft",
+      "0.2-draft"
+    ],
+    "profile": "0.1-draft",
+    "publishedPackages": "0.5.0-alpha.1",
+    "validationApi": "validation-api-v1-preview",
+    "cliOutput": "0.5-preview.1",
+    "hostApi": "host-preflight-v1-preview",
+    "node": "26.13.1",
+    "npm": "11.20.0"
+  },
+  "reports": [
+    {
+      "kind": "compatibility",
+      "sourceRevision": "58c1897eb47fae92f73d9a0681bb58e9e277eb57",
+      "sha256": "c195e962e4dc4d493bfd0b8f20280815a6fa70b42e412639d49c13b5d385ee93",
+      "url": "https://github.com/iwizy/NexFlow/actions/runs/44740863655/artifacts/14630149273"
+    },
+    {
+      "kind": "package-checks",
+      "sourceRevision": "58c1897eb47fae92f73d9a0681bb58e9e277eb57",
+      "sha256": "a4c77b7855b7f2b48655bb2d6347d13648ed393c333356eae12f894c1bb9e3bb",
+      "checks": 54,
+      "url": "https://github.com/iwizy/NexFlow/actions/runs/44740863675/artifacts/14631915276"
+    },
+    {
+      "kind": "installed-security",
+      "sourceRevision": "58c1897eb47fae92f73d9a0681bb58e9e277eb57",
+      "sha256": "ac22d59e4cf93e25298fae115c594134bff1035929393244d4af8521500795aa",
+      "checks": 30,
+      "url": "https://github.com/iwizy/NexFlow/actions/runs/44740863675/artifacts/14631915276"
+    }
+  ],
+  "security": {
+    "sourceRevision": "58c1897eb47fae92f73d9a0681bb58e9e277eb57",
+    "recordedAt": "2026-11-20T13:03:44.324Z",
+    "outcome": "qualified-with-bounded-tooling-risks",
+    "unresolved": [],
+    "graphs": [
+      {
+        "name": "delivered-library",
+        "components": 8,
+        "matchedAdvisoryInstances": 0
+      },
+      {
+        "name": "delivered-cli",
+        "components": 9,
+        "matchedAdvisoryInstances": 0
+      },
+      {
+        "name": "maintenance",
+        "components": 8,
+        "matchedAdvisoryInstances": 4
+      },
+      {
+        "name": "validation-build",
+        "components": 11,
+        "matchedAdvisoryInstances": 0
+      },
+      {
+        "name": "npm-tool",
+        "components": 144,
+        "matchedAdvisoryInstances": 19
+      }
+    ],
+    "reportSha256": "ff9169dbb16cf4ce76b4d0f95328cd497f8520a985607895f4aa9ce926e29430",
+    "policySha256": "242fbc0657c16c8503c6d5279c0cec41d2c3498e57a8b0ee2055ed88033faaf2",
+    "url": "https://github.com/iwizy/NexFlow/actions/runs/44740863675/artifacts/14631915276",
+    "limitations": [
+      "independent audit",
+      "publisher signatures",
+      "OS sandbox and native target lifecycle",
+      "all upstream source code",
+      "non-npm native/CPE advisory coverage"
+    ]
+  }
+}

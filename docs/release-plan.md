@@ -275,6 +275,8 @@ Non-goals:
 ## `0.7` Integration and Extension Hardening
 
 The `0.7` line should make extensions safer for independent tools.
+The [NF-118 candidate review](../release/0.7/review.md) maps the criteria below
+to immutable source, fixture and result evidence.
 
 Release readiness:
 

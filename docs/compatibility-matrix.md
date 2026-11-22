@@ -117,7 +117,7 @@ row, manifest dialect, published release or older validator claim subject.
 
 | Manifest `specVersion` | Schema snapshot | Reference examples | Repository validator | Reference CLI | Runtime | Extensions | Repository support |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| `0.1` | Current 17-kind draft schema set | 8 maintained project sets | Schema validation implemented; semantic references partial | Unreleased bounded preview, exact candidate/runtime/targets | Not implemented | Declaration shape implemented; behavior not implemented | Current supported authoring and repository validation target |
+| `0.1` | Current 17-kind draft schema set | 8 maintained project sets | Schema validation implemented; semantic references partial | Published bounded 0.5.0-alpha.1, exact archives/runtime/targets | Source-only offline fixture host | Declaration shape and offline profile fixtures; execution unsupported | Current supported authoring and repository validation target |
 | Any other `0.x` | No published schema mapping | None | Must report unsupported version | Not implemented | Not implemented | Unsupported | Unsupported |
 | `1.0` | Not published | None | Must report unsupported version | Planned only | Planned only | Planned only | Future target, not currently supported |
 
@@ -474,13 +474,13 @@ by the specification and RFCs. Passing it must not be presented as complete
 
 ## CLI Compatibility
 
-No reference CLI is implemented.
+The reference CLI and pure validator are published as `0.5.0-alpha.1`.
 
-The [0.4 Alpha Preparation Checkpoint](0.4-alpha-checkpoint.md) records the
+The [0.4 Alpha Preparation Checkpoint](0.4-alpha-checkpoint.md) retains
 its dated release decision as `not-ready`. RFC-0025's developer architecture
 selection does not change the
 separate implemented first-alpha slice or the `Partial` prototype below. The
-[preview pairing](reference-cli-compatibility.md) is bounded and unreleased;
+[preview pairing](reference-cli-compatibility.md) has bounded published archives;
 historical preparation outcomes are not relabeled.
 
 The [repository CLI prototype](cli-prototype.md) is an unreleased command
@@ -543,15 +543,15 @@ make the broader RFC-0011 or historical prototype a conformant implementation.
 
 ## Runtime Compatibility
 
-No NexFlow runtime is implemented. RFC-0025 selects TypeScript/layout B for the
-developer architecture and future host design without authorizing runtime
-implementation. Current source-bound qualification and selected fragment/API
-coverage are distinct from full project semantics or a production runtime.
+The [v0.6.0 source prototype](../prototype/README.md) implements one explicit
+offline fixture under RFC-0025's TypeScript/layout B. It accepts four synthetic
+manifest types and keeps admission in the host. Real adapters, durable audit,
+OS isolation and extension admission remain outside that implemented scope.
 The [historical fidelity comparison](../evaluation/fidelity/README.md) preserves
 the original unsupported cases; new evidence never rewrites those snapshots.
 
-There is currently no supported pairing between `specVersion: "0.1"` and an
-executable runtime.
+The fixture binds `specVersion: "0.1"`, `validation-api-v1-preview` and
+`host-preflight-v1-preview` to its exact qualified inputs.
 
 A future runtime must publish at least:
 
@@ -598,8 +598,11 @@ Current extension support includes:
   structure and focused offline validation
 - an experimental `io.nexflow.a2a` policy profile with machine-readable
   external identity, work, artifact, authority, and callback boundaries
-- a standalone `0.1-draft` registry metadata schema, fictional snapshot, and
-  focused structural and deterministic-ordering checks
+- standalone `0.1-draft` and `0.2-draft` registry metadata, exact-version source
+  pins, lifecycle/history consistency checks and retained legacy fixtures
+- [offline compatibility fixtures](0.7/extension-compatibility.md) for unknown,
+  incompatible, revoked, invalid and migrated metadata, with observed
+  validator/CLI diagnostics and explicit authority limits
 
 Current extension support does not include:
 

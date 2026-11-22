@@ -1,0 +1,125 @@
+{
+  "recordVersion": "0.1",
+  "kind": "NexFlowCandidateReadiness",
+  "candidate": {
+    "label": "0.7 Integration And Extension Hardening (repository source milestone)",
+    "specVersion": "0.1",
+    "proposedTag": "v0.7.0",
+    "commit": "58c1897eb47fae92f73d9a0681bb58e9e277eb57",
+    "evaluatedAt": "2026-11-22T10:41:05.845Z",
+    "changelog": "release-notes.md"
+  },
+  "decision": {
+    "outcome": "ready-with-notes",
+    "decidedBy": "NF-118 technical assessment for the single maintainer",
+    "rationale": "All six 0.7 release-plan criteria are covered by source-bound policy and offline evidence. The implementation is ready for source-milestone review with explicit support and security limits; publication authority and exact-cut verification remain separate."
+  },
+  "checks": {
+    "documentation": {
+      "status": "passed",
+      "summary": "The review maps all six release-plan criteria and reconciles current release, extension, validator, CLI and fixture-host notices.",
+      "evidence": [
+        {
+          "type": "document",
+          "description": "NF-118 source-bound review evidence",
+          "location": "review.md",
+          "revision": "58c1897eb47fae92f73d9a0681bb58e9e277eb57"
+        }
+      ]
+    },
+    "schemas": {
+      "status": "passed",
+      "summary": "18 schema files and all 17 kinds validate 109 maintained manifests. Registry and four profile schema checks passed.",
+      "evidence": [
+        {
+          "type": "document",
+          "description": "NF-118 source-bound review evidence",
+          "location": "source-checks.json",
+          "revision": "58c1897eb47fae92f73d9a0681bb58e9e277eb57"
+        }
+      ]
+    },
+    "examples": {
+      "status": "passed",
+      "summary": "Fictional registry, legacy migration and all four integration profiles have focused offline evidence.",
+      "evidence": [
+        {
+          "type": "document",
+          "description": "NF-118 source-bound review evidence",
+          "location": "source-checks.json",
+          "revision": "58c1897eb47fae92f73d9a0681bb58e9e277eb57"
+        }
+      ]
+    },
+    "validation": {
+      "status": "passed",
+      "summary": "91 registry assertions, 108 integration cases, 17 compatibility cases and 51 installed CLI invocations retain unsupported and inert outcomes.",
+      "evidence": [
+        {
+          "type": "document",
+          "description": "NF-118 source-bound review evidence",
+          "location": "compatibility-results.json",
+          "revision": "58c1897eb47fae92f73d9a0681bb58e9e277eb57"
+        }
+      ]
+    },
+    "rfc-governance": {
+      "status": "passed",
+      "summary": "The existing single-maintainer process and accepted component boundary apply, with no personal review or independent sign-off claimed.",
+      "evidence": [
+        {
+          "type": "document",
+          "description": "NF-118 source-bound review evidence",
+          "location": "review.md",
+          "revision": "58c1897eb47fae92f73d9a0681bb58e9e277eb57"
+        }
+      ]
+    },
+    "compatibility-migrations": {
+      "status": "passed",
+      "summary": "Exact version domains, source pins, preservation, legacy migration and known-history downgrade are explicit. CLI profile checks remain not-run.",
+      "evidence": [
+        {
+          "type": "document",
+          "description": "NF-118 source-bound review evidence",
+          "location": "review.md",
+          "revision": "58c1897eb47fae92f73d9a0681bb58e9e277eb57"
+        }
+      ]
+    },
+    "security-limitations": {
+      "status": "passed",
+      "summary": "All five candidate dependency graphs have zero unresolved review inputs; existing scoped maintenance/tooling findings and source-distribution limits are retained.",
+      "evidence": [
+        {
+          "type": "document",
+          "description": "NF-118 source-bound review evidence",
+          "location": "evidence.json",
+          "revision": "58c1897eb47fae92f73d9a0681bb58e9e277eb57"
+        }
+      ]
+    },
+    "release-evidence": {
+      "status": "passed",
+      "summary": "Prerequisite merges and all ten exact-source workflows passed. The previous source milestone is published; promotion and public-download checks follow a separate decision.",
+      "evidence": [
+        {
+          "type": "document",
+          "description": "NF-118 source-bound review evidence",
+          "location": "evidence.json",
+          "revision": "58c1897eb47fae92f73d9a0681bb58e9e277eb57"
+        }
+      ]
+    }
+  },
+  "limitations": [
+    "Source milestone with declarative profiles and offline fixtures; live integration, executable loading and hosted registry are unsupported.",
+    "The published CLI and validator preserve the existing preview versions and report extensionProfiles and runtime checks as not-run.",
+    "Compatibility reason labels belong to fixture evidence and have no public CLI or library API contract.",
+    "The source-only fixture host supports one synthetic operation, with in-memory receipts and no ExtensionSet admission.",
+    "The November 20 dependency evidence retains four root-maintenance and 19 npm-tool advisory instances under scoped dispositions; current-source CI and a future publication cut need their own dated assessment.",
+    "Ownership verification, publisher signatures, independent conformance and native/OS security certification are outside the qualified scope.",
+    "Publication and verification of future public 0.7 source archives are separate, pending actions."
+  ],
+  "blockers": []
+}

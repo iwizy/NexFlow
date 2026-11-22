@@ -267,6 +267,7 @@ decision.
 | Provider training policy | Legacy `allowTrainingUse` to explicit `trainingUse` policy | [Provider Constraints](provider-constraints.md), `npm run provider-constraint-schema-smoke` |
 | Network policy | Advisory `networkAccess` text to a structured deny-by-default policy | [Network Access Policy](network-access-policy.md), `npm run validate`, `npm run semantic-smoke` |
 | MCP declaration profile | Earlier MCP sources to explicit server identity, surface inventory, and action allow-list and approval posture where applicable | [MCP Extension Draft](../extensions/mcp/README.md), `npm run mcp-extension-smoke` |
+| Extension registry | Historical `0.1-draft` snapshots to exact-version `0.2-draft` records, preserving original snapshots and ownership evidence | [Registry migration](extension-registry.md#migration-from-01-draft), [Offline compatibility](0.7/extension-compatibility.md) |
 | Repository CLI JSON | Experimental `formatVersion` transitions through `0.4-draft` | [CLI Machine-Readable Diagnostics](cli-diagnostics.md), `npm run cli-diagnostics-smoke` |
 
 This inventory is navigational, not a claim that every project must adopt each

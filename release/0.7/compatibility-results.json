@@ -1,0 +1,176 @@
+{
+  "revision": "58c1897eb47fae92f73d9a0681bb58e9e277eb57",
+  "release": "v0.5.0-alpha.1",
+  "packages": {
+    "cli": "82644c14ac1f7f7d28e7bee8938f11899299dbabf75694c7ba9f0c6e405deb09",
+    "validation": "07e3966c54bf3c15345811396b84f47677cdfeed99fef4e357676eb306d9f1e1"
+  },
+  "cases": 17,
+  "commands": [
+    "validate",
+    "inspect",
+    "graph"
+  ],
+  "platform": "linux",
+  "arch": "x64",
+  "node": "26.13.1",
+  "outcomes": [
+    {
+      "case": "known-pair",
+      "compatibility": "compatible-metadata",
+      "manifest": "valid",
+      "cliExit": 0,
+      "cliDiagnostics": [],
+      "extensionProfiles": "not-run",
+      "executionAuthorized": false
+    },
+    {
+      "case": "unknown-namespace",
+      "compatibility": "unsupported-namespace",
+      "manifest": "valid",
+      "cliExit": 0,
+      "cliDiagnostics": [],
+      "extensionProfiles": "not-run",
+      "executionAuthorized": false
+    },
+    {
+      "case": "unknown-profile",
+      "compatibility": "unsupported-profile",
+      "manifest": "valid",
+      "cliExit": 0,
+      "cliDiagnostics": [],
+      "extensionProfiles": "not-run",
+      "executionAuthorized": false
+    },
+    {
+      "case": "unknown-version",
+      "compatibility": "unsupported-profile-version",
+      "manifest": "valid",
+      "cliExit": 0,
+      "cliDiagnostics": [],
+      "extensionProfiles": "not-run",
+      "executionAuthorized": false
+    },
+    {
+      "case": "incompatible-manifest-pair",
+      "compatibility": "incompatible-pair",
+      "manifest": "valid",
+      "cliExit": 0,
+      "cliDiagnostics": [],
+      "extensionProfiles": "not-run",
+      "executionAuthorized": false
+    },
+    {
+      "case": "incompatible-attachment",
+      "compatibility": "incompatible-pair",
+      "manifest": "valid",
+      "cliExit": 0,
+      "cliDiagnostics": [],
+      "extensionProfiles": "not-run",
+      "executionAuthorized": false
+    },
+    {
+      "case": "mismatched-source-pin",
+      "compatibility": "profile-pin-mismatch",
+      "manifest": "valid",
+      "cliExit": 0,
+      "cliDiagnostics": [],
+      "extensionProfiles": "not-run",
+      "executionAuthorized": false
+    },
+    {
+      "case": "revoked-with-existing-successor",
+      "compatibility": "revoked-profile",
+      "manifest": "valid",
+      "cliExit": 0,
+      "cliDiagnostics": [],
+      "extensionProfiles": "not-run",
+      "executionAuthorized": false
+    },
+    {
+      "case": "withdrawn",
+      "compatibility": "withdrawn-profile",
+      "manifest": "valid",
+      "cliExit": 0,
+      "cliDiagnostics": [],
+      "extensionProfiles": "not-run",
+      "executionAuthorized": false
+    },
+    {
+      "case": "disputed",
+      "compatibility": "disputed-ownership",
+      "manifest": "valid",
+      "cliExit": 0,
+      "cliDiagnostics": [],
+      "extensionProfiles": "not-run",
+      "executionAuthorized": false
+    },
+    {
+      "case": "invalid-snapshot",
+      "compatibility": "invalid-registry",
+      "manifest": "valid",
+      "cliExit": 0,
+      "cliDiagnostics": [],
+      "extensionProfiles": "not-run",
+      "executionAuthorized": false
+    },
+    {
+      "case": "ambiguous-snapshot",
+      "compatibility": "inconsistent-registry",
+      "manifest": "valid",
+      "cliExit": 0,
+      "cliDiagnostics": [],
+      "extensionProfiles": "not-run",
+      "executionAuthorized": false
+    },
+    {
+      "case": "legacy-snapshot",
+      "compatibility": "legacy-registry",
+      "manifest": "valid",
+      "cliExit": 0,
+      "cliDiagnostics": [],
+      "extensionProfiles": "not-run",
+      "executionAuthorized": false
+    },
+    {
+      "case": "migrated-snapshot",
+      "compatibility": "unpublished-profile",
+      "manifest": "valid",
+      "cliExit": 0,
+      "cliDiagnostics": [],
+      "extensionProfiles": "not-run",
+      "executionAuthorized": false
+    },
+    {
+      "case": "legacy-downgrade",
+      "compatibility": "inconsistent-registry",
+      "manifest": "valid",
+      "cliExit": 0,
+      "cliDiagnostics": [],
+      "extensionProfiles": "not-run",
+      "executionAuthorized": false
+    },
+    {
+      "case": "unsupported-manifest-dialect",
+      "compatibility": "incompatible-pair",
+      "manifest": "unsupported",
+      "cliExit": 3,
+      "cliDiagnostics": [
+        "NF-DISCOVERY-UNSUPPORTED-VERSION"
+      ],
+      "extensionProfiles": "not-run",
+      "executionAuthorized": false
+    },
+    {
+      "case": "invalid-authored-lifecycle",
+      "compatibility": "compatible-metadata",
+      "manifest": "invalid",
+      "cliExit": 1,
+      "cliDiagnostics": [
+        "NF-SCHEMA"
+      ],
+      "extensionProfiles": "not-run",
+      "executionAuthorized": false
+    }
+  ]
+}

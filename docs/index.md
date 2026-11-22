@@ -71,6 +71,7 @@ uncataloged documentation pages, and missing top-level guide links.
 | [Event Interoperability](event-interoperability.md) | Maps NexFlow event instances to CloudEvents and OpenTelemetry without selecting transport, storage, or runtime behavior. |
 | [Extension Model](extensions.md) | Defines namespaced extension lifecycle and integration surface. |
 | [Extension Registry Model](extension-registry.md) | Defines optional registry snapshots, namespace ownership claims, pinned profile sources, compatibility and risk metadata, publication lifecycle, and strict no-authority boundaries. |
+| [Unsupported Extension Compatibility](0.7/extension-compatibility.md) | Observed registry, schema, validator, CLI and fixture-host support, diagnostics, preservation and migration. |
 | [Extension Loading Boundary](extension-loading-boundary.md) | Defines explicit implementation discovery, immutable resolution, verification, fail-closed unsupported handling, isolation, activation, and per-operation authorization for future runtimes. |
 | [GitHub Extension Draft](../extensions/github/README.md) | Maps repository, revision, pull request, review, check, and webhook surfaces to independent capability, approval, network, credential, trust, and audit boundaries. |
 | [MCP Extension Draft](../extensions/mcp/README.md) | Maps MCP context and action surfaces to independent capability, permission, approval, network, credential, and audit boundaries. |

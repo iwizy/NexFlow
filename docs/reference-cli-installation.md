@@ -1,10 +1,10 @@
 # Reference CLI Installation And Quick Start
 
-This guide describes the first **unreleased** `0.5.0-alpha.1` developer preview.
-The [release review](../release/0.5-preview-review.md) must select exact archives
-and record technical readiness. A separate maintainer instruction is required
-to promote `develop` to `main`, create `v0.5.0-alpha.1` and publish assets. The
-proposed release is not a live download merely because these instructions exist.
+This guide describes the published `0.5.0-alpha.1` developer preview.
+The [release review](../release/0.5-preview-review.md) records its selected
+archives and technical readiness. Obtain the exact bytes from the
+[prerelease page](https://github.com/iwizy/NexFlow/releases/tag/v0.5.0-alpha.1)
+and verify their checksum set before installation.
 
 ## Select The Exact Package And Runtime
 
@@ -15,10 +15,9 @@ verify the corresponding upstream checksum; the native records also bind the
 executing binary and license. Same-origin checksums are not independent publisher
 authentication. Other runtimes/architectures are outside this preview's support.
 
-The proposed distribution channel is GitHub prerelease assets, not npm registry
-publication, a native app or an embedded interpreter. Before publication, the
-reviewed CI artifact supplies staging bytes; it may require a GitHub login.
-After publication, obtain the complete asset/checksum set from the exact tag.
+The distribution channel is GitHub prerelease assets. Obtain the complete
+asset/checksum set from the exact tag. The native Node runtime is a separate
+prerequisite.
 Do not use a moving branch's tarball or an unrelated workflow artifact.
 
 The base package set contains two `.tgz` archives, their two detached

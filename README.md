@@ -3,7 +3,7 @@
 ![Spec Version](https://img.shields.io/badge/spec-0.1--draft-orange)
 ![Release](https://img.shields.io/github/v/release/iwizy/NexFlow)
 ![Status](https://img.shields.io/badge/status-specification--first-blue)
-![Runtime](https://img.shields.io/badge/runtime-not%20implemented-lightgrey)
+![Runtime](https://img.shields.io/badge/runtime-offline%20prototype-lightgrey)
 ![Provider Neutral](https://img.shields.io/badge/provider-neutral-brightgreen)
 ![License](https://img.shields.io/badge/license-MIT-blue)
 [![XERJ Corpus Hub contributor](https://hub.xerj.org/contributors/iwizy/badge.svg)](https://hub.xerj.org/contributors/iwizy)
@@ -14,18 +14,18 @@ NexFlow is a specification-first project for describing how humans, AI agents, a
 
 It is **not** an AI coding agent, an LLM API wrapper, a chat application, or a
 personal productivity tool. The specification is the foundation. Repository
-validation tools, a reference validation library and an
-[unreleased installable CLI candidate](docs/reference-package-candidate.md)
-exist. The first alpha is in [release review](release/0.5-preview-review.md);
-public publication and workflow runtime remain separate decisions.
+validation tools, a [published reference CLI and validation library](https://github.com/iwizy/NexFlow/releases/tag/v0.5.0-alpha.1)
+and a [source-only offline fixture host](prototype/README.md) are available.
+The [0.7 technical review](release/0.7/review.md) covers extension and
+integration metadata, compatibility and migration.
 
 ## Status
 
 Latest published release: [GitHub release history](https://github.com/iwizy/NexFlow/releases/latest).
-Current release: [**`v0.4.0`**](https://github.com/iwizy/NexFlow/releases/tag/v0.4.0),
-the Runtime Decision Readiness source/decision/evidence milestone, published and
-download-verified on 2026-10-28. It follows the separately published `v0.3.0`
-semantic, `v0.2.0` validation and `v0.1.0` foundation milestones.
+Current source release: [**`v0.6.0`**](https://github.com/iwizy/NexFlow/releases/tag/v0.6.0),
+the Runtime Prototype Boundary milestone, published on 2026-11-15.
+The reference CLI and pure validator are distributed as
+[`v0.5.0-alpha.1`](https://github.com/iwizy/NexFlow/releases/tag/v0.5.0-alpha.1).
 Manifest `specVersion` remains `"0.1"`.
 
 The [`v0.1.0` release scope](docs/0.1-scope.md) remains frozen as the evaluated
@@ -47,7 +47,7 @@ adds a later exact-source assessment and reproducible checks. It preserves the
 published release history, partial semantics and draft conformance boundaries;
 it is not another release or a new support claim.
 
-The published release sequence is **`0.1` → `0.2` → `0.3` → `0.4`**, with separate
+The published release sequence is **`0.1` → `0.2` → `0.3` → `0.4` → `0.5.0-alpha.1` → `0.6`**, with separate
 [validation/conformance](release/0.2-release-review.md) and
 [semantic-consistency](release/0.3-release-review.md) reviews and commit-bound
 evidence. Scope approval does not replace final candidate checks. The
@@ -68,16 +68,12 @@ binds the tag, five downloaded assets and all 1,059 source-archive files to
 the exact checked release commit. The earlier readiness records keep their
 original authority boundaries and timestamps.
 
-Preparation for a possible **`0.5` reference tooling beta** is separate from
-that current release line. The [beta readiness checklist](docs/0.5-beta-readiness-checklist.md)
-defines future review gates. The [beta preparation checkpoint](docs/0.5-beta-checkpoint.md)
-assesses all eight gates at one exact source revision and remains `not-ready`;
-the [source-checkout dry run](docs/cli-release-dry-run.md) rehearses evidence
-collection. The [alpha preparation checkpoint](docs/0.4-alpha-checkpoint.md)
-is still `not-ready`. The separately implemented installable first-alpha
-candidate has package/security/native evidence and is undergoing
-[its own release review](release/0.5-preview-review.md). No beta, NF-CLI claim
-or public 0.5 release is approved or published by that preparation.
+The historical [beta preparation checkpoint](docs/0.5-beta-checkpoint.md) and
+[alpha preparation checkpoint](docs/0.4-alpha-checkpoint.md) retain their
+dated `not-ready` assessments. The subsequent first alpha has its own
+[release review](release/0.5-preview-review.md) and
+[published archives](https://github.com/iwizy/NexFlow/releases/tag/v0.5.0-alpha.1).
+Its complete semantic, extension and runtime checks remain `not-run`.
 
 Feature lifecycle is tracked separately in the [Feature Status Registry](docs/feature-status-registry.md):
 Accepted, Draft, Experimental, Deprecated and Planned are scoped design/lifecycle
@@ -99,23 +95,23 @@ states, not synonyms for the implementation evidence summarized below.
 | GitHub extension draft | Implemented as an offline repository/review policy profile and focused checks; no live integration | `npm run github-extension-smoke`, [GitHub Extension Draft](extensions/github/README.md) |
 | MCP extension draft | Implemented as an offline policy profile and focused schema checks; no live integration | `npm run mcp-extension-smoke`, [MCP Extension Draft](extensions/mcp/README.md) |
 | A2A extension draft | Implemented as an offline external-agent/task/artifact policy profile; no live integration | `npm run a2a-extension-smoke`, [A2A Extension Draft](extensions/a2a/README.md), [MCP And A2A Boundaries](docs/mcp-a2a-boundaries.md) |
-| Extension registry model | Standalone `0.1-draft` metadata schema, fictional example, and focused checks; no registry service or published snapshot | `npm run extension-registry-smoke`, [Extension Registry Model](docs/extension-registry.md) |
+| Extension registry model | `0.1-draft` and `0.2-draft` metadata, exact profile pins, lifecycle/history checks and offline compatibility fixtures | `npm run extension-registry-smoke`, [Extension Registry Model](docs/extension-registry.md) |
 | Event interoperability | Specified as CloudEvents and OpenTelemetry EventRecord mappings; no exporter or transport | [Event Interoperability](docs/event-interoperability.md), [Event Model](docs/events.md) |
 | Conformance claim format | Implemented as a standalone schema, profile-qualified YAML and Markdown templates, and 37 cataloged claim-format cases; a revision-pinned repository-validator statement remains draft and partial, not an `NF-CLI` claim | `npm run conformance-claim-smoke`, [Conformance Fixtures](fixtures/conformance/), [Draft Validator Statement](conformance/REPOSITORY-VALIDATOR-CLAIM.md), [Conformance Claims](docs/conformance-claims.md) |
-| Candidate readiness record | Standalone `0.1` schema/template and milestone-specific evaluated evidence for published `v0.1.0` through `v0.4.0`; the generic schema alone does not approve later milestones | `npm run candidate-readiness-smoke`, [0.1 Readiness Checklist](docs/readiness-checklist.md), [Release Evidence](release/README.md) |
-| Current milestone | Published and verified `0.4` source/decision/evidence milestone; RFC-0025 selects the bounded developer architecture. `0.5` public tooling remains separate work | [Publication Verification](release/0.4-publication.md), [Changelog](CHANGELOG.md), [Release Reviews](release/README.md), [Roadmap](docs/roadmap.md) |
+| Candidate readiness record | Standalone `0.1` schema/template with milestone-specific source and evidence bindings | `npm run candidate-readiness-smoke`, [0.1 Readiness Checklist](docs/readiness-checklist.md), [Release Evidence](release/README.md) |
+| Current milestone | Published `v0.6.0` source prototype and `v0.5.0-alpha.1` tooling; the [0.7 review](release/0.7/review.md) covers extension hardening | [Publication Verification](release/0.4-publication.md), [Changelog](CHANGELOG.md), [Release Reviews](release/README.md), [Roadmap](docs/roadmap.md) |
 | Semantic reference checks | Partial repository smoke coverage | `npm run semantic-smoke`, [Validation](docs/validation.md) |
 | Governance and RFC process | Implemented in documentation | [Governance](docs/governance.md), [RFCs](rfcs/README.md) |
 | Foundational model changes | ActorSet, compact AgentSet, and authoritative unique-active-definition slices implemented; RFCs remain Draft | [Actor Model](docs/actor-model.md), [Effective Agent Configuration](docs/effective-agent-configuration.md), [Foundational Model Review](rfcs/reviews/2026-07-foundational-model-review.md) |
 | Human override policy | Structured fail-closed manifest model implemented; runtime enforcement absent | [Human Override](docs/human-override.md), [RFC-0017](rfcs/RFC-0017-human-override.md) |
 | Credential handling policy | Structured fail-closed manifest model and focused checks implemented; credential broker, values, and runtime mediation absent | `npm run credential-handling-schema-smoke`, [Credential Handling](docs/credential-handling.md) |
 | Threat model | Current repository and conditional future-runtime trust boundaries, attacker stories, mitigations, assumptions, and severity calibration documented; not a vulnerability report or runtime claim | [Threat Model](docs/threat-model.md), [Security Policy](SECURITY.md) |
-| Runtime architecture decision | Accepted TypeScript/layout B for unsigned developer validation and future host interface design; no runtime implementation or release authorized | [RFC-0025](rfcs/RFC-0025-reference-implementation-architecture.md), [Exact decision](evaluation/architecture/revised/decision.json), [Runtime Options](docs/runtime-options.md) |
+| Runtime architecture decision | Accepted TypeScript/layout B with a bounded source-only fixture host in v0.6.0 | [RFC-0025](rfcs/RFC-0025-reference-implementation-architecture.md), [Exact decision](evaluation/architecture/revised/decision.json), [Runtime Options](docs/runtime-options.md) |
 | Runtime language candidates | Four independent Experimental prototypes; TypeScript/Python qualify in the current evaluation scope, while current Rust/Go fail Windows confinement. Original failed reports remain historical evidence | [Evaluation Packet](evaluation/README.md), [Current measurements](evaluation/measurement-qualification/README.md), [Feature Status Registry](docs/feature-status-registry.md) |
-| Reference CLI | Unreleased installable first-alpha candidate: validate/inspect/static graph, help/version, fixed schemas and safe preview JSON; init deferred. Exact package/security/native records support release review, with no NF-CLI claim or publication approval | [Source Preview](docs/reference-cli-preview.md), [0.5 CLI Contract](docs/0.5-cli-contract.md), [Reference CLI](docs/reference-cli.md), [Alpha Preparation Checkpoint](docs/0.4-alpha-checkpoint.md), [0.5 Beta Readiness Checklist](docs/0.5-beta-readiness-checklist.md), [Beta Preparation Checkpoint](docs/0.5-beta-checkpoint.md), [CLI Release Dry Run](docs/cli-release-dry-run.md), [CLI And Runtime Responsibility Boundary](docs/cli-runtime-boundary.md), [RFC-0011](rfcs/RFC-0011-reference-cli-scope.md) |
-| Reference validation library | Separate pure TypeScript package, bundled production closure and root-bound CLI read adapter; candidate-bound API/install/security/native evidence, no published package or full semantic claim | [Library Scope And Qualification](docs/reference-validation-library.md), [Package API](packages/validation/README.md), [CLI And Adapter](packages/cli/README.md) |
+| Reference CLI | Published `0.5.0-alpha.1`: validate/inspect/static graph, help/version, fixed schemas and preview JSON; init deferred, complete extension and runtime checks `not-run` | [Source Preview](docs/reference-cli-preview.md), [0.5 CLI Contract](docs/0.5-cli-contract.md), [Reference CLI](docs/reference-cli.md), [Alpha Preparation Checkpoint](docs/0.4-alpha-checkpoint.md), [0.5 Beta Readiness Checklist](docs/0.5-beta-readiness-checklist.md), [Beta Preparation Checkpoint](docs/0.5-beta-checkpoint.md), [CLI Release Dry Run](docs/cli-release-dry-run.md), [CLI And Runtime Responsibility Boundary](docs/cli-runtime-boundary.md), [RFC-0011](rfcs/RFC-0011-reference-cli-scope.md) |
+| Reference validation library | Separate pure TypeScript package, bundled production closure and root-bound CLI read adapter; published `0.5.0-alpha.1` archives with API/install/security/native evidence and partial validation coverage | [Library Scope And Qualification](docs/reference-validation-library.md), [Package API](packages/validation/README.md), [CLI And Adapter](packages/cli/README.md) |
 | Repository CLI prototype | Experimental local discovery, JSON Schema validation, declared inspection, static graphing, bounded starter initialization, versioned JSON output, executable no-runtime guardrails, cataloged fixtures, and dedicated CI; not a reference CLI alpha, language decision, operating-system sandbox, or `NF-CLI` claim | `npm run cli-prototype -- --help`, `npm run cli-no-runtime-guardrails-smoke`, `npm run cli-fixture-smoke`, [CLI Workflow](.github/workflows/cli-smoke.yml), [Prototype Scope](docs/cli-prototype.md), [JSON Diagnostics](docs/cli-diagnostics.md), [Declared Inspection](docs/cli-inspection.md), [Static Graph](docs/cli-graph.md), [Starter Initialization](docs/cli-init.md) |
-| Runtime and provider execution | Planned, not implemented | [Architecture](docs/architecture.md), [Runtime Options](docs/runtime-options.md) |
+| Runtime and provider execution | Source-only host supports one synthetic offline fixture; live provider operations remain deferred | [Architecture](docs/architecture.md), [Runtime Options](docs/runtime-options.md) |
 | Live integrations and extension loading | Not implemented | [Compatibility Matrix](docs/compatibility-matrix.md) |
 
 Today, NexFlow can be used to author and review declarative team manifests,

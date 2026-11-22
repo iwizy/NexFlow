@@ -1,0 +1,58 @@
+{
+  "task": "NF-118",
+  "sourceRevision": "58c1897eb47fae92f73d9a0681bb58e9e277eb57",
+  "recordedAt": "2026-11-22T10:41:05.845Z",
+  "node": "26.13.1",
+  "platform": "darwin",
+  "arch": "arm64",
+  "checks": [
+    {
+      "command": "node scripts/validate-schemas.mjs",
+      "exitCode": 0,
+      "stdout": "Parsed 18 schema files and 109 example manifests.\nMatched 17 manifest kinds to 17 schemas.\nValidated 109 manifests against 17 schemas.\nSchema validation passed. Semantic validation was not performed.",
+      "stdoutSha256": "22620e85d09eb176f33faafd06d5383cfccb10d18aef2ef1311a044fe45e6de4"
+    },
+    {
+      "command": "node scripts/extension-registry-smoke.mjs",
+      "exitCode": 0,
+      "stdout": "Extension registry smoke checks passed (91 assertions).",
+      "stdoutSha256": "e2bca8e69cedd744ae7826e23bca6092f01f3a6d39932ec5db3925dac8faf483"
+    },
+    {
+      "command": "node scripts/github-extension-smoke.mjs",
+      "exitCode": 0,
+      "stdout": "GitHub extension checks passed for 51 assertions.\nValidated provider authority, immutable evidence, operation separation, review, network, credential, webhook, and fail-closed boundaries without contacting GitHub.",
+      "stdoutSha256": "2a40f789d606401315cf78e48ad2c07f7ea60302ac2b376e73658ed258088d95"
+    },
+    {
+      "command": "node scripts/issue-tracker-extension-smoke.mjs",
+      "exitCode": 0,
+      "stdout": "Issue tracker extension checks passed for 73 cases.\nValidated profile and fictional declaration boundaries offline; no tracker access, synchronization, or runtime enforcement.",
+      "stdoutSha256": "0ad3650dd4e8e1ccb07ee2bc43d913bb849898b379c971e808d62580532d468c"
+    },
+    {
+      "command": "node scripts/mcp-extension-smoke.mjs",
+      "exitCode": 0,
+      "stdout": "MCP extension checks passed for 25 schema cases.\nValidated the draft profile, two fictional declaration fragments, surface authority boundaries, and selected Software Team declarations without connecting to an MCP server.",
+      "stdoutSha256": "4be30c2ecdaf9bc651249cf1623de987a31d7bad2d4036b44ef99ae73e117869"
+    },
+    {
+      "command": "node scripts/a2a-extension-smoke.mjs",
+      "exitCode": 0,
+      "stdout": "A2A extension checks passed for 13 schema cases.\nValidated external identity, task, artifact, authority, network, credential, and fail-closed boundaries without contacting an A2A agent.",
+      "stdoutSha256": "0199f707f4e047fd9b7d98f3298ae7188c36078d60855a6994e75914ee6645f4"
+    },
+    {
+      "command": "node scripts/integration-metadata-smoke.mjs",
+      "exitCode": 0,
+      "stdout": "Integration metadata boundaries passed 108 offline fixture cases across 4 pinned profiles.",
+      "stdoutSha256": "1cb2640169a31d34a67bdb89aacee5d3299a1f4bc3866ddc7ede60f06b05ed5d"
+    },
+    {
+      "command": "node scripts/conformance-claim-smoke.mjs",
+      "exitCode": 0,
+      "stdout": "Conformance claim checks passed for 37 cataloged fixture cases and 622 assertions.\nMaintained templates and the draft validator statement include 9 required sections and 6 conformance levels.\nThese checks validate claim structure and cataloged rejection boundaries, not external evidence or implementation conformance.",
+      "stdoutSha256": "5ccdbd34856980ce29608747b9466803a4c220cf8111e16601908b37841cab25"
+    }
+  ]
+}

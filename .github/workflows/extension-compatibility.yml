@@ -13,6 +13,8 @@ on:
       - 'schemas/common.schema.json'
       - 'schemas/extensions.schema.json'
       - 'scripts/extension-compatibility-smoke.mjs'
+      - 'scripts/release-0-7-readiness-smoke.mjs'
+      - 'release/0.7/**'
       - 'scripts/test/**'
   push:
     branches: [main, develop]
@@ -27,6 +29,8 @@ on:
       - 'schemas/common.schema.json'
       - 'schemas/extensions.schema.json'
       - 'scripts/extension-compatibility-smoke.mjs'
+      - 'scripts/release-0-7-readiness-smoke.mjs'
+      - 'release/0.7/**'
       - 'scripts/test/**'
 
 permissions:
@@ -39,6 +43,7 @@ jobs:
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
+          fetch-depth: 0
           persist-credentials: false
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
@@ -59,8 +64,18 @@ jobs:
             "$RUNNER_TEMP/nexflow-cli-0.5.0-alpha.1.tgz" \
             "$RUNNER_TEMP/nexflow-validation-0.5.0-alpha.1.tgz" \
             > "$RUNNER_TEMP/nf-117-extension-compatibility.json"
+      - name: Verify source-bound 0.7 readiness and current compatibility results
+        run: >-
+          node scripts/release-0-7-readiness-smoke.mjs
+          "$RUNNER_TEMP/nf-117-extension-compatibility.json"
+          > "$RUNNER_TEMP/nf-118-readiness.json"
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: nf-117-extension-compatibility
           path: ${{ runner.temp }}/nf-117-extension-compatibility.json
+          if-no-files-found: error
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: nf-118-release-readiness
+          path: ${{ runner.temp }}/nf-118-readiness.json
           if-no-files-found: error

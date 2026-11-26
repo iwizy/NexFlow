@@ -23,7 +23,7 @@ jobs:
       - name: Install validation tooling
         run: npm ci --ignore-scripts
 
-      - name: Verify documentation navigation and current release status
+      - name: Verify documentation navigation
         run: npm run documentation-navigation-smoke
 
       - name: Verify stored Linux lifecycle evidence without promoting gates

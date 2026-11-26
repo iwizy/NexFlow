@@ -1,10 +1,13 @@
 # Reference Package Candidate
 
-NF-107 supplies an **unreleased installable candidate** for the bounded
+NF-107 supplies a reproducible **installable candidate build** for the bounded
 [0.5 CLI contract](0.5-cli-contract.md). It packages the NF-105 library and NF-106
 commands without changing manifest meaning, diagnostics, versions or runtime
 authority. Registry publication, a public release and full native lifecycle are
-separate decisions. The broader RFC-0011 remains Draft.
+separate decisions. The broader RFC-0011 remains Draft. The selected
+[0.5.0-alpha.1 archives](https://github.com/iwizy/NexFlow/releases/tag/v0.5.0-alpha.1)
+are now published; use the [installation guide](reference-cli-installation.md)
+for those exact bytes. A new candidate build is not that published artifact.
 
 ## Build From An Exact Revision
 

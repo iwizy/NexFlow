@@ -1,5 +1,12 @@
 # Reference Native Lifecycle
 
+The published [0.5.0-alpha.1 pairing](reference-cli-compatibility.md) uses
+Node **26.13.1** / npm **11.20.0**, requalified after the November security update.
+The original NF-109 record below retains its exact 26.13.0 cohort and is not
+a recommendation to install that older runtime.
+
+## Original NF-109 Qualification
+
 NF-109 qualifies the actual private CLI and library archives from the bounded
 [preview contract](0.5-cli-contract.md) on Ubuntu 24.04 AMD64, macOS 15 ARM64
 and Windows Server 2025 AMD64, with exact external Node **26.13.0** and npm

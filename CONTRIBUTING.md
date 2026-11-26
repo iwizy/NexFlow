@@ -54,7 +54,10 @@ Use an RFC for:
 
 ## Pull Request Checklist
 
-- Docs are updated.
+- Review README status/release sequence, SECURITY, CONTRIBUTING, the roadmap,
+  compatibility and affected guides for every change. Update affected claims;
+  record reviewed-but-unchanged surfaces in the PR rather than editing them
+  only to change a date. Run the documentation navigation/status check.
 - Schemas are updated if manifest fields changed.
 - Examples are updated if behavior changed, and example changes follow [examples/CHECKLIST.md](examples/CHECKLIST.md).
 - Changelog is updated for user-visible changes.
@@ -79,9 +82,10 @@ Avoid implying that planned runtime behavior already exists.
 ## Local Validation
 
 This repository provides JSON Schemas, maintenance checks, experimental tooling
-and an unreleased [reference validation library](packages/validation/README.md).
-An unreleased installable reference CLI candidate is available for
-[release qualification](release/0.5-preview-review.md); it is not a public release.
+and the published [reference validation library](packages/validation/README.md).
+The CLI/library developer preview is available as [v0.5.0-alpha.1](https://github.com/iwizy/NexFlow/releases/tag/v0.5.0-alpha.1);
+[release qualification](release/0.5-preview-review.md) records its bounded scope.
+New source builds are separate candidates, identified by their own source and digests.
 Install the pinned root
 maintenance tooling and run the repository validator before opening a pull request:
 
@@ -124,7 +128,7 @@ TypeScript/layout B is adopted in [RFC-0025](rfcs/RFC-0025-reference-implementat
 for the bounded developer/design scope; a workflow runtime is not implemented.
 
 Changes to the reference library or its workspace adapter also require Node.js
-26.13.0, npm 11.20.0 and the pinned TypeScript compiler. From the repository root:
+26.13.1, npm 11.20.0 and the pinned TypeScript compiler. From the repository root:
 
 ```sh
 npm ci --prefix packages/validation --ignore-scripts
@@ -161,8 +165,11 @@ inside an archive changes its digest and requires applicable requalification.
 Documentation changes must keep local links valid, every first-level
 `docs/*.md` page discoverable from the documentation index, and the root README
 linked to each repository guide. Run `npm run documentation-navigation-smoke`
-to verify those navigation boundaries. The check is offline: it does not fetch
-external URLs or establish that prose is correct or specification-conformant.
+to verify navigation and current-release/version statements against the dated
+changelog and package metadata. The check is offline: it does not fetch external
+URLs, discover a new publication or establish general prose correctness.
+Publication work must first verify the real release/tag and public downloads,
+then update the changelog and current status pages together.
 
 The [repository CLI prototype](docs/cli-prototype.md) is also maintenance and
 evaluation tooling, not a reference CLI alpha. Its `discover` command reports

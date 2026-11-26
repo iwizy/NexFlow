@@ -5,7 +5,8 @@ NexFlow is specification-first. Runtime work starts only after the core model is
 Current architecture direction: [Accepted RFC-0025](../rfcs/RFC-0025-reference-implementation-architecture.md)
 and the [exact decision](../evaluation/architecture/revised/decision.json) adopt
 TypeScript/layout B for unsigned developer validation and future host interface
-design. Runtime implementation and NF-103 product-release approval are separate.
+design. Subsequent bounded tooling and source milestones have their own
+publication evidence; the decision alone authorizes no product release.
 The dated preparation/review snapshots below preserve their historical scope.
 
 For version-by-version readiness criteria from `0.1` draft through `1.0`, see the [Release Plan](release-plan.md).
@@ -20,24 +21,26 @@ adds a provider-neutral policy profile and offline validation evidence.
 Provider bindings, live issue operations, synchronization, and inbound events
 remain unimplemented; this does not advance a release or CLI readiness gate.
 
-## Current Checkpoint: `v0.4.0`
+## Current Checkpoint: `v0.7.0`
 
-Status: `v0.1.0` foundation, `v0.2.0` validation/conformance, `v0.3.0`
-semantic consistency and `v0.4.0` Runtime Decision Readiness released in order.
-The [October 28 publication receipt](../release/0.4-publication.md) verifies
-the exact tag, five downloaded assets and complete source archive. This is a
-repository source/decision/evidence release, not an installed CLI or runtime.
-The earlier `0.3` scope and bounded manual
-expectations received maintainer approval and separate exact-candidate checks.
-The [release reviews](../release/README.md) preserve partial semantics, Draft
-RFCs, and blocked architecture/tooling claims. The next release line is the
-separately gated `0.5` Reference Tooling Preview. The
-[October 28 completion review](../release/0.4-completion-review.md) records
-`ready-with-notes` for repository source/decision/evidence publication after an
-explicit comparison-criterion amendment and current advisory dispositions.
-The earlier `not-ready` assessment remains historical. The later explicit
-publication instruction has been executed; tooling packages and runtime
-implementation remain separate work.
+Current source release: [**`v0.7.0`**](https://github.com/iwizy/NexFlow/releases/tag/v0.7.0).
+The source Integration and Extension Hardening milestone is published and
+[download-verified](https://github.com/iwizy/NexFlow/releases/download/v0.7.0/PUBLICATION.json). The published sequence is
+0.1 foundation, 0.2 validation/conformance, 0.3 semantic consistency, 0.4 runtime
+decision readiness, 0.5.0-alpha.1 tooling, 0.6 offline fixture host and 0.7
+extension/integration metadata hardening.
+
+The [published CLI/library preview](https://github.com/iwizy/NexFlow/releases/tag/v0.5.0-alpha.1) retains manifest
+`specVersion: "0.1"`, Node 26.13.1 and its existing commands. The host remains a
+single-operation synthetic offline source fixture. Live integrations, executable
+extension loading, a production runtime and broad conformance remain deferred.
+The [0.7 review](../release/0.7/review.md) remains ready-with-notes.
+
+The next release line is **0.8 Interoperability Review**: a common corpus,
+independent implementation comparison and explicit limitations/migration results.
+Review the specification version and Draft status during that preparation;
+neither the release number nor elapsed time predetermines the manifest version.
+The dated preparation snapshots below retain their original outcomes.
 
 The dated [0.2 validation/conformance checkpoint](0.2-validation-checkpoint.md)
 consolidates later source evidence and remaining gaps. It does not rewrite the
@@ -337,8 +340,9 @@ CI and historical preparation alone are not architecture acceptance.
 
 ### Remaining Implementation And Public Distribution Work
 
-- NF-103 must review fresh release/publisher/runtime-prerequisite evidence and
-  any applicable future native app/installer signing/notarization route.
+- NF-103 completed the 0.4 source milestone review. Later 0.5–0.7 publications
+  have their own exact evidence; new package/runtime delivery and any future
+  native signing/notarization route require a fresh applicable review.
 - Pure-kernel extraction, graph/init porting and broader semantic/Core/extension
   or stable CLI/ABI claims need separately reviewed implementation evidence.
 - Actual host admission, credentials, durable storage and executable integration
@@ -408,7 +412,7 @@ Relevant docs: [Architecture](architecture.md), [Runtime Options](runtime-option
 
 ## Milestone 5: Reference CLI
 
-Current next work follows the [adopted 0.5 implementation profile](0.5-cli-contract.md)
+The published first preview follows the [adopted 0.5 implementation profile](0.5-cli-contract.md)
 and [NF-104 scope review](../rfcs/reviews/2026-10-28-cli-preview-scope.md).
 First-preview commands:
 
@@ -417,11 +421,11 @@ First-preview commands:
 - `nexflow graph`
 - help/version
 
-`init` is deferred for the first preview. Implement the separate TypeScript
-validation and CLI packages, then qualify actual npm-compatible tarballs,
-dependency/security closure and native installation/upgrade/rollback on all
-three targets. The target label is `0.5.0-alpha.1` with external Node; package
-implementation and release are not completed by adopting the scope.
+`init` remains deferred. The separate TypeScript validation and CLI packages
+were implemented, qualified and published as `0.5.0-alpha.1` with external Node.
+The [installation guide](reference-cli-installation.md) and
+[compatibility guide](reference-cli-compatibility.md) identify the published
+bytes and native target limits. Scope adoption alone did not complete delivery.
 
 The CLI should validate and inspect manifests only. It should not orchestrate real work.
 Its commands must preserve the offline, filesystem, process, extension,
@@ -431,6 +435,10 @@ credential, and runtime-preflight limits in the
 Relevant docs: [Validation](validation.md), [Conformance](conformance.md), [Compatibility](compatibility.md).
 
 ## Milestone 6: Runtime Prototype
+
+The published [0.6 source fixture](../prototype/README.md) implements one
+synthetic offline operation. The broader design goals below remain future work;
+they do not describe production workflow interpretation or live providers.
 
 - Interpret workflows.
 - Enforce approval gates.

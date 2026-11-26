@@ -51,8 +51,9 @@ The developer delivery uses JavaScript source/declarations and separately
 provisioned Node. Actual TypeScript capsules have the same 24-file distributions
 and no detected native project executable or nested archive. Project signing,
 notarization and trusted public delivery remain unperformed; original signing
-and all-four-success objectives remain false. NF-103 must review publisher and
-runtime trust and any applicable future native signing before product delivery.
+and all-four-success objectives remain false. NF-103 completed the 0.4 source
+review; published 0.5–0.7 delivery has its own evidence. New runtime/native
+delivery still requires applicable publisher, runtime-trust and signing review.
 
 Historical preparation inputs, supplemented by that current decision:
 

@@ -1,16 +1,19 @@
 # @nexflow/cli Source Preview
 
-NF-106 implements the unreleased validation-only `nexflow` entry point in
+NF-106 introduced the validation-only `nexflow` entry point in
 `src/main.ts`, using the separate public `@nexflow/validation` API. Commands are
 `validate`, `inspect`, static `graph`, help and version. `init`, `discover` and
 runtime operations are unsupported. Package metadata remains private
-`0.5.0-alpha.1`; it does not indicate a published download.
+`0.5.0-alpha.1` to disable npm registry publication. The selected archives are
+published through the [GitHub developer preview](https://github.com/iwizy/NexFlow/releases/tag/v0.5.0-alpha.1).
 
 NF-107 adds a separate [installable candidate build](../../docs/reference-package-candidate.md)
 with the exact library/production closure bundled in the CLI archive, legal
 notices, schema indexes and integrity/provenance records. Use that clean-revision
 pipeline for actual offline installation; the development build below is still
-only a source build. Artifact security/native lifecycle/publication remain open.
+only a source build. Use the [installation guide](../../docs/reference-cli-installation.md)
+for the qualified published archives. New candidate bytes require their own
+applicable security/native checks and publication decision.
 
 Use the exact Node 26.13.1/npm 11.20.0 toolchain and the existing pinned compiler:
 

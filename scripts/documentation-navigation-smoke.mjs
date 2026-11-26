@@ -190,7 +190,7 @@ if (JSON.stringify(sequence) !== JSON.stringify(expectedSequence)) {
 }
 for (const [file, metadata] of [["packages/cli/README.md", cli], ["packages/validation/README.md", validation]]) {
   // A future source candidate may have a version that has not been published.
-  if (!published.includes(metadata.version)) continue;
+  if (metadata.version !== publishedTooling) continue;
   const introduction = contentsByFile.get(file)?.slice(0, 800) ?? "";
   if (/\bunreleased\b/iu.test(introduction) || !introduction.includes(`/releases/tag/v${metadata.version}`)) {
     errors.push(`${file}: introduction must identify the published preview v${metadata.version}.`);

@@ -5,13 +5,14 @@ NF-106 implements the source entry for the bounded
 and version. It uses the separate NF-105 library through its public package
 entry, not a historical CLI or another language backend.
 
-Status: **implemented source preview, unreleased**. Package identity is
+Status: **published developer preview**. Package identity is
 `@nexflow/cli` `0.5.0-alpha.1`, with matching `@nexflow/validation` and exact
 Node 26.13.1. The bin mapping points to `dist/main.js`. NF-107 supplies the
 [actual tarball/dependency closure and offline installation candidate](reference-package-candidate.md);
 [security](reference-package-security.md) and [native lifecycle](reference-native-lifecycle.md)
 now have candidate-bound evidence. The [final review](../release/0.5-preview-review.md)
-selects the exact documented archives; publication requires separate authority.
+selects the exact documented archives available from the
+[published alpha](https://github.com/iwizy/NexFlow/releases/tag/v0.5.0-alpha.1).
 Use the [portable install/quick start](reference-cli-installation.md) and
 [compatibility/rollback guide](reference-cli-compatibility.md).
 This is not an `NF-CLI` or full semantic claim.

@@ -8,6 +8,15 @@ Completed commit-bound records may be published as GitHub release assets. This
 avoids embedding a self-referential commit hash in the commit being evaluated
 while keeping the record, check output, and review attached to the exact tag.
 
+## 0.7 Extension Hardening Review
+
+NF-118's [technical review](0.7/review.md), [readiness record](0.7/record.json)
+and [evidence index](0.7/evidence.json) bind the source and fixture scope of the
+proposed source milestone to NF-115–117 and actual CI results. The
+[proposed notes](0.7/release-notes.md) retain implementation, security and
+migration limits. Promotion, publication and public-download verification
+require their own subsequent decision and receipts.
+
 ## 0.1 Candidate Record
 
 - [`candidate-readiness.schema.json`](candidate-readiness.schema.json) validates

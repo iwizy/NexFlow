@@ -8,6 +8,12 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Added
 
+- Prepared the 0.7 source milestone review covering namespace ownership,
+  registry lifecycle/history, integration metadata and unsupported-profile
+  handling. The review binds NF-115–117 to exact source and CI evidence,
+  preserves the published validator/CLI and fixture-host limits, and records
+  the separate publication decision.
+
 - Updated the exact first-alpha runtime to Node.js 26.13.1 after the November
   security bulletin and requalified the selected packages on all three targets.
 

@@ -122,6 +122,30 @@ boundary and bounded tooling-risk disposition are unchanged. The new full
 advisory content hash is pinned explicitly. Failed scan evidence is retained
 even when its gate refuses a changed input.
 
+NF-117 reviewed `GHSA-fc5q-39xc-vjpf` on **2026-11-20** after the
+[candidate check](https://github.com/iwizy/NexFlow/actions/runs/44277184418)
+reported `picomatch` 4.0.4 in npm 11.20.0. The
+[upstream advisory](https://github.com/advisories/GHSA-fc5q-39xc-vjpf)
+was withdrawn on 2026-11-18, and the current OSV exact-version query returns
+no matches. The policy binds the reviewed withdrawn response and preserves
+the previous response digest.
+
+Static review traced the sole consumer through `node-gyp` 12.4.0 and
+`tinyglobby` 0.2.17. `node-gyp/lib/build.js` uses the literal patterns
+`build/*.sln` and `build/*.mk` on Windows. The qualified candidate job runs on
+Linux; its `ci`, `pack` and local `install` commands disable lifecycle scripts.
+Authored manifests reach the installed validation and CLI entries after
+installation. The delivered dependency inventories contain no `picomatch`.
+The exact npm-tool entry has a `bounded-not-applicable` disposition. Changes
+to advisory content, callers, tool versions, patterns, lifecycle/native-build
+configuration or npm package inputs require reassessment.
+
+The release readiness workflow checks the published alpha evidence from its
+exact release revision, `3aabaf610a5bd72f4f58f4ddb1b4a91dc5ee164b`, and checks
+that its retained records and verifier match that revision. Current-source
+package and security acceptance runs in the Reference Package Candidate
+workflow with the current policy.
+
 ## Remaining Gates
 
 The collector's npm advisory results do not fully assess Node's native C/C++

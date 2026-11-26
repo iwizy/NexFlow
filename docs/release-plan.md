@@ -275,6 +275,8 @@ Non-goals:
 ## `0.7` Integration and Extension Hardening
 
 The `0.7` line should make extensions safer for independent tools.
+The [NF-118 candidate review](../release/0.7/review.md) maps the criteria below
+to immutable source, fixture and result evidence.
 
 Release readiness:
 
@@ -286,6 +288,7 @@ Release readiness:
 - the experimental A2A profile keeps Agent Cards, remote identity, skill claims,
   messages, tasks, and artifacts separate from local authority and work state
 - extension compatibility expectations are represented in conformance language
+  with [offline fixtures and observed support](0.7/extension-compatibility.md)
 
 ## `0.8` Interoperability Review
 

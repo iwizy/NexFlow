@@ -163,3 +163,18 @@ evidence only. They do not resolve a live identity, validate provider payloads,
 enforce concurrency or policy, test adapters, prove `NF-EXTENSION` conformance,
 or publish a supported integration. See [Versioning](../../docs/versioning.md)
 and the [Compatibility Matrix](../../docs/compatibility-matrix.md).
+
+## Ownership And Profile Pinning
+
+This `0.1-draft` issue tracker profile is experimental and governed in the
+`io.nexflow.*` namespace. For compatibility evidence, bind the exact profile
+and schema revision to manifest `specVersion: "0.1"` and the covered attachment
+areas. The [extension registry contract](../../docs/extension-registry.md)
+defines disputes, deprecation and revocation for pinned records. A new
+profile version needs explicit review. Any future installed implementation
+needs its own support and integrity check, and the host evaluates credentials,
+network, permissions and approval independently for each operation.
+
+See the [shared integration metadata contract](../../docs/integrations.md#external-metadata-and-local-decisions)
+for exact compatibility, scoped evidence, callback refusals and authority
+checks across integration boundaries.

@@ -1,8 +1,9 @@
 # Reference Preview Compatibility And Support
 
-This guide applies to the exact private `0.5.0-alpha.1` archives selected by the
-[release review](../release/0.5-preview-review.md). Publication is pending a
-separate instruction. Package/repository tag, manifest `0.1`, embedded schema
+This guide applies to the exact published `0.5.0-alpha.1` archives selected by the
+[release review](../release/0.5-preview-review.md) and available from the
+[release page](https://github.com/iwizy/NexFlow/releases/tag/v0.5.0-alpha.1).
+Package/repository tag, manifest `0.1`, embedded schema
 snapshot and `0.5-preview.1` output are independent version domains.
 
 ## Supported Slice

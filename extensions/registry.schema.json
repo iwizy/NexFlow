@@ -7,7 +7,7 @@
   "required": ["registryFormatVersion", "kind", "metadata", "entries"],
   "properties": {
     "registryFormatVersion": {
-      "const": "0.1-draft"
+      "enum": ["0.1-draft", "0.2-draft"]
     },
     "kind": {
       "const": "NexFlowExtensionRegistry"
@@ -41,11 +41,16 @@
     "entries": {
       "type": "array",
       "minItems": 1,
-      "items": {
-        "$ref": "#/$defs/entry"
-      }
+      "items": { "type": "object" }
     }
   },
+  "allOf": [
+    {
+      "if": { "properties": { "registryFormatVersion": { "const": "0.2-draft" } } },
+      "then": { "properties": { "entries": { "items": { "$ref": "#/$defs/currentEntry" } } } },
+      "else": { "properties": { "entries": { "items": { "$ref": "#/$defs/legacyEntry" } } } }
+    }
+  ],
   "$defs": {
     "id": {
       "type": "string",
@@ -117,7 +122,7 @@
       "properties": {
         "status": {
           "type": "string",
-          "enum": ["unverified", "self_asserted", "registry_verified"]
+          "enum": ["unverified", "self_asserted", "registry_verified", "disputed"]
         },
         "method": {
           "type": "string",
@@ -131,13 +136,108 @@
         {
           "if": {
             "properties": {
-              "status": { "const": "registry_verified" }
+              "status": { "enum": ["registry_verified", "disputed"] }
             },
             "required": ["status"]
           },
           "then": {
             "required": ["method", "evidence"]
           }
+        }
+      ]
+    },
+    "reverseDnsNamespace": {
+      "$ref": "#/$defs/namespace",
+      "pattern": "^[a-z][a-z0-9]*(?:[-_][a-z0-9]+)*(?:\\.[a-z0-9]+(?:[-_][a-z0-9]+)*)+$"
+    },
+    "profileVersion": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 64,
+      "pattern": "^[0-9]+(?:[._-][0-9A-Za-z]+)*$"
+    },
+    "deprecation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["reason", "migration", "effectiveAt", "supportEndsAt"],
+      "properties": {
+        "reason": { "type": "string", "minLength": 1 },
+        "migration": { "$ref": "#/$defs/httpsUri" },
+        "effectiveAt": { "type": "string", "format": "date-time" },
+        "supportEndsAt": { "type": ["string", "null"], "format": "date-time" },
+        "replacement": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["namespace", "version"],
+          "properties": {
+            "namespace": { "$ref": "#/$defs/reverseDnsNamespace" },
+            "version": { "$ref": "#/$defs/profileVersion" }
+          }
+        }
+      }
+    },
+    "withdrawal": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["reason", "effectiveAt", "evidence"],
+      "properties": {
+        "reason": { "type": "string", "minLength": 1 },
+        "effectiveAt": { "type": "string", "format": "date-time" },
+        "evidence": { "$ref": "#/$defs/httpsUri" }
+      }
+    },
+    "legacyEntry": {
+      "$ref": "#/$defs/entry",
+      "properties": {
+        "deprecation": false,
+        "withdrawal": false,
+        "owner": { "properties": { "verification": { "properties": {
+          "status": { "not": { "const": "disputed" } }
+        } } } },
+        "publication": { "properties": { "status": { "not": { "const": "revoked" } } } }
+      }
+    },
+    "currentEntry": {
+      "$ref": "#/$defs/entry",
+      "properties": {
+        "namespace": { "$ref": "#/$defs/reverseDnsNamespace" },
+        "profile": {
+          "properties": {
+            "version": { "$ref": "#/$defs/profileVersion" },
+            "source": { "properties": {
+              "path": { "pattern": "^(?:[A-Za-z0-9_-][A-Za-z0-9._-]*|\\.[A-Za-z0-9_-][A-Za-z0-9._-]*)(?:/(?:[A-Za-z0-9_-][A-Za-z0-9._-]*|\\.[A-Za-z0-9_-][A-Za-z0-9._-]*))*$" }
+            } }
+          }
+        },
+        "compatibility": { "properties": {
+          "profileVersions": { "maxItems": 1, "items": { "$ref": "#/$defs/profileVersion" } }
+        } },
+        "replacedBy": false
+      },
+      "allOf": [
+        {
+          "if": { "properties": {
+            "lifecycle": { "enum": ["deprecated", "removed"] }
+          } },
+          "then": { "required": ["deprecation"] }
+        },
+        {
+          "if": { "properties": { "publication": { "properties": { "status": { "const": "deprecated" } } } } },
+          "then": {
+            "required": ["deprecation"],
+            "properties": { "publication": { "required": ["publishedAt"] } }
+          }
+        },
+        {
+          "if": { "properties": { "publication": { "properties": { "status": { "enum": ["withdrawn", "revoked"] } } } } },
+          "then": { "required": ["withdrawal"] },
+          "else": { "properties": { "withdrawal": false } }
+        },
+        {
+          "if": { "properties": { "lifecycle": { "const": "removed" } } },
+          "then": { "properties": { "publication": { "properties": {
+            "status": { "enum": ["withdrawn", "revoked"] }
+          } } } }
         }
       ]
     },
@@ -331,7 +431,7 @@
           "properties": {
             "status": {
               "type": "string",
-              "enum": ["draft", "published", "deprecated", "withdrawn"]
+              "enum": ["draft", "published", "deprecated", "withdrawn", "revoked"]
             },
             "publishedAt": {
               "type": "string",
@@ -356,6 +456,8 @@
             }
           ]
         },
+        "deprecation": { "$ref": "#/$defs/deprecation" },
+        "withdrawal": { "$ref": "#/$defs/withdrawal" },
         "replacedBy": {
           "$ref": "#/$defs/namespace"
         },

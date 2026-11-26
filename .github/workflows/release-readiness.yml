@@ -27,6 +27,12 @@ jobs:
             release/0.4 release/0.4-completion \
             scripts/release-0-4-readiness-smoke.mjs \
             scripts/release-0-4-completion-smoke.mjs
+          git diff --exit-code 3aabaf610a5bd72f4f58f4ddb1b4a91dc5ee164b -- \
+            release/0.5-preview \
+            release/0.5-preview-review.md \
+            release/0.5-preview-release-notes.md \
+            release/0.5-preview-publication.md \
+            scripts/release-preview-review.mjs
       - name: Check out the exact published source for historical assessment
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
@@ -53,7 +59,15 @@ jobs:
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
           node-version: '26.13.1'
-      - name: Install locked review dependencies
+      - name: Check out the published alpha revision for historical assessment
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: 3aabaf610a5bd72f4f58f4ddb1b4a91dc5ee164b
+          path: .release-0.5-snapshot
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Install the historical alpha review dependencies
+        working-directory: .release-0.5-snapshot
         run: npm ci --ignore-scripts --no-audit --no-fund --update-notifier=false
       - name: Download selected package and security inputs
         uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
@@ -95,12 +109,13 @@ jobs:
           artifact-ids: 13892505909
           merge-multiple: true
           path: ${{ runner.temp }}/preview-inputs/windows-amd64
-      - name: Verify selected evidence and prepare first-alpha review assets
+      - name: Verify the published alpha evidence at its exact revision
+        working-directory: .release-0.5-snapshot
         run: >-
           node scripts/release-preview-review.mjs
           --inputs "$RUNNER_TEMP/preview-inputs"
           --out "$RUNNER_TEMP/preview-review"
-      - name: Retain the actual reviewed asset packet
+      - name: Retain the historical alpha review packet
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: reference-preview-review-${{ github.event.pull_request.head.sha || github.sha }}

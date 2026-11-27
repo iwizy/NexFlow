@@ -131,10 +131,12 @@ The manifest holds machine-readable rules; apply them per profile:
    a repeatability failure. For cross-implementation comparison only, sort by
    file, pointer, severity (error/warning/info), code and canonical structured
    meaning. Sorting must not erase that earlier repeatability finding.
-6. Check public output for absolute paths, synthetic private canaries, raw authored
-   values and native exceptions before normalization. A leak is a failure;
-   stripping it afterward does not make the candidate pass. Record original and
-   resulting input digests; unexpected mutation fails the case.
+6. Check public output for absolute paths, synthetic private canaries, unfiltered
+   source documents, values outside the declared public projection and native
+   exceptions before normalization. Authored IDs and other allow-listed public
+   projection fields remain comparable. A leak is a failure; stripping it
+   afterward does not make the candidate pass. Record original and resulting
+   input digests; unexpected mutation fails the case.
 7. The draft observation schema separates observed, unsupported, not-tested and
    error. The controller assesses matches; an implementation never receives the
    oracle or self-awards a comparison pass. Runtime/extension execution checks

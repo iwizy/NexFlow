@@ -1242,7 +1242,7 @@
     },
     {
       "path": "docs/0.8/interoperability-corpus.md",
-      "sha256": "e439cd683517767bf7d1b18433069b03945fd28b5710718e85dbeed12d11a649"
+      "sha256": "af13dda747fcd887a023a7f68991ead0de4e321b3aed0ce5da870e087c025030"
     }
   ],
   "normalization": {
@@ -1269,7 +1269,7 @@
       "canonical structured meaning"
     ],
     "duplicates": "preserve multiplicity",
-    "redaction": "absolute roots, raw input values, native exceptions and synthetic canaries are failures; redacting afterward cannot grant pass",
+    "redaction": "absolute roots, unfiltered source documents, values outside the declared public projection, native exceptions and synthetic canaries are failures; allow-listed authored IDs/projection fields remain comparable; redacting afterward cannot grant pass",
     "outcomes": "observed unsupported-input rejection is distinct from unsupported operation, not-tested and error",
     "mutation": "compare all input byte digests before and after every run",
     "scope": "no full semantic, live integration or runtime execution inference"

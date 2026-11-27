@@ -1,0 +1,35 @@
+name: Interoperability Corpus
+
+on:
+  pull_request:
+  push:
+    branches: [main, develop]
+
+permissions:
+  contents: read
+
+jobs:
+  corpus:
+    name: Frozen interoperability inputs
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '20'
+          cache: npm
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Verify corpus integrity, migration boundaries and observation protocol
+        run: node scripts/interoperability-corpus-smoke.mjs > "$RUNNER_TEMP/nf-119-corpus-check.json"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: nf-119-corpus-check
+          path: ${{ runner.temp }}/nf-119-corpus-check.json
+          if-no-files-found: error
+          retention-days: 90

@@ -1,0 +1,304 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nexflow.dev/interoperability/observation-v1.schema.json",
+  "title": "Draft interoperability observations, not a product output ABI",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "formatVersion",
+    "corpusId",
+    "corpusSha256",
+    "subject",
+    "runId",
+    "results"
+  ],
+  "properties": {
+    "formatVersion": {
+      "const": "0.1-draft"
+    },
+    "corpusId": {
+      "const": "nf-119-interop-v1"
+    },
+    "corpusSha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "subject": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "revision"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "revision": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        }
+      }
+    },
+    "runId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "caseId",
+          "profile",
+          "state",
+          "observed",
+          "diagnostics",
+          "checks",
+          "executionAuthorized"
+        ],
+        "properties": {
+          "caseId": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9./-]+$"
+          },
+          "profile": {
+            "enum": [
+              "schema",
+              "parser",
+              "local-schema-engine",
+              "static-fragments",
+              "discovery",
+              "prototype-cli",
+              "claim-format",
+              "extension-metadata",
+              "migration",
+              "public-cli",
+              "runtime-boundary"
+            ]
+          },
+          "state": {
+            "enum": [
+              "observed",
+              "unsupported",
+              "not-tested",
+              "error"
+            ]
+          },
+          "observed": {
+            "type": [
+              "object",
+              "null"
+            ]
+          },
+          "diagnostics": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "category",
+                "code",
+                "file",
+                "path",
+                "severity",
+                "meaning"
+              ],
+              "properties": {
+                "category": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "minLength": 1
+                },
+                "code": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "pattern": "^[A-Z][A-Z0-9-]+$"
+                },
+                "file": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "pattern": "^(?!/|[A-Za-z]:)(?!.*(?:^|/)\\.\\.(?:/|$))[^\\\\]*$"
+                },
+                "path": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "pattern": "^(?:/(?:[^~]|~[01])*)?$"
+                },
+                "severity": {
+                  "enum": [
+                    "error",
+                    "warning",
+                    "info",
+                    null
+                  ]
+                },
+                "meaning": {
+                  "anyOf": [
+                    {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "kind",
+                        "details"
+                      ],
+                      "properties": {
+                        "kind": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "details": {
+                          "type": "object",
+                          "additionalProperties": {
+                            "type": [
+                              "string",
+                              "number",
+                              "boolean",
+                              "null"
+                            ]
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "checks": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "schema",
+              "staticSemantics",
+              "extensionMetadata",
+              "extensionExecution",
+              "runtimeExecution"
+            ],
+            "properties": {
+              "schema": {
+                "enum": [
+                  "passed",
+                  "failed",
+                  "not-run"
+                ]
+              },
+              "staticSemantics": {
+                "enum": [
+                  "passed",
+                  "failed",
+                  "not-run"
+                ]
+              },
+              "extensionMetadata": {
+                "enum": [
+                  "passed",
+                  "failed",
+                  "not-run"
+                ]
+              },
+              "extensionExecution": {
+                "const": "not-run"
+              },
+              "runtimeExecution": {
+                "const": "not-run"
+              }
+            }
+          },
+          "executionAuthorized": {
+            "const": false
+          }
+        },
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "state": {
+                  "enum": [
+                    "unsupported",
+                    "not-tested",
+                    "error"
+                  ]
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "observed": {
+                  "type": "null"
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "state": {
+                  "const": "observed"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "observed": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "state": {
+                  "enum": [
+                    "unsupported",
+                    "not-tested"
+                  ]
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "checks": {
+                  "properties": {
+                    "schema": {
+                      "const": "not-run"
+                    },
+                    "staticSemantics": {
+                      "const": "not-run"
+                    },
+                    "extensionMetadata": {
+                      "const": "not-run"
+                    },
+                    "extensionExecution": {
+                      "const": "not-run"
+                    },
+                    "runtimeExecution": {
+                      "const": "not-run"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ]
+      },
+      "minItems": 447,
+      "maxItems": 447,
+      "uniqueItems": true
+    }
+  }
+}

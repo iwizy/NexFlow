@@ -40,6 +40,11 @@ The next release line is **0.8 Interoperability Review**: a common corpus,
 independent implementation comparison and explicit limitations/migration results.
 Review the specification version and Draft status during that preparation;
 neither the release number nor elapsed time predetermines the manifest version.
+The [NF-119 corpus](0.8/interoperability-corpus.md) is prepared with 447 cases
+and all eight existing teams. Its [version review](0.8/specification-version-review.md)
+retains a concrete schema-acceptance narrowing; comparison inputs use the
+implemented 0.1 Draft snapshot. Independent comparison and the final release
+version/status decision remain separate work.
 The dated preparation snapshots below retain their original outcomes.
 
 The dated [0.2 validation/conformance checkpoint](0.2-validation-checkpoint.md)

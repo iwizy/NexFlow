@@ -92,6 +92,7 @@ maintenance tooling and run the repository validator before opening a pull reque
 ```sh
 npm ci --ignore-scripts
 npm run documentation-navigation-smoke
+node scripts/interoperability-corpus-smoke.mjs
 npm run validate
 npm run negative-schema-fixtures
 npm run typed-reference-schema-smoke

@@ -1,7 +1,10 @@
 # @nexflow/validation
 
-Unreleased `0.5.0-alpha.1` ESM validation library, extracted in NF-105 from the
-reviewed TypeScript candidate. This is not the executable reference CLI.
+The `0.5.0-alpha.1` ESM validation library is published in the
+[GitHub developer preview](https://github.com/iwizy/NexFlow/releases/tag/v0.5.0-alpha.1). Its source was extracted in NF-105
+from the reviewed TypeScript candidate. This is not the executable reference CLI.
+Private package metadata disables npm registry publication; it does not negate
+the published GitHub tarballs. New builds have their own source and digests.
 
 The main entry is pure application code: it parses supplied YAML/data and uses
 embedded, immutable-schema inputs. It does not read a project, access network or

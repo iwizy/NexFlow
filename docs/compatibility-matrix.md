@@ -1,5 +1,7 @@
 # Compatibility Matrix
 
+Current source release: [**`v0.7.0`**](https://github.com/iwizy/NexFlow/releases/tag/v0.7.0).
+
 This matrix records which NexFlow specification, schema, example, validator,
 CLI, runtime, and extension combinations are supported by the repository today.
 
@@ -104,7 +106,7 @@ row, manifest dialect, published release or older validator claim subject.
 | Semantic reference inventory | P0-P3 target namespaces, coverage, gaps, and deferred fields | Specified | `docs/semantic-reference-inventory.md` | Documentation contract only; it is not a manifest, generated registry, validator, or conformance suite. |
 | Semantic reference smoke | Selected cross-manifest reference, active definition authority, and duplicate checks | Partial | `npm run semantic-smoke`, semantic reference inventory | Does not cover every inventoried field or establish full `NF-SEMANTIC` conformance, graph safety, or policy correctness. |
 | Runtime language evaluation | Four independent prototypes, current qualification, six native measurement records and revision-bound TypeScript/layout B developer decision | Partial | [Evaluation Packet](../evaluation/README.md), [Exact decision](../evaluation/architecture/revised/decision.json), [Measurements](../evaluation/measurement-qualification/README.md) | Current TypeScript/Python qualify in the amended unsigned evaluation scope; Rust/Go fail Windows confinement and remain unscored. Original failed reports, missing public signing/trust and full product semantic/CLI/runtime gaps stay visible; architecture acceptance does not grant broader support. |
-| Reference CLI | Unreleased offline-installable first alpha, explicit-root validate/inspect/static graph/help/version, fixed schemas and preview JSON | Partial | [Install/quick start](reference-cli-installation.md), [candidate review](../release/0.5-preview-review.md), [native evidence](reference-native-lifecycle.md) | Candidate-bound structural/projection scope on exact Node/targets; no full semantic/Core/extension/runtime, stable output or NF-CLI claim; publication separately authorized. |
+| Reference CLI | Published offline-installable 0.5.0-alpha.1 developer preview, explicit-root validate/inspect/static graph/help/version, fixed schemas and preview JSON | Partial | [Install/quick start](reference-cli-installation.md), [candidate review](../release/0.5-preview-review.md), [native evidence](reference-native-lifecycle.md) | Candidate-bound structural/projection scope on exact Node/targets; no full semantic/Core/extension/runtime, stable output or NF-CLI claim; only the selected published archives are qualified. |
 | Repository CLI prototype | Help, unreleased version, local discovery, structural `validate`, declared-only `inspect`, static `graph`, bounded `init`, and opt-in JSON output | Partial | `docs/cli-prototype.md`, `npm run cli-prototype-smoke`, `npm run cli-validation-smoke`, `npm run cli-init-smoke` | Disposable maintenance tooling, not a reference CLI alpha or completed architecture candidate; no full semantic validation, stable JSON envelope, package, or conformance claim. |
 | Prototype JSON diagnostics | Experimental `formatVersion: "0.4-draft"` envelope and separate output schema | Implemented | `docs/cli-diagnostics.md`, `scripts/contracts/cli-output.schema.json`, `npm run cli-diagnostics-smoke` | Versioned repository output, not stable catalog or public CLI conformance; no semantic diagnostics, SARIF, automatic fixes, or runtime authority. |
 | Prototype declared inspection | Schema-first Project summary, declaration occurrences, and selected unresolved references across all 17 kinds | Implemented | `docs/cli-inspection.md`, `npm run cli-inspection-smoke` | Bounded, allowlisted projection only; no complete reference inventory, effective configuration, Agent Assembly resolver, or execution authority. |
@@ -181,8 +183,8 @@ conformance claim format smoke: scripts/conformance-claim-smoke.mjs
 conformance claim fixtures: fixtures/conformance/
 candidate readiness record smoke: scripts/candidate-readiness-smoke.mjs
 semantic smoke: scripts/semantic-reference-smoke.mjs
-reference CLI: absent
-runtime: absent
+reference CLI: published 0.5.0-alpha.1; explicit-root validate/inspect/static graph
+runtime: source-only synthetic offline fixture host; no production workflow runtime
 extension execution: absent
 ```
 
@@ -649,7 +651,7 @@ A future `NF-EXTENSION` compatibility claim should publish:
 | Schema-valid manifest + claimed full semantic correctness | Unsupported claim | JSON Schema cannot prove cross-manifest meaning. |
 | Semantic-smoke pass + claimed runtime safety | Unsupported claim | Smoke validation does not enforce behavior. |
 | Current manifest + selected reference preview | Partial | Explicit-root structural checks and declared projections only, on exact qualified Node/target/archive bytes; no full semantic or NF-CLI claim. |
-| Current manifest + NexFlow runtime | Unsupported | No runtime exists. |
+| Current manifest + production workflow runtime | Unsupported | The source-only fixture host does not implement general workflow execution. |
 | Declared extension + claimed live integration | Unsupported claim | Declaration is not implementation or authorization. |
 | Unknown extension + additional access | Non-conforming | Unknown metadata cannot grant authority. |
 

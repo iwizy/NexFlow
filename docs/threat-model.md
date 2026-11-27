@@ -26,7 +26,7 @@ automation collaboration. It is explicitly not an agent, provider client, or
 orchestration engine ([Project status](../README.md#status)).
 
 The current executable surfaces include source/evaluation tooling and an
-unreleased offline-installable reference candidate:
+the published offline-installable reference developer preview:
 
 - maintainers and contributors run Node.js checks against repository schemas,
   fixtures, and examples;
@@ -36,8 +36,11 @@ unreleased offline-installable reference candidate:
   an explicit existing directory;
 - four independent validation candidates retain their own source, toolchains,
   locks and evaluation evidence; retained target failures are not erased;
-- callers may build/import the unreleased `@nexflow/validation` pure data API,
+- callers may build/import the published `@nexflow/validation` pure data API,
 while a separate workspace adapter reads selected local files;
+- a [source-only host](../prototype/README.md) admits one synthetic offline
+  operation with in-memory approvals, events and replay protection; it has no
+  real provider, persistent authority store or general workflow execution;
 - GitHub Actions installs pinned npm dependencies and runs the maintained check
   set on pull requests and pushes to `main` or `develop`.
 
@@ -45,14 +48,15 @@ The reference library is separate from NF-106's
 [executable source CLI](reference-cli-preview.md). That entry implements the
 bounded commands through the library and read adapter, with startup package
 checks and safe text/JSON output. Its [actual package candidate](reference-package-candidate.md)
-bundles the fixed local schema/production closure; target lifecycle, OS-level
-controls and release acceptance remain separate work. `init` is deferred in the
+bundles the fixed local schema/production closure. The
+[published pairing](reference-cli-installation.md) has exact target and release
+evidence; those results do not qualify arbitrary new builds or a general OS sandbox. `init` is deferred in the
 [first-preview contract](0.5-cli-contract.md). The historical prototype's
 initializer is still an existing write surface in this model.
 
 There is no hosted NexFlow service, multi-tenant control plane, provider call,
 credential broker, extension loader, workflow scheduler, memory backend, event
-store, deployment adapter, or runtime in this repository. The README states the
+store, deployment adapter, or production workflow runtime in this repository. The README states the
 same implementation boundary ([Known limitations](../README.md#known-limitations)).
 
 The future-runtime portion of this model is a design constraint for NexFlow

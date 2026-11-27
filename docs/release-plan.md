@@ -1,5 +1,7 @@
 # Release Plan
 
+Current source release: [**`v0.7.0`**](https://github.com/iwizy/NexFlow/releases/tag/v0.7.0).
+
 NexFlow is specification-first. Releases describe specification maturity, validation coverage, examples, governance, and future implementation boundaries. They do not imply that a runtime engine exists.
 
 This plan is public guidance for contributors and implementers. It is not a private work schedule, release calendar, or promise of delivery dates.
@@ -10,10 +12,11 @@ host interface design. [The accepted RFC](../rfcs/RFC-0025-reference-implementat
 authorizes no product release, package, tag, version change or runtime implementation.
 The completed NF-103 review and [v0.4.0 publication receipt](../release/0.4-publication.md)
 cover the released source/decision/evidence milestone. The separate
-[0.5 CLI implementation profile](0.5-cli-contract.md) defines the next bounded
-tooling target; its actual packages, publisher/runtime trust and applicable
-artifact checks remain future work. Current project signing/notarization remains
-unperformed; architecture or scope adoption is not tooling release GO.
+[0.5 CLI implementation profile](0.5-cli-contract.md) led to the published
+[v0.5.0-alpha.1](https://github.com/iwizy/NexFlow/releases/tag/v0.5.0-alpha.1)
+CLI/library preview. The 0.6 and 0.7 source milestones have their own release
+reviews and public-download verification. Project signing/notarization remains
+unperformed; architecture or scope adoption alone is not a release decision.
 
 ## Release Principles
 
@@ -50,7 +53,11 @@ backdate releases, or rewrite published history.
 
 `v0.2.0` and then `v0.3.0` were separately published and verified on
 `2026-10-01`. `v0.4.0` runtime decision readiness was separately published and
-download-verified on `2026-10-28`; the next line is `0.5` reference tooling.
+download-verified on `2026-10-28`. `v0.5.0-alpha.1` was published on
+`2026-11-12`, `v0.6.0` on `2026-11-15`, and `v0.7.0` on `2026-11-26`.
+The next line is `0.8` Interoperability Review. The
+[0.7 publication receipt](https://github.com/iwizy/NexFlow/releases/download/v0.7.0/PUBLICATION.json)
+records exact source/archive/native-check results.
 The [0.2 review packet](../release/0.2-release-review.md) and
 [0.3 review packet](../release/0.3-release-review.md) map the existing evidence
 to their respective criteria. Their scope, compatibility, and limitations were
@@ -65,7 +72,7 @@ reviews keep their original outcomes. Completing that milestone does not make
 the repository prototype or beta checklist an installable `0.5` CLI.
 
 Repository release tags and manifest `specVersion` are separate identifiers.
-The published `v0.2.0`, `v0.3.0` and `v0.4.0` snapshots continue to accept only
+The published snapshots through `v0.7.0` continue to accept only
 `specVersion: "0.1"`; they do not introduce corresponding new manifest dialects.
 See [Versioning](versioning.md).
 
@@ -293,6 +300,8 @@ Release readiness:
 ## `0.8` Interoperability Review
 
 The `0.8` line should test whether independent implementations can interpret NexFlow consistently.
+Preparation must also explicitly review the specification version and Draft
+status, with a documented compatibility/migration decision before publication.
 
 Release readiness:
 

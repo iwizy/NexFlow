@@ -1,0 +1,2789 @@
+{
+  "formatVersion": "0.1-draft",
+  "schemaCases": [
+    {
+      "id": "provider-features-before",
+      "profile": "migration",
+      "operation": "manifest-schema",
+      "migrationGroup": "provider-features",
+      "phase": "before",
+      "input": {
+        "value": {
+          "specVersion": "0.1",
+          "kind": "ProviderSet",
+          "metadata": {
+            "project": "software-team"
+          },
+          "providers": [
+            {
+              "id": "coding_reasoning",
+              "type": "abstract",
+              "description": "Provider-neutral coding and review model class.",
+              "constraints": {
+                "trainingUse": "prohibited",
+                "dataResidency": "project_policy",
+                "toolUse": "declared_tools_only",
+                "maxSensitivity": "confidential",
+                "costTier": "medium",
+                "latencyClass": "interactive"
+              },
+              "selection": {
+                "strategy": "project_policy"
+              },
+              "capabilities": [
+                "text_generation",
+                "code_reasoning",
+                "tool_reasoning"
+              ]
+            },
+            {
+              "id": "general_reasoning",
+              "type": "abstract",
+              "description": "Provider-neutral general reasoning model class.",
+              "constraints": {
+                "trainingUse": "prohibited",
+                "dataResidency": "project_policy",
+                "toolUse": "declared_tools_only",
+                "maxSensitivity": "confidential",
+                "costTier": "medium",
+                "latencyClass": "interactive"
+              },
+              "selection": {
+                "strategy": "project_policy"
+              },
+              "capabilities": [
+                "text_generation"
+              ]
+            }
+          ]
+        }
+      },
+      "expected": {
+        "valid": true,
+        "diagnosticCodes": [],
+        "semanticChecks": "not-run",
+        "executionAuthorized": false,
+        "meaning": "legacy-provider-features-no-capability-grant"
+      },
+      "source": "examples/software-team/providers.yaml",
+      "requiresHumanPolicyReview": false
+    },
+    {
+      "id": "provider-features-after",
+      "profile": "migration",
+      "operation": "manifest-schema",
+      "migrationGroup": "provider-features",
+      "phase": "after",
+      "input": {
+        "value": {
+          "specVersion": "0.1",
+          "kind": "ProviderSet",
+          "metadata": {
+            "project": "software-team"
+          },
+          "providers": [
+            {
+              "id": "coding_reasoning",
+              "type": "abstract",
+              "description": "Provider-neutral coding and review model class.",
+              "features": [
+                "text_generation",
+                "code_reasoning",
+                "tool_reasoning"
+              ],
+              "constraints": {
+                "trainingUse": "prohibited",
+                "dataResidency": "project_policy",
+                "toolUse": "declared_tools_only",
+                "maxSensitivity": "confidential",
+                "costTier": "medium",
+                "latencyClass": "interactive"
+              },
+              "selection": {
+                "strategy": "project_policy"
+              }
+            },
+            {
+              "id": "general_reasoning",
+              "type": "abstract",
+              "description": "Provider-neutral general reasoning model class.",
+              "features": [
+                "text_generation"
+              ],
+              "constraints": {
+                "trainingUse": "prohibited",
+                "dataResidency": "project_policy",
+                "toolUse": "declared_tools_only",
+                "maxSensitivity": "confidential",
+                "costTier": "medium",
+                "latencyClass": "interactive"
+              },
+              "selection": {
+                "strategy": "project_policy"
+              }
+            }
+          ]
+        }
+      },
+      "expected": {
+        "valid": true,
+        "diagnosticCodes": [],
+        "semanticChecks": "not-run",
+        "executionAuthorized": false,
+        "meaning": "explicit-provider-features-no-capability-grant"
+      },
+      "source": "examples/software-team/providers.yaml",
+      "requiresHumanPolicyReview": false
+    },
+    {
+      "id": "provider-features-conflict",
+      "profile": "migration",
+      "operation": "manifest-schema",
+      "migrationGroup": "provider-features",
+      "phase": "conflict",
+      "input": {
+        "value": {
+          "specVersion": "0.1",
+          "kind": "ProviderSet",
+          "metadata": {
+            "project": "software-team"
+          },
+          "providers": [
+            {
+              "id": "coding_reasoning",
+              "type": "abstract",
+              "description": "Provider-neutral coding and review model class.",
+              "features": [
+                "text_generation",
+                "code_reasoning",
+                "tool_reasoning"
+              ],
+              "constraints": {
+                "trainingUse": "prohibited",
+                "dataResidency": "project_policy",
+                "toolUse": "declared_tools_only",
+                "maxSensitivity": "confidential",
+                "costTier": "medium",
+                "latencyClass": "interactive"
+              },
+              "selection": {
+                "strategy": "project_policy"
+              },
+              "capabilities": [
+                "text_generation",
+                "code_reasoning",
+                "tool_reasoning"
+              ]
+            },
+            {
+              "id": "general_reasoning",
+              "type": "abstract",
+              "description": "Provider-neutral general reasoning model class.",
+              "features": [
+                "text_generation"
+              ],
+              "constraints": {
+                "trainingUse": "prohibited",
+                "dataResidency": "project_policy",
+                "toolUse": "declared_tools_only",
+                "maxSensitivity": "confidential",
+                "costTier": "medium",
+                "latencyClass": "interactive"
+              },
+              "selection": {
+                "strategy": "project_policy"
+              }
+            }
+          ]
+        }
+      },
+      "expected": {
+        "valid": false,
+        "diagnosticCodes": [
+          "NF-SCHEMA"
+        ],
+        "semanticChecks": "not-run",
+        "executionAuthorized": false,
+        "meaning": "provider-feature-fields-cannot-coexist"
+      },
+      "source": "examples/software-team/providers.yaml",
+      "requiresHumanPolicyReview": false
+    },
+    {
+      "id": "training-use-before",
+      "profile": "migration",
+      "operation": "manifest-schema",
+      "migrationGroup": "training-use",
+      "phase": "before",
+      "input": {
+        "value": {
+          "specVersion": "0.1",
+          "kind": "ProviderSet",
+          "metadata": {
+            "project": "software-team"
+          },
+          "providers": [
+            {
+              "id": "coding_reasoning",
+              "type": "abstract",
+              "description": "Provider-neutral coding and review model class.",
+              "features": [
+                "text_generation",
+                "code_reasoning",
+                "tool_reasoning"
+              ],
+              "constraints": {
+                "dataResidency": "project_policy",
+                "toolUse": "declared_tools_only",
+                "maxSensitivity": "confidential",
+                "costTier": "medium",
+                "latencyClass": "interactive",
+                "allowTrainingUse": false
+              },
+              "selection": {
+                "strategy": "project_policy"
+              }
+            },
+            {
+              "id": "general_reasoning",
+              "type": "abstract",
+              "description": "Provider-neutral general reasoning model class.",
+              "features": [
+                "text_generation"
+              ],
+              "constraints": {
+                "dataResidency": "project_policy",
+                "toolUse": "declared_tools_only",
+                "maxSensitivity": "confidential",
+                "costTier": "medium",
+                "latencyClass": "interactive",
+                "allowTrainingUse": false
+              },
+              "selection": {
+                "strategy": "project_policy"
+              }
+            }
+          ]
+        }
+      },
+      "expected": {
+        "valid": true,
+        "diagnosticCodes": [],
+        "semanticChecks": "not-run",
+        "executionAuthorized": false,
+        "meaning": "legacy-false-training-policy"
+      },
+      "source": "examples/software-team/providers.yaml",
+      "requiresHumanPolicyReview": true
+    },
+    {
+      "id": "training-use-after",
+      "profile": "migration",
+      "operation": "manifest-schema",
+      "migrationGroup": "training-use",
+      "phase": "after",
+      "input": {
+        "value": {
+          "specVersion": "0.1",
+          "kind": "ProviderSet",
+          "metadata": {
+            "project": "software-team"
+          },
+          "providers": [
+            {
+              "id": "coding_reasoning",
+              "type": "abstract",
+              "description": "Provider-neutral coding and review model class.",
+              "features": [
+                "text_generation",
+                "code_reasoning",
+                "tool_reasoning"
+              ],
+              "constraints": {
+                "trainingUse": "prohibited",
+                "dataResidency": "project_policy",
+                "toolUse": "declared_tools_only",
+                "maxSensitivity": "confidential",
+                "costTier": "medium",
+                "latencyClass": "interactive"
+              },
+              "selection": {
+                "strategy": "project_policy"
+              }
+            },
+            {
+              "id": "general_reasoning",
+              "type": "abstract",
+              "description": "Provider-neutral general reasoning model class.",
+              "features": [
+                "text_generation"
+              ],
+              "constraints": {
+                "trainingUse": "prohibited",
+                "dataResidency": "project_policy",
+                "toolUse": "declared_tools_only",
+                "maxSensitivity": "confidential",
+                "costTier": "medium",
+                "latencyClass": "interactive"
+              },
+              "selection": {
+                "strategy": "project_policy"
+              }
+            }
+          ]
+        }
+      },
+      "expected": {
+        "valid": true,
+        "diagnosticCodes": [],
+        "semanticChecks": "not-run",
+        "executionAuthorized": false,
+        "meaning": "explicit-prohibited-training-policy"
+      },
+      "source": "examples/software-team/providers.yaml",
+      "requiresHumanPolicyReview": true
+    },
+    {
+      "id": "training-use-conflict",
+      "profile": "migration",
+      "operation": "manifest-schema",
+      "migrationGroup": "training-use",
+      "phase": "conflict",
+      "input": {
+        "value": {
+          "specVersion": "0.1",
+          "kind": "ProviderSet",
+          "metadata": {
+            "project": "software-team"
+          },
+          "providers": [
+            {
+              "id": "coding_reasoning",
+              "type": "abstract",
+              "description": "Provider-neutral coding and review model class.",
+              "features": [
+                "text_generation",
+                "code_reasoning",
+                "tool_reasoning"
+              ],
+              "constraints": {
+                "trainingUse": "prohibited",
+                "dataResidency": "project_policy",
+                "toolUse": "declared_tools_only",
+                "maxSensitivity": "confidential",
+                "costTier": "medium",
+                "latencyClass": "interactive",
+                "allowTrainingUse": false
+              },
+              "selection": {
+                "strategy": "project_policy"
+              }
+            },
+            {
+              "id": "general_reasoning",
+              "type": "abstract",
+              "description": "Provider-neutral general reasoning model class.",
+              "features": [
+                "text_generation"
+              ],
+              "constraints": {
+                "trainingUse": "prohibited",
+                "dataResidency": "project_policy",
+                "toolUse": "declared_tools_only",
+                "maxSensitivity": "confidential",
+                "costTier": "medium",
+                "latencyClass": "interactive"
+              },
+              "selection": {
+                "strategy": "project_policy"
+              }
+            }
+          ]
+        }
+      },
+      "expected": {
+        "valid": false,
+        "diagnosticCodes": [
+          "NF-SCHEMA"
+        ],
+        "semanticChecks": "not-run",
+        "executionAuthorized": false,
+        "meaning": "training-fields-cannot-coexist"
+      },
+      "source": "examples/software-team/providers.yaml",
+      "requiresHumanPolicyReview": true
+    },
+    {
+      "id": "workflow-hint-before",
+      "profile": "migration",
+      "operation": "manifest-schema",
+      "migrationGroup": "workflow-hints",
+      "phase": "before",
+      "input": {
+        "value": {
+          "specVersion": "0.1",
+          "kind": "Project",
+          "metadata": {
+            "project": "solo-developer",
+            "name": "Solo Developer"
+          },
+          "project": {
+            "id": "solo-developer",
+            "displayName": "Solo Developer",
+            "description": "A human-owned project with one AI coding assistant and explicit review boundaries.",
+            "license": "MIT",
+            "maintainers": [
+              {
+                "id": "solo-maintainer",
+                "name": "Solo Maintainer",
+                "role": "maintainer"
+              }
+            ],
+            "defaultAutonomy": "ask_before_changes",
+            "policies": {
+              "requireReview": true,
+              "secretHandling": "Use secret references only; never place secrets in manifests.",
+              "destructiveActions": "Denied unless a separate reviewed policy explicitly allows them.",
+              "productionActions": "Not declared."
+            },
+            "approvalGates": [
+              {
+                "id": "human-change-review",
+                "description": "The solo maintainer reviews repository writes, command execution, and final acceptance.",
+                "requiredApprovers": [
+                  "solo-maintainer"
+                ]
+              }
+            ]
+          },
+          "manifests": {
+            "actors": "actors.yaml",
+            "agents": "agents.yaml",
+            "capabilities": "capabilities.yaml",
+            "permissions": "permissions.yaml",
+            "tasks": "tasks.yaml",
+            "workflow": "workflow.yaml",
+            "handoffs": "handoffs.yaml",
+            "context": "context.yaml",
+            "events": "events.yaml"
+          }
+        }
+      },
+      "expected": {
+        "valid": true,
+        "diagnosticCodes": [],
+        "semanticChecks": "not-run",
+        "executionAuthorized": false,
+        "meaning": "single-workflow-source-hint"
+      },
+      "source": "examples/solo-developer/project.yaml",
+      "requiresHumanPolicyReview": false
+    },
+    {
+      "id": "workflow-hint-after",
+      "profile": "migration",
+      "operation": "manifest-schema",
+      "migrationGroup": "workflow-hints",
+      "phase": "after",
+      "input": {
+        "value": {
+          "specVersion": "0.1",
+          "kind": "Project",
+          "metadata": {
+            "project": "solo-developer",
+            "name": "Solo Developer"
+          },
+          "project": {
+            "id": "solo-developer",
+            "displayName": "Solo Developer",
+            "description": "A human-owned project with one AI coding assistant and explicit review boundaries.",
+            "license": "MIT",
+            "maintainers": [
+              {
+                "id": "solo-maintainer",
+                "name": "Solo Maintainer",
+                "role": "maintainer"
+              }
+            ],
+            "defaultAutonomy": "ask_before_changes",
+            "policies": {
+              "requireReview": true,
+              "secretHandling": "Use secret references only; never place secrets in manifests.",
+              "destructiveActions": "Denied unless a separate reviewed policy explicitly allows them.",
+              "productionActions": "Not declared."
+            },
+            "approvalGates": [
+              {
+                "id": "human-change-review",
+                "description": "The solo maintainer reviews repository writes, command execution, and final acceptance.",
+                "requiredApprovers": [
+                  "solo-maintainer"
+                ]
+              }
+            ]
+          },
+          "manifests": {
+            "actors": "actors.yaml",
+            "agents": "agents.yaml",
+            "capabilities": "capabilities.yaml",
+            "permissions": "permissions.yaml",
+            "tasks": "tasks.yaml",
+            "handoffs": "handoffs.yaml",
+            "context": "context.yaml",
+            "events": "events.yaml",
+            "workflows": [
+              "workflow.yaml"
+            ]
+          }
+        }
+      },
+      "expected": {
+        "valid": true,
+        "diagnosticCodes": [],
+        "semanticChecks": "not-run",
+        "executionAuthorized": false,
+        "meaning": "plural-hint-preserves-one-workflow-no-execution"
+      },
+      "source": "examples/solo-developer/project.yaml",
+      "requiresHumanPolicyReview": false
+    },
+    {
+      "id": "workflow-hint-conflict",
+      "profile": "migration",
+      "operation": "manifest-schema",
+      "migrationGroup": "workflow-hints",
+      "phase": "conflict",
+      "input": {
+        "value": {
+          "specVersion": "0.1",
+          "kind": "Project",
+          "metadata": {
+            "project": "solo-developer",
+            "name": "Solo Developer"
+          },
+          "project": {
+            "id": "solo-developer",
+            "displayName": "Solo Developer",
+            "description": "A human-owned project with one AI coding assistant and explicit review boundaries.",
+            "license": "MIT",
+            "maintainers": [
+              {
+                "id": "solo-maintainer",
+                "name": "Solo Maintainer",
+                "role": "maintainer"
+              }
+            ],
+            "defaultAutonomy": "ask_before_changes",
+            "policies": {
+              "requireReview": true,
+              "secretHandling": "Use secret references only; never place secrets in manifests.",
+              "destructiveActions": "Denied unless a separate reviewed policy explicitly allows them.",
+              "productionActions": "Not declared."
+            },
+            "approvalGates": [
+              {
+                "id": "human-change-review",
+                "description": "The solo maintainer reviews repository writes, command execution, and final acceptance.",
+                "requiredApprovers": [
+                  "solo-maintainer"
+                ]
+              }
+            ]
+          },
+          "manifests": {
+            "actors": "actors.yaml",
+            "agents": "agents.yaml",
+            "capabilities": "capabilities.yaml",
+            "permissions": "permissions.yaml",
+            "tasks": "tasks.yaml",
+            "workflow": "workflow.yaml",
+            "handoffs": "handoffs.yaml",
+            "context": "context.yaml",
+            "events": "events.yaml",
+            "workflows": [
+              "workflow.yaml"
+            ]
+          }
+        }
+      },
+      "expected": {
+        "valid": false,
+        "diagnosticCodes": [
+          "NF-SCHEMA"
+        ],
+        "semanticChecks": "not-run",
+        "executionAuthorized": false,
+        "meaning": "singular-and-plural-hints-cannot-coexist"
+      },
+      "source": "examples/solo-developer/project.yaml",
+      "requiresHumanPolicyReview": false
+    },
+    {
+      "id": "approval-target-before",
+      "profile": "migration",
+      "operation": "manifest-schema",
+      "migrationGroup": "approval-targets",
+      "phase": "before",
+      "input": {
+        "value": {
+          "specVersion": "0.1",
+          "kind": "Project",
+          "metadata": {
+            "project": "software-team",
+            "name": "Software Team"
+          },
+          "project": {
+            "id": "software-team",
+            "displayName": "Software Team",
+            "description": "Reference configuration for a small software delivery team.",
+            "license": "MIT",
+            "maintainers": [
+              {
+                "id": "reviewer",
+                "name": "Code Reviewer",
+                "role": "maintainer"
+              }
+            ],
+            "defaultAutonomy": "ask_before_changes",
+            "policies": {
+              "requireReview": true,
+              "secretHandling": "Use secret references only.",
+              "credentialHandling": {
+                "default": "deny",
+                "rules": [
+                  {
+                    "id": "coding-provider-credential",
+                    "description": "Permit reviewed model requests through the selected coding provider adapter.",
+                    "credentialRef": "coding-provider-access",
+                    "kind": "api_key",
+                    "effect": "approval_required",
+                    "actors": [
+                      "implementation-agent"
+                    ],
+                    "capabilities": [
+                      "use_credential"
+                    ],
+                    "purposes": [
+                      "provider_request"
+                    ],
+                    "targets": {
+                      "providers": [
+                        "coding_reasoning"
+                      ]
+                    },
+                    "lease": {
+                      "scope": "operation",
+                      "renewal": "reauthorize",
+                      "maxDurationSeconds": 900
+                    },
+                    "approvalGate": "credential_access_review"
+                  }
+                ],
+                "controls": {
+                  "valuesInManifests": "forbidden",
+                  "ambientDiscovery": "deny",
+                  "directActorExposure": "deny",
+                  "delegation": "deny",
+                  "persistence": "deny"
+                },
+                "audit": {
+                  "events": [
+                    "credential.decision"
+                  ],
+                  "recordDecisions": true,
+                  "recordActor": true,
+                  "recordCredentialRef": true,
+                  "recordTarget": true,
+                  "redactValues": true
+                }
+              },
+              "networkAccess": {
+                "default": "deny",
+                "rules": [
+                  {
+                    "id": "approved_project_services",
+                    "description": "Approved agents may reach declared context, provider, and integration services.",
+                    "effect": "approval_required",
+                    "actors": [
+                      "implementation-agent",
+                      "qa-agent",
+                      "docs-agent"
+                    ],
+                    "capabilities": [
+                      "access_network"
+                    ],
+                    "purposes": [
+                      "context_read",
+                      "provider_request",
+                      "integration_read"
+                    ],
+                    "destinations": {
+                      "contextSources": [
+                        "repository",
+                        "issue_tracker"
+                      ],
+                      "providers": [
+                        "coding_reasoning",
+                        "general_reasoning"
+                      ],
+                      "extensions": [
+                        "github_basic",
+                        "linear_basic"
+                      ],
+                      "schemes": [
+                        "https"
+                      ],
+                      "ports": [
+                        443
+                      ]
+                    },
+                    "maxDataClassification": "confidential",
+                    "approvalGate": "network_access_review"
+                  }
+                ],
+                "transport": {
+                  "requireTls": true,
+                  "allowPrivateNetworks": false,
+                  "allowLoopback": false,
+                  "followRedirects": false,
+                  "maxRedirects": 0
+                },
+                "audit": {
+                  "events": [
+                    "network.decision"
+                  ],
+                  "recordDecisions": true,
+                  "recordDestination": true,
+                  "recordPurpose": true,
+                  "redactQuery": true,
+                  "redactHeaders": true
+                }
+              },
+              "destructiveActions": "Human approval required.",
+              "productionActions": "Human approval required."
+            },
+            "approvalGates": [
+              {
+                "id": "code_review",
+                "description": "Reviewer approval required before merge.",
+                "requiredApprovers": [
+                  "reviewer"
+                ]
+              },
+              {
+                "id": "dependency_approval",
+                "description": "Maintainer approval required before installing dependencies.",
+                "requiredApprovers": [
+                  "reviewer"
+                ]
+              },
+              {
+                "id": "mcp_tool_review",
+                "description": "Reviewer approval required before an agent uses an allow-listed MCP tool.",
+                "requiredApprovers": [
+                  "reviewer"
+                ],
+                "appliesTo": [
+                  "mcp_tools"
+                ]
+              },
+              {
+                "id": "network_access_review",
+                "description": "Reviewer approval required before an agent initiates an allowed outbound connection.",
+                "requiredApprovers": [
+                  "reviewer"
+                ]
+              },
+              {
+                "id": "credential_access_review",
+                "description": "Reviewer approval required before mediated use of the coding provider credential.",
+                "requiredApprovers": [
+                  "reviewer"
+                ]
+              }
+            ]
+          },
+          "manifests": {
+            "agents": "agents.yaml",
+            "agentDefinitions": "agent-definitions.yaml",
+            "workflow": "workflow.yaml",
+            "tasks": "tasks.yaml",
+            "handoffs": "handoffs.yaml",
+            "permissions": "permissions.yaml",
+            "capabilities": "capabilities.yaml",
+            "context": "context.yaml",
+            "memory": "memory.yaml",
+            "providers": "providers.yaml",
+            "modelProfiles": "model-profiles.yaml",
+            "promptSets": "prompt-sets.yaml",
+            "retrievalProfiles": "retrieval-profiles.yaml",
+            "events": "events.yaml",
+            "extensions": "extensions.yaml"
+          }
+        }
+      },
+      "expected": {
+        "valid": true,
+        "diagnosticCodes": [],
+        "semanticChecks": "not-run",
+        "executionAuthorized": false,
+        "meaning": "legacy-targets-require-explicit-kind-review"
+      },
+      "source": "examples/software-team/project.yaml",
+      "requiresHumanPolicyReview": true
+    },
+    {
+      "id": "approval-target-after",
+      "profile": "migration",
+      "operation": "manifest-schema",
+      "migrationGroup": "approval-targets",
+      "phase": "after",
+      "input": {
+        "value": {
+          "specVersion": "0.1",
+          "kind": "Project",
+          "metadata": {
+            "project": "software-team",
+            "name": "Software Team"
+          },
+          "project": {
+            "id": "software-team",
+            "displayName": "Software Team",
+            "description": "Reference configuration for a small software delivery team.",
+            "license": "MIT",
+            "maintainers": [
+              {
+                "id": "reviewer",
+                "name": "Code Reviewer",
+                "role": "maintainer"
+              }
+            ],
+            "defaultAutonomy": "ask_before_changes",
+            "policies": {
+              "requireReview": true,
+              "secretHandling": "Use secret references only.",
+              "credentialHandling": {
+                "default": "deny",
+                "rules": [
+                  {
+                    "id": "coding-provider-credential",
+                    "description": "Permit reviewed model requests through the selected coding provider adapter.",
+                    "credentialRef": "coding-provider-access",
+                    "kind": "api_key",
+                    "effect": "approval_required",
+                    "actors": [
+                      "implementation-agent"
+                    ],
+                    "capabilities": [
+                      "use_credential"
+                    ],
+                    "purposes": [
+                      "provider_request"
+                    ],
+                    "targets": {
+                      "providers": [
+                        "coding_reasoning"
+                      ]
+                    },
+                    "lease": {
+                      "scope": "operation",
+                      "renewal": "reauthorize",
+                      "maxDurationSeconds": 900
+                    },
+                    "approvalGate": "credential_access_review"
+                  }
+                ],
+                "controls": {
+                  "valuesInManifests": "forbidden",
+                  "ambientDiscovery": "deny",
+                  "directActorExposure": "deny",
+                  "delegation": "deny",
+                  "persistence": "deny"
+                },
+                "audit": {
+                  "events": [
+                    "credential.decision"
+                  ],
+                  "recordDecisions": true,
+                  "recordActor": true,
+                  "recordCredentialRef": true,
+                  "recordTarget": true,
+                  "redactValues": true
+                }
+              },
+              "networkAccess": {
+                "default": "deny",
+                "rules": [
+                  {
+                    "id": "approved_project_services",
+                    "description": "Approved agents may reach declared context, provider, and integration services.",
+                    "effect": "approval_required",
+                    "actors": [
+                      "implementation-agent",
+                      "qa-agent",
+                      "docs-agent"
+                    ],
+                    "capabilities": [
+                      "access_network"
+                    ],
+                    "purposes": [
+                      "context_read",
+                      "provider_request",
+                      "integration_read"
+                    ],
+                    "destinations": {
+                      "contextSources": [
+                        "repository",
+                        "issue_tracker"
+                      ],
+                      "providers": [
+                        "coding_reasoning",
+                        "general_reasoning"
+                      ],
+                      "extensions": [
+                        "github_basic",
+                        "linear_basic"
+                      ],
+                      "schemes": [
+                        "https"
+                      ],
+                      "ports": [
+                        443
+                      ]
+                    },
+                    "maxDataClassification": "confidential",
+                    "approvalGate": "network_access_review"
+                  }
+                ],
+                "transport": {
+                  "requireTls": true,
+                  "allowPrivateNetworks": false,
+                  "allowLoopback": false,
+                  "followRedirects": false,
+                  "maxRedirects": 0
+                },
+                "audit": {
+                  "events": [
+                    "network.decision"
+                  ],
+                  "recordDecisions": true,
+                  "recordDestination": true,
+                  "recordPurpose": true,
+                  "redactQuery": true,
+                  "redactHeaders": true
+                }
+              },
+              "destructiveActions": "Human approval required.",
+              "productionActions": "Human approval required."
+            },
+            "approvalGates": [
+              {
+                "id": "code_review",
+                "description": "Reviewer approval required before merge.",
+                "requiredApprovers": [
+                  "reviewer"
+                ]
+              },
+              {
+                "id": "dependency_approval",
+                "description": "Maintainer approval required before installing dependencies.",
+                "requiredApprovers": [
+                  "reviewer"
+                ]
+              },
+              {
+                "id": "mcp_tool_review",
+                "description": "Reviewer approval required before an agent uses an allow-listed MCP tool.",
+                "requiredApprovers": [
+                  "reviewer"
+                ],
+                "targets": [
+                  {
+                    "kind": "context-source",
+                    "id": "mcp_tools"
+                  }
+                ]
+              },
+              {
+                "id": "network_access_review",
+                "description": "Reviewer approval required before an agent initiates an allowed outbound connection.",
+                "requiredApprovers": [
+                  "reviewer"
+                ]
+              },
+              {
+                "id": "credential_access_review",
+                "description": "Reviewer approval required before mediated use of the coding provider credential.",
+                "requiredApprovers": [
+                  "reviewer"
+                ]
+              }
+            ]
+          },
+          "manifests": {
+            "agents": "agents.yaml",
+            "agentDefinitions": "agent-definitions.yaml",
+            "workflow": "workflow.yaml",
+            "tasks": "tasks.yaml",
+            "handoffs": "handoffs.yaml",
+            "permissions": "permissions.yaml",
+            "capabilities": "capabilities.yaml",
+            "context": "context.yaml",
+            "memory": "memory.yaml",
+            "providers": "providers.yaml",
+            "modelProfiles": "model-profiles.yaml",
+            "promptSets": "prompt-sets.yaml",
+            "retrievalProfiles": "retrieval-profiles.yaml",
+            "events": "events.yaml",
+            "extensions": "extensions.yaml"
+          }
+        }
+      },
+      "expected": {
+        "valid": true,
+        "diagnosticCodes": [],
+        "semanticChecks": "not-run",
+        "executionAuthorized": false,
+        "meaning": "typed-targets-no-approval-or-execution-grant"
+      },
+      "source": "examples/software-team/project.yaml",
+      "requiresHumanPolicyReview": true
+    },
+    {
+      "id": "approval-target-conflict",
+      "profile": "migration",
+      "operation": "manifest-schema",
+      "migrationGroup": "approval-targets",
+      "phase": "conflict",
+      "input": {
+        "value": {
+          "specVersion": "0.1",
+          "kind": "Project",
+          "metadata": {
+            "project": "software-team",
+            "name": "Software Team"
+          },
+          "project": {
+            "id": "software-team",
+            "displayName": "Software Team",
+            "description": "Reference configuration for a small software delivery team.",
+            "license": "MIT",
+            "maintainers": [
+              {
+                "id": "reviewer",
+                "name": "Code Reviewer",
+                "role": "maintainer"
+              }
+            ],
+            "defaultAutonomy": "ask_before_changes",
+            "policies": {
+              "requireReview": true,
+              "secretHandling": "Use secret references only.",
+              "credentialHandling": {
+                "default": "deny",
+                "rules": [
+                  {
+                    "id": "coding-provider-credential",
+                    "description": "Permit reviewed model requests through the selected coding provider adapter.",
+                    "credentialRef": "coding-provider-access",
+                    "kind": "api_key",
+                    "effect": "approval_required",
+                    "actors": [
+                      "implementation-agent"
+                    ],
+                    "capabilities": [
+                      "use_credential"
+                    ],
+                    "purposes": [
+                      "provider_request"
+                    ],
+                    "targets": {
+                      "providers": [
+                        "coding_reasoning"
+                      ]
+                    },
+                    "lease": {
+                      "scope": "operation",
+                      "renewal": "reauthorize",
+                      "maxDurationSeconds": 900
+                    },
+                    "approvalGate": "credential_access_review"
+                  }
+                ],
+                "controls": {
+                  "valuesInManifests": "forbidden",
+                  "ambientDiscovery": "deny",
+                  "directActorExposure": "deny",
+                  "delegation": "deny",
+                  "persistence": "deny"
+                },
+                "audit": {
+                  "events": [
+                    "credential.decision"
+                  ],
+                  "recordDecisions": true,
+                  "recordActor": true,
+                  "recordCredentialRef": true,
+                  "recordTarget": true,
+                  "redactValues": true
+                }
+              },
+              "networkAccess": {
+                "default": "deny",
+                "rules": [
+                  {
+                    "id": "approved_project_services",
+                    "description": "Approved agents may reach declared context, provider, and integration services.",
+                    "effect": "approval_required",
+                    "actors": [
+                      "implementation-agent",
+                      "qa-agent",
+                      "docs-agent"
+                    ],
+                    "capabilities": [
+                      "access_network"
+                    ],
+                    "purposes": [
+                      "context_read",
+                      "provider_request",
+                      "integration_read"
+                    ],
+                    "destinations": {
+                      "contextSources": [
+                        "repository",
+                        "issue_tracker"
+                      ],
+                      "providers": [
+                        "coding_reasoning",
+                        "general_reasoning"
+                      ],
+                      "extensions": [
+                        "github_basic",
+                        "linear_basic"
+                      ],
+                      "schemes": [
+                        "https"
+                      ],
+                      "ports": [
+                        443
+                      ]
+                    },
+                    "maxDataClassification": "confidential",
+                    "approvalGate": "network_access_review"
+                  }
+                ],
+                "transport": {
+                  "requireTls": true,
+                  "allowPrivateNetworks": false,
+                  "allowLoopback": false,
+                  "followRedirects": false,
+                  "maxRedirects": 0
+                },
+                "audit": {
+                  "events": [
+                    "network.decision"
+                  ],
+                  "recordDecisions": true,
+                  "recordDestination": true,
+                  "recordPurpose": true,
+                  "redactQuery": true,
+                  "redactHeaders": true
+                }
+              },
+              "destructiveActions": "Human approval required.",
+              "productionActions": "Human approval required."
+            },
+            "approvalGates": [
+              {
+                "id": "code_review",
+                "description": "Reviewer approval required before merge.",
+                "requiredApprovers": [
+                  "reviewer"
+                ]
+              },
+              {
+                "id": "dependency_approval",
+                "description": "Maintainer approval required before installing dependencies.",
+                "requiredApprovers": [
+                  "reviewer"
+                ]
+              },
+              {
+                "id": "mcp_tool_review",
+                "description": "Reviewer approval required before an agent uses an allow-listed MCP tool.",
+                "requiredApprovers": [
+                  "reviewer"
+                ],
+                "targets": [
+                  {
+                    "kind": "context-source",
+                    "id": "mcp_tools"
+                  }
+                ],
+                "appliesTo": [
+                  "mcp_tools"
+                ]
+              },
+              {
+                "id": "network_access_review",
+                "description": "Reviewer approval required before an agent initiates an allowed outbound connection.",
+                "requiredApprovers": [
+                  "reviewer"
+                ]
+              },
+              {
+                "id": "credential_access_review",
+                "description": "Reviewer approval required before mediated use of the coding provider credential.",
+                "requiredApprovers": [
+                  "reviewer"
+                ]
+              }
+            ]
+          },
+          "manifests": {
+            "agents": "agents.yaml",
+            "agentDefinitions": "agent-definitions.yaml",
+            "workflow": "workflow.yaml",
+            "tasks": "tasks.yaml",
+            "handoffs": "handoffs.yaml",
+            "permissions": "permissions.yaml",
+            "capabilities": "capabilities.yaml",
+            "context": "context.yaml",
+            "memory": "memory.yaml",
+            "providers": "providers.yaml",
+            "modelProfiles": "model-profiles.yaml",
+            "promptSets": "prompt-sets.yaml",
+            "retrievalProfiles": "retrieval-profiles.yaml",
+            "events": "events.yaml",
+            "extensions": "extensions.yaml"
+          }
+        }
+      },
+      "expected": {
+        "valid": false,
+        "diagnosticCodes": [
+          "NF-SCHEMA"
+        ],
+        "semanticChecks": "not-run",
+        "executionAuthorized": false,
+        "meaning": "typed-and-legacy-targets-cannot-coexist"
+      },
+      "source": "examples/software-team/project.yaml",
+      "requiresHumanPolicyReview": true
+    },
+    {
+      "id": "credential-policy-opaque-before",
+      "profile": "migration",
+      "operation": "manifest-schema",
+      "migrationGroup": "credential-policy",
+      "phase": "before",
+      "input": {
+        "value": {
+          "specVersion": "0.1",
+          "kind": "Project",
+          "metadata": {
+            "project": "minimal-team",
+            "name": "Minimal Team"
+          },
+          "project": {
+            "id": "minimal-team",
+            "displayName": "Minimal Team",
+            "description": "Minimum useful NexFlow identity and responsibility description.",
+            "license": "MIT",
+            "maintainers": [
+              {
+                "id": "human-maintainer",
+                "name": "Human Maintainer",
+                "role": "maintainer"
+              }
+            ],
+            "policies": {
+              "credentialHandling": "external-reference-only"
+            }
+          },
+          "manifests": {
+            "actors": "actors.yaml",
+            "agents": "agents.yaml"
+          }
+        }
+      },
+      "expected": {
+        "valid": false,
+        "diagnosticCodes": [
+          "NF-SCHEMA"
+        ],
+        "semanticChecks": "not-run",
+        "executionAuthorized": false,
+        "meaning": "current-snapshot-rejects-foundation-accepted-opaque-field"
+      },
+      "source": "fixtures/interoperability/v1/version-assessment.json",
+      "requiresHumanPolicyReview": true
+    },
+    {
+      "id": "credential-policy-deny-after",
+      "profile": "migration",
+      "operation": "manifest-schema",
+      "migrationGroup": "credential-policy",
+      "phase": "after",
+      "input": {
+        "value": {
+          "specVersion": "0.1",
+          "kind": "Project",
+          "metadata": {
+            "project": "minimal-team",
+            "name": "Minimal Team"
+          },
+          "project": {
+            "id": "minimal-team",
+            "displayName": "Minimal Team",
+            "description": "Minimum useful NexFlow identity and responsibility description.",
+            "license": "MIT",
+            "maintainers": [
+              {
+                "id": "human-maintainer",
+                "name": "Human Maintainer",
+                "role": "maintainer"
+              }
+            ],
+            "policies": {
+              "credentialHandling": {
+                "default": "deny",
+                "rules": [],
+                "controls": {
+                  "valuesInManifests": "forbidden",
+                  "ambientDiscovery": "deny",
+                  "directActorExposure": "deny",
+                  "delegation": "deny",
+                  "persistence": "deny"
+                },
+                "audit": {
+                  "events": [
+                    "credential.decision"
+                  ],
+                  "recordDecisions": true,
+                  "recordActor": true,
+                  "recordCredentialRef": true,
+                  "recordTarget": true,
+                  "redactValues": true
+                }
+              }
+            }
+          },
+          "manifests": {
+            "actors": "actors.yaml",
+            "agents": "agents.yaml"
+          }
+        }
+      },
+      "expected": {
+        "valid": true,
+        "diagnosticCodes": [],
+        "semanticChecks": "not-run",
+        "executionAuthorized": false,
+        "meaning": "manual-explicit-deny-policy-not-inferred-equivalence"
+      },
+      "source": "examples/software-team/project.yaml",
+      "requiresHumanPolicyReview": true
+    },
+    {
+      "id": "credential-policy-allow-conflict",
+      "profile": "migration",
+      "operation": "manifest-schema",
+      "migrationGroup": "credential-policy",
+      "phase": "conflict",
+      "input": {
+        "value": {
+          "specVersion": "0.1",
+          "kind": "Project",
+          "metadata": {
+            "project": "minimal-team",
+            "name": "Minimal Team"
+          },
+          "project": {
+            "id": "minimal-team",
+            "displayName": "Minimal Team",
+            "description": "Minimum useful NexFlow identity and responsibility description.",
+            "license": "MIT",
+            "maintainers": [
+              {
+                "id": "human-maintainer",
+                "name": "Human Maintainer",
+                "role": "maintainer"
+              }
+            ],
+            "policies": {
+              "credentialHandling": {
+                "default": "allow",
+                "rules": [],
+                "controls": {
+                  "valuesInManifests": "forbidden",
+                  "ambientDiscovery": "deny",
+                  "directActorExposure": "deny",
+                  "delegation": "deny",
+                  "persistence": "deny"
+                },
+                "audit": {
+                  "events": [
+                    "credential.decision"
+                  ],
+                  "recordDecisions": true,
+                  "recordActor": true,
+                  "recordCredentialRef": true,
+                  "recordTarget": true,
+                  "redactValues": true
+                }
+              }
+            }
+          },
+          "manifests": {
+            "actors": "actors.yaml",
+            "agents": "agents.yaml"
+          }
+        }
+      },
+      "expected": {
+        "valid": false,
+        "diagnosticCodes": [
+          "NF-SCHEMA"
+        ],
+        "semanticChecks": "not-run",
+        "executionAuthorized": false,
+        "meaning": "unknown-credential-policy-must-not-become-allow"
+      },
+      "source": "examples/software-team/project.yaml",
+      "requiresHumanPolicyReview": true
+    }
+  ],
+  "cliCases": [
+    {
+      "id": "validate-minimal",
+      "profile": "public-cli",
+      "input": {
+        "root": "examples/minimal-team",
+        "argv": [
+          "validate",
+          "--root",
+          "{root}",
+          "--format",
+          "json"
+        ],
+        "overlay": []
+      },
+      "expected": {
+        "exitCode": 0,
+        "diagnosticCodes": [],
+        "checks": {
+          "discovery": "passed",
+          "schema": "passed",
+          "coreProfile": "not-run",
+          "extensionProfiles": "not-run",
+          "runtime": "not-run",
+          "semantic": "not-run"
+        },
+        "executionAuthorized": false,
+        "inputMutation": "none"
+      },
+      "source": "docs/reference-cli-preview.md"
+    },
+    {
+      "id": "inspect-minimal",
+      "profile": "public-cli",
+      "input": {
+        "root": "examples/minimal-team",
+        "argv": [
+          "inspect",
+          "--root",
+          "{root}",
+          "--format",
+          "json"
+        ],
+        "overlay": []
+      },
+      "expected": {
+        "exitCode": 0,
+        "diagnosticCodes": [],
+        "checks": {
+          "discovery": "passed",
+          "schema": "passed",
+          "coreProfile": "not-run",
+          "extensionProfiles": "not-run",
+          "runtime": "not-run",
+          "semantic": "not-run"
+        },
+        "executionAuthorized": false,
+        "inputMutation": "none"
+      },
+      "source": "docs/reference-cli-preview.md"
+    },
+    {
+      "id": "graph-minimal",
+      "profile": "public-cli",
+      "input": {
+        "root": "examples/minimal-team",
+        "argv": [
+          "graph",
+          "--root",
+          "{root}",
+          "--format",
+          "json"
+        ],
+        "overlay": []
+      },
+      "expected": {
+        "exitCode": 0,
+        "diagnosticCodes": [],
+        "checks": {
+          "discovery": "passed",
+          "schema": "passed",
+          "coreProfile": "not-run",
+          "extensionProfiles": "not-run",
+          "runtime": "not-run",
+          "semantic": "not-run"
+        },
+        "executionAuthorized": false,
+        "inputMutation": "none"
+      },
+      "source": "docs/reference-cli-preview.md"
+    },
+    {
+      "id": "unsupported-dialect",
+      "profile": "public-cli",
+      "input": {
+        "root": "examples/minimal-team",
+        "argv": [
+          "validate",
+          "--root",
+          "{root}",
+          "--format",
+          "json"
+        ],
+        "overlay": [
+          {
+            "file": "project.yaml",
+            "op": "replace",
+            "path": "/specVersion",
+            "value": "0.2"
+          }
+        ]
+      },
+      "expected": {
+        "exitCode": 3,
+        "diagnosticCodes": [
+          "NF-DISCOVERY-UNSUPPORTED-VERSION"
+        ],
+        "executionAuthorized": false,
+        "inputMutation": "none"
+      },
+      "source": "packages/cli/contracts/output.schema.json"
+    },
+    {
+      "id": "deny-run",
+      "profile": "public-cli",
+      "input": {
+        "root": "examples/minimal-team",
+        "argv": [
+          "run",
+          "--root",
+          "{root}",
+          "--format",
+          "json"
+        ],
+        "overlay": []
+      },
+      "expected": {
+        "exitCode": 2,
+        "diagnosticCodes": [
+          "NEXFLOW-CLI-USAGE"
+        ],
+        "executionAuthorized": false,
+        "inputMutation": "none"
+      },
+      "source": "docs/reference-cli-preview.md"
+    },
+    {
+      "id": "deny-init",
+      "profile": "public-cli",
+      "input": {
+        "root": "examples/minimal-team",
+        "argv": [
+          "init",
+          "--root",
+          "{root}",
+          "--format",
+          "json"
+        ],
+        "overlay": []
+      },
+      "expected": {
+        "exitCode": 2,
+        "diagnosticCodes": [
+          "NEXFLOW-CLI-USAGE"
+        ],
+        "executionAuthorized": false,
+        "inputMutation": "none"
+      },
+      "source": "docs/reference-cli-preview.md"
+    },
+    {
+      "id": "deny-discover",
+      "profile": "public-cli",
+      "input": {
+        "root": "examples/minimal-team",
+        "argv": [
+          "discover",
+          "--root",
+          "{root}",
+          "--format",
+          "json"
+        ],
+        "overlay": []
+      },
+      "expected": {
+        "exitCode": 2,
+        "diagnosticCodes": [
+          "NEXFLOW-CLI-USAGE"
+        ],
+        "executionAuthorized": false,
+        "inputMutation": "none"
+      },
+      "source": "docs/reference-cli-preview.md"
+    }
+  ],
+  "runtimeCases": [
+    {
+      "id": "workflow-execution",
+      "profile": "runtime-boundary",
+      "input": {
+        "operation": "workflow-execution",
+        "project": "examples/minimal-team"
+      },
+      "expected": {
+        "state": "unsupported",
+        "outcome": "not-applicable",
+        "runtimeExecution": "not-run",
+        "executionAuthorized": false
+      },
+      "source": "docs/compatibility-matrix.md",
+      "limits": "Capability declaration only; do not attempt the effect. The 76-case source host remains a separate synthetic fixture, not support for this operation."
+    },
+    {
+      "id": "provider-network-call",
+      "profile": "runtime-boundary",
+      "input": {
+        "operation": "provider-network-call",
+        "project": "examples/minimal-team"
+      },
+      "expected": {
+        "state": "unsupported",
+        "outcome": "not-applicable",
+        "runtimeExecution": "not-run",
+        "executionAuthorized": false
+      },
+      "source": "docs/compatibility-matrix.md",
+      "limits": "Capability declaration only; do not attempt the effect. The 76-case source host remains a separate synthetic fixture, not support for this operation."
+    },
+    {
+      "id": "credential-broker",
+      "profile": "runtime-boundary",
+      "input": {
+        "operation": "credential-broker",
+        "project": "examples/minimal-team"
+      },
+      "expected": {
+        "state": "unsupported",
+        "outcome": "not-applicable",
+        "runtimeExecution": "not-run",
+        "executionAuthorized": false
+      },
+      "source": "docs/compatibility-matrix.md",
+      "limits": "Capability declaration only; do not attempt the effect. The 76-case source host remains a separate synthetic fixture, not support for this operation."
+    },
+    {
+      "id": "executable-extension-loading",
+      "profile": "runtime-boundary",
+      "input": {
+        "operation": "executable-extension-loading",
+        "project": "examples/minimal-team"
+      },
+      "expected": {
+        "state": "unsupported",
+        "outcome": "not-applicable",
+        "runtimeExecution": "not-run",
+        "executionAuthorized": false
+      },
+      "source": "docs/compatibility-matrix.md",
+      "limits": "Capability declaration only; do not attempt the effect. The 76-case source host remains a separate synthetic fixture, not support for this operation."
+    }
+  ],
+  "registryVariants": {
+    "current": {
+      "base": "extensions/registry.example.yaml",
+      "patch": [],
+      "materializedSha256": "27943ecb30f42a677678be896e3045f1f5ee6fb836603d2c525df2be66800e64"
+    },
+    "legacy": {
+      "base": "fixtures/extension-registry/legacy.yaml",
+      "patch": [],
+      "materializedSha256": "db9e8735bbd79b605eb25398e7be883a13cfa41694adb64106a5dd34ff4c7846"
+    },
+    "migrated": {
+      "base": "fixtures/extension-registry/legacy.yaml",
+      "patch": [
+        {
+          "op": "replace",
+          "path": "/registryFormatVersion",
+          "value": "0.2-draft"
+        },
+        {
+          "op": "replace",
+          "path": "/metadata/source/revision",
+          "value": "2222222222222222222222222222222222222222"
+        }
+      ],
+      "materializedSha256": "33ae4e866199beba79b79464bdf1fcedd9a3b52cbf9c29441ae312a2c0e0b7e6"
+    },
+    "unknown-profile": {
+      "base": "extensions/registry.example.yaml",
+      "patch": [
+        {
+          "op": "replace",
+          "path": "/entries/1/namespace",
+          "value": "com.example.unrecognized"
+        }
+      ],
+      "materializedSha256": "e4bb53f748fde22ff5526cdc1125d9badfda0c0d1e95b43dc468d2340517a837"
+    },
+    "other-spec": {
+      "base": "extensions/registry.example.yaml",
+      "patch": [
+        {
+          "op": "replace",
+          "path": "/entries/1/compatibility/specVersions",
+          "value": [
+            "0.2"
+          ]
+        }
+      ],
+      "materializedSha256": "415726377ed0ee5cb987ea16f4c630490325e859d0ed4e3d0c6386e726428cbe"
+    },
+    "changed-pin": {
+      "base": "extensions/registry.example.yaml",
+      "patch": [
+        {
+          "op": "replace",
+          "path": "/entries/1/profile/source/sha256",
+          "value": "2222222222222222222222222222222222222222222222222222222222222222"
+        }
+      ],
+      "materializedSha256": "6edfc4af141029e7b7883188f18c182fc361aa99fb6c4122f341bae8bdc91a5b"
+    },
+    "withdrawn": {
+      "base": "extensions/registry.example.yaml",
+      "patch": [
+        {
+          "op": "replace",
+          "path": "/entries/1/publication/status",
+          "value": "withdrawn"
+        },
+        {
+          "op": "add",
+          "path": "/entries/1/withdrawal",
+          "value": {
+            "reason": "Fictional policy withdrawal used to demonstrate a retained record.",
+            "effectiveAt": "2026-09-20T00:00:00Z",
+            "evidence": "https://example.invalid/withdrawals/issue-tracker-0.1"
+          }
+        }
+      ],
+      "materializedSha256": "a0810f43c2ae657a3355b490d581ead0ed1f0b7afc432daab002730d5e0949f6"
+    },
+    "disputed": {
+      "base": "extensions/registry.example.yaml",
+      "patch": [
+        {
+          "op": "replace",
+          "path": "/entries/1/owner/verification/status",
+          "value": "disputed"
+        }
+      ],
+      "materializedSha256": "eed7396ed19aba32506fc616a0ebc544ea16b19b1ce2e18e487ae84d64e87612"
+    },
+    "invalid-source": {
+      "base": "extensions/registry.example.yaml",
+      "patch": [
+        {
+          "op": "replace",
+          "path": "/entries/1/profile/source/revision",
+          "value": "main"
+        }
+      ],
+      "materializedSha256": "ee203b8a5909c9a5de08f2ff17e2819b4ad94169e81dec62c740785d3828dde8"
+    },
+    "duplicate": {
+      "base": "extensions/registry.example.yaml",
+      "patch": [
+        {
+          "op": "add",
+          "path": "/entries/-",
+          "value": {
+            "namespace": "com.example.issue_tracker",
+            "displayName": "Example Issue Tracker",
+            "summary": "Fictional extension metadata used only to demonstrate the draft registry format.",
+            "owner": {
+              "name": "Example Organization",
+              "type": "organization",
+              "identifier": "https://example.invalid/",
+              "verification": {
+                "status": "registry_verified",
+                "method": "repository",
+                "evidence": "https://example.invalid/verification/issue-tracker"
+              }
+            },
+            "lifecycle": "experimental",
+            "profile": {
+              "version": "0.2-draft",
+              "status": "draft",
+              "specification": "https://example.invalid/extensions/issue-tracker/0.2/specification",
+              "source": {
+                "repository": "https://example.invalid/extensions",
+                "revision": "1111111111111111111111111111111111111111",
+                "path": "extensions/issue-tracker/profile.yaml",
+                "sha256": "1111111111111111111111111111111111111111111111111111111111111111"
+              }
+            },
+            "compatibility": {
+              "specVersions": [
+                "0.1"
+              ],
+              "profileVersions": [
+                "0.2-draft"
+              ],
+              "attachmentAreas": [
+                "context",
+                "events",
+                "tasks"
+              ],
+              "conformanceLevels": [
+                "NF-EXTENSION"
+              ]
+            },
+            "requirements": {
+              "capabilities": [
+                "read_context"
+              ],
+              "networkAccess": "required",
+              "credentials": "optional",
+              "executableCode": true
+            },
+            "documentation": {
+              "homepage": "https://example.invalid/extensions/issue-tracker",
+              "specification": "https://example.invalid/extensions/issue-tracker/0.2/specification",
+              "security": "https://example.invalid/security"
+            },
+            "publication": {
+              "status": "published",
+              "publishedAt": "2026-09-20T00:00:00Z"
+            },
+            "limitations": [
+              "This is fictional metadata and does not identify an installable or supported extension."
+            ]
+          }
+        }
+      ],
+      "materializedSha256": "4ad0eba36b54d06ab4320984acf8e44124326c608b3df793b4b85cf604cfcd5d"
+    }
+  },
+  "extensionInputs": {
+    "known-pair": {
+      "selection": {
+        "namespace": "com.example.issue_tracker",
+        "profileVersion": "0.2-draft",
+        "specVersion": "0.1",
+        "attachmentArea": "context"
+      },
+      "project": {
+        "kind": "Project",
+        "specVersion": "0.1",
+        "metadata": {
+          "project": "fixture-project"
+        },
+        "project": {
+          "id": "fixture-project",
+          "displayName": "Fixture",
+          "description": "Synthetic extension fixture"
+        },
+        "manifests": {
+          "extensions": "extensions.yaml"
+        }
+      },
+      "manifest": {
+        "kind": "ExtensionSet",
+        "specVersion": "0.1",
+        "metadata": {
+          "project": "fixture-project"
+        },
+        "extensions": [
+          {
+            "id": "fixture-extension",
+            "displayName": "Fixture",
+            "namespace": "com.example.issue_tracker",
+            "lifecycle": "experimental",
+            "appliesTo": [
+              "context"
+            ],
+            "fixtureMetadata": {
+              "requestedVersion": "0.2-draft",
+              "opaque": "NF117_SYNTHETIC_PRIVATE_CANARY"
+            }
+          }
+        ]
+      },
+      "expected": {
+        "schemaValid": true,
+        "validatorStatus": "valid",
+        "diagnosticCodes": [],
+        "registryDisposition": "compatible-metadata",
+        "executionAuthorized": false
+      }
+    },
+    "unknown-namespace": {
+      "selection": {
+        "namespace": "com.example.unknown",
+        "profileVersion": "0.2-draft",
+        "specVersion": "0.1",
+        "attachmentArea": "context"
+      },
+      "project": {
+        "kind": "Project",
+        "specVersion": "0.1",
+        "metadata": {
+          "project": "fixture-project"
+        },
+        "project": {
+          "id": "fixture-project",
+          "displayName": "Fixture",
+          "description": "Synthetic extension fixture"
+        },
+        "manifests": {
+          "extensions": "extensions.yaml"
+        }
+      },
+      "manifest": {
+        "kind": "ExtensionSet",
+        "specVersion": "0.1",
+        "metadata": {
+          "project": "fixture-project"
+        },
+        "extensions": [
+          {
+            "id": "fixture-extension",
+            "displayName": "Fixture",
+            "namespace": "com.example.unknown",
+            "lifecycle": "experimental",
+            "appliesTo": [
+              "context"
+            ],
+            "fixtureMetadata": {
+              "requestedVersion": "0.2-draft",
+              "opaque": "NF117_SYNTHETIC_PRIVATE_CANARY"
+            }
+          }
+        ]
+      },
+      "expected": {
+        "schemaValid": true,
+        "validatorStatus": "valid",
+        "diagnosticCodes": [],
+        "registryDisposition": "unsupported-namespace",
+        "executionAuthorized": false
+      }
+    },
+    "unknown-profile": {
+      "selection": {
+        "namespace": "com.example.unrecognized",
+        "profileVersion": "0.2-draft",
+        "specVersion": "0.1",
+        "attachmentArea": "context"
+      },
+      "project": {
+        "kind": "Project",
+        "specVersion": "0.1",
+        "metadata": {
+          "project": "fixture-project"
+        },
+        "project": {
+          "id": "fixture-project",
+          "displayName": "Fixture",
+          "description": "Synthetic extension fixture"
+        },
+        "manifests": {
+          "extensions": "extensions.yaml"
+        }
+      },
+      "manifest": {
+        "kind": "ExtensionSet",
+        "specVersion": "0.1",
+        "metadata": {
+          "project": "fixture-project"
+        },
+        "extensions": [
+          {
+            "id": "fixture-extension",
+            "displayName": "Fixture",
+            "namespace": "com.example.unrecognized",
+            "lifecycle": "experimental",
+            "appliesTo": [
+              "context"
+            ],
+            "fixtureMetadata": {
+              "requestedVersion": "0.2-draft",
+              "opaque": "NF117_SYNTHETIC_PRIVATE_CANARY"
+            }
+          }
+        ]
+      },
+      "expected": {
+        "schemaValid": true,
+        "validatorStatus": "valid",
+        "diagnosticCodes": [],
+        "registryDisposition": "unsupported-profile",
+        "executionAuthorized": false
+      }
+    },
+    "unknown-version": {
+      "selection": {
+        "namespace": "com.example.issue_tracker",
+        "profileVersion": "9.0",
+        "specVersion": "0.1",
+        "attachmentArea": "context"
+      },
+      "project": {
+        "kind": "Project",
+        "specVersion": "0.1",
+        "metadata": {
+          "project": "fixture-project"
+        },
+        "project": {
+          "id": "fixture-project",
+          "displayName": "Fixture",
+          "description": "Synthetic extension fixture"
+        },
+        "manifests": {
+          "extensions": "extensions.yaml"
+        }
+      },
+      "manifest": {
+        "kind": "ExtensionSet",
+        "specVersion": "0.1",
+        "metadata": {
+          "project": "fixture-project"
+        },
+        "extensions": [
+          {
+            "id": "fixture-extension",
+            "displayName": "Fixture",
+            "namespace": "com.example.issue_tracker",
+            "lifecycle": "experimental",
+            "appliesTo": [
+              "context"
+            ],
+            "fixtureMetadata": {
+              "requestedVersion": "9.0",
+              "opaque": "NF117_SYNTHETIC_PRIVATE_CANARY"
+            }
+          }
+        ]
+      },
+      "expected": {
+        "schemaValid": true,
+        "validatorStatus": "valid",
+        "diagnosticCodes": [],
+        "registryDisposition": "unsupported-profile-version",
+        "executionAuthorized": false
+      }
+    },
+    "incompatible-manifest-pair": {
+      "selection": {
+        "namespace": "com.example.issue_tracker",
+        "profileVersion": "0.2-draft",
+        "specVersion": "0.1",
+        "attachmentArea": "context"
+      },
+      "project": {
+        "kind": "Project",
+        "specVersion": "0.1",
+        "metadata": {
+          "project": "fixture-project"
+        },
+        "project": {
+          "id": "fixture-project",
+          "displayName": "Fixture",
+          "description": "Synthetic extension fixture"
+        },
+        "manifests": {
+          "extensions": "extensions.yaml"
+        }
+      },
+      "manifest": {
+        "kind": "ExtensionSet",
+        "specVersion": "0.1",
+        "metadata": {
+          "project": "fixture-project"
+        },
+        "extensions": [
+          {
+            "id": "fixture-extension",
+            "displayName": "Fixture",
+            "namespace": "com.example.issue_tracker",
+            "lifecycle": "experimental",
+            "appliesTo": [
+              "context"
+            ],
+            "fixtureMetadata": {
+              "requestedVersion": "0.2-draft",
+              "opaque": "NF117_SYNTHETIC_PRIVATE_CANARY"
+            }
+          }
+        ]
+      },
+      "expected": {
+        "schemaValid": true,
+        "validatorStatus": "valid",
+        "diagnosticCodes": [],
+        "registryDisposition": "incompatible-pair",
+        "executionAuthorized": false
+      }
+    },
+    "incompatible-attachment": {
+      "selection": {
+        "namespace": "com.example.issue_tracker",
+        "profileVersion": "0.2-draft",
+        "specVersion": "0.1",
+        "attachmentArea": "workflow"
+      },
+      "project": {
+        "kind": "Project",
+        "specVersion": "0.1",
+        "metadata": {
+          "project": "fixture-project"
+        },
+        "project": {
+          "id": "fixture-project",
+          "displayName": "Fixture",
+          "description": "Synthetic extension fixture"
+        },
+        "manifests": {
+          "extensions": "extensions.yaml"
+        }
+      },
+      "manifest": {
+        "kind": "ExtensionSet",
+        "specVersion": "0.1",
+        "metadata": {
+          "project": "fixture-project"
+        },
+        "extensions": [
+          {
+            "id": "fixture-extension",
+            "displayName": "Fixture",
+            "namespace": "com.example.issue_tracker",
+            "lifecycle": "experimental",
+            "appliesTo": [
+              "workflow"
+            ],
+            "fixtureMetadata": {
+              "requestedVersion": "0.2-draft",
+              "opaque": "NF117_SYNTHETIC_PRIVATE_CANARY"
+            }
+          }
+        ]
+      },
+      "expected": {
+        "schemaValid": true,
+        "validatorStatus": "valid",
+        "diagnosticCodes": [],
+        "registryDisposition": "incompatible-pair",
+        "executionAuthorized": false
+      }
+    },
+    "mismatched-source-pin": {
+      "selection": {
+        "namespace": "com.example.issue_tracker",
+        "profileVersion": "0.2-draft",
+        "specVersion": "0.1",
+        "attachmentArea": "context"
+      },
+      "project": {
+        "kind": "Project",
+        "specVersion": "0.1",
+        "metadata": {
+          "project": "fixture-project"
+        },
+        "project": {
+          "id": "fixture-project",
+          "displayName": "Fixture",
+          "description": "Synthetic extension fixture"
+        },
+        "manifests": {
+          "extensions": "extensions.yaml"
+        }
+      },
+      "manifest": {
+        "kind": "ExtensionSet",
+        "specVersion": "0.1",
+        "metadata": {
+          "project": "fixture-project"
+        },
+        "extensions": [
+          {
+            "id": "fixture-extension",
+            "displayName": "Fixture",
+            "namespace": "com.example.issue_tracker",
+            "lifecycle": "experimental",
+            "appliesTo": [
+              "context"
+            ],
+            "fixtureMetadata": {
+              "requestedVersion": "0.2-draft",
+              "opaque": "NF117_SYNTHETIC_PRIVATE_CANARY"
+            }
+          }
+        ]
+      },
+      "expected": {
+        "schemaValid": true,
+        "validatorStatus": "valid",
+        "diagnosticCodes": [],
+        "registryDisposition": "profile-pin-mismatch",
+        "executionAuthorized": false
+      }
+    },
+    "revoked-with-existing-successor": {
+      "selection": {
+        "namespace": "com.example.issue_tracker",
+        "profileVersion": "0.1-draft",
+        "specVersion": "0.1",
+        "attachmentArea": "context"
+      },
+      "project": {
+        "kind": "Project",
+        "specVersion": "0.1",
+        "metadata": {
+          "project": "fixture-project"
+        },
+        "project": {
+          "id": "fixture-project",
+          "displayName": "Fixture",
+          "description": "Synthetic extension fixture"
+        },
+        "manifests": {
+          "extensions": "extensions.yaml"
+        }
+      },
+      "manifest": {
+        "kind": "ExtensionSet",
+        "specVersion": "0.1",
+        "metadata": {
+          "project": "fixture-project"
+        },
+        "extensions": [
+          {
+            "id": "fixture-extension",
+            "displayName": "Fixture",
+            "namespace": "com.example.issue_tracker",
+            "lifecycle": "experimental",
+            "appliesTo": [
+              "context"
+            ],
+            "fixtureMetadata": {
+              "requestedVersion": "0.1-draft",
+              "opaque": "NF117_SYNTHETIC_PRIVATE_CANARY"
+            }
+          }
+        ]
+      },
+      "expected": {
+        "schemaValid": true,
+        "validatorStatus": "valid",
+        "diagnosticCodes": [],
+        "registryDisposition": "revoked-profile",
+        "executionAuthorized": false
+      }
+    },
+    "withdrawn": {
+      "selection": {
+        "namespace": "com.example.issue_tracker",
+        "profileVersion": "0.2-draft",
+        "specVersion": "0.1",
+        "attachmentArea": "context"
+      },
+      "project": {
+        "kind": "Project",
+        "specVersion": "0.1",
+        "metadata": {
+          "project": "fixture-project"
+        },
+        "project": {
+          "id": "fixture-project",
+          "displayName": "Fixture",
+          "description": "Synthetic extension fixture"
+        },
+        "manifests": {
+          "extensions": "extensions.yaml"
+        }
+      },
+      "manifest": {
+        "kind": "ExtensionSet",
+        "specVersion": "0.1",
+        "metadata": {
+          "project": "fixture-project"
+        },
+        "extensions": [
+          {
+            "id": "fixture-extension",
+            "displayName": "Fixture",
+            "namespace": "com.example.issue_tracker",
+            "lifecycle": "experimental",
+            "appliesTo": [
+              "context"
+            ],
+            "fixtureMetadata": {
+              "requestedVersion": "0.2-draft",
+              "opaque": "NF117_SYNTHETIC_PRIVATE_CANARY"
+            }
+          }
+        ]
+      },
+      "expected": {
+        "schemaValid": true,
+        "validatorStatus": "valid",
+        "diagnosticCodes": [],
+        "registryDisposition": "withdrawn-profile",
+        "executionAuthorized": false
+      }
+    },
+    "disputed": {
+      "selection": {
+        "namespace": "com.example.issue_tracker",
+        "profileVersion": "0.2-draft",
+        "specVersion": "0.1",
+        "attachmentArea": "context"
+      },
+      "project": {
+        "kind": "Project",
+        "specVersion": "0.1",
+        "metadata": {
+          "project": "fixture-project"
+        },
+        "project": {
+          "id": "fixture-project",
+          "displayName": "Fixture",
+          "description": "Synthetic extension fixture"
+        },
+        "manifests": {
+          "extensions": "extensions.yaml"
+        }
+      },
+      "manifest": {
+        "kind": "ExtensionSet",
+        "specVersion": "0.1",
+        "metadata": {
+          "project": "fixture-project"
+        },
+        "extensions": [
+          {
+            "id": "fixture-extension",
+            "displayName": "Fixture",
+            "namespace": "com.example.issue_tracker",
+            "lifecycle": "experimental",
+            "appliesTo": [
+              "context"
+            ],
+            "fixtureMetadata": {
+              "requestedVersion": "0.2-draft",
+              "opaque": "NF117_SYNTHETIC_PRIVATE_CANARY"
+            }
+          }
+        ]
+      },
+      "expected": {
+        "schemaValid": true,
+        "validatorStatus": "valid",
+        "diagnosticCodes": [],
+        "registryDisposition": "disputed-ownership",
+        "executionAuthorized": false
+      }
+    },
+    "invalid-snapshot": {
+      "selection": {
+        "namespace": "com.example.issue_tracker",
+        "profileVersion": "0.2-draft",
+        "specVersion": "0.1",
+        "attachmentArea": "context"
+      },
+      "project": {
+        "kind": "Project",
+        "specVersion": "0.1",
+        "metadata": {
+          "project": "fixture-project"
+        },
+        "project": {
+          "id": "fixture-project",
+          "displayName": "Fixture",
+          "description": "Synthetic extension fixture"
+        },
+        "manifests": {
+          "extensions": "extensions.yaml"
+        }
+      },
+      "manifest": {
+        "kind": "ExtensionSet",
+        "specVersion": "0.1",
+        "metadata": {
+          "project": "fixture-project"
+        },
+        "extensions": [
+          {
+            "id": "fixture-extension",
+            "displayName": "Fixture",
+            "namespace": "com.example.issue_tracker",
+            "lifecycle": "experimental",
+            "appliesTo": [
+              "context"
+            ],
+            "fixtureMetadata": {
+              "requestedVersion": "0.2-draft",
+              "opaque": "NF117_SYNTHETIC_PRIVATE_CANARY"
+            }
+          }
+        ]
+      },
+      "expected": {
+        "schemaValid": true,
+        "validatorStatus": "valid",
+        "diagnosticCodes": [],
+        "registryDisposition": "invalid-registry",
+        "executionAuthorized": false
+      }
+    },
+    "ambiguous-snapshot": {
+      "selection": {
+        "namespace": "com.example.issue_tracker",
+        "profileVersion": "0.2-draft",
+        "specVersion": "0.1",
+        "attachmentArea": "context"
+      },
+      "project": {
+        "kind": "Project",
+        "specVersion": "0.1",
+        "metadata": {
+          "project": "fixture-project"
+        },
+        "project": {
+          "id": "fixture-project",
+          "displayName": "Fixture",
+          "description": "Synthetic extension fixture"
+        },
+        "manifests": {
+          "extensions": "extensions.yaml"
+        }
+      },
+      "manifest": {
+        "kind": "ExtensionSet",
+        "specVersion": "0.1",
+        "metadata": {
+          "project": "fixture-project"
+        },
+        "extensions": [
+          {
+            "id": "fixture-extension",
+            "displayName": "Fixture",
+            "namespace": "com.example.issue_tracker",
+            "lifecycle": "experimental",
+            "appliesTo": [
+              "context"
+            ],
+            "fixtureMetadata": {
+              "requestedVersion": "0.2-draft",
+              "opaque": "NF117_SYNTHETIC_PRIVATE_CANARY"
+            }
+          }
+        ]
+      },
+      "expected": {
+        "schemaValid": true,
+        "validatorStatus": "valid",
+        "diagnosticCodes": [],
+        "registryDisposition": "inconsistent-registry",
+        "executionAuthorized": false
+      }
+    },
+    "legacy-snapshot": {
+      "selection": {
+        "namespace": "com.example.issue_tracker",
+        "profileVersion": "0.1-draft",
+        "specVersion": "0.1",
+        "attachmentArea": "context"
+      },
+      "project": {
+        "kind": "Project",
+        "specVersion": "0.1",
+        "metadata": {
+          "project": "fixture-project"
+        },
+        "project": {
+          "id": "fixture-project",
+          "displayName": "Fixture",
+          "description": "Synthetic extension fixture"
+        },
+        "manifests": {
+          "extensions": "extensions.yaml"
+        }
+      },
+      "manifest": {
+        "kind": "ExtensionSet",
+        "specVersion": "0.1",
+        "metadata": {
+          "project": "fixture-project"
+        },
+        "extensions": [
+          {
+            "id": "fixture-extension",
+            "displayName": "Fixture",
+            "namespace": "com.example.issue_tracker",
+            "lifecycle": "experimental",
+            "appliesTo": [
+              "context"
+            ],
+            "fixtureMetadata": {
+              "requestedVersion": "0.1-draft",
+              "opaque": "NF117_SYNTHETIC_PRIVATE_CANARY"
+            }
+          }
+        ]
+      },
+      "expected": {
+        "schemaValid": true,
+        "validatorStatus": "valid",
+        "diagnosticCodes": [],
+        "registryDisposition": "legacy-registry",
+        "executionAuthorized": false
+      }
+    },
+    "migrated-snapshot": {
+      "selection": {
+        "namespace": "com.example.issue_tracker",
+        "profileVersion": "0.1-draft",
+        "specVersion": "0.1",
+        "attachmentArea": "context"
+      },
+      "project": {
+        "kind": "Project",
+        "specVersion": "0.1",
+        "metadata": {
+          "project": "fixture-project"
+        },
+        "project": {
+          "id": "fixture-project",
+          "displayName": "Fixture",
+          "description": "Synthetic extension fixture"
+        },
+        "manifests": {
+          "extensions": "extensions.yaml"
+        }
+      },
+      "manifest": {
+        "kind": "ExtensionSet",
+        "specVersion": "0.1",
+        "metadata": {
+          "project": "fixture-project"
+        },
+        "extensions": [
+          {
+            "id": "fixture-extension",
+            "displayName": "Fixture",
+            "namespace": "com.example.issue_tracker",
+            "lifecycle": "experimental",
+            "appliesTo": [
+              "context"
+            ],
+            "fixtureMetadata": {
+              "requestedVersion": "0.1-draft",
+              "opaque": "NF117_SYNTHETIC_PRIVATE_CANARY"
+            }
+          }
+        ]
+      },
+      "expected": {
+        "schemaValid": true,
+        "validatorStatus": "valid",
+        "diagnosticCodes": [],
+        "registryDisposition": "unpublished-profile",
+        "executionAuthorized": false
+      }
+    },
+    "legacy-downgrade": {
+      "selection": {
+        "namespace": "com.example.issue_tracker",
+        "profileVersion": "0.1-draft",
+        "specVersion": "0.1",
+        "attachmentArea": "context"
+      },
+      "project": {
+        "kind": "Project",
+        "specVersion": "0.1",
+        "metadata": {
+          "project": "fixture-project"
+        },
+        "project": {
+          "id": "fixture-project",
+          "displayName": "Fixture",
+          "description": "Synthetic extension fixture"
+        },
+        "manifests": {
+          "extensions": "extensions.yaml"
+        }
+      },
+      "manifest": {
+        "kind": "ExtensionSet",
+        "specVersion": "0.1",
+        "metadata": {
+          "project": "fixture-project"
+        },
+        "extensions": [
+          {
+            "id": "fixture-extension",
+            "displayName": "Fixture",
+            "namespace": "com.example.issue_tracker",
+            "lifecycle": "experimental",
+            "appliesTo": [
+              "context"
+            ],
+            "fixtureMetadata": {
+              "requestedVersion": "0.1-draft",
+              "opaque": "NF117_SYNTHETIC_PRIVATE_CANARY"
+            }
+          }
+        ]
+      },
+      "expected": {
+        "schemaValid": true,
+        "validatorStatus": "valid",
+        "diagnosticCodes": [],
+        "registryDisposition": "inconsistent-registry",
+        "executionAuthorized": false
+      }
+    },
+    "unsupported-manifest-dialect": {
+      "selection": {
+        "namespace": "com.example.issue_tracker",
+        "profileVersion": "0.2-draft",
+        "specVersion": "0.2",
+        "attachmentArea": "context"
+      },
+      "project": {
+        "kind": "Project",
+        "specVersion": "0.1",
+        "metadata": {
+          "project": "fixture-project"
+        },
+        "project": {
+          "id": "fixture-project",
+          "displayName": "Fixture",
+          "description": "Synthetic extension fixture"
+        },
+        "manifests": {
+          "extensions": "extensions.yaml"
+        }
+      },
+      "manifest": {
+        "kind": "ExtensionSet",
+        "specVersion": "0.2",
+        "metadata": {
+          "project": "fixture-project"
+        },
+        "extensions": [
+          {
+            "id": "fixture-extension",
+            "displayName": "Fixture",
+            "namespace": "com.example.issue_tracker",
+            "lifecycle": "experimental",
+            "appliesTo": [
+              "context"
+            ],
+            "fixtureMetadata": {
+              "requestedVersion": "0.2-draft",
+              "opaque": "NF117_SYNTHETIC_PRIVATE_CANARY"
+            }
+          }
+        ]
+      },
+      "expected": {
+        "schemaValid": false,
+        "validatorStatus": "unsupported",
+        "diagnosticCodes": [
+          "NF-DISCOVERY-UNSUPPORTED-VERSION"
+        ],
+        "registryDisposition": "incompatible-pair",
+        "executionAuthorized": false
+      }
+    },
+    "invalid-authored-lifecycle": {
+      "selection": {
+        "namespace": "com.example.issue_tracker",
+        "profileVersion": "0.2-draft",
+        "specVersion": "0.1",
+        "attachmentArea": "context"
+      },
+      "project": {
+        "kind": "Project",
+        "specVersion": "0.1",
+        "metadata": {
+          "project": "fixture-project"
+        },
+        "project": {
+          "id": "fixture-project",
+          "displayName": "Fixture",
+          "description": "Synthetic extension fixture"
+        },
+        "manifests": {
+          "extensions": "extensions.yaml"
+        }
+      },
+      "manifest": {
+        "kind": "ExtensionSet",
+        "specVersion": "0.1",
+        "metadata": {
+          "project": "fixture-project"
+        },
+        "extensions": [
+          {
+            "id": "fixture-extension",
+            "displayName": "Fixture",
+            "namespace": "com.example.issue_tracker",
+            "lifecycle": "revoked",
+            "appliesTo": [
+              "context"
+            ],
+            "fixtureMetadata": {
+              "requestedVersion": "0.2-draft",
+              "opaque": "NF117_SYNTHETIC_PRIVATE_CANARY"
+            }
+          }
+        ]
+      },
+      "expected": {
+        "schemaValid": false,
+        "validatorStatus": "invalid",
+        "diagnosticCodes": [
+          "NF-SCHEMA"
+        ],
+        "registryDisposition": "compatible-metadata",
+        "executionAuthorized": false
+      }
+    }
+  },
+  "redactionCanaries": [
+    "NF117_SYNTHETIC_PRIVATE_CANARY"
+  ]
+}

@@ -1,0 +1,785 @@
+{
+  "baselineRevision": "a7dd64df680babaf9dcf26fcea181c41f30f8ea2",
+  "publishedFoundationRevision": "3f70eb22d9ddfcdeab766cdd52a59f047cb82751",
+  "schemaFiles": 18,
+  "changedSchemas": [
+    {
+      "path": "schemas/common.schema.json",
+      "beforeSha256": "1ff37b09efba3181512e44707f7dad2c627b79d735eb92a395c25b0f13d329c0",
+      "afterSha256": "a02f583325e2b20ffbb659efa451206579779a557a5fc89fbb412c10414630cc"
+    },
+    {
+      "path": "schemas/project.schema.json",
+      "beforeSha256": "36836dde6ebb7a68db44e79299472368a28e417b26c817db26fbe55772f1a885",
+      "afterSha256": "586bc846277b846f723371a734952fc30cf29e8c916d6b52db1897ac32fc0778"
+    }
+  ],
+  "addedDefinitions": [
+    "credentialHandlingPolicy",
+    "credentialKind",
+    "credentialPurpose"
+  ],
+  "changedExistingDefinitions": [],
+  "credentialFieldRequired": false,
+  "previousExamples": {
+    "total": 113,
+    "passed": 113,
+    "observations": [
+      {
+        "file": "examples/enterprise-team/agent-definitions.yaml",
+        "inputSha256": "ae6664121697cafcbe3edcb1f34ec8164ec3f4d4814e7ce33c51c5ea581bffb0",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/enterprise-team/agents.yaml",
+        "inputSha256": "8ec8e536104ce5281f46ceb8ae375f80fde19ed6093d4bb6df8babcd07fbe270",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/enterprise-team/capabilities.yaml",
+        "inputSha256": "25b04c8858c0f8f4fd3007313aff2fc2906efa6b23f920d858c5797992a1991a",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/enterprise-team/context.yaml",
+        "inputSha256": "ba17d2090250df79333f52d1edd18a412d3053f89e52989bb356e421dd0c49d8",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/enterprise-team/events.yaml",
+        "inputSha256": "7671d5ee5db1ee5def62a8e7a8d8982aef1e9e463ca9508b58ce594d1d45afb5",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/enterprise-team/extensions.yaml",
+        "inputSha256": "a7f4c67e0e0ea30bc8f5bc2fb1f4c8f1efdc219a4527974c29408f0cae9cf383",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/enterprise-team/handoffs.yaml",
+        "inputSha256": "e869900ae875498c37a3acad0a1dab6b231699c194f8ebff4498c7b8c1d444eb",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/enterprise-team/memory.yaml",
+        "inputSha256": "8fa849e899f40ab1bbe695beab618a77b2af88c42124a21977194295c19a8890",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/enterprise-team/model-profiles.yaml",
+        "inputSha256": "b9ae52d12cd5ad9ab687cd4188f61a19dd57d7a52c2207b92c762d608d4a0f2b",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/enterprise-team/permissions.yaml",
+        "inputSha256": "7c56997c444a494c6fe07be3800dec47ead589d7dc301cdd37005669f3e7d214",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/enterprise-team/project.yaml",
+        "inputSha256": "c4a9131240675a9a7e035d779ccd3431920637702650c3c629fae3f120479110",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/enterprise-team/prompt-sets.yaml",
+        "inputSha256": "17b64c2c8eceb7c9799c854176aefb60ce7ef865fd4e1a95799ec0bacd96d793",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/enterprise-team/providers.yaml",
+        "inputSha256": "9b3dc07b8b1ea30314ec0d049a4c2905141d45e41d8d57129d5da07b05771e47",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/enterprise-team/retrieval-profiles.yaml",
+        "inputSha256": "af09798f3ee088c2b01d9d9722b45b2980891f7f6f1b90d58e5bd37f7d98dd1f",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/enterprise-team/tasks.yaml",
+        "inputSha256": "21fb4b4532c5c759ea50a26eabca218ad3fd7db2adf95c79d8b014cfdfa5a5b6",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/enterprise-team/workflow.yaml",
+        "inputSha256": "0a595b142f8146875afc64b41a19c075937e6d9de85a9d5ba8cc49086ed68303",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/minimal-team/actors.yaml",
+        "inputSha256": "b15ada86e692fdd7a9b609330ecae11b92f8213e83040897743051372a3e2a98",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/minimal-team/agent-definitions.yaml",
+        "inputSha256": "9d7e25ddd84d95f6091a6201de3aa3b915c1efbac89dd358cbd5ca38d834f4f5",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/minimal-team/agents.yaml",
+        "inputSha256": "efb3e6b660c37fdeeb732d6fc45a8521ed1b9305c518ff996771d2a95df53433",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/minimal-team/capabilities.yaml",
+        "inputSha256": "b5295a5fad3c063f461e905cfeace5a9f5ca126a640da7b50d28517305944193",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/minimal-team/context.yaml",
+        "inputSha256": "7de4fc47ae5637ec99a4681944ec504ca6bb45bdf1925fbfb6c282e37198bdd5",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/minimal-team/events.yaml",
+        "inputSha256": "26c4a427e7ec6e2a32eb01696aa9ac03e1d5ebd8288e400c2559897c19171a85",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/minimal-team/extensions.yaml",
+        "inputSha256": "14e5f9eae2814d5ac13a18a23e98618f03d06e5c6f7801acb5d56b8c378d9d5a",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/minimal-team/handoffs.yaml",
+        "inputSha256": "c77e2cdf32cc3e9a4d0a534db12dfa1bffdcce61c9175c6bba13f4cacd8bd01c",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/minimal-team/memory.yaml",
+        "inputSha256": "a4c97f8775bc21112c78900433a3afaa9e5881277fbde7812d0f449eb9031708",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/minimal-team/model-profiles.yaml",
+        "inputSha256": "0108c25449aa2638e7aaf62ae261f5fe20a6fd3ef578e6fa4a9a6af33bcacdb3",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/minimal-team/permissions.yaml",
+        "inputSha256": "a0af115335f0532bb00f3e75b5cf8fb3329f11b4690ae5cc35babfad6400618d",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/minimal-team/project.yaml",
+        "inputSha256": "3bcdc8898e60f89e3c5e4e521bc2b693624ffc99da7f03db145045800ced6221",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/minimal-team/prompt-sets.yaml",
+        "inputSha256": "ca9978ac679a8b91e6df1a1f4771c743ced1c47079298ae2ac1f716f2932815e",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/minimal-team/providers.yaml",
+        "inputSha256": "da77725c40b2e297d092fe340d716aca76ae028dfa71d6125cd3046483fff6fc",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/minimal-team/retrieval-profiles.yaml",
+        "inputSha256": "64a867f10519401f9c81b4f09499da7bbdb7cac8b948eca11253577de340354d",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/minimal-team/tasks.yaml",
+        "inputSha256": "36257730553001c0f1308cc2e95c53d75625b2be8b7d2d4051b46014ca69ef3a",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/minimal-team/workflow.yaml",
+        "inputSha256": "620e714bf2da233af280ac20d2ab07818c793a93e39a08d02639decba40d714e",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/open-source-maintainer/agent-definitions.yaml",
+        "inputSha256": "67d7ef8edac5dcc70419e78addbad62836f8abf489f00350594c4a6dac6737f5",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/open-source-maintainer/agents.yaml",
+        "inputSha256": "887b329689b021efe39347a28e126f3175287d9d6a42e3979e26e5e1c4dc24ea",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/open-source-maintainer/capabilities.yaml",
+        "inputSha256": "9cd197468f204f67fea14399ae1d5be7be285272879a05f622f18c9baf3a0869",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/open-source-maintainer/context.yaml",
+        "inputSha256": "351473c0b5d0de14ae65c1b6ccf1744417a08eca38abb92c73a900388dc059d7",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/open-source-maintainer/events.yaml",
+        "inputSha256": "99c6619954f425bdcf36a243cd935e3d2d2a1cba4cc51c0055a841cb13d9989c",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/open-source-maintainer/extensions.yaml",
+        "inputSha256": "4d30dcebe4488cb245a31688630adda603f0f133a427e5824529c96f8d4fd2b9",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/open-source-maintainer/handoffs.yaml",
+        "inputSha256": "c1b68290899570d478edbb72cf0fd54537e24497e678226be920d32bb4306b56",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/open-source-maintainer/memory.yaml",
+        "inputSha256": "0c73110a536f2779401d73a12c6951fb3a3f6e0d51ce97dc4ecb72d04a2ac382",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/open-source-maintainer/model-profiles.yaml",
+        "inputSha256": "5a85acb5ee84f98a1e07fc7b18487dea905612ba17109a5e70edcd68c7bdbe9e",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/open-source-maintainer/permissions.yaml",
+        "inputSha256": "070ab68e0fff64bef22fb71aaea632c791a2ee2d6b2aa1b06d44c6b579ca0fe2",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/open-source-maintainer/project.yaml",
+        "inputSha256": "3a6be3835634e05da819dda993d94cbb7f6b9c11cd0bdfb4bb7a5f3dc4a91a09",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/open-source-maintainer/prompt-sets.yaml",
+        "inputSha256": "e6b6870c02776cb467f9453babdac3b104efa2fff4922ef60c00e644b51836a2",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/open-source-maintainer/providers.yaml",
+        "inputSha256": "855e3b334bd3ca72df73f8300ee4c345d8b891c614b76955245f18bd0b7ed937",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/open-source-maintainer/retrieval-profiles.yaml",
+        "inputSha256": "85407d3bbc0da72d4edf654384d4a95b4055ae90fd6309f1b9e548cb5dd04d0f",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/open-source-maintainer/tasks.yaml",
+        "inputSha256": "1eb51f0729dae9eb4cdbb7e64b31ce21a8de205939991b96915aa69eb111fdb2",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/open-source-maintainer/workflow.yaml",
+        "inputSha256": "53b6adf982d37f74532acb4ae1bbcf63b122df83b13a96011d890651ada06dfb",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/product-delivery-team/agent-definitions.yaml",
+        "inputSha256": "fa626fc526649dc1259c3388a0d65fbab702b9024ce790efabbf71ab0749e38f",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/product-delivery-team/agents.yaml",
+        "inputSha256": "bd2dbdf75c2adb7ef95e74a3f1d82043e8f1025996f23b46ef246d90281d7b07",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/product-delivery-team/capabilities.yaml",
+        "inputSha256": "aea496438ab8cf2272cc3825c7a500bb271928fe0e466f44c63c11e650efe891",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/product-delivery-team/context.yaml",
+        "inputSha256": "9ac1a946849fbe76423f43f305012c98607b0caef82aa82535f9c7bab7985340",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/product-delivery-team/events.yaml",
+        "inputSha256": "d2aad69f024e84f0dd5a6882a5915db3e5226bd010781e50d91119b993e56b31",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/product-delivery-team/extensions.yaml",
+        "inputSha256": "e178ea1a077f80e2f6eae396180821de562ac36950dfaabfcbac6223b655a7ce",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/product-delivery-team/handoffs.yaml",
+        "inputSha256": "a2fc92f244070ee618be6db4194b23b30f5bd253cae7f07093772463767c6630",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/product-delivery-team/memory.yaml",
+        "inputSha256": "cef7a2cedc8702f03c30f0823303845efbfa05fd121f9537aeb264b768550607",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/product-delivery-team/model-profiles.yaml",
+        "inputSha256": "57bd49423426ef98efa2ffd20a1c7fb20ff96b6f590914e82a35f7c45c02d073",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/product-delivery-team/permissions.yaml",
+        "inputSha256": "fca714c58f1db719d504ad7cbd61f69592386e3fa96ce5d05d191922b2a9e5af",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/product-delivery-team/project.yaml",
+        "inputSha256": "2fa38effb2c0bbc31d9a65aba29d55a223542b1257a46751d2e92e8ee78c7483",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/product-delivery-team/prompt-sets.yaml",
+        "inputSha256": "1f69ebfd8cb535b55db47522c0fc1e83c81256e885b221de73da1fddc60f59f6",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/product-delivery-team/providers.yaml",
+        "inputSha256": "37ab888b3ba7d1cdc32964cdc62d161fcdcd59fdef897ab22cebdba487ba569e",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/product-delivery-team/retrieval-profiles.yaml",
+        "inputSha256": "422f44e5ab42aaa5fbbb47ca12e21930bd1cbb365700e8a7c7411e691ab52f1c",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/product-delivery-team/tasks.yaml",
+        "inputSha256": "f7e6e529746fa04b34b1d2fc13a09fc8d119824fe1499fe8883bbc4f71960e49",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/product-delivery-team/workflow.yaml",
+        "inputSha256": "19c292f045ce72a8595bc18b32d42666db2641278eee8386457949e47926818b",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/research-lab/agent-definitions.yaml",
+        "inputSha256": "1d590f708a2391f758a2dcdf7fe7b2d6b790de2886bdfb56604fe2d4b6009ad0",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/research-lab/agents.yaml",
+        "inputSha256": "d8be2c72deac164a8742495ea3f6da9997752616f89d0072c05de70765a35c26",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/research-lab/capabilities.yaml",
+        "inputSha256": "39f74db9ebf80e6f1038a9beeb68dda33abc0334ab84df944847a66021808b7c",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/research-lab/context.yaml",
+        "inputSha256": "9d58997c758212db99e9213dd0c6b6b7b7a5d2cbd681588774cc1fa46f84dc02",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/research-lab/events.yaml",
+        "inputSha256": "8c33d1559bede3cf312da0bbb02137adb3083bb1fdaa469ce7d3968876713221",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/research-lab/extensions.yaml",
+        "inputSha256": "eff2f1e77524bab81b65164602b021c23c7fa1b8ecf358ad4143726cab4c34ca",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/research-lab/handoffs.yaml",
+        "inputSha256": "21cb8f0dff9ccf736d42a0ef02b3c202728644a22d2d5b53c946f33225bd5709",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/research-lab/memory.yaml",
+        "inputSha256": "9139b4ff541b845de16262450064a18a8160a8685fe7d39d1cc9504f21f66130",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/research-lab/model-profiles.yaml",
+        "inputSha256": "e1d79ab8182c7d6bdf3cc780baab2389f3449383457bfaa271e83653bf504128",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/research-lab/permissions.yaml",
+        "inputSha256": "96d04c60631832360bab393e960d7ffecd8256ebc9623b7c30dcf76959573b5f",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/research-lab/project.yaml",
+        "inputSha256": "bb4b82b1e02e9846aa1a6f0b1d79c234231204b1e637236ad5067c1255c20125",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/research-lab/prompt-sets.yaml",
+        "inputSha256": "61fc6489d6920c50f30e213a2683a7f46d9b7487a23a93e51c7bbb176f1bc821",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/research-lab/providers.yaml",
+        "inputSha256": "4634bce912c5a0bf20bfde7cd8f33e92436305930fc3c4743be771f2304d2aac",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/research-lab/retrieval-profiles.yaml",
+        "inputSha256": "7edb1340f648d372bace4c33a6ed957d8c9385bc46be82986e77ea3c21070a05",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/research-lab/tasks.yaml",
+        "inputSha256": "e7b06b71f8828589883b0c2b2a1cd246c7229d412724e88da2e4d3e6c6921553",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/research-lab/workflow.yaml",
+        "inputSha256": "1bf977e1dc48c9b183fe5956eaa4d90936409c7e17f2a8065184e19adfc9df60",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/software-team/agent-definitions.yaml",
+        "inputSha256": "45d904a5ba779ccd8b086e42ef338d885020a9420d4551be8928609331801654",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/software-team/agents.yaml",
+        "inputSha256": "d0aa42e1f74d73e0361ac6d5167e37a912834b84297f8b80f4bcbe9165db37f0",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/software-team/capabilities.yaml",
+        "inputSha256": "71f509b00a24a3b7cf179ebf24cf58667aaa6996ee0c16760c63b07441940358",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/software-team/context.yaml",
+        "inputSha256": "48063a5e8f233e109ec945e37370af0a8b41f8426d98c5110b4c26a969596833",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/software-team/events.yaml",
+        "inputSha256": "cbd7ac675bc3058669e60a24b099afa25aa61de8ab2e636188d571b63802a804",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/software-team/extensions.yaml",
+        "inputSha256": "bfde6db7b38dd0fe0daf9d5aae9ad7298b786fd20c9eeb37db00df9f07f0bf1a",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/software-team/handoffs.yaml",
+        "inputSha256": "84f28e190d52143c519896a7cbe209f4bd2a9ff8ec3bbe5609c06522c15a8f06",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/software-team/memory.yaml",
+        "inputSha256": "1f3b35757ca3685126a9e29bbde0f1e34694147cac52f598996f71ff5fadcfcb",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/software-team/model-profiles.yaml",
+        "inputSha256": "e1d16dff14349f7c3997ce884ebe5d5be7c1361d2122a64465a17ac0282a5b51",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/software-team/permissions.yaml",
+        "inputSha256": "8cd6f68067ead2826dbcd9e4f840db471c79686849e12d9dfbb72bb28255c24b",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/software-team/project.yaml",
+        "inputSha256": "545fc4656053fad4421eb28e48f5e7f08592003527940074553dc179c7cb9b21",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/software-team/prompt-sets.yaml",
+        "inputSha256": "30875f43ec7e710b3f85670f11c7df5c6d7df07daf50012a2f4a0b7db539e6a6",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/software-team/providers.yaml",
+        "inputSha256": "96526260fbb4d8bf1353ad2f1dfc1f4a48a157d05a237a3c59931bae030af866",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/software-team/retrieval-profiles.yaml",
+        "inputSha256": "443d4b68de3e2302d98f63127dc85f808e166697ac79e0b8cebc0033b5a5c567",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/software-team/tasks.yaml",
+        "inputSha256": "45636e5a18594529f86f8e5c0ff8f845df5d4267b13b79d90da8d17fdf28a7e6",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/software-team/workflow.yaml",
+        "inputSha256": "3750bdbd5533d807261164cdd45d023b81e74b5f83aa7396559106f37ee81fae",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/startup-team/agent-definitions.yaml",
+        "inputSha256": "c13fb11e3eb340e5f63554315fa6c08d1ccd64763cd1da8f2a69d7a49dea02a6",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/startup-team/agents.yaml",
+        "inputSha256": "a2390e901d47520db65b7916fce6f7a4788bdad50fc5c5ef0f7ff26032271387",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/startup-team/capabilities.yaml",
+        "inputSha256": "263946e1780ac2bb052a070a1587ab7585c59b7bcd02651e53b01e7701b0671a",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/startup-team/context.yaml",
+        "inputSha256": "31f678b1f646e3f6f3afa02b7c2a01d00aa7001b38696cba3614d33736424586",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/startup-team/events.yaml",
+        "inputSha256": "eb90bba402f2780ef9564814bc46ae6d479e8080aaff625f3483bd443452e609",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/startup-team/extensions.yaml",
+        "inputSha256": "ca72707bde5ea39b10a64959a2ae0509aff63e4303d2911bf3e448c05cdb4a63",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/startup-team/handoffs.yaml",
+        "inputSha256": "7d20f574d27336226cf4fa3f9e36d3f53fec7b2c6e9ea18d1485046106978f6a",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/startup-team/memory.yaml",
+        "inputSha256": "c2e724ce937744aa16e6fbaf370a6c9fee7ce41f8b3881d6921a689cb0d14743",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/startup-team/model-profiles.yaml",
+        "inputSha256": "6b37395bb0683eb688a4709e88279587253e9c212f62e96e1f7fbc51fe62c70f",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/startup-team/permissions.yaml",
+        "inputSha256": "7a6d63a0e9c8dc1160950a9da580ccb6f650d5eb0c92f8f48f2b3104f4ff658d",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/startup-team/project.yaml",
+        "inputSha256": "0b9f441a0a554de722c50f5f140e2b7592c9861d6905e0ca9721fda54c921237",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/startup-team/prompt-sets.yaml",
+        "inputSha256": "e13c0b563c683e88b79b6fc42c32a055c97cf7edcddc18d966210deaa037ba04",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/startup-team/providers.yaml",
+        "inputSha256": "e99a6e3bd24c159603e9a0ac8d3c7e5e6043ffb2ad3e367d5cb7ce58443edb04",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/startup-team/retrieval-profiles.yaml",
+        "inputSha256": "8439aac349def59c1d1f02125bba91c75e4e976fd220fa9d836f5de399e95c65",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/startup-team/tasks.yaml",
+        "inputSha256": "6bd7d6d499caaf08a61912abdf573d9f93ce332484f44ae7f375b6123cddd544",
+        "valid": true,
+        "diagnostics": []
+      },
+      {
+        "file": "examples/startup-team/workflow.yaml",
+        "inputSha256": "90ec42dee97b3a314b96e11816e91d7888ea24a8b04fa19a1cb774dade5b110f",
+        "valid": true,
+        "diagnostics": []
+      }
+    ]
+  },
+  "schemasChangedSinceV070": [],
+  "legacyRuleDocuments": [
+    {
+      "path": "docs/approval-gate-targets.md",
+      "unchangedSinceCatalog": true
+    },
+    {
+      "path": "docs/effective-agent-configuration.md",
+      "unchangedSinceCatalog": true
+    },
+    {
+      "path": "docs/manifest-discovery.md",
+      "unchangedSinceCatalog": true
+    },
+    {
+      "path": "docs/semantic-reference-inventory.md",
+      "unchangedSinceCatalog": true
+    },
+    {
+      "path": "docs/typed-references.md",
+      "unchangedSinceCatalog": true
+    },
+    {
+      "path": "docs/validation.md",
+      "unchangedSinceCatalog": false
+    },
+    {
+      "path": "docs/work-reference-namespaces.md",
+      "unchangedSinceCatalog": true
+    }
+  ],
+  "acceptanceNarrowing": [
+    {
+      "id": "credential-handling-previously-unknown-field",
+      "value": {
+        "specVersion": "0.1",
+        "kind": "Project",
+        "metadata": {
+          "project": "minimal-team",
+          "name": "Minimal Team"
+        },
+        "project": {
+          "id": "minimal-team",
+          "displayName": "Minimal Team",
+          "description": "Minimum useful NexFlow identity and responsibility description.",
+          "license": "MIT",
+          "maintainers": [
+            {
+              "id": "human-maintainer",
+              "name": "Human Maintainer",
+              "role": "maintainer"
+            }
+          ],
+          "policies": {
+            "credentialHandling": "external-reference-only"
+          }
+        },
+        "manifests": {
+          "actors": "actors.yaml",
+          "agents": "agents.yaml"
+        }
+      },
+      "beforeValid": true,
+      "afterValid": false,
+      "afterDiagnostics": [
+        {
+          "keyword": "type",
+          "path": "/project/policies/credentialHandling"
+        }
+      ],
+      "interpretation": "Old open-object schema admitted an unspecified field; the current typed policy rejects a string. This is schema-acceptance narrowing, not proof of a prior credential authority contract."
+    }
+  ],
+  "legacyCatalogFileCoverage": {
+    "unchanged": 156,
+    "total": 156
+  }
+}

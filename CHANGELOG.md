@@ -6,6 +6,17 @@ This project follows a specification-first process. Breaking changes must includ
 
 ## [Unreleased]
 
+### Added
+
+- Prepared NF-119's 447-case interoperability corpus on an immutable source
+  snapshot, covering all eight example teams, the complete frozen library
+  catalog, prototype/public CLI, claim format, extension metadata, migration
+  cases and unsupported runtime boundaries. Added hash/recipe/observation
+  verification and focused CI. The preliminary version review retains a real
+  foundation-accepted/current-rejected credential-policy input; comparison
+  uses the implemented 0.1 Draft snapshot, while NF-121 retains the release
+  version/status decision. No independent comparison or 0.8 release is claimed.
+
 ### Changed
 
 - Synchronized current release, package, runtime and support statements across

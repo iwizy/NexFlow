@@ -131,6 +131,8 @@ uncataloged documentation pages, and missing top-level guide links.
 | [Schema Bundle Publication](schema-bundle-publication.md) | Defines a future language-neutral schema artifact layout, index, independent versions, deterministic assembly, integrity, safe consumption, and publication gates. |
 | [Compatibility](compatibility.md) | Compatibility expectations and breaking change guidance. |
 | [Compatibility Matrix](compatibility-matrix.md) | Current support across spec versions, schemas, examples, validators, CLI, runtime, and extensions. |
+| [Interoperability Corpus](0.8/interoperability-corpus.md) | Frozen case composition, representative teams, diagnostic normalization, migration and unsupported boundaries for 0.8 preparation. |
+| [0.8 Specification Version Review](0.8/specification-version-review.md) | Preliminary alternatives, measured compatibility and retained acceptance narrowing; final release decision belongs to NF-121. |
 | [Release Plan](release-plan.md) | Public readiness criteria from `0.1` draft through `1.0`. |
 | [0.4 Alpha Preparation Checkpoint](0.4-alpha-checkpoint.md) | Records the gate-by-gate CLI alpha readiness assessment, evidence inventory, blockers, claim ceiling, and current `not-ready` decision. |
 | [0.1 Candidate Scope](0.1-scope.md) | Freezes the 17-kind baseline, RFC-backed feature treatment, deferred work, and remaining candidate blockers. |

@@ -131,7 +131,9 @@ extension, provider, audit, conformance, compatibility, and ownership gates.
 The current outcome is `accepted` within that explicit scope. Delivery remains
 unsigned developer source with separately provisioned Node. Project signing,
 notarization and trusted public product delivery are unperformed. Runtime
-implementation and NF-103 release approval remain separate decisions.
+implementation beyond the offline fixture and any new product delivery require
+their own review. NF-103 completed the 0.4 source milestone; subsequent published
+0.5–0.7 releases have separate exact-source evidence.
 
 ### Architecture Decision Gate
 

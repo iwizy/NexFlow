@@ -22,8 +22,10 @@ integration metadata, compatibility and migration.
 ## Status
 
 Latest published release: [GitHub release history](https://github.com/iwizy/NexFlow/releases/latest).
-Current source release: [**`v0.6.0`**](https://github.com/iwizy/NexFlow/releases/tag/v0.6.0),
-the Runtime Prototype Boundary milestone, published on 2026-11-15.
+Current source release: [**`v0.7.0`**](https://github.com/iwizy/NexFlow/releases/tag/v0.7.0).
+The Integration and Extension Hardening milestone was published on 2026-11-26;
+its [public-source verification receipt](https://github.com/iwizy/NexFlow/releases/download/v0.7.0/PUBLICATION.json)
+records both source archives and offline checks on all three native targets.
 The reference CLI and pure validator are distributed as
 [`v0.5.0-alpha.1`](https://github.com/iwizy/NexFlow/releases/tag/v0.5.0-alpha.1).
 Manifest `specVersion` remains `"0.1"`.
@@ -47,7 +49,7 @@ adds a later exact-source assessment and reproducible checks. It preserves the
 published release history, partial semantics and draft conformance boundaries;
 it is not another release or a new support claim.
 
-The published release sequence is **`0.1` → `0.2` → `0.3` → `0.4` → `0.5.0-alpha.1` → `0.6`**, with separate
+The published release sequence is **`v0.1.0` → `v0.2.0` → `v0.3.0` → `v0.4.0` → `v0.5.0-alpha.1` → `v0.6.0` → `v0.7.0`**, with separate
 [validation/conformance](release/0.2-release-review.md) and
 [semantic-consistency](release/0.3-release-review.md) reviews and commit-bound
 evidence. Scope approval does not replace final candidate checks. The
@@ -99,7 +101,7 @@ states, not synonyms for the implementation evidence summarized below.
 | Event interoperability | Specified as CloudEvents and OpenTelemetry EventRecord mappings; no exporter or transport | [Event Interoperability](docs/event-interoperability.md), [Event Model](docs/events.md) |
 | Conformance claim format | Implemented as a standalone schema, profile-qualified YAML and Markdown templates, and 37 cataloged claim-format cases; a revision-pinned repository-validator statement remains draft and partial, not an `NF-CLI` claim | `npm run conformance-claim-smoke`, [Conformance Fixtures](fixtures/conformance/), [Draft Validator Statement](conformance/REPOSITORY-VALIDATOR-CLAIM.md), [Conformance Claims](docs/conformance-claims.md) |
 | Candidate readiness record | Standalone `0.1` schema/template with milestone-specific source and evidence bindings | `npm run candidate-readiness-smoke`, [0.1 Readiness Checklist](docs/readiness-checklist.md), [Release Evidence](release/README.md) |
-| Current milestone | Published `v0.6.0` source prototype and `v0.5.0-alpha.1` tooling; the [0.7 review](release/0.7/review.md) covers extension hardening | [Publication Verification](release/0.4-publication.md), [Changelog](CHANGELOG.md), [Release Reviews](release/README.md), [Roadmap](docs/roadmap.md) |
+| Current milestone | Published `v0.7.0` source extension/integration hardening, retaining the bounded offline host and `v0.5.0-alpha.1` tooling | [Publication Verification](https://github.com/iwizy/NexFlow/releases/download/v0.7.0/PUBLICATION.json), [Changelog](CHANGELOG.md), [Release Reviews](release/README.md), [Roadmap](docs/roadmap.md) |
 | Semantic reference checks | Partial repository smoke coverage | `npm run semantic-smoke`, [Validation](docs/validation.md) |
 | Governance and RFC process | Implemented in documentation | [Governance](docs/governance.md), [RFCs](rfcs/README.md) |
 | Foundational model changes | ActorSet, compact AgentSet, and authoritative unique-active-definition slices implemented; RFCs remain Draft | [Actor Model](docs/actor-model.md), [Effective Agent Configuration](docs/effective-agent-configuration.md), [Foundational Model Review](rfcs/reviews/2026-07-foundational-model-review.md) |

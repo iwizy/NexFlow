@@ -97,7 +97,7 @@ triage against current code does not promise backports to every historical tag.
 | Surface | Current status |
 | --- | --- |
 | `develop` | Active pre-release specification and implemented-tooling maintenance. |
-| `v0.6.0` | Latest published source milestone; the host supports one synthetic offline fixture with the limits in `prototype/README.md`. |
+| `v0.7.0` | Latest published source milestone; extension/integration checks remain offline, and the host supports one synthetic fixture with the limits in `prototype/README.md`. |
 | Earlier release tags | Historical snapshots; include the exact revision when reporting an issue. |
 | Manifest `specVersion: "0.1"` | The authored format, separate from release and package versions; not a security-support branch identifier. |
 | CLI and validation packages `0.5.0-alpha.1` | Published unsigned developer preview; exact archive and target limits are recorded in the installation and support guides. |

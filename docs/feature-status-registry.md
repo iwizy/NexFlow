@@ -6,7 +6,7 @@ manifest kind, every numbered RFC proposal, experimental implementation slices,
 explicitly deprecated fields and the planned implementations most easily
 confused with existing documentation.
 
-Current source snapshot: `5ee82f536984d54997cf7e514d730dd9d8e75c2a`.
+Lifecycle inventory baseline snapshot: `5ee82f536984d54997cf7e514d730dd9d8e75c2a`.
 The inventory describes that source plus the source CLI, installable candidate
 and bounded package security qualification, with synchronized documentation.
 A later edit must update the affected rows and their evidence; this is not a

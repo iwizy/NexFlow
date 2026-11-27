@@ -1,5 +1,7 @@
 # NexFlow Release Evidence
 
+Current source release: [**`v0.7.0`**](https://github.com/iwizy/NexFlow/releases/tag/v0.7.0).
+
 This directory contains standalone artifacts for recording release decisions.
 They are repository maintenance records, not NexFlow project manifests, release
 announcements, conformance certificates, or runtime guarantees.
@@ -12,10 +14,13 @@ while keeping the record, check output, and review attached to the exact tag.
 
 NF-118's [technical review](0.7/review.md), [readiness record](0.7/record.json)
 and [evidence index](0.7/evidence.json) bind the source and fixture scope of the
-proposed source milestone to NF-115–117 and actual CI results. The
-[proposed notes](0.7/release-notes.md) retain implementation, security and
-migration limits. Promotion, publication and public-download verification
-require their own subsequent decision and receipts.
+source milestone to NF-115–117 and actual CI results. The original
+[pre-publication notes](0.7/release-notes.md) retain their reviewed scope.
+[v0.7.0](https://github.com/iwizy/NexFlow/releases/tag/v0.7.0) is now published; its
+[public-download receipt](https://github.com/iwizy/NexFlow/releases/download/v0.7.0/PUBLICATION.json)
+and [SHA256SUMS](https://github.com/iwizy/NexFlow/releases/download/v0.7.0/SHA256SUMS)
+record the exact source and passed native checks. Historical readiness records
+remain unchanged and do not themselves grant publication authority.
 
 ## 0.1 Candidate Record
 

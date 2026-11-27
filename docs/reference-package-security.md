@@ -1,5 +1,9 @@
 # Reference Package Security Qualification
 
+The selected [published preview](reference-cli-installation.md) has its own
+exact release/security evidence. The NF-108 assessment below is dated
+candidate history; it must not be read as a fresh advisory scan of every build.
+
 NF-108 reviews the actual installed [candidate](reference-package-candidate.md),
 not only the repository's npm graph. This is a single-maintainer review through
 two technical lenses: data/code boundaries and dependency/distribution risks.

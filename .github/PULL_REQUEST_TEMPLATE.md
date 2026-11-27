@@ -31,11 +31,13 @@ docs/provider-neutrality-checklist.md. "No impact" is fine with a brief reason. 
 ## Validation
 
 <!-- List the exact commands or manual reviews run and their outcomes. Note
-checks not run or evidence gaps. A passing schema check does not establish
+checks not run or evidence gaps. Include documentation-navigation-smoke and the
+current-status review. A passing schema check does not establish
 semantic or runtime behavior. -->
 
 ## Review Checklist
 
+- [ ] README release/status, SECURITY, CONTRIBUTING, roadmap, compatibility and affected guides were reviewed; changed claims are updated and unchanged surfaces are noted.
 - [ ] Changed docs, schemas, examples, fixtures, and indexes are synchronized where applicable.
 - [ ] User-visible changes are recorded in `CHANGELOG.md`.
 - [ ] Compatibility and version decisions are documented; breaking changes use `docs/migration-guide.md`.

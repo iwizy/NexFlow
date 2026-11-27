@@ -74,7 +74,10 @@ access or executing work.
 2. Read the owning documents, related RFC status, compatibility matrix entry,
    and current Unreleased changelog.
 3. Define what changes, what stays compatible, and what remains unsupported.
-4. Identify every synchronized surface before editing.
+4. Identify every synchronized surface before editing. For every change, review
+   README status/release sequence, SECURITY, CONTRIBUTING, roadmap, compatibility
+   and affected package/usage guides. Update changed claims and identify reviewed
+   unchanged surfaces in the PR. Documentation freshness is part of task completion.
 5. Prefer the smallest change that proves the intended contract.
 6. Add focused positive and negative evidence proportional to the risk.
 7. Keep unrelated formatting, generated churn, and private working material
@@ -98,6 +101,12 @@ candidates. Use this flow for code, schemas, documentation and maintenance:
    trees before beginning the next release's tasks.
 5. Tag/package/release publication still requires its own applicable authority
    and downloaded-artifact verification. A branch merge is not publication.
+6. After verifying publication, update dated changelog entries and all current
+   release/package/support statements through the same integration flow. Keep
+   prepared candidates distinct from published releases. Preserve frozen release
+   archives and dated evidence; forward documentation corrections do not rewrite
+   them. Run `npm run documentation-navigation-smoke` and review the actual public
+   release page because the offline check cannot discover a new publication.
 
 The adoption of this flow preserves work already merged into `main`, including
 NF-105. The one-time policy synchronization establishes equal branches without

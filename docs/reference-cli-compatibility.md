@@ -56,10 +56,10 @@ record first. If no permitted predecessor is safe/available, remove the scoped
 consumer and stop; do not invent a rollback or disable integrity checks.
 
 Public immutable assets must not be overwritten under the same filename/tag to
-hide a defect. After a future publication, corrections need a new preview
+hide a defect. Corrections to a published package need a new preview
 identifier, new candidate evidence and migration notes. Known bad assets must
 be identified explicitly; withdrawal must explain impact, replacement and
-whether previously downloaded bytes are affected. Published 0.1–0.4 tags and
+whether previously downloaded bytes are affected. Existing published tags and
 their evidence are preserved. Package/version changes are separately reviewed.
 
 ## Maintainer And Feedback

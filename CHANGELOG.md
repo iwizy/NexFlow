@@ -6,6 +6,25 @@ This project follows a specification-first process. Breaking changes must includ
 
 ## [Unreleased]
 
+### Changed
+
+- Synchronized current release, package, runtime and support statements across
+  root and implementation guides after publication of v0.7.0. Added dated
+  0.5–0.7 publication entries and current-status checks to the existing offline
+  documentation verifier. Every change now explicitly reviews affected docs.
+
+## [0.7.0] - 2026-11-26
+
+Published Integration and Extension Hardening as a source milestone from
+`eb1a6cbe0c1a753c88b7d07119df74ced53ced56`, after 11 main CI workflows passed.
+Both public source archives matched all 1,165 Git files and passed source,
+compatibility and 76-case host fixture checks on Linux AMD64, macOS ARM64 and
+Windows AMD64. [Release](https://github.com/iwizy/NexFlow/releases/tag/v0.7.0) and [publication receipt](https://github.com/iwizy/NexFlow/releases/download/v0.7.0/PUBLICATION.json)
+preserve hashes, exact verification revisions and the disclosed Windows harness
+adaptations. Technical readiness remains ready-with-notes. Manifest 0.1 and
+published tooling 0.5.0-alpha.1 are unchanged; live integrations, executable
+loading, publisher signing and broad conformance remain outside the scope.
+
 ### Added
 
 - Prepared the 0.7 source milestone review covering namespace ownership,
@@ -13,6 +32,31 @@ This project follows a specification-first process. Breaking changes must includ
   handling. The review binds NF-115–117 to exact source and CI evidence,
   preserves the published validator/CLI and fixture-host limits, and records
   the separate publication decision.
+
+## [0.6.0] - 2026-11-15
+
+Published Runtime Prototype Boundary from
+`22364e3235e2ac273466318255d67331b49f47db`. The source-only host supports one
+synthetic offline operation with explicit admission, approval and event/receipt
+boundaries. Both public source archives matched 1,149 Git files; 76 fixture cases
+passed from each archive on all three native targets. [Release and verification](https://github.com/iwizy/NexFlow/releases/tag/v0.6.0).
+No production runtime, native installer or NF-RUNTIME conformance is claimed.
+
+## [0.5.0-alpha.1] - 2026-11-12
+
+Published the bounded reference CLI and validation library developer preview
+from `3aabaf610a5bd72f4f58f4ddb1b4a91dc5ee164b`; selected package source
+`89292102783454140671d706c234f8e6d17a337c`. Downloaded archives and native
+installation were verified on all three targets with Node 26.13.1/npm 11.20.0.
+[Release and archive checksums](https://github.com/iwizy/NexFlow/releases/tag/v0.5.0-alpha.1) retain the selected bytes and limits.
+Commands are validate, inspect, static graph, help and version; init, full
+semantics, runtime and extension execution remain unsupported/not-run.
+
+The development entries below describe their original stage and candidate
+scope. References to an unreleased candidate or Node 26.13.0 in this dated
+history do not describe the final published pairing above.
+
+### Added
 
 - Updated the exact first-alpha runtime to Node.js 26.13.1 after the November
   security bulletin and requalified the selected packages on all three targets.

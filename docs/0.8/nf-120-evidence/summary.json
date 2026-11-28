@@ -1,0 +1,6912 @@
+{
+  "task": "NF-120",
+  "outcome": "comparison-recorded-with-gaps",
+  "specification": "0.1 Draft comparison baseline; NF-121 decision pending",
+  "corpusId": "nf-119-interop-v1",
+  "corpusSha256": "d080a4cf0cfc82a16d74b9b43f5d24b3f7949970b106b763f7922447f8af5439",
+  "corpusInputRevision": "a7dd64df680babaf9dcf26fcea181c41f30f8ea2",
+  "implementationRevision": "bd5cd4140801f205746fac17ea9d3a258993011c",
+  "caseCount": 447,
+  "environment": {
+    "platform": "darwin",
+    "architecture": "arm64",
+    "kernel": "27.2.0",
+    "node": "26.13.1",
+    "osVersion": "27.2.1",
+    "referenceDependencies": {
+      "ajv": "8.20.0",
+      "ajv-formats": "3.0.1",
+      "yaml": "2.9.0",
+      "typescript": "6.0.3"
+    },
+    "python": {
+      "version": "3.12.15",
+      "dependencies": {
+        "PyYAML": "6.0.3",
+        "attrs": "26.1.0",
+        "jsonschema": "4.26.0",
+        "jsonschema-specifications": "2025.9.1",
+        "referencing": "0.37.0",
+        "rfc3339-validator": "0.1.4",
+        "rpds-py": "2026.6.3",
+        "six": "1.17.0",
+        "typing_extensions": "4.16.0"
+      }
+    }
+  },
+  "repeatability": {
+    "reference": {
+      "rawOrderAndValuesEqual": true,
+      "inputMutation": "none",
+      "runs": 2
+    },
+    "python": {
+      "rawOrderAndValuesEqual": true,
+      "inputMutation": "none",
+      "runs": 2
+    }
+  },
+  "rawHashes": {
+    "reference": [
+      {
+        "file": "reference-run-1.jsonl",
+        "sha256": "c28c245d416884f5ad7df33fd18de54a7bcd4ccdd5b8a8ddcf60aafdb508b875"
+      },
+      {
+        "file": "reference-run-2.jsonl",
+        "sha256": "c28c245d416884f5ad7df33fd18de54a7bcd4ccdd5b8a8ddcf60aafdb508b875"
+      }
+    ],
+    "python": [
+      {
+        "file": "python-run-1.jsonl",
+        "sha256": "bf1b2517f05796b9383aa4e941bfdd9929797fcf7b4e97cb3b48eeaabc4da6ee"
+      },
+      {
+        "file": "python-run-2.jsonl",
+        "sha256": "bf1b2517f05796b9383aa4e941bfdd9929797fcf7b4e97cb3b48eeaabc4da6ee"
+      }
+    ]
+  },
+  "profileSummary": {
+    "static-fragments": {
+      "cases": 224,
+      "matches": 0,
+      "differences": 0,
+      "outsideCommonScope": 224,
+      "reference": {
+        "observed": 0,
+        "unsupported": 224,
+        "error": 0,
+        "not-tested": 0
+      },
+      "python": {
+        "observed": 224,
+        "unsupported": 0,
+        "error": 0,
+        "not-tested": 0
+      }
+    },
+    "schema": {
+      "cases": 113,
+      "matches": 112,
+      "differences": 1,
+      "outsideCommonScope": 0,
+      "reference": {
+        "observed": 113,
+        "unsupported": 0,
+        "error": 0,
+        "not-tested": 0
+      },
+      "python": {
+        "observed": 113,
+        "unsupported": 0,
+        "error": 0,
+        "not-tested": 0
+      }
+    },
+    "local-schema-engine": {
+      "cases": 5,
+      "matches": 0,
+      "differences": 0,
+      "outsideCommonScope": 5,
+      "reference": {
+        "observed": 0,
+        "unsupported": 5,
+        "error": 0,
+        "not-tested": 0
+      },
+      "python": {
+        "observed": 5,
+        "unsupported": 0,
+        "error": 0,
+        "not-tested": 0
+      }
+    },
+    "parser": {
+      "cases": 3,
+      "matches": 3,
+      "differences": 0,
+      "outsideCommonScope": 0,
+      "reference": {
+        "observed": 3,
+        "unsupported": 0,
+        "error": 0,
+        "not-tested": 0
+      },
+      "python": {
+        "observed": 3,
+        "unsupported": 0,
+        "error": 0,
+        "not-tested": 0
+      }
+    },
+    "discovery": {
+      "cases": 7,
+      "matches": 6,
+      "differences": 1,
+      "outsideCommonScope": 0,
+      "reference": {
+        "observed": 7,
+        "unsupported": 0,
+        "error": 0,
+        "not-tested": 0
+      },
+      "python": {
+        "observed": 7,
+        "unsupported": 0,
+        "error": 0,
+        "not-tested": 0
+      }
+    },
+    "prototype-cli": {
+      "cases": 15,
+      "matches": 0,
+      "differences": 0,
+      "outsideCommonScope": 15,
+      "reference": {
+        "observed": 0,
+        "unsupported": 15,
+        "error": 0,
+        "not-tested": 0
+      },
+      "python": {
+        "observed": 8,
+        "unsupported": 7,
+        "error": 0,
+        "not-tested": 0
+      }
+    },
+    "claim-format": {
+      "cases": 37,
+      "matches": 0,
+      "differences": 0,
+      "outsideCommonScope": 37,
+      "reference": {
+        "observed": 0,
+        "unsupported": 37,
+        "error": 0,
+        "not-tested": 0
+      },
+      "python": {
+        "observed": 0,
+        "unsupported": 37,
+        "error": 0,
+        "not-tested": 0
+      }
+    },
+    "extension-metadata": {
+      "cases": 17,
+      "matches": 0,
+      "differences": 0,
+      "outsideCommonScope": 17,
+      "reference": {
+        "observed": 0,
+        "unsupported": 17,
+        "error": 0,
+        "not-tested": 0
+      },
+      "python": {
+        "observed": 0,
+        "unsupported": 17,
+        "error": 0,
+        "not-tested": 0
+      }
+    },
+    "migration": {
+      "cases": 15,
+      "matches": 15,
+      "differences": 0,
+      "outsideCommonScope": 0,
+      "reference": {
+        "observed": 15,
+        "unsupported": 0,
+        "error": 0,
+        "not-tested": 0
+      },
+      "python": {
+        "observed": 15,
+        "unsupported": 0,
+        "error": 0,
+        "not-tested": 0
+      }
+    },
+    "public-cli": {
+      "cases": 7,
+      "matches": 0,
+      "differences": 3,
+      "outsideCommonScope": 4,
+      "reference": {
+        "observed": 7,
+        "unsupported": 0,
+        "error": 0,
+        "not-tested": 0
+      },
+      "python": {
+        "observed": 3,
+        "unsupported": 4,
+        "error": 0,
+        "not-tested": 0
+      }
+    },
+    "runtime-boundary": {
+      "cases": 4,
+      "matches": 0,
+      "differences": 0,
+      "outsideCommonScope": 4,
+      "reference": {
+        "observed": 0,
+        "unsupported": 4,
+        "error": 0,
+        "not-tested": 0
+      },
+      "python": {
+        "observed": 0,
+        "unsupported": 4,
+        "error": 0,
+        "not-tested": 0
+      }
+    }
+  },
+  "adapterSources": [
+    {
+      "file": "scripts/interoperability-compare.mjs",
+      "sha256": "ec885c875fa42fcb505e31c212621188b04f074e70fdfecbb101d1db7c04841f"
+    },
+    {
+      "file": "scripts/interop-reference-driver.mjs",
+      "sha256": "819ab2e47f149fbb2e6a3d49a28fe2389acda5c1ad41b69863de39c2e4aeee16"
+    },
+    {
+      "file": "scripts/interop-python-driver.py",
+      "sha256": "43c98cbc145d784aadf21a20b208ad5068b618aa141ffacf7bb1930313321751"
+    }
+  ],
+  "implementationPins": [
+    {
+      "file": "evaluation/prototypes/python/.python-version",
+      "sha256": "845c494b4a7e1a741db19fd42eda239d3ee03b65f08276008943349a3055c9cc"
+    },
+    {
+      "file": "evaluation/prototypes/python/README.md",
+      "sha256": "fa80c4e7cf49c0b2d538cf015997c513735726a469aa59b5e19011d26129c531"
+    },
+    {
+      "file": "evaluation/prototypes/python/cli.py",
+      "sha256": "ac602e08999c07b14215c577b38b411e3c298b902f5700db681a61839c5d1fe5"
+    },
+    {
+      "file": "evaluation/prototypes/python/library_driver.py",
+      "sha256": "4c7d2a24e5eb330dcdf60caf3fbebcc347ba9d9d9f57feb7c9cc67191c9334e2"
+    },
+    {
+      "file": "evaluation/prototypes/python/nexflow_python_evaluation/__init__.py",
+      "sha256": "b0b4d4b76c2e19981a4791177534d58c7e17d55ced1cb27a2da7efd8917cb5c6"
+    },
+    {
+      "file": "evaluation/prototypes/python/nexflow_python_evaluation/discovery.py",
+      "sha256": "42e101935704f55f43b57252e5c9b60f1fb21186f1adc687e76831a6dc45ca88"
+    },
+    {
+      "file": "evaluation/prototypes/python/nexflow_python_evaluation/files.py",
+      "sha256": "4bbf3e9894d39e0309c00198783c983c312c119618e3612889e5eebb3ee74eaf"
+    },
+    {
+      "file": "evaluation/prototypes/python/nexflow_python_evaluation/inspection.py",
+      "sha256": "5a49f74f3ed434e462f0b64403f91af33685681e0b5f2d801cb238fd25aee0c7"
+    },
+    {
+      "file": "evaluation/prototypes/python/nexflow_python_evaluation/library.py",
+      "sha256": "5a50be62787d304441ba54759f1fdc2704a3d1c2183b4ebd075277293b2596ee"
+    },
+    {
+      "file": "evaluation/prototypes/python/nexflow_python_evaluation/model.py",
+      "sha256": "2429b1e2ac8ca511f6074a43f28a1d2f8e287675fc8cffbcf1ee573a3334a440"
+    },
+    {
+      "file": "evaluation/prototypes/python/nexflow_python_evaluation/public.py",
+      "sha256": "e3cf57d26dd2d4bee247a604633752defd3172592355be4bd61c18b860a9d56c"
+    },
+    {
+      "file": "evaluation/prototypes/python/nexflow_python_evaluation/schema.py",
+      "sha256": "f00871b39d1d47b2c67c9d8450b412644543c034ee296391050d449b09b6887b"
+    },
+    {
+      "file": "evaluation/prototypes/python/nexflow_python_evaluation/semantic-rules.json",
+      "sha256": "4aa1981c1e74ee6676a0f1fdb1266380e1296a9e017a3dc21f2e5316217b45c0"
+    },
+    {
+      "file": "evaluation/prototypes/python/nexflow_python_evaluation/semantics.py",
+      "sha256": "46f302b4dd2e750bf5c3f39d3e51fc7a2d11e4d4028815f29cc61b6fa2c2dca9"
+    },
+    {
+      "file": "evaluation/prototypes/python/nexflow_python_evaluation/yaml_input.py",
+      "sha256": "4c460e98505c283e46dee355b500afcab3a18aa807e75384d816e4cdab8daa63"
+    },
+    {
+      "file": "evaluation/prototypes/python/requirements.in",
+      "sha256": "5eb0969fa05027e2549cd254b67c7c31160c08c6ed14c02e9188fecd73ef953e"
+    },
+    {
+      "file": "evaluation/prototypes/python/requirements.lock",
+      "sha256": "6d95fc741f0f204c6f16c218360bd502188ba86bc95234c5b04d47e535ad25d7"
+    },
+    {
+      "file": "evaluation/prototypes/python/self_test.py",
+      "sha256": "c689ee6bdbbe156bca26fd8904486bde4004e06a0650dea749a239ec878e4f02"
+    },
+    {
+      "file": "packages/cli/README.md",
+      "sha256": "303ccd39dc2bd0ce371cf97c7d89d982c01763f44cd1c7e00342d7d9f5707ba7"
+    },
+    {
+      "file": "packages/cli/contracts/output.schema.json",
+      "sha256": "caa23e0ec634fb336f5861273cbb3caba505309b20b1e466e8bdc835bb0a5548"
+    },
+    {
+      "file": "packages/cli/contracts/schema-bundle.schema.json",
+      "sha256": "5d75d576d1e8adea2323c68a09c285ebc1fb2020c6e0b485ab9a7b86960a0c9c"
+    },
+    {
+      "file": "packages/cli/distribution/README.md",
+      "sha256": "a8ec9dbbf2abfa25c0237112cec8fcb2f5bffb6350a234b3ea66bee8d59db954"
+    },
+    {
+      "file": "packages/cli/distribution/verify-package.mjs",
+      "sha256": "6cecf96e6a9067b7c69d980840436e0c5a3e0f5cbf997204e0da99ed354e4640"
+    },
+    {
+      "file": "packages/cli/package.json",
+      "sha256": "99718f35229579e55afd81208b0467833e9c52005d2746d6af235f1362665ce6"
+    },
+    {
+      "file": "packages/cli/scripts/build.mjs",
+      "sha256": "93dce4b1304e57a3b619a6b7c091b665181463ec3b4383703149675a15056505"
+    },
+    {
+      "file": "packages/cli/src/arguments.ts",
+      "sha256": "5eb31a756f8a9c8df3cb51984dd058eabf4c7e1b04fdcf589f827856d3ad5751"
+    },
+    {
+      "file": "packages/cli/src/files.ts",
+      "sha256": "0c61dfc57b434700525f13c7dd6bb62ae8e285bae2680f1275db394a7d044117"
+    },
+    {
+      "file": "packages/cli/src/graph.ts",
+      "sha256": "14d0899724f7110a09d64150168f3947024be2b026bf56f7880b8c036157da67"
+    },
+    {
+      "file": "packages/cli/src/main.ts",
+      "sha256": "a7117f357612522f0ebf5e164c591b8713b061222eb92ca2a0db78d4f000a4e3"
+    },
+    {
+      "file": "packages/cli/src/output.ts",
+      "sha256": "2b3b2788df16b606e5e482f8e278f73237df88c3192b653ef5d94328d0328c92"
+    },
+    {
+      "file": "packages/cli/src/runtime.ts",
+      "sha256": "bbfabd22207be408b307f5cdf41d7159970c64db3af01bb10fac37bf8a38b432"
+    },
+    {
+      "file": "packages/cli/src/workspace.ts",
+      "sha256": "2a279521f774d72f83f773abd4e2edd0451a1fc79d095d506fa4fa6098b0fda5"
+    },
+    {
+      "file": "packages/cli/tsconfig.json",
+      "sha256": "3ca7f52433d70154484254801ddf0b84f1dd2bb981d513d3bfa1c5360f256340"
+    },
+    {
+      "file": "packages/validation/.gitignore",
+      "sha256": "aaa4cd41ff34b3c83da50dd5874ba94e08d394d73fb0522daeb8cbdbedffaca3"
+    },
+    {
+      "file": "packages/validation/LICENSE",
+      "sha256": "a5cad8e4acc33bcf795fcc9d97c4dea71b11513d301bab4bef1988cefb842383"
+    },
+    {
+      "file": "packages/validation/README.md",
+      "sha256": "a187fa3413c6f2324f2b5188c5349730dcd9e220feaee0489e9cedd81102a1ad"
+    },
+    {
+      "file": "packages/validation/package-lock.json",
+      "sha256": "e359af03ea9c262d18459caecc713471ca3191cf4a20eb5a4d9f11338a754dd6"
+    },
+    {
+      "file": "packages/validation/package.json",
+      "sha256": "feeb986a253aa5a17d0b4dee4a76adbeb2fb9f668aa69e7441ef521c80f89079"
+    },
+    {
+      "file": "packages/validation/schema-snapshot.json",
+      "sha256": "be5ff8d8d32f1fa099e253da8472c749c67cb6fd12786cda28263fa05b633d85"
+    },
+    {
+      "file": "packages/validation/scripts/build.mjs",
+      "sha256": "5e90e519a7e1902e77af3b7c1c09134ccef5088a00ce93ed9e964b30dde45d00"
+    },
+    {
+      "file": "packages/validation/src/assembly.ts",
+      "sha256": "a174df2ba6fadbff711c8981d63654cd6051efc7343263ecf37cc8201e6d4483"
+    },
+    {
+      "file": "packages/validation/src/diagnostics.ts",
+      "sha256": "6c65f577461b00977e349a815c9ebd9ffcefd1f30f7528bdc78bddfa9f1c97a4"
+    },
+    {
+      "file": "packages/validation/src/index.ts",
+      "sha256": "164a7dd59a6acb75b0b709242b2412937a0887b9b387d0e5a7e1f58c2ab62773"
+    },
+    {
+      "file": "packages/validation/src/inspection.ts",
+      "sha256": "74568c3083f9ea4f8ebf31d5fa9b22cd438a68f8d07df7dbf14d4ff7d03cb91d"
+    },
+    {
+      "file": "packages/validation/src/model.ts",
+      "sha256": "34e3db849317caf44ded993d151d6e1119a545676a91c347713e6d3368b09fed"
+    },
+    {
+      "file": "packages/validation/src/schema.ts",
+      "sha256": "5ca871a9a165101a86c2bdabf2948e63dade1d82c3291bcfc4d85e6659d3772f"
+    },
+    {
+      "file": "packages/validation/src/semantics.ts",
+      "sha256": "6500dfd261b1f4070d08f40b926d6c56673ed49981300ffa76437b01773c33c9"
+    },
+    {
+      "file": "packages/validation/src/yaml.ts",
+      "sha256": "70feb20c70a7457a81248af75b400271a6958277d849aeceb9241169c0971fd8"
+    },
+    {
+      "file": "packages/validation/tsconfig.json",
+      "sha256": "749eac120847e36804ecc9905652e066c3e055089804de46adc704f18713a850"
+    },
+    {
+      "file": "schemas/README.md",
+      "sha256": "28d1715b391c414c1a4c46410046277e783f5df60768761ea127630c8773a890"
+    },
+    {
+      "file": "schemas/actors.schema.json",
+      "sha256": "fb376254763eaa670696618678629f049cb6f782b7816aa20e0216e9625c21a3"
+    },
+    {
+      "file": "schemas/agent-definitions.schema.json",
+      "sha256": "0faad7750d9fd95914e09ee7ffbfb23236da303fbcfd211ce77c45589bfa68d7"
+    },
+    {
+      "file": "schemas/agents.schema.json",
+      "sha256": "7505ce0ad4ce18eb74a477982b31b77ca06d8069022300171c28e1ada419b24e"
+    },
+    {
+      "file": "schemas/capabilities.schema.json",
+      "sha256": "4fc446a356b2f7709bf259ad6fbf4632a64bc77800a43e77b81354710e5e3026"
+    },
+    {
+      "file": "schemas/common.schema.json",
+      "sha256": "a02f583325e2b20ffbb659efa451206579779a557a5fc89fbb412c10414630cc"
+    },
+    {
+      "file": "schemas/context.schema.json",
+      "sha256": "ad0fc663f5e4bf92eb033d250e38c2ef914947834aa03fc257d601a6226ad7a8"
+    },
+    {
+      "file": "schemas/events.schema.json",
+      "sha256": "d08c9cce4106394c5bf53a034ff8a574bfe11ccf085ac53f508459d7a0e98a65"
+    },
+    {
+      "file": "schemas/extensions.schema.json",
+      "sha256": "1c87855f8ec5eeba871981ab8d0feac4f026c508b943644bfbc350685270a31d"
+    },
+    {
+      "file": "schemas/handoffs.schema.json",
+      "sha256": "40af0a3c48b63f8709e8297badf4a9100fdcc3b22f66cc3c748b88628e5b1ab5"
+    },
+    {
+      "file": "schemas/memory.schema.json",
+      "sha256": "75a655d9b1aa57be73c6ec738e10faea327837838ecf2a4b7a1031e28486fb59"
+    },
+    {
+      "file": "schemas/model-profiles.schema.json",
+      "sha256": "0503322e7f73d62d3bbcad226799d6615ffc36339c2e9d9afe951c542a57ed00"
+    },
+    {
+      "file": "schemas/permissions.schema.json",
+      "sha256": "64084ad81e53b3629dfc4ecab3faf4ebd765105a3072c5f627c5d31daee2fbb0"
+    },
+    {
+      "file": "schemas/project.schema.json",
+      "sha256": "586bc846277b846f723371a734952fc30cf29e8c916d6b52db1897ac32fc0778"
+    },
+    {
+      "file": "schemas/prompt-sets.schema.json",
+      "sha256": "feaff935c6337638e4bd2cffdcd54d7bad516958cad0d0407185261dc2439d02"
+    },
+    {
+      "file": "schemas/providers.schema.json",
+      "sha256": "e3b55c4fbc2a86c05a82be8a7b3ef8126e04a13d425d5654a0e2ee0bca31e4fb"
+    },
+    {
+      "file": "schemas/retrieval-profiles.schema.json",
+      "sha256": "685bce372bc68e454b015afd39f412adc88c386f45c56144842fc11e4ff75ade"
+    },
+    {
+      "file": "schemas/tasks.schema.json",
+      "sha256": "4cf1f1f35396240abf7da7e018e03a0e99b99c71cb9881c4f729c0175a07a250"
+    },
+    {
+      "file": "schemas/workflow.schema.json",
+      "sha256": "1821ec6e26cc1e6060cd2388c22fc51c77a3678cf4ac8c1140934fe612a1b446"
+    }
+  ],
+  "buildPayload": {
+    "validation": [
+      [
+        "assembly.d.ts",
+        "4978145852dafbbf7bb2035fdbb99ea0fefad23fd79655b222c0fefa024fdaf4"
+      ],
+      [
+        "assembly.js",
+        "d7a9055141639a3f1492b1ab4ab79820215d448191fc7099a02491e4e450926f"
+      ],
+      [
+        "diagnostics.d.ts",
+        "b55acb3403802dde1eeaeae996ca024c74936c1df9086645d56fb074ef74e845"
+      ],
+      [
+        "diagnostics.js",
+        "6a204681dc030efc441839903c4e2265d1cd905737f5fdccb06b242ad6449877"
+      ],
+      [
+        "index.d.ts",
+        "00a1f6b68c88b364d851bed223f5912f93ef78f0b9e49368b919de29f30bede4"
+      ],
+      [
+        "index.js",
+        "518d1bc1c7e538637acc54720715cf668f51b9c8403818d4b801f8d9b7388c6a"
+      ],
+      [
+        "inspection.d.ts",
+        "78c92cb25da913b118b4c8cc03fd2509e60d34393c74127174a3988a9ad26853"
+      ],
+      [
+        "inspection.js",
+        "4fc5feb787172c3c3b2eab14adf32431c948e92a05c560bfe6785aeb07c89245"
+      ],
+      [
+        "model.d.ts",
+        "3d501f75bcc4e6a520427fc852b0dc55bbd30b9420fe844482b1fb63a72852aa"
+      ],
+      [
+        "model.js",
+        "764277da055a025a3b6b091d529beb6196a23071790454dc4511e022ecfb4a8d"
+      ],
+      [
+        "schema-data.d.ts",
+        "2ddc77a866949726510b7a8d33257152fc17ae772ce0d7c6c5131d3cbb02bca1"
+      ],
+      [
+        "schema-data.js",
+        "ea5e8feef6557232d3c67fad8a8715412cbbc9f297168d4856d3854ad17e2f08"
+      ],
+      [
+        "schema-snapshot.json",
+        "be5ff8d8d32f1fa099e253da8472c749c67cb6fd12786cda28263fa05b633d85"
+      ],
+      [
+        "schema.d.ts",
+        "0842a824ed0b00f50c687e5a29dc4582d768be3f63f944a479eebf01ab9f087b"
+      ],
+      [
+        "schema.js",
+        "cc67c9d9ac28ceb23e113306e5a35bedeb6cf7d0c9f06766e3d9c6d9aeb6209e"
+      ],
+      [
+        "schemas/actors.schema.json",
+        "fb376254763eaa670696618678629f049cb6f782b7816aa20e0216e9625c21a3"
+      ],
+      [
+        "schemas/agent-definitions.schema.json",
+        "0faad7750d9fd95914e09ee7ffbfb23236da303fbcfd211ce77c45589bfa68d7"
+      ],
+      [
+        "schemas/agents.schema.json",
+        "7505ce0ad4ce18eb74a477982b31b77ca06d8069022300171c28e1ada419b24e"
+      ],
+      [
+        "schemas/capabilities.schema.json",
+        "4fc446a356b2f7709bf259ad6fbf4632a64bc77800a43e77b81354710e5e3026"
+      ],
+      [
+        "schemas/common.schema.json",
+        "a02f583325e2b20ffbb659efa451206579779a557a5fc89fbb412c10414630cc"
+      ],
+      [
+        "schemas/context.schema.json",
+        "ad0fc663f5e4bf92eb033d250e38c2ef914947834aa03fc257d601a6226ad7a8"
+      ],
+      [
+        "schemas/events.schema.json",
+        "d08c9cce4106394c5bf53a034ff8a574bfe11ccf085ac53f508459d7a0e98a65"
+      ],
+      [
+        "schemas/extensions.schema.json",
+        "1c87855f8ec5eeba871981ab8d0feac4f026c508b943644bfbc350685270a31d"
+      ],
+      [
+        "schemas/handoffs.schema.json",
+        "40af0a3c48b63f8709e8297badf4a9100fdcc3b22f66cc3c748b88628e5b1ab5"
+      ],
+      [
+        "schemas/memory.schema.json",
+        "75a655d9b1aa57be73c6ec738e10faea327837838ecf2a4b7a1031e28486fb59"
+      ],
+      [
+        "schemas/model-profiles.schema.json",
+        "0503322e7f73d62d3bbcad226799d6615ffc36339c2e9d9afe951c542a57ed00"
+      ],
+      [
+        "schemas/permissions.schema.json",
+        "64084ad81e53b3629dfc4ecab3faf4ebd765105a3072c5f627c5d31daee2fbb0"
+      ],
+      [
+        "schemas/project.schema.json",
+        "586bc846277b846f723371a734952fc30cf29e8c916d6b52db1897ac32fc0778"
+      ],
+      [
+        "schemas/prompt-sets.schema.json",
+        "feaff935c6337638e4bd2cffdcd54d7bad516958cad0d0407185261dc2439d02"
+      ],
+      [
+        "schemas/providers.schema.json",
+        "e3b55c4fbc2a86c05a82be8a7b3ef8126e04a13d425d5654a0e2ee0bca31e4fb"
+      ],
+      [
+        "schemas/retrieval-profiles.schema.json",
+        "685bce372bc68e454b015afd39f412adc88c386f45c56144842fc11e4ff75ade"
+      ],
+      [
+        "schemas/tasks.schema.json",
+        "4cf1f1f35396240abf7da7e018e03a0e99b99c71cb9881c4f729c0175a07a250"
+      ],
+      [
+        "schemas/workflow.schema.json",
+        "1821ec6e26cc1e6060cd2388c22fc51c77a3678cf4ac8c1140934fe612a1b446"
+      ],
+      [
+        "semantics.d.ts",
+        "b340f17de09fb719bc3de65f571d1b54187629cc83a9b269eeab87250bd6bc9a"
+      ],
+      [
+        "semantics.js",
+        "4d9f0b65cc44572e6a15483ff48b7455b65d9ebca8cfa5c115d1dc75f9984733"
+      ],
+      [
+        "yaml.d.ts",
+        "59a19d5764855f5ba85db57354cf8d609df1b160518b3219b54c038e79a8dd76"
+      ],
+      [
+        "yaml.js",
+        "036a81507f9776169ac5283f7fac262b8e80befa23f069dc1c8fa2f028080dc4"
+      ]
+    ],
+    "cli": [
+      [
+        "arguments.d.ts",
+        "73ced3e18e28c135ad002b8f16b4c45bfb02ecc77a0e71fa064e14a1b5c8e151"
+      ],
+      [
+        "arguments.js",
+        "37f809e5c0cf7197b9adb80f642cc6a5f5f370a4625be7b2950409358705823f"
+      ],
+      [
+        "files.d.ts",
+        "51b762bccbd04942153ec7ed800411b80071520afa074130b7ff7f7823234793"
+      ],
+      [
+        "files.js",
+        "4e2acb7802e88a58cffc588fe78fd1c134955c621e82cafbd187bbb6d143e83e"
+      ],
+      [
+        "graph.d.ts",
+        "c1dfffc8d28872d2ada0763773ff16c90ccf9cbc76638eb4a42f9cbe7ac4387d"
+      ],
+      [
+        "graph.js",
+        "5b8077fabb6f3141544c3ffa551f28136fb74dd4bf7e3a2f7a14487c39482cfa"
+      ],
+      [
+        "main.d.ts",
+        "43e818adf60173644896298637f47b01d5819b17eda46eaa32d0c7d64724d012"
+      ],
+      [
+        "main.js",
+        "9ce2ba7706ee1828a4165c93c5fa359b6e17d4bcd3ba6c4552b08b90fa51edfa"
+      ],
+      [
+        "output.d.ts",
+        "6442b4b0685854f875d59ceca5bdb2f149be222b4cfee3a0bf480bdfc255dcee"
+      ],
+      [
+        "output.js",
+        "2c932e0a0cb9df1b37631bf6159628ec7c2cb7636831c0cdcf5e72e849036783"
+      ],
+      [
+        "runtime.d.ts",
+        "07ab6817014190d095b45d09ca1334cb0d5ef29d1a20aefad31932a221a1a2c4"
+      ],
+      [
+        "runtime.js",
+        "ac64cc5fbb1fa87f19c91b4d99885ef618d7760ec219fed96c030e3024c0ea58"
+      ],
+      [
+        "workspace.d.ts",
+        "2c7bb85b330bf3656b7e9744faf17c434a5120fb7ce9a97ddb09a8bebd9d90e6"
+      ],
+      [
+        "workspace.js",
+        "15ecc4a6da59f6ff0e72e6a7c829ca2f73c057176acb71bb847c7c31c5158863"
+      ]
+    ]
+  },
+  "inputInventorySha256": "7ba918075c159a4b8ee43799639fc1bb784f410191b253c28688ea1b97e38bd9",
+  "inputFileCount": 245,
+  "independence": "Native Python modules use PyYAML/jsonschema/referencing; no reference or JavaScript backend. Shared inputs and comparison controller; not an independent human audit.",
+  "runtimeExperiments": {
+    "executed": false,
+    "extensionExecution": "not-run",
+    "workflowExecution": "not-run",
+    "liveIntegrations": "not-run",
+    "sourceHostFixture": "not-run"
+  },
+  "limits": [
+    "Schema/static/CLI source experiment, not installed artifact lifecycle or OS isolation.",
+    "No full semantic conformance, performance score, winner, release readiness or new specification decision.",
+    "Unsupported operations remain in the complete 447-case denominator. Python fragment support is not a public reference-library capability.",
+    "Only native structured diagnostic fields are normalized; absent fields remain null. Parser wording and package-specific prose do not grant semantic equivalence."
+  ],
+  "comparison": [
+    {
+      "caseId": "library/project-project-maintainers-0-id-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/project-project-maintainers-0-id-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/project-project-approvalgates-0-requiredapprovers-0-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/project-project-approvalgates-0-requiredapprovers-0-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/actorset-actors-0-operatedby-0-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/actorset-actors-0-operatedby-0-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/actorset-actors-0-representedby-0-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/actorset-actors-0-representedby-0-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/actorset-actors-0-integrationref-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/actorset-actors-0-integrationref-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/project-project-policies-networkaccess-rules-0-actors-0-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/project-project-policies-networkaccess-rules-0-actors-0-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/project-project-policies-networkaccess-rules-0-capabilities-0-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/project-project-policies-networkaccess-rules-0-capabilities-0-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/project-project-policies-networkaccess-rules-0-destinations-contextsources-0-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/project-project-policies-networkaccess-rules-0-destinations-contextsources-0-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/project-project-policies-networkaccess-rules-0-destinations-providers-0-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/project-project-policies-networkaccess-rules-0-destinations-providers-0-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/project-project-policies-networkaccess-rules-0-destinations-extensions-0-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/project-project-policies-networkaccess-rules-0-destinations-extensions-0-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/project-project-policies-networkaccess-rules-0-approvalgate-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/project-project-policies-networkaccess-rules-0-approvalgate-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/project-project-policies-networkaccess-audit-events-0-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/project-project-policies-networkaccess-audit-events-0-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/project-project-policies-credentialhandling-rules-0-actors-0-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/project-project-policies-credentialhandling-rules-0-actors-0-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/project-project-policies-credentialhandling-rules-0-capabilities-0-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/project-project-policies-credentialhandling-rules-0-capabilities-0-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/project-project-policies-credentialhandling-rules-0-targets-contextsources-0-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/project-project-policies-credentialhandling-rules-0-targets-contextsources-0-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/project-project-policies-credentialhandling-rules-0-targets-providers-0-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/project-project-policies-credentialhandling-rules-0-targets-providers-0-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/project-project-policies-credentialhandling-rules-0-targets-extensions-0-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/project-project-policies-credentialhandling-rules-0-targets-extensions-0-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/project-project-policies-credentialhandling-rules-0-approvalgate-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/project-project-policies-credentialhandling-rules-0-approvalgate-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/project-project-policies-credentialhandling-audit-events-0-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/project-project-policies-credentialhandling-audit-events-0-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/project-project-policies-humanoverride-resume-approvalgate-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/project-project-policies-humanoverride-resume-approvalgate-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/project-project-policies-humanoverride-audit-events-0-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/project-project-policies-humanoverride-audit-events-0-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/agentset-agents-0-permissions-0-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/agentset-agents-0-permissions-0-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/agentset-agents-0-capabilities-0-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/agentset-agents-0-capabilities-0-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/agentset-agents-0-contextaccess-0-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/agentset-agents-0-contextaccess-0-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/agentset-agents-0-memoryaccess-0-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/agentset-agents-0-memoryaccess-0-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/agentset-agents-0-providerpreferences-0-provider-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/agentset-agents-0-providerpreferences-0-provider-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/agentset-agents-0-extensions-0-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/agentset-agents-0-extensions-0-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/taskset-tasks-0-owner-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/taskset-tasks-0-owner-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/taskset-tasks-0-participants-0-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/taskset-tasks-0-participants-0-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/taskset-tasks-0-dependson-0-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/taskset-tasks-0-dependson-0-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/taskset-tasks-0-capabilitiesrequired-0-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/taskset-tasks-0-capabilitiesrequired-0-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/taskset-tasks-0-approvalgates-0-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/taskset-tasks-0-approvalgates-0-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/workflow-workflow-stages-0-steps-0-task-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/workflow-workflow-stages-0-steps-0-task-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/workflow-workflow-stages-0-steps-0-approvalgates-0-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/workflow-workflow-stages-0-steps-0-approvalgates-0-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/workflow-workflow-stages-0-steps-0-emits-0-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/workflow-workflow-stages-0-steps-0-emits-0-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/handoffset-handoffs-0-from-0-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/handoffset-handoffs-0-from-0-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/handoffset-handoffs-0-to-0-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/handoffset-handoffs-0-to-0-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/permissionset-permissions-0-subjects-0-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/permissionset-permissions-0-subjects-0-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/permissionset-permissions-0-capabilities-0-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/permissionset-permissions-0-capabilities-0-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/permissionset-permissions-0-approvalgate-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/permissionset-permissions-0-approvalgate-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/contextset-contextsources-0-access-allowedactors-0-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/contextset-contextsources-0-access-allowedactors-0-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/contextset-contextsources-0-approvalgates-0-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/contextset-contextsources-0-approvalgates-0-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/memoryset-memoryscopes-0-allowedconsumers-0-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/memoryset-memoryscopes-0-allowedconsumers-0-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/memoryset-memoryscopes-0-allowedwriters-0-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/memoryset-memoryscopes-0-allowedwriters-0-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/memoryset-memoryscopes-0-approvalgate-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/memoryset-memoryscopes-0-approvalgate-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/modelprofileset-modelprofiles-0-selection-providerrefs-0-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/modelprofileset-modelprofiles-0-selection-providerrefs-0-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/modelprofileset-modelprofiles-0-selection-providerrefs-0-providerref-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/modelprofileset-modelprofiles-0-selection-providerrefs-0-providerref-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/modelprofileset-modelprofiles-0-fallback-candidateproviderrefs-0-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/modelprofileset-modelprofiles-0-fallback-candidateproviderrefs-0-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/modelprofileset-modelprofiles-0-fallback-candidateproviderrefs-0-providerref-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/modelprofileset-modelprofiles-0-fallback-candidateproviderrefs-0-providerref-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/modelprofileset-modelprofiles-0-review-approvers-0-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/modelprofileset-modelprofiles-0-review-approvers-0-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/modelprofileset-modelprofiles-0-recommendedfor-0-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/modelprofileset-modelprofiles-0-recommendedfor-0-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/promptset-promptsets-0-owner-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/promptset-promptsets-0-owner-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/promptset-promptsets-0-review-approvers-0-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/promptset-promptsets-0-review-approvers-0-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/promptset-promptsets-0-compatibility-affectedagents-0-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/promptset-promptsets-0-compatibility-affectedagents-0-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/promptset-promptsets-0-recommendedfor-0-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/promptset-promptsets-0-recommendedfor-0-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/retrievalprofileset-retrievalprofiles-0-owner-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/retrievalprofileset-retrievalprofiles-0-owner-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/retrievalprofileset-retrievalprofiles-0-review-approvers-0-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/retrievalprofileset-retrievalprofiles-0-review-approvers-0-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/retrievalprofileset-retrievalprofiles-0-sources-0-contextsourceref-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/retrievalprofileset-retrievalprofiles-0-sources-0-contextsourceref-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/retrievalprofileset-retrievalprofiles-0-compatibility-affectedagents-0-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/retrievalprofileset-retrievalprofiles-0-compatibility-affectedagents-0-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/retrievalprofileset-retrievalprofiles-0-recommendedfor-0-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/retrievalprofileset-retrievalprofiles-0-recommendedfor-0-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/agentdefinitionset-agentdefinitions-0-agentref-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/agentdefinitionset-agentdefinitions-0-agentref-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/agentdefinitionset-agentdefinitions-0-compatibility-affectedagents-0-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/agentdefinitionset-agentdefinitions-0-compatibility-affectedagents-0-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/agentdefinitionset-agentdefinitions-0-owner-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/agentdefinitionset-agentdefinitions-0-owner-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/agentdefinitionset-agentdefinitions-0-review-approvers-0-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/agentdefinitionset-agentdefinitions-0-review-approvers-0-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/agentdefinitionset-agentdefinitions-0-components-modelprofileref-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/agentdefinitionset-agentdefinitions-0-components-modelprofileref-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/agentdefinitionset-agentdefinitions-0-components-promptsetref-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/agentdefinitionset-agentdefinitions-0-components-promptsetref-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/agentdefinitionset-agentdefinitions-0-components-retrievalprofileref-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/agentdefinitionset-agentdefinitions-0-components-retrievalprofileref-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/agentdefinitionset-agentdefinitions-0-components-permissionrefs-0-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/agentdefinitionset-agentdefinitions-0-components-permissionrefs-0-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/agentdefinitionset-agentdefinitions-0-components-capabilityrefs-0-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/agentdefinitionset-agentdefinitions-0-components-capabilityrefs-0-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/agentdefinitionset-agentdefinitions-0-components-contextsourcerefs-0-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/agentdefinitionset-agentdefinitions-0-components-contextsourcerefs-0-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/agentdefinitionset-agentdefinitions-0-components-memoryscopes-0-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/agentdefinitionset-agentdefinitions-0-components-memoryscopes-0-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/agentdefinitionset-agentdefinitions-0-components-extensionrefs-0-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/agentdefinitionset-agentdefinitions-0-components-extensionrefs-0-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/agentdefinitionset-agentdefinitions-0-review-approvalgate-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/agentdefinitionset-agentdefinitions-0-review-approvalgate-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/agentdefinitionset-agentdefinitions-0-audit-events-0-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/agentdefinitionset-agentdefinitions-0-audit-events-0-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/extensionset-extensions-0-requiredcapabilities-0-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/extensionset-extensions-0-requiredcapabilities-0-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/duplicate-actor",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/duplicate-agent",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/duplicate-task",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/duplicate-permission",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/duplicate-capability",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/duplicate-context-source",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/duplicate-memory-scope",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/duplicate-provider",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/duplicate-model-profile",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/duplicate-prompt-set",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/duplicate-retrieval-profile",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/duplicate-agent-definition",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/duplicate-event-type",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/duplicate-extension",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/duplicate-approval-gate",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/workflow-cross-stage-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/workflow-same-stage-duplicate",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/workflow-cross-stage-duplicate",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/workflow-separate-workflow-identity",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/workflow-inline-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/workflow-edge-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/workflow-edge-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/workflow-duplicate-stage",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/artifact-cross-task-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/artifact-same-task-duplicate",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/artifact-cross-task-duplicate",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/artifact-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/artifact-separate-assembly-identity",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/agent-bridge-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/agent-bridge-missing",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/agent-bridge-duplicate",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/actor-reference-wrong-kind",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/actor-relationship-cycle",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/legacy-actor-fallback",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/override-human",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/override-authority",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/override-service",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/override-requires-actors",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/active-definition-ambiguous",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/promptsetref-eligible",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/promptsetref-inactive-component",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/promptsetref-unapproved-component",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/retrievalprofileref-inactive-component",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/provider-legacy-feature",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/gate-scoped-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/gate-scope-missing",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/gate-scope-wrong",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/gate-scoped-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/gate-unscoped-kind-has-scope",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/gate-unsupported-kind",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/gate-legacy-ambiguous",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-enterprise-team-agent-definitions",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-enterprise-team-agents",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-enterprise-team-capabilities",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-enterprise-team-context",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-enterprise-team-events",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-enterprise-team-extensions",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-enterprise-team-handoffs",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-enterprise-team-memory",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-enterprise-team-model-profiles",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-enterprise-team-permissions",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-enterprise-team-project",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-enterprise-team-prompt-sets",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-enterprise-team-providers",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-enterprise-team-retrieval-profiles",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-enterprise-team-tasks",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-enterprise-team-workflow",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-minimal-team-actors",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-minimal-team-agents",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-minimal-team-project",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-open-source-maintainer-agent-definitions",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-open-source-maintainer-agents",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-open-source-maintainer-capabilities",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-open-source-maintainer-context",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-open-source-maintainer-events",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-open-source-maintainer-extensions",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-open-source-maintainer-handoffs",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-open-source-maintainer-memory",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-open-source-maintainer-model-profiles",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-open-source-maintainer-permissions",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-open-source-maintainer-project",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-open-source-maintainer-prompt-sets",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-open-source-maintainer-providers",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-open-source-maintainer-retrieval-profiles",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-open-source-maintainer-tasks",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-open-source-maintainer-workflow",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-product-delivery-team-agent-definitions",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-product-delivery-team-agents",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-product-delivery-team-capabilities",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-product-delivery-team-context",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-product-delivery-team-events",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-product-delivery-team-extensions",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-product-delivery-team-handoffs",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-product-delivery-team-memory",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-product-delivery-team-model-profiles",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-product-delivery-team-permissions",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-product-delivery-team-project",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-product-delivery-team-prompt-sets",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-product-delivery-team-providers",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-product-delivery-team-retrieval-profiles",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-product-delivery-team-tasks",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-product-delivery-team-workflow",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-research-lab-agent-definitions",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-research-lab-agents",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-research-lab-capabilities",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-research-lab-context",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-research-lab-events",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-research-lab-extensions",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-research-lab-handoffs",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-research-lab-memory",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-research-lab-model-profiles",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-research-lab-permissions",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-research-lab-project",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-research-lab-prompt-sets",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-research-lab-providers",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-research-lab-retrieval-profiles",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-research-lab-tasks",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-research-lab-workflow",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-software-team-agent-definitions",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-software-team-agents",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-software-team-capabilities",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-software-team-context",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-software-team-events",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-software-team-extensions",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-software-team-handoffs",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-software-team-memory",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-software-team-model-profiles",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-software-team-permissions",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-software-team-project",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-software-team-prompt-sets",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-software-team-providers",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-software-team-retrieval-profiles",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-software-team-tasks",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-software-team-workflow",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-solo-developer-actors",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-solo-developer-agents",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-solo-developer-capabilities",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-solo-developer-context",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-solo-developer-events",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-solo-developer-handoffs",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-solo-developer-permissions",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-solo-developer-project",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-solo-developer-tasks",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-solo-developer-workflow",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-startup-team-agent-definitions",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-startup-team-agents",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-startup-team-capabilities",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-startup-team-context",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-startup-team-events",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-startup-team-extensions",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-startup-team-handoffs",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-startup-team-memory",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-startup-team-model-profiles",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-startup-team-permissions",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-startup-team-project",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-startup-team-prompt-sets",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-startup-team-providers",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-startup-team-retrieval-profiles",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-startup-team-tasks",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-examples-startup-team-workflow",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-negative-missing-required-field",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-negative-invalid-enum",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-negative-invalid-id",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/schema-negative-unknown-kind",
+      "profile": "schema",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "different",
+      "differences": [
+        "diagnostics"
+      ],
+      "oracleFindings": {
+        "reference": [
+          "diagnostic-expectation"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/local-ref-resolved",
+      "profile": "local-schema-engine",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/local-ref-wrong-type",
+      "profile": "local-schema-engine",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/local-ref-unavailable",
+      "profile": "local-schema-engine",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/draft-2020-prefixitems-accepted",
+      "profile": "local-schema-engine",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/draft-2020-prefixitems-rejected",
+      "profile": "local-schema-engine",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/yaml-unique",
+      "profile": "parser",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/yaml-duplicate",
+      "profile": "parser",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/yaml-malformed",
+      "profile": "parser",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/discovery-validate-project-hints",
+      "profile": "discovery",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/discovery-reject-unsupported-version",
+      "profile": "discovery",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/discovery-reject-unsupported-kind",
+      "profile": "discovery",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/discovery-reject-source-outside-root",
+      "profile": "discovery",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "different",
+      "differences": [
+        "diagnostics"
+      ],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/discovery-reject-source-kind-mismatch",
+      "profile": "discovery",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/discovery-reject-ambiguous-project-entry",
+      "profile": "discovery",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/discovery-multiple-workflows",
+      "profile": "discovery",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/agent-bridge-wrong-kind",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/agent-bridge-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/override-mixed-representation",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/gate-kind-agent-definition-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/gate-kind-agent-definition-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/gate-kind-capability-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/gate-kind-capability-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/gate-kind-permission-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/gate-kind-permission-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/gate-kind-context-source-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/gate-kind-context-source-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/gate-kind-memory-scope-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/gate-kind-memory-scope-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/gate-kind-provider-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/gate-kind-provider-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/gate-kind-task-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/gate-kind-task-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/gate-kind-extension-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/gate-kind-extension-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/gate-kind-workflow-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/gate-kind-workflow-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/gate-kind-workflow-stage-resolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "library/gate-kind-workflow-stage-unresolved",
+      "profile": "static-fragments",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "prototype-cli/discover-directory-project",
+      "profile": "prototype-cli",
+      "referenceState": "unsupported",
+      "pythonState": "unsupported",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": [
+          "not-assessed"
+        ]
+      }
+    },
+    {
+      "caseId": "prototype-cli/discover-explicit-files",
+      "profile": "prototype-cli",
+      "referenceState": "unsupported",
+      "pythonState": "unsupported",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": [
+          "not-assessed"
+        ]
+      }
+    },
+    {
+      "caseId": "prototype-cli/validate-project-hints",
+      "profile": "prototype-cli",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "prototype-cli/inspect-valid-project",
+      "profile": "prototype-cli",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "prototype-cli/graph-valid-project",
+      "profile": "prototype-cli",
+      "referenceState": "unsupported",
+      "pythonState": "unsupported",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": [
+          "not-assessed"
+        ]
+      }
+    },
+    {
+      "caseId": "prototype-cli/reject-yaml-syntax",
+      "profile": "prototype-cli",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "prototype-cli/reject-schema-invalid-project",
+      "profile": "prototype-cli",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "prototype-cli/reject-unsupported-version",
+      "profile": "prototype-cli",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "prototype-cli/reject-unsupported-kind",
+      "profile": "prototype-cli",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "prototype-cli/reject-ambiguous-project-entry",
+      "profile": "prototype-cli",
+      "referenceState": "unsupported",
+      "pythonState": "unsupported",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": [
+          "not-assessed"
+        ]
+      }
+    },
+    {
+      "caseId": "prototype-cli/reject-source-outside-root",
+      "profile": "prototype-cli",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "prototype-cli/reject-source-kind-mismatch",
+      "profile": "prototype-cli",
+      "referenceState": "unsupported",
+      "pythonState": "observed",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": []
+      }
+    },
+    {
+      "caseId": "prototype-cli/init-bounded-starter",
+      "profile": "prototype-cli",
+      "referenceState": "unsupported",
+      "pythonState": "unsupported",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": [
+          "not-assessed"
+        ]
+      }
+    },
+    {
+      "caseId": "prototype-cli/reject-init-conflict",
+      "profile": "prototype-cli",
+      "referenceState": "unsupported",
+      "pythonState": "unsupported",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": [
+          "not-assessed"
+        ]
+      }
+    },
+    {
+      "caseId": "prototype-cli/reject-runtime-command",
+      "profile": "prototype-cli",
+      "referenceState": "unsupported",
+      "pythonState": "unsupported",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": [
+          "not-assessed"
+        ]
+      }
+    },
+    {
+      "caseId": "claim-format/accept-draft-validator",
+      "profile": "claim-format",
+      "referenceState": "unsupported",
+      "pythonState": "unsupported",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": [
+          "not-assessed"
+        ]
+      }
+    },
+    {
+      "caseId": "claim-format/accept-published-validator",
+      "profile": "claim-format",
+      "referenceState": "unsupported",
+      "pythonState": "unsupported",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": [
+          "not-assessed"
+        ]
+      }
+    },
+    {
+      "caseId": "claim-format/accept-partial-cli",
+      "profile": "claim-format",
+      "referenceState": "unsupported",
+      "pythonState": "unsupported",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": [
+          "not-assessed"
+        ]
+      }
+    },
+    {
+      "caseId": "claim-format/accept-published-extension",
+      "profile": "claim-format",
+      "referenceState": "unsupported",
+      "pythonState": "unsupported",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": [
+          "not-assessed"
+        ]
+      }
+    },
+    {
+      "caseId": "claim-format/accept-withdrawn-service",
+      "profile": "claim-format",
+      "referenceState": "unsupported",
+      "pythonState": "unsupported",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": [
+          "not-assessed"
+        ]
+      }
+    },
+    {
+      "caseId": "claim-format/reject-empty-spec-versions",
+      "profile": "claim-format",
+      "referenceState": "unsupported",
+      "pythonState": "unsupported",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": [
+          "not-assessed"
+        ]
+      }
+    },
+    {
+      "caseId": "claim-format/reject-duplicate-spec-version",
+      "profile": "claim-format",
+      "referenceState": "unsupported",
+      "pythonState": "unsupported",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": [
+          "not-assessed"
+        ]
+      }
+    },
+    {
+      "caseId": "claim-format/reject-invalid-spec-version",
+      "profile": "claim-format",
+      "referenceState": "unsupported",
+      "pythonState": "unsupported",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": [
+          "not-assessed"
+        ]
+      }
+    },
+    {
+      "caseId": "claim-format/reject-duplicate-manifest-kind",
+      "profile": "claim-format",
+      "referenceState": "unsupported",
+      "pythonState": "unsupported",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": [
+          "not-assessed"
+        ]
+      }
+    },
+    {
+      "caseId": "claim-format/reject-invalid-manifest-kind",
+      "profile": "claim-format",
+      "referenceState": "unsupported",
+      "pythonState": "unsupported",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": [
+          "not-assessed"
+        ]
+      }
+    },
+    {
+      "caseId": "claim-format/reject-duplicate-profile",
+      "profile": "claim-format",
+      "referenceState": "unsupported",
+      "pythonState": "unsupported",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": [
+          "not-assessed"
+        ]
+      }
+    },
+    {
+      "caseId": "claim-format/reject-unknown-profile",
+      "profile": "claim-format",
+      "referenceState": "unsupported",
+      "pythonState": "unsupported",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": [
+          "not-assessed"
+        ]
+      }
+    },
+    {
+      "caseId": "claim-format/reject-duplicate-extension-namespace",
+      "profile": "claim-format",
+      "referenceState": "unsupported",
+      "pythonState": "unsupported",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": [
+          "not-assessed"
+        ]
+      }
+    },
+    {
+      "caseId": "claim-format/reject-blank-unsupported-field",
+      "profile": "claim-format",
+      "referenceState": "unsupported",
+      "pythonState": "unsupported",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": [
+          "not-assessed"
+        ]
+      }
+    },
+    {
+      "caseId": "claim-format/reject-unknown-level",
+      "profile": "claim-format",
+      "referenceState": "unsupported",
+      "pythonState": "unsupported",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": [
+          "not-assessed"
+        ]
+      }
+    },
+    {
+      "caseId": "claim-format/reject-missing-required-level",
+      "profile": "claim-format",
+      "referenceState": "unsupported",
+      "pythonState": "unsupported",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": [
+          "not-assessed"
+        ]
+      }
+    },
+    {
+      "caseId": "claim-format/reject-supported-without-evidence",
+      "profile": "claim-format",
+      "referenceState": "unsupported",
+      "pythonState": "unsupported",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": [
+          "not-assessed"
+        ]
+      }
+    },
+    {
+      "caseId": "claim-format/reject-partial-without-evidence",
+      "profile": "claim-format",
+      "referenceState": "unsupported",
+      "pythonState": "unsupported",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": [
+          "not-assessed"
+        ]
+      }
+    },
+    {
+      "caseId": "claim-format/reject-partial-without-limitation",
+      "profile": "claim-format",
+      "referenceState": "unsupported",
+      "pythonState": "unsupported",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": [
+          "not-assessed"
+        ]
+      }
+    },
+    {
+      "caseId": "claim-format/reject-unknown-publication-status",
+      "profile": "claim-format",
+      "referenceState": "unsupported",
+      "pythonState": "unsupported",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": [
+          "not-assessed"
+        ]
+      }
+    },
+    {
+      "caseId": "claim-format/reject-invalid-issued-at",
+      "profile": "claim-format",
+      "referenceState": "unsupported",
+      "pythonState": "unsupported",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": [
+          "not-assessed"
+        ]
+      }
+    },
+    {
+      "caseId": "claim-format/reject-unknown-subject-type",
+      "profile": "claim-format",
+      "referenceState": "unsupported",
+      "pythonState": "unsupported",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": [
+          "not-assessed"
+        ]
+      }
+    },
+    {
+      "caseId": "claim-format/reject-unsupported-top-level-field",
+      "profile": "claim-format",
+      "referenceState": "unsupported",
+      "pythonState": "unsupported",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": [
+          "not-assessed"
+        ]
+      }
+    },
+    {
+      "caseId": "claim-format/reject-non-self-declared-assurance",
+      "profile": "claim-format",
+      "referenceState": "unsupported",
+      "pythonState": "unsupported",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": [
+          "not-assessed"
+        ]
+      }
+    },
+    {
+      "caseId": "claim-format/reject-missing-responsible-party",
+      "profile": "claim-format",
+      "referenceState": "unsupported",
+      "pythonState": "unsupported",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": [
+          "not-assessed"
+        ]
+      }
+    },
+    {
+      "caseId": "claim-format/reject-invalid-evidence-uri",
+      "profile": "claim-format",
+      "referenceState": "unsupported",
+      "pythonState": "unsupported",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": [
+          "not-assessed"
+        ]
+      }
+    },
+    {
+      "caseId": "claim-format/reject-duplicate-evidence",
+      "profile": "claim-format",
+      "referenceState": "unsupported",
+      "pythonState": "unsupported",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": [
+          "not-assessed"
+        ]
+      }
+    },
+    {
+      "caseId": "claim-format/reject-invalid-snapshot-source",
+      "profile": "claim-format",
+      "referenceState": "unsupported",
+      "pythonState": "unsupported",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": [
+          "not-assessed"
+        ]
+      }
+    },
+    {
+      "caseId": "claim-format/reject-invalid-snapshot-version",
+      "profile": "claim-format",
+      "referenceState": "unsupported",
+      "pythonState": "unsupported",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": [
+          "not-assessed"
+        ]
+      }
+    },
+    {
+      "caseId": "claim-format/reject-missing-snapshot-revision",
+      "profile": "claim-format",
+      "referenceState": "unsupported",
+      "pythonState": "unsupported",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": [
+          "not-assessed"
+        ]
+      }
+    },
+    {
+      "caseId": "claim-format/reject-additional-level-field",
+      "profile": "claim-format",
+      "referenceState": "unsupported",
+      "pythonState": "unsupported",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": [
+          "not-assessed"
+        ]
+      }
+    },
+    {
+      "caseId": "claim-format/reject-blank-evidence-description",
+      "profile": "claim-format",
+      "referenceState": "unsupported",
+      "pythonState": "unsupported",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": [
+          "not-assessed"
+        ]
+      }
+    },
+    {
+      "caseId": "claim-format/reject-missing-enforcement-description",
+      "profile": "claim-format",
+      "referenceState": "unsupported",
+      "pythonState": "unsupported",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": [
+          "not-assessed"
+        ]
+      }
+    },
+    {
+      "caseId": "claim-format/reject-invalid-metadata-id",
+      "profile": "claim-format",
+      "referenceState": "unsupported",
+      "pythonState": "unsupported",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": [
+          "not-assessed"
+        ]
+      }
+    },
+    {
+      "caseId": "claim-format/reject-blank-subject-version",
+      "profile": "claim-format",
+      "referenceState": "unsupported",
+      "pythonState": "unsupported",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": [
+          "not-assessed"
+        ]
+      }
+    },
+    {
+      "caseId": "claim-format/reject-unknown-evidence-type",
+      "profile": "claim-format",
+      "referenceState": "unsupported",
+      "pythonState": "unsupported",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": [
+          "not-assessed"
+        ]
+      }
+    },
+    {
+      "caseId": "claim-format/reject-missing-level-summary",
+      "profile": "claim-format",
+      "referenceState": "unsupported",
+      "pythonState": "unsupported",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": [
+          "not-assessed"
+        ]
+      }
+    },
+    {
+      "caseId": "extension-metadata/known-pair",
+      "profile": "extension-metadata",
+      "referenceState": "unsupported",
+      "pythonState": "unsupported",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": [
+          "not-assessed"
+        ]
+      }
+    },
+    {
+      "caseId": "extension-metadata/unknown-namespace",
+      "profile": "extension-metadata",
+      "referenceState": "unsupported",
+      "pythonState": "unsupported",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": [
+          "not-assessed"
+        ]
+      }
+    },
+    {
+      "caseId": "extension-metadata/unknown-profile",
+      "profile": "extension-metadata",
+      "referenceState": "unsupported",
+      "pythonState": "unsupported",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": [
+          "not-assessed"
+        ]
+      }
+    },
+    {
+      "caseId": "extension-metadata/unknown-version",
+      "profile": "extension-metadata",
+      "referenceState": "unsupported",
+      "pythonState": "unsupported",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": [
+          "not-assessed"
+        ]
+      }
+    },
+    {
+      "caseId": "extension-metadata/incompatible-manifest-pair",
+      "profile": "extension-metadata",
+      "referenceState": "unsupported",
+      "pythonState": "unsupported",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": [
+          "not-assessed"
+        ]
+      }
+    },
+    {
+      "caseId": "extension-metadata/incompatible-attachment",
+      "profile": "extension-metadata",
+      "referenceState": "unsupported",
+      "pythonState": "unsupported",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": [
+          "not-assessed"
+        ]
+      }
+    },
+    {
+      "caseId": "extension-metadata/mismatched-source-pin",
+      "profile": "extension-metadata",
+      "referenceState": "unsupported",
+      "pythonState": "unsupported",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": [
+          "not-assessed"
+        ]
+      }
+    },
+    {
+      "caseId": "extension-metadata/revoked-with-existing-successor",
+      "profile": "extension-metadata",
+      "referenceState": "unsupported",
+      "pythonState": "unsupported",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": [
+          "not-assessed"
+        ]
+      }
+    },
+    {
+      "caseId": "extension-metadata/withdrawn",
+      "profile": "extension-metadata",
+      "referenceState": "unsupported",
+      "pythonState": "unsupported",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": [
+          "not-assessed"
+        ]
+      }
+    },
+    {
+      "caseId": "extension-metadata/disputed",
+      "profile": "extension-metadata",
+      "referenceState": "unsupported",
+      "pythonState": "unsupported",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": [
+          "not-assessed"
+        ]
+      }
+    },
+    {
+      "caseId": "extension-metadata/invalid-snapshot",
+      "profile": "extension-metadata",
+      "referenceState": "unsupported",
+      "pythonState": "unsupported",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": [
+          "not-assessed"
+        ]
+      }
+    },
+    {
+      "caseId": "extension-metadata/ambiguous-snapshot",
+      "profile": "extension-metadata",
+      "referenceState": "unsupported",
+      "pythonState": "unsupported",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": [
+          "not-assessed"
+        ]
+      }
+    },
+    {
+      "caseId": "extension-metadata/legacy-snapshot",
+      "profile": "extension-metadata",
+      "referenceState": "unsupported",
+      "pythonState": "unsupported",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": [
+          "not-assessed"
+        ]
+      }
+    },
+    {
+      "caseId": "extension-metadata/migrated-snapshot",
+      "profile": "extension-metadata",
+      "referenceState": "unsupported",
+      "pythonState": "unsupported",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": [
+          "not-assessed"
+        ]
+      }
+    },
+    {
+      "caseId": "extension-metadata/legacy-downgrade",
+      "profile": "extension-metadata",
+      "referenceState": "unsupported",
+      "pythonState": "unsupported",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": [
+          "not-assessed"
+        ]
+      }
+    },
+    {
+      "caseId": "extension-metadata/unsupported-manifest-dialect",
+      "profile": "extension-metadata",
+      "referenceState": "unsupported",
+      "pythonState": "unsupported",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": [
+          "not-assessed"
+        ]
+      }
+    },
+    {
+      "caseId": "extension-metadata/invalid-authored-lifecycle",
+      "profile": "extension-metadata",
+      "referenceState": "unsupported",
+      "pythonState": "unsupported",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": [
+          "not-assessed"
+        ]
+      }
+    },
+    {
+      "caseId": "migration/provider-features-before",
+      "profile": "migration",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "migration/provider-features-after",
+      "profile": "migration",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "migration/provider-features-conflict",
+      "profile": "migration",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "migration/training-use-before",
+      "profile": "migration",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "migration/training-use-after",
+      "profile": "migration",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "migration/training-use-conflict",
+      "profile": "migration",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "migration/workflow-hint-before",
+      "profile": "migration",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "migration/workflow-hint-after",
+      "profile": "migration",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "migration/workflow-hint-conflict",
+      "profile": "migration",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "migration/approval-target-before",
+      "profile": "migration",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "migration/approval-target-after",
+      "profile": "migration",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "migration/approval-target-conflict",
+      "profile": "migration",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "migration/credential-policy-opaque-before",
+      "profile": "migration",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "migration/credential-policy-deny-after",
+      "profile": "migration",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "migration/credential-policy-allow-conflict",
+      "profile": "migration",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "match",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": []
+      }
+    },
+    {
+      "caseId": "public-cli/validate-minimal",
+      "profile": "public-cli",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "different",
+      "differences": [
+        "performed-layers"
+      ],
+      "oracleFindings": {
+        "reference": [],
+        "python": [
+          "layer:runtime"
+        ]
+      }
+    },
+    {
+      "caseId": "public-cli/inspect-minimal",
+      "profile": "public-cli",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "different",
+      "differences": [
+        "performed-layers"
+      ],
+      "oracleFindings": {
+        "reference": [],
+        "python": [
+          "layer:runtime"
+        ]
+      }
+    },
+    {
+      "caseId": "public-cli/graph-minimal",
+      "profile": "public-cli",
+      "referenceState": "observed",
+      "pythonState": "unsupported",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": [
+          "not-assessed"
+        ]
+      }
+    },
+    {
+      "caseId": "public-cli/unsupported-dialect",
+      "profile": "public-cli",
+      "referenceState": "observed",
+      "pythonState": "observed",
+      "comparison": "different",
+      "differences": [
+        "diagnostics",
+        "performed-layers"
+      ],
+      "oracleFindings": {
+        "reference": [],
+        "python": [
+          "diagnostic-codes"
+        ]
+      }
+    },
+    {
+      "caseId": "public-cli/deny-run",
+      "profile": "public-cli",
+      "referenceState": "observed",
+      "pythonState": "unsupported",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": [
+          "not-assessed"
+        ]
+      }
+    },
+    {
+      "caseId": "public-cli/deny-init",
+      "profile": "public-cli",
+      "referenceState": "observed",
+      "pythonState": "unsupported",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": [
+          "not-assessed"
+        ]
+      }
+    },
+    {
+      "caseId": "public-cli/deny-discover",
+      "profile": "public-cli",
+      "referenceState": "observed",
+      "pythonState": "unsupported",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [],
+        "python": [
+          "not-assessed"
+        ]
+      }
+    },
+    {
+      "caseId": "runtime-boundary/workflow-execution",
+      "profile": "runtime-boundary",
+      "referenceState": "unsupported",
+      "pythonState": "unsupported",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": [
+          "not-assessed"
+        ]
+      }
+    },
+    {
+      "caseId": "runtime-boundary/provider-network-call",
+      "profile": "runtime-boundary",
+      "referenceState": "unsupported",
+      "pythonState": "unsupported",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": [
+          "not-assessed"
+        ]
+      }
+    },
+    {
+      "caseId": "runtime-boundary/credential-broker",
+      "profile": "runtime-boundary",
+      "referenceState": "unsupported",
+      "pythonState": "unsupported",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": [
+          "not-assessed"
+        ]
+      }
+    },
+    {
+      "caseId": "runtime-boundary/executable-extension-loading",
+      "profile": "runtime-boundary",
+      "referenceState": "unsupported",
+      "pythonState": "unsupported",
+      "comparison": "outside-common-scope",
+      "differences": [],
+      "oracleFindings": {
+        "reference": [
+          "not-assessed"
+        ],
+        "python": [
+          "not-assessed"
+        ]
+      }
+    }
+  ]
+}

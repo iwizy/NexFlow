@@ -304,7 +304,9 @@ The prepared [NF-119 corpus](0.8/interoperability-corpus.md) preserves all
 selected inputs and unsupported profiles. The
 [preliminary specification version review](0.8/specification-version-review.md)
 records compatibility evidence before the freeze; the final version/Draft
-decision remains part of the release review after independent comparison.
+decision remains part of the release review. The [NF-120 comparison](0.8/interoperability-comparison.md)
+records the actual reference/Python intersection, five diagnostic/layer
+differences and all unsupported profiles; it does not itself approve 0.8.
 
 Release readiness:
 

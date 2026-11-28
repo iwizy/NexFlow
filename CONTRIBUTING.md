@@ -119,6 +119,12 @@ npm run conformance-claim-smoke
 npm run semantic-smoke
 ```
 
+Changes to interoperability adapters or reports also require
+`node scripts/interoperability-comparison-smoke.mjs` and a fresh two-run
+reference/native Python comparison using the unchanged corpus and locks. See
+the [comparison procedure](docs/0.8/interoperability-comparison.md). Retain all
+unsupported cases and differences; a verified report is not a conformance pass.
+
 Root maintenance checks require Node.js 20 or newer. The validator checks schema
 JSON and example YAML syntax, rejects aliases and duplicate mapping keys, verifies manifest-kind
 discovery and example coverage, compiles every schema, and validates every

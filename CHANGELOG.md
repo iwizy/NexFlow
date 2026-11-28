@@ -8,6 +8,12 @@ This project follows a specification-first process. Breaking changes must includ
 
 ### Added
 
+- Recorded NF-120 reference/native Python interoperability on the unchanged
+  447-case corpus. The 141 shared cases retain 136 exact matches and five
+  diagnostic/layer differences; 306 stay outside common support. Added two-run
+  raw/normalized evidence, source and payload bindings, receipt verification
+  and fresh CI comparison. Runtime experiments remain not-run, and NF-121 owns
+  the final specification version/Draft and release decisions.
 - Prepared NF-119's 447-case interoperability corpus on an immutable source
   snapshot, covering all eight example teams, the complete frozen library
   catalog, prototype/public CLI, claim format, extension metadata, migration
@@ -15,7 +21,8 @@ This project follows a specification-first process. Breaking changes must includ
   verification and focused CI. The preliminary version review retains a real
   foundation-accepted/current-rejected credential-policy input; comparison
   uses the implemented 0.1 Draft snapshot, while NF-121 retains the release
-  version/status decision. No independent comparison or 0.8 release is claimed.
+  version/status decision. NF-119 itself supplied no implementation comparison;
+  the subsequent NF-120 record is separate. No 0.8 release is claimed.
 
 ### Changed
 

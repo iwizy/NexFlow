@@ -43,8 +43,10 @@ neither the release number nor elapsed time predetermines the manifest version.
 The [NF-119 corpus](0.8/interoperability-corpus.md) is prepared with 447 cases
 and all eight existing teams. Its [version review](0.8/specification-version-review.md)
 retains a concrete schema-acceptance narrowing; comparison inputs use the
-implemented 0.1 Draft snapshot. Independent comparison and the final release
-version/status decision remain separate work.
+implemented 0.1 Draft snapshot. The [NF-120 comparison](0.8/interoperability-comparison.md)
+records 136 exact matches and five retained differences in 141 shared cases;
+306 cases stay outside common support. The final version/status and release
+decision remain NF-121 work.
 The dated preparation snapshots below retain their original outcomes.
 
 The dated [0.2 validation/conformance checkpoint](0.2-validation-checkpoint.md)

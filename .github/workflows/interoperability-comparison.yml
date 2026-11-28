@@ -1,0 +1,46 @@
+name: Interoperability Comparison
+on:
+  pull_request:
+  push:
+    branches: [main, develop]
+permissions:
+  contents: read
+jobs:
+  comparison:
+    name: Reference and native Python corpus comparison
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '26.13.1'
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1
+        with:
+          python-version: '3.12.15'
+      - name: Provision unchanged locked sources
+        run: |
+          npm ci --ignore-scripts --no-audit --no-fund
+          npm ci --prefix packages/validation --ignore-scripts --no-audit --no-fund
+          npm run build --prefix packages/validation
+          npm run build --prefix packages/cli
+          python -I scripts/evaluation-python-provision.py --venv "$RUNNER_TEMP/nf120-venv" --wheelhouse "$RUNNER_TEMP/nf120-wheels" --provisioner "$RUNNER_TEMP/nf120-provisioner"
+      - name: Verify retained corpus and recorded receipts
+        run: |
+          node scripts/interoperability-corpus-smoke.mjs
+          node scripts/interoperability-comparison-smoke.mjs
+      - name: Execute both implementations twice with no oracle packet
+        run: |
+          node scripts/interoperability-compare.mjs "$RUNNER_TEMP/nf120-venv/bin/python" "$RUNNER_TEMP/nf120-comparison"
+          node scripts/interoperability-comparison-smoke.mjs "$RUNNER_TEMP/nf120-comparison"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: nf-120-interoperability-comparison
+          path: ${{ runner.temp }}/nf120-comparison/
+          if-no-files-found: error
+          retention-days: 90
